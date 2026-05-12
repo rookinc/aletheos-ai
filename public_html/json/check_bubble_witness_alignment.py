@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 import sys
 
-ROOT = Path(".")
+ROOT = Path(__file__).resolve().parent
 
 FILES = {
     "bubble": ROOT / "bubble_witness_lens.json",

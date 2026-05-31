@@ -1,6 +1,6 @@
 <?php
 $page_title = 'Audit — Aletheos.ai';
-$page_description = 'Verification records, theorem data, and checker routes for Aletheos.ai.';
+$page_description = 'The Aletheos audit layer exposes theorem objects, verification reports, data contracts, and checker commands so public claims can leave inspectable tracks.';
 $page_css = ['assets/index.css'];
 
 include __DIR__ . '/includes/head.php';
@@ -10,9 +10,16 @@ include __DIR__ . '/includes/site_header.php';
 <main class="site-shell">
   <section class="hero">
     <p class="eyebrow">Verification and anti-drift</p>
-    <h1 class="hero-title">Audit</h1>
+    <h1 class="hero-title">Claims should leave tracks.</h1>
     <p class="hero-text">
-      Machine-readable data contracts, verification records, and local checker commands for the current Aletheos public artifact set.
+      The audit layer exposes theorem objects, verification reports, data
+      contracts, and checker commands so public claims can be inspected instead
+      of merely trusted.
+    </p>
+    <p class="hero-text hero-text--secondary">
+      This is where CoRI's public thesis becomes operational: apparent patterns
+      become accountable structures only when their constraints, artifacts, and
+      verification paths remain visible.
     </p>
   </section>
 

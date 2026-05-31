@@ -1,6 +1,6 @@
 <?php
 $page_title = 'Aletheos.ai — Accountable Intelligence Research';
-$page_description = 'Aletheos.ai is a public research workshop exploring AI agent accountability, privacy-preserving fintech, human-technology trust, and Thalean Graph Theory.';
+$page_description = 'Aletheos.ai is the public home of CoRI, a research workshop studying how apparent patterns become accountable structures through changed viewpoints, controlled perturbations, and traceable constraints.';
 $page_css = ['assets/index.css'];
 
 include __DIR__ . '/includes/head.php';
@@ -13,16 +13,16 @@ include __DIR__ . '/includes/site_header.php';
 
     <div class="hero-grid">
       <div class="hero-copy">
-        <h1 class="hero-title">Making intelligence accountable.</h1>
+        <h1 class="hero-title">From apparent pattern to accountable structure.</h1>
         <p class="hero-text">
-          Aletheos is an open source research project conducted by the Center of Recursive Inquiry. We explore AI agent accountability,
-          privacy-preserving financial technology, and the changing relationship
-          between humans and intelligent systems.
+          Aletheos is the public home of the Center of Recursive Inquiry. CoRI studies
+          how apparent patterns become accountable structures: by testing whether they
+          survive changed viewpoints, controlled perturbations, and traceable constraints.
         </p>
         <p class="hero-text hero-text--secondary">
-          We approach these problems through Thalean Graph Theory: an experimental
-          mathematical framework for studying relation, observation, structure,
-          and traceable action.
+          We approach accountability as a structural problem. Ideas, systems, and
+          mathematical objects become stronger when they leave traces that can be
+          inspected, challenged, and reproduced.
         </p>
 
         <div class="hero-actions" aria-label="Primary actions">
@@ -70,35 +70,32 @@ include __DIR__ . '/includes/site_header.php';
 
   <section class="index-section mission-section">
     <div class="section-head">
-      <p class="section-kicker">The problem</p>
-      <h2>Powerful systems need visible reasoning.</h2>
+      <p class="section-kicker">The method</p>
+      <h2>Patterns should be tested by the views that stress them.</h2>
       <p class="section-text">
-        AI systems are moving from conversation into action. Financial systems are
-        becoming more automated, encrypted, and privacy-preserving. Human decisions
-        are increasingly mediated by tools that operate faster than traditional
-        oversight can follow. Children are growing up inside this shift,
-        learning from and alongside systems that previous generations never had
-        to understand.
+        Not every compelling pattern is coherent. CoRI studies what remains stable
+        when an idea is moved, compressed, perturbed, compared against controls, and
+        tied back to reproducible evidence.
       </p>
     </div>
 
     <div class="principle-grid">
       <article class="principle-card">
-        <span class="card-label">AI agents</span>
-        <h3>Accountable action</h3>
-        <p>How can autonomous and semi-autonomous systems leave inspectable traces of their decisions?</p>
+        <span class="card-label">Viewpoint change</span>
+        <h3>Changed viewpoints</h3>
+        <p>Does the pattern survive when viewed from another root, scale, frame, quotient, or observer position?</p>
       </article>
 
       <article class="principle-card">
-        <span class="card-label">Fintech</span>
-        <h3>Private but auditable</h3>
-        <p>How can encrypted financial computation preserve privacy without losing responsibility?</p>
+        <span class="card-label">Stress testing</span>
+        <h3>Controlled perturbations</h3>
+        <p>Does the structure persist under rewiring, null models, shuffled controls, boundary cases, or failure audits?</p>
       </article>
 
       <article class="principle-card">
-        <span class="card-label">Human systems</span>
-        <h3>Human trust</h3>
-        <p>How do people, families, and institutions stay grounded as intelligent tools reshape learning, work, identity, and childhood?</p>
+        <span class="card-label">Evidence trail</span>
+        <h3>Traceable constraints</h3>
+        <p>Can the claim be tied to artifacts, scripts, invariants, ledgers, and reproducible checks?</p>
       </article>
     </div>
   </section>

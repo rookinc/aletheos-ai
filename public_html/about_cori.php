@@ -1,6 +1,6 @@
 <?php
-$page_title = 'About CoRI — Aletheos.ai';
-$page_description = 'CoRI is an independent research group exploring AI, human meaning, accountability, and the exchange of information between people and intelligent systems.';
+$page_title = 'About CoRI - Aletheos.ai';
+$page_description = 'CoRI is an independent research workshop studying how apparent patterns become accountable structures through changed viewpoints, controlled perturbations, and traceable constraints.';
 $page_css = ['assets/index.css'];
 
 include __DIR__ . '/includes/head.php';
@@ -16,19 +16,21 @@ include __DIR__ . '/includes/site_header.php';
         <h1 class="hero-title">Err. Doubt. Endure. Discover.</h1>
 
         <p class="hero-text">
-          We are entering a period where artificial intelligence will change how
-          people learn, work, create, govern, remember, decide, and understand
-          themselves.
+          The Center of Recursive Inquiry is a workshop for disciplined
+          recognition. It studies how apparent patterns become accountable
+          structures.
         </p>
 
         <p class="hero-text hero-text--secondary">
-          That change is happening faster than our institutions, laws, schools,
-          families, and public language can adapt.
+          CoRI does not protect ideas from stress. It asks whether they survive
+          changed viewpoints, controlled perturbations, and traceable
+          constraints.
         </p>
 
         <p class="hero-text hero-text--secondary">
-          The Center of Recursive Inquiry was created to examine the benefits
-          and harms of this emerging relationship.
+          Aletheos.ai is the public surface for that work: a place for research
+          notes, theorem objects, audit artifacts, interactive labs, and careful
+          public explanation.
         </p>
       </div>
 
@@ -41,12 +43,52 @@ include __DIR__ . '/includes/site_header.php';
           <span class="orbital-mark__point orbital-mark__point--two"></span>
           <span class="orbital-mark__point orbital-mark__point--three"></span>
         </div>
-        <p class="emblem-caption">err · doubt · endure · discover</p>
+        <p class="emblem-caption">err - doubt - endure - discover</p>
       </aside>
     </div>
   </section>
 
+  <section class="index-section">
+    <div class="section-head">
+      <p class="section-kicker">What CoRI does</p>
+      <h2>We test when patterns become accountable.</h2>
+      <p class="section-text">
+        A compelling pattern can still be fragile. It may depend on one chosen
+        view, one flattering scale, one selected example, or one untested
+        analogy. CoRI studies what remains after the view is changed and the
+        structure is asked to explain itself.
+      </p>
+    </div>
 
+    <div class="principle-grid">
+      <article class="principle-card">
+        <span class="card-label">Inquiry</span>
+        <h3>Follow the pattern</h3>
+        <p>
+          We begin with observations, constructions, failures, analogies, and
+          candidate structures that appear to carry information.
+        </p>
+      </article>
+
+      <article class="principle-card">
+        <span class="card-label">Discipline</span>
+        <h3>Stress the claim</h3>
+        <p>
+          We use changed viewpoints, null models, perturbations, closure tests,
+          and explicit limitations to separate coherence from local mimicry.
+        </p>
+      </article>
+
+      <article class="principle-card">
+        <span class="card-label">Witness</span>
+        <h3>Leave a trail</h3>
+        <p>
+          We prefer claims that can be tied to artifacts, scripts, invariants,
+          verification reports, and public reasoning.
+        </p>
+      </article>
+    </div>
+  </section>
 
   <section class="index-section">
     <div class="section-head">
@@ -60,7 +102,6 @@ include __DIR__ . '/includes/site_header.php';
       </p>
     </div>
   </section>
-
 
   <section class="index-section">
     <div class="section-head">
@@ -84,8 +125,9 @@ include __DIR__ . '/includes/site_header.php';
       </p>
       <p class="section-text">
         His broader work spans artificial intelligence, human meaning, visual
-        reasoning, accountability, and the question of how society can adapt to
-        powerful new tools without losing trust, agency, or humanity.
+        reasoning, accountability, finite structure, and the question of how
+        society can adapt to powerful new tools without losing trust, agency, or
+        humanity.
       </p>
       <p class="section-text">
         In 2025, Scott was among the top 0.1% of ChatGPT users, with more than

@@ -1,6 +1,6 @@
 <?php
-$page_title = 'Local Mimicry and Global Coherence - Aletheos.ai';
-$page_description = 'A CoRI research page explaining the coherence gap: how a pattern can look right from one selected viewpoint while failing as a global structure.';
+$page_title = 'Projected Surfaces and Global Coherence - Aletheos.ai';
+$page_description = 'A CoRI research page explaining the coherence gap: how a projected surface can agree locally while failing as a global structure.';
 $page_css = ['assets/index.css', 'assets/research_page.css'];
 
 include __DIR__ . '/includes/head.php';
@@ -13,17 +13,19 @@ include __DIR__ . '/includes/site_header.php';
 
     <div class="hero-grid">
       <div class="hero-copy">
-        <h1 class="hero-title">Local mimicry is not global coherence.</h1>
+        <h1 class="hero-title">A projected surface is not global coherence.</h1>
 
         <p class="hero-text">
-          A pattern can look right from one chosen viewpoint while failing as a
-          global structure. CoRI studies that gap.
+          An agent, graph, or system can project a surface that satisfies a
+          local observer while failing broader coherence tests. CoRI studies
+          that gap.
         </p>
 
         <p class="hero-text hero-text--secondary">
           The coherence-gap program turns that warning into a graph-theoretic
           diagnostic: change the root, change the frame, perturb the object,
-          compare against controls, and ask what remains.
+          compare against controls, and ask whether surface-level agreement is
+          carried by root-independent structure.
         </p>
 
         <div class="hero-actions" aria-label="Coherence page actions">
@@ -49,25 +51,25 @@ include __DIR__ . '/includes/site_header.php';
   <section class="index-section">
     <div class="section-head">
       <p class="section-kicker">The problem</p>
-      <h2>A selected view can flatter a pattern.</h2>
+      <h2>A selected view can project a surface.</h2>
       <p class="section-text">
         Some structures match a target profile from one root, one scale, or one
-        carefully selected view. That can be useful evidence, but it is not yet
-        global coherence.
+        carefully selected view. That projected surface can be useful evidence,
+        but it is not yet global coherence.
       </p>
       <p class="section-text section-text--spaced">
-        The coherence-gap question is simple: does the pattern survive when the
-        privileged viewpoint is removed?
+        The coherence-gap question is simple: does the projected surface remain
+        accountable when the privileged viewpoint is removed?
       </p>
     </div>
 
     <div class="principle-grid">
       <article class="principle-card">
         <span class="card-label">Selected view</span>
-        <h3>Local mimicry</h3>
+        <h3>Surface agreement</h3>
         <p>
-          The object imitates a desired profile from one chosen root or
-          presentation, but the agreement may be local or accidental.
+          The object realizes a desired profile through one chosen root or
+          presentation, but the agreement may remain projection-limited.
         </p>
       </article>
 
@@ -135,10 +137,11 @@ include __DIR__ . '/includes/site_header.php';
   <section class="index-section">
     <div class="section-head">
       <p class="section-kicker">Why it matters</p>
-      <h2>The view that flatters the object is not enough.</h2>
+      <h2>The selected surface is not enough.</h2>
       <p class="section-text">
         The coherence-gap paper gives CoRI a general research pattern: do not
-        trust the easiest view of a structure. Test the views that stress it.
+        confuse surface-level agreement with global structure. Test the views
+        that stress it.
       </p>
       <p class="section-text section-text--spaced">
         That principle now informs the broader site: theorem objects, witness

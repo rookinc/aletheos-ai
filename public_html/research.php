@@ -24,7 +24,7 @@ include __DIR__ . '/includes/site_header.php';
         <p class="hero-text hero-text--secondary">
           The research program begins with exact finite structures, then asks
           how their invariants, failures, closures, and audit trails can help
-          distinguish global coherence from local mimicry.
+          distinguish projected surface agreement from global coherence.
         </p>
 
         <div class="hero-actions" aria-label="Research actions">
@@ -71,9 +71,9 @@ include __DIR__ . '/includes/site_header.php';
         <span class="card-label">Diagnostics</span>
         <h3>Coherence gap</h3>
         <p>
-          A developing graph-theoretic diagnostic for separating local mimicry
-          from global coherence through all-root inspection, shell stress, and
-          controlled rewiring.
+          A developing graph-theoretic diagnostic for separating projected
+          surface agreement from global coherence through all-root inspection,
+          shell stress, and controlled rewiring.
         </p>
       </a>
 

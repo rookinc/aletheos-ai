@@ -1,6 +1,6 @@
 <?php
 $page_title = 'Labs — Aletheos.ai';
-$page_description = 'Aletheos Labs contains experimental viewers, witness lenses, and exploratory renderers for making Thalean Graph Theory easier to inspect.';
+$page_description = 'Aletheos Labs contains witness surfaces for changing viewpoint, inspecting finite structure, and testing how apparent patterns become accountable structures.';
 $page_css = ['assets/index.css', 'assets/labs_page.css'];
 
 include __DIR__ . '/includes/head.php';
@@ -13,24 +13,23 @@ include __DIR__ . '/includes/site_header.php';
 
     <div class="hero-grid">
       <div class="hero-copy">
-        <h1 class="hero-title">Explore the ideas visually.</h1>
+        <h1 class="hero-title">Labs are witness surfaces.</h1>
         <p class="hero-text">
-          Aletheos Labs turns difficult ideas into interactive experiments. These
-          tools are built for seeing patterns, movement, structure, and change —
-          not just reading about them.
+          Aletheos Labs turns research claims into interactive surfaces where
+          patterns can be viewed, moved, inspected, and questioned.
         </p>
         <p class="hero-text hero-text--secondary">
-          You do not need a technical background to begin. The goal is to make
-          complex systems easier to inspect, question, and understand one layer
-          at a time.
+          These tools are not proof by themselves. They are instruments for
+          changing viewpoint, exposing structure, and making abstract claims
+          easier to challenge one layer at a time.
         </p>
         <div class="hero-actions lab-action-grid" aria-label="Lab actions">
           <a class="lab-action-card lab-action-card--primary" href="/labs/informative_action/">
             <span class="card-label">Quotient lab</span>
             <strong>Informative Action</strong>
             <span>
-              Watch how action moves through a simple visual system and leaves a
-              trace that can be inspected.
+              Inspect how action, boundary, collapse, release, and trace become
+              visible through a quotient-level witness surface.
             </span>
           </a>
 
@@ -38,8 +37,8 @@ include __DIR__ . '/includes/site_header.php';
             <span class="card-label">Constructor</span>
             <strong>Wave Form Constructor</strong>
             <span>
-              Explore a live visual model of the Thalean graph as it grows,
-              shifts, and forms structure in the browser.
+              Explore a live browser-side construction surface for rotating,
+              comparing, and inspecting finite structure.
             </span>
           </a>
         </div>
@@ -54,7 +53,7 @@ include __DIR__ . '/includes/site_header.php';
           <span class="orbital-mark__point orbital-mark__point--two"></span>
           <span class="orbital-mark__point orbital-mark__point--three"></span>
         </div>
-        <p class="emblem-caption">model · render · inspect</p>
+        <p class="emblem-caption">view - perturb - inspect</p>
       </aside>
     </div>
   </section>
@@ -62,41 +61,39 @@ include __DIR__ . '/includes/site_header.php';
   <section class="index-section">
     <div class="section-head">
       <p class="section-kicker">What we are doing</p>
-      <h2>The lab turns abstract accountability into visible structure.</h2>
+      <h2>The lab turns changed viewpoints into public inspection.</h2>
       <p class="section-text">
-        Aletheos is concerned with questions that many people can feel before
-        they can formally describe: how do intelligent systems act, how do we
-        know what happened, how do we preserve privacy without losing
-        responsibility, and how do humans stay grounded as technology becomes
-        harder to understand?
+        CoRI studies how apparent patterns become accountable structures. The
+        labs support that work by making finite structures, witness lenses, and
+        exploratory transitions visible enough to inspect, question, and refine.
       </p>
     </div>
 
     <div class="principle-grid">
       <article class="principle-card">
+        <span class="card-label">Viewpoint</span>
+        <h3>What changes when the view changes?</h3>
+        <p>
+          A witness surface lets us rotate, compare, and reframe a structure so
+          one flattering view does not carry the whole claim.
+        </p>
+      </article>
+
+      <article class="principle-card">
+        <span class="card-label">Structure</span>
+        <h3>What remains connected?</h3>
+        <p>
+          The labs help expose relationships among states, sectors, constraints,
+          responses, and artifacts rather than treating events as isolated.
+        </p>
+      </article>
+
+      <article class="principle-card">
         <span class="card-label">Trace</span>
-        <h3>What happened?</h3>
+        <h3>What remains inspectable?</h3>
         <p>
-          We are exploring ways to represent actions as structured paths rather
-          than isolated events, so that behavior can be inspected afterward.
-        </p>
-      </article>
-
-      <article class="principle-card">
-        <span class="card-label">Relation</span>
-        <h3>What was connected?</h3>
-        <p>
-          Many accountability problems are not about one decision. They are about
-          how people, tools, data, constraints, and institutions interact.
-        </p>
-      </article>
-
-      <article class="principle-card">
-        <span class="card-label">Witness</span>
-        <h3>What remains visible?</h3>
-        <p>
-          The lab studies how evidence, structure, and observation can remain
-          inspectable without pretending every system is simple.
+          A useful visualization should leave a trail back to data, constraints,
+          theorem objects, or explicitly bounded exploratory assumptions.
         </p>
       </article>
     </div>
@@ -105,11 +102,11 @@ include __DIR__ . '/includes/site_header.php';
   <section class="index-section">
     <div class="section-head">
       <p class="section-kicker">Current lab routes</p>
-      <h2>Experimental surfaces for the Aletheos graph stack.</h2>
+      <h2>Experimental witness surfaces for the Aletheos graph stack.</h2>
       <p class="section-text">
         These pages are development viewers and public renderers. They help us
-        inspect transport structure, witness behavior, and visual analogies
-        without changing the canonical theorem object.
+        inspect transport structure, quotient-visible behavior, and exploratory
+        analogies without changing the canonical theorem object.
       </p>
     </div>
 
@@ -118,12 +115,12 @@ include __DIR__ . '/includes/site_header.php';
         <span class="card-label">Active lab</span>
         <h3>Collapse Witness Lens</h3>
         <p>
-          An experimental visual lens for exploring collapse, rebound, bubble
-          analogy, and witness behavior over the current transport data.
+          An experimental visual lens for exploring boundary, collapse,
+          release, and witness behavior over the current transport data.
         </p>
       </a>
 
-      <a class="index-card" href="the_thalean_graph_at4val_60_6.php">
+      <a class="index-card" href="/the_thalean_graph_at4val_60_6.php">
         <span class="card-label">Public research</span>
         <h3>Thalean Graph Page</h3>
         <p>

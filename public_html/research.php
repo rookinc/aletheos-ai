@@ -67,7 +67,7 @@ include __DIR__ . '/includes/site_header.php';
         </p>
       </a>
 
-      <article class="index-card">
+      <a class="index-card" href="/coherence.php">
         <span class="card-label">Diagnostics</span>
         <h3>Coherence gap</h3>
         <p>
@@ -75,7 +75,7 @@ include __DIR__ . '/includes/site_header.php';
           from global coherence through all-root inspection, shell stress, and
           controlled rewiring.
         </p>
-      </article>
+      </a>
 
       <article class="index-card">
         <span class="card-label">Closure</span>

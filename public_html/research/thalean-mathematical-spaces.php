@@ -12,7 +12,7 @@ $page_description = "A research note mapping Thalean graph theory onto topology,
   <title><?php echo htmlspecialchars($page_title); ?> | Aletheos Research</title>
   <meta name="description" content="<?php echo htmlspecialchars($page_description); ?>" />
 
-  <link rel="stylesheet" href="/assets/site.css" />
+  <link rel="stylesheet" href="/assets/index.css" />
   <link rel="stylesheet" href="/assets/research.css" />
 </head>
 

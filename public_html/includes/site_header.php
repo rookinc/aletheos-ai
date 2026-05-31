@@ -7,7 +7,7 @@
 
     <nav class="global-nav" aria-label="Primary">
       <a class="global-nav__link" href="/index.php">Home</a>
-      <a class="global-nav__link" href="/the_thalean_graph_at4val_60_6.php">Research</a>
+      <a class="global-nav__link" href="/research.php">Research</a>
       <a class="global-nav__link" href="/labs.php">Labs</a>
       <a class="global-nav__link" href="/mission.php">Mission</a>
       <a class="global-nav__link" href="/about_cori.php">About CoRI</a>

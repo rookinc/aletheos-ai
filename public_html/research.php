@@ -96,6 +96,15 @@ include __DIR__ . '/includes/site_header.php';
         </p>
       </article>
 
+      <a class="index-card" href="/glossary.php">
+        <span class="card-label">Vocabulary</span>
+        <h3>Thalean glossary</h3>
+        <p>
+          Public definitions for TRT, TGT, thalion, witness, boundary,
+          admissibility, surface, and coherence gap.
+        </p>
+      </a>
+
       <a class="index-card" href="/audit.php">
         <span class="card-label">Audit layer</span>
         <h3>Claims leave tracks</h3>

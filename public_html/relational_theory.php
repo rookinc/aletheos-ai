@@ -33,7 +33,7 @@ include __DIR__ . '/includes/site_header.php';
 
         <div class="hero-actions" aria-label="TRT actions">
           <a class="button button--primary" href="/the_thalean_graph_at4val_60_6.php">Open the graph core</a>
-          <a class="button button--secondary" href="/research.php">Back to research map</a>
+          <a class="button button--secondary" href="/glossary.php">Open the glossary</a>
         </div>
       </div>
 

@@ -28,9 +28,9 @@ include __DIR__ . '/includes/site_header.php';
         </p>
 
         <p class="hero-text hero-text--secondary">
-          Aletheos.ai is the public surface for that work: a place for research
-          notes, theorem objects, audit artifacts, interactive labs, and careful
-          public explanation.
+          Aletheos.ai is the public surface for that work: a place for Thalean
+          Relational Theory, Thalean Graph Theory, coherence diagnostics, audit
+          artifacts, interactive labs, and careful public explanation.
         </p>
       </div>
 
@@ -54,7 +54,7 @@ include __DIR__ . '/includes/site_header.php';
       <h2>We test when patterns become accountable.</h2>
       <p class="section-text">
         A compelling pattern can still be fragile. It may depend on one chosen
-        view, one flattering scale, one selected example, or one untested
+        view, one convenient scale, one selected example, or one untested
         analogy. CoRI studies what remains after the view is changed and the
         structure is asked to explain itself.
       </p>
@@ -92,71 +92,78 @@ include __DIR__ . '/includes/site_header.php';
 
   <section class="index-section">
     <div class="section-head">
-      <p class="section-kicker">Contact</p>
-      <h2>Reach the project.</h2>
+      <p class="section-kicker">Project scope</p>
+      <h2>Aletheos is scoped to CoRI and its research projects.</h2>
       <p class="section-text">
-        For questions, collaboration, media, or research correspondence:
+        Aletheos.ai is not a portfolio, business page, or personal resume. It is
+        the public research surface for CoRI, Thalean Relational Theory, Thalean
+        Graph Theory, coherence diagnostics, artifact-backed notes, and
+        inspectable labs.
       </p>
-      <p class="section-text">
-        <a href="mailto:scott@rook.ca">scott@rook.ca</a>
-      </p>
-    </div>
-  </section>
-
-  <section class="index-section">
-    <div class="section-head">
-      <p class="section-kicker">About the Founder</p>
-      <h2>Scott Allen Cave</h2>
-      <p class="section-text">
-        Scott Allen Cave is an independent researcher, builder, and business
-        owner based in Abbotsford, British Columbia.
-      </p>
-      <p class="section-text">
-        He is the owner of Rook Services Inc., a mechatronics company focused on
-        practical engineering, automation, precision tooling, and technical
-        problem-solving.
-      </p>
-      <p class="section-text">
-        Through Rook, Scott has developed TrimSetter, a mechatronics and
-        manufacturing project for improving how parachute suspension lines are
-        measured, marked, and prepared. Rook has also worked on projects for
-        NASA / JPL, the University of Washington Applied Physics Department, and
-        SONY Cinematics.
-      </p>
-      <p class="section-text">
-        His broader work spans artificial intelligence, human meaning, visual
-        reasoning, accountability, finite structure, and the question of how
-        society can adapt to powerful new tools without losing trust, agency, or
-        humanity.
-      </p>
-      <p class="section-text">
-        In 2025, Scott was among the top 0.1% of ChatGPT users, with more than
-        197,000 messages exchanged. That unusual depth of interaction helped
-        shape his focus on how humans and AI learn from, influence, and depend
-        on each other.
-      </p>
-      <p class="section-text">
-        He founded CoRI and Aletheos.ai to create a public place for this work to
-        develop carefully.
+      <p class="section-text section-text--spaced">
+        The site keeps one boundary: public claims should be tied to relation,
+        action, witness, and traceable constraint.
       </p>
     </div>
   </section>
 
   <section class="index-section">
     <div class="section-head">
-      <p class="section-kicker">Public writing</p>
-      <h2>Free Galileo</h2>
-      <p class="section-text">
-        Free Galileo is Scott Cave's Substack for essays, working notes, and
-        public reflections on artificial intelligence, human meaning, technology,
-        and the ideas behind Aletheos and CoRI.
-      </p>
-      <p class="section-text">
-        Read it at <a href="https://scottcave.substack.com">scottcave.substack.com</a>.
-      </p>
+      <p class="section-kicker">Current research lanes</p>
+      <h2>The work is organized around accountability.</h2>
+    </div>
+
+    <div class="card-grid">
+      <a class="index-card feature-card" href="/relational_theory.php">
+        <span class="card-label">Framework</span>
+        <h3>Thalean Relational Theory</h3>
+        <p>
+          The umbrella framework behind the graph work: identity as relational
+          invariance under admissible change.
+        </p>
+      </a>
+
+      <a class="index-card" href="/the_thalean_graph_at4val_60_6.php">
+        <span class="card-label">Graph core</span>
+        <h3>The Thalean Graph</h3>
+        <p>
+          The central finite graph object and theorem-facing public surface for
+          the Thalean graph program.
+        </p>
+      </a>
+
+      <a class="index-card" href="/coherence.php">
+        <span class="card-label">Diagnostics</span>
+        <h3>Coherence Gap</h3>
+        <p>
+          A graph-theoretic diagnostic for separating projected surface
+          agreement from global coherence.
+        </p>
+      </a>
+
+      <a class="index-card" href="/audit.php">
+        <span class="card-label">Audit</span>
+        <h3>Claims Leave Tracks</h3>
+        <p>
+          Canonical artifacts, verification reports, metadata, and public
+          inspection surfaces.
+        </p>
+      </a>
     </div>
   </section>
 
+  <section class="index-section">
+    <div class="section-head">
+      <p class="section-kicker">Method</p>
+      <h2>Do not protect the idea. Make the idea protect itself.</h2>
+      <p class="section-text">
+        CoRI treats a pattern as a beginning, not a conclusion. The question is
+        what survives when the viewpoint changes, the boundary moves, the claim
+        is perturbed, and the supporting context is asked to carry its own
+        weight.
+      </p>
+    </div>
+  </section>
 </main>
 
 <?php include __DIR__ . '/includes/site_footer.php'; ?>

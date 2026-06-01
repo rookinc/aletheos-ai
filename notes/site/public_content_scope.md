@@ -155,3 +155,10 @@ TrimSetter
 tdash3
 personal business history
 
+## First cleanup principle
+
+Keep the LAMP/PHP include structure, CSS, DOM patterns, and lab code basically the same.
+
+This is a content and navigation cleanup, not a rebuild.
+
+New pages are allowed, but working public labs must be preserved.

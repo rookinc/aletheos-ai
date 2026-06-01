@@ -1,6 +1,6 @@
 <?php
-$page_title = 'Aletheos.ai — Accountable Intelligence Research';
-$page_description = 'Aletheos.ai is the public home of CoRI, a research workshop studying how apparent patterns become accountable structures through changed viewpoints, controlled perturbations, and traceable constraints.';
+$page_title = 'Aletheos.ai - CoRI Research Surface';
+$page_description = 'Aletheos.ai is the public research surface for CoRI, Thalean Relational Theory, Thalean Graph Theory, labs, papers, and audit artifacts.';
 $page_css = ['assets/index.css'];
 
 include __DIR__ . '/includes/head.php';
@@ -15,19 +15,19 @@ include __DIR__ . '/includes/site_header.php';
       <div class="hero-copy">
         <h1 class="hero-title">From apparent pattern to accountable structure.</h1>
         <p class="hero-text">
-          Aletheos is the public home of the Center of Recursive Inquiry. CoRI studies
-          how apparent patterns become accountable structures: by testing whether they
-          survive changed viewpoints, controlled perturbations, and traceable constraints.
+          Aletheos.ai is the public research surface for CoRI. CoRI studies how
+          apparent patterns become accountable structures by testing whether they
+          survive changed viewpoints, controlled perturbations, and traceable
+          constraints.
         </p>
         <p class="hero-text hero-text--secondary">
-          We approach accountability as a structural problem. Ideas, systems, and
-          mathematical objects become stronger when they leave traces that can be
-          inspected, challenged, and reproduced.
+          The site is focused on Thalean Relational Theory, Thalean Graph Theory,
+          coherence diagnostics, public labs, papers, and audit artifacts.
         </p>
 
         <div class="hero-actions" aria-label="Primary actions">
-          <a class="button button--primary" href="the_thalean_graph_at4val_60_6.php">Explore the research</a>
-          <a class="button button--secondary" href="labs.php">Visit the labs</a>
+          <a class="button button--primary" href="/relational_theory.php">Start with TRT</a>
+          <a class="button button--secondary" href="/research.php">View the research map</a>
         </div>
       </div>
 
@@ -40,7 +40,7 @@ include __DIR__ . '/includes/site_header.php';
           <span class="orbital-mark__point orbital-mark__point--two"></span>
           <span class="orbital-mark__point orbital-mark__point--three"></span>
         </div>
-        <p class="emblem-caption">relation · observation · trace</p>
+        <p class="emblem-caption">relation - action - witness</p>
       </aside>
     </div>
   </section>
@@ -51,11 +51,12 @@ include __DIR__ . '/includes/site_header.php';
         <p class="section-kicker">Lab tool</p>
         <h2>Explore the constructor.</h2>
         <p class="section-text">
-          The constructor is an interactive lab surface for exploring Thalean structure
-          visually. It provides a place to rotate, compare, and inspect transport
-          forms, layered symmetry, and finite geometric witnesses.
+          The constructor is an interactive witness surface for exploring
+          Thalean structure visually. It provides a place to rotate, compare,
+          and inspect transport forms, layered symmetry, and finite geometric
+          witnesses.
         </p>
-        <span class="constructor-feature__cta">Open the interactive lab tool →</span>
+        <span class="constructor-feature__cta">Open the interactive lab tool</span>
       </div>
 
       <figure class="constructor-feature__media">
@@ -73,9 +74,9 @@ include __DIR__ . '/includes/site_header.php';
       <p class="section-kicker">The method</p>
       <h2>Patterns should be tested by the views that stress them.</h2>
       <p class="section-text">
-        Not every compelling pattern is coherent. CoRI studies what remains stable
-        when an idea is moved, compressed, perturbed, compared against controls, and
-        tied back to reproducible evidence.
+        Not every compelling pattern is coherent. CoRI studies what remains
+        stable when an idea is moved, compressed, perturbed, compared against
+        controls, and tied back to reproducible evidence.
       </p>
     </div>
 
@@ -102,31 +103,38 @@ include __DIR__ . '/includes/site_header.php';
 
   <section class="index-section approach-section">
     <div class="section-head">
-      <p class="section-kicker">The approach</p>
-      <h2>Thalean Graph Theory is the research path.</h2>
+      <p class="section-kicker">The public map</p>
+      <h2>TRT is the umbrella. TGT is the graph core.</h2>
       <p class="section-text">
-        Aletheos studies accountability as a structural problem. Instead of treating
-        actions as isolated events, we ask how actions move through networks of
-        relation, constraint, observation, and evidence.
+        Thalean Relational Theory gives the project its public scope: relation,
+        action, identity, boundary, witness, and accountability. Thalean Graph
+        Theory provides the finite graph objects and theorem-facing structures
+        that make the work inspectable.
       </p>
     </div>
 
     <div class="card-grid">
-      <a class="index-card feature-card" href="the_thalean_graph_at4val_60_6.php">
-        <span class="card-label">Research</span>
+      <a class="index-card feature-card" href="/relational_theory.php">
+        <span class="card-label">Framework</span>
+        <h3>Thalean Relational Theory</h3>
+        <p>Identity as relational invariance under admissible change.</p>
+      </a>
+
+      <a class="index-card" href="/the_thalean_graph_at4val_60_6.php">
+        <span class="card-label">Graph core</span>
         <h3>The Thalean Graph</h3>
         <p>The current public presentation of the 60-state graph object and its technical notes.</p>
       </a>
 
-      <a class="index-card" href="labs.php">
-        <span class="card-label">Workshop</span>
-        <h3>Labs</h3>
-        <p>Experimental viewers, witness lenses, and rendering stages for exploring the structure.</p>
+      <a class="index-card" href="/labs.php">
+        <span class="card-label">Labs</span>
+        <h3>Witness surfaces</h3>
+        <p>Experimental viewers and public lab surfaces for inspecting the structure.</p>
       </a>
 
-      <a class="index-card" href="audit.php">
-        <span class="card-label">Records</span>
-        <h3>Audit</h3>
+      <a class="index-card" href="/audit.php">
+        <span class="card-label">Audit</span>
+        <h3>Claims leave tracks</h3>
         <p>Verification outputs and machine-readable records for the public artifact set.</p>
       </a>
     </div>

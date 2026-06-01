@@ -6,11 +6,12 @@
     </a>
 
     <nav class="global-nav" aria-label="Primary">
-      <a class="global-nav__link" href="/index.php">Home</a>
+            <a class="global-nav__link" href="/index.php">Home</a>
       <a class="global-nav__link" href="/research.php">Research</a>
+      <a class="global-nav__link" href="/relational_theory.php">TRT</a>
       <a class="global-nav__link" href="/labs.php">Labs</a>
-      <a class="global-nav__link" href="/mission.php">Mission</a>
-      <a class="global-nav__link" href="/about_cori.php">About CoRI</a>
+      <a class="global-nav__link" href="/audit.php">Audit</a>
+      <a class="global-nav__link" href="/about_cori.php">About</a>
     </nav>
   </div>
 </header>

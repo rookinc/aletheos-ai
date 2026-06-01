@@ -114,6 +114,15 @@ include __DIR__ . '/includes/site_header.php';
         </p>
       </a>
 
+      <a class="index-card" href="/papers.php">
+        <span class="card-label">Papers</span>
+        <h3>Papers and notes</h3>
+        <p>
+          Public research outputs with status labels: theorem-facing notes,
+          working notes, method papers, and bounded speculative bridges.
+        </p>
+      </a>
+
       <a class="index-card" href="/labs.php">
         <span class="card-label">Labs</span>
         <h3>Witness surfaces</h3>

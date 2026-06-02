@@ -1,34 +1,34 @@
 #!/usr/bin/env bash
-set -euo pipefail
-
-HOST="${HOST:-127.0.0.1}"
-PORT="${PORT:-8000}"
-DOCROOT="${DOCROOT:-public_html}"
+set -e
 
 cd "$(dirname "$0")"
 
-if ! command -v php >/dev/null 2>&1; then
-  echo "ERROR: php is not installed or not on PATH."
-  echo "Install it in Termux with: pkg install php"
-  exit 1
-fi
+cmd="${1:-help}"
 
-if [ ! -d "$DOCROOT" ]; then
-  echo "ERROR: document root not found: $DOCROOT"
-  exit 1
-fi
-
-echo "Serving Aletheos.ai"
-echo "Root:   $PWD/$DOCROOT"
-echo "URL:    http://$HOST:$PORT/"
-echo
-echo "Routes:"
-echo "  http://$HOST:$PORT/"
-echo "  http://$HOST:$PORT/labs.php"
-echo "  http://$HOST:$PORT/collapse_witness.php"
-echo "  http://$HOST:$PORT/the_thalean_graph_at4val_60_6.php"
-echo
-echo "Press Ctrl+C to stop."
-echo
-
-exec php -S "$HOST:$PORT" -t "$DOCROOT"
+case "$cmd" in
+  start|up)
+    ./scripts/start-bg.sh
+    ;;
+  stop|down)
+    ./scripts/stop-bg.sh
+    ;;
+  restart)
+    ./scripts/stop-bg.sh
+    ./scripts/start-bg.sh
+    ;;
+  status)
+    ./scripts/status-bg.sh
+    ;;
+  logs)
+    tail -80 logs/web.log 2>/dev/null || true
+    ;;
+  foreground|fg)
+    HOST="${HOST:-127.0.0.1}"
+    PORT="${PORT:-8000}"
+    DOCROOT="${DOCROOT:-public_html}"
+    exec php -S "$HOST:$PORT" -t "$DOCROOT"
+    ;;
+  *)
+    echo "Usage: ./run.sh start|stop|restart|status|logs|foreground"
+    ;;
+esac

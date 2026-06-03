@@ -1,6 +1,6 @@
 <?php
-$page_title = 'Thalean Relational Theory - Aletheos.ai';
-$page_description = 'A public introduction to Thalean Relational Theory, the umbrella framework for CoRI research.';
+$page_title = 'Thalean Action Theory - Aletheos.ai';
+$page_description = 'A public introduction to Thalean Action Theory, the umbrella framework for CoRI research.';
 $page_css = ['assets/index.css', 'assets/research_page.css'];
 
 include __DIR__ . '/includes/head.php';
@@ -9,14 +9,14 @@ include __DIR__ . '/includes/site_header.php';
 
 <main class="site-shell research-page">
   <section class="hero research-hero">
-    <p class="eyebrow">Thalean Relational Theory</p>
+    <p class="eyebrow">Thalean Action Theory</p>
 
     <div class="hero-grid">
       <div class="hero-copy">
         <h1 class="hero-title">Identity as relation under admissible change.</h1>
 
         <p class="hero-text">
-          Thalean Relational Theory is the umbrella framework for CoRI's public
+          Thalean Action Theory is the umbrella framework for CoRI's public
           research program. It studies how identity, meaning, action, and
           accountability arise through relational structure.
         </p>
@@ -31,13 +31,13 @@ include __DIR__ . '/includes/site_header.php';
           It is also what its presence makes possible for others.
         </p>
 
-        <div class="hero-actions" aria-label="TRT actions">
+        <div class="hero-actions" aria-label="TAT actions">
           <a class="button button--primary" href="/the_thalean_graph_at4val_60_6.php">Open the graph core</a>
           <a class="button button--secondary" href="/glossary.php">Open the glossary</a>
         </div>
       </div>
 
-      <aside class="hero-emblem" aria-label="TRT themes">
+      <aside class="hero-emblem" aria-label="TAT themes">
         <div class="orbital-mark">
           <span class="orbital-mark__ring orbital-mark__ring--outer"></span>
           <span class="orbital-mark__ring orbital-mark__ring--middle"></span>
@@ -54,7 +54,7 @@ include __DIR__ . '/includes/site_header.php';
   <section class="index-section">
     <div class="section-head">
       <p class="section-kicker">The stack</p>
-      <h2>TRT gives the public scope for the work.</h2>
+      <h2>TAT gives the public scope for the work.</h2>
       <p class="section-text">
         Thalean Graph Theory is the mathematical core. Existential relativity is
         the philosophical thesis. Discrete action theory studies admissible
@@ -66,7 +66,7 @@ include __DIR__ . '/includes/site_header.php';
     <div class="card-grid">
       <article class="index-card feature-card">
         <span class="card-label">Framework</span>
-        <h3>Thalean Relational Theory</h3>
+        <h3>Thalean Action Theory</h3>
         <p>
           The umbrella for relation, action, identity, boundary, witness, and
           accountability.

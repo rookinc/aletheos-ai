@@ -7,7 +7,7 @@ Scope: public-facing Aletheos.ai content only
 
 Aletheos.ai is the public research surface for CoRI and its projects.
 
-It presents Thalean Relational Theory, Thalean Graph Theory, coherence diagnostics, labs, papers, and audit artifacts in a way that public visitors can inspect.
+It presents Thalean Action Theory, Thalean Graph Theory, coherence diagnostics, labs, papers, and audit artifacts in a way that public visitors can inspect.
 
 It is not an internal reference hub, personal resume, business portfolio, or local project dashboard.
 
@@ -23,7 +23,7 @@ Preferred top navigation:
 
 Home
 Research
-TRT
+TAT
 Labs
 Audit
 About
@@ -46,7 +46,7 @@ Purpose:
 Provide a map of the public research program.
 
 Include:
-TRT
+TAT
 Thalean Graph / TGT
 Coherence diagnostics
 Papers
@@ -54,10 +54,10 @@ Labs
 Audit
 Carefully bounded physics-facing probes
 
-### TRT
+### TAT
 
 Purpose:
-Introduce Thalean Relational Theory as the umbrella framework.
+Introduce Thalean Action Theory as the umbrella framework.
 
 Core message:
 Identity is not isolated substance. Identity is relational invariance under admissible change.
@@ -68,7 +68,7 @@ Purpose:
 Provide stable public vocabulary.
 
 Include:
-TRT
+TAT
 TGT
 thalion
 existential relativity

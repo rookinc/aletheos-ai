@@ -100,7 +100,7 @@ include __DIR__ . '/includes/site_header.php';
         <span class="card-label">Vocabulary</span>
         <h3>Thalean glossary</h3>
         <p>
-          Public definitions for TRT, TGT, thalion, witness, boundary,
+          Public definitions for TAT, TGT, thalion, witness, boundary,
           admissibility, surface, and coherence gap.
         </p>
       </a>

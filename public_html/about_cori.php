@@ -29,7 +29,7 @@ include __DIR__ . '/includes/site_header.php';
 
         <p class="hero-text hero-text--secondary">
           Aletheos.ai is the public surface for that work: a place for Thalean
-          Relational Theory, Thalean Graph Theory, coherence diagnostics, audit
+          Action Theory, Thalean Graph Theory, coherence diagnostics, audit
           artifacts, interactive labs, and careful public explanation.
         </p>
       </div>
@@ -96,7 +96,7 @@ include __DIR__ . '/includes/site_header.php';
       <h2>Aletheos is scoped to CoRI and its research projects.</h2>
       <p class="section-text">
         Aletheos.ai is not a portfolio, business page, or personal resume. It is
-        the public research surface for CoRI, Thalean Relational Theory, Thalean
+        the public research surface for CoRI, Thalean Action Theory, Thalean
         Graph Theory, coherence diagnostics, artifact-backed notes, and
         inspectable labs.
       </p>
@@ -114,9 +114,9 @@ include __DIR__ . '/includes/site_header.php';
     </div>
 
     <div class="card-grid">
-      <a class="index-card feature-card" href="/relational_theory.php">
+      <a class="index-card feature-card" href="/thalean_action_theory.php">
         <span class="card-label">Framework</span>
-        <h3>Thalean Relational Theory</h3>
+        <h3>Thalean Action Theory</h3>
         <p>
           The umbrella framework behind the graph work: identity as relational
           invariance under admissible change.

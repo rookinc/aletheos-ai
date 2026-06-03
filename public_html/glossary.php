@@ -1,6 +1,6 @@
 <?php
 $page_title = 'Thalean Glossary - Aletheos.ai';
-$page_description = 'A public glossary for Thalean Relational Theory, Thalean Graph Theory, coherence diagnostics, witness surfaces, and audit language.';
+$page_description = 'A public glossary for Thalean Action Theory, Thalean Graph Theory, coherence diagnostics, witness surfaces, and audit language.';
 $page_css = ['assets/index.css', 'assets/research_page.css'];
 
 include __DIR__ . '/includes/head.php';
@@ -27,7 +27,7 @@ include __DIR__ . '/includes/site_header.php';
         </p>
 
         <div class="hero-actions" aria-label="Glossary actions">
-          <a class="button button--primary" href="/relational_theory.php">Back to TRT</a>
+          <a class="button button--primary" href="/thalean_action_theory.php">Back to TAT</a>
           <a class="button button--secondary" href="/research.php">Research map</a>
         </div>
       </div>
@@ -54,8 +54,8 @@ include __DIR__ . '/includes/site_header.php';
 
     <div class="card-grid">
       <article class="index-card feature-card">
-        <span class="card-label">TRT</span>
-        <h3>Thalean Relational Theory</h3>
+        <span class="card-label">TAT</span>
+        <h3>Thalean Action Theory</h3>
         <p>
           The umbrella framework for studying identity, meaning, action, and
           accountability through relational structure and admissible change.
@@ -85,7 +85,7 @@ include __DIR__ . '/includes/site_header.php';
   <section class="index-section">
     <div class="section-head">
       <p class="section-kicker">Identity and action</p>
-      <h2>How TRT talks about structure.</h2>
+      <h2>How TAT talks about structure.</h2>
     </div>
 
     <div class="card-grid">

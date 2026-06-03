@@ -1,6 +1,6 @@
 <?php
 $page_title = 'Aletheos.ai - CoRI Research Surface';
-$page_description = 'Aletheos.ai is the public research surface for CoRI, Thalean Relational Theory, Thalean Graph Theory, labs, papers, and audit artifacts.';
+$page_description = 'Aletheos.ai is the public research surface for CoRI, Thalean Action Theory, Thalean Graph Theory, labs, papers, and audit artifacts.';
 $page_css = ['assets/index.css'];
 
 include __DIR__ . '/includes/head.php';
@@ -21,12 +21,12 @@ include __DIR__ . '/includes/site_header.php';
           constraints.
         </p>
         <p class="hero-text hero-text--secondary">
-          The site is focused on Thalean Relational Theory, Thalean Graph Theory,
+          The site is focused on Thalean Action Theory, Thalean Graph Theory,
           coherence diagnostics, public labs, papers, and audit artifacts.
         </p>
 
         <div class="hero-actions" aria-label="Primary actions">
-          <a class="button button--primary" href="/relational_theory.php">Start with TRT</a>
+          <a class="button button--primary" href="/thalean_action_theory.php">Start with TAT</a>
           <a class="button button--secondary" href="/research.php">View the research map</a>
         </div>
       </div>
@@ -104,9 +104,9 @@ include __DIR__ . '/includes/site_header.php';
   <section class="index-section approach-section">
     <div class="section-head">
       <p class="section-kicker">The public map</p>
-      <h2>TRT is the umbrella. TGT is the graph core.</h2>
+      <h2>TAT is the umbrella. TGT is the graph core.</h2>
       <p class="section-text">
-        Thalean Relational Theory gives the project its public scope: relation,
+        Thalean Action Theory gives the project its public scope: relation,
         action, identity, boundary, witness, and accountability. Thalean Graph
         Theory provides the finite graph objects and theorem-facing structures
         that make the work inspectable.
@@ -114,9 +114,9 @@ include __DIR__ . '/includes/site_header.php';
     </div>
 
     <div class="card-grid">
-      <a class="index-card feature-card" href="/relational_theory.php">
+      <a class="index-card feature-card" href="/thalean_action_theory.php">
         <span class="card-label">Framework</span>
-        <h3>Thalean Relational Theory</h3>
+        <h3>Thalean Action Theory</h3>
         <p>Identity as relational invariance under admissible change.</p>
       </a>
 

@@ -45,7 +45,13 @@ include __DIR__ . '/includes/site_header.php';
         <p class="emblem-caption">structure - stress - trace</p>
       </aside>
     </div>
-  </section>
+  
+        <article class="research-card">
+          <p class="eyebrow">Introductory tutorial</p>
+          <h2><a href="/research/from-circle-to-thalion.php">From Circle to Thalion</a></h2>
+          <p>Start with a circle, then climb through boundary, body, membrane, port, hinge, closure, and dodecahedral transport toward the thalion.</p>
+        </article>
+</section>
 
   <section class="index-section">
     <div class="section-head">

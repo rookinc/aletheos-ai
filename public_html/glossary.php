@@ -73,7 +73,7 @@ include __DIR__ . '/includes/site_header.php';
 
       <article class="index-card">
         <span class="card-label">CoRI</span>
-        <h3>Center of Recursive Inquiry</h3>
+        <h3>Centre of Recursive Inquiry</h3>
         <p>
           The research workshop and method: changed viewpoints, controlled
           perturbations, traceable constraints, and public witness discipline.

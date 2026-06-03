@@ -1,6 +1,6 @@
 <?php
 $page_title = 'Aletheos.ai - CoRI Research Surface';
-$page_description = 'Aletheos.ai is the public research surface for CoRI, Thalean Action Theory, Thalean Graph Theory, labs, papers, and audit artifacts.';
+$page_description = 'Aletheos.ai is the public research surface for the Centre of Recursive Inquiry (CoRI), Thalean Action Theory, Thalean Graph Theory, labs, papers, and audit artifacts.';
 $page_css = ['assets/index.css'];
 
 include __DIR__ . '/includes/head.php';
@@ -9,25 +9,30 @@ include __DIR__ . '/includes/site_header.php';
 
 <main class="site-shell">
   <section class="hero hero--observatory">
-    <p class="eyebrow">Center of Recursive Inquiry</p>
+    <p class="eyebrow">Centre of Recursive Inquiry</p>
 
     <div class="hero-grid">
       <div class="hero-copy">
         <h1 class="hero-title">From apparent pattern to accountable structure.</h1>
+
         <p class="hero-text">
-          Aletheos.ai is the public research surface for CoRI. CoRI studies how
-          apparent patterns become accountable structures by testing whether they
-          survive changed viewpoints, controlled perturbations, and traceable
-          constraints.
+          Aletheos.ai is the public research surface for the Centre of Recursive
+          Inquiry (CoRI). CoRI studies how apparent patterns become accountable
+          structures by testing whether they survive changed viewpoints,
+          controlled perturbations, and traceable constraints.
         </p>
+
         <p class="hero-text hero-text--secondary">
           The site is focused on Thalean Action Theory, Thalean Graph Theory,
-          coherence diagnostics, public labs, papers, and audit artifacts.
+          coherence diagnostics, public labs, papers, and audit artifacts. Its
+          application horizons include AI governance, fully homomorphic
+          encryption, privacy-preserving systems, accountable automation, and
+          new materials science.
         </p>
 
         <div class="hero-actions" aria-label="Primary actions">
-          <a class="button button--primary" href="/thalean_action_theory.php">Start with TAT</a>
-          <a class="button button--secondary" href="/research.php">View the research map</a>
+          <a class="button button--primary" href="/research/from-circle-to-thalion.php">What is a Thalion?</a>
+          <a class="button button--secondary" href="/thalean_action_theory.php">Start with TAT</a>
         </div>
       </div>
 
@@ -114,7 +119,13 @@ include __DIR__ . '/includes/site_header.php';
     </div>
 
     <div class="card-grid">
-      <a class="index-card feature-card" href="/thalean_action_theory.php">
+      <a class="index-card feature-card" href="/research/from-circle-to-thalion.php">
+        <span class="card-label">Introductory tutorial</span>
+        <h3>What is a Thalion?</h3>
+        <p>Start with boundary, body, membrane, port, hinge, witness, closure, and relational transport.</p>
+      </a>
+
+      <a class="index-card" href="/thalean_action_theory.php">
         <span class="card-label">Framework</span>
         <h3>Thalean Action Theory</h3>
         <p>Identity as relational invariance under admissible change.</p>

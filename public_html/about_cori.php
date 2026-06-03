@@ -16,7 +16,7 @@ include __DIR__ . '/includes/site_header.php';
         <h1 class="hero-title">Err. Doubt. Endure. Discover.</h1>
 
         <p class="hero-text">
-          The Center of Recursive Inquiry is a workshop for disciplined
+          The Centre of Recursive Inquiry (CoRI) is a workshop for disciplined
           recognition. It studies how apparent patterns become accountable
           structures.
         </p>

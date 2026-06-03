@@ -1,5 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" role="img">
   <title>02-boundary-before-body.svg</title>
+
   <style>
     .bg { fill: #fbfbfb; }
     .line { fill: none; stroke: #111; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
@@ -9,17 +10,20 @@
     .mem { fill: none; stroke: #777; stroke-width: 34; stroke-linecap: round; }
     .node { fill: #111; stroke: #111; stroke-width: 3; }
     .open { fill: #fbfbfb; stroke: #111; stroke-width: 5; }
-    .accent { fill: #dcdcdc; stroke: #111; stroke-width: 4; }
-    .label { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 24px; fill: #222; }
-    .small { font-size: 19px; fill: #444; }
-    .tiny { font-size: 16px; fill: #444; }
+    .accent { fill: #e7e7e7; stroke: #111; stroke-width: 4; opacity: 0.85; }
+    .label { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 19px; fill: #222; }
+    .small { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 15px; fill: #444; }
+    .tag { fill: rgba(255,255,255,0.82); stroke: rgba(0,0,0,0.08); stroke-width: 1; }
   </style>
+
   <rect class="bg" x="0" y="0" width="720" height="520" rx="28"/>
 
-  <circle class="line" cx="360" cy="260" r="145" style="stroke-width: 18"/>
-  <circle class="thin" cx="360" cy="260" r="70"/>
-  <text class="label" x="105" y="125">outside</text>
-  <text class="label" x="300" y="269">held region</text>
-  <text class="small" x="225" y="455">boundary holds a region</text>
+  <circle class="line" cx="360" cy="236" r="130" style="stroke-width: 17"/>
+  <circle class="thin" cx="360" cy="236" r="62"/>
+  <rect class="tag" x="160" y="108" width="78" height="31" rx="12"/>
+  <text class="label" x="174" y="130">outside</text>
+  <rect class="tag" x="305" y="220" width="112" height="31" rx="12"/>
+  <text class="label" x="318" y="242">held region</text>
+  <text class="small" x="270" y="410">boundary holds a region</text>
 
 </svg>

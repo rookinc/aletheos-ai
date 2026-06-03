@@ -381,7 +381,7 @@ $sections = [
       </div>
 
       <figure class="fct-diagram-card">
-        <img class="fct-svg" src="/assets/from-circle-to-thalion/<?php echo htmlspecialchars($section["svg"]); ?>" alt="">
+        <img class="fct-svg" src="/assets/from-circle-to-thalion/<?php echo htmlspecialchars($section["svg"]) . "?v=3"; ?>" alt="">
         <figcaption class="fct-caption"><?php echo htmlspecialchars($section["caption"]); ?></figcaption>
       </figure>
     </section>

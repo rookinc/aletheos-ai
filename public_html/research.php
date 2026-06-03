@@ -45,13 +45,7 @@ include __DIR__ . '/includes/site_header.php';
         <p class="emblem-caption">structure - stress - trace</p>
       </aside>
     </div>
-  
-        <article class="research-card">
-          <p class="eyebrow">Introductory tutorial</p>
-          <h2><a href="/research/from-circle-to-thalion.php">From Circle to Thalion</a></h2>
-          <p>Start with a circle, then climb through boundary, body, membrane, port, hinge, closure, and dodecahedral transport toward the thalion.</p>
-        </article>
-</section>
+  </section>
 
   <section class="index-section">
     <div class="section-head">
@@ -64,6 +58,16 @@ include __DIR__ . '/includes/site_header.php';
     </div>
 
     <div class="card-grid">
+      <a class="index-card" href="/research/from-circle-to-thalion.php">
+        <span class="card-label">Introductory tutorial</span>
+        <h3>What is a Thalion?</h3>
+        <p>
+          Start with the simplest boundary we know: a circle. Then climb through
+          body, membrane, port, hinge, witness, closure, and dodecahedral
+          transport toward the thalion.
+        </p>
+      </a>
+
       <a class="index-card feature-card" href="/the_thalean_graph_at4val_60_6.php">
         <span class="card-label">Finite structure</span>
         <h3>The Thalean graph</h3>

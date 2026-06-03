@@ -1,9 +1,10 @@
 <?php
-$page_title = "From Circle to Thalion";
+$page_title = "What is a Thalion?";
 $page_description = "Boundary, body, and the birth of relational transport.";
+$page_css = ['/assets/index.css', '/assets/from_circle_to_thalion.css?v=7'];
 $body_class = "research-page from-circle-to-thalion-page";
-require_once __DIR__ . "/../includes/head.php";
-require_once __DIR__ . "/../includes/site_header.php";
+include __DIR__ . '/../includes/head.php';
+include __DIR__ . '/../includes/site_header.php';
 
 $sections = [
   [
@@ -158,218 +159,62 @@ $sections = [
       "A thalion is this entire movement made accountable: a relational body whose boundary, ports, hinges, witness center, and closure participate in finite transport."
     ],
     "links" => true,
+    "hide_figure" => true,
     "svg" => "14-progression.svg",
     "caption" => "From circle to thalion: a boundary becomes a body, a body becomes a transport cell, and the transport cell becomes accountable in a finite graph."
   ],
 ];
 ?>
 
-<style>
-.fct-page {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 3rem 1.25rem 5rem;
-}
 
-.fct-hero {
-  padding: 3rem 0 2rem;
-  border-bottom: 1px solid rgba(120, 120, 120, 0.25);
-}
-
-.fct-kicker {
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 0.78rem;
-  opacity: 0.72;
-  margin-bottom: 0.8rem;
-}
-
-.fct-hero h1 {
-  font-size: clamp(2.4rem, 7vw, 5.5rem);
-  line-height: 0.95;
-  margin: 0 0 1rem;
-}
-
-.fct-subtitle {
-  font-size: clamp(1.05rem, 2.5vw, 1.4rem);
-  max-width: 760px;
-  opacity: 0.86;
-}
-
-.fct-section {
-  display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.92fr);
-  gap: 2rem;
-  align-items: center;
-  padding: 3rem 0;
-  border-bottom: 1px solid rgba(120, 120, 120, 0.18);
-  scroll-margin-top: 2rem;
-}
-
-.fct-section:nth-child(even) {
-  direction: rtl;
-}
-
-.fct-section:nth-child(even) > * {
-  direction: ltr;
-}
-
-.fct-section h2 {
-  font-size: clamp(1.55rem, 4vw, 2.55rem);
-  line-height: 1.08;
-  margin: 0 0 1rem;
-}
-
-.fct-section p {
-  font-size: clamp(1rem, 2.4vw, 1.12rem);
-  line-height: 1.62;
-  margin: 0 0 1rem;
-}
-
-.fct-callout {
-  margin-top: 1.35rem;
-  padding: 1rem 1.1rem;
-  border-left: 4px solid currentColor;
-  background: rgba(120, 120, 120, 0.08);
-  border-radius: 0.6rem;
-}
-
-.fct-callout strong {
-  display: block;
-  margin-bottom: 0.35rem;
-}
-
-.fct-diagram-card {
-  background: radial-gradient(circle at 50% 42%, rgba(255,255,255,0.09), rgba(120,120,120,0.06));
-  border: 1px solid rgba(120, 120, 120, 0.24);
-  border-radius: 1.4rem;
-  padding: 1.25rem;
-  min-height: 330px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.fct-svg {
-  display: block;
-  width: min(100%, 420px);
-  height: auto;
-  margin: 0 auto;
-}
-
-.fct-caption {
-  font-size: clamp(0.86rem, 2.2vw, 0.98rem);
-  line-height: 1.42;
-  opacity: 0.75;
-  margin-top: 1rem;
-  text-align: center;
-}
-
-.fct-footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 1.5rem;
-}
-
-.fct-footer-links a {
-  display: inline-block;
-  padding: 0.7rem 1rem;
-  border: 1px solid rgba(120, 120, 120, 0.28);
-  border-radius: 999px;
-  text-decoration: none;
-}
-
-.fct-footer-links a:hover {
-  text-decoration: underline;
-}
-
-@media (max-width: 820px) {
-  .fct-page {
-    padding: 1.5rem 1rem 3.5rem;
-  }
-
-  .fct-hero {
-    padding: 2rem 0 1.5rem;
-  }
-
-  .fct-hero h1 {
-    font-size: clamp(2.35rem, 12vw, 3.6rem);
-  }
-
-  .fct-subtitle {
-    font-size: 1.05rem;
-  }
-
-  .fct-section,
-  .fct-section:nth-child(even) {
-    display: block;
-    direction: ltr;
-    padding: 2.25rem 0;
-  }
-
-  .fct-section h2 {
-    font-size: clamp(1.55rem, 7vw, 2.25rem);
-  }
-
-  .fct-section p {
-    font-size: 0.98rem;
-    line-height: 1.56;
-  }
-
-  .fct-callout {
-    padding: 0.9rem 1rem;
-    font-size: 0.94rem;
-  }
-
-  .fct-diagram-card {
-    margin-top: 1.35rem;
-    min-height: 235px;
-    padding: 1rem;
-    border-radius: 1.1rem;
-  }
-
-  .fct-svg {
-    width: min(100%, 330px);
-  }
-
-  .fct-caption {
-    font-size: 0.88rem;
-  }
-
-  .fct-footer-links a {
-    font-size: 0.95rem;
-    padding: 0.65rem 0.85rem;
-  }
-}
-</style>
-
-<main class="fct-page">
+<main class="site-shell fct-page">
   <header class="fct-hero">
     <div class="fct-kicker">Introductory tutorial</div>
-    <h1>From Circle to Thalion</h1>
+    <h1>What is a Thalion?</h1>
     <p class="fct-subtitle">Boundary, body, and the birth of relational transport.</p>
+
+    <p class="fct-intro-graphic">
+      <img src="/assets/from-circle-to-thalion/intro-series-hero.png?v=4" alt="Circle to thalion progression: circle, boundary, body, ported, closure, graph.">
+      <span class="fct-visually-hidden">Fig. 1. From circle to thalion: boundary becomes body, body becomes transport, and transport becomes accountable in finite form.</span>
+    </p>
+
+
+    <div class="fct-intro">
+      <p>A thalion is a way of talking about a simple idea that becomes surprisingly rich: something can have an inside, an outside, a boundary between them, and structured ways for relation to cross that boundary.</p>
+
+      <p>That may sound abstract at first, but the starting point is ordinary. A living cell has a membrane. A room has walls and doors. A conversation has participants, openings, limits, and turns. A city has roads, borders, gates, neighborhoods, and paths of movement. In each case, the thing is not only a shape. It is a bounded structure that manages relation.</p>
+
+      <p>A thalion is our name for that kind of structure when it becomes mathematically accountable.</p>
+
+      <p>More precisely, a thalion sits on a Thalean graph. That graph is the formal object underneath the tutorial: the finite structure where the relations can be checked, counted, and inspected. But the graph itself is the next chapter. This page does not begin with the machinery. It begins with the intuition.</p>
+
+      <p>A thalion is not just an object sitting there. It is a bounded relational body. It has an inside and an outside. It has a boundary. It has places where relation may enter or leave. It has hinge-points where outside relation becomes usable inside. It has a center or witness role from which its internal relations become legible. And most importantly, it closes as one thing.</p>
+
+      <p>So we begin with the simplest boundary most people already understand: a circle.</p>
+    </div>
+
     <div class="fct-callout">
-      <strong>Core idea</strong>
-      A circle gives us a boundary; a thalion is what happens when boundary becomes body, body becomes transport, and transport closes as accountable form.
+      A circle separates. A boundary holds. A body persists. A membrane regulates. A port admits. A hinge translates. A witness point makes relation legible. A closure binds the local parts into one whole.
+    </div>
+
+    <div class="fct-intro">
+      <p>A thalion is what happens when that whole ladder becomes accountable as a finite relational structure.</p>
+
+      <p>The path of this page is simple. We start with a circle, notice the boundary, let the boundary become a body, let the body become an active membrane, give the membrane lawful ports, watch ports become hinges, mark the witness center, and then see how local articulations close into a thalion-like form.</p>
+
+      <p>The formal graph is not the starting point for the reader. It is the accountability layer waiting at the end of the walk.</p>
+
+      <p>This page teaches the roles. The next chapter introduces the Thalean graph that makes those roles accountable.</p>
     </div>
   </header>
 
-  <?php foreach ($sections as $section): ?>
+  <?php foreach ($sections as $idx => $section): ?>
     <section class="fct-section">
       <div>
         <h2><?php echo htmlspecialchars($section["title"]); ?></h2>
         <?php foreach ($section["body"] as $paragraph): ?>
           <p><?php echo htmlspecialchars($paragraph); ?></p>
         <?php endforeach; ?>
-
-        <?php if (isset($section["callout"])): ?>
-          <div class="fct-callout">
-            <strong><?php echo htmlspecialchars($section["callout_title"]); ?></strong>
-            <?php echo htmlspecialchars($section["callout"]); ?>
-          </div>
-        <?php endif; ?>
 
         <?php if (!empty($section["links"])): ?>
           <div class="fct-footer-links">
@@ -380,12 +225,24 @@ $sections = [
         <?php endif; ?>
       </div>
 
+      <?php if (empty($section["hide_figure"])): ?>
       <figure class="fct-diagram-card">
-        <img class="fct-svg" src="/assets/from-circle-to-thalion/<?php echo htmlspecialchars($section["svg"]) . "?v=3"; ?>" alt="">
-        <figcaption class="fct-caption"><?php echo htmlspecialchars($section["caption"]); ?></figcaption>
+        <img class="fct-svg" src="/assets/from-circle-to-thalion/<?php echo htmlspecialchars($section["svg"]) . "?v=4"; ?>" alt="">
+        <?php
+          $cap_parts = [];
+          if (!empty($section["callout"])) {
+            $cap_parts[] = $section["callout"];
+          }
+          if (!empty($section["caption"])) {
+            $cap_parts[] = $section["caption"];
+          }
+          $fig_caption = trim(implode(" ", array_filter($cap_parts)));
+        ?>
+        <figcaption class="fct-caption"><strong>Fig. <?php echo $idx + 1; ?>.</strong> <?php echo htmlspecialchars($fig_caption); ?></figcaption>
       </figure>
+      <?php endif; ?>
     </section>
   <?php endforeach; ?>
 </main>
 
-<?php require_once __DIR__ . "/../includes/site_footer.php"; ?>
+<?php include __DIR__ . '/../includes/site_footer.php'; ?>

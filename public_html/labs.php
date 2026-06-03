@@ -1,7 +1,7 @@
 <?php
-$page_title = 'Labs — Aletheos.ai';
-$page_description = 'Aletheos Labs contains witness surfaces for changing viewpoint, inspecting finite structure, and testing how apparent patterns become accountable structures.';
-$page_css = ['assets/index.css', 'assets/labs_page.css'];
+$page_title = 'Labs - Aletheos.ai';
+$page_description = 'Aletheos Labs are public witness surfaces for inspecting finite structure, quotient-visible behavior, and exploratory transitions.';
+$page_css = ['/assets/index.css', '/assets/labs_page.css'];
 
 include __DIR__ . '/includes/head.php';
 include __DIR__ . '/includes/site_header.php';
@@ -14,37 +14,32 @@ include __DIR__ . '/includes/site_header.php';
     <div class="hero-grid">
       <div class="hero-copy">
         <h1 class="hero-title">Labs are witness surfaces.</h1>
+
         <p class="hero-text">
           Aletheos Labs turns research claims into interactive surfaces where
           patterns can be viewed, moved, inspected, and questioned.
         </p>
+
         <p class="hero-text hero-text--secondary">
           These tools are not proof by themselves. They are instruments for
           changing viewpoint, exposing structure, and making abstract claims
           easier to challenge one layer at a time.
         </p>
-        <div class="hero-actions lab-action-grid" aria-label="Lab actions">
-          <a class="lab-action-card lab-action-card--primary" href="/labs/informative_action/">
-            <span class="card-label">Quotient lab</span>
-            <strong>Informative Action</strong>
-            <span>
-              Inspect how action, boundary, collapse, release, and trace become
-              visible through a quotient-level witness surface.
-            </span>
-          </a>
 
-          <a class="lab-action-card" href="/labs/constructor/lab.html">
-            <span class="card-label">Constructor</span>
-            <strong>Wave Form Constructor</strong>
-            <span>
-              Explore a live browser-side construction surface for rotating,
-              comparing, and inspecting finite structure.
-            </span>
-          </a>
+        <p class="hero-text hero-text--secondary">
+          If the tutorial explains what a thalion is, and the graph page gives
+          the formal object, the labs ask what becomes visible when that object
+          is rendered through a particular witness surface.
+        </p>
+
+        <div class="hero-actions" aria-label="Lab actions">
+          <a class="button button--primary" href="/labs/constructor/lab.html">Open the constructor</a>
+          <a class="button button--secondary" href="/labs/informative_action/collapse_witness.php">Open the witness lens</a>
+          <a class="button button--secondary" href="/research/from-circle-to-thalion.php">What is a Thalion?</a>
         </div>
       </div>
 
-      <aside class="hero-emblem" aria-label="Aletheos lab themes">
+      <aside class="hero-emblem" aria-label="Aletheos Labs themes">
         <div class="orbital-mark">
           <span class="orbital-mark__ring orbital-mark__ring--outer"></span>
           <span class="orbital-mark__ring orbital-mark__ring--middle"></span>
@@ -53,8 +48,59 @@ include __DIR__ . '/includes/site_header.php';
           <span class="orbital-mark__point orbital-mark__point--two"></span>
           <span class="orbital-mark__point orbital-mark__point--three"></span>
         </div>
-        <p class="emblem-caption">view - perturb - inspect</p>
+        <p class="emblem-caption">view - move - inspect</p>
       </aside>
+    </div>
+  </section>
+
+  <section class="index-section">
+    <div class="section-head">
+      <p class="section-kicker">Orientation</p>
+      <h2>From idea, to object, to witness surface.</h2>
+      <p class="section-text">
+        The labs sit downstream from the concept and the theorem object. The
+        tutorial introduces the thalion in ordinary language. The graph page
+        gives the canonical finite object. The labs provide public surfaces for
+        inspecting shadows, quotients, renderings, and exploratory transitions.
+      </p>
+    </div>
+
+    <div class="card-grid">
+      <a class="index-card feature-card" href="/research/from-circle-to-thalion.php">
+        <span class="card-label">Introductory tutorial</span>
+        <h3>What is a Thalion?</h3>
+        <p>
+          Start with a circle, then climb through boundary, body, membrane,
+          port, hinge, witness, closure, and relational transport.
+        </p>
+      </a>
+
+      <a class="index-card" href="/the_thalean_graph_at4val_60_6.php">
+        <span class="card-label">Graph core</span>
+        <h3>The Thalean graph</h3>
+        <p>
+          The theorem-facing public surface for the canonical finite object,
+          verification records, and companion papers.
+        </p>
+      </a>
+
+      <a class="index-card" href="/labs/constructor/lab.html">
+        <span class="card-label">Constructor</span>
+        <h3>Wave Form Constructor</h3>
+        <p>
+          Explore a browser-side construction surface for rotating, comparing,
+          and inspecting finite structure.
+        </p>
+      </a>
+
+      <a class="index-card" href="/labs/informative_action/collapse_witness.php">
+        <span class="card-label">Quotient lab</span>
+        <h3>Collapse Witness Lens</h3>
+        <p>
+          Inspect how action, boundary, collapse, release, and trace become
+          visible through a quotient-level witness surface.
+        </p>
+      </a>
     </div>
   </section>
 
@@ -69,17 +115,17 @@ include __DIR__ . '/includes/site_header.php';
       </p>
     </div>
 
-    <div class="principle-grid">
-      <article class="principle-card">
+    <div class="card-grid">
+      <article class="index-card">
         <span class="card-label">Viewpoint</span>
         <h3>What changes when the view changes?</h3>
         <p>
           A witness surface lets us rotate, compare, and reframe a structure so
-          one flattering view does not carry the whole claim.
+          one attractive view does not carry the whole claim.
         </p>
       </article>
 
-      <article class="principle-card">
+      <article class="index-card">
         <span class="card-label">Structure</span>
         <h3>What remains connected?</h3>
         <p>
@@ -88,7 +134,7 @@ include __DIR__ . '/includes/site_header.php';
         </p>
       </article>
 
-      <article class="principle-card">
+      <article class="index-card">
         <span class="card-label">Trace</span>
         <h3>What remains inspectable?</h3>
         <p>
@@ -110,22 +156,13 @@ include __DIR__ . '/includes/site_header.php';
       </p>
     </div>
 
-    <div class="card-grid lab-route-grid">
-      <a class="index-card feature-card" href="/labs/informative_action/">
+    <div class="card-grid">
+      <a class="index-card feature-card" href="/labs/informative_action/collapse_witness.php">
         <span class="card-label">Active lab</span>
         <h3>Collapse Witness Lens</h3>
         <p>
-          An experimental visual lens for exploring boundary, collapse,
-          release, and witness behavior over the current transport data.
-        </p>
-      </a>
-
-      <a class="index-card" href="/the_thalean_graph_at4val_60_6.php">
-        <span class="card-label">Public research</span>
-        <h3>Thalean Graph Page</h3>
-        <p>
-          The theorem-facing public surface for the canonical artifact,
-          verification records, and companion papers.
+          An experimental visual lens for exploring boundary, collapse, release,
+          and witness behavior over the current transport data.
         </p>
       </a>
 
@@ -137,6 +174,57 @@ include __DIR__ . '/includes/site_header.php';
           active graph construction surface without a Python runtime.
         </p>
       </a>
+
+      <a class="index-card" href="/the_thalean_graph_at4val_60_6.php">
+        <span class="card-label">Public research</span>
+        <h3>Thalean Graph Page</h3>
+        <p>
+          The theorem-facing public surface for the canonical artifact,
+          verification records, and companion papers.
+        </p>
+      </a>
+    </div>
+  </section>
+
+  <section class="index-section">
+    <div class="section-head">
+      <p class="section-kicker">Current lens</p>
+      <h2>Where the Collapse Witness Lens sits.</h2>
+      <p class="section-text">
+        The Collapse Witness Lens operates at the G15/G30 quotient-visible
+        layer of the Thalean graph. It does not render the full G60 thalion
+        directly. Instead, it uses G15 as the readable shadow, G30 as the
+        incidence response, and a six-station witness as an exploratory visual
+        surface.
+      </p>
+    </div>
+
+    <div class="card-grid">
+      <article class="index-card">
+        <span class="card-label">Full object</span>
+        <h3>G60 thalion</h3>
+        <p>
+          AT4val[60,6], the full 60-state Thalean transport organism.
+        </p>
+      </article>
+
+      <article class="index-card">
+        <span class="card-label">Quotient</span>
+        <h3>G15 / G30</h3>
+        <p>
+          The compressed transport state and 30-column incidence response used
+          by the renderer.
+        </p>
+      </article>
+
+      <article class="index-card">
+        <span class="card-label">Lens</span>
+        <h3>Six-station witness</h3>
+        <p>
+          A quotient-visible collapse/rebound witness rendered as an exploratory
+          bubble analog.
+        </p>
+      </article>
     </div>
   </section>
 
@@ -152,8 +240,8 @@ include __DIR__ . '/includes/site_header.php';
       </p>
     </div>
 
-    <div class="principle-grid">
-      <article class="principle-card">
+    <div class="card-grid">
+      <article class="index-card">
         <span class="card-label">AI accountability</span>
         <h3>Agents need traces.</h3>
         <p>
@@ -163,7 +251,7 @@ include __DIR__ . '/includes/site_header.php';
         </p>
       </article>
 
-      <article class="principle-card">
+      <article class="index-card">
         <span class="card-label">Private computation</span>
         <h3>Privacy needs structure.</h3>
         <p>
@@ -172,7 +260,7 @@ include __DIR__ . '/includes/site_header.php';
         </p>
       </article>
 
-      <article class="principle-card">
+      <article class="index-card">
         <span class="card-label">Human trust</span>
         <h3>People need orientation.</h3>
         <p>
@@ -183,41 +271,7 @@ include __DIR__ . '/includes/site_header.php';
     </div>
   </section>
 
-
   <section class="index-section">
-    <div class="section-head">
-      <p class="section-kicker">Current lens</p>
-      <h2>Where the Collapse Witness Lens sits.</h2>
-      <p class="section-text">
-        The Collapse Witness Lens operates at the G15/G30 quotient-visible layer
-        of the Thalean graph. It does not render the full G60 thalion directly.
-        Instead, it uses G15 as the readable shadow, G30 as the incidence response,
-        and a six-station witness as an exploratory visual surface.
-      </p>
-    </div>
-
-    <div class="principle-grid">
-      <article class="principle-card">
-        <span class="card-label">Full object</span>
-        <h3>G60 thalion</h3>
-        <p>AT4val[60,6], the full 60-state Thalean transport organism.</p>
-      </article>
-
-      <article class="principle-card">
-        <span class="card-label">Quotient</span>
-        <h3>G15 / G30</h3>
-        <p>The compressed transport state and 30-column incidence response used by the renderer.</p>
-      </article>
-
-      <article class="principle-card">
-        <span class="card-label">Lens</span>
-        <h3>Six-station witness</h3>
-        <p>A quotient-visible collapse/rebound witness rendered as a bubble analog.</p>
-      </article>
-    </div>
-  </section>
-
-  <section class="index-section scope-section">
     <div class="section-head">
       <p class="section-kicker">Lab status</p>
       <h2>Experimental, inspectable, unfinished.</h2>
@@ -228,7 +282,6 @@ include __DIR__ . '/includes/site_header.php';
       </p>
     </div>
   </section>
-
 </main>
 
 <?php include __DIR__ . '/includes/site_footer.php'; ?>

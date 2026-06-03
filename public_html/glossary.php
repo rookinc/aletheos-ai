@@ -99,11 +99,42 @@ include __DIR__ . '/includes/site_header.php';
       </article>
 
       <article class="index-card">
-        <span class="card-label">Action</span>
+        <span class="card-label">Acting side</span>
+        <h3>Admissible action</h3>
+        <p>
+          A locally permitted next move available to a situated agent, witness,
+          node, state, or relational body.
+        </p>
+        <p>
+          In plain language: what a thing may do next from where it is.
+        </p>
+      </article>
+
+      <article class="index-card">
+        <span class="card-label">Receiving side</span>
         <h3>Admissible transformation</h3>
         <p>
-          An action is a lawful transition inside a relational frame. Not every
-          imaginable change counts as a meaningful test of identity.
+          A structurally permitted change that an object can allow, absorb, or
+          undergo while preserving the invariants that make it itself.
+        </p>
+        <p>
+          In plain language: what a thing may undergo without ceasing to be
+          itself.
+        </p>
+      </article>
+
+      <article class="index-card feature-card">
+        <span class="card-label">Trace</span>
+        <h3>Informative action</h3>
+        <p>
+          Action that leaves an inspectable trace. An action is informative
+          when it reveals something about the structure it passes through: a
+          boundary, constraint, response, invariant, failure mode, or admissible
+          transformation.
+        </p>
+        <p>
+          In plain language: action that teaches the witness something because
+          it leaves a trace.
         </p>
       </article>
 
@@ -112,7 +143,8 @@ include __DIR__ . '/includes/site_header.php';
         <h3>Admissibility surface</h3>
         <p>
           A boundary is not merely a wall. It regulates exchange, distinguishes
-          inside from outside, and helps determine which actions preserve a body.
+          inside from outside, and helps determine which actions and
+          transformations a body can admit.
         </p>
       </article>
     </div>

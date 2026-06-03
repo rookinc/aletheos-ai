@@ -25,6 +25,57 @@ include __DIR__ . '/includes/site_header.php';
 
   <section class="index-section">
     <div class="section-head">
+      <p class="section-kicker">What this page audits</p>
+      <h2>From public explanation back to inspectable records.</h2>
+      <p class="section-text">
+        The tutorial introduces the intuition. The Thalean graph page names the
+        formal object. The labs render witness surfaces. The audit layer keeps
+        those public surfaces tied to records that can be checked.
+      </p>
+    </div>
+
+    <div class="card-grid">
+      <a class="index-card" href="/research/from-circle-to-thalion.php">
+        <span class="card-label">Tutorial surface</span>
+        <h3>What is a Thalion?</h3>
+        <p>
+          A public-language path from circle, boundary, and body toward the
+          thalion as a bounded relational transport organism.
+        </p>
+      </a>
+
+      <a class="index-card feature-card" href="/the_thalean_graph_at4val_60_6.php">
+        <span class="card-label">Formal object</span>
+        <h3>The Thalean Graph</h3>
+        <p>
+          The theorem-facing finite graph object whose relations can be counted,
+          checked, and inspected.
+        </p>
+      </a>
+
+      <a class="index-card" href="/labs.php">
+        <span class="card-label">Witness surfaces</span>
+        <h3>Aletheos Labs</h3>
+        <p>
+          Interactive renderers and quotient-visible lenses that make structure
+          easier to inspect without replacing the theorem object.
+        </p>
+      </a>
+
+      <article class="index-card">
+        <span class="card-label">Verification layer</span>
+        <h3>Checker scripts</h3>
+        <p>
+          Local commands, artifact contracts, metadata, and reports that help
+          keep claims from drifting away from their supporting records.
+        </p>
+      </article>
+    </div>
+  </section>
+
+
+  <section class="index-section">
+    <div class="section-head">
       <p class="section-kicker">Primary records</p>
       <h2>Artifact contracts</h2>
       <p class="section-text">

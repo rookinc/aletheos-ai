@@ -50,6 +50,57 @@ include __DIR__ . '/includes/site_header.php';
 
   <section class="index-section">
     <div class="section-head">
+      <p class="section-kicker">Where to start</p>
+      <h2>A simple path into the work.</h2>
+      <p class="section-text">
+        CoRI is the method. Thalean Action Theory is the umbrella framework.
+        The thalion tutorial gives the intuition. The Thalean graph page gives
+        the formal object. The labs provide witness surfaces for inspection.
+      </p>
+    </div>
+
+    <div class="card-grid">
+      <a class="index-card feature-card" href="/research/from-circle-to-thalion.php">
+        <span class="card-label">Introductory tutorial</span>
+        <h3>What is a Thalion?</h3>
+        <p>
+          Start with a circle, then climb through boundary, body, membrane,
+          port, hinge, witness, closure, and relational transport.
+        </p>
+      </a>
+
+      <a class="index-card" href="/thalean_action_theory.php">
+        <span class="card-label">Framework</span>
+        <h3>Thalean Action Theory</h3>
+        <p>
+          The public umbrella for relation, action, identity, boundary,
+          witness, and accountability.
+        </p>
+      </a>
+
+      <a class="index-card" href="/the_thalean_graph_at4val_60_6.php">
+        <span class="card-label">Graph core</span>
+        <h3>The Thalean Graph</h3>
+        <p>
+          The finite theorem object where the relations can be checked,
+          counted, and inspected.
+        </p>
+      </a>
+
+      <a class="index-card" href="/labs.php">
+        <span class="card-label">Witness surfaces</span>
+        <h3>Aletheos Labs</h3>
+        <p>
+          Interactive surfaces for changing viewpoint, exposing structure,
+          and inspecting quotient-visible behavior.
+        </p>
+      </a>
+    </div>
+  </section>
+
+
+  <section class="index-section">
+    <div class="section-head">
       <p class="section-kicker">What CoRI does</p>
       <h2>We test when patterns become accountable.</h2>
       <p class="section-text">

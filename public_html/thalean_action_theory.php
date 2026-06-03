@@ -32,6 +32,14 @@ include __DIR__ . '/includes/site_header.php';
           It is also what its presence makes possible for others.
         </p>
 
+        <p class="hero-text hero-text--secondary">
+          The same lens may matter wherever identity, constraint, action, and
+          trace need to be held together: AI governance, fully homomorphic
+          encryption, privacy-preserving systems, accountable automation, and
+          new materials science. These are application horizons, not completed
+          claims.
+        </p>
+
         <div class="hero-actions" aria-label="Thalean Action Theory actions">
           <a class="button button--primary" href="/research/from-circle-to-thalion.php">What is a Thalion?</a>
           <a class="button button--secondary" href="/the_thalean_graph_at4val_60_6.php">Open the graph core</a>

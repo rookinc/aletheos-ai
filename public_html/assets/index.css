@@ -698,3 +698,30 @@ code {
     width: min(100%, 260px);
   }
 }
+
+/* Global readable text rhythm */
+.hero-copy .hero-text {
+  margin: 0;
+}
+
+.hero-copy .hero-text + .hero-text {
+  margin-top: clamp(1rem, 2.5vw, 1.45rem);
+}
+
+.hero-copy .hero-actions {
+  margin-top: clamp(1.35rem, 3vw, 2rem);
+}
+
+.section-text,
+.index-card p,
+.principle-card p,
+.constructor-feature__copy p {
+  line-height: 1.65;
+}
+
+.section-text + .section-text,
+.index-card p + p,
+.principle-card p + p,
+.constructor-feature__copy p + p {
+  margin-top: 1rem;
+}

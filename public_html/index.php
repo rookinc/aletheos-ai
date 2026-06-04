@@ -1,7 +1,7 @@
 <?php
 $page_title = 'Aletheos.ai - CoRI Research Surface';
 $page_description = 'Aletheos.ai is the public research surface for the Centre of Recursive Inquiry (CoRI), Thalean Action Theory, Thalean Graph Theory, labs, papers, and audit artifacts.';
-$page_css = ['assets/index.css'];
+$page_css = ['assets/index.css', 'assets/css/at4val-3d-viewer.css'];
 
 include __DIR__ . '/includes/head.php';
 include __DIR__ . '/includes/site_header.php';
@@ -15,19 +15,44 @@ include __DIR__ . '/includes/site_header.php';
       <div class="hero-copy">
         <h1 class="hero-title">From apparent pattern to accountable structure.</h1>
 
+        <div
+          class="intro-graph intro-graph--at4val"
+          data-at4val-3d
+          data-src="/json/at4val_60_6_3d.json"
+          aria-label="Rotating 3D rendering of AT4val[60,6]"
+        >
+          <canvas></canvas>
+        </div>
+
         <p class="hero-text">
-          Aletheos.ai is the public research surface for the Centre of Recursive
-          Inquiry (CoRI). CoRI studies how apparent patterns become accountable
-          structures by testing whether they survive changed viewpoints,
-          controlled perturbations, and traceable constraints.
+          Some patterns vanish when you turn them. Others survive changed
+          viewpoints, controlled perturbations, and traceable constraints.
+        </p>
+
+        <p class="hero-text">
+          At CoRI, we study relationships: how things connect, how those
+          connections hold together, and how a pattern changes when it is
+          viewed from another angle.
+        </p>
+
+        <p class="hero-text">
+          Our tool of choice is the Thalean graph. It gives us a small finite
+          structure for studying relationships: a structure we can inspect,
+          disturb, rotate, quotient, compare, and test. A single working
+          instance of that structure is called a thalion.
         </p>
 
         <p class="hero-text hero-text--secondary">
-          The site is focused on Thalean Action Theory, Thalean Graph Theory,
-          coherence diagnostics, public labs, papers, and audit artifacts. Its
-          application horizons include AI governance, fully homomorphic
-          encryption, privacy-preserving systems, accountable automation, and
-          new materials science.
+          A thalion is not a metaphor. It is a concrete relational object:
+          sixty states, fixed connections, and enough internal structure to
+          test whether an apparent pattern is merely suggestive, or actually
+          accountable.
+        </p>
+
+        <p class="hero-text hero-text--secondary">
+          Aletheos.ai is the public research surface for this work: Thalean
+          Action Theory, Thalean Graph Theory, coherence diagnostics, public
+          labs, papers, and audit artifacts.
         </p>
 
         <div class="hero-actions" aria-label="Primary actions">
@@ -150,9 +175,7 @@ include __DIR__ . '/includes/site_header.php';
       </a>
     </div>
   </section>
-
 </main>
 
+<script src="/assets/js/at4val-3d-viewer.js" defer></script>
 <?php include __DIR__ . '/includes/site_footer.php'; ?>
-</body>
-</html>

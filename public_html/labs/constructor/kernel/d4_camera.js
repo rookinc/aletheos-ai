@@ -1,9 +1,9 @@
 export function createDefaultCamera() {
   return {
     projection: "perspective",
-    distance: 14.0,
-    yaw: 0.0,
-    pitch: -0.28,
+    distance: 12.0,
+    yaw: 10.96,
+    pitch: -0.23,
     panX: 0.0,
     panY: 0.0,
     orbitEnabled: false,
@@ -16,9 +16,9 @@ export function clamp(value, min, max) {
 
 export function resetCamera(camera) {
   camera.projection = "perspective";
-  camera.distance = 14.0;
-  camera.yaw = 0.0;
-  camera.pitch = -0.28;
+  camera.distance = 12.0;
+  camera.yaw = 10.96;
+  camera.pitch = -0.23;
   camera.panX = 0.0;
   camera.panY = 0.0;
   camera.orbitEnabled = false;
@@ -101,7 +101,7 @@ export function stepOrbit(camera, delta = 0.004) {
 }
 
 export function toggleOrbit(camera) {
-  camera.orbitEnabled = !camera.orbitEnabled;
+  camera.orbitEnabled = false;
   return camera.orbitEnabled;
 }
 

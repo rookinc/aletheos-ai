@@ -46,13 +46,22 @@ ui.display.leftFaceOpacity = 0.8;
 ui.display.rightFaceOpacity = 0.8;
 ui.display.showAxes = false;
 ui.display.cameraPreset = "perspective_default";
+ui.camera.distance = 12.0;
+ui.camera.yaw = 10.96;
+ui.camera.pitch = -0.23;
+ui.camera.orbitEnabled = false;
 
 const canvas = document.getElementById("stage-canvas");
 const ctx = canvas.getContext("2d");
 
 const els = {
-  toggleFaces: document.getElementById("toggle-faces"),
-  toggleEdges: document.getElementById("toggle-edges"),
+  primaryModeCard: document.getElementById("primary-mode-card"),
+  p900ControlsCard: document.getElementById("p900-controls-card"),
+  tetraControlsCard: document.getElementById("tetra-controls-card"),
+  toggleP900States: document.getElementById("toggle-p900-states"),
+  toggleP900Edges: document.getElementById("toggle-p900-edges"),
+  toggleTetraFaces: document.getElementById("toggle-tetra-faces"),
+  toggleTetraEdges: document.getElementById("toggle-tetra-edges"),
   leftFaceOpacitySlider: document.getElementById("left-face-opacity-slider"),
   rightFaceOpacitySlider: document.getElementById("right-face-opacity-slider"),
   resetBtn: document.getElementById("reset-btn"),
@@ -111,6 +120,7 @@ let snapshot = engine.snapshot();
 let witnessSnapshot = null;
 let witnessCacheKey = null;
 let p900ExternalData = null;
+let p900ContinuePastReveal = false;
 let projector = null;
 let orbitFrame = null;
 let playTimer = null;
@@ -120,14 +130,21 @@ function sliderPctToAlpha(value) {
 }
 
 function syncUIFlags() {
-  ui.display.showFaces = els.toggleFaces?.checked ?? true;
-  ui.display.showEdges = els.toggleEdges?.checked ?? true;
+  if (isP900ExternalMode()) {
+    ui.display.showFaces = els.toggleP900States?.checked ?? true;
+    ui.display.showEdges = els.toggleP900Edges?.checked ?? true;
+  } else {
+    ui.display.showFaces = els.toggleTetraFaces?.checked ?? true;
+    ui.display.showEdges = els.toggleTetraEdges?.checked ?? true;
+  }
+
   ui.display.showColorEdges = els.toggleColorEdges?.checked ?? true;
   ui.display.showTrurtle = els.toggleTrurtle?.checked ?? true;
   ui.display.showSpinors = els.toggleSpinors?.checked ?? true;
   ui.display.showLabels = els.toggleLabels?.checked ?? false;
   ui.display.showStageGrid = els.toggleGrid?.checked ?? true;
   ui.display.showAxes = els.toggleAxes?.checked ?? false;
+  ui.camera.orbitEnabled = false;
   ui.display.spinorOpacity = sliderPctToAlpha(els.spinorOpacitySlider?.value ?? 28);
   ui.display.leftFaceOpacity = sliderPctToAlpha(els.leftFaceOpacitySlider?.value ?? 80);
   ui.display.rightFaceOpacity = sliderPctToAlpha(els.rightFaceOpacitySlider?.value ?? 80);
@@ -161,6 +178,12 @@ function syncSpinorOpacityVisibility() {
   els.spinorOpacityField.classList.toggle("is-hidden", !ui.display.showSpinors);
 }
 
+function syncModeControlVisibility() {
+  const p900Mode = isP900ExternalMode();
+  els.p900ControlsCard?.classList.toggle("is-hidden", !p900Mode);
+  els.tetraControlsCard?.classList.toggle("is-hidden", p900Mode);
+}
+
 function syncSpinorOpacitySlider() {
   if (!els.spinorOpacitySlider) return;
   els.spinorOpacitySlider.value = String(Math.round((ui.display.spinorOpacity ?? 0.28) * 100));
@@ -191,7 +214,52 @@ async function ensureP900ExternalData() {
   p900ExternalData = await loadP900ExternalData();
 }
 
+function isP900ExternalMode() {
+  return ui.display.mode === "p900_external";
+}
+
+function p900Overdrive(readout) {
+  return Math.max(0, Math.floor(Number(readout.currentD4s) || 0) - 900);
+}
+
+function formatP900Console(readout) {
+  const checkpoint = p900ExternalData?.checkpoint || {};
+  const numeric = checkpoint.numeric_summary || {};
+  const edgeData = p900ExternalData?.edgeData || {};
+  const simStates = Math.max(0, Math.floor(Number(readout.currentD4s) || 0));
+  const overdrive = Math.max(0, simStates - 900);
+
+  return [
+    `mode             : P900 Simulator`,
+    `artifact_states  : 900`,
+    `sim_states       : ${simStates}`,
+    `overdrive        : ${overdrive}`,
+    `visual_regime    : ${overdrive > 0 ? "post-900 extrapolation" : "artifact reveal"}`,
+    `autopause_armed  : ${p900ContinuePastReveal ? "no" : "yes"}`,
+    `external_edges   : ${numeric.external_edges ?? edgeData.external_edge_count ?? 1800}`,
+    `external_degree  : uniform 4`,
+    `components       : ${numeric.component_count ?? 30}`,
+    `sheet_count      : ${numeric.sheet_count ?? 30}`,
+    `sheet_type       : doubled-G15 2-lift`,
+    `half_turn_set    : ${(numeric.preferred_half_turn_set || [0, 1, 2, 3, 9]).join(",")}`,
+    `identity_set     : ${(numeric.preferred_identity_set || [4, 5, 6, 7, 8]).join(",")}`,
+    `checkpoint_ok    : ${checkpoint.checkpoint_ok ?? "unknown"}`,
+    `boundary         : simulated beyond checkpoint after 900`,
+    `internal_g60     : not added`,
+    `camera_distance  : ${readout.camera.distance}`,
+    `camera_yaw       : ${readout.camera.yaw}`,
+    `camera_pitch     : ${readout.camera.pitch}`,
+    `faces            : ${ui.display.showFaces ? "on" : "off"}`,
+    `edges            : ${ui.display.showEdges ? "on" : "off"}`,
+    `source           : /json/p900/`
+  ].join("\n");
+}
+
 function formatConsole(readout) {
+  if (isP900ExternalMode()) {
+    return formatP900Console(readout);
+  }
+
   return [
     `current_d4s      : ${readout.currentD4s}`,
     `turn             : ${readout.turnIndex}`,
@@ -204,7 +272,7 @@ function formatConsole(readout) {
     `regime           : ${readout.regime}`,
     `rung             : ${readout.rungValue}`,
     `aggregation      : ${readout.display.aggregationMode}`,
-    `active_tetra     : ${readout.activeTetraId ?? "-"}`,
+    `secondary_tetra     : ${readout.activeTetraId ?? "-"}`,
     `active_face      : ${readout.activeFaceLabel ?? "-"}`,
     `active_chirality : ${readout.activeChirality ?? "-"}`,
     `spinors          : ${ui.display.showSpinors ? "on" : "off"}`,
@@ -217,7 +285,7 @@ function formatConsole(readout) {
     `camera_distance  : ${readout.camera.distance}`,
     `camera_yaw       : ${readout.camera.yaw}`,
     `camera_pitch     : ${readout.camera.pitch}`,
-    `camera_preset    : ${ui.display.cameraPreset}`
+    `camera_preset    : ${ui.display.cameraPreset}`,
   ].join("\n");
 }
 
@@ -225,7 +293,11 @@ function updateReadouts() {
   const readout = buildUIReadout(ui, snapshot);
 
   if (els.statusText) els.statusText.textContent = readout.statusText;
-  if (els.metricTurn) els.metricTurn.textContent = String(readout.turnIndex);
+  if (els.metricTurn) {
+    els.metricTurn.textContent = isP900ExternalMode()
+      ? String(readout.currentD4s)
+      : String(readout.turnIndex);
+  }
   if (els.metricCameraDistance) els.metricCameraDistance.textContent = readout.camera.distance;
   if (els.metricCameraYaw) els.metricCameraYaw.textContent = readout.camera.yaw;
   if (els.metricCameraPitch) els.metricCameraPitch.textContent = readout.camera.pitch;
@@ -276,6 +348,7 @@ async function draw() {
   syncPauseAtInput();
   syncSpinorOpacitySlider();
   syncSpinorOpacityVisibility();
+  syncModeControlVisibility();
 
   clearStage(ctx, canvas);
   drawStageGrid(ctx, canvas, ui.display.showStageGrid);
@@ -305,8 +378,13 @@ async function draw() {
         showEdges: ui.display.showEdges,
         showLabels: ui.display.showLabels,
         revealCount: snapshot.currentD4s,
+        modelTick: snapshot.currentD4s,
       });
-      setStatus(ui, `P900 external reveal ${Math.min(snapshot.currentD4s, 900)}/900`);
+      const overdrive = Math.max(0, snapshot.currentD4s - 900);
+      setStatus(ui, overdrive > 0
+        ? `P900 overdrive ${overdrive}, simulated states ${snapshot.currentD4s}`
+        : `P900 artifact reveal ${snapshot.currentD4s}/900`);
+
     } catch (err) {
       console.error(err);
       setStatus(ui, "P900 external load failed");
@@ -357,6 +435,17 @@ function startPlayTimer() {
     snapshot = engine.step();
 
     if (
+      isP900ExternalMode() &&
+      !p900ContinuePastReveal &&
+      snapshot.currentD4s >= 900
+    ) {
+      stopPlayTimer();
+      setStatus(ui, "P900 artifact boundary reached at 900; press play again for simulator overdrive");
+      void draw();
+      return;
+    }
+
+    if (
       Number.isFinite(ui.playback.pauseAtD4s) &&
       ui.playback.pauseAtD4s > 0 &&
       snapshot.currentD4s >= ui.playback.pauseAtD4s
@@ -383,7 +472,7 @@ function ensureOrbitLoop() {
   if (orbitFrame !== null) return;
   const loop = () => {
     orbitFrame = requestAnimationFrame(loop);
-    if (ui.camera.orbitEnabled && !ui.playback.isPlaying) {
+    if (false) {
       stepOrbit(ui.camera, 0.004);
       void draw();
     }
@@ -396,6 +485,13 @@ function pointerPos(event) {
   return { x: event.clientX - rect.left, y: event.clientY - rect.top };
 }
 
+function advanceEngineToStartTick(target) {
+  const wanted = Math.max(0, Math.floor(Number(target) || 0));
+  while (snapshot.currentD4s < wanted) {
+    snapshot = engine.step();
+  }
+}
+
 function applyPreset(name) {
   if (!name) return;
 
@@ -403,16 +499,16 @@ function applyPreset(name) {
     ui.camera.projectionMode = "perspective";
     ui.camera.panX = 0;
     ui.camera.panY = 0;
-    ui.camera.distance = 15;
-    ui.camera.yaw = 0;
-    ui.camera.pitch = 0;
+    ui.camera.distance = 12;
+    ui.camera.yaw = 10.96;
+    ui.camera.pitch = -0.23;
   } else if (name === "perspective_15_0_0") {
     ui.camera.projectionMode = "perspective";
     ui.camera.panX = 0;
     ui.camera.panY = 0;
-    ui.camera.distance = 15;
-    ui.camera.yaw = 0;
-    ui.camera.pitch = 0;
+    ui.camera.distance = 12;
+    ui.camera.yaw = 10.96;
+    ui.camera.pitch = -0.23;
   } else {
     applyCameraPreset(ui.camera, name);
   }
@@ -432,6 +528,7 @@ els.displayModeSelect?.addEventListener("change", async () => {
     setStatus(ui, `display mode: ${ui.display.mode}`);
   }
 
+  syncModeControlVisibility();
   await draw();
 });
 
@@ -485,8 +582,10 @@ els.rightFaceOpacitySlider?.addEventListener("input", () => {
 });
 
 [
-  els.toggleFaces,
-  els.toggleEdges,
+  els.toggleP900States,
+  els.toggleP900Edges,
+  els.toggleTetraFaces,
+  els.toggleTetraEdges,
   els.toggleColorEdges,
   els.toggleTrurtle,
   els.toggleSpinors,
@@ -498,6 +597,7 @@ els.rightFaceOpacitySlider?.addEventListener("input", () => {
 els.resetBtn?.addEventListener("click", () => {
   engine.reset();
   snapshot = engine.snapshot();
+  p900ContinuePastReveal = false;
   stopPlayTimer();
   setStatus(ui, "reset to seed");
   void draw();
@@ -507,6 +607,7 @@ els.stepBackBtn?.addEventListener("click", () => {
   stopPlayTimer();
   engine.reset();
   snapshot = engine.snapshot();
+  p900ContinuePastReveal = false;
   setStatus(ui, "step back not yet implemented");
   void draw();
 });
@@ -523,8 +624,17 @@ els.playBtn?.addEventListener("click", () => {
     stopPlayTimer();
     setStatus(ui, "paused");
   } else {
+    if (isP900ExternalMode() && snapshot.currentD4s >= 900) {
+      p900ContinuePastReveal = true;
+      setStatus(ui, `P900 simulator overdrive at ${ui.playback.hz} hz`);
+    } else if (isP900ExternalMode()) {
+      p900ContinuePastReveal = false;
+      setStatus(ui, `P900 artifact reveal running at ${ui.playback.hz} hz`);
+    } else {
+      setStatus(ui, `running at ${ui.playback.hz} hz`);
+    }
+
     startPlayTimer();
-    setStatus(ui, `running at ${ui.playback.hz} hz`);
   }
   void draw();
 });
@@ -577,7 +687,10 @@ canvas.addEventListener(
 
 window.addEventListener("resize", () => { void draw(); });
 
-setDisplayMode(ui, els.displayModeSelect?.value || "prime");
+setDisplayMode(ui, els.displayModeSelect?.value || "p900_external");
+if (ui.display.mode === "p900_external") {
+  advanceEngineToStartTick(900);
+}
 
 const initialPause = String(els.pauseAtInput?.value ?? "").trim();
 if (initialPause) {

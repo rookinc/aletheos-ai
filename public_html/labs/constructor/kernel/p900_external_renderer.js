@@ -9,15 +9,34 @@ function safePoint(v) {
   };
 }
 
-function buildP900Point(sector, local) {
+function buildP900Point(sector, local, modelTick = 0, echoLayer = 0) {
   const residue = local % 30;
   const bit = local >= 30 ? 1 : 0;
 
-  const sectorAngle = (Math.PI * 2 * sector) / 15;
-  const residueAngle = (Math.PI * 2 * residue) / 30;
+  const overdrive = Math.max(0, Number(modelTick) - 900);
+  const layer = Math.max(0, Number(echoLayer) || 0);
 
-  const band = bit === 0 ? -0.42 : 0.42;
-  const majorRadius = 4.8 + 0.42 * Math.sin(residueAngle * 3);
+  const sectorAngle =
+    (Math.PI * 2 * sector) / 15 +
+    overdrive * 0.004 +
+    layer * 0.055;
+
+  const residueAngle =
+    (Math.PI * 2 * residue) / 30 +
+    overdrive * 0.007 +
+    layer * 0.031;
+
+  const breath =
+    0.22 * Math.sin(overdrive * 0.025 + residue * 0.31 + bit * Math.PI + layer * 0.7);
+
+  const band = (bit === 0 ? -0.42 : 0.42) + breath;
+
+  const majorRadius =
+    4.8 +
+    layer * 0.42 +
+    0.42 * Math.sin(residueAngle * 3) +
+    0.18 * Math.sin(overdrive * 0.011 + sector * 0.7);
+
   const sheetOffset = 0.10 * Math.cos(residueAngle * 5);
 
   return {
@@ -26,6 +45,7 @@ function buildP900Point(sector, local) {
     local,
     residue,
     bit,
+    echoLayer: layer,
     x: Math.cos(sectorAngle) * (majorRadius + sheetOffset),
     y: Math.sin(sectorAngle) * (majorRadius + sheetOffset),
     z: band + 2.1 * Math.sin(residueAngle),
@@ -54,6 +74,35 @@ function drawPoint(ctx, p, color, radius = 2.2, alpha = 1) {
   ctx.restore();
 }
 
+function visibleArtifactIds(simStateCount) {
+  const ids = new Set();
+  const artifactVisible = Math.min(900, Math.max(0, Math.floor(Number(simStateCount) || 0)));
+
+  for (let sector = 0; sector < 15; sector += 1) {
+    for (let local = 0; local < 60; local += 1) {
+      const ordinal = sector * 60 + local + 1;
+      if (ordinal <= artifactVisible) {
+        ids.add(`${sector}:${local}`);
+      }
+    }
+  }
+
+  return ids;
+}
+
+function overdriveEchoInfo(simStateCount) {
+  const overdrive = Math.max(0, Math.floor(Number(simStateCount) || 0) - 900);
+  const fullEchoLayers = Math.floor(overdrive / 900);
+  const partialEchoStates = overdrive % 900;
+
+  return {
+    overdrive,
+    fullEchoLayers,
+    partialEchoStates,
+    simulatedStates: Math.max(0, Math.floor(Number(simStateCount) || 0)),
+  };
+}
+
 export async function loadP900ExternalData() {
   const [edgeRes, checkpointRes] = await Promise.all([
     fetch(P900_EDGE_URL, { cache: "no-store" }),
@@ -69,7 +118,7 @@ export async function loadP900ExternalData() {
   const points = new Map();
   for (let sector = 0; sector < 15; sector += 1) {
     for (let local = 0; local < 60; local += 1) {
-      const p = buildP900Point(sector, local);
+      const p = buildP900Point(sector, local, 0, 0);
       points.set(p.id, p);
     }
   }
@@ -81,30 +130,29 @@ export async function loadP900ExternalData() {
   };
 }
 
-export function renderP900ExternalScene(ctx, canvas, data, project3D, options = {}) {
-  if (!data?.edgeData?.external_edges || !data?.points) return;
-
+function renderLayer(ctx, data, project3D, options) {
   const {
-    showEdges = true,
-    showFaces = true,
-    showLabels = false,
-    revealCount = 900,
+    modelTick,
+    simStateCount,
+    echoLayer,
+    echoPartialLimit,
+    showEdges,
+    showFaces,
+    showLabels,
+    alphaScale,
+    pointRadius,
   } = options;
 
-  const visibleCount = Math.max(0, Math.min(900, Math.floor(Number(revealCount) || 0)));
-  const visibleIds = new Set();
+  const visibleIds = visibleArtifactIds(echoPartialLimit ?? simStateCount);
+  const projected = new Map();
+
   for (let sector = 0; sector < 15; sector += 1) {
     for (let local = 0; local < 60; local += 1) {
-      const ordinal = sector * 60 + local + 1;
-      if (ordinal <= visibleCount) {
-        visibleIds.add(`${sector}:${local}`);
-      }
+      const id = `${sector}:${local}`;
+      if (!visibleIds.has(id)) continue;
+      const p = buildP900Point(sector, local, modelTick, echoLayer);
+      projected.set(id, project3D(safePoint(p)));
     }
-  }
-
-  const projected = new Map();
-  for (const [id, p] of data.points.entries()) {
-    projected.set(id, project3D(safePoint(p)));
   }
 
   if (showEdges) {
@@ -117,45 +165,112 @@ export function renderP900ExternalScene(ctx, canvas, data, project3D, options = 
       const b = projected.get(bid);
       if (!a || !b) continue;
 
-      const sameResidue = edge.a[1] % 30 === edge.b[1] % 30;
       const crossBit = (edge.a[1] >= 30) !== (edge.b[1] >= 30);
-
       const color = crossBit
-        ? "rgba(255, 196, 230, 0.28)"
-        : "rgba(186, 239, 255, 0.24)";
+        ? `rgba(255, 196, 230, ${0.30 * alphaScale})`
+        : `rgba(186, 239, 255, ${0.26 * alphaScale})`;
 
-      drawLine(ctx, a, b, color, sameResidue ? 0.8 : 0.5, 1);
+      drawLine(ctx, a, b, color, echoLayer === 0 ? 0.8 : 0.55, 1);
     }
   }
 
   if (showFaces) {
-    for (const [id, p] of data.points.entries()) {
-      if (!visibleIds.has(id)) continue;
-      const q = projected.get(id);
-      const color = p.bit === 0
-        ? "rgba(186, 239, 255, 0.68)"
-        : "rgba(255, 196, 230, 0.68)";
-      drawPoint(ctx, q, color, 1.8, 0.85);
+    for (let sector = 0; sector < 15; sector += 1) {
+      for (let local = 0; local < 60; local += 1) {
+        const id = `${sector}:${local}`;
+        if (!visibleIds.has(id)) continue;
+
+        const q = projected.get(id);
+        if (!q) continue;
+
+        const bit = local >= 30 ? 1 : 0;
+        const color = bit === 0
+          ? `rgba(186, 239, 255, ${0.72 * alphaScale})`
+          : `rgba(255, 196, 230, ${0.72 * alphaScale})`;
+
+        drawPoint(ctx, q, color, pointRadius, 0.9);
+      }
     }
   }
 
-  if (showLabels) {
+  if (showLabels && echoLayer === 0) {
     ctx.save();
     ctx.fillStyle = "rgba(232,240,248,0.72)";
     ctx.font = "10px sans-serif";
-    for (const [id, p] of data.points.entries()) {
-      if (!visibleIds.has(id)) continue;
-      if (p.local !== 0 && p.local !== 30) continue;
-      const q = projected.get(id);
-      ctx.fillText(`${p.sector}:${p.local}`, q.x + 4, q.y - 4);
+
+    for (let sector = 0; sector < 15; sector += 1) {
+      for (const local of [0, 30]) {
+        const id = `${sector}:${local}`;
+        if (!visibleIds.has(id)) continue;
+        const q = projected.get(id);
+        if (q) ctx.fillText(`${sector}:${local}`, q.x + 4, q.y - 4);
+      }
     }
+
     ctx.restore();
+  }
+}
+
+export function renderP900ExternalScene(ctx, canvas, data, project3D, options = {}) {
+  if (!data?.edgeData?.external_edges || !data?.points) return;
+
+  const {
+    showEdges = true,
+    showFaces = true,
+    showLabels = false,
+    revealCount = 0,
+    modelTick = revealCount,
+  } = options;
+
+  const simStateCount = Math.max(0, Math.floor(Number(revealCount) || 0));
+  const visualTick = Math.max(0, Math.floor(Number(modelTick) || 0));
+  const echo = overdriveEchoInfo(simStateCount);
+
+  renderLayer(ctx, data, project3D, {
+    modelTick: visualTick,
+    simStateCount,
+    echoLayer: 0,
+    showEdges,
+    showFaces,
+    showLabels,
+    alphaScale: 1,
+    pointRadius: 1.8,
+  });
+
+  /*
+    Post-900 overdrive is intentionally simulated.
+
+    To keep phone rendering safe, we draw at most three echo layers.
+    The readout still reports the full simulated state count and
+    overdrive count. The visual shows the latest overdrive shell behavior
+    rather than allocating unbounded geometry.
+  */
+  const visibleEchoLayers = Math.min(3, echo.fullEchoLayers + (echo.partialEchoStates > 0 ? 1 : 0));
+  const firstLayer = Math.max(1, echo.fullEchoLayers - visibleEchoLayers + 2);
+
+  for (let i = 0; i < visibleEchoLayers; i += 1) {
+    const layer = firstLayer + i;
+    const isPartial = layer === echo.fullEchoLayers + 1 && echo.partialEchoStates > 0;
+    const partialLimit = isPartial ? echo.partialEchoStates : 900;
+
+    renderLayer(ctx, data, project3D, {
+      modelTick: visualTick,
+      simStateCount: 900,
+      echoLayer: layer,
+      echoPartialLimit: partialLimit,
+      showEdges,
+      showFaces,
+      showLabels: false,
+      alphaScale: Math.max(0.16, 0.46 - i * 0.10),
+      pointRadius: Math.max(0.9, 1.35 - i * 0.15),
+    });
   }
 
   ctx.save();
   ctx.fillStyle = "rgba(232,240,248,0.72)";
   ctx.font = "12px sans-serif";
-  ctx.fillText(`P900 External: ${visibleCount}/900 states`, 28, 38);
-  ctx.fillText("30 doubled-G15 sheets, no internal G60 edges", 28, 56);
+  ctx.fillText(`P900 Simulator: ${echo.simulatedStates} simulated states`, 28, 38);
+  ctx.fillText(`artifact 900, overdrive ${echo.overdrive}`, 28, 56);
+  ctx.fillText("post-900 echo beyond checkpoint", 28, 74);
   ctx.restore();
 }

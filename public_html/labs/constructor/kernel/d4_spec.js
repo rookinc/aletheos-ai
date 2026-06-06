@@ -115,6 +115,6 @@ export function createDefaultPlaybackState() {
     pauseAtD4s: 900,
     hz: 30,
     isPlaying: false,
-    displayMode: "prime"
+    displayMode: "p900_external"
   };
 }

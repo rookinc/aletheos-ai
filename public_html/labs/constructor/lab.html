@@ -29,30 +29,6 @@
     </header>
 
     <section class="lab-bar" aria-label="Lab controls">
-      <div class="lab-bar__group lab-bar__group--opacity">
-        <div class="inline-field inline-field--slider">
-          <label for="left-face-opacity-slider">L</label>
-          <input id="left-face-opacity-slider" type="range" min="0" max="100" step="1" value="80" />
-        </div>
-
-        <div class="inline-field inline-field--slider">
-          <label for="right-face-opacity-slider">R</label>
-          <input id="right-face-opacity-slider" type="range" min="0" max="100" step="1" value="80" />
-        </div>
-      </div>
-
-      <div class="lab-bar__group lab-bar__group--toggles">
-        <label class="inline-check">
-          <input type="checkbox" id="toggle-faces" checked />
-          <span>Faces</span>
-        </label>
-
-        <label class="inline-check">
-          <input type="checkbox" id="toggle-edges" checked />
-          <span>Edges</span>
-        </label>
-      </div>
-
       <div class="lab-bar__group lab-bar__group--transport">
         <button id="reset-btn" class="icon-btn" type="button" aria-label="Reset">↺</button>
         <button id="step-back-btn" class="icon-btn" type="button" aria-label="Step back">|◀</button>
@@ -69,30 +45,75 @@
 
         <div class="stage-zoom" aria-label="Zoom">
           <label for="zoom-slider">Zoom</label>
-          <input id="zoom-slider" type="range" min="4.5" max="60" step="0.1" value="15" />
+          <input id="zoom-slider" type="range" min="4.5" max="60" step="0.1" value="12" />
         </div>
 
         <div class="stage-readout">
-          <div class="stage-readout__item"><span>Tick</span><strong id="metric-turn">0</strong></div>
-          <div class="stage-readout__item"><span>Dist</span><strong id="metric-camera-distance">15.00</strong></div>
-          <div class="stage-readout__item"><span>Yaw</span><strong id="metric-camera-yaw">0.00</strong></div>
-          <div class="stage-readout__item"><span>Pitch</span><strong id="metric-camera-pitch">0.00</strong></div>
+          <div class="stage-readout__item"><span>Tick</span><strong id="metric-turn">900</strong></div>
+          <div class="stage-readout__item"><span>Dist</span><strong id="metric-camera-distance">12.00</strong></div>
+          <div class="stage-readout__item"><span>Yaw</span><strong id="metric-camera-yaw">10.96</strong></div>
+          <div class="stage-readout__item"><span>Pitch</span><strong id="metric-camera-pitch">-0.23</strong></div>
           <div class="stage-readout__item stage-readout__status"><span>Status</span><strong id="status-text">ready</strong></div>
         </div>
       </section>
 
       <aside class="left-rail">
-        <section class="rail-card">
-          <div class="rail-card__title">Render</div>
+        <section class="rail-card" id="primary-mode-card">
+          <div class="rail-card__title">Primary mode</div>
 
           <div class="field">
-            <label for="display-mode-select">Render mode</label>
+            <label for="display-mode-select">Instrument</label>
             <select id="display-mode-select">
-              <option value="prime" selected>Prime</option>
-              <option value="p900_external">P900 External</option>
-              <option value="witness">Witness</option>
+              <option value="p900_external" selected>P900 External Scaffold</option>
+              <option value="prime">Tetra Prime</option>
+              <option value="witness">Tetra Witness</option>
             </select>
+            <p class="control-hint p900-mode-hint">P900 is the primary instrument. Tetrahedron modes remain available as secondary generators.</p>
           </div>
+        </section>
+
+        <section class="rail-card" id="p900-controls-card">
+          <div class="rail-card__title">P900 controls</div>
+
+          <label class="stack-check">
+            <input type="checkbox" id="toggle-p900-states" checked />
+            <span>Show P900 states</span>
+          </label>
+
+          <label class="stack-check">
+            <input type="checkbox" id="toggle-p900-edges" checked />
+            <span>Show external edges</span>
+          </label>
+
+          <p class="control-hint">Post-900 overdrive is simulated beyond the artifact checkpoint.</p>
+        </section>
+
+        <section class="rail-card" id="tetra-controls-card">
+          <div class="rail-card__title">Tetra controls</div>
+
+          <div class="field">
+            <label>Channel opacity</label>
+
+            <div class="inline-field inline-field--slider">
+              <label for="left-face-opacity-slider">L</label>
+              <input id="left-face-opacity-slider" type="range" min="0" max="100" step="1" value="80" />
+            </div>
+
+            <div class="inline-field inline-field--slider">
+              <label for="right-face-opacity-slider">R</label>
+              <input id="right-face-opacity-slider" type="range" min="0" max="100" step="1" value="80" />
+            </div>
+          </div>
+
+          <label class="stack-check">
+            <input type="checkbox" id="toggle-tetra-faces" checked />
+            <span>Show tetra faces</span>
+          </label>
+
+          <label class="stack-check">
+            <input type="checkbox" id="toggle-tetra-edges" checked />
+            <span>Show tetra edges</span>
+          </label>
 
           <label class="stack-check">
             <input type="checkbox" id="toggle-spinors" checked />
@@ -179,7 +200,7 @@ increment_target : 3
 regime           : Seed / mediator
 rung             : 1.5
 aggregation      : none
-active_tetra     : -
+secondary_tetra     : -
 active_face      : -
 active_chirality : -
 spinors          : on
@@ -189,9 +210,9 @@ edges            : on
 color_edges      : on
 left_opacity     : 80%
 right_opacity    : 80%
-camera_distance  : 15.00
-camera_yaw       : 0.00
-camera_pitch     : 0.00
+camera_distance  : 12.00
+camera_yaw       : 10.96
+camera_pitch     : -0.23
 camera_preset    : perspective_default</pre>
 
       <div class="metrics-hidden-bindings" aria-hidden="true">

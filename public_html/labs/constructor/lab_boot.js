@@ -46,7 +46,7 @@ ui.display.leftFaceOpacity = 0.8;
 ui.display.rightFaceOpacity = 0.8;
 ui.display.showAxes = false;
 ui.display.cameraPreset = "perspective_default";
-ui.camera.distance = 12.0;
+ui.camera.distance = 8.0;
 ui.camera.yaw = 11.0;
 ui.camera.pitch = -0.23;
     ui.camera.roll = 0;
@@ -598,14 +598,14 @@ function applyPreset(name) {
     ui.camera.projectionMode = "perspective";
     ui.camera.panX = 0;
     ui.camera.panY = 0;
-    ui.camera.distance = 12;
+    ui.camera.distance = 8;
     ui.camera.yaw = 11.0;
     ui.camera.pitch = -0.23;
   } else if (name === "perspective_15_0_0") {
     ui.camera.projectionMode = "perspective";
     ui.camera.panX = 0;
     ui.camera.panY = 0;
-    ui.camera.distance = 12;
+    ui.camera.distance = 8;
     ui.camera.yaw = 11.0;
     ui.camera.pitch = -0.23;
   } else {

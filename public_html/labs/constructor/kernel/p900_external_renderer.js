@@ -266,11 +266,4 @@ export function renderP900ExternalScene(ctx, canvas, data, project3D, options = 
     });
   }
 
-  ctx.save();
-  ctx.fillStyle = "rgba(232,240,248,0.72)";
-  ctx.font = "12px sans-serif";
-  ctx.fillText(`P900 Simulator: ${echo.simulatedStates} simulated states`, 28, 38);
-  ctx.fillText(`artifact 900, overdrive ${echo.overdrive}`, 28, 56);
-  ctx.fillText("post-900 echo beyond checkpoint", 28, 74);
-  ctx.restore();
 }

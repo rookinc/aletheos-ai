@@ -30,6 +30,7 @@ import {
 import { buildScaffoldPoints, renderScaffold } from "./kernel/d4_render_scaffold.js";
 import { renderPrimeScene } from "./kernel/d4_render_prime.js";
 import { renderWitnessScene } from "./kernel/d4_render_witness.js";
+import { loadP900ExternalData, renderP900ExternalScene } from "./kernel/p900_external_renderer.js";
 
 const engine = new D4GrowthEngine();
 const ui = createUIState();
@@ -109,6 +110,7 @@ const els = {
 let snapshot = engine.snapshot();
 let witnessSnapshot = null;
 let witnessCacheKey = null;
+let p900ExternalData = null;
 let projector = null;
 let orbitFrame = null;
 let playTimer = null;
@@ -182,6 +184,11 @@ async function ensureWitnessSnapshot() {
     ui.witness.scale
   );
   witnessCacheKey = key;
+}
+
+async function ensureP900ExternalData() {
+  if (p900ExternalData) return;
+  p900ExternalData = await loadP900ExternalData();
 }
 
 function formatConsole(readout) {
@@ -289,6 +296,19 @@ async function draw() {
     } catch (err) {
       console.error(err);
       setStatus(ui, "witness fetch failed");
+    }
+  } else if (ui.display.mode === "p900_external") {
+    try {
+      await ensureP900ExternalData();
+      renderP900ExternalScene(ctx, canvas, p900ExternalData, projector, {
+        showFaces: ui.display.showFaces,
+        showEdges: ui.display.showEdges,
+        showLabels: ui.display.showLabels,
+      });
+      setStatus(ui, "P900 external surface");
+    } catch (err) {
+      console.error(err);
+      setStatus(ui, "P900 external load failed");
     }
   } else {
     const spinorPoints = buildScaffoldPoints(snapshot.currentD4s);

@@ -35,7 +35,8 @@ export const D4_DISPLAY_MODES = [
   "prime",
   "prime_plus_composite",
   "hybrid",
-  "witness"
+  "witness",
+  "p900_external"
 ];
 
 export function canonicalPrimeVertices() {

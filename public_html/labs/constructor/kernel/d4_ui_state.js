@@ -65,6 +65,10 @@ export function setDisplayMode(uiState, mode) {
     uiState.display.showScaffold = false;
     uiState.display.showPrime = false;
     uiState.display.showComposite = false;
+  } else if (mode === "p900_external") {
+    uiState.display.showScaffold = false;
+    uiState.display.showPrime = false;
+    uiState.display.showComposite = false;
   }
 
   return uiState.display.mode;

@@ -304,8 +304,9 @@ async function draw() {
         showFaces: ui.display.showFaces,
         showEdges: ui.display.showEdges,
         showLabels: ui.display.showLabels,
+        revealCount: snapshot.currentD4s,
       });
-      setStatus(ui, "P900 external surface");
+      setStatus(ui, `P900 external reveal ${Math.min(snapshot.currentD4s, 900)}/900`);
     } catch (err) {
       console.error(err);
       setStatus(ui, "P900 external load failed");

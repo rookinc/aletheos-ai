@@ -88,7 +88,19 @@ export function renderP900ExternalScene(ctx, canvas, data, project3D, options = 
     showEdges = true,
     showFaces = true,
     showLabels = false,
+    revealCount = 900,
   } = options;
+
+  const visibleCount = Math.max(0, Math.min(900, Math.floor(Number(revealCount) || 0)));
+  const visibleIds = new Set();
+  for (let sector = 0; sector < 15; sector += 1) {
+    for (let local = 0; local < 60; local += 1) {
+      const ordinal = sector * 60 + local + 1;
+      if (ordinal <= visibleCount) {
+        visibleIds.add(`${sector}:${local}`);
+      }
+    }
+  }
 
   const projected = new Map();
   for (const [id, p] of data.points.entries()) {
@@ -97,8 +109,12 @@ export function renderP900ExternalScene(ctx, canvas, data, project3D, options = 
 
   if (showEdges) {
     for (const edge of data.edgeData.external_edges) {
-      const a = projected.get(`${edge.a[0]}:${edge.a[1]}`);
-      const b = projected.get(`${edge.b[0]}:${edge.b[1]}`);
+      const aid = `${edge.a[0]}:${edge.a[1]}`;
+      const bid = `${edge.b[0]}:${edge.b[1]}`;
+      if (!visibleIds.has(aid) || !visibleIds.has(bid)) continue;
+
+      const a = projected.get(aid);
+      const b = projected.get(bid);
       if (!a || !b) continue;
 
       const sameResidue = edge.a[1] % 30 === edge.b[1] % 30;
@@ -114,6 +130,7 @@ export function renderP900ExternalScene(ctx, canvas, data, project3D, options = 
 
   if (showFaces) {
     for (const [id, p] of data.points.entries()) {
+      if (!visibleIds.has(id)) continue;
       const q = projected.get(id);
       const color = p.bit === 0
         ? "rgba(186, 239, 255, 0.68)"
@@ -127,6 +144,7 @@ export function renderP900ExternalScene(ctx, canvas, data, project3D, options = 
     ctx.fillStyle = "rgba(232,240,248,0.72)";
     ctx.font = "10px sans-serif";
     for (const [id, p] of data.points.entries()) {
+      if (!visibleIds.has(id)) continue;
       if (p.local !== 0 && p.local !== 30) continue;
       const q = projected.get(id);
       ctx.fillText(`${p.sector}:${p.local}`, q.x + 4, q.y - 4);
@@ -137,7 +155,7 @@ export function renderP900ExternalScene(ctx, canvas, data, project3D, options = 
   ctx.save();
   ctx.fillStyle = "rgba(232,240,248,0.72)";
   ctx.font = "12px sans-serif";
-  ctx.fillText("P900 External: 30 doubled-G15 sheets", 28, 38);
-  ctx.fillText("external-only scaffold, no internal G60 edges", 28, 56);
+  ctx.fillText(`P900 External: ${visibleCount}/900 states`, 28, 38);
+  ctx.fillText("30 doubled-G15 sheets, no internal G60 edges", 28, 56);
   ctx.restore();
 }

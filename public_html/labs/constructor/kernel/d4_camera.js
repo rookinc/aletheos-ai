@@ -1,7 +1,7 @@
 export function createDefaultCamera() {
   return {
     projection: "perspective",
-    distance: 8.0,
+    distance: 9.0,
     yaw: 11.0,
     pitch: -0.23,
     roll: 0.0,
@@ -17,7 +17,7 @@ export function clamp(value, min, max) {
 
 export function resetCamera(camera) {
   camera.projection = "perspective";
-  camera.distance = 8.0;
+  camera.distance = 9.0;
   camera.yaw = 11.0;
   camera.pitch = -0.23;
   camera.roll = 0.0;

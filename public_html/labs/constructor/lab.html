@@ -8,27 +8,11 @@
 </head>
 <body>
   <div class="lab-shell">
-    <header class="site-header">
-      <div class="site-header__logo">
-        <div class="logo-box">LOGO</div>
-      </div>
-
-      <div class="site-header__main">
-        <nav class="site-nav" aria-label="Site navigation">
-          <a href="/" class="site-nav__item site-nav__item--home">Home</a>
-          <a href="#" class="site-nav__item">Site Nav</a>
-          <a href="#" class="site-nav__item">Site Nav</a>
-          <a href="#" class="site-nav__item">Site Nav</a>
-          <div class="site-nav__lab">LAB</div>
-        </nav>
-
-        <button id="settings-btn" class="icon-btn settings-btn" type="button" aria-label="Settings">
-          ⚙
-        </button>
-      </div>
+    <header class="site-header site-header--lab-minimal">
+      <a class="lab-return-btn" href="/labs.php">Back to Labs</a>
     </header>
 
-    <section class="lab-bar" aria-label="Lab controls">
+<section class="lab-bar" aria-label="Lab controls">
       <div class="lab-bar__group lab-bar__group--transport">
         <button id="reset-btn" class="icon-btn" type="button" aria-label="Reset">↺</button>
         <button id="step-back-btn" class="icon-btn" type="button" aria-label="Step back">|◀</button>
@@ -88,12 +72,12 @@
 
         <div class="stage-zoom" aria-label="Zoom">
           <label for="zoom-slider">Zoom</label>
-          <input id="zoom-slider" type="range" min="4.5" max="60" step="0.1" value="8" />
+          <input id="zoom-slider" type="range" min="4.5" max="60" step="0.1" value="9" />
         </div>
 
         <div class="stage-readout">
           <div class="stage-readout__item"><span>Tick</span><strong id="metric-turn">900</strong></div>
-          <div class="stage-readout__item"><span>Dist</span><strong id="metric-camera-distance">8.00</strong></div>
+          <div class="stage-readout__item"><span>Dist</span><strong id="metric-camera-distance">9.00</strong></div>
           <div class="stage-readout__item"><span>Yaw</span><strong id="metric-camera-yaw">11.00</strong></div>
           <div class="stage-readout__item"><span>Pitch</span><strong id="metric-camera-pitch">-0.23</strong></div>
           <div class="stage-readout__item stage-readout__status"><span>Status</span><strong id="status-text">ready</strong></div>
@@ -189,7 +173,7 @@
 
           <div class="field">
             <label for="hz-input">Rate (Hz)</label>
-            <input id="hz-input" type="number" min="1" step="1" value="30" />
+            <input id="hz-input" type="number" min="1" step="1" value="72" />
           </div>
         </section>
 
@@ -253,7 +237,7 @@ edges            : on
 color_edges      : on
 left_opacity     : 80%
 right_opacity    : 80%
-camera_distance  : 8.00
+camera_distance  : 9.00
 camera_yaw       : 11.00
 camera_pitch     : -0.23
 camera_preset    : perspective_default</pre>

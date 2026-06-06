@@ -2,8 +2,9 @@ export function createDefaultCamera() {
   return {
     projection: "perspective",
     distance: 12.0,
-    yaw: 10.96,
+    yaw: 11.0,
     pitch: -0.23,
+    roll: 0.0,
     panX: 0.0,
     panY: 0.0,
     orbitEnabled: false,
@@ -17,8 +18,9 @@ export function clamp(value, min, max) {
 export function resetCamera(camera) {
   camera.projection = "perspective";
   camera.distance = 12.0;
-  camera.yaw = 10.96;
+  camera.yaw = 11.0;
   camera.pitch = -0.23;
+  camera.roll = 0.0;
   camera.panX = 0.0;
   camera.panY = 0.0;
   camera.orbitEnabled = false;
@@ -45,9 +47,20 @@ export function rotateX(point, angle) {
   };
 }
 
+export function rotateZ(point, angle) {
+  const c = Math.cos(angle);
+  const s = Math.sin(angle);
+  return {
+    x: c * point.x - s * point.y,
+    y: s * point.x + c * point.y,
+    z: point.z,
+  };
+}
+
 export function projectPoint(point, camera, viewport) {
   let q = rotateY(point, camera.yaw);
   q = rotateX(q, camera.pitch);
+  q = rotateZ(q, camera.roll || 0);
 
   q.x += camera.panX;
   q.y += camera.panY;
@@ -106,6 +119,7 @@ export function toggleOrbit(camera) {
 }
 
 export function applyCameraPreset(camera, preset) {
+  camera.roll = 0.0;
   switch (preset) {
     case "front":
       camera.yaw = 0.0;
@@ -166,6 +180,7 @@ export function cameraReadout(camera) {
     distance: camera.distance.toFixed(2),
     yaw: camera.yaw.toFixed(2),
     pitch: camera.pitch.toFixed(2),
+    roll: (camera.roll || 0).toFixed(2),
     panX: camera.panX.toFixed(2),
     panY: camera.panY.toFixed(2),
     orbitEnabled: camera.orbitEnabled,

@@ -39,6 +39,49 @@
 
     <main class="workspace">
       <section class="stage-column">
+        <div class="rotate-toolbar" aria-label="Rotate controls">
+          <div class="rotate-toolbar__head">
+            <span class="rotate-toolbar__title">Rotate</span>
+            <label class="rotate-toolbar__auto">
+              <input type="checkbox" id="rotate-auto-toggle" />
+              <span>Auto</span>
+            </label>
+          </div>
+
+          <div class="rotate-rocker">
+            <label class="rotate-rocker__flag">
+              <input type="checkbox" id="rotate-pitch-enabled" checked />
+              <span>Pitch</span>
+            </label>
+            <div class="rotate-rocker__buttons">
+              <button id="rotate-pitch-up-btn" class="rotate-btn" type="button" aria-label="Pitch up">Up</button>
+              <button id="rotate-pitch-down-btn" class="rotate-btn" type="button" aria-label="Pitch down">Down</button>
+            </div>
+          </div>
+
+          <div class="rotate-rocker">
+            <label class="rotate-rocker__flag">
+              <input type="checkbox" id="rotate-yaw-enabled" checked />
+              <span>Yaw</span>
+            </label>
+            <div class="rotate-rocker__buttons">
+              <button id="rotate-yaw-left-btn" class="rotate-btn" type="button" aria-label="Yaw left">Left</button>
+              <button id="rotate-yaw-right-btn" class="rotate-btn" type="button" aria-label="Yaw right">Right</button>
+            </div>
+          </div>
+
+          <div class="rotate-rocker">
+            <label class="rotate-rocker__flag">
+              <input type="checkbox" id="rotate-roll-enabled" checked />
+              <span>Roll</span>
+            </label>
+            <div class="rotate-rocker__buttons">
+              <button id="rotate-roll-left-btn" class="rotate-btn" type="button" aria-label="Roll left">CCW</button>
+              <button id="rotate-roll-right-btn" class="rotate-btn" type="button" aria-label="Roll right">CW</button>
+            </div>
+          </div>
+        </div>
+
         <div class="stage-frame">
           <canvas id="stage-canvas"></canvas>
         </div>
@@ -51,7 +94,7 @@
         <div class="stage-readout">
           <div class="stage-readout__item"><span>Tick</span><strong id="metric-turn">900</strong></div>
           <div class="stage-readout__item"><span>Dist</span><strong id="metric-camera-distance">12.00</strong></div>
-          <div class="stage-readout__item"><span>Yaw</span><strong id="metric-camera-yaw">10.96</strong></div>
+          <div class="stage-readout__item"><span>Yaw</span><strong id="metric-camera-yaw">11.00</strong></div>
           <div class="stage-readout__item"><span>Pitch</span><strong id="metric-camera-pitch">-0.23</strong></div>
           <div class="stage-readout__item stage-readout__status"><span>Status</span><strong id="status-text">ready</strong></div>
         </div>
@@ -211,7 +254,7 @@ color_edges      : on
 left_opacity     : 80%
 right_opacity    : 80%
 camera_distance  : 12.00
-camera_yaw       : 10.96
+camera_yaw       : 11.00
 camera_pitch     : -0.23
 camera_preset    : perspective_default</pre>
 

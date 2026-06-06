@@ -47,8 +47,9 @@ ui.display.rightFaceOpacity = 0.8;
 ui.display.showAxes = false;
 ui.display.cameraPreset = "perspective_default";
 ui.camera.distance = 12.0;
-ui.camera.yaw = 10.96;
+ui.camera.yaw = 11.0;
 ui.camera.pitch = -0.23;
+    ui.camera.roll = 0;
 ui.camera.orbitEnabled = false;
 
 const canvas = document.getElementById("stage-canvas");
@@ -82,6 +83,16 @@ const els = {
   toggleAxes: document.getElementById("toggle-axes"),
   toggleLabels: document.getElementById("toggle-labels"),
   zoomSlider: document.getElementById("zoom-slider"),
+  rotateAutoToggle: document.getElementById("rotate-auto-toggle"),
+  rotatePitchEnabled: document.getElementById("rotate-pitch-enabled"),
+  rotateYawEnabled: document.getElementById("rotate-yaw-enabled"),
+  rotateRollEnabled: document.getElementById("rotate-roll-enabled"),
+  rotatePitchUpBtn: document.getElementById("rotate-pitch-up-btn"),
+  rotatePitchDownBtn: document.getElementById("rotate-pitch-down-btn"),
+  rotateYawLeftBtn: document.getElementById("rotate-yaw-left-btn"),
+  rotateYawRightBtn: document.getElementById("rotate-yaw-right-btn"),
+  rotateRollLeftBtn: document.getElementById("rotate-roll-left-btn"),
+  rotateRollRightBtn: document.getElementById("rotate-roll-right-btn"),
 
   statusText: document.getElementById("status-text"),
   metricTurn: document.getElementById("metric-turn"),
@@ -124,6 +135,8 @@ let p900ContinuePastReveal = false;
 let projector = null;
 let orbitFrame = null;
 let playTimer = null;
+let rotateTimer = null;
+let activeRotate = null;
 
 function sliderPctToAlpha(value) {
   return clamp(Number(value) / 100, 0, 1);
@@ -249,6 +262,7 @@ function formatP900Console(readout) {
     `camera_distance  : ${readout.camera.distance}`,
     `camera_yaw       : ${readout.camera.yaw}`,
     `camera_pitch     : ${readout.camera.pitch}`,
+    `camera_roll      : ${readout.camera.roll}`,
     `faces            : ${ui.display.showFaces ? "on" : "off"}`,
     `edges            : ${ui.display.showEdges ? "on" : "off"}`,
     `source           : /json/p900/`
@@ -416,6 +430,91 @@ async function draw() {
   updateReadouts();
 }
 
+function wrapAngle(value) {
+  const tau = Math.PI * 2;
+  let x = Number(value) || 0;
+
+  while (x > Math.PI) x -= tau;
+  while (x <= -Math.PI) x += tau;
+
+  return x;
+}
+
+function rotateStep(axis, direction, amount = 0.08) {
+  const delta = Number(direction) * amount;
+
+  if (axis === "pitch") {
+    ui.camera.pitch = wrapAngle((ui.camera.pitch || 0) + delta);
+  } else if (axis === "yaw") {
+    ui.camera.yaw = wrapAngle((ui.camera.yaw || 0) + delta);
+  } else if (axis === "roll") {
+    ui.camera.roll = wrapAngle((ui.camera.roll || 0) + delta);
+  }
+
+  setStatus(ui, `rotate ${axis} ${direction > 0 ? "plus" : "minus"}`);
+}
+
+function rotateAxisEnabled(axis) {
+  if (axis === "pitch") return els.rotatePitchEnabled?.checked ?? true;
+  if (axis === "yaw") return els.rotateYawEnabled?.checked ?? true;
+  if (axis === "roll") return els.rotateRollEnabled?.checked ?? true;
+  return false;
+}
+
+function stopRotateTimer() {
+  if (rotateTimer !== null) {
+    clearInterval(rotateTimer);
+    rotateTimer = null;
+  }
+  activeRotate = null;
+}
+
+function startRotateTimer(axis, direction) {
+  stopRotateTimer();
+  activeRotate = { axis, direction };
+  rotateTimer = setInterval(() => {
+    if (!rotateAxisEnabled(axis)) {
+      stopRotateTimer();
+      void draw();
+      return;
+    }
+    rotateStep(axis, direction, 0.035);
+    void draw();
+  }, 33);
+}
+
+function handleRotateButton(axis, direction) {
+  if (!rotateAxisEnabled(axis)) {
+    setStatus(ui, `rotate ${axis} is off`);
+    void draw();
+    return;
+  }
+
+  const auto = els.rotateAutoToggle?.checked ?? false;
+
+  if (!auto) {
+    stopRotateTimer();
+    rotateStep(axis, direction, 0.10);
+    void draw();
+    return;
+  }
+
+  if (
+    activeRotate &&
+    activeRotate.axis === axis &&
+    activeRotate.direction === direction
+  ) {
+    stopRotateTimer();
+    setStatus(ui, `rotate ${axis} stopped`);
+    void draw();
+    return;
+  }
+
+  startRotateTimer(axis, direction);
+  setStatus(ui, `rotate ${axis} auto ${direction > 0 ? "plus" : "minus"}`);
+  void draw();
+}
+
 function stopPlayTimer() {
   if (playTimer !== null) {
     clearInterval(playTimer);
@@ -500,14 +599,14 @@ function applyPreset(name) {
     ui.camera.panX = 0;
     ui.camera.panY = 0;
     ui.camera.distance = 12;
-    ui.camera.yaw = 10.96;
+    ui.camera.yaw = 11.0;
     ui.camera.pitch = -0.23;
   } else if (name === "perspective_15_0_0") {
     ui.camera.projectionMode = "perspective";
     ui.camera.panX = 0;
     ui.camera.panY = 0;
     ui.camera.distance = 12;
-    ui.camera.yaw = 10.96;
+    ui.camera.yaw = 11.0;
     ui.camera.pitch = -0.23;
   } else {
     applyCameraPreset(ui.camera, name);
@@ -638,6 +737,24 @@ els.playBtn?.addEventListener("click", () => {
   }
   void draw();
 });
+
+els.rotatePitchUpBtn?.addEventListener("click", () => handleRotateButton("pitch", 1));
+els.rotatePitchDownBtn?.addEventListener("click", () => handleRotateButton("pitch", -1));
+els.rotateYawLeftBtn?.addEventListener("click", () => handleRotateButton("yaw", -1));
+els.rotateYawRightBtn?.addEventListener("click", () => handleRotateButton("yaw", 1));
+els.rotateRollLeftBtn?.addEventListener("click", () => handleRotateButton("roll", -1));
+els.rotateRollRightBtn?.addEventListener("click", () => handleRotateButton("roll", 1));
+
+[
+  els.rotatePitchEnabled,
+  els.rotateYawEnabled,
+  els.rotateRollEnabled,
+  els.rotateAutoToggle
+].forEach((el) => el?.addEventListener("change", () => {
+  if (!(els.rotateAutoToggle?.checked ?? false)) stopRotateTimer();
+  if (activeRotate && !rotateAxisEnabled(activeRotate.axis)) stopRotateTimer();
+  void draw();
+}));
 
 canvas.addEventListener("contextmenu", (event) => event.preventDefault());
 

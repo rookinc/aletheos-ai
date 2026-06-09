@@ -13,6 +13,8 @@ const els = {
   toggleEdges: document.getElementById("toggle-edges"),
   toggleLabels: document.getElementById("toggle-labels"),
   togglePulse: document.getElementById("toggle-pulse"),
+  edgeAlphaSlider: document.getElementById("edge-alpha-slider"),
+  vertexScaleSlider: document.getElementById("vertex-scale-slider"),
   zoomSlider: document.getElementById("zoom-slider"),
   autoRotateToggle: document.getElementById("auto-rotate-toggle"),
   yawLeftBtn: document.getElementById("yaw-left-btn"),
@@ -45,6 +47,8 @@ function options() {
     showEdges: els.toggleEdges.checked,
     showLabels: els.toggleLabels.checked,
     pulse: els.togglePulse.checked,
+    edgeAlpha: Number(els.edgeAlphaSlider.value) / 100,
+    vertexScale: Number(els.vertexScaleSlider.value) / 100,
   };
 }
 
@@ -67,6 +71,8 @@ function consoleText(o) {
     "identity_set     : " + c.identity_set.join(","),
     "edge_classes     : " + JSON.stringify(c.edge_class_counts),
     "rendered_edges   : " + buildEdges(c, o.view).length,
+    "edge_opacity     : " + o.edgeAlpha.toFixed(2),
+    "vertex_scale     : " + o.vertexScale.toFixed(2),
     "motion           : visual inspection only",
     "boundary         : no states added beyond artifact vertices",
     "claim_status     : renderer inspection, not final law",
@@ -125,6 +131,8 @@ function bindControls() {
     els.toggleEdges,
     els.toggleLabels,
     els.togglePulse,
+    els.edgeAlphaSlider,
+    els.vertexScaleSlider,
     els.autoRotateToggle,
   ]) {
     el.addEventListener("change", draw);

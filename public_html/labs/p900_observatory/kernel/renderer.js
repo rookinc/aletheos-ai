@@ -17,11 +17,11 @@ function resizeCanvas(canvas, ctx) {
   return { width: rect.width, height: rect.height };
 }
 
-function edgeColor(kind) {
-  if (kind === "internal_same_sector") return "rgba(156, 227, 176, 0.34)";
-  if (kind === "external_half_turn_mod30") return "rgba(217, 184, 108, 0.46)";
-  if (kind === "external_identity_same_local") return "rgba(120, 170, 255, 0.38)";
-  return "rgba(220, 230, 245, 0.26)";
+function edgeColor(kind, alpha) {
+  if (kind === "internal_same_sector") return "rgba(156, 227, 176, " + alpha + ")";
+  if (kind === "external_half_turn_mod30") return "rgba(217, 184, 108, " + alpha + ")";
+  if (kind === "external_identity_same_local") return "rgba(120, 170, 255, " + alpha + ")";
+  return "rgba(220, 230, 245, " + alpha + ")";
 }
 
 function vertexColor(p, view) {
@@ -45,6 +45,8 @@ export function renderScene(ctx, canvas, scene, camera, options) {
   ctx.clearRect(0, 0, viewport.width, viewport.height);
 
   const projected = new Map();
+  const edgeAlpha = Math.max(0.02, Math.min(1, Number(options.edgeAlpha ?? 0.38)));
+  const vertexScale = Math.max(0.2, Math.min(3, Number(options.vertexScale ?? 1)));
 
   for (const p of scene.vertices) {
     projected.set(p.id, {
@@ -76,8 +78,8 @@ export function renderScene(ctx, canvas, scene, camera, options) {
       const b = item.b.screen;
 
       ctx.save();
-      ctx.strokeStyle = edgeColor(item.edge.kind);
-      ctx.lineWidth = item.edge.kind === "internal_same_sector" ? 0.75 : 1.0;
+      ctx.strokeStyle = edgeColor(item.edge.kind, edgeAlpha);
+      ctx.lineWidth = item.edge.kind === "internal_same_sector" ? 0.55 : 0.75;
       ctx.beginPath();
       ctx.moveTo(a.x, a.y);
       ctx.lineTo(b.x, b.y);
@@ -92,7 +94,7 @@ export function renderScene(ctx, canvas, scene, camera, options) {
     for (const item of points) {
       const p = item.raw;
       const q = item.screen;
-      const r = Math.max(1.5, Math.min(4.4, q.scale * 0.018));
+      const r = Math.max(1.0, Math.min(4.8, q.scale * 0.018 * vertexScale));
 
       ctx.save();
       ctx.fillStyle = vertexColor(p, scene.view);

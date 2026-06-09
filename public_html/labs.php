@@ -33,7 +33,8 @@ include __DIR__ . '/includes/site_header.php';
         </p>
 
         <div class="hero-actions" aria-label="Lab actions">
-          <a class="button button--primary" href="/labs/constructor/lab.html">Open the constructor</a>
+          <a class="button button--primary" href="/labs/relational_witness/lab.html">Open the relational witness lab</a>
+          <a class="button button--secondary" href="/labs/constructor/lab.html">Open the constructor</a>
           <a class="button button--secondary" href="/labs/informative_action/collapse_witness.php">Open the witness lens</a>
           <a class="button button--secondary" href="/research/from-circle-to-thalion.php">What is a Thalion?</a>
         </div>
@@ -81,6 +82,15 @@ include __DIR__ . '/includes/site_header.php';
         <p>
           The theorem-facing public surface for the canonical finite object,
           verification records, and companion papers.
+        </p>
+      </a>
+
+      <a class="index-card feature-card" href="/labs/relational_witness/lab.html">
+        <span class="card-label">Admissibility lab</span>
+        <h3>Relational Witness Lab</h3>
+        <p>
+          Inspect finite witness systems for surface coherence, projection,
+          observed closure, independent witness, and admission.
         </p>
       </a>
 
@@ -157,8 +167,17 @@ include __DIR__ . '/includes/site_header.php';
     </div>
 
     <div class="card-grid">
-      <a class="index-card feature-card" href="/labs/informative_action/collapse_witness.php">
+      <a class="index-card feature-card" href="/labs/relational_witness/lab.html">
         <span class="card-label">Active lab</span>
+        <h3>Relational Witness Lab</h3>
+        <p>
+          A finite witness renderer for checking the strict ladder from surface
+          coherence to projection, observed closure, witness, and admission.
+        </p>
+      </a>
+
+      <a class="index-card" href="/labs/informative_action/collapse_witness.php">
+        <span class="card-label">Quotient lab</span>
         <h3>Collapse Witness Lens</h3>
         <p>
           An experimental visual lens for exploring boundary, collapse, release,

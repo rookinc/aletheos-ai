@@ -66,27 +66,23 @@ function vertexColor(p, view) {
 export function renderScene(ctx, canvas, scene, camera, options) {
   const viewport = resizeCanvas(canvas, ctx);
 
-  if (options.trailEnabled) {
-    ctx.save();
-    ctx.fillStyle = "rgba(5, 9, 15, " + String(Math.max(0.02, Math.min(0.9, options.trailAmount ?? 0.16))) + ")";
-    ctx.fillRect(0, 0, viewport.width, viewport.height);
-    ctx.restore();
-  } else {
-    ctx.clearRect(0, 0, viewport.width, viewport.height);
+  if (!options.preserveCanvas) {
+    if (options.trailEnabled) {
+      ctx.save();
+      ctx.fillStyle = "rgba(5, 9, 15, " + String(Math.max(0.02, Math.min(0.9, options.trailAmount ?? 0.16))) + ")";
+      ctx.fillRect(0, 0, viewport.width, viewport.height);
+      ctx.restore();
+    } else {
+      ctx.clearRect(0, 0, viewport.width, viewport.height);
+    }
   }
 
-  const edgeEnabled = domChecked("edge-toggle", options.showEdges ?? true);
-  const vertexEnabled = domChecked("vertex-toggle", options.showVertices ?? true);
-  const edgeOpacity = domSlider("edge-opacity-slider", 1);
-  const vertexOpacity = domSlider("vertex-opacity-slider", 1);
-
-  setReadout("edge-opacity-readout", edgeOpacity);
-  setReadout("vertex-opacity-readout", vertexOpacity);
-
   const projected = new Map();
-  const edgeAlpha = Math.max(0, Math.min(1, Number(options.edgeAlpha ?? 0.38))) * edgeOpacity;
+  const edgeAlpha = Math.max(0, Math.min(1, Number(options.edgeAlpha ?? 0.38)));
   const vertexScale = Math.max(0.2, Math.min(3, Number(options.vertexScale ?? 1)));
-  const vertexAlpha = vertexOpacity;
+  const vertexAlpha = Math.max(0, Math.min(1, Number(options.vertexAlpha ?? 1)));
+  const edgeEnabled = options.showEdges ?? true;
+  const vertexEnabled = options.showVertices ?? true;
 
   const usableCenterOffsetX = 18;
 

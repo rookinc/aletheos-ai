@@ -11,10 +11,13 @@
     <div>
       <p class="eyebrow"><a href="/labs.php">Aletheos Labs</a></p>
       <h1>P900 Surface Observatory</h1>
-      <p class="lede">
-        A fixed 900-point structure, shown as a moving surface. The motion is only
-        for viewing. The underlying data does not change.
-      </p>
+      <details class="lede p900-instructions">
+          <summary>Instructions</summary>
+          <p>
+            A fixed 900-point structure, shown as a moving surface.
+            The motion is only for viewing. The underlying data does not change.
+          </p>
+        </details>
     </div>
  
   </header>
@@ -28,6 +31,13 @@
           <button id="reset-btn" class="mini-transport-btn" type="button" aria-label="Reset view">↻</button>
           <button id="step-forward-btn" class="mini-transport-btn" type="button" aria-label="Step forward one sheet">⟫</button>
         </div>
+
+          <div class="camera-preset-row" aria-label="Graph reading presets">
+            <span>Read</span>
+            <button id="camera-preset-1" class="camera-preset-btn" type="button" aria-label="Axis reading">Axis</button>
+            <button id="camera-preset-2" class="camera-preset-btn" type="button" aria-label="Ring reading">Ring</button>
+            <button id="camera-preset-3" class="camera-preset-btn" type="button" aria-label="Shear reading">Shear</button>
+          </div>
 
         <div class="rate-control sheet-rate-control">
           <label for="sheet-rate-slider">Sheets/sec</label>
@@ -53,7 +63,7 @@
 
         <canvas id="stage-canvas"></canvas>
         <span id="status-text" class="visually-hidden">loading</span>
-        <span id="camera-text" class="visually-hidden">camera</span>
+        <span id="camera-text" class="camera-overlay">camera</span>
       </section>
     </section>
 
@@ -61,22 +71,41 @@
     <section class="card settings-card">
       <h2>Settings</h2>
 
-      <div class="layer-control">
-        <label for="layer-select">Layer</label>
-        <select id="layer-select">
-          <option value="toroidal_surface" selected>Toroidal surface</option>
-          <option value="internal_g60">Internal G60 bodies</option>
-          <option value="combined">Combined body plus surface</option>
-        </select>
+        <div class="settings-preset-row">
+          <label for="settings-preset-select">Preset</label>
+          <select id="settings-preset-select" aria-label="Settings preset">
+            <option value="default" selected>Default</option>
+            <option value="cloud">Cloud</option>
+            <option value="balanced">Balanced</option>
+            <option value="trinity">Trinity</option>
+            <option value="body_ring">Body ring</option>
+            <option value="ectoplasm">Ectoplasm</option>
+            <option value="surface_scan">Surface scan</option>
+            <option value="spine">Spine</option>
+          </select>
+        </div>
+
+      <div class="view-fader-stack" aria-label="Layer faders">
+        <div class="rate-control mixer-entry-row layer-fader-row">
+          <label for="surface-opacity-slider">Surface</label>
+          <input id="surface-opacity-slider" type="range" min="0" max="100" step="1" value="50" />
+          <span id="surface-opacity-readout">50%</span>
+        </div>
+
+        <div class="rate-control mixer-entry-row layer-fader-row">
+          <label for="body-opacity-slider">Body</label>
+          <input id="body-opacity-slider" type="range" min="0" max="100" step="1" value="50" />
+          <span id="body-opacity-readout">50%</span>
+        </div>
       </div>
 
       <div class="rate-control mixer-entry-row">
         <label class="mixer-check-label">
-          <input type="checkbox" id="trail-toggle" />
+          <input type="checkbox" id="trail-toggle" checked />
           <span>Trail</span>
         </label>
-        <input id="trail-slider" type="range" min="0.02" max="0.45" step="0.01" value="0.16" />
-          <span id="trail-readout">0.16</span>
+        <input id="trail-slider" type="range" min="0" max="100" step="1" value="67" />
+          <span id="trail-readout">67%</span>
       </div>
 <div class="rate-control mixer-entry-row">
           <label class="mixer-check-label">

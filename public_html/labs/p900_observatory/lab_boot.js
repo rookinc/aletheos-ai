@@ -11,7 +11,14 @@ const els = {
   playPauseBtn: document.getElementById("play-pause-btn"),
   stepForwardBtn: document.getElementById("step-forward-btn"),
   resetBtn: document.getElementById("reset-btn"),
+  cameraPreset1Btn: document.getElementById("camera-preset-1"),
+  cameraPreset2Btn: document.getElementById("camera-preset-2"),
+  cameraPreset3Btn: document.getElementById("camera-preset-3"),
   layerSelect: document.getElementById("layer-select"),
+  surfaceOpacitySlider: document.getElementById("surface-opacity-slider"),
+  surfaceOpacityReadout: document.getElementById("surface-opacity-readout"),
+  bodyOpacitySlider: document.getElementById("body-opacity-slider"),
+  bodyOpacityReadout: document.getElementById("body-opacity-readout"),
   touchResponseToggle: document.getElementById("touch-response-toggle"),
   sheetRateSlider: document.getElementById("sheet-rate-slider"),
   sheetRateReadout: document.getElementById("sheet-rate-readout"),
@@ -22,9 +29,16 @@ const els = {
   trailReadout: document.getElementById("trail-readout"),
   trailNumber: document.getElementById("trail-number"),
   trailApplyBtn: document.getElementById("trail-apply"),
+  edgeToggle: document.getElementById("edge-toggle"),
+  edgeOpacitySlider: document.getElementById("edge-opacity-slider"),
+  edgeOpacityReadout: document.getElementById("edge-opacity-readout"),
+  vertexToggle: document.getElementById("vertex-toggle"),
+  vertexOpacitySlider: document.getElementById("vertex-opacity-slider"),
+  vertexOpacityReadout: document.getElementById("vertex-opacity-readout"),
   fpsReadout: document.getElementById("fps-readout"),
   statusText: document.getElementById("status-text"),
   cameraText: document.getElementById("camera-text"),
+  settingsPresetSelect: document.getElementById("settings-preset-select"),
   metricsConsole: document.getElementById("metrics-console"),
 };
 
@@ -66,8 +80,152 @@ const ZOOM_MIN = 0.85;
 const ZOOM_MAX = 80;
 const SHEET_COUNT = 30;
 
+const SETTINGS_PRESETS = {
+  default: {
+    sheetRate: 30,
+    surface: 50,
+    body: 50,
+    trailOn: true,
+    trail: 67,
+    edgesOn: true,
+    edgeOpacity: 1,
+    verticesOn: true,
+    vertexOpacity: 1,
+    cameraPreset: 1,
+  },
+  cloud: {
+    sheetRate: 656.75,
+    surface: 13,
+    body: 25,
+    trailOn: true,
+    trail: 67,
+    edgesOn: true,
+    edgeOpacity: 1,
+    verticesOn: true,
+    vertexOpacity: 1,
+    camera: {
+      distance: 9,
+      yawDeg: 1845,
+      pitchDeg: 245,
+      rollDeg: 0,
+    },
+  },
+  balanced: {
+    sheetRate: 30,
+    surface: 50,
+    body: 50,
+    trailOn: true,
+    trail: 67,
+    edgesOn: true,
+    edgeOpacity: 1,
+    verticesOn: true,
+    vertexOpacity: 1,
+    cameraPreset: 1,
+  },
+  trinity: {
+    sheetRate: 614.75,
+    surface: 0,
+    body: 62,
+    trailOn: true,
+    trail: 0,
+    edgesOn: true,
+    edgeOpacity: 1,
+    verticesOn: true,
+    vertexOpacity: 0.84,
+    camera: {
+      distance: 9,
+      yawDeg: 1765,
+      pitchDeg: 278,
+      rollDeg: 0,
+    },
+  },
+  body_ring: {
+    sheetRate: 30,
+    surface: 0,
+    body: 62,
+    trailOn: true,
+    trail: 0,
+    edgesOn: true,
+    edgeOpacity: 1,
+    verticesOn: true,
+    vertexOpacity: 0.84,
+    cameraPreset: 2,
+  },
+  ectoplasm: {
+    sheetRate: 741,
+    surface: 0,
+    body: 4,
+    trailOn: true,
+    trail: 100,
+    edgesOn: true,
+    edgeOpacity: 0.82,
+    verticesOn: true,
+    vertexOpacity: 0.11,
+    camera: {
+      distance: 9,
+      yawDeg: 1797,
+      pitchDeg: 283,
+      rollDeg: 0,
+    },
+  },
+  surface_scan: {
+    sheetRate: 30,
+    surface: 100,
+    body: 0,
+    trailOn: true,
+    trail: 67,
+    edgesOn: true,
+    edgeOpacity: 1,
+    verticesOn: true,
+    vertexOpacity: 1,
+    cameraPreset: 1,
+  },
+  spine: {
+    sheetRate: 960,
+    surface: 0,
+    body: 15,
+    trailOn: true,
+    trail: 99,
+    edgesOn: true,
+    edgeOpacity: 1,
+    verticesOn: true,
+    vertexOpacity: 1,
+    camera: {
+      distance: 9,
+      yawDeg: 2060,
+      pitchDeg: 76,
+      rollDeg: 0,
+    },
+  },
+};
+
+
 function layer() {
   return LAYERS[els.layerSelect?.value] || LAYERS.toroidal_surface;
+}
+
+function percentSliderValue(sliderEl, fallback) {
+  const n = Number(sliderEl?.value ?? fallback);
+  if (!Number.isFinite(n)) return fallback;
+  return Math.max(0, Math.min(100, n));
+}
+
+function surfaceOpacity() {
+  return percentSliderValue(els.surfaceOpacitySlider, 50) / 100;
+}
+
+function bodyOpacity() {
+  return percentSliderValue(els.bodyOpacitySlider, 50) / 100;
+}
+
+function faderViewLabel() {
+  const s = surfaceOpacity();
+  const b = bodyOpacity();
+
+  if (s > 0 && b > 0) return "Surface plus body";
+  if (s > 0) return "Surface";
+  if (b > 0) return "Body";
+  return "Hidden";
 }
 
 function wrapAngle(value) {
@@ -99,6 +257,24 @@ function resetView() {
   playing = false;
   tick = 0;
   applyLayerCamera();
+  draw();
+}
+
+function setCameraPreset(presetId) {
+  if (presetId === 1) {
+    applyLayerCamera();
+  } else if (presetId === 2) {
+    camera.distance = 9;
+    camera.yaw = 1797 * Math.PI / 180;
+    camera.pitch = 189 * Math.PI / 180;
+    camera.roll = 0;
+  } else if (presetId === 3) {
+    camera.distance = 9;
+    camera.yaw = 1837 * Math.PI / 180;
+    camera.pitch = 268 * Math.PI / 180;
+    camera.roll = 0;
+  }
+
   draw();
 }
 
@@ -139,18 +315,90 @@ function syncSheetRateNumber() {
   els.sheetRateNumber.value = sheetRate().toFixed(2);
 }
 
+function trailPercent() {
+  return Math.max(0, Math.min(100, Number(els.trailSlider?.value ?? 67)));
+}
+
 function trailAmount() {
-  return Number(els.trailSlider?.value ?? 0.16);
+  const minFade = 0.02;
+  const maxFade = 0.45;
+  const strength = trailPercent() / 100;
+  return maxFade - (maxFade - minFade) * strength;
 }
 
 function trailEnabled() {
   return !!els.trailToggle?.checked;
 }
 
+function edgeEnabled() {
+  return els.edgeToggle?.checked ?? true;
+}
+
+function vertexEnabled() {
+  return els.vertexToggle?.checked ?? true;
+}
+
+function edgeOpacity() {
+  const n = Number(els.edgeOpacitySlider?.value ?? 1);
+  if (!Number.isFinite(n)) return 1;
+  return Math.max(0, Math.min(1, n));
+}
+
+function vertexOpacity() {
+  const n = Number(els.vertexOpacitySlider?.value ?? 1);
+  if (!Number.isFinite(n)) return 1;
+  return Math.max(0, Math.min(1, n));
+}
+
+function setSliderValue(sliderEl, value) {
+  if (sliderEl) sliderEl.value = String(value);
+}
+
+function setCheckboxValue(checkEl, value) {
+  if (checkEl) checkEl.checked = !!value;
+}
+
+function applySettingsPreset(presetName) {
+  const preset = SETTINGS_PRESETS[presetName];
+  if (!preset) return;
+
+  const rate = clampSheetRate(preset.sheetRate);
+  setSliderValue(els.sheetRateSlider, rate);
+  if (els.sheetRateNumber) els.sheetRateNumber.value = rate.toFixed(2);
+
+  setSliderValue(els.surfaceOpacitySlider, preset.surface);
+  setSliderValue(els.bodyOpacitySlider, preset.body);
+
+  setCheckboxValue(els.trailToggle, preset.trailOn);
+  setSliderValue(els.trailSlider, preset.trail);
+
+  setCheckboxValue(els.edgeToggle, preset.edgesOn);
+  setSliderValue(els.edgeOpacitySlider, preset.edgeOpacity);
+
+  setCheckboxValue(els.vertexToggle, preset.verticesOn);
+  setSliderValue(els.vertexOpacitySlider, preset.vertexOpacity);
+
+  if (preset.camera) {
+    camera.distance = preset.camera.distance;
+    camera.yaw = preset.camera.yawDeg * Math.PI / 180;
+    camera.pitch = preset.camera.pitchDeg * Math.PI / 180;
+    camera.roll = preset.camera.rollDeg * Math.PI / 180;
+  } else if (preset.cameraPreset) {
+    setCameraPreset(preset.cameraPreset);
+  }
+
+  updateRateReadout();
+  draw();
+}
+
 function updateRateReadout() {
   if (els.sheetRateReadout) els.sheetRateReadout.textContent = sheetRate().toFixed(2);
   syncSheetRateNumber();
-  if (els.trailReadout) els.trailReadout.textContent = trailAmount().toFixed(2);
+  if (els.trailReadout) els.trailReadout.textContent = trailPercent().toFixed(0) + "%";
+  if (els.edgeOpacityReadout) els.edgeOpacityReadout.textContent = edgeOpacity().toFixed(2);
+  if (els.vertexOpacityReadout) els.vertexOpacityReadout.textContent = vertexOpacity().toFixed(2);
+  if (els.surfaceOpacityReadout) els.surfaceOpacityReadout.textContent = Math.round(surfaceOpacity() * 100) + "%";
+  if (els.bodyOpacityReadout) els.bodyOpacityReadout.textContent = Math.round(bodyOpacity() * 100) + "%";
 }
 
 function sourceLabel() {
@@ -169,11 +417,12 @@ function consoleText() {
   return [
     "P900 Surface Observatory",
     "",
-    "layer          : " + l.label,
+    "view mix       : " + faderViewLabel(),
     "source         : " + sourceLabel(),
     "candidate      : " + candidate.id,
     "role           : " + candidate.role,
-    "view           : " + l.view,
+    "surface        : " + Math.round(surfaceOpacity() * 100) + "%",
+    "body           : " + Math.round(bodyOpacity() * 100) + "%",
     "",
     "vertices       : " + candidate.vertices,
     "internal       : " + candidate.internal_edges,
@@ -193,7 +442,7 @@ function consoleText() {
     "frame_step     : 1 sheet",
     "sheet_rate     : " + sheetRate().toFixed(2) + " sheets/sec",
     "cycle_rate     : " + (sheetRate() / SHEET_COUNT).toFixed(2) + " cycles/sec",
-    "trail          : " + (trailEnabled() ? trailAmount().toFixed(2) : "off"),
+    "trail          : " + (trailEnabled() ? trailPercent().toFixed(0) + "%" : "off"),
     "playback       : " + (playing ? "playing" : "paused"),
     "touch_response : " + (touchEnabled() ? "on" : "off"),
     "motion         : visual inspection only",
@@ -205,28 +454,53 @@ function consoleText() {
 function draw() {
   if (!candidate) return;
 
-  const l = layer();
-  const scene = {
+  const sAlpha = surfaceOpacity();
+  const bAlpha = bodyOpacity();
+
+  const surfaceScene = {
     candidate,
-    view: l.view,
-    vertices: buildVertices(candidate, l.view, tick, playing),
-    edges: buildEdges(candidate, l.view),
+    view: "external_p900",
+    vertices: buildVertices(candidate, "external_p900", tick, playing),
+    edges: buildEdges(candidate, "external_p900"),
   };
 
-  renderScene(ctx, canvas, scene, camera, {
-    showVertices: true,
-    showEdges: true,
+  const bodyScene = {
+    candidate,
+    view: "internal_g60",
+    vertices: buildVertices(candidate, "internal_g60", tick, playing),
+    edges: buildEdges(candidate, "internal_g60"),
+  };
+
+  renderScene(ctx, canvas, surfaceScene, camera, {
+    showVertices: vertexEnabled() && sAlpha > 0,
+    showEdges: edgeEnabled() && sAlpha > 0,
     showLabels: false,
-    edgeAlpha: l.edgeAlpha,
-    vertexScale: l.vertexScale,
+    edgeAlpha: LAYERS.toroidal_surface.edgeAlpha * edgeOpacity() * sAlpha,
+    vertexScale: LAYERS.toroidal_surface.vertexScale,
+    vertexAlpha: vertexOpacity() * sAlpha,
     trailEnabled: trailEnabled() && playing,
     trailAmount: trailAmount(),
+    preserveCanvas: false,
   });
 
-  els.statusText.textContent = candidate.id + " / " + l.label;
+  renderScene(ctx, canvas, bodyScene, camera, {
+    showVertices: vertexEnabled() && bAlpha > 0,
+    showEdges: edgeEnabled() && bAlpha > 0,
+    showLabels: false,
+    edgeAlpha: LAYERS.internal_g60.edgeAlpha * edgeOpacity() * bAlpha,
+    vertexScale: LAYERS.internal_g60.vertexScale,
+    vertexAlpha: vertexOpacity() * bAlpha,
+    trailEnabled: false,
+    trailAmount: trailAmount(),
+    preserveCanvas: true,
+  });
+
+  els.statusText.textContent = candidate.id + " / " + faderViewLabel();
   els.cameraText.textContent =
-    "dist " + camera.distance.toFixed(1) +
-    " pitch " + Math.round(camera.pitch * 180 / Math.PI) + "deg";
+    "cam d=" + camera.distance.toFixed(2) +
+    " y=" + Math.round(camera.yaw * 180 / Math.PI) + "deg" +
+    " p=" + Math.round(camera.pitch * 180 / Math.PI) + "deg" +
+    " r=" + Math.round(camera.roll * 180 / Math.PI) + "deg";
 
   els.metricsConsole.textContent = consoleText();
   els.playPauseBtn.textContent = playing ? "Ⅱ" : "▶";
@@ -345,9 +619,32 @@ async function main() {
 
   if (els.resetBtn) els.resetBtn.addEventListener("click", resetView);
 
-  if (els.layerSelect) {
-    els.layerSelect.addEventListener("change", () => {
-      resetView();
+  if (els.settingsPresetSelect) {
+    els.settingsPresetSelect.addEventListener("change", () => {
+      applySettingsPreset(els.settingsPresetSelect.value);
+    });
+  }
+
+  if (els.cameraPreset1Btn) {
+    els.cameraPreset1Btn.addEventListener("click", () => setCameraPreset(1));
+  }
+
+  if (els.cameraPreset2Btn) {
+    els.cameraPreset2Btn.addEventListener("click", () => setCameraPreset(2));
+  }
+
+  if (els.cameraPreset3Btn) {
+    els.cameraPreset3Btn.addEventListener("click", () => setCameraPreset(3));
+  }
+
+  for (const el of [
+    els.surfaceOpacitySlider,
+    els.bodyOpacitySlider,
+  ]) {
+    if (!el) continue;
+    el.addEventListener("input", () => {
+      updateRateReadout();
+      draw();
     });
   }
 
@@ -394,6 +691,23 @@ async function main() {
 
   if (els.trailToggle) {
     els.trailToggle.addEventListener("change", draw);
+  }
+
+  for (const el of [
+    els.edgeToggle,
+    els.edgeOpacitySlider,
+    els.vertexToggle,
+    els.vertexOpacitySlider,
+  ]) {
+    if (!el) continue;
+    el.addEventListener("input", () => {
+      updateRateReadout();
+      draw();
+    });
+    el.addEventListener("change", () => {
+      updateRateReadout();
+      draw();
+    });
   }
 
   for (const cfg of [

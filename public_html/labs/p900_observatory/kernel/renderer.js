@@ -17,6 +17,29 @@ function resizeCanvas(canvas, ctx) {
   return { width: rect.width, height: rect.height };
 }
 
+function clamp01(value, fallback = 1) {
+  const n = Number(value);
+  if (!Number.isFinite(n)) return fallback;
+  return Math.max(0, Math.min(1, n));
+}
+
+function domChecked(id, fallback = true) {
+  const el = document.getElementById(id);
+  if (!el) return fallback;
+  return !!el.checked;
+}
+
+function domSlider(id, fallback = 1) {
+  const el = document.getElementById(id);
+  if (!el) return fallback;
+  return clamp01(el.value, fallback);
+}
+
+function setReadout(id, value) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = value.toFixed(2);
+}
+
 function edgeColor(kind, alpha) {
   if (kind === "internal_same_sector") return "rgba(156, 227, 176, " + alpha + ")";
   if (kind === "external_half_turn_mod30") return "rgba(217, 184, 108, " + alpha + ")";
@@ -42,6 +65,7 @@ function vertexColor(p, view) {
 
 export function renderScene(ctx, canvas, scene, camera, options) {
   const viewport = resizeCanvas(canvas, ctx);
+
   if (options.trailEnabled) {
     ctx.save();
     ctx.fillStyle = "rgba(5, 9, 15, " + String(Math.max(0.02, Math.min(0.9, options.trailAmount ?? 0.16))) + ")";
@@ -51,9 +75,18 @@ export function renderScene(ctx, canvas, scene, camera, options) {
     ctx.clearRect(0, 0, viewport.width, viewport.height);
   }
 
+  const edgeEnabled = domChecked("edge-toggle", options.showEdges ?? true);
+  const vertexEnabled = domChecked("vertex-toggle", options.showVertices ?? true);
+  const edgeOpacity = domSlider("edge-opacity-slider", 1);
+  const vertexOpacity = domSlider("vertex-opacity-slider", 1);
+
+  setReadout("edge-opacity-readout", edgeOpacity);
+  setReadout("vertex-opacity-readout", vertexOpacity);
+
   const projected = new Map();
-  const edgeAlpha = Math.max(0.02, Math.min(1, Number(options.edgeAlpha ?? 0.38)));
+  const edgeAlpha = Math.max(0, Math.min(1, Number(options.edgeAlpha ?? 0.38))) * edgeOpacity;
   const vertexScale = Math.max(0.2, Math.min(3, Number(options.vertexScale ?? 1)));
+  const vertexAlpha = vertexOpacity;
 
   const usableCenterOffsetX = 18;
 
@@ -66,7 +99,7 @@ export function renderScene(ctx, canvas, scene, camera, options) {
     });
   }
 
-  if (options.showEdges) {
+  if (edgeEnabled && edgeAlpha > 0) {
     const edgeItems = [];
 
     for (const e of scene.edges) {
@@ -99,7 +132,7 @@ export function renderScene(ctx, canvas, scene, camera, options) {
     }
   }
 
-  if (options.showVertices) {
+  if (vertexEnabled && vertexAlpha > 0) {
     const points = Array.from(projected.values()).sort((a, b) => b.screen.depth - a.screen.depth);
 
     for (const item of points) {
@@ -108,6 +141,7 @@ export function renderScene(ctx, canvas, scene, camera, options) {
       const r = Math.max(1.0, Math.min(4.8, q.scale * 0.018 * vertexScale));
 
       ctx.save();
+      ctx.globalAlpha = vertexAlpha;
       ctx.fillStyle = vertexColor(p, scene.view);
       ctx.beginPath();
       ctx.arc(q.x, q.y, r, 0, Math.PI * 2);

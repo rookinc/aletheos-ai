@@ -75,7 +75,29 @@
         <span id="trail-readout">0.16</span>
       </div>
 
-      <div class="fps-readout" id="fps-readout">fps --</div>
+      <label class="touch-toggle">
+          <input type="checkbox" id="edge-toggle" checked />
+          <span>Edges</span>
+        </label>
+
+        <div class="rate-control">
+          <label for="edge-opacity-slider">Edges</label>
+          <input id="edge-opacity-slider" type="range" min="0" max="1" step="0.01" value="1" />
+          <span id="edge-opacity-readout">1.00</span>
+        </div>
+
+        <label class="touch-toggle">
+          <input type="checkbox" id="vertex-toggle" checked />
+          <span>Vertices</span>
+        </label>
+
+        <div class="rate-control">
+          <label for="vertex-opacity-slider">Vertices</label>
+          <input id="vertex-opacity-slider" type="range" min="0" max="1" step="0.01" value="1" />
+          <span id="vertex-opacity-readout">1.00</span>
+        </div>
+
+        <div class="fps-readout" id="fps-readout">fps --</div>
     </section>
 
     <section class="card boundary-card">

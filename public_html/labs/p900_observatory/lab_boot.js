@@ -52,30 +52,48 @@ function options() {
   };
 }
 
+function sourceLabel() {
+  if (!data || !data.source) return "unknown";
+  if (String(data.source).includes("p900_phase30_combined_graph_export")) {
+    return "phase30 combined graph export";
+  }
+  return String(data.source);
+}
+
 function consoleText(o) {
   const c = o.candidate;
+  const edgeClasses = c.edge_class_counts || {};
 
   return [
-    "system           : P900 Surface Observatory",
-    "source           : " + (data ? data.source : "unknown"),
-    "candidate        : " + c.id,
-    "role             : " + c.role,
-    "view             : " + o.view,
-    "artifact_vertices: " + c.vertices,
-    "internal_edges   : " + c.internal_edges,
-    "external_edges   : " + c.external_edges,
-    "combined_edges   : " + c.combined_edges,
-    "duplicate_edges  : " + c.duplicate_edges,
-    "degree_histogram : " + JSON.stringify(c.degree_histogram),
-    "half_turn_set    : " + c.half_turn_set.join(","),
-    "identity_set     : " + c.identity_set.join(","),
-    "edge_classes     : " + JSON.stringify(c.edge_class_counts),
-    "rendered_edges   : " + buildEdges(c, o.view).length,
-    "edge_opacity     : " + o.edgeAlpha.toFixed(2),
-    "vertex_scale     : " + o.vertexScale.toFixed(2),
-    "motion           : visual inspection only",
-    "boundary         : no states added beyond artifact vertices",
-    "claim_status     : renderer inspection, not final law",
+    "P900 Surface Observatory",
+    "",
+    "source        : " + sourceLabel(),
+    "candidate     : " + c.id,
+    "role          : " + c.role,
+    "view          : " + o.view,
+    "",
+    "vertices      : " + c.vertices,
+    "internal      : " + c.internal_edges,
+    "external      : " + c.external_edges,
+    "combined      : " + c.combined_edges,
+    "duplicates    : " + c.duplicate_edges,
+    "degree        : " + JSON.stringify(c.degree_histogram),
+    "",
+    "half_turn     : " + c.half_turn_set.join(","),
+    "identity      : " + c.identity_set.join(","),
+    "rendered      : " + buildEdges(c, o.view).length,
+    "",
+    "edge opacity  : " + o.edgeAlpha.toFixed(2),
+    "vertex scale  : " + o.vertexScale.toFixed(2),
+    "",
+    "classes",
+    "  internal    : " + (edgeClasses.internal_same_sector ?? "n/a"),
+    "  half_turn   : " + (edgeClasses.external_half_turn_mod30 ?? "n/a"),
+    "  identity    : " + (edgeClasses.external_identity_same_local ?? "n/a"),
+    "",
+    "motion        : visual inspection only",
+    "boundary      : no states added beyond 900",
+    "claim         : renderer inspection, not final law",
   ].join("\n");
 }
 

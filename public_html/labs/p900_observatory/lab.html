@@ -21,16 +21,19 @@
 
   <main class="single-layout">
     <section class="stage-card">
-      <div class="stage-toolbar playback-toolbar" aria-label="Playback toolbar">
-        <button id="play-pause-btn" type="button" aria-label="Play or pause">Play</button>
-        <button id="reset-btn" type="button" aria-label="Reset view">Reset</button>
-        <button id="step-back-btn" type="button" aria-label="Step back one sheet">Back</button>
-        <button id="step-forward-btn" type="button" aria-label="Step forward one sheet">Forward</button>
+      <div class="stage-toolbar" aria-label="Playback toolbar">
+        <div class="transport-button-row" aria-label="Transport controls">
+          <button id="step-back-btn" class="mini-transport-btn" type="button" aria-label="Step back one sheet">⟪</button>
+          <button id="play-pause-btn" class="mini-transport-btn" type="button" aria-label="Play or pause">▶</button>
+          <button id="reset-btn" class="mini-transport-btn" type="button" aria-label="Reset view">↻</button>
+          <button id="step-forward-btn" class="mini-transport-btn" type="button" aria-label="Step forward one sheet">⟫</button>
+        </div>
 
         <div class="rate-control sheet-rate-control">
           <label for="sheet-rate-slider">Sheets/sec</label>
           <input id="sheet-rate-slider" type="range" min="0.25" max="960" step="0.25" value="30" />
-          <span id="sheet-rate-readout">30.00</span>
+          <input id="sheet-rate-number" class="sheet-rate-number" type="number" min="0.25" max="960" step="0.25" value="30.00" inputmode="decimal" aria-label="Sheets per second value" />
+          <button id="sheet-rate-apply" class="sheet-rate-apply" type="button" aria-label="Apply sheets per second">↵</button>
         </div>
       </div>
 
@@ -40,6 +43,14 @@
           <span></span>
           <span></span>
         </div>
+
+        <label class="stage-lock-toggle" title="Stage lock">
+          <span class="stage-lock-text" aria-hidden="true">Pinch and Zoom</span>
+          <input type="checkbox" id="touch-response-toggle" />
+          <span aria-hidden="true" class="stage-lock-icon"></span>
+          <span class="visually-hidden">Stage lock</span>
+        </label>
+
         <canvas id="stage-canvas"></canvas>
         <span id="status-text" class="visually-hidden">loading</span>
         <span id="camera-text" class="visually-hidden">camera</span>
@@ -59,45 +70,31 @@
         </select>
       </div>
 
-      <label class="touch-toggle">
-        <input type="checkbox" id="touch-response-toggle" />
-        <span>Touch response</span>
-      </label>
-
-      <label class="touch-toggle">
-        <input type="checkbox" id="trail-toggle" />
-        <span>Trail</span>
-      </label>
-
-      <div class="rate-control">
-        <label for="trail-slider">Trail</label>
-        <input id="trail-slider" type="range" min="0.02" max="0.45" step="0.01" value="0.16" />
-        <span id="trail-readout">0.16</span>
-      </div>
-
-      <label class="touch-toggle">
-          <input type="checkbox" id="edge-toggle" checked />
-          <span>Edges</span>
+      <div class="rate-control mixer-entry-row">
+        <label class="mixer-check-label">
+          <input type="checkbox" id="trail-toggle" />
+          <span>Trail</span>
         </label>
-
-        <div class="rate-control">
-          <label for="edge-opacity-slider">Edges</label>
+        <input id="trail-slider" type="range" min="0.02" max="0.45" step="0.01" value="0.16" />
+          <span id="trail-readout">0.16</span>
+      </div>
+<div class="rate-control mixer-entry-row">
+          <label class="mixer-check-label">
+            <input type="checkbox" id="edge-toggle" checked />
+            <span>Edges</span>
+          </label>
           <input id="edge-opacity-slider" type="range" min="0" max="1" step="0.01" value="1" />
           <span id="edge-opacity-readout">1.00</span>
         </div>
 
-        <label class="touch-toggle">
-          <input type="checkbox" id="vertex-toggle" checked />
-          <span>Vertices</span>
-        </label>
-
-        <div class="rate-control">
-          <label for="vertex-opacity-slider">Vertices</label>
+        <div class="rate-control mixer-entry-row">
+          <label class="mixer-check-label">
+            <input type="checkbox" id="vertex-toggle" checked />
+            <span>Vertices</span>
+          </label>
           <input id="vertex-opacity-slider" type="range" min="0" max="1" step="0.01" value="1" />
           <span id="vertex-opacity-readout">1.00</span>
         </div>
-
-        <div class="fps-readout" id="fps-readout">fps --</div>
     </section>
 
     <section class="card boundary-card">

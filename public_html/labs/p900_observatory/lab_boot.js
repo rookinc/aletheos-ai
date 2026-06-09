@@ -15,9 +15,13 @@ const els = {
   touchResponseToggle: document.getElementById("touch-response-toggle"),
   sheetRateSlider: document.getElementById("sheet-rate-slider"),
   sheetRateReadout: document.getElementById("sheet-rate-readout"),
+  sheetRateNumber: document.getElementById("sheet-rate-number"),
+  sheetRateApplyBtn: document.getElementById("sheet-rate-apply"),
   trailToggle: document.getElementById("trail-toggle"),
   trailSlider: document.getElementById("trail-slider"),
   trailReadout: document.getElementById("trail-readout"),
+  trailNumber: document.getElementById("trail-number"),
+  trailApplyBtn: document.getElementById("trail-apply"),
   fpsReadout: document.getElementById("fps-readout"),
   statusText: document.getElementById("status-text"),
   cameraText: document.getElementById("camera-text"),
@@ -108,11 +112,31 @@ function stepSheets(deltaSheets) {
 }
 
 function touchEnabled() {
-  return !!els.touchResponseToggle?.checked;
+  return !(els.touchResponseToggle?.checked ?? false);
 }
 
 function sheetRate() {
   return Number(els.sheetRateSlider?.value ?? 30);
+}
+
+function clampSheetRate(value) {
+  const n = Number(value);
+  if (!Number.isFinite(n)) return 30;
+  return Math.max(0.25, Math.min(960, n));
+}
+
+function setSheetRate(value) {
+  const n = clampSheetRate(value);
+  if (els.sheetRateSlider) els.sheetRateSlider.value = String(n);
+  if (els.sheetRateNumber) els.sheetRateNumber.value = n.toFixed(2);
+  updateRateReadout();
+  draw();
+}
+
+function syncSheetRateNumber() {
+  if (!els.sheetRateNumber) return;
+  if (document.activeElement === els.sheetRateNumber) return;
+  els.sheetRateNumber.value = sheetRate().toFixed(2);
 }
 
 function trailAmount() {
@@ -125,6 +149,7 @@ function trailEnabled() {
 
 function updateRateReadout() {
   if (els.sheetRateReadout) els.sheetRateReadout.textContent = sheetRate().toFixed(2);
+  syncSheetRateNumber();
   if (els.trailReadout) els.trailReadout.textContent = trailAmount().toFixed(2);
 }
 
@@ -204,7 +229,7 @@ function draw() {
     " pitch " + Math.round(camera.pitch * 180 / Math.PI) + "deg";
 
   els.metricsConsole.textContent = consoleText();
-  els.playPauseBtn.textContent = playing ? "Pause" : "Play";
+  els.playPauseBtn.textContent = playing ? "Ⅱ" : "▶";
 }
 
 function frame(now) {
@@ -341,6 +366,25 @@ async function main() {
     });
   }
 
+  if (els.sheetRateApplyBtn) {
+    els.sheetRateApplyBtn.addEventListener("click", () => {
+      setSheetRate(els.sheetRateNumber?.value ?? sheetRate());
+    });
+  }
+
+  if (els.sheetRateNumber) {
+    els.sheetRateNumber.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        setSheetRate(els.sheetRateNumber.value);
+      }
+    });
+
+    els.sheetRateNumber.addEventListener("blur", () => {
+      setSheetRate(els.sheetRateNumber.value);
+    });
+  }
+
   if (els.trailSlider) {
     els.trailSlider.addEventListener("input", () => {
       updateRateReadout();
@@ -350,6 +394,46 @@ async function main() {
 
   if (els.trailToggle) {
     els.trailToggle.addEventListener("change", draw);
+  }
+
+  for (const cfg of [
+    [els.trailApplyBtn, els.trailNumber, els.trailSlider, 0.02, 0.45, 0.16, 2],
+    [els.edgeOpacityApplyBtn, els.edgeOpacityNumber, els.edgeOpacitySlider, 0, 1, 1, 2],
+    [els.vertexOpacityApplyBtn, els.vertexOpacityNumber, els.vertexOpacitySlider, 0, 1, 1, 2],
+  ]) {
+    const [btn, numberEl, sliderEl, min, max, fallback, digits] = cfg;
+    if (btn) {
+      btn.addEventListener("click", () => {
+        setSliderFromNumber(sliderEl, numberEl, min, max, fallback, digits);
+      });
+    }
+
+    if (numberEl) {
+      numberEl.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          setSliderFromNumber(sliderEl, numberEl, min, max, fallback, digits);
+        }
+      });
+
+      numberEl.addEventListener("blur", () => {
+        setSliderFromNumber(sliderEl, numberEl, min, max, fallback, digits);
+      });
+    }
+  }
+
+  for (const cfg of [
+    [els.sheetRateSlider, els.sheetRateNumber, 2],
+    [els.trailSlider, els.trailNumber, 2],
+    [els.edgeOpacitySlider, els.edgeOpacityNumber, 2],
+    [els.vertexOpacitySlider, els.vertexOpacityNumber, 2],
+  ]) {
+    const [sliderEl, numberEl, digits] = cfg;
+    if (!sliderEl || !numberEl) continue;
+
+    sliderEl.addEventListener("input", () => {
+      numberEl.value = Number(sliderEl.value).toFixed(digits);
+    });
   }
 
   window.addEventListener("resize", draw);

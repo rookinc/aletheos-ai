@@ -34,6 +34,7 @@ include __DIR__ . '/includes/site_header.php';
 
         <div class="hero-actions" aria-label="Lab actions">
           <a class="button button--primary" href="/labs/relational_witness/lab.html">Open the relational witness lab</a>
+          <a class="button button--secondary" href="/labs/p900_observatory/lab.html">Open the P900 surface observatory</a>
           <a class="button button--secondary" href="/labs/constructor/lab.html">Open the constructor</a>
           <a class="button button--secondary" href="/labs/informative_action/collapse_witness.php">Open the witness lens</a>
           <a class="button button--secondary" href="/research/from-circle-to-thalion.php">What is a Thalion?</a>

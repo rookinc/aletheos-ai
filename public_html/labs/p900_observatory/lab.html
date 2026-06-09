@@ -9,121 +9,90 @@
 <body>
   <header class="topbar">
     <div>
-      <p class="eyebrow">Aletheos Lab</p>
+      <p class="eyebrow"><a href="/labs.php">Aletheos Labs</a></p>
       <h1>P900 Surface Observatory</h1>
       <p class="lede">
-        Inspect Phase 30 P900 body-plus-surface graph candidates without treating
-        renderer motion as new structure.
+        A fixed 900-point structure, shown as a moving surface. The motion is only
+        for viewing. The underlying data does not change.
       </p>
     </div>
-
-    <nav class="topbar__links" aria-label="Lab links">
-      <a href="/labs.php">Labs</a>
-      <a href="/labs/constructor/lab.html">Constructor</a>
-      <a href="/labs/relational_witness/lab.html">Relational Witness</a>
-    </nav>
+ 
   </header>
 
-  <main class="layout">
-    <aside class="panel">
-      <section class="card">
-        <h2>Candidate</h2>
-        <label for="candidate-select">Closure-bearing candidate</label>
-        <select id="candidate-select">
-          <option value="gap1_orbit_2" selected>Orbit 2, local-balance provisional selector</option>
-          <option value="gap1_orbit_1">Orbit 1, global-tightness countercandidate</option>
-        </select>
-      </section>
+  <main class="single-layout">
+    <section class="stage-card">
+      <div class="stage-toolbar playback-toolbar" aria-label="Playback toolbar">
+        <button id="play-pause-btn" type="button" aria-label="Play or pause">Play</button>
+        <button id="reset-btn" type="button" aria-label="Reset view">Reset</button>
+        <button id="step-back-btn" type="button" aria-label="Step back one sheet">Back</button>
+        <button id="step-forward-btn" type="button" aria-label="Step forward one sheet">Forward</button>
 
-      <section class="card">
-        <h2>View</h2>
-        <label for="view-select">Inspection view</label>
-        <select id="view-select">
-          <option value="combined" selected>Combined body plus surface</option>
-          <option value="internal_g60">Internal G60 bodies</option>
-          <option value="external_p900">External P900 scaffold</option>
-          <option value="residue_sheets">Residue sheets</option>
-          <option value="sector_fibers">Sector fibers</option>
-        </select>
-
-        <label class="check">
-          <input type="checkbox" id="toggle-vertices" checked />
-          <span>Show vertices</span>
-        </label>
-
-        <label class="check">
-          <input type="checkbox" id="toggle-edges" checked />
-          <span>Show edges</span>
-        </label>
-
-        <label class="check">
-          <input type="checkbox" id="toggle-labels" />
-          <span>Show labels</span>
-        </label>
-
-        <label class="check">
-          <input type="checkbox" id="toggle-pulse" checked />
-          <span>Visual pulse</span>
-        </label>
-
-        <label for="edge-alpha-slider">Edge opacity</label>
-        <input id="edge-alpha-slider" type="range" min="5" max="100" step="1" value="38" />
-
-        <label for="vertex-scale-slider">Vertex size</label>
-        <input id="vertex-scale-slider" type="range" min="40" max="180" step="1" value="100" />
-      </section>
-
-      <section class="card">
-        <h2>Camera</h2>
-        <label for="zoom-slider">Zoom</label>
-        <input id="zoom-slider" type="range" min="5" max="80" step="0.1" value="13" />
-
-        <div class="button-row">
-          <button id="yaw-left-btn" type="button">Yaw -</button>
-          <button id="yaw-right-btn" type="button">Yaw +</button>
+        <div class="rate-control sheet-rate-control">
+          <label for="sheet-rate-slider">Sheets/sec</label>
+          <input id="sheet-rate-slider" type="range" min="0.25" max="960" step="0.25" value="30" />
+          <span id="sheet-rate-readout">30.00</span>
         </div>
-
-        <div class="button-row">
-          <button id="pitch-down-btn" type="button">Pitch -</button>
-          <button id="pitch-up-btn" type="button">Pitch +</button>
-        </div>
-
-        <div class="button-row">
-          <button id="roll-left-btn" type="button">Roll -</button>
-          <button id="roll-right-btn" type="button">Roll +</button>
-        </div>
-
-        <label class="check">
-          <input type="checkbox" id="auto-rotate-toggle" checked />
-          <span>Auto rotate</span>
-        </label>
-      </section>
-
-      <section class="card">
-        <h2>Boundary</h2>
-        <p>
-          This lab renders fixed Phase 30 artifacts. Motion is visual inspection
-          only. No states are added beyond the 900 artifact vertices.
-        </p>
-      </section>
-    </aside>
-
-    <section class="stage-wrap">
-      <canvas id="stage-canvas"></canvas>
-      <div class="readout">
-        <span id="status-text">loading</span>
-        <span id="camera-text">camera</span>
       </div>
+
+      <section class="stage-wrap">
+        <div class="scroll-grab-bar" aria-label="Page scroll handle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <canvas id="stage-canvas"></canvas>
+        <span id="status-text" class="visually-hidden">loading</span>
+        <span id="camera-text" class="visually-hidden">camera</span>
+      </section>
     </section>
 
-    <aside class="panel console-panel">
-      <section class="card">
-        <h2>Console</h2>
-        <pre id="metrics-console">loading...</pre>
-      </section>
-    </aside>
+
+    <section class="card settings-card">
+      <h2>Settings</h2>
+
+      <div class="layer-control">
+        <label for="layer-select">Layer</label>
+        <select id="layer-select">
+          <option value="toroidal_surface" selected>Toroidal surface</option>
+          <option value="internal_g60">Internal G60 bodies</option>
+          <option value="combined">Combined body plus surface</option>
+        </select>
+      </div>
+
+      <label class="touch-toggle">
+        <input type="checkbox" id="touch-response-toggle" />
+        <span>Touch response</span>
+      </label>
+
+      <label class="touch-toggle">
+        <input type="checkbox" id="trail-toggle" />
+        <span>Trail</span>
+      </label>
+
+      <div class="rate-control">
+        <label for="trail-slider">Trail</label>
+        <input id="trail-slider" type="range" min="0.02" max="0.45" step="0.01" value="0.16" />
+        <span id="trail-readout">0.16</span>
+      </div>
+
+      <div class="fps-readout" id="fps-readout">fps --</div>
+    </section>
+
+    <section class="card boundary-card">
+      <h2>Boundary</h2>
+      <p>
+        This lab renders the preferred Phase 30 P900 toroidal-action view:
+        Orbit 2, fixed 900 artifact vertices, with selectable surface, internal G60, and combined layers.
+        Play/Pause changes only visual inspection motion.
+      </p>
+    </section>
+
+    <section class="card console-panel">
+      <h2>Console</h2>
+      <pre id="metrics-console">loading...</pre>
+    </section>
   </main>
 
-  <script type="module" src="lab_boot.js?v=4"></script>
+  <script type="module" src="lab_boot.js"></script>
 </body>
 </html>

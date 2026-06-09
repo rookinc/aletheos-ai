@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Relational Witness Lab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="lab.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <p class="eyebrow">Thalean Relational Theory</p>
+      <h1>Relational Witness Lab</h1>
+      <p>
+        A finite rendering surface for projection, trace return,
+        observed closure, witness, and admission.
+      </p>
+    </header>
+
+    <section class="controls">
+      <label>
+        Witness mode
+        <select id="modeSelect">
+          <option value="surface_without_projection">Surface coherence without projection</option>
+          <option value="projection_without_observed_closure">Projection without observed closure</option>
+          <option value="closed_without_admission">Observed closure without admission</option>
+          <option value="admitted_projection">Admitted projection</option>
+        </select>
+      </label>
+
+      <label class="check">
+        <input id="showProjection" type="checkbox" checked>
+        projection
+      </label>
+
+      <label class="check">
+        <input id="showTrace" type="checkbox" checked>
+        trace
+      </label>
+
+      <label class="check">
+        <input id="showWitness" type="checkbox" checked>
+        witness
+      </label>
+    </section>
+
+    <section class="stage">
+      <canvas id="rwCanvas" width="960" height="560"></canvas>
+      <aside class="panel">
+        <h2 id="modeTitle">Mode</h2>
+        <p id="modeSummary"></p>
+
+        <h3>Status</h3>
+        <pre id="statusBox"></pre>
+
+        <h3>Criterion</h3>
+        <pre id="criterionBox"></pre>
+      </aside>
+    </section>
+  </main>
+
+  <script src="kernel/relational_state.js"></script>
+  <script src="kernel/canvas_renderer.js"></script>
+  <script src="lab_boot.js"></script>
+</body>
+</html>

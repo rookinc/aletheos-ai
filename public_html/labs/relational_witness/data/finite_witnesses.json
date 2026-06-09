@@ -1,0 +1,151 @@
+{
+  "schema": "relational_witness.finite_systems.v1",
+  "criterion": {
+    "closed": "Closed(v) iff there exists a in A_I such that pi(a)=v and O(v)=tau_A(a)",
+    "admitted": "Admitted(v) iff Closed(v) and W(v,O(v))"
+  },
+  "systems": {
+    "surface_without_projection": {
+      "title": "Witness I: surface coherence without projection",
+      "summary": "The visible surface is internally coherent, but no controlled ambient element projects to it.",
+      "intended_gap": "surface coherence holds; projection fails",
+      "finite": {
+        "A": ["a0"],
+        "I": [],
+        "A_I": [],
+        "V": ["v0"],
+        "T": ["t0"],
+        "pi": {},
+        "tau_A": {
+          "a0": "t0"
+        },
+        "O": {
+          "v0": "t0"
+        },
+        "W": {
+          "v0": false
+        },
+        "surface_coherent": {
+          "v0": true
+        },
+        "selected": "v0"
+      },
+      "layout": {
+        "ambient": {
+          "a0": { "label": "a0", "x": 250, "y": 260 }
+        },
+        "surface": {
+          "v0": { "label": "v0", "x": 650, "y": 260 }
+        }
+      }
+    },
+    "projection_without_observed_closure": {
+      "title": "Witness II: projection without observed closure",
+      "summary": "A controlled ambient element projects to the visible surface, but the observed trace disagrees with the ambient trace.",
+      "intended_gap": "projection holds; observed closure fails",
+      "finite": {
+        "A": ["a0"],
+        "I": ["i0"],
+        "A_I": ["a0"],
+        "V": ["v0"],
+        "T": ["tA", "tO"],
+        "pi": {
+          "a0": "v0"
+        },
+        "tau_A": {
+          "a0": "tA"
+        },
+        "O": {
+          "v0": "tO"
+        },
+        "W": {
+          "v0": false
+        },
+        "surface_coherent": {
+          "v0": true
+        },
+        "selected": "v0"
+      },
+      "layout": {
+        "ambient": {
+          "a0": { "label": "a0", "x": 250, "y": 260 }
+        },
+        "surface": {
+          "v0": { "label": "v0", "x": 650, "y": 260 }
+        }
+      }
+    },
+    "closed_without_admission": {
+      "title": "Witness III: observed closure without admission",
+      "summary": "Projection exists and trace agrees, but the independent witness predicate fails.",
+      "intended_gap": "observed closure holds; admission fails",
+      "finite": {
+        "A": ["a0"],
+        "I": ["i0"],
+        "A_I": ["a0"],
+        "V": ["v0"],
+        "T": ["t0"],
+        "pi": {
+          "a0": "v0"
+        },
+        "tau_A": {
+          "a0": "t0"
+        },
+        "O": {
+          "v0": "t0"
+        },
+        "W": {
+          "v0": false
+        },
+        "surface_coherent": {
+          "v0": true
+        },
+        "selected": "v0"
+      },
+      "layout": {
+        "ambient": {
+          "a0": { "label": "a0", "x": 250, "y": 260 }
+        },
+        "surface": {
+          "v0": { "label": "v0", "x": 650, "y": 260 }
+        }
+      }
+    },
+    "admitted_projection": {
+      "title": "Admitted projection",
+      "summary": "Projection exists, trace agrees, and the independent witness predicate admits the visible surface.",
+      "intended_gap": "control example; all stages hold",
+      "finite": {
+        "A": ["a0"],
+        "I": ["i0"],
+        "A_I": ["a0"],
+        "V": ["v0"],
+        "T": ["t0"],
+        "pi": {
+          "a0": "v0"
+        },
+        "tau_A": {
+          "a0": "t0"
+        },
+        "O": {
+          "v0": "t0"
+        },
+        "W": {
+          "v0": true
+        },
+        "surface_coherent": {
+          "v0": true
+        },
+        "selected": "v0"
+      },
+      "layout": {
+        "ambient": {
+          "a0": { "label": "a0", "x": 250, "y": 260 }
+        },
+        "surface": {
+          "v0": { "label": "v0", "x": 650, "y": 260 }
+        }
+      }
+    }
+  }
+}

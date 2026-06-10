@@ -1,4 +1,4 @@
-import { createLocalLens, getLocalLens, loadLocalLenses } from "./kernel/local_storage_lenses.js";
+import { createLocalLens, deleteLocalLens, getLocalLens, loadLocalLenses } from "./kernel/local_storage_lenses.js";
 import { createCamera, clamp } from "./kernel/camera.js";
 import { loadP900Phase30 } from "./kernel/p900_data.js";
 import { buildVertices, buildEdges } from "./kernel/p900_geometry.js";
@@ -42,6 +42,7 @@ const els = {
   settingsPresetSelect: document.getElementById("settings-preset-select"),
   settingsSavedLensesOptgroup: document.getElementById("settings-saved-lenses-optgroup"),
   settingsSaveLensBtn: document.getElementById("settings-save-lens-btn"),
+  settingsDeleteLensBtn: document.getElementById("settings-delete-lens-btn"),
   settingsExportUrlBtn: document.getElementById("settings-export-url-btn"),
   settingsShareDialog: document.getElementById("settings-share-dialog"),
   settingsShareNameInput: document.getElementById("settings-share-name-input"),
@@ -247,6 +248,17 @@ function renderLocalLensOptions(selectedId = "") {
   if (selectedId) {
     select.value = localLensValue(selectedId);
   }
+
+  updateLocalLensControls();
+}
+
+function updateLocalLensControls() {
+  const hasLocalLens = !!selectedLocalLensId();
+
+  if (els.settingsDeleteLensBtn) {
+    els.settingsDeleteLensBtn.hidden = !hasLocalLens;
+    els.settingsDeleteLensBtn.disabled = !hasLocalLens;
+  }
 }
 
 function saveCurrentLensToLocalStorage() {
@@ -285,6 +297,31 @@ function loadLocalLensById(id) {
   draw();
 
   return true;
+}
+
+function deleteSelectedLocalLens() {
+  const id = selectedLocalLensId();
+  if (!id) return;
+
+  const lens = getLocalLens(id);
+  const name = lens ? lens.name : "this lens";
+
+  if (!window.confirm('Delete saved browser lens "' + name + '"?')) return;
+
+  const result = deleteLocalLens(id);
+  if (!result.ok) {
+    window.alert("Could not delete this browser lens: " + result.reason);
+    return;
+  }
+
+  if (els.settingsPresetSelect) {
+    els.settingsPresetSelect.value = "default";
+    applySettingsPreset("default");
+  }
+
+  renderLocalLensOptions("");
+  updateRateReadout();
+  draw();
 }
 
 
@@ -921,13 +958,22 @@ async function main() {
         return;
       }
 
-      if (applySharedGraphLensOption(option)) return;
+      if (applySharedGraphLensOption(option)) {
+        updateLocalLensControls();
+        return;
+      }
+
       applySettingsPreset(els.settingsPresetSelect.value);
+      updateLocalLensControls();
     });
   }
 
   if (els.settingsSaveLensBtn) {
     els.settingsSaveLensBtn.addEventListener("click", saveCurrentLensToLocalStorage);
+  }
+
+  if (els.settingsDeleteLensBtn) {
+    els.settingsDeleteLensBtn.addEventListener("click", deleteSelectedLocalLens);
   }
 
   if (els.settingsExportUrlBtn) {

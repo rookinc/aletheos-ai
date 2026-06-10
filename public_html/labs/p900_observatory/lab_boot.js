@@ -1,3 +1,4 @@
+import { createLocalLens, getLocalLens, loadLocalLenses } from "./kernel/local_storage_lenses.js";
 import { createCamera, clamp } from "./kernel/camera.js";
 import { loadP900Phase30 } from "./kernel/p900_data.js";
 import { buildVertices, buildEdges } from "./kernel/p900_geometry.js";
@@ -39,6 +40,8 @@ const els = {
   statusText: document.getElementById("status-text"),
   cameraText: document.getElementById("camera-text"),
   settingsPresetSelect: document.getElementById("settings-preset-select"),
+  settingsSavedLensesOptgroup: document.getElementById("settings-saved-lenses-optgroup"),
+  settingsSaveLensBtn: document.getElementById("settings-save-lens-btn"),
   settingsExportUrlBtn: document.getElementById("settings-export-url-btn"),
   settingsShareDialog: document.getElementById("settings-share-dialog"),
   settingsShareNameInput: document.getElementById("settings-share-name-input"),
@@ -204,6 +207,85 @@ const SETTINGS_PRESETS = {
     },
   },
 };
+
+
+
+const LOCAL_LENS_VALUE_PREFIX = "__local_lens__:";
+
+function localLensValue(id) {
+  return LOCAL_LENS_VALUE_PREFIX + String(id || "");
+}
+
+function localLensIdFromValue(value) {
+  const raw = String(value || "");
+  if (!raw.startsWith(LOCAL_LENS_VALUE_PREFIX)) return "";
+  return raw.slice(LOCAL_LENS_VALUE_PREFIX.length);
+}
+
+function selectedLocalLensId() {
+  return localLensIdFromValue(els.settingsPresetSelect?.value || "");
+}
+
+function renderLocalLensOptions(selectedId = "") {
+  const group = els.settingsSavedLensesOptgroup;
+  const select = els.settingsPresetSelect;
+  if (!group || !select) return;
+
+  group.textContent = "";
+
+  const lenses = loadLocalLenses();
+  group.hidden = lenses.length === 0;
+
+  for (const lens of lenses) {
+    const option = document.createElement("option");
+    option.value = localLensValue(lens.id);
+    option.textContent = lens.name;
+    option.dataset.localLensId = lens.id;
+    group.appendChild(option);
+  }
+
+  if (selectedId) {
+    select.value = localLensValue(selectedId);
+  }
+}
+
+function saveCurrentLensToLocalStorage() {
+  const fallback = currentPresetLabel() || "P900 lens";
+  const name = window.prompt("Name your lens:", fallback);
+  if (name === null) return;
+
+  const result = createLocalLens({
+    name,
+    params: currentSettingsParams().toString(),
+  });
+
+  if (!result.ok || !result.lens) {
+    window.alert("Could not save this browser lens: " + result.reason);
+    return;
+  }
+
+  renderLocalLensOptions(result.lens.id);
+
+  if (els.statusText) {
+    els.statusText.textContent = "saved browser lens: " + result.lens.name;
+  }
+}
+
+function loadLocalLensById(id) {
+  const lens = getLocalLens(id);
+  if (!lens) return false;
+
+  const url = new URL(window.location.href);
+  url.search = lens.params;
+  window.history.replaceState(null, "", url.toString());
+
+  applySettingsFromUrl();
+  renderLocalLensOptions(lens.id);
+  updateRateReadout();
+  draw();
+
+  return true;
+}
 
 
 function layer() {
@@ -832,9 +914,20 @@ async function main() {
   if (els.settingsPresetSelect) {
     els.settingsPresetSelect.addEventListener("change", () => {
       const option = els.settingsPresetSelect.options[els.settingsPresetSelect.selectedIndex];
+      const localLensId = selectedLocalLensId();
+
+      if (localLensId) {
+        loadLocalLensById(localLensId);
+        return;
+      }
+
       if (applySharedGraphLensOption(option)) return;
       applySettingsPreset(els.settingsPresetSelect.value);
     });
+  }
+
+  if (els.settingsSaveLensBtn) {
+    els.settingsSaveLensBtn.addEventListener("click", saveCurrentLensToLocalStorage);
   }
 
   if (els.settingsExportUrlBtn) {
@@ -993,6 +1086,7 @@ async function main() {
   data = await loadP900Phase30();
   candidate = data.candidates.find((c) => c.id === PREFERRED_CANDIDATE_ID) || data.candidates[0];
 
+  renderLocalLensOptions("");
   applySettingsFromUrl();
 
   if (!candidate) throw new Error("No P900 candidate loaded");

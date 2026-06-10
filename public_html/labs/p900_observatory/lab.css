@@ -2468,3 +2468,56 @@ button:hover {
     font-size: 0.66rem !important;
   }
 }
+
+/* P900 local lens Save/Share header actions */
+.settings-header-actions {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 0.52rem !important;
+  flex-wrap: nowrap !important;
+}
+
+.settings-card > .settings-card-header .settings-header-action-btn {
+  position: static !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: auto !important;
+  min-width: 5.1rem !important;
+  max-width: none !important;
+  min-height: 2.15rem !important;
+  margin: 0 !important;
+  padding: 0.48rem 0.86rem !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(214, 184, 108, 0.62) !important;
+  background:
+    linear-gradient(180deg, rgba(214, 184, 108, 0.16), rgba(214, 184, 108, 0.055)),
+    rgba(9, 20, 33, 0.92) !important;
+  color: var(--accent) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.08),
+    0 0.55rem 1.2rem rgba(0,0,0,0.22) !important;
+  font-size: 0.68rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.13em !important;
+  text-transform: uppercase !important;
+}
+
+#settings-saved-lenses-optgroup[hidden] {
+  display: none;
+}
+
+@media (max-width: 520px) {
+  .settings-header-actions {
+    gap: 0.38rem !important;
+  }
+
+  .settings-card > .settings-card-header .settings-header-action-btn {
+    min-width: 4.55rem !important;
+    min-height: 1.95rem !important;
+    padding: 0.42rem 0.62rem !important;
+    font-size: 0.6rem !important;
+    letter-spacing: 0.1em !important;
+  }
+}

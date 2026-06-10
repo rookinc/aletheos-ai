@@ -16,6 +16,7 @@
           <p>
             A fixed 900-point structure, shown as a moving surface.
             The motion is only for viewing. The underlying data does not change.
+            Save stores a lens only in this browser. Share creates a portable URL.
           </p>
         </details>
     </div>
@@ -71,9 +72,14 @@
     <section class="card settings-card">
         <div class="settings-card-header">
           <h2>Lens Settings</h2>
-          <button id="settings-export-url-btn" class="settings-export-url-btn settings-share-primary settings-share-header-btn" type="button">
-            Share
-          </button>
+          <div class="settings-header-actions" aria-label="Lens actions">
+            <button id="settings-save-lens-btn" class="settings-save-lens-btn settings-header-action-btn" type="button">
+              Save
+            </button>
+            <button id="settings-export-url-btn" class="settings-export-url-btn settings-share-primary settings-share-header-btn settings-header-action-btn" type="button">
+              Share
+            </button>
+          </div>
         </div>
 
         <div class="settings-preset-row">
@@ -89,6 +95,7 @@
             <option value="spine">Spine</option>
           
           
+            <optgroup id="settings-saved-lenses-optgroup" label="Saved lenses"></optgroup>
           </select>
         </div>
 

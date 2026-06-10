@@ -192,7 +192,7 @@ include __DIR__ . '/includes/site_header.php';
         </p>
       </a>
 
-      <a class="index-card" href="/audit.php">
+      <a class="index-card" href="/evidence.php">
         <span class="card-label">Audit</span>
         <h3>Claims Leave Tracks</h3>
         <p>

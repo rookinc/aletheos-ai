@@ -7,10 +7,10 @@
 
     <nav class="global-nav" aria-label="Primary">
             <a class="global-nav__link" href="/index.php">Home</a>
+      <a class="global-nav__link" href="/research/from-circle-to-thalion.php">Start Here</a>
       <a class="global-nav__link" href="/research.php">Research</a>
-      <a class="global-nav__link" href="/thalean_action_theory.php">TAT</a>
       <a class="global-nav__link" href="/labs.php">Labs</a>
-      <a class="global-nav__link" href="/audit.php">Audit</a>
+      <a class="global-nav__link" href="/evidence.php">Evidence</a>
       <a class="global-nav__link" href="/about_cori.php">About</a>
     </nav>
   </div>

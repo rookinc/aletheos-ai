@@ -19,5 +19,6 @@ $page_css = $page_css ?? [];
   <?php foreach ($page_css as $css_file): ?>
   <link rel="stylesheet" href="<?php echo htmlspecialchars($css_file, ENT_QUOTES, 'UTF-8'); ?>" />
   <?php endforeach; ?>
+  <link rel="stylesheet" href="/assets/index.css" />
 </head>
 <body>

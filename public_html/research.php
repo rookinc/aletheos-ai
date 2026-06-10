@@ -1,163 +1,155 @@
 <?php
-$page_title = 'Research - Aletheos.ai';
-$page_description = 'Aletheos research map for CoRI: finite structure, coherence diagnostics, physics-facing probes, and public audit artifacts.';
-$page_css = ['assets/index.css', 'assets/research_page.css'];
-
+$page_title = 'Research — Aletheos.ai';
+$page_description = 'Research index for Aletheos and CoRI: Thalean Action Theory, the Thalean graph, papers, labs, and public evidence.';
+$page_css = ['/assets/research_page.css'];
 include __DIR__ . '/includes/head.php';
 include __DIR__ . '/includes/site_header.php';
 ?>
 
 <main class="site-shell research-page">
-  <section class="hero research-hero">
+  <section class="hero">
     <p class="eyebrow">Research</p>
-
-    <div class="hero-grid">
-      <div class="hero-copy">
-        <h1 class="hero-title">Research at CoRI.</h1>
-
-        <p class="hero-text">
-          CoRI studies how apparent patterns become accountable structures:
-          by testing whether they survive changed viewpoints, controlled
-          perturbations, and traceable constraints.
-        </p>
-
-        <p class="hero-text hero-text--secondary">
-          The research program begins with exact finite structures, then asks
-          how their invariants, failures, closures, and audit trails can help
-          distinguish projected surface agreement from global coherence.
-        </p>
-
-        <div class="hero-actions" aria-label="Research actions">
-          <a class="button button--primary" href="/the_thalean_graph_at4val_60_6.php">Open the Thalean graph page</a>
-          <a class="button button--secondary" href="/audit.php">View the audit layer</a>
-        </div>
-      </div>
-
-      <aside class="hero-emblem" aria-label="CoRI research themes">
-        <div class="orbital-mark">
-          <span class="orbital-mark__ring orbital-mark__ring--outer"></span>
-          <span class="orbital-mark__ring orbital-mark__ring--middle"></span>
-          <span class="orbital-mark__ring orbital-mark__ring--inner"></span>
-          <span class="orbital-mark__point orbital-mark__point--one"></span>
-          <span class="orbital-mark__point orbital-mark__point--two"></span>
-          <span class="orbital-mark__point orbital-mark__point--three"></span>
-        </div>
-        <p class="emblem-caption">structure - stress - trace</p>
-      </aside>
+    <h1>The formal work lives here.</h1>
+    <p class="hero-text">
+      Research pages collect the framework, canonical object, papers, technical
+      notes, inspection surfaces, and evidence records behind Aletheos.
+    </p>
+    <p class="hero-text">
+      The public goal is simple: claims should remain connected to relation,
+      action, witness, and traceable constraint.
+    </p>
+    <div class="hero-actions">
+      <a class="button button--primary" href="/the_thalean_graph_at4val_60_6.php">View the Thalean graph</a>
+      <a class="button button--secondary" href="/papers.php">Read papers</a>
+      <a class="button button--secondary" href="/evidence.php">View evidence</a>
     </div>
   </section>
 
   <section class="index-section">
-    <div class="section-head">
-      <p class="section-kicker">Research lanes</p>
-      <h2>A map of the current program.</h2>
-      <p class="section-text">
-        The work is organized around a practical question: what makes a pattern
-        accountable enough to inspect, challenge, reproduce, and build on?
-      </p>
-    </div>
+    <p class="eyebrow">Core path</p>
+    <h2>From concept to object.</h2>
 
     <div class="card-grid">
-      <a class="index-card" href="/research/from-circle-to-thalion.php">
-        <span class="card-label">Introductory tutorial</span>
-        <h3>What is a Thalion?</h3>
-        <p>
-          Start with the simplest boundary we know: a circle. Then climb through
-          body, membrane, port, hinge, witness, closure, and dodecahedral
-          transport toward the thalion.
-        </p>
-      </a>
-
-      <a class="index-card feature-card" href="/the_thalean_graph_at4val_60_6.php">
-        <span class="card-label">Finite structure</span>
-        <h3>The Thalean graph</h3>
-        <p>
-          The central theorem object: AT4val[60,6], its G60/G30/G15 quotient
-          structure, sector geometry, chamber grammar, and exact matrix identity.
-        </p>
-      </a>
-
-      <a class="index-card" href="/coherence.php">
-        <span class="card-label">Diagnostics</span>
-        <h3>Coherence gap</h3>
-        <p>
-          A developing graph-theoretic diagnostic for separating projected
-          surface agreement from global coherence through all-root inspection,
-          shell stress, and controlled rewiring.
-        </p>
-      </a>
-
       <article class="index-card">
-        <span class="card-label">Closure</span>
-        <h3>Metric closure</h3>
+        <p class="card-label">Beginner path</p>
+        <h3>Start Here</h3>
         <p>
-          A workshop method for treating failed constructions as evidence:
-          failed lift, metric closure, quotient extraction, verification, and
-          catalogue identification.
+          Start with a circle, then climb through boundary, body, membrane,
+          port, hinge, witness, closure, and thalion.
         </p>
+        <a class="button button--secondary" href="/research/from-circle-to-thalion.php">Read the tutorial</a>
       </article>
 
       <article class="index-card">
-        <span class="card-label">Physics-facing probes</span>
-        <h3>Structured benchmarks</h3>
+        <p class="card-label">Framework</p>
+        <h3>Thalean Action Theory</h3>
         <p>
-          Cautious bridge work applying the same discipline to CMB benchmark
-          templates and sonoluminescence boundary-flux experimental design.
+          The research framework for relation, action, witness, trace,
+          admissibility, and accountable structure.
         </p>
+        <a class="button button--secondary" href="/thalean_action_theory.php">Read TAT</a>
       </article>
 
-      <a class="index-card" href="/glossary.php">
-        <span class="card-label">Vocabulary</span>
-        <h3>Thalean glossary</h3>
+      <article class="index-card">
+        <p class="card-label">Canonical object</p>
+        <h3>The Thalean Graph</h3>
         <p>
-          Public definitions for TAT, TGT, thalion, witness, boundary,
-          admissibility, surface, and coherence gap.
+          The theorem-facing public surface for the canonical finite object,
+          verification records, and companion papers.
         </p>
-      </a>
-
-      <a class="index-card" href="/audit.php">
-        <span class="card-label">Audit layer</span>
-        <h3>Claims leave tracks</h3>
-        <p>
-          Public theorem objects, JSON contracts, verification reports, and
-          checker scripts keep claims tied to inspectable artifacts.
-        </p>
-      </a>
-
-      <a class="index-card" href="/papers.php">
-        <span class="card-label">Papers</span>
-        <h3>Papers and notes</h3>
-        <p>
-          Public research outputs with status labels: theorem-facing notes,
-          working notes, method papers, and bounded speculative bridges.
-        </p>
-      </a>
-
-      <a class="index-card" href="/labs.php">
-        <span class="card-label">Labs</span>
-        <h3>Witness surfaces</h3>
-        <p>
-          Interactive tools for changing viewpoint, inspecting finite structure,
-          and exploring quotient-visible witnesses.
-        </p>
-      </a>
+        <a class="button button--primary" href="/the_thalean_graph_at4val_60_6.php">View the object</a>
+      </article>
     </div>
   </section>
 
   <section class="index-section">
-    <div class="section-head">
-      <p class="section-kicker">Scope</p>
-      <h2>Exploratory, artifact-backed, and deliberately bounded.</h2>
-      <p class="section-text">
-        CoRI does not treat visual analogy, numerical coincidence, or one
-        favorable viewpoint as proof. The goal is to develop ideas carefully by
-        making their assumptions, constraints, artifacts, and failure modes
-        visible.
-      </p>
+    <p class="eyebrow">Research library</p>
+    <h2>Papers, notes, and definitions.</h2>
+
+    <div class="card-grid">
+      <article class="index-card">
+        <p class="card-label">Papers</p>
+        <h3>Papers and notes</h3>
+        <p>
+          Manuscripts, technical notes, and supporting written artifacts for the
+          current research stack.
+        </p>
+        <a class="button button--secondary" href="/papers.php">Open papers</a>
+      </article>
+
+      <article class="index-card">
+        <p class="card-label">Technical spaces</p>
+        <h3>Mathematical spaces</h3>
+        <p>
+          A deeper technical page for the mathematical setting around the
+          Thalean construction.
+        </p>
+        <a class="button button--secondary" href="/research/thalean-mathematical-spaces.php">Open technical page</a>
+      </article>
+
+      <article class="index-card">
+        <p class="card-label">Definitions</p>
+        <h3>Glossary</h3>
+        <p>
+          Public definitions for recurring terms: thalion, witness, boundary,
+          action, surface, TAT, TGT, and related language.
+        </p>
+        <a class="button button--secondary" href="/glossary.php">Open glossary</a>
+      </article>
     </div>
+  </section>
+
+  <section class="index-section">
+    <p class="eyebrow">Inspection and evidence</p>
+    <h2>Surfaces and receipts.</h2>
+
+    <div class="card-grid">
+      <article class="index-card">
+        <p class="card-label">Labs</p>
+        <h3>Public inspection surfaces</h3>
+        <p>
+          Open live surfaces for viewing, moving, comparing, and questioning the
+          current structures.
+        </p>
+        <a class="button button--secondary" href="/labs.php">Open labs</a>
+      </article>
+
+      <article class="index-card">
+        <p class="card-label">Evidence</p>
+        <h3>Receipts and artifacts</h3>
+        <p>
+          Find theorem objects, JSON records, verification reports, checker
+          scripts, and bounded status records.
+        </p>
+        <a class="button button--secondary" href="/evidence.php">View evidence</a>
+      </article>
+
+      <article class="index-card">
+        <p class="card-label">Coherence</p>
+        <h3>Coherence notes</h3>
+        <p>
+          Notes on surface coherence, projection, observed closure, and the
+          difference between appearance and accountable structure.
+        </p>
+        <a class="button button--secondary" href="/coherence.php">Open coherence notes</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="index-section">
+    <p class="eyebrow">Research posture</p>
+    <h2>Useful, bounded, inspectable.</h2>
+    <p class="section-text">
+      CoRI does not treat visual analogy, numerical coincidence, or one
+      attractive rendering as proof. The work is strongest when a pattern
+      survives changed viewpoints, controlled perturbations, and traceable
+      constraints.
+    </p>
+    <p class="section-text">
+      Aletheos.ai is the public surface for that discipline: relation, action,
+      witness, evidence, and explicit status boundaries.
+    </p>
   </section>
 </main>
 
 <?php include __DIR__ . '/includes/site_footer.php'; ?>
-</body>
-</html>

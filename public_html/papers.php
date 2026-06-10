@@ -30,7 +30,7 @@ include __DIR__ . '/includes/site_header.php';
 
         <div class="hero-actions" aria-label="Paper page actions">
           <a class="button button--primary" href="/research.php">Back to research map</a>
-          <a class="button button--secondary" href="/audit.php">View audit layer</a>
+          <a class="button button--secondary" href="/evidence.php">View evidence layer</a>
         </div>
       </div>
 

@@ -10,7 +10,7 @@ include __DIR__ . '/../../includes/site_header.php';
 <main class="site-shell collapse-tool-page">
   <section class="tool-header">
     <div>
-      <p class="eyebrow">Quotient Lab</p>
+      <p class="eyebrow">Informative Action Lab</p>
       <h1>Informative Action</h1>
       <p>
         Watch how action moves through a simple visual system and leaves a trace

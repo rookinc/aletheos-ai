@@ -31,14 +31,13 @@
           <button id="play-pause-btn" class="mini-transport-btn" type="button" aria-label="Play or pause">▶</button>
           <button id="reset-btn" class="mini-transport-btn" type="button" aria-label="Reset view">↻</button>
           <button id="step-forward-btn" class="mini-transport-btn" type="button" aria-label="Step forward one sheet">⟫</button>
-        </div>
-
-          <div class="camera-preset-row" aria-label="Graph reading presets">
-            <span>Read</span>
-            <button id="camera-preset-1" class="camera-preset-btn" type="button" aria-label="Axis reading">Axis</button>
-            <button id="camera-preset-2" class="camera-preset-btn" type="button" aria-label="Ring reading">Ring</button>
-            <button id="camera-preset-3" class="camera-preset-btn" type="button" aria-label="Shear reading">Shear</button>
+        
+          <div class="camera-preset-row" aria-label="View presets">
+<button id="camera-preset-1" class="camera-preset-btn" type="button" aria-label="View Axis">A</button>
+            <button id="camera-preset-2" class="camera-preset-btn" type="button" aria-label="View Ring">R</button>
+            <button id="camera-preset-3" class="camera-preset-btn" type="button" aria-label="View Shear">S</button>
           </div>
+        </div>
 
         <div class="rate-control sheet-rate-control">
           <label for="sheet-rate-slider">Sheets/sec</label>
@@ -144,21 +143,8 @@
           <span id="vertex-opacity-readout">1.00</span>
         </div>
     </section>
-
-    <section class="card boundary-card">
-      <h2>Boundary</h2>
-      <p>
-        This lab renders the preferred Phase 30 P900 toroidal-action view:
-        Orbit 2, fixed 900 artifact vertices, with selectable surface, internal G60, and combined layers.
-        Play/Pause changes only visual inspection motion.
-      </p>
-    </section>
-
-    <section class="card console-panel">
-      <h2>Console</h2>
-      <pre id="metrics-console">loading...</pre>
-    </section>
-  </main>
+    <pre id="metrics-console" class="visually-hidden">loading...</pre>
+</main>
 
   <script type="module" src="lab_boot.js"></script>
 

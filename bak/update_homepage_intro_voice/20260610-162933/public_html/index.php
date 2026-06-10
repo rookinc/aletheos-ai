@@ -21,17 +21,12 @@ include __DIR__ . '/includes/site_header.php';
       </div>
 
     <p class="hero-text">
-      Welcome to Aletheos, the public research surface for the Centre of
-      Recursive Inquiry. We are an AI think tank exploring what emerging
-      intelligent systems mean for human agency, trust, governance, and
-      responsibility.
+      Aletheos is the public research surface for the Centre of Recursive Inquiry.
+      It studies how apparent patterns become accountable structures.
     </p>
     <p class="hero-text">
-      We work from inside the system, using the same technological transition
-      we study: AI-assisted inquiry, technical artifacts, public labs, and
-      philosophical reflection. Our guiding question is practical and human:
-      when intelligent systems act, what remains visible, and how can people
-      inspect what happened?
+      The work asks a practical question: when relation becomes action, what trace
+      remains, and how can others inspect it?
     </p>
     <div class="hero-actions">
       <a class="button button--primary" href="/research/from-circle-to-thalion.php">Start here</a>

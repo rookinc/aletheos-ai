@@ -181,7 +181,7 @@ $sections = [
 
     <div class="fct-intro">
       <p>
-        <strong>Some things hold together.</strong>
+        Some things hold together.
       </p>
 
       <p>
@@ -217,6 +217,11 @@ $sections = [
     <div class="fct-intro">
       <p>A thalion is what happens when that whole ladder becomes accountable as a finite relational structure.</p>
 
+      <p>The path of this page is simple. We start with a circle, notice the boundary, let the boundary become a body, let the body become an active membrane, give the membrane lawful ports, watch ports become hinges, mark the witness center, and then see how local articulations close into a thalion-like form.</p>
+
+      <p>The formal graph is not the starting point for the reader. It is the accountability layer waiting at the end of the walk.</p>
+
+      <p>This page teaches the roles. The next chapter introduces the Thalean graph that makes those roles accountable.</p>
     </div>
   </header>
 

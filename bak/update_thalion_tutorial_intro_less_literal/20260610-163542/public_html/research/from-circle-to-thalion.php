@@ -181,32 +181,40 @@ $sections = [
 
     <div class="fct-intro">
       <p>
-        <strong>Some things hold together.</strong>
+        This page is a gentle doorway into one of CoRI's central ideas. You do
+        not need to know graph theory, AI governance, or Thalean terminology
+        before you begin. We are going to start with something ordinary: a
+        circle.
       </p>
 
       <p>
-        A room holds a conversation. A cell holds a living interior. A city
-        holds movement through streets, gates, borders, and neighborhoods. A
-        software system holds users, permissions, memory, decisions, and
-        consequences. None of these things are only shapes. They are bounded
-        worlds where relation is allowed to happen without everything dissolving
-        into everything else.
+        A circle already gives us a useful distinction. There is an inside,
+        an outside, and a boundary between them. From there, we can ask a very
+        human question: what happens when a bounded thing does not merely sit
+        there, but admits relation, responds to what crosses its boundary, and
+        leaves a trace of what happened?
       </p>
 
       <p>
-        A thalion is CoRI's name for a bounded relational structure when that
-        structure becomes accountable. It is not just a thing with an edge. It
-        is a body with an inside and an outside, places where relation may cross,
-        ways for crossing to change meaning, and a witness position from which
-        the whole can be inspected.
+        That question matters beyond mathematics. Rooms, conversations,
+        organizations, software systems, and intelligent tools all have
+        boundaries of some kind. They allow some things in, keep some things
+        out, transform what passes through them, and create consequences that
+        other people may need to understand.
       </p>
 
       <p>
-        This tutorial starts before the machinery. It begins with the simplest
-        boundary most people already understand: a circle. From there, we follow
-        a slow path from boundary to body, from body to relation, from relation
-        to witness, and finally toward the formal graph that makes the structure
-        checkable.
+        A thalion is CoRI's name for this kind of bounded relational body when
+        it becomes mathematically accountable. It has an inside and an outside,
+        lawful crossing points, hinge-like places where relation changes
+        register, and a witness role from which the structure can be inspected.
+      </p>
+
+      <p>
+        The formal Thalean graph is the accountability layer behind this
+        tutorial. But the graph is not where a first reader should begin. This
+        page teaches the intuition first, one step at a time, so the machinery
+        has somewhere to land.
       </p>
     </div>
 
@@ -217,6 +225,11 @@ $sections = [
     <div class="fct-intro">
       <p>A thalion is what happens when that whole ladder becomes accountable as a finite relational structure.</p>
 
+      <p>The path of this page is simple. We start with a circle, notice the boundary, let the boundary become a body, let the body become an active membrane, give the membrane lawful ports, watch ports become hinges, mark the witness center, and then see how local articulations close into a thalion-like form.</p>
+
+      <p>The formal graph is not the starting point for the reader. It is the accountability layer waiting at the end of the walk.</p>
+
+      <p>This page teaches the roles. The next chapter introduces the Thalean graph that makes those roles accountable.</p>
     </div>
   </header>
 

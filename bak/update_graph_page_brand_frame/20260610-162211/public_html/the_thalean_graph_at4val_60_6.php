@@ -119,7 +119,7 @@ include __DIR__ . '/includes/site_header.php';
 
       <article class="principle-card">
         <span class="card-label">Aletheos</span>
-        <h3>A path toward accountable intelligence</h3>
+        <h3>A path toward accountability</h3>
         <p>
           The long-term question is whether structures like this can help model
           traceable action in AI systems, privacy-preserving computation, and
@@ -291,7 +291,7 @@ include __DIR__ . '/includes/site_header.php';
   <section class="index-section scope-section">
     <div class="section-head">
       <p class="section-kicker">Scope</p>
-      <h2>A theorem object inside a human-centered AI think tank.</h2>
+      <h2>Research context, not final doctrine.</h2>
       <p class="section-text">
         The Thalean Graph project is exploratory mathematical research. Aletheos
         presents it publicly because the broader goal is to make difficult ideas,

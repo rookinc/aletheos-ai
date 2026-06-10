@@ -75,12 +75,23 @@ function phaseMorphology() {
 
 function colorFor(value) {
   const x = clamp(value, -2.5, 2.5);
-  if (x >= 0) {
-    const k = Math.round(80 + 70 * Math.min(1, x / 2.5));
-    return `rgb(${k + 70}, ${90 + k / 2}, 110)`;
+  const k = Math.min(1, Math.abs(x) / 2.5);
+
+  if (Math.abs(x) < 0.035) {
+    return 'rgb(248, 250, 252)';
   }
-  const k = Math.round(80 + 90 * Math.min(1, -x / 2.5));
-  return `rgb(70, ${100 + k / 2}, ${k + 80})`;
+
+  if (x >= 0) {
+    const r = Math.round(219 - 78 * k);
+    const g = Math.round(234 - 78 * k);
+    const b = Math.round(254 - 34 * k);
+    return `rgb(${r}, ${g}, ${b})`;
+  }
+
+  const r = Math.round(254 - 34 * k);
+  const g = Math.round(226 - 80 * k);
+  const b = Math.round(226 - 88 * k);
+  return `rgb(${r}, ${g}, ${b})`;
 }
 
 function makeSvg(tag, attrs = {}) {
@@ -205,7 +216,7 @@ function currentStateObject() {
   const maxu = Math.max(...CW.u.map(Math.abs));
 
   return {
-    artifact: "collapse_witness_lens_state",
+    artifact: "informative_action_lab_state",
     version: "0.6",
     theorem_object: CW.theorem?.name ?? null,
     lens: CW.lens?.name ?? null,
@@ -219,7 +230,7 @@ function currentStateObject() {
       ["A", "D", "E", "C", "B", "F"].map(k => [k, Number((stations[k] ?? 0).toFixed(6))])
     ),
     source_vertex: CW.params?.forcing?.source_vertex ?? null,
-    note: "Exploratory visual lens state. This is not a theorem object and not a physical derivation."
+    note: "Exploratory informative-action lab state. This is not a theorem object and not a physical derivation."
   };
 }
 
@@ -234,7 +245,7 @@ async function copyStateJson() {
 
   try {
     await navigator.clipboard.writeText(text);
-    setStatus("Copied current collapse witness state JSON to clipboard.");
+    setStatus("Copied current informative action state JSON to clipboard.");
   } catch (err) {
     setStatus("Clipboard copy failed. State JSON is visible in the provenance panel.");
     console.error(err);
@@ -258,7 +269,7 @@ function exportWitnessSvg() {
   const blob = new Blob([source], { type: "image/svg+xml;charset=utf-8" });
   const url = URL.createObjectURL(blob);
 
-  const filename = `collapse_witness_${state.mode.replaceAll(" ", "_")}_${state.phase.replaceAll(" ", "_")}_${String(state.time).replace(".", "p")}.svg`;
+  const filename = `informative_action_${state.mode.replaceAll(" ", "_")}_${state.phase.replaceAll(" ", "_")}_${String(state.time).replace(".", "p")}.svg`;
 
   const a = document.createElement("a");
   a.href = url;
@@ -997,7 +1008,7 @@ function updateReadouts() {
   const mode = getMode();
   const locked = typeof isPhaseLocked === "function" && isPhaseLocked();
   setText('cw-phase', mode === 'overlay' ? currentPhaseName() : 'raw G15 quotient');
-  setText('cw-mode-readout', locked ? 'locked preset' : (mode === 'overlay' ? 'collapse overlay' : 'raw G15'));
+  setText('cw-mode-readout', locked ? 'locked preset' : (mode === 'overlay' ? 'action overlay' : 'raw G15'));
   setText('cw-time', CW.t.toFixed(2));
   setText('cw-maxu', maxu.toFixed(3));
   setText(
@@ -1072,7 +1083,7 @@ async function bootCollapseWitness() {
   document.getElementById('cw-export-svg')?.addEventListener('click', exportWitnessSvg);
   document.getElementById('cw-copy-state')?.addEventListener('click', copyStateJson);
 
-  setStatus(`Loaded canonical G15 transport theorem object. Current view: exploratory collapse witness lens.`);
+  setStatus(`Loaded canonical G15 transport theorem object. Current view: informative action lab.`);
   requestAnimationFrame(frame);
 }
 

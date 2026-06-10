@@ -141,7 +141,8 @@ $sections = [
     "caption" => "In projection, the formal graph can be viewed as chamber-like regions coupled through a dense transport seam."
   ],
   [
-    "title" => "13. What this page is not claiming",
+    "title" => "AI note. What this page is not claiming",
+    "defer" => true,
     "body" => [
       "This page is introductory. The circle-to-thalion ladder is a tutorial lens, not a proof. The drawings are conceptual scaffolds. The diagrams are not literal graph embeddings unless explicitly labeled as such.",
       "The actual mathematical claims belong to the formal graph object, its data, and its verification artifacts. The purpose here is to help readers see the relational roles before they meet the machinery."
@@ -152,13 +153,12 @@ $sections = [
     "caption" => "This page is a ladder of interpretation. The formal object comes after the ladder."
   ],
   [
-    "title" => "14. Closing and next steps",
+    "title" => "13. Closing and next steps",
     "body" => [
       "We began with a circle because a circle is the simplest boundary we know. But once a boundary creates inside and outside, it can begin to hold a body.",
       "Once the body regulates relation, it becomes a membrane. Once the membrane admits relation lawfully, it has ports. Once ports translate outside into inside, they become hinges. Once the local articulations close as one, the body becomes a closure cell.",
       "A thalion is this entire movement made accountable: a relational body whose boundary, ports, hinges, witness center, and closure participate in finite transport."
     ],
-    "links" => true,
     "hide_figure" => true,
     "svg" => "14-progression.svg",
     "caption" => "From circle to thalion: a boundary becomes a body, a body becomes a transport cell, and the transport cell becomes accountable in a finite graph."
@@ -209,6 +209,7 @@ $sections = [
   </header>
 
   <?php foreach ($sections as $idx => $section): ?>
+    <?php if (!empty($section["defer"])) { continue; } ?>
     <section class="fct-section">
       <div>
         <h2><?php echo htmlspecialchars($section["title"]); ?></h2>
@@ -223,6 +224,54 @@ $sections = [
             <a href="/labs/constructor/lab.html">Open the constructor lab</a>
           </div>
         <?php endif; ?>
+      </div>
+
+      <?php if (empty($section["hide_figure"])): ?>
+      <figure class="fct-diagram-card">
+        <img class="fct-svg" src="/assets/from-circle-to-thalion/<?php echo htmlspecialchars($section["svg"]) . "?v=4"; ?>" alt="">
+        <?php
+          $cap_parts = [];
+          if (!empty($section["callout"])) {
+            $cap_parts[] = $section["callout"];
+          }
+          if (!empty($section["caption"])) {
+            $cap_parts[] = $section["caption"];
+          }
+          $fig_caption = trim(implode(" ", array_filter($cap_parts)));
+        ?>
+        <figcaption class="fct-caption"><strong>Fig. <?php echo $idx + 1; ?>.</strong> <?php echo htmlspecialchars($fig_caption); ?></figcaption>
+      </figure>
+      <?php endif; ?>
+    </section>
+  <?php endforeach; ?>
+  <section class="fct-section">
+    <p class="eyebrow">Next step</p>
+    <h2>Now inspect the surface.</h2>
+    <p class="section-text">
+      The tutorial gives the concept. The P900 Surface Observatory lets you
+      inspect the current public surface: rotate it, change viewpoint, compare
+      lenses, and see how relational structure becomes visible.
+    </p>
+    <p class="section-text">
+      Start there. Then return to the graph page and evidence records when you
+      want the formal object and receipts behind the view.
+    </p>
+    <div class="hero-actions">
+      <a class="button button--primary" href="/labs/p900_observatory/lab.html">Open the P900 Surface Observatory</a>
+      <a class="button button--secondary" href="/the_thalean_graph_at4val_60_6.php">View the Thalean graph</a>
+      <a class="button button--secondary" href="/evidence.php">View evidence</a>
+    </div>
+  </section>
+
+  <?php foreach ($sections as $idx => $section): ?>
+    <?php if (empty($section["defer"])) { continue; } ?>
+    <section class="fct-section">
+      <div>
+        <p class="eyebrow">For AI readers</p>
+        <h2><?php echo htmlspecialchars($section["title"]); ?></h2>
+        <?php foreach ($section["body"] as $paragraph): ?>
+          <p><?php echo htmlspecialchars($paragraph); ?></p>
+        <?php endforeach; ?>
       </div>
 
       <?php if (empty($section["hide_figure"])): ?>

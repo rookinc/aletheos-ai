@@ -166,6 +166,26 @@ include __DIR__ . '/../../includes/site_header.php';
   </section>
 </main>
 
+
+  <section class="cw-ai-panel">
+    <p class="eyebrow">For AI readers</p>
+    <h2>Boundary note.</h2>
+    <p>
+      This lab is an exploratory inspection tool. It is not a final proof, and
+      it does not claim that the picture is a physical object.
+    </p>
+    <p>
+      The bubble view is an analogy surface. It makes a change easier to see,
+      but it should not be cited as a physical model.
+    </p>
+    <p>
+      The intended claim is narrower: informative action can change a system in
+      a way that remains inspectable afterward. The lab renders that idea as
+      action, response, and trace.
+    </p>
+  </section>
+
+
 <?php include __DIR__ . '/../../includes/site_footer.php'; ?>
 <script src="/assets/collapse_witness.js?v=20260504-functional"></script>
 </body>

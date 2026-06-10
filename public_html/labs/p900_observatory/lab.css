@@ -2743,3 +2743,73 @@ button:hover {
     min-width: 3.18rem !important;
   }
 }
+
+/* P900 tiny pinch and zoom label */
+.stage-lock-text,
+.stage-lock-toggle .stage-lock-text,
+.stage-lock-toggle:has(input:checked) .stage-lock-text {
+  font-size: 0.24rem !important;
+  letter-spacing: 0.16em !important;
+  opacity: 0.22 !important;
+  right: calc(100% + 0.26rem) !important;
+}
+
+@media (max-width: 520px) {
+  .stage-lock-text,
+  .stage-lock-toggle .stage-lock-text,
+  .stage-lock-toggle:has(input:checked) .stage-lock-text {
+    font-size: 0.20rem !important;
+    letter-spacing: 0.14em !important;
+    opacity: 0.18 !important;
+    right: calc(100% + 0.22rem) !important;
+  }
+}
+
+/* P900 readable tiny pinch and zoom label */
+.stage-lock-text,
+.stage-lock-toggle .stage-lock-text,
+.stage-lock-toggle:has(input:checked) .stage-lock-text {
+  font-size: 0.84rem !important;
+  letter-spacing: 0.13em !important;
+  opacity: 0.46 !important;
+  right: calc(100% + 0.34rem) !important;
+}
+
+@media (max-width: 520px) {
+  .stage-lock-text,
+  .stage-lock-toggle .stage-lock-text,
+  .stage-lock-toggle:has(input:checked) .stage-lock-text {
+    font-size: 0.72rem !important;
+    letter-spacing: 0.12em !important;
+    opacity: 0.38 !important;
+    right: calc(100% + 0.28rem) !important;
+  }
+}
+
+/* P900 CoRI public footer */
+.p900-lab-footer {
+  max-width: 980px;
+  margin: 1.25rem auto 1.6rem;
+  padding: 0 1rem;
+  color: rgba(159, 182, 204, 0.78);
+  font-size: 0.78rem;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.p900-lab-footer p {
+  margin: 0.18rem 0;
+}
+
+.p900-lab-footer p:first-child {
+  color: rgba(217, 184, 108, 0.82);
+}
+
+@media (max-width: 520px) {
+  .p900-lab-footer {
+    margin-top: 1rem;
+    padding: 0 0.85rem 1.2rem;
+    font-size: 0.68rem;
+    line-height: 1.35;
+  }
+}

@@ -79,15 +79,13 @@
             <button id="settings-export-url-btn" class="settings-export-url-btn settings-share-primary settings-share-header-btn settings-header-action-btn" type="button">
               Share
             </button>
-            <button id="settings-delete-lens-btn" class="settings-delete-lens-btn settings-header-action-btn" type="button" hidden>
-              Delete
-            </button>
           </div>
         </div>
 
         <div class="settings-preset-row">
           <label for="settings-preset-select">Lens Name</label>
-          <select id="settings-preset-select" aria-label="Lens Name">
+          <div class="settings-preset-control">
+            <select id="settings-preset-select" aria-label="Lens Name">
             <option value="default" selected>Default</option>
             <option value="cloud">Cloud</option>
             <option value="balanced">Balanced</option>
@@ -100,6 +98,10 @@
           
             <optgroup id="settings-saved-lenses-optgroup" label="Saved lenses"></optgroup>
           </select>
+            <button id="settings-delete-lens-btn" class="settings-delete-lens-btn settings-delete-icon-btn" type="button" hidden aria-label="Delete saved lens" title="Delete saved lens">
+              &#128465;
+            </button>
+          </div>
         </div>
 
         <div class="view-fader-stack" aria-label="Layer faders">

@@ -1,7 +1,7 @@
 <?php
 $page_title = 'About CoRI - Aletheos.ai';
-$page_description = 'CoRI is an independent research workshop studying how apparent patterns become accountable structures through changed viewpoints, controlled perturbations, and traceable constraints.';
-$page_css = ['assets/index.css'];
+$page_description = 'The Centre of Recursive Inquiry is a research workshop for making ideas accountable through changed viewpoints, controlled perturbations, and traceable constraints.';
+$page_css = ['/assets/index.css'];
 
 include __DIR__ . '/includes/head.php';
 include __DIR__ . '/includes/site_header.php';
@@ -10,210 +10,161 @@ include __DIR__ . '/includes/site_header.php';
 <main class="site-shell">
   <section class="hero">
     <p class="eyebrow">About CoRI</p>
-
-    <div class="hero-grid">
-      <div class="hero-copy">
-        <h1 class="hero-title">Err. Doubt. Endure. Discover.</h1>
-
-        <p class="hero-text">
-          The Centre of Recursive Inquiry (CoRI) is a workshop for disciplined
-          recognition. It studies how apparent patterns become accountable
-          structures.
-        </p>
-
-        <p class="hero-text hero-text--secondary">
-          CoRI does not protect ideas from stress. It asks whether they survive
-          changed viewpoints, controlled perturbations, and traceable
-          constraints.
-        </p>
-
-        <p class="hero-text hero-text--secondary">
-          Aletheos.ai is the public surface for that work: a place for Thalean
-          Action Theory, Thalean Graph Theory, coherence diagnostics, audit
-          artifacts, interactive labs, and careful public explanation.
-        </p>
-      </div>
-
-      <aside class="hero-emblem" aria-label="CoRI themes">
-        <div class="orbital-mark">
-          <span class="orbital-mark__ring orbital-mark__ring--outer"></span>
-          <span class="orbital-mark__ring orbital-mark__ring--middle"></span>
-          <span class="orbital-mark__ring orbital-mark__ring--inner"></span>
-          <span class="orbital-mark__point orbital-mark__point--one"></span>
-          <span class="orbital-mark__point orbital-mark__point--two"></span>
-          <span class="orbital-mark__point orbital-mark__point--three"></span>
-        </div>
-        <p class="emblem-caption">err - doubt - endure - discover</p>
-      </aside>
-    </div>
+    <h1>Err. Doubt. Endure. Discover.</h1>
+    <p class="hero-text">
+      The Centre of Recursive Inquiry is a research workshop for making ideas
+      accountable.
+    </p>
+    <p class="hero-text">
+      CoRI studies how apparent patterns become structures that can be inspected,
+      challenged, and refined. A pattern may look meaningful from one angle. The
+      question is whether it survives changed viewpoints, controlled
+      perturbations, and traceable constraints.
+    </p>
+    <p class="hero-text">
+      We do not protect ideas from stress. We ask whether they can protect
+      themselves.
+    </p>
   </section>
 
   <section class="index-section">
-    <div class="section-head">
-      <p class="section-kicker">Where to start</p>
-      <h2>A simple path into the work.</h2>
-      <p class="section-text">
-        CoRI is the method. Thalean Action Theory is the umbrella framework.
-        The thalion tutorial gives the intuition. The Thalean graph page gives
-        the formal object. The labs provide witness surfaces for inspection.
-      </p>
-    </div>
-
-    <div class="card-grid">
-      <a class="index-card feature-card" href="/research/from-circle-to-thalion.php">
-        <span class="card-label">Introductory tutorial</span>
-        <h3>What is a Thalion?</h3>
-        <p>
-          Start with a circle, then climb through boundary, body, membrane,
-          port, hinge, witness, closure, and relational transport.
-        </p>
-      </a>
-
-      <a class="index-card" href="/thalean_action_theory.php">
-        <span class="card-label">Framework</span>
-        <h3>Thalean Action Theory</h3>
-        <p>
-          The public umbrella for relation, action, identity, boundary,
-          witness, and accountability.
-        </p>
-      </a>
-
-      <a class="index-card" href="/the_thalean_graph_at4val_60_6.php">
-        <span class="card-label">Graph core</span>
-        <h3>The Thalean Graph</h3>
-        <p>
-          The finite theorem object where the relations can be checked,
-          counted, and inspected.
-        </p>
-      </a>
-
-      <a class="index-card" href="/labs.php">
-        <span class="card-label">Witness surfaces</span>
-        <h3>Aletheos Labs</h3>
-        <p>
-          Interactive surfaces for changing viewpoint, exposing structure,
-          and inspecting quotient-visible behavior.
-        </p>
-      </a>
-    </div>
-  </section>
-
-
-  <section class="index-section">
-    <div class="section-head">
-      <p class="section-kicker">What CoRI does</p>
-      <h2>We test when patterns become accountable.</h2>
-      <p class="section-text">
-        A compelling pattern can still be fragile. It may depend on one chosen
-        view, one convenient scale, one selected example, or one untested
-        analogy. CoRI studies what remains after the view is changed and the
-        structure is asked to explain itself.
-      </p>
-    </div>
+    <p class="eyebrow">What CoRI does</p>
+    <h2>CoRI helps claims become inspectable.</h2>
+    <p class="section-text">
+      CoRI works with early ideas, formal structures, visual surfaces, and
+      evidence records. The aim is not to declare final truth too quickly. The
+      aim is to help a claim become clear enough that others can inspect it.
+    </p>
 
     <div class="principle-grid">
       <article class="principle-card">
-        <span class="card-label">Inquiry</span>
-        <h3>Follow the pattern</h3>
+        <h3>Notice the pattern</h3>
         <p>
-          We begin with observations, constructions, failures, analogies, and
-          candidate structures that appear to carry information.
+          Begin with something that appears to carry structure: a relation, a
+          diagram, a graph, a motion, a repeated form, a failure, or a surprising
+          match.
         </p>
       </article>
 
       <article class="principle-card">
-        <span class="card-label">Discipline</span>
-        <h3>Stress the claim</h3>
+        <h3>Change the view</h3>
         <p>
-          We use changed viewpoints, null models, perturbations, closure tests,
-          and explicit limitations to separate coherence from local mimicry.
+          Rotate it. Perturb it. Compare it against null cases. Ask whether the
+          pattern survives when the conditions change.
         </p>
       </article>
 
       <article class="principle-card">
-        <span class="card-label">Witness</span>
         <h3>Leave a trail</h3>
         <p>
-          We prefer claims that can be tied to artifacts, scripts, invariants,
-          verification reports, and public reasoning.
+          Prefer claims that point back to artifacts, scripts, data, diagrams,
+          verification records, or explicit limits.
         </p>
       </article>
     </div>
   </section>
 
   <section class="index-section">
-    <div class="section-head">
-      <p class="section-kicker">Project scope</p>
-      <h2>Aletheos is scoped to CoRI and its research projects.</h2>
-      <p class="section-text">
-        Aletheos.ai is not a portfolio, business page, or personal resume. It is
-        the public research surface for CoRI, Thalean Action Theory, Thalean
-        Graph Theory, coherence diagnostics, artifact-backed notes, and
-        inspectable labs.
-      </p>
-      <p class="section-text section-text--spaced">
-        The site keeps one boundary: public claims should be tied to relation,
-        action, witness, and traceable constraint.
-      </p>
-    </div>
+    <p class="eyebrow">Aletheos.ai</p>
+    <h2>The public workbench.</h2>
+    <p class="section-text">
+      Aletheos.ai is the public research surface for CoRI.
+    </p>
+    <p class="section-text">
+      It is where the work becomes visible: tutorials, research notes, graph
+      objects, labs, evidence records, and careful public explanations.
+    </p>
+    <p class="section-text">
+      The site is not a portfolio or a personal resume. It is a public workbench
+      for accountable structure.
+    </p>
   </section>
 
   <section class="index-section">
-    <div class="section-head">
-      <p class="section-kicker">Current research lanes</p>
-      <h2>The work is organized around accountability.</h2>
-    </div>
+    <p class="eyebrow">Current focus</p>
+    <h2>Thalean Action Theory and the graph program.</h2>
 
     <div class="card-grid">
-      <a class="index-card feature-card" href="/thalean_action_theory.php">
-        <span class="card-label">Framework</span>
+      <article class="index-card">
+        <p class="card-label">Framework</p>
         <h3>Thalean Action Theory</h3>
         <p>
-          The umbrella framework behind the graph work: identity as relational
-          invariance under admissible change.
+          A framework for thinking about relation, action, boundary, witness,
+          trace, and accountability.
         </p>
-      </a>
+        <a class="button button--secondary" href="/thalean_action_theory.php">Read TAT</a>
+      </article>
 
-      <a class="index-card" href="/the_thalean_graph_at4val_60_6.php">
-        <span class="card-label">Graph core</span>
-        <h3>The Thalean Graph</h3>
+      <article class="index-card">
+        <p class="card-label">Concept</p>
+        <h3>The thalion</h3>
         <p>
-          The central finite graph object and theorem-facing public surface for
-          the Thalean graph program.
+          A beginner-facing way to understand the central idea: a bounded
+          relational body whose inside, outside, ports, hinges, witness role,
+          and closure become accountable as finite structure.
         </p>
-      </a>
+        <a class="button button--secondary" href="/research/from-circle-to-thalion.php">Start here</a>
+      </article>
 
-      <a class="index-card" href="/coherence.php">
-        <span class="card-label">Diagnostics</span>
-        <h3>Coherence Gap</h3>
+      <article class="index-card">
+        <p class="card-label">Object</p>
+        <h3>The Thalean graph</h3>
         <p>
-          A graph-theoretic diagnostic for separating projected surface
-          agreement from global coherence.
+          The formal object behind the public graph work. This is where the
+          relations can be checked, counted, and inspected.
         </p>
-      </a>
+        <a class="button button--secondary" href="/the_thalean_graph_at4val_60_6.php">View the graph</a>
+      </article>
 
-      <a class="index-card" href="/evidence.php">
-        <span class="card-label">Audit</span>
-        <h3>Claims Leave Tracks</h3>
+      <article class="index-card">
+        <p class="card-label">Labs</p>
+        <h3>Inspection surfaces</h3>
         <p>
-          Canonical artifacts, verification reports, metadata, and public
-          inspection surfaces.
+          Interactive surfaces for seeing structure move, changing viewpoint,
+          and asking what remains connected.
         </p>
-      </a>
+        <a class="button button--secondary" href="/labs.php">Open labs</a>
+      </article>
+
+      <article class="index-card">
+        <p class="card-label">Evidence</p>
+        <h3>The receipts</h3>
+        <p>
+          JSON records, verification reports, checker scripts, metadata, and
+          public artifacts.
+        </p>
+        <a class="button button--secondary" href="/evidence.php">View evidence</a>
+      </article>
     </div>
   </section>
 
   <section class="index-section">
-    <div class="section-head">
-      <p class="section-kicker">Method</p>
-      <h2>Do not protect the idea. Make the idea protect itself.</h2>
-      <p class="section-text">
-        CoRI treats a pattern as a beginning, not a conclusion. The question is
-        what survives when the viewpoint changes, the boundary moves, the claim
-        is perturbed, and the supporting context is asked to carry its own
-        weight.
-      </p>
+    <p class="eyebrow">Where to start</p>
+    <h2>Begin with the thalion tutorial.</h2>
+    <p class="section-text">
+      New visitors should begin with the thalion tutorial. It starts with a
+      circle and builds gradually through boundary, body, membrane, port, hinge,
+      witness, closure, and relational transport.
+    </p>
+    <p class="section-text">
+      After that, open the P900 Surface Observatory to see the current public
+      surface move. Then follow the graph page and evidence records when you
+      want the formal object behind the view.
+    </p>
+    <div class="hero-actions">
+      <a class="button button--primary" href="/research/from-circle-to-thalion.php">Start with the tutorial</a>
+      <a class="button button--secondary" href="/labs/p900_observatory/lab.html">Open P900</a>
     </div>
+  </section>
+
+  <section class="index-section">
+    <p class="eyebrow">Method</p>
+    <h2>Do not protect the idea. Make the idea protect itself.</h2>
+    <p class="section-text">
+      A compelling pattern is a beginning, not a conclusion. CoRI asks what
+      survives when the viewpoint changes, the boundary moves, the claim is
+      perturbed, and the supporting context is asked to carry its own weight.
+    </p>
   </section>
 </main>
 

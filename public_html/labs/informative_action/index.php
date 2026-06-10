@@ -1,6 +1,6 @@
 <?php
 $page_title = 'Informative Action — Aletheos.ai';
-$page_description = 'An interactive visual lab for seeing how action moves through a simple system and leaves an inspectable trace.';
+$page_description = 'A beginner-friendly interactive lab for watching action move through a small system and leave an inspectable trace.';
 $page_css = ['/assets/index.css', '/assets/collapse_witness.css'];
 
 include __DIR__ . '/../../includes/head.php';
@@ -8,23 +8,50 @@ include __DIR__ . '/../../includes/site_header.php';
 ?>
 
 <main class="site-shell collapse-tool-page">
-  <section class="tool-header">
-    <div>
-      <p class="eyebrow">Informative Action Lab</p>
-      <h1>Informative Action</h1>
-      <p>
-        Watch how action moves through a simple visual system and leaves a trace
-        that can be inspected.
-      </p>
-    </div>
+  <section class="tool-panel">
+    <p class="eyebrow">Informative Action Lab</p>
+    <h1>Watch action leave a trace.</h1>
+    <p class="hero-text">
+      This lab shows a small structure changing over time. Something pushes on
+      the structure, the structure responds, and the result leaves a visible
+      trace.
+    </p>
+    <p class="hero-text">
+      You do not need the math first. Start by watching what moves, what changes,
+      and what remains connected.
+    </p>
+</section>
+  <section class="tool-panel tool-notes">
+    <p class="eyebrow">How to use this lab</p>
+    <h2>Watch, pause, compare.</h2>
 
-    <div class="tool-header__actions">
-      <a class="button button--secondary" href="/labs.php">Back to Labs</a>
-      <a class="button button--secondary" href="/the_thalean_graph_at4val_60_6.php">Research Page</a>
+    <div class="principle-grid">
+      <article class="principle-card">
+        <h3>Watch one cycle</h3>
+        <p>
+          Let the motion run once before changing anything. Notice which parts
+          move first, which parts follow, and what shape the trace takes.
+        </p>
+      </article>
+
+      <article class="principle-card">
+        <h3>Pause and step</h3>
+        <p>
+          Use the step buttons to slow the motion down. This makes it easier
+          to see how one stage turns into the next.
+        </p>
+      </article>
+
+      <article class="principle-card">
+        <h3>Change one slider</h3>
+        <p>
+          Adjust speed, push, or smoothing one at a time. Then compare what
+          changed and what stayed connected.
+        </p>
+      </article>
     </div>
   </section>
-
-  <section class="tool-panel controls-panel" aria-label="Informative action controls">
+<section class="tool-panel controls-panel" aria-label="Informative action controls">
     <div class="tool-panel__head">
       <div>
         <p class="section-kicker">Controls</p>
@@ -78,32 +105,32 @@ include __DIR__ . '/../../includes/site_header.php';
   <section class="collapse-grid collapse-grid--tool" aria-label="Informative action visual panels">
     <section class="collapse-panel">
       <div class="collapse-panel__head">
-        <h2>Starting structure</h2>
-        <span>pattern</span>
+        <h2>1. Starting pattern</h2>
+        <span>before</span>
       </div>
       <svg id="g15-panel" class="collapse-svg" viewBox="0 0 420 320" role="img" aria-label="Starting structure animation"></svg>
     </section>
 
     <section class="collapse-panel">
       <div class="collapse-panel__head">
-        <h2>Response pattern</h2>
-        <span>effect</span>
+        <h2>2. Response</h2>
+        <span>change</span>
       </div>
       <svg id="incidence-panel" class="collapse-svg" viewBox="0 0 420 320" role="img" aria-label="Response pattern"></svg>
     </section>
 
     <section class="collapse-panel collapse-panel--featured">
       <div class="collapse-panel__head">
-        <h2>Visible trace</h2>
-        <span>witness</span>
+        <h2>3. Visible trace</h2>
+        <span>after</span>
       </div>
       <svg id="witness-panel" class="collapse-svg" viewBox="0 0 420 320" role="img" aria-label="Visible action trace"></svg>
     </section>
 
     <section class="collapse-panel collapse-panel--bubble">
       <div class="collapse-panel__head">
-        <h2>Bubble view</h2>
-        <span>analogy</span>
+        <h2>4. Bubble view</h2>
+        <span>guide</span>
       </div>
       <svg id="bubble-panel" class="collapse-svg" viewBox="0 0 420 320" role="img" aria-label="Smooth bubble analogy"></svg>
     </section>
@@ -133,30 +160,6 @@ include __DIR__ . '/../../includes/site_header.php';
   </section>
 
   <section class="tool-panel tool-notes">
-    <details class="cw-details" open>
-      <summary>What am I looking at?</summary>
-      <div class="cw-detail-grid">
-        <div class="cw-howto">
-          <h3>Plain-language map</h3>
-          <p>
-            This lab shows a small system as it changes. One panel shows the
-            starting structure, another shows how the structure responds, and a
-            third compresses that motion into a visible trace. The bubble view is
-            an analogy that makes the same change easier to see.
-          </p>
-        </div>
-
-        <div class="cw-morphology-note">
-          <h3>Status</h3>
-          <p>
-            This is an exploratory inspection tool. It is not a final proof and
-            it does not claim that the picture is a physical object. It is a way
-            to see how action can leave structure behind.
-          </p>
-        </div>
-      </div>
-    </details>
-
     <details class="cw-details cw-details--provenance">
       <summary>Current state JSON</summary>
       <div class="cw-provenance">
@@ -164,7 +167,44 @@ include __DIR__ . '/../../includes/site_header.php';
       </div>
     </details>
   </section>
-</main>
+
+
+  <section class="tool-panel">
+    <p class="eyebrow">What’s next?</p>
+    <h2>Follow the trace.</h2>
+    <p class="section-text">
+      After you have watched the motion, the next step is to connect the picture
+      back to the larger project.
+    </p>
+    <div class="card-grid">
+      <article class="index-card">
+        <p class="card-label">Main surface</p>
+        <h3>Open P900</h3>
+        <p>
+          Move from this small action demo to the main public surface.
+        </p>
+        <a class="button button--primary" href="/labs/p900_observatory/lab.html">Open P900</a>
+      </article>
+
+      <article class="index-card">
+        <p class="card-label">Formal object</p>
+        <h3>View the graph</h3>
+        <p>
+          See the canonical finite object behind the public surfaces.
+        </p>
+        <a class="button button--secondary" href="/the_thalean_graph_at4val_60_6.php">View the graph</a>
+      </article>
+
+      <article class="index-card">
+        <p class="card-label">Receipts</p>
+        <h3>Check the evidence</h3>
+        <p>
+          Follow the data, reports, checker scripts, and public records.
+        </p>
+        <a class="button button--secondary" href="/evidence.php">View evidence</a>
+      </article>
+    </div>
+  </section>
 
 
   <section class="cw-ai-panel">
@@ -184,7 +224,7 @@ include __DIR__ . '/../../includes/site_header.php';
       action, response, and trace.
     </p>
   </section>
-
+</main>
 
 <?php include __DIR__ . '/../../includes/site_footer.php'; ?>
 <script src="/assets/collapse_witness.js?v=20260504-functional"></script>

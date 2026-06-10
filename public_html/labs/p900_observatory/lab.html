@@ -69,11 +69,15 @@
 
 
     <section class="card settings-card">
-      <h2>Settings</h2>
+        <h2>Lens Settings</h2>
+
+        <button id="settings-export-url-btn" class="settings-export-url-btn settings-share-primary" type="button">
+          Share
+        </button>
 
         <div class="settings-preset-row">
-          <label for="settings-preset-select">Preset</label>
-          <select id="settings-preset-select" aria-label="Settings preset">
+          <label for="settings-preset-select">Lens Name</label>
+          <select id="settings-preset-select" aria-label="Lens Name">
             <option value="default" selected>Default</option>
             <option value="cloud">Cloud</option>
             <option value="balanced">Balanced</option>
@@ -82,10 +86,12 @@
             <option value="ectoplasm">Ectoplasm</option>
             <option value="surface_scan">Surface scan</option>
             <option value="spine">Spine</option>
+          
+          
           </select>
         </div>
 
-      <div class="view-fader-stack" aria-label="Layer faders">
+        <div class="view-fader-stack" aria-label="Layer faders">
         <div class="rate-control mixer-entry-row layer-fader-row">
           <label for="surface-opacity-slider">Surface</label>
           <input id="surface-opacity-slider" type="range" min="0" max="100" step="1" value="50" />
@@ -142,5 +148,29 @@
   </main>
 
   <script type="module" src="lab_boot.js"></script>
+
+  <div id="settings-share-dialog" class="settings-share-dialog" hidden>
+    <div class="settings-share-panel" role="dialog" aria-modal="true" aria-labelledby="settings-share-title">
+      <div class="settings-share-header">
+        <h2 id="settings-share-title">Share view</h2>
+        <button id="settings-share-close" class="settings-share-close" type="button" aria-label="Close export dialog">Close</button>
+      </div>
+
+      <label class="settings-share-name">
+        <span>Name</span>
+        <input id="settings-share-name-input" type="text" placeholder="Name this view" autocomplete="off" />
+      </label>
+
+      <label class="settings-share-url">
+        <span>URL</span>
+        <textarea id="settings-share-url-text" readonly rows="5"></textarea>
+      </label>
+
+      <div class="settings-share-actions">
+        <button id="settings-share-copy" class="settings-share-copy" type="button">Copy link</button>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>

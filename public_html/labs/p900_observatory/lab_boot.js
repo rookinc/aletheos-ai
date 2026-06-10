@@ -39,6 +39,12 @@ const els = {
   statusText: document.getElementById("status-text"),
   cameraText: document.getElementById("camera-text"),
   settingsPresetSelect: document.getElementById("settings-preset-select"),
+  settingsExportUrlBtn: document.getElementById("settings-export-url-btn"),
+  settingsShareDialog: document.getElementById("settings-share-dialog"),
+  settingsShareNameInput: document.getElementById("settings-share-name-input"),
+  settingsShareUrlText: document.getElementById("settings-share-url-text"),
+  settingsShareCopyBtn: document.getElementById("settings-share-copy"),
+  settingsShareCloseBtn: document.getElementById("settings-share-close"),
   metricsConsole: document.getElementById("metrics-console"),
 };
 
@@ -401,6 +407,210 @@ function updateRateReadout() {
   if (els.bodyOpacityReadout) els.bodyOpacityReadout.textContent = Math.round(bodyOpacity() * 100) + "%";
 }
 
+function numericParam(params, key, fallback, minValue, maxValue) {
+  const raw = params.get(key);
+  if (raw === null) return fallback;
+  const n = Number(raw);
+  if (!Number.isFinite(n)) return fallback;
+  return Math.max(minValue, Math.min(maxValue, n));
+}
+
+function boolParam(params, key, fallback) {
+  const raw = params.get(key);
+  if (raw === null) return fallback;
+  return raw === "1" || raw === "true";
+}
+
+function cameraDeg(value) {
+  return Math.round(value * 180 / Math.PI);
+}
+
+function currentSettingsParams() {
+  const params = new URLSearchParams();
+
+  params.set("preset", els.settingsPresetSelect?.value || "default");
+  params.set("sheets", sheetRate().toFixed(2));
+
+  params.set("surface", String(Math.round(surfaceOpacity() * 100)));
+  params.set("body", String(Math.round(bodyOpacity() * 100)));
+
+  params.set("trail_on", trailEnabled() ? "1" : "0");
+  params.set("trail", String(Math.round(trailPercent())));
+
+  params.set("edges_on", edgeEnabled() ? "1" : "0");
+  params.set("edges", edgeOpacity().toFixed(2));
+
+  params.set("vertices_on", vertexEnabled() ? "1" : "0");
+  params.set("vertices", vertexOpacity().toFixed(2));
+
+  params.set("cam_d", camera.distance.toFixed(2));
+  params.set("cam_y", String(cameraDeg(camera.yaw)));
+  params.set("cam_p", String(cameraDeg(camera.pitch)));
+  params.set("cam_r", String(cameraDeg(camera.roll)));
+
+  return params;
+}
+
+function currentPresetLabel() {
+  const select = els.settingsPresetSelect;
+  if (!select) return "";
+  const option = select.options[select.selectedIndex];
+  return option ? option.textContent.trim() : "";
+}
+
+function buildSettingsUrl(nameValue) {
+  const url = new URL(window.location.href);
+  const params = currentSettingsParams();
+  const name = String(nameValue || "").trim();
+
+  if (name) params.set("name", name);
+  else params.delete("name");
+
+  url.search = params.toString();
+  return url.toString();
+}
+
+function updateShareUrlText() {
+  if (!els.settingsShareUrlText) return;
+  const name = els.settingsShareNameInput?.value || "";
+  els.settingsShareUrlText.value = buildSettingsUrl(name);
+}
+
+function openShareDialog() {
+  if (!els.settingsShareDialog) return;
+
+  const params = new URLSearchParams(window.location.search);
+  const urlName = params.get("name");
+  const fallbackName = currentPresetLabel();
+
+  if (els.settingsShareNameInput && !els.settingsShareNameInput.value) {
+    els.settingsShareNameInput.value = urlName || fallbackName || "";
+  }
+
+  updateShareUrlText();
+  els.settingsShareDialog.hidden = false;
+
+  window.setTimeout(() => {
+    els.settingsShareNameInput?.focus();
+    els.settingsShareNameInput?.select();
+  }, 0);
+}
+
+function closeShareDialog() {
+  if (els.settingsShareDialog) els.settingsShareDialog.hidden = true;
+}
+
+async function copyShareUrl() {
+  updateShareUrlText();
+
+  const text = els.settingsShareUrlText?.value || "";
+  if (!text) return;
+
+  let copied = false;
+  try {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      await navigator.clipboard.writeText(text);
+      copied = true;
+    }
+  } catch (err) {
+    copied = false;
+  }
+
+  if (!copied && els.settingsShareUrlText) {
+    els.settingsShareUrlText.focus();
+    els.settingsShareUrlText.select();
+    try {
+      copied = document.execCommand("copy");
+    } catch (err) {
+      copied = false;
+    }
+  }
+
+  if (copied) {
+    const url = new URL(text);
+    window.history.replaceState(null, "", url.toString());
+  }
+
+  if (els.settingsShareCopyBtn) {
+    const oldText = els.settingsShareCopyBtn.textContent;
+    els.settingsShareCopyBtn.textContent = copied ? "Copied" : "Select text";
+    window.setTimeout(() => {
+      if (els.settingsShareCopyBtn) els.settingsShareCopyBtn.textContent = oldText;
+    }, 1200);
+  }
+}
+
+async function exportSettingsUrl() {
+  openShareDialog();
+}
+
+function setSharedGraphLensOption(nameValue, basePreset, params) {
+  const select = els.settingsPresetSelect;
+  const name = String(nameValue || "").trim();
+  if (!select || !name) return;
+
+  let option = select.querySelector('option[data-shared-url-name="1"]');
+  if (!option) {
+    option = document.createElement("option");
+    option.dataset.sharedUrlName = "1";
+    select.insertBefore(option, select.firstChild);
+  }
+
+  option.value = "__shared_url__";
+  option.dataset.basePreset = basePreset || "default";
+  option.dataset.sharedUrlParams = params ? params.toString() : "";
+  option.textContent = name;
+  option.selected = true;
+}
+
+function applySharedGraphLensOption(option) {
+  if (!option || option.value !== "__shared_url__") return false;
+  const raw = option.dataset.sharedUrlParams || "";
+  if (!raw) return false;
+
+  const current = new URL(window.location.href);
+  current.search = raw;
+  window.history.replaceState(null, "", current.toString());
+
+  applySettingsFromUrl();
+  return true;
+}
+
+function applySettingsFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+  if (!params.size) return;
+
+  const preset = params.get("preset");
+  if (preset && SETTINGS_PRESETS[preset]) {
+    if (els.settingsPresetSelect) els.settingsPresetSelect.value = preset;
+    applySettingsPreset(preset);
+  }
+
+  setSharedGraphLensOption(params.get("name"), preset, params);
+
+  setSheetRate(numericParam(params, "sheets", sheetRate(), 0.25, 960));
+
+  setSliderValue(els.surfaceOpacitySlider, numericParam(params, "surface", Math.round(surfaceOpacity() * 100), 0, 100));
+  setSliderValue(els.bodyOpacitySlider, numericParam(params, "body", Math.round(bodyOpacity() * 100), 0, 100));
+
+  setCheckboxValue(els.trailToggle, boolParam(params, "trail_on", trailEnabled()));
+  setSliderValue(els.trailSlider, numericParam(params, "trail", trailPercent(), 0, 100));
+
+  setCheckboxValue(els.edgeToggle, boolParam(params, "edges_on", edgeEnabled()));
+  setSliderValue(els.edgeOpacitySlider, numericParam(params, "edges", edgeOpacity(), 0, 1));
+
+  setCheckboxValue(els.vertexToggle, boolParam(params, "vertices_on", vertexEnabled()));
+  setSliderValue(els.vertexOpacitySlider, numericParam(params, "vertices", vertexOpacity(), 0, 1));
+
+  camera.distance = numericParam(params, "cam_d", camera.distance, ZOOM_MIN, ZOOM_MAX);
+  camera.yaw = numericParam(params, "cam_y", cameraDeg(camera.yaw), -100000, 100000) * Math.PI / 180;
+  camera.pitch = numericParam(params, "cam_p", cameraDeg(camera.pitch), -100000, 100000) * Math.PI / 180;
+  camera.roll = numericParam(params, "cam_r", cameraDeg(camera.roll), -100000, 100000) * Math.PI / 180;
+
+  updateRateReadout();
+  draw();
+}
+
 function sourceLabel() {
   if (!data || !data.source) return "unknown";
   if (String(data.source).includes("p900_phase30_combined_graph_export")) {
@@ -621,9 +831,37 @@ async function main() {
 
   if (els.settingsPresetSelect) {
     els.settingsPresetSelect.addEventListener("change", () => {
+      const option = els.settingsPresetSelect.options[els.settingsPresetSelect.selectedIndex];
+      if (applySharedGraphLensOption(option)) return;
       applySettingsPreset(els.settingsPresetSelect.value);
     });
   }
+
+  if (els.settingsExportUrlBtn) {
+    els.settingsExportUrlBtn.addEventListener("click", exportSettingsUrl);
+  }
+
+  if (els.settingsShareNameInput) {
+    els.settingsShareNameInput.addEventListener("input", updateShareUrlText);
+  }
+
+  if (els.settingsShareCopyBtn) {
+    els.settingsShareCopyBtn.addEventListener("click", copyShareUrl);
+  }
+
+  if (els.settingsShareCloseBtn) {
+    els.settingsShareCloseBtn.addEventListener("click", closeShareDialog);
+  }
+
+  if (els.settingsShareDialog) {
+    els.settingsShareDialog.addEventListener("click", (event) => {
+      if (event.target === els.settingsShareDialog) closeShareDialog();
+    });
+  }
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeShareDialog();
+  });
 
   if (els.cameraPreset1Btn) {
     els.cameraPreset1Btn.addEventListener("click", () => setCameraPreset(1));
@@ -754,6 +992,8 @@ async function main() {
 
   data = await loadP900Phase30();
   candidate = data.candidates.find((c) => c.id === PREFERRED_CANDIDATE_ID) || data.candidates[0];
+
+  applySettingsFromUrl();
 
   if (!candidate) throw new Error("No P900 candidate loaded");
 

@@ -2079,3 +2079,344 @@ button:hover {
   }
 }
 
+
+/* P900 export settings URL pass */
+.settings-preset-row {
+  grid-template-columns: 5.2rem minmax(0, 1fr) auto !important;
+}
+
+.settings-export-url-btn {
+  min-height: 2.28rem;
+  border: 1px solid rgba(214, 184, 108, 0.42);
+  border-radius: 0.72rem;
+  background: rgba(9, 20, 33, 0.78);
+  color: var(--accent);
+  padding: 0 0.82rem;
+  font: inherit;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.settings-export-url-btn:active {
+  transform: translateY(1px);
+}
+
+@media (max-width: 520px) {
+  .settings-preset-row {
+    grid-template-columns: 4.6rem minmax(0, 1fr) !important;
+  }
+
+  .settings-export-url-btn {
+    grid-column: 2;
+    min-height: 1.92rem;
+    border-radius: 0.62rem;
+    font-size: 0.66rem;
+    padding: 0 0.64rem;
+  }
+}
+
+
+/* P900 export URL popup pass */
+.settings-share-dialog[hidden] {
+  display: none !important;
+}
+
+.settings-share-dialog {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.62);
+  backdrop-filter: blur(10px);
+}
+
+.settings-share-panel {
+  width: min(42rem, 100%);
+  border: 1px solid rgba(214, 184, 108, 0.42);
+  border-radius: 1.1rem;
+  background: rgba(7, 18, 31, 0.96);
+  box-shadow: 0 1.2rem 4rem rgba(0, 0, 0, 0.42);
+  padding: 1rem;
+}
+
+.settings-share-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 0.9rem;
+}
+
+.settings-share-header h2 {
+  margin: 0;
+  color: var(--accent);
+  font-size: 1.05rem;
+}
+
+.settings-share-close {
+  border: 1px solid rgba(214, 184, 108, 0.42);
+  border-radius: 0.6rem;
+  background: rgba(9, 20, 33, 0.78);
+  color: var(--muted);
+  width: 2rem;
+  height: 2rem;
+  font: inherit;
+}
+
+.settings-share-name,
+.settings-share-url {
+  display: grid;
+  gap: 0.42rem;
+  margin-top: 0.8rem;
+}
+
+.settings-share-name span,
+.settings-share-url span {
+  color: var(--muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.settings-share-name input,
+.settings-share-url textarea {
+  width: 100%;
+  border: 1px solid rgba(214, 184, 108, 0.36);
+  border-radius: 0.72rem;
+  background: rgba(2, 9, 16, 0.82);
+  color: var(--text);
+  font: inherit;
+  padding: 0.75rem;
+  outline: none;
+}
+
+.settings-share-url textarea {
+  min-height: 7rem;
+  resize: vertical;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.76rem;
+  line-height: 1.45;
+}
+
+.settings-share-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.9rem;
+}
+
+.settings-share-copy {
+  min-height: 2.28rem;
+  border: 1px solid rgba(214, 184, 108, 0.48);
+  border-radius: 0.72rem;
+  background: rgba(9, 20, 33, 0.86);
+  color: var(--accent);
+  padding: 0 0.95rem;
+  font: inherit;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 520px) {
+  .settings-share-dialog {
+    align-items: end;
+    padding: 0.75rem;
+  }
+
+  .settings-share-panel {
+    border-radius: 1rem;
+    padding: 0.9rem;
+  }
+
+  .settings-share-url textarea {
+    min-height: 8rem;
+    font-size: 0.68rem;
+  }
+
+  .settings-share-copy {
+    width: 100%;
+  }
+}
+
+
+/* P900 share above graph lens fixed pass */
+.settings-share-primary {
+  width: 100%;
+  margin: 0.1rem 0 0.72rem;
+}
+
+.settings-preset-row {
+  grid-template-columns: 5.8rem minmax(0, 1fr) !important;
+}
+
+@media (max-width: 520px) {
+  .settings-share-primary {
+    margin-bottom: 0.72rem;
+  }
+
+  .settings-preset-row {
+    grid-template-columns: 6.2rem minmax(0, 1fr) !important;
+  }
+}
+
+
+/* P900 settings layout repair after Share/Graph Lens */
+.settings-card {
+  overflow: hidden !important;
+}
+
+.settings-share-primary {
+  display: block !important;
+  width: 100% !important;
+  min-height: 2.25rem !important;
+  margin: 0.1rem 0 0.85rem !important;
+  box-sizing: border-box !important;
+}
+
+.settings-preset-row {
+  display: grid !important;
+  grid-template-columns: 7.2rem minmax(0, 1fr) !important;
+  gap: 0.72rem !important;
+  align-items: center !important;
+  margin: 0 0 1rem !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.settings-preset-row label {
+  min-width: 0 !important;
+  white-space: normal !important;
+}
+
+.settings-preset-row select {
+  min-width: 0 !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.view-fader-stack {
+  width: 100% !important;
+}
+
+@media (max-width: 520px) {
+  .settings-preset-row {
+    grid-template-columns: 7.1rem minmax(0, 1fr) !important;
+    gap: 0.52rem !important;
+  }
+
+  .settings-share-primary {
+    margin-bottom: 0.78rem !important;
+  }
+}
+
+
+/* P900 final Settings card layout override */
+.settings-card {
+  display: block !important;
+  overflow: hidden !important;
+}
+
+.settings-card > h2 {
+  display: block !important;
+  margin-bottom: 0.85rem !important;
+}
+
+.settings-card > .settings-share-primary {
+  position: static !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-height: 2.35rem !important;
+  margin: 0 0 0.9rem !important;
+  box-sizing: border-box !important;
+  grid-column: auto !important;
+}
+
+.settings-card > .settings-preset-row {
+  position: static !important;
+  display: grid !important;
+  grid-template-columns: 7.4rem minmax(0, 1fr) !important;
+  gap: 0.75rem !important;
+  align-items: center !important;
+  width: 100% !important;
+  margin: 0 0 1.05rem !important;
+  box-sizing: border-box !important;
+}
+
+.settings-card > .settings-preset-row label {
+  white-space: normal !important;
+  min-width: 0 !important;
+}
+
+.settings-card > .settings-preset-row select {
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.settings-card > .view-fader-stack {
+  display: block !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+.settings-card .layer-fader-row,
+.settings-card > .mixer-entry-row {
+  display: grid !important;
+  grid-template-columns: 7.4rem minmax(0, 1fr) 4.1rem !important;
+  gap: 0.75rem !important;
+  align-items: center !important;
+  width: 100% !important;
+  margin: 0.72rem 0 !important;
+  box-sizing: border-box !important;
+}
+
+.settings-card .mixer-check-label {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.55rem !important;
+  min-width: 0 !important;
+  white-space: nowrap !important;
+}
+
+.settings-card .layer-fader-row label,
+.settings-card .mixer-check-label span {
+  min-width: 0 !important;
+}
+
+.settings-card .layer-fader-row input[type="range"],
+.settings-card > .mixer-entry-row input[type="range"] {
+  width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.settings-card .layer-fader-row > span,
+.settings-card > .mixer-entry-row > span {
+  text-align: right !important;
+  min-width: 3.6rem !important;
+}
+
+@media (max-width: 520px) {
+  .settings-card > .settings-preset-row,
+  .settings-card .layer-fader-row,
+  .settings-card > .mixer-entry-row {
+    grid-template-columns: 6.9rem minmax(0, 1fr) 3.65rem !important;
+    gap: 0.52rem !important;
+  }
+
+  .settings-card > .settings-preset-row {
+    grid-template-columns: 6.9rem minmax(0, 1fr) !important;
+  }
+
+  .settings-card .layer-fader-row > span,
+  .settings-card > .mixer-entry-row > span {
+    min-width: 3.25rem !important;
+  }
+}
+

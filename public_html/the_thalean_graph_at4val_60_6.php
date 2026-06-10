@@ -1,7 +1,7 @@
 <?php
 $page_title = 'Research — The Thalean Graph';
 $page_description = 'Aletheos research page for the Thalean Graph AT4val[60,6], companion papers, canonical artifacts, and public research context.';
-$page_css = ['assets/index.css', 'assets/research_page.css'];
+$page_css = ['assets/index.css', 'assets/research_page.css', '/assets/css/at4val-3d-viewer.css'];
 
 include __DIR__ . '/includes/head.php';
 include __DIR__ . '/includes/site_header.php';
@@ -14,6 +14,16 @@ include __DIR__ . '/includes/site_header.php';
     <div class="hero-grid">
       <div class="hero-copy">
         <h1 class="hero-title">The Thalean Graph.</h1>
+
+      <div
+        class="intro-graph intro-graph--at4val graph-page-viewer"
+        data-at4val-3d
+        data-src="/json/at4val_60_6_3d.json"
+        aria-label="Rotating 3D rendering of AT4val[60,6]"
+      >
+        <canvas></canvas>
+      </div>
+
 
         <p class="hero-text">
           The Thalean graph is CoRI's central theorem object: a finite,
@@ -48,19 +58,7 @@ include __DIR__ . '/includes/site_header.php';
           <a class="button button--secondary" href="#artifacts">Browse artifacts</a>
         </div>
       </div>
-
-      <aside class="hero-emblem" aria-label="Thalean research themes">
-        <div class="orbital-mark">
-          <span class="orbital-mark__ring orbital-mark__ring--outer"></span>
-          <span class="orbital-mark__ring orbital-mark__ring--middle"></span>
-          <span class="orbital-mark__ring orbital-mark__ring--inner"></span>
-          <span class="orbital-mark__point orbital-mark__point--one"></span>
-          <span class="orbital-mark__point orbital-mark__point--two"></span>
-          <span class="orbital-mark__point orbital-mark__point--three"></span>
-        </div>
-        <p class="emblem-caption">G60 · G30 · G15</p>
-      </aside>
-    </div>
+</div>
   </section>
 
   <section class="index-section">
@@ -304,6 +302,7 @@ include __DIR__ . '/includes/site_header.php';
   </section>
 </main>
 
+<script src="/assets/js/at4val-3d-viewer.js" defer></script>
 <?php include __DIR__ . '/includes/site_footer.php'; ?>
 </body>
 </html>

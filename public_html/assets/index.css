@@ -539,3 +539,89 @@ textarea,
     max-width: none;
   }
 }
+
+/* Homepage AT4val desktop composition */
+
+@media (min-width: 980px) {
+  .hero.home-hero,
+  .hero:has(.intro-graph--at4val) {
+    position: relative;
+    min-height: 560px;
+    overflow: hidden;
+  }
+
+  .hero.home-hero .home-hero__copy,
+  .hero:has(.intro-graph--at4val) .home-hero__copy {
+    max-width: 58%;
+  }
+
+  .hero .intro-graph--at4val {
+    float: none;
+    position: absolute;
+    top: 4.5rem;
+    right: clamp(2rem, 6vw, 6rem);
+    width: min(38vw, 520px);
+    max-width: 520px;
+    margin: 0;
+    opacity: 0.92;
+  }
+
+  .hero .intro-graph--at4val canvas {
+    width: 100%;
+    height: auto;
+    min-height: 380px;
+  }
+
+  .hero:has(.intro-graph--at4val) .hero-text,
+  .hero:has(.intro-graph--at4val) .hero-actions {
+    max-width: 58ch;
+  }
+}
+
+@media (max-width: 979px) {
+  .hero .intro-graph--at4val {
+    position: static;
+    float: none;
+    width: 100%;
+    margin: 1.25rem 0;
+  }
+}
+
+/* Thalean graph page AT4val viewer */
+
+.graph-page-viewer {
+  margin: 1.5rem 0 2rem;
+}
+
+@media (min-width: 980px) {
+  .graph-page-viewer {
+    float: right;
+    width: min(42vw, 560px);
+    max-width: 560px;
+    margin: -0.75rem 0 2rem 3rem;
+  }
+
+  .graph-page-viewer canvas {
+    width: 100%;
+    height: auto;
+    min-height: 390px;
+  }
+
+  .graph-page-viewer + p,
+  .graph-page-viewer ~ p {
+    max-width: 66ch;
+  }
+}
+
+@media (max-width: 979px) {
+  .graph-page-viewer {
+    float: none;
+    width: 100%;
+    margin: 1.25rem 0 2rem;
+  }
+
+  .graph-page-viewer canvas {
+    width: 100%;
+    min-height: 300px;
+  }
+}

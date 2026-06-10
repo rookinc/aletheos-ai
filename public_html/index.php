@@ -1,7 +1,7 @@
 <?php
 $page_title = 'Aletheos.ai — Public research surface for CoRI';
 $page_description = 'Aletheos.ai is the public research surface for CoRI: accountable structure, relation, action, witness, and traceable evidence.';
-$page_css = ['/assets/index.css'];
+$page_css = ['/assets/index.css', '/assets/css/at4val-3d-viewer.css'];
 include __DIR__ . '/includes/head.php';
 include __DIR__ . '/includes/site_header.php';
 ?>
@@ -10,6 +10,16 @@ include __DIR__ . '/includes/site_header.php';
   <section class="hero">
     <p class="eyebrow">Aletheos.ai</p>
     <h1>Making intelligence accountable.</h1>
+
+      <div
+        class="intro-graph intro-graph--at4val"
+        data-at4val-3d
+        data-src="/json/at4val_60_6_3d.json"
+        aria-label="Rotating 3D rendering of AT4val[60,6]"
+      >
+        <canvas></canvas>
+      </div>
+
     <p class="hero-text">
       Aletheos is the public research surface for the Centre of Recursive Inquiry.
       It studies how apparent patterns become accountable structures.
@@ -139,4 +149,5 @@ include __DIR__ . '/includes/site_header.php';
   </section>
 </main>
 
+<script src="/assets/js/at4val-3d-viewer.js" defer></script>
 <?php include __DIR__ . '/includes/site_footer.php'; ?>

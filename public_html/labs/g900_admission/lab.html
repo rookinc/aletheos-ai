@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>G900 Admission Lab | Aletheos Labs</title>
+  <link rel="stylesheet" href="lab.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <div class="kicker">ALETHEOS LABS</div>
+      <h1>G900 Admission Lab</h1>
+      <p class="lede">
+        A finite object is admitted by receipts, not by appearance.
+      </p>
+      <p class="soft">
+        This lab does not ask the image to prove the object. It lets the image point toward
+        a finite ledger of checks: kernel, construction, certificates, comparisons, and boundaries.
+      </p>
+    </header>
+
+    <section class="panel intro-panel">
+      <button class="accordion" id="instructions-toggle" type="button" aria-expanded="false">
+        <span>Instructions</span>
+        <span id="instructions-symbol">+</span>
+      </button>
+      <div class="instructions" id="instructions-body" hidden>
+        <p>
+          Use the tabs to move between the kernel, the generated object, the receipts,
+          the comparison layer, and the claim boundary. The graphic is illustrative.
+          The admission claim lives in the finite data and checks.
+        </p>
+      </div>
+    </section>
+
+    <section class="stage panel">
+      <canvas id="g900-canvas" width="900" height="900" aria-label="G900 admission ring visualization"></canvas>
+      <div class="stage-caption" id="stage-caption">
+        Canonical G900 candidate: fifteen G60 fibers coupled by signed carriers.
+      </div>
+    </section>
+
+    <section class="controls panel" aria-label="Lab controls">
+      <button class="tab active" type="button" data-view="kernel">Kernel</button>
+      <button class="tab" type="button" data-view="object">Object</button>
+      <button class="tab" type="button" data-view="receipts">Receipts</button>
+      <button class="tab" type="button" data-view="compare">Compare</button>
+      <button class="tab" type="button" data-view="boundary">Boundary</button>
+    </section>
+
+    <section class="panel content-card" id="content-card">
+      <h2 id="card-title">Kernel</h2>
+      <div id="card-body"></div>
+    </section>
+
+    <section class="grid">
+      <article class="metric panel">
+        <span class="label">Vertices</span>
+        <strong>900</strong>
+      </article>
+      <article class="metric panel">
+        <span class="label">Edges</span>
+        <strong>3600</strong>
+      </article>
+      <article class="metric panel">
+        <span class="label">Degree</span>
+        <strong>8</strong>
+      </article>
+      <article class="metric panel">
+        <span class="label">Diameter</span>
+        <strong>8</strong>
+      </article>
+      <article class="metric panel">
+        <span class="label">Radius</span>
+        <strong>6</strong>
+      </article>
+      <article class="metric panel">
+        <span class="label">Ledger</span>
+        <strong>Closed</strong>
+      </article>
+    </section>
+  </main>
+
+  <script src="kernel/g900_data.js"></script>
+  <script src="kernel/renderer.js"></script>
+  <script src="lab_boot.js"></script>
+</body>
+</html>

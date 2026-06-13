@@ -2847,3 +2847,118 @@ button:hover {
     grid-template-columns: minmax(860px, 1fr) minmax(340px, 400px) !important;
   }
 }
+
+/* P900 finite force grammar color strip */
+.force-grammar-strip {
+  margin: 0.78rem 0 0.92rem !important;
+  padding: 0.68rem 0.72rem 0.64rem !important;
+  border: 1px solid rgba(217, 184, 108, 0.18) !important;
+  border-radius: 0.92rem !important;
+  background:
+    linear-gradient(180deg, rgba(19, 34, 52, 0.78), rgba(7, 14, 25, 0.88)),
+    rgba(7, 14, 25, 0.82) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.055),
+    0 0.5rem 1.15rem rgba(0,0,0,0.18) !important;
+}
+
+.force-grammar-title {
+  margin: 0 0 0.46rem !important;
+  color: rgba(217, 184, 108, 0.86) !important;
+  font-size: 0.58rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+}
+
+.force-chip-row {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 0.42rem !important;
+}
+
+.force-chip {
+  --force-rgb: 217, 184, 108;
+  display: grid !important;
+  gap: 0.08rem !important;
+  min-width: 0 !important;
+  padding: 0.48rem 0.52rem 0.46rem !important;
+  border-radius: 0.72rem !important;
+  border: 1px solid rgba(var(--force-rgb), 0.42) !important;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(var(--force-rgb), 0.22), transparent 52%),
+    linear-gradient(180deg, rgba(var(--force-rgb), 0.115), rgba(var(--force-rgb), 0.035)),
+    rgba(8, 18, 31, 0.88) !important;
+  color: rgba(238, 245, 252, 0.92) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.07),
+    0 0 0 1px rgba(var(--force-rgb), 0.055),
+    0 0.38rem 0.85rem rgba(0,0,0,0.16) !important;
+}
+
+.force-chip b {
+  color: rgba(var(--force-rgb), 0.98) !important;
+  font-size: 0.72rem !important;
+  line-height: 1 !important;
+  letter-spacing: 0.02em !important;
+}
+
+.force-chip em {
+  color: rgba(205, 221, 238, 0.68) !important;
+  font-size: 0.58rem !important;
+  font-style: normal !important;
+  line-height: 1.05 !important;
+}
+
+.force-chip-gravity {
+  --force-rgb: 217, 184, 108;
+}
+
+.force-chip-em {
+  --force-rgb: 84, 207, 232;
+}
+
+.force-chip-strong {
+  --force-rgb: 255, 126, 92;
+}
+
+.force-chip-weak {
+  --force-rgb: 178, 142, 255;
+}
+
+.force-grammar-note {
+  margin: 0.48rem 0 0 !important;
+  color: rgba(159, 182, 204, 0.62) !important;
+  font-size: 0.58rem !important;
+  line-height: 1.28 !important;
+}
+
+@media (max-width: 520px) {
+  .force-grammar-strip {
+    margin: 0.64rem 0 0.76rem !important;
+    padding: 0.58rem 0.58rem 0.54rem !important;
+    border-radius: 0.82rem !important;
+  }
+
+  .force-chip-row {
+    gap: 0.34rem !important;
+  }
+
+  .force-chip {
+    padding: 0.42rem 0.42rem 0.40rem !important;
+    border-radius: 0.62rem !important;
+  }
+
+  .force-chip b {
+    font-size: 0.66rem !important;
+  }
+
+  .force-chip em {
+    font-size: 0.52rem !important;
+  }
+
+  .force-grammar-note {
+    font-size: 0.52rem !important;
+  }
+}
+

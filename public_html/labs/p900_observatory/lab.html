@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>P900 Surface Observatory v1.0</title>
-  <link rel="stylesheet" href="lab.css" />
+  <link rel="stylesheet" href="lab.css?v=force-sim-5" />
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3MHQ9Y1GJX"></script>
   <script>
@@ -24,9 +24,10 @@
                     <div class="instructions-copy">
             <h3>What this lab is</h3>
             <p>
-              The P900 Surface Observatory is a viewer for a fixed 900-point graph artifact.
-              It shows the structure as a moving surface so that its shape, transport, layers,
-              and viewpoints can be inspected more easily.
+              The P900 Surface Observatory is a viewer and simulator-lens surface for a fixed
+              900-point graph artifact. It shows the structure as a moving surface so that its
+              shape, transport, layers, force-grammar lenses, and viewpoints can be inspected
+              more easily.
             </p>
             <p>
               The motion is only visual inspection. The underlying 900-point data does not
@@ -84,6 +85,26 @@
               contains the built-in lenses and any browser-saved lenses you create.
             </p>
 
+            <h3>Force grammar simulator</h3>
+            <p>
+              The colored force chips are simulator lenses for the same fixed P900 artifact.
+              They do not change the graph data, add new states, or claim that the graph proves
+              physical forces. They only change the visual lens: camera, speed, layer mix,
+              opacity, edge strength, vertex strength, and motion memory.
+            </p>
+            <p>
+              Gravity, EM, Strong, and Weak are used here as finite action verbs. Gravity emphasizes
+              compression. EM emphasizes polarity and circulation. Strong emphasizes confinement.
+              Weak emphasizes directed transformation. These names are a grammar for inspection,
+              not a physical-force claim.
+            </p>
+            <p>
+              Use the chips as comparison tools. Tap a force grammar mode, inspect what becomes
+              visible, then switch modes and ask what survives the change of lens. The important
+              question is not whether the mode looks dramatic. The important question is what remains
+              accountable across controlled changes of viewpoint and visual rule.
+            </p>
+
             <h3>Saving lenses</h3>
             <p>
               Save stores the current lens in this browser only. A saved lens is local to the browser
@@ -130,9 +151,10 @@
 
             <h3>Boundary of the lab</h3>
             <p>
-              The P900 Surface Observatory is a renderer inspection surface. It does not claim that motion
-              creates the graph. It does not claim that a visual pattern is proof. It does not claim that a
-              saved lens is part of the mathematical object.
+              The P900 Surface Observatory is a renderer inspection surface and simulator-lens surface.
+              It does not claim that motion creates the graph. It does not claim that a visual pattern is
+              proof. It does not claim that a saved lens or force grammar mode is part of the mathematical
+              object. It does not claim that Gravity, EM, Strong, or Weak modes are physical-force derivations.
             </p>
             <p>
               The artifact is fixed. The lens is a way of seeing it. The viewer helps us compare appearances
@@ -230,12 +252,12 @@
         <div class="force-grammar-strip" aria-label="Finite force-like grammar">
           <p class="force-grammar-title">Force grammar</p>
           <div class="force-chip-row">
-            <span class="force-chip force-chip-gravity"><b>Gravity</b><em>compresses</em></span>
-            <span class="force-chip force-chip-em"><b>EM</b><em>polarizes</em></span>
-            <span class="force-chip force-chip-strong"><b>Strong</b><em>confines</em></span>
-            <span class="force-chip force-chip-weak"><b>Weak</b><em>transforms</em></span>
+            <button class="force-chip force-chip-gravity" type="button" data-force-mode="gravity" aria-pressed="false" title="Gravity mode: closure with memory gives compression"><b>Gravity</b><em>compresses</em></button>
+            <button class="force-chip force-chip-em" type="button" data-force-mode="em" aria-pressed="false" title="EM mode: circulation with orientation gives polarity"><b>EM</b><em>polarizes</em></button>
+            <button class="force-chip force-chip-strong" type="button" data-force-mode="strong" aria-pressed="false" title="Strong mode: neutral closure gives confinement"><b>Strong</b><em>confines</em></button>
+            <button class="force-chip force-chip-weak" type="button" data-force-mode="weak" aria-pressed="false" title="Weak mode: directed channel crossing gives transformation"><b>Weak</b><em>transforms</em></button>
           </div>
-          <p class="force-grammar-note">Finite action grammar, not a physical-force claim.</p>
+          <p class="force-grammar-note">Simulator lens. Graph unchanged. Not a physical-force claim.</p>
         </div>
 
         <div class="view-fader-stack" aria-label="Layer faders">
@@ -287,7 +309,7 @@
     <p>Public claims should remain inspectable: relation, action, witness, and traceable constraint.</p>
   </footer>
 
-  <script type="module" src="lab_boot.js"></script>
+  <script type="module" src="lab_boot.js?v=force-sim-5"></script>
 
   <div id="settings-share-dialog" class="settings-share-dialog" hidden>
     <div class="settings-share-panel" role="dialog" aria-modal="true" aria-labelledby="settings-share-title">

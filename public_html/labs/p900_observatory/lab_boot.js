@@ -90,6 +90,83 @@ const ZOOM_MIN = 0.85;
 const ZOOM_MAX = 80;
 const SHEET_COUNT = 30;
 
+
+const FORCE_GRAMMAR_MODES = {
+  none: {
+    label: "Off",
+    verb: "visual inspection",
+    description: "No force grammar lens is active.",
+  },
+  gravity: {
+    label: "Gravity",
+    verb: "compresses",
+    description: "Closure with memory gives compression.",
+    lens: {
+      sheetRate: 12,
+      surface: 34,
+      body: 72,
+      trailOn: true,
+      trail: 88,
+      edgesOn: true,
+      edgeOpacity: 1,
+      verticesOn: true,
+      vertexOpacity: 0.92,
+      cameraPreset: 3,
+    },
+  },
+  em: {
+    label: "EM",
+    verb: "polarizes",
+    description: "Circulation with orientation gives polarity.",
+    lens: {
+      sheetRate: 240,
+      surface: 64,
+      body: 38,
+      trailOn: true,
+      trail: 74,
+      edgesOn: true,
+      edgeOpacity: 0.86,
+      verticesOn: true,
+      vertexOpacity: 0.74,
+      cameraPreset: 2,
+    },
+  },
+  strong: {
+    label: "Strong",
+    verb: "confines",
+    description: "Difference under neutral closure gives confinement.",
+    lens: {
+      sheetRate: 30,
+      surface: 0,
+      body: 76,
+      trailOn: true,
+      trail: 18,
+      edgesOn: true,
+      edgeOpacity: 1,
+      verticesOn: true,
+      vertexOpacity: 1,
+      cameraPreset: 2,
+    },
+  },
+  weak: {
+    label: "Weak",
+    verb: "transforms",
+    description: "Directed channel crossing gives transformation.",
+    lens: {
+      sheetRate: 720,
+      surface: 18,
+      body: 44,
+      trailOn: true,
+      trail: 96,
+      edgesOn: true,
+      edgeOpacity: 0.72,
+      verticesOn: true,
+      vertexOpacity: 0.52,
+      cameraPreset: 3,
+    },
+  },
+};
+
 const SETTINGS_PRESETS = {
   default: {
     sheetRate: 30,
@@ -314,6 +391,14 @@ function deleteSelectedLocalLens() {
     return;
   }
 
+
+  for (const button of Array.from(document.querySelectorAll("[data-force-mode]"))) {
+    button.addEventListener("click", () => {
+      const mode = button.dataset.forceMode || "none";
+      setForceMode(forceMode === mode ? "none" : mode);
+    });
+  }
+
   if (els.settingsPresetSelect) {
     els.settingsPresetSelect.value = "default";
     applySettingsPreset("default");
@@ -321,6 +406,77 @@ function deleteSelectedLocalLens() {
 
   renderLocalLensOptions("");
   updateRateReadout();
+  draw();
+}
+
+
+
+function forceModeConfig() {
+  return FORCE_GRAMMAR_MODES[forceMode] || FORCE_GRAMMAR_MODES.none;
+}
+
+function forceModeLabel() {
+  const cfg = forceModeConfig();
+  if (!cfg || forceMode === "none") return "off";
+  return cfg.label + " " + cfg.verb;
+}
+
+function updateForceGrammarButtons() {
+  const buttons = Array.from(document.querySelectorAll("[data-force-mode]"));
+  for (const button of buttons) {
+    const mode = button.dataset.forceMode || "";
+    const active = mode === forceMode;
+    button.classList.toggle("is-active", active);
+    button.setAttribute("aria-pressed", active ? "true" : "false");
+  }
+
+  document.body.dataset.forceMode = forceMode === "none" ? "" : forceMode;
+}
+
+function applyForceLens(lens) {
+  if (!lens) return;
+
+  const rate = clampSheetRate(lens.sheetRate);
+  setSliderValue(els.sheetRateSlider, rate);
+  if (els.sheetRateNumber) els.sheetRateNumber.value = rate.toFixed(2);
+
+  setSliderValue(els.surfaceOpacitySlider, lens.surface);
+  setSliderValue(els.bodyOpacitySlider, lens.body);
+
+  setCheckboxValue(els.trailToggle, lens.trailOn);
+  setSliderValue(els.trailSlider, lens.trail);
+
+  setCheckboxValue(els.edgeToggle, lens.edgesOn);
+  setSliderValue(els.edgeOpacitySlider, lens.edgeOpacity);
+
+  setCheckboxValue(els.vertexToggle, lens.verticesOn);
+  setSliderValue(els.vertexOpacitySlider, lens.vertexOpacity);
+
+  if (lens.cameraPreset) {
+    setCameraPreset(lens.cameraPreset);
+  }
+
+  updateRateReadout();
+}
+
+function setForceMode(mode, options = {}) {
+  const nextMode = FORCE_GRAMMAR_MODES[mode] ? mode : "none";
+  const applyLens = options.applyLens !== false;
+
+  forceMode = nextMode;
+  updateForceGrammarButtons();
+
+  const cfg = forceModeConfig();
+  if (applyLens && cfg.lens) {
+    applyForceLens(cfg.lens);
+  }
+
+  const label = forceModeLabel();
+
+  if (els.statusText) {
+    els.statusText.textContent = "force grammar lens: " + label;
+  }
+
   draw();
 }
 
@@ -367,6 +523,7 @@ let tick = 0;
 let playing = false;
 let lastFrameTime = null;
 let fpsSmoothed = null;
+let forceMode = "none";
 
 function applyLayerCamera() {
   const l = layer();
@@ -548,6 +705,7 @@ function currentSettingsParams() {
   const params = new URLSearchParams();
 
   params.set("preset", els.settingsPresetSelect?.value || "default");
+  params.set("force", forceMode);
   params.set("sheets", sheetRate().toFixed(2));
 
   params.set("surface", String(Math.round(surfaceOpacity() * 100)));
@@ -726,6 +884,13 @@ function applySettingsFromUrl() {
   camera.pitch = numericParam(params, "cam_p", cameraDeg(camera.pitch), -100000, 100000) * Math.PI / 180;
   camera.roll = numericParam(params, "cam_r", cameraDeg(camera.roll), -100000, 100000) * Math.PI / 180;
 
+  const forceParam = params.get("force");
+  if (forceParam && FORCE_GRAMMAR_MODES[forceParam]) {
+    setForceMode(forceParam, { applyLens: false });
+  } else {
+    updateForceGrammarButtons();
+  }
+
   updateRateReadout();
   draw();
 }
@@ -747,6 +912,7 @@ function consoleText() {
     "P900 Surface Observatory",
     "",
     "view mix       : " + faderViewLabel(),
+    "force mode     : " + forceModeLabel(),
     "source         : " + sourceLabel(),
     "candidate      : " + candidate.id,
     "role           : " + candidate.role,
@@ -777,10 +943,12 @@ function consoleText() {
     "motion         : visual inspection only",
     "boundary       : no states added beyond 900",
     "claim          : renderer inspection, not final law",
+    "force grammar  : visual lens only, graph unchanged",
   ].join("\n");
 }
 
 function draw() {
+  updateForceGrammarButtons();
   if (!candidate) return;
 
   const sAlpha = surfaceOpacity();
@@ -930,8 +1098,31 @@ function bindStageTouchControls() {
   }, { passive: false });
 }
 
+
+function bindForceGrammarSimulator() {
+  const buttons = Array.from(document.querySelectorAll("[data-force-mode]"));
+
+  for (const button of buttons) {
+    if (button.dataset.forceBound === "1") continue;
+    button.dataset.forceBound = "1";
+
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+
+      const mode = button.dataset.forceMode || "none";
+      setForceMode(forceMode === mode ? "none" : mode);
+    });
+  }
+
+  updateForceGrammarButtons();
+}
+
+
 async function main() {
+  window.__p900ForceSimBoot = "ok";
   bindStageTouchControls();
+  bindForceGrammarSimulator();
 
   if (els.stepBackBtn) {
     els.stepBackBtn.addEventListener("click", () => stepSheets(-1));
@@ -1146,5 +1337,8 @@ async function main() {
 main().catch((err) => {
   console.error(err);
   els.statusText.textContent = "error";
+  if (els.cameraText) {
+    els.cameraText.textContent = "error: " + String(err && err.message ? err.message : err);
+  }
   els.metricsConsole.textContent = String(err && err.stack ? err.stack : err);
 });

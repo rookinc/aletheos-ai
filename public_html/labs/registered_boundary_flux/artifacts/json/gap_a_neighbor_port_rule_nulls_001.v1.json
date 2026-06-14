@@ -1,0 +1,438 @@
+{
+  "schema": "gap_a_neighbor_port_rule_nulls_001.v1",
+  "status": "gap_a_neighbor_port_rule_nulls_mixed_not_promoted",
+  "timestamp_utc": "2026-06-14T19:49:38.902923+00:00",
+  "purpose": "Attack the Gap A neighbor-port rule inside the zero-twisted neighborhood.",
+  "boundary": [
+    "This does not close Gap A.",
+    "The neighbor-port rule remains local to the tested zero-twisted-carrier neighborhood.",
+    "This null pass is mixed, not a clean promotion.",
+    "Some structural nulls break exactness, but weaker role/column substitutes remain exact.",
+    "No full chamber/register map is claimed.",
+    "No physical interpretation is claimed."
+  ],
+  "inputs": {
+    "neighbor_port_rule": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_neighbor_port_rule_001.v1.json",
+      "sha256": "6041bcf4ac3f4a32858c0334934e3cc208d5bdfc56f4a15e4ef345e3ef7b4489",
+      "status": "gap_a_neighbor_port_rule_candidate_found_not_closure"
+    },
+    "context_probe": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_surrounding_cell_context_probe_001.v1.json",
+      "sha256": "3ecfbca2c2fae088ba878944c9d7a42765f2430ffe7bc2d814a229f13299cad7",
+      "status": "gap_a_surrounding_cell_context_probe_recorded"
+    },
+    "zero_twisted_split": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_zero_twisted_neighborhood_split_001.v1.json",
+      "sha256": "14293c9f7a362b2c9e1f50587c3222816f7d1a29050a8015e26fe49b0b018476",
+      "status": "gap_a_zero_twisted_neighborhood_split_candidate_found_not_closure"
+    },
+    "zero_twisted_split_nulls": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_zero_twisted_split_candidate_nulls_001.v1.json",
+      "sha256": "1bf05ad3f362415ccf92cf3a1a75381f3323f8db215bf4a6bc1c3f5e02cf637a",
+      "status": "gap_a_zero_twisted_split_candidate_nulls_recorded"
+    }
+  },
+  "zero_twisted_neighborhood": [
+    3,
+    4,
+    9,
+    15,
+    16
+  ],
+  "known_residual_rows": [
+    3,
+    16
+  ],
+  "baseline": {
+    "rule": "balanced singleton ZT port OR multi-column TI return with a dead neighbor port",
+    "support": [
+      3,
+      16
+    ]
+  },
+  "radius2_rows": [
+    {
+      "row_ordinal": 3,
+      "role": "ZT",
+      "cycle_index": 0,
+      "column_count": 1,
+      "pair_degrees_radius_2": [
+        [
+          2,
+          2
+        ]
+      ],
+      "dead_endpoint_count_radius_2": 0,
+      "balanced_singleton_radius_2": true,
+      "is_radius2_balanced_singleton_ZT": true,
+      "is_radius2_TI_dead_port": false
+    },
+    {
+      "row_ordinal": 4,
+      "role": "TI",
+      "cycle_index": 0,
+      "column_count": 1,
+      "pair_degrees_radius_2": [
+        [
+          3,
+          2
+        ]
+      ],
+      "dead_endpoint_count_radius_2": 0,
+      "balanced_singleton_radius_2": false,
+      "is_radius2_balanced_singleton_ZT": false,
+      "is_radius2_TI_dead_port": false
+    },
+    {
+      "row_ordinal": 9,
+      "role": "ZT",
+      "cycle_index": 1,
+      "column_count": 3,
+      "pair_degrees_radius_2": [
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "dead_endpoint_count_radius_2": 0,
+      "balanced_singleton_radius_2": false,
+      "is_radius2_balanced_singleton_ZT": false,
+      "is_radius2_TI_dead_port": false
+    },
+    {
+      "row_ordinal": 15,
+      "role": "ZT",
+      "cycle_index": 2,
+      "column_count": 2,
+      "pair_degrees_radius_2": [
+        [
+          4,
+          4
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "dead_endpoint_count_radius_2": 0,
+      "balanced_singleton_radius_2": false,
+      "is_radius2_balanced_singleton_ZT": false,
+      "is_radius2_TI_dead_port": false
+    },
+    {
+      "row_ordinal": 16,
+      "role": "TI",
+      "cycle_index": 2,
+      "column_count": 2,
+      "pair_degrees_radius_2": [
+        [
+          3,
+          3
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "dead_endpoint_count_radius_2": 0,
+      "balanced_singleton_radius_2": false,
+      "is_radius2_balanced_singleton_ZT": false,
+      "is_radius2_TI_dead_port": false
+    }
+  ],
+  "null_setup": {
+    "placement_shift": {
+      "3": 4,
+      "4": 9,
+      "9": 15,
+      "15": 16,
+      "16": 3
+    },
+    "rotated_role_by_row": {
+      "3": "TI",
+      "4": "ZT",
+      "9": "ZT",
+      "15": "TI",
+      "16": "ZT"
+    }
+  },
+  "null_tests": [
+    {
+      "name": "baseline_neighbor_port_rule",
+      "support": [
+        3,
+        16
+      ],
+      "support_count": 2,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [],
+      "misses": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "exact": true
+    },
+    {
+      "name": "null_role_blind_balanced_singleton_OR_any_dead_port",
+      "support": [
+        3,
+        15,
+        16
+      ],
+      "support_count": 3,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [
+        15
+      ],
+      "misses": [],
+      "precision": 0.6666666666666666,
+      "recall": 1.0,
+      "exact": false
+    },
+    {
+      "name": "null_dead_role_blind_balanced_ZT_OR_any_dead_port",
+      "support": [
+        3,
+        15,
+        16
+      ],
+      "support_count": 3,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [
+        15
+      ],
+      "misses": [],
+      "precision": 0.6666666666666666,
+      "recall": 1.0,
+      "exact": false
+    },
+    {
+      "name": "null_balance_blind_singleton_ZT_OR_TI_dead_port",
+      "support": [
+        3,
+        16
+      ],
+      "support_count": 2,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [],
+      "misses": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "exact": true
+    },
+    {
+      "name": "null_column_role_only_singleton_ZT_OR_multi_TI",
+      "support": [
+        3,
+        16
+      ],
+      "support_count": 2,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [],
+      "misses": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "exact": true
+    },
+    {
+      "name": "null_radius2_neighbor_port_rule",
+      "support": [
+        3
+      ],
+      "support_count": 1,
+      "residual_hits": [
+        3
+      ],
+      "false_positives": [],
+      "misses": [
+        16
+      ],
+      "precision": 1.0,
+      "recall": 0.5,
+      "exact": false
+    },
+    {
+      "name": "null_shift_dead_port_placement",
+      "support": [
+        3,
+        16
+      ],
+      "support_count": 2,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [],
+      "misses": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "exact": true
+    },
+    {
+      "name": "null_shift_balanced_singleton_placement",
+      "support": [
+        4,
+        16
+      ],
+      "support_count": 2,
+      "residual_hits": [
+        16
+      ],
+      "false_positives": [
+        4
+      ],
+      "misses": [
+        3
+      ],
+      "precision": 0.5,
+      "recall": 0.5,
+      "exact": false
+    },
+    {
+      "name": "null_role_rotation_neighbor_port_rule",
+      "support": [
+        15
+      ],
+      "support_count": 1,
+      "residual_hits": [],
+      "false_positives": [
+        15
+      ],
+      "misses": [
+        3,
+        16
+      ],
+      "precision": 0.0,
+      "recall": 0.0,
+      "exact": false
+    }
+  ],
+  "load_bearing": {
+    "role_specificity_load_bearing": true,
+    "dead_port_role_specificity_load_bearing": true,
+    "radius1_locality_load_bearing": true,
+    "dead_port_placement_load_bearing": false,
+    "balanced_singleton_placement_load_bearing": true,
+    "role_placement_load_bearing": true
+  },
+  "summary": {
+    "baseline_exact": true,
+    "baseline_support": [
+      3,
+      16
+    ],
+    "broken_null_count": 5,
+    "null_count": 8,
+    "load_bearing": {
+      "role_specificity_load_bearing": true,
+      "dead_port_role_specificity_load_bearing": true,
+      "radius1_locality_load_bearing": true,
+      "dead_port_placement_load_bearing": false,
+      "balanced_singleton_placement_load_bearing": true,
+      "role_placement_load_bearing": true
+    },
+    "review_result": "mixed_not_promoted",
+    "exact_surviving_nulls": [
+      "null_balance_blind_singleton_ZT_OR_TI_dead_port",
+      "null_column_role_only_singleton_ZT_OR_multi_TI",
+      "null_shift_dead_port_placement"
+    ],
+    "broken_nulls": [
+      "null_role_blind_balanced_singleton_OR_any_dead_port",
+      "null_dead_role_blind_balanced_ZT_OR_any_dead_port",
+      "null_radius2_neighbor_port_rule",
+      "null_shift_balanced_singleton_placement",
+      "null_role_rotation_neighbor_port_rule"
+    ]
+  },
+  "interpretation": {
+    "main_result": "The neighbor-port rule is exact as a baseline, but this null pass does not justify promoting it as independently load-bearing.",
+    "surviving_substitutes": "Two weaker substitutes remain exact: balance-blind singleton ZT OR TI dead port, and column/role-only singleton ZT OR multi-column TI.",
+    "dead_port_placement": "The dead-port placement shift also remains exact, so dead-port placement is not load-bearing in this test.",
+    "what_breaks": "Role-blind, dead-port-role-blind, radius-2, balanced-singleton placement, and role-rotation variants break exactness.",
+    "meaning": "The exact support may be coming from a simpler role/column pattern inside the zero-twisted neighborhood rather than from the full neighbor-port rule.",
+    "not_closure": "This remains useful evidence about surrounding-cell context, but it is not a clean source-rule derivation and does not close Gap A."
+  },
+  "checks": [
+    {
+      "id": "rule_loaded",
+      "status": true,
+      "detail": "gap_a_neighbor_port_rule_candidate_found_not_closure"
+    },
+    {
+      "id": "context_loaded",
+      "status": true,
+      "detail": "gap_a_surrounding_cell_context_probe_recorded"
+    },
+    {
+      "id": "split_loaded",
+      "status": true,
+      "detail": "gap_a_zero_twisted_neighborhood_split_candidate_found_not_closure"
+    },
+    {
+      "id": "split_nulls_loaded",
+      "status": true,
+      "detail": "gap_a_zero_twisted_split_candidate_nulls_recorded"
+    },
+    {
+      "id": "baseline_exact",
+      "status": true,
+      "detail": "{\"exact\": true, \"false_positives\": [], \"misses\": [], \"name\": \"baseline_neighbor_port_rule\", \"precision\": 1.0, \"recall\": 1.0, \"residual_hits\": [3, 16], \"support\": [3, 16], \"support_count\": 2}"
+    },
+    {
+      "id": "role_blind_breaks_exact",
+      "status": true,
+      "detail": "{\"exact\": false, \"false_positives\": [15], \"misses\": [], \"name\": \"null_role_blind_balanced_singleton_OR_any_dead_port\", \"precision\": 0.6666666666666666, \"recall\": 1.0, \"residual_hits\": [3, 16], \"support\": [3, 15, 16], \"support_count\": 3}"
+    },
+    {
+      "id": "dead_role_blind_breaks_exact",
+      "status": true,
+      "detail": "{\"exact\": false, \"false_positives\": [15], \"misses\": [], \"name\": \"null_dead_role_blind_balanced_ZT_OR_any_dead_port\", \"precision\": 0.6666666666666666, \"recall\": 1.0, \"residual_hits\": [3, 16], \"support\": [3, 15, 16], \"support_count\": 3}"
+    },
+    {
+      "id": "radius2_breaks_exact",
+      "status": true,
+      "detail": "{\"exact\": false, \"false_positives\": [], \"misses\": [16], \"name\": \"null_radius2_neighbor_port_rule\", \"precision\": 1.0, \"recall\": 0.5, \"residual_hits\": [3], \"support\": [3], \"support_count\": 1}"
+    },
+    {
+      "id": "dead_shift_breaks_exact",
+      "status": false,
+      "detail": "expected mixed result: dead-port placement shift did not break exactness"
+    },
+    {
+      "id": "balanced_shift_breaks_exact",
+      "status": true,
+      "detail": "{\"exact\": false, \"false_positives\": [4], \"misses\": [3], \"name\": \"null_shift_balanced_singleton_placement\", \"precision\": 0.5, \"recall\": 0.5, \"residual_hits\": [16], \"support\": [4, 16], \"support_count\": 2}"
+    },
+    {
+      "id": "role_rotation_breaks_exact",
+      "status": true,
+      "detail": "{\"exact\": false, \"false_positives\": [15], \"misses\": [3, 16], \"name\": \"null_role_rotation_neighbor_port_rule\", \"precision\": 0.0, \"recall\": 0.0, \"residual_hits\": [], \"support\": [15], \"support_count\": 1}"
+    }
+  ],
+  "next_script": "record_gap_a_neighbor_port_interim_note_001.py",
+  "timestamp_utc_repaired": "2026-06-14T19:50:38.126858+00:00"
+}

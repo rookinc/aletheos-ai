@@ -1,0 +1,406 @@
+{
+  "schema": "gap_a_branch_sensitive_survivor_comparison_001.v1",
+  "status": "gap_a_branch_sensitive_survivor_row_equivalent_to_normalized_preimage",
+  "timestamp_utc": "2026-06-14T20:25:19.198039+00:00",
+  "purpose": "Determine whether the surviving branch_sensitive OR singleton ZT selector is independent, or row-equivalent to the normalized zero-row source preimage.",
+  "boundary": [
+    "This does not close Gap A.",
+    "This compares row-level expressions only.",
+    "A row-equivalence result does not by itself produce a full source-derived chamber/register map.",
+    "No global exact selector is claimed.",
+    "No physical interpretation is claimed."
+  ],
+  "inputs": {
+    "normalized_preimage": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_source_preimage_from_normalized_zero_rows_001.v1.json",
+      "sha256": "59a127a3d4e4866a43340885150f55695b28b96c4332a26402acf61e21613b1a",
+      "status": "gap_a_source_preimage_from_normalized_zero_rows_recorded_not_promoted"
+    },
+    "preimage_nulls": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_source_law_preimage_candidate_nulls_001.v1.json",
+      "sha256": "b713f6703c9d7245e4b71687a2a3fe22b7ed6299d1b7b52b8998246d57a4caf1",
+      "status": "gap_a_source_law_preimage_candidate_nulls_mixed_not_promoted"
+    },
+    "role_geometry": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_role_column_source_geometry_001.v1.json",
+      "sha256": "f20e71ee814653a3cfef9132110f69fec036386b2806282bd15b65e495cfc19c",
+      "status": "gap_a_role_column_source_geometry_candidate_found_not_closure"
+    },
+    "normalized_zero_rows": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_uniform_lift_zero_twisted_rows_001.v1.json",
+      "sha256": "60247d6a017d4da644a97d93fd55ceabb2818e5d39382ac4d19813bab8c6caeb",
+      "status": "gap_a_uniform_lift_zero_twisted_rows_normalized"
+    },
+    "chamber_interim": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_chamber_register_candidate_interim_note_001.v1.json",
+      "sha256": "c0b10fad9afc6de3134a86cbe4d270218bf87071ce723fb52bae8607327e18e9",
+      "status": "gap_a_chamber_register_candidate_interim_note_recorded"
+    }
+  },
+  "supports": {
+    "zero_twisted_rows": [
+      3,
+      4,
+      9,
+      15,
+      16
+    ],
+    "preimage_support": [
+      3,
+      16
+    ],
+    "branch_sensitive": [
+      16
+    ],
+    "branch_sensitive_source": "role_geometry.source_rows.branch_sensitive",
+    "singleton_ZT": [
+      3
+    ],
+    "zero_AND_singleton_ZT": [
+      3
+    ],
+    "zero_AND_multi_TI": [
+      16
+    ],
+    "normalized_expression_support": [
+      3,
+      16
+    ],
+    "survivor_support": [
+      3,
+      16
+    ]
+  },
+  "identity_tests": {
+    "singleton_ZT_equals_zero_AND_singleton_ZT": true,
+    "branch_sensitive_equals_zero_AND_multi_TI": true,
+    "survivor_support_equals_normalized_expression": true,
+    "survivor_support_equals_preimage_support": true,
+    "normalized_expression_equals_preimage_support": true,
+    "survivor_exact_18": true,
+    "normalized_exact_18": true
+  },
+  "normalized_result": {
+    "support": [
+      3,
+      16
+    ],
+    "row_count": 18,
+    "match_count": 18,
+    "mismatches": [],
+    "exact": true,
+    "changed_fixes": [
+      3,
+      16
+    ],
+    "changed_breaks": []
+  },
+  "survivor_result": {
+    "support": [
+      3,
+      16
+    ],
+    "row_count": 18,
+    "match_count": 18,
+    "mismatches": [],
+    "exact": true,
+    "changed_fixes": [
+      3,
+      16
+    ],
+    "changed_breaks": []
+  },
+  "row_comparison": [
+    {
+      "row_ordinal": 0,
+      "role": "WX",
+      "column_shape": "singleton",
+      "normalized_zero_twisted_source": false,
+      "singleton_ZT": false,
+      "branch_sensitive": false,
+      "zero_AND_singleton_ZT": false,
+      "zero_AND_multi_TI": false,
+      "survivor_member": false,
+      "normalized_preimage_member": false
+    },
+    {
+      "row_ordinal": 1,
+      "role": "XY",
+      "column_shape": "singleton",
+      "normalized_zero_twisted_source": false,
+      "singleton_ZT": false,
+      "branch_sensitive": false,
+      "zero_AND_singleton_ZT": false,
+      "zero_AND_multi_TI": false,
+      "survivor_member": false,
+      "normalized_preimage_member": false
+    },
+    {
+      "row_ordinal": 2,
+      "role": "YZ",
+      "column_shape": "multi_column",
+      "normalized_zero_twisted_source": false,
+      "singleton_ZT": false,
+      "branch_sensitive": false,
+      "zero_AND_singleton_ZT": false,
+      "zero_AND_multi_TI": false,
+      "survivor_member": false,
+      "normalized_preimage_member": false
+    },
+    {
+      "row_ordinal": 3,
+      "role": "ZT",
+      "column_shape": "singleton",
+      "normalized_zero_twisted_source": true,
+      "singleton_ZT": true,
+      "branch_sensitive": false,
+      "zero_AND_singleton_ZT": true,
+      "zero_AND_multi_TI": false,
+      "survivor_member": true,
+      "normalized_preimage_member": true
+    },
+    {
+      "row_ordinal": 4,
+      "role": "TI",
+      "column_shape": "singleton",
+      "normalized_zero_twisted_source": true,
+      "singleton_ZT": false,
+      "branch_sensitive": false,
+      "zero_AND_singleton_ZT": false,
+      "zero_AND_multi_TI": false,
+      "survivor_member": false,
+      "normalized_preimage_member": false
+    },
+    {
+      "row_ordinal": 5,
+      "role": "IW",
+      "column_shape": "multi_column",
+      "normalized_zero_twisted_source": false,
+      "singleton_ZT": false,
+      "branch_sensitive": false,
+      "zero_AND_singleton_ZT": false,
+      "zero_AND_multi_TI": false,
+      "survivor_member": false,
+      "normalized_preimage_member": false
+    },
+    {
+      "row_ordinal": 6,
+      "role": "WX",
+      "column_shape": "singleton",
+      "normalized_zero_twisted_source": false,
+      "singleton_ZT": false,
+      "branch_sensitive": false,
+      "zero_AND_singleton_ZT": false,
+      "zero_AND_multi_TI": false,
+      "survivor_member": false,
+      "normalized_preimage_member": false
+    },
+    {
+      "row_ordinal": 7,
+      "role": "XY",
+      "column_shape": "singleton",
+      "normalized_zero_twisted_source": false,
+      "singleton_ZT": false,
+      "branch_sensitive": false,
+      "zero_AND_singleton_ZT": false,
+      "zero_AND_multi_TI": false,
+      "survivor_member": false,
+      "normalized_preimage_member": false
+    },
+    {
+      "row_ordinal": 8,
+      "role": "YZ",
+      "column_shape": "multi_column",
+      "normalized_zero_twisted_source": false,
+      "singleton_ZT": false,
+      "branch_sensitive": false,
+      "zero_AND_singleton_ZT": false,
+      "zero_AND_multi_TI": false,
+      "survivor_member": false,
+      "normalized_preimage_member": false
+    },
+    {
+      "row_ordinal": 9,
+      "role": "ZT",
+      "column_shape": "multi_column",
+      "normalized_zero_twisted_source": true,
+      "singleton_ZT": false,
+      "branch_sensitive": false,
+      "zero_AND_singleton_ZT": false,
+      "zero_AND_multi_TI": false,
+      "survivor_member": false,
+      "normalized_preimage_member": false
+    },
+    {
+      "row_ordinal": 10,
+      "role": "TI",
+      "column_shape": "multi_column",
+      "normalized_zero_twisted_source": false,
+      "singleton_ZT": false,
+      "branch_sensitive": false,
+      "zero_AND_singleton_ZT": false,
+      "zero_AND_multi_TI": false,
+      "survivor_member": false,
+      "normalized_preimage_member": false
+    },
+    {
+      "row_ordinal": 11,
+      "role": "IW",
+      "column_shape": "multi_column",
+      "normalized_zero_twisted_source": false,
+      "singleton_ZT": false,
+      "branch_sensitive": false,
+      "zero_AND_singleton_ZT": false,
+      "zero_AND_multi_TI": false,
+      "survivor_member": false,
+      "normalized_preimage_member": false
+    },
+    {
+      "row_ordinal": 12,
+      "role": "WX",
+      "column_shape": "singleton",
+      "normalized_zero_twisted_source": false,
+      "singleton_ZT": false,
+      "branch_sensitive": false,
+      "zero_AND_singleton_ZT": false,
+      "zero_AND_multi_TI": false,
+      "survivor_member": false,
+      "normalized_preimage_member": false
+    },
+    {
+      "row_ordinal": 13,
+      "role": "XY",
+      "column_shape": "singleton",
+      "normalized_zero_twisted_source": false,
+      "singleton_ZT": false,
+      "branch_sensitive": false,
+      "zero_AND_singleton_ZT": false,
+      "zero_AND_multi_TI": false,
+      "survivor_member": false,
+      "normalized_preimage_member": false
+    },
+    {
+      "row_ordinal": 14,
+      "role": "YZ",
+      "column_shape": "multi_column",
+      "normalized_zero_twisted_source": false,
+      "singleton_ZT": false,
+      "branch_sensitive": false,
+      "zero_AND_singleton_ZT": false,
+      "zero_AND_multi_TI": false,
+      "survivor_member": false,
+      "normalized_preimage_member": false
+    },
+    {
+      "row_ordinal": 15,
+      "role": "ZT",
+      "column_shape": "multi_column",
+      "normalized_zero_twisted_source": true,
+      "singleton_ZT": false,
+      "branch_sensitive": false,
+      "zero_AND_singleton_ZT": false,
+      "zero_AND_multi_TI": false,
+      "survivor_member": false,
+      "normalized_preimage_member": false
+    },
+    {
+      "row_ordinal": 16,
+      "role": "TI",
+      "column_shape": "multi_column",
+      "normalized_zero_twisted_source": true,
+      "singleton_ZT": false,
+      "branch_sensitive": true,
+      "zero_AND_singleton_ZT": false,
+      "zero_AND_multi_TI": true,
+      "survivor_member": true,
+      "normalized_preimage_member": true
+    },
+    {
+      "row_ordinal": 17,
+      "role": "IW",
+      "column_shape": "multi_column",
+      "normalized_zero_twisted_source": false,
+      "singleton_ZT": false,
+      "branch_sensitive": false,
+      "zero_AND_singleton_ZT": false,
+      "zero_AND_multi_TI": false,
+      "survivor_member": false,
+      "normalized_preimage_member": false
+    }
+  ],
+  "claim": {
+    "does_this_close_gap_a": false,
+    "does_this_promote_global_source_map": false,
+    "does_this_remove_independent_survivor_at_row_level": true,
+    "short_form": "The surviving selector branch_sensitive OR singleton ZT is row-equivalent to the normalized zero-row source preimage on the tested 18-row table.",
+    "not_closed_reason": "The equivalence is row-level. Gap A still needs a global source-derived chamber/register map."
+  },
+  "interpretation": {
+    "main_result": "The survivor is not independent on the tested row table: branch_sensitive equals normalized zero AND multi-column TI, while singleton ZT equals normalized zero AND singleton ZT.",
+    "effect": "The previous promotion blocker is reduced from an independent rival selector to a row-equivalent expression, but only at the row-table level.",
+    "still_open": "The next step is to record this as a bounded equivalence and then attempt a global source-law lift."
+  },
+  "checks": [
+    {
+      "id": "normalized_preimage_loaded",
+      "status": true,
+      "detail": "gap_a_source_preimage_from_normalized_zero_rows_recorded_not_promoted"
+    },
+    {
+      "id": "preimage_nulls_loaded",
+      "status": true,
+      "detail": "gap_a_source_law_preimage_candidate_nulls_mixed_not_promoted"
+    },
+    {
+      "id": "role_geometry_loaded",
+      "status": true,
+      "detail": "gap_a_role_column_source_geometry_candidate_found_not_closure"
+    },
+    {
+      "id": "zero_rows_loaded",
+      "status": true,
+      "detail": "gap_a_uniform_lift_zero_twisted_rows_normalized"
+    },
+    {
+      "id": "chamber_loaded",
+      "status": true,
+      "detail": "gap_a_chamber_register_candidate_interim_note_recorded"
+    },
+    {
+      "id": "branch_sensitive_support_16",
+      "status": true,
+      "detail": "[16]"
+    },
+    {
+      "id": "singleton_ZT_support_3",
+      "status": true,
+      "detail": "[3]"
+    },
+    {
+      "id": "zero_and_multi_TI_16",
+      "status": true,
+      "detail": "[16]"
+    },
+    {
+      "id": "zero_and_singleton_ZT_3",
+      "status": true,
+      "detail": "[3]"
+    },
+    {
+      "id": "survivor_equals_normalized",
+      "status": true,
+      "detail": "{\"normalized\": [3, 16], \"survivor\": [3, 16]}"
+    },
+    {
+      "id": "identity_tests_all_pass",
+      "status": true,
+      "detail": "{\"branch_sensitive_equals_zero_AND_multi_TI\": true, \"normalized_exact_18\": true, \"normalized_expression_equals_preimage_support\": true, \"singleton_ZT_equals_zero_AND_singleton_ZT\": true, \"survivor_exact_18\": true, \"survivor_support_equals_normalized_expression\": true, \"survivor_support_equals_preimage_support\": true}"
+    },
+    {
+      "id": "not_gap_closure",
+      "status": true,
+      "detail": "row-level equivalence only"
+    }
+  ],
+  "next_script": "record_gap_a_branch_sensitive_survivor_equivalence_note_001.py"
+}

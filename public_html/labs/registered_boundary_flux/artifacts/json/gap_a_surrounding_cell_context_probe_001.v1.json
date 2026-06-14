@@ -1,0 +1,2417 @@
+{
+  "schema": "gap_a_surrounding_cell_context_probe_001.v1",
+  "status": "gap_a_surrounding_cell_context_probe_recorded",
+  "timestamp_utc": "2026-06-14T19:45:30.987968+00:00",
+  "purpose": "Explore whether surrounding 15-thalion cell context can explain the zero-twisted split candidate.",
+  "boundary": [
+    "This does not close Gap A.",
+    "This is a source-rule probe, not a proof.",
+    "Surrounding cells are treated as neighbor boundary conditions, not arbitrary extra data.",
+    "The current exact rule remains local to the zero-twisted neighborhood unless a direct source derivation is found.",
+    "No physical interpretation is claimed."
+  ],
+  "inputs": {
+    "interim": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_zero_twisted_split_interim_note_001.v1.json",
+      "sha256": "be90d3544a0078d91846b12c591d809e49c0342e1ca2987ad41a59d0628fcf6d",
+      "status": "gap_a_zero_twisted_split_interim_note_recorded"
+    },
+    "split": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_zero_twisted_neighborhood_split_001.v1.json",
+      "sha256": "14293c9f7a362b2c9e1f50587c3222816f7d1a29050a8015e26fe49b0b018476",
+      "status": "gap_a_zero_twisted_neighborhood_split_candidate_found_not_closure"
+    },
+    "nulls": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_zero_twisted_split_candidate_nulls_001.v1.json",
+      "sha256": "1bf05ad3f362415ccf92cf3a1a75381f3323f8db215bf4a6bc1c3f5e02cf637a",
+      "status": "gap_a_zero_twisted_split_candidate_nulls_recorded"
+    },
+    "schema": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_15_thalion_ring_schema_001.v1.json",
+      "sha256": "a2fe20a7f07e295d7d698f28861b74e592b135e0042fe4bc0914da0d559df806",
+      "status": "gap_a_15_thalion_ring_schema_recovered_residual_blind"
+    },
+    "lift": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_uniform_15_thalion_row_lift_001.v1.json",
+      "sha256": "746469ce14d675063543189bdf49420fa630ee0834958a0c27b4056a45364c46",
+      "status": "gap_a_uniform_15_thalion_row_lift_needs_inspection"
+    },
+    "twisted_source": {
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/16-fifteen-thalion-ring/support/generated/g900_twisted_ring_candidate_edges.json",
+      "sha256": "e8ae983acccb8102261bde73cca6493d9a13958edfacad0a2cb6b3e24f4398ef"
+    },
+    "untwisted_source": {
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/16-fifteen-thalion-ring/support/generated/g900_candidate_edges.json",
+      "sha256": "1fad85393b160e5f15c71815a82120577fc2463e708d15b67d712b17654c686f"
+    }
+  },
+  "working_conjecture": {
+    "statement": "Surrounding perfect cells supply neighbor boundary conditions for the local WXYZTI register.",
+    "meaning": "A single Perfect Return Cell displays the local witness, while the 15-thalion ring supplies the environment that distinguishes selected-turn residue from return-path residue.",
+    "current_status": "plausible_source_rule_vector_not_closure"
+  },
+  "zero_twisted_neighborhood": [
+    3,
+    4,
+    9,
+    15,
+    16
+  ],
+  "known_residual_rows": [
+    3,
+    16
+  ],
+  "candidate_support": [
+    3,
+    16
+  ],
+  "context_rows": [
+    {
+      "row_ordinal": 3,
+      "cycle_index": 0,
+      "role": "ZT",
+      "columns": [
+        9
+      ],
+      "column_count": 1,
+      "slot_pairs": [
+        [
+          2,
+          13
+        ]
+      ],
+      "row_slots": [
+        2,
+        13
+      ],
+      "slot_pair_spans": [
+        4
+      ],
+      "min_slot_span": 4,
+      "max_slot_span": 4,
+      "branch_sensitive": false,
+      "branch_stable": true,
+      "is_candidate_support": true,
+      "is_known_residual": true,
+      "direct_twisted": {
+        "edge_count": 0,
+        "law_hist": {},
+        "kind_hist": {},
+        "local_delta_mod60_hist": {}
+      },
+      "direct_untwisted": {
+        "edge_count": 60,
+        "law_hist": {
+          "g15_line_petersen_slot_adjacency": 60
+        },
+        "kind_hist": {
+          "inter_thalion_diagonal_carrier": 60
+        },
+        "local_delta_mod60_hist": {
+          "0": 60
+        }
+      },
+      "radius_context": {
+        "1": {
+          "neighbor_slots": [
+            1,
+            2,
+            3,
+            12,
+            13,
+            14
+          ],
+          "candidate_context_pair_count": 8,
+          "twisted_active_context_pairs": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              12,
+              13
+            ],
+            [
+              13,
+              14
+            ]
+          ],
+          "untwisted_active_context_pairs": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              12
+            ],
+            [
+              3,
+              13
+            ]
+          ],
+          "twisted_context": {
+            "edge_count": 240,
+            "law_hist": {
+              "half_flip_x_plus_30": 120,
+              "identity": 120
+            },
+            "kind_hist": {
+              "external_signed_carrier": 240
+            },
+            "local_delta_mod60_hist": {
+              "0": 120,
+              "30": 120
+            }
+          },
+          "untwisted_context": {
+            "edge_count": 240,
+            "law_hist": {
+              "g15_line_petersen_slot_adjacency": 240
+            },
+            "kind_hist": {
+              "inter_thalion_diagonal_carrier": 240
+            },
+            "local_delta_mod60_hist": {
+              "0": 240
+            }
+          }
+        },
+        "2": {
+          "neighbor_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            11,
+            12,
+            13,
+            14
+          ],
+          "candidate_context_pair_count": 14,
+          "twisted_active_context_pairs": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              12,
+              13
+            ],
+            [
+              13,
+              14
+            ]
+          ],
+          "untwisted_active_context_pairs": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              12
+            ],
+            [
+              3,
+              13
+            ]
+          ],
+          "twisted_context": {
+            "edge_count": 240,
+            "law_hist": {
+              "half_flip_x_plus_30": 120,
+              "identity": 120
+            },
+            "kind_hist": {
+              "external_signed_carrier": 240
+            },
+            "local_delta_mod60_hist": {
+              "0": 120,
+              "30": 120
+            }
+          },
+          "untwisted_context": {
+            "edge_count": 240,
+            "law_hist": {
+              "g15_line_petersen_slot_adjacency": 240
+            },
+            "kind_hist": {
+              "inter_thalion_diagonal_carrier": 240
+            },
+            "local_delta_mod60_hist": {
+              "0": 240
+            }
+          }
+        }
+      }
+    },
+    {
+      "row_ordinal": 4,
+      "cycle_index": 0,
+      "role": "TI",
+      "columns": [
+        13
+      ],
+      "column_count": 1,
+      "slot_pairs": [
+        [
+          4,
+          10
+        ]
+      ],
+      "row_slots": [
+        4,
+        10
+      ],
+      "slot_pair_spans": [
+        6
+      ],
+      "min_slot_span": 6,
+      "max_slot_span": 6,
+      "branch_sensitive": false,
+      "branch_stable": true,
+      "is_candidate_support": false,
+      "is_known_residual": false,
+      "direct_twisted": {
+        "edge_count": 0,
+        "law_hist": {},
+        "kind_hist": {},
+        "local_delta_mod60_hist": {}
+      },
+      "direct_untwisted": {
+        "edge_count": 60,
+        "law_hist": {
+          "g15_line_petersen_slot_adjacency": 60
+        },
+        "kind_hist": {
+          "inter_thalion_diagonal_carrier": 60
+        },
+        "local_delta_mod60_hist": {
+          "0": 60
+        }
+      },
+      "radius_context": {
+        "1": {
+          "neighbor_slots": [
+            3,
+            4,
+            5,
+            9,
+            10,
+            11
+          ],
+          "candidate_context_pair_count": 8,
+          "twisted_active_context_pairs": [
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              4,
+              9
+            ],
+            [
+              5,
+              10
+            ],
+            [
+              10,
+              11
+            ]
+          ],
+          "untwisted_active_context_pairs": [
+            [
+              3,
+              4
+            ],
+            [
+              5,
+              10
+            ],
+            [
+              9,
+              10
+            ]
+          ],
+          "twisted_context": {
+            "edge_count": 300,
+            "law_hist": {
+              "half_flip_x_plus_30": 120,
+              "identity": 180
+            },
+            "kind_hist": {
+              "external_signed_carrier": 300
+            },
+            "local_delta_mod60_hist": {
+              "0": 180,
+              "30": 120
+            }
+          },
+          "untwisted_context": {
+            "edge_count": 180,
+            "law_hist": {
+              "g15_line_petersen_slot_adjacency": 180
+            },
+            "kind_hist": {
+              "inter_thalion_diagonal_carrier": 180
+            },
+            "local_delta_mod60_hist": {
+              "0": 180
+            }
+          }
+        },
+        "2": {
+          "neighbor_slots": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "candidate_context_pair_count": 16,
+          "twisted_active_context_pairs": [
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              4,
+              9
+            ],
+            [
+              5,
+              10
+            ],
+            [
+              10,
+              11
+            ]
+          ],
+          "untwisted_active_context_pairs": [
+            [
+              3,
+              4
+            ],
+            [
+              5,
+              10
+            ],
+            [
+              9,
+              10
+            ]
+          ],
+          "twisted_context": {
+            "edge_count": 300,
+            "law_hist": {
+              "half_flip_x_plus_30": 120,
+              "identity": 180
+            },
+            "kind_hist": {
+              "external_signed_carrier": 300
+            },
+            "local_delta_mod60_hist": {
+              "0": 180,
+              "30": 120
+            }
+          },
+          "untwisted_context": {
+            "edge_count": 180,
+            "law_hist": {
+              "g15_line_petersen_slot_adjacency": 180
+            },
+            "kind_hist": {
+              "inter_thalion_diagonal_carrier": 180
+            },
+            "local_delta_mod60_hist": {
+              "0": 180
+            }
+          }
+        }
+      }
+    },
+    {
+      "row_ordinal": 9,
+      "cycle_index": 1,
+      "role": "ZT",
+      "columns": [
+        9,
+        11,
+        14
+      ],
+      "column_count": 3,
+      "slot_pairs": [
+        [
+          2,
+          13
+        ],
+        [
+          3,
+          13
+        ],
+        [
+          4,
+          14
+        ]
+      ],
+      "row_slots": [
+        2,
+        3,
+        4,
+        13,
+        14
+      ],
+      "slot_pair_spans": [
+        4,
+        5,
+        5
+      ],
+      "min_slot_span": 4,
+      "max_slot_span": 5,
+      "branch_sensitive": false,
+      "branch_stable": true,
+      "is_candidate_support": false,
+      "is_known_residual": false,
+      "direct_twisted": {
+        "edge_count": 0,
+        "law_hist": {},
+        "kind_hist": {},
+        "local_delta_mod60_hist": {}
+      },
+      "direct_untwisted": {
+        "edge_count": 180,
+        "law_hist": {
+          "g15_line_petersen_slot_adjacency": 180
+        },
+        "kind_hist": {
+          "inter_thalion_diagonal_carrier": 180
+        },
+        "local_delta_mod60_hist": {
+          "0": 180
+        }
+      },
+      "radius_context": {
+        "1": {
+          "neighbor_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            12,
+            13,
+            14
+          ],
+          "candidate_context_pair_count": 27,
+          "twisted_active_context_pairs": [
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              14
+            ],
+            [
+              12,
+              13
+            ],
+            [
+              13,
+              14
+            ]
+          ],
+          "untwisted_active_context_pairs": [
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              12
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              14
+            ]
+          ],
+          "twisted_context": {
+            "edge_count": 480,
+            "law_hist": {
+              "half_flip_x_plus_30": 300,
+              "identity": 180
+            },
+            "kind_hist": {
+              "external_signed_carrier": 480
+            },
+            "local_delta_mod60_hist": {
+              "0": 180,
+              "30": 300
+            }
+          },
+          "untwisted_context": {
+            "edge_count": 360,
+            "law_hist": {
+              "g15_line_petersen_slot_adjacency": 360
+            },
+            "kind_hist": {
+              "inter_thalion_diagonal_carrier": 360
+            },
+            "local_delta_mod60_hist": {
+              "0": 360
+            }
+          }
+        },
+        "2": {
+          "neighbor_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            11,
+            12,
+            13,
+            14
+          ],
+          "candidate_context_pair_count": 37,
+          "twisted_active_context_pairs": [
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              14
+            ],
+            [
+              6,
+              13
+            ],
+            [
+              12,
+              13
+            ],
+            [
+              13,
+              14
+            ]
+          ],
+          "untwisted_active_context_pairs": [
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              12
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              14
+            ],
+            [
+              6,
+              14
+            ]
+          ],
+          "twisted_context": {
+            "edge_count": 540,
+            "law_hist": {
+              "half_flip_x_plus_30": 300,
+              "identity": 240
+            },
+            "kind_hist": {
+              "external_signed_carrier": 540
+            },
+            "local_delta_mod60_hist": {
+              "0": 240,
+              "30": 300
+            }
+          },
+          "untwisted_context": {
+            "edge_count": 420,
+            "law_hist": {
+              "g15_line_petersen_slot_adjacency": 420
+            },
+            "kind_hist": {
+              "inter_thalion_diagonal_carrier": 420
+            },
+            "local_delta_mod60_hist": {
+              "0": 420
+            }
+          }
+        }
+      }
+    },
+    {
+      "row_ordinal": 15,
+      "cycle_index": 2,
+      "role": "ZT",
+      "columns": [
+        21,
+        22
+      ],
+      "column_count": 2,
+      "slot_pairs": [
+        [
+          6,
+          14
+        ],
+        [
+          7,
+          8
+        ]
+      ],
+      "row_slots": [
+        6,
+        7,
+        8,
+        14
+      ],
+      "slot_pair_spans": [
+        1,
+        7
+      ],
+      "min_slot_span": 1,
+      "max_slot_span": 7,
+      "branch_sensitive": false,
+      "branch_stable": true,
+      "is_candidate_support": false,
+      "is_known_residual": false,
+      "direct_twisted": {
+        "edge_count": 0,
+        "law_hist": {},
+        "kind_hist": {},
+        "local_delta_mod60_hist": {}
+      },
+      "direct_untwisted": {
+        "edge_count": 120,
+        "law_hist": {
+          "g15_line_petersen_slot_adjacency": 120
+        },
+        "kind_hist": {
+          "inter_thalion_diagonal_carrier": 120
+        },
+        "local_delta_mod60_hist": {
+          "0": 120
+        }
+      },
+      "radius_context": {
+        "1": {
+          "neighbor_slots": [
+            0,
+            5,
+            6,
+            7,
+            8,
+            9,
+            13,
+            14
+          ],
+          "candidate_context_pair_count": 20,
+          "twisted_active_context_pairs": [
+            [
+              0,
+              6
+            ],
+            [
+              5,
+              14
+            ],
+            [
+              6,
+              13
+            ],
+            [
+              8,
+              13
+            ],
+            [
+              8,
+              14
+            ],
+            [
+              13,
+              14
+            ]
+          ],
+          "untwisted_active_context_pairs": [
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              14
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              8,
+              13
+            ]
+          ],
+          "twisted_context": {
+            "edge_count": 360,
+            "law_hist": {
+              "half_flip_x_plus_30": 120,
+              "identity": 240
+            },
+            "kind_hist": {
+              "external_signed_carrier": 360
+            },
+            "local_delta_mod60_hist": {
+              "0": 240,
+              "30": 120
+            }
+          },
+          "untwisted_context": {
+            "edge_count": 300,
+            "law_hist": {
+              "g15_line_petersen_slot_adjacency": 300
+            },
+            "kind_hist": {
+              "inter_thalion_diagonal_carrier": 300
+            },
+            "local_delta_mod60_hist": {
+              "0": 300
+            }
+          }
+        },
+        "2": {
+          "neighbor_slots": [
+            0,
+            1,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            12,
+            13,
+            14
+          ],
+          "candidate_context_pair_count": 36,
+          "twisted_active_context_pairs": [
+            [
+              0,
+              6
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              5,
+              14
+            ],
+            [
+              6,
+              12
+            ],
+            [
+              6,
+              13
+            ],
+            [
+              7,
+              10
+            ],
+            [
+              8,
+              13
+            ],
+            [
+              8,
+              14
+            ],
+            [
+              10,
+              14
+            ],
+            [
+              13,
+              14
+            ]
+          ],
+          "untwisted_active_context_pairs": [
+            [
+              4,
+              14
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              6,
+              12
+            ],
+            [
+              7,
+              14
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              8,
+              13
+            ]
+          ],
+          "twisted_context": {
+            "edge_count": 660,
+            "law_hist": {
+              "half_flip_x_plus_30": 300,
+              "identity": 360
+            },
+            "kind_hist": {
+              "external_signed_carrier": 660
+            },
+            "local_delta_mod60_hist": {
+              "0": 360,
+              "30": 300
+            }
+          },
+          "untwisted_context": {
+            "edge_count": 420,
+            "law_hist": {
+              "g15_line_petersen_slot_adjacency": 420
+            },
+            "kind_hist": {
+              "inter_thalion_diagonal_carrier": 420
+            },
+            "local_delta_mod60_hist": {
+              "0": 420
+            }
+          }
+        }
+      }
+    },
+    {
+      "row_ordinal": 16,
+      "cycle_index": 2,
+      "role": "TI",
+      "columns": [
+        13,
+        15
+      ],
+      "column_count": 2,
+      "slot_pairs": [
+        [
+          4,
+          10
+        ],
+        [
+          5,
+          6
+        ]
+      ],
+      "row_slots": [
+        4,
+        5,
+        6,
+        10
+      ],
+      "slot_pair_spans": [
+        1,
+        6
+      ],
+      "min_slot_span": 1,
+      "max_slot_span": 6,
+      "branch_sensitive": true,
+      "branch_stable": false,
+      "is_candidate_support": true,
+      "is_known_residual": true,
+      "direct_twisted": {
+        "edge_count": 0,
+        "law_hist": {},
+        "kind_hist": {},
+        "local_delta_mod60_hist": {}
+      },
+      "direct_untwisted": {
+        "edge_count": 120,
+        "law_hist": {
+          "g15_line_petersen_slot_adjacency": 120
+        },
+        "kind_hist": {
+          "inter_thalion_diagonal_carrier": 120
+        },
+        "local_delta_mod60_hist": {
+          "0": 120
+        }
+      },
+      "radius_context": {
+        "1": {
+          "neighbor_slots": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            9,
+            10,
+            11
+          ],
+          "candidate_context_pair_count": 20,
+          "twisted_active_context_pairs": [
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              4,
+              9
+            ],
+            [
+              5,
+              10
+            ],
+            [
+              7,
+              10
+            ],
+            [
+              10,
+              11
+            ]
+          ],
+          "untwisted_active_context_pairs": [
+            [
+              3,
+              4
+            ],
+            [
+              5,
+              9
+            ],
+            [
+              5,
+              10
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              9,
+              10
+            ]
+          ],
+          "twisted_context": {
+            "edge_count": 360,
+            "law_hist": {
+              "half_flip_x_plus_30": 120,
+              "identity": 240
+            },
+            "kind_hist": {
+              "external_signed_carrier": 360
+            },
+            "local_delta_mod60_hist": {
+              "0": 240,
+              "30": 120
+            }
+          },
+          "untwisted_context": {
+            "edge_count": 300,
+            "law_hist": {
+              "g15_line_petersen_slot_adjacency": 300
+            },
+            "kind_hist": {
+              "inter_thalion_diagonal_carrier": 300
+            },
+            "local_delta_mod60_hist": {
+              "0": 300
+            }
+          }
+        },
+        "2": {
+          "neighbor_slots": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "candidate_context_pair_count": 32,
+          "twisted_active_context_pairs": [
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              4,
+              9
+            ],
+            [
+              5,
+              10
+            ],
+            [
+              6,
+              12
+            ],
+            [
+              7,
+              10
+            ],
+            [
+              10,
+              11
+            ]
+          ],
+          "untwisted_active_context_pairs": [
+            [
+              3,
+              4
+            ],
+            [
+              5,
+              9
+            ],
+            [
+              5,
+              10
+            ],
+            [
+              5,
+              12
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              6,
+              12
+            ],
+            [
+              9,
+              10
+            ]
+          ],
+          "twisted_context": {
+            "edge_count": 420,
+            "law_hist": {
+              "half_flip_x_plus_30": 120,
+              "identity": 300
+            },
+            "kind_hist": {
+              "external_signed_carrier": 420
+            },
+            "local_delta_mod60_hist": {
+              "0": 300,
+              "30": 120
+            }
+          },
+          "untwisted_context": {
+            "edge_count": 420,
+            "law_hist": {
+              "g15_line_petersen_slot_adjacency": 420
+            },
+            "kind_hist": {
+              "inter_thalion_diagonal_carrier": 420
+            },
+            "local_delta_mod60_hist": {
+              "0": 420
+            }
+          }
+        }
+      }
+    }
+  ],
+  "feature_tests": [
+    {
+      "name": "branch_sensitive_inside_zero",
+      "support": [
+        16
+      ],
+      "support_count": 1,
+      "residual_hits": [
+        16
+      ],
+      "false_positives": [],
+      "misses": [
+        3
+      ],
+      "precision": 1.0,
+      "recall": 0.5,
+      "exact": false
+    },
+    {
+      "name": "branch_stable_multi_column_ZT",
+      "support": [
+        9,
+        15
+      ],
+      "support_count": 2,
+      "residual_hits": [],
+      "false_positives": [
+        9,
+        15
+      ],
+      "misses": [
+        3,
+        16
+      ],
+      "precision": 0.0,
+      "recall": 0.0,
+      "exact": false
+    },
+    {
+      "name": "branch_stable_singleton_TI",
+      "support": [
+        4
+      ],
+      "support_count": 1,
+      "residual_hits": [],
+      "false_positives": [
+        4
+      ],
+      "misses": [
+        3,
+        16
+      ],
+      "precision": 0.0,
+      "recall": 0.0,
+      "exact": false
+    },
+    {
+      "name": "has_slot_span_1",
+      "support": [
+        15,
+        16
+      ],
+      "support_count": 2,
+      "residual_hits": [
+        16
+      ],
+      "false_positives": [
+        15
+      ],
+      "misses": [
+        3
+      ],
+      "precision": 0.5,
+      "recall": 0.5,
+      "exact": false
+    },
+    {
+      "name": "has_slot_span_4",
+      "support": [
+        3,
+        9
+      ],
+      "support_count": 2,
+      "residual_hits": [
+        3
+      ],
+      "false_positives": [
+        9
+      ],
+      "misses": [
+        16
+      ],
+      "precision": 0.5,
+      "recall": 0.5,
+      "exact": false
+    },
+    {
+      "name": "has_slot_span_5",
+      "support": [
+        9
+      ],
+      "support_count": 1,
+      "residual_hits": [],
+      "false_positives": [
+        9
+      ],
+      "misses": [
+        3,
+        16
+      ],
+      "precision": 0.0,
+      "recall": 0.0,
+      "exact": false
+    },
+    {
+      "name": "has_slot_span_6",
+      "support": [
+        4,
+        16
+      ],
+      "support_count": 2,
+      "residual_hits": [
+        16
+      ],
+      "false_positives": [
+        4
+      ],
+      "misses": [
+        3
+      ],
+      "precision": 0.5,
+      "recall": 0.5,
+      "exact": false
+    },
+    {
+      "name": "has_slot_span_7",
+      "support": [
+        15
+      ],
+      "support_count": 1,
+      "residual_hits": [],
+      "false_positives": [
+        15
+      ],
+      "misses": [
+        3,
+        16
+      ],
+      "precision": 0.0,
+      "recall": 0.0,
+      "exact": false
+    },
+    {
+      "name": "neighbor_zero_twisted_all",
+      "support": [
+        3,
+        4,
+        9,
+        15,
+        16
+      ],
+      "support_count": 5,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [
+        4,
+        9,
+        15
+      ],
+      "misses": [],
+      "precision": 0.4,
+      "recall": 1.0,
+      "exact": false
+    },
+    {
+      "name": "radius_1_context_has_half_flip",
+      "support": [
+        3,
+        4,
+        9,
+        15,
+        16
+      ],
+      "support_count": 5,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [
+        4,
+        9,
+        15
+      ],
+      "misses": [],
+      "precision": 0.4,
+      "recall": 1.0,
+      "exact": false
+    },
+    {
+      "name": "radius_1_context_has_identity",
+      "support": [
+        3,
+        4,
+        9,
+        15,
+        16
+      ],
+      "support_count": 5,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [
+        4,
+        9,
+        15
+      ],
+      "misses": [],
+      "precision": 0.4,
+      "recall": 1.0,
+      "exact": false
+    },
+    {
+      "name": "radius_1_twisted_context_active_pair_count_ge_1",
+      "support": [
+        3,
+        4,
+        9,
+        15,
+        16
+      ],
+      "support_count": 5,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [
+        4,
+        9,
+        15
+      ],
+      "misses": [],
+      "precision": 0.4,
+      "recall": 1.0,
+      "exact": false
+    },
+    {
+      "name": "radius_1_twisted_context_active_pair_count_ge_10",
+      "support": [],
+      "support_count": 0,
+      "residual_hits": [],
+      "false_positives": [],
+      "misses": [
+        3,
+        16
+      ],
+      "precision": null,
+      "recall": 0.0,
+      "exact": false
+    },
+    {
+      "name": "radius_1_twisted_context_active_pair_count_ge_2",
+      "support": [
+        3,
+        4,
+        9,
+        15,
+        16
+      ],
+      "support_count": 5,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [
+        4,
+        9,
+        15
+      ],
+      "misses": [],
+      "precision": 0.4,
+      "recall": 1.0,
+      "exact": false
+    },
+    {
+      "name": "radius_1_twisted_context_active_pair_count_ge_20",
+      "support": [],
+      "support_count": 0,
+      "residual_hits": [],
+      "false_positives": [],
+      "misses": [
+        3,
+        16
+      ],
+      "precision": null,
+      "recall": 0.0,
+      "exact": false
+    },
+    {
+      "name": "radius_1_twisted_context_active_pair_count_ge_3",
+      "support": [
+        3,
+        4,
+        9,
+        15,
+        16
+      ],
+      "support_count": 5,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [
+        4,
+        9,
+        15
+      ],
+      "misses": [],
+      "precision": 0.4,
+      "recall": 1.0,
+      "exact": false
+    },
+    {
+      "name": "radius_1_twisted_context_active_pair_count_ge_4",
+      "support": [
+        3,
+        4,
+        9,
+        15,
+        16
+      ],
+      "support_count": 5,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [
+        4,
+        9,
+        15
+      ],
+      "misses": [],
+      "precision": 0.4,
+      "recall": 1.0,
+      "exact": false
+    },
+    {
+      "name": "radius_1_twisted_context_active_pair_count_ge_5",
+      "support": [
+        4,
+        9,
+        15,
+        16
+      ],
+      "support_count": 4,
+      "residual_hits": [
+        16
+      ],
+      "false_positives": [
+        4,
+        9,
+        15
+      ],
+      "misses": [
+        3
+      ],
+      "precision": 0.25,
+      "recall": 0.5,
+      "exact": false
+    },
+    {
+      "name": "radius_1_twisted_context_edge_count_ge_120",
+      "support": [
+        3,
+        4,
+        9,
+        15,
+        16
+      ],
+      "support_count": 5,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [
+        4,
+        9,
+        15
+      ],
+      "misses": [],
+      "precision": 0.4,
+      "recall": 1.0,
+      "exact": false
+    },
+    {
+      "name": "radius_1_twisted_context_edge_count_ge_180",
+      "support": [
+        3,
+        4,
+        9,
+        15,
+        16
+      ],
+      "support_count": 5,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [
+        4,
+        9,
+        15
+      ],
+      "misses": [],
+      "precision": 0.4,
+      "recall": 1.0,
+      "exact": false
+    },
+    {
+      "name": "radius_1_twisted_context_edge_count_ge_240",
+      "support": [
+        3,
+        4,
+        9,
+        15,
+        16
+      ],
+      "support_count": 5,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [
+        4,
+        9,
+        15
+      ],
+      "misses": [],
+      "precision": 0.4,
+      "recall": 1.0,
+      "exact": false
+    },
+    {
+      "name": "radius_1_twisted_context_edge_count_ge_300",
+      "support": [
+        4,
+        9,
+        15,
+        16
+      ],
+      "support_count": 4,
+      "residual_hits": [
+        16
+      ],
+      "false_positives": [
+        4,
+        9,
+        15
+      ],
+      "misses": [
+        3
+      ],
+      "precision": 0.25,
+      "recall": 0.5,
+      "exact": false
+    },
+    {
+      "name": "radius_1_twisted_context_edge_count_ge_360",
+      "support": [
+        9,
+        15,
+        16
+      ],
+      "support_count": 3,
+      "residual_hits": [
+        16
+      ],
+      "false_positives": [
+        9,
+        15
+      ],
+      "misses": [
+        3
+      ],
+      "precision": 0.3333333333333333,
+      "recall": 0.5,
+      "exact": false
+    },
+    {
+      "name": "radius_1_twisted_context_edge_count_ge_60",
+      "support": [
+        3,
+        4,
+        9,
+        15,
+        16
+      ],
+      "support_count": 5,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [
+        4,
+        9,
+        15
+      ],
+      "misses": [],
+      "precision": 0.4,
+      "recall": 1.0,
+      "exact": false
+    },
+    {
+      "name": "radius_1_twisted_context_edge_count_ge_600",
+      "support": [],
+      "support_count": 0,
+      "residual_hits": [],
+      "false_positives": [],
+      "misses": [
+        3,
+        16
+      ],
+      "precision": null,
+      "recall": 0.0,
+      "exact": false
+    },
+    {
+      "name": "radius_2_context_has_half_flip",
+      "support": [
+        3,
+        4,
+        9,
+        15,
+        16
+      ],
+      "support_count": 5,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [
+        4,
+        9,
+        15
+      ],
+      "misses": [],
+      "precision": 0.4,
+      "recall": 1.0,
+      "exact": false
+    },
+    {
+      "name": "radius_2_context_has_identity",
+      "support": [
+        3,
+        4,
+        9,
+        15,
+        16
+      ],
+      "support_count": 5,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [
+        4,
+        9,
+        15
+      ],
+      "misses": [],
+      "precision": 0.4,
+      "recall": 1.0,
+      "exact": false
+    },
+    {
+      "name": "radius_2_twisted_context_active_pair_count_ge_1",
+      "support": [
+        3,
+        4,
+        9,
+        15,
+        16
+      ],
+      "support_count": 5,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [
+        4,
+        9,
+        15
+      ],
+      "misses": [],
+      "precision": 0.4,
+      "recall": 1.0,
+      "exact": false
+    },
+    {
+      "name": "radius_2_twisted_context_active_pair_count_ge_10",
+      "support": [
+        15
+      ],
+      "support_count": 1,
+      "residual_hits": [],
+      "false_positives": [
+        15
+      ],
+      "misses": [
+        3,
+        16
+      ],
+      "precision": 0.0,
+      "recall": 0.0,
+      "exact": false
+    },
+    {
+      "name": "radius_2_twisted_context_active_pair_count_ge_2",
+      "support": [
+        3,
+        4,
+        9,
+        15,
+        16
+      ],
+      "support_count": 5,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [
+        4,
+        9,
+        15
+      ],
+      "misses": [],
+      "precision": 0.4,
+      "recall": 1.0,
+      "exact": false
+    },
+    {
+      "name": "radius_2_twisted_context_active_pair_count_ge_20",
+      "support": [],
+      "support_count": 0,
+      "residual_hits": [],
+      "false_positives": [],
+      "misses": [
+        3,
+        16
+      ],
+      "precision": null,
+      "recall": 0.0,
+      "exact": false
+    },
+    {
+      "name": "radius_2_twisted_context_active_pair_count_ge_3",
+      "support": [
+        3,
+        4,
+        9,
+        15,
+        16
+      ],
+      "support_count": 5,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [
+        4,
+        9,
+        15
+      ],
+      "misses": [],
+      "precision": 0.4,
+      "recall": 1.0,
+      "exact": false
+    },
+    {
+      "name": "radius_2_twisted_context_active_pair_count_ge_4",
+      "support": [
+        3,
+        4,
+        9,
+        15,
+        16
+      ],
+      "support_count": 5,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [
+        4,
+        9,
+        15
+      ],
+      "misses": [],
+      "precision": 0.4,
+      "recall": 1.0,
+      "exact": false
+    },
+    {
+      "name": "radius_2_twisted_context_active_pair_count_ge_5",
+      "support": [
+        4,
+        9,
+        15,
+        16
+      ],
+      "support_count": 4,
+      "residual_hits": [
+        16
+      ],
+      "false_positives": [
+        4,
+        9,
+        15
+      ],
+      "misses": [
+        3
+      ],
+      "precision": 0.25,
+      "recall": 0.5,
+      "exact": false
+    },
+    {
+      "name": "radius_2_twisted_context_edge_count_ge_120",
+      "support": [
+        3,
+        4,
+        9,
+        15,
+        16
+      ],
+      "support_count": 5,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [
+        4,
+        9,
+        15
+      ],
+      "misses": [],
+      "precision": 0.4,
+      "recall": 1.0,
+      "exact": false
+    },
+    {
+      "name": "radius_2_twisted_context_edge_count_ge_180",
+      "support": [
+        3,
+        4,
+        9,
+        15,
+        16
+      ],
+      "support_count": 5,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [
+        4,
+        9,
+        15
+      ],
+      "misses": [],
+      "precision": 0.4,
+      "recall": 1.0,
+      "exact": false
+    },
+    {
+      "name": "radius_2_twisted_context_edge_count_ge_240",
+      "support": [
+        3,
+        4,
+        9,
+        15,
+        16
+      ],
+      "support_count": 5,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [
+        4,
+        9,
+        15
+      ],
+      "misses": [],
+      "precision": 0.4,
+      "recall": 1.0,
+      "exact": false
+    },
+    {
+      "name": "radius_2_twisted_context_edge_count_ge_300",
+      "support": [
+        4,
+        9,
+        15,
+        16
+      ],
+      "support_count": 4,
+      "residual_hits": [
+        16
+      ],
+      "false_positives": [
+        4,
+        9,
+        15
+      ],
+      "misses": [
+        3
+      ],
+      "precision": 0.25,
+      "recall": 0.5,
+      "exact": false
+    },
+    {
+      "name": "radius_2_twisted_context_edge_count_ge_360",
+      "support": [
+        9,
+        15,
+        16
+      ],
+      "support_count": 3,
+      "residual_hits": [
+        16
+      ],
+      "false_positives": [
+        9,
+        15
+      ],
+      "misses": [
+        3
+      ],
+      "precision": 0.3333333333333333,
+      "recall": 0.5,
+      "exact": false
+    },
+    {
+      "name": "radius_2_twisted_context_edge_count_ge_60",
+      "support": [
+        3,
+        4,
+        9,
+        15,
+        16
+      ],
+      "support_count": 5,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [
+        4,
+        9,
+        15
+      ],
+      "misses": [],
+      "precision": 0.4,
+      "recall": 1.0,
+      "exact": false
+    },
+    {
+      "name": "radius_2_twisted_context_edge_count_ge_600",
+      "support": [
+        15
+      ],
+      "support_count": 1,
+      "residual_hits": [],
+      "false_positives": [
+        15
+      ],
+      "misses": [
+        3,
+        16
+      ],
+      "precision": 0.0,
+      "recall": 0.0,
+      "exact": false
+    },
+    {
+      "name": "singleton_ZT_inside_zero",
+      "support": [
+        3
+      ],
+      "support_count": 1,
+      "residual_hits": [
+        3
+      ],
+      "false_positives": [],
+      "misses": [
+        16
+      ],
+      "precision": 1.0,
+      "recall": 0.5,
+      "exact": false
+    },
+    {
+      "name": "source_candidate_rule_branch_sensitive_return_OR_singleton_ZT",
+      "support": [
+        3,
+        16
+      ],
+      "support_count": 2,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [],
+      "misses": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "exact": true
+    }
+  ],
+  "exact_features": [
+    {
+      "name": "source_candidate_rule_branch_sensitive_return_OR_singleton_ZT",
+      "support": [
+        3,
+        16
+      ],
+      "support_count": 2,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [],
+      "misses": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "exact": true
+    }
+  ],
+  "high_precision_features": [
+    {
+      "name": "branch_sensitive_inside_zero",
+      "support": [
+        16
+      ],
+      "support_count": 1,
+      "residual_hits": [
+        16
+      ],
+      "false_positives": [],
+      "misses": [
+        3
+      ],
+      "precision": 1.0,
+      "recall": 0.5,
+      "exact": false
+    },
+    {
+      "name": "singleton_ZT_inside_zero",
+      "support": [
+        3
+      ],
+      "support_count": 1,
+      "residual_hits": [
+        3
+      ],
+      "false_positives": [],
+      "misses": [
+        16
+      ],
+      "precision": 1.0,
+      "recall": 0.5,
+      "exact": false
+    },
+    {
+      "name": "source_candidate_rule_branch_sensitive_return_OR_singleton_ZT",
+      "support": [
+        3,
+        16
+      ],
+      "support_count": 2,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [],
+      "misses": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "exact": true
+    }
+  ],
+  "union_exact_count": 7,
+  "union_exact_examples": [
+    {
+      "name": "branch_sensitive_inside_zero OR singleton_ZT_inside_zero",
+      "support": [
+        3,
+        16
+      ],
+      "support_count": 2,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [],
+      "misses": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "exact": true
+    },
+    {
+      "name": "branch_sensitive_inside_zero OR source_candidate_rule_branch_sensitive_return_OR_singleton_ZT",
+      "support": [
+        3,
+        16
+      ],
+      "support_count": 2,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [],
+      "misses": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "exact": true
+    },
+    {
+      "name": "radius_1_twisted_context_active_pair_count_ge_10 OR source_candidate_rule_branch_sensitive_return_OR_singleton_ZT",
+      "support": [
+        3,
+        16
+      ],
+      "support_count": 2,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [],
+      "misses": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "exact": true
+    },
+    {
+      "name": "radius_1_twisted_context_active_pair_count_ge_20 OR source_candidate_rule_branch_sensitive_return_OR_singleton_ZT",
+      "support": [
+        3,
+        16
+      ],
+      "support_count": 2,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [],
+      "misses": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "exact": true
+    },
+    {
+      "name": "radius_1_twisted_context_edge_count_ge_600 OR source_candidate_rule_branch_sensitive_return_OR_singleton_ZT",
+      "support": [
+        3,
+        16
+      ],
+      "support_count": 2,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [],
+      "misses": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "exact": true
+    },
+    {
+      "name": "radius_2_twisted_context_active_pair_count_ge_20 OR source_candidate_rule_branch_sensitive_return_OR_singleton_ZT",
+      "support": [
+        3,
+        16
+      ],
+      "support_count": 2,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [],
+      "misses": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "exact": true
+    },
+    {
+      "name": "singleton_ZT_inside_zero OR source_candidate_rule_branch_sensitive_return_OR_singleton_ZT",
+      "support": [
+        3,
+        16
+      ],
+      "support_count": 2,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [],
+      "misses": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "exact": true
+    }
+  ],
+  "interpretation": {
+    "main_result": "The surrounding-cell context probe records the local neighbor environment of the five zero-twisted rows.",
+    "candidate_read": "The supported candidate remains branch-sensitive return OR singleton ZT selected-turn.",
+    "neighbor_read": "Surrounding cells are now represented as slot-neighborhood context around each zero-twisted row.",
+    "not_closure": "This pass does not yet derive the rule directly from neighbor context; it prepares the data needed to try that next.",
+    "next_question": "Can a source-derived neighbor-port rule reproduce branch-sensitive return and singleton ZT selected-turn without using residual labels?"
+  },
+  "checks": [
+    {
+      "id": "interim_loaded",
+      "status": true,
+      "detail": "gap_a_zero_twisted_split_interim_note_recorded"
+    },
+    {
+      "id": "split_loaded",
+      "status": true,
+      "detail": "gap_a_zero_twisted_neighborhood_split_candidate_found_not_closure"
+    },
+    {
+      "id": "nulls_loaded",
+      "status": true,
+      "detail": "gap_a_zero_twisted_split_candidate_nulls_recorded"
+    },
+    {
+      "id": "schema_loaded",
+      "status": true,
+      "detail": "gap_a_15_thalion_ring_schema_recovered_residual_blind"
+    },
+    {
+      "id": "zero_count_5",
+      "status": true,
+      "detail": "[3, 4, 9, 15, 16]"
+    },
+    {
+      "id": "candidate_support_3_16",
+      "status": true,
+      "detail": "[3, 16]"
+    },
+    {
+      "id": "context_rows_5",
+      "status": true,
+      "detail": "5"
+    },
+    {
+      "id": "twisted_external_index_nonempty",
+      "status": true,
+      "detail": "30"
+    },
+    {
+      "id": "source_candidate_exact",
+      "status": true,
+      "detail": "candidate exact in context probe"
+    }
+  ],
+  "next_script": "derive_gap_a_neighbor_port_rule_001.py"
+}

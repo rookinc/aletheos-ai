@@ -1,0 +1,251 @@
+{
+  "schema": "register_map_candidate_inputs.validation_001.v1",
+  "status": "passed",
+  "timestamp_utc": "2026-06-14T17:54:19.172120+00:00",
+  "validated_bundle": "artifacts/json/register_map_candidate_inputs_001.v1.json",
+  "validated_bundle_sha256": "1a36a510be506c5f912841b8cd07737d4d41e8efbcaaaf8e6156bd162266aac2",
+  "purpose": "Validate that Gap A candidate input artifacts are internally coherent before any register-map proof attempt.",
+  "boundary": [
+    "This validation does not prove the register map.",
+    "This validation does not run selector recovery.",
+    "This validation checks readiness and internal consistency only.",
+    "This validator treats row_taxonomy as a class partition, not as a literal 15-row list.",
+    "This validator reconstructs the target role pattern from top-lock tamper rows because the top-lock probe stores the aggregate signature rather than the raw target pattern."
+  ],
+  "summary": {
+    "check_count": 22,
+    "passed_count": 22,
+    "failed_error_count": 0,
+    "failed_warning_count": 0,
+    "matrix_M_shape": {
+      "rows": 15,
+      "cols": 30
+    },
+    "taxonomy_row_union": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "target_cycles": [
+      [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      [
+        0,
+        1,
+        2,
+        7,
+        10,
+        5
+      ],
+      [
+        0,
+        1,
+        2,
+        8,
+        14,
+        5
+      ]
+    ],
+    "target_zt_edges": [
+      [
+        3,
+        4
+      ],
+      [
+        7,
+        10
+      ],
+      [
+        8,
+        14
+      ]
+    ],
+    "target_pattern": [
+      1,
+      1,
+      1,
+      0,
+      1,
+      1
+    ],
+    "reconstructed_target_patterns": {
+      "(0, 1, 2, 3, 4, 5)": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "(0, 1, 2, 7, 10, 5)": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "(0, 1, 2, 8, 14, 5)": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        1
+      ]
+    }
+  },
+  "checks": [
+    {
+      "id": "bundle_status_ready",
+      "status": true,
+      "severity": "error",
+      "detail": "bundle status is ready_for_candidate_input_validation"
+    },
+    {
+      "id": "no_required_missing",
+      "status": true,
+      "severity": "error",
+      "detail": "required_missing=[]"
+    },
+    {
+      "id": "no_required_bad",
+      "status": true,
+      "severity": "error",
+      "detail": "required_bad=[]"
+    },
+    {
+      "id": "all_required_records_loaded",
+      "status": true,
+      "severity": "error",
+      "detail": "loaded_required_count=11/11"
+    },
+    {
+      "id": "target_status_normalized",
+      "status": true,
+      "severity": "error",
+      "detail": "target status is normalized_target_not_proof"
+    },
+    {
+      "id": "target_cycle_count_three",
+      "status": true,
+      "severity": "error",
+      "detail": "target cycle count=3"
+    },
+    {
+      "id": "target_zt_edge_count_three",
+      "status": true,
+      "severity": "error",
+      "detail": "target ZT edge count=3"
+    },
+    {
+      "id": "target_role_pattern_exact",
+      "status": true,
+      "severity": "error",
+      "detail": "target pattern=[1, 1, 1, 0, 1, 1]"
+    },
+    {
+      "id": "matrix_M_shape_15x30",
+      "status": true,
+      "severity": "error",
+      "detail": "matrix_M shape={\"rows\": 15, \"cols\": 30}"
+    },
+    {
+      "id": "row_taxonomy_rows_partition_0_to_14",
+      "status": true,
+      "severity": "error",
+      "detail": "taxonomy row union=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]"
+    },
+    {
+      "id": "row_taxonomy_has_9_classes",
+      "status": true,
+      "severity": "error",
+      "detail": "taxonomy class count=9"
+    },
+    {
+      "id": "fhe_anatomy_contains_target_cycles",
+      "status": true,
+      "severity": "error",
+      "detail": "all target cycles found in fhe_anatomy=True"
+    },
+    {
+      "id": "fhe_anatomy_contains_zt_edges",
+      "status": true,
+      "severity": "error",
+      "detail": "all target ZT edges found in fhe_anatomy=True"
+    },
+    {
+      "id": "top_lock_probe_contains_apre_signature",
+      "status": true,
+      "severity": "error",
+      "detail": "apre_signature={\"edge_sign_sum\": 5, \"even_only_slot_count\": 0, \"even_triangle_touch_count\": 1, \"odd_slot_count\": 6, \"odd_triangle_touch_count\": 5, \"residue_bit\": 1}"
+    },
+    {
+      "id": "top_lock_tamper_rows_reconstruct_target_pattern",
+      "status": true,
+      "severity": "error",
+      "detail": "reconstructed_patterns={\"(0, 1, 2, 3, 4, 5)\": [1, 1, 1, 0, 1, 1], \"(0, 1, 2, 7, 10, 5)\": [1, 1, 1, 0, 1, 1], \"(0, 1, 2, 8, 14, 5)\": [1, 1, 1, 0, 1, 1]}"
+    },
+    {
+      "id": "zero_edge_census_contains_selected_zt_edges",
+      "status": true,
+      "severity": "error",
+      "detail": "selected ZT edges found in zero-edge census=True"
+    },
+    {
+      "id": "row_aware_artifact_mentions_row_features",
+      "status": true,
+      "severity": "error",
+      "detail": "row-aware feature names found"
+    },
+    {
+      "id": "exact_selector_minimizer_mentions_exact_selector_terms",
+      "status": true,
+      "severity": "error",
+      "detail": "exact selector terms found"
+    },
+    {
+      "id": "register_keypair_artifact_loaded_as_candidate_evidence",
+      "status": true,
+      "severity": "error",
+      "detail": "register keypair artifact loaded=True"
+    },
+    {
+      "id": "candidate_test_declared_A0_public_predicate_only",
+      "status": true,
+      "severity": "error",
+      "detail": "candidate id present=True"
+    },
+    {
+      "id": "candidate_test_declared_A1_row_aware_M_incidence",
+      "status": true,
+      "severity": "error",
+      "detail": "candidate id present=True"
+    },
+    {
+      "id": "candidate_test_declared_A2_row_shuffled_M_null",
+      "status": true,
+      "severity": "error",
+      "detail": "candidate id present=True"
+    }
+  ],
+  "next_script_if_passed": "run_register_map_candidate_recovery_001.py"
+}

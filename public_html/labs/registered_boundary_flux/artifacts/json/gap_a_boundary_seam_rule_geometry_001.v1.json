@@ -1,0 +1,537 @@
+{
+  "schema": "gap_a_boundary_seam_rule_geometry_001.v1",
+  "status": "boundary_seam_rule_geometrically_justified_not_map_proof",
+  "timestamp_utc": "2026-06-14T18:43:53.189540+00:00",
+  "gap": "A_chamber_register_map",
+  "purpose": "Test whether the bounded boundary-seam projection rule is justified by WXYZTI register geometry rather than by post-hoc mismatch selection.",
+  "boundary": [
+    "This is not a chamber/register map proof.",
+    "This does not prove the physical or source meaning of the seam flip.",
+    "This only tests whether the seam rule is independently expressible from WXYZTI cyclic geometry.",
+    "The rule remains a candidate until connected back to source transport or G60 register derivation."
+  ],
+  "inputs": {
+    "bounded_role_projection_rule": "registered_boundary_flux/artifacts/json/gap_a_bounded_role_projection_rule_001.v1.json",
+    "bounded_role_projection_rule_sha256": "68806cb0e20fa8027b0b9166a830f9fb788c903239663db953a2bbca8ce08537",
+    "role_pattern": "registered_boundary_flux/artifacts/json/gap_a_bridge_paths_wxyzti_role_pattern_001.v1.json",
+    "role_pattern_sha256": "32ce791b382062f7f3d9f559a0b0d23de803509ed7b34f77a85b7366cfe3a6e6",
+    "selected_wxyzti_target": "registered_boundary_flux/artifacts/json/selected_wxyzti_target_001.v1.json",
+    "selected_wxyzti_target_sha256": "70bd9ff63bfbd58e888f8380c1eced8ad2c03fe4c7d07f1838bd2a52d94613a3",
+    "perfect_return_cell_data": "registered_boundary_flux/data/perfect_return_cell.v1.json",
+    "perfect_return_cell_data_sha256": "a49883203ef87e3c5129f24c9a889ef0ddc5a3a1f7a60c863be6f239ef57a375"
+  },
+  "role_order": [
+    "WX",
+    "XY",
+    "YZ",
+    "ZT",
+    "TI",
+    "IW"
+  ],
+  "raw_bridge_path_majority_pattern": [
+    0,
+    1,
+    1,
+    0,
+    1,
+    0
+  ],
+  "target_pattern": [
+    1,
+    1,
+    1,
+    0,
+    1,
+    1
+  ],
+  "boundary_seam_masks": {
+    "first_last_mask": {
+      "WX": true,
+      "XY": false,
+      "YZ": false,
+      "ZT": false,
+      "TI": false,
+      "IW": true
+    },
+    "W_incident_mask": {
+      "WX": true,
+      "XY": false,
+      "YZ": false,
+      "ZT": false,
+      "TI": false,
+      "IW": true
+    },
+    "first_last_equals_W_incident": true,
+    "first_last_projected_pattern": [
+      1,
+      1,
+      1,
+      0,
+      1,
+      1
+    ],
+    "W_incident_projected_pattern": [
+      1,
+      1,
+      1,
+      0,
+      1,
+      1
+    ]
+  },
+  "station_incidence_rule_results": [
+    {
+      "station": "W",
+      "mask_by_role": {
+        "WX": true,
+        "XY": false,
+        "YZ": false,
+        "ZT": false,
+        "TI": false,
+        "IW": true
+      },
+      "projected_pattern": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "target_pattern": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "hamming_distance_to_target": 0,
+      "matches_target": true,
+      "incident_roles": [
+        "WX",
+        "IW"
+      ]
+    },
+    {
+      "station": "X",
+      "mask_by_role": {
+        "WX": true,
+        "XY": true,
+        "YZ": false,
+        "ZT": false,
+        "TI": false,
+        "IW": false
+      },
+      "projected_pattern": [
+        1,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "target_pattern": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "hamming_distance_to_target": 2,
+      "matches_target": false,
+      "incident_roles": [
+        "WX",
+        "XY"
+      ]
+    },
+    {
+      "station": "Y",
+      "mask_by_role": {
+        "WX": false,
+        "XY": true,
+        "YZ": true,
+        "ZT": false,
+        "TI": false,
+        "IW": false
+      },
+      "projected_pattern": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "target_pattern": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "hamming_distance_to_target": 4,
+      "matches_target": false,
+      "incident_roles": [
+        "XY",
+        "YZ"
+      ]
+    },
+    {
+      "station": "Z",
+      "mask_by_role": {
+        "WX": false,
+        "XY": false,
+        "YZ": true,
+        "ZT": true,
+        "TI": false,
+        "IW": false
+      },
+      "projected_pattern": [
+        0,
+        1,
+        0,
+        1,
+        1,
+        0
+      ],
+      "target_pattern": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "hamming_distance_to_target": 4,
+      "matches_target": false,
+      "incident_roles": [
+        "YZ",
+        "ZT"
+      ]
+    },
+    {
+      "station": "T",
+      "mask_by_role": {
+        "WX": false,
+        "XY": false,
+        "YZ": false,
+        "ZT": true,
+        "TI": true,
+        "IW": false
+      },
+      "projected_pattern": [
+        0,
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "target_pattern": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "hamming_distance_to_target": 4,
+      "matches_target": false,
+      "incident_roles": [
+        "ZT",
+        "TI"
+      ]
+    },
+    {
+      "station": "I",
+      "mask_by_role": {
+        "WX": false,
+        "XY": false,
+        "YZ": false,
+        "ZT": false,
+        "TI": true,
+        "IW": true
+      },
+      "projected_pattern": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "target_pattern": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "hamming_distance_to_target": 2,
+      "matches_target": false,
+      "incident_roles": [
+        "TI",
+        "IW"
+      ]
+    }
+  ],
+  "cycle_geometry_rows": [
+    {
+      "cycle_index": 0,
+      "cycle": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "starts_at_shared_W": true,
+      "ends_at_shared_I_before_closure": true,
+      "role_edges": {
+        "WX": [
+          0,
+          1
+        ],
+        "XY": [
+          1,
+          2
+        ],
+        "YZ": [
+          2,
+          3
+        ],
+        "ZT": [
+          3,
+          4
+        ],
+        "TI": [
+          4,
+          5
+        ],
+        "IW": [
+          5,
+          0
+        ]
+      },
+      "W_incident_role_edges": {
+        "WX": [
+          0,
+          1
+        ],
+        "IW": [
+          5,
+          0
+        ]
+      },
+      "first_last_roles_are_W_incident": true
+    },
+    {
+      "cycle_index": 1,
+      "cycle": [
+        0,
+        1,
+        2,
+        7,
+        10,
+        5
+      ],
+      "starts_at_shared_W": true,
+      "ends_at_shared_I_before_closure": true,
+      "role_edges": {
+        "WX": [
+          0,
+          1
+        ],
+        "XY": [
+          1,
+          2
+        ],
+        "YZ": [
+          2,
+          7
+        ],
+        "ZT": [
+          7,
+          10
+        ],
+        "TI": [
+          10,
+          5
+        ],
+        "IW": [
+          5,
+          0
+        ]
+      },
+      "W_incident_role_edges": {
+        "WX": [
+          0,
+          1
+        ],
+        "IW": [
+          5,
+          0
+        ]
+      },
+      "first_last_roles_are_W_incident": true
+    },
+    {
+      "cycle_index": 2,
+      "cycle": [
+        0,
+        1,
+        2,
+        8,
+        14,
+        5
+      ],
+      "starts_at_shared_W": true,
+      "ends_at_shared_I_before_closure": true,
+      "role_edges": {
+        "WX": [
+          0,
+          1
+        ],
+        "XY": [
+          1,
+          2
+        ],
+        "YZ": [
+          2,
+          8
+        ],
+        "ZT": [
+          8,
+          14
+        ],
+        "TI": [
+          14,
+          5
+        ],
+        "IW": [
+          5,
+          0
+        ]
+      },
+      "W_incident_role_edges": {
+        "WX": [
+          0,
+          1
+        ],
+        "IW": [
+          5,
+          0
+        ]
+      },
+      "first_last_roles_are_W_incident": true
+    }
+  ],
+  "summary": {
+    "exact_station_incidence_rules": [
+      "W"
+    ],
+    "all_cycles_start_at_shared_W": true,
+    "all_cycles_end_at_shared_I_before_closure": true,
+    "all_cycles_first_last_roles_are_W_incident": true,
+    "first_last_rule_equals_W_incident_rule": true,
+    "selected_zt_edges": [
+      [
+        3,
+        4
+      ],
+      [
+        7,
+        10
+      ],
+      [
+        8,
+        14
+      ]
+    ]
+  },
+  "interpretation": {
+    "main_result": "The boundary seam rule is geometrically justified as the W-incident first/last seam rule of the cyclic WXYZTI register.",
+    "anti_overfit_result": "Among station-incidence rules, only W incidence maps the raw bridge-path majority pattern to the selected target pattern.",
+    "what_this_gives": "The seam flip can now be described as a register-geometry candidate rather than a mismatch-selected patch.",
+    "what_remains_open": "Gap A still requires connecting this W boundary seam rule to source transport or G60-derived register geometry.",
+    "next_question": "Can the W boundary seam projection be applied to the row-level role records and then checked against the selected target without further choices?"
+  },
+  "checks": [
+    {
+      "id": "bounded_rule_loaded",
+      "status": true,
+      "detail": "status=bounded_boundary_seam_projection_candidate_found_not_map_proof"
+    },
+    {
+      "id": "role_pattern_loaded",
+      "status": true,
+      "detail": "status=wxyzti_bridge_path_role_pattern_partial_not_map_proof"
+    },
+    {
+      "id": "target_loaded",
+      "status": true,
+      "detail": "status=normalized_target_not_proof"
+    },
+    {
+      "id": "role_order_is_wxyzti_edges",
+      "status": true,
+      "detail": "role_order=[\"WX\", \"XY\", \"YZ\", \"ZT\", \"TI\", \"IW\"]"
+    },
+    {
+      "id": "raw_and_target_len_6",
+      "status": true,
+      "detail": "raw=[0, 1, 1, 0, 1, 0] target=[1, 1, 1, 0, 1, 1]"
+    },
+    {
+      "id": "first_last_equals_W_incident_mask",
+      "status": true,
+      "detail": "first_last=[true, false, false, false, false, true] W_incident=[true, false, false, false, false, true]"
+    },
+    {
+      "id": "first_last_projects_to_target",
+      "status": true,
+      "detail": "projected=[1, 1, 1, 0, 1, 1]"
+    },
+    {
+      "id": "W_incident_projects_to_target",
+      "status": true,
+      "detail": "projected=[1, 1, 1, 0, 1, 1]"
+    },
+    {
+      "id": "only_W_station_incidence_matches_target",
+      "status": true,
+      "detail": "exact_station_rules=[\"W\"]"
+    },
+    {
+      "id": "selected_target_has_3_cycles",
+      "status": true,
+      "detail": "cycle_count=3"
+    },
+    {
+      "id": "all_cycles_start_at_shared_W",
+      "status": true,
+      "detail": "shared_W=0"
+    },
+    {
+      "id": "all_cycles_end_at_shared_I_before_closure",
+      "status": true,
+      "detail": "shared_I=5"
+    },
+    {
+      "id": "all_cycles_first_last_roles_are_W_incident",
+      "status": true,
+      "detail": "rows=[true, true, true]"
+    },
+    {
+      "id": "bounded_candidates_present",
+      "status": true,
+      "detail": "allowed_exact_rules=[\"flip_boundary_seam_first_last\", \"flip_W_incident_roles\"]"
+    }
+  ],
+  "next_script": "apply_gap_a_boundary_seam_projection_to_role_rows_001.py"
+}

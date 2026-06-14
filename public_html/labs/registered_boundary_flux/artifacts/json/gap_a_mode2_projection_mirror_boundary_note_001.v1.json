@@ -1,0 +1,144 @@
+{
+  "schema": "gap_a_mode2_projection_mirror_boundary_note_001.v1",
+  "status": "gap_a_mode2_projection_mirror_boundary_note_recorded",
+  "timestamp_utc": "2026-06-14T21:38:49.036982+00:00",
+  "purpose": "Record the final boundary for the Mode 2 WXYZTITZYXW mirror exploration.",
+  "boundary": [
+    "This does not close Gap A.",
+    "Mode 2 mirror is projection-level evidence, not source-derived closure.",
+    "The mirror is source-backed columnwise but not source-derived from the tested 30-column, 900-vertex, or orbit probes.",
+    "The remaining missing object is the source-native WXYZTI row/register generator.",
+    "No physical interpretation is claimed."
+  ],
+  "summary": {
+    "boundary_result": "mode2_mirror_recorded_as_projection_level_evidence_not_source_closure",
+    "gap_a_closed": false,
+    "mode2_path_tested": "W-X-Y-Z-T-I-T-Z-Y-X-W",
+    "mode2_mirror_rule": "return_cycle = 2 - start_cycle",
+    "projection_candidate_supported": true,
+    "source_derived": false,
+    "source_promotion_allowed": false,
+    "zero_rows_recovered": [
+      3,
+      4,
+      9,
+      15,
+      16
+    ],
+    "preimage_rows_recovered": [
+      3,
+      16
+    ],
+    "stable_rows_recovered": [
+      4,
+      9,
+      15
+    ],
+    "central_hinge_row": 10,
+    "boundary_preimage_pair": true,
+    "column_side_exact_involution_found": false,
+    "handbuilt_900_mirror_found": false,
+    "source_discovered_mirror_support_found": false,
+    "row_local_source_selectors_found": true,
+    "remaining_gap": "source-native WXYZTI row/register generator",
+    "claim_closes_gap_a": false
+  },
+  "positive_projection_evidence": [
+    "Mode 2 was tested as W-X-Y-Z-T-I-T-Z-Y-X-W.",
+    "The mirror return rule return_cycle = 2 - start_cycle organizes the turn block ZT, TI, IT, TZ.",
+    "The mirror turn union recovers zero rows [3,4,9,15,16].",
+    "The mirror turn union recovers preimage rows [3,16].",
+    "The mirror turn union recovers stable rows [4,9,15].",
+    "Start cycles 0 and 2 carry the full preimage pair.",
+    "Start cycle 1 folds through row 10 as a central nonzero TI hinge.",
+    "All Mode 2 turn rows are source-backed columnwise."
+  ],
+  "negative_source_evidence": [
+    "No exact 30-column source-side involution was found for the full tested Mode 2 mirror row relation.",
+    "No exact 900-vertex mirror involution was found in the tested hand-built transform family.",
+    "Source-discovered WL/orbit and slot-quotient probes gave no mirror support in the tested 900-vertex sources.",
+    "The mirror rule remains stated over projection/register cycle labels.",
+    "No source-native WXYZTI cycle labels or full row generator have been found in the global carrier source."
+  ],
+  "classification": {
+    "mode2_mirror_class": "projection_level_register_symmetry",
+    "allowed_use": [
+      "diagnostic witness",
+      "register/projection explanation",
+      "heuristic guide for turn-block structure",
+      "boundary note for Gap A"
+    ],
+    "forbidden_use": [
+      "do not claim Gap A closure",
+      "do not claim source-derived mirror law",
+      "do not use as full 900 carrier-to-WXYZTI generator",
+      "do not promote to physical interpretation"
+    ]
+  },
+  "claim": {
+    "does_this_close_gap_a": false,
+    "does_this_preserve_mode2_as_useful_projection_evidence": true,
+    "does_this_promote_mode2_to_source_law": false,
+    "does_this_construct_full_900_carrier_to_register_map": false,
+    "short_form": "Mode 2 mirror is a useful projection-level return-path witness, but source-side tests did not support promoting it to Gap A closure.",
+    "next_problem": "derive the source-native WXYZTI row/register generator"
+  },
+  "checks": [
+    {
+      "id": "mode2_exploration_loaded",
+      "status": true,
+      "detail": "gap_a_mode2_wxyztitzyxw_return_path_candidate_found_not_closure"
+    },
+    {
+      "id": "mode2_audit_loaded",
+      "status": true,
+      "detail": "gap_a_mode2_mirror_return_rule_projection_symmetric_not_source_derived"
+    },
+    {
+      "id": "column_involution_search_loaded",
+      "status": true,
+      "detail": "gap_a_source_side_involution_for_mode2_mirror_not_found"
+    },
+    {
+      "id": "mirror_900_search_loaded",
+      "status": true,
+      "detail": "gap_a_mode2_mirror_900_vertex_involution_not_found"
+    },
+    {
+      "id": "orbit_discovery_loaded",
+      "status": true,
+      "detail": "gap_a_900_vertex_automorphism_orbits_no_mirror_support"
+    },
+    {
+      "id": "row_grouping_inference_loaded",
+      "status": true,
+      "detail": "gap_a_row_grouping_rule_inference_row_local_selectors_complete_not_global"
+    },
+    {
+      "id": "boundary_theorem_loaded",
+      "status": true,
+      "detail": "gap_a_boundary_theorem_note_recorded"
+    },
+    {
+      "id": "projection_candidate_supported",
+      "status": true,
+      "detail": "Mode 2 mirror supported as projection candidate"
+    },
+    {
+      "id": "source_derived_false",
+      "status": true,
+      "detail": "source derivation not found"
+    },
+    {
+      "id": "source_promotion_forbidden",
+      "status": true,
+      "detail": "not promoted"
+    },
+    {
+      "id": "gap_a_not_closed",
+      "status": true,
+      "detail": "boundary note only"
+    }
+  ],
+  "next_script": "return_to_gap_a_wxyzti_register_generator_derivation_001.py"
+}

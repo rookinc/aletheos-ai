@@ -360,12 +360,12 @@ async function loadGapASelectorStatus() {
 
     target.textContent = [
       "Gap A selector status",
-      "status: " + (receipt.status || "unknown"),
-      "A0: public predicates reduce, not close",
-      "A1: row-aware incidence exact in tested family",
-      "A2: row identity load-bearing under null",
+      "bounded theorem note",
+      "A0: public reduces, not closes",
+      "A1: row-aware exact",
+      "A2: row identity null passed",
       "selector: " + (exact.one_feature_exact_selector || "unknown"),
-      "boundary: " + (statement.proof_status || "bounded theorem note")
+      "boundary: full map still open"
     ].join("\n");
   } catch (err) {
     target.textContent = "Gap A selector status: receipt unavailable.";

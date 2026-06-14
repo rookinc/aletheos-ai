@@ -1,0 +1,154 @@
+{
+  "id": "g900_signature_binding.v1",
+  "status": "local_signature_bound",
+  "kind": "local_theorem_signature",
+  "role": "G900 context signature for future multi-unit field work",
+  "candidate": {
+    "name": "G900 ring candidate",
+    "symbol": "X_sigma",
+    "kernel": "K_900",
+    "construction": "X_sigma = Gen(K_900)",
+    "vertices": 900,
+    "edges": 3600,
+    "source_counts": {
+      "g15_slots": 15,
+      "g60_fiber_states": 60,
+      "product_vertices": "15 * 60 = 900",
+      "recorded_x_sigma_edge_rows": 3600,
+      "recorded_g60_local_edge_rows": 120,
+      "recorded_g15_slot_edge_rows": 30
+    }
+  },
+  "identity_boundary": {
+    "external_census_identity_claimed": false,
+    "census_status": "not externally census-identified",
+    "not_claimed": [
+      "uniqueness among all signed carriers",
+      "external census identity",
+      "physical interpretation",
+      "invalidity of sibling graph"
+    ]
+  },
+  "admission_signature": {
+    "repository": "rookinc/g900-kernel-admission",
+    "tag": "g900-kernel-admission-bounded-qed-v1.0.0",
+    "direct_kernel_claims_proved": 6,
+    "certificate_claims_certified": 7,
+    "qed_status": "see qed_status_ledger.json",
+    "summary": "Finite kernel-admission theorem package for explicit generated candidate."
+  },
+  "theorem_claims_from_main_section": [
+    "X_sigma has 900 vertices and 3600 edges.",
+    "X_sigma is 8-regular, with degree split 4+4 into internal and carrier neighbors.",
+    "The generated edge set equals the recorded canonical edge set.",
+    "X_sigma is connected.",
+    "X_sigma has diameter 8 and radius 6.",
+    "X_sigma separates from the untwisted product baseline by exact metric invariants.",
+    "The recorded sibling signing, defined in Section 6.1, is not switching-equivalent to the canonical signing.",
+    "The recorded sibling graph is separated from X_sigma by exact graph invariants."
+  ],
+  "source_files": [
+    {
+      "path": "research/thalean-graph-theory/18-g900-kernel-admission/paper/sections/03_main_theorem.tex",
+      "exists": true,
+      "bytes": 1760,
+      "sha256": "140e5abb8ea7c67837e513a52dfbd75f9baba2f20381d1b14841061df10378a8"
+    },
+    {
+      "path": "research/thalean-graph-theory/18-g900-kernel-admission/paper/sections/00_abstract.tex",
+      "exists": true,
+      "bytes": 1001,
+      "sha256": "c59316852b4c576ee24b0b4587f422bd06027d5c629c9208cc6e740ed0e14329"
+    },
+    {
+      "path": "research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/qed_status_ledger.json",
+      "exists": true,
+      "bytes": 3873,
+      "sha256": "b71e534e65213029d0648a9f8b598ff308a219cf9fff01a9535eaca67ff7d9ab"
+    },
+    {
+      "path": "research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/manuscript_manifest.json",
+      "exists": true,
+      "bytes": 307,
+      "sha256": "b8130a1decbf351ada2219e48a1bae3265b1b7148908f09275add6e7d033f5bc"
+    },
+    {
+      "path": "research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/kernel_payload_manifest.json",
+      "exists": true,
+      "bytes": 2010,
+      "sha256": "e8d28cafe9dccacf2ab808e875b914a22cc15480ee721cf7220d9df9b1bbc76b"
+    },
+    {
+      "path": "research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/construction_independence_status.json",
+      "exists": true,
+      "bytes": 881,
+      "sha256": "046f7b05e75ce00ea7b50e5e263e7529f6d09150aac29a624ba5d67c7981fd1c"
+    },
+    {
+      "path": "research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/exact_edge_set_identity_certificate.json",
+      "exists": true,
+      "bytes": 1168,
+      "sha256": "65509fb164b58562cc5a79bc66a464d12ca0f0a32ccb6600a9d983fdc5a6ce2c"
+    },
+    {
+      "path": "research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/connectedness_certificate.json",
+      "exists": true,
+      "bytes": 98048,
+      "sha256": "62b0542c126af0e723707e572751d112e3a2793592a688a2efe07ec03e0ec066"
+    },
+    {
+      "path": "research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/metric_certificate.json",
+      "exists": true,
+      "bytes": 90205,
+      "sha256": "584de24c3debb0a4becd2c07007a9d80fe35c05e550aa368e7606470f514526d"
+    },
+    {
+      "path": "research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/baseline_separation_certificate.json",
+      "exists": true,
+      "bytes": 2142,
+      "sha256": "f48603d522a6bab09a1218e2d9557e277c84e5424bb2f566d525740c7773e469"
+    },
+    {
+      "path": "research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/sibling_non_switching_certificate.json",
+      "exists": true,
+      "bytes": 5087,
+      "sha256": "44f06c343d359c98f103a178cc340fc40b1acd45104504292fa80c7b4e0484e7"
+    },
+    {
+      "path": "research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/sibling_full_graph_separation_certificate.json",
+      "exists": true,
+      "bytes": 3245,
+      "sha256": "13cd86554c7ce2175a7e88ab92923643468dd0cad5ca20c83c64290464a5dcee"
+    },
+    {
+      "path": "research/thalean-graph-theory/18-g900-kernel-admission/source/kernel_payload/g15_slot_edges.csv",
+      "exists": true,
+      "bytes": 185,
+      "sha256": "7b94834d507cf2995ec6faf73e2e227a685d831894aa98f2647556d8b922b8f6"
+    },
+    {
+      "path": "research/thalean-graph-theory/18-g900-kernel-admission/source/kernel_payload/g60_local_edges.csv",
+      "exists": true,
+      "bytes": 817,
+      "sha256": "c700a185fab6a5f434da09b7acb716b96c76170774bee946af8ea907e4fe7f9f"
+    },
+    {
+      "path": "research/thalean-graph-theory/18-g900-kernel-admission/source/kernel_payload/carrier_signing_table.csv",
+      "exists": true,
+      "bytes": 942,
+      "sha256": "9b3cf812cc0f6d7b065666c81fa6d16fd3e3b8a98955c264709337c7f3e7efb7"
+    },
+    {
+      "path": "research/thalean-graph-theory/18-g900-kernel-admission/source/kernel_payload/x_sigma_edges.csv",
+      "exists": true,
+      "bytes": 151574,
+      "sha256": "ea2679662f4322a9ea021fba1143c804ef73b1fae95f50c77ba76b7fe1092230"
+    }
+  ],
+  "source_file_count": 16,
+  "render_boundary": {
+    "not_a_renderer_source": true,
+    "not_active_in_perfect_return_cell": true,
+    "relationship_to_current_cell": "The Perfect Return Cell is a G60 projection witness. G900 is retained as a future multi-unit field signature, not as the current rendered object."
+  }
+}

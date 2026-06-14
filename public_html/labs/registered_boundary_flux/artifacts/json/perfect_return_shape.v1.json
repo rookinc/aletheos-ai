@@ -1,0 +1,165 @@
+{
+  "schema": "perfect_return_shape.v1",
+  "status": "exported",
+  "source_object": {
+    "name": "G60 Thalean source form",
+    "graph_id": "AT4val[60,6]",
+    "scaffolding": "5,3,4",
+    "rule": "G60 is the thing. Visible lab forms are projections."
+  },
+  "projection": {
+    "id": "triad_of_diads_cyclic_return",
+    "status": "projection_of_G60",
+    "path": [
+      "W",
+      "X",
+      "Y",
+      "Z",
+      "T",
+      "I",
+      "W"
+    ],
+    "path_string": "W-X-Y-Z-T-I-W",
+    "projection_of": "G60 / AT4val[60,6] / 5,3,4 scaffolding",
+    "boundary": "This shape is a projection witness, not the canonical source object."
+  },
+  "shape": {
+    "kind": "perfect_return_cell",
+    "station_order": [
+      "W",
+      "X",
+      "Y",
+      "Z",
+      "T",
+      "I"
+    ],
+    "closed_path": [
+      "W",
+      "X",
+      "Y",
+      "Z",
+      "T",
+      "I",
+      "W"
+    ],
+    "edges": [
+      {
+        "index": 0,
+        "from": "W",
+        "to": "X",
+        "label": "WX",
+        "kind": "diad",
+        "closes_return": false
+      },
+      {
+        "index": 1,
+        "from": "X",
+        "to": "Y",
+        "label": "XY",
+        "kind": "coupler",
+        "closes_return": false
+      },
+      {
+        "index": 2,
+        "from": "Y",
+        "to": "Z",
+        "label": "YZ",
+        "kind": "diad",
+        "closes_return": false
+      },
+      {
+        "index": 3,
+        "from": "Z",
+        "to": "T",
+        "label": "ZT",
+        "kind": "coupler",
+        "closes_return": false
+      },
+      {
+        "index": 4,
+        "from": "T",
+        "to": "I",
+        "label": "TI",
+        "kind": "diad",
+        "closes_return": false
+      },
+      {
+        "index": 5,
+        "from": "I",
+        "to": "W",
+        "label": "IW",
+        "kind": "coupler",
+        "closes_return": true
+      }
+    ],
+    "triad_of_diads": {
+      "diads": [
+        {
+          "label": "WX",
+          "stations": [
+            "W",
+            "X"
+          ]
+        },
+        {
+          "label": "YZ",
+          "stations": [
+            "Y",
+            "Z"
+          ]
+        },
+        {
+          "label": "TI",
+          "stations": [
+            "T",
+            "I"
+          ]
+        }
+      ],
+      "couplers": [
+        {
+          "label": "XY",
+          "stations": [
+            "X",
+            "Y"
+          ]
+        },
+        {
+          "label": "ZT",
+          "stations": [
+            "Z",
+            "T"
+          ]
+        },
+        {
+          "label": "IW",
+          "stations": [
+            "I",
+            "W"
+          ]
+        }
+      ],
+      "interpretation": "The unit is organized as three paired cells. Coupler edges carry the return field between pairs until action returns through IW to W."
+    }
+  },
+  "render_contract": {
+    "no_user_attempted_coupling": true,
+    "no_motion_without_cycle_edge": true,
+    "no_glow_without_active_edge": true,
+    "no_return_claim_without_W_return": true,
+    "triad_of_diads_visible": true
+  },
+  "provenance": {
+    "generated_by": "registered_boundary_flux/scripts/export_perfect_return_shape.py",
+    "inputs": [
+      {
+        "path": "registered_boundary_flux/data/perfect_return_cell.v1.json",
+        "sha256": "9973f2716506318980bd1c6efda43ee860fe02d8ee13e084398bc9269153144f"
+      },
+      {
+        "path": "registered_boundary_flux/data/g60_source_binding.v1.json",
+        "sha256": "8dec103c109f8a93fa84f46ea8faafd5638e1e1042ef66bb9fe47c3ab976f675"
+      }
+    ]
+  }
+}

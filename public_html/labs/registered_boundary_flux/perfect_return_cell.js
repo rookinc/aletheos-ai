@@ -8,6 +8,7 @@ const cycleReadout = document.getElementById("cycle-readout");
 const returnReadout = document.getElementById("return-readout");
 const boundaryReadout = document.getElementById("boundary-readout");
 const g60SourceStatus = document.getElementById("g60-source-status");
+const g900SignatureStatus = document.getElementById("g900-signature-status");
 
 let model = null;
 let startTime = null;
@@ -197,10 +198,38 @@ async function loadG60SourceBinding() {
   }
 }
 
+
+async function loadG900SignatureBinding() {
+  if (!g900SignatureStatus) return null;
+
+  try {
+    const binding = await fetch("data/g900_signature_binding.v1.json", { cache: "no-store" }).then((r) => r.json());
+    const cand = binding.candidate || {};
+    const adm = binding.admission_signature || {};
+    const boundary = binding.identity_boundary || {};
+    const tag = adm.tag || "unavailable";
+
+    g900SignatureStatus.innerHTML =
+      "<strong>G900 local signature</strong><br>" +
+      "candidate: " + (cand.symbol || "X_sigma") + " / " + (cand.kernel || "K_900") + "<br>" +
+      "counts: " + (cand.vertices || "?") + " vertices / " + (cand.edges || "?") + " edges<br>" +
+      "census: " + (boundary.census_status || "not externally identified") + "<br>" +
+      "tag: " + tag + "<br>" +
+      "role: context only; not the active rendered cell.";
+
+    return binding;
+  } catch (err) {
+    g900SignatureStatus.textContent = "G900 signature binding failed to load.";
+    console.warn("G900 signature binding load failed", err);
+    return null;
+  }
+}
+
 async function boot() {
   resizeCanvas();
   model = await fetch("data/perfect_return_cell.v1.json", { cache: "no-store" }).then((r) => r.json());
   await loadG60SourceBinding();
+  await loadG900SignatureBinding();
   boundaryReadout.textContent = model.boundary;
   requestAnimationFrame(draw);
 }

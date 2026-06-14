@@ -155,5 +155,19 @@
     "file": "data/g60_source_binding.v1.json",
     "status": "wired",
     "rule": "Perfect Return Cell must report its G60 source binding."
+  },
+  "g900_signature_binding": {
+    "file": "data/g900_signature_binding.v1.json",
+    "status": "wired_as_context_not_rendered",
+    "rule": "G900 has a local admission signature, not an external census identity."
+  },
+  "hidden_panels": {
+    "status": "active",
+    "hidden": [
+      "4. Coupling Grammar",
+      "5. Return Ledger",
+      "6. Evidence / Boundary"
+    ],
+    "rule": "Hidden panels remain in source as diagnostics, but are not shown in the primary public flow."
   }
 }

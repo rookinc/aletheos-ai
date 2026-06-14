@@ -1,0 +1,87 @@
+{
+  "schema": "perfect_return_shape.validation.v1",
+  "status": "verified",
+  "passed": true,
+  "validator": "registered_boundary_flux/scripts/validate_perfect_return_shape.py",
+  "shape": {
+    "path": "registered_boundary_flux/artifacts/json/perfect_return_shape.v1.json",
+    "sha256": "bcd2e60ecd37b5da30d3d33ac1780065039a7b4633d38040e51c3b9976c8ce81"
+  },
+  "checks": [
+    {
+      "name": "source_graph_is_g60",
+      "passed": true,
+      "detail": "Canonical source graph id must be AT4val[60,6]."
+    },
+    {
+      "name": "source_scaffolding_is_5_3_4",
+      "passed": true,
+      "detail": "Canonical scaffolding must be 5,3,4."
+    },
+    {
+      "name": "projection_declares_g60",
+      "passed": true,
+      "detail": "Projection must explicitly declare G60 source."
+    },
+    {
+      "name": "path_exact",
+      "passed": true,
+      "detail": "Closed path must be W-X-Y-Z-T-I-W."
+    },
+    {
+      "name": "stations_exact",
+      "passed": true,
+      "detail": "Station order must be W,X,Y,Z,T,I."
+    },
+    {
+      "name": "edge_labels_exact",
+      "passed": true,
+      "detail": "Edge labels must be WX,XY,YZ,ZT,TI,IW."
+    },
+    {
+      "name": "edge_labels_derived_from_path",
+      "passed": true,
+      "detail": "Each edge label must equal from+to from the closed path."
+    },
+    {
+      "name": "edge_kinds_alternate",
+      "passed": true,
+      "detail": "Edge kinds must alternate diad,coupler,diad,coupler,diad,coupler."
+    },
+    {
+      "name": "triad_of_diads_exact",
+      "passed": true,
+      "detail": "Triad of diads must be WX,YZ,TI."
+    },
+    {
+      "name": "couplers_exact",
+      "passed": true,
+      "detail": "Couplers must be XY,ZT,IW."
+    },
+    {
+      "name": "return_closes_on_IW",
+      "passed": true,
+      "detail": "The final edge must be IW and must close return to W."
+    },
+    {
+      "name": "observer_only",
+      "passed": true,
+      "detail": "This MVP must remain observer-only."
+    },
+    {
+      "name": "no_motion_without_cycle_edge",
+      "passed": true,
+      "detail": "Motion must be restricted to declared cycle edges."
+    },
+    {
+      "name": "projection_not_canonical_object",
+      "passed": true,
+      "detail": "Shape must identify itself as a projection, not the canonical object."
+    }
+  ],
+  "summary": {
+    "check_count": 14,
+    "passed_count": 14,
+    "failed_count": 0
+  }
+}

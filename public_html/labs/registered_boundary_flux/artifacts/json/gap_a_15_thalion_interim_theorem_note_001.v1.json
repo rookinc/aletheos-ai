@@ -1,0 +1,257 @@
+{
+  "schema": "gap_a_15_thalion_interim_theorem_note_001.v1",
+  "status": "gap_a_15_thalion_interim_theorem_note_recorded",
+  "timestamp_utc": "2026-06-14T19:30:16.284749+00:00",
+  "purpose": "Record the current theorem-level interpretation of the 15-thalion witness ring evidence for Gap A.",
+  "boundary": [
+    "This is an interim theorem note, not a closure proof.",
+    "Gap A remains open.",
+    "No exact chamber/register map is claimed.",
+    "No residual flip rule is accepted.",
+    "No physical interpretation is claimed.",
+    "The 15-thalion twisted carrier is treated as a source-derived obstruction neighborhood, not an exact selector."
+  ],
+  "inputs": {
+    "gap_a_lift_refined_theorem_note": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_lift_refined_partial_closure_theorem_note_001.v1.json",
+      "sha256": "a6e1e64dfc299847286475529300c37179371396d0a41c8fd2d35f7aa166bcf7",
+      "status": "gap_a_lift_refined_partial_closure_theorem_note_recorded"
+    },
+    "source_inventory": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_15_thalion_ring_source_inventory_001.v1.json",
+      "sha256": "b18df0127ff555929cf79fb64283b601b022d9e3146402e3c87ecab82ec9068f",
+      "status": "gap_a_15_thalion_ring_sources_inventoried"
+    },
+    "test_plan": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_15_thalion_ring_test_plan_001.v1.json",
+      "sha256": "7db6a8abc38ec77b1604eb2879ffda7e4a8637c4f63fadeb485ee92585bd0b9a",
+      "status": "gap_a_15_thalion_ring_test_plan_recorded"
+    },
+    "schema": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_15_thalion_ring_schema_001.v1.json",
+      "sha256": "a2fe20a7f07e295d7d698f28861b74e592b135e0042fe4bc0914da0d559df806",
+      "status": "gap_a_15_thalion_ring_schema_recovered_residual_blind"
+    },
+    "uniform_lift": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_uniform_15_thalion_row_lift_001.v1.json",
+      "sha256": "746469ce14d675063543189bdf49420fa630ee0834958a0c27b4056a45364c46",
+      "status": "gap_a_uniform_15_thalion_row_lift_needs_inspection"
+    },
+    "uniform_lift_inspection": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_uniform_15_thalion_row_lift_inspection_001.v1.json",
+      "sha256": "c9a4565ebea0849738a7ca99011ac506b4796ba7fbf438f80a01eb950db65d66",
+      "status": "uniform_15_thalion_lift_inspected_twisted_absence_feature_found"
+    },
+    "residual_split": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_15_thalion_residual_split_001.v1.json",
+      "sha256": "59a393b876c5bfff5971ca5744dc2f8a58a15918d30bfd3f01f9d7fb6211bc33",
+      "status": "gap_a_15_thalion_residual_split_aligned_not_closed"
+    },
+    "residual_nulls": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_15_thalion_residual_split_nulls_001.v1.json",
+      "sha256": "d2b1e515a5edfddc564ceca1b8407cd3b5741879be125314e6e64ada0485eb97",
+      "status": "gap_a_15_thalion_residual_split_nulls_recorded"
+    }
+  },
+  "claim": {
+    "does_15_thalion_ring_close_gap_a": false,
+    "does_15_thalion_ring_solve_gap_a": false,
+    "does_15_thalion_ring_supply_source_derived_structure": true,
+    "does_15_thalion_ring_supply_exact_selector": false,
+    "interim_result": "The 15-thalion twisted ring supplies a load-bearing source-derived obstruction neighborhood for Gap A, but it does not close Gap A.",
+    "short_form": "Gap A remains open. The 15-thalion twisted carrier explains where to look: both known residuals lie in the zero-twisted-carrier obstruction neighborhood, with ZT branch-stable and TI branch-sensitive.",
+    "not_closed_reason": "The obstruction neighborhood is not exact: zero-twisted-carrier support catches five rows, not only the two residual rows, and no source-derived chamber/register map has closed the final residuals."
+  },
+  "evidence": {
+    "source_inventory": {
+      "status": "gap_a_15_thalion_ring_sources_inventoried",
+      "record_count": 1531
+    },
+    "test_plan": {
+      "status": "gap_a_15_thalion_ring_test_plan_recorded",
+      "test_count": 8
+    },
+    "schema": {
+      "status": "gap_a_15_thalion_ring_schema_recovered_residual_blind",
+      "vertex_pattern": "Tss_Sll where ss is thalion slot 0..14 and ll is local G60 state 0..59",
+      "expected_vertex_count": 900,
+      "expected_edge_count": 3600,
+      "twisted_edge_law_names": [
+        "g60_internal",
+        "half_flip_x_plus_30",
+        "identity"
+      ]
+    },
+    "uniform_lift": {
+      "status": "gap_a_uniform_15_thalion_row_lift_needs_inspection",
+      "row_count": 18,
+      "rows_with_uniform_ring_lift": 13,
+      "feature_signature_count": 12
+    },
+    "uniform_lift_inspection": {
+      "status": "uniform_15_thalion_lift_inspected_twisted_absence_feature_found",
+      "zero_twisted_carrier_row_count": 5,
+      "zero_role_counts": {
+        "ZT": 3,
+        "TI": 2
+      },
+      "nonzero_role_counts": {
+        "WX": 3,
+        "XY": 3,
+        "YZ": 3,
+        "IW": 3,
+        "TI": 1
+      }
+    },
+    "residual_split": {
+      "status": "gap_a_15_thalion_residual_split_aligned_not_closed",
+      "known_residual_row_ordinals": [
+        3,
+        16
+      ],
+      "zero_twisted_rows": [
+        3,
+        4,
+        9,
+        15,
+        16
+      ],
+      "zero_twisted_residual_recall": 1.0,
+      "zero_twisted_false_positive_count": 3,
+      "zt_residual_branch_stable": true,
+      "ti_residual_branch_sensitive": true,
+      "exact_feature_names": []
+    },
+    "residual_nulls": {
+      "status": "gap_a_15_thalion_residual_split_nulls_recorded",
+      "baseline_support": [
+        3,
+        4,
+        9,
+        15,
+        16
+      ],
+      "baseline_recall": 1.0,
+      "baseline_precision": 0.4,
+      "untwisted_null_support": [],
+      "untwisted_null_recall": 0.0,
+      "generic_union_null_support": [],
+      "generic_union_null_recall": 0.0,
+      "slot_shuffle_null_support": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        9,
+        10,
+        12,
+        13,
+        14,
+        16
+      ],
+      "slot_shuffle_null_recall": 1.0,
+      "load_bearing": {
+        "untwisted_carrier_null_destroys_alignment": true,
+        "generic_carrier_union_null_destroys_alignment": true,
+        "slot_shuffle_null_destroys_or_changes_alignment": true
+      }
+    }
+  },
+  "interim_theorem_statement": {
+    "name": "Gap A 15-thalion obstruction-neighborhood theorem note",
+    "statement": "Within the tested artifact chain, the 15-thalion twisted ring does not close Gap A, but it supplies a source-derived obstruction neighborhood. The zero-twisted-carrier feature catches both known residual rows, has recall 1.0 and precision 0.4, is not exact, and is destroyed by untwisted/generic carrier nulls while slot shuffling damages specificity. The lift-refined residual split is preserved: the ZT residual is branch-stable and the TI residual is branch-sensitive.",
+    "admission_status": "bounded_interim_support_not_gap_closure"
+  },
+  "next_questions": [
+    "Can the five-row zero-twisted-carrier neighborhood be split by a source-derived rule that is not residual-targeted?",
+    "Can the three false positives 4, 9, and 15 be explained by ring position, cycle phase, or selected-turn/return-path geometry?",
+    "Can a source-derived chamber/register map be constructed from twisted carrier law plus slot identity?",
+    "Do additional nulls over slot automorphisms preserve or destroy the same obstruction neighborhood?"
+  ],
+  "checks": [
+    {
+      "id": "gap_note_loaded",
+      "status": true,
+      "detail": "gap_a_lift_refined_partial_closure_theorem_note_recorded"
+    },
+    {
+      "id": "inventory_loaded",
+      "status": true,
+      "detail": "gap_a_15_thalion_ring_sources_inventoried"
+    },
+    {
+      "id": "test_plan_loaded",
+      "status": true,
+      "detail": "gap_a_15_thalion_ring_test_plan_recorded"
+    },
+    {
+      "id": "schema_loaded",
+      "status": true,
+      "detail": "gap_a_15_thalion_ring_schema_recovered_residual_blind"
+    },
+    {
+      "id": "uniform_lift_loaded",
+      "status": true,
+      "detail": "gap_a_uniform_15_thalion_row_lift_needs_inspection"
+    },
+    {
+      "id": "inspection_loaded",
+      "status": true,
+      "detail": "uniform_15_thalion_lift_inspected_twisted_absence_feature_found"
+    },
+    {
+      "id": "split_loaded",
+      "status": true,
+      "detail": "gap_a_15_thalion_residual_split_aligned_not_closed"
+    },
+    {
+      "id": "nulls_loaded",
+      "status": true,
+      "detail": "gap_a_15_thalion_residual_split_nulls_recorded"
+    },
+    {
+      "id": "baseline_recall_1",
+      "status": true,
+      "detail": "1.0"
+    },
+    {
+      "id": "baseline_not_exact",
+      "status": true,
+      "detail": "0.4"
+    },
+    {
+      "id": "exact_feature_names_empty",
+      "status": true,
+      "detail": "[]"
+    },
+    {
+      "id": "zt_branch_stable",
+      "status": true,
+      "detail": "True"
+    },
+    {
+      "id": "ti_branch_sensitive",
+      "status": true,
+      "detail": "True"
+    },
+    {
+      "id": "untwisted_null_destroys_alignment",
+      "status": true,
+      "detail": "{\"generic_carrier_union_null_destroys_alignment\": true, \"slot_shuffle_null_destroys_or_changes_alignment\": true, \"untwisted_carrier_null_destroys_alignment\": true}"
+    },
+    {
+      "id": "generic_union_null_destroys_alignment",
+      "status": true,
+      "detail": "{\"generic_carrier_union_null_destroys_alignment\": true, \"slot_shuffle_null_destroys_or_changes_alignment\": true, \"untwisted_carrier_null_destroys_alignment\": true}"
+    },
+    {
+      "id": "slot_shuffle_changes_alignment",
+      "status": true,
+      "detail": "{\"generic_carrier_union_null_destroys_alignment\": true, \"slot_shuffle_null_destroys_or_changes_alignment\": true, \"untwisted_carrier_null_destroys_alignment\": true}"
+    }
+  ],
+  "next_script": "split_gap_a_zero_twisted_neighborhood_001.py"
+}

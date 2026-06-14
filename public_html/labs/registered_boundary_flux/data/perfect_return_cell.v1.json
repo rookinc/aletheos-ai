@@ -1,0 +1,154 @@
+{
+  "id": "perfect_return_cell.v1",
+  "title": "Perfect Return Cell",
+  "status": "mvp_wireframe_live",
+  "principle": "G60 / AT4val[60,6] with 5,3,4 scaffolding is the canonical source form. The visible Perfect Return Cell is a triad-of-diads projection of that form.",
+  "boundary": "This is a finite Thalean coupling demonstration. It is not a physical gravity model and not a multi-unit G900 field.",
+  "user_role": "observer_only",
+  "cycle": {
+    "stations": [
+      "W",
+      "X",
+      "Y",
+      "Z",
+      "T",
+      "I"
+    ],
+    "closed_path": [
+      "W",
+      "X",
+      "Y",
+      "Z",
+      "T",
+      "I",
+      "W"
+    ],
+    "edges": [
+      {
+        "from": "W",
+        "to": "X",
+        "kind": "diad",
+        "label": "WX"
+      },
+      {
+        "from": "X",
+        "to": "Y",
+        "kind": "coupler",
+        "label": "XY"
+      },
+      {
+        "from": "Y",
+        "to": "Z",
+        "kind": "diad",
+        "label": "YZ"
+      },
+      {
+        "from": "Z",
+        "to": "T",
+        "kind": "coupler",
+        "label": "ZT"
+      },
+      {
+        "from": "T",
+        "to": "I",
+        "kind": "diad",
+        "label": "TI"
+      },
+      {
+        "from": "I",
+        "to": "W",
+        "kind": "coupler",
+        "label": "IW"
+      }
+    ],
+    "return_condition": "The cycle is complete when action returns to W after I->W.",
+    "edge_grammar": {
+      "diad_edges": [
+        "WX",
+        "YZ",
+        "TI"
+      ],
+      "coupler_edges": [
+        "XY",
+        "ZT",
+        "IW"
+      ]
+    }
+  },
+  "render_contract": {
+    "no_user_attempted_coupling": true,
+    "no_motion_without_cycle_edge": true,
+    "no_glow_without_active_edge": true,
+    "no_return_claim_without_W_return": true,
+    "triad_of_diads_visible": true
+  },
+  "projection_channels": {
+    "station_nodes": "six labeled stations on a closed register",
+    "active_edge": "current lawful transition in W-X-Y-Z-T-I-W",
+    "trace_ring": "registered aftermath after completed return",
+    "ledger": "cycle count, active edge, edge kind, return status",
+    "sequence_rail": "The full W-X-Y-Z-T-I-W return path with active edge and edge kind."
+  },
+  "triad_of_diads": {
+    "diads": [
+      {
+        "label": "WX",
+        "stations": [
+          "W",
+          "X"
+        ]
+      },
+      {
+        "label": "YZ",
+        "stations": [
+          "Y",
+          "Z"
+        ]
+      },
+      {
+        "label": "TI",
+        "stations": [
+          "T",
+          "I"
+        ]
+      }
+    ],
+    "couplers": [
+      {
+        "label": "XY",
+        "stations": [
+          "X",
+          "Y"
+        ]
+      },
+      {
+        "label": "ZT",
+        "stations": [
+          "Z",
+          "T"
+        ]
+      },
+      {
+        "label": "IW",
+        "stations": [
+          "I",
+          "W"
+        ]
+      }
+    ],
+    "interpretation": "The unit is organized as three paired cells. Coupler edges carry the return field between pairs until action returns through IW to W."
+  },
+  "source_object": {
+    "name": "G60 Thalean source form",
+    "graph_id": "AT4val[60,6]",
+    "scaffolding": "5,3,4",
+    "role": "canonical source object",
+    "rule": "G60 is the thing. Rendered cycles are projections of this source form."
+  },
+  "projection": {
+    "name": "triad-of-diads return witness",
+    "path": "W-X-Y-Z-T-I-W",
+    "status": "projection_of_G60",
+    "boundary": "The six-station return cell is a witness/projection, not the canonical object itself."
+  }
+}

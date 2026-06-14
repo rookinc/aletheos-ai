@@ -1,0 +1,173 @@
+html {
+  background: #06111d;
+  color: #e8f1fb;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(80, 145, 210, 0.16), transparent 34%),
+    linear-gradient(180deg, #0b2033, #050b12 42%, #03070c);
+}
+
+.wf-topbar,
+.wf-shell {
+  width: min(980px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.wf-topbar {
+  padding: 1rem 0 0.65rem;
+}
+
+.wf-back {
+  display: block;
+  color: #d8bc76;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+h1 {
+  margin: 0.1rem 0 0.35rem;
+  font-size: clamp(1.5rem, 7vw, 3rem);
+  line-height: 0.95;
+  letter-spacing: -0.07em;
+}
+
+.wf-thesis {
+  max-width: 46rem;
+  color: rgba(205, 221, 238, 0.72);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.wf-shell {
+  display: grid;
+  gap: 0.72rem;
+  padding-bottom: 1.5rem;
+}
+
+.wf-panel {
+  border: 1px solid rgba(216, 188, 118, 0.34);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(17, 34, 53, 0.86), rgba(6, 14, 25, 0.94));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.06),
+    0 0.7rem 1.4rem rgba(0,0,0,0.18);
+  padding: 0.9rem;
+}
+
+.wf-panel h2 {
+  margin: 0 0 0.5rem;
+  color: #d8bc76;
+  font-size: 0.86rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.wf-panel p {
+  margin: 0.55rem 0 0;
+  color: rgba(205, 221, 238, 0.72);
+  line-height: 1.45;
+}
+
+.wf-contract {
+  border-color: rgba(216, 188, 118, 0.56);
+}
+
+.wf-tags,
+.wf-grid {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.wf-tags {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.wf-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.wf-tags span,
+.wf-grid div {
+  border: 1px solid rgba(156, 200, 255, 0.22);
+  border-radius: 6px;
+  background: rgba(2, 8, 15, 0.48);
+  color: rgba(232, 241, 251, 0.86);
+  padding: 0.62rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.wf-stage {
+  border-color: rgba(156, 200, 255, 0.42);
+}
+
+.wf-stage-box {
+  position: relative;
+  height: 42svh;
+  min-height: 18rem;
+  border: 1px solid rgba(216, 188, 118, 0.38);
+  border-radius: 6px;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(156, 200, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(156, 200, 255, 0.07) 1px, transparent 1px),
+    radial-gradient(circle at 50% 45%, rgba(156, 200, 255, 0.18), transparent 34%),
+    #030910;
+  background-size: 42px 42px, 42px 42px, auto, auto;
+}
+
+.wf-stage-label {
+  position: absolute;
+  top: 0.8rem;
+  right: 0.8rem;
+  color: rgba(205, 221, 238, 0.36);
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+}
+
+.wf-stage-cross::before,
+.wf-stage-cross::after {
+  content: "";
+  position: absolute;
+  background: rgba(216, 188, 118, 0.42);
+}
+
+.wf-stage-cross::before {
+  left: 50%;
+  top: 15%;
+  bottom: 15%;
+  width: 1px;
+}
+
+.wf-stage-cross::after {
+  top: 50%;
+  left: 15%;
+  right: 15%;
+  height: 1px;
+}
+
+@media (max-width: 520px) {
+  .wf-tags,
+  .wf-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wf-panel {
+    padding: 0.78rem;
+  }
+
+  .wf-stage-box {
+    height: 38svh;
+    min-height: 16rem;
+  }
+}

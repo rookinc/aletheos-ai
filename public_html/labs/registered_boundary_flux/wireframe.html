@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Registered Boundary Flux Wireframe</title>
+  <link rel="stylesheet" href="wireframe.css" />
+</head>
+<body>
+  <header class="wf-topbar">
+    <a href="../index.html" class="wf-back">&lt; Aletheos Labs</a>
+    <h1>Registered Boundary Flux</h1>
+    <p class="wf-thesis">
+      A source-bound visual instrument for inspecting boundary loading,
+      compression, release, and registered trace inside a simplified register.
+    </p>
+  </header>
+
+  <main class="wf-shell">
+
+    <section class="wf-panel wf-contract">
+      <h2>0. Mathematical Contract</h2>
+      <p>
+        Every rendered behavior must name its source, projection rule, and boundary.
+        Unbound signals are not rendered.
+      </p>
+      <div class="wf-tags">
+        <span>Theorem / source object</span>
+        <span>Projection map</span>
+        <span>Rendered trace</span>
+        <span>Audit status</span>
+      </div>
+    </section>
+
+    <section class="wf-panel wf-stage">
+      <h2>1. Register Stage</h2>
+      <div class="wf-stage-box">
+        <div class="wf-stage-label">Cube Register projection surface</div>
+        <div class="wf-stage-cross"></div>
+      </div>
+      <p>
+        This panel is the only visual instrument. It may render only approved
+        projection channels from the binding layer.
+      </p>
+    </section>
+
+    <section class="wf-panel wf-controls">
+      <h2>2. Lawful Controls</h2>
+      <div class="wf-grid">
+        <div>Regime selector</div>
+        <div>Sheet clock</div>
+        <div>Projection layer toggles</div>
+        <div>Stage lock / scroll</div>
+      </div>
+      <p>
+        Controls must either select a finite regime, change inspection viewpoint,
+        or adjust an explicitly marked visual parameter.
+      </p>
+    </section>
+
+    <section class="wf-panel wf-binding">
+      <h2>3. Projection Binding</h2>
+      <div class="wf-grid">
+        <div>Compression source</div>
+        <div>Polarity source</div>
+        <div>Confinement source</div>
+        <div>Transformation source</div>
+        <div>Registered trace source</div>
+      </div>
+      <p>
+        This panel answers: what finite signal is allowed to enter the stage,
+        and which visual channel may carry it?
+      </p>
+    </section>
+
+    <section class="wf-panel wf-audit">
+      <h2>4. Evidence Ledger</h2>
+      <div class="wf-grid">
+        <div>Kernel JSON</div>
+        <div>K900 binding JSON</div>
+        <div>P19/P20 source files</div>
+        <div>SHA-256 custody</div>
+      </div>
+      <p>
+        This is not decoration. It is the accountability layer behind the renderer.
+      </p>
+    </section>
+
+    <section class="wf-panel wf-debug">
+      <h2>5. Operator Diagnostics</h2>
+      <div class="wf-grid">
+        <div>Current sheet</div>
+        <div>Current cycle</div>
+        <div>Active projection channels</div>
+        <div>Unrendered signals</div>
+      </div>
+      <p>
+        Debug information is available for research operation, but it should not
+        dominate the public default view.
+      </p>
+    </section>
+
+  </main>
+</body>
+</html>

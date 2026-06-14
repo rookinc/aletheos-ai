@@ -1,0 +1,252 @@
+html {
+  background: #050b12;
+  color: #e8f1fb;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(80, 145, 210, 0.18), transparent 34%),
+    linear-gradient(180deg, #0b2033, #050b12 42%, #03070c);
+}
+
+.topbar,
+.shell {
+  width: min(980px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.topbar {
+  padding: 0.9rem 0 0.55rem;
+}
+
+.back {
+  display: block;
+  color: #d8bc76;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  font-weight: 850;
+}
+
+h1 {
+  margin: 0.12rem 0 0.28rem;
+  font-size: clamp(1.4rem, 6.8vw, 3rem);
+  line-height: 0.95;
+  letter-spacing: -0.075em;
+}
+
+.topbar p {
+  margin: 0;
+  max-width: 46rem;
+  color: rgba(205, 221, 238, 0.72);
+  line-height: 1.38;
+}
+
+.shell {
+  display: grid;
+  gap: 0.62rem;
+  padding-bottom: 1.5rem;
+}
+
+.panel {
+  border: 1px solid rgba(216, 188, 118, 0.34);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(17, 34, 53, 0.86), rgba(6, 14, 25, 0.94));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.06),
+    0 0.7rem 1.4rem rgba(0,0,0,0.18);
+  padding: 0.82rem;
+}
+
+.panel h2 {
+  margin: 0 0 0.5rem;
+  color: #d8bc76;
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.panel p {
+  margin: 0;
+  color: rgba(205, 221, 238, 0.74);
+  line-height: 1.45;
+}
+
+.contract {
+  border-color: rgba(216, 188, 118, 0.58);
+}
+
+.stage-panel {
+  padding: 0.62rem;
+}
+
+#return-canvas {
+  display: block;
+  width: 100%;
+  height: 50svh;
+  min-height: 21rem;
+  max-height: 34rem;
+  border: 1px solid rgba(156, 200, 255, 0.22);
+  border-radius: 6px;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(156, 200, 255, 0.14), transparent 36%),
+    #030910;
+}
+
+.stage-caption {
+  margin-top: 0.45rem;
+  color: rgba(205, 221, 238, 0.48);
+  font-size: 0.66rem;
+  font-weight: 850;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.ledger-grid,
+.grammar-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.45rem;
+}
+
+.ledger-grid div,
+.grammar-grid div {
+  border: 1px solid rgba(156, 200, 255, 0.22);
+  border-radius: 6px;
+  background: rgba(2, 8, 15, 0.48);
+  padding: 0.62rem;
+}
+
+.ledger-grid b,
+.grammar-grid b {
+  display: block;
+  color: rgba(216, 188, 118, 0.88);
+  font-size: 0.64rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.ledger-grid span,
+.grammar-grid span {
+  display: block;
+  margin-top: 0.18rem;
+  color: rgba(232, 241, 251, 0.9);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.92rem;
+}
+
+.return-ledger {
+  border-color: rgba(120, 255, 190, 0.32);
+}
+
+.boundary {
+  border-color: rgba(255, 190, 120, 0.24);
+}
+
+@media (max-width: 520px) {
+  .topbar,
+  .shell {
+    width: min(100% - 1.35rem, 980px);
+  }
+
+  .ledger-grid,
+  .grammar-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #return-canvas {
+    height: 44svh;
+    min-height: 18rem;
+  }
+}
+
+
+/* perfect return triad pass 001 */
+.sequence-rail {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.35rem;
+  margin-top: 0.55rem;
+}
+
+.sequence-rail span {
+  border: 1px solid rgba(156, 200, 255, 0.20);
+  border-radius: 6px;
+  background:
+    linear-gradient(180deg, rgba(10, 22, 36, 0.86), rgba(3, 9, 16, 0.94));
+  color: rgba(205, 221, 238, 0.62);
+  padding: 0.42rem 0.25rem;
+  text-align: center;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.74rem;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+}
+
+.sequence-rail span::after {
+  display: block;
+  margin-top: 0.18rem;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.48rem;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.76;
+}
+
+.sequence-rail span[data-kind="diad"]::after {
+  content: "diad";
+  color: rgba(216, 188, 118, 0.82);
+}
+
+.sequence-rail span[data-kind="coupler"]::after {
+  content: "coupler";
+  color: rgba(156, 200, 255, 0.82);
+}
+
+.sequence-rail span.is-active {
+  color: rgba(5, 11, 18, 0.96);
+  border-color: rgba(216, 188, 118, 0.92);
+  background:
+    linear-gradient(180deg, rgba(238, 216, 154, 0.96), rgba(187, 154, 76, 0.96));
+  box-shadow:
+    0 0 0 1px rgba(216, 188, 118, 0.16),
+    0 0 22px rgba(216, 188, 118, 0.18);
+}
+
+.sequence-rail span.is-active[data-kind="coupler"] {
+  border-color: rgba(156, 200, 255, 0.96);
+  background:
+    linear-gradient(180deg, rgba(177, 216, 255, 0.96), rgba(89, 142, 200, 0.96));
+  box-shadow:
+    0 0 0 1px rgba(156, 200, 255, 0.16),
+    0 0 22px rgba(156, 200, 255, 0.18);
+}
+
+.sequence-rail span.is-active::after {
+  color: rgba(5, 11, 18, 0.76);
+}
+
+.grammar-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 520px) {
+  .sequence-rail {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .sequence-rail span {
+    font-size: 0.7rem;
+  }
+
+  .grammar-grid {
+    grid-template-columns: 1fr;
+  }
+}

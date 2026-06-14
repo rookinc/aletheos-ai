@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Perfect Return Cell</title>
+  <link rel="stylesheet" href="perfect_return_cell.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a href="./wireframe.html" class="back">&lt; RBF Wireframe</a>
+    <h1>Perfect Return Cell</h1>
+    <p>
+      A single autonomous Thalean unit: a triad of diads coupled into the closed W-X-Y-Z-T-I-W return field.
+    </p>
+  </header>
+
+  <main class="shell">
+    <section class="panel contract">
+      <h2>1. Projection Contract</h2>
+      <p>Projection contract: the visible W-X-Y-Z-T-I-W cell may move only as a declared projection of G60 / AT4val[60,6] with 5,3,4 scaffolding.</p>
+    </section>
+
+    <section class="panel source-object">
+      <h2>0. Source Object</h2>
+      <p>
+        G60 is the thing. AT4val[60,6] with 5,3,4 scaffolding is the canonical source form.
+        The triad-of-diads cycle, sheet-flip path, and canvas rendering are projection witnesses.
+      </p>
+    </section>
+
+    <section class="panel stage-panel">
+      <h2>2. Return Field Stage</h2>
+      <canvas id="return-canvas" width="900" height="620"></canvas>
+      <div class="stage-caption">Observer-only autonomous cycle</div>
+      <div class="sequence-rail" id="sequence-rail" aria-label="Closed return sequence">
+        <span data-edge="WX" data-kind="diad">W-X</span>
+        <span data-edge="XY" data-kind="coupler">X-Y</span>
+        <span data-edge="YZ" data-kind="diad">Y-Z</span>
+        <span data-edge="ZT" data-kind="coupler">Z-T</span>
+        <span data-edge="TI" data-kind="diad">T-I</span>
+        <span data-edge="IW" data-kind="coupler">I-W</span>
+      </div>
+    </section>
+
+    <section class="panel ledger">
+      <h2>3. Cycle Clock</h2>
+      <div class="ledger-grid">
+        <div><b>Station</b><span id="station-readout">loading</span></div>
+        <div><b>Edge</b><span id="edge-readout">loading</span></div>
+        <div><b>Kind</b><span id="kind-readout">loading</span></div>
+        <div><b>Cycle</b><span id="cycle-readout">0</span></div>
+      </div>
+    </section>
+
+    <section class="panel grammar">
+      <h2>4. Coupling Grammar</h2>
+      <div class="grammar-grid">
+        <div><b>Triad of diads</b><span>WX, YZ, TI</span></div>
+        <div><b>Coupler edges</b><span>XY, ZT, IW</span></div>
+        <div><b>Closed path</b><span>W-X-Y-Z-T-I-W</span></div>
+        <div><b>Return rule</b><span>complete after I-W returns to W</span></div>
+      </div>
+    </section>
+
+    <section class="panel return-ledger">
+      <h2>5. Return Ledger</h2>
+      <p id="return-readout">Waiting for first return to W.</p>
+    </section>
+
+    <section class="panel boundary">
+      <h2>6. Evidence / Boundary</h2>
+      <p id="boundary-readout">
+        This is a finite Thalean coupling demonstration. It is not a physical gravity model and not a multi-unit G900 field.
+      </p>
+    </section>
+  </main>
+
+  <script src="perfect_return_cell.js"></script>
+</body>
+</html>

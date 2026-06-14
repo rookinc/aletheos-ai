@@ -1,0 +1,739 @@
+{
+  "schema": "gap_a_15_thalion_residual_split_nulls_001.v1",
+  "status": "gap_a_15_thalion_residual_split_nulls_recorded",
+  "timestamp_utc": "2026-06-14T19:28:40.485364+00:00",
+  "purpose": "Attack the 15-thalion residual split alignment with untwisted, generic-carrier, and slot-shuffle nulls.",
+  "boundary": [
+    "This does not claim Gap A closure.",
+    "The baseline feature is not exact.",
+    "The nulls test whether the alignment depends on twisted carrier structure.",
+    "A source-derived exact chamber/register map remains missing."
+  ],
+  "inputs": {
+    "split": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_15_thalion_residual_split_001.v1.json",
+      "sha256": "59a393b876c5bfff5971ca5744dc2f8a58a15918d30bfd3f01f9d7fb6211bc33",
+      "status": "gap_a_15_thalion_residual_split_aligned_not_closed"
+    },
+    "lift": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_uniform_15_thalion_row_lift_001.v1.json",
+      "sha256": "746469ce14d675063543189bdf49420fa630ee0834958a0c27b4056a45364c46",
+      "status": "gap_a_uniform_15_thalion_row_lift_needs_inspection"
+    },
+    "twisted_source": {
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/16-fifteen-thalion-ring/support/generated/g900_twisted_ring_candidate_edges.json",
+      "sha256": "e8ae983acccb8102261bde73cca6493d9a13958edfacad0a2cb6b3e24f4398ef"
+    }
+  },
+  "residuals": [
+    3,
+    16
+  ],
+  "slot_permutation_null": [
+    7,
+    0,
+    13,
+    5,
+    1,
+    14,
+    2,
+    10,
+    3,
+    12,
+    4,
+    9,
+    6,
+    11,
+    8
+  ],
+  "feature_tests": [
+    {
+      "name": "baseline_zero_twisted_carrier",
+      "support": [
+        3,
+        4,
+        9,
+        15,
+        16
+      ],
+      "support_count": 5,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "residual_hit_count": 2,
+      "false_positives": [
+        4,
+        9,
+        15
+      ],
+      "false_positive_count": 3,
+      "misses": [],
+      "miss_count": 0,
+      "precision": 0.4,
+      "recall": 1.0,
+      "exact": false
+    },
+    {
+      "name": "null_zero_untwisted_carrier",
+      "support": [],
+      "support_count": 0,
+      "residual_hits": [],
+      "residual_hit_count": 0,
+      "false_positives": [],
+      "false_positive_count": 0,
+      "misses": [
+        3,
+        16
+      ],
+      "miss_count": 2,
+      "precision": null,
+      "recall": 0.0,
+      "exact": false
+    },
+    {
+      "name": "null_zero_generic_carrier_union",
+      "support": [],
+      "support_count": 0,
+      "residual_hits": [],
+      "residual_hit_count": 0,
+      "false_positives": [],
+      "false_positive_count": 0,
+      "misses": [
+        3,
+        16
+      ],
+      "miss_count": 2,
+      "precision": null,
+      "recall": 0.0,
+      "exact": false
+    },
+    {
+      "name": "null_zero_twisted_after_slot_shuffle",
+      "support": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        9,
+        10,
+        12,
+        13,
+        14,
+        16
+      ],
+      "support_count": 13,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "residual_hit_count": 2,
+      "false_positives": [
+        0,
+        1,
+        2,
+        4,
+        6,
+        7,
+        9,
+        10,
+        12,
+        13,
+        14
+      ],
+      "false_positive_count": 11,
+      "misses": [],
+      "miss_count": 0,
+      "precision": 0.15384615384615385,
+      "recall": 1.0,
+      "exact": false
+    }
+  ],
+  "slot_shuffle_rows": [
+    {
+      "row_ordinal": 0,
+      "cycle_index": 0,
+      "role": "WX",
+      "columns": [
+        0
+      ],
+      "original_slot_pairs": [
+        [
+          0,
+          1
+        ]
+      ],
+      "shuffled_slot_pairs": [
+        [
+          0,
+          7
+        ]
+      ],
+      "shuffled_twisted_edge_count": 0
+    },
+    {
+      "row_ordinal": 1,
+      "cycle_index": 0,
+      "role": "XY",
+      "columns": [
+        4
+      ],
+      "original_slot_pairs": [
+        [
+          1,
+          2
+        ]
+      ],
+      "shuffled_slot_pairs": [
+        [
+          0,
+          13
+        ]
+      ],
+      "shuffled_twisted_edge_count": 0
+    },
+    {
+      "row_ordinal": 2,
+      "cycle_index": 0,
+      "role": "YZ",
+      "columns": [
+        7,
+        10
+      ],
+      "original_slot_pairs": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "shuffled_slot_pairs": [
+        [
+          5,
+          13
+        ],
+        [
+          1,
+          5
+        ]
+      ],
+      "shuffled_twisted_edge_count": 0
+    },
+    {
+      "row_ordinal": 3,
+      "cycle_index": 0,
+      "role": "ZT",
+      "columns": [
+        9
+      ],
+      "original_slot_pairs": [
+        [
+          2,
+          13
+        ]
+      ],
+      "shuffled_slot_pairs": [
+        [
+          11,
+          13
+        ]
+      ],
+      "shuffled_twisted_edge_count": 0
+    },
+    {
+      "row_ordinal": 4,
+      "cycle_index": 0,
+      "role": "TI",
+      "columns": [
+        13
+      ],
+      "original_slot_pairs": [
+        [
+          4,
+          10
+        ]
+      ],
+      "shuffled_slot_pairs": [
+        [
+          1,
+          4
+        ]
+      ],
+      "shuffled_twisted_edge_count": 0
+    },
+    {
+      "row_ordinal": 5,
+      "cycle_index": 0,
+      "role": "IW",
+      "columns": [
+        1,
+        7
+      ],
+      "original_slot_pairs": [
+        [
+          0,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "shuffled_slot_pairs": [
+        [
+          1,
+          7
+        ],
+        [
+          5,
+          13
+        ]
+      ],
+      "shuffled_twisted_edge_count": 60
+    },
+    {
+      "row_ordinal": 6,
+      "cycle_index": 1,
+      "role": "WX",
+      "columns": [
+        0
+      ],
+      "original_slot_pairs": [
+        [
+          0,
+          1
+        ]
+      ],
+      "shuffled_slot_pairs": [
+        [
+          0,
+          7
+        ]
+      ],
+      "shuffled_twisted_edge_count": 0
+    },
+    {
+      "row_ordinal": 7,
+      "cycle_index": 1,
+      "role": "XY",
+      "columns": [
+        4
+      ],
+      "original_slot_pairs": [
+        [
+          1,
+          2
+        ]
+      ],
+      "shuffled_slot_pairs": [
+        [
+          0,
+          13
+        ]
+      ],
+      "shuffled_twisted_edge_count": 0
+    },
+    {
+      "row_ordinal": 8,
+      "cycle_index": 1,
+      "role": "YZ",
+      "columns": [
+        1,
+        3,
+        22
+      ],
+      "original_slot_pairs": [
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          11
+        ],
+        [
+          7,
+          8
+        ]
+      ],
+      "shuffled_slot_pairs": [
+        [
+          1,
+          7
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          3,
+          10
+        ]
+      ],
+      "shuffled_twisted_edge_count": 60
+    },
+    {
+      "row_ordinal": 9,
+      "cycle_index": 1,
+      "role": "ZT",
+      "columns": [
+        9,
+        11,
+        14
+      ],
+      "original_slot_pairs": [
+        [
+          2,
+          13
+        ],
+        [
+          3,
+          13
+        ],
+        [
+          4,
+          14
+        ]
+      ],
+      "shuffled_slot_pairs": [
+        [
+          11,
+          13
+        ],
+        [
+          5,
+          11
+        ],
+        [
+          1,
+          8
+        ]
+      ],
+      "shuffled_twisted_edge_count": 0
+    },
+    {
+      "row_ordinal": 10,
+      "cycle_index": 1,
+      "role": "TI",
+      "columns": [
+        10,
+        11
+      ],
+      "original_slot_pairs": [
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          13
+        ]
+      ],
+      "shuffled_slot_pairs": [
+        [
+          1,
+          5
+        ],
+        [
+          5,
+          11
+        ]
+      ],
+      "shuffled_twisted_edge_count": 0
+    },
+    {
+      "row_ordinal": 11,
+      "cycle_index": 1,
+      "role": "IW",
+      "columns": [
+        1,
+        7
+      ],
+      "original_slot_pairs": [
+        [
+          0,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "shuffled_slot_pairs": [
+        [
+          1,
+          7
+        ],
+        [
+          5,
+          13
+        ]
+      ],
+      "shuffled_twisted_edge_count": 60
+    },
+    {
+      "row_ordinal": 12,
+      "cycle_index": 2,
+      "role": "WX",
+      "columns": [
+        0
+      ],
+      "original_slot_pairs": [
+        [
+          0,
+          1
+        ]
+      ],
+      "shuffled_slot_pairs": [
+        [
+          0,
+          7
+        ]
+      ],
+      "shuffled_twisted_edge_count": 0
+    },
+    {
+      "row_ordinal": 13,
+      "cycle_index": 2,
+      "role": "XY",
+      "columns": [
+        4
+      ],
+      "original_slot_pairs": [
+        [
+          1,
+          2
+        ]
+      ],
+      "shuffled_slot_pairs": [
+        [
+          0,
+          13
+        ]
+      ],
+      "shuffled_twisted_edge_count": 0
+    },
+    {
+      "row_ordinal": 14,
+      "cycle_index": 2,
+      "role": "YZ",
+      "columns": [
+        4,
+        5
+      ],
+      "original_slot_pairs": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          11
+        ]
+      ],
+      "shuffled_slot_pairs": [
+        [
+          0,
+          13
+        ],
+        [
+          0,
+          9
+        ]
+      ],
+      "shuffled_twisted_edge_count": 0
+    },
+    {
+      "row_ordinal": 15,
+      "cycle_index": 2,
+      "role": "ZT",
+      "columns": [
+        21,
+        22
+      ],
+      "original_slot_pairs": [
+        [
+          6,
+          14
+        ],
+        [
+          7,
+          8
+        ]
+      ],
+      "shuffled_slot_pairs": [
+        [
+          2,
+          8
+        ],
+        [
+          3,
+          10
+        ]
+      ],
+      "shuffled_twisted_edge_count": 60
+    },
+    {
+      "row_ordinal": 16,
+      "cycle_index": 2,
+      "role": "TI",
+      "columns": [
+        13,
+        15
+      ],
+      "original_slot_pairs": [
+        [
+          4,
+          10
+        ],
+        [
+          5,
+          6
+        ]
+      ],
+      "shuffled_slot_pairs": [
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          14
+        ]
+      ],
+      "shuffled_twisted_edge_count": 0
+    },
+    {
+      "row_ordinal": 17,
+      "cycle_index": 2,
+      "role": "IW",
+      "columns": [
+        1,
+        7
+      ],
+      "original_slot_pairs": [
+        [
+          0,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "shuffled_slot_pairs": [
+        [
+          1,
+          7
+        ],
+        [
+          5,
+          13
+        ]
+      ],
+      "shuffled_twisted_edge_count": 60
+    }
+  ],
+  "load_bearing": {
+    "untwisted_carrier_null_destroys_alignment": true,
+    "generic_carrier_union_null_destroys_alignment": true,
+    "slot_shuffle_null_destroys_or_changes_alignment": true
+  },
+  "summary": {
+    "baseline_support": [
+      3,
+      4,
+      9,
+      15,
+      16
+    ],
+    "baseline_recall": 1.0,
+    "baseline_precision": 0.4,
+    "untwisted_null_support": [],
+    "untwisted_null_recall": 0.0,
+    "generic_union_null_support": [],
+    "generic_union_null_recall": 0.0,
+    "slot_shuffle_null_support": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      9,
+      10,
+      12,
+      13,
+      14,
+      16
+    ],
+    "slot_shuffle_null_recall": 1.0,
+    "load_bearing": {
+      "untwisted_carrier_null_destroys_alignment": true,
+      "generic_carrier_union_null_destroys_alignment": true,
+      "slot_shuffle_null_destroys_or_changes_alignment": true
+    }
+  },
+  "interpretation": {
+    "main_result": "The residual alignment depends on the twisted carrier structure rather than generic carrier availability.",
+    "untwisted_null": "Untwisted carrier absence does not reproduce the baseline zero-twisted obstruction neighborhood.",
+    "generic_union_null": "Collapsing twisted and untwisted carrier availability destroys the zero-carrier obstruction signal.",
+    "slot_shuffle_null": "Slot shuffle is recorded as a structural attack on slot identity; compare its support to the baseline support.",
+    "not_closure": "The baseline remains an obstruction neighborhood, not an exact selector."
+  },
+  "checks": [
+    {
+      "id": "split_loaded",
+      "status": true,
+      "detail": "gap_a_15_thalion_residual_split_aligned_not_closed"
+    },
+    {
+      "id": "lift_loaded",
+      "status": true,
+      "detail": "gap_a_uniform_15_thalion_row_lift_needs_inspection"
+    },
+    {
+      "id": "residual_count_2",
+      "status": true,
+      "detail": "[3, 16]"
+    },
+    {
+      "id": "baseline_recall_1",
+      "status": true,
+      "detail": "{\"exact\": false, \"false_positive_count\": 3, \"false_positives\": [4, 9, 15], \"miss_count\": 0, \"misses\": [], \"name\": \"baseline_zero_twisted_carrier\", \"precision\": 0.4, \"recall\": 1.0, \"residual_hit_count\": 2, \"residual_hits\": [3, 16], \"support\": [3, 4, 9, 15, 16], \"support_count\": 5}"
+    },
+    {
+      "id": "untwisted_null_computed",
+      "status": true,
+      "detail": "{\"exact\": false, \"false_positive_count\": 0, \"false_positives\": [], \"miss_count\": 2, \"misses\": [3, 16], \"name\": \"null_zero_untwisted_carrier\", \"precision\": null, \"recall\": 0.0, \"residual_hit_count\": 0, \"residual_hits\": [], \"support\": [], \"support_count\": 0}"
+    },
+    {
+      "id": "generic_union_null_computed",
+      "status": true,
+      "detail": "{\"exact\": false, \"false_positive_count\": 0, \"false_positives\": [], \"miss_count\": 2, \"misses\": [3, 16], \"name\": \"null_zero_generic_carrier_union\", \"precision\": null, \"recall\": 0.0, \"residual_hit_count\": 0, \"residual_hits\": [], \"support\": [], \"support_count\": 0}"
+    },
+    {
+      "id": "slot_shuffle_null_computed",
+      "status": true,
+      "detail": "{\"exact\": false, \"false_positive_count\": 11, \"false_positives\": [0, 1, 2, 4, 6, 7, 9, 10, 12, 13, 14], \"miss_count\": 0, \"misses\": [], \"name\": \"null_zero_twisted_after_slot_shuffle\", \"precision\": 0.15384615384615385, \"recall\": 1.0, \"residual_hit_count\": 2, \"residual_hits\": [3, 16], \"support\": [0, 1, 2, 3, 4, 6, 7, 9, 10, 12, 13, 14, 16], \"support_count\": 13}"
+    },
+    {
+      "id": "untwisted_destroys_alignment",
+      "status": true,
+      "detail": "{\"exact\": false, \"false_positive_count\": 0, \"false_positives\": [], \"miss_count\": 2, \"misses\": [3, 16], \"name\": \"null_zero_untwisted_carrier\", \"precision\": null, \"recall\": 0.0, \"residual_hit_count\": 0, \"residual_hits\": [], \"support\": [], \"support_count\": 0}"
+    },
+    {
+      "id": "generic_union_destroys_alignment",
+      "status": true,
+      "detail": "{\"exact\": false, \"false_positive_count\": 0, \"false_positives\": [], \"miss_count\": 2, \"misses\": [3, 16], \"name\": \"null_zero_generic_carrier_union\", \"precision\": null, \"recall\": 0.0, \"residual_hit_count\": 0, \"residual_hits\": [], \"support\": [], \"support_count\": 0}"
+    }
+  ],
+  "next_script": "record_gap_a_15_thalion_interim_theorem_note_001.py"
+}

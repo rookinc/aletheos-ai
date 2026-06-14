@@ -1,0 +1,637 @@
+{
+  "schema": "gap_a_mode2_mirror_return_rule_audit_001.v1",
+  "status": "gap_a_mode2_mirror_return_rule_projection_symmetric_not_source_derived",
+  "timestamp_utc": "2026-06-14T21:26:15.803568+00:00",
+  "purpose": "Audit whether the Mode 2 mirror return rule is source-derived or projection-level symmetry.",
+  "boundary": [
+    "This does not close Gap A.",
+    "The mirror return rule is source-backed columnwise but not source-derived.",
+    "Projection symmetry support is not the same as a full 900 carrier-to-WXYZTI generator.",
+    "The audit ranks tested return rules but does not prove uniqueness outside the tested family.",
+    "No physical interpretation is claimed."
+  ],
+  "summary": {
+    "audit_result": "mirror_return_projection_symmetric_source_backed_not_source_derived",
+    "gap_a_closed": false,
+    "selected_return_rule": "mirror_2_minus_cycle",
+    "mirror_audit_score": 14,
+    "mirror_reverse_boundary_pair": true,
+    "mirror_central_palindrome": true,
+    "mirror_endpoint_swap_0_2_fixed_1": true,
+    "mirror_boundary_preimage_pair": true,
+    "mirror_unique_reverse_boundary": true,
+    "mirror_unique_boundary_preimage": true,
+    "mirror_zero_turn_rows": [
+      3,
+      4,
+      9,
+      15,
+      16
+    ],
+    "mirror_preimage_turn_rows": [
+      3,
+      16
+    ],
+    "mirror_stable_turn_rows": [
+      4,
+      9,
+      15
+    ],
+    "mirror_turn_rows_source_complete": true,
+    "source_derivation_found": false,
+    "projection_symmetry_support": true,
+    "claim_closes_gap_a": false
+  },
+  "audit_variants": [
+    {
+      "return_rule": "mirror_2_minus_cycle",
+      "return_map": {
+        "0": 2,
+        "1": 1,
+        "2": 0
+      },
+      "path0": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        16,
+        15,
+        14,
+        13,
+        12
+      ],
+      "path1": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        10,
+        9,
+        8,
+        7,
+        6
+      ],
+      "path2": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "path0_columns": [
+        0,
+        4,
+        5,
+        7,
+        9,
+        10,
+        13,
+        15,
+        21,
+        22
+      ],
+      "path1_columns": [
+        0,
+        1,
+        3,
+        4,
+        9,
+        10,
+        11,
+        14,
+        22
+      ],
+      "path2_columns": [
+        0,
+        4,
+        5,
+        7,
+        9,
+        10,
+        13,
+        15,
+        21,
+        22
+      ],
+      "reverse_boundary_pair": true,
+      "central_palindrome": true,
+      "endpoint_swap_0_2_fixed_1": true,
+      "boundary_preimage_pair": true,
+      "preimage_pair_start_cycles": [
+        0,
+        2
+      ],
+      "turn_rows": [
+        3,
+        4,
+        9,
+        10,
+        15,
+        16
+      ],
+      "zero_turn_rows": [
+        3,
+        4,
+        9,
+        15,
+        16
+      ],
+      "preimage_turn_rows": [
+        3,
+        16
+      ],
+      "stable_turn_rows": [
+        4,
+        9,
+        15
+      ],
+      "zero_turn_rows_exact": true,
+      "preimage_turn_rows_exact": true,
+      "stable_turn_rows_exact": true,
+      "turn_rows_source_complete": true,
+      "audit_score": 14
+    },
+    {
+      "return_rule": "same_cycle",
+      "return_map": {
+        "0": 0,
+        "1": 1,
+        "2": 2
+      },
+      "path0": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "path1": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        10,
+        9,
+        8,
+        7,
+        6
+      ],
+      "path2": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        16,
+        15,
+        14,
+        13,
+        12
+      ],
+      "path0_columns": [
+        0,
+        4,
+        7,
+        9,
+        10,
+        13
+      ],
+      "path1_columns": [
+        0,
+        1,
+        3,
+        4,
+        9,
+        10,
+        11,
+        14,
+        22
+      ],
+      "path2_columns": [
+        0,
+        4,
+        5,
+        13,
+        15,
+        21,
+        22
+      ],
+      "reverse_boundary_pair": false,
+      "central_palindrome": true,
+      "endpoint_swap_0_2_fixed_1": false,
+      "boundary_preimage_pair": false,
+      "preimage_pair_start_cycles": [],
+      "turn_rows": [
+        3,
+        4,
+        9,
+        10,
+        15,
+        16
+      ],
+      "zero_turn_rows": [
+        3,
+        4,
+        9,
+        15,
+        16
+      ],
+      "preimage_turn_rows": [
+        3,
+        16
+      ],
+      "stable_turn_rows": [
+        4,
+        9,
+        15
+      ],
+      "zero_turn_rows_exact": true,
+      "preimage_turn_rows_exact": true,
+      "stable_turn_rows_exact": true,
+      "turn_rows_source_complete": true,
+      "audit_score": 6
+    },
+    {
+      "return_rule": "next_cycle_mod3",
+      "return_map": {
+        "0": 1,
+        "1": 2,
+        "2": 0
+      },
+      "path0": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        10,
+        9,
+        8,
+        7,
+        6
+      ],
+      "path1": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        16,
+        15,
+        14,
+        13,
+        12
+      ],
+      "path2": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "path0_columns": [
+        0,
+        1,
+        3,
+        4,
+        7,
+        9,
+        10,
+        11,
+        13,
+        14,
+        22
+      ],
+      "path1_columns": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        9,
+        10,
+        11,
+        13,
+        14,
+        15,
+        21,
+        22
+      ],
+      "path2_columns": [
+        0,
+        4,
+        5,
+        7,
+        9,
+        10,
+        13,
+        15,
+        21,
+        22
+      ],
+      "reverse_boundary_pair": false,
+      "central_palindrome": false,
+      "endpoint_swap_0_2_fixed_1": false,
+      "boundary_preimage_pair": false,
+      "preimage_pair_start_cycles": [
+        2
+      ],
+      "turn_rows": [
+        3,
+        4,
+        9,
+        10,
+        15,
+        16
+      ],
+      "zero_turn_rows": [
+        3,
+        4,
+        9,
+        15,
+        16
+      ],
+      "preimage_turn_rows": [
+        3,
+        16
+      ],
+      "stable_turn_rows": [
+        4,
+        9,
+        15
+      ],
+      "zero_turn_rows_exact": true,
+      "preimage_turn_rows_exact": true,
+      "stable_turn_rows_exact": true,
+      "turn_rows_source_complete": true,
+      "audit_score": 4
+    },
+    {
+      "return_rule": "prev_cycle_mod3",
+      "return_map": {
+        "0": 2,
+        "1": 0,
+        "2": 1
+      },
+      "path0": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        16,
+        15,
+        14,
+        13,
+        12
+      ],
+      "path1": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "path2": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        10,
+        9,
+        8,
+        7,
+        6
+      ],
+      "path0_columns": [
+        0,
+        4,
+        5,
+        7,
+        9,
+        10,
+        13,
+        15,
+        21,
+        22
+      ],
+      "path1_columns": [
+        0,
+        1,
+        3,
+        4,
+        7,
+        9,
+        10,
+        11,
+        13,
+        14,
+        22
+      ],
+      "path2_columns": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        9,
+        10,
+        11,
+        13,
+        14,
+        15,
+        21,
+        22
+      ],
+      "reverse_boundary_pair": false,
+      "central_palindrome": false,
+      "endpoint_swap_0_2_fixed_1": false,
+      "boundary_preimage_pair": false,
+      "preimage_pair_start_cycles": [
+        0
+      ],
+      "turn_rows": [
+        3,
+        4,
+        9,
+        10,
+        15,
+        16
+      ],
+      "zero_turn_rows": [
+        3,
+        4,
+        9,
+        15,
+        16
+      ],
+      "preimage_turn_rows": [
+        3,
+        16
+      ],
+      "stable_turn_rows": [
+        4,
+        9,
+        15
+      ],
+      "zero_turn_rows_exact": true,
+      "preimage_turn_rows_exact": true,
+      "stable_turn_rows_exact": true,
+      "turn_rows_source_complete": true,
+      "audit_score": 4
+    }
+  ],
+  "source_derivation_tests": [
+    {
+      "test": "mirror_rule_uses_cycle_labels",
+      "result": true,
+      "interpretation": "The formula return_cycle = 2 - start_cycle is stated in projection/register cycle labels."
+    },
+    {
+      "test": "cycle_labels_source_native_in_column_records",
+      "result": false,
+      "interpretation": "The 30 source-column records contain carrier-law columns, sector pairs, slot edges, and witness modes, but not a native WXYZTI cycle label."
+    },
+    {
+      "test": "entry_seams_distinguish_cycles",
+      "result": false,
+      "interpretation": "WX, XY, and IW supports are constant across cycles, so the entry/exit seams do not by themselves identify start cycle."
+    },
+    {
+      "test": "turn_block_source_backed",
+      "result": true,
+      "interpretation": "All Mode 2 turn rows have complete source-backed columns."
+    },
+    {
+      "test": "mirror_unique_among_tested_return_rules",
+      "result": true,
+      "interpretation": "Among tested return rules, mirror uniquely gives both boundary reversal and boundary preimage pairing."
+    },
+    {
+      "test": "full_source_native_derivation_found",
+      "result": false,
+      "interpretation": "No derivation of return_cycle = 2 - start_cycle from the full 900 carrier source is present in this artifact."
+    }
+  ],
+  "positive_evidence": [
+    "Mode 2 makes the turn block explicit as ZT, TI, IT, TZ.",
+    "Mirror return gives endpoint swap 0 <-> 2 with fixed center 1.",
+    "Mirror return makes the start-0 path the reverse of the start-2 path.",
+    "Mirror return makes the start-1 path palindromic.",
+    "Mirror return is unique among tested rules for boundary preimage pairing.",
+    "The mirror turn union recovers zero rows [3,4,9,15,16].",
+    "The mirror turn union recovers preimage rows [3,16].",
+    "The mirror turn union recovers stable rows [4,9,15].",
+    "All turn rows are source-backed columnwise."
+  ],
+  "blockers": [
+    "The mirror formula is still written over projection/register cycle labels.",
+    "No source-native WXYZTI cycle label has been found in the global carrier source.",
+    "Column-wise source backing is not the same as a source-native grouping rule.",
+    "Row-local source selectors may still be disguised lookup selectors.",
+    "The full 900 carrier-to-WXYZTI row generator remains missing."
+  ],
+  "claim": {
+    "does_this_close_gap_a": false,
+    "does_this_support_mode2_mirror_return": true,
+    "does_this_source_derive_mirror_return": false,
+    "does_this_construct_full_900_carrier_to_register_map": false,
+    "short_form": "Mode 2 mirror return is strongly supported as projection symmetry with source-backed turn rows, but it is not yet source-derived.",
+    "not_closed_reason": "The formula return_cycle = 2 - start_cycle still depends on projection/register cycle labels."
+  },
+  "interpretation": {
+    "main_result": "The mirror rule is the best tested Mode 2 return candidate, but it remains projection-level.",
+    "why_it_matters": "It explains why the boundary starts 0 and 2 carry the full preimage pair while start 1 folds through the central hinge.",
+    "row10_signal": "Row 10 remains the central nonzero TI hinge inside the Mode 2 turn neighborhood.",
+    "remaining_gap": "Derive the mirror cycle relation from source carrier structure, not from row labels.",
+    "next_move": "Search for a source-side involution or reflection on carrier columns that induces cycle map 0 <-> 2 and fixes 1."
+  },
+  "checks": [
+    {
+      "id": "mode2_exploration_loaded",
+      "status": true,
+      "detail": "gap_a_mode2_wxyztitzyxw_return_path_candidate_found_not_closure"
+    },
+    {
+      "id": "row_grouping_inference_loaded",
+      "status": true,
+      "detail": "gap_a_row_grouping_rule_inference_row_local_selectors_complete_not_global"
+    },
+    {
+      "id": "upstreamed_supports_loaded",
+      "status": true,
+      "detail": "gap_a_projection_row_supports_upstreamed_columnwise_complete_not_generator"
+    },
+    {
+      "id": "distilled_rule_loaded",
+      "status": true,
+      "detail": "gap_a_projection_row_generator_rule_distilled_not_source_native"
+    },
+    {
+      "id": "boundary_theorem_loaded",
+      "status": true,
+      "detail": "gap_a_boundary_theorem_note_recorded"
+    },
+    {
+      "id": "mirror_is_top_scored_variant",
+      "status": true,
+      "detail": "mirror_2_minus_cycle"
+    },
+    {
+      "id": "mirror_reverse_boundary_pair",
+      "status": true,
+      "detail": "[0, 1, 2, 3, 4, 16, 15, 14, 13, 12]"
+    },
+    {
+      "id": "mirror_central_palindrome",
+      "status": true,
+      "detail": "[6, 7, 8, 9, 10, 10, 9, 8, 7, 6]"
+    },
+    {
+      "id": "mirror_unique_boundary_preimage",
+      "status": true,
+      "detail": "[\"mirror_2_minus_cycle\"]"
+    },
+    {
+      "id": "mirror_turn_rows_source_complete",
+      "status": true,
+      "detail": "[3, 4, 9, 10, 15, 16]"
+    },
+    {
+      "id": "source_derivation_not_claimed",
+      "status": true,
+      "detail": "no source-native derivation found"
+    },
+    {
+      "id": "gap_a_not_closed",
+      "status": true,
+      "detail": "audit only"
+    }
+  ],
+  "next_script": "search_gap_a_source_side_involution_for_mode2_mirror_001.py"
+}

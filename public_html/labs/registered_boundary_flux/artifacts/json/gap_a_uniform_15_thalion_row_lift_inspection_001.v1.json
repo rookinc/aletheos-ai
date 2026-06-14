@@ -1,0 +1,559 @@
+{
+  "schema": "gap_a_uniform_15_thalion_row_lift_inspection_001.v1",
+  "status": "uniform_15_thalion_lift_inspected_twisted_absence_feature_found",
+  "timestamp_utc": "2026-06-14T19:24:24.636547+00:00",
+  "purpose": "Inspect why the residual-blind uniform 15-thalion lift failed the all_rows_have_twisted_edges check.",
+  "boundary": [
+    "This does not use residual or mismatch labels.",
+    "This does not claim Gap A closure.",
+    "This treats twisted carrier absence as a candidate source-derived feature.",
+    "Residual evaluation remains deferred to the next pass."
+  ],
+  "source": {
+    "path": "registered_boundary_flux/artifacts/json/gap_a_uniform_15_thalion_row_lift_001.v1.json",
+    "sha256": "746469ce14d675063543189bdf49420fa630ee0834958a0c27b4056a45364c46",
+    "status": "gap_a_uniform_15_thalion_row_lift_needs_inspection"
+  },
+  "summary": {
+    "row_count": 18,
+    "zero_twisted_carrier_row_count": 5,
+    "nonzero_twisted_carrier_row_count": 13,
+    "role_counts": {
+      "WX": 3,
+      "XY": 3,
+      "YZ": 3,
+      "ZT": 3,
+      "TI": 3,
+      "IW": 3
+    },
+    "zero_role_counts": {
+      "ZT": 3,
+      "TI": 2
+    },
+    "nonzero_role_counts": {
+      "WX": 3,
+      "XY": 3,
+      "YZ": 3,
+      "IW": 3,
+      "TI": 1
+    },
+    "cycle_counts": {
+      "0": 6,
+      "1": 6,
+      "2": 6
+    },
+    "zero_cycle_counts": {
+      "0": 2,
+      "1": 1,
+      "2": 2
+    }
+  },
+  "role_table": [
+    {
+      "role": "IW",
+      "total": 3,
+      "zero_twisted_carrier": 0,
+      "nonzero_twisted_carrier": 3
+    },
+    {
+      "role": "TI",
+      "total": 3,
+      "zero_twisted_carrier": 2,
+      "nonzero_twisted_carrier": 1
+    },
+    {
+      "role": "WX",
+      "total": 3,
+      "zero_twisted_carrier": 0,
+      "nonzero_twisted_carrier": 3
+    },
+    {
+      "role": "XY",
+      "total": 3,
+      "zero_twisted_carrier": 0,
+      "nonzero_twisted_carrier": 3
+    },
+    {
+      "role": "YZ",
+      "total": 3,
+      "zero_twisted_carrier": 0,
+      "nonzero_twisted_carrier": 3
+    },
+    {
+      "role": "ZT",
+      "total": 3,
+      "zero_twisted_carrier": 3,
+      "nonzero_twisted_carrier": 0
+    }
+  ],
+  "cycle_table": [
+    {
+      "cycle": 0,
+      "total": 6,
+      "zero_twisted_carrier": 2
+    },
+    {
+      "cycle": 1,
+      "total": 6,
+      "zero_twisted_carrier": 1
+    },
+    {
+      "cycle": 2,
+      "total": 6,
+      "zero_twisted_carrier": 2
+    }
+  ],
+  "zero_rows": [
+    {
+      "row_ordinal": 3,
+      "cycle_index": 0,
+      "role": "ZT",
+      "columns": [
+        9
+      ],
+      "slot_pairs": [
+        [
+          2,
+          13
+        ]
+      ],
+      "untwisted_edge_count": 60,
+      "twisted_edge_count": 0
+    },
+    {
+      "row_ordinal": 4,
+      "cycle_index": 0,
+      "role": "TI",
+      "columns": [
+        13
+      ],
+      "slot_pairs": [
+        [
+          4,
+          10
+        ]
+      ],
+      "untwisted_edge_count": 60,
+      "twisted_edge_count": 0
+    },
+    {
+      "row_ordinal": 9,
+      "cycle_index": 1,
+      "role": "ZT",
+      "columns": [
+        9,
+        11,
+        14
+      ],
+      "slot_pairs": [
+        [
+          2,
+          13
+        ],
+        [
+          3,
+          13
+        ],
+        [
+          4,
+          14
+        ]
+      ],
+      "untwisted_edge_count": 180,
+      "twisted_edge_count": 0
+    },
+    {
+      "row_ordinal": 15,
+      "cycle_index": 2,
+      "role": "ZT",
+      "columns": [
+        21,
+        22
+      ],
+      "slot_pairs": [
+        [
+          6,
+          14
+        ],
+        [
+          7,
+          8
+        ]
+      ],
+      "untwisted_edge_count": 120,
+      "twisted_edge_count": 0
+    },
+    {
+      "row_ordinal": 16,
+      "cycle_index": 2,
+      "role": "TI",
+      "columns": [
+        13,
+        15
+      ],
+      "slot_pairs": [
+        [
+          4,
+          10
+        ],
+        [
+          5,
+          6
+        ]
+      ],
+      "untwisted_edge_count": 120,
+      "twisted_edge_count": 0
+    }
+  ],
+  "nonzero_rows": [
+    {
+      "row_ordinal": 0,
+      "cycle_index": 0,
+      "role": "WX",
+      "columns": [
+        0
+      ],
+      "slot_pairs": [
+        [
+          0,
+          1
+        ]
+      ],
+      "twisted_law_hist": {
+        "half_flip_x_plus_30": 60
+      },
+      "twisted_local_delta_mod60_hist": {
+        "30": 60
+      },
+      "twisted_edge_count": 60
+    },
+    {
+      "row_ordinal": 1,
+      "cycle_index": 0,
+      "role": "XY",
+      "columns": [
+        4
+      ],
+      "slot_pairs": [
+        [
+          1,
+          2
+        ]
+      ],
+      "twisted_law_hist": {
+        "half_flip_x_plus_30": 60
+      },
+      "twisted_local_delta_mod60_hist": {
+        "30": 60
+      },
+      "twisted_edge_count": 60
+    },
+    {
+      "row_ordinal": 2,
+      "cycle_index": 0,
+      "role": "YZ",
+      "columns": [
+        7,
+        10
+      ],
+      "slot_pairs": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "twisted_law_hist": {
+        "half_flip_x_plus_30": 60,
+        "identity": 60
+      },
+      "twisted_local_delta_mod60_hist": {
+        "0": 60,
+        "30": 60
+      },
+      "twisted_edge_count": 120
+    },
+    {
+      "row_ordinal": 5,
+      "cycle_index": 0,
+      "role": "IW",
+      "columns": [
+        1,
+        7
+      ],
+      "slot_pairs": [
+        [
+          0,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "twisted_law_hist": {
+        "half_flip_x_plus_30": 120
+      },
+      "twisted_local_delta_mod60_hist": {
+        "30": 120
+      },
+      "twisted_edge_count": 120
+    },
+    {
+      "row_ordinal": 6,
+      "cycle_index": 1,
+      "role": "WX",
+      "columns": [
+        0
+      ],
+      "slot_pairs": [
+        [
+          0,
+          1
+        ]
+      ],
+      "twisted_law_hist": {
+        "half_flip_x_plus_30": 60
+      },
+      "twisted_local_delta_mod60_hist": {
+        "30": 60
+      },
+      "twisted_edge_count": 60
+    },
+    {
+      "row_ordinal": 7,
+      "cycle_index": 1,
+      "role": "XY",
+      "columns": [
+        4
+      ],
+      "slot_pairs": [
+        [
+          1,
+          2
+        ]
+      ],
+      "twisted_law_hist": {
+        "half_flip_x_plus_30": 60
+      },
+      "twisted_local_delta_mod60_hist": {
+        "30": 60
+      },
+      "twisted_edge_count": 60
+    },
+    {
+      "row_ordinal": 8,
+      "cycle_index": 1,
+      "role": "YZ",
+      "columns": [
+        1,
+        3,
+        22
+      ],
+      "slot_pairs": [
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          11
+        ],
+        [
+          7,
+          8
+        ]
+      ],
+      "twisted_law_hist": {
+        "half_flip_x_plus_30": 60
+      },
+      "twisted_local_delta_mod60_hist": {
+        "30": 60
+      },
+      "twisted_edge_count": 60
+    },
+    {
+      "row_ordinal": 10,
+      "cycle_index": 1,
+      "role": "TI",
+      "columns": [
+        10,
+        11
+      ],
+      "slot_pairs": [
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          13
+        ]
+      ],
+      "twisted_law_hist": {
+        "identity": 60
+      },
+      "twisted_local_delta_mod60_hist": {
+        "0": 60
+      },
+      "twisted_edge_count": 60
+    },
+    {
+      "row_ordinal": 11,
+      "cycle_index": 1,
+      "role": "IW",
+      "columns": [
+        1,
+        7
+      ],
+      "slot_pairs": [
+        [
+          0,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "twisted_law_hist": {
+        "half_flip_x_plus_30": 120
+      },
+      "twisted_local_delta_mod60_hist": {
+        "30": 120
+      },
+      "twisted_edge_count": 120
+    },
+    {
+      "row_ordinal": 12,
+      "cycle_index": 2,
+      "role": "WX",
+      "columns": [
+        0
+      ],
+      "slot_pairs": [
+        [
+          0,
+          1
+        ]
+      ],
+      "twisted_law_hist": {
+        "half_flip_x_plus_30": 60
+      },
+      "twisted_local_delta_mod60_hist": {
+        "30": 60
+      },
+      "twisted_edge_count": 60
+    },
+    {
+      "row_ordinal": 13,
+      "cycle_index": 2,
+      "role": "XY",
+      "columns": [
+        4
+      ],
+      "slot_pairs": [
+        [
+          1,
+          2
+        ]
+      ],
+      "twisted_law_hist": {
+        "half_flip_x_plus_30": 60
+      },
+      "twisted_local_delta_mod60_hist": {
+        "30": 60
+      },
+      "twisted_edge_count": 60
+    },
+    {
+      "row_ordinal": 14,
+      "cycle_index": 2,
+      "role": "YZ",
+      "columns": [
+        4,
+        5
+      ],
+      "slot_pairs": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          11
+        ]
+      ],
+      "twisted_law_hist": {
+        "half_flip_x_plus_30": 60
+      },
+      "twisted_local_delta_mod60_hist": {
+        "30": 60
+      },
+      "twisted_edge_count": 60
+    },
+    {
+      "row_ordinal": 17,
+      "cycle_index": 2,
+      "role": "IW",
+      "columns": [
+        1,
+        7
+      ],
+      "slot_pairs": [
+        [
+          0,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "twisted_law_hist": {
+        "half_flip_x_plus_30": 120
+      },
+      "twisted_local_delta_mod60_hist": {
+        "30": 120
+      },
+      "twisted_edge_count": 120
+    }
+  ],
+  "interpretation": {
+    "main_result": "The failed twisted-edge check is structured, not random.",
+    "zt_result": "All ZT rows are twisted-carrier absent under the uniform source rule.",
+    "ti_result": "TI splits: one TI row has identity twisted carrier support and two TI rows are twisted-carrier absent.",
+    "next_question": "When residual labels are evaluated, do the known residuals align with this precomputed twisted-absence / identity split?"
+  },
+  "checks": [
+    {
+      "id": "source_lift_loaded",
+      "status": true,
+      "detail": "gap_a_uniform_15_thalion_row_lift_needs_inspection"
+    },
+    {
+      "id": "zero_rows_present",
+      "status": true,
+      "detail": "zero row count=5"
+    },
+    {
+      "id": "all_zt_zero",
+      "status": true,
+      "detail": "ZT zero=3 of 3"
+    },
+    {
+      "id": "ti_split",
+      "status": true,
+      "detail": "TI zero=2 nonzero=1"
+    },
+    {
+      "id": "no_residual_labels_used",
+      "status": true,
+      "detail": "Inspection uses only row role/cycle labels and precomputed twisted carrier presence."
+    }
+  ],
+  "next_script": "evaluate_gap_a_15_thalion_residual_split_001.py"
+}

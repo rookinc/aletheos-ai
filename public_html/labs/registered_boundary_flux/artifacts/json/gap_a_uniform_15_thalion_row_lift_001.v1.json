@@ -1,0 +1,2490 @@
+{
+  "schema": "gap_a_uniform_15_thalion_row_lift_001.v1",
+  "status": "gap_a_uniform_15_thalion_row_lift_needs_inspection",
+  "timestamp_utc": "2026-06-14T19:23:13.577684+00:00",
+  "purpose": "Lift all 18 WXYZTI role rows uniformly into the recovered 15-thalion ring schema without using residual labels.",
+  "boundary": [
+    "This is a uniform row-to-ring lift, not Gap A closure.",
+    "Residual labels are not used in this pass.",
+    "Role/cycle labels are retained only as row identifiers.",
+    "Residual evaluation must happen in the next pass using only features produced here.",
+    "No explanation of ZT or TI is claimed here."
+  ],
+  "inputs": {
+    "test_plan": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_15_thalion_ring_test_plan_001.v1.json",
+      "sha256": "7db6a8abc38ec77b1604eb2879ffda7e4a8637c4f63fadeb485ee92585bd0b9a",
+      "status": "gap_a_15_thalion_ring_test_plan_recorded"
+    },
+    "schema": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_15_thalion_ring_schema_001.v1.json",
+      "sha256": "a2fe20a7f07e295d7d698f28861b74e592b135e0042fe4bc0914da0d559df806",
+      "status": "gap_a_15_thalion_ring_schema_recovered_residual_blind"
+    },
+    "prior_uniform_g900_lift": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_uniform_g900_row_lift_001.v1.json",
+      "sha256": "9dea3b881ea6e3f6005e5cf00a2b5679cc148d60b33f471d8a4ae2c2ccaeed6b",
+      "status": "uniform_g900_row_lift_available_residuals_not_separated"
+    },
+    "untwisted_ring": {
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/16-fifteen-thalion-ring/support/generated/g900_candidate_edges.json",
+      "sha256": "1fad85393b160e5f15c71815a82120577fc2463e708d15b67d712b17654c686f"
+    },
+    "twisted_ring": {
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/16-fifteen-thalion-ring/support/generated/g900_twisted_ring_candidate_edges.json",
+      "sha256": "e8ae983acccb8102261bde73cca6493d9a13958edfacad0a2cb6b3e24f4398ef"
+    }
+  },
+  "column_slot_pair_map": {
+    "0": [
+      0,
+      1
+    ],
+    "1": [
+      0,
+      4
+    ],
+    "2": [
+      0,
+      10
+    ],
+    "3": [
+      0,
+      11
+    ],
+    "4": [
+      1,
+      2
+    ],
+    "5": [
+      1,
+      11
+    ],
+    "6": [
+      1,
+      12
+    ],
+    "7": [
+      2,
+      3
+    ],
+    "8": [
+      2,
+      12
+    ],
+    "9": [
+      2,
+      13
+    ],
+    "10": [
+      3,
+      4
+    ],
+    "11": [
+      3,
+      13
+    ],
+    "12": [
+      3,
+      14
+    ],
+    "13": [
+      4,
+      10
+    ],
+    "14": [
+      4,
+      14
+    ],
+    "15": [
+      5,
+      6
+    ],
+    "16": [
+      5,
+      9
+    ],
+    "17": [
+      5,
+      10
+    ],
+    "18": [
+      5,
+      12
+    ],
+    "19": [
+      6,
+      7
+    ],
+    "20": [
+      6,
+      12
+    ],
+    "21": [
+      6,
+      14
+    ],
+    "22": [
+      7,
+      8
+    ],
+    "23": [
+      7,
+      11
+    ],
+    "24": [
+      7,
+      14
+    ],
+    "25": [
+      8,
+      9
+    ],
+    "26": [
+      8,
+      11
+    ],
+    "27": [
+      8,
+      13
+    ],
+    "28": [
+      9,
+      10
+    ],
+    "29": [
+      9,
+      13
+    ]
+  },
+  "summary": {
+    "row_count": 18,
+    "rows_with_uniform_ring_lift": 13,
+    "total_columns_seen": 30,
+    "unique_columns_seen": [
+      0,
+      1,
+      3,
+      4,
+      5,
+      7,
+      9,
+      10,
+      11,
+      13,
+      14,
+      15,
+      21,
+      22
+    ],
+    "unique_slot_pairs_seen": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        11
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        11
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        13
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        13
+      ],
+      [
+        4,
+        10
+      ],
+      [
+        4,
+        14
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        6,
+        14
+      ],
+      [
+        7,
+        8
+      ]
+    ],
+    "twisted_law_signature_count": 5,
+    "feature_signature_count": 12,
+    "identity_only_rows": [
+      10
+    ],
+    "half_flip_only_rows": [
+      0,
+      1,
+      5,
+      6,
+      7,
+      8,
+      11,
+      12,
+      13,
+      14,
+      17
+    ],
+    "mixed_identity_half_flip_rows": [
+      2
+    ]
+  },
+  "lift_rows": [
+    {
+      "row_ordinal": 0,
+      "source_row_index": 0,
+      "cycle_index": 0,
+      "role": "WX",
+      "edge": [
+        0,
+        1
+      ],
+      "columns": [
+        0
+      ],
+      "column_count": 1,
+      "slot_pairs": [
+        [
+          0,
+          1
+        ]
+      ],
+      "missing_column_slot_pairs": [],
+      "untwisted": {
+        "edge_count": 60,
+        "kind_hist": {
+          "inter_thalion_diagonal_carrier": 60
+        },
+        "law_hist": {
+          "g15_line_petersen_slot_adjacency": 60
+        },
+        "slot_delta_mod15_hist": {
+          "1": 60
+        },
+        "local_delta_mod60_hist": {
+          "0": 60
+        },
+        "has_identity": false,
+        "has_half_flip_x_plus_30": false,
+        "identity_count": 0,
+        "half_flip_x_plus_30_count": 0
+      },
+      "twisted": {
+        "edge_count": 60,
+        "kind_hist": {
+          "external_signed_carrier": 60
+        },
+        "law_hist": {
+          "half_flip_x_plus_30": 60
+        },
+        "slot_delta_mod15_hist": {
+          "1": 60
+        },
+        "local_delta_mod60_hist": {
+          "30": 60
+        },
+        "has_identity": false,
+        "has_half_flip_x_plus_30": true,
+        "identity_count": 0,
+        "half_flip_x_plus_30_count": 60
+      },
+      "derived_features": {
+        "has_uniform_ring_lift": true,
+        "twisted_has_identity": false,
+        "twisted_has_half_flip_x_plus_30": true,
+        "twisted_identity_count": 0,
+        "twisted_half_flip_x_plus_30_count": 60,
+        "twisted_external_edge_count": 60,
+        "untwisted_external_edge_count": 60,
+        "twisted_half_flip_ratio": 1.0
+      },
+      "feature_signature": {
+        "column_count": 1,
+        "twisted_law_hist": {
+          "half_flip_x_plus_30": 60
+        },
+        "twisted_local_delta_mod60_hist": {
+          "30": 60
+        },
+        "twisted_slot_delta_mod15_hist": {
+          "1": 60
+        },
+        "untwisted_local_delta_mod60_hist": {
+          "0": 60
+        },
+        "slot_pairs": [
+          [
+            0,
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "row_ordinal": 1,
+      "source_row_index": 1,
+      "cycle_index": 0,
+      "role": "XY",
+      "edge": [
+        1,
+        2
+      ],
+      "columns": [
+        4
+      ],
+      "column_count": 1,
+      "slot_pairs": [
+        [
+          1,
+          2
+        ]
+      ],
+      "missing_column_slot_pairs": [],
+      "untwisted": {
+        "edge_count": 60,
+        "kind_hist": {
+          "inter_thalion_diagonal_carrier": 60
+        },
+        "law_hist": {
+          "g15_line_petersen_slot_adjacency": 60
+        },
+        "slot_delta_mod15_hist": {
+          "1": 60
+        },
+        "local_delta_mod60_hist": {
+          "0": 60
+        },
+        "has_identity": false,
+        "has_half_flip_x_plus_30": false,
+        "identity_count": 0,
+        "half_flip_x_plus_30_count": 0
+      },
+      "twisted": {
+        "edge_count": 60,
+        "kind_hist": {
+          "external_signed_carrier": 60
+        },
+        "law_hist": {
+          "half_flip_x_plus_30": 60
+        },
+        "slot_delta_mod15_hist": {
+          "1": 60
+        },
+        "local_delta_mod60_hist": {
+          "30": 60
+        },
+        "has_identity": false,
+        "has_half_flip_x_plus_30": true,
+        "identity_count": 0,
+        "half_flip_x_plus_30_count": 60
+      },
+      "derived_features": {
+        "has_uniform_ring_lift": true,
+        "twisted_has_identity": false,
+        "twisted_has_half_flip_x_plus_30": true,
+        "twisted_identity_count": 0,
+        "twisted_half_flip_x_plus_30_count": 60,
+        "twisted_external_edge_count": 60,
+        "untwisted_external_edge_count": 60,
+        "twisted_half_flip_ratio": 1.0
+      },
+      "feature_signature": {
+        "column_count": 1,
+        "twisted_law_hist": {
+          "half_flip_x_plus_30": 60
+        },
+        "twisted_local_delta_mod60_hist": {
+          "30": 60
+        },
+        "twisted_slot_delta_mod15_hist": {
+          "1": 60
+        },
+        "untwisted_local_delta_mod60_hist": {
+          "0": 60
+        },
+        "slot_pairs": [
+          [
+            1,
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "row_ordinal": 2,
+      "source_row_index": 2,
+      "cycle_index": 0,
+      "role": "YZ",
+      "edge": [
+        2,
+        3
+      ],
+      "columns": [
+        7,
+        10
+      ],
+      "column_count": 2,
+      "slot_pairs": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "missing_column_slot_pairs": [],
+      "untwisted": {
+        "edge_count": 120,
+        "kind_hist": {
+          "inter_thalion_diagonal_carrier": 120
+        },
+        "law_hist": {
+          "g15_line_petersen_slot_adjacency": 120
+        },
+        "slot_delta_mod15_hist": {
+          "1": 120
+        },
+        "local_delta_mod60_hist": {
+          "0": 120
+        },
+        "has_identity": false,
+        "has_half_flip_x_plus_30": false,
+        "identity_count": 0,
+        "half_flip_x_plus_30_count": 0
+      },
+      "twisted": {
+        "edge_count": 120,
+        "kind_hist": {
+          "external_signed_carrier": 120
+        },
+        "law_hist": {
+          "half_flip_x_plus_30": 60,
+          "identity": 60
+        },
+        "slot_delta_mod15_hist": {
+          "1": 120
+        },
+        "local_delta_mod60_hist": {
+          "0": 60,
+          "30": 60
+        },
+        "has_identity": true,
+        "has_half_flip_x_plus_30": true,
+        "identity_count": 60,
+        "half_flip_x_plus_30_count": 60
+      },
+      "derived_features": {
+        "has_uniform_ring_lift": true,
+        "twisted_has_identity": true,
+        "twisted_has_half_flip_x_plus_30": true,
+        "twisted_identity_count": 60,
+        "twisted_half_flip_x_plus_30_count": 60,
+        "twisted_external_edge_count": 120,
+        "untwisted_external_edge_count": 120,
+        "twisted_half_flip_ratio": 0.5
+      },
+      "feature_signature": {
+        "column_count": 2,
+        "twisted_law_hist": {
+          "half_flip_x_plus_30": 60,
+          "identity": 60
+        },
+        "twisted_local_delta_mod60_hist": {
+          "0": 60,
+          "30": 60
+        },
+        "twisted_slot_delta_mod15_hist": {
+          "1": 120
+        },
+        "untwisted_local_delta_mod60_hist": {
+          "0": 120
+        },
+        "slot_pairs": [
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ]
+        ]
+      }
+    },
+    {
+      "row_ordinal": 3,
+      "source_row_index": 3,
+      "cycle_index": 0,
+      "role": "ZT",
+      "edge": [
+        3,
+        4
+      ],
+      "columns": [
+        9
+      ],
+      "column_count": 1,
+      "slot_pairs": [
+        [
+          2,
+          13
+        ]
+      ],
+      "missing_column_slot_pairs": [],
+      "untwisted": {
+        "edge_count": 60,
+        "kind_hist": {
+          "inter_thalion_diagonal_carrier": 60
+        },
+        "law_hist": {
+          "g15_line_petersen_slot_adjacency": 60
+        },
+        "slot_delta_mod15_hist": {
+          "11": 60
+        },
+        "local_delta_mod60_hist": {
+          "0": 60
+        },
+        "has_identity": false,
+        "has_half_flip_x_plus_30": false,
+        "identity_count": 0,
+        "half_flip_x_plus_30_count": 0
+      },
+      "twisted": {
+        "edge_count": 0,
+        "kind_hist": {},
+        "law_hist": {},
+        "slot_delta_mod15_hist": {},
+        "local_delta_mod60_hist": {},
+        "has_identity": false,
+        "has_half_flip_x_plus_30": false,
+        "identity_count": 0,
+        "half_flip_x_plus_30_count": 0
+      },
+      "derived_features": {
+        "has_uniform_ring_lift": false,
+        "twisted_has_identity": false,
+        "twisted_has_half_flip_x_plus_30": false,
+        "twisted_identity_count": 0,
+        "twisted_half_flip_x_plus_30_count": 0,
+        "twisted_external_edge_count": 0,
+        "untwisted_external_edge_count": 60,
+        "twisted_half_flip_ratio": null
+      },
+      "feature_signature": {
+        "column_count": 1,
+        "twisted_law_hist": {},
+        "twisted_local_delta_mod60_hist": {},
+        "twisted_slot_delta_mod15_hist": {},
+        "untwisted_local_delta_mod60_hist": {
+          "0": 60
+        },
+        "slot_pairs": [
+          [
+            2,
+            13
+          ]
+        ]
+      }
+    },
+    {
+      "row_ordinal": 4,
+      "source_row_index": 4,
+      "cycle_index": 0,
+      "role": "TI",
+      "edge": [
+        4,
+        5
+      ],
+      "columns": [
+        13
+      ],
+      "column_count": 1,
+      "slot_pairs": [
+        [
+          4,
+          10
+        ]
+      ],
+      "missing_column_slot_pairs": [],
+      "untwisted": {
+        "edge_count": 60,
+        "kind_hist": {
+          "inter_thalion_diagonal_carrier": 60
+        },
+        "law_hist": {
+          "g15_line_petersen_slot_adjacency": 60
+        },
+        "slot_delta_mod15_hist": {
+          "6": 60
+        },
+        "local_delta_mod60_hist": {
+          "0": 60
+        },
+        "has_identity": false,
+        "has_half_flip_x_plus_30": false,
+        "identity_count": 0,
+        "half_flip_x_plus_30_count": 0
+      },
+      "twisted": {
+        "edge_count": 0,
+        "kind_hist": {},
+        "law_hist": {},
+        "slot_delta_mod15_hist": {},
+        "local_delta_mod60_hist": {},
+        "has_identity": false,
+        "has_half_flip_x_plus_30": false,
+        "identity_count": 0,
+        "half_flip_x_plus_30_count": 0
+      },
+      "derived_features": {
+        "has_uniform_ring_lift": false,
+        "twisted_has_identity": false,
+        "twisted_has_half_flip_x_plus_30": false,
+        "twisted_identity_count": 0,
+        "twisted_half_flip_x_plus_30_count": 0,
+        "twisted_external_edge_count": 0,
+        "untwisted_external_edge_count": 60,
+        "twisted_half_flip_ratio": null
+      },
+      "feature_signature": {
+        "column_count": 1,
+        "twisted_law_hist": {},
+        "twisted_local_delta_mod60_hist": {},
+        "twisted_slot_delta_mod15_hist": {},
+        "untwisted_local_delta_mod60_hist": {
+          "0": 60
+        },
+        "slot_pairs": [
+          [
+            4,
+            10
+          ]
+        ]
+      }
+    },
+    {
+      "row_ordinal": 5,
+      "source_row_index": 5,
+      "cycle_index": 0,
+      "role": "IW",
+      "edge": [
+        5,
+        0
+      ],
+      "columns": [
+        1,
+        7
+      ],
+      "column_count": 2,
+      "slot_pairs": [
+        [
+          0,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "missing_column_slot_pairs": [],
+      "untwisted": {
+        "edge_count": 120,
+        "kind_hist": {
+          "inter_thalion_diagonal_carrier": 120
+        },
+        "law_hist": {
+          "g15_line_petersen_slot_adjacency": 120
+        },
+        "slot_delta_mod15_hist": {
+          "1": 60,
+          "4": 60
+        },
+        "local_delta_mod60_hist": {
+          "0": 120
+        },
+        "has_identity": false,
+        "has_half_flip_x_plus_30": false,
+        "identity_count": 0,
+        "half_flip_x_plus_30_count": 0
+      },
+      "twisted": {
+        "edge_count": 120,
+        "kind_hist": {
+          "external_signed_carrier": 120
+        },
+        "law_hist": {
+          "half_flip_x_plus_30": 120
+        },
+        "slot_delta_mod15_hist": {
+          "1": 60,
+          "4": 60
+        },
+        "local_delta_mod60_hist": {
+          "30": 120
+        },
+        "has_identity": false,
+        "has_half_flip_x_plus_30": true,
+        "identity_count": 0,
+        "half_flip_x_plus_30_count": 120
+      },
+      "derived_features": {
+        "has_uniform_ring_lift": true,
+        "twisted_has_identity": false,
+        "twisted_has_half_flip_x_plus_30": true,
+        "twisted_identity_count": 0,
+        "twisted_half_flip_x_plus_30_count": 120,
+        "twisted_external_edge_count": 120,
+        "untwisted_external_edge_count": 120,
+        "twisted_half_flip_ratio": 1.0
+      },
+      "feature_signature": {
+        "column_count": 2,
+        "twisted_law_hist": {
+          "half_flip_x_plus_30": 120
+        },
+        "twisted_local_delta_mod60_hist": {
+          "30": 120
+        },
+        "twisted_slot_delta_mod15_hist": {
+          "1": 60,
+          "4": 60
+        },
+        "untwisted_local_delta_mod60_hist": {
+          "0": 120
+        },
+        "slot_pairs": [
+          [
+            0,
+            4
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "row_ordinal": 6,
+      "source_row_index": 6,
+      "cycle_index": 1,
+      "role": "WX",
+      "edge": [
+        0,
+        1
+      ],
+      "columns": [
+        0
+      ],
+      "column_count": 1,
+      "slot_pairs": [
+        [
+          0,
+          1
+        ]
+      ],
+      "missing_column_slot_pairs": [],
+      "untwisted": {
+        "edge_count": 60,
+        "kind_hist": {
+          "inter_thalion_diagonal_carrier": 60
+        },
+        "law_hist": {
+          "g15_line_petersen_slot_adjacency": 60
+        },
+        "slot_delta_mod15_hist": {
+          "1": 60
+        },
+        "local_delta_mod60_hist": {
+          "0": 60
+        },
+        "has_identity": false,
+        "has_half_flip_x_plus_30": false,
+        "identity_count": 0,
+        "half_flip_x_plus_30_count": 0
+      },
+      "twisted": {
+        "edge_count": 60,
+        "kind_hist": {
+          "external_signed_carrier": 60
+        },
+        "law_hist": {
+          "half_flip_x_plus_30": 60
+        },
+        "slot_delta_mod15_hist": {
+          "1": 60
+        },
+        "local_delta_mod60_hist": {
+          "30": 60
+        },
+        "has_identity": false,
+        "has_half_flip_x_plus_30": true,
+        "identity_count": 0,
+        "half_flip_x_plus_30_count": 60
+      },
+      "derived_features": {
+        "has_uniform_ring_lift": true,
+        "twisted_has_identity": false,
+        "twisted_has_half_flip_x_plus_30": true,
+        "twisted_identity_count": 0,
+        "twisted_half_flip_x_plus_30_count": 60,
+        "twisted_external_edge_count": 60,
+        "untwisted_external_edge_count": 60,
+        "twisted_half_flip_ratio": 1.0
+      },
+      "feature_signature": {
+        "column_count": 1,
+        "twisted_law_hist": {
+          "half_flip_x_plus_30": 60
+        },
+        "twisted_local_delta_mod60_hist": {
+          "30": 60
+        },
+        "twisted_slot_delta_mod15_hist": {
+          "1": 60
+        },
+        "untwisted_local_delta_mod60_hist": {
+          "0": 60
+        },
+        "slot_pairs": [
+          [
+            0,
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "row_ordinal": 7,
+      "source_row_index": 7,
+      "cycle_index": 1,
+      "role": "XY",
+      "edge": [
+        1,
+        2
+      ],
+      "columns": [
+        4
+      ],
+      "column_count": 1,
+      "slot_pairs": [
+        [
+          1,
+          2
+        ]
+      ],
+      "missing_column_slot_pairs": [],
+      "untwisted": {
+        "edge_count": 60,
+        "kind_hist": {
+          "inter_thalion_diagonal_carrier": 60
+        },
+        "law_hist": {
+          "g15_line_petersen_slot_adjacency": 60
+        },
+        "slot_delta_mod15_hist": {
+          "1": 60
+        },
+        "local_delta_mod60_hist": {
+          "0": 60
+        },
+        "has_identity": false,
+        "has_half_flip_x_plus_30": false,
+        "identity_count": 0,
+        "half_flip_x_plus_30_count": 0
+      },
+      "twisted": {
+        "edge_count": 60,
+        "kind_hist": {
+          "external_signed_carrier": 60
+        },
+        "law_hist": {
+          "half_flip_x_plus_30": 60
+        },
+        "slot_delta_mod15_hist": {
+          "1": 60
+        },
+        "local_delta_mod60_hist": {
+          "30": 60
+        },
+        "has_identity": false,
+        "has_half_flip_x_plus_30": true,
+        "identity_count": 0,
+        "half_flip_x_plus_30_count": 60
+      },
+      "derived_features": {
+        "has_uniform_ring_lift": true,
+        "twisted_has_identity": false,
+        "twisted_has_half_flip_x_plus_30": true,
+        "twisted_identity_count": 0,
+        "twisted_half_flip_x_plus_30_count": 60,
+        "twisted_external_edge_count": 60,
+        "untwisted_external_edge_count": 60,
+        "twisted_half_flip_ratio": 1.0
+      },
+      "feature_signature": {
+        "column_count": 1,
+        "twisted_law_hist": {
+          "half_flip_x_plus_30": 60
+        },
+        "twisted_local_delta_mod60_hist": {
+          "30": 60
+        },
+        "twisted_slot_delta_mod15_hist": {
+          "1": 60
+        },
+        "untwisted_local_delta_mod60_hist": {
+          "0": 60
+        },
+        "slot_pairs": [
+          [
+            1,
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "row_ordinal": 8,
+      "source_row_index": 8,
+      "cycle_index": 1,
+      "role": "YZ",
+      "edge": [
+        2,
+        7
+      ],
+      "columns": [
+        1,
+        3,
+        22
+      ],
+      "column_count": 3,
+      "slot_pairs": [
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          11
+        ],
+        [
+          7,
+          8
+        ]
+      ],
+      "missing_column_slot_pairs": [],
+      "untwisted": {
+        "edge_count": 180,
+        "kind_hist": {
+          "inter_thalion_diagonal_carrier": 180
+        },
+        "law_hist": {
+          "g15_line_petersen_slot_adjacency": 180
+        },
+        "slot_delta_mod15_hist": {
+          "1": 60,
+          "11": 60,
+          "4": 60
+        },
+        "local_delta_mod60_hist": {
+          "0": 180
+        },
+        "has_identity": false,
+        "has_half_flip_x_plus_30": false,
+        "identity_count": 0,
+        "half_flip_x_plus_30_count": 0
+      },
+      "twisted": {
+        "edge_count": 60,
+        "kind_hist": {
+          "external_signed_carrier": 60
+        },
+        "law_hist": {
+          "half_flip_x_plus_30": 60
+        },
+        "slot_delta_mod15_hist": {
+          "4": 60
+        },
+        "local_delta_mod60_hist": {
+          "30": 60
+        },
+        "has_identity": false,
+        "has_half_flip_x_plus_30": true,
+        "identity_count": 0,
+        "half_flip_x_plus_30_count": 60
+      },
+      "derived_features": {
+        "has_uniform_ring_lift": true,
+        "twisted_has_identity": false,
+        "twisted_has_half_flip_x_plus_30": true,
+        "twisted_identity_count": 0,
+        "twisted_half_flip_x_plus_30_count": 60,
+        "twisted_external_edge_count": 60,
+        "untwisted_external_edge_count": 180,
+        "twisted_half_flip_ratio": 1.0
+      },
+      "feature_signature": {
+        "column_count": 3,
+        "twisted_law_hist": {
+          "half_flip_x_plus_30": 60
+        },
+        "twisted_local_delta_mod60_hist": {
+          "30": 60
+        },
+        "twisted_slot_delta_mod15_hist": {
+          "4": 60
+        },
+        "untwisted_local_delta_mod60_hist": {
+          "0": 180
+        },
+        "slot_pairs": [
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            11
+          ],
+          [
+            7,
+            8
+          ]
+        ]
+      }
+    },
+    {
+      "row_ordinal": 9,
+      "source_row_index": 9,
+      "cycle_index": 1,
+      "role": "ZT",
+      "edge": [
+        7,
+        10
+      ],
+      "columns": [
+        9,
+        11,
+        14
+      ],
+      "column_count": 3,
+      "slot_pairs": [
+        [
+          2,
+          13
+        ],
+        [
+          3,
+          13
+        ],
+        [
+          4,
+          14
+        ]
+      ],
+      "missing_column_slot_pairs": [],
+      "untwisted": {
+        "edge_count": 180,
+        "kind_hist": {
+          "inter_thalion_diagonal_carrier": 180
+        },
+        "law_hist": {
+          "g15_line_petersen_slot_adjacency": 180
+        },
+        "slot_delta_mod15_hist": {
+          "10": 120,
+          "11": 60
+        },
+        "local_delta_mod60_hist": {
+          "0": 180
+        },
+        "has_identity": false,
+        "has_half_flip_x_plus_30": false,
+        "identity_count": 0,
+        "half_flip_x_plus_30_count": 0
+      },
+      "twisted": {
+        "edge_count": 0,
+        "kind_hist": {},
+        "law_hist": {},
+        "slot_delta_mod15_hist": {},
+        "local_delta_mod60_hist": {},
+        "has_identity": false,
+        "has_half_flip_x_plus_30": false,
+        "identity_count": 0,
+        "half_flip_x_plus_30_count": 0
+      },
+      "derived_features": {
+        "has_uniform_ring_lift": false,
+        "twisted_has_identity": false,
+        "twisted_has_half_flip_x_plus_30": false,
+        "twisted_identity_count": 0,
+        "twisted_half_flip_x_plus_30_count": 0,
+        "twisted_external_edge_count": 0,
+        "untwisted_external_edge_count": 180,
+        "twisted_half_flip_ratio": null
+      },
+      "feature_signature": {
+        "column_count": 3,
+        "twisted_law_hist": {},
+        "twisted_local_delta_mod60_hist": {},
+        "twisted_slot_delta_mod15_hist": {},
+        "untwisted_local_delta_mod60_hist": {
+          "0": 180
+        },
+        "slot_pairs": [
+          [
+            2,
+            13
+          ],
+          [
+            3,
+            13
+          ],
+          [
+            4,
+            14
+          ]
+        ]
+      }
+    },
+    {
+      "row_ordinal": 10,
+      "source_row_index": 10,
+      "cycle_index": 1,
+      "role": "TI",
+      "edge": [
+        10,
+        5
+      ],
+      "columns": [
+        10,
+        11
+      ],
+      "column_count": 2,
+      "slot_pairs": [
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          13
+        ]
+      ],
+      "missing_column_slot_pairs": [],
+      "untwisted": {
+        "edge_count": 120,
+        "kind_hist": {
+          "inter_thalion_diagonal_carrier": 120
+        },
+        "law_hist": {
+          "g15_line_petersen_slot_adjacency": 120
+        },
+        "slot_delta_mod15_hist": {
+          "1": 60,
+          "10": 60
+        },
+        "local_delta_mod60_hist": {
+          "0": 120
+        },
+        "has_identity": false,
+        "has_half_flip_x_plus_30": false,
+        "identity_count": 0,
+        "half_flip_x_plus_30_count": 0
+      },
+      "twisted": {
+        "edge_count": 60,
+        "kind_hist": {
+          "external_signed_carrier": 60
+        },
+        "law_hist": {
+          "identity": 60
+        },
+        "slot_delta_mod15_hist": {
+          "1": 60
+        },
+        "local_delta_mod60_hist": {
+          "0": 60
+        },
+        "has_identity": true,
+        "has_half_flip_x_plus_30": false,
+        "identity_count": 60,
+        "half_flip_x_plus_30_count": 0
+      },
+      "derived_features": {
+        "has_uniform_ring_lift": true,
+        "twisted_has_identity": true,
+        "twisted_has_half_flip_x_plus_30": false,
+        "twisted_identity_count": 60,
+        "twisted_half_flip_x_plus_30_count": 0,
+        "twisted_external_edge_count": 60,
+        "untwisted_external_edge_count": 120,
+        "twisted_half_flip_ratio": 0.0
+      },
+      "feature_signature": {
+        "column_count": 2,
+        "twisted_law_hist": {
+          "identity": 60
+        },
+        "twisted_local_delta_mod60_hist": {
+          "0": 60
+        },
+        "twisted_slot_delta_mod15_hist": {
+          "1": 60
+        },
+        "untwisted_local_delta_mod60_hist": {
+          "0": 120
+        },
+        "slot_pairs": [
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            13
+          ]
+        ]
+      }
+    },
+    {
+      "row_ordinal": 11,
+      "source_row_index": 11,
+      "cycle_index": 1,
+      "role": "IW",
+      "edge": [
+        5,
+        0
+      ],
+      "columns": [
+        1,
+        7
+      ],
+      "column_count": 2,
+      "slot_pairs": [
+        [
+          0,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "missing_column_slot_pairs": [],
+      "untwisted": {
+        "edge_count": 120,
+        "kind_hist": {
+          "inter_thalion_diagonal_carrier": 120
+        },
+        "law_hist": {
+          "g15_line_petersen_slot_adjacency": 120
+        },
+        "slot_delta_mod15_hist": {
+          "1": 60,
+          "4": 60
+        },
+        "local_delta_mod60_hist": {
+          "0": 120
+        },
+        "has_identity": false,
+        "has_half_flip_x_plus_30": false,
+        "identity_count": 0,
+        "half_flip_x_plus_30_count": 0
+      },
+      "twisted": {
+        "edge_count": 120,
+        "kind_hist": {
+          "external_signed_carrier": 120
+        },
+        "law_hist": {
+          "half_flip_x_plus_30": 120
+        },
+        "slot_delta_mod15_hist": {
+          "1": 60,
+          "4": 60
+        },
+        "local_delta_mod60_hist": {
+          "30": 120
+        },
+        "has_identity": false,
+        "has_half_flip_x_plus_30": true,
+        "identity_count": 0,
+        "half_flip_x_plus_30_count": 120
+      },
+      "derived_features": {
+        "has_uniform_ring_lift": true,
+        "twisted_has_identity": false,
+        "twisted_has_half_flip_x_plus_30": true,
+        "twisted_identity_count": 0,
+        "twisted_half_flip_x_plus_30_count": 120,
+        "twisted_external_edge_count": 120,
+        "untwisted_external_edge_count": 120,
+        "twisted_half_flip_ratio": 1.0
+      },
+      "feature_signature": {
+        "column_count": 2,
+        "twisted_law_hist": {
+          "half_flip_x_plus_30": 120
+        },
+        "twisted_local_delta_mod60_hist": {
+          "30": 120
+        },
+        "twisted_slot_delta_mod15_hist": {
+          "1": 60,
+          "4": 60
+        },
+        "untwisted_local_delta_mod60_hist": {
+          "0": 120
+        },
+        "slot_pairs": [
+          [
+            0,
+            4
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "row_ordinal": 12,
+      "source_row_index": 12,
+      "cycle_index": 2,
+      "role": "WX",
+      "edge": [
+        0,
+        1
+      ],
+      "columns": [
+        0
+      ],
+      "column_count": 1,
+      "slot_pairs": [
+        [
+          0,
+          1
+        ]
+      ],
+      "missing_column_slot_pairs": [],
+      "untwisted": {
+        "edge_count": 60,
+        "kind_hist": {
+          "inter_thalion_diagonal_carrier": 60
+        },
+        "law_hist": {
+          "g15_line_petersen_slot_adjacency": 60
+        },
+        "slot_delta_mod15_hist": {
+          "1": 60
+        },
+        "local_delta_mod60_hist": {
+          "0": 60
+        },
+        "has_identity": false,
+        "has_half_flip_x_plus_30": false,
+        "identity_count": 0,
+        "half_flip_x_plus_30_count": 0
+      },
+      "twisted": {
+        "edge_count": 60,
+        "kind_hist": {
+          "external_signed_carrier": 60
+        },
+        "law_hist": {
+          "half_flip_x_plus_30": 60
+        },
+        "slot_delta_mod15_hist": {
+          "1": 60
+        },
+        "local_delta_mod60_hist": {
+          "30": 60
+        },
+        "has_identity": false,
+        "has_half_flip_x_plus_30": true,
+        "identity_count": 0,
+        "half_flip_x_plus_30_count": 60
+      },
+      "derived_features": {
+        "has_uniform_ring_lift": true,
+        "twisted_has_identity": false,
+        "twisted_has_half_flip_x_plus_30": true,
+        "twisted_identity_count": 0,
+        "twisted_half_flip_x_plus_30_count": 60,
+        "twisted_external_edge_count": 60,
+        "untwisted_external_edge_count": 60,
+        "twisted_half_flip_ratio": 1.0
+      },
+      "feature_signature": {
+        "column_count": 1,
+        "twisted_law_hist": {
+          "half_flip_x_plus_30": 60
+        },
+        "twisted_local_delta_mod60_hist": {
+          "30": 60
+        },
+        "twisted_slot_delta_mod15_hist": {
+          "1": 60
+        },
+        "untwisted_local_delta_mod60_hist": {
+          "0": 60
+        },
+        "slot_pairs": [
+          [
+            0,
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "row_ordinal": 13,
+      "source_row_index": 13,
+      "cycle_index": 2,
+      "role": "XY",
+      "edge": [
+        1,
+        2
+      ],
+      "columns": [
+        4
+      ],
+      "column_count": 1,
+      "slot_pairs": [
+        [
+          1,
+          2
+        ]
+      ],
+      "missing_column_slot_pairs": [],
+      "untwisted": {
+        "edge_count": 60,
+        "kind_hist": {
+          "inter_thalion_diagonal_carrier": 60
+        },
+        "law_hist": {
+          "g15_line_petersen_slot_adjacency": 60
+        },
+        "slot_delta_mod15_hist": {
+          "1": 60
+        },
+        "local_delta_mod60_hist": {
+          "0": 60
+        },
+        "has_identity": false,
+        "has_half_flip_x_plus_30": false,
+        "identity_count": 0,
+        "half_flip_x_plus_30_count": 0
+      },
+      "twisted": {
+        "edge_count": 60,
+        "kind_hist": {
+          "external_signed_carrier": 60
+        },
+        "law_hist": {
+          "half_flip_x_plus_30": 60
+        },
+        "slot_delta_mod15_hist": {
+          "1": 60
+        },
+        "local_delta_mod60_hist": {
+          "30": 60
+        },
+        "has_identity": false,
+        "has_half_flip_x_plus_30": true,
+        "identity_count": 0,
+        "half_flip_x_plus_30_count": 60
+      },
+      "derived_features": {
+        "has_uniform_ring_lift": true,
+        "twisted_has_identity": false,
+        "twisted_has_half_flip_x_plus_30": true,
+        "twisted_identity_count": 0,
+        "twisted_half_flip_x_plus_30_count": 60,
+        "twisted_external_edge_count": 60,
+        "untwisted_external_edge_count": 60,
+        "twisted_half_flip_ratio": 1.0
+      },
+      "feature_signature": {
+        "column_count": 1,
+        "twisted_law_hist": {
+          "half_flip_x_plus_30": 60
+        },
+        "twisted_local_delta_mod60_hist": {
+          "30": 60
+        },
+        "twisted_slot_delta_mod15_hist": {
+          "1": 60
+        },
+        "untwisted_local_delta_mod60_hist": {
+          "0": 60
+        },
+        "slot_pairs": [
+          [
+            1,
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "row_ordinal": 14,
+      "source_row_index": 14,
+      "cycle_index": 2,
+      "role": "YZ",
+      "edge": [
+        2,
+        8
+      ],
+      "columns": [
+        4,
+        5
+      ],
+      "column_count": 2,
+      "slot_pairs": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          11
+        ]
+      ],
+      "missing_column_slot_pairs": [],
+      "untwisted": {
+        "edge_count": 120,
+        "kind_hist": {
+          "inter_thalion_diagonal_carrier": 120
+        },
+        "law_hist": {
+          "g15_line_petersen_slot_adjacency": 120
+        },
+        "slot_delta_mod15_hist": {
+          "1": 60,
+          "10": 60
+        },
+        "local_delta_mod60_hist": {
+          "0": 120
+        },
+        "has_identity": false,
+        "has_half_flip_x_plus_30": false,
+        "identity_count": 0,
+        "half_flip_x_plus_30_count": 0
+      },
+      "twisted": {
+        "edge_count": 60,
+        "kind_hist": {
+          "external_signed_carrier": 60
+        },
+        "law_hist": {
+          "half_flip_x_plus_30": 60
+        },
+        "slot_delta_mod15_hist": {
+          "1": 60
+        },
+        "local_delta_mod60_hist": {
+          "30": 60
+        },
+        "has_identity": false,
+        "has_half_flip_x_plus_30": true,
+        "identity_count": 0,
+        "half_flip_x_plus_30_count": 60
+      },
+      "derived_features": {
+        "has_uniform_ring_lift": true,
+        "twisted_has_identity": false,
+        "twisted_has_half_flip_x_plus_30": true,
+        "twisted_identity_count": 0,
+        "twisted_half_flip_x_plus_30_count": 60,
+        "twisted_external_edge_count": 60,
+        "untwisted_external_edge_count": 120,
+        "twisted_half_flip_ratio": 1.0
+      },
+      "feature_signature": {
+        "column_count": 2,
+        "twisted_law_hist": {
+          "half_flip_x_plus_30": 60
+        },
+        "twisted_local_delta_mod60_hist": {
+          "30": 60
+        },
+        "twisted_slot_delta_mod15_hist": {
+          "1": 60
+        },
+        "untwisted_local_delta_mod60_hist": {
+          "0": 120
+        },
+        "slot_pairs": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            11
+          ]
+        ]
+      }
+    },
+    {
+      "row_ordinal": 15,
+      "source_row_index": 15,
+      "cycle_index": 2,
+      "role": "ZT",
+      "edge": [
+        8,
+        14
+      ],
+      "columns": [
+        21,
+        22
+      ],
+      "column_count": 2,
+      "slot_pairs": [
+        [
+          6,
+          14
+        ],
+        [
+          7,
+          8
+        ]
+      ],
+      "missing_column_slot_pairs": [],
+      "untwisted": {
+        "edge_count": 120,
+        "kind_hist": {
+          "inter_thalion_diagonal_carrier": 120
+        },
+        "law_hist": {
+          "g15_line_petersen_slot_adjacency": 120
+        },
+        "slot_delta_mod15_hist": {
+          "1": 60,
+          "8": 60
+        },
+        "local_delta_mod60_hist": {
+          "0": 120
+        },
+        "has_identity": false,
+        "has_half_flip_x_plus_30": false,
+        "identity_count": 0,
+        "half_flip_x_plus_30_count": 0
+      },
+      "twisted": {
+        "edge_count": 0,
+        "kind_hist": {},
+        "law_hist": {},
+        "slot_delta_mod15_hist": {},
+        "local_delta_mod60_hist": {},
+        "has_identity": false,
+        "has_half_flip_x_plus_30": false,
+        "identity_count": 0,
+        "half_flip_x_plus_30_count": 0
+      },
+      "derived_features": {
+        "has_uniform_ring_lift": false,
+        "twisted_has_identity": false,
+        "twisted_has_half_flip_x_plus_30": false,
+        "twisted_identity_count": 0,
+        "twisted_half_flip_x_plus_30_count": 0,
+        "twisted_external_edge_count": 0,
+        "untwisted_external_edge_count": 120,
+        "twisted_half_flip_ratio": null
+      },
+      "feature_signature": {
+        "column_count": 2,
+        "twisted_law_hist": {},
+        "twisted_local_delta_mod60_hist": {},
+        "twisted_slot_delta_mod15_hist": {},
+        "untwisted_local_delta_mod60_hist": {
+          "0": 120
+        },
+        "slot_pairs": [
+          [
+            6,
+            14
+          ],
+          [
+            7,
+            8
+          ]
+        ]
+      }
+    },
+    {
+      "row_ordinal": 16,
+      "source_row_index": 16,
+      "cycle_index": 2,
+      "role": "TI",
+      "edge": [
+        14,
+        5
+      ],
+      "columns": [
+        13,
+        15
+      ],
+      "column_count": 2,
+      "slot_pairs": [
+        [
+          4,
+          10
+        ],
+        [
+          5,
+          6
+        ]
+      ],
+      "missing_column_slot_pairs": [],
+      "untwisted": {
+        "edge_count": 120,
+        "kind_hist": {
+          "inter_thalion_diagonal_carrier": 120
+        },
+        "law_hist": {
+          "g15_line_petersen_slot_adjacency": 120
+        },
+        "slot_delta_mod15_hist": {
+          "1": 60,
+          "6": 60
+        },
+        "local_delta_mod60_hist": {
+          "0": 120
+        },
+        "has_identity": false,
+        "has_half_flip_x_plus_30": false,
+        "identity_count": 0,
+        "half_flip_x_plus_30_count": 0
+      },
+      "twisted": {
+        "edge_count": 0,
+        "kind_hist": {},
+        "law_hist": {},
+        "slot_delta_mod15_hist": {},
+        "local_delta_mod60_hist": {},
+        "has_identity": false,
+        "has_half_flip_x_plus_30": false,
+        "identity_count": 0,
+        "half_flip_x_plus_30_count": 0
+      },
+      "derived_features": {
+        "has_uniform_ring_lift": false,
+        "twisted_has_identity": false,
+        "twisted_has_half_flip_x_plus_30": false,
+        "twisted_identity_count": 0,
+        "twisted_half_flip_x_plus_30_count": 0,
+        "twisted_external_edge_count": 0,
+        "untwisted_external_edge_count": 120,
+        "twisted_half_flip_ratio": null
+      },
+      "feature_signature": {
+        "column_count": 2,
+        "twisted_law_hist": {},
+        "twisted_local_delta_mod60_hist": {},
+        "twisted_slot_delta_mod15_hist": {},
+        "untwisted_local_delta_mod60_hist": {
+          "0": 120
+        },
+        "slot_pairs": [
+          [
+            4,
+            10
+          ],
+          [
+            5,
+            6
+          ]
+        ]
+      }
+    },
+    {
+      "row_ordinal": 17,
+      "source_row_index": 17,
+      "cycle_index": 2,
+      "role": "IW",
+      "edge": [
+        5,
+        0
+      ],
+      "columns": [
+        1,
+        7
+      ],
+      "column_count": 2,
+      "slot_pairs": [
+        [
+          0,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "missing_column_slot_pairs": [],
+      "untwisted": {
+        "edge_count": 120,
+        "kind_hist": {
+          "inter_thalion_diagonal_carrier": 120
+        },
+        "law_hist": {
+          "g15_line_petersen_slot_adjacency": 120
+        },
+        "slot_delta_mod15_hist": {
+          "1": 60,
+          "4": 60
+        },
+        "local_delta_mod60_hist": {
+          "0": 120
+        },
+        "has_identity": false,
+        "has_half_flip_x_plus_30": false,
+        "identity_count": 0,
+        "half_flip_x_plus_30_count": 0
+      },
+      "twisted": {
+        "edge_count": 120,
+        "kind_hist": {
+          "external_signed_carrier": 120
+        },
+        "law_hist": {
+          "half_flip_x_plus_30": 120
+        },
+        "slot_delta_mod15_hist": {
+          "1": 60,
+          "4": 60
+        },
+        "local_delta_mod60_hist": {
+          "30": 120
+        },
+        "has_identity": false,
+        "has_half_flip_x_plus_30": true,
+        "identity_count": 0,
+        "half_flip_x_plus_30_count": 120
+      },
+      "derived_features": {
+        "has_uniform_ring_lift": true,
+        "twisted_has_identity": false,
+        "twisted_has_half_flip_x_plus_30": true,
+        "twisted_identity_count": 0,
+        "twisted_half_flip_x_plus_30_count": 120,
+        "twisted_external_edge_count": 120,
+        "untwisted_external_edge_count": 120,
+        "twisted_half_flip_ratio": 1.0
+      },
+      "feature_signature": {
+        "column_count": 2,
+        "twisted_law_hist": {
+          "half_flip_x_plus_30": 120
+        },
+        "twisted_local_delta_mod60_hist": {
+          "30": 120
+        },
+        "twisted_slot_delta_mod15_hist": {
+          "1": 60,
+          "4": 60
+        },
+        "untwisted_local_delta_mod60_hist": {
+          "0": 120
+        },
+        "slot_pairs": [
+          [
+            0,
+            4
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      }
+    }
+  ],
+  "role_feature_table": [
+    {
+      "row_ordinal": 0,
+      "source_row_index": 0,
+      "cycle_index": 0,
+      "role": "WX",
+      "columns": [
+        0
+      ],
+      "slot_pairs": [
+        [
+          0,
+          1
+        ]
+      ],
+      "twisted_law_hist": {
+        "half_flip_x_plus_30": 60
+      },
+      "twisted_local_delta_mod60_hist": {
+        "30": 60
+      },
+      "twisted_slot_delta_mod15_hist": {
+        "1": 60
+      },
+      "feature_signature_multiplicity": 3
+    },
+    {
+      "row_ordinal": 1,
+      "source_row_index": 1,
+      "cycle_index": 0,
+      "role": "XY",
+      "columns": [
+        4
+      ],
+      "slot_pairs": [
+        [
+          1,
+          2
+        ]
+      ],
+      "twisted_law_hist": {
+        "half_flip_x_plus_30": 60
+      },
+      "twisted_local_delta_mod60_hist": {
+        "30": 60
+      },
+      "twisted_slot_delta_mod15_hist": {
+        "1": 60
+      },
+      "feature_signature_multiplicity": 3
+    },
+    {
+      "row_ordinal": 2,
+      "source_row_index": 2,
+      "cycle_index": 0,
+      "role": "YZ",
+      "columns": [
+        7,
+        10
+      ],
+      "slot_pairs": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "twisted_law_hist": {
+        "half_flip_x_plus_30": 60,
+        "identity": 60
+      },
+      "twisted_local_delta_mod60_hist": {
+        "0": 60,
+        "30": 60
+      },
+      "twisted_slot_delta_mod15_hist": {
+        "1": 120
+      },
+      "feature_signature_multiplicity": 1
+    },
+    {
+      "row_ordinal": 3,
+      "source_row_index": 3,
+      "cycle_index": 0,
+      "role": "ZT",
+      "columns": [
+        9
+      ],
+      "slot_pairs": [
+        [
+          2,
+          13
+        ]
+      ],
+      "twisted_law_hist": {},
+      "twisted_local_delta_mod60_hist": {},
+      "twisted_slot_delta_mod15_hist": {},
+      "feature_signature_multiplicity": 1
+    },
+    {
+      "row_ordinal": 4,
+      "source_row_index": 4,
+      "cycle_index": 0,
+      "role": "TI",
+      "columns": [
+        13
+      ],
+      "slot_pairs": [
+        [
+          4,
+          10
+        ]
+      ],
+      "twisted_law_hist": {},
+      "twisted_local_delta_mod60_hist": {},
+      "twisted_slot_delta_mod15_hist": {},
+      "feature_signature_multiplicity": 1
+    },
+    {
+      "row_ordinal": 5,
+      "source_row_index": 5,
+      "cycle_index": 0,
+      "role": "IW",
+      "columns": [
+        1,
+        7
+      ],
+      "slot_pairs": [
+        [
+          0,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "twisted_law_hist": {
+        "half_flip_x_plus_30": 120
+      },
+      "twisted_local_delta_mod60_hist": {
+        "30": 120
+      },
+      "twisted_slot_delta_mod15_hist": {
+        "1": 60,
+        "4": 60
+      },
+      "feature_signature_multiplicity": 3
+    },
+    {
+      "row_ordinal": 6,
+      "source_row_index": 6,
+      "cycle_index": 1,
+      "role": "WX",
+      "columns": [
+        0
+      ],
+      "slot_pairs": [
+        [
+          0,
+          1
+        ]
+      ],
+      "twisted_law_hist": {
+        "half_flip_x_plus_30": 60
+      },
+      "twisted_local_delta_mod60_hist": {
+        "30": 60
+      },
+      "twisted_slot_delta_mod15_hist": {
+        "1": 60
+      },
+      "feature_signature_multiplicity": 3
+    },
+    {
+      "row_ordinal": 7,
+      "source_row_index": 7,
+      "cycle_index": 1,
+      "role": "XY",
+      "columns": [
+        4
+      ],
+      "slot_pairs": [
+        [
+          1,
+          2
+        ]
+      ],
+      "twisted_law_hist": {
+        "half_flip_x_plus_30": 60
+      },
+      "twisted_local_delta_mod60_hist": {
+        "30": 60
+      },
+      "twisted_slot_delta_mod15_hist": {
+        "1": 60
+      },
+      "feature_signature_multiplicity": 3
+    },
+    {
+      "row_ordinal": 8,
+      "source_row_index": 8,
+      "cycle_index": 1,
+      "role": "YZ",
+      "columns": [
+        1,
+        3,
+        22
+      ],
+      "slot_pairs": [
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          11
+        ],
+        [
+          7,
+          8
+        ]
+      ],
+      "twisted_law_hist": {
+        "half_flip_x_plus_30": 60
+      },
+      "twisted_local_delta_mod60_hist": {
+        "30": 60
+      },
+      "twisted_slot_delta_mod15_hist": {
+        "4": 60
+      },
+      "feature_signature_multiplicity": 1
+    },
+    {
+      "row_ordinal": 9,
+      "source_row_index": 9,
+      "cycle_index": 1,
+      "role": "ZT",
+      "columns": [
+        9,
+        11,
+        14
+      ],
+      "slot_pairs": [
+        [
+          2,
+          13
+        ],
+        [
+          3,
+          13
+        ],
+        [
+          4,
+          14
+        ]
+      ],
+      "twisted_law_hist": {},
+      "twisted_local_delta_mod60_hist": {},
+      "twisted_slot_delta_mod15_hist": {},
+      "feature_signature_multiplicity": 1
+    },
+    {
+      "row_ordinal": 10,
+      "source_row_index": 10,
+      "cycle_index": 1,
+      "role": "TI",
+      "columns": [
+        10,
+        11
+      ],
+      "slot_pairs": [
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          13
+        ]
+      ],
+      "twisted_law_hist": {
+        "identity": 60
+      },
+      "twisted_local_delta_mod60_hist": {
+        "0": 60
+      },
+      "twisted_slot_delta_mod15_hist": {
+        "1": 60
+      },
+      "feature_signature_multiplicity": 1
+    },
+    {
+      "row_ordinal": 11,
+      "source_row_index": 11,
+      "cycle_index": 1,
+      "role": "IW",
+      "columns": [
+        1,
+        7
+      ],
+      "slot_pairs": [
+        [
+          0,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "twisted_law_hist": {
+        "half_flip_x_plus_30": 120
+      },
+      "twisted_local_delta_mod60_hist": {
+        "30": 120
+      },
+      "twisted_slot_delta_mod15_hist": {
+        "1": 60,
+        "4": 60
+      },
+      "feature_signature_multiplicity": 3
+    },
+    {
+      "row_ordinal": 12,
+      "source_row_index": 12,
+      "cycle_index": 2,
+      "role": "WX",
+      "columns": [
+        0
+      ],
+      "slot_pairs": [
+        [
+          0,
+          1
+        ]
+      ],
+      "twisted_law_hist": {
+        "half_flip_x_plus_30": 60
+      },
+      "twisted_local_delta_mod60_hist": {
+        "30": 60
+      },
+      "twisted_slot_delta_mod15_hist": {
+        "1": 60
+      },
+      "feature_signature_multiplicity": 3
+    },
+    {
+      "row_ordinal": 13,
+      "source_row_index": 13,
+      "cycle_index": 2,
+      "role": "XY",
+      "columns": [
+        4
+      ],
+      "slot_pairs": [
+        [
+          1,
+          2
+        ]
+      ],
+      "twisted_law_hist": {
+        "half_flip_x_plus_30": 60
+      },
+      "twisted_local_delta_mod60_hist": {
+        "30": 60
+      },
+      "twisted_slot_delta_mod15_hist": {
+        "1": 60
+      },
+      "feature_signature_multiplicity": 3
+    },
+    {
+      "row_ordinal": 14,
+      "source_row_index": 14,
+      "cycle_index": 2,
+      "role": "YZ",
+      "columns": [
+        4,
+        5
+      ],
+      "slot_pairs": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          11
+        ]
+      ],
+      "twisted_law_hist": {
+        "half_flip_x_plus_30": 60
+      },
+      "twisted_local_delta_mod60_hist": {
+        "30": 60
+      },
+      "twisted_slot_delta_mod15_hist": {
+        "1": 60
+      },
+      "feature_signature_multiplicity": 1
+    },
+    {
+      "row_ordinal": 15,
+      "source_row_index": 15,
+      "cycle_index": 2,
+      "role": "ZT",
+      "columns": [
+        21,
+        22
+      ],
+      "slot_pairs": [
+        [
+          6,
+          14
+        ],
+        [
+          7,
+          8
+        ]
+      ],
+      "twisted_law_hist": {},
+      "twisted_local_delta_mod60_hist": {},
+      "twisted_slot_delta_mod15_hist": {},
+      "feature_signature_multiplicity": 1
+    },
+    {
+      "row_ordinal": 16,
+      "source_row_index": 16,
+      "cycle_index": 2,
+      "role": "TI",
+      "columns": [
+        13,
+        15
+      ],
+      "slot_pairs": [
+        [
+          4,
+          10
+        ],
+        [
+          5,
+          6
+        ]
+      ],
+      "twisted_law_hist": {},
+      "twisted_local_delta_mod60_hist": {},
+      "twisted_slot_delta_mod15_hist": {},
+      "feature_signature_multiplicity": 1
+    },
+    {
+      "row_ordinal": 17,
+      "source_row_index": 17,
+      "cycle_index": 2,
+      "role": "IW",
+      "columns": [
+        1,
+        7
+      ],
+      "slot_pairs": [
+        [
+          0,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "twisted_law_hist": {
+        "half_flip_x_plus_30": 120
+      },
+      "twisted_local_delta_mod60_hist": {
+        "30": 120
+      },
+      "twisted_slot_delta_mod15_hist": {
+        "1": 60,
+        "4": 60
+      },
+      "feature_signature_multiplicity": 3
+    }
+  ],
+  "interpretation": {
+    "main_result": "All role rows that pass checks have been lifted by the same source rule from M-column identity to 15-thalion slot-edge carrier features.",
+    "twist_feature": "The lift exposes identity and half_flip_x_plus_30 carrier laws before any residual evaluation.",
+    "next_question": "Do the two known residual rows align with branch-stable selected-turn and branch-sensitive return-path behavior when evaluated against these precomputed features?"
+  },
+  "checks": [
+    {
+      "id": "test_plan_loaded",
+      "status": true,
+      "detail": "status=gap_a_15_thalion_ring_test_plan_recorded"
+    },
+    {
+      "id": "schema_loaded",
+      "status": true,
+      "detail": "status=gap_a_15_thalion_ring_schema_recovered_residual_blind"
+    },
+    {
+      "id": "prior_lift_loaded",
+      "status": true,
+      "detail": "status=uniform_g900_row_lift_available_residuals_not_separated"
+    },
+    {
+      "id": "slot_edge_list_len_30",
+      "status": true,
+      "detail": "len=30"
+    },
+    {
+      "id": "column_slot_pairs_30",
+      "status": true,
+      "detail": "len=30"
+    },
+    {
+      "id": "role_row_count_18",
+      "status": true,
+      "detail": "len=18"
+    },
+    {
+      "id": "all_rows_have_columns",
+      "status": true,
+      "detail": "empty_rows=[]"
+    },
+    {
+      "id": "all_rows_have_slot_pairs",
+      "status": true,
+      "detail": "missing=[]"
+    },
+    {
+      "id": "all_rows_have_twisted_edges",
+      "status": false,
+      "detail": "zero=[3, 4, 9, 15, 16]"
+    },
+    {
+      "id": "all_rows_have_untwisted_edges",
+      "status": true,
+      "detail": "zero=[]"
+    },
+    {
+      "id": "no_residual_labels_used",
+      "status": true,
+      "detail": "script reads prior lift rows, columns, role/cycle labels, and ring source edges; it does not read residual/mismatch flags or Gap A theorem residual labels"
+    }
+  ],
+  "next_script": "evaluate_gap_a_15_thalion_residual_split_001.py"
+}

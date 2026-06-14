@@ -1,0 +1,79 @@
+{
+  "schema": "registered_boundary_flux.regimes.v1",
+  "title": "Registered Boundary Flux Regimes",
+  "boundary": "Exploratory boundary-flux renderer. Not a hydrodynamic solver.",
+  "phases": [
+    {
+      "id": "drive_loads",
+      "label": "Drive loads",
+      "meaning": "External drive loads the boundary system."
+    },
+    {
+      "id": "boundary_compresses",
+      "label": "Boundary compresses",
+      "meaning": "The constrained boundary stores structured pressure."
+    },
+    {
+      "id": "focus_forms",
+      "label": "Focus forms",
+      "meaning": "Interior structure gathers into a focused release condition."
+    },
+    {
+      "id": "release_emits",
+      "label": "Release emits",
+      "meaning": "A release event crosses the boundary."
+    },
+    {
+      "id": "trace_remains",
+      "label": "Trace remains",
+      "meaning": "The event leaves a registered aftermath."
+    }
+  ],
+  "presets": [
+    {
+      "id": "stable_window",
+      "label": "Stable Window",
+      "boundary": 0.72,
+      "interior": 0.54,
+      "flux": 0.48,
+      "emission": 0.36,
+      "trace": 0.42
+    },
+    {
+      "id": "deep_collapse",
+      "label": "Deep Collapse",
+      "boundary": 0.88,
+      "interior": 0.92,
+      "flux": 0.76,
+      "emission": 0.32,
+      "trace": 0.58
+    },
+    {
+      "id": "clean_release",
+      "label": "Clean Release",
+      "boundary": 0.64,
+      "interior": 0.62,
+      "flux": 0.72,
+      "emission": 0.86,
+      "trace": 0.74
+    },
+    {
+      "id": "degraded_boundary",
+      "label": "Degraded Boundary",
+      "boundary": 0.96,
+      "interior": 0.80,
+      "flux": 0.92,
+      "emission": 0.44,
+      "trace": 0.88
+    },
+    {
+      "id": "aftertrace",
+      "label": "Aftertrace",
+      "boundary": 0.28,
+      "interior": 0.22,
+      "flux": 0.36,
+      "emission": 0.30,
+      "trace": 0.96
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "schema": "registered_boundary_flux.evidence_index.v1",
+  "status": "evidence_linked",
+  "source_project": "06-sonoluminescence",
+  "public_boundary": "Evidence-linked visual grammar. Not a hydrodynamic solver.",
+  "records": [
+    {
+      "id": "invariant_table",
+      "source_path": "artifacts/csv/invariant_table.csv",
+      "exists": true,
+      "sha256": "299cb73c16106a75a88ef637e7ff386e34ef8d51845127e2ae808686983e6ab6",
+      "size_bytes": 9038,
+      "inspection": {
+        "row_count": 27,
+        "columns": [
+          "invariant_id",
+          "invariant_statement",
+          "invariant_type",
+          "supporting_claim_ids",
+          "supporting_sources",
+          "contradicting_claim_ids",
+          "contradicting_sources",
+          "model_dependence",
+          "confidence",
+          "boundary_flux_relevance",
+          "gate_terms",
+          "null_models_challenged",
+          "notes"
+        ],
+        "sample_columns": [
+          "invariant_id",
+          "invariant_statement",
+          "invariant_type",
+          "supporting_claim_ids",
+          "supporting_sources",
+          "contradicting_claim_ids",
+          "contradicting_sources",
+          "model_dependence"
+        ]
+      }
+    },
+    {
+      "id": "model_score_table",
+      "source_path": "artifacts/csv/model_invariant_score_table.csv",
+      "exists": true,
+      "sha256": "beb6adb2d11561e0732b74a9129de72b004846c4a805e63ac47e98c1f850e433",
+      "size_bytes": 16782,
+      "inspection": {
+        "row_count": 93,
+        "columns": [
+          "model_id",
+          "invariant_id",
+          "score",
+          "score_meaning",
+          "rationale",
+          "supporting_claim_ids",
+          "notes"
+        ],
+        "sample_columns": [
+          "model_id",
+          "invariant_id",
+          "score",
+          "score_meaning",
+          "rationale",
+          "supporting_claim_ids",
+          "notes"
+        ]
+      }
+    },
+    {
+      "id": "upper_boundary_checkpoint",
+      "source_path": "artifacts/json/registered_boundary_flux_upper_boundary_checkpoint_pass_009.v1.json",
+      "exists": true,
+      "sha256": "478f04ce07bab4424fa600c44ce265048c08cd9c1c989cbaefb70dc33c5e0873",
+      "size_bytes": 869,
+      "inspection": {
+        "top_type": "dict",
+        "top_keys": [
+          "artifact",
+          "generated_utc",
+          "status",
+          "claim_unit",
+          "locked_steps",
+          "current_head",
+          "repo_status_before_checkpoint",
+          "next_recommended_step",
+          "boundary"
+        ]
+      }
+    },
+    {
+      "id": "model_comparison_summary",
+      "source_path": "artifacts/json/model_comparison_summary.json",
+      "exists": true,
+      "sha256": "6813db6caf08ff1e812e53786742b2f7259967d3c44131d3519f75b1327ca334",
+      "size_bytes": 1385,
+      "inspection": {
+        "top_type": "dict",
+        "top_keys": [
+          "project",
+          "version",
+          "status",
+          "models",
+          "evaluation_targets"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registered Boundary Flux Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="lab">
+    <section class="topbar">
+      <div class="eyebrow">Registered Boundary Flux</div>
+      <h1>Boundary Flux Renderer</h1>
+      <p>
+        A visual instrument for constrained loading, collapse, release,
+        and registered trace.
+      </p>
+      <p class="boundary">
+        Boundary-flux lens. Not a hydrodynamic solver.
+      </p>
+    </section>
+
+    <details class="instructions">
+      <summary>Instructions</summary>
+      <div class="instructions-body">
+        <p>
+          Use this lab as a boundary-flux renderer. It shows a constrained
+          boundary loading, compressing, focusing, releasing, and leaving trace.
+        </p>
+        <ol>
+          <li>Choose a regime from the Regime menu.</li>
+          <li>Use PREV and NEXT to step through the phase grammar.</li>
+          <li>Use PAUSE to freeze the renderer for inspection.</li>
+          <li>Tune Boundary, Interior, Flux, Emission, and Trace.</li>
+        </ol>
+        <p class="small-boundary">
+          Boundary: this is a visual grammar only. It is not a hydrodynamic
+          solver and not a physical-force simulation.
+        </p>
+      </div>
+    </details>
+
+    <section class="viewer-card">
+      <canvas id="flux-canvas"></canvas>
+      <div class="viewer-label">BOUNDARY FLUX</div>
+      <div class="hud" id="hud">phase=drive_loads</div>
+    </section>
+
+    <section class="panel">
+      <div class="controls">
+        <button id="prev">PREV</button>
+        <button id="play">PAUSE</button>
+        <button id="next">NEXT</button>
+        <button id="reset">RESET</button>
+      </div>
+
+      <label for="preset">Regime</label>
+      <select id="preset"></select>
+
+      <div id="kernel-status" class="kernel-status">Kernel loading...</div>
+
+      <div id="phases" class="phases"></div>
+
+      <div class="sliders">
+        <label>Boundary <input id="boundary" type="range" min="0" max="100" value="72"></label>
+        <label>Interior <input id="interior" type="range" min="0" max="100" value="54"></label>
+        <label>Flux <input id="flux" type="range" min="0" max="100" value="48"></label>
+        <label>Emission <input id="emission" type="range" min="0" max="100" value="36"></label>
+        <label>Trace <input id="trace" type="range" min="0" max="100" value="42"></label>
+      </div>
+
+      <p class="note">
+        This renderer shows boundary loading, compression, focused release,
+        and aftermath trace as a visual grammar only.
+      </p>
+    </section>
+  </main>
+
+  <script src="lab.js"></script>
+</body>
+</html>

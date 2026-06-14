@@ -1,0 +1,1813 @@
+{
+  "schema": "gap_a_wxyzti_register_generator_derivation_return_001.v1",
+  "status": "gap_a_wxyzti_register_generator_slot_path_candidate_not_found",
+  "timestamp_utc": "2026-06-14T21:43:44.047256+00:00",
+  "purpose": "Return from Mode 2 mirror boundary to the source-native WXYZTI row/register generator problem.",
+  "boundary": [
+    "This does not close Gap A.",
+    "This tests a simple source slot-path generator only.",
+    "Failure of this candidate does not rule out a source-native generator.",
+    "Mode 2 mirror remains projection-level evidence and is not promoted here.",
+    "No physical interpretation is claimed."
+  ],
+  "summary": {
+    "derivation_return_result": "slot_path_register_candidate_not_found",
+    "gap_a_closed": false,
+    "source_column_count": 30,
+    "slot_edge_column_count": 30,
+    "row_count": 18,
+    "path_like_rows": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      10,
+      12,
+      13,
+      14
+    ],
+    "open_path_like_rows": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      10,
+      12,
+      13,
+      14
+    ],
+    "shortest_exact_rows": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      10,
+      12,
+      13,
+      14
+    ],
+    "disconnected_rows": [
+      5,
+      8,
+      9,
+      11,
+      15,
+      16,
+      17
+    ],
+    "non_path_rows": [
+      5,
+      8,
+      9,
+      11,
+      15,
+      16,
+      17
+    ],
+    "cycles_with_closed_wxyzti_orientation": [],
+    "all_rows_path_like": false,
+    "all_rows_open_path_like": false,
+    "all_cycles_oriented": false,
+    "preimage_rows": [
+      3,
+      16
+    ],
+    "stable_rows": [
+      4,
+      9,
+      15
+    ],
+    "zero_rows": [
+      3,
+      4,
+      9,
+      15,
+      16
+    ],
+    "claim_closes_gap_a": false
+  },
+  "row_profiles": [
+    {
+      "row_ordinal": 0,
+      "cycle": 0,
+      "role": "WX",
+      "columns": [
+        0
+      ],
+      "preimage": false,
+      "stable_complement": false,
+      "zero_twisted_source_row": false,
+      "path_profile": {
+        "columns": [
+          0
+        ],
+        "slot_edges": [
+          [
+            0,
+            1
+          ]
+        ],
+        "missing_columns": [],
+        "vertices": [
+          0,
+          1
+        ],
+        "component_count": 1,
+        "components": [
+          [
+            0,
+            1
+          ]
+        ],
+        "connected": true,
+        "degree_histogram": {
+          "1": 2
+        },
+        "max_degree": 1,
+        "odd_vertices": [
+          0,
+          1
+        ],
+        "endpoints": [
+          0,
+          1
+        ],
+        "is_single_edge": true,
+        "is_path_like": true,
+        "is_open_path_like": true,
+        "is_closed_cycle_like": false,
+        "shortest_distance": 1,
+        "shortest_distance_matches_support_size": true
+      }
+    },
+    {
+      "row_ordinal": 1,
+      "cycle": 0,
+      "role": "XY",
+      "columns": [
+        4
+      ],
+      "preimage": false,
+      "stable_complement": false,
+      "zero_twisted_source_row": false,
+      "path_profile": {
+        "columns": [
+          4
+        ],
+        "slot_edges": [
+          [
+            1,
+            2
+          ]
+        ],
+        "missing_columns": [],
+        "vertices": [
+          1,
+          2
+        ],
+        "component_count": 1,
+        "components": [
+          [
+            1,
+            2
+          ]
+        ],
+        "connected": true,
+        "degree_histogram": {
+          "1": 2
+        },
+        "max_degree": 1,
+        "odd_vertices": [
+          1,
+          2
+        ],
+        "endpoints": [
+          1,
+          2
+        ],
+        "is_single_edge": true,
+        "is_path_like": true,
+        "is_open_path_like": true,
+        "is_closed_cycle_like": false,
+        "shortest_distance": 1,
+        "shortest_distance_matches_support_size": true
+      }
+    },
+    {
+      "row_ordinal": 2,
+      "cycle": 0,
+      "role": "YZ",
+      "columns": [
+        7,
+        10
+      ],
+      "preimage": false,
+      "stable_complement": false,
+      "zero_twisted_source_row": false,
+      "path_profile": {
+        "columns": [
+          7,
+          10
+        ],
+        "slot_edges": [
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "missing_columns": [],
+        "vertices": [
+          2,
+          3,
+          4
+        ],
+        "component_count": 1,
+        "components": [
+          [
+            2,
+            3,
+            4
+          ]
+        ],
+        "connected": true,
+        "degree_histogram": {
+          "1": 2,
+          "2": 1
+        },
+        "max_degree": 2,
+        "odd_vertices": [
+          2,
+          4
+        ],
+        "endpoints": [
+          2,
+          4
+        ],
+        "is_single_edge": false,
+        "is_path_like": true,
+        "is_open_path_like": true,
+        "is_closed_cycle_like": false,
+        "shortest_distance": 2,
+        "shortest_distance_matches_support_size": true
+      }
+    },
+    {
+      "row_ordinal": 3,
+      "cycle": 0,
+      "role": "ZT",
+      "columns": [
+        9
+      ],
+      "preimage": true,
+      "stable_complement": false,
+      "zero_twisted_source_row": true,
+      "path_profile": {
+        "columns": [
+          9
+        ],
+        "slot_edges": [
+          [
+            2,
+            13
+          ]
+        ],
+        "missing_columns": [],
+        "vertices": [
+          2,
+          13
+        ],
+        "component_count": 1,
+        "components": [
+          [
+            2,
+            13
+          ]
+        ],
+        "connected": true,
+        "degree_histogram": {
+          "1": 2
+        },
+        "max_degree": 1,
+        "odd_vertices": [
+          2,
+          13
+        ],
+        "endpoints": [
+          2,
+          13
+        ],
+        "is_single_edge": true,
+        "is_path_like": true,
+        "is_open_path_like": true,
+        "is_closed_cycle_like": false,
+        "shortest_distance": 1,
+        "shortest_distance_matches_support_size": true
+      }
+    },
+    {
+      "row_ordinal": 4,
+      "cycle": 0,
+      "role": "TI",
+      "columns": [
+        13
+      ],
+      "preimage": false,
+      "stable_complement": true,
+      "zero_twisted_source_row": true,
+      "path_profile": {
+        "columns": [
+          13
+        ],
+        "slot_edges": [
+          [
+            4,
+            10
+          ]
+        ],
+        "missing_columns": [],
+        "vertices": [
+          4,
+          10
+        ],
+        "component_count": 1,
+        "components": [
+          [
+            4,
+            10
+          ]
+        ],
+        "connected": true,
+        "degree_histogram": {
+          "1": 2
+        },
+        "max_degree": 1,
+        "odd_vertices": [
+          4,
+          10
+        ],
+        "endpoints": [
+          4,
+          10
+        ],
+        "is_single_edge": true,
+        "is_path_like": true,
+        "is_open_path_like": true,
+        "is_closed_cycle_like": false,
+        "shortest_distance": 1,
+        "shortest_distance_matches_support_size": true
+      }
+    },
+    {
+      "row_ordinal": 5,
+      "cycle": 0,
+      "role": "IW",
+      "columns": [
+        1,
+        7
+      ],
+      "preimage": false,
+      "stable_complement": false,
+      "zero_twisted_source_row": false,
+      "path_profile": {
+        "columns": [
+          1,
+          7
+        ],
+        "slot_edges": [
+          [
+            0,
+            4
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "missing_columns": [],
+        "vertices": [
+          0,
+          2,
+          3,
+          4
+        ],
+        "component_count": 2,
+        "components": [
+          [
+            0,
+            4
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "connected": false,
+        "degree_histogram": {
+          "1": 4
+        },
+        "max_degree": 1,
+        "odd_vertices": [
+          0,
+          2,
+          3,
+          4
+        ],
+        "endpoints": [
+          0,
+          2,
+          3,
+          4
+        ],
+        "is_single_edge": false,
+        "is_path_like": false,
+        "is_open_path_like": false,
+        "is_closed_cycle_like": false,
+        "shortest_distance": null,
+        "shortest_distance_matches_support_size": false
+      }
+    },
+    {
+      "row_ordinal": 6,
+      "cycle": 1,
+      "role": "WX",
+      "columns": [
+        0
+      ],
+      "preimage": false,
+      "stable_complement": false,
+      "zero_twisted_source_row": false,
+      "path_profile": {
+        "columns": [
+          0
+        ],
+        "slot_edges": [
+          [
+            0,
+            1
+          ]
+        ],
+        "missing_columns": [],
+        "vertices": [
+          0,
+          1
+        ],
+        "component_count": 1,
+        "components": [
+          [
+            0,
+            1
+          ]
+        ],
+        "connected": true,
+        "degree_histogram": {
+          "1": 2
+        },
+        "max_degree": 1,
+        "odd_vertices": [
+          0,
+          1
+        ],
+        "endpoints": [
+          0,
+          1
+        ],
+        "is_single_edge": true,
+        "is_path_like": true,
+        "is_open_path_like": true,
+        "is_closed_cycle_like": false,
+        "shortest_distance": 1,
+        "shortest_distance_matches_support_size": true
+      }
+    },
+    {
+      "row_ordinal": 7,
+      "cycle": 1,
+      "role": "XY",
+      "columns": [
+        4
+      ],
+      "preimage": false,
+      "stable_complement": false,
+      "zero_twisted_source_row": false,
+      "path_profile": {
+        "columns": [
+          4
+        ],
+        "slot_edges": [
+          [
+            1,
+            2
+          ]
+        ],
+        "missing_columns": [],
+        "vertices": [
+          1,
+          2
+        ],
+        "component_count": 1,
+        "components": [
+          [
+            1,
+            2
+          ]
+        ],
+        "connected": true,
+        "degree_histogram": {
+          "1": 2
+        },
+        "max_degree": 1,
+        "odd_vertices": [
+          1,
+          2
+        ],
+        "endpoints": [
+          1,
+          2
+        ],
+        "is_single_edge": true,
+        "is_path_like": true,
+        "is_open_path_like": true,
+        "is_closed_cycle_like": false,
+        "shortest_distance": 1,
+        "shortest_distance_matches_support_size": true
+      }
+    },
+    {
+      "row_ordinal": 8,
+      "cycle": 1,
+      "role": "YZ",
+      "columns": [
+        1,
+        3,
+        22
+      ],
+      "preimage": false,
+      "stable_complement": false,
+      "zero_twisted_source_row": false,
+      "path_profile": {
+        "columns": [
+          1,
+          3,
+          22
+        ],
+        "slot_edges": [
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            11
+          ],
+          [
+            7,
+            8
+          ]
+        ],
+        "missing_columns": [],
+        "vertices": [
+          0,
+          4,
+          7,
+          8,
+          11
+        ],
+        "component_count": 2,
+        "components": [
+          [
+            0,
+            4,
+            11
+          ],
+          [
+            7,
+            8
+          ]
+        ],
+        "connected": false,
+        "degree_histogram": {
+          "1": 4,
+          "2": 1
+        },
+        "max_degree": 2,
+        "odd_vertices": [
+          4,
+          7,
+          8,
+          11
+        ],
+        "endpoints": [
+          4,
+          7,
+          8,
+          11
+        ],
+        "is_single_edge": false,
+        "is_path_like": false,
+        "is_open_path_like": false,
+        "is_closed_cycle_like": false,
+        "shortest_distance": null,
+        "shortest_distance_matches_support_size": false
+      }
+    },
+    {
+      "row_ordinal": 9,
+      "cycle": 1,
+      "role": "ZT",
+      "columns": [
+        9,
+        11,
+        14
+      ],
+      "preimage": false,
+      "stable_complement": true,
+      "zero_twisted_source_row": true,
+      "path_profile": {
+        "columns": [
+          9,
+          11,
+          14
+        ],
+        "slot_edges": [
+          [
+            2,
+            13
+          ],
+          [
+            3,
+            13
+          ],
+          [
+            4,
+            14
+          ]
+        ],
+        "missing_columns": [],
+        "vertices": [
+          2,
+          3,
+          4,
+          13,
+          14
+        ],
+        "component_count": 2,
+        "components": [
+          [
+            2,
+            3,
+            13
+          ],
+          [
+            4,
+            14
+          ]
+        ],
+        "connected": false,
+        "degree_histogram": {
+          "1": 4,
+          "2": 1
+        },
+        "max_degree": 2,
+        "odd_vertices": [
+          2,
+          3,
+          4,
+          14
+        ],
+        "endpoints": [
+          2,
+          3,
+          4,
+          14
+        ],
+        "is_single_edge": false,
+        "is_path_like": false,
+        "is_open_path_like": false,
+        "is_closed_cycle_like": false,
+        "shortest_distance": null,
+        "shortest_distance_matches_support_size": false
+      }
+    },
+    {
+      "row_ordinal": 10,
+      "cycle": 1,
+      "role": "TI",
+      "columns": [
+        10,
+        11
+      ],
+      "preimage": false,
+      "stable_complement": false,
+      "zero_twisted_source_row": false,
+      "path_profile": {
+        "columns": [
+          10,
+          11
+        ],
+        "slot_edges": [
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            13
+          ]
+        ],
+        "missing_columns": [],
+        "vertices": [
+          3,
+          4,
+          13
+        ],
+        "component_count": 1,
+        "components": [
+          [
+            3,
+            4,
+            13
+          ]
+        ],
+        "connected": true,
+        "degree_histogram": {
+          "1": 2,
+          "2": 1
+        },
+        "max_degree": 2,
+        "odd_vertices": [
+          4,
+          13
+        ],
+        "endpoints": [
+          4,
+          13
+        ],
+        "is_single_edge": false,
+        "is_path_like": true,
+        "is_open_path_like": true,
+        "is_closed_cycle_like": false,
+        "shortest_distance": 2,
+        "shortest_distance_matches_support_size": true
+      }
+    },
+    {
+      "row_ordinal": 11,
+      "cycle": 1,
+      "role": "IW",
+      "columns": [
+        1,
+        7
+      ],
+      "preimage": false,
+      "stable_complement": false,
+      "zero_twisted_source_row": false,
+      "path_profile": {
+        "columns": [
+          1,
+          7
+        ],
+        "slot_edges": [
+          [
+            0,
+            4
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "missing_columns": [],
+        "vertices": [
+          0,
+          2,
+          3,
+          4
+        ],
+        "component_count": 2,
+        "components": [
+          [
+            0,
+            4
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "connected": false,
+        "degree_histogram": {
+          "1": 4
+        },
+        "max_degree": 1,
+        "odd_vertices": [
+          0,
+          2,
+          3,
+          4
+        ],
+        "endpoints": [
+          0,
+          2,
+          3,
+          4
+        ],
+        "is_single_edge": false,
+        "is_path_like": false,
+        "is_open_path_like": false,
+        "is_closed_cycle_like": false,
+        "shortest_distance": null,
+        "shortest_distance_matches_support_size": false
+      }
+    },
+    {
+      "row_ordinal": 12,
+      "cycle": 2,
+      "role": "WX",
+      "columns": [
+        0
+      ],
+      "preimage": false,
+      "stable_complement": false,
+      "zero_twisted_source_row": false,
+      "path_profile": {
+        "columns": [
+          0
+        ],
+        "slot_edges": [
+          [
+            0,
+            1
+          ]
+        ],
+        "missing_columns": [],
+        "vertices": [
+          0,
+          1
+        ],
+        "component_count": 1,
+        "components": [
+          [
+            0,
+            1
+          ]
+        ],
+        "connected": true,
+        "degree_histogram": {
+          "1": 2
+        },
+        "max_degree": 1,
+        "odd_vertices": [
+          0,
+          1
+        ],
+        "endpoints": [
+          0,
+          1
+        ],
+        "is_single_edge": true,
+        "is_path_like": true,
+        "is_open_path_like": true,
+        "is_closed_cycle_like": false,
+        "shortest_distance": 1,
+        "shortest_distance_matches_support_size": true
+      }
+    },
+    {
+      "row_ordinal": 13,
+      "cycle": 2,
+      "role": "XY",
+      "columns": [
+        4
+      ],
+      "preimage": false,
+      "stable_complement": false,
+      "zero_twisted_source_row": false,
+      "path_profile": {
+        "columns": [
+          4
+        ],
+        "slot_edges": [
+          [
+            1,
+            2
+          ]
+        ],
+        "missing_columns": [],
+        "vertices": [
+          1,
+          2
+        ],
+        "component_count": 1,
+        "components": [
+          [
+            1,
+            2
+          ]
+        ],
+        "connected": true,
+        "degree_histogram": {
+          "1": 2
+        },
+        "max_degree": 1,
+        "odd_vertices": [
+          1,
+          2
+        ],
+        "endpoints": [
+          1,
+          2
+        ],
+        "is_single_edge": true,
+        "is_path_like": true,
+        "is_open_path_like": true,
+        "is_closed_cycle_like": false,
+        "shortest_distance": 1,
+        "shortest_distance_matches_support_size": true
+      }
+    },
+    {
+      "row_ordinal": 14,
+      "cycle": 2,
+      "role": "YZ",
+      "columns": [
+        4,
+        5
+      ],
+      "preimage": false,
+      "stable_complement": false,
+      "zero_twisted_source_row": false,
+      "path_profile": {
+        "columns": [
+          4,
+          5
+        ],
+        "slot_edges": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            11
+          ]
+        ],
+        "missing_columns": [],
+        "vertices": [
+          1,
+          2,
+          11
+        ],
+        "component_count": 1,
+        "components": [
+          [
+            1,
+            2,
+            11
+          ]
+        ],
+        "connected": true,
+        "degree_histogram": {
+          "1": 2,
+          "2": 1
+        },
+        "max_degree": 2,
+        "odd_vertices": [
+          2,
+          11
+        ],
+        "endpoints": [
+          2,
+          11
+        ],
+        "is_single_edge": false,
+        "is_path_like": true,
+        "is_open_path_like": true,
+        "is_closed_cycle_like": false,
+        "shortest_distance": 2,
+        "shortest_distance_matches_support_size": true
+      }
+    },
+    {
+      "row_ordinal": 15,
+      "cycle": 2,
+      "role": "ZT",
+      "columns": [
+        21,
+        22
+      ],
+      "preimage": false,
+      "stable_complement": true,
+      "zero_twisted_source_row": true,
+      "path_profile": {
+        "columns": [
+          21,
+          22
+        ],
+        "slot_edges": [
+          [
+            6,
+            14
+          ],
+          [
+            7,
+            8
+          ]
+        ],
+        "missing_columns": [],
+        "vertices": [
+          6,
+          7,
+          8,
+          14
+        ],
+        "component_count": 2,
+        "components": [
+          [
+            6,
+            14
+          ],
+          [
+            7,
+            8
+          ]
+        ],
+        "connected": false,
+        "degree_histogram": {
+          "1": 4
+        },
+        "max_degree": 1,
+        "odd_vertices": [
+          6,
+          7,
+          8,
+          14
+        ],
+        "endpoints": [
+          6,
+          7,
+          8,
+          14
+        ],
+        "is_single_edge": false,
+        "is_path_like": false,
+        "is_open_path_like": false,
+        "is_closed_cycle_like": false,
+        "shortest_distance": null,
+        "shortest_distance_matches_support_size": false
+      }
+    },
+    {
+      "row_ordinal": 16,
+      "cycle": 2,
+      "role": "TI",
+      "columns": [
+        13,
+        15
+      ],
+      "preimage": true,
+      "stable_complement": false,
+      "zero_twisted_source_row": true,
+      "path_profile": {
+        "columns": [
+          13,
+          15
+        ],
+        "slot_edges": [
+          [
+            4,
+            10
+          ],
+          [
+            5,
+            6
+          ]
+        ],
+        "missing_columns": [],
+        "vertices": [
+          4,
+          5,
+          6,
+          10
+        ],
+        "component_count": 2,
+        "components": [
+          [
+            4,
+            10
+          ],
+          [
+            5,
+            6
+          ]
+        ],
+        "connected": false,
+        "degree_histogram": {
+          "1": 4
+        },
+        "max_degree": 1,
+        "odd_vertices": [
+          4,
+          5,
+          6,
+          10
+        ],
+        "endpoints": [
+          4,
+          5,
+          6,
+          10
+        ],
+        "is_single_edge": false,
+        "is_path_like": false,
+        "is_open_path_like": false,
+        "is_closed_cycle_like": false,
+        "shortest_distance": null,
+        "shortest_distance_matches_support_size": false
+      }
+    },
+    {
+      "row_ordinal": 17,
+      "cycle": 2,
+      "role": "IW",
+      "columns": [
+        1,
+        7
+      ],
+      "preimage": false,
+      "stable_complement": false,
+      "zero_twisted_source_row": false,
+      "path_profile": {
+        "columns": [
+          1,
+          7
+        ],
+        "slot_edges": [
+          [
+            0,
+            4
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "missing_columns": [],
+        "vertices": [
+          0,
+          2,
+          3,
+          4
+        ],
+        "component_count": 2,
+        "components": [
+          [
+            0,
+            4
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "connected": false,
+        "degree_histogram": {
+          "1": 4
+        },
+        "max_degree": 1,
+        "odd_vertices": [
+          0,
+          2,
+          3,
+          4
+        ],
+        "endpoints": [
+          0,
+          2,
+          3,
+          4
+        ],
+        "is_single_edge": false,
+        "is_path_like": false,
+        "is_open_path_like": false,
+        "is_closed_cycle_like": false,
+        "shortest_distance": null,
+        "shortest_distance_matches_support_size": false
+      }
+    }
+  ],
+  "cycle_reports": [
+    {
+      "cycle": 0,
+      "row_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "roles": [
+        "WX",
+        "XY",
+        "YZ",
+        "ZT",
+        "TI",
+        "IW"
+      ],
+      "all_rows_open_path_like": false,
+      "exact_closed_wxyzti_orientation_found": false,
+      "solution_count": 0,
+      "solutions": [],
+      "blocking_rows": [
+        {
+          "row_ordinal": 5,
+          "role": "IW",
+          "columns": [
+            1,
+            7
+          ],
+          "reason": {
+            "is_open_path_like": false,
+            "connected": false,
+            "component_count": 2,
+            "max_degree": 1,
+            "endpoints": [
+              0,
+              2,
+              3,
+              4
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "cycle": 1,
+      "row_ids": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "roles": [
+        "WX",
+        "XY",
+        "YZ",
+        "ZT",
+        "TI",
+        "IW"
+      ],
+      "all_rows_open_path_like": false,
+      "exact_closed_wxyzti_orientation_found": false,
+      "solution_count": 0,
+      "solutions": [],
+      "blocking_rows": [
+        {
+          "row_ordinal": 8,
+          "role": "YZ",
+          "columns": [
+            1,
+            3,
+            22
+          ],
+          "reason": {
+            "is_open_path_like": false,
+            "connected": false,
+            "component_count": 2,
+            "max_degree": 2,
+            "endpoints": [
+              4,
+              7,
+              8,
+              11
+            ]
+          }
+        },
+        {
+          "row_ordinal": 9,
+          "role": "ZT",
+          "columns": [
+            9,
+            11,
+            14
+          ],
+          "reason": {
+            "is_open_path_like": false,
+            "connected": false,
+            "component_count": 2,
+            "max_degree": 2,
+            "endpoints": [
+              2,
+              3,
+              4,
+              14
+            ]
+          }
+        },
+        {
+          "row_ordinal": 11,
+          "role": "IW",
+          "columns": [
+            1,
+            7
+          ],
+          "reason": {
+            "is_open_path_like": false,
+            "connected": false,
+            "component_count": 2,
+            "max_degree": 1,
+            "endpoints": [
+              0,
+              2,
+              3,
+              4
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "cycle": 2,
+      "row_ids": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "roles": [
+        "WX",
+        "XY",
+        "YZ",
+        "ZT",
+        "TI",
+        "IW"
+      ],
+      "all_rows_open_path_like": false,
+      "exact_closed_wxyzti_orientation_found": false,
+      "solution_count": 0,
+      "solutions": [],
+      "blocking_rows": [
+        {
+          "row_ordinal": 15,
+          "role": "ZT",
+          "columns": [
+            21,
+            22
+          ],
+          "reason": {
+            "is_open_path_like": false,
+            "connected": false,
+            "component_count": 2,
+            "max_degree": 1,
+            "endpoints": [
+              6,
+              7,
+              8,
+              14
+            ]
+          }
+        },
+        {
+          "row_ordinal": 16,
+          "role": "TI",
+          "columns": [
+            13,
+            15
+          ],
+          "reason": {
+            "is_open_path_like": false,
+            "connected": false,
+            "component_count": 2,
+            "max_degree": 1,
+            "endpoints": [
+              4,
+              5,
+              6,
+              10
+            ]
+          }
+        },
+        {
+          "row_ordinal": 17,
+          "role": "IW",
+          "columns": [
+            1,
+            7
+          ],
+          "reason": {
+            "is_open_path_like": false,
+            "connected": false,
+            "component_count": 2,
+            "max_degree": 1,
+            "endpoints": [
+              0,
+              2,
+              3,
+              4
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "preimage_path_profiles": [
+    {
+      "row_ordinal": 3,
+      "cycle": 0,
+      "role": "ZT",
+      "columns": [
+        9
+      ],
+      "preimage": true,
+      "stable_complement": false,
+      "zero_twisted_source_row": true,
+      "path_profile": {
+        "columns": [
+          9
+        ],
+        "slot_edges": [
+          [
+            2,
+            13
+          ]
+        ],
+        "missing_columns": [],
+        "vertices": [
+          2,
+          13
+        ],
+        "component_count": 1,
+        "components": [
+          [
+            2,
+            13
+          ]
+        ],
+        "connected": true,
+        "degree_histogram": {
+          "1": 2
+        },
+        "max_degree": 1,
+        "odd_vertices": [
+          2,
+          13
+        ],
+        "endpoints": [
+          2,
+          13
+        ],
+        "is_single_edge": true,
+        "is_path_like": true,
+        "is_open_path_like": true,
+        "is_closed_cycle_like": false,
+        "shortest_distance": 1,
+        "shortest_distance_matches_support_size": true
+      }
+    },
+    {
+      "row_ordinal": 16,
+      "cycle": 2,
+      "role": "TI",
+      "columns": [
+        13,
+        15
+      ],
+      "preimage": true,
+      "stable_complement": false,
+      "zero_twisted_source_row": true,
+      "path_profile": {
+        "columns": [
+          13,
+          15
+        ],
+        "slot_edges": [
+          [
+            4,
+            10
+          ],
+          [
+            5,
+            6
+          ]
+        ],
+        "missing_columns": [],
+        "vertices": [
+          4,
+          5,
+          6,
+          10
+        ],
+        "component_count": 2,
+        "components": [
+          [
+            4,
+            10
+          ],
+          [
+            5,
+            6
+          ]
+        ],
+        "connected": false,
+        "degree_histogram": {
+          "1": 4
+        },
+        "max_degree": 1,
+        "odd_vertices": [
+          4,
+          5,
+          6,
+          10
+        ],
+        "endpoints": [
+          4,
+          5,
+          6,
+          10
+        ],
+        "is_single_edge": false,
+        "is_path_like": false,
+        "is_open_path_like": false,
+        "is_closed_cycle_like": false,
+        "shortest_distance": null,
+        "shortest_distance_matches_support_size": false
+      }
+    }
+  ],
+  "stable_path_profiles": [
+    {
+      "row_ordinal": 4,
+      "cycle": 0,
+      "role": "TI",
+      "columns": [
+        13
+      ],
+      "preimage": false,
+      "stable_complement": true,
+      "zero_twisted_source_row": true,
+      "path_profile": {
+        "columns": [
+          13
+        ],
+        "slot_edges": [
+          [
+            4,
+            10
+          ]
+        ],
+        "missing_columns": [],
+        "vertices": [
+          4,
+          10
+        ],
+        "component_count": 1,
+        "components": [
+          [
+            4,
+            10
+          ]
+        ],
+        "connected": true,
+        "degree_histogram": {
+          "1": 2
+        },
+        "max_degree": 1,
+        "odd_vertices": [
+          4,
+          10
+        ],
+        "endpoints": [
+          4,
+          10
+        ],
+        "is_single_edge": true,
+        "is_path_like": true,
+        "is_open_path_like": true,
+        "is_closed_cycle_like": false,
+        "shortest_distance": 1,
+        "shortest_distance_matches_support_size": true
+      }
+    },
+    {
+      "row_ordinal": 9,
+      "cycle": 1,
+      "role": "ZT",
+      "columns": [
+        9,
+        11,
+        14
+      ],
+      "preimage": false,
+      "stable_complement": true,
+      "zero_twisted_source_row": true,
+      "path_profile": {
+        "columns": [
+          9,
+          11,
+          14
+        ],
+        "slot_edges": [
+          [
+            2,
+            13
+          ],
+          [
+            3,
+            13
+          ],
+          [
+            4,
+            14
+          ]
+        ],
+        "missing_columns": [],
+        "vertices": [
+          2,
+          3,
+          4,
+          13,
+          14
+        ],
+        "component_count": 2,
+        "components": [
+          [
+            2,
+            3,
+            13
+          ],
+          [
+            4,
+            14
+          ]
+        ],
+        "connected": false,
+        "degree_histogram": {
+          "1": 4,
+          "2": 1
+        },
+        "max_degree": 2,
+        "odd_vertices": [
+          2,
+          3,
+          4,
+          14
+        ],
+        "endpoints": [
+          2,
+          3,
+          4,
+          14
+        ],
+        "is_single_edge": false,
+        "is_path_like": false,
+        "is_open_path_like": false,
+        "is_closed_cycle_like": false,
+        "shortest_distance": null,
+        "shortest_distance_matches_support_size": false
+      }
+    },
+    {
+      "row_ordinal": 15,
+      "cycle": 2,
+      "role": "ZT",
+      "columns": [
+        21,
+        22
+      ],
+      "preimage": false,
+      "stable_complement": true,
+      "zero_twisted_source_row": true,
+      "path_profile": {
+        "columns": [
+          21,
+          22
+        ],
+        "slot_edges": [
+          [
+            6,
+            14
+          ],
+          [
+            7,
+            8
+          ]
+        ],
+        "missing_columns": [],
+        "vertices": [
+          6,
+          7,
+          8,
+          14
+        ],
+        "component_count": 2,
+        "components": [
+          [
+            6,
+            14
+          ],
+          [
+            7,
+            8
+          ]
+        ],
+        "connected": false,
+        "degree_histogram": {
+          "1": 4
+        },
+        "max_degree": 1,
+        "odd_vertices": [
+          6,
+          7,
+          8,
+          14
+        ],
+        "endpoints": [
+          6,
+          7,
+          8,
+          14
+        ],
+        "is_single_edge": false,
+        "is_path_like": false,
+        "is_open_path_like": false,
+        "is_closed_cycle_like": false,
+        "shortest_distance": null,
+        "shortest_distance_matches_support_size": false
+      }
+    }
+  ],
+  "interpretation": {
+    "main_result": "The 18 WXYZTI row supports are not explained by the simple source slot-path generator.",
+    "what_was_tested": "Each projected row support was treated as a set of source columns, translated to g900 slot edges, and tested as a path in the 15-slot source graph.",
+    "why_it_matters": "If the rows are slot paths, the register might be generated from source graph path structure rather than projection lookup.",
+    "remaining_gap": "A source-native WXYZTI row/register generator remains required.",
+    "next_move": "Broaden from simple paths to source column adjacency/hypergraph generators."
+  },
+  "claim": {
+    "does_this_close_gap_a": false,
+    "does_this_find_simple_slot_path_register_candidate": false,
+    "does_this_construct_full_900_carrier_to_register_map": false,
+    "short_form": "The WXYZTI rows are not generated by the simple source slot-path rule.",
+    "next_problem": "Broaden from simple paths to source column adjacency/hypergraph generators."
+  },
+  "checks": [
+    {
+      "id": "mode2_boundary_loaded",
+      "status": true,
+      "detail": "gap_a_mode2_projection_mirror_boundary_note_recorded"
+    },
+    {
+      "id": "upstreamed_supports_loaded",
+      "status": true,
+      "detail": "gap_a_projection_row_supports_upstreamed_columnwise_complete_not_generator"
+    },
+    {
+      "id": "row_grouping_inference_loaded",
+      "status": true,
+      "detail": "gap_a_row_grouping_rule_inference_row_local_selectors_complete_not_global"
+    },
+    {
+      "id": "boundary_theorem_loaded",
+      "status": true,
+      "detail": "gap_a_boundary_theorem_note_recorded"
+    },
+    {
+      "id": "source_columns_loaded",
+      "status": true,
+      "detail": "30"
+    },
+    {
+      "id": "slot_edges_loaded",
+      "status": true,
+      "detail": "30"
+    },
+    {
+      "id": "row_profiles_completed",
+      "status": true,
+      "detail": "18"
+    },
+    {
+      "id": "gap_a_not_closed",
+      "status": true,
+      "detail": "derivation return probe only"
+    }
+  ],
+  "next_script": "search_gap_a_register_generator_from_column_adjacency_hypergraph_001.py"
+}

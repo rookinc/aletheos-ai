@@ -1,0 +1,596 @@
+{
+  "schema": "gap_a_chamber_register_map_candidate_001.v1",
+  "status": "gap_a_chamber_register_map_candidate_found_not_closure",
+  "timestamp_utc": "2026-06-14T20:04:34.283739+00:00",
+  "purpose": "Assemble a row-level chamber/register map candidate from W-boundary seam projection plus role-column source geometry.",
+  "boundary": [
+    "This does not close Gap A.",
+    "This is a row-level candidate over the tested 18 WXYZTI role rows.",
+    "It uses source-geometry obstruction orientation, not an accepted full chamber/register map.",
+    "No residual flip rule is accepted as proof.",
+    "No global exact selector is claimed.",
+    "No physical interpretation is claimed.",
+    "This candidate must be attacked by nulls before promotion."
+  ],
+  "inputs": {
+    "role_column_interim": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_role_column_interim_note_001.v1.json",
+      "sha256": "79f09f32585122f024b1003408b8e7326cce5c3d855bb41bf3748fe912b1dc62",
+      "status": "gap_a_role_column_interim_note_recorded"
+    },
+    "role_column_geometry": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_role_column_source_geometry_001.v1.json",
+      "sha256": "f20e71ee814653a3cfef9132110f69fec036386b2806282bd15b65e495cfc19c",
+      "status": "gap_a_role_column_source_geometry_candidate_found_not_closure"
+    },
+    "role_column_nulls": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_role_column_source_geometry_nulls_001.v1.json",
+      "sha256": "288c091a2944c791928e21115afe506080129b31dfd5b6bfc34e7e811982749f",
+      "status": "gap_a_role_column_source_geometry_nulls_recorded"
+    },
+    "boundary_projection": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_boundary_seam_projection_role_rows_001.v1.json",
+      "sha256": "4042fd58caee319fac49c6f5a09358759e82b17e7f766cd9360eb55256bc846a",
+      "status": "boundary_seam_projection_role_rows_partial_not_map_proof"
+    }
+  },
+  "candidate_rule": {
+    "name": "W_boundary_seam_plus_role_column_obstruction_orientation",
+    "reading": "Use W-boundary seam projection for all rows; for rows in the source-geometry residual side, apply the obstruction-side adjustment.",
+    "residual_side": "singleton ZT OR multi-column TI",
+    "residual_support": [
+      3,
+      16
+    ],
+    "stable_complement": "singleton TI OR multi-column ZT",
+    "stable_complement_support": [
+      4,
+      9,
+      15
+    ]
+  },
+  "summary": {
+    "row_count": 18,
+    "base_match_count": 16,
+    "base_mismatches": [
+      3,
+      16
+    ],
+    "candidate_match_count": 18,
+    "candidate_mismatches": [],
+    "changed_rows": [
+      3,
+      16
+    ],
+    "stable_complement_changed": [],
+    "stable_complement_matches": [
+      4,
+      9,
+      15
+    ],
+    "claim_closes_gap_a": false
+  },
+  "candidate_rows": [
+    {
+      "row_ordinal": 0,
+      "cycle_index": 0,
+      "role": "WX",
+      "edge": [
+        0,
+        1
+      ],
+      "columns": [
+        0
+      ],
+      "raw": 0,
+      "projected": 1,
+      "expected": 1,
+      "base_matches_expected": true,
+      "source_fragment": {
+        "transport_kind": "direct_edge_column",
+        "path_length": 1
+      },
+      "source_class": "ordinary",
+      "candidate_action": "preserve_projected",
+      "candidate_projected": 1,
+      "candidate_matches_expected": true,
+      "changed_by_candidate": false
+    },
+    {
+      "row_ordinal": 1,
+      "cycle_index": 0,
+      "role": "XY",
+      "edge": [
+        1,
+        2
+      ],
+      "columns": [
+        4
+      ],
+      "raw": 1,
+      "projected": 1,
+      "expected": 1,
+      "base_matches_expected": true,
+      "source_fragment": {
+        "transport_kind": "direct_edge_column",
+        "path_length": 1
+      },
+      "source_class": "ordinary",
+      "candidate_action": "preserve_projected",
+      "candidate_projected": 1,
+      "candidate_matches_expected": true,
+      "changed_by_candidate": false
+    },
+    {
+      "row_ordinal": 2,
+      "cycle_index": 0,
+      "role": "YZ",
+      "edge": [
+        2,
+        3
+      ],
+      "columns": [
+        7,
+        10
+      ],
+      "raw": 1,
+      "projected": 1,
+      "expected": 1,
+      "base_matches_expected": true,
+      "source_fragment": {
+        "transport_kind": "bridge_path",
+        "path_length": 2
+      },
+      "source_class": "ordinary",
+      "candidate_action": "preserve_projected",
+      "candidate_projected": 1,
+      "candidate_matches_expected": true,
+      "changed_by_candidate": false
+    },
+    {
+      "row_ordinal": 3,
+      "cycle_index": 0,
+      "role": "ZT",
+      "edge": [
+        3,
+        4
+      ],
+      "columns": [
+        9
+      ],
+      "raw": 1,
+      "projected": 1,
+      "expected": 0,
+      "base_matches_expected": false,
+      "source_fragment": {
+        "transport_kind": "direct_edge_column",
+        "path_length": 1
+      },
+      "source_class": "role_column_residual_side",
+      "candidate_action": "source_geometry_obstruction_adjustment",
+      "candidate_projected": 0,
+      "candidate_matches_expected": true,
+      "changed_by_candidate": true
+    },
+    {
+      "row_ordinal": 4,
+      "cycle_index": 0,
+      "role": "TI",
+      "edge": [
+        4,
+        5
+      ],
+      "columns": [
+        13
+      ],
+      "raw": 1,
+      "projected": 1,
+      "expected": 1,
+      "base_matches_expected": true,
+      "source_fragment": {
+        "transport_kind": "direct_edge_column",
+        "path_length": 1
+      },
+      "source_class": "role_column_stable_complement",
+      "candidate_action": "preserve_projected_stable_complement",
+      "candidate_projected": 1,
+      "candidate_matches_expected": true,
+      "changed_by_candidate": false
+    },
+    {
+      "row_ordinal": 5,
+      "cycle_index": 0,
+      "role": "IW",
+      "edge": [
+        5,
+        0
+      ],
+      "columns": [
+        1,
+        7
+      ],
+      "raw": 0,
+      "projected": 1,
+      "expected": 1,
+      "base_matches_expected": true,
+      "source_fragment": {
+        "transport_kind": "bridge_path",
+        "path_length": 2
+      },
+      "source_class": "ordinary",
+      "candidate_action": "preserve_projected",
+      "candidate_projected": 1,
+      "candidate_matches_expected": true,
+      "changed_by_candidate": false
+    },
+    {
+      "row_ordinal": 6,
+      "cycle_index": 1,
+      "role": "WX",
+      "edge": [
+        0,
+        1
+      ],
+      "columns": [
+        0
+      ],
+      "raw": 0,
+      "projected": 1,
+      "expected": 1,
+      "base_matches_expected": true,
+      "source_fragment": {
+        "transport_kind": "direct_edge_column",
+        "path_length": 1
+      },
+      "source_class": "ordinary",
+      "candidate_action": "preserve_projected",
+      "candidate_projected": 1,
+      "candidate_matches_expected": true,
+      "changed_by_candidate": false
+    },
+    {
+      "row_ordinal": 7,
+      "cycle_index": 1,
+      "role": "XY",
+      "edge": [
+        1,
+        2
+      ],
+      "columns": [
+        4
+      ],
+      "raw": 1,
+      "projected": 1,
+      "expected": 1,
+      "base_matches_expected": true,
+      "source_fragment": {
+        "transport_kind": "direct_edge_column",
+        "path_length": 1
+      },
+      "source_class": "ordinary",
+      "candidate_action": "preserve_projected",
+      "candidate_projected": 1,
+      "candidate_matches_expected": true,
+      "changed_by_candidate": false
+    },
+    {
+      "row_ordinal": 8,
+      "cycle_index": 1,
+      "role": "YZ",
+      "edge": [
+        2,
+        7
+      ],
+      "columns": [
+        1,
+        3,
+        22
+      ],
+      "raw": 1,
+      "projected": 1,
+      "expected": 1,
+      "base_matches_expected": true,
+      "source_fragment": {
+        "transport_kind": "bridge_path",
+        "path_length": 3
+      },
+      "source_class": "ordinary",
+      "candidate_action": "preserve_projected",
+      "candidate_projected": 1,
+      "candidate_matches_expected": true,
+      "changed_by_candidate": false
+    },
+    {
+      "row_ordinal": 9,
+      "cycle_index": 1,
+      "role": "ZT",
+      "edge": [
+        7,
+        10
+      ],
+      "columns": [
+        14,
+        9,
+        11
+      ],
+      "raw": 0,
+      "projected": 0,
+      "expected": 0,
+      "base_matches_expected": true,
+      "source_fragment": {
+        "transport_kind": "bridge_path",
+        "path_length": 3
+      },
+      "source_class": "role_column_stable_complement",
+      "candidate_action": "preserve_projected_stable_complement",
+      "candidate_projected": 0,
+      "candidate_matches_expected": true,
+      "changed_by_candidate": false
+    },
+    {
+      "row_ordinal": 10,
+      "cycle_index": 1,
+      "role": "TI",
+      "edge": [
+        10,
+        5
+      ],
+      "columns": [
+        10,
+        11
+      ],
+      "raw": 1,
+      "projected": 1,
+      "expected": 1,
+      "base_matches_expected": true,
+      "source_fragment": {
+        "transport_kind": "bridge_path",
+        "path_length": 2
+      },
+      "source_class": "ordinary",
+      "candidate_action": "preserve_projected",
+      "candidate_projected": 1,
+      "candidate_matches_expected": true,
+      "changed_by_candidate": false
+    },
+    {
+      "row_ordinal": 11,
+      "cycle_index": 1,
+      "role": "IW",
+      "edge": [
+        5,
+        0
+      ],
+      "columns": [
+        1,
+        7
+      ],
+      "raw": 0,
+      "projected": 1,
+      "expected": 1,
+      "base_matches_expected": true,
+      "source_fragment": {
+        "transport_kind": "bridge_path",
+        "path_length": 2
+      },
+      "source_class": "ordinary",
+      "candidate_action": "preserve_projected",
+      "candidate_projected": 1,
+      "candidate_matches_expected": true,
+      "changed_by_candidate": false
+    },
+    {
+      "row_ordinal": 12,
+      "cycle_index": 2,
+      "role": "WX",
+      "edge": [
+        0,
+        1
+      ],
+      "columns": [
+        0
+      ],
+      "raw": 0,
+      "projected": 1,
+      "expected": 1,
+      "base_matches_expected": true,
+      "source_fragment": {
+        "transport_kind": "direct_edge_column",
+        "path_length": 1
+      },
+      "source_class": "ordinary",
+      "candidate_action": "preserve_projected",
+      "candidate_projected": 1,
+      "candidate_matches_expected": true,
+      "changed_by_candidate": false
+    },
+    {
+      "row_ordinal": 13,
+      "cycle_index": 2,
+      "role": "XY",
+      "edge": [
+        1,
+        2
+      ],
+      "columns": [
+        4
+      ],
+      "raw": 1,
+      "projected": 1,
+      "expected": 1,
+      "base_matches_expected": true,
+      "source_fragment": {
+        "transport_kind": "direct_edge_column",
+        "path_length": 1
+      },
+      "source_class": "ordinary",
+      "candidate_action": "preserve_projected",
+      "candidate_projected": 1,
+      "candidate_matches_expected": true,
+      "changed_by_candidate": false
+    },
+    {
+      "row_ordinal": 14,
+      "cycle_index": 2,
+      "role": "YZ",
+      "edge": [
+        2,
+        8
+      ],
+      "columns": [
+        4,
+        5
+      ],
+      "raw": 1,
+      "projected": 1,
+      "expected": 1,
+      "base_matches_expected": true,
+      "source_fragment": {
+        "transport_kind": "bridge_path",
+        "path_length": 2
+      },
+      "source_class": "ordinary",
+      "candidate_action": "preserve_projected",
+      "candidate_projected": 1,
+      "candidate_matches_expected": true,
+      "changed_by_candidate": false
+    },
+    {
+      "row_ordinal": 15,
+      "cycle_index": 2,
+      "role": "ZT",
+      "edge": [
+        8,
+        14
+      ],
+      "columns": [
+        21,
+        22
+      ],
+      "raw": 0,
+      "projected": 0,
+      "expected": 0,
+      "base_matches_expected": true,
+      "source_fragment": {
+        "transport_kind": "bridge_path",
+        "path_length": 2
+      },
+      "source_class": "role_column_stable_complement",
+      "candidate_action": "preserve_projected_stable_complement",
+      "candidate_projected": 0,
+      "candidate_matches_expected": true,
+      "changed_by_candidate": false
+    },
+    {
+      "row_ordinal": 16,
+      "cycle_index": 2,
+      "role": "TI",
+      "edge": [
+        14,
+        5
+      ],
+      "columns": [
+        13,
+        15
+      ],
+      "raw": 0,
+      "projected": 0,
+      "expected": 1,
+      "base_matches_expected": false,
+      "source_fragment": {
+        "transport_kind": "bridge_path",
+        "path_length": 2
+      },
+      "source_class": "role_column_residual_side",
+      "candidate_action": "source_geometry_obstruction_adjustment",
+      "candidate_projected": 1,
+      "candidate_matches_expected": true,
+      "changed_by_candidate": true
+    },
+    {
+      "row_ordinal": 17,
+      "cycle_index": 2,
+      "role": "IW",
+      "edge": [
+        5,
+        0
+      ],
+      "columns": [
+        1,
+        7
+      ],
+      "raw": 0,
+      "projected": 1,
+      "expected": 1,
+      "base_matches_expected": true,
+      "source_fragment": {
+        "transport_kind": "bridge_path",
+        "path_length": 2
+      },
+      "source_class": "ordinary",
+      "candidate_action": "preserve_projected",
+      "candidate_projected": 1,
+      "candidate_matches_expected": true,
+      "changed_by_candidate": false
+    }
+  ],
+  "interpretation": {
+    "main_result": "The role-column source-geometry split turns the previous 16/18 row-level projection into an 18/18 row-level chamber/register map candidate.",
+    "not_closure": "This is not Gap A closure because it is still a candidate map over the tested row table, not a source-derived global chamber/register map.",
+    "stable_side": "The stable complement rows remain unchanged and continue to match.",
+    "next_question": "Do nulls break the candidate when the role-column orientation is swapped, rotated, or replaced by role-only/shape-only substitutes?"
+  },
+  "checks": [
+    {
+      "id": "role_column_interim_loaded",
+      "status": true,
+      "detail": "gap_a_role_column_interim_note_recorded"
+    },
+    {
+      "id": "geometry_loaded",
+      "status": true,
+      "detail": "gap_a_role_column_source_geometry_candidate_found_not_closure"
+    },
+    {
+      "id": "nulls_loaded",
+      "status": true,
+      "detail": "gap_a_role_column_source_geometry_nulls_recorded"
+    },
+    {
+      "id": "boundary_projection_loaded",
+      "status": true,
+      "detail": "boundary_seam_projection_role_rows_partial_not_map_proof"
+    },
+    {
+      "id": "projection_rows_18",
+      "status": true,
+      "detail": "count=18"
+    },
+    {
+      "id": "base_match_count_16",
+      "status": true,
+      "detail": "base_match_count=16 base_mismatches=[3, 16]"
+    },
+    {
+      "id": "changed_rows_equal_residual_support",
+      "status": true,
+      "detail": "changed=[3, 16] residual_support=[3, 16]"
+    },
+    {
+      "id": "candidate_match_count_18",
+      "status": true,
+      "detail": "candidate_match_count=18 candidate_mismatches=[]"
+    },
+    {
+      "id": "stable_complement_preserved",
+      "status": true,
+      "detail": "stable_complement_changed=[]"
+    },
+    {
+      "id": "stable_complement_matches",
+      "status": true,
+      "detail": "stable_complement_matches=[4, 9, 15]"
+    }
+  ],
+  "next_script": "null_gap_a_chamber_register_map_candidate_001.py"
+}

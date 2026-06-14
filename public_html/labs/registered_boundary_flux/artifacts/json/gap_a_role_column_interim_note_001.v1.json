@@ -1,0 +1,301 @@
+{
+  "schema": "gap_a_role_column_interim_note_001.v1",
+  "status": "gap_a_role_column_interim_note_recorded",
+  "timestamp_utc": "2026-06-14T20:03:08.702185+00:00",
+  "purpose": "Recreate the missing role-column interim checkpoint from already recorded geometry and null artifacts.",
+  "boundary": [
+    "This is an interim theorem note, not a closure proof.",
+    "Gap A remains open.",
+    "The result is local to the tested zero-twisted-carrier obstruction neighborhood.",
+    "No full source-derived chamber/register map is claimed.",
+    "No global exact selector is claimed.",
+    "No physical interpretation is claimed."
+  ],
+  "inputs": {
+    "role_column_geometry": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_role_column_source_geometry_001.v1.json",
+      "sha256": "f20e71ee814653a3cfef9132110f69fec036386b2806282bd15b65e495cfc19c",
+      "status": "gap_a_role_column_source_geometry_candidate_found_not_closure"
+    },
+    "role_column_nulls": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_role_column_source_geometry_nulls_001.v1.json",
+      "sha256": "288c091a2944c791928e21115afe506080129b31dfd5b6bfc34e7e811982749f",
+      "status": "gap_a_role_column_source_geometry_nulls_recorded"
+    },
+    "neighbor_port_mixed_note": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_neighbor_port_mixed_note_001.v1.json",
+      "sha256": "1c0d00187297d8d8133a8eb890d18386aa3596a8b0cdd3c4c77a1c138b7b3884",
+      "status": "gap_a_neighbor_port_mixed_note_recorded"
+    },
+    "zero_twisted_split": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_zero_twisted_neighborhood_split_001.v1.json",
+      "sha256": "14293c9f7a362b2c9e1f50587c3222816f7d1a29050a8015e26fe49b0b018476",
+      "status": "gap_a_zero_twisted_neighborhood_split_candidate_found_not_closure"
+    },
+    "fifteen_thalion_interim": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_15_thalion_interim_theorem_note_001.v1.json",
+      "sha256": "d7ccd86222ad4d75a140bbc2899d8aad6f68170078457f0886e08b1fe13a360d",
+      "status": "gap_a_15_thalion_interim_theorem_note_recorded"
+    }
+  },
+  "claim": {
+    "does_this_close_gap_a": false,
+    "does_this_solve_gap_a": false,
+    "does_this_give_full_chamber_register_map": false,
+    "does_this_give_bounded_interim_support": true,
+    "local_domain": "tested zero-twisted-carrier obstruction neighborhood",
+    "residual_rule": "singleton ZT OR multi-column TI",
+    "residual_support": [
+      3,
+      16
+    ],
+    "stable_complement_rule": "singleton TI OR multi-column ZT",
+    "stable_complement_support": [
+      4,
+      9,
+      15
+    ],
+    "all_residual_nulls_broken": true,
+    "short_form": "Gap A remains open, but inside the zero-twisted obstruction the role-column orientation is load-bearing: singleton ZT plus multi-column TI selects the residuals, while singleton TI plus multi-column ZT selects the stable false positives.",
+    "not_closed_reason": "The result is local to the tested zero-twisted-carrier neighborhood and does not yet derive a full source chamber/register map."
+  },
+  "interim_theorem_statement": {
+    "name": "Gap A role-column obstruction split interim theorem note",
+    "statement": "Within the tested zero-twisted-carrier obstruction neighborhood, the residual rows are selected exactly by the role-column orientation singleton ZT OR multi-column TI. The stable false positives are selected exactly by the complementary orientation singleton TI OR multi-column ZT. Role-only and column-shape-only tests are insufficient; all nine residual nulls break exactness. This gives bounded interim support for a source-geometry split of the obstruction, but it does not close Gap A because no full source-derived chamber/register map has yet been constructed.",
+    "admission_status": "bounded_interim_support_not_gap_closure"
+  },
+  "evidence": {
+    "residual_side": {
+      "name": "source_geometry_singleton_ZT_OR_multi_column_TI",
+      "reading": "inside zero-twisted carrier, residual support is singleton ZT OR multi-column TI",
+      "support": [
+        3,
+        16
+      ],
+      "precision": 1.0,
+      "recall": 1.0,
+      "exact_inside_neighborhood": true
+    },
+    "stable_side": {
+      "name": "source_geometry_singleton_TI_OR_multi_column_ZT",
+      "reading": "inside zero-twisted carrier, stable false-positive support is singleton TI OR multi-column ZT",
+      "support": [
+        4,
+        9,
+        15
+      ],
+      "precision_against_false_positives": 1.0,
+      "recall_against_false_positives": 1.0,
+      "exact_against_false_positives": true
+    },
+    "null_summary": {
+      "baseline_support": [
+        3,
+        16
+      ],
+      "baseline_exact": true,
+      "broken_residual_null_count": 9,
+      "residual_null_count": 9,
+      "complement_support": [
+        4,
+        9,
+        15
+      ],
+      "complement_selects_false_positives": true,
+      "load_bearing": {
+        "role_only_insufficient": true,
+        "shape_only_insufficient": true,
+        "pairing_orientation_load_bearing": true,
+        "role_placement_load_bearing": true,
+        "shape_placement_load_bearing": true,
+        "role_swap_breaks_residual_exactness": true,
+        "shape_swap_breaks_residual_exactness": true,
+        "complement_selects_false_positives": true
+      }
+    },
+    "class_summary": {
+      "multi_column_TI": {
+        "rows": [
+          16
+        ],
+        "count": 1,
+        "residual_rows": [
+          16
+        ],
+        "false_positive_rows": [],
+        "roles": [
+          "TI"
+        ],
+        "column_counts": [
+          2
+        ],
+        "slot_pair_spans": [
+          [
+            1,
+            6
+          ]
+        ],
+        "branch_sensitive_rows": [
+          16
+        ],
+        "branch_stable_rows": []
+      },
+      "multi_column_ZT": {
+        "rows": [
+          9,
+          15
+        ],
+        "count": 2,
+        "residual_rows": [],
+        "false_positive_rows": [
+          9,
+          15
+        ],
+        "roles": [
+          "ZT"
+        ],
+        "column_counts": [
+          2,
+          3
+        ],
+        "slot_pair_spans": [
+          [
+            4,
+            5,
+            5
+          ],
+          [
+            1,
+            7
+          ]
+        ],
+        "branch_sensitive_rows": [],
+        "branch_stable_rows": [
+          9,
+          15
+        ]
+      },
+      "singleton_TI": {
+        "rows": [
+          4
+        ],
+        "count": 1,
+        "residual_rows": [],
+        "false_positive_rows": [
+          4
+        ],
+        "roles": [
+          "TI"
+        ],
+        "column_counts": [
+          1
+        ],
+        "slot_pair_spans": [
+          [
+            6
+          ]
+        ],
+        "branch_sensitive_rows": [],
+        "branch_stable_rows": [
+          4
+        ]
+      },
+      "singleton_ZT": {
+        "rows": [
+          3
+        ],
+        "count": 1,
+        "residual_rows": [
+          3
+        ],
+        "false_positive_rows": [],
+        "roles": [
+          "ZT"
+        ],
+        "column_counts": [
+          1
+        ],
+        "slot_pair_spans": [
+          [
+            4
+          ]
+        ],
+        "branch_sensitive_rows": [],
+        "branch_stable_rows": [
+          3
+        ]
+      }
+    },
+    "row_classes": [
+      {
+        "row_ordinal": 3,
+        "role": "ZT",
+        "column_shape": "singleton",
+        "role_column_class": "singleton_ZT",
+        "target": "residual"
+      },
+      {
+        "row_ordinal": 4,
+        "role": "TI",
+        "column_shape": "singleton",
+        "role_column_class": "singleton_TI",
+        "target": "stable_false_positive"
+      },
+      {
+        "row_ordinal": 9,
+        "role": "ZT",
+        "column_shape": "multi_column",
+        "role_column_class": "multi_column_ZT",
+        "target": "stable_false_positive"
+      },
+      {
+        "row_ordinal": 15,
+        "role": "ZT",
+        "column_shape": "multi_column",
+        "role_column_class": "multi_column_ZT",
+        "target": "stable_false_positive"
+      },
+      {
+        "row_ordinal": 16,
+        "role": "TI",
+        "column_shape": "multi_column",
+        "role_column_class": "multi_column_TI",
+        "target": "residual"
+      }
+    ]
+  },
+  "next_questions": [
+    "Can the role-column orientation be derived from the source edge-law geometry before forming residual labels?",
+    "Can the split be lifted from zero-twisted rows to a chamber/register map over all WXYZTI rows?",
+    "Can allowed slot symmetries preserve the role-column orientation split?",
+    "Can the stable complement singleton TI OR multi-column ZT be explained as lawful stable zero-twisted support?"
+  ],
+  "checks": [
+    {
+      "id": "geometry_loaded",
+      "status": true,
+      "detail": "gap_a_role_column_source_geometry_candidate_found_not_closure"
+    },
+    {
+      "id": "nulls_loaded",
+      "status": true,
+      "detail": "gap_a_role_column_source_geometry_nulls_recorded"
+    },
+    {
+      "id": "residual_support_3_16",
+      "status": true,
+      "detail": "{\"exact_inside_neighborhood\": true, \"name\": \"source_geometry_singleton_ZT_OR_multi_column_TI\", \"precision\": 1.0, \"reading\": \"inside zero-twisted carrier, residual support is singleton ZT OR multi-column TI\", \"recall\": 1.0, \"support\": [3, 16]}"
+    },
+    {
+      "id": "stable_support_4_9_15",
+      "status": true,
+      "detail": "{\"exact_against_false_positives\": true, \"name\": \"source_geometry_singleton_TI_OR_multi_column_ZT\", \"precision_against_false_positives\": 1.0, \"reading\": \"inside zero-twisted carrier, stable false-positive support is singleton TI OR multi-column ZT\", \"recall_against_false_positives\": 1.0, \"support\": [4, 9, 15]}"
+    },
+    {
+      "id": "all_residual_nulls_broken",
+      "status": true,
+      "detail": "{\"baseline_exact\": true, \"baseline_support\": [3, 16], \"broken_residual_null_count\": 9, \"complement_selects_false_positives\": true, \"complement_support\": [4, 9, 15], \"load_bearing\": {\"complement_selects_false_positives\": true, \"pairing_orientation_load_bearing\": true, \"role_only_insufficient\": true, \"role_placement_load_bearing\": true, \"role_swap_breaks_residual_exactness\": true, \"shape_only_insufficient\": true, \"shape_placement_load_bearing\": true, \"shape_swap_breaks_residual_exactness\": true}, \"residual_null_count\": 9}"
+    }
+  ],
+  "next_script": "derive_gap_a_chamber_register_map_candidate_001.py"
+}

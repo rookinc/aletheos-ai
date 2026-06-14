@@ -1,0 +1,738 @@
+{
+  "schema": "gap_a_role_column_source_geometry_001.v1",
+  "status": "gap_a_role_column_source_geometry_candidate_found_not_closure",
+  "timestamp_utc": "2026-06-14T19:54:26.985251+00:00",
+  "purpose": "Test whether the zero-twisted obstruction splits by role/column source geometry.",
+  "boundary": [
+    "This does not close Gap A.",
+    "This is exact only inside the tested zero-twisted-carrier neighborhood.",
+    "This is a source-geometry candidate, not a full chamber/register map.",
+    "No residual flip rule is accepted.",
+    "No physical interpretation is claimed.",
+    "The rule must be attacked by source-geometry nulls before promotion."
+  ],
+  "inputs": {
+    "mixed_note": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_neighbor_port_mixed_note_001.v1.json",
+      "sha256": "1c0d00187297d8d8133a8eb890d18386aa3596a8b0cdd3c4c77a1c138b7b3884",
+      "status": "gap_a_neighbor_port_mixed_note_recorded"
+    },
+    "neighbor_rule": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_neighbor_port_rule_001.v1.json",
+      "sha256": "6041bcf4ac3f4a32858c0334934e3cc208d5bdfc56f4a15e4ef345e3ef7b4489",
+      "status": "gap_a_neighbor_port_rule_candidate_found_not_closure"
+    },
+    "neighbor_nulls": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_neighbor_port_rule_nulls_001.v1.json",
+      "sha256": "1d6a481f7213a074a3aa639438187ed61e59cf1b636551001226a72cc0383b77",
+      "status": "gap_a_neighbor_port_rule_nulls_mixed_not_promoted"
+    },
+    "zero_twisted_split": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_zero_twisted_neighborhood_split_001.v1.json",
+      "sha256": "14293c9f7a362b2c9e1f50587c3222816f7d1a29050a8015e26fe49b0b018476",
+      "status": "gap_a_zero_twisted_neighborhood_split_candidate_found_not_closure"
+    },
+    "context_probe": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_surrounding_cell_context_probe_001.v1.json",
+      "sha256": "3ecfbca2c2fae088ba878944c9d7a42765f2430ffe7bc2d814a229f13299cad7",
+      "status": "gap_a_surrounding_cell_context_probe_recorded"
+    },
+    "uniform_lift": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_uniform_15_thalion_row_lift_001.v1.json",
+      "sha256": "746469ce14d675063543189bdf49420fa630ee0834958a0c27b4056a45364c46",
+      "status": "gap_a_uniform_15_thalion_row_lift_needs_inspection"
+    }
+  },
+  "zero_twisted_neighborhood": [
+    3,
+    4,
+    9,
+    15,
+    16
+  ],
+  "known_residual_rows": [
+    3,
+    16
+  ],
+  "false_positive_rows_before_split": [
+    4,
+    9,
+    15
+  ],
+  "source_rows": [
+    {
+      "row_ordinal": 3,
+      "cycle_index": 0,
+      "role": "ZT",
+      "columns": [
+        9
+      ],
+      "column_count": 1,
+      "column_shape": "singleton",
+      "role_column_class": "singleton_ZT",
+      "slot_pairs": [
+        [
+          2,
+          13
+        ]
+      ],
+      "slot_pair_spans": [
+        4
+      ],
+      "pair_degrees_radius_1": [
+        [
+          2,
+          2
+        ]
+      ],
+      "dead_endpoint_count_radius_1": 0,
+      "balanced_singleton_radius_1": true,
+      "branch_sensitive": false,
+      "branch_stable": true,
+      "is_known_residual": true,
+      "is_false_positive_before_split": false
+    },
+    {
+      "row_ordinal": 4,
+      "cycle_index": 0,
+      "role": "TI",
+      "columns": [
+        13
+      ],
+      "column_count": 1,
+      "column_shape": "singleton",
+      "role_column_class": "singleton_TI",
+      "slot_pairs": [
+        [
+          4,
+          10
+        ]
+      ],
+      "slot_pair_spans": [
+        6
+      ],
+      "pair_degrees_radius_1": [
+        [
+          3,
+          2
+        ]
+      ],
+      "dead_endpoint_count_radius_1": 0,
+      "balanced_singleton_radius_1": false,
+      "branch_sensitive": false,
+      "branch_stable": true,
+      "is_known_residual": false,
+      "is_false_positive_before_split": true
+    },
+    {
+      "row_ordinal": 9,
+      "cycle_index": 1,
+      "role": "ZT",
+      "columns": [
+        9,
+        11,
+        14
+      ],
+      "column_count": 3,
+      "column_shape": "multi_column",
+      "role_column_class": "multi_column_ZT",
+      "slot_pairs": [
+        [
+          2,
+          13
+        ],
+        [
+          3,
+          13
+        ],
+        [
+          4,
+          14
+        ]
+      ],
+      "slot_pair_spans": [
+        4,
+        5,
+        5
+      ],
+      "pair_degrees_radius_1": [
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "dead_endpoint_count_radius_1": 0,
+      "balanced_singleton_radius_1": false,
+      "branch_sensitive": false,
+      "branch_stable": true,
+      "is_known_residual": false,
+      "is_false_positive_before_split": true
+    },
+    {
+      "row_ordinal": 15,
+      "cycle_index": 2,
+      "role": "ZT",
+      "columns": [
+        21,
+        22
+      ],
+      "column_count": 2,
+      "column_shape": "multi_column",
+      "role_column_class": "multi_column_ZT",
+      "slot_pairs": [
+        [
+          6,
+          14
+        ],
+        [
+          7,
+          8
+        ]
+      ],
+      "slot_pair_spans": [
+        1,
+        7
+      ],
+      "pair_degrees_radius_1": [
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "dead_endpoint_count_radius_1": 1,
+      "balanced_singleton_radius_1": false,
+      "branch_sensitive": false,
+      "branch_stable": true,
+      "is_known_residual": false,
+      "is_false_positive_before_split": true
+    },
+    {
+      "row_ordinal": 16,
+      "cycle_index": 2,
+      "role": "TI",
+      "columns": [
+        13,
+        15
+      ],
+      "column_count": 2,
+      "column_shape": "multi_column",
+      "role_column_class": "multi_column_TI",
+      "slot_pairs": [
+        [
+          4,
+          10
+        ],
+        [
+          5,
+          6
+        ]
+      ],
+      "slot_pair_spans": [
+        1,
+        6
+      ],
+      "pair_degrees_radius_1": [
+        [
+          3,
+          3
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "dead_endpoint_count_radius_1": 1,
+      "balanced_singleton_radius_1": false,
+      "branch_sensitive": true,
+      "branch_stable": false,
+      "is_known_residual": true,
+      "is_false_positive_before_split": false
+    }
+  ],
+  "class_summary": {
+    "multi_column_TI": {
+      "rows": [
+        16
+      ],
+      "count": 1,
+      "residual_rows": [
+        16
+      ],
+      "false_positive_rows": [],
+      "roles": [
+        "TI"
+      ],
+      "column_counts": [
+        2
+      ],
+      "slot_pair_spans": [
+        [
+          1,
+          6
+        ]
+      ],
+      "branch_sensitive_rows": [
+        16
+      ],
+      "branch_stable_rows": []
+    },
+    "multi_column_ZT": {
+      "rows": [
+        9,
+        15
+      ],
+      "count": 2,
+      "residual_rows": [],
+      "false_positive_rows": [
+        9,
+        15
+      ],
+      "roles": [
+        "ZT"
+      ],
+      "column_counts": [
+        2,
+        3
+      ],
+      "slot_pair_spans": [
+        [
+          4,
+          5,
+          5
+        ],
+        [
+          1,
+          7
+        ]
+      ],
+      "branch_sensitive_rows": [],
+      "branch_stable_rows": [
+        9,
+        15
+      ]
+    },
+    "singleton_TI": {
+      "rows": [
+        4
+      ],
+      "count": 1,
+      "residual_rows": [],
+      "false_positive_rows": [
+        4
+      ],
+      "roles": [
+        "TI"
+      ],
+      "column_counts": [
+        1
+      ],
+      "slot_pair_spans": [
+        [
+          6
+        ]
+      ],
+      "branch_sensitive_rows": [],
+      "branch_stable_rows": [
+        4
+      ]
+    },
+    "singleton_ZT": {
+      "rows": [
+        3
+      ],
+      "count": 1,
+      "residual_rows": [
+        3
+      ],
+      "false_positive_rows": [],
+      "roles": [
+        "ZT"
+      ],
+      "column_counts": [
+        1
+      ],
+      "slot_pair_spans": [
+        [
+          4
+        ]
+      ],
+      "branch_sensitive_rows": [],
+      "branch_stable_rows": [
+        3
+      ]
+    }
+  },
+  "preferred_candidate": {
+    "name": "source_geometry_singleton_ZT_OR_multi_column_TI",
+    "reading": "inside zero-twisted carrier, residual support is singleton ZT OR multi-column TI",
+    "support": [
+      3,
+      16
+    ],
+    "precision": 1.0,
+    "recall": 1.0,
+    "exact_inside_neighborhood": true
+  },
+  "complement_candidate": {
+    "name": "source_geometry_singleton_TI_OR_multi_column_ZT",
+    "reading": "inside zero-twisted carrier, stable false-positive support is singleton TI OR multi-column ZT",
+    "support": [
+      4,
+      9,
+      15
+    ],
+    "precision_against_false_positives": 1.0,
+    "recall_against_false_positives": 1.0,
+    "exact_against_false_positives": true
+  },
+  "feature_tests": [
+    {
+      "name": "column_shape_multi_column",
+      "support": [
+        9,
+        15,
+        16
+      ],
+      "support_count": 3,
+      "residual_hits": [
+        16
+      ],
+      "false_positives": [
+        9,
+        15
+      ],
+      "misses": [
+        3
+      ],
+      "precision": 0.3333333333333333,
+      "recall": 0.5,
+      "exact": false
+    },
+    {
+      "name": "column_shape_singleton",
+      "support": [
+        3,
+        4
+      ],
+      "support_count": 2,
+      "residual_hits": [
+        3
+      ],
+      "false_positives": [
+        4
+      ],
+      "misses": [
+        16
+      ],
+      "precision": 0.5,
+      "recall": 0.5,
+      "exact": false
+    },
+    {
+      "name": "role_TI",
+      "support": [
+        4,
+        16
+      ],
+      "support_count": 2,
+      "residual_hits": [
+        16
+      ],
+      "false_positives": [
+        4
+      ],
+      "misses": [
+        3
+      ],
+      "precision": 0.5,
+      "recall": 0.5,
+      "exact": false
+    },
+    {
+      "name": "role_ZT",
+      "support": [
+        3,
+        9,
+        15
+      ],
+      "support_count": 3,
+      "residual_hits": [
+        3
+      ],
+      "false_positives": [
+        9,
+        15
+      ],
+      "misses": [
+        16
+      ],
+      "precision": 0.3333333333333333,
+      "recall": 0.5,
+      "exact": false
+    },
+    {
+      "name": "role_column_class_multi_column_TI",
+      "support": [
+        16
+      ],
+      "support_count": 1,
+      "residual_hits": [
+        16
+      ],
+      "false_positives": [],
+      "misses": [
+        3
+      ],
+      "precision": 1.0,
+      "recall": 0.5,
+      "exact": false
+    },
+    {
+      "name": "role_column_class_multi_column_ZT",
+      "support": [
+        9,
+        15
+      ],
+      "support_count": 2,
+      "residual_hits": [],
+      "false_positives": [
+        9,
+        15
+      ],
+      "misses": [
+        3,
+        16
+      ],
+      "precision": 0.0,
+      "recall": 0.0,
+      "exact": false
+    },
+    {
+      "name": "role_column_class_singleton_TI",
+      "support": [
+        4
+      ],
+      "support_count": 1,
+      "residual_hits": [],
+      "false_positives": [
+        4
+      ],
+      "misses": [
+        3,
+        16
+      ],
+      "precision": 0.0,
+      "recall": 0.0,
+      "exact": false
+    },
+    {
+      "name": "role_column_class_singleton_ZT",
+      "support": [
+        3
+      ],
+      "support_count": 1,
+      "residual_hits": [
+        3
+      ],
+      "false_positives": [],
+      "misses": [
+        16
+      ],
+      "precision": 1.0,
+      "recall": 0.5,
+      "exact": false
+    },
+    {
+      "name": "source_geometry_branch_sensitive_OR_singleton_ZT",
+      "support": [
+        3,
+        16
+      ],
+      "support_count": 2,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [],
+      "misses": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "exact": true
+    },
+    {
+      "name": "source_geometry_neighbor_port_rule",
+      "support": [
+        3,
+        16
+      ],
+      "support_count": 2,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [],
+      "misses": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "exact": true
+    },
+    {
+      "name": "source_geometry_singleton_TI_OR_multi_column_ZT",
+      "support": [
+        4,
+        9,
+        15
+      ],
+      "support_count": 3,
+      "residual_hits": [],
+      "false_positives": [
+        4,
+        9,
+        15
+      ],
+      "misses": [
+        3,
+        16
+      ],
+      "precision": 0.0,
+      "recall": 0.0,
+      "exact": false
+    },
+    {
+      "name": "source_geometry_singleton_ZT_OR_multi_column_TI",
+      "support": [
+        3,
+        16
+      ],
+      "support_count": 2,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [],
+      "misses": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "exact": true
+    }
+  ],
+  "exact_features": [
+    {
+      "name": "source_geometry_branch_sensitive_OR_singleton_ZT",
+      "support": [
+        3,
+        16
+      ],
+      "support_count": 2,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [],
+      "misses": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "exact": true
+    },
+    {
+      "name": "source_geometry_neighbor_port_rule",
+      "support": [
+        3,
+        16
+      ],
+      "support_count": 2,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [],
+      "misses": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "exact": true
+    },
+    {
+      "name": "source_geometry_singleton_ZT_OR_multi_column_TI",
+      "support": [
+        3,
+        16
+      ],
+      "support_count": 2,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [],
+      "misses": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "exact": true
+    }
+  ],
+  "interpretation": {
+    "main_result": "Inside the zero-twisted-carrier neighborhood, the residual split is exactly singleton ZT OR multi-column TI.",
+    "complement_result": "The stable false positives are exactly the complementary role-column pattern: singleton TI OR multi-column ZT.",
+    "source_geometry_read": "The obstruction is not merely neighbor-port balance; it appears to split by how role and column multiplicity interact inside the zero-twisted carrier.",
+    "not_closure": "This remains local to the zero-twisted neighborhood and does not supply the full chamber/register map."
+  },
+  "checks": [
+    {
+      "id": "mixed_note_loaded",
+      "status": true,
+      "detail": "gap_a_neighbor_port_mixed_note_recorded"
+    },
+    {
+      "id": "neighbor_rule_loaded",
+      "status": true,
+      "detail": "gap_a_neighbor_port_rule_candidate_found_not_closure"
+    },
+    {
+      "id": "neighbor_nulls_mixed",
+      "status": true,
+      "detail": "gap_a_neighbor_port_rule_nulls_mixed_not_promoted"
+    },
+    {
+      "id": "zero_split_loaded",
+      "status": true,
+      "detail": "gap_a_zero_twisted_neighborhood_split_candidate_found_not_closure"
+    },
+    {
+      "id": "context_loaded",
+      "status": true,
+      "detail": "gap_a_surrounding_cell_context_probe_recorded"
+    },
+    {
+      "id": "zero_rows_expected",
+      "status": true,
+      "detail": "[3, 4, 9, 15, 16]"
+    },
+    {
+      "id": "preferred_exact",
+      "status": true,
+      "detail": "{\"exact\": true, \"false_positives\": [], \"misses\": [], \"name\": \"source_geometry_singleton_ZT_OR_multi_column_TI\", \"precision\": 1.0, \"recall\": 1.0, \"residual_hits\": [3, 16], \"support\": [3, 16], \"support_count\": 2}"
+    },
+    {
+      "id": "complement_selects_false_positives",
+      "status": true,
+      "detail": "{\"exact\": true, \"false_positives\": [], \"misses\": [], \"name\": \"complement_singleton_TI_OR_multi_column_ZT_selects_false_positives\", \"precision\": 1.0, \"recall\": 1.0, \"residual_hits\": [4, 9, 15], \"support\": [4, 9, 15], \"support_count\": 3}"
+    },
+    {
+      "id": "gap_a_not_closed",
+      "status": true,
+      "detail": "this is local to zero-twisted neighborhood"
+    }
+  ],
+  "next_script": "null_gap_a_role_column_source_geometry_001.py"
+}

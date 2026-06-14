@@ -1,0 +1,5538 @@
+{
+  "schema": "gap_a_wxyzti_register_generator_bruteforce_family_001.v1",
+  "status": "gap_a_bruteforce_wxyzti_register_exact_selector_family_found_not_generator",
+  "timestamp_utc": "2026-06-14T21:53:14.105422+00:00",
+  "purpose": "Run a bounded Mac-side brute-force search for exact WXYZTI row selectors over source-column feature terms, as a benchmark before claiming any source-native generator.",
+  "boundary": [
+    "This does not close Gap A.",
+    "This searches exact selector formulas, not a source-native row/register generator.",
+    "A successful selector family is useful only as a benchmark and overfit target.",
+    "Singleton-heavy formulas are treated as lookup-like.",
+    "Mode 2 mirror remains projection-level evidence and is not promoted here.",
+    "No physical interpretation is claimed."
+  ],
+  "summary": {
+    "bruteforce_result": "exact_bounded_selector_family_found_not_generator",
+    "gap_a_closed": false,
+    "source_column_count": 30,
+    "row_count": 18,
+    "non_path_rows": [
+      5,
+      8,
+      9,
+      11,
+      15,
+      16,
+      17
+    ],
+    "preimage_rows": [
+      3,
+      16
+    ],
+    "stable_rows": [
+      4,
+      9,
+      15
+    ],
+    "zero_rows": [
+      3,
+      4,
+      9,
+      15,
+      16
+    ],
+    "source_native_atom_count": 930,
+    "source_native_term_support_count": 673,
+    "source_native_all_rows_exact": true,
+    "source_native_total_cost": 1153,
+    "source_native_singleton_row_count": 11,
+    "source_native_distinct_feature_count": 17,
+    "broad_atom_count": 1099,
+    "broad_term_support_count": 1072,
+    "broad_all_rows_exact": true,
+    "broad_total_cost": 1101,
+    "primary_solution_kind": "source_native",
+    "primary_all_rows_exact": true,
+    "primary_exact_rows": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "primary_total_cost": 1153,
+    "primary_singleton_rows": [
+      0,
+      1,
+      3,
+      4,
+      6,
+      7,
+      8,
+      10,
+      12,
+      13,
+      14
+    ],
+    "primary_singleton_row_count": 11,
+    "primary_distinct_feature_count": 17,
+    "overfit_flags": [
+      "many_rows_require_singleton_terms",
+      "many_distinct_feature_families"
+    ],
+    "claim_closes_gap_a": false
+  },
+  "source_native_solution": {
+    "row_solutions": [
+      {
+        "row_ordinal": 0,
+        "cycle": 0,
+        "role": "WX",
+        "columns": [
+          0
+        ],
+        "preimage": false,
+        "stable_complement": false,
+        "zero_twisted_source_row": false,
+        "exact_formula_found": true,
+        "formula_cost": 56,
+        "term_count": 1,
+        "uses_singleton_terms": true,
+        "singleton_term_count": 1,
+        "feature_count": 2,
+        "features": [
+          "g900_slot_edge.a",
+          "g900_slot_edge.diff_mod15"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "g900_slot_edge.a == 0 AND g900_slot_edge.diff_mod15 == 1",
+            "term_cost": 56,
+            "support": [
+              0
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.a",
+              "g900_slot_edge.diff_mod15"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.a == 0",
+                "class": "source_native",
+                "support": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "g900_slot_edge.diff_mod15 == 1",
+                "class": "source_native",
+                "support": [
+                  0,
+                  4,
+                  7,
+                  10,
+                  15,
+                  19,
+                  22,
+                  25,
+                  28
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 1,
+        "cycle": 0,
+        "role": "XY",
+        "columns": [
+          4
+        ],
+        "preimage": false,
+        "stable_complement": false,
+        "zero_twisted_source_row": false,
+        "exact_formula_found": true,
+        "formula_cost": 56,
+        "term_count": 1,
+        "uses_singleton_terms": true,
+        "singleton_term_count": 1,
+        "feature_count": 2,
+        "features": [
+          "g900_slot_edge.a_mod5",
+          "p900_candidate0_edge_law.sector.diff_mod15"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "g900_slot_edge.a_mod5 == 1 AND p900_candidate0_edge_law.sector.diff_mod15 == 1",
+            "term_cost": 56,
+            "support": [
+              4
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.a_mod5",
+              "p900_candidate0_edge_law.sector.diff_mod15"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.a_mod5 == 1",
+                "class": "source_native",
+                "support": [
+                  4,
+                  5,
+                  6,
+                  19,
+                  20,
+                  21
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "p900_candidate0_edge_law.sector.diff_mod15 == 1",
+                "class": "source_native",
+                "support": [
+                  0,
+                  4,
+                  7,
+                  10,
+                  13,
+                  25,
+                  27,
+                  28,
+                  29
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 2,
+        "cycle": 0,
+        "role": "YZ",
+        "columns": [
+          7,
+          10
+        ],
+        "preimage": false,
+        "stable_complement": false,
+        "zero_twisted_source_row": false,
+        "exact_formula_found": true,
+        "formula_cost": 45,
+        "term_count": 1,
+        "uses_singleton_terms": false,
+        "singleton_term_count": 0,
+        "feature_count": 2,
+        "features": [
+          "g900_slot_edge.cycle_b_5x3",
+          "g900_slot_edge.endpoint_mod5"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "g900_slot_edge.cycle_b_5x3 == 0 AND g900_slot_edge.endpoint_mod5 == 3",
+            "term_cost": 45,
+            "support": [
+              7,
+              10
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.cycle_b_5x3",
+              "g900_slot_edge.endpoint_mod5"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.cycle_b_5x3 == 0",
+                "class": "source_native",
+                "support": [
+                  0,
+                  1,
+                  4,
+                  7,
+                  10
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "g900_slot_edge.endpoint_mod5 == 3",
+                "class": "source_native",
+                "support": [
+                  7,
+                  9,
+                  10,
+                  11,
+                  12,
+                  22,
+                  25,
+                  26,
+                  27,
+                  29
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 3,
+        "cycle": 0,
+        "role": "ZT",
+        "columns": [
+          9
+        ],
+        "preimage": true,
+        "stable_complement": false,
+        "zero_twisted_source_row": true,
+        "exact_formula_found": true,
+        "formula_cost": 56,
+        "term_count": 1,
+        "uses_singleton_terms": true,
+        "singleton_term_count": 1,
+        "feature_count": 2,
+        "features": [
+          "g900_slot_edge.a_mod5",
+          "p900_candidate0_edge_law.petersen_b.b_mod5"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "g900_slot_edge.a_mod5 == 2 AND p900_candidate0_edge_law.petersen_b.b_mod5 == 3",
+            "term_cost": 56,
+            "support": [
+              9
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.a_mod5",
+              "p900_candidate0_edge_law.petersen_b.b_mod5"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.a_mod5 == 2",
+                "class": "source_native",
+                "support": [
+                  7,
+                  8,
+                  9,
+                  22,
+                  23,
+                  24
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "p900_candidate0_edge_law.petersen_b.b_mod5 == 3",
+                "class": "source_native",
+                "support": [
+                  4,
+                  9,
+                  11,
+                  18,
+                  21,
+                  28
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 4,
+        "cycle": 0,
+        "role": "TI",
+        "columns": [
+          13
+        ],
+        "preimage": false,
+        "stable_complement": true,
+        "zero_twisted_source_row": true,
+        "exact_formula_found": true,
+        "formula_cost": 56,
+        "term_count": 1,
+        "uses_singleton_terms": true,
+        "singleton_term_count": 1,
+        "feature_count": 2,
+        "features": [
+          "g900_slot_edge.a_mod5",
+          "p900_candidate0_edge_law.label"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "g900_slot_edge.a_mod5 == 4 AND p900_candidate0_edge_law.label == \"half_turn\"",
+            "term_cost": 56,
+            "support": [
+              13
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.a_mod5",
+              "p900_candidate0_edge_law.label"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.a_mod5 == 4",
+                "class": "source_native",
+                "support": [
+                  13,
+                  14,
+                  28,
+                  29
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "p900_candidate0_edge_law.label == \"half_turn\"",
+                "class": "source_native",
+                "support": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  11,
+                  13,
+                  15,
+                  16,
+                  26
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 5,
+        "cycle": 0,
+        "role": "IW",
+        "columns": [
+          1,
+          7
+        ],
+        "preimage": false,
+        "stable_complement": false,
+        "zero_twisted_source_row": false,
+        "exact_formula_found": true,
+        "formula_cost": 45,
+        "term_count": 1,
+        "uses_singleton_terms": false,
+        "singleton_term_count": 0,
+        "feature_count": 2,
+        "features": [
+          "p900_candidate0_edge_law.label",
+          "p900_candidate0_edge_law.petersen_b.endpoint"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "p900_candidate0_edge_law.petersen_b.endpoint == 4 AND p900_candidate0_edge_law.label == \"half_turn\"",
+            "term_cost": 45,
+            "support": [
+              1,
+              7
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "p900_candidate0_edge_law.label",
+              "p900_candidate0_edge_law.petersen_b.endpoint"
+            ],
+            "atoms": [
+              {
+                "atom": "p900_candidate0_edge_law.petersen_b.endpoint == 4",
+                "class": "source_native",
+                "support": [
+                  1,
+                  7,
+                  10,
+                  12,
+                  14
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "p900_candidate0_edge_law.label == \"half_turn\"",
+                "class": "source_native",
+                "support": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  11,
+                  13,
+                  15,
+                  16,
+                  26
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 6,
+        "cycle": 1,
+        "role": "WX",
+        "columns": [
+          0
+        ],
+        "preimage": false,
+        "stable_complement": false,
+        "zero_twisted_source_row": false,
+        "exact_formula_found": true,
+        "formula_cost": 56,
+        "term_count": 1,
+        "uses_singleton_terms": true,
+        "singleton_term_count": 1,
+        "feature_count": 2,
+        "features": [
+          "g900_slot_edge.a",
+          "g900_slot_edge.diff_mod15"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "g900_slot_edge.a == 0 AND g900_slot_edge.diff_mod15 == 1",
+            "term_cost": 56,
+            "support": [
+              0
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.a",
+              "g900_slot_edge.diff_mod15"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.a == 0",
+                "class": "source_native",
+                "support": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "g900_slot_edge.diff_mod15 == 1",
+                "class": "source_native",
+                "support": [
+                  0,
+                  4,
+                  7,
+                  10,
+                  15,
+                  19,
+                  22,
+                  25,
+                  28
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 7,
+        "cycle": 1,
+        "role": "XY",
+        "columns": [
+          4
+        ],
+        "preimage": false,
+        "stable_complement": false,
+        "zero_twisted_source_row": false,
+        "exact_formula_found": true,
+        "formula_cost": 56,
+        "term_count": 1,
+        "uses_singleton_terms": true,
+        "singleton_term_count": 1,
+        "feature_count": 2,
+        "features": [
+          "g900_slot_edge.a_mod5",
+          "p900_candidate0_edge_law.sector.diff_mod15"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "g900_slot_edge.a_mod5 == 1 AND p900_candidate0_edge_law.sector.diff_mod15 == 1",
+            "term_cost": 56,
+            "support": [
+              4
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.a_mod5",
+              "p900_candidate0_edge_law.sector.diff_mod15"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.a_mod5 == 1",
+                "class": "source_native",
+                "support": [
+                  4,
+                  5,
+                  6,
+                  19,
+                  20,
+                  21
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "p900_candidate0_edge_law.sector.diff_mod15 == 1",
+                "class": "source_native",
+                "support": [
+                  0,
+                  4,
+                  7,
+                  10,
+                  13,
+                  25,
+                  27,
+                  28,
+                  29
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 8,
+        "cycle": 1,
+        "role": "YZ",
+        "columns": [
+          1,
+          3,
+          22
+        ],
+        "preimage": false,
+        "stable_complement": false,
+        "zero_twisted_source_row": false,
+        "exact_formula_found": true,
+        "formula_cost": 111,
+        "term_count": 2,
+        "uses_singleton_terms": true,
+        "singleton_term_count": 1,
+        "feature_count": 4,
+        "features": [
+          "g900_slot_edge.a",
+          "g900_slot_edge.a_mod5",
+          "g900_slot_edge.distance_mod15",
+          "p900_candidate0_edge_law.petersen_b.b"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "g900_slot_edge.a == 0 AND g900_slot_edge.distance_mod15 == 4",
+            "term_cost": 45,
+            "support": [
+              1,
+              3
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.a",
+              "g900_slot_edge.distance_mod15"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.a == 0",
+                "class": "source_native",
+                "support": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "g900_slot_edge.distance_mod15 == 4",
+                "class": "source_native",
+                "support": [
+                  1,
+                  3,
+                  6,
+                  9,
+                  12,
+                  16,
+                  23,
+                  29
+                ],
+                "atom_cost": 13
+              }
+            ]
+          },
+          {
+            "term": "g900_slot_edge.a_mod5 == 2 AND p900_candidate0_edge_law.petersen_b.b == 5",
+            "term_cost": 56,
+            "support": [
+              22
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.a_mod5",
+              "p900_candidate0_edge_law.petersen_b.b"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.a_mod5 == 2",
+                "class": "source_native",
+                "support": [
+                  7,
+                  8,
+                  9,
+                  22,
+                  23,
+                  24
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "p900_candidate0_edge_law.petersen_b.b == 5",
+                "class": "source_native",
+                "support": [
+                  2,
+                  13,
+                  16,
+                  22,
+                  26,
+                  29
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 9,
+        "cycle": 1,
+        "role": "ZT",
+        "columns": [
+          9,
+          11,
+          14
+        ],
+        "preimage": false,
+        "stable_complement": true,
+        "zero_twisted_source_row": true,
+        "exact_formula_found": true,
+        "formula_cost": 90,
+        "term_count": 2,
+        "uses_singleton_terms": false,
+        "singleton_term_count": 0,
+        "feature_count": 3,
+        "features": [
+          "g900_slot_edge.diff_mod15",
+          "p900_candidate0_edge_law.petersen_a.endpoint",
+          "p900_candidate0_edge_law.petersen_b.sum_mod15"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "p900_candidate0_edge_law.petersen_b.sum_mod15 == 11",
+            "term_cost": 35,
+            "support": [
+              9,
+              11
+            ],
+            "atom_count": 1,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "p900_candidate0_edge_law.petersen_b.sum_mod15"
+            ],
+            "atoms": [
+              {
+                "atom": "p900_candidate0_edge_law.petersen_b.sum_mod15 == 11",
+                "class": "source_native",
+                "support": [
+                  9,
+                  11
+                ],
+                "atom_cost": 28
+              }
+            ]
+          },
+          {
+            "term": "g900_slot_edge.diff_mod15 == 10 AND p900_candidate0_edge_law.petersen_a.endpoint == 4",
+            "term_cost": 45,
+            "support": [
+              11,
+              14
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.diff_mod15",
+              "p900_candidate0_edge_law.petersen_a.endpoint"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.diff_mod15 == 10",
+                "class": "source_native",
+                "support": [
+                  2,
+                  5,
+                  8,
+                  11,
+                  14
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "p900_candidate0_edge_law.petersen_a.endpoint == 4",
+                "class": "source_native",
+                "support": [
+                  10,
+                  11,
+                  12,
+                  13,
+                  14,
+                  23,
+                  24
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 10,
+        "cycle": 1,
+        "role": "TI",
+        "columns": [
+          10,
+          11
+        ],
+        "preimage": false,
+        "stable_complement": false,
+        "zero_twisted_source_row": false,
+        "exact_formula_found": true,
+        "formula_cost": 122,
+        "term_count": 2,
+        "uses_singleton_terms": true,
+        "singleton_term_count": 2,
+        "feature_count": 3,
+        "features": [
+          "g900_slot_edge.a_mod5",
+          "g900_slot_edge.cycle_b_5x3",
+          "p900_candidate0_edge_law.petersen_b.b_mod5"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "g900_slot_edge.a_mod5 == 3 AND p900_candidate0_edge_law.petersen_b.b_mod5 == 3",
+            "term_cost": 56,
+            "support": [
+              11
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.a_mod5",
+              "p900_candidate0_edge_law.petersen_b.b_mod5"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.a_mod5 == 3",
+                "class": "source_native",
+                "support": [
+                  10,
+                  11,
+                  12,
+                  25,
+                  26,
+                  27
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "p900_candidate0_edge_law.petersen_b.b_mod5 == 3",
+                "class": "source_native",
+                "support": [
+                  4,
+                  9,
+                  11,
+                  18,
+                  21,
+                  28
+                ],
+                "atom_cost": 13
+              }
+            ]
+          },
+          {
+            "term": "g900_slot_edge.cycle_b_5x3 == 0 AND g900_slot_edge.a_mod5 == 3",
+            "term_cost": 56,
+            "support": [
+              10
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.a_mod5",
+              "g900_slot_edge.cycle_b_5x3"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.cycle_b_5x3 == 0",
+                "class": "source_native",
+                "support": [
+                  0,
+                  1,
+                  4,
+                  7,
+                  10
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "g900_slot_edge.a_mod5 == 3",
+                "class": "source_native",
+                "support": [
+                  10,
+                  11,
+                  12,
+                  25,
+                  26,
+                  27
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 11,
+        "cycle": 1,
+        "role": "IW",
+        "columns": [
+          1,
+          7
+        ],
+        "preimage": false,
+        "stable_complement": false,
+        "zero_twisted_source_row": false,
+        "exact_formula_found": true,
+        "formula_cost": 45,
+        "term_count": 1,
+        "uses_singleton_terms": false,
+        "singleton_term_count": 0,
+        "feature_count": 2,
+        "features": [
+          "p900_candidate0_edge_law.label",
+          "p900_candidate0_edge_law.petersen_b.endpoint"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "p900_candidate0_edge_law.petersen_b.endpoint == 4 AND p900_candidate0_edge_law.label == \"half_turn\"",
+            "term_cost": 45,
+            "support": [
+              1,
+              7
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "p900_candidate0_edge_law.label",
+              "p900_candidate0_edge_law.petersen_b.endpoint"
+            ],
+            "atoms": [
+              {
+                "atom": "p900_candidate0_edge_law.petersen_b.endpoint == 4",
+                "class": "source_native",
+                "support": [
+                  1,
+                  7,
+                  10,
+                  12,
+                  14
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "p900_candidate0_edge_law.label == \"half_turn\"",
+                "class": "source_native",
+                "support": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  11,
+                  13,
+                  15,
+                  16,
+                  26
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 12,
+        "cycle": 2,
+        "role": "WX",
+        "columns": [
+          0
+        ],
+        "preimage": false,
+        "stable_complement": false,
+        "zero_twisted_source_row": false,
+        "exact_formula_found": true,
+        "formula_cost": 56,
+        "term_count": 1,
+        "uses_singleton_terms": true,
+        "singleton_term_count": 1,
+        "feature_count": 2,
+        "features": [
+          "g900_slot_edge.a",
+          "g900_slot_edge.diff_mod15"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "g900_slot_edge.a == 0 AND g900_slot_edge.diff_mod15 == 1",
+            "term_cost": 56,
+            "support": [
+              0
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.a",
+              "g900_slot_edge.diff_mod15"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.a == 0",
+                "class": "source_native",
+                "support": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "g900_slot_edge.diff_mod15 == 1",
+                "class": "source_native",
+                "support": [
+                  0,
+                  4,
+                  7,
+                  10,
+                  15,
+                  19,
+                  22,
+                  25,
+                  28
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 13,
+        "cycle": 2,
+        "role": "XY",
+        "columns": [
+          4
+        ],
+        "preimage": false,
+        "stable_complement": false,
+        "zero_twisted_source_row": false,
+        "exact_formula_found": true,
+        "formula_cost": 56,
+        "term_count": 1,
+        "uses_singleton_terms": true,
+        "singleton_term_count": 1,
+        "feature_count": 2,
+        "features": [
+          "g900_slot_edge.a_mod5",
+          "p900_candidate0_edge_law.sector.diff_mod15"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "g900_slot_edge.a_mod5 == 1 AND p900_candidate0_edge_law.sector.diff_mod15 == 1",
+            "term_cost": 56,
+            "support": [
+              4
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.a_mod5",
+              "p900_candidate0_edge_law.sector.diff_mod15"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.a_mod5 == 1",
+                "class": "source_native",
+                "support": [
+                  4,
+                  5,
+                  6,
+                  19,
+                  20,
+                  21
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "p900_candidate0_edge_law.sector.diff_mod15 == 1",
+                "class": "source_native",
+                "support": [
+                  0,
+                  4,
+                  7,
+                  10,
+                  13,
+                  25,
+                  27,
+                  28,
+                  29
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 14,
+        "cycle": 2,
+        "role": "YZ",
+        "columns": [
+          4,
+          5
+        ],
+        "preimage": false,
+        "stable_complement": false,
+        "zero_twisted_source_row": false,
+        "exact_formula_found": true,
+        "formula_cost": 122,
+        "term_count": 2,
+        "uses_singleton_terms": true,
+        "singleton_term_count": 2,
+        "feature_count": 3,
+        "features": [
+          "g900_slot_edge.a_mod5",
+          "g900_slot_edge.b_mod5",
+          "p900_candidate0_edge_law.sector.diff_mod15"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "g900_slot_edge.a_mod5 == 1 AND g900_slot_edge.b_mod5 == 1",
+            "term_cost": 56,
+            "support": [
+              5
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.a_mod5",
+              "g900_slot_edge.b_mod5"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.a_mod5 == 1",
+                "class": "source_native",
+                "support": [
+                  4,
+                  5,
+                  6,
+                  19,
+                  20,
+                  21
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "g900_slot_edge.b_mod5 == 1",
+                "class": "source_native",
+                "support": [
+                  0,
+                  3,
+                  5,
+                  15,
+                  23,
+                  26
+                ],
+                "atom_cost": 13
+              }
+            ]
+          },
+          {
+            "term": "g900_slot_edge.a_mod5 == 1 AND p900_candidate0_edge_law.sector.diff_mod15 == 1",
+            "term_cost": 56,
+            "support": [
+              4
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.a_mod5",
+              "p900_candidate0_edge_law.sector.diff_mod15"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.a_mod5 == 1",
+                "class": "source_native",
+                "support": [
+                  4,
+                  5,
+                  6,
+                  19,
+                  20,
+                  21
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "p900_candidate0_edge_law.sector.diff_mod15 == 1",
+                "class": "source_native",
+                "support": [
+                  0,
+                  4,
+                  7,
+                  10,
+                  13,
+                  25,
+                  27,
+                  28,
+                  29
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 15,
+        "cycle": 2,
+        "role": "ZT",
+        "columns": [
+          21,
+          22
+        ],
+        "preimage": false,
+        "stable_complement": true,
+        "zero_twisted_source_row": true,
+        "exact_formula_found": true,
+        "formula_cost": 35,
+        "term_count": 1,
+        "uses_singleton_terms": false,
+        "singleton_term_count": 0,
+        "feature_count": 1,
+        "features": [
+          "p900_candidate0_edge_law.petersen_a.sum_mod15"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "p900_candidate0_edge_law.petersen_a.sum_mod15 == 11",
+            "term_cost": 35,
+            "support": [
+              21,
+              22
+            ],
+            "atom_count": 1,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "p900_candidate0_edge_law.petersen_a.sum_mod15"
+            ],
+            "atoms": [
+              {
+                "atom": "p900_candidate0_edge_law.petersen_a.sum_mod15 == 11",
+                "class": "source_native",
+                "support": [
+                  21,
+                  22
+                ],
+                "atom_cost": 28
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 16,
+        "cycle": 2,
+        "role": "TI",
+        "columns": [
+          13,
+          15
+        ],
+        "preimage": true,
+        "stable_complement": false,
+        "zero_twisted_source_row": true,
+        "exact_formula_found": true,
+        "formula_cost": 45,
+        "term_count": 1,
+        "uses_singleton_terms": false,
+        "singleton_term_count": 0,
+        "feature_count": 2,
+        "features": [
+          "p900_candidate0_edge_law.petersen_a.b_mod5",
+          "p900_candidate0_edge_law.petersen_b.a_mod5"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "p900_candidate0_edge_law.petersen_a.b_mod5 == 0 AND p900_candidate0_edge_law.petersen_b.a_mod5 == 0",
+            "term_cost": 45,
+            "support": [
+              13,
+              15
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "p900_candidate0_edge_law.petersen_a.b_mod5",
+              "p900_candidate0_edge_law.petersen_b.a_mod5"
+            ],
+            "atoms": [
+              {
+                "atom": "p900_candidate0_edge_law.petersen_a.b_mod5 == 0",
+                "class": "source_native",
+                "support": [
+                  13,
+                  14,
+                  15,
+                  16
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "p900_candidate0_edge_law.petersen_b.a_mod5 == 0",
+                "class": "source_native",
+                "support": [
+                  2,
+                  13,
+                  15,
+                  19
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 17,
+        "cycle": 2,
+        "role": "IW",
+        "columns": [
+          1,
+          7
+        ],
+        "preimage": false,
+        "stable_complement": false,
+        "zero_twisted_source_row": false,
+        "exact_formula_found": true,
+        "formula_cost": 45,
+        "term_count": 1,
+        "uses_singleton_terms": false,
+        "singleton_term_count": 0,
+        "feature_count": 2,
+        "features": [
+          "p900_candidate0_edge_law.label",
+          "p900_candidate0_edge_law.petersen_b.endpoint"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "p900_candidate0_edge_law.petersen_b.endpoint == 4 AND p900_candidate0_edge_law.label == \"half_turn\"",
+            "term_cost": 45,
+            "support": [
+              1,
+              7
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "p900_candidate0_edge_law.label",
+              "p900_candidate0_edge_law.petersen_b.endpoint"
+            ],
+            "atoms": [
+              {
+                "atom": "p900_candidate0_edge_law.petersen_b.endpoint == 4",
+                "class": "source_native",
+                "support": [
+                  1,
+                  7,
+                  10,
+                  12,
+                  14
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "p900_candidate0_edge_law.label == \"half_turn\"",
+                "class": "source_native",
+                "support": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  11,
+                  13,
+                  15,
+                  16,
+                  26
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "exact_rows": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "all_rows_exact": true,
+    "total_cost": 1153,
+    "singleton_rows": [
+      0,
+      1,
+      3,
+      4,
+      6,
+      7,
+      8,
+      10,
+      12,
+      13,
+      14
+    ],
+    "singleton_row_count": 11,
+    "feature_reuse": [
+      [
+        "g900_slot_edge.a_mod5",
+        8
+      ],
+      [
+        "g900_slot_edge.a",
+        4
+      ],
+      [
+        "g900_slot_edge.diff_mod15",
+        4
+      ],
+      [
+        "p900_candidate0_edge_law.sector.diff_mod15",
+        4
+      ],
+      [
+        "p900_candidate0_edge_law.label",
+        4
+      ],
+      [
+        "p900_candidate0_edge_law.petersen_b.endpoint",
+        3
+      ],
+      [
+        "g900_slot_edge.cycle_b_5x3",
+        2
+      ],
+      [
+        "p900_candidate0_edge_law.petersen_b.b_mod5",
+        2
+      ],
+      [
+        "g900_slot_edge.endpoint_mod5",
+        1
+      ],
+      [
+        "g900_slot_edge.distance_mod15",
+        1
+      ],
+      [
+        "p900_candidate0_edge_law.petersen_b.b",
+        1
+      ],
+      [
+        "p900_candidate0_edge_law.petersen_a.endpoint",
+        1
+      ],
+      [
+        "p900_candidate0_edge_law.petersen_b.sum_mod15",
+        1
+      ],
+      [
+        "g900_slot_edge.b_mod5",
+        1
+      ],
+      [
+        "p900_candidate0_edge_law.petersen_a.sum_mod15",
+        1
+      ],
+      [
+        "p900_candidate0_edge_law.petersen_a.b_mod5",
+        1
+      ],
+      [
+        "p900_candidate0_edge_law.petersen_b.a_mod5",
+        1
+      ]
+    ],
+    "distinct_feature_count": 17
+  },
+  "broad_solution": {
+    "row_solutions": [
+      {
+        "row_ordinal": 0,
+        "cycle": 0,
+        "role": "WX",
+        "columns": [
+          0
+        ],
+        "preimage": false,
+        "stable_complement": false,
+        "zero_twisted_source_row": false,
+        "exact_formula_found": true,
+        "formula_cost": 56,
+        "term_count": 1,
+        "uses_singleton_terms": true,
+        "singleton_term_count": 1,
+        "feature_count": 2,
+        "features": [
+          "g900_slot_edge.a",
+          "g900_slot_edge.diff_mod15"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "g900_slot_edge.a == 0 AND g900_slot_edge.diff_mod15 == 1",
+            "term_cost": 56,
+            "support": [
+              0
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.a",
+              "g900_slot_edge.diff_mod15"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.a == 0",
+                "class": "source_native",
+                "support": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "g900_slot_edge.diff_mod15 == 1",
+                "class": "source_native",
+                "support": [
+                  0,
+                  4,
+                  7,
+                  10,
+                  15,
+                  19,
+                  22,
+                  25,
+                  28
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 1,
+        "cycle": 0,
+        "role": "XY",
+        "columns": [
+          4
+        ],
+        "preimage": false,
+        "stable_complement": false,
+        "zero_twisted_source_row": false,
+        "exact_formula_found": true,
+        "formula_cost": 56,
+        "term_count": 1,
+        "uses_singleton_terms": true,
+        "singleton_term_count": 1,
+        "feature_count": 2,
+        "features": [
+          "g900_slot_edge.a_mod5",
+          "p900_candidate0_edge_law.sector.diff_mod15"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "g900_slot_edge.a_mod5 == 1 AND p900_candidate0_edge_law.sector.diff_mod15 == 1",
+            "term_cost": 56,
+            "support": [
+              4
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.a_mod5",
+              "p900_candidate0_edge_law.sector.diff_mod15"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.a_mod5 == 1",
+                "class": "source_native",
+                "support": [
+                  4,
+                  5,
+                  6,
+                  19,
+                  20,
+                  21
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "p900_candidate0_edge_law.sector.diff_mod15 == 1",
+                "class": "source_native",
+                "support": [
+                  0,
+                  4,
+                  7,
+                  10,
+                  13,
+                  25,
+                  27,
+                  28,
+                  29
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 2,
+        "cycle": 0,
+        "role": "YZ",
+        "columns": [
+          7,
+          10
+        ],
+        "preimage": false,
+        "stable_complement": false,
+        "zero_twisted_source_row": false,
+        "exact_formula_found": true,
+        "formula_cost": 45,
+        "term_count": 1,
+        "uses_singleton_terms": false,
+        "singleton_term_count": 0,
+        "feature_count": 2,
+        "features": [
+          "g900_slot_edge.cycle_b_5x3",
+          "g900_slot_edge.endpoint_mod5"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "g900_slot_edge.cycle_b_5x3 == 0 AND g900_slot_edge.endpoint_mod5 == 3",
+            "term_cost": 45,
+            "support": [
+              7,
+              10
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.cycle_b_5x3",
+              "g900_slot_edge.endpoint_mod5"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.cycle_b_5x3 == 0",
+                "class": "source_native",
+                "support": [
+                  0,
+                  1,
+                  4,
+                  7,
+                  10
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "g900_slot_edge.endpoint_mod5 == 3",
+                "class": "source_native",
+                "support": [
+                  7,
+                  9,
+                  10,
+                  11,
+                  12,
+                  22,
+                  25,
+                  26,
+                  27,
+                  29
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 3,
+        "cycle": 0,
+        "role": "ZT",
+        "columns": [
+          9
+        ],
+        "preimage": true,
+        "stable_complement": false,
+        "zero_twisted_source_row": true,
+        "exact_formula_found": true,
+        "formula_cost": 56,
+        "term_count": 1,
+        "uses_singleton_terms": true,
+        "singleton_term_count": 1,
+        "feature_count": 2,
+        "features": [
+          "g900_slot_edge.a_mod5",
+          "p900_candidate0_edge_law.petersen_b.b_mod5"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "g900_slot_edge.a_mod5 == 2 AND p900_candidate0_edge_law.petersen_b.b_mod5 == 3",
+            "term_cost": 56,
+            "support": [
+              9
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.a_mod5",
+              "p900_candidate0_edge_law.petersen_b.b_mod5"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.a_mod5 == 2",
+                "class": "source_native",
+                "support": [
+                  7,
+                  8,
+                  9,
+                  22,
+                  23,
+                  24
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "p900_candidate0_edge_law.petersen_b.b_mod5 == 3",
+                "class": "source_native",
+                "support": [
+                  4,
+                  9,
+                  11,
+                  18,
+                  21,
+                  28
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 4,
+        "cycle": 0,
+        "role": "TI",
+        "columns": [
+          13
+        ],
+        "preimage": false,
+        "stable_complement": true,
+        "zero_twisted_source_row": true,
+        "exact_formula_found": true,
+        "formula_cost": 56,
+        "term_count": 1,
+        "uses_singleton_terms": true,
+        "singleton_term_count": 1,
+        "feature_count": 2,
+        "features": [
+          "g900_slot_edge.a_mod5",
+          "p900_candidate0_edge_law.label"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "g900_slot_edge.a_mod5 == 4 AND p900_candidate0_edge_law.label == \"half_turn\"",
+            "term_cost": 56,
+            "support": [
+              13
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.a_mod5",
+              "p900_candidate0_edge_law.label"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.a_mod5 == 4",
+                "class": "source_native",
+                "support": [
+                  13,
+                  14,
+                  28,
+                  29
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "p900_candidate0_edge_law.label == \"half_turn\"",
+                "class": "source_native",
+                "support": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  11,
+                  13,
+                  15,
+                  16,
+                  26
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 5,
+        "cycle": 0,
+        "role": "IW",
+        "columns": [
+          1,
+          7
+        ],
+        "preimage": false,
+        "stable_complement": false,
+        "zero_twisted_source_row": false,
+        "exact_formula_found": true,
+        "formula_cost": 45,
+        "term_count": 1,
+        "uses_singleton_terms": false,
+        "singleton_term_count": 0,
+        "feature_count": 2,
+        "features": [
+          "p900_candidate0_edge_law.label",
+          "p900_candidate0_edge_law.petersen_b.endpoint"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "p900_candidate0_edge_law.petersen_b.endpoint == 4 AND p900_candidate0_edge_law.label == \"half_turn\"",
+            "term_cost": 45,
+            "support": [
+              1,
+              7
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "p900_candidate0_edge_law.label",
+              "p900_candidate0_edge_law.petersen_b.endpoint"
+            ],
+            "atoms": [
+              {
+                "atom": "p900_candidate0_edge_law.petersen_b.endpoint == 4",
+                "class": "source_native",
+                "support": [
+                  1,
+                  7,
+                  10,
+                  12,
+                  14
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "p900_candidate0_edge_law.label == \"half_turn\"",
+                "class": "source_native",
+                "support": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  11,
+                  13,
+                  15,
+                  16,
+                  26
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 6,
+        "cycle": 1,
+        "role": "WX",
+        "columns": [
+          0
+        ],
+        "preimage": false,
+        "stable_complement": false,
+        "zero_twisted_source_row": false,
+        "exact_formula_found": true,
+        "formula_cost": 56,
+        "term_count": 1,
+        "uses_singleton_terms": true,
+        "singleton_term_count": 1,
+        "feature_count": 2,
+        "features": [
+          "g900_slot_edge.a",
+          "g900_slot_edge.diff_mod15"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "g900_slot_edge.a == 0 AND g900_slot_edge.diff_mod15 == 1",
+            "term_cost": 56,
+            "support": [
+              0
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.a",
+              "g900_slot_edge.diff_mod15"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.a == 0",
+                "class": "source_native",
+                "support": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "g900_slot_edge.diff_mod15 == 1",
+                "class": "source_native",
+                "support": [
+                  0,
+                  4,
+                  7,
+                  10,
+                  15,
+                  19,
+                  22,
+                  25,
+                  28
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 7,
+        "cycle": 1,
+        "role": "XY",
+        "columns": [
+          4
+        ],
+        "preimage": false,
+        "stable_complement": false,
+        "zero_twisted_source_row": false,
+        "exact_formula_found": true,
+        "formula_cost": 56,
+        "term_count": 1,
+        "uses_singleton_terms": true,
+        "singleton_term_count": 1,
+        "feature_count": 2,
+        "features": [
+          "g900_slot_edge.a_mod5",
+          "p900_candidate0_edge_law.sector.diff_mod15"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "g900_slot_edge.a_mod5 == 1 AND p900_candidate0_edge_law.sector.diff_mod15 == 1",
+            "term_cost": 56,
+            "support": [
+              4
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.a_mod5",
+              "p900_candidate0_edge_law.sector.diff_mod15"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.a_mod5 == 1",
+                "class": "source_native",
+                "support": [
+                  4,
+                  5,
+                  6,
+                  19,
+                  20,
+                  21
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "p900_candidate0_edge_law.sector.diff_mod15 == 1",
+                "class": "source_native",
+                "support": [
+                  0,
+                  4,
+                  7,
+                  10,
+                  13,
+                  25,
+                  27,
+                  28,
+                  29
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 8,
+        "cycle": 1,
+        "role": "YZ",
+        "columns": [
+          1,
+          3,
+          22
+        ],
+        "preimage": false,
+        "stable_complement": false,
+        "zero_twisted_source_row": false,
+        "exact_formula_found": true,
+        "formula_cost": 111,
+        "term_count": 2,
+        "uses_singleton_terms": true,
+        "singleton_term_count": 1,
+        "feature_count": 4,
+        "features": [
+          "g900_slot_edge.a",
+          "g900_slot_edge.a_mod5",
+          "g900_slot_edge.distance_mod15",
+          "p900_candidate0_edge_law.petersen_b.b"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "g900_slot_edge.a == 0 AND g900_slot_edge.distance_mod15 == 4",
+            "term_cost": 45,
+            "support": [
+              1,
+              3
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.a",
+              "g900_slot_edge.distance_mod15"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.a == 0",
+                "class": "source_native",
+                "support": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "g900_slot_edge.distance_mod15 == 4",
+                "class": "source_native",
+                "support": [
+                  1,
+                  3,
+                  6,
+                  9,
+                  12,
+                  16,
+                  23,
+                  29
+                ],
+                "atom_cost": 13
+              }
+            ]
+          },
+          {
+            "term": "g900_slot_edge.a_mod5 == 2 AND p900_candidate0_edge_law.petersen_b.b == 5",
+            "term_cost": 56,
+            "support": [
+              22
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.a_mod5",
+              "p900_candidate0_edge_law.petersen_b.b"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.a_mod5 == 2",
+                "class": "source_native",
+                "support": [
+                  7,
+                  8,
+                  9,
+                  22,
+                  23,
+                  24
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "p900_candidate0_edge_law.petersen_b.b == 5",
+                "class": "source_native",
+                "support": [
+                  2,
+                  13,
+                  16,
+                  22,
+                  26,
+                  29
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 9,
+        "cycle": 1,
+        "role": "ZT",
+        "columns": [
+          9,
+          11,
+          14
+        ],
+        "preimage": false,
+        "stable_complement": true,
+        "zero_twisted_source_row": true,
+        "exact_formula_found": true,
+        "formula_cost": 90,
+        "term_count": 2,
+        "uses_singleton_terms": false,
+        "singleton_term_count": 0,
+        "feature_count": 3,
+        "features": [
+          "g900_slot_edge.diff_mod15",
+          "p900_candidate0_edge_law.petersen_a.endpoint",
+          "p900_candidate0_edge_law.petersen_b.sum_mod15"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "p900_candidate0_edge_law.petersen_b.sum_mod15 == 11",
+            "term_cost": 35,
+            "support": [
+              9,
+              11
+            ],
+            "atom_count": 1,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "p900_candidate0_edge_law.petersen_b.sum_mod15"
+            ],
+            "atoms": [
+              {
+                "atom": "p900_candidate0_edge_law.petersen_b.sum_mod15 == 11",
+                "class": "source_native",
+                "support": [
+                  9,
+                  11
+                ],
+                "atom_cost": 28
+              }
+            ]
+          },
+          {
+            "term": "g900_slot_edge.diff_mod15 == 10 AND p900_candidate0_edge_law.petersen_a.endpoint == 4",
+            "term_cost": 45,
+            "support": [
+              11,
+              14
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.diff_mod15",
+              "p900_candidate0_edge_law.petersen_a.endpoint"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.diff_mod15 == 10",
+                "class": "source_native",
+                "support": [
+                  2,
+                  5,
+                  8,
+                  11,
+                  14
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "p900_candidate0_edge_law.petersen_a.endpoint == 4",
+                "class": "source_native",
+                "support": [
+                  10,
+                  11,
+                  12,
+                  13,
+                  14,
+                  23,
+                  24
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 10,
+        "cycle": 1,
+        "role": "TI",
+        "columns": [
+          10,
+          11
+        ],
+        "preimage": false,
+        "stable_complement": false,
+        "zero_twisted_source_row": false,
+        "exact_formula_found": true,
+        "formula_cost": 70,
+        "term_count": 1,
+        "uses_singleton_terms": false,
+        "singleton_term_count": 0,
+        "feature_count": 2,
+        "features": [
+          "g900_slot_edge.a_mod5",
+          "global_witness_mode"
+        ],
+        "classes": [
+          "source_native",
+          "source_witness"
+        ],
+        "terms": [
+          {
+            "term": "g900_slot_edge.a_mod5 == 3 AND global_witness_mode == \"indexed_only\"",
+            "term_cost": 70,
+            "support": [
+              10,
+              11
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native",
+              "source_witness"
+            ],
+            "features": [
+              "g900_slot_edge.a_mod5",
+              "global_witness_mode"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.a_mod5 == 3",
+                "class": "source_native",
+                "support": [
+                  10,
+                  11,
+                  12,
+                  25,
+                  26,
+                  27
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "global_witness_mode == \"indexed_only\"",
+                "class": "source_witness",
+                "support": [
+                  1,
+                  3,
+                  5,
+                  6,
+                  7,
+                  10,
+                  11,
+                  14,
+                  18,
+                  19,
+                  28,
+                  29
+                ],
+                "atom_cost": 38
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 11,
+        "cycle": 1,
+        "role": "IW",
+        "columns": [
+          1,
+          7
+        ],
+        "preimage": false,
+        "stable_complement": false,
+        "zero_twisted_source_row": false,
+        "exact_formula_found": true,
+        "formula_cost": 45,
+        "term_count": 1,
+        "uses_singleton_terms": false,
+        "singleton_term_count": 0,
+        "feature_count": 2,
+        "features": [
+          "p900_candidate0_edge_law.label",
+          "p900_candidate0_edge_law.petersen_b.endpoint"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "p900_candidate0_edge_law.petersen_b.endpoint == 4 AND p900_candidate0_edge_law.label == \"half_turn\"",
+            "term_cost": 45,
+            "support": [
+              1,
+              7
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "p900_candidate0_edge_law.label",
+              "p900_candidate0_edge_law.petersen_b.endpoint"
+            ],
+            "atoms": [
+              {
+                "atom": "p900_candidate0_edge_law.petersen_b.endpoint == 4",
+                "class": "source_native",
+                "support": [
+                  1,
+                  7,
+                  10,
+                  12,
+                  14
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "p900_candidate0_edge_law.label == \"half_turn\"",
+                "class": "source_native",
+                "support": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  11,
+                  13,
+                  15,
+                  16,
+                  26
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 12,
+        "cycle": 2,
+        "role": "WX",
+        "columns": [
+          0
+        ],
+        "preimage": false,
+        "stable_complement": false,
+        "zero_twisted_source_row": false,
+        "exact_formula_found": true,
+        "formula_cost": 56,
+        "term_count": 1,
+        "uses_singleton_terms": true,
+        "singleton_term_count": 1,
+        "feature_count": 2,
+        "features": [
+          "g900_slot_edge.a",
+          "g900_slot_edge.diff_mod15"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "g900_slot_edge.a == 0 AND g900_slot_edge.diff_mod15 == 1",
+            "term_cost": 56,
+            "support": [
+              0
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.a",
+              "g900_slot_edge.diff_mod15"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.a == 0",
+                "class": "source_native",
+                "support": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "g900_slot_edge.diff_mod15 == 1",
+                "class": "source_native",
+                "support": [
+                  0,
+                  4,
+                  7,
+                  10,
+                  15,
+                  19,
+                  22,
+                  25,
+                  28
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 13,
+        "cycle": 2,
+        "role": "XY",
+        "columns": [
+          4
+        ],
+        "preimage": false,
+        "stable_complement": false,
+        "zero_twisted_source_row": false,
+        "exact_formula_found": true,
+        "formula_cost": 56,
+        "term_count": 1,
+        "uses_singleton_terms": true,
+        "singleton_term_count": 1,
+        "feature_count": 2,
+        "features": [
+          "g900_slot_edge.a_mod5",
+          "p900_candidate0_edge_law.sector.diff_mod15"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "g900_slot_edge.a_mod5 == 1 AND p900_candidate0_edge_law.sector.diff_mod15 == 1",
+            "term_cost": 56,
+            "support": [
+              4
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.a_mod5",
+              "p900_candidate0_edge_law.sector.diff_mod15"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.a_mod5 == 1",
+                "class": "source_native",
+                "support": [
+                  4,
+                  5,
+                  6,
+                  19,
+                  20,
+                  21
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "p900_candidate0_edge_law.sector.diff_mod15 == 1",
+                "class": "source_native",
+                "support": [
+                  0,
+                  4,
+                  7,
+                  10,
+                  13,
+                  25,
+                  27,
+                  28,
+                  29
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 14,
+        "cycle": 2,
+        "role": "YZ",
+        "columns": [
+          4,
+          5
+        ],
+        "preimage": false,
+        "stable_complement": false,
+        "zero_twisted_source_row": false,
+        "exact_formula_found": true,
+        "formula_cost": 122,
+        "term_count": 2,
+        "uses_singleton_terms": true,
+        "singleton_term_count": 2,
+        "feature_count": 3,
+        "features": [
+          "g900_slot_edge.a_mod5",
+          "g900_slot_edge.b_mod5",
+          "p900_candidate0_edge_law.sector.diff_mod15"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "g900_slot_edge.a_mod5 == 1 AND g900_slot_edge.b_mod5 == 1",
+            "term_cost": 56,
+            "support": [
+              5
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.a_mod5",
+              "g900_slot_edge.b_mod5"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.a_mod5 == 1",
+                "class": "source_native",
+                "support": [
+                  4,
+                  5,
+                  6,
+                  19,
+                  20,
+                  21
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "g900_slot_edge.b_mod5 == 1",
+                "class": "source_native",
+                "support": [
+                  0,
+                  3,
+                  5,
+                  15,
+                  23,
+                  26
+                ],
+                "atom_cost": 13
+              }
+            ]
+          },
+          {
+            "term": "g900_slot_edge.a_mod5 == 1 AND p900_candidate0_edge_law.sector.diff_mod15 == 1",
+            "term_cost": 56,
+            "support": [
+              4
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.a_mod5",
+              "p900_candidate0_edge_law.sector.diff_mod15"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.a_mod5 == 1",
+                "class": "source_native",
+                "support": [
+                  4,
+                  5,
+                  6,
+                  19,
+                  20,
+                  21
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "p900_candidate0_edge_law.sector.diff_mod15 == 1",
+                "class": "source_native",
+                "support": [
+                  0,
+                  4,
+                  7,
+                  10,
+                  13,
+                  25,
+                  27,
+                  28,
+                  29
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 15,
+        "cycle": 2,
+        "role": "ZT",
+        "columns": [
+          21,
+          22
+        ],
+        "preimage": false,
+        "stable_complement": true,
+        "zero_twisted_source_row": true,
+        "exact_formula_found": true,
+        "formula_cost": 35,
+        "term_count": 1,
+        "uses_singleton_terms": false,
+        "singleton_term_count": 0,
+        "feature_count": 1,
+        "features": [
+          "p900_candidate0_edge_law.petersen_a.sum_mod15"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "p900_candidate0_edge_law.petersen_a.sum_mod15 == 11",
+            "term_cost": 35,
+            "support": [
+              21,
+              22
+            ],
+            "atom_count": 1,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "p900_candidate0_edge_law.petersen_a.sum_mod15"
+            ],
+            "atoms": [
+              {
+                "atom": "p900_candidate0_edge_law.petersen_a.sum_mod15 == 11",
+                "class": "source_native",
+                "support": [
+                  21,
+                  22
+                ],
+                "atom_cost": 28
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 16,
+        "cycle": 2,
+        "role": "TI",
+        "columns": [
+          13,
+          15
+        ],
+        "preimage": true,
+        "stable_complement": false,
+        "zero_twisted_source_row": true,
+        "exact_formula_found": true,
+        "formula_cost": 45,
+        "term_count": 1,
+        "uses_singleton_terms": false,
+        "singleton_term_count": 0,
+        "feature_count": 2,
+        "features": [
+          "p900_candidate0_edge_law.petersen_a.b_mod5",
+          "p900_candidate0_edge_law.petersen_b.a_mod5"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "p900_candidate0_edge_law.petersen_a.b_mod5 == 0 AND p900_candidate0_edge_law.petersen_b.a_mod5 == 0",
+            "term_cost": 45,
+            "support": [
+              13,
+              15
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "p900_candidate0_edge_law.petersen_a.b_mod5",
+              "p900_candidate0_edge_law.petersen_b.a_mod5"
+            ],
+            "atoms": [
+              {
+                "atom": "p900_candidate0_edge_law.petersen_a.b_mod5 == 0",
+                "class": "source_native",
+                "support": [
+                  13,
+                  14,
+                  15,
+                  16
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "p900_candidate0_edge_law.petersen_b.a_mod5 == 0",
+                "class": "source_native",
+                "support": [
+                  2,
+                  13,
+                  15,
+                  19
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 17,
+        "cycle": 2,
+        "role": "IW",
+        "columns": [
+          1,
+          7
+        ],
+        "preimage": false,
+        "stable_complement": false,
+        "zero_twisted_source_row": false,
+        "exact_formula_found": true,
+        "formula_cost": 45,
+        "term_count": 1,
+        "uses_singleton_terms": false,
+        "singleton_term_count": 0,
+        "feature_count": 2,
+        "features": [
+          "p900_candidate0_edge_law.label",
+          "p900_candidate0_edge_law.petersen_b.endpoint"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "p900_candidate0_edge_law.petersen_b.endpoint == 4 AND p900_candidate0_edge_law.label == \"half_turn\"",
+            "term_cost": 45,
+            "support": [
+              1,
+              7
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "p900_candidate0_edge_law.label",
+              "p900_candidate0_edge_law.petersen_b.endpoint"
+            ],
+            "atoms": [
+              {
+                "atom": "p900_candidate0_edge_law.petersen_b.endpoint == 4",
+                "class": "source_native",
+                "support": [
+                  1,
+                  7,
+                  10,
+                  12,
+                  14
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "p900_candidate0_edge_law.label == \"half_turn\"",
+                "class": "source_native",
+                "support": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  11,
+                  13,
+                  15,
+                  16,
+                  26
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "exact_rows": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "all_rows_exact": true,
+    "total_cost": 1101,
+    "singleton_rows": [
+      0,
+      1,
+      3,
+      4,
+      6,
+      7,
+      8,
+      12,
+      13,
+      14
+    ],
+    "singleton_row_count": 10,
+    "feature_reuse": [
+      [
+        "g900_slot_edge.a_mod5",
+        8
+      ],
+      [
+        "g900_slot_edge.a",
+        4
+      ],
+      [
+        "g900_slot_edge.diff_mod15",
+        4
+      ],
+      [
+        "p900_candidate0_edge_law.sector.diff_mod15",
+        4
+      ],
+      [
+        "p900_candidate0_edge_law.label",
+        4
+      ],
+      [
+        "p900_candidate0_edge_law.petersen_b.endpoint",
+        3
+      ],
+      [
+        "g900_slot_edge.cycle_b_5x3",
+        1
+      ],
+      [
+        "g900_slot_edge.endpoint_mod5",
+        1
+      ],
+      [
+        "p900_candidate0_edge_law.petersen_b.b_mod5",
+        1
+      ],
+      [
+        "g900_slot_edge.distance_mod15",
+        1
+      ],
+      [
+        "p900_candidate0_edge_law.petersen_b.b",
+        1
+      ],
+      [
+        "p900_candidate0_edge_law.petersen_a.endpoint",
+        1
+      ],
+      [
+        "p900_candidate0_edge_law.petersen_b.sum_mod15",
+        1
+      ],
+      [
+        "global_witness_mode",
+        1
+      ],
+      [
+        "g900_slot_edge.b_mod5",
+        1
+      ],
+      [
+        "p900_candidate0_edge_law.petersen_a.sum_mod15",
+        1
+      ],
+      [
+        "p900_candidate0_edge_law.petersen_a.b_mod5",
+        1
+      ],
+      [
+        "p900_candidate0_edge_law.petersen_b.a_mod5",
+        1
+      ]
+    ],
+    "distinct_feature_count": 18
+  },
+  "primary_solution": {
+    "row_solutions": [
+      {
+        "row_ordinal": 0,
+        "cycle": 0,
+        "role": "WX",
+        "columns": [
+          0
+        ],
+        "preimage": false,
+        "stable_complement": false,
+        "zero_twisted_source_row": false,
+        "exact_formula_found": true,
+        "formula_cost": 56,
+        "term_count": 1,
+        "uses_singleton_terms": true,
+        "singleton_term_count": 1,
+        "feature_count": 2,
+        "features": [
+          "g900_slot_edge.a",
+          "g900_slot_edge.diff_mod15"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "g900_slot_edge.a == 0 AND g900_slot_edge.diff_mod15 == 1",
+            "term_cost": 56,
+            "support": [
+              0
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.a",
+              "g900_slot_edge.diff_mod15"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.a == 0",
+                "class": "source_native",
+                "support": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "g900_slot_edge.diff_mod15 == 1",
+                "class": "source_native",
+                "support": [
+                  0,
+                  4,
+                  7,
+                  10,
+                  15,
+                  19,
+                  22,
+                  25,
+                  28
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 1,
+        "cycle": 0,
+        "role": "XY",
+        "columns": [
+          4
+        ],
+        "preimage": false,
+        "stable_complement": false,
+        "zero_twisted_source_row": false,
+        "exact_formula_found": true,
+        "formula_cost": 56,
+        "term_count": 1,
+        "uses_singleton_terms": true,
+        "singleton_term_count": 1,
+        "feature_count": 2,
+        "features": [
+          "g900_slot_edge.a_mod5",
+          "p900_candidate0_edge_law.sector.diff_mod15"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "g900_slot_edge.a_mod5 == 1 AND p900_candidate0_edge_law.sector.diff_mod15 == 1",
+            "term_cost": 56,
+            "support": [
+              4
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.a_mod5",
+              "p900_candidate0_edge_law.sector.diff_mod15"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.a_mod5 == 1",
+                "class": "source_native",
+                "support": [
+                  4,
+                  5,
+                  6,
+                  19,
+                  20,
+                  21
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "p900_candidate0_edge_law.sector.diff_mod15 == 1",
+                "class": "source_native",
+                "support": [
+                  0,
+                  4,
+                  7,
+                  10,
+                  13,
+                  25,
+                  27,
+                  28,
+                  29
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 2,
+        "cycle": 0,
+        "role": "YZ",
+        "columns": [
+          7,
+          10
+        ],
+        "preimage": false,
+        "stable_complement": false,
+        "zero_twisted_source_row": false,
+        "exact_formula_found": true,
+        "formula_cost": 45,
+        "term_count": 1,
+        "uses_singleton_terms": false,
+        "singleton_term_count": 0,
+        "feature_count": 2,
+        "features": [
+          "g900_slot_edge.cycle_b_5x3",
+          "g900_slot_edge.endpoint_mod5"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "g900_slot_edge.cycle_b_5x3 == 0 AND g900_slot_edge.endpoint_mod5 == 3",
+            "term_cost": 45,
+            "support": [
+              7,
+              10
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.cycle_b_5x3",
+              "g900_slot_edge.endpoint_mod5"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.cycle_b_5x3 == 0",
+                "class": "source_native",
+                "support": [
+                  0,
+                  1,
+                  4,
+                  7,
+                  10
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "g900_slot_edge.endpoint_mod5 == 3",
+                "class": "source_native",
+                "support": [
+                  7,
+                  9,
+                  10,
+                  11,
+                  12,
+                  22,
+                  25,
+                  26,
+                  27,
+                  29
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 3,
+        "cycle": 0,
+        "role": "ZT",
+        "columns": [
+          9
+        ],
+        "preimage": true,
+        "stable_complement": false,
+        "zero_twisted_source_row": true,
+        "exact_formula_found": true,
+        "formula_cost": 56,
+        "term_count": 1,
+        "uses_singleton_terms": true,
+        "singleton_term_count": 1,
+        "feature_count": 2,
+        "features": [
+          "g900_slot_edge.a_mod5",
+          "p900_candidate0_edge_law.petersen_b.b_mod5"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "g900_slot_edge.a_mod5 == 2 AND p900_candidate0_edge_law.petersen_b.b_mod5 == 3",
+            "term_cost": 56,
+            "support": [
+              9
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.a_mod5",
+              "p900_candidate0_edge_law.petersen_b.b_mod5"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.a_mod5 == 2",
+                "class": "source_native",
+                "support": [
+                  7,
+                  8,
+                  9,
+                  22,
+                  23,
+                  24
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "p900_candidate0_edge_law.petersen_b.b_mod5 == 3",
+                "class": "source_native",
+                "support": [
+                  4,
+                  9,
+                  11,
+                  18,
+                  21,
+                  28
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 4,
+        "cycle": 0,
+        "role": "TI",
+        "columns": [
+          13
+        ],
+        "preimage": false,
+        "stable_complement": true,
+        "zero_twisted_source_row": true,
+        "exact_formula_found": true,
+        "formula_cost": 56,
+        "term_count": 1,
+        "uses_singleton_terms": true,
+        "singleton_term_count": 1,
+        "feature_count": 2,
+        "features": [
+          "g900_slot_edge.a_mod5",
+          "p900_candidate0_edge_law.label"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "g900_slot_edge.a_mod5 == 4 AND p900_candidate0_edge_law.label == \"half_turn\"",
+            "term_cost": 56,
+            "support": [
+              13
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.a_mod5",
+              "p900_candidate0_edge_law.label"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.a_mod5 == 4",
+                "class": "source_native",
+                "support": [
+                  13,
+                  14,
+                  28,
+                  29
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "p900_candidate0_edge_law.label == \"half_turn\"",
+                "class": "source_native",
+                "support": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  11,
+                  13,
+                  15,
+                  16,
+                  26
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 5,
+        "cycle": 0,
+        "role": "IW",
+        "columns": [
+          1,
+          7
+        ],
+        "preimage": false,
+        "stable_complement": false,
+        "zero_twisted_source_row": false,
+        "exact_formula_found": true,
+        "formula_cost": 45,
+        "term_count": 1,
+        "uses_singleton_terms": false,
+        "singleton_term_count": 0,
+        "feature_count": 2,
+        "features": [
+          "p900_candidate0_edge_law.label",
+          "p900_candidate0_edge_law.petersen_b.endpoint"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "p900_candidate0_edge_law.petersen_b.endpoint == 4 AND p900_candidate0_edge_law.label == \"half_turn\"",
+            "term_cost": 45,
+            "support": [
+              1,
+              7
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "p900_candidate0_edge_law.label",
+              "p900_candidate0_edge_law.petersen_b.endpoint"
+            ],
+            "atoms": [
+              {
+                "atom": "p900_candidate0_edge_law.petersen_b.endpoint == 4",
+                "class": "source_native",
+                "support": [
+                  1,
+                  7,
+                  10,
+                  12,
+                  14
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "p900_candidate0_edge_law.label == \"half_turn\"",
+                "class": "source_native",
+                "support": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  11,
+                  13,
+                  15,
+                  16,
+                  26
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 6,
+        "cycle": 1,
+        "role": "WX",
+        "columns": [
+          0
+        ],
+        "preimage": false,
+        "stable_complement": false,
+        "zero_twisted_source_row": false,
+        "exact_formula_found": true,
+        "formula_cost": 56,
+        "term_count": 1,
+        "uses_singleton_terms": true,
+        "singleton_term_count": 1,
+        "feature_count": 2,
+        "features": [
+          "g900_slot_edge.a",
+          "g900_slot_edge.diff_mod15"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "g900_slot_edge.a == 0 AND g900_slot_edge.diff_mod15 == 1",
+            "term_cost": 56,
+            "support": [
+              0
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.a",
+              "g900_slot_edge.diff_mod15"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.a == 0",
+                "class": "source_native",
+                "support": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "g900_slot_edge.diff_mod15 == 1",
+                "class": "source_native",
+                "support": [
+                  0,
+                  4,
+                  7,
+                  10,
+                  15,
+                  19,
+                  22,
+                  25,
+                  28
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 7,
+        "cycle": 1,
+        "role": "XY",
+        "columns": [
+          4
+        ],
+        "preimage": false,
+        "stable_complement": false,
+        "zero_twisted_source_row": false,
+        "exact_formula_found": true,
+        "formula_cost": 56,
+        "term_count": 1,
+        "uses_singleton_terms": true,
+        "singleton_term_count": 1,
+        "feature_count": 2,
+        "features": [
+          "g900_slot_edge.a_mod5",
+          "p900_candidate0_edge_law.sector.diff_mod15"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "g900_slot_edge.a_mod5 == 1 AND p900_candidate0_edge_law.sector.diff_mod15 == 1",
+            "term_cost": 56,
+            "support": [
+              4
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.a_mod5",
+              "p900_candidate0_edge_law.sector.diff_mod15"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.a_mod5 == 1",
+                "class": "source_native",
+                "support": [
+                  4,
+                  5,
+                  6,
+                  19,
+                  20,
+                  21
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "p900_candidate0_edge_law.sector.diff_mod15 == 1",
+                "class": "source_native",
+                "support": [
+                  0,
+                  4,
+                  7,
+                  10,
+                  13,
+                  25,
+                  27,
+                  28,
+                  29
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 8,
+        "cycle": 1,
+        "role": "YZ",
+        "columns": [
+          1,
+          3,
+          22
+        ],
+        "preimage": false,
+        "stable_complement": false,
+        "zero_twisted_source_row": false,
+        "exact_formula_found": true,
+        "formula_cost": 111,
+        "term_count": 2,
+        "uses_singleton_terms": true,
+        "singleton_term_count": 1,
+        "feature_count": 4,
+        "features": [
+          "g900_slot_edge.a",
+          "g900_slot_edge.a_mod5",
+          "g900_slot_edge.distance_mod15",
+          "p900_candidate0_edge_law.petersen_b.b"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "g900_slot_edge.a == 0 AND g900_slot_edge.distance_mod15 == 4",
+            "term_cost": 45,
+            "support": [
+              1,
+              3
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.a",
+              "g900_slot_edge.distance_mod15"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.a == 0",
+                "class": "source_native",
+                "support": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "g900_slot_edge.distance_mod15 == 4",
+                "class": "source_native",
+                "support": [
+                  1,
+                  3,
+                  6,
+                  9,
+                  12,
+                  16,
+                  23,
+                  29
+                ],
+                "atom_cost": 13
+              }
+            ]
+          },
+          {
+            "term": "g900_slot_edge.a_mod5 == 2 AND p900_candidate0_edge_law.petersen_b.b == 5",
+            "term_cost": 56,
+            "support": [
+              22
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.a_mod5",
+              "p900_candidate0_edge_law.petersen_b.b"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.a_mod5 == 2",
+                "class": "source_native",
+                "support": [
+                  7,
+                  8,
+                  9,
+                  22,
+                  23,
+                  24
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "p900_candidate0_edge_law.petersen_b.b == 5",
+                "class": "source_native",
+                "support": [
+                  2,
+                  13,
+                  16,
+                  22,
+                  26,
+                  29
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 9,
+        "cycle": 1,
+        "role": "ZT",
+        "columns": [
+          9,
+          11,
+          14
+        ],
+        "preimage": false,
+        "stable_complement": true,
+        "zero_twisted_source_row": true,
+        "exact_formula_found": true,
+        "formula_cost": 90,
+        "term_count": 2,
+        "uses_singleton_terms": false,
+        "singleton_term_count": 0,
+        "feature_count": 3,
+        "features": [
+          "g900_slot_edge.diff_mod15",
+          "p900_candidate0_edge_law.petersen_a.endpoint",
+          "p900_candidate0_edge_law.petersen_b.sum_mod15"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "p900_candidate0_edge_law.petersen_b.sum_mod15 == 11",
+            "term_cost": 35,
+            "support": [
+              9,
+              11
+            ],
+            "atom_count": 1,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "p900_candidate0_edge_law.petersen_b.sum_mod15"
+            ],
+            "atoms": [
+              {
+                "atom": "p900_candidate0_edge_law.petersen_b.sum_mod15 == 11",
+                "class": "source_native",
+                "support": [
+                  9,
+                  11
+                ],
+                "atom_cost": 28
+              }
+            ]
+          },
+          {
+            "term": "g900_slot_edge.diff_mod15 == 10 AND p900_candidate0_edge_law.petersen_a.endpoint == 4",
+            "term_cost": 45,
+            "support": [
+              11,
+              14
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.diff_mod15",
+              "p900_candidate0_edge_law.petersen_a.endpoint"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.diff_mod15 == 10",
+                "class": "source_native",
+                "support": [
+                  2,
+                  5,
+                  8,
+                  11,
+                  14
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "p900_candidate0_edge_law.petersen_a.endpoint == 4",
+                "class": "source_native",
+                "support": [
+                  10,
+                  11,
+                  12,
+                  13,
+                  14,
+                  23,
+                  24
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 10,
+        "cycle": 1,
+        "role": "TI",
+        "columns": [
+          10,
+          11
+        ],
+        "preimage": false,
+        "stable_complement": false,
+        "zero_twisted_source_row": false,
+        "exact_formula_found": true,
+        "formula_cost": 122,
+        "term_count": 2,
+        "uses_singleton_terms": true,
+        "singleton_term_count": 2,
+        "feature_count": 3,
+        "features": [
+          "g900_slot_edge.a_mod5",
+          "g900_slot_edge.cycle_b_5x3",
+          "p900_candidate0_edge_law.petersen_b.b_mod5"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "g900_slot_edge.a_mod5 == 3 AND p900_candidate0_edge_law.petersen_b.b_mod5 == 3",
+            "term_cost": 56,
+            "support": [
+              11
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.a_mod5",
+              "p900_candidate0_edge_law.petersen_b.b_mod5"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.a_mod5 == 3",
+                "class": "source_native",
+                "support": [
+                  10,
+                  11,
+                  12,
+                  25,
+                  26,
+                  27
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "p900_candidate0_edge_law.petersen_b.b_mod5 == 3",
+                "class": "source_native",
+                "support": [
+                  4,
+                  9,
+                  11,
+                  18,
+                  21,
+                  28
+                ],
+                "atom_cost": 13
+              }
+            ]
+          },
+          {
+            "term": "g900_slot_edge.cycle_b_5x3 == 0 AND g900_slot_edge.a_mod5 == 3",
+            "term_cost": 56,
+            "support": [
+              10
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.a_mod5",
+              "g900_slot_edge.cycle_b_5x3"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.cycle_b_5x3 == 0",
+                "class": "source_native",
+                "support": [
+                  0,
+                  1,
+                  4,
+                  7,
+                  10
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "g900_slot_edge.a_mod5 == 3",
+                "class": "source_native",
+                "support": [
+                  10,
+                  11,
+                  12,
+                  25,
+                  26,
+                  27
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 11,
+        "cycle": 1,
+        "role": "IW",
+        "columns": [
+          1,
+          7
+        ],
+        "preimage": false,
+        "stable_complement": false,
+        "zero_twisted_source_row": false,
+        "exact_formula_found": true,
+        "formula_cost": 45,
+        "term_count": 1,
+        "uses_singleton_terms": false,
+        "singleton_term_count": 0,
+        "feature_count": 2,
+        "features": [
+          "p900_candidate0_edge_law.label",
+          "p900_candidate0_edge_law.petersen_b.endpoint"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "p900_candidate0_edge_law.petersen_b.endpoint == 4 AND p900_candidate0_edge_law.label == \"half_turn\"",
+            "term_cost": 45,
+            "support": [
+              1,
+              7
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "p900_candidate0_edge_law.label",
+              "p900_candidate0_edge_law.petersen_b.endpoint"
+            ],
+            "atoms": [
+              {
+                "atom": "p900_candidate0_edge_law.petersen_b.endpoint == 4",
+                "class": "source_native",
+                "support": [
+                  1,
+                  7,
+                  10,
+                  12,
+                  14
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "p900_candidate0_edge_law.label == \"half_turn\"",
+                "class": "source_native",
+                "support": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  11,
+                  13,
+                  15,
+                  16,
+                  26
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 12,
+        "cycle": 2,
+        "role": "WX",
+        "columns": [
+          0
+        ],
+        "preimage": false,
+        "stable_complement": false,
+        "zero_twisted_source_row": false,
+        "exact_formula_found": true,
+        "formula_cost": 56,
+        "term_count": 1,
+        "uses_singleton_terms": true,
+        "singleton_term_count": 1,
+        "feature_count": 2,
+        "features": [
+          "g900_slot_edge.a",
+          "g900_slot_edge.diff_mod15"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "g900_slot_edge.a == 0 AND g900_slot_edge.diff_mod15 == 1",
+            "term_cost": 56,
+            "support": [
+              0
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.a",
+              "g900_slot_edge.diff_mod15"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.a == 0",
+                "class": "source_native",
+                "support": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "g900_slot_edge.diff_mod15 == 1",
+                "class": "source_native",
+                "support": [
+                  0,
+                  4,
+                  7,
+                  10,
+                  15,
+                  19,
+                  22,
+                  25,
+                  28
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 13,
+        "cycle": 2,
+        "role": "XY",
+        "columns": [
+          4
+        ],
+        "preimage": false,
+        "stable_complement": false,
+        "zero_twisted_source_row": false,
+        "exact_formula_found": true,
+        "formula_cost": 56,
+        "term_count": 1,
+        "uses_singleton_terms": true,
+        "singleton_term_count": 1,
+        "feature_count": 2,
+        "features": [
+          "g900_slot_edge.a_mod5",
+          "p900_candidate0_edge_law.sector.diff_mod15"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "g900_slot_edge.a_mod5 == 1 AND p900_candidate0_edge_law.sector.diff_mod15 == 1",
+            "term_cost": 56,
+            "support": [
+              4
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.a_mod5",
+              "p900_candidate0_edge_law.sector.diff_mod15"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.a_mod5 == 1",
+                "class": "source_native",
+                "support": [
+                  4,
+                  5,
+                  6,
+                  19,
+                  20,
+                  21
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "p900_candidate0_edge_law.sector.diff_mod15 == 1",
+                "class": "source_native",
+                "support": [
+                  0,
+                  4,
+                  7,
+                  10,
+                  13,
+                  25,
+                  27,
+                  28,
+                  29
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 14,
+        "cycle": 2,
+        "role": "YZ",
+        "columns": [
+          4,
+          5
+        ],
+        "preimage": false,
+        "stable_complement": false,
+        "zero_twisted_source_row": false,
+        "exact_formula_found": true,
+        "formula_cost": 122,
+        "term_count": 2,
+        "uses_singleton_terms": true,
+        "singleton_term_count": 2,
+        "feature_count": 3,
+        "features": [
+          "g900_slot_edge.a_mod5",
+          "g900_slot_edge.b_mod5",
+          "p900_candidate0_edge_law.sector.diff_mod15"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "g900_slot_edge.a_mod5 == 1 AND g900_slot_edge.b_mod5 == 1",
+            "term_cost": 56,
+            "support": [
+              5
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.a_mod5",
+              "g900_slot_edge.b_mod5"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.a_mod5 == 1",
+                "class": "source_native",
+                "support": [
+                  4,
+                  5,
+                  6,
+                  19,
+                  20,
+                  21
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "g900_slot_edge.b_mod5 == 1",
+                "class": "source_native",
+                "support": [
+                  0,
+                  3,
+                  5,
+                  15,
+                  23,
+                  26
+                ],
+                "atom_cost": 13
+              }
+            ]
+          },
+          {
+            "term": "g900_slot_edge.a_mod5 == 1 AND p900_candidate0_edge_law.sector.diff_mod15 == 1",
+            "term_cost": 56,
+            "support": [
+              4
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "g900_slot_edge.a_mod5",
+              "p900_candidate0_edge_law.sector.diff_mod15"
+            ],
+            "atoms": [
+              {
+                "atom": "g900_slot_edge.a_mod5 == 1",
+                "class": "source_native",
+                "support": [
+                  4,
+                  5,
+                  6,
+                  19,
+                  20,
+                  21
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "p900_candidate0_edge_law.sector.diff_mod15 == 1",
+                "class": "source_native",
+                "support": [
+                  0,
+                  4,
+                  7,
+                  10,
+                  13,
+                  25,
+                  27,
+                  28,
+                  29
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 15,
+        "cycle": 2,
+        "role": "ZT",
+        "columns": [
+          21,
+          22
+        ],
+        "preimage": false,
+        "stable_complement": true,
+        "zero_twisted_source_row": true,
+        "exact_formula_found": true,
+        "formula_cost": 35,
+        "term_count": 1,
+        "uses_singleton_terms": false,
+        "singleton_term_count": 0,
+        "feature_count": 1,
+        "features": [
+          "p900_candidate0_edge_law.petersen_a.sum_mod15"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "p900_candidate0_edge_law.petersen_a.sum_mod15 == 11",
+            "term_cost": 35,
+            "support": [
+              21,
+              22
+            ],
+            "atom_count": 1,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "p900_candidate0_edge_law.petersen_a.sum_mod15"
+            ],
+            "atoms": [
+              {
+                "atom": "p900_candidate0_edge_law.petersen_a.sum_mod15 == 11",
+                "class": "source_native",
+                "support": [
+                  21,
+                  22
+                ],
+                "atom_cost": 28
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 16,
+        "cycle": 2,
+        "role": "TI",
+        "columns": [
+          13,
+          15
+        ],
+        "preimage": true,
+        "stable_complement": false,
+        "zero_twisted_source_row": true,
+        "exact_formula_found": true,
+        "formula_cost": 45,
+        "term_count": 1,
+        "uses_singleton_terms": false,
+        "singleton_term_count": 0,
+        "feature_count": 2,
+        "features": [
+          "p900_candidate0_edge_law.petersen_a.b_mod5",
+          "p900_candidate0_edge_law.petersen_b.a_mod5"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "p900_candidate0_edge_law.petersen_a.b_mod5 == 0 AND p900_candidate0_edge_law.petersen_b.a_mod5 == 0",
+            "term_cost": 45,
+            "support": [
+              13,
+              15
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "p900_candidate0_edge_law.petersen_a.b_mod5",
+              "p900_candidate0_edge_law.petersen_b.a_mod5"
+            ],
+            "atoms": [
+              {
+                "atom": "p900_candidate0_edge_law.petersen_a.b_mod5 == 0",
+                "class": "source_native",
+                "support": [
+                  13,
+                  14,
+                  15,
+                  16
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "p900_candidate0_edge_law.petersen_b.a_mod5 == 0",
+                "class": "source_native",
+                "support": [
+                  2,
+                  13,
+                  15,
+                  19
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "row_ordinal": 17,
+        "cycle": 2,
+        "role": "IW",
+        "columns": [
+          1,
+          7
+        ],
+        "preimage": false,
+        "stable_complement": false,
+        "zero_twisted_source_row": false,
+        "exact_formula_found": true,
+        "formula_cost": 45,
+        "term_count": 1,
+        "uses_singleton_terms": false,
+        "singleton_term_count": 0,
+        "feature_count": 2,
+        "features": [
+          "p900_candidate0_edge_law.label",
+          "p900_candidate0_edge_law.petersen_b.endpoint"
+        ],
+        "classes": [
+          "source_native"
+        ],
+        "terms": [
+          {
+            "term": "p900_candidate0_edge_law.petersen_b.endpoint == 4 AND p900_candidate0_edge_law.label == \"half_turn\"",
+            "term_cost": 45,
+            "support": [
+              1,
+              7
+            ],
+            "atom_count": 2,
+            "classes": [
+              "source_native"
+            ],
+            "features": [
+              "p900_candidate0_edge_law.label",
+              "p900_candidate0_edge_law.petersen_b.endpoint"
+            ],
+            "atoms": [
+              {
+                "atom": "p900_candidate0_edge_law.petersen_b.endpoint == 4",
+                "class": "source_native",
+                "support": [
+                  1,
+                  7,
+                  10,
+                  12,
+                  14
+                ],
+                "atom_cost": 13
+              },
+              {
+                "atom": "p900_candidate0_edge_law.label == \"half_turn\"",
+                "class": "source_native",
+                "support": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  11,
+                  13,
+                  15,
+                  16,
+                  26
+                ],
+                "atom_cost": 13
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "exact_rows": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "all_rows_exact": true,
+    "total_cost": 1153,
+    "singleton_rows": [
+      0,
+      1,
+      3,
+      4,
+      6,
+      7,
+      8,
+      10,
+      12,
+      13,
+      14
+    ],
+    "singleton_row_count": 11,
+    "feature_reuse": [
+      [
+        "g900_slot_edge.a_mod5",
+        8
+      ],
+      [
+        "g900_slot_edge.a",
+        4
+      ],
+      [
+        "g900_slot_edge.diff_mod15",
+        4
+      ],
+      [
+        "p900_candidate0_edge_law.sector.diff_mod15",
+        4
+      ],
+      [
+        "p900_candidate0_edge_law.label",
+        4
+      ],
+      [
+        "p900_candidate0_edge_law.petersen_b.endpoint",
+        3
+      ],
+      [
+        "g900_slot_edge.cycle_b_5x3",
+        2
+      ],
+      [
+        "p900_candidate0_edge_law.petersen_b.b_mod5",
+        2
+      ],
+      [
+        "g900_slot_edge.endpoint_mod5",
+        1
+      ],
+      [
+        "g900_slot_edge.distance_mod15",
+        1
+      ],
+      [
+        "p900_candidate0_edge_law.petersen_b.b",
+        1
+      ],
+      [
+        "p900_candidate0_edge_law.petersen_a.endpoint",
+        1
+      ],
+      [
+        "p900_candidate0_edge_law.petersen_b.sum_mod15",
+        1
+      ],
+      [
+        "g900_slot_edge.b_mod5",
+        1
+      ],
+      [
+        "p900_candidate0_edge_law.petersen_a.sum_mod15",
+        1
+      ],
+      [
+        "p900_candidate0_edge_law.petersen_a.b_mod5",
+        1
+      ],
+      [
+        "p900_candidate0_edge_law.petersen_b.a_mod5",
+        1
+      ]
+    ],
+    "distinct_feature_count": 17
+  },
+  "hard_row_solutions": [
+    {
+      "row_ordinal": 3,
+      "cycle": 0,
+      "role": "ZT",
+      "columns": [
+        9
+      ],
+      "preimage": true,
+      "stable_complement": false,
+      "zero_twisted_source_row": true,
+      "exact_formula_found": true,
+      "formula_cost": 56,
+      "term_count": 1,
+      "uses_singleton_terms": true,
+      "singleton_term_count": 1,
+      "feature_count": 2,
+      "features": [
+        "g900_slot_edge.a_mod5",
+        "p900_candidate0_edge_law.petersen_b.b_mod5"
+      ],
+      "classes": [
+        "source_native"
+      ],
+      "terms": [
+        {
+          "term": "g900_slot_edge.a_mod5 == 2 AND p900_candidate0_edge_law.petersen_b.b_mod5 == 3",
+          "term_cost": 56,
+          "support": [
+            9
+          ],
+          "atom_count": 2,
+          "classes": [
+            "source_native"
+          ],
+          "features": [
+            "g900_slot_edge.a_mod5",
+            "p900_candidate0_edge_law.petersen_b.b_mod5"
+          ],
+          "atoms": [
+            {
+              "atom": "g900_slot_edge.a_mod5 == 2",
+              "class": "source_native",
+              "support": [
+                7,
+                8,
+                9,
+                22,
+                23,
+                24
+              ],
+              "atom_cost": 13
+            },
+            {
+              "atom": "p900_candidate0_edge_law.petersen_b.b_mod5 == 3",
+              "class": "source_native",
+              "support": [
+                4,
+                9,
+                11,
+                18,
+                21,
+                28
+              ],
+              "atom_cost": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "row_ordinal": 4,
+      "cycle": 0,
+      "role": "TI",
+      "columns": [
+        13
+      ],
+      "preimage": false,
+      "stable_complement": true,
+      "zero_twisted_source_row": true,
+      "exact_formula_found": true,
+      "formula_cost": 56,
+      "term_count": 1,
+      "uses_singleton_terms": true,
+      "singleton_term_count": 1,
+      "feature_count": 2,
+      "features": [
+        "g900_slot_edge.a_mod5",
+        "p900_candidate0_edge_law.label"
+      ],
+      "classes": [
+        "source_native"
+      ],
+      "terms": [
+        {
+          "term": "g900_slot_edge.a_mod5 == 4 AND p900_candidate0_edge_law.label == \"half_turn\"",
+          "term_cost": 56,
+          "support": [
+            13
+          ],
+          "atom_count": 2,
+          "classes": [
+            "source_native"
+          ],
+          "features": [
+            "g900_slot_edge.a_mod5",
+            "p900_candidate0_edge_law.label"
+          ],
+          "atoms": [
+            {
+              "atom": "g900_slot_edge.a_mod5 == 4",
+              "class": "source_native",
+              "support": [
+                13,
+                14,
+                28,
+                29
+              ],
+              "atom_cost": 13
+            },
+            {
+              "atom": "p900_candidate0_edge_law.label == \"half_turn\"",
+              "class": "source_native",
+              "support": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                11,
+                13,
+                15,
+                16,
+                26
+              ],
+              "atom_cost": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "row_ordinal": 5,
+      "cycle": 0,
+      "role": "IW",
+      "columns": [
+        1,
+        7
+      ],
+      "preimage": false,
+      "stable_complement": false,
+      "zero_twisted_source_row": false,
+      "exact_formula_found": true,
+      "formula_cost": 45,
+      "term_count": 1,
+      "uses_singleton_terms": false,
+      "singleton_term_count": 0,
+      "feature_count": 2,
+      "features": [
+        "p900_candidate0_edge_law.label",
+        "p900_candidate0_edge_law.petersen_b.endpoint"
+      ],
+      "classes": [
+        "source_native"
+      ],
+      "terms": [
+        {
+          "term": "p900_candidate0_edge_law.petersen_b.endpoint == 4 AND p900_candidate0_edge_law.label == \"half_turn\"",
+          "term_cost": 45,
+          "support": [
+            1,
+            7
+          ],
+          "atom_count": 2,
+          "classes": [
+            "source_native"
+          ],
+          "features": [
+            "p900_candidate0_edge_law.label",
+            "p900_candidate0_edge_law.petersen_b.endpoint"
+          ],
+          "atoms": [
+            {
+              "atom": "p900_candidate0_edge_law.petersen_b.endpoint == 4",
+              "class": "source_native",
+              "support": [
+                1,
+                7,
+                10,
+                12,
+                14
+              ],
+              "atom_cost": 13
+            },
+            {
+              "atom": "p900_candidate0_edge_law.label == \"half_turn\"",
+              "class": "source_native",
+              "support": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                11,
+                13,
+                15,
+                16,
+                26
+              ],
+              "atom_cost": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "row_ordinal": 8,
+      "cycle": 1,
+      "role": "YZ",
+      "columns": [
+        1,
+        3,
+        22
+      ],
+      "preimage": false,
+      "stable_complement": false,
+      "zero_twisted_source_row": false,
+      "exact_formula_found": true,
+      "formula_cost": 111,
+      "term_count": 2,
+      "uses_singleton_terms": true,
+      "singleton_term_count": 1,
+      "feature_count": 4,
+      "features": [
+        "g900_slot_edge.a",
+        "g900_slot_edge.a_mod5",
+        "g900_slot_edge.distance_mod15",
+        "p900_candidate0_edge_law.petersen_b.b"
+      ],
+      "classes": [
+        "source_native"
+      ],
+      "terms": [
+        {
+          "term": "g900_slot_edge.a == 0 AND g900_slot_edge.distance_mod15 == 4",
+          "term_cost": 45,
+          "support": [
+            1,
+            3
+          ],
+          "atom_count": 2,
+          "classes": [
+            "source_native"
+          ],
+          "features": [
+            "g900_slot_edge.a",
+            "g900_slot_edge.distance_mod15"
+          ],
+          "atoms": [
+            {
+              "atom": "g900_slot_edge.a == 0",
+              "class": "source_native",
+              "support": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "atom_cost": 13
+            },
+            {
+              "atom": "g900_slot_edge.distance_mod15 == 4",
+              "class": "source_native",
+              "support": [
+                1,
+                3,
+                6,
+                9,
+                12,
+                16,
+                23,
+                29
+              ],
+              "atom_cost": 13
+            }
+          ]
+        },
+        {
+          "term": "g900_slot_edge.a_mod5 == 2 AND p900_candidate0_edge_law.petersen_b.b == 5",
+          "term_cost": 56,
+          "support": [
+            22
+          ],
+          "atom_count": 2,
+          "classes": [
+            "source_native"
+          ],
+          "features": [
+            "g900_slot_edge.a_mod5",
+            "p900_candidate0_edge_law.petersen_b.b"
+          ],
+          "atoms": [
+            {
+              "atom": "g900_slot_edge.a_mod5 == 2",
+              "class": "source_native",
+              "support": [
+                7,
+                8,
+                9,
+                22,
+                23,
+                24
+              ],
+              "atom_cost": 13
+            },
+            {
+              "atom": "p900_candidate0_edge_law.petersen_b.b == 5",
+              "class": "source_native",
+              "support": [
+                2,
+                13,
+                16,
+                22,
+                26,
+                29
+              ],
+              "atom_cost": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "row_ordinal": 9,
+      "cycle": 1,
+      "role": "ZT",
+      "columns": [
+        9,
+        11,
+        14
+      ],
+      "preimage": false,
+      "stable_complement": true,
+      "zero_twisted_source_row": true,
+      "exact_formula_found": true,
+      "formula_cost": 90,
+      "term_count": 2,
+      "uses_singleton_terms": false,
+      "singleton_term_count": 0,
+      "feature_count": 3,
+      "features": [
+        "g900_slot_edge.diff_mod15",
+        "p900_candidate0_edge_law.petersen_a.endpoint",
+        "p900_candidate0_edge_law.petersen_b.sum_mod15"
+      ],
+      "classes": [
+        "source_native"
+      ],
+      "terms": [
+        {
+          "term": "p900_candidate0_edge_law.petersen_b.sum_mod15 == 11",
+          "term_cost": 35,
+          "support": [
+            9,
+            11
+          ],
+          "atom_count": 1,
+          "classes": [
+            "source_native"
+          ],
+          "features": [
+            "p900_candidate0_edge_law.petersen_b.sum_mod15"
+          ],
+          "atoms": [
+            {
+              "atom": "p900_candidate0_edge_law.petersen_b.sum_mod15 == 11",
+              "class": "source_native",
+              "support": [
+                9,
+                11
+              ],
+              "atom_cost": 28
+            }
+          ]
+        },
+        {
+          "term": "g900_slot_edge.diff_mod15 == 10 AND p900_candidate0_edge_law.petersen_a.endpoint == 4",
+          "term_cost": 45,
+          "support": [
+            11,
+            14
+          ],
+          "atom_count": 2,
+          "classes": [
+            "source_native"
+          ],
+          "features": [
+            "g900_slot_edge.diff_mod15",
+            "p900_candidate0_edge_law.petersen_a.endpoint"
+          ],
+          "atoms": [
+            {
+              "atom": "g900_slot_edge.diff_mod15 == 10",
+              "class": "source_native",
+              "support": [
+                2,
+                5,
+                8,
+                11,
+                14
+              ],
+              "atom_cost": 13
+            },
+            {
+              "atom": "p900_candidate0_edge_law.petersen_a.endpoint == 4",
+              "class": "source_native",
+              "support": [
+                10,
+                11,
+                12,
+                13,
+                14,
+                23,
+                24
+              ],
+              "atom_cost": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "row_ordinal": 11,
+      "cycle": 1,
+      "role": "IW",
+      "columns": [
+        1,
+        7
+      ],
+      "preimage": false,
+      "stable_complement": false,
+      "zero_twisted_source_row": false,
+      "exact_formula_found": true,
+      "formula_cost": 45,
+      "term_count": 1,
+      "uses_singleton_terms": false,
+      "singleton_term_count": 0,
+      "feature_count": 2,
+      "features": [
+        "p900_candidate0_edge_law.label",
+        "p900_candidate0_edge_law.petersen_b.endpoint"
+      ],
+      "classes": [
+        "source_native"
+      ],
+      "terms": [
+        {
+          "term": "p900_candidate0_edge_law.petersen_b.endpoint == 4 AND p900_candidate0_edge_law.label == \"half_turn\"",
+          "term_cost": 45,
+          "support": [
+            1,
+            7
+          ],
+          "atom_count": 2,
+          "classes": [
+            "source_native"
+          ],
+          "features": [
+            "p900_candidate0_edge_law.label",
+            "p900_candidate0_edge_law.petersen_b.endpoint"
+          ],
+          "atoms": [
+            {
+              "atom": "p900_candidate0_edge_law.petersen_b.endpoint == 4",
+              "class": "source_native",
+              "support": [
+                1,
+                7,
+                10,
+                12,
+                14
+              ],
+              "atom_cost": 13
+            },
+            {
+              "atom": "p900_candidate0_edge_law.label == \"half_turn\"",
+              "class": "source_native",
+              "support": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                11,
+                13,
+                15,
+                16,
+                26
+              ],
+              "atom_cost": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "row_ordinal": 15,
+      "cycle": 2,
+      "role": "ZT",
+      "columns": [
+        21,
+        22
+      ],
+      "preimage": false,
+      "stable_complement": true,
+      "zero_twisted_source_row": true,
+      "exact_formula_found": true,
+      "formula_cost": 35,
+      "term_count": 1,
+      "uses_singleton_terms": false,
+      "singleton_term_count": 0,
+      "feature_count": 1,
+      "features": [
+        "p900_candidate0_edge_law.petersen_a.sum_mod15"
+      ],
+      "classes": [
+        "source_native"
+      ],
+      "terms": [
+        {
+          "term": "p900_candidate0_edge_law.petersen_a.sum_mod15 == 11",
+          "term_cost": 35,
+          "support": [
+            21,
+            22
+          ],
+          "atom_count": 1,
+          "classes": [
+            "source_native"
+          ],
+          "features": [
+            "p900_candidate0_edge_law.petersen_a.sum_mod15"
+          ],
+          "atoms": [
+            {
+              "atom": "p900_candidate0_edge_law.petersen_a.sum_mod15 == 11",
+              "class": "source_native",
+              "support": [
+                21,
+                22
+              ],
+              "atom_cost": 28
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "row_ordinal": 16,
+      "cycle": 2,
+      "role": "TI",
+      "columns": [
+        13,
+        15
+      ],
+      "preimage": true,
+      "stable_complement": false,
+      "zero_twisted_source_row": true,
+      "exact_formula_found": true,
+      "formula_cost": 45,
+      "term_count": 1,
+      "uses_singleton_terms": false,
+      "singleton_term_count": 0,
+      "feature_count": 2,
+      "features": [
+        "p900_candidate0_edge_law.petersen_a.b_mod5",
+        "p900_candidate0_edge_law.petersen_b.a_mod5"
+      ],
+      "classes": [
+        "source_native"
+      ],
+      "terms": [
+        {
+          "term": "p900_candidate0_edge_law.petersen_a.b_mod5 == 0 AND p900_candidate0_edge_law.petersen_b.a_mod5 == 0",
+          "term_cost": 45,
+          "support": [
+            13,
+            15
+          ],
+          "atom_count": 2,
+          "classes": [
+            "source_native"
+          ],
+          "features": [
+            "p900_candidate0_edge_law.petersen_a.b_mod5",
+            "p900_candidate0_edge_law.petersen_b.a_mod5"
+          ],
+          "atoms": [
+            {
+              "atom": "p900_candidate0_edge_law.petersen_a.b_mod5 == 0",
+              "class": "source_native",
+              "support": [
+                13,
+                14,
+                15,
+                16
+              ],
+              "atom_cost": 13
+            },
+            {
+              "atom": "p900_candidate0_edge_law.petersen_b.a_mod5 == 0",
+              "class": "source_native",
+              "support": [
+                2,
+                13,
+                15,
+                19
+              ],
+              "atom_cost": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "row_ordinal": 17,
+      "cycle": 2,
+      "role": "IW",
+      "columns": [
+        1,
+        7
+      ],
+      "preimage": false,
+      "stable_complement": false,
+      "zero_twisted_source_row": false,
+      "exact_formula_found": true,
+      "formula_cost": 45,
+      "term_count": 1,
+      "uses_singleton_terms": false,
+      "singleton_term_count": 0,
+      "feature_count": 2,
+      "features": [
+        "p900_candidate0_edge_law.label",
+        "p900_candidate0_edge_law.petersen_b.endpoint"
+      ],
+      "classes": [
+        "source_native"
+      ],
+      "terms": [
+        {
+          "term": "p900_candidate0_edge_law.petersen_b.endpoint == 4 AND p900_candidate0_edge_law.label == \"half_turn\"",
+          "term_cost": 45,
+          "support": [
+            1,
+            7
+          ],
+          "atom_count": 2,
+          "classes": [
+            "source_native"
+          ],
+          "features": [
+            "p900_candidate0_edge_law.label",
+            "p900_candidate0_edge_law.petersen_b.endpoint"
+          ],
+          "atoms": [
+            {
+              "atom": "p900_candidate0_edge_law.petersen_b.endpoint == 4",
+              "class": "source_native",
+              "support": [
+                1,
+                7,
+                10,
+                12,
+                14
+              ],
+              "atom_cost": 13
+            },
+            {
+              "atom": "p900_candidate0_edge_law.label == \"half_turn\"",
+              "class": "source_native",
+              "support": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                11,
+                13,
+                15,
+                16,
+                26
+              ],
+              "atom_cost": 13
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "interpretation": {
+    "main_result": "The bounded brute-force family found exact row selectors, but this is not a source-native generator.",
+    "why_not_closure": "Exact row-local selectors can still be disguised lookup. Gap A needs a generator that produces WXYZTI row/register structure from source, not one formula per row.",
+    "hard_rows": "The decisive rows remain the non-path and zero/preimage/stable rows.",
+    "next_move": "Audit the exact selector family for overfit, then isolate reusable subgrammar if any survives."
+  },
+  "claim": {
+    "does_this_close_gap_a": false,
+    "does_this_find_exact_bounded_selector_family": true,
+    "does_this_find_source_native_generator": false,
+    "does_this_construct_full_900_carrier_to_register_map": false,
+    "short_form": "The bounded brute-force family found exact row selectors, but this is not a source-native generator.",
+    "not_closed_reason": "Exact row-local selectors can still be disguised lookup. Gap A needs a generator that produces WXYZTI row/register structure from source, not one formula per row.",
+    "next_problem": "Audit the exact selector family for overfit, then isolate reusable subgrammar if any survives."
+  },
+  "checks": [
+    {
+      "id": "column_hypergraph_loaded",
+      "status": true,
+      "detail": "gap_a_column_hypergraph_register_generator_candidate_not_found"
+    },
+    {
+      "id": "derivation_return_loaded",
+      "status": true,
+      "detail": "gap_a_wxyzti_register_generator_slot_path_candidate_not_found"
+    },
+    {
+      "id": "mode2_boundary_loaded",
+      "status": true,
+      "detail": "gap_a_mode2_projection_mirror_boundary_note_recorded"
+    },
+    {
+      "id": "upstreamed_supports_loaded",
+      "status": true,
+      "detail": "gap_a_projection_row_supports_upstreamed_columnwise_complete_not_generator"
+    },
+    {
+      "id": "row_grouping_inference_loaded",
+      "status": true,
+      "detail": "gap_a_row_grouping_rule_inference_row_local_selectors_complete_not_global"
+    },
+    {
+      "id": "boundary_theorem_loaded",
+      "status": true,
+      "detail": "gap_a_boundary_theorem_note_recorded"
+    },
+    {
+      "id": "source_columns_loaded",
+      "status": true,
+      "detail": "30"
+    },
+    {
+      "id": "rows_loaded",
+      "status": true,
+      "detail": "18"
+    },
+    {
+      "id": "source_native_atoms_built",
+      "status": true,
+      "detail": "930"
+    },
+    {
+      "id": "source_native_term_catalog_built",
+      "status": true,
+      "detail": "673"
+    },
+    {
+      "id": "broad_term_catalog_built",
+      "status": true,
+      "detail": "1072"
+    },
+    {
+      "id": "gap_a_not_closed",
+      "status": true,
+      "detail": "bounded selector search only"
+    }
+  ],
+  "next_script": "audit_gap_a_bruteforce_selector_overfit_001.py"
+}

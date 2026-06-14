@@ -1,0 +1,1084 @@
+{
+  "schema": "gap_a_source_law_preimage_candidate_001.v1",
+  "status": "gap_a_source_law_preimage_candidate_found_not_closure",
+  "timestamp_utc": "2026-06-14T20:10:11.475970+00:00",
+  "purpose": "Recover the row-level chamber/register adjustment as a source-law preimage candidate rather than as an after-the-fact correction.",
+  "boundary": [
+    "This does not close Gap A.",
+    "This is a source-law preimage candidate, not a full source-derived chamber/register map.",
+    "The rule uses zero-twisted carrier support plus role/column orientation.",
+    "No global exact selector is claimed.",
+    "No physical interpretation is claimed.",
+    "This candidate must be attacked by source-preimage nulls before promotion."
+  ],
+  "inputs": {
+    "chamber_interim": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_chamber_register_candidate_interim_note_001.v1.json",
+      "sha256": "c0b10fad9afc6de3134a86cbe4d270218bf87071ce723fb52bae8607327e18e9",
+      "status": "gap_a_chamber_register_candidate_interim_note_recorded"
+    },
+    "chamber_candidate": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_chamber_register_map_candidate_001.v1.json",
+      "sha256": "c9759c997a6948f98e33c73de4f3ea035d5f791349cb3d67d70191f004ec0210",
+      "status": "gap_a_chamber_register_map_candidate_found_not_closure"
+    },
+    "chamber_nulls": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_chamber_register_map_candidate_nulls_001.v1.json",
+      "sha256": "49f7bf3f38e0088e1a130f00d54f745cafd751d64410f1edde6494518f5d53ce",
+      "status": "gap_a_chamber_register_map_candidate_nulls_recorded"
+    },
+    "boundary_projection": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_boundary_seam_projection_role_rows_001.v1.json",
+      "sha256": "4042fd58caee319fac49c6f5a09358759e82b17e7f766cd9360eb55256bc846a",
+      "status": "boundary_seam_projection_role_rows_partial_not_map_proof"
+    },
+    "uniform_lift": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_uniform_15_thalion_row_lift_001.v1.json",
+      "sha256": "746469ce14d675063543189bdf49420fa630ee0834958a0c27b4056a45364c46",
+      "status": "gap_a_uniform_15_thalion_row_lift_needs_inspection"
+    },
+    "uniform_inspection": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_uniform_15_thalion_row_lift_inspection_001.v1.json",
+      "sha256": "c9a4565ebea0849738a7ca99011ac506b4796ba7fbf438f80a01eb950db65d66",
+      "status": "uniform_15_thalion_lift_inspected_twisted_absence_feature_found"
+    },
+    "zero_split_fallback": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_zero_twisted_neighborhood_split_001.v1.json",
+      "sha256": "14293c9f7a362b2c9e1f50587c3222816f7d1a29050a8015e26fe49b0b018476",
+      "status": "gap_a_zero_twisted_neighborhood_split_candidate_found_not_closure"
+    }
+  },
+  "source_extraction": {
+    "zero_twisted_rows": [
+      3,
+      4,
+      9,
+      15,
+      16
+    ],
+    "zero_twisted_source": "fallback.zero_twisted_split.zero_twisted_neighborhood"
+  },
+  "candidate_rule": {
+    "name": "zero_twisted_source_law_preimage_with_role_column_orientation",
+    "reading": "zero-twisted carrier support AND (singleton ZT OR multi-column TI)",
+    "preimage_support": [
+      3,
+      16
+    ],
+    "stable_complement_reading": "zero-twisted carrier support AND (singleton TI OR multi-column ZT)",
+    "stable_complement_support": [
+      4,
+      9,
+      15
+    ]
+  },
+  "summary": {
+    "row_count": 18,
+    "match_count": 18,
+    "mismatches": [],
+    "exact_18_row_candidate": true,
+    "changed_fixes": [
+      3,
+      16
+    ],
+    "changed_breaks": [],
+    "claim_closes_gap_a": false
+  },
+  "source_rows": [
+    {
+      "row_ordinal": 0,
+      "cycle_index": 0,
+      "role": "WX",
+      "edge": [
+        0,
+        1
+      ],
+      "columns": [
+        0
+      ],
+      "column_count": 1,
+      "column_shape": "singleton",
+      "transport_kind": "direct_edge_column",
+      "path_length": 1,
+      "raw_role_cocycle_sum_mod2": 0,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": true,
+      "zero_twisted_source": false,
+      "role_column_orientation": "singleton_WX",
+      "source_law_preimage_member": false,
+      "source_law_stable_complement_member": false
+    },
+    {
+      "row_ordinal": 1,
+      "cycle_index": 0,
+      "role": "XY",
+      "edge": [
+        1,
+        2
+      ],
+      "columns": [
+        4
+      ],
+      "column_count": 1,
+      "column_shape": "singleton",
+      "transport_kind": "direct_edge_column",
+      "path_length": 1,
+      "raw_role_cocycle_sum_mod2": 1,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": false,
+      "zero_twisted_source": false,
+      "role_column_orientation": "singleton_XY",
+      "source_law_preimage_member": false,
+      "source_law_stable_complement_member": false
+    },
+    {
+      "row_ordinal": 2,
+      "cycle_index": 0,
+      "role": "YZ",
+      "edge": [
+        2,
+        3
+      ],
+      "columns": [
+        7,
+        10
+      ],
+      "column_count": 2,
+      "column_shape": "multi_column",
+      "transport_kind": "bridge_path",
+      "path_length": 2,
+      "raw_role_cocycle_sum_mod2": 1,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": false,
+      "zero_twisted_source": false,
+      "role_column_orientation": "multi_column_YZ",
+      "source_law_preimage_member": false,
+      "source_law_stable_complement_member": false
+    },
+    {
+      "row_ordinal": 3,
+      "cycle_index": 0,
+      "role": "ZT",
+      "edge": [
+        3,
+        4
+      ],
+      "columns": [
+        9
+      ],
+      "column_count": 1,
+      "column_shape": "singleton",
+      "transport_kind": "direct_edge_column",
+      "path_length": 1,
+      "raw_role_cocycle_sum_mod2": 1,
+      "projected_value": 1,
+      "expected_target_value": 0,
+      "base_matches_expected": false,
+      "seam_flip_applied": false,
+      "zero_twisted_source": true,
+      "role_column_orientation": "singleton_ZT",
+      "source_law_preimage_member": true,
+      "source_law_stable_complement_member": false
+    },
+    {
+      "row_ordinal": 4,
+      "cycle_index": 0,
+      "role": "TI",
+      "edge": [
+        4,
+        5
+      ],
+      "columns": [
+        13
+      ],
+      "column_count": 1,
+      "column_shape": "singleton",
+      "transport_kind": "direct_edge_column",
+      "path_length": 1,
+      "raw_role_cocycle_sum_mod2": 1,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": false,
+      "zero_twisted_source": true,
+      "role_column_orientation": "singleton_TI",
+      "source_law_preimage_member": false,
+      "source_law_stable_complement_member": true
+    },
+    {
+      "row_ordinal": 5,
+      "cycle_index": 0,
+      "role": "IW",
+      "edge": [
+        5,
+        0
+      ],
+      "columns": [
+        1,
+        7
+      ],
+      "column_count": 2,
+      "column_shape": "multi_column",
+      "transport_kind": "bridge_path",
+      "path_length": 2,
+      "raw_role_cocycle_sum_mod2": 0,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": true,
+      "zero_twisted_source": false,
+      "role_column_orientation": "multi_column_IW",
+      "source_law_preimage_member": false,
+      "source_law_stable_complement_member": false
+    },
+    {
+      "row_ordinal": 6,
+      "cycle_index": 1,
+      "role": "WX",
+      "edge": [
+        0,
+        1
+      ],
+      "columns": [
+        0
+      ],
+      "column_count": 1,
+      "column_shape": "singleton",
+      "transport_kind": "direct_edge_column",
+      "path_length": 1,
+      "raw_role_cocycle_sum_mod2": 0,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": true,
+      "zero_twisted_source": false,
+      "role_column_orientation": "singleton_WX",
+      "source_law_preimage_member": false,
+      "source_law_stable_complement_member": false
+    },
+    {
+      "row_ordinal": 7,
+      "cycle_index": 1,
+      "role": "XY",
+      "edge": [
+        1,
+        2
+      ],
+      "columns": [
+        4
+      ],
+      "column_count": 1,
+      "column_shape": "singleton",
+      "transport_kind": "direct_edge_column",
+      "path_length": 1,
+      "raw_role_cocycle_sum_mod2": 1,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": false,
+      "zero_twisted_source": false,
+      "role_column_orientation": "singleton_XY",
+      "source_law_preimage_member": false,
+      "source_law_stable_complement_member": false
+    },
+    {
+      "row_ordinal": 8,
+      "cycle_index": 1,
+      "role": "YZ",
+      "edge": [
+        2,
+        7
+      ],
+      "columns": [
+        1,
+        3,
+        22
+      ],
+      "column_count": 3,
+      "column_shape": "multi_column",
+      "transport_kind": "bridge_path",
+      "path_length": 3,
+      "raw_role_cocycle_sum_mod2": 1,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": false,
+      "zero_twisted_source": false,
+      "role_column_orientation": "multi_column_YZ",
+      "source_law_preimage_member": false,
+      "source_law_stable_complement_member": false
+    },
+    {
+      "row_ordinal": 9,
+      "cycle_index": 1,
+      "role": "ZT",
+      "edge": [
+        7,
+        10
+      ],
+      "columns": [
+        14,
+        9,
+        11
+      ],
+      "column_count": 3,
+      "column_shape": "multi_column",
+      "transport_kind": "bridge_path",
+      "path_length": 3,
+      "raw_role_cocycle_sum_mod2": 0,
+      "projected_value": 0,
+      "expected_target_value": 0,
+      "base_matches_expected": true,
+      "seam_flip_applied": false,
+      "zero_twisted_source": true,
+      "role_column_orientation": "multi_column_ZT",
+      "source_law_preimage_member": false,
+      "source_law_stable_complement_member": true
+    },
+    {
+      "row_ordinal": 10,
+      "cycle_index": 1,
+      "role": "TI",
+      "edge": [
+        10,
+        5
+      ],
+      "columns": [
+        10,
+        11
+      ],
+      "column_count": 2,
+      "column_shape": "multi_column",
+      "transport_kind": "bridge_path",
+      "path_length": 2,
+      "raw_role_cocycle_sum_mod2": 1,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": false,
+      "zero_twisted_source": false,
+      "role_column_orientation": "multi_column_TI",
+      "source_law_preimage_member": false,
+      "source_law_stable_complement_member": false
+    },
+    {
+      "row_ordinal": 11,
+      "cycle_index": 1,
+      "role": "IW",
+      "edge": [
+        5,
+        0
+      ],
+      "columns": [
+        1,
+        7
+      ],
+      "column_count": 2,
+      "column_shape": "multi_column",
+      "transport_kind": "bridge_path",
+      "path_length": 2,
+      "raw_role_cocycle_sum_mod2": 0,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": true,
+      "zero_twisted_source": false,
+      "role_column_orientation": "multi_column_IW",
+      "source_law_preimage_member": false,
+      "source_law_stable_complement_member": false
+    },
+    {
+      "row_ordinal": 12,
+      "cycle_index": 2,
+      "role": "WX",
+      "edge": [
+        0,
+        1
+      ],
+      "columns": [
+        0
+      ],
+      "column_count": 1,
+      "column_shape": "singleton",
+      "transport_kind": "direct_edge_column",
+      "path_length": 1,
+      "raw_role_cocycle_sum_mod2": 0,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": true,
+      "zero_twisted_source": false,
+      "role_column_orientation": "singleton_WX",
+      "source_law_preimage_member": false,
+      "source_law_stable_complement_member": false
+    },
+    {
+      "row_ordinal": 13,
+      "cycle_index": 2,
+      "role": "XY",
+      "edge": [
+        1,
+        2
+      ],
+      "columns": [
+        4
+      ],
+      "column_count": 1,
+      "column_shape": "singleton",
+      "transport_kind": "direct_edge_column",
+      "path_length": 1,
+      "raw_role_cocycle_sum_mod2": 1,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": false,
+      "zero_twisted_source": false,
+      "role_column_orientation": "singleton_XY",
+      "source_law_preimage_member": false,
+      "source_law_stable_complement_member": false
+    },
+    {
+      "row_ordinal": 14,
+      "cycle_index": 2,
+      "role": "YZ",
+      "edge": [
+        2,
+        8
+      ],
+      "columns": [
+        4,
+        5
+      ],
+      "column_count": 2,
+      "column_shape": "multi_column",
+      "transport_kind": "bridge_path",
+      "path_length": 2,
+      "raw_role_cocycle_sum_mod2": 1,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": false,
+      "zero_twisted_source": false,
+      "role_column_orientation": "multi_column_YZ",
+      "source_law_preimage_member": false,
+      "source_law_stable_complement_member": false
+    },
+    {
+      "row_ordinal": 15,
+      "cycle_index": 2,
+      "role": "ZT",
+      "edge": [
+        8,
+        14
+      ],
+      "columns": [
+        21,
+        22
+      ],
+      "column_count": 2,
+      "column_shape": "multi_column",
+      "transport_kind": "bridge_path",
+      "path_length": 2,
+      "raw_role_cocycle_sum_mod2": 0,
+      "projected_value": 0,
+      "expected_target_value": 0,
+      "base_matches_expected": true,
+      "seam_flip_applied": false,
+      "zero_twisted_source": true,
+      "role_column_orientation": "multi_column_ZT",
+      "source_law_preimage_member": false,
+      "source_law_stable_complement_member": true
+    },
+    {
+      "row_ordinal": 16,
+      "cycle_index": 2,
+      "role": "TI",
+      "edge": [
+        14,
+        5
+      ],
+      "columns": [
+        13,
+        15
+      ],
+      "column_count": 2,
+      "column_shape": "multi_column",
+      "transport_kind": "bridge_path",
+      "path_length": 2,
+      "raw_role_cocycle_sum_mod2": 0,
+      "projected_value": 0,
+      "expected_target_value": 1,
+      "base_matches_expected": false,
+      "seam_flip_applied": false,
+      "zero_twisted_source": true,
+      "role_column_orientation": "multi_column_TI",
+      "source_law_preimage_member": true,
+      "source_law_stable_complement_member": false
+    },
+    {
+      "row_ordinal": 17,
+      "cycle_index": 2,
+      "role": "IW",
+      "edge": [
+        5,
+        0
+      ],
+      "columns": [
+        1,
+        7
+      ],
+      "column_count": 2,
+      "column_shape": "multi_column",
+      "transport_kind": "bridge_path",
+      "path_length": 2,
+      "raw_role_cocycle_sum_mod2": 0,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": true,
+      "zero_twisted_source": false,
+      "role_column_orientation": "multi_column_IW",
+      "source_law_preimage_member": false,
+      "source_law_stable_complement_member": false
+    }
+  ],
+  "candidate_rows": [
+    {
+      "row_ordinal": 0,
+      "cycle_index": 0,
+      "role": "WX",
+      "edge": [
+        0,
+        1
+      ],
+      "columns": [
+        0
+      ],
+      "column_count": 1,
+      "column_shape": "singleton",
+      "transport_kind": "direct_edge_column",
+      "path_length": 1,
+      "raw_role_cocycle_sum_mod2": 0,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": true,
+      "source_law_preimage_member": false,
+      "candidate_projected_value": 1,
+      "candidate_matches_expected": true,
+      "changed_by_preimage": false
+    },
+    {
+      "row_ordinal": 1,
+      "cycle_index": 0,
+      "role": "XY",
+      "edge": [
+        1,
+        2
+      ],
+      "columns": [
+        4
+      ],
+      "column_count": 1,
+      "column_shape": "singleton",
+      "transport_kind": "direct_edge_column",
+      "path_length": 1,
+      "raw_role_cocycle_sum_mod2": 1,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": false,
+      "source_law_preimage_member": false,
+      "candidate_projected_value": 1,
+      "candidate_matches_expected": true,
+      "changed_by_preimage": false
+    },
+    {
+      "row_ordinal": 2,
+      "cycle_index": 0,
+      "role": "YZ",
+      "edge": [
+        2,
+        3
+      ],
+      "columns": [
+        7,
+        10
+      ],
+      "column_count": 2,
+      "column_shape": "multi_column",
+      "transport_kind": "bridge_path",
+      "path_length": 2,
+      "raw_role_cocycle_sum_mod2": 1,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": false,
+      "source_law_preimage_member": false,
+      "candidate_projected_value": 1,
+      "candidate_matches_expected": true,
+      "changed_by_preimage": false
+    },
+    {
+      "row_ordinal": 3,
+      "cycle_index": 0,
+      "role": "ZT",
+      "edge": [
+        3,
+        4
+      ],
+      "columns": [
+        9
+      ],
+      "column_count": 1,
+      "column_shape": "singleton",
+      "transport_kind": "direct_edge_column",
+      "path_length": 1,
+      "raw_role_cocycle_sum_mod2": 1,
+      "projected_value": 1,
+      "expected_target_value": 0,
+      "base_matches_expected": false,
+      "seam_flip_applied": false,
+      "source_law_preimage_member": true,
+      "candidate_projected_value": 0,
+      "candidate_matches_expected": true,
+      "changed_by_preimage": true
+    },
+    {
+      "row_ordinal": 4,
+      "cycle_index": 0,
+      "role": "TI",
+      "edge": [
+        4,
+        5
+      ],
+      "columns": [
+        13
+      ],
+      "column_count": 1,
+      "column_shape": "singleton",
+      "transport_kind": "direct_edge_column",
+      "path_length": 1,
+      "raw_role_cocycle_sum_mod2": 1,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": false,
+      "source_law_preimage_member": false,
+      "candidate_projected_value": 1,
+      "candidate_matches_expected": true,
+      "changed_by_preimage": false
+    },
+    {
+      "row_ordinal": 5,
+      "cycle_index": 0,
+      "role": "IW",
+      "edge": [
+        5,
+        0
+      ],
+      "columns": [
+        1,
+        7
+      ],
+      "column_count": 2,
+      "column_shape": "multi_column",
+      "transport_kind": "bridge_path",
+      "path_length": 2,
+      "raw_role_cocycle_sum_mod2": 0,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": true,
+      "source_law_preimage_member": false,
+      "candidate_projected_value": 1,
+      "candidate_matches_expected": true,
+      "changed_by_preimage": false
+    },
+    {
+      "row_ordinal": 6,
+      "cycle_index": 1,
+      "role": "WX",
+      "edge": [
+        0,
+        1
+      ],
+      "columns": [
+        0
+      ],
+      "column_count": 1,
+      "column_shape": "singleton",
+      "transport_kind": "direct_edge_column",
+      "path_length": 1,
+      "raw_role_cocycle_sum_mod2": 0,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": true,
+      "source_law_preimage_member": false,
+      "candidate_projected_value": 1,
+      "candidate_matches_expected": true,
+      "changed_by_preimage": false
+    },
+    {
+      "row_ordinal": 7,
+      "cycle_index": 1,
+      "role": "XY",
+      "edge": [
+        1,
+        2
+      ],
+      "columns": [
+        4
+      ],
+      "column_count": 1,
+      "column_shape": "singleton",
+      "transport_kind": "direct_edge_column",
+      "path_length": 1,
+      "raw_role_cocycle_sum_mod2": 1,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": false,
+      "source_law_preimage_member": false,
+      "candidate_projected_value": 1,
+      "candidate_matches_expected": true,
+      "changed_by_preimage": false
+    },
+    {
+      "row_ordinal": 8,
+      "cycle_index": 1,
+      "role": "YZ",
+      "edge": [
+        2,
+        7
+      ],
+      "columns": [
+        1,
+        3,
+        22
+      ],
+      "column_count": 3,
+      "column_shape": "multi_column",
+      "transport_kind": "bridge_path",
+      "path_length": 3,
+      "raw_role_cocycle_sum_mod2": 1,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": false,
+      "source_law_preimage_member": false,
+      "candidate_projected_value": 1,
+      "candidate_matches_expected": true,
+      "changed_by_preimage": false
+    },
+    {
+      "row_ordinal": 9,
+      "cycle_index": 1,
+      "role": "ZT",
+      "edge": [
+        7,
+        10
+      ],
+      "columns": [
+        14,
+        9,
+        11
+      ],
+      "column_count": 3,
+      "column_shape": "multi_column",
+      "transport_kind": "bridge_path",
+      "path_length": 3,
+      "raw_role_cocycle_sum_mod2": 0,
+      "projected_value": 0,
+      "expected_target_value": 0,
+      "base_matches_expected": true,
+      "seam_flip_applied": false,
+      "source_law_preimage_member": false,
+      "candidate_projected_value": 0,
+      "candidate_matches_expected": true,
+      "changed_by_preimage": false
+    },
+    {
+      "row_ordinal": 10,
+      "cycle_index": 1,
+      "role": "TI",
+      "edge": [
+        10,
+        5
+      ],
+      "columns": [
+        10,
+        11
+      ],
+      "column_count": 2,
+      "column_shape": "multi_column",
+      "transport_kind": "bridge_path",
+      "path_length": 2,
+      "raw_role_cocycle_sum_mod2": 1,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": false,
+      "source_law_preimage_member": false,
+      "candidate_projected_value": 1,
+      "candidate_matches_expected": true,
+      "changed_by_preimage": false
+    },
+    {
+      "row_ordinal": 11,
+      "cycle_index": 1,
+      "role": "IW",
+      "edge": [
+        5,
+        0
+      ],
+      "columns": [
+        1,
+        7
+      ],
+      "column_count": 2,
+      "column_shape": "multi_column",
+      "transport_kind": "bridge_path",
+      "path_length": 2,
+      "raw_role_cocycle_sum_mod2": 0,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": true,
+      "source_law_preimage_member": false,
+      "candidate_projected_value": 1,
+      "candidate_matches_expected": true,
+      "changed_by_preimage": false
+    },
+    {
+      "row_ordinal": 12,
+      "cycle_index": 2,
+      "role": "WX",
+      "edge": [
+        0,
+        1
+      ],
+      "columns": [
+        0
+      ],
+      "column_count": 1,
+      "column_shape": "singleton",
+      "transport_kind": "direct_edge_column",
+      "path_length": 1,
+      "raw_role_cocycle_sum_mod2": 0,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": true,
+      "source_law_preimage_member": false,
+      "candidate_projected_value": 1,
+      "candidate_matches_expected": true,
+      "changed_by_preimage": false
+    },
+    {
+      "row_ordinal": 13,
+      "cycle_index": 2,
+      "role": "XY",
+      "edge": [
+        1,
+        2
+      ],
+      "columns": [
+        4
+      ],
+      "column_count": 1,
+      "column_shape": "singleton",
+      "transport_kind": "direct_edge_column",
+      "path_length": 1,
+      "raw_role_cocycle_sum_mod2": 1,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": false,
+      "source_law_preimage_member": false,
+      "candidate_projected_value": 1,
+      "candidate_matches_expected": true,
+      "changed_by_preimage": false
+    },
+    {
+      "row_ordinal": 14,
+      "cycle_index": 2,
+      "role": "YZ",
+      "edge": [
+        2,
+        8
+      ],
+      "columns": [
+        4,
+        5
+      ],
+      "column_count": 2,
+      "column_shape": "multi_column",
+      "transport_kind": "bridge_path",
+      "path_length": 2,
+      "raw_role_cocycle_sum_mod2": 1,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": false,
+      "source_law_preimage_member": false,
+      "candidate_projected_value": 1,
+      "candidate_matches_expected": true,
+      "changed_by_preimage": false
+    },
+    {
+      "row_ordinal": 15,
+      "cycle_index": 2,
+      "role": "ZT",
+      "edge": [
+        8,
+        14
+      ],
+      "columns": [
+        21,
+        22
+      ],
+      "column_count": 2,
+      "column_shape": "multi_column",
+      "transport_kind": "bridge_path",
+      "path_length": 2,
+      "raw_role_cocycle_sum_mod2": 0,
+      "projected_value": 0,
+      "expected_target_value": 0,
+      "base_matches_expected": true,
+      "seam_flip_applied": false,
+      "source_law_preimage_member": false,
+      "candidate_projected_value": 0,
+      "candidate_matches_expected": true,
+      "changed_by_preimage": false
+    },
+    {
+      "row_ordinal": 16,
+      "cycle_index": 2,
+      "role": "TI",
+      "edge": [
+        14,
+        5
+      ],
+      "columns": [
+        13,
+        15
+      ],
+      "column_count": 2,
+      "column_shape": "multi_column",
+      "transport_kind": "bridge_path",
+      "path_length": 2,
+      "raw_role_cocycle_sum_mod2": 0,
+      "projected_value": 0,
+      "expected_target_value": 1,
+      "base_matches_expected": false,
+      "seam_flip_applied": false,
+      "source_law_preimage_member": true,
+      "candidate_projected_value": 1,
+      "candidate_matches_expected": true,
+      "changed_by_preimage": true
+    },
+    {
+      "row_ordinal": 17,
+      "cycle_index": 2,
+      "role": "IW",
+      "edge": [
+        5,
+        0
+      ],
+      "columns": [
+        1,
+        7
+      ],
+      "column_count": 2,
+      "column_shape": "multi_column",
+      "transport_kind": "bridge_path",
+      "path_length": 2,
+      "raw_role_cocycle_sum_mod2": 0,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": true,
+      "source_law_preimage_member": false,
+      "candidate_projected_value": 1,
+      "candidate_matches_expected": true,
+      "changed_by_preimage": false
+    }
+  ],
+  "interpretation": {
+    "main_result": "Rows [3, 16] are recovered as a source-law preimage candidate: zero-twisted carrier support plus the residual-side role/column orientation.",
+    "stable_result": "Rows [4, 9, 15] are recovered as the complementary stable zero-twisted orientation.",
+    "not_correction": "The row-level adjustment can now be described without referencing mismatch labels: it is the preimage of a source-side zero-twisted role/column condition.",
+    "not_closure": "This still does not close Gap A because the candidate has not yet been lifted to a full global source-derived chamber/register map."
+  },
+  "checks": [
+    {
+      "id": "chamber_interim_loaded",
+      "status": true,
+      "detail": "gap_a_chamber_register_candidate_interim_note_recorded"
+    },
+    {
+      "id": "chamber_candidate_loaded",
+      "status": true,
+      "detail": "gap_a_chamber_register_map_candidate_found_not_closure"
+    },
+    {
+      "id": "chamber_nulls_loaded",
+      "status": true,
+      "detail": "gap_a_chamber_register_map_candidate_nulls_recorded"
+    },
+    {
+      "id": "boundary_loaded",
+      "status": true,
+      "detail": "boundary_seam_projection_role_rows_partial_not_map_proof"
+    },
+    {
+      "id": "projection_rows_18",
+      "status": true,
+      "detail": "count=18"
+    },
+    {
+      "id": "zero_twisted_rows_3_4_9_15_16",
+      "status": true,
+      "detail": "source=fallback.zero_twisted_split.zero_twisted_neighborhood rows=[3, 4, 9, 15, 16]"
+    },
+    {
+      "id": "preimage_support_3_16",
+      "status": true,
+      "detail": "[3, 16]"
+    },
+    {
+      "id": "stable_complement_4_9_15",
+      "status": true,
+      "detail": "[4, 9, 15]"
+    },
+    {
+      "id": "preimage_candidate_exact_18",
+      "status": true,
+      "detail": "{\"changed_breaks\": [], \"changed_fixes\": [3, 16], \"exact\": true, \"match_count\": 18, \"mismatches\": [], \"row_count\": 18, \"support\": [3, 16]}"
+    },
+    {
+      "id": "changed_rows_fix_3_16",
+      "status": true,
+      "detail": "[3, 16]"
+    },
+    {
+      "id": "changed_rows_break_none",
+      "status": true,
+      "detail": "[]"
+    },
+    {
+      "id": "not_gap_closure",
+      "status": true,
+      "detail": "still source-law preimage candidate only"
+    }
+  ],
+  "next_script": "null_gap_a_source_law_preimage_candidate_001.py"
+}

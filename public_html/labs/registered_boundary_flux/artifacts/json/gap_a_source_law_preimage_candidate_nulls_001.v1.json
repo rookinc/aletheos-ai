@@ -1,0 +1,3293 @@
+{
+  "schema": "gap_a_source_law_preimage_candidate_nulls_001.v1",
+  "status": "gap_a_source_law_preimage_candidate_nulls_mixed_not_promoted",
+  "timestamp_utc": "2026-06-14T20:12:49.734675+00:00",
+  "purpose": "Attack the source-law preimage candidate by replacing zero-twisted residual orientation with weaker, swapped, shifted, and older substitute predicates.",
+  "boundary": [
+    "This does not close Gap A.",
+    "The tested object is a source-law preimage candidate, not a full source-derived chamber/register map.",
+    "The zero-twisted source currently uses the recorded zero-split fallback unless direct lift provenance is found.",
+    "Surviving exact substitutes, if any, prevent promotion.",
+    "No global exact selector is claimed.",
+    "No physical interpretation is claimed."
+  ],
+  "inputs": {
+    "source_law_preimage": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_source_law_preimage_candidate_001.v1.json",
+      "sha256": "13f7e6bc160115b796df7e422543e246d0dcb96efb1df2cbc4180d10c711d8af",
+      "status": "gap_a_source_law_preimage_candidate_found_not_closure"
+    },
+    "chamber_candidate": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_chamber_register_map_candidate_001.v1.json",
+      "sha256": "c9759c997a6948f98e33c73de4f3ea035d5f791349cb3d67d70191f004ec0210",
+      "status": "gap_a_chamber_register_map_candidate_found_not_closure"
+    },
+    "chamber_nulls": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_chamber_register_map_candidate_nulls_001.v1.json",
+      "sha256": "49f7bf3f38e0088e1a130f00d54f745cafd751d64410f1edde6494518f5d53ce",
+      "status": "gap_a_chamber_register_map_candidate_nulls_recorded"
+    },
+    "role_geometry": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_role_column_source_geometry_001.v1.json",
+      "sha256": "f20e71ee814653a3cfef9132110f69fec036386b2806282bd15b65e495cfc19c",
+      "status": "gap_a_role_column_source_geometry_candidate_found_not_closure"
+    },
+    "role_nulls": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_role_column_source_geometry_nulls_001.v1.json",
+      "sha256": "288c091a2944c791928e21115afe506080129b31dfd5b6bfc34e7e811982749f",
+      "status": "gap_a_role_column_source_geometry_nulls_recorded"
+    },
+    "uniform_lift": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_uniform_15_thalion_row_lift_001.v1.json",
+      "sha256": "746469ce14d675063543189bdf49420fa630ee0834958a0c27b4056a45364c46",
+      "status": "gap_a_uniform_15_thalion_row_lift_needs_inspection"
+    },
+    "uniform_inspection": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_uniform_15_thalion_row_lift_inspection_001.v1.json",
+      "sha256": "c9a4565ebea0849738a7ca99011ac506b4796ba7fbf438f80a01eb950db65d66",
+      "status": "uniform_15_thalion_lift_inspected_twisted_absence_feature_found"
+    },
+    "zero_split": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_zero_twisted_neighborhood_split_001.v1.json",
+      "sha256": "14293c9f7a362b2c9e1f50587c3222816f7d1a29050a8015e26fe49b0b018476",
+      "status": "gap_a_zero_twisted_neighborhood_split_candidate_found_not_closure"
+    }
+  },
+  "provenance": {
+    "zero_twisted_rows": [
+      3,
+      4,
+      9,
+      15,
+      16
+    ],
+    "zero_twisted_source": "fallback.zero_twisted_split.zero_twisted_neighborhood",
+    "direct_zero_hits": {
+      "uniform_lift": [],
+      "uniform_inspection": [],
+      "zero_split": [
+        "$.zero_twisted_neighborhood",
+        "$.feature_tests[15].support"
+      ]
+    },
+    "direct_zero_source_confirmed_from_uniform_artifact": false,
+    "fallback_zero_source_used": true
+  },
+  "baseline": {
+    "rule": "zero-twisted AND (singleton ZT OR multi-column TI)",
+    "support": [
+      3,
+      16
+    ]
+  },
+  "null_tests": [
+    {
+      "name": "baseline_zero_twisted_AND_residual_orientation",
+      "changed_rows": [
+        3,
+        16
+      ],
+      "row_count": 18,
+      "match_count": 18,
+      "mismatches": [],
+      "exact": true,
+      "changed_fixes": [
+        3,
+        16
+      ],
+      "changed_breaks": [],
+      "rows": [
+        {
+          "row_ordinal": 0,
+          "role": "WX",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 1,
+          "role": "XY",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 2,
+          "role": "YZ",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 3,
+          "role": "ZT",
+          "column_shape": "singleton",
+          "zero_twisted_source": true,
+          "changed": true,
+          "projected_value": 1,
+          "expected_target_value": 0,
+          "candidate_projected_value": 0,
+          "matches_expected": true,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 4,
+          "role": "TI",
+          "column_shape": "singleton",
+          "zero_twisted_source": true,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 5,
+          "role": "IW",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 6,
+          "role": "WX",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 7,
+          "role": "XY",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 8,
+          "role": "YZ",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 9,
+          "role": "ZT",
+          "column_shape": "multi_column",
+          "zero_twisted_source": true,
+          "changed": false,
+          "projected_value": 0,
+          "expected_target_value": 0,
+          "candidate_projected_value": 0,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 10,
+          "role": "TI",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 11,
+          "role": "IW",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 12,
+          "role": "WX",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 13,
+          "role": "XY",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 14,
+          "role": "YZ",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 15,
+          "role": "ZT",
+          "column_shape": "multi_column",
+          "zero_twisted_source": true,
+          "changed": false,
+          "projected_value": 0,
+          "expected_target_value": 0,
+          "candidate_projected_value": 0,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 16,
+          "role": "TI",
+          "column_shape": "multi_column",
+          "zero_twisted_source": true,
+          "changed": true,
+          "projected_value": 0,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 17,
+          "role": "IW",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        }
+      ]
+    },
+    {
+      "name": "null_no_change",
+      "changed_rows": [],
+      "row_count": 18,
+      "match_count": 16,
+      "mismatches": [
+        3,
+        16
+      ],
+      "exact": false,
+      "changed_fixes": [],
+      "changed_breaks": [],
+      "rows": [
+        {
+          "row_ordinal": 0,
+          "role": "WX",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 1,
+          "role": "XY",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 2,
+          "role": "YZ",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 3,
+          "role": "ZT",
+          "column_shape": "singleton",
+          "zero_twisted_source": true,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 0,
+          "candidate_projected_value": 1,
+          "matches_expected": false,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 4,
+          "role": "TI",
+          "column_shape": "singleton",
+          "zero_twisted_source": true,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 5,
+          "role": "IW",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 6,
+          "role": "WX",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 7,
+          "role": "XY",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 8,
+          "role": "YZ",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 9,
+          "role": "ZT",
+          "column_shape": "multi_column",
+          "zero_twisted_source": true,
+          "changed": false,
+          "projected_value": 0,
+          "expected_target_value": 0,
+          "candidate_projected_value": 0,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 10,
+          "role": "TI",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 11,
+          "role": "IW",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 12,
+          "role": "WX",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 13,
+          "role": "XY",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 14,
+          "role": "YZ",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 15,
+          "role": "ZT",
+          "column_shape": "multi_column",
+          "zero_twisted_source": true,
+          "changed": false,
+          "projected_value": 0,
+          "expected_target_value": 0,
+          "candidate_projected_value": 0,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 16,
+          "role": "TI",
+          "column_shape": "multi_column",
+          "zero_twisted_source": true,
+          "changed": false,
+          "projected_value": 0,
+          "expected_target_value": 1,
+          "candidate_projected_value": 0,
+          "matches_expected": false,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 17,
+          "role": "IW",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        }
+      ]
+    },
+    {
+      "name": "null_zero_twisted_alone",
+      "changed_rows": [
+        3,
+        4,
+        9,
+        15,
+        16
+      ],
+      "row_count": 18,
+      "match_count": 15,
+      "mismatches": [
+        4,
+        9,
+        15
+      ],
+      "exact": false,
+      "changed_fixes": [
+        3,
+        16
+      ],
+      "changed_breaks": [
+        4,
+        9,
+        15
+      ],
+      "rows": [
+        {
+          "row_ordinal": 0,
+          "role": "WX",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 1,
+          "role": "XY",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 2,
+          "role": "YZ",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 3,
+          "role": "ZT",
+          "column_shape": "singleton",
+          "zero_twisted_source": true,
+          "changed": true,
+          "projected_value": 1,
+          "expected_target_value": 0,
+          "candidate_projected_value": 0,
+          "matches_expected": true,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 4,
+          "role": "TI",
+          "column_shape": "singleton",
+          "zero_twisted_source": true,
+          "changed": true,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 0,
+          "matches_expected": false,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 5,
+          "role": "IW",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 6,
+          "role": "WX",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 7,
+          "role": "XY",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 8,
+          "role": "YZ",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 9,
+          "role": "ZT",
+          "column_shape": "multi_column",
+          "zero_twisted_source": true,
+          "changed": true,
+          "projected_value": 0,
+          "expected_target_value": 0,
+          "candidate_projected_value": 1,
+          "matches_expected": false,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 10,
+          "role": "TI",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 11,
+          "role": "IW",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 12,
+          "role": "WX",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 13,
+          "role": "XY",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 14,
+          "role": "YZ",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 15,
+          "role": "ZT",
+          "column_shape": "multi_column",
+          "zero_twisted_source": true,
+          "changed": true,
+          "projected_value": 0,
+          "expected_target_value": 0,
+          "candidate_projected_value": 1,
+          "matches_expected": false,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 16,
+          "role": "TI",
+          "column_shape": "multi_column",
+          "zero_twisted_source": true,
+          "changed": true,
+          "projected_value": 0,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 17,
+          "role": "IW",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        }
+      ]
+    },
+    {
+      "name": "null_residual_orientation_alone",
+      "changed_rows": [
+        3,
+        10,
+        16
+      ],
+      "row_count": 18,
+      "match_count": 17,
+      "mismatches": [
+        10
+      ],
+      "exact": false,
+      "changed_fixes": [
+        3,
+        16
+      ],
+      "changed_breaks": [
+        10
+      ],
+      "rows": [
+        {
+          "row_ordinal": 0,
+          "role": "WX",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 1,
+          "role": "XY",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 2,
+          "role": "YZ",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 3,
+          "role": "ZT",
+          "column_shape": "singleton",
+          "zero_twisted_source": true,
+          "changed": true,
+          "projected_value": 1,
+          "expected_target_value": 0,
+          "candidate_projected_value": 0,
+          "matches_expected": true,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 4,
+          "role": "TI",
+          "column_shape": "singleton",
+          "zero_twisted_source": true,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 5,
+          "role": "IW",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 6,
+          "role": "WX",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 7,
+          "role": "XY",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 8,
+          "role": "YZ",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 9,
+          "role": "ZT",
+          "column_shape": "multi_column",
+          "zero_twisted_source": true,
+          "changed": false,
+          "projected_value": 0,
+          "expected_target_value": 0,
+          "candidate_projected_value": 0,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 10,
+          "role": "TI",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": true,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 0,
+          "matches_expected": false,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 11,
+          "role": "IW",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 12,
+          "role": "WX",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 13,
+          "role": "XY",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 14,
+          "role": "YZ",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 15,
+          "role": "ZT",
+          "column_shape": "multi_column",
+          "zero_twisted_source": true,
+          "changed": false,
+          "projected_value": 0,
+          "expected_target_value": 0,
+          "candidate_projected_value": 0,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 16,
+          "role": "TI",
+          "column_shape": "multi_column",
+          "zero_twisted_source": true,
+          "changed": true,
+          "projected_value": 0,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 17,
+          "role": "IW",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        }
+      ]
+    },
+    {
+      "name": "null_stable_orientation_alone",
+      "changed_rows": [
+        4,
+        9,
+        15
+      ],
+      "row_count": 18,
+      "match_count": 13,
+      "mismatches": [
+        3,
+        4,
+        9,
+        15,
+        16
+      ],
+      "exact": false,
+      "changed_fixes": [],
+      "changed_breaks": [
+        4,
+        9,
+        15
+      ],
+      "rows": [
+        {
+          "row_ordinal": 0,
+          "role": "WX",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 1,
+          "role": "XY",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 2,
+          "role": "YZ",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 3,
+          "role": "ZT",
+          "column_shape": "singleton",
+          "zero_twisted_source": true,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 0,
+          "candidate_projected_value": 1,
+          "matches_expected": false,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 4,
+          "role": "TI",
+          "column_shape": "singleton",
+          "zero_twisted_source": true,
+          "changed": true,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 0,
+          "matches_expected": false,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 5,
+          "role": "IW",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 6,
+          "role": "WX",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 7,
+          "role": "XY",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 8,
+          "role": "YZ",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 9,
+          "role": "ZT",
+          "column_shape": "multi_column",
+          "zero_twisted_source": true,
+          "changed": true,
+          "projected_value": 0,
+          "expected_target_value": 0,
+          "candidate_projected_value": 1,
+          "matches_expected": false,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 10,
+          "role": "TI",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 11,
+          "role": "IW",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 12,
+          "role": "WX",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 13,
+          "role": "XY",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 14,
+          "role": "YZ",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 15,
+          "role": "ZT",
+          "column_shape": "multi_column",
+          "zero_twisted_source": true,
+          "changed": true,
+          "projected_value": 0,
+          "expected_target_value": 0,
+          "candidate_projected_value": 1,
+          "matches_expected": false,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 16,
+          "role": "TI",
+          "column_shape": "multi_column",
+          "zero_twisted_source": true,
+          "changed": false,
+          "projected_value": 0,
+          "expected_target_value": 1,
+          "candidate_projected_value": 0,
+          "matches_expected": false,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 17,
+          "role": "IW",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        }
+      ]
+    },
+    {
+      "name": "null_zero_twisted_AND_stable_orientation",
+      "changed_rows": [
+        4,
+        9,
+        15
+      ],
+      "row_count": 18,
+      "match_count": 13,
+      "mismatches": [
+        3,
+        4,
+        9,
+        15,
+        16
+      ],
+      "exact": false,
+      "changed_fixes": [],
+      "changed_breaks": [
+        4,
+        9,
+        15
+      ],
+      "rows": [
+        {
+          "row_ordinal": 0,
+          "role": "WX",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 1,
+          "role": "XY",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 2,
+          "role": "YZ",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 3,
+          "role": "ZT",
+          "column_shape": "singleton",
+          "zero_twisted_source": true,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 0,
+          "candidate_projected_value": 1,
+          "matches_expected": false,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 4,
+          "role": "TI",
+          "column_shape": "singleton",
+          "zero_twisted_source": true,
+          "changed": true,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 0,
+          "matches_expected": false,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 5,
+          "role": "IW",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 6,
+          "role": "WX",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 7,
+          "role": "XY",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 8,
+          "role": "YZ",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 9,
+          "role": "ZT",
+          "column_shape": "multi_column",
+          "zero_twisted_source": true,
+          "changed": true,
+          "projected_value": 0,
+          "expected_target_value": 0,
+          "candidate_projected_value": 1,
+          "matches_expected": false,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 10,
+          "role": "TI",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 11,
+          "role": "IW",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 12,
+          "role": "WX",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 13,
+          "role": "XY",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 14,
+          "role": "YZ",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 15,
+          "role": "ZT",
+          "column_shape": "multi_column",
+          "zero_twisted_source": true,
+          "changed": true,
+          "projected_value": 0,
+          "expected_target_value": 0,
+          "candidate_projected_value": 1,
+          "matches_expected": false,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 16,
+          "role": "TI",
+          "column_shape": "multi_column",
+          "zero_twisted_source": true,
+          "changed": false,
+          "projected_value": 0,
+          "expected_target_value": 1,
+          "candidate_projected_value": 0,
+          "matches_expected": false,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 17,
+          "role": "IW",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        }
+      ]
+    },
+    {
+      "name": "null_zero_twisted_AND_role_ZT",
+      "changed_rows": [
+        3,
+        9,
+        15
+      ],
+      "row_count": 18,
+      "match_count": 15,
+      "mismatches": [
+        9,
+        15,
+        16
+      ],
+      "exact": false,
+      "changed_fixes": [
+        3
+      ],
+      "changed_breaks": [
+        9,
+        15
+      ],
+      "rows": [
+        {
+          "row_ordinal": 0,
+          "role": "WX",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 1,
+          "role": "XY",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 2,
+          "role": "YZ",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 3,
+          "role": "ZT",
+          "column_shape": "singleton",
+          "zero_twisted_source": true,
+          "changed": true,
+          "projected_value": 1,
+          "expected_target_value": 0,
+          "candidate_projected_value": 0,
+          "matches_expected": true,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 4,
+          "role": "TI",
+          "column_shape": "singleton",
+          "zero_twisted_source": true,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 5,
+          "role": "IW",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 6,
+          "role": "WX",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 7,
+          "role": "XY",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 8,
+          "role": "YZ",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 9,
+          "role": "ZT",
+          "column_shape": "multi_column",
+          "zero_twisted_source": true,
+          "changed": true,
+          "projected_value": 0,
+          "expected_target_value": 0,
+          "candidate_projected_value": 1,
+          "matches_expected": false,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 10,
+          "role": "TI",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 11,
+          "role": "IW",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 12,
+          "role": "WX",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 13,
+          "role": "XY",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 14,
+          "role": "YZ",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 15,
+          "role": "ZT",
+          "column_shape": "multi_column",
+          "zero_twisted_source": true,
+          "changed": true,
+          "projected_value": 0,
+          "expected_target_value": 0,
+          "candidate_projected_value": 1,
+          "matches_expected": false,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 16,
+          "role": "TI",
+          "column_shape": "multi_column",
+          "zero_twisted_source": true,
+          "changed": false,
+          "projected_value": 0,
+          "expected_target_value": 1,
+          "candidate_projected_value": 0,
+          "matches_expected": false,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 17,
+          "role": "IW",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        }
+      ]
+    },
+    {
+      "name": "null_zero_twisted_AND_role_TI",
+      "changed_rows": [
+        4,
+        16
+      ],
+      "row_count": 18,
+      "match_count": 16,
+      "mismatches": [
+        3,
+        4
+      ],
+      "exact": false,
+      "changed_fixes": [
+        16
+      ],
+      "changed_breaks": [
+        4
+      ],
+      "rows": [
+        {
+          "row_ordinal": 0,
+          "role": "WX",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 1,
+          "role": "XY",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 2,
+          "role": "YZ",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 3,
+          "role": "ZT",
+          "column_shape": "singleton",
+          "zero_twisted_source": true,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 0,
+          "candidate_projected_value": 1,
+          "matches_expected": false,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 4,
+          "role": "TI",
+          "column_shape": "singleton",
+          "zero_twisted_source": true,
+          "changed": true,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 0,
+          "matches_expected": false,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 5,
+          "role": "IW",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 6,
+          "role": "WX",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 7,
+          "role": "XY",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 8,
+          "role": "YZ",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 9,
+          "role": "ZT",
+          "column_shape": "multi_column",
+          "zero_twisted_source": true,
+          "changed": false,
+          "projected_value": 0,
+          "expected_target_value": 0,
+          "candidate_projected_value": 0,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 10,
+          "role": "TI",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 11,
+          "role": "IW",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 12,
+          "role": "WX",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 13,
+          "role": "XY",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 14,
+          "role": "YZ",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 15,
+          "role": "ZT",
+          "column_shape": "multi_column",
+          "zero_twisted_source": true,
+          "changed": false,
+          "projected_value": 0,
+          "expected_target_value": 0,
+          "candidate_projected_value": 0,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 16,
+          "role": "TI",
+          "column_shape": "multi_column",
+          "zero_twisted_source": true,
+          "changed": true,
+          "projected_value": 0,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 17,
+          "role": "IW",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        }
+      ]
+    },
+    {
+      "name": "null_zero_twisted_AND_singleton",
+      "changed_rows": [
+        3,
+        4
+      ],
+      "row_count": 18,
+      "match_count": 16,
+      "mismatches": [
+        4,
+        16
+      ],
+      "exact": false,
+      "changed_fixes": [
+        3
+      ],
+      "changed_breaks": [
+        4
+      ],
+      "rows": [
+        {
+          "row_ordinal": 0,
+          "role": "WX",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 1,
+          "role": "XY",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 2,
+          "role": "YZ",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 3,
+          "role": "ZT",
+          "column_shape": "singleton",
+          "zero_twisted_source": true,
+          "changed": true,
+          "projected_value": 1,
+          "expected_target_value": 0,
+          "candidate_projected_value": 0,
+          "matches_expected": true,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 4,
+          "role": "TI",
+          "column_shape": "singleton",
+          "zero_twisted_source": true,
+          "changed": true,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 0,
+          "matches_expected": false,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 5,
+          "role": "IW",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 6,
+          "role": "WX",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 7,
+          "role": "XY",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 8,
+          "role": "YZ",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 9,
+          "role": "ZT",
+          "column_shape": "multi_column",
+          "zero_twisted_source": true,
+          "changed": false,
+          "projected_value": 0,
+          "expected_target_value": 0,
+          "candidate_projected_value": 0,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 10,
+          "role": "TI",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 11,
+          "role": "IW",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 12,
+          "role": "WX",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 13,
+          "role": "XY",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 14,
+          "role": "YZ",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 15,
+          "role": "ZT",
+          "column_shape": "multi_column",
+          "zero_twisted_source": true,
+          "changed": false,
+          "projected_value": 0,
+          "expected_target_value": 0,
+          "candidate_projected_value": 0,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 16,
+          "role": "TI",
+          "column_shape": "multi_column",
+          "zero_twisted_source": true,
+          "changed": false,
+          "projected_value": 0,
+          "expected_target_value": 1,
+          "candidate_projected_value": 0,
+          "matches_expected": false,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 17,
+          "role": "IW",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        }
+      ]
+    },
+    {
+      "name": "null_zero_twisted_AND_multi_column",
+      "changed_rows": [
+        9,
+        15,
+        16
+      ],
+      "row_count": 18,
+      "match_count": 15,
+      "mismatches": [
+        3,
+        9,
+        15
+      ],
+      "exact": false,
+      "changed_fixes": [
+        16
+      ],
+      "changed_breaks": [
+        9,
+        15
+      ],
+      "rows": [
+        {
+          "row_ordinal": 0,
+          "role": "WX",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 1,
+          "role": "XY",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 2,
+          "role": "YZ",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 3,
+          "role": "ZT",
+          "column_shape": "singleton",
+          "zero_twisted_source": true,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 0,
+          "candidate_projected_value": 1,
+          "matches_expected": false,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 4,
+          "role": "TI",
+          "column_shape": "singleton",
+          "zero_twisted_source": true,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 5,
+          "role": "IW",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 6,
+          "role": "WX",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 7,
+          "role": "XY",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 8,
+          "role": "YZ",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 9,
+          "role": "ZT",
+          "column_shape": "multi_column",
+          "zero_twisted_source": true,
+          "changed": true,
+          "projected_value": 0,
+          "expected_target_value": 0,
+          "candidate_projected_value": 1,
+          "matches_expected": false,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 10,
+          "role": "TI",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 11,
+          "role": "IW",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 12,
+          "role": "WX",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 13,
+          "role": "XY",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 14,
+          "role": "YZ",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 15,
+          "role": "ZT",
+          "column_shape": "multi_column",
+          "zero_twisted_source": true,
+          "changed": true,
+          "projected_value": 0,
+          "expected_target_value": 0,
+          "candidate_projected_value": 1,
+          "matches_expected": false,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 16,
+          "role": "TI",
+          "column_shape": "multi_column",
+          "zero_twisted_source": true,
+          "changed": true,
+          "projected_value": 0,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 17,
+          "role": "IW",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        }
+      ]
+    },
+    {
+      "name": "null_zero_source_shift_plus_one_AND_residual_orientation",
+      "changed_rows": [
+        10,
+        16
+      ],
+      "row_count": 18,
+      "match_count": 16,
+      "mismatches": [
+        3,
+        10
+      ],
+      "exact": false,
+      "changed_fixes": [
+        16
+      ],
+      "changed_breaks": [
+        10
+      ],
+      "rows": [
+        {
+          "row_ordinal": 0,
+          "role": "WX",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 1,
+          "role": "XY",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 2,
+          "role": "YZ",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 3,
+          "role": "ZT",
+          "column_shape": "singleton",
+          "zero_twisted_source": true,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 0,
+          "candidate_projected_value": 1,
+          "matches_expected": false,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 4,
+          "role": "TI",
+          "column_shape": "singleton",
+          "zero_twisted_source": true,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 5,
+          "role": "IW",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 6,
+          "role": "WX",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 7,
+          "role": "XY",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 8,
+          "role": "YZ",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 9,
+          "role": "ZT",
+          "column_shape": "multi_column",
+          "zero_twisted_source": true,
+          "changed": false,
+          "projected_value": 0,
+          "expected_target_value": 0,
+          "candidate_projected_value": 0,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 10,
+          "role": "TI",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": true,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 0,
+          "matches_expected": false,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 11,
+          "role": "IW",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 12,
+          "role": "WX",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 13,
+          "role": "XY",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 14,
+          "role": "YZ",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 15,
+          "role": "ZT",
+          "column_shape": "multi_column",
+          "zero_twisted_source": true,
+          "changed": false,
+          "projected_value": 0,
+          "expected_target_value": 0,
+          "candidate_projected_value": 0,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 16,
+          "role": "TI",
+          "column_shape": "multi_column",
+          "zero_twisted_source": true,
+          "changed": true,
+          "projected_value": 0,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 17,
+          "role": "IW",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        }
+      ]
+    },
+    {
+      "name": "null_zero_source_shift_minus_one_AND_residual_orientation",
+      "changed_rows": [
+        3
+      ],
+      "row_count": 18,
+      "match_count": 17,
+      "mismatches": [
+        16
+      ],
+      "exact": false,
+      "changed_fixes": [
+        3
+      ],
+      "changed_breaks": [],
+      "rows": [
+        {
+          "row_ordinal": 0,
+          "role": "WX",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 1,
+          "role": "XY",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 2,
+          "role": "YZ",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 3,
+          "role": "ZT",
+          "column_shape": "singleton",
+          "zero_twisted_source": true,
+          "changed": true,
+          "projected_value": 1,
+          "expected_target_value": 0,
+          "candidate_projected_value": 0,
+          "matches_expected": true,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 4,
+          "role": "TI",
+          "column_shape": "singleton",
+          "zero_twisted_source": true,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 5,
+          "role": "IW",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 6,
+          "role": "WX",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 7,
+          "role": "XY",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 8,
+          "role": "YZ",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 9,
+          "role": "ZT",
+          "column_shape": "multi_column",
+          "zero_twisted_source": true,
+          "changed": false,
+          "projected_value": 0,
+          "expected_target_value": 0,
+          "candidate_projected_value": 0,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 10,
+          "role": "TI",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 11,
+          "role": "IW",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 12,
+          "role": "WX",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 13,
+          "role": "XY",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 14,
+          "role": "YZ",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 15,
+          "role": "ZT",
+          "column_shape": "multi_column",
+          "zero_twisted_source": true,
+          "changed": false,
+          "projected_value": 0,
+          "expected_target_value": 0,
+          "candidate_projected_value": 0,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 16,
+          "role": "TI",
+          "column_shape": "multi_column",
+          "zero_twisted_source": true,
+          "changed": false,
+          "projected_value": 0,
+          "expected_target_value": 1,
+          "candidate_projected_value": 0,
+          "matches_expected": false,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 17,
+          "role": "IW",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        }
+      ]
+    },
+    {
+      "name": "null_branch_sensitive_OR_singleton_ZT",
+      "changed_rows": [
+        3,
+        16
+      ],
+      "row_count": 18,
+      "match_count": 18,
+      "mismatches": [],
+      "exact": true,
+      "changed_fixes": [
+        3,
+        16
+      ],
+      "changed_breaks": [],
+      "rows": [
+        {
+          "row_ordinal": 0,
+          "role": "WX",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 1,
+          "role": "XY",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 2,
+          "role": "YZ",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 3,
+          "role": "ZT",
+          "column_shape": "singleton",
+          "zero_twisted_source": true,
+          "changed": true,
+          "projected_value": 1,
+          "expected_target_value": 0,
+          "candidate_projected_value": 0,
+          "matches_expected": true,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 4,
+          "role": "TI",
+          "column_shape": "singleton",
+          "zero_twisted_source": true,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 5,
+          "role": "IW",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 6,
+          "role": "WX",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 7,
+          "role": "XY",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 8,
+          "role": "YZ",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 9,
+          "role": "ZT",
+          "column_shape": "multi_column",
+          "zero_twisted_source": true,
+          "changed": false,
+          "projected_value": 0,
+          "expected_target_value": 0,
+          "candidate_projected_value": 0,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 10,
+          "role": "TI",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 11,
+          "role": "IW",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 12,
+          "role": "WX",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 13,
+          "role": "XY",
+          "column_shape": "singleton",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 14,
+          "role": "YZ",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 15,
+          "role": "ZT",
+          "column_shape": "multi_column",
+          "zero_twisted_source": true,
+          "changed": false,
+          "projected_value": 0,
+          "expected_target_value": 0,
+          "candidate_projected_value": 0,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 16,
+          "role": "TI",
+          "column_shape": "multi_column",
+          "zero_twisted_source": true,
+          "changed": true,
+          "projected_value": 0,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 17,
+          "role": "IW",
+          "column_shape": "multi_column",
+          "zero_twisted_source": false,
+          "changed": false,
+          "projected_value": 1,
+          "expected_target_value": 1,
+          "candidate_projected_value": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "baseline_exact": true,
+    "baseline_match_count": 18,
+    "row_count": 18,
+    "null_count": 12,
+    "broken_null_count": 11,
+    "broken_nulls": [
+      "null_no_change",
+      "null_zero_twisted_alone",
+      "null_residual_orientation_alone",
+      "null_stable_orientation_alone",
+      "null_zero_twisted_AND_stable_orientation",
+      "null_zero_twisted_AND_role_ZT",
+      "null_zero_twisted_AND_role_TI",
+      "null_zero_twisted_AND_singleton",
+      "null_zero_twisted_AND_multi_column",
+      "null_zero_source_shift_plus_one_AND_residual_orientation",
+      "null_zero_source_shift_minus_one_AND_residual_orientation"
+    ],
+    "surviving_nulls": [
+      "null_branch_sensitive_OR_singleton_ZT"
+    ],
+    "load_bearing": {
+      "zero_twisted_alone_insufficient": true,
+      "residual_orientation_alone_insufficient": true,
+      "stable_orientation_breaks": true,
+      "role_only_inside_zero_insufficient": true,
+      "shape_only_inside_zero_insufficient": true,
+      "zero_source_placement_load_bearing": true,
+      "branch_sensitive_substitute_survives": true,
+      "direct_zero_source_confirmed_from_uniform_artifact": false,
+      "fallback_zero_source_used": true,
+      "all_nonbranch_nulls_break": true
+    },
+    "claim_closes_gap_a": false
+  },
+  "interpretation": {
+    "main_result": "The source-law preimage candidate remains exact as baseline.",
+    "weaker_nulls": "Zero-twisted alone, residual orientation alone, stable orientation, role-only, shape-only, and shifted zero-source nulls are tested.",
+    "survivor_warning": "If branch-sensitive OR singleton ZT survives, the source-law preimage is not uniquely promoted yet.",
+    "provenance_warning": "If zero-twisted rows are still only recovered from fallback zero-split, provenance must be tightened before closure.",
+    "not_closure": "This remains below Gap A closure until source-law provenance and global chamber/register lift are established."
+  },
+  "checks": [
+    {
+      "id": "preimage_loaded",
+      "status": true,
+      "detail": "gap_a_source_law_preimage_candidate_found_not_closure"
+    },
+    {
+      "id": "chamber_candidate_loaded",
+      "status": true,
+      "detail": "gap_a_chamber_register_map_candidate_found_not_closure"
+    },
+    {
+      "id": "chamber_nulls_loaded",
+      "status": true,
+      "detail": "gap_a_chamber_register_map_candidate_nulls_recorded"
+    },
+    {
+      "id": "role_geometry_loaded",
+      "status": true,
+      "detail": "gap_a_role_column_source_geometry_candidate_found_not_closure"
+    },
+    {
+      "id": "role_nulls_loaded",
+      "status": true,
+      "detail": "gap_a_role_column_source_geometry_nulls_recorded"
+    },
+    {
+      "id": "baseline_exact",
+      "status": true,
+      "detail": "{\"changed_breaks\": [], \"changed_fixes\": [3, 16], \"changed_rows\": [3, 16], \"exact\": true, \"match_count\": 18, \"mismatches\": [], \"name\": \"baseline_zero_twisted_AND_residual_orientation\", \"row_count\": 18}"
+    },
+    {
+      "id": "preimage_support_3_16",
+      "status": true,
+      "detail": "[3, 16]"
+    },
+    {
+      "id": "stable_support_4_9_15",
+      "status": true,
+      "detail": "[4, 9, 15]"
+    },
+    {
+      "id": "zero_alone_breaks",
+      "status": true,
+      "detail": "{\"changed_breaks\": [4, 9, 15], \"changed_fixes\": [3, 16], \"changed_rows\": [3, 4, 9, 15, 16], \"exact\": false, \"match_count\": 15, \"mismatches\": [4, 9, 15], \"name\": \"null_zero_twisted_alone\", \"row_count\": 18}"
+    },
+    {
+      "id": "orientation_alone_breaks",
+      "status": true,
+      "detail": "{\"changed_breaks\": [10], \"changed_fixes\": [3, 16], \"changed_rows\": [3, 10, 16], \"exact\": false, \"match_count\": 17, \"mismatches\": [10], \"name\": \"null_residual_orientation_alone\", \"row_count\": 18}"
+    },
+    {
+      "id": "stable_orientation_breaks",
+      "status": true,
+      "detail": "[{\"changed_breaks\": [4, 9, 15], \"changed_fixes\": [], \"changed_rows\": [4, 9, 15], \"exact\": false, \"match_count\": 13, \"mismatches\": [3, 4, 9, 15, 16], \"name\": \"null_stable_orientation_alone\", \"row_count\": 18}, {\"changed_breaks\": [4, 9, 15], \"changed_fixes\": [], \"changed_rows\": [4, 9, 15], \"exact\": false, \"match_count\": 13, \"mismatches\": [3, 4, 9, 15, 16], \"name\": \"null_zero_twisted_AND_stable_orientation\", \"row_count\": 18}]"
+    },
+    {
+      "id": "zero_source_placement_load_bearing",
+      "status": true,
+      "detail": "[{\"changed_breaks\": [10], \"changed_fixes\": [16], \"changed_rows\": [10, 16], \"exact\": false, \"match_count\": 16, \"mismatches\": [3, 10], \"name\": \"null_zero_source_shift_plus_one_AND_residual_orientation\", \"row_count\": 18}, {\"changed_breaks\": [], \"changed_fixes\": [3], \"changed_rows\": [3], \"exact\": false, \"match_count\": 17, \"mismatches\": [16], \"name\": \"null_zero_source_shift_minus_one_AND_residual_orientation\", \"row_count\": 18}]"
+    },
+    {
+      "id": "not_gap_closure",
+      "status": true,
+      "detail": "source preimage candidate only"
+    }
+  ],
+  "next_script": "record_gap_a_source_law_preimage_mixed_or_promoted_note_001.py"
+}

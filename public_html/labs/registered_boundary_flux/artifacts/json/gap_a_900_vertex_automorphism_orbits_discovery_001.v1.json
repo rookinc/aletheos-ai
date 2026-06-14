@@ -1,0 +1,2576 @@
+{
+  "schema": "gap_a_900_vertex_automorphism_orbits_discovery_001.v1",
+  "status": "gap_a_900_vertex_automorphism_orbits_no_mirror_support",
+  "timestamp_utc": "2026-06-14T21:36:33.782364+00:00",
+  "purpose": "Discover source-side WL cells and slot-quotient automorphism orbits for the 900-vertex carrier graphs, and test whether they support the Mode 2 mirror.",
+  "boundary": [
+    "This does not close Gap A.",
+    "WL color classes are necessary automorphism invariants, not a complete automorphism group.",
+    "Slot-quotient automorphisms are source-side quotient symmetries, not full 900-vertex automorphisms.",
+    "Mirror support here means source-discovered compatibility, not proof of the WXYZTI row generator.",
+    "No physical interpretation is claimed."
+  ],
+  "summary": {
+    "discovery_result": "no_source_discovered_mirror_support_found",
+    "gap_a_closed": false,
+    "graph_report_count": 3,
+    "mirror_supported_sources": [],
+    "max_wl_cell_count": 240,
+    "max_slot_quotient_automorphism_count": 120,
+    "sources_with_slot_quotient_automorphisms": [
+      "g900_candidate_graph_export",
+      "g900_twisted_ring_candidate_export",
+      "g900_candidate_edges"
+    ],
+    "sources_with_mirror_slot_automorphisms": [],
+    "claim_closes_gap_a": false
+  },
+  "graph_reports": [
+    {
+      "source_name": "g900_candidate_graph_export",
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/16-fifteen-thalion-ring/support/exports/g900_candidate_graph_export.json",
+      "vertex_count": 900,
+      "edge_count": 3600,
+      "degree_histogram": {
+        "8": 900
+      },
+      "wl_rounds": [
+        {
+          "iteration": 1,
+          "cell_count": 1,
+          "cell_size_histogram": {
+            "900": 1
+          }
+        },
+        {
+          "iteration": 2,
+          "cell_count": 1,
+          "cell_size_histogram": {
+            "900": 1
+          }
+        }
+      ],
+      "wl_cell_count": 1,
+      "wl_cell_size_histogram": {
+        "900": 1
+      },
+      "wl_largest_cells": [
+        900
+      ],
+      "slot_signatures": [
+        {
+          "slot": 0,
+          "diagonal": 120,
+          "total": 360,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            120
+          ],
+          "nonzero_targets": [
+            0,
+            1,
+            4,
+            10,
+            11
+          ],
+          "signature": "[120, 360, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 120]]"
+        },
+        {
+          "slot": 1,
+          "diagonal": 120,
+          "total": 360,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            120
+          ],
+          "nonzero_targets": [
+            0,
+            1,
+            2,
+            11,
+            12
+          ],
+          "signature": "[120, 360, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 120]]"
+        },
+        {
+          "slot": 2,
+          "diagonal": 120,
+          "total": 360,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            120
+          ],
+          "nonzero_targets": [
+            1,
+            2,
+            3,
+            12,
+            13
+          ],
+          "signature": "[120, 360, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 120]]"
+        },
+        {
+          "slot": 3,
+          "diagonal": 120,
+          "total": 360,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            120
+          ],
+          "nonzero_targets": [
+            2,
+            3,
+            4,
+            13,
+            14
+          ],
+          "signature": "[120, 360, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 120]]"
+        },
+        {
+          "slot": 4,
+          "diagonal": 120,
+          "total": 360,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            120
+          ],
+          "nonzero_targets": [
+            0,
+            3,
+            4,
+            10,
+            14
+          ],
+          "signature": "[120, 360, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 120]]"
+        },
+        {
+          "slot": 5,
+          "diagonal": 120,
+          "total": 360,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            120
+          ],
+          "nonzero_targets": [
+            5,
+            6,
+            9,
+            10,
+            12
+          ],
+          "signature": "[120, 360, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 120]]"
+        },
+        {
+          "slot": 6,
+          "diagonal": 120,
+          "total": 360,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            120
+          ],
+          "nonzero_targets": [
+            5,
+            6,
+            7,
+            12,
+            14
+          ],
+          "signature": "[120, 360, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 120]]"
+        },
+        {
+          "slot": 7,
+          "diagonal": 120,
+          "total": 360,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            120
+          ],
+          "nonzero_targets": [
+            6,
+            7,
+            8,
+            11,
+            14
+          ],
+          "signature": "[120, 360, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 120]]"
+        },
+        {
+          "slot": 8,
+          "diagonal": 120,
+          "total": 360,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            120
+          ],
+          "nonzero_targets": [
+            7,
+            8,
+            9,
+            11,
+            13
+          ],
+          "signature": "[120, 360, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 120]]"
+        },
+        {
+          "slot": 9,
+          "diagonal": 120,
+          "total": 360,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            120
+          ],
+          "nonzero_targets": [
+            5,
+            8,
+            9,
+            10,
+            13
+          ],
+          "signature": "[120, 360, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 120]]"
+        },
+        {
+          "slot": 10,
+          "diagonal": 120,
+          "total": 360,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            120
+          ],
+          "nonzero_targets": [
+            0,
+            4,
+            5,
+            9,
+            10
+          ],
+          "signature": "[120, 360, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 120]]"
+        },
+        {
+          "slot": 11,
+          "diagonal": 120,
+          "total": 360,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            120
+          ],
+          "nonzero_targets": [
+            0,
+            1,
+            7,
+            8,
+            11
+          ],
+          "signature": "[120, 360, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 120]]"
+        },
+        {
+          "slot": 12,
+          "diagonal": 120,
+          "total": 360,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            120
+          ],
+          "nonzero_targets": [
+            1,
+            2,
+            5,
+            6,
+            12
+          ],
+          "signature": "[120, 360, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 120]]"
+        },
+        {
+          "slot": 13,
+          "diagonal": 120,
+          "total": 360,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            120
+          ],
+          "nonzero_targets": [
+            2,
+            3,
+            8,
+            9,
+            13
+          ],
+          "signature": "[120, 360, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 120]]"
+        },
+        {
+          "slot": 14,
+          "diagonal": 120,
+          "total": 360,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            120
+          ],
+          "nonzero_targets": [
+            3,
+            4,
+            6,
+            7,
+            14
+          ],
+          "signature": "[120, 360, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 120]]"
+        }
+      ],
+      "slot_signature_class_count": 1,
+      "slot_quotient_automorphism_count": 120,
+      "slot_quotient_automorphism_capped": false,
+      "slot_orbits": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ]
+      ],
+      "slot_orbit_count": 1,
+      "mirror_slot_automorphism_count": 0,
+      "mirror_tests": [
+        {
+          "name": "cycle_mirror_keep_local_5x3",
+          "preserves_slot_quotient": false,
+          "slot_perm": [
+            10,
+            11,
+            12,
+            13,
+            14,
+            5,
+            6,
+            7,
+            8,
+            9,
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "wl_color_preservation": {
+            "same_color_count": 900,
+            "total": 900,
+            "fraction": 1.0,
+            "broken_sample": []
+          }
+        },
+        {
+          "name": "cycle_mirror_reverse_local_5x3",
+          "preserves_slot_quotient": false,
+          "slot_perm": [
+            14,
+            13,
+            12,
+            11,
+            10,
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "wl_color_preservation": {
+            "same_color_count": 900,
+            "total": 900,
+            "fraction": 1.0,
+            "broken_sample": []
+          }
+        },
+        {
+          "name": "reflect_14_minus_s",
+          "preserves_slot_quotient": false,
+          "slot_perm": [
+            14,
+            13,
+            12,
+            11,
+            10,
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "wl_color_preservation": {
+            "same_color_count": 900,
+            "total": 900,
+            "fraction": 1.0,
+            "broken_sample": []
+          }
+        }
+      ],
+      "source_discovered_mirror_support": false
+    },
+    {
+      "source_name": "g900_twisted_ring_candidate_export",
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/16-fifteen-thalion-ring/support/exports/g900_twisted_ring_candidate_export.json",
+      "vertex_count": 900,
+      "edge_count": 3600,
+      "degree_histogram": {
+        "8": 900
+      },
+      "wl_rounds": [
+        {
+          "iteration": 1,
+          "cell_count": 1,
+          "cell_size_histogram": {
+            "900": 1
+          }
+        },
+        {
+          "iteration": 2,
+          "cell_count": 1,
+          "cell_size_histogram": {
+            "900": 1
+          }
+        }
+      ],
+      "wl_cell_count": 1,
+      "wl_cell_size_histogram": {
+        "900": 1
+      },
+      "wl_largest_cells": [
+        900
+      ],
+      "slot_signatures": [
+        {
+          "slot": 0,
+          "diagonal": 120,
+          "total": 360,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            120
+          ],
+          "nonzero_targets": [
+            0,
+            1,
+            4,
+            5,
+            6
+          ],
+          "signature": "[120, 360, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 120]]"
+        },
+        {
+          "slot": 1,
+          "diagonal": 120,
+          "total": 360,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            120
+          ],
+          "nonzero_targets": [
+            0,
+            1,
+            2,
+            6,
+            7
+          ],
+          "signature": "[120, 360, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 120]]"
+        },
+        {
+          "slot": 2,
+          "diagonal": 120,
+          "total": 360,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            120
+          ],
+          "nonzero_targets": [
+            1,
+            2,
+            3,
+            7,
+            8
+          ],
+          "signature": "[120, 360, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 120]]"
+        },
+        {
+          "slot": 3,
+          "diagonal": 120,
+          "total": 360,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            120
+          ],
+          "nonzero_targets": [
+            2,
+            3,
+            4,
+            8,
+            9
+          ],
+          "signature": "[120, 360, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 120]]"
+        },
+        {
+          "slot": 4,
+          "diagonal": 120,
+          "total": 360,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            120
+          ],
+          "nonzero_targets": [
+            0,
+            3,
+            4,
+            5,
+            9
+          ],
+          "signature": "[120, 360, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 120]]"
+        },
+        {
+          "slot": 5,
+          "diagonal": 120,
+          "total": 360,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            120
+          ],
+          "nonzero_targets": [
+            0,
+            4,
+            5,
+            10,
+            14
+          ],
+          "signature": "[120, 360, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 120]]"
+        },
+        {
+          "slot": 6,
+          "diagonal": 120,
+          "total": 360,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            120
+          ],
+          "nonzero_targets": [
+            0,
+            1,
+            6,
+            12,
+            13
+          ],
+          "signature": "[120, 360, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 120]]"
+        },
+        {
+          "slot": 7,
+          "diagonal": 120,
+          "total": 360,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            120
+          ],
+          "nonzero_targets": [
+            1,
+            2,
+            7,
+            10,
+            11
+          ],
+          "signature": "[120, 360, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 120]]"
+        },
+        {
+          "slot": 8,
+          "diagonal": 120,
+          "total": 360,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            120
+          ],
+          "nonzero_targets": [
+            2,
+            3,
+            8,
+            13,
+            14
+          ],
+          "signature": "[120, 360, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 120]]"
+        },
+        {
+          "slot": 9,
+          "diagonal": 120,
+          "total": 360,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            120
+          ],
+          "nonzero_targets": [
+            3,
+            4,
+            9,
+            11,
+            12
+          ],
+          "signature": "[120, 360, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 120]]"
+        },
+        {
+          "slot": 10,
+          "diagonal": 120,
+          "total": 360,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            120
+          ],
+          "nonzero_targets": [
+            5,
+            7,
+            10,
+            11,
+            14
+          ],
+          "signature": "[120, 360, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 120]]"
+        },
+        {
+          "slot": 11,
+          "diagonal": 120,
+          "total": 360,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            120
+          ],
+          "nonzero_targets": [
+            7,
+            9,
+            10,
+            11,
+            12
+          ],
+          "signature": "[120, 360, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 120]]"
+        },
+        {
+          "slot": 12,
+          "diagonal": 120,
+          "total": 360,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            120
+          ],
+          "nonzero_targets": [
+            6,
+            9,
+            11,
+            12,
+            13
+          ],
+          "signature": "[120, 360, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 120]]"
+        },
+        {
+          "slot": 13,
+          "diagonal": 120,
+          "total": 360,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            120
+          ],
+          "nonzero_targets": [
+            6,
+            8,
+            12,
+            13,
+            14
+          ],
+          "signature": "[120, 360, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 120]]"
+        },
+        {
+          "slot": 14,
+          "diagonal": 120,
+          "total": 360,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            120
+          ],
+          "nonzero_targets": [
+            5,
+            8,
+            10,
+            13,
+            14
+          ],
+          "signature": "[120, 360, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 120]]"
+        }
+      ],
+      "slot_signature_class_count": 1,
+      "slot_quotient_automorphism_count": 120,
+      "slot_quotient_automorphism_capped": false,
+      "slot_orbits": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ]
+      ],
+      "slot_orbit_count": 1,
+      "mirror_slot_automorphism_count": 0,
+      "mirror_tests": [
+        {
+          "name": "cycle_mirror_keep_local_5x3",
+          "preserves_slot_quotient": false,
+          "slot_perm": [
+            10,
+            11,
+            12,
+            13,
+            14,
+            5,
+            6,
+            7,
+            8,
+            9,
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "wl_color_preservation": {
+            "same_color_count": 900,
+            "total": 900,
+            "fraction": 1.0,
+            "broken_sample": []
+          }
+        },
+        {
+          "name": "cycle_mirror_reverse_local_5x3",
+          "preserves_slot_quotient": false,
+          "slot_perm": [
+            14,
+            13,
+            12,
+            11,
+            10,
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "wl_color_preservation": {
+            "same_color_count": 900,
+            "total": 900,
+            "fraction": 1.0,
+            "broken_sample": []
+          }
+        },
+        {
+          "name": "reflect_14_minus_s",
+          "preserves_slot_quotient": false,
+          "slot_perm": [
+            14,
+            13,
+            12,
+            11,
+            10,
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "wl_color_preservation": {
+            "same_color_count": 900,
+            "total": 900,
+            "fraction": 1.0,
+            "broken_sample": []
+          }
+        }
+      ],
+      "source_discovered_mirror_support": false
+    },
+    {
+      "source_name": "g900_candidate_edges",
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/16-fifteen-thalion-ring/support/generated/g900_candidate_edges.json",
+      "vertex_count": 900,
+      "edge_count": 3629,
+      "degree_histogram": {
+        "8": 885,
+        "11": 2,
+        "12": 13
+      },
+      "wl_rounds": [
+        {
+          "iteration": 1,
+          "cell_count": 15,
+          "cell_size_histogram": {
+            "1": 7,
+            "2": 2,
+            "4": 1,
+            "5": 1,
+            "9": 1,
+            "10": 1,
+            "69": 1,
+            "792": 1
+          }
+        },
+        {
+          "iteration": 2,
+          "cell_count": 59,
+          "cell_size_histogram": {
+            "1": 34,
+            "2": 6,
+            "3": 1,
+            "4": 9,
+            "8": 2,
+            "16": 2,
+            "20": 1,
+            "40": 1,
+            "75": 1,
+            "104": 1,
+            "528": 1
+          }
+        },
+        {
+          "iteration": 3,
+          "cell_count": 117,
+          "cell_size_histogram": {
+            "1": 54,
+            "2": 3,
+            "4": 35,
+            "8": 14,
+            "12": 1,
+            "16": 3,
+            "26": 1,
+            "28": 1,
+            "32": 1,
+            "40": 1,
+            "80": 1,
+            "136": 1,
+            "186": 1
+          }
+        },
+        {
+          "iteration": 4,
+          "cell_count": 175,
+          "cell_size_histogram": {
+            "1": 60,
+            "2": 8,
+            "4": 56,
+            "8": 38,
+            "10": 1,
+            "16": 6,
+            "20": 1,
+            "24": 2,
+            "32": 1,
+            "34": 1,
+            "56": 1
+          }
+        },
+        {
+          "iteration": 5,
+          "cell_count": 220,
+          "cell_size_histogram": {
+            "1": 60,
+            "2": 34,
+            "4": 66,
+            "6": 1,
+            "8": 55,
+            "14": 1,
+            "16": 3
+          }
+        },
+        {
+          "iteration": 6,
+          "cell_count": 237,
+          "cell_size_histogram": {
+            "1": 60,
+            "2": 54,
+            "4": 63,
+            "8": 60
+          }
+        },
+        {
+          "iteration": 7,
+          "cell_count": 240,
+          "cell_size_histogram": {
+            "1": 60,
+            "2": 60,
+            "4": 60,
+            "8": 60
+          }
+        },
+        {
+          "iteration": 8,
+          "cell_count": 240,
+          "cell_size_histogram": {
+            "1": 60,
+            "2": 60,
+            "4": 60,
+            "8": 60
+          }
+        },
+        {
+          "iteration": 9,
+          "cell_count": 240,
+          "cell_size_histogram": {
+            "1": 60,
+            "2": 60,
+            "4": 60,
+            "8": 60
+          }
+        },
+        {
+          "iteration": 10,
+          "cell_count": 240,
+          "cell_size_histogram": {
+            "1": 60,
+            "2": 60,
+            "4": 60,
+            "8": 60
+          }
+        },
+        {
+          "iteration": 11,
+          "cell_count": 240,
+          "cell_size_histogram": {
+            "1": 60,
+            "2": 60,
+            "4": 60,
+            "8": 60
+          }
+        },
+        {
+          "iteration": 12,
+          "cell_count": 240,
+          "cell_size_histogram": {
+            "1": 60,
+            "2": 60,
+            "4": 60,
+            "8": 60
+          }
+        },
+        {
+          "iteration": 13,
+          "cell_count": 240,
+          "cell_size_histogram": {
+            "1": 60,
+            "2": 60,
+            "4": 60,
+            "8": 60
+          }
+        },
+        {
+          "iteration": 14,
+          "cell_count": 240,
+          "cell_size_histogram": {
+            "1": 60,
+            "2": 60,
+            "4": 60,
+            "8": 60
+          }
+        },
+        {
+          "iteration": 15,
+          "cell_count": 240,
+          "cell_size_histogram": {
+            "1": 60,
+            "2": 60,
+            "4": 60,
+            "8": 60
+          }
+        },
+        {
+          "iteration": 16,
+          "cell_count": 240,
+          "cell_size_histogram": {
+            "1": 60,
+            "2": 60,
+            "4": 60,
+            "8": 60
+          }
+        },
+        {
+          "iteration": 17,
+          "cell_count": 240,
+          "cell_size_histogram": {
+            "1": 60,
+            "2": 60,
+            "4": 60,
+            "8": 60
+          }
+        },
+        {
+          "iteration": 18,
+          "cell_count": 240,
+          "cell_size_histogram": {
+            "1": 60,
+            "2": 60,
+            "4": 60,
+            "8": 60
+          }
+        },
+        {
+          "iteration": 19,
+          "cell_count": 240,
+          "cell_size_histogram": {
+            "1": 60,
+            "2": 60,
+            "4": 60,
+            "8": 60
+          }
+        },
+        {
+          "iteration": 20,
+          "cell_count": 240,
+          "cell_size_histogram": {
+            "1": 60,
+            "2": 60,
+            "4": 60,
+            "8": 60
+          }
+        },
+        {
+          "iteration": 21,
+          "cell_count": 240,
+          "cell_size_histogram": {
+            "1": 60,
+            "2": 60,
+            "4": 60,
+            "8": 60
+          }
+        },
+        {
+          "iteration": 22,
+          "cell_count": 240,
+          "cell_size_histogram": {
+            "1": 60,
+            "2": 60,
+            "4": 60,
+            "8": 60
+          }
+        },
+        {
+          "iteration": 23,
+          "cell_count": 240,
+          "cell_size_histogram": {
+            "1": 60,
+            "2": 60,
+            "4": 60,
+            "8": 60
+          }
+        },
+        {
+          "iteration": 24,
+          "cell_count": 240,
+          "cell_size_histogram": {
+            "1": 60,
+            "2": 60,
+            "4": 60,
+            "8": 60
+          }
+        },
+        {
+          "iteration": 25,
+          "cell_count": 240,
+          "cell_size_histogram": {
+            "1": 60,
+            "2": 60,
+            "4": 60,
+            "8": 60
+          }
+        },
+        {
+          "iteration": 26,
+          "cell_count": 240,
+          "cell_size_histogram": {
+            "1": 60,
+            "2": 60,
+            "4": 60,
+            "8": 60
+          }
+        },
+        {
+          "iteration": 27,
+          "cell_count": 240,
+          "cell_size_histogram": {
+            "1": 60,
+            "2": 60,
+            "4": 60,
+            "8": 60
+          }
+        },
+        {
+          "iteration": 28,
+          "cell_count": 240,
+          "cell_size_histogram": {
+            "1": 60,
+            "2": 60,
+            "4": 60,
+            "8": 60
+          }
+        },
+        {
+          "iteration": 29,
+          "cell_count": 240,
+          "cell_size_histogram": {
+            "1": 60,
+            "2": 60,
+            "4": 60,
+            "8": 60
+          }
+        },
+        {
+          "iteration": 30,
+          "cell_count": 240,
+          "cell_size_histogram": {
+            "1": 60,
+            "2": 60,
+            "4": 60,
+            "8": 60
+          }
+        }
+      ],
+      "wl_cell_count": 240,
+      "wl_cell_size_histogram": {
+        "1": 60,
+        "2": 60,
+        "4": 60,
+        "8": 60
+      },
+      "wl_largest_cells": [
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "slot_signatures": [
+        {
+          "slot": 0,
+          "diagonal": 149,
+          "total": 389,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            149
+          ],
+          "nonzero_targets": [
+            0,
+            1,
+            4,
+            10,
+            11
+          ],
+          "signature": "[149, 389, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 149]]"
+        },
+        {
+          "slot": 1,
+          "diagonal": 120,
+          "total": 360,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            120
+          ],
+          "nonzero_targets": [
+            0,
+            1,
+            2,
+            11,
+            12
+          ],
+          "signature": "[120, 360, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 120]]"
+        },
+        {
+          "slot": 2,
+          "diagonal": 120,
+          "total": 360,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            120
+          ],
+          "nonzero_targets": [
+            1,
+            2,
+            3,
+            12,
+            13
+          ],
+          "signature": "[120, 360, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 120]]"
+        },
+        {
+          "slot": 3,
+          "diagonal": 120,
+          "total": 360,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            120
+          ],
+          "nonzero_targets": [
+            2,
+            3,
+            4,
+            13,
+            14
+          ],
+          "signature": "[120, 360, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 120]]"
+        },
+        {
+          "slot": 4,
+          "diagonal": 120,
+          "total": 360,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            120
+          ],
+          "nonzero_targets": [
+            0,
+            3,
+            4,
+            10,
+            14
+          ],
+          "signature": "[120, 360, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 120]]"
+        },
+        {
+          "slot": 5,
+          "diagonal": 120,
+          "total": 360,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            120
+          ],
+          "nonzero_targets": [
+            5,
+            6,
+            9,
+            10,
+            12
+          ],
+          "signature": "[120, 360, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 120]]"
+        },
+        {
+          "slot": 6,
+          "diagonal": 120,
+          "total": 360,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            120
+          ],
+          "nonzero_targets": [
+            5,
+            6,
+            7,
+            12,
+            14
+          ],
+          "signature": "[120, 360, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 120]]"
+        },
+        {
+          "slot": 7,
+          "diagonal": 120,
+          "total": 360,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            120
+          ],
+          "nonzero_targets": [
+            6,
+            7,
+            8,
+            11,
+            14
+          ],
+          "signature": "[120, 360, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 120]]"
+        },
+        {
+          "slot": 8,
+          "diagonal": 120,
+          "total": 360,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            120
+          ],
+          "nonzero_targets": [
+            7,
+            8,
+            9,
+            11,
+            13
+          ],
+          "signature": "[120, 360, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 120]]"
+        },
+        {
+          "slot": 9,
+          "diagonal": 120,
+          "total": 360,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            120
+          ],
+          "nonzero_targets": [
+            5,
+            8,
+            9,
+            10,
+            13
+          ],
+          "signature": "[120, 360, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 120]]"
+        },
+        {
+          "slot": 10,
+          "diagonal": 120,
+          "total": 360,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            120
+          ],
+          "nonzero_targets": [
+            0,
+            4,
+            5,
+            9,
+            10
+          ],
+          "signature": "[120, 360, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 120]]"
+        },
+        {
+          "slot": 11,
+          "diagonal": 120,
+          "total": 360,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            120
+          ],
+          "nonzero_targets": [
+            0,
+            1,
+            7,
+            8,
+            11
+          ],
+          "signature": "[120, 360, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 120]]"
+        },
+        {
+          "slot": 12,
+          "diagonal": 120,
+          "total": 360,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            120
+          ],
+          "nonzero_targets": [
+            1,
+            2,
+            5,
+            6,
+            12
+          ],
+          "signature": "[120, 360, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 120]]"
+        },
+        {
+          "slot": 13,
+          "diagonal": 120,
+          "total": 360,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            120
+          ],
+          "nonzero_targets": [
+            2,
+            3,
+            8,
+            9,
+            13
+          ],
+          "signature": "[120, 360, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 120]]"
+        },
+        {
+          "slot": 14,
+          "diagonal": 120,
+          "total": 360,
+          "sorted_row": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            60,
+            60,
+            60,
+            60,
+            120
+          ],
+          "nonzero_targets": [
+            3,
+            4,
+            6,
+            7,
+            14
+          ],
+          "signature": "[120, 360, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 120]]"
+        }
+      ],
+      "slot_signature_class_count": 2,
+      "slot_quotient_automorphism_count": 8,
+      "slot_quotient_automorphism_capped": false,
+      "slot_orbits": [
+        [
+          0
+        ],
+        [
+          6,
+          13
+        ],
+        [
+          1,
+          4,
+          10,
+          11
+        ],
+        [
+          2,
+          3,
+          5,
+          7,
+          8,
+          9,
+          12,
+          14
+        ]
+      ],
+      "slot_orbit_count": 4,
+      "mirror_slot_automorphism_count": 0,
+      "mirror_tests": [
+        {
+          "name": "cycle_mirror_keep_local_5x3",
+          "preserves_slot_quotient": false,
+          "slot_perm": [
+            10,
+            11,
+            12,
+            13,
+            14,
+            5,
+            6,
+            7,
+            8,
+            9,
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "wl_color_preservation": {
+            "same_color_count": 540,
+            "total": 900,
+            "fraction": 0.6,
+            "broken_sample": [
+              [
+                "T00_S00",
+                "T10_S00",
+                "177",
+                "175"
+              ],
+              [
+                "T00_S01",
+                "T10_S01",
+                "215",
+                "105"
+              ],
+              [
+                "T00_S02",
+                "T10_S02",
+                "126",
+                "64"
+              ],
+              [
+                "T00_S03",
+                "T10_S03",
+                "189",
+                "65"
+              ],
+              [
+                "T00_S04",
+                "T10_S04",
+                "153",
+                "168"
+              ],
+              [
+                "T00_S05",
+                "T10_S05",
+                "132",
+                "117"
+              ],
+              [
+                "T00_S06",
+                "T10_S06",
+                "138",
+                "72"
+              ],
+              [
+                "T00_S07",
+                "T10_S07",
+                "160",
+                "52"
+              ],
+              [
+                "T00_S08",
+                "T10_S08",
+                "86",
+                "123"
+              ],
+              [
+                "T00_S09",
+                "T10_S09",
+                "1",
+                "220"
+              ],
+              [
+                "T00_S10",
+                "T10_S10",
+                "0",
+                "159"
+              ],
+              [
+                "T00_S11",
+                "T10_S11",
+                "141",
+                "166"
+              ],
+              [
+                "T00_S12",
+                "T10_S12",
+                "211",
+                "182"
+              ],
+              [
+                "T00_S13",
+                "T10_S13",
+                "170",
+                "120"
+              ],
+              [
+                "T00_S14",
+                "T10_S14",
+                "4",
+                "119"
+              ],
+              [
+                "T00_S15",
+                "T10_S15",
+                "194",
+                "37"
+              ],
+              [
+                "T00_S16",
+                "T10_S16",
+                "223",
+                "127"
+              ],
+              [
+                "T00_S17",
+                "T10_S17",
+                "144",
+                "186"
+              ],
+              [
+                "T00_S18",
+                "T10_S18",
+                "185",
+                "35"
+              ],
+              [
+                "T00_S19",
+                "T10_S19",
+                "46",
+                "9"
+              ]
+            ]
+          }
+        },
+        {
+          "name": "cycle_mirror_reverse_local_5x3",
+          "preserves_slot_quotient": false,
+          "slot_perm": [
+            14,
+            13,
+            12,
+            11,
+            10,
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "wl_color_preservation": {
+            "same_color_count": 420,
+            "total": 900,
+            "fraction": 0.4666666666666667,
+            "broken_sample": [
+              [
+                "T00_S00",
+                "T14_S00",
+                "177",
+                "125"
+              ],
+              [
+                "T00_S01",
+                "T14_S01",
+                "215",
+                "235"
+              ],
+              [
+                "T00_S02",
+                "T14_S02",
+                "126",
+                "104"
+              ],
+              [
+                "T00_S03",
+                "T14_S03",
+                "189",
+                "234"
+              ],
+              [
+                "T00_S04",
+                "T14_S04",
+                "153",
+                "129"
+              ],
+              [
+                "T00_S05",
+                "T14_S05",
+                "132",
+                "67"
+              ],
+              [
+                "T00_S06",
+                "T14_S06",
+                "138",
+                "61"
+              ],
+              [
+                "T00_S07",
+                "T14_S07",
+                "160",
+                "17"
+              ],
+              [
+                "T00_S08",
+                "T14_S08",
+                "86",
+                "48"
+              ],
+              [
+                "T00_S09",
+                "T14_S09",
+                "1",
+                "135"
+              ],
+              [
+                "T00_S10",
+                "T14_S10",
+                "0",
+                "178"
+              ],
+              [
+                "T00_S11",
+                "T14_S11",
+                "141",
+                "106"
+              ],
+              [
+                "T00_S12",
+                "T14_S12",
+                "211",
+                "122"
+              ],
+              [
+                "T00_S13",
+                "T14_S13",
+                "170",
+                "212"
+              ],
+              [
+                "T00_S14",
+                "T14_S14",
+                "4",
+                "199"
+              ],
+              [
+                "T00_S15",
+                "T14_S15",
+                "194",
+                "206"
+              ],
+              [
+                "T00_S16",
+                "T14_S16",
+                "223",
+                "156"
+              ],
+              [
+                "T00_S17",
+                "T14_S17",
+                "144",
+                "58"
+              ],
+              [
+                "T00_S18",
+                "T14_S18",
+                "185",
+                "192"
+              ],
+              [
+                "T00_S19",
+                "T14_S19",
+                "46",
+                "181"
+              ]
+            ]
+          }
+        },
+        {
+          "name": "reflect_14_minus_s",
+          "preserves_slot_quotient": false,
+          "slot_perm": [
+            14,
+            13,
+            12,
+            11,
+            10,
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "wl_color_preservation": {
+            "same_color_count": 420,
+            "total": 900,
+            "fraction": 0.4666666666666667,
+            "broken_sample": [
+              [
+                "T00_S00",
+                "T14_S00",
+                "177",
+                "125"
+              ],
+              [
+                "T00_S01",
+                "T14_S01",
+                "215",
+                "235"
+              ],
+              [
+                "T00_S02",
+                "T14_S02",
+                "126",
+                "104"
+              ],
+              [
+                "T00_S03",
+                "T14_S03",
+                "189",
+                "234"
+              ],
+              [
+                "T00_S04",
+                "T14_S04",
+                "153",
+                "129"
+              ],
+              [
+                "T00_S05",
+                "T14_S05",
+                "132",
+                "67"
+              ],
+              [
+                "T00_S06",
+                "T14_S06",
+                "138",
+                "61"
+              ],
+              [
+                "T00_S07",
+                "T14_S07",
+                "160",
+                "17"
+              ],
+              [
+                "T00_S08",
+                "T14_S08",
+                "86",
+                "48"
+              ],
+              [
+                "T00_S09",
+                "T14_S09",
+                "1",
+                "135"
+              ],
+              [
+                "T00_S10",
+                "T14_S10",
+                "0",
+                "178"
+              ],
+              [
+                "T00_S11",
+                "T14_S11",
+                "141",
+                "106"
+              ],
+              [
+                "T00_S12",
+                "T14_S12",
+                "211",
+                "122"
+              ],
+              [
+                "T00_S13",
+                "T14_S13",
+                "170",
+                "212"
+              ],
+              [
+                "T00_S14",
+                "T14_S14",
+                "4",
+                "199"
+              ],
+              [
+                "T00_S15",
+                "T14_S15",
+                "194",
+                "206"
+              ],
+              [
+                "T00_S16",
+                "T14_S16",
+                "223",
+                "156"
+              ],
+              [
+                "T00_S17",
+                "T14_S17",
+                "144",
+                "58"
+              ],
+              [
+                "T00_S18",
+                "T14_S18",
+                "185",
+                "192"
+              ],
+              [
+                "T00_S19",
+                "T14_S19",
+                "46",
+                "181"
+              ]
+            ]
+          }
+        }
+      ],
+      "source_discovered_mirror_support": false
+    }
+  ],
+  "claim": {
+    "does_this_close_gap_a": false,
+    "does_this_discover_source_orbit_data": true,
+    "does_this_find_source_discovered_mirror_support": false,
+    "does_this_construct_full_900_carrier_to_register_map": false,
+    "short_form": "Source-discovered orbit data gives no mirror support in the tested 900-vertex sources.",
+    "not_closed_reason": "No source-derived WXYZTI row generator is constructed."
+  },
+  "interpretation": {
+    "main_result": "The source graph itself does not support the projection mirror under the tested orbit and quotient probes.",
+    "remaining_gap": "A source-native WXYZTI row generator remains missing.",
+    "next_move": "Record the Mode 2 mirror as projection-level evidence and return to deriving the WXYZTI register generator."
+  },
+  "checks": [
+    {
+      "id": "mirror_900_search_loaded",
+      "status": true,
+      "detail": "gap_a_mode2_mirror_900_vertex_involution_not_found"
+    },
+    {
+      "id": "column_involution_search_loaded",
+      "status": true,
+      "detail": "gap_a_source_side_involution_for_mode2_mirror_not_found"
+    },
+    {
+      "id": "mode2_audit_loaded",
+      "status": true,
+      "detail": "gap_a_mode2_mirror_return_rule_projection_symmetric_not_source_derived"
+    },
+    {
+      "id": "mode2_exploration_loaded",
+      "status": true,
+      "detail": "gap_a_mode2_wxyztitzyxw_return_path_candidate_found_not_closure"
+    },
+    {
+      "id": "upstreamed_supports_loaded",
+      "status": true,
+      "detail": "gap_a_projection_row_supports_upstreamed_columnwise_complete_not_generator"
+    },
+    {
+      "id": "graph_reports_created",
+      "status": true,
+      "detail": "3"
+    },
+    {
+      "id": "wl_refinement_completed",
+      "status": true,
+      "detail": "all graph reports have WL rounds"
+    },
+    {
+      "id": "slot_quotient_checked",
+      "status": true,
+      "detail": "slot quotient automorphisms checked"
+    },
+    {
+      "id": "gap_a_not_closed",
+      "status": true,
+      "detail": "orbit discovery only"
+    }
+  ],
+  "next_script": "record_gap_a_mode2_projection_mirror_boundary_note_001.py"
+}

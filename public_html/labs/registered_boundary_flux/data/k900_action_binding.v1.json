@@ -1,0 +1,376 @@
+{
+  "schema": "registered_boundary_flux.k900_action_binding.v1",
+  "status": "numeric_binding_not_rendered",
+  "boundary": "Numeric K900/P19/P20 action signals are bound for future Cube Register rendering. They are not rendered by this pass and are not physical-force claims.",
+  "source_files": {
+    "p20_force": {
+      "path": "../../../research/thalean-graph-theory/20-oriented-carrier-circulation/artifacts/json/019_project20_force_analogue_checkpoint.json",
+      "exists": true,
+      "sha256": "25d28608c6b82e94826713f89b6aea0a1cc8f825f14f0edd6a05da0499ef4929"
+    },
+    "p20_synthesis": {
+      "path": "../../../research/thalean-graph-theory/20-oriented-carrier-circulation/artifacts/json/022_project20_synthesis_checkpoint.json",
+      "exists": true,
+      "sha256": "15e0ffc3d8e02a61f19aeb023feb988dceee0d57758ab261209b49fd68f76544"
+    },
+    "p20_em_residue": {
+      "path": "../../../research/thalean-graph-theory/20-oriented-carrier-circulation/artifacts/json/029_em_residue_representative_audit.json",
+      "exists": true,
+      "sha256": "b0fe81d73899ee34c281f25f344b57ee10d1c8f76e34b9197ac0579c04488cef"
+    },
+    "p20_leftover": {
+      "path": "../../../research/thalean-graph-theory/20-oriented-carrier-circulation/artifacts/json/033_em_leftover_vector_predictor.json",
+      "exists": true,
+      "sha256": "bbf56f46a2d044c19d531c010017725ed79312621571763374fcbf551d0fd867"
+    },
+    "p20_claims_csv": {
+      "path": "../../../research/thalean-graph-theory/20-oriented-carrier-circulation/artifacts/csv/035_project20_theorem_status_synthesis.csv",
+      "exists": true,
+      "sha256": "594f137d0166c3f869e7aeebba50b072bd70e9df60e1e112f4f38b4677b04812"
+    },
+    "p19_compression": {
+      "path": "../../../research/thalean-graph-theory/19-thalean-gravity-finite-tests/artifacts/json/010_holonomy_return_compression_audit.json",
+      "exists": true,
+      "sha256": "f088593c3630a22a77351e5a9291c6cb81c7cb34f210e78ab1072043a4db8ace"
+    },
+    "p19_localization": {
+      "path": "../../../research/thalean-graph-theory/19-thalean-gravity-finite-tests/artifacts/json/011_odd_triangle_localization_audit.json",
+      "exists": true,
+      "sha256": "b6195028550c12add4c42004ed3e6422859ac5ef013178c50be7d1bb7c27c51f"
+    },
+    "p19_ablation": {
+      "path": "../../../research/thalean-graph-theory/19-thalean-gravity-finite-tests/artifacts/json/012_odd_triangle_ablation_audit.json",
+      "exists": true,
+      "sha256": "7b633a3a21126785b399a2a4e2eb70782a15795d70d9a7fabd5c3f5a794f55c0"
+    }
+  },
+  "action_bindings": {
+    "compression": {
+      "source_claim": "odd carrier triangles localize the strongest half-flip return compression",
+      "source_artifacts": [
+        "19-thalean-gravity-finite-tests/artifacts/json/010_holonomy_return_compression_audit.json",
+        "19-thalean-gravity-finite-tests/artifacts/json/011_odd_triangle_localization_audit.json",
+        "19-thalean-gravity-finite-tests/artifacts/json/012_odd_triangle_ablation_audit.json"
+      ],
+      "raw_signals": {
+        "original_compressed_count": 294,
+        "original_odd_triangle_count": 5,
+        "odd_triangle_count": 5,
+        "even_triangle_count": 5,
+        "odd_triangle_slot_count": 11,
+        "non_odd_triangle_slot_count": 4,
+        "odd_triangle_slots": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          10,
+          14
+        ],
+        "non_odd_triangle_slots": [
+          9,
+          11,
+          12,
+          13
+        ],
+        "odd_slot_mean_actual_delta": -0.5,
+        "non_odd_slot_mean_actual_delta": -0.03333333333333333,
+        "compression_checks": {
+          "all_odd_triangle_slots_have_best_odd_len_3": true,
+          "no_non_odd_triangle_slot_has_best_odd_len_3": true,
+          "no_return_pair_expansion": true,
+          "odd_triangle_slots_more_compressive_than_non_odd_triangle_slots": true
+        },
+        "ablation_checks": {
+          "minus3_compression_removed_by_neutralization": true,
+          "neutralized_has_no_odd_triangles": true,
+          "neutralized_mean_less_compressive_than_original": true,
+          "original_has_odd_triangles": true,
+          "return_distribution_changes_after_neutralization": true
+        },
+        "neutralized_compressed_count": 30,
+        "neutralized_odd_triangle_count": 0
+      },
+      "cube_register_target": {
+        "primary": "interior",
+        "secondary": "trace",
+        "meaning": "Interior may later show finite return-path compression; trace may later show registered aftermath."
+      },
+      "boundary": "Compression means finite return-path metric compression, not physical gravity."
+    },
+    "polarity": {
+      "source_claims": [
+        {
+          "claim_id": "P20-EM-001",
+          "domain": "EM-like support selector",
+          "status": "enumerated finite result",
+          "statement": "Within the exhaustive five-edge census, support conservation exactly selects the 1,231 threshold-preserving variants.",
+          "boundary": "Finite five-edge census only. Not a physical field law.",
+          "next_test": ""
+        },
+        {
+          "claim_id": "P20-EM-004",
+          "domain": "K900 is the exact residue-vector representative",
+          "status": "bounded scan result",
+          "statement": "K900 supplies the exact baseline residue vector; the five-edge support-preserving shell contains no exact residue-vector returns.",
+          "boundary": "Exact-return parity is established only through the scanned weights 0 through 6.",
+          "next_test": ""
+        },
+        {
+          "claim_id": "P20-EM-005",
+          "domain": "Even exact returns are paired cancellations",
+          "status": "bounded scan result",
+          "statement": "Every exact residue-vector return in the scanned range decomposes into opposite edge-delta pairs; no odd scanned weight returns exactly.",
+          "boundary": "Scanned weights 0 through 6 only.",
+          "next_test": ""
+        }
+      ],
+      "source_artifacts": [
+        "20-oriented-carrier-circulation/artifacts/json/029_em_residue_representative_audit.json",
+        "20-oriented-carrier-circulation/artifacts/csv/035_project20_theorem_status_synthesis.csv"
+      ],
+      "raw_signals": {
+        "baseline_residue_vector": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "baseline_total_residue": 5,
+        "baseline_absolute_residue": 5,
+        "baseline_square_residue": 5,
+        "max_toggle_weight": 6,
+        "odd_exact_return_weights": [],
+        "even_exact_return_weights": [
+          0,
+          2,
+          4,
+          6
+        ],
+        "weight5_no_exact_return": true,
+        "weight5_all_support_preservers_excited": true,
+        "rows_summary": [
+          {
+            "support_preserver_count": 1,
+            "exact_residue_vector_count": 1,
+            "support_excitation_count": 0,
+            "exact_fraction_among_support": 1.0,
+            "support_fraction": 1.0
+          },
+          {
+            "support_preserver_count": 5,
+            "exact_residue_vector_count": 0,
+            "support_excitation_count": 5,
+            "exact_fraction_among_support": 0.0,
+            "support_fraction": 0.16666666666666666
+          },
+          {
+            "support_preserver_count": 35,
+            "exact_residue_vector_count": 20,
+            "support_excitation_count": 15,
+            "exact_fraction_among_support": 0.5714285714285714,
+            "support_fraction": 0.08045977011494253
+          },
+          {
+            "support_preserver_count": 120,
+            "exact_residue_vector_count": 0,
+            "support_excitation_count": 120,
+            "exact_fraction_among_support": 0.0,
+            "support_fraction": 0.029556650246305417
+          },
+          {
+            "support_preserver_count": 475,
+            "exact_residue_vector_count": 180,
+            "support_excitation_count": 295,
+            "exact_fraction_among_support": 0.37894736842105264,
+            "support_fraction": 0.017332603539500092
+          },
+          {
+            "support_preserver_count": 1231,
+            "exact_residue_vector_count": 0,
+            "support_excitation_count": 1231,
+            "exact_fraction_among_support": 0.0,
+            "support_fraction": 0.008638232776163811
+          },
+          {
+            "support_preserver_count": 3485,
+            "exact_residue_vector_count": 960,
+            "support_excitation_count": 2525,
+            "exact_fraction_among_support": 0.27546628407460544,
+            "support_fraction": 0.005869226558881732
+          }
+        ]
+      },
+      "cube_register_target": {
+        "primary": "top_bottom_caps",
+        "secondary": "side_walls",
+        "meaning": "Caps may later show residue polarity; side walls may later show support-preserving circulation."
+      },
+      "boundary": "Polarity means finite orientation/residue behavior, not physical electromagnetism."
+    },
+    "confinement": {
+      "source_claims": [
+        {
+          "claim_id": "P20-STRONG-001",
+          "domain": "Strong-like confined-composite marker is rigid under elementary triangle ablation",
+          "status": "finite ablation result",
+          "statement": "Every tested triangle-opening or triangle-deletion ablation breaks the exact strong-like confinement marker set.",
+          "boundary": "Strong-like is finite confinement grammar only, not QCD or physical strong force.",
+          "next_test": ""
+        },
+        {
+          "claim_id": "P20-C03",
+          "claim": "K900 has a clean confined-composite triangle signature.",
+          "status": "finite_marker_support",
+          "supporting_artifacts": "artifacts/json/018_strong_weak_candidate_probe.json",
+          "evidence": "all_edges_partitioned_by_triangles=True; exact_triangle_purity_5x111_5x000=True; no_wound_edges_in_silent_triangles=True.",
+          "boundary": "Exploratory strong-like grammar, not physical strong force."
+        },
+        {
+          "claim_id": "P20-C04",
+          "claim": "K900 strong-like confinement markers are rigid under elementary triangle-opening ablations.",
+          "status": "finite_ablation_support",
+          "supporting_artifacts": "artifacts/json/020_strong_confinement_ablation.json",
+          "evidence": "total_ablation_cases=70; confinement_admissible_count=0; confinement_broken_count=70.",
+          "boundary": "Only elementary flip/delete triangle ablations were tested."
+        }
+      ],
+      "source_artifacts": [
+        "20-oriented-carrier-circulation/artifacts/json/018_strong_weak_candidate_probe.json",
+        "20-oriented-carrier-circulation/artifacts/json/020_strong_confinement_ablation.json",
+        "20-oriented-carrier-circulation/artifacts/json/019_project20_force_analogue_checkpoint.json"
+      ],
+      "raw_signals": {
+        "finite_signature": "internal difference + neutral closure -> confined composite identity",
+        "key_counts": {
+          "all_edges_partitioned_by_triangles": true,
+          "exact_triangle_purity_5x111_5x000": true,
+          "no_wound_edges_in_silent_triangles": true,
+          "active_triangle_count": 5,
+          "silent_triangle_count": 5,
+          "pattern_counts": {
+            "000": 5,
+            "111": 5
+          },
+          "residue_counts": {
+            "0": 5,
+            "1": 5
+          },
+          "slot_active_profile": {
+            "0": 4,
+            "1": 7,
+            "2": 4
+          }
+        },
+        "interpretation": "K900 has a clean confined-composite signature: its carrier edges partition into triangles, its triangle grammar is exactly five 111 and five 000, and no wound edge appears in a silent triangle."
+      },
+      "cube_register_target": {
+        "primary": "edges_corners",
+        "secondary": "interior",
+        "meaning": "Seams may later show confined triangle/edge organization."
+      },
+      "boundary": "Confinement means finite triangle/edge organization, not physical strong force."
+    },
+    "transformation": {
+      "source_claims": [
+        {
+          "claim_id": "P20-WEAK-001",
+          "domain": "Weak-like channels are directed K900-to-target transformations",
+          "status": "enumerated finite result",
+          "statement": "All 1,231 admissible support-preserving channels are oriented K900-to-target transformations with nonzero directed triangle-transition signature.",
+          "boundary": "Weak-like is finite directed transformation grammar only, not physical weak interaction.",
+          "next_test": ""
+        },
+        {
+          "claim_id": "P20-WEAK-002",
+          "domain": "Weak-like directed classes are not inverse-paired in the K900 source frame",
+          "status": "enumerated finite result",
+          "statement": "No directed weak-like channel class has an exact inverse partner inside the same K900-to-target channel grammar.",
+          "boundary": "Toggle operations remain operationally reversible; the directed class grammar is not internally inverse-paired.",
+          "next_test": ""
+        },
+        {
+          "claim_id": "P20-WEAK-003",
+          "domain": "Weak-like directed family has one-sided finite handedness",
+          "status": "enumerated finite result",
+          "statement": "All 21 directed weak-like classes and all 1,231 channels have positive finite handedness in the K900 source frame.",
+          "boundary": "Finite handedness is internal transition asymmetry only, not physical chirality.",
+          "next_test": ""
+        },
+        {
+          "claim_id": "P20-WEAK-004",
+          "domain": "Weak-like handedness organizes inverse-distance order more than compression strength",
+          "status": "correlation probe result",
+          "statement": "The handedness score has strong rank-order association with nearest-inverse distance but is not a strong compression predictor.",
+          "boundary": "Correlation probe only; does not establish a physical weak-force mechanism.",
+          "next_test": ""
+        },
+        {
+          "claim_id": "P20-C05",
+          "claim": "Weak-like channels can be oriented as directed K900 to target transformations.",
+          "status": "exhaustive_over_preserver_family",
+          "supporting_artifacts": "artifacts/json/021_weak_channel_directionality_probe.json",
+          "evidence": "total_channels=1231; oriented_channel_count=1231; zero_change_count=0; distinct_directed_channel_classes=21.",
+          "boundary": "Directed finite triangle-transition grammar only, not physical weak interaction."
+        }
+      ],
+      "source_artifacts": [
+        "20-oriented-carrier-circulation/artifacts/json/021_weak_channel_directionality_probe.json",
+        "20-oriented-carrier-circulation/artifacts/csv/035_project20_theorem_status_synthesis.csv",
+        "20-oriented-carrier-circulation/artifacts/json/019_project20_force_analogue_checkpoint.json"
+      ],
+      "raw_signals": {
+        "finite_signature": "admissible channel crossing -> lawful identity change",
+        "key_counts": {
+          "threshold_preserver_count": 1231,
+          "changed_metric_identity_count": 1231,
+          "exact_k900_triangle_purity_count": 0,
+          "k900_metric_match_count": 0,
+          "no_expansion_count": 1231,
+          "all_preservers_no_expansion": true,
+          "distinct_structural_channel_classes": 21,
+          "distinct_metric_fingerprints": 127,
+          "distinct_total_metric_profiles": 25
+        },
+        "interpretation": "The five-edge threshold-preserving variants behave like admissible identity-changing channels: they preserve the active/silent threshold and no-expansion direction, but all of them break the exact K900 metric fingerprint."
+      },
+      "cube_register_target": {
+        "primary": "side_walls",
+        "secondary": "edges_corners",
+        "meaning": "Relationship walls may later show directed K900-to-target channel crossing."
+      },
+      "boundary": "Transformation means finite directed channel crossing, not physical weak interaction."
+    },
+    "registered_trace": {
+      "source_claim": "Every rendered future signal must carry source artifact id and sha256 from this binding packet.",
+      "raw_signals": {
+        "source_file_count": 8,
+        "all_source_files_exist": true
+      },
+      "cube_register_target": {
+        "primary": "face_trace",
+        "secondary": "hud_or_inspector",
+        "meaning": "Trace means registered aftermath and audit linkage."
+      },
+      "boundary": "Trace is not measurement itself; it is a queryable registered aftermath/audit binding."
+    }
+  },
+  "rendering_policy": {
+    "renderer_status": "not_rendered",
+    "do_not_render_without_projection_event": true,
+    "require_source_sha256": true,
+    "require_boundary_text": true,
+    "next_step": "Add a non-visual inspector or projection-event packet before using these signals in draw()."
+  }
+}

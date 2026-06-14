@@ -1,0 +1,1605 @@
+{
+  "schema": "gap_a_residual_rule_search_001.v1",
+  "status": "no_bounded_residual_rule_found_keep_residuals_open",
+  "timestamp_utc": "2026-06-14T18:48:51.813437+00:00",
+  "gap": "A_chamber_register_map",
+  "purpose": "Search for a bounded non-overfit rule that explains the two residual rows after W-boundary seam projection.",
+  "boundary": [
+    "This is not a chamber/register map proof.",
+    "This pass must not accept a rule selected by mismatch identity alone.",
+    "Allowed rules are small structural predicates: selected ZT, role, transport kind, path length, or cycle index.",
+    "Forbidden rules are recorded separately when they use residual/mismatch/output-value information."
+  ],
+  "inputs": {
+    "boundary_seam_projection_role_rows": "registered_boundary_flux/artifacts/json/gap_a_boundary_seam_projection_role_rows_001.v1.json",
+    "boundary_seam_projection_role_rows_sha256": "4042fd58caee319fac49c6f5a09358759e82b17e7f766cd9360eb55256bc846a",
+    "row_level_residuals": "registered_boundary_flux/artifacts/json/gap_a_row_level_seam_projection_residuals_001.v1.json",
+    "row_level_residuals_sha256": "51d73f08946693988d3468c6ec8a6b917747c2901be53c47cc1edc3f34b4b170",
+    "selected_wxyzti_target": "registered_boundary_flux/artifacts/json/selected_wxyzti_target_001.v1.json",
+    "selected_wxyzti_target_sha256": "70bd9ff63bfbd58e888f8380c1eced8ad2c03fe4c7d07f1838bd2a52d94613a3"
+  },
+  "summary": {
+    "base_distance_after_W_seam": 2,
+    "allowed_exact_rules": [],
+    "disallowed_exact_rules": [
+      "flip_residual_rows",
+      "flip_ZT_raw1_or_TI_raw0"
+    ],
+    "best_allowed_distance": 1,
+    "best_allowed_rules": [
+      "flip_selected_ZT_direct_edges"
+    ],
+    "candidate_count": 19
+  },
+  "candidate_results": [
+    {
+      "name": "identity",
+      "allowed": true,
+      "basis": "baseline",
+      "flipped_count": 0,
+      "hamming_distance_to_target": 2,
+      "improvement_over_base": 0,
+      "matches_target": false,
+      "flipped_records": []
+    },
+    {
+      "name": "flip_selected_ZT_edges",
+      "allowed": true,
+      "basis": "selected ZT edge set from target",
+      "flipped_count": 3,
+      "hamming_distance_to_target": 3,
+      "improvement_over_base": -1,
+      "matches_target": false,
+      "flipped_records": [
+        {
+          "index": 3,
+          "cycle_index": 0,
+          "role": "ZT",
+          "edge": [
+            3,
+            4
+          ],
+          "transport_kind": "direct_edge_column",
+          "path_length": 1,
+          "before": 1,
+          "after": 0,
+          "expected": 0
+        },
+        {
+          "index": 9,
+          "cycle_index": 1,
+          "role": "ZT",
+          "edge": [
+            7,
+            10
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 3,
+          "before": 0,
+          "after": 1,
+          "expected": 0
+        },
+        {
+          "index": 15,
+          "cycle_index": 2,
+          "role": "ZT",
+          "edge": [
+            8,
+            14
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 2,
+          "before": 0,
+          "after": 1,
+          "expected": 0
+        }
+      ]
+    },
+    {
+      "name": "flip_selected_ZT_direct_edges",
+      "allowed": true,
+      "basis": "selected ZT plus direct visibility",
+      "flipped_count": 1,
+      "hamming_distance_to_target": 1,
+      "improvement_over_base": 1,
+      "matches_target": false,
+      "flipped_records": [
+        {
+          "index": 3,
+          "cycle_index": 0,
+          "role": "ZT",
+          "edge": [
+            3,
+            4
+          ],
+          "transport_kind": "direct_edge_column",
+          "path_length": 1,
+          "before": 1,
+          "after": 0,
+          "expected": 0
+        }
+      ]
+    },
+    {
+      "name": "flip_selected_ZT_bridge_paths",
+      "allowed": true,
+      "basis": "selected ZT plus bridge-path visibility",
+      "flipped_count": 2,
+      "hamming_distance_to_target": 4,
+      "improvement_over_base": -2,
+      "matches_target": false,
+      "flipped_records": [
+        {
+          "index": 9,
+          "cycle_index": 1,
+          "role": "ZT",
+          "edge": [
+            7,
+            10
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 3,
+          "before": 0,
+          "after": 1,
+          "expected": 0
+        },
+        {
+          "index": 15,
+          "cycle_index": 2,
+          "role": "ZT",
+          "edge": [
+            8,
+            14
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 2,
+          "before": 0,
+          "after": 1,
+          "expected": 0
+        }
+      ]
+    },
+    {
+      "name": "flip_ZT_role",
+      "allowed": true,
+      "basis": "role name ZT",
+      "flipped_count": 3,
+      "hamming_distance_to_target": 3,
+      "improvement_over_base": -1,
+      "matches_target": false,
+      "flipped_records": [
+        {
+          "index": 3,
+          "cycle_index": 0,
+          "role": "ZT",
+          "edge": [
+            3,
+            4
+          ],
+          "transport_kind": "direct_edge_column",
+          "path_length": 1,
+          "before": 1,
+          "after": 0,
+          "expected": 0
+        },
+        {
+          "index": 9,
+          "cycle_index": 1,
+          "role": "ZT",
+          "edge": [
+            7,
+            10
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 3,
+          "before": 0,
+          "after": 1,
+          "expected": 0
+        },
+        {
+          "index": 15,
+          "cycle_index": 2,
+          "role": "ZT",
+          "edge": [
+            8,
+            14
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 2,
+          "before": 0,
+          "after": 1,
+          "expected": 0
+        }
+      ]
+    },
+    {
+      "name": "flip_TI_role",
+      "allowed": true,
+      "basis": "role name TI",
+      "flipped_count": 3,
+      "hamming_distance_to_target": 3,
+      "improvement_over_base": -1,
+      "matches_target": false,
+      "flipped_records": [
+        {
+          "index": 4,
+          "cycle_index": 0,
+          "role": "TI",
+          "edge": [
+            4,
+            5
+          ],
+          "transport_kind": "direct_edge_column",
+          "path_length": 1,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 10,
+          "cycle_index": 1,
+          "role": "TI",
+          "edge": [
+            10,
+            5
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 2,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 16,
+          "cycle_index": 2,
+          "role": "TI",
+          "edge": [
+            14,
+            5
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 2,
+          "before": 0,
+          "after": 1,
+          "expected": 1
+        }
+      ]
+    },
+    {
+      "name": "flip_ZT_or_TI_roles",
+      "allowed": true,
+      "basis": "interior-turn role neighborhood",
+      "flipped_count": 6,
+      "hamming_distance_to_target": 4,
+      "improvement_over_base": -2,
+      "matches_target": false,
+      "flipped_records": [
+        {
+          "index": 3,
+          "cycle_index": 0,
+          "role": "ZT",
+          "edge": [
+            3,
+            4
+          ],
+          "transport_kind": "direct_edge_column",
+          "path_length": 1,
+          "before": 1,
+          "after": 0,
+          "expected": 0
+        },
+        {
+          "index": 4,
+          "cycle_index": 0,
+          "role": "TI",
+          "edge": [
+            4,
+            5
+          ],
+          "transport_kind": "direct_edge_column",
+          "path_length": 1,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 9,
+          "cycle_index": 1,
+          "role": "ZT",
+          "edge": [
+            7,
+            10
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 3,
+          "before": 0,
+          "after": 1,
+          "expected": 0
+        },
+        {
+          "index": 10,
+          "cycle_index": 1,
+          "role": "TI",
+          "edge": [
+            10,
+            5
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 2,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 15,
+          "cycle_index": 2,
+          "role": "ZT",
+          "edge": [
+            8,
+            14
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 2,
+          "before": 0,
+          "after": 1,
+          "expected": 0
+        },
+        {
+          "index": 16,
+          "cycle_index": 2,
+          "role": "TI",
+          "edge": [
+            14,
+            5
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 2,
+          "before": 0,
+          "after": 1,
+          "expected": 1
+        }
+      ]
+    },
+    {
+      "name": "flip_direct_edge_column_rows",
+      "allowed": true,
+      "basis": "transport kind direct",
+      "flipped_count": 8,
+      "hamming_distance_to_target": 8,
+      "improvement_over_base": -6,
+      "matches_target": false,
+      "flipped_records": [
+        {
+          "index": 0,
+          "cycle_index": 0,
+          "role": "WX",
+          "edge": [
+            0,
+            1
+          ],
+          "transport_kind": "direct_edge_column",
+          "path_length": 1,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 1,
+          "cycle_index": 0,
+          "role": "XY",
+          "edge": [
+            1,
+            2
+          ],
+          "transport_kind": "direct_edge_column",
+          "path_length": 1,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 3,
+          "cycle_index": 0,
+          "role": "ZT",
+          "edge": [
+            3,
+            4
+          ],
+          "transport_kind": "direct_edge_column",
+          "path_length": 1,
+          "before": 1,
+          "after": 0,
+          "expected": 0
+        },
+        {
+          "index": 4,
+          "cycle_index": 0,
+          "role": "TI",
+          "edge": [
+            4,
+            5
+          ],
+          "transport_kind": "direct_edge_column",
+          "path_length": 1,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 6,
+          "cycle_index": 1,
+          "role": "WX",
+          "edge": [
+            0,
+            1
+          ],
+          "transport_kind": "direct_edge_column",
+          "path_length": 1,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 7,
+          "cycle_index": 1,
+          "role": "XY",
+          "edge": [
+            1,
+            2
+          ],
+          "transport_kind": "direct_edge_column",
+          "path_length": 1,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 12,
+          "cycle_index": 2,
+          "role": "WX",
+          "edge": [
+            0,
+            1
+          ],
+          "transport_kind": "direct_edge_column",
+          "path_length": 1,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 13,
+          "cycle_index": 2,
+          "role": "XY",
+          "edge": [
+            1,
+            2
+          ],
+          "transport_kind": "direct_edge_column",
+          "path_length": 1,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        }
+      ]
+    },
+    {
+      "name": "flip_bridge_path_rows",
+      "allowed": true,
+      "basis": "transport kind bridge path",
+      "flipped_count": 10,
+      "hamming_distance_to_target": 10,
+      "improvement_over_base": -8,
+      "matches_target": false,
+      "flipped_records": [
+        {
+          "index": 2,
+          "cycle_index": 0,
+          "role": "YZ",
+          "edge": [
+            2,
+            3
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 2,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 5,
+          "cycle_index": 0,
+          "role": "IW",
+          "edge": [
+            5,
+            0
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 2,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 8,
+          "cycle_index": 1,
+          "role": "YZ",
+          "edge": [
+            2,
+            7
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 3,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 9,
+          "cycle_index": 1,
+          "role": "ZT",
+          "edge": [
+            7,
+            10
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 3,
+          "before": 0,
+          "after": 1,
+          "expected": 0
+        },
+        {
+          "index": 10,
+          "cycle_index": 1,
+          "role": "TI",
+          "edge": [
+            10,
+            5
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 2,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 11,
+          "cycle_index": 1,
+          "role": "IW",
+          "edge": [
+            5,
+            0
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 2,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 14,
+          "cycle_index": 2,
+          "role": "YZ",
+          "edge": [
+            2,
+            8
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 2,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 15,
+          "cycle_index": 2,
+          "role": "ZT",
+          "edge": [
+            8,
+            14
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 2,
+          "before": 0,
+          "after": 1,
+          "expected": 0
+        },
+        {
+          "index": 16,
+          "cycle_index": 2,
+          "role": "TI",
+          "edge": [
+            14,
+            5
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 2,
+          "before": 0,
+          "after": 1,
+          "expected": 1
+        },
+        {
+          "index": 17,
+          "cycle_index": 2,
+          "role": "IW",
+          "edge": [
+            5,
+            0
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 2,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        }
+      ]
+    },
+    {
+      "name": "flip_path_length_1",
+      "allowed": true,
+      "basis": "path length 1",
+      "flipped_count": 8,
+      "hamming_distance_to_target": 8,
+      "improvement_over_base": -6,
+      "matches_target": false,
+      "flipped_records": [
+        {
+          "index": 0,
+          "cycle_index": 0,
+          "role": "WX",
+          "edge": [
+            0,
+            1
+          ],
+          "transport_kind": "direct_edge_column",
+          "path_length": 1,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 1,
+          "cycle_index": 0,
+          "role": "XY",
+          "edge": [
+            1,
+            2
+          ],
+          "transport_kind": "direct_edge_column",
+          "path_length": 1,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 3,
+          "cycle_index": 0,
+          "role": "ZT",
+          "edge": [
+            3,
+            4
+          ],
+          "transport_kind": "direct_edge_column",
+          "path_length": 1,
+          "before": 1,
+          "after": 0,
+          "expected": 0
+        },
+        {
+          "index": 4,
+          "cycle_index": 0,
+          "role": "TI",
+          "edge": [
+            4,
+            5
+          ],
+          "transport_kind": "direct_edge_column",
+          "path_length": 1,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 6,
+          "cycle_index": 1,
+          "role": "WX",
+          "edge": [
+            0,
+            1
+          ],
+          "transport_kind": "direct_edge_column",
+          "path_length": 1,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 7,
+          "cycle_index": 1,
+          "role": "XY",
+          "edge": [
+            1,
+            2
+          ],
+          "transport_kind": "direct_edge_column",
+          "path_length": 1,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 12,
+          "cycle_index": 2,
+          "role": "WX",
+          "edge": [
+            0,
+            1
+          ],
+          "transport_kind": "direct_edge_column",
+          "path_length": 1,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 13,
+          "cycle_index": 2,
+          "role": "XY",
+          "edge": [
+            1,
+            2
+          ],
+          "transport_kind": "direct_edge_column",
+          "path_length": 1,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        }
+      ]
+    },
+    {
+      "name": "flip_path_length_2",
+      "allowed": true,
+      "basis": "path length 2",
+      "flipped_count": 8,
+      "hamming_distance_to_target": 8,
+      "improvement_over_base": -6,
+      "matches_target": false,
+      "flipped_records": [
+        {
+          "index": 2,
+          "cycle_index": 0,
+          "role": "YZ",
+          "edge": [
+            2,
+            3
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 2,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 5,
+          "cycle_index": 0,
+          "role": "IW",
+          "edge": [
+            5,
+            0
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 2,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 10,
+          "cycle_index": 1,
+          "role": "TI",
+          "edge": [
+            10,
+            5
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 2,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 11,
+          "cycle_index": 1,
+          "role": "IW",
+          "edge": [
+            5,
+            0
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 2,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 14,
+          "cycle_index": 2,
+          "role": "YZ",
+          "edge": [
+            2,
+            8
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 2,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 15,
+          "cycle_index": 2,
+          "role": "ZT",
+          "edge": [
+            8,
+            14
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 2,
+          "before": 0,
+          "after": 1,
+          "expected": 0
+        },
+        {
+          "index": 16,
+          "cycle_index": 2,
+          "role": "TI",
+          "edge": [
+            14,
+            5
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 2,
+          "before": 0,
+          "after": 1,
+          "expected": 1
+        },
+        {
+          "index": 17,
+          "cycle_index": 2,
+          "role": "IW",
+          "edge": [
+            5,
+            0
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 2,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        }
+      ]
+    },
+    {
+      "name": "flip_path_length_3",
+      "allowed": true,
+      "basis": "path length 3",
+      "flipped_count": 2,
+      "hamming_distance_to_target": 4,
+      "improvement_over_base": -2,
+      "matches_target": false,
+      "flipped_records": [
+        {
+          "index": 8,
+          "cycle_index": 1,
+          "role": "YZ",
+          "edge": [
+            2,
+            7
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 3,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 9,
+          "cycle_index": 1,
+          "role": "ZT",
+          "edge": [
+            7,
+            10
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 3,
+          "before": 0,
+          "after": 1,
+          "expected": 0
+        }
+      ]
+    },
+    {
+      "name": "flip_cycle_0",
+      "allowed": true,
+      "basis": "cycle index 0",
+      "flipped_count": 6,
+      "hamming_distance_to_target": 6,
+      "improvement_over_base": -4,
+      "matches_target": false,
+      "flipped_records": [
+        {
+          "index": 0,
+          "cycle_index": 0,
+          "role": "WX",
+          "edge": [
+            0,
+            1
+          ],
+          "transport_kind": "direct_edge_column",
+          "path_length": 1,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 1,
+          "cycle_index": 0,
+          "role": "XY",
+          "edge": [
+            1,
+            2
+          ],
+          "transport_kind": "direct_edge_column",
+          "path_length": 1,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 2,
+          "cycle_index": 0,
+          "role": "YZ",
+          "edge": [
+            2,
+            3
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 2,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 3,
+          "cycle_index": 0,
+          "role": "ZT",
+          "edge": [
+            3,
+            4
+          ],
+          "transport_kind": "direct_edge_column",
+          "path_length": 1,
+          "before": 1,
+          "after": 0,
+          "expected": 0
+        },
+        {
+          "index": 4,
+          "cycle_index": 0,
+          "role": "TI",
+          "edge": [
+            4,
+            5
+          ],
+          "transport_kind": "direct_edge_column",
+          "path_length": 1,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 5,
+          "cycle_index": 0,
+          "role": "IW",
+          "edge": [
+            5,
+            0
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 2,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        }
+      ]
+    },
+    {
+      "name": "flip_cycle_1",
+      "allowed": true,
+      "basis": "cycle index 1",
+      "flipped_count": 6,
+      "hamming_distance_to_target": 8,
+      "improvement_over_base": -6,
+      "matches_target": false,
+      "flipped_records": [
+        {
+          "index": 6,
+          "cycle_index": 1,
+          "role": "WX",
+          "edge": [
+            0,
+            1
+          ],
+          "transport_kind": "direct_edge_column",
+          "path_length": 1,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 7,
+          "cycle_index": 1,
+          "role": "XY",
+          "edge": [
+            1,
+            2
+          ],
+          "transport_kind": "direct_edge_column",
+          "path_length": 1,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 8,
+          "cycle_index": 1,
+          "role": "YZ",
+          "edge": [
+            2,
+            7
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 3,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 9,
+          "cycle_index": 1,
+          "role": "ZT",
+          "edge": [
+            7,
+            10
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 3,
+          "before": 0,
+          "after": 1,
+          "expected": 0
+        },
+        {
+          "index": 10,
+          "cycle_index": 1,
+          "role": "TI",
+          "edge": [
+            10,
+            5
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 2,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 11,
+          "cycle_index": 1,
+          "role": "IW",
+          "edge": [
+            5,
+            0
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 2,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        }
+      ]
+    },
+    {
+      "name": "flip_cycle_2",
+      "allowed": true,
+      "basis": "cycle index 2",
+      "flipped_count": 6,
+      "hamming_distance_to_target": 6,
+      "improvement_over_base": -4,
+      "matches_target": false,
+      "flipped_records": [
+        {
+          "index": 12,
+          "cycle_index": 2,
+          "role": "WX",
+          "edge": [
+            0,
+            1
+          ],
+          "transport_kind": "direct_edge_column",
+          "path_length": 1,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 13,
+          "cycle_index": 2,
+          "role": "XY",
+          "edge": [
+            1,
+            2
+          ],
+          "transport_kind": "direct_edge_column",
+          "path_length": 1,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 14,
+          "cycle_index": 2,
+          "role": "YZ",
+          "edge": [
+            2,
+            8
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 2,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 15,
+          "cycle_index": 2,
+          "role": "ZT",
+          "edge": [
+            8,
+            14
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 2,
+          "before": 0,
+          "after": 1,
+          "expected": 0
+        },
+        {
+          "index": 16,
+          "cycle_index": 2,
+          "role": "TI",
+          "edge": [
+            14,
+            5
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 2,
+          "before": 0,
+          "after": 1,
+          "expected": 1
+        },
+        {
+          "index": 17,
+          "cycle_index": 2,
+          "role": "IW",
+          "edge": [
+            5,
+            0
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 2,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        }
+      ]
+    },
+    {
+      "name": "flip_raw_0_rows",
+      "allowed": false,
+      "basis": "post-hoc output value class",
+      "flipped_count": 9,
+      "hamming_distance_to_target": 9,
+      "improvement_over_base": -7,
+      "matches_target": false,
+      "flipped_records": [
+        {
+          "index": 0,
+          "cycle_index": 0,
+          "role": "WX",
+          "edge": [
+            0,
+            1
+          ],
+          "transport_kind": "direct_edge_column",
+          "path_length": 1,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 5,
+          "cycle_index": 0,
+          "role": "IW",
+          "edge": [
+            5,
+            0
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 2,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 6,
+          "cycle_index": 1,
+          "role": "WX",
+          "edge": [
+            0,
+            1
+          ],
+          "transport_kind": "direct_edge_column",
+          "path_length": 1,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 9,
+          "cycle_index": 1,
+          "role": "ZT",
+          "edge": [
+            7,
+            10
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 3,
+          "before": 0,
+          "after": 1,
+          "expected": 0
+        },
+        {
+          "index": 11,
+          "cycle_index": 1,
+          "role": "IW",
+          "edge": [
+            5,
+            0
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 2,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 12,
+          "cycle_index": 2,
+          "role": "WX",
+          "edge": [
+            0,
+            1
+          ],
+          "transport_kind": "direct_edge_column",
+          "path_length": 1,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 15,
+          "cycle_index": 2,
+          "role": "ZT",
+          "edge": [
+            8,
+            14
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 2,
+          "before": 0,
+          "after": 1,
+          "expected": 0
+        },
+        {
+          "index": 16,
+          "cycle_index": 2,
+          "role": "TI",
+          "edge": [
+            14,
+            5
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 2,
+          "before": 0,
+          "after": 1,
+          "expected": 1
+        },
+        {
+          "index": 17,
+          "cycle_index": 2,
+          "role": "IW",
+          "edge": [
+            5,
+            0
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 2,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        }
+      ]
+    },
+    {
+      "name": "flip_raw_1_rows",
+      "allowed": false,
+      "basis": "post-hoc output value class",
+      "flipped_count": 9,
+      "hamming_distance_to_target": 9,
+      "improvement_over_base": -7,
+      "matches_target": false,
+      "flipped_records": [
+        {
+          "index": 1,
+          "cycle_index": 0,
+          "role": "XY",
+          "edge": [
+            1,
+            2
+          ],
+          "transport_kind": "direct_edge_column",
+          "path_length": 1,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 2,
+          "cycle_index": 0,
+          "role": "YZ",
+          "edge": [
+            2,
+            3
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 2,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 3,
+          "cycle_index": 0,
+          "role": "ZT",
+          "edge": [
+            3,
+            4
+          ],
+          "transport_kind": "direct_edge_column",
+          "path_length": 1,
+          "before": 1,
+          "after": 0,
+          "expected": 0
+        },
+        {
+          "index": 4,
+          "cycle_index": 0,
+          "role": "TI",
+          "edge": [
+            4,
+            5
+          ],
+          "transport_kind": "direct_edge_column",
+          "path_length": 1,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 7,
+          "cycle_index": 1,
+          "role": "XY",
+          "edge": [
+            1,
+            2
+          ],
+          "transport_kind": "direct_edge_column",
+          "path_length": 1,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 8,
+          "cycle_index": 1,
+          "role": "YZ",
+          "edge": [
+            2,
+            7
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 3,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 10,
+          "cycle_index": 1,
+          "role": "TI",
+          "edge": [
+            10,
+            5
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 2,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 13,
+          "cycle_index": 2,
+          "role": "XY",
+          "edge": [
+            1,
+            2
+          ],
+          "transport_kind": "direct_edge_column",
+          "path_length": 1,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        },
+        {
+          "index": 14,
+          "cycle_index": 2,
+          "role": "YZ",
+          "edge": [
+            2,
+            8
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 2,
+          "before": 1,
+          "after": 0,
+          "expected": 1
+        }
+      ]
+    },
+    {
+      "name": "flip_residual_rows",
+      "allowed": false,
+      "basis": "forbidden mismatch-selected rule",
+      "flipped_count": 2,
+      "hamming_distance_to_target": 0,
+      "improvement_over_base": 2,
+      "matches_target": true,
+      "flipped_records": [
+        {
+          "index": 3,
+          "cycle_index": 0,
+          "role": "ZT",
+          "edge": [
+            3,
+            4
+          ],
+          "transport_kind": "direct_edge_column",
+          "path_length": 1,
+          "before": 1,
+          "after": 0,
+          "expected": 0
+        },
+        {
+          "index": 16,
+          "cycle_index": 2,
+          "role": "TI",
+          "edge": [
+            14,
+            5
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 2,
+          "before": 0,
+          "after": 1,
+          "expected": 1
+        }
+      ]
+    },
+    {
+      "name": "flip_ZT_raw1_or_TI_raw0",
+      "allowed": false,
+      "basis": "forbidden role/output-targeted residual descriptor",
+      "flipped_count": 2,
+      "hamming_distance_to_target": 0,
+      "improvement_over_base": 2,
+      "matches_target": true,
+      "flipped_records": [
+        {
+          "index": 3,
+          "cycle_index": 0,
+          "role": "ZT",
+          "edge": [
+            3,
+            4
+          ],
+          "transport_kind": "direct_edge_column",
+          "path_length": 1,
+          "before": 1,
+          "after": 0,
+          "expected": 0
+        },
+        {
+          "index": 16,
+          "cycle_index": 2,
+          "role": "TI",
+          "edge": [
+            14,
+            5
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 2,
+          "before": 0,
+          "after": 1,
+          "expected": 1
+        }
+      ]
+    }
+  ],
+  "interpretation": {
+    "main_result": "The residual rows were tested against bounded structural predicates without accepting mismatch-selected rules.",
+    "if_no_allowed_exact": "If no allowed exact rule appears, the honest result is that the two residuals remain open.",
+    "what_this_gives": "The search prevents an overfit closure of Gap A.",
+    "what_remains_open": "A future rule must come from a stronger source-side orientation, selected-turn, or register-geometry derivation.",
+    "next_question": "Should the current Gap A result be frozen as a bounded partial theorem with two residual rows?"
+  },
+  "checks": [
+    {
+      "id": "row_projection_loaded",
+      "status": true,
+      "detail": "status=boundary_seam_projection_role_rows_partial_not_map_proof"
+    },
+    {
+      "id": "residuals_loaded",
+      "status": true,
+      "detail": "status=row_level_seam_projection_residuals_localized_not_map_proof"
+    },
+    {
+      "id": "target_loaded",
+      "status": true,
+      "detail": "status=normalized_target_not_proof"
+    },
+    {
+      "id": "row_count_18",
+      "status": true,
+      "detail": "count=18"
+    },
+    {
+      "id": "base_distance_2",
+      "status": true,
+      "detail": "base_distance=2"
+    },
+    {
+      "id": "candidate_count_ge_15",
+      "status": true,
+      "detail": "count=19"
+    },
+    {
+      "id": "records_forbidden_exact_rule",
+      "status": true,
+      "detail": "disallowed_exact=[\"flip_residual_rows\", \"flip_ZT_raw1_or_TI_raw0\"]"
+    }
+  ],
+  "next_script": "record_gap_a_partial_closure_theorem_note_001.py"
+}

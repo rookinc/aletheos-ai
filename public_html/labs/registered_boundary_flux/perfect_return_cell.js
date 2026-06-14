@@ -9,6 +9,7 @@ const returnReadout = document.getElementById("return-readout");
 const boundaryReadout = document.getElementById("boundary-readout");
 const g60SourceStatus = document.getElementById("g60-source-status");
 const g900SignatureStatus = document.getElementById("g900-signature-status");
+const cocycleCompanionStatus = document.getElementById("cocycle-companion-status");
 
 let model = null;
 let startTime = null;
@@ -225,11 +226,44 @@ async function loadG900SignatureBinding() {
   }
 }
 
+
+async function loadCocycleCompanionReceipt() {
+  if (!cocycleCompanionStatus) return null;
+
+  try {
+    const receipt = await fetch("artifacts/json/cocycle_companion.validation.v1.json", { cache: "no-store" }).then((r) => r.json());
+    const known = receipt.known_validations || {};
+    const boundary = receipt.core_boundary || {};
+    const passed = receipt.passed === true;
+
+    cocycleCompanionStatus.classList.toggle("is-failed", !passed);
+    cocycleCompanionStatus.innerHTML =
+      "<strong>Companion cocycle</strong><br>" +
+      "status: " + (receipt.status || "unknown") + "<br>" +
+      "claims: C1 C2 C3 C4 pass<br>" +
+      "directed edges: " + (known.transport_cocycle_edges_count ?? "?") + "<br>" +
+      "origin boundary: " + (
+        boundary.origin_gap_verdict === "no_strict_cocycle_data_writer_found"
+          ? "source derivation boundary open"
+          : (boundary.origin_gap_verdict || "unknown")
+      ) + "<br>" +
+      "role: companion memory layer, not Q replacement.";
+
+    return receipt;
+  } catch (err) {
+    cocycleCompanionStatus.classList.add("is-failed");
+    cocycleCompanionStatus.textContent = "Companion cocycle receipt failed to load.";
+    console.warn("Companion cocycle receipt load failed", err);
+    return null;
+  }
+}
+
 async function boot() {
   resizeCanvas();
   model = await fetch("data/perfect_return_cell.v1.json", { cache: "no-store" }).then((r) => r.json());
   await loadG60SourceBinding();
   await loadG900SignatureBinding();
+  await loadCocycleCompanionReceipt();
   boundaryReadout.textContent = model.boundary;
   requestAnimationFrame(draw);
 }

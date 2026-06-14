@@ -1,0 +1,335 @@
+{
+  "schema": "cocycle_companion_validation_receipt.v1",
+  "status": "verified_with_origin_gap_boundary",
+  "passed": true,
+  "role": "companion memory layer for G60 projection work",
+  "core_boundary": {
+    "q_role": "Q sees overlap.",
+    "cocycle_role": "The cocycle sees return memory / signed-lift holonomy.",
+    "not_substitutes": true,
+    "strict_origin_gap_closed": false,
+    "origin_gap_verdict": "no_strict_cocycle_data_writer_found",
+    "honesty_rule": "Use the active aligned cocycle as a validated companion payload, but do not claim a fully closed strict source derivation while the origin-gap audit remains open."
+  },
+  "active_inputs": {
+    "theorem_path": "public_html/json/gram_Q.json",
+    "cocycle_path": "theorem/cocycle_data_aligned.json"
+  },
+  "payloads": [
+    {
+      "path": "public_html/json/transport_cocycle.json",
+      "exists": true,
+      "bytes": 3336,
+      "sha256": "54fbfe8bbd66991beb4a185a13791d164e6686b2148ed3f17de337a907346676",
+      "json_valid": true,
+      "keys": [
+        "name",
+        "status",
+        "purpose",
+        "core_statement",
+        "domains",
+        "walk_state_fields",
+        "transition_classes",
+        "stairs_principle",
+        "cocycle_effects",
+        "invariants",
+        "anti_drift_rules",
+        "plain_language"
+      ]
+    },
+    {
+      "path": "public_html/json/gram_Q.json",
+      "exists": true,
+      "bytes": 2235,
+      "sha256": "486cc484c9dc8b17ad36cad2935caf4a93480d556a2de384b975f66d102a56de",
+      "json_valid": true,
+      "keys": [
+        "Q"
+      ]
+    },
+    {
+      "path": "theorem/cocycle_data_aligned.json",
+      "exists": true,
+      "bytes": 2995,
+      "sha256": "7d9b3144524b2989d1710e317810a4e1778914c628b1ff4672e4980a5988516d",
+      "json_valid": true,
+      "keys": [
+        "graph",
+        "graph_description",
+        "sign_convention",
+        "source_note",
+        "alignment_note",
+        "vertex_map_archived_to_active",
+        "edge_cocycle"
+      ],
+      "edge_cocycle_count": 30
+    },
+    {
+      "path": "theorem/cocycle_status.json",
+      "exists": true,
+      "bytes": 729,
+      "sha256": "40e8a469109cfd98e2e6082f059fa16c8cbb4847cf38b75af67c3a5f09768547",
+      "json_valid": true,
+      "keys": [
+        "cocycle_layer_status",
+        "current_scope",
+        "verified_claims",
+        "theorem_file",
+        "archived_pre_alignment_file",
+        "intended_boundary"
+      ]
+    },
+    {
+      "path": "../research/thalean-graph-theory/05-thalean-stress-testing/artifacts/json/transport_cocycle_edges.json",
+      "exists": true,
+      "bytes": 33614,
+      "sha256": "99046ff3fd3e0e85cd74eab66986bdb492a9d312c492cd5278b8f268d0b4ae79",
+      "json_valid": true,
+      "keys": [
+        "name",
+        "status",
+        "base_graph",
+        "source_artifact",
+        "source_graph",
+        "source_graph_description",
+        "source_sign_convention",
+        "source_note",
+        "alignment_note",
+        "import_convention",
+        "edge_records"
+      ],
+      "edge_records_count": 60
+    },
+    {
+      "path": "../research/thalean-graph-theory/05-thalean-stress-testing/artifacts/json/transport_cocycle_edges_validation_report.json",
+      "exists": true,
+      "bytes": 309,
+      "sha256": "95a4696bef8b3221ca52d2f4f4169b1c1f44300495451a2f12be45e79a8409d8",
+      "json_valid": true,
+      "keys": [
+        "artifact",
+        "valid",
+        "edge_record_count",
+        "unique_directed_edge_count",
+        "errors",
+        "phase2b_rule"
+      ],
+      "valid": true
+    },
+    {
+      "path": "../research/thalean-graph-theory/11-thalean-unification/lifts/g15_candidate_cocycle_edges.json",
+      "exists": true,
+      "bytes": 9962,
+      "sha256": "031a9843d65f820fb6d6ff0d2531fd6cba203bf4873f129ea00cfb55f80c0a96",
+      "json_valid": true,
+      "keys": [
+        "lift_id",
+        "schema_version",
+        "status",
+        "base_graph",
+        "vertices",
+        "edges",
+        "edge_signs",
+        "gauge_convention",
+        "spanning_tree",
+        "non_tree_edges",
+        "cycle_residue_basis",
+        "source_constraints",
+        "validation_checks"
+      ]
+    },
+    {
+      "path": "../research/thalean-graph-theory/11-thalean-unification/artifacts/json/030_validate_candidate_cocycle_lift_against_old_checkers.json",
+      "exists": true,
+      "bytes": 1740,
+      "sha256": "3257d8b617397c447b9a6ed3815d0595c717805ce31b0dd8d3f726cf717405a7",
+      "json_valid": true,
+      "keys": [
+        "audit",
+        "timestamp_utc",
+        "ok",
+        "lift_path",
+        "lawful_claim",
+        "edge_count",
+        "sign_count",
+        "edge_sets_match",
+        "sign_counts",
+        "raw_support_size",
+        "minimal_support_size",
+        "number_of_distinct_minimal_supports",
+        "sample_minimal_support",
+        "cycle_residue_counts",
+        "checks",
+        "finding",
+        "next_step"
+      ],
+      "ok": true
+    },
+    {
+      "path": "../research/thalean-graph-theory/11-thalean-unification/artifacts/json/038_strict_cocycle_data_origin_gap.json",
+      "exists": true,
+      "bytes": 500,
+      "sha256": "1182f9d8c935bba4befb8c6c03fb01fdee823899a7abcf3c63e1c113d356cebe",
+      "json_valid": true,
+      "keys": [
+        "audit",
+        "timestamp_utc",
+        "mention_count",
+        "strict_writer_count",
+        "real_strict_writer_count",
+        "real_strict_writers",
+        "verdict",
+        "finding",
+        "next_step"
+      ],
+      "verdict": "no_strict_cocycle_data_writer_found"
+    }
+  ],
+  "checker_runs": [
+    {
+      "path": "checkers/check_cocycle_data.py",
+      "claim": "C1/C2 edge set and sign count",
+      "args": [
+        "public_html/json/gram_Q.json",
+        "theorem/cocycle_data_aligned.json"
+      ],
+      "exists": true,
+      "sha256": "ed9346c6e30e44e7512c44954f77c9d49626f3b2d4cca3d618e7b8dc5b124708",
+      "returncode": 0,
+      "passed": true,
+      "stdout": "{\n  \"claims\": [\n    {\n      \"claim_id\": \"C1\",\n      \"status\": \"pass\",\n      \"details\": {\n        \"edge_count_graph\": 30,\n        \"edge_count_cocycle\": 30,\n        \"edge_sets_match\": true\n      }\n    },\n    {\n      \"claim_id\": \"C2\",\n      \"status\": \"pass\",\n      \"details\": {\n        \"parallel_count\": 10,\n        \"crossed_count\": 20,\n        \"expected_parallel\": 10,\n        \"expected_crossed\": 20\n      }\n    }\n  ]\n}\n",
+      "stderr": "",
+      "parsed": {
+        "claims": [
+          {
+            "claim_id": "C1",
+            "status": "pass",
+            "details": {
+              "edge_count_graph": 30,
+              "edge_count_cocycle": 30,
+              "edge_sets_match": true
+            }
+          },
+          {
+            "claim_id": "C2",
+            "status": "pass",
+            "details": {
+              "parallel_count": 10,
+              "crossed_count": 20,
+              "expected_parallel": 10,
+              "expected_crossed": 20
+            }
+          }
+        ]
+      },
+      "claim_statuses": [
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "path": "checkers/check_cocycle_holonomy.py",
+      "claim": "C4 odd holonomy exists",
+      "args": [
+        "theorem/cocycle_data_aligned.json"
+      ],
+      "exists": true,
+      "sha256": "191452b4fba2ecfea64acf94cc54d46e141cf3e5f4ff373ec804997d167132dd",
+      "returncode": 0,
+      "passed": true,
+      "stdout": "{\n  \"claim_id\": \"C4\",\n  \"status\": \"pass\",\n  \"details\": {\n    \"odd_cycle_count\": 8,\n    \"sample_odd_cycle\": [\n      [\n        3,\n        13\n      ],\n      [\n        1,\n        13\n      ],\n      [\n        0,\n        1\n      ],\n      [\n        0,\n        2\n      ],\n      [\n        2,\n        5\n      ],\n      [\n        3,\n        5\n      ]\n    ]\n  }\n}\n",
+      "stderr": "",
+      "parsed": {
+        "claim_id": "C4",
+        "status": "pass",
+        "details": {
+          "odd_cycle_count": 8,
+          "sample_odd_cycle": [
+            [
+              3,
+              13
+            ],
+            [
+              1,
+              13
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              5
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "path": "checkers/check_cocycle_min_support.py",
+      "claim": "C3 minimal support size",
+      "args": [
+        "theorem/cocycle_data_aligned.json"
+      ],
+      "exists": true,
+      "sha256": "1b24af9d40e7a3c389eb43aba4005fc9689e56db74c2c2409286e8d4bbbe4bda",
+      "returncode": 0,
+      "passed": true,
+      "stdout": "{\n  \"claim_id\": \"C3\",\n  \"status\": \"pass\",\n  \"details\": {\n    \"minimal_support_size\": 6,\n    \"expected_minimal_support_size\": 6,\n    \"number_of_distinct_minimal_supports\": 40,\n    \"sample_minimal_support\": [\n      [\n        0,\n        14\n      ],\n      [\n        1,\n        13\n      ],\n      [\n        2,\n        12\n      ],\n      [\n        5,\n        12\n      ],\n      [\n        8,\n        13\n      ],\n      [\n        11,\n        14\n      ]\n    ]\n  }\n}\n",
+      "stderr": "",
+      "parsed": {
+        "claim_id": "C3",
+        "status": "pass",
+        "details": {
+          "minimal_support_size": 6,
+          "expected_minimal_support_size": 6,
+          "number_of_distinct_minimal_supports": 40,
+          "sample_minimal_support": [
+            [
+              0,
+              14
+            ],
+            [
+              1,
+              13
+            ],
+            [
+              2,
+              12
+            ],
+            [
+              5,
+              12
+            ],
+            [
+              8,
+              13
+            ],
+            [
+              11,
+              14
+            ]
+          ]
+        }
+      }
+    }
+  ],
+  "known_validations": {
+    "transport_cocycle_edges_validation_valid": true,
+    "transport_cocycle_edges_count": 60,
+    "transport_cocycle_unique_directed_edges": 60,
+    "candidate_lift_old_checker_ok": true,
+    "candidate_lift_edge_count": 30,
+    "candidate_lift_sign_count": 30,
+    "candidate_lift_minimal_support_size": 6,
+    "strict_origin_gap_real_writer_count": 0
+  }
+}

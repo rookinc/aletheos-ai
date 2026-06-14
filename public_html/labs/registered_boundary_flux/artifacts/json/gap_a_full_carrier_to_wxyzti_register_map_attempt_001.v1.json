@@ -1,0 +1,514 @@
+{
+  "schema": "gap_a_full_carrier_to_wxyzti_register_map_attempt_001.v1",
+  "status": "gap_a_full_carrier_to_wxyzti_register_map_attempt_source_map_missing",
+  "timestamp_utc": "2026-06-14T21:05:37.466085+00:00",
+  "purpose": "Attempt to construct WXYZTI register rows directly from the 900 carrier sources rather than from the already-formed 18-row witness table.",
+  "boundary": [
+    "This does not close Gap A.",
+    "This is a source-map attempt, not a theorem proof.",
+    "The audit distinguishes indexed carrier witness coverage from a source-native register-row generator.",
+    "A negative result here is useful because it identifies the missing source-map ingredient.",
+    "No physical interpretation is claimed."
+  ],
+  "source_only_attempt": {
+    "can_derive_column_index_universe": true,
+    "can_derive_wxyzti_register_rows_without_row_table": false,
+    "can_derive_preimage_without_row_table": false,
+    "can_derive_stable_complement_without_row_table": false,
+    "reason": "The global sources expose indexed 30-entry carrier-law tables, but this audit did not find a source-native WXYZTI row generator or a source-native grouping of 30 columns into 18 WXYZTI rows."
+  },
+  "source_available": {
+    "global_files_loaded": [
+      "p900_phase30_combined_graph_export",
+      "g900_candidate_edges",
+      "g900_candidate_graph_export",
+      "g900_twisted_ring_candidate_edges",
+      "g900_twisted_ring_candidate_export",
+      "g900_vertex_register_candidate"
+    ],
+    "indexed_30_entry_carrier_tables": [
+      {
+        "source": "p900_phase30_combined_graph_export",
+        "path": "$.candidates[0].edge_law_table",
+        "kind": "edge_law_table",
+        "length": 30,
+        "sample": "[{\"label\": \"half_turn\", \"petersen_edge_a\": [0, 1], \"petersen_edge_b\": [1, 2], \"sector_a\": 0, \"sector_b\": 1, \"shared_petersen_vertex\": 1, \"shift_mod60\": 30}, {\"label\": \"half_turn\", \"petersen_edge_a\": [0, 1], \"petersen_edge_b\": [4, 0], \"sector_a\": 0, \"sector_b\": 4, \"shared_petersen_vertex\": 0, \"shift_mod60\": 30}, {\"label\": \"half_turn\", \"petersen_edge_a\": [0, 1], \"petersen_edge_b\": [0, 5], \"sector_a\": 0, \"sector_b\": 5, \"shared_petersen_vertex\": 0, \"shift_mod60\": 30}, {\"label\": \"half_turn\", \"petersen_edge_a\": [0, 1], \"petersen_edge_b\": [1, 6], \"sector_a\": 0, \"sector_b\": 6, \"shared_petersen_vertex\": 1, \"shift_mod60\": 30}, {\"label\": \"half_turn\", \"petersen_edge_a\": [1, 2], \"petersen_edge_b\": [2, 3], \"sector_a\": 1, \"sector_b\": 2, \"shared_petersen_vertex\": 2, \"shift_mod60\": 30}, {\"label\": \"half_turn\", \"petersen_edge_a\": [1, 2], \"petersen_edge_b\": [1, 6], \"sector_a\": 1, \"sector_b\": 6, \"shared_petersen_vertex\": 1, \"shift_mod60\": 30}]"
+      },
+      {
+        "source": "p900_phase30_combined_graph_export",
+        "path": "$.candidates[1].edge_law_table",
+        "kind": "edge_law_table",
+        "length": 30,
+        "sample": "[{\"label\": \"half_turn\", \"petersen_edge_a\": [0, 1], \"petersen_edge_b\": [1, 2], \"sector_a\": 0, \"sector_b\": 1, \"shared_petersen_vertex\": 1, \"shift_mod60\": 30}, {\"label\": \"half_turn\", \"petersen_edge_a\": [0, 1], \"petersen_edge_b\": [4, 0], \"sector_a\": 0, \"sector_b\": 4, \"shared_petersen_vertex\": 0, \"shift_mod60\": 30}, {\"label\": \"half_turn\", \"petersen_edge_a\": [0, 1], \"petersen_edge_b\": [0, 5], \"sector_a\": 0, \"sector_b\": 5, \"shared_petersen_vertex\": 0, \"shift_mod60\": 30}, {\"label\": \"half_turn\", \"petersen_edge_a\": [0, 1], \"petersen_edge_b\": [1, 6], \"sector_a\": 0, \"sector_b\": 6, \"shared_petersen_vertex\": 1, \"shift_mod60\": 30}, {\"label\": \"half_turn\", \"petersen_edge_a\": [1, 2], \"petersen_edge_b\": [2, 3], \"sector_a\": 1, \"sector_b\": 2, \"shared_petersen_vertex\": 2, \"shift_mod60\": 30}, {\"label\": \"half_turn\", \"petersen_edge_a\": [1, 2], \"petersen_edge_b\": [1, 6], \"sector_a\": 1, \"sector_b\": 6, \"shared_petersen_vertex\": 1, \"shift_mod60\": 30}]"
+      },
+      {
+        "source": "g900_candidate_edges",
+        "path": "$.slot_edges_g15_line_petersen",
+        "kind": "slot_edges_g15_line_petersen",
+        "length": 30,
+        "sample": "[[0, 1], [0, 4], [0, 10], [0, 11], [1, 2], [1, 11]]"
+      }
+    ]
+  },
+  "table_derived_reference": {
+    "row_count": 18,
+    "column_count": 30,
+    "preimage_support": [
+      3,
+      16
+    ],
+    "stable_complement_support": [
+      4,
+      9,
+      15
+    ],
+    "all_rows_witnessed": true,
+    "all_columns_witnessed": true
+  },
+  "global_source_reports": {
+    "p900_phase30_combined_graph_export": {
+      "loaded": true,
+      "register_material": {
+        "station_text_hits": {
+          "T": 2,
+          "I": 1
+        },
+        "key_hits": [
+          {
+            "path": "$.candidates[0]",
+            "keys": [
+              "combined_edges",
+              "counts",
+              "edge_law_table",
+              "external_edges",
+              "half_turn_set",
+              "id",
+              "identity_set",
+              "internal_edges",
+              "name",
+              "role"
+            ],
+            "sample": "{\"combined_edges\": [{\"class\": \"internal_g60\", \"edge_class\": \"internal_same_sector\", \"local_a\": 0, \"local_b\": 16, \"residue_a\": 0, \"residue_b\": 16, \"sector_a\": 0, \"sector_b\": 0, \"shared_petersen_vertex\": null, \"shift_mod60\": null, \"source\": 0, \"target\": 16}, {\"class\": \"internal_g60\", \"edge_class\": \"internal_same_sector\", \"local_a\": 0, \"local_b\": 19, \"residue_a\": 0, \"residue_b\": 19, \"sector_a\": 0, \"sector_b\": 0, \"shared_petersen_vertex\": null, \"shift_mod60\": null, \"source\": 0, \"target\": 19}, {\"class\": \"internal_g60\", \"edge_class\": \"internal_same_sector\", \"local_a\": 0, \"local_b\": 25, \"residue_a\": 0, \"residue_b\": 25, \"sector_a\": 0, \"sector_b\": 0, \"shared_petersen_vertex\": null, \"shift_mod60\": null, \"source\": 0, \"target\": 25}, {\"class\": \"external_p900\", \"edge_class\": \"external_half_turn_mod30\", \"local_a\": 0, \"local_b\": 30, \"residue_a\": 0, \"residue_b\": 0, \"sector_a\": 0, \"sector_b\": 4, \"shared_p..."
+          },
+          {
+            "path": "$.candidates[1]",
+            "keys": [
+              "combined_edges",
+              "counts",
+              "edge_law_table",
+              "external_edges",
+              "half_turn_set",
+              "id",
+              "identity_set",
+              "internal_edges",
+              "name",
+              "role"
+            ],
+            "sample": "{\"combined_edges\": [{\"class\": \"internal_g60\", \"edge_class\": \"internal_same_sector\", \"local_a\": 0, \"local_b\": 16, \"residue_a\": 0, \"residue_b\": 16, \"sector_a\": 0, \"sector_b\": 0, \"shared_petersen_vertex\": null, \"shift_mod60\": null, \"source\": 0, \"target\": 16}, {\"class\": \"internal_g60\", \"edge_class\": \"internal_same_sector\", \"local_a\": 0, \"local_b\": 19, \"residue_a\": 0, \"residue_b\": 19, \"sector_a\": 0, \"sector_b\": 0, \"shared_petersen_vertex\": null, \"shift_mod60\": null, \"source\": 0, \"target\": 19}, {\"class\": \"internal_g60\", \"edge_class\": \"internal_same_sector\", \"local_a\": 0, \"local_b\": 25, \"residue_a\": 0, \"residue_b\": 25, \"sector_a\": 0, \"sector_b\": 0, \"shared_petersen_vertex\": null, \"shift_mod60\": null, \"source\": 0, \"target\": 25}, {\"class\": \"external_p900\", \"edge_class\": \"external_half_turn_mod30\", \"local_a\": 0, \"local_b\": 30, \"residue_a\": 0, \"residue_b\": 0, \"sector_a\": 0, \"sector_b\": 4, \"shared_p..."
+          }
+        ],
+        "list6_hits": [],
+        "list18_hits": [],
+        "list30_hits": [
+          {
+            "path": "$.candidates[0].edge_law_table",
+            "sample": "[{\"label\": \"half_turn\", \"petersen_edge_a\": [0, 1], \"petersen_edge_b\": [1, 2], \"sector_a\": 0, \"sector_b\": 1, \"shared_petersen_vertex\": 1, \"shift_mod60\": 30}, {\"label\": \"half_turn\", \"petersen_edge_a\": [0, 1], \"petersen_edge_b\": [4, 0], \"sector_a\": 0, \"sector_b\": 4, \"shared_petersen_vertex\": 0, \"shift_mod60\": 30}, {\"label\": \"half_turn\", \"petersen_edge_a\": [0, 1], \"petersen_edge_b\": [0, 5], \"sector_a\": 0, \"sector_b\": 5, \"shared_petersen_vertex\": 0, \"shift_mod60\": 30}, {\"label\": \"half_turn\", \"petersen_edge_a\": [0, 1], \"petersen_edge_b\": [1, 6], \"sector_a\": 0, \"sector_b\": 6, \"shared_petersen_vertex\": 1, \"shift_mod60\": 30}, {\"label\": \"half_turn\", \"petersen_edge_a\": [1, 2], \"petersen_edge_b\": [2, 3], \"sector_a\": 1, \"sector_b\": 2, \"shared_petersen_vertex\": 2, \"shift_mod60\": 30}, {\"label\": \"half_turn\", \"petersen_edge_a\": [1, 2], \"petersen_edge_b\": [1, 6], \"sector_a\": 1, \"sector_b\": 6, \"shared_pete..."
+          },
+          {
+            "path": "$.candidates[1].edge_law_table",
+            "sample": "[{\"label\": \"half_turn\", \"petersen_edge_a\": [0, 1], \"petersen_edge_b\": [1, 2], \"sector_a\": 0, \"sector_b\": 1, \"shared_petersen_vertex\": 1, \"shift_mod60\": 30}, {\"label\": \"half_turn\", \"petersen_edge_a\": [0, 1], \"petersen_edge_b\": [4, 0], \"sector_a\": 0, \"sector_b\": 4, \"shared_petersen_vertex\": 0, \"shift_mod60\": 30}, {\"label\": \"half_turn\", \"petersen_edge_a\": [0, 1], \"petersen_edge_b\": [0, 5], \"sector_a\": 0, \"sector_b\": 5, \"shared_petersen_vertex\": 0, \"shift_mod60\": 30}, {\"label\": \"half_turn\", \"petersen_edge_a\": [0, 1], \"petersen_edge_b\": [1, 6], \"sector_a\": 0, \"sector_b\": 6, \"shared_petersen_vertex\": 1, \"shift_mod60\": 30}, {\"label\": \"half_turn\", \"petersen_edge_a\": [1, 2], \"petersen_edge_b\": [2, 3], \"sector_a\": 1, \"sector_b\": 2, \"shared_petersen_vertex\": 2, \"shift_mod60\": 30}, {\"label\": \"half_turn\", \"petersen_edge_a\": [1, 2], \"petersen_edge_b\": [1, 6], \"sector_a\": 1, \"sector_b\": 6, \"shared_pete..."
+          }
+        ],
+        "counts": {
+          "station_text_hit_keys": 2,
+          "key_hits": 2,
+          "list6_hits": 0,
+          "list18_hits": 0,
+          "list30_hits": 2
+        }
+      },
+      "indexed_tables": [
+        {
+          "path": "$.candidates[0].edge_law_table",
+          "kind": "edge_law_table",
+          "length": 30,
+          "sample": "[{\"label\": \"half_turn\", \"petersen_edge_a\": [0, 1], \"petersen_edge_b\": [1, 2], \"sector_a\": 0, \"sector_b\": 1, \"shared_petersen_vertex\": 1, \"shift_mod60\": 30}, {\"label\": \"half_turn\", \"petersen_edge_a\": [0, 1], \"petersen_edge_b\": [4, 0], \"sector_a\": 0, \"sector_b\": 4, \"shared_petersen_vertex\": 0, \"shift_mod60\": 30}, {\"label\": \"half_turn\", \"petersen_edge_a\": [0, 1], \"petersen_edge_b\": [0, 5], \"sector_a\": 0, \"sector_b\": 5, \"shared_petersen_vertex\": 0, \"shift_mod60\": 30}, {\"label\": \"half_turn\", \"petersen_edge_a\": [0, 1], \"petersen_edge_b\": [1, 6], \"sector_a\": 0, \"sector_b\": 6, \"shared_petersen_vertex\": 1, \"shift_mod60\": 30}, {\"label\": \"half_turn\", \"petersen_edge_a\": [1, 2], \"petersen_edge_b\": [2, 3], \"sector_a\": 1, \"sector_b\": 2, \"shared_petersen_vertex\": 2, \"shift_mod60\": 30}, {\"label\": \"half_turn\", \"petersen_edge_a\": [1, 2], \"petersen_edge_b\": [1, 6], \"sector_a\": 1, \"sector_b\": 6, \"shared_petersen_vertex\": 1, \"shift_mod60\": 30}]"
+        },
+        {
+          "path": "$.candidates[1].edge_law_table",
+          "kind": "edge_law_table",
+          "length": 30,
+          "sample": "[{\"label\": \"half_turn\", \"petersen_edge_a\": [0, 1], \"petersen_edge_b\": [1, 2], \"sector_a\": 0, \"sector_b\": 1, \"shared_petersen_vertex\": 1, \"shift_mod60\": 30}, {\"label\": \"half_turn\", \"petersen_edge_a\": [0, 1], \"petersen_edge_b\": [4, 0], \"sector_a\": 0, \"sector_b\": 4, \"shared_petersen_vertex\": 0, \"shift_mod60\": 30}, {\"label\": \"half_turn\", \"petersen_edge_a\": [0, 1], \"petersen_edge_b\": [0, 5], \"sector_a\": 0, \"sector_b\": 5, \"shared_petersen_vertex\": 0, \"shift_mod60\": 30}, {\"label\": \"half_turn\", \"petersen_edge_a\": [0, 1], \"petersen_edge_b\": [1, 6], \"sector_a\": 0, \"sector_b\": 6, \"shared_petersen_vertex\": 1, \"shift_mod60\": 30}, {\"label\": \"half_turn\", \"petersen_edge_a\": [1, 2], \"petersen_edge_b\": [2, 3], \"sector_a\": 1, \"sector_b\": 2, \"shared_petersen_vertex\": 2, \"shift_mod60\": 30}, {\"label\": \"half_turn\", \"petersen_edge_a\": [1, 2], \"petersen_edge_b\": [1, 6], \"sector_a\": 1, \"sector_b\": 6, \"shared_petersen_vertex\": 1, \"shift_mod60\": 30}]"
+        }
+      ]
+    },
+    "g900_candidate_edges": {
+      "loaded": true,
+      "register_material": {
+        "station_text_hits": {
+          "T": 8100
+        },
+        "key_hits": [
+          {
+            "path": "$.summary",
+            "keys": [
+              "boundary",
+              "complete_candidate",
+              "edge_kinds",
+              "g15_slot_edge_count",
+              "inter_thalion_carrier_edge_count",
+              "internal_thalion_edge_count",
+              "local_g60_edge_source",
+              "local_state_count",
+              "slot_count",
+              "status",
+              "total_edge_count",
+              "vertex_count",
+              "warning"
+            ],
+            "sample": "{\"boundary\": {\"candidate_only\": true, \"not_admitted\": true, \"not_census_id\": true, \"not_public_proof\": true}, \"complete_candidate\": true, \"edge_kinds\": {\"inter_thalion_diagonal_carrier\": 1800, \"internal_thalion_copy\": 1800}, \"g15_slot_edge_count\": 30, \"inter_thalion_carrier_edge_count\": 1800, \"internal_thalion_edge_count\": 1800, \"local_g60_edge_source\": {\"edge_count\": 120, \"file\": \"support/sources/g60_local_edges_from_aletheos.json\", \"json_path\": \"root.g60_edges\"}, \"local_state_count\": 60, \"slot_count\": 15, \"status\": \"g900_candidate_edges_generated\", \"total_edge_count\": 3600, \"vertex_count\": 900, \"warning\": null}"
+          }
+        ],
+        "list6_hits": [],
+        "list18_hits": [],
+        "list30_hits": [
+          {
+            "path": "$.slot_edges_g15_line_petersen",
+            "sample": "[[0, 1], [0, 4], [0, 10], [0, 11], [1, 2], [1, 11]]"
+          }
+        ],
+        "counts": {
+          "station_text_hit_keys": 1,
+          "key_hits": 1,
+          "list6_hits": 0,
+          "list18_hits": 0,
+          "list30_hits": 1
+        }
+      },
+      "indexed_tables": [
+        {
+          "path": "$.slot_edges_g15_line_petersen",
+          "kind": "slot_edges_g15_line_petersen",
+          "length": 30,
+          "sample": "[[0, 1], [0, 4], [0, 10], [0, 11], [1, 2], [1, 11]]"
+        }
+      ]
+    },
+    "g900_candidate_graph_export": {
+      "loaded": true,
+      "register_material": {
+        "station_text_hits": {
+          "T": 8100
+        },
+        "key_hits": [
+          {
+            "path": "$.fingerprint",
+            "keys": [
+              "boundary",
+              "candidate_complete",
+              "component_count",
+              "connected",
+              "degree_counts",
+              "diameter",
+              "edge_count",
+              "kind_counts",
+              "radius",
+              "root_shell_profile",
+              "sha256",
+              "status",
+              "validation_ok",
+              "vertex_count"
+            ],
+            "sample": "{\"boundary\": {\"candidate_only\": true, \"not_admitted\": true, \"not_census_id\": true, \"not_public_proof\": true, \"validated_graph_surface\": true}, \"candidate_complete\": true, \"component_count\": 1, \"connected\": true, \"degree_counts\": {\"8\": 900}, \"diameter\": 9, \"edge_count\": 3600, \"kind_counts\": {\"inter_thalion_diagonal_carrier\": 1800, \"internal_thalion_copy\": 1800}, \"radius\": 9, \"root_shell_profile\": [1, 8, 32, 82, 160, 246, 249, 100, 20, 2], \"sha256\": {\"adjacency_json_canonical\": \"4ee3de6d0f69934b41b94bd6ede1703e979738bf2c43abe5846fb735e9f375aa\", \"edge_rows_with_kind_source\": \"f77fb954311ffbe33245cd6ae6ce832b906c1c97923562e4389d972ca83e3c91\", \"g60_local_source_file\": \"6cd7fd5a9be9db507e4db2860da7e41b8da14448024886e801376aad5e773ad0\", \"generated_edge_csv_file\": \"94c8ddf3ec5dad8e2309e4cee124a0d61483bc65acbf750de1d1e3be58e6875d\", \"generated_summary_file\": \"2036d26c87a5f3a0d5b7f8997ed3113bd0ac2e..."
+          },
+          {
+            "path": "$.fingerprint.sha256",
+            "keys": [
+              "adjacency_json_canonical",
+              "edge_rows_with_kind_source",
+              "g60_local_source_file",
+              "generated_edge_csv_file",
+              "generated_summary_file",
+              "simple_edge_pairs",
+              "validation_file"
+            ],
+            "sample": "{\"adjacency_json_canonical\": \"4ee3de6d0f69934b41b94bd6ede1703e979738bf2c43abe5846fb735e9f375aa\", \"edge_rows_with_kind_source\": \"f77fb954311ffbe33245cd6ae6ce832b906c1c97923562e4389d972ca83e3c91\", \"g60_local_source_file\": \"6cd7fd5a9be9db507e4db2860da7e41b8da14448024886e801376aad5e773ad0\", \"generated_edge_csv_file\": \"94c8ddf3ec5dad8e2309e4cee124a0d61483bc65acbf750de1d1e3be58e6875d\", \"generated_summary_file\": \"2036d26c87a5f3a0d5b7f8997ed3113bd0ac2e8d0b14853de8cf1e4e9cd9ba60\", \"simple_edge_pairs\": \"090d3f82e9709c941b333950a2fc959cc55c61c94cff9abbb662b4711f92b217\", \"validation_file\": \"aabe5bec580a47f6f9b09d682631a0fa4dbe272ef4e6a7a08db71cb8e2d74603\"}"
+          }
+        ],
+        "list6_hits": [],
+        "list18_hits": [],
+        "list30_hits": [],
+        "counts": {
+          "station_text_hit_keys": 1,
+          "key_hits": 2,
+          "list6_hits": 0,
+          "list18_hits": 0,
+          "list30_hits": 0
+        }
+      },
+      "indexed_tables": []
+    },
+    "g900_twisted_ring_candidate_edges": {
+      "loaded": true,
+      "register_material": {
+        "station_text_hits": {
+          "T": 7200
+        },
+        "key_hits": [
+          {
+            "path": "$.summary",
+            "keys": [
+              "boundary",
+              "carrier_law_counts",
+              "external_edge_count",
+              "internal_edge_count",
+              "interpretation",
+              "local_g60_edge_count",
+              "local_state_count",
+              "signed_slot_edge_count",
+              "slot_count",
+              "source_files",
+              "status",
+              "total_edge_count",
+              "vertex_count"
+            ],
+            "sample": "{\"boundary\": {\"candidate_only\": true, \"not_admitted\": true, \"not_census_id\": true, \"not_public_proof\": true}, \"carrier_law_counts\": {\"half_flip_x_plus_30\": 900, \"identity\": 900}, \"external_edge_count\": 1800, \"internal_edge_count\": 1800, \"interpretation\": {\"baseline_contrast\": \"not the untwisted Cartesian product baseline\", \"candidate_type\": \"twisted_g60_fiber_bundle_over_g15\", \"crossed_rule\": \"x -> x+30 mod 60\", \"parallel_rule\": \"x -> x\"}, \"local_g60_edge_count\": 120, \"local_state_count\": 60, \"signed_slot_edge_count\": 30, \"slot_count\": 15, \"source_files\": {\"g60_source\": \"support/sources/g60_local_edges_from_aletheos.json\", \"sign_cocycle\": \"support/cocycles/p900_external_sign_cocycle.json\"}, \"status\": \"g900_twisted_ring_candidate_generated\", \"total_edge_count\": 3600, \"vertex_count\": 900}"
+          },
+          {
+            "path": "$.summary.source_files",
+            "keys": [
+              "g60_source",
+              "sign_cocycle"
+            ],
+            "sample": "{\"g60_source\": \"support/sources/g60_local_edges_from_aletheos.json\", \"sign_cocycle\": \"support/cocycles/p900_external_sign_cocycle.json\"}"
+          }
+        ],
+        "list6_hits": [],
+        "list18_hits": [],
+        "list30_hits": [],
+        "counts": {
+          "station_text_hit_keys": 1,
+          "key_hits": 2,
+          "list6_hits": 0,
+          "list18_hits": 0,
+          "list30_hits": 0
+        }
+      },
+      "indexed_tables": []
+    },
+    "g900_twisted_ring_candidate_export": {
+      "loaded": true,
+      "register_material": {
+        "station_text_hits": {
+          "T": 8100
+        },
+        "key_hits": [
+          {
+            "path": "$.fingerprint",
+            "keys": [
+              "boundary",
+              "candidate_complete",
+              "cocycle_ok",
+              "comparison_to_untwisted_baseline",
+              "component_count",
+              "connected",
+              "degree_counts",
+              "diameter",
+              "edge_count",
+              "kind_counts",
+              "law_counts",
+              "radius",
+              "root_shell_profile",
+              "sha256",
+              "status",
+              "validation_ok",
+              "vertex_count"
+            ],
+            "sample": "{\"boundary\": {\"candidate_only\": true, \"not_admitted\": true, \"not_census_id\": true, \"not_public_proof\": true, \"twisted_ring_candidate\": true, \"validated_graph_surface\": true}, \"candidate_complete\": true, \"cocycle_ok\": true, \"comparison_to_untwisted_baseline\": {\"baseline_diameter\": 9, \"baseline_form\": \"untwisted_product_G15_box_G60\", \"baseline_radius\": 9, \"baseline_root_shell_profile\": [1, 8, 32, 82, 160, 246, 249, 100, 20, 2], \"diameter_change\": -1, \"radius_change\": -3, \"twisted_diameter\": 8, \"twisted_form\": \"signed_half_flip_carrier_ring_candidate\", \"twisted_radius\": 6, \"twisted_root_shell_profile\": [1, 8, 52, 175, 329, 257, 77, 1]}, \"component_count\": 1, \"connected\": true, \"degree_counts\": {\"8\": 900}, \"diameter\": 8, \"edge_count\": 3600, \"kind_counts\": {\"external_signed_carrier\": 1800, \"internal_thalion_copy\": 1800}, \"law_counts\": {\"g60_internal\": 1800, \"half_flip_x_plus_30\": 900, \"identi..."
+          },
+          {
+            "path": "$.fingerprint.sha256",
+            "keys": [
+              "adjacency_json_canonical",
+              "cocycle_file",
+              "edge_rows_with_kind_source_law",
+              "generated_edge_csv_file",
+              "generated_summary_file",
+              "simple_edge_pairs",
+              "validation_file"
+            ],
+            "sample": "{\"adjacency_json_canonical\": \"13920a25a942e78d8993ea0a8187a58db7cd26a866ddd2b0dd5f587248383b09\", \"cocycle_file\": \"68f1e7ae2ef6fe94d2b40d876b9a6ea818c5962c88d221d7fef672c408e28bd6\", \"edge_rows_with_kind_source_law\": \"998e518ee1b27762676972c5a8cbdede7f47bb1de6da7019e8a65f70d708255f\", \"generated_edge_csv_file\": \"6a7a5437b3f49b5f1fe17dad5eb7f05a6cdcf2184d319324f1cc96267e70e2c4\", \"generated_summary_file\": \"8e9bb8c76d92d17eff1121d5c0e23b1d5f1dd7983b7ca669bbe206f2f723efbe\", \"simple_edge_pairs\": \"27af3fef8fed26f19d1a1a0abd786a4aaed158f8cf3f4f57bccb59482b25cb47\", \"validation_file\": \"b483121e937ca826f22479716232dabe365f72f819dc86cbb9bd16aa9baa213d\"}"
+          }
+        ],
+        "list6_hits": [],
+        "list18_hits": [],
+        "list30_hits": [],
+        "counts": {
+          "station_text_hit_keys": 1,
+          "key_hits": 2,
+          "list6_hits": 0,
+          "list18_hits": 0,
+          "list30_hits": 0
+        }
+      },
+      "indexed_tables": []
+    },
+    "g900_vertex_register_candidate": {
+      "loaded": true,
+      "register_material": {
+        "station_text_hits": {
+          "T": 900
+        },
+        "key_hits": [
+          {
+            "path": "$",
+            "keys": [
+              "artifact",
+              "boundary",
+              "census_search_target",
+              "construction_basis",
+              "phase",
+              "source_rule",
+              "source_status",
+              "status",
+              "thalean_iteration_cycle",
+              "unique_vertex_ids",
+              "vertex_count",
+              "vertices"
+            ],
+            "sample": "{\"artifact\": \"301_proposed_g900_vertex_register_candidate\", \"boundary\": {\"not_census_id\": true, \"not_edge_law\": true, \"not_graph_export\": true, \"not_recovered_historical_source\": true}, \"census_search_target\": \"expanded_g900_simple_graph_shadow\", \"construction_basis\": {\"basis_statement\": \"A proposed expanded G900 vertex register is constructed as the product of 15 thalion slots and 60 local thalion states.\", \"expected_vertex_count\": 900, \"local_state_count_per_thalion\": 60, \"thalion_slot_count\": 15}, \"phase\": \"g900_vertex_register_and_edge_law_construction_candidate\", \"source_rule\": \"299_g900_vertex_register_and_edge_law_construction_rule_candidate\", \"source_status\": \"constructed_proposed_not_recovered\", \"status\": \"proposed_g900_vertex_register_candidate\", \"thalean_iteration_cycle\": 15, \"unique_vertex_ids\": true, \"vertex_count\": 900, \"vertices\": [{\"id\": \"T00_S00\", \"interpretation\": \"stat..."
+          }
+        ],
+        "list6_hits": [],
+        "list18_hits": [],
+        "list30_hits": [],
+        "counts": {
+          "station_text_hit_keys": 1,
+          "key_hits": 1,
+          "list6_hits": 0,
+          "list18_hits": 0,
+          "list30_hits": 0
+        }
+      },
+      "indexed_tables": []
+    }
+  },
+  "summary": {
+    "attempt_result": "not_closed_source_map_missing",
+    "gap_a_closed": false,
+    "source_only_can_derive_column_index_universe": true,
+    "source_only_can_derive_wxyzti_rows": false,
+    "source_only_can_derive_preimage": false,
+    "source_only_can_derive_stable_complement": false,
+    "missing_requirements": [
+      "native WXYZTI station/role labels in global carrier sources",
+      "source-native 18-row register list or row generator",
+      "rule grouping 30 indexed carrier-law columns into 18 WXYZTI role rows"
+    ],
+    "global_files_loaded": [
+      "p900_phase30_combined_graph_export",
+      "g900_candidate_edges",
+      "g900_candidate_graph_export",
+      "g900_twisted_ring_candidate_edges",
+      "g900_twisted_ring_candidate_export",
+      "g900_vertex_register_candidate"
+    ],
+    "indexed_30_entry_table_count": 3,
+    "station_hit_sources": {
+      "p900_phase30_combined_graph_export": {
+        "T": 2,
+        "I": 1
+      },
+      "g900_candidate_edges": {
+        "T": 8100
+      },
+      "g900_candidate_graph_export": {
+        "T": 8100
+      },
+      "g900_twisted_ring_candidate_edges": {
+        "T": 7200
+      },
+      "g900_twisted_ring_candidate_export": {
+        "T": 8100
+      },
+      "g900_vertex_register_candidate": {
+        "T": 900
+      }
+    },
+    "has_native_wxyzti_tokens": false,
+    "has_register_key_material": true,
+    "has_candidate_18_row_list": false,
+    "table_derived_preimage_support": [
+      3,
+      16
+    ],
+    "table_derived_stable_complement_support": [
+      4,
+      9,
+      15
+    ],
+    "claim_closes_gap_a": false
+  },
+  "claim": {
+    "does_this_close_gap_a": false,
+    "does_this_construct_full_900_carrier_to_wxyzti_register_map": false,
+    "does_this_find_indexed_carrier_source": true,
+    "does_this_find_source_native_wxyzti_row_generator": false,
+    "short_form": "The 900 sources provide indexed carrier-law tables, but this audit did not find a source-native WXYZTI row generator.",
+    "not_closed_reason": "The map from 900 carrier sources to the 18 WXYZTI register rows remains external to the global source files."
+  },
+  "interpretation": {
+    "main_result": "The bounded predicate plateau is real, but full Gap A closure still needs a source-derived row generator.",
+    "what_is_available": "The global source files expose indexed 30-entry carrier-law structure.",
+    "what_is_missing": "A native rule that groups or transports those source columns into the 18 WXYZTI role rows.",
+    "next_move": "Define or discover a candidate source-native row generator, then test whether it reproduces the 18 WXYZTI rows."
+  },
+  "checks": [
+    {
+      "id": "boundary_theorem_loaded",
+      "status": true,
+      "detail": "gap_a_boundary_theorem_note_recorded"
+    },
+    {
+      "id": "indexed_predicate_loaded",
+      "status": true,
+      "detail": "gap_a_indexed_global_carrier_predicate_exact"
+    },
+    {
+      "id": "global_indexed_map_loaded",
+      "status": true,
+      "detail": "gap_a_global_carrier_map_with_indexed_witnesses_complete"
+    },
+    {
+      "id": "parser_patch_loaded",
+      "status": true,
+      "detail": "gap_a_global_edge_parser_patch_indexed_witness_complete"
+    },
+    {
+      "id": "global_sources_loaded",
+      "status": true,
+      "detail": "[\"p900_phase30_combined_graph_export\", \"g900_candidate_edges\", \"g900_candidate_graph_export\", \"g900_twisted_ring_candidate_edges\", \"g900_twisted_ring_candidate_export\", \"g900_vertex_register_candidate\"]"
+    },
+    {
+      "id": "indexed_tables_found",
+      "status": true,
+      "detail": "[{\"kind\": \"edge_law_table\", \"length\": 30, \"path\": \"$.candidates[0].edge_law_table\", \"sample\": \"[{\\\"label\\\": \\\"half_turn\\\", \\\"petersen_edge_a\\\": [0, 1], \\\"petersen_edge_b\\\": [1, 2], \\\"sector_a\\\": 0, \\\"sector_b\\\": 1, \\\"shared_petersen_vertex\\\": 1, \\\"shift_mod60\\\": 30}, {\\\"label\\\": \\\"half_turn\\\", \\\"petersen_edge_a\\\": [0, 1], \\\"petersen_edge_b\\\": [4, 0], \\\"sector_a\\\": 0, \\\"sector_b\\\": 4, \\\"shared_petersen_vertex\\\": 0, \\\"shift_mod60\\\": 30}, {\\\"label\\\": \\\"half_turn\\\", \\\"petersen_edge_a\\\": [0, 1], \\\"petersen_edge_b\\\": [0, 5], \\\"sector_a\\\": 0, \\\"sector_b\\\": 5, \\\"shared_petersen_vertex\\\": 0, \\\"shift_mod60\\\": 30}, {\\\"label\\\": \\\"half_turn\\\", \\\"petersen_edge_a\\\": [0, 1], \\\"petersen_edge_b\\\": [1, 6], \\\"sector_a\\\": 0, \\\"sector_b\\\": 6, \\\"shared_petersen_vertex\\\": 1, \\\"shift_mod60\\\": 30}, {\\\"label\\\": \\\"half_turn\\\", \\\"petersen_edge_a\\\": [1, 2], \\\"petersen_edge_b\\\": [2, 3], \\\"sector_a\\\": 1, \\\"sector_b\\\": 2, \\\"shared_petersen_vertex\\\": 2, \\\"shift_mod60\\\": 30}, {\\\"label\\\": \\\"half_turn\\\", \\\"petersen_edge_a\\\": [1, 2], \\\"petersen_edge_b\\\": [1, 6], \\\"sector_a\\\": 1, \\\"sector_b\\\": 6, \\\"shared_petersen_vertex\\\": 1, \\\"shift_mod60\\\": 30}]\", \"source\": \"p900_phase30_combined_graph_export\"}, {\"kind\": \"edge_law_table\", \"length\": 30, \"path\": \"$.candidates[1].edge_law_table\", \"sample\": \"[{\\\"label\\\": \\\"half_turn\\\", \\\"petersen_edge_a\\\": [0, 1], \\\"petersen_edge_b\\\": [1, 2], \\\"sector_a\\\": 0, \\\"sector_b\\\": 1, \\\"shared_petersen_vertex\\\": 1, \\\"shift_mod60\\\": 30}, {\\\"label\\\": \\\"half_turn\\\", \\\"petersen_edge_a\\\": [0, 1], \\\"petersen_edge_b\\\": [4, 0], \\\"sector_a\\\": 0, \\\"sector_b\\\": 4, \\\"shared_petersen_vertex\\\": 0, \\\"shift_mod60\\\": 30}, {\\\"label\\\": \\\"half_turn\\\", \\\"petersen_edge_a\\\": [0, 1], \\\"petersen_edge_b\\\": [0, 5], \\\"sector_a\\\": 0, \\\"sector_b\\\": 5, \\\"shared_petersen_vertex\\\": 0, \\\"shift_mod60\\\": 30}, {\\\"label\\\": \\\"half_turn\\\", \\\"petersen_edge_a\\\": [0, 1], \\\"petersen_edge_b\\\": [1, 6], \\\"sector_a\\\": 0, \\\"sector_b\\\": 6, \\\"shared_petersen_vertex\\\": 1, \\\"shift_mod60\\\": 30}, {\\\"label\\\": \\\"half_turn\\\", \\\"petersen_edge_a\\\": [1, 2], \\\"petersen_edge_b\\\": [2, 3], \\\"sector_a\\\": 1, \\\"sector_b\\\": 2, \\\"shared_petersen_vertex\\\": 2, \\\"shift_mod60\\\": 30}, {\\\"label\\\": \\\"half_turn\\\", \\\"petersen_edge_a\\\": [1, 2], \\\"petersen_edge_b\\\": [1, 6], \\\"sector_a\\\": 1, \\\"sector_b\\\": 6, \\\"shared_petersen_vertex\\\": 1, \\\"shift_mod60\\\": 30}]\", \"source\": \"p900_phase30_combined_graph_export\"}, {\"kind\": \"slot_edges_g15_line_petersen\", \"length\": 30, \"path\": \"$.slot_edges_g15_line_petersen\", \"sample\": \"[[0, 1], [0, 4], [0, 10], [0, 11], [1, 2], [1, 11]]\", \"source\": \"g900_candidate_edges\"}]"
+    },
+    {
+      "id": "source_native_18_row_generator_found",
+      "status": false,
+      "detail": "{}"
+    },
+    {
+      "id": "source_native_wxyzti_tokens_found",
+      "status": false,
+      "detail": "{\"g900_candidate_edges\": {\"T\": 8100}, \"g900_candidate_graph_export\": {\"T\": 8100}, \"g900_twisted_ring_candidate_edges\": {\"T\": 7200}, \"g900_twisted_ring_candidate_export\": {\"T\": 8100}, \"g900_vertex_register_candidate\": {\"T\": 900}, \"p900_phase30_combined_graph_export\": {\"I\": 1, \"T\": 2}}"
+    },
+    {
+      "id": "gap_a_not_closed",
+      "status": true,
+      "detail": "source-derived map not constructed"
+    }
+  ],
+  "next_script": "search_gap_a_source_native_row_generator_001.py"
+}

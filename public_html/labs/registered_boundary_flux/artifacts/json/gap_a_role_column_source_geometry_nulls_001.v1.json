@@ -1,0 +1,469 @@
+{
+  "schema": "gap_a_role_column_source_geometry_nulls_001.v1",
+  "status": "gap_a_role_column_source_geometry_nulls_recorded",
+  "timestamp_utc": "2026-06-14T19:55:56.994815+00:00",
+  "purpose": "Attack the role-column source-geometry split inside the zero-twisted-carrier neighborhood.",
+  "boundary": [
+    "This does not close Gap A.",
+    "The result is local to the tested zero-twisted-carrier neighborhood.",
+    "Nulls test role-only, column-shape-only, complement pairing, role rotation, shape rotation, role swap, and shape swap.",
+    "No full chamber/register map is claimed.",
+    "No physical interpretation is claimed."
+  ],
+  "inputs": {
+    "role_column_geometry": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_role_column_source_geometry_001.v1.json",
+      "sha256": "f20e71ee814653a3cfef9132110f69fec036386b2806282bd15b65e495cfc19c",
+      "status": "gap_a_role_column_source_geometry_candidate_found_not_closure"
+    },
+    "neighbor_port_mixed_note": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_neighbor_port_mixed_note_001.v1.json",
+      "sha256": "1c0d00187297d8d8133a8eb890d18386aa3596a8b0cdd3c4c77a1c138b7b3884",
+      "status": "gap_a_neighbor_port_mixed_note_recorded"
+    },
+    "zero_twisted_split": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_zero_twisted_neighborhood_split_001.v1.json",
+      "sha256": "14293c9f7a362b2c9e1f50587c3222816f7d1a29050a8015e26fe49b0b018476",
+      "status": "gap_a_zero_twisted_neighborhood_split_candidate_found_not_closure"
+    }
+  },
+  "zero_twisted_neighborhood": [
+    3,
+    4,
+    9,
+    15,
+    16
+  ],
+  "known_residual_rows": [
+    3,
+    16
+  ],
+  "stable_false_positive_rows": [
+    4,
+    9,
+    15
+  ],
+  "baseline_pairs": [
+    [
+      "TI",
+      "multi_column"
+    ],
+    [
+      "ZT",
+      "singleton"
+    ]
+  ],
+  "complement_pairs": [
+    [
+      "TI",
+      "singleton"
+    ],
+    [
+      "ZT",
+      "multi_column"
+    ]
+  ],
+  "row_classes": [
+    {
+      "row_ordinal": 3,
+      "role": "ZT",
+      "column_shape": "singleton",
+      "role_column_class": "singleton_ZT",
+      "target": "residual"
+    },
+    {
+      "row_ordinal": 4,
+      "role": "TI",
+      "column_shape": "singleton",
+      "role_column_class": "singleton_TI",
+      "target": "stable_false_positive"
+    },
+    {
+      "row_ordinal": 9,
+      "role": "ZT",
+      "column_shape": "multi_column",
+      "role_column_class": "multi_column_ZT",
+      "target": "stable_false_positive"
+    },
+    {
+      "row_ordinal": 15,
+      "role": "ZT",
+      "column_shape": "multi_column",
+      "role_column_class": "multi_column_ZT",
+      "target": "stable_false_positive"
+    },
+    {
+      "row_ordinal": 16,
+      "role": "TI",
+      "column_shape": "multi_column",
+      "role_column_class": "multi_column_TI",
+      "target": "residual"
+    }
+  ],
+  "tests_against_residuals": [
+    {
+      "name": "baseline_singleton_ZT_OR_multi_column_TI",
+      "support": [
+        3,
+        16
+      ],
+      "support_count": 2,
+      "target_hits": [
+        3,
+        16
+      ],
+      "false_positives": [],
+      "misses": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "exact": true
+    },
+    {
+      "name": "null_role_only_ZT",
+      "support": [
+        3,
+        9,
+        15
+      ],
+      "support_count": 3,
+      "target_hits": [
+        3
+      ],
+      "false_positives": [
+        9,
+        15
+      ],
+      "misses": [
+        16
+      ],
+      "precision": 0.3333333333333333,
+      "recall": 0.5,
+      "exact": false
+    },
+    {
+      "name": "null_role_only_TI",
+      "support": [
+        4,
+        16
+      ],
+      "support_count": 2,
+      "target_hits": [
+        16
+      ],
+      "false_positives": [
+        4
+      ],
+      "misses": [
+        3
+      ],
+      "precision": 0.5,
+      "recall": 0.5,
+      "exact": false
+    },
+    {
+      "name": "null_shape_only_singleton",
+      "support": [
+        3,
+        4
+      ],
+      "support_count": 2,
+      "target_hits": [
+        3
+      ],
+      "false_positives": [
+        4
+      ],
+      "misses": [
+        16
+      ],
+      "precision": 0.5,
+      "recall": 0.5,
+      "exact": false
+    },
+    {
+      "name": "null_shape_only_multi_column",
+      "support": [
+        9,
+        15,
+        16
+      ],
+      "support_count": 3,
+      "target_hits": [
+        16
+      ],
+      "false_positives": [
+        9,
+        15
+      ],
+      "misses": [
+        3
+      ],
+      "precision": 0.3333333333333333,
+      "recall": 0.5,
+      "exact": false
+    },
+    {
+      "name": "null_complement_pairing_singleton_TI_OR_multi_column_ZT",
+      "support": [
+        4,
+        9,
+        15
+      ],
+      "support_count": 3,
+      "target_hits": [],
+      "false_positives": [
+        4,
+        9,
+        15
+      ],
+      "misses": [
+        3,
+        16
+      ],
+      "precision": 0.0,
+      "recall": 0.0,
+      "exact": false
+    },
+    {
+      "name": "null_rotated_roles_keep_shapes",
+      "support": [
+        4,
+        15
+      ],
+      "support_count": 2,
+      "target_hits": [],
+      "false_positives": [
+        4,
+        15
+      ],
+      "misses": [
+        3,
+        16
+      ],
+      "precision": 0.0,
+      "recall": 0.0,
+      "exact": false
+    },
+    {
+      "name": "null_rotated_shapes_keep_roles",
+      "support": [
+        3,
+        4
+      ],
+      "support_count": 2,
+      "target_hits": [
+        3
+      ],
+      "false_positives": [
+        4
+      ],
+      "misses": [
+        16
+      ],
+      "precision": 0.5,
+      "recall": 0.5,
+      "exact": false
+    },
+    {
+      "name": "null_swapped_roles_keep_shapes",
+      "support": [
+        4,
+        9,
+        15
+      ],
+      "support_count": 3,
+      "target_hits": [],
+      "false_positives": [
+        4,
+        9,
+        15
+      ],
+      "misses": [
+        3,
+        16
+      ],
+      "precision": 0.0,
+      "recall": 0.0,
+      "exact": false
+    },
+    {
+      "name": "null_swapped_shapes_keep_roles",
+      "support": [
+        4,
+        9,
+        15
+      ],
+      "support_count": 3,
+      "target_hits": [],
+      "false_positives": [
+        4,
+        9,
+        15
+      ],
+      "misses": [
+        3,
+        16
+      ],
+      "precision": 0.0,
+      "recall": 0.0,
+      "exact": false
+    }
+  ],
+  "tests_against_false_positives": [
+    {
+      "name": "complement_pairing_selects_stable_false_positives",
+      "support": [
+        4,
+        9,
+        15
+      ],
+      "support_count": 3,
+      "target_hits": [
+        4,
+        9,
+        15
+      ],
+      "false_positives": [],
+      "misses": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "exact": true
+    },
+    {
+      "name": "baseline_pairing_against_stable_false_positives",
+      "support": [
+        3,
+        16
+      ],
+      "support_count": 2,
+      "target_hits": [],
+      "false_positives": [
+        3,
+        16
+      ],
+      "misses": [
+        4,
+        9,
+        15
+      ],
+      "precision": 0.0,
+      "recall": 0.0,
+      "exact": false
+    }
+  ],
+  "load_bearing": {
+    "role_only_insufficient": true,
+    "shape_only_insufficient": true,
+    "pairing_orientation_load_bearing": true,
+    "role_placement_load_bearing": true,
+    "shape_placement_load_bearing": true,
+    "role_swap_breaks_residual_exactness": true,
+    "shape_swap_breaks_residual_exactness": true,
+    "complement_selects_false_positives": true
+  },
+  "summary": {
+    "baseline_support": [
+      3,
+      16
+    ],
+    "baseline_exact": true,
+    "broken_residual_null_count": 9,
+    "residual_null_count": 9,
+    "complement_support": [
+      4,
+      9,
+      15
+    ],
+    "complement_selects_false_positives": true,
+    "load_bearing": {
+      "role_only_insufficient": true,
+      "shape_only_insufficient": true,
+      "pairing_orientation_load_bearing": true,
+      "role_placement_load_bearing": true,
+      "shape_placement_load_bearing": true,
+      "role_swap_breaks_residual_exactness": true,
+      "shape_swap_breaks_residual_exactness": true,
+      "complement_selects_false_positives": true
+    }
+  },
+  "interpretation": {
+    "main_result": "All tested residual nulls break exactness while the complement pairing exactly selects the stable false positives.",
+    "role_result": "Role alone is insufficient.",
+    "shape_result": "Column shape alone is insufficient.",
+    "pairing_result": "The orientation of the role-column pairing is load-bearing: singleton ZT plus multi-column TI selects residuals, while singleton TI plus multi-column ZT selects stable false positives.",
+    "not_closure": "This supports a sharper source-geometry split but still does not close Gap A."
+  },
+  "checks": [
+    {
+      "id": "geometry_loaded",
+      "status": true,
+      "detail": "gap_a_role_column_source_geometry_candidate_found_not_closure"
+    },
+    {
+      "id": "mixed_note_loaded",
+      "status": true,
+      "detail": "gap_a_neighbor_port_mixed_note_recorded"
+    },
+    {
+      "id": "zero_split_loaded",
+      "status": true,
+      "detail": "gap_a_zero_twisted_neighborhood_split_candidate_found_not_closure"
+    },
+    {
+      "id": "zero_rows_expected",
+      "status": true,
+      "detail": "[3, 4, 9, 15, 16]"
+    },
+    {
+      "id": "residual_rows_expected",
+      "status": true,
+      "detail": "[3, 16]"
+    },
+    {
+      "id": "baseline_exact",
+      "status": true,
+      "detail": "{\"exact\": true, \"false_positives\": [], \"misses\": [], \"name\": \"baseline_singleton_ZT_OR_multi_column_TI\", \"precision\": 1.0, \"recall\": 1.0, \"support\": [3, 16], \"support_count\": 2, \"target_hits\": [3, 16]}"
+    },
+    {
+      "id": "role_only_insufficient",
+      "status": true,
+      "detail": "[{\"exact\": false, \"false_positives\": [9, 15], \"misses\": [16], \"name\": \"null_role_only_ZT\", \"precision\": 0.3333333333333333, \"recall\": 0.5, \"support\": [3, 9, 15], \"support_count\": 3, \"target_hits\": [3]}, {\"exact\": false, \"false_positives\": [4], \"misses\": [3], \"name\": \"null_role_only_TI\", \"precision\": 0.5, \"recall\": 0.5, \"support\": [4, 16], \"support_count\": 2, \"target_hits\": [16]}]"
+    },
+    {
+      "id": "shape_only_insufficient",
+      "status": true,
+      "detail": "[{\"exact\": false, \"false_positives\": [4], \"misses\": [16], \"name\": \"null_shape_only_singleton\", \"precision\": 0.5, \"recall\": 0.5, \"support\": [3, 4], \"support_count\": 2, \"target_hits\": [3]}, {\"exact\": false, \"false_positives\": [9, 15], \"misses\": [3], \"name\": \"null_shape_only_multi_column\", \"precision\": 0.3333333333333333, \"recall\": 0.5, \"support\": [9, 15, 16], \"support_count\": 3, \"target_hits\": [16]}]"
+    },
+    {
+      "id": "complement_not_residual_exact",
+      "status": true,
+      "detail": "{\"exact\": false, \"false_positives\": [4, 9, 15], \"misses\": [3, 16], \"name\": \"null_complement_pairing_singleton_TI_OR_multi_column_ZT\", \"precision\": 0.0, \"recall\": 0.0, \"support\": [4, 9, 15], \"support_count\": 3, \"target_hits\": []}"
+    },
+    {
+      "id": "role_rotation_breaks_exact",
+      "status": true,
+      "detail": "{\"exact\": false, \"false_positives\": [4, 15], \"misses\": [3, 16], \"name\": \"null_rotated_roles_keep_shapes\", \"precision\": 0.0, \"recall\": 0.0, \"support\": [4, 15], \"support_count\": 2, \"target_hits\": []}"
+    },
+    {
+      "id": "shape_rotation_breaks_exact",
+      "status": true,
+      "detail": "{\"exact\": false, \"false_positives\": [4], \"misses\": [16], \"name\": \"null_rotated_shapes_keep_roles\", \"precision\": 0.5, \"recall\": 0.5, \"support\": [3, 4], \"support_count\": 2, \"target_hits\": [3]}"
+    },
+    {
+      "id": "role_swap_breaks_exact",
+      "status": true,
+      "detail": "{\"exact\": false, \"false_positives\": [4, 9, 15], \"misses\": [3, 16], \"name\": \"null_swapped_roles_keep_shapes\", \"precision\": 0.0, \"recall\": 0.0, \"support\": [4, 9, 15], \"support_count\": 3, \"target_hits\": []}"
+    },
+    {
+      "id": "shape_swap_breaks_exact",
+      "status": true,
+      "detail": "{\"exact\": false, \"false_positives\": [4, 9, 15], \"misses\": [3, 16], \"name\": \"null_swapped_shapes_keep_roles\", \"precision\": 0.0, \"recall\": 0.0, \"support\": [4, 9, 15], \"support_count\": 3, \"target_hits\": []}"
+    },
+    {
+      "id": "complement_selects_false_positives",
+      "status": true,
+      "detail": "{\"exact\": true, \"false_positives\": [], \"misses\": [], \"name\": \"complement_pairing_selects_stable_false_positives\", \"precision\": 1.0, \"recall\": 1.0, \"support\": [4, 9, 15], \"support_count\": 3, \"target_hits\": [4, 9, 15]}"
+    }
+  ],
+  "next_script": "record_gap_a_role_column_interim_note_001.py"
+}

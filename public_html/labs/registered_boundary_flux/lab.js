@@ -44,9 +44,20 @@ function currentSheetIndex() {
   return ((Math.floor(sheetTick) % n) + n) % n;
 }
 
+function currentCycleIndex() {
+  const n = sheetCount();
+  return Math.floor(sheetTick / n);
+}
+
 function syncVisualPhaseToSheetTick() {
   const n = sheetCount();
-  t = (sheetTick % n) / n * Math.PI * 2;
+
+  /*
+    Sheet index wraps, but the visual cycle does not.
+    One full sheet_count pass advances the register into the next cycle
+    instead of resetting the face projection to its first visual state.
+  */
+  t = (sheetTick / n) * Math.PI * 2;
 }
 
 function sheetsPerSecond() {
@@ -761,6 +772,7 @@ function draw() {
   hud.textContent =
     "cube face=true sheet=" + currentSheetIndex().toString().padStart(2, "0") +
     "/" + sheetCount() +
+    " cycle=" + currentCycleIndex() +
     " phase=" + phase.id +
     " zoom=" + rbfCamera.zoom.toFixed(2) +
     " sps=" + sheetsPerSecond().toFixed(0);

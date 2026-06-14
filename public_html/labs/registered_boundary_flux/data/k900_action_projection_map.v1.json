@@ -1,0 +1,92 @@
+{
+  "schema": "registered_boundary_flux.k900_action_projection_map.v1",
+  "status": "projection_mapped_not_rendered",
+  "source_index": "data/k900_action_source_index.v1.json",
+  "boundary": "This map authorizes future Cube Register rendering channels for indexed K900/P19/P20 action sources. It does not render those sources yet and does not claim physical forces.",
+  "principle": "Action grammar must enter the Cube Register through declared roles only: caps, side walls, seams, interior, and trace.",
+  "action_to_register_roles": {
+    "compression": {
+      "source_grammar": "closure with memory produces compression",
+      "allowed_register_roles": [
+        "interior",
+        "trace"
+      ],
+      "primary_visual_target": "registered_carrier_volume",
+      "future_signal_candidates": [
+        "compressed_count",
+        "return_distance_delta",
+        "odd_triangle_count",
+        "strong_weak_slot_class"
+      ],
+      "boundary": "Compression means finite return-path metric compression, not physical gravity."
+    },
+    "polarity": {
+      "source_grammar": "circulation with orientation produces polarity",
+      "allowed_register_roles": [
+        "top_bottom_caps",
+        "side_walls"
+      ],
+      "primary_visual_target": "polarity_caps",
+      "future_signal_candidates": [
+        "orientation_residue",
+        "support_conservation",
+        "residue_vector",
+        "cap_opposition"
+      ],
+      "boundary": "Polarity means finite orientation/circulation residue, not physical electromagnetism."
+    },
+    "confinement": {
+      "source_grammar": "internal difference under neutral closure produces confinement",
+      "allowed_register_roles": [
+        "edges_corners",
+        "interior"
+      ],
+      "primary_visual_target": "coupling_seams",
+      "future_signal_candidates": [
+        "triangle_purity_111_000",
+        "carrier_edge_partition",
+        "confinement_ablation_status"
+      ],
+      "boundary": "Confinement means finite triangle/edge organization, not physical strong force."
+    },
+    "transformation": {
+      "source_grammar": "admissible directed channel crossing produces transformation",
+      "allowed_register_roles": [
+        "side_walls",
+        "edges_corners",
+        "trace"
+      ],
+      "primary_visual_target": "relationship_walls",
+      "future_signal_candidates": [
+        "directed_channel_class",
+        "nearest_inverse_distance",
+        "handedness_score",
+        "target_transition_signature"
+      ],
+      "boundary": "Transformation means finite directed channel crossing, not physical weak interaction."
+    },
+    "registered_trace": {
+      "source_grammar": "action leaves queryable aftermath in the register",
+      "allowed_register_roles": [
+        "trace",
+        "side_walls",
+        "interior"
+      ],
+      "primary_visual_target": "face_trace",
+      "future_signal_candidates": [
+        "source_artifact_id",
+        "claim_id",
+        "sha256",
+        "projection_event_id"
+      ],
+      "boundary": "Trace means registered aftermath/audit linkage, not measurement itself."
+    }
+  },
+  "rendering_policy": {
+    "do_not_invent_signals": true,
+    "require_source_artifact": true,
+    "require_projection_binding_before_render": true,
+    "renderer_status_until_bound": "not_rendered",
+    "allowed_next_step": "build numeric binding packet from selected P19/P20 artifacts"
+  }
+}

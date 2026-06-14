@@ -1,7 +1,7 @@
 {
   "schema": "registered_boundary_flux.kernel.v1",
   "title": "Registered Boundary Flux Kernel",
-  "status": "evidence_linked_kernel_scaffold_with_cube_register_and_p900_sheet_clock",
+  "status": "evidence_linked_cube_register_with_p900_sheet_clock_and_k900_projection_map",
   "source_project": {
     "name": "06-sonoluminescence",
     "relative_path": "../../../../research/thalean-graph-theory/06-sonoluminescence",
@@ -92,52 +92,52 @@
     {
       "id": "stable_window",
       "label": "Stable Window",
-      "kernel_meaning": "Constrained, coherent operation inside a stable regime.",
-      "boundary": 0.72,
-      "interior": 0.54,
-      "flux": 0.48,
-      "emission": 0.36,
-      "trace": 0.42
+      "kernel_meaning": "Balanced boundary loading with readable carrier volume and restrained trace.",
+      "boundary": 0.58,
+      "interior": 0.56,
+      "flux": 0.34,
+      "emission": 0.18,
+      "trace": 0.3
     },
     {
       "id": "deep_collapse",
       "label": "Deep Collapse",
-      "kernel_meaning": "High compression without assuming clean release.",
-      "boundary": 0.88,
-      "interior": 0.92,
-      "flux": 0.76,
-      "emission": 0.32,
-      "trace": 0.58
+      "kernel_meaning": "High boundary and interior compression without assuming clean release.",
+      "boundary": 0.86,
+      "interior": 0.88,
+      "flux": 0.38,
+      "emission": 0.14,
+      "trace": 0.42
     },
     {
       "id": "clean_release",
       "label": "Clean Release",
-      "kernel_meaning": "Focused release with coherent aftermath trace.",
-      "boundary": 0.64,
-      "interior": 0.62,
-      "flux": 0.72,
+      "kernel_meaning": "Focused crossing through the register with coherent aftermath trace.",
+      "boundary": 0.62,
+      "interior": 0.52,
+      "flux": 0.62,
       "emission": 0.86,
-      "trace": 0.74
+      "trace": 0.58
     },
     {
       "id": "degraded_boundary",
       "label": "Degraded Boundary",
-      "kernel_meaning": "Strong loading with degraded or unstable boundary behavior.",
-      "boundary": 0.96,
-      "interior": 0.8,
-      "flux": 0.92,
-      "emission": 0.44,
-      "trace": 0.88
+      "kernel_meaning": "Overloaded boundary with noisy relationship walls and persistent disturbed trace.",
+      "boundary": 0.92,
+      "interior": 0.68,
+      "flux": 0.82,
+      "emission": 0.34,
+      "trace": 0.86
     },
     {
       "id": "aftertrace",
       "label": "Aftertrace",
-      "kernel_meaning": "The release body fades while registered aftermath remains.",
-      "boundary": 0.28,
-      "interior": 0.22,
-      "flux": 0.36,
-      "emission": 0.3,
-      "trace": 0.96
+      "kernel_meaning": "The release body fades while registered aftermath remains on the faces.",
+      "boundary": 0.26,
+      "interior": 0.2,
+      "flux": 0.18,
+      "emission": 0.12,
+      "trace": 0.94
     }
   ],
   "evidence_hooks": [
@@ -185,6 +185,35 @@
     "source_file": "p900_observatory/lab_boot.js",
     "relationship": "tick advances by elapsed_seconds * sheets_per_second; one frame step is one sheet; cycle_rate is sheets_per_second divided by sheet_count.",
     "sheet_count": 30,
-    "boundary": "This imports the P900-style sheet clock only. It does not import or mutate the P900 theorem artifact."
+    "boundary": "This imports the P900-style sheet clock only. It does not import or mutate the P900 theorem artifact.",
+    "cycle_progression": {
+      "status": "active",
+      "rule": "Sheet index wraps modulo sheet_count, but visual register phase advances continuously across completed cycles.",
+      "meaning": "A completed sheet pass is not a reset. It advances the continuous sheet phase without adding discontinuous cycle-memory effects."
+    }
+  },
+  "regime_calibration": {
+    "status": "cube_register_visual_calibration_v1",
+    "boundary": "Visual calibration only. These settings expose finite boundary-flux grammar; they are not physical parameters.",
+    "principle": "Each regime emphasizes a different Cube Register role: stable balance, compression, focused release, overload, or aftermath trace."
+  },
+  "k900_action_layer": {
+    "status": "source_indexed_and_projection_mapped_not_rendered",
+    "source_index": "data/k900_action_source_index.v1.json",
+    "boundary": "K900/P19/P20 action sources are indexed and mapped to Cube Register roles, but no numeric action rendering is active yet.",
+    "action_grammar": {
+      "compression": "closure with memory produces compression",
+      "polarity": "circulation with orientation produces polarity",
+      "confinement": "internal difference under neutral closure produces confinement",
+      "transformation": "admissible directed channel crossing produces transformation"
+    },
+    "projection_map": "data/k900_action_projection_map.v1.json",
+    "rendering_policy": {
+      "do_not_invent_signals": true,
+      "require_source_artifact": true,
+      "require_projection_binding_before_render": true,
+      "renderer_status_until_bound": "not_rendered",
+      "allowed_next_step": "build numeric binding packet from selected P19/P20 artifacts"
+    }
   }
 }

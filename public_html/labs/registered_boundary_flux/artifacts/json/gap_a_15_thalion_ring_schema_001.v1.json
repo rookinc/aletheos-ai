@@ -1,0 +1,2238 @@
+{
+  "schema": "gap_a_15_thalion_ring_schema_001.v1",
+  "status": "gap_a_15_thalion_ring_schema_recovered_residual_blind",
+  "timestamp_utc": "2026-06-14T19:20:33.591586+00:00",
+  "purpose": "Recover the residual-blind schema of the 15-thalion ring and compare untwisted versus twisted G900 candidates.",
+  "boundary": [
+    "Residual labels are not used in this pass.",
+    "This is schema recovery, not Gap A closure.",
+    "The 15-thalion ring is still a leading candidate, not a proved source map.",
+    "Later residual evaluation must use only features derived here or in a uniform lift."
+  ],
+  "inputs": {
+    "test_plan": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_15_thalion_ring_test_plan_001.v1.json",
+      "sha256": "7db6a8abc38ec77b1604eb2879ffda7e4a8637c4f63fadeb485ee92585bd0b9a",
+      "status": "gap_a_15_thalion_ring_test_plan_recorded"
+    },
+    "sources": {
+      "g900_candidate_edges": {
+        "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/16-fifteen-thalion-ring/support/generated/g900_candidate_edges.json",
+        "sha256": "1fad85393b160e5f15c71815a82120577fc2463e708d15b67d712b17654c686f"
+      },
+      "g900_candidate_graph_export": {
+        "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/16-fifteen-thalion-ring/support/exports/g900_candidate_graph_export.json",
+        "sha256": "26592a04f1f49a63746e9190a9a5c0c3bb96a219882bdd59cacf6b16c22c0951"
+      },
+      "g900_twisted_ring_candidate_edges": {
+        "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/16-fifteen-thalion-ring/support/generated/g900_twisted_ring_candidate_edges.json",
+        "sha256": "e8ae983acccb8102261bde73cca6493d9a13958edfacad0a2cb6b3e24f4398ef"
+      },
+      "g900_twisted_ring_candidate_export": {
+        "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/16-fifteen-thalion-ring/support/exports/g900_twisted_ring_candidate_export.json",
+        "sha256": "bce9c8841c6b568fdd5f9469ef33079085f0729a6c32960b8930cf42dff3b9d3"
+      },
+      "proposed_g900_vertex_register_candidate": {
+        "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/16-fifteen-thalion-ring/support/artifacts/json/301_proposed_g900_vertex_register_candidate.json",
+        "sha256": "cfb06b672c18cddb97c482e62af9c1b49ceab0a7d028aa2cbc23cafbcbe47d20"
+      },
+      "p900_external_permutation_law_audit": {
+        "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/16-fifteen-thalion-ring/support/audits/p900_external_permutation_law_audit.json",
+        "sha256": "eab85ec94716c49626a97cb02aa478c31b03514506490c204d5f49f43804cd36"
+      },
+      "p900_phase5_binary_half_turn_holonomy": {
+        "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/14-p900-consonance-surface/artifacts/json/p900_phase5_binary_half_turn_holonomy.json",
+        "sha256": "c7631f014e38f06ef2ed8db650cc464ca972fd48e4d71460ffa819171deda0ef"
+      },
+      "p900_phase4_cycle_holonomy_stub": {
+        "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/14-p900-consonance-surface/artifacts/json/p900_phase4_cycle_holonomy_stub.json",
+        "sha256": "9a4066f124dd967d798a4c00eed97511595f31220956968db9ae244e67cd5ebc"
+      }
+    }
+  },
+  "schema_map": {
+    "vertex_id_pattern": "Tss_Sll where ss is thalion slot 0..14 and ll is local G60 state 0..59",
+    "expected_slot_count": 15,
+    "expected_local_state_count_per_slot": 60,
+    "expected_vertex_count": 900,
+    "expected_edge_count": 3600,
+    "source_edge_kind_names": [
+      "external_signed_carrier",
+      "inter_thalion_diagonal_carrier",
+      "internal_thalion_copy"
+    ],
+    "twisted_edge_law_names": [
+      "g60_internal",
+      "half_flip_x_plus_30",
+      "identity"
+    ],
+    "untwisted_edge_law_names": [
+      "g15_line_petersen_slot_adjacency",
+      "g60_edge_list"
+    ],
+    "field_basis": {
+      "vertex": [
+        "id parsed by Tss_Sll"
+      ],
+      "edge": [
+        "kind",
+        "law",
+        "source",
+        "u",
+        "v"
+      ],
+      "twist_candidates": [
+        "law",
+        "kind",
+        "source",
+        "slot_delta_mod15",
+        "local_delta_mod60"
+      ]
+    }
+  },
+  "source_records": {
+    "g900_candidate_edges": {
+      "name": "g900_candidate_edges",
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/16-fifteen-thalion-ring/support/generated/g900_candidate_edges.json",
+      "exists": true,
+      "sha256": "1fad85393b160e5f15c71815a82120577fc2463e708d15b67d712b17654c686f",
+      "top_keys": [
+        "summary",
+        "vertices",
+        "slot_edges_g15_line_petersen",
+        "edges"
+      ],
+      "vertex_summary": {
+        "vertex_count": 900,
+        "unique_raw_id_count": 900,
+        "parsed_vertex_count": 900,
+        "slot_count": 15,
+        "local_state_count": 60,
+        "slot_min": 0,
+        "slot_max": 14,
+        "local_min": 0,
+        "local_max": 59,
+        "pair_count": 900,
+        "per_slot_hist": {
+          "60": 15
+        },
+        "per_local_hist": {
+          "15": 60
+        },
+        "sample_vertices": [
+          "T00_S00",
+          "T00_S01",
+          "T00_S02",
+          "T00_S03",
+          "T00_S04",
+          "T00_S05",
+          "T00_S06",
+          "T00_S07"
+        ]
+      },
+      "edge_summary": {
+        "edge_count": 3600,
+        "field_union": [
+          "kind",
+          "source",
+          "u",
+          "v"
+        ],
+        "field_intersection": [
+          "kind",
+          "source",
+          "u",
+          "v"
+        ],
+        "kind_hist": {
+          "inter_thalion_diagonal_carrier": 1800,
+          "internal_thalion_copy": 1800
+        },
+        "law_hist": {
+          "g15_line_petersen_slot_adjacency": 1800,
+          "g60_edge_list": 1800
+        },
+        "source_hist": {
+          "g15_line_petersen_slot_adjacency": 1800,
+          "g60_edge_list": 1800
+        },
+        "endpoint_parse_count": 3600,
+        "same_slot_edge_count": 1800,
+        "different_slot_edge_count": 1800,
+        "slot_delta_mod15_hist": {
+          "0": 1800,
+          "1": 540,
+          "10": 300,
+          "11": 240,
+          "3": 60,
+          "4": 240,
+          "5": 120,
+          "6": 120,
+          "7": 120,
+          "8": 60
+        },
+        "local_delta_mod60_hist": {
+          "0": 1800,
+          "1": 15,
+          "11": 75,
+          "12": 120,
+          "13": 15,
+          "14": 75,
+          "15": 30,
+          "16": 15,
+          "18": 15,
+          "19": 15,
+          "22": 15,
+          "23": 15,
+          "24": 30,
+          "25": 30,
+          "27": 15,
+          "28": 15,
+          "31": 15,
+          "32": 15,
+          "33": 30,
+          "34": 30,
+          "36": 30,
+          "37": 15,
+          "38": 30,
+          "39": 15,
+          "4": 285,
+          "41": 30,
+          "42": 60,
+          "43": 30,
+          "44": 45,
+          "45": 30,
+          "46": 45,
+          "52": 30,
+          "55": 30,
+          "6": 345,
+          "8": 120,
+          "9": 75
+        },
+        "directed_local_delta_sample": [
+          [
+            0,
+            16,
+            16
+          ],
+          [
+            0,
+            19,
+            19
+          ],
+          [
+            0,
+            25,
+            25
+          ],
+          [
+            0,
+            55,
+            55
+          ],
+          [
+            1,
+            15,
+            14
+          ],
+          [
+            1,
+            26,
+            25
+          ],
+          [
+            1,
+            29,
+            28
+          ],
+          [
+            1,
+            35,
+            34
+          ],
+          [
+            2,
+            25,
+            23
+          ],
+          [
+            2,
+            36,
+            34
+          ],
+          [
+            2,
+            39,
+            37
+          ],
+          [
+            2,
+            45,
+            43
+          ],
+          [
+            3,
+            35,
+            32
+          ],
+          [
+            3,
+            46,
+            43
+          ],
+          [
+            3,
+            49,
+            46
+          ],
+          [
+            3,
+            55,
+            52
+          ],
+          [
+            4,
+            15,
+            11
+          ],
+          [
+            4,
+            45,
+            41
+          ],
+          [
+            4,
+            56,
+            52
+          ],
+          [
+            4,
+            59,
+            55
+          ]
+        ],
+        "parsed_edge_samples": [
+          {
+            "u": {
+              "id": "T00_S00",
+              "slot": 0,
+              "local": 0
+            },
+            "v": {
+              "id": "T00_S16",
+              "slot": 0,
+              "local": 16
+            },
+            "kind": "internal_thalion_copy",
+            "law": "g60_edge_list"
+          },
+          {
+            "u": {
+              "id": "T00_S00",
+              "slot": 0,
+              "local": 0
+            },
+            "v": {
+              "id": "T00_S19",
+              "slot": 0,
+              "local": 19
+            },
+            "kind": "internal_thalion_copy",
+            "law": "g60_edge_list"
+          },
+          {
+            "u": {
+              "id": "T00_S00",
+              "slot": 0,
+              "local": 0
+            },
+            "v": {
+              "id": "T00_S25",
+              "slot": 0,
+              "local": 25
+            },
+            "kind": "internal_thalion_copy",
+            "law": "g60_edge_list"
+          },
+          {
+            "u": {
+              "id": "T00_S00",
+              "slot": 0,
+              "local": 0
+            },
+            "v": {
+              "id": "T00_S55",
+              "slot": 0,
+              "local": 55
+            },
+            "kind": "internal_thalion_copy",
+            "law": "g60_edge_list"
+          },
+          {
+            "u": {
+              "id": "T00_S01",
+              "slot": 0,
+              "local": 1
+            },
+            "v": {
+              "id": "T00_S15",
+              "slot": 0,
+              "local": 15
+            },
+            "kind": "internal_thalion_copy",
+            "law": "g60_edge_list"
+          },
+          {
+            "u": {
+              "id": "T00_S01",
+              "slot": 0,
+              "local": 1
+            },
+            "v": {
+              "id": "T00_S26",
+              "slot": 0,
+              "local": 26
+            },
+            "kind": "internal_thalion_copy",
+            "law": "g60_edge_list"
+          },
+          {
+            "u": {
+              "id": "T00_S01",
+              "slot": 0,
+              "local": 1
+            },
+            "v": {
+              "id": "T00_S29",
+              "slot": 0,
+              "local": 29
+            },
+            "kind": "internal_thalion_copy",
+            "law": "g60_edge_list"
+          },
+          {
+            "u": {
+              "id": "T00_S01",
+              "slot": 0,
+              "local": 1
+            },
+            "v": {
+              "id": "T00_S35",
+              "slot": 0,
+              "local": 35
+            },
+            "kind": "internal_thalion_copy",
+            "law": "g60_edge_list"
+          }
+        ]
+      },
+      "summary_field": {
+        "status": "g900_candidate_edges_generated",
+        "complete_candidate": true,
+        "warning": null,
+        "vertex_count": 900,
+        "slot_count": 15,
+        "local_state_count": 60,
+        "g15_slot_edge_count": 30,
+        "local_g60_edge_source": {
+          "file": "support/sources/g60_local_edges_from_aletheos.json",
+          "json_path": "root.g60_edges",
+          "edge_count": 120
+        },
+        "internal_thalion_edge_count": 1800,
+        "inter_thalion_carrier_edge_count": 1800,
+        "total_edge_count": 3600,
+        "edge_kinds": {
+          "internal_thalion_copy": 1800,
+          "inter_thalion_diagonal_carrier": 1800
+        },
+        "boundary": {
+          "candidate_only": true,
+          "not_admitted": true,
+          "not_census_id": true,
+          "not_public_proof": true
+        }
+      },
+      "fingerprint": null,
+      "error": null
+    },
+    "g900_candidate_graph_export": {
+      "name": "g900_candidate_graph_export",
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/16-fifteen-thalion-ring/support/exports/g900_candidate_graph_export.json",
+      "exists": true,
+      "sha256": "26592a04f1f49a63746e9190a9a5c0c3bb96a219882bdd59cacf6b16c22c0951",
+      "top_keys": [
+        "status",
+        "vertices",
+        "edges",
+        "fingerprint"
+      ],
+      "vertex_summary": {
+        "vertex_count": 900,
+        "unique_raw_id_count": 900,
+        "parsed_vertex_count": 900,
+        "slot_count": 15,
+        "local_state_count": 60,
+        "slot_min": 0,
+        "slot_max": 14,
+        "local_min": 0,
+        "local_max": 59,
+        "pair_count": 900,
+        "per_slot_hist": {
+          "60": 15
+        },
+        "per_local_hist": {
+          "15": 60
+        },
+        "sample_vertices": [
+          "T00_S00",
+          "T00_S01",
+          "T00_S02",
+          "T00_S03",
+          "T00_S04",
+          "T00_S05",
+          "T00_S06",
+          "T00_S07"
+        ]
+      },
+      "edge_summary": {
+        "edge_count": 3600,
+        "field_union": [
+          "kind",
+          "source",
+          "u",
+          "v"
+        ],
+        "field_intersection": [
+          "kind",
+          "source",
+          "u",
+          "v"
+        ],
+        "kind_hist": {
+          "inter_thalion_diagonal_carrier": 1800,
+          "internal_thalion_copy": 1800
+        },
+        "law_hist": {
+          "g15_line_petersen_slot_adjacency": 1800,
+          "g60_edge_list": 1800
+        },
+        "source_hist": {
+          "g15_line_petersen_slot_adjacency": 1800,
+          "g60_edge_list": 1800
+        },
+        "endpoint_parse_count": 3600,
+        "same_slot_edge_count": 1800,
+        "different_slot_edge_count": 1800,
+        "slot_delta_mod15_hist": {
+          "0": 1800,
+          "1": 540,
+          "10": 300,
+          "11": 240,
+          "3": 60,
+          "4": 240,
+          "5": 120,
+          "6": 120,
+          "7": 120,
+          "8": 60
+        },
+        "local_delta_mod60_hist": {
+          "0": 1800,
+          "1": 15,
+          "11": 75,
+          "12": 120,
+          "13": 15,
+          "14": 75,
+          "15": 30,
+          "16": 15,
+          "18": 15,
+          "19": 15,
+          "22": 15,
+          "23": 15,
+          "24": 30,
+          "25": 30,
+          "27": 15,
+          "28": 15,
+          "31": 15,
+          "32": 15,
+          "33": 30,
+          "34": 30,
+          "36": 30,
+          "37": 15,
+          "38": 30,
+          "39": 15,
+          "4": 285,
+          "41": 30,
+          "42": 60,
+          "43": 30,
+          "44": 45,
+          "45": 30,
+          "46": 45,
+          "52": 30,
+          "55": 30,
+          "6": 345,
+          "8": 120,
+          "9": 75
+        },
+        "directed_local_delta_sample": [
+          [
+            0,
+            16,
+            16
+          ],
+          [
+            0,
+            19,
+            19
+          ],
+          [
+            0,
+            25,
+            25
+          ],
+          [
+            0,
+            55,
+            55
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            15,
+            14
+          ],
+          [
+            1,
+            26,
+            25
+          ],
+          [
+            1,
+            29,
+            28
+          ],
+          [
+            1,
+            35,
+            34
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            25,
+            23
+          ],
+          [
+            2,
+            36,
+            34
+          ],
+          [
+            2,
+            39,
+            37
+          ],
+          [
+            2,
+            45,
+            43
+          ]
+        ],
+        "parsed_edge_samples": [
+          {
+            "u": {
+              "id": "T00_S00",
+              "slot": 0,
+              "local": 0
+            },
+            "v": {
+              "id": "T00_S16",
+              "slot": 0,
+              "local": 16
+            },
+            "kind": "internal_thalion_copy",
+            "law": "g60_edge_list"
+          },
+          {
+            "u": {
+              "id": "T00_S00",
+              "slot": 0,
+              "local": 0
+            },
+            "v": {
+              "id": "T00_S19",
+              "slot": 0,
+              "local": 19
+            },
+            "kind": "internal_thalion_copy",
+            "law": "g60_edge_list"
+          },
+          {
+            "u": {
+              "id": "T00_S00",
+              "slot": 0,
+              "local": 0
+            },
+            "v": {
+              "id": "T00_S25",
+              "slot": 0,
+              "local": 25
+            },
+            "kind": "internal_thalion_copy",
+            "law": "g60_edge_list"
+          },
+          {
+            "u": {
+              "id": "T00_S00",
+              "slot": 0,
+              "local": 0
+            },
+            "v": {
+              "id": "T00_S55",
+              "slot": 0,
+              "local": 55
+            },
+            "kind": "internal_thalion_copy",
+            "law": "g60_edge_list"
+          },
+          {
+            "u": {
+              "id": "T00_S00",
+              "slot": 0,
+              "local": 0
+            },
+            "v": {
+              "id": "T01_S00",
+              "slot": 1,
+              "local": 0
+            },
+            "kind": "inter_thalion_diagonal_carrier",
+            "law": "g15_line_petersen_slot_adjacency"
+          },
+          {
+            "u": {
+              "id": "T00_S00",
+              "slot": 0,
+              "local": 0
+            },
+            "v": {
+              "id": "T04_S00",
+              "slot": 4,
+              "local": 0
+            },
+            "kind": "inter_thalion_diagonal_carrier",
+            "law": "g15_line_petersen_slot_adjacency"
+          },
+          {
+            "u": {
+              "id": "T00_S00",
+              "slot": 0,
+              "local": 0
+            },
+            "v": {
+              "id": "T10_S00",
+              "slot": 10,
+              "local": 0
+            },
+            "kind": "inter_thalion_diagonal_carrier",
+            "law": "g15_line_petersen_slot_adjacency"
+          },
+          {
+            "u": {
+              "id": "T00_S00",
+              "slot": 0,
+              "local": 0
+            },
+            "v": {
+              "id": "T11_S00",
+              "slot": 11,
+              "local": 0
+            },
+            "kind": "inter_thalion_diagonal_carrier",
+            "law": "g15_line_petersen_slot_adjacency"
+          }
+        ]
+      },
+      "summary_field": null,
+      "fingerprint": {
+        "status": "g900_candidate_fingerprint",
+        "candidate_complete": true,
+        "validation_ok": true,
+        "vertex_count": 900,
+        "edge_count": 3600,
+        "degree_counts": {
+          "8": 900
+        },
+        "kind_counts": {
+          "inter_thalion_diagonal_carrier": 1800,
+          "internal_thalion_copy": 1800
+        },
+        "connected": true,
+        "component_count": 1,
+        "diameter": 9,
+        "radius": 9,
+        "root_shell_profile": [
+          1,
+          8,
+          32,
+          82,
+          160,
+          246,
+          249,
+          100,
+          20,
+          2
+        ],
+        "sha256": {
+          "edge_rows_with_kind_source": "f77fb954311ffbe33245cd6ae6ce832b906c1c97923562e4389d972ca83e3c91",
+          "simple_edge_pairs": "090d3f82e9709c941b333950a2fc959cc55c61c94cff9abbb662b4711f92b217",
+          "adjacency_json_canonical": "4ee3de6d0f69934b41b94bd6ede1703e979738bf2c43abe5846fb735e9f375aa",
+          "g60_local_source_file": "6cd7fd5a9be9db507e4db2860da7e41b8da14448024886e801376aad5e773ad0",
+          "generated_edge_csv_file": "94c8ddf3ec5dad8e2309e4cee124a0d61483bc65acbf750de1d1e3be58e6875d",
+          "generated_summary_file": "2036d26c87a5f3a0d5b7f8997ed3113bd0ac2e8d0b14853de8cf1e4e9cd9ba60",
+          "validation_file": "aabe5bec580a47f6f9b09d682631a0fa4dbe272ef4e6a7a08db71cb8e2d74603"
+        },
+        "boundary": {
+          "candidate_only": true,
+          "validated_graph_surface": true,
+          "not_admitted": true,
+          "not_census_id": true,
+          "not_public_proof": true
+        }
+      },
+      "error": null
+    },
+    "g900_twisted_ring_candidate_edges": {
+      "name": "g900_twisted_ring_candidate_edges",
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/16-fifteen-thalion-ring/support/generated/g900_twisted_ring_candidate_edges.json",
+      "exists": true,
+      "sha256": "e8ae983acccb8102261bde73cca6493d9a13958edfacad0a2cb6b3e24f4398ef",
+      "top_keys": [
+        "summary",
+        "edges"
+      ],
+      "vertex_summary": {
+        "vertex_count": 0,
+        "unique_raw_id_count": 0,
+        "parsed_vertex_count": 0,
+        "slot_count": 0,
+        "local_state_count": 0,
+        "slot_min": null,
+        "slot_max": null,
+        "local_min": null,
+        "local_max": null,
+        "pair_count": 0,
+        "per_slot_hist": {},
+        "per_local_hist": {},
+        "sample_vertices": []
+      },
+      "edge_summary": {
+        "edge_count": 3600,
+        "field_union": [
+          "kind",
+          "law",
+          "source",
+          "u",
+          "v"
+        ],
+        "field_intersection": [
+          "kind",
+          "law",
+          "source",
+          "u",
+          "v"
+        ],
+        "kind_hist": {
+          "external_signed_carrier": 1800,
+          "internal_thalion_copy": 1800
+        },
+        "law_hist": {
+          "g60_internal": 1800,
+          "half_flip_x_plus_30": 900,
+          "identity": 900
+        },
+        "source_hist": {
+          "g60_local_edges_from_aletheos": 1800,
+          "p900_external_sign_cocycle": 1800
+        },
+        "endpoint_parse_count": 3600,
+        "same_slot_edge_count": 1800,
+        "different_slot_edge_count": 1800,
+        "slot_delta_mod15_hist": {
+          "0": 1800,
+          "1": 540,
+          "2": 60,
+          "3": 120,
+          "4": 180,
+          "5": 420,
+          "6": 360,
+          "7": 60,
+          "9": 60
+        },
+        "local_delta_mod60_hist": {
+          "0": 900,
+          "1": 15,
+          "11": 75,
+          "12": 120,
+          "13": 15,
+          "14": 75,
+          "15": 30,
+          "16": 15,
+          "18": 15,
+          "19": 15,
+          "22": 15,
+          "23": 15,
+          "24": 30,
+          "25": 30,
+          "27": 15,
+          "28": 15,
+          "30": 900,
+          "31": 15,
+          "32": 15,
+          "33": 30,
+          "34": 30,
+          "36": 30,
+          "37": 15,
+          "38": 30,
+          "39": 15,
+          "4": 285,
+          "41": 30,
+          "42": 60,
+          "43": 30,
+          "44": 45,
+          "45": 30,
+          "46": 45,
+          "52": 30,
+          "55": 30,
+          "6": 345,
+          "8": 120,
+          "9": 75
+        },
+        "directed_local_delta_sample": [
+          [
+            0,
+            16,
+            16
+          ],
+          [
+            0,
+            19,
+            19
+          ],
+          [
+            0,
+            25,
+            25
+          ],
+          [
+            0,
+            55,
+            55
+          ],
+          [
+            1,
+            15,
+            14
+          ],
+          [
+            1,
+            26,
+            25
+          ],
+          [
+            1,
+            29,
+            28
+          ],
+          [
+            1,
+            35,
+            34
+          ],
+          [
+            2,
+            25,
+            23
+          ],
+          [
+            2,
+            36,
+            34
+          ],
+          [
+            2,
+            39,
+            37
+          ],
+          [
+            2,
+            45,
+            43
+          ],
+          [
+            3,
+            35,
+            32
+          ],
+          [
+            3,
+            46,
+            43
+          ],
+          [
+            3,
+            49,
+            46
+          ],
+          [
+            3,
+            55,
+            52
+          ],
+          [
+            4,
+            15,
+            11
+          ],
+          [
+            4,
+            45,
+            41
+          ],
+          [
+            4,
+            56,
+            52
+          ],
+          [
+            4,
+            59,
+            55
+          ]
+        ],
+        "parsed_edge_samples": [
+          {
+            "u": {
+              "id": "T00_S00",
+              "slot": 0,
+              "local": 0
+            },
+            "v": {
+              "id": "T00_S16",
+              "slot": 0,
+              "local": 16
+            },
+            "kind": "internal_thalion_copy",
+            "law": "g60_internal"
+          },
+          {
+            "u": {
+              "id": "T00_S00",
+              "slot": 0,
+              "local": 0
+            },
+            "v": {
+              "id": "T00_S19",
+              "slot": 0,
+              "local": 19
+            },
+            "kind": "internal_thalion_copy",
+            "law": "g60_internal"
+          },
+          {
+            "u": {
+              "id": "T00_S00",
+              "slot": 0,
+              "local": 0
+            },
+            "v": {
+              "id": "T00_S25",
+              "slot": 0,
+              "local": 25
+            },
+            "kind": "internal_thalion_copy",
+            "law": "g60_internal"
+          },
+          {
+            "u": {
+              "id": "T00_S00",
+              "slot": 0,
+              "local": 0
+            },
+            "v": {
+              "id": "T00_S55",
+              "slot": 0,
+              "local": 55
+            },
+            "kind": "internal_thalion_copy",
+            "law": "g60_internal"
+          },
+          {
+            "u": {
+              "id": "T00_S01",
+              "slot": 0,
+              "local": 1
+            },
+            "v": {
+              "id": "T00_S15",
+              "slot": 0,
+              "local": 15
+            },
+            "kind": "internal_thalion_copy",
+            "law": "g60_internal"
+          },
+          {
+            "u": {
+              "id": "T00_S01",
+              "slot": 0,
+              "local": 1
+            },
+            "v": {
+              "id": "T00_S26",
+              "slot": 0,
+              "local": 26
+            },
+            "kind": "internal_thalion_copy",
+            "law": "g60_internal"
+          },
+          {
+            "u": {
+              "id": "T00_S01",
+              "slot": 0,
+              "local": 1
+            },
+            "v": {
+              "id": "T00_S29",
+              "slot": 0,
+              "local": 29
+            },
+            "kind": "internal_thalion_copy",
+            "law": "g60_internal"
+          },
+          {
+            "u": {
+              "id": "T00_S01",
+              "slot": 0,
+              "local": 1
+            },
+            "v": {
+              "id": "T00_S35",
+              "slot": 0,
+              "local": 35
+            },
+            "kind": "internal_thalion_copy",
+            "law": "g60_internal"
+          }
+        ]
+      },
+      "summary_field": {
+        "status": "g900_twisted_ring_candidate_generated",
+        "vertex_count": 900,
+        "slot_count": 15,
+        "local_state_count": 60,
+        "local_g60_edge_count": 120,
+        "signed_slot_edge_count": 30,
+        "internal_edge_count": 1800,
+        "external_edge_count": 1800,
+        "total_edge_count": 3600,
+        "carrier_law_counts": {
+          "half_flip_x_plus_30": 900,
+          "identity": 900
+        },
+        "source_files": {
+          "g60_source": "support/sources/g60_local_edges_from_aletheos.json",
+          "sign_cocycle": "support/cocycles/p900_external_sign_cocycle.json"
+        },
+        "interpretation": {
+          "candidate_type": "twisted_g60_fiber_bundle_over_g15",
+          "parallel_rule": "x -> x",
+          "crossed_rule": "x -> x+30 mod 60",
+          "baseline_contrast": "not the untwisted Cartesian product baseline"
+        },
+        "boundary": {
+          "candidate_only": true,
+          "not_admitted": true,
+          "not_census_id": true,
+          "not_public_proof": true
+        }
+      },
+      "fingerprint": null,
+      "error": null
+    },
+    "g900_twisted_ring_candidate_export": {
+      "name": "g900_twisted_ring_candidate_export",
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/16-fifteen-thalion-ring/support/exports/g900_twisted_ring_candidate_export.json",
+      "exists": true,
+      "sha256": "bce9c8841c6b568fdd5f9469ef33079085f0729a6c32960b8930cf42dff3b9d3",
+      "top_keys": [
+        "status",
+        "vertices",
+        "edges",
+        "fingerprint"
+      ],
+      "vertex_summary": {
+        "vertex_count": 900,
+        "unique_raw_id_count": 900,
+        "parsed_vertex_count": 900,
+        "slot_count": 15,
+        "local_state_count": 60,
+        "slot_min": 0,
+        "slot_max": 14,
+        "local_min": 0,
+        "local_max": 59,
+        "pair_count": 900,
+        "per_slot_hist": {
+          "60": 15
+        },
+        "per_local_hist": {
+          "15": 60
+        },
+        "sample_vertices": [
+          "T00_S00",
+          "T00_S01",
+          "T00_S02",
+          "T00_S03",
+          "T00_S04",
+          "T00_S05",
+          "T00_S06",
+          "T00_S07"
+        ]
+      },
+      "edge_summary": {
+        "edge_count": 3600,
+        "field_union": [
+          "kind",
+          "law",
+          "source",
+          "u",
+          "v"
+        ],
+        "field_intersection": [
+          "kind",
+          "law",
+          "source",
+          "u",
+          "v"
+        ],
+        "kind_hist": {
+          "external_signed_carrier": 1800,
+          "internal_thalion_copy": 1800
+        },
+        "law_hist": {
+          "g60_internal": 1800,
+          "half_flip_x_plus_30": 900,
+          "identity": 900
+        },
+        "source_hist": {
+          "g60_local_edges_from_aletheos": 1800,
+          "p900_external_sign_cocycle": 1800
+        },
+        "endpoint_parse_count": 3600,
+        "same_slot_edge_count": 1800,
+        "different_slot_edge_count": 1800,
+        "slot_delta_mod15_hist": {
+          "0": 1800,
+          "1": 540,
+          "2": 60,
+          "3": 120,
+          "4": 180,
+          "5": 420,
+          "6": 360,
+          "7": 60,
+          "9": 60
+        },
+        "local_delta_mod60_hist": {
+          "0": 900,
+          "1": 15,
+          "11": 75,
+          "12": 120,
+          "13": 15,
+          "14": 75,
+          "15": 30,
+          "16": 15,
+          "18": 15,
+          "19": 15,
+          "22": 15,
+          "23": 15,
+          "24": 30,
+          "25": 30,
+          "27": 15,
+          "28": 15,
+          "30": 900,
+          "31": 15,
+          "32": 15,
+          "33": 30,
+          "34": 30,
+          "36": 30,
+          "37": 15,
+          "38": 30,
+          "39": 15,
+          "4": 285,
+          "41": 30,
+          "42": 60,
+          "43": 30,
+          "44": 45,
+          "45": 30,
+          "46": 45,
+          "52": 30,
+          "55": 30,
+          "6": 345,
+          "8": 120,
+          "9": 75
+        },
+        "directed_local_delta_sample": [
+          [
+            0,
+            16,
+            16
+          ],
+          [
+            0,
+            19,
+            19
+          ],
+          [
+            0,
+            25,
+            25
+          ],
+          [
+            0,
+            55,
+            55
+          ],
+          [
+            0,
+            30,
+            30
+          ],
+          [
+            0,
+            30,
+            30
+          ],
+          [
+            0,
+            30,
+            30
+          ],
+          [
+            0,
+            30,
+            30
+          ],
+          [
+            1,
+            15,
+            14
+          ],
+          [
+            1,
+            26,
+            25
+          ],
+          [
+            1,
+            29,
+            28
+          ],
+          [
+            1,
+            35,
+            34
+          ],
+          [
+            1,
+            31,
+            30
+          ],
+          [
+            1,
+            31,
+            30
+          ],
+          [
+            1,
+            31,
+            30
+          ],
+          [
+            1,
+            31,
+            30
+          ],
+          [
+            2,
+            25,
+            23
+          ],
+          [
+            2,
+            36,
+            34
+          ],
+          [
+            2,
+            39,
+            37
+          ],
+          [
+            2,
+            45,
+            43
+          ]
+        ],
+        "parsed_edge_samples": [
+          {
+            "u": {
+              "id": "T00_S00",
+              "slot": 0,
+              "local": 0
+            },
+            "v": {
+              "id": "T00_S16",
+              "slot": 0,
+              "local": 16
+            },
+            "kind": "internal_thalion_copy",
+            "law": "g60_internal"
+          },
+          {
+            "u": {
+              "id": "T00_S00",
+              "slot": 0,
+              "local": 0
+            },
+            "v": {
+              "id": "T00_S19",
+              "slot": 0,
+              "local": 19
+            },
+            "kind": "internal_thalion_copy",
+            "law": "g60_internal"
+          },
+          {
+            "u": {
+              "id": "T00_S00",
+              "slot": 0,
+              "local": 0
+            },
+            "v": {
+              "id": "T00_S25",
+              "slot": 0,
+              "local": 25
+            },
+            "kind": "internal_thalion_copy",
+            "law": "g60_internal"
+          },
+          {
+            "u": {
+              "id": "T00_S00",
+              "slot": 0,
+              "local": 0
+            },
+            "v": {
+              "id": "T00_S55",
+              "slot": 0,
+              "local": 55
+            },
+            "kind": "internal_thalion_copy",
+            "law": "g60_internal"
+          },
+          {
+            "u": {
+              "id": "T00_S00",
+              "slot": 0,
+              "local": 0
+            },
+            "v": {
+              "id": "T01_S30",
+              "slot": 1,
+              "local": 30
+            },
+            "kind": "external_signed_carrier",
+            "law": "half_flip_x_plus_30"
+          },
+          {
+            "u": {
+              "id": "T00_S00",
+              "slot": 0,
+              "local": 0
+            },
+            "v": {
+              "id": "T04_S30",
+              "slot": 4,
+              "local": 30
+            },
+            "kind": "external_signed_carrier",
+            "law": "half_flip_x_plus_30"
+          },
+          {
+            "u": {
+              "id": "T00_S00",
+              "slot": 0,
+              "local": 0
+            },
+            "v": {
+              "id": "T05_S30",
+              "slot": 5,
+              "local": 30
+            },
+            "kind": "external_signed_carrier",
+            "law": "half_flip_x_plus_30"
+          },
+          {
+            "u": {
+              "id": "T00_S00",
+              "slot": 0,
+              "local": 0
+            },
+            "v": {
+              "id": "T06_S30",
+              "slot": 6,
+              "local": 30
+            },
+            "kind": "external_signed_carrier",
+            "law": "half_flip_x_plus_30"
+          }
+        ]
+      },
+      "summary_field": null,
+      "fingerprint": {
+        "status": "g900_twisted_ring_candidate_fingerprint",
+        "candidate_complete": true,
+        "validation_ok": true,
+        "cocycle_ok": true,
+        "vertex_count": 900,
+        "edge_count": 3600,
+        "degree_counts": {
+          "8": 900
+        },
+        "kind_counts": {
+          "external_signed_carrier": 1800,
+          "internal_thalion_copy": 1800
+        },
+        "law_counts": {
+          "g60_internal": 1800,
+          "half_flip_x_plus_30": 900,
+          "identity": 900
+        },
+        "connected": true,
+        "component_count": 1,
+        "diameter": 8,
+        "radius": 6,
+        "root_shell_profile": [
+          1,
+          8,
+          52,
+          175,
+          329,
+          257,
+          77,
+          1
+        ],
+        "comparison_to_untwisted_baseline": {
+          "baseline_form": "untwisted_product_G15_box_G60",
+          "twisted_form": "signed_half_flip_carrier_ring_candidate",
+          "baseline_diameter": 9,
+          "twisted_diameter": 8,
+          "diameter_change": -1,
+          "baseline_radius": 9,
+          "twisted_radius": 6,
+          "radius_change": -3,
+          "baseline_root_shell_profile": [
+            1,
+            8,
+            32,
+            82,
+            160,
+            246,
+            249,
+            100,
+            20,
+            2
+          ],
+          "twisted_root_shell_profile": [
+            1,
+            8,
+            52,
+            175,
+            329,
+            257,
+            77,
+            1
+          ]
+        },
+        "sha256": {
+          "edge_rows_with_kind_source_law": "998e518ee1b27762676972c5a8cbdede7f47bb1de6da7019e8a65f70d708255f",
+          "simple_edge_pairs": "27af3fef8fed26f19d1a1a0abd786a4aaed158f8cf3f4f57bccb59482b25cb47",
+          "adjacency_json_canonical": "13920a25a942e78d8993ea0a8187a58db7cd26a866ddd2b0dd5f587248383b09",
+          "generated_edge_csv_file": "6a7a5437b3f49b5f1fe17dad5eb7f05a6cdcf2184d319324f1cc96267e70e2c4",
+          "generated_summary_file": "8e9bb8c76d92d17eff1121d5c0e23b1d5f1dd7983b7ca669bbe206f2f723efbe",
+          "validation_file": "b483121e937ca826f22479716232dabe365f72f819dc86cbb9bd16aa9baa213d",
+          "cocycle_file": "68f1e7ae2ef6fe94d2b40d876b9a6ea818c5962c88d221d7fef672c408e28bd6"
+        },
+        "boundary": {
+          "candidate_only": true,
+          "twisted_ring_candidate": true,
+          "validated_graph_surface": true,
+          "not_admitted": true,
+          "not_census_id": true,
+          "not_public_proof": true
+        }
+      },
+      "error": null
+    },
+    "proposed_g900_vertex_register_candidate": {
+      "name": "proposed_g900_vertex_register_candidate",
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/16-fifteen-thalion-ring/support/artifacts/json/301_proposed_g900_vertex_register_candidate.json",
+      "exists": true,
+      "sha256": "cfb06b672c18cddb97c482e62af9c1b49ceab0a7d028aa2cbc23cafbcbe47d20",
+      "top_keys": [
+        "artifact",
+        "status",
+        "source_status",
+        "phase",
+        "thalean_iteration_cycle",
+        "source_rule",
+        "census_search_target",
+        "construction_basis",
+        "vertex_count",
+        "unique_vertex_ids",
+        "vertices",
+        "boundary"
+      ],
+      "vertex_summary": {
+        "vertex_count": 900,
+        "unique_raw_id_count": 900,
+        "parsed_vertex_count": 900,
+        "slot_count": 15,
+        "local_state_count": 60,
+        "slot_min": 0,
+        "slot_max": 14,
+        "local_min": 0,
+        "local_max": 59,
+        "pair_count": 900,
+        "per_slot_hist": {
+          "60": 15
+        },
+        "per_local_hist": {
+          "15": 60
+        },
+        "sample_vertices": [
+          "T00_S00",
+          "T00_S01",
+          "T00_S02",
+          "T00_S03",
+          "T00_S04",
+          "T00_S05",
+          "T00_S06",
+          "T00_S07"
+        ]
+      },
+      "edge_summary": {
+        "edge_count": 0,
+        "field_union": [],
+        "field_intersection": [],
+        "kind_hist": {},
+        "law_hist": {},
+        "source_hist": {},
+        "endpoint_parse_count": 0,
+        "same_slot_edge_count": 0,
+        "different_slot_edge_count": 0,
+        "slot_delta_mod15_hist": {},
+        "local_delta_mod60_hist": {},
+        "directed_local_delta_sample": [],
+        "parsed_edge_samples": []
+      },
+      "summary_field": null,
+      "fingerprint": null,
+      "error": null
+    },
+    "p900_external_permutation_law_audit": {
+      "name": "p900_external_permutation_law_audit",
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/16-fifteen-thalion-ring/support/audits/p900_external_permutation_law_audit.json",
+      "exists": true,
+      "sha256": "eab85ec94716c49626a97cb02aa478c31b03514506490c204d5f49f43804cd36",
+      "top_keys": [
+        "status",
+        "audit_count",
+        "preferred_external_audit",
+        "audits",
+        "interpretation",
+        "boundary"
+      ],
+      "vertex_summary": {
+        "vertex_count": 0,
+        "unique_raw_id_count": 0,
+        "parsed_vertex_count": 0,
+        "slot_count": 0,
+        "local_state_count": 0,
+        "slot_min": null,
+        "slot_max": null,
+        "local_min": null,
+        "local_max": null,
+        "pair_count": 0,
+        "per_slot_hist": {},
+        "per_local_hist": {},
+        "sample_vertices": []
+      },
+      "edge_summary": {
+        "edge_count": 0,
+        "field_union": [],
+        "field_intersection": [],
+        "kind_hist": {},
+        "law_hist": {},
+        "source_hist": {},
+        "endpoint_parse_count": 0,
+        "same_slot_edge_count": 0,
+        "different_slot_edge_count": 0,
+        "slot_delta_mod15_hist": {},
+        "local_delta_mod60_hist": {},
+        "directed_local_delta_sample": [],
+        "parsed_edge_samples": []
+      },
+      "summary_field": null,
+      "fingerprint": null,
+      "error": null
+    },
+    "p900_phase5_binary_half_turn_holonomy": {
+      "name": "p900_phase5_binary_half_turn_holonomy",
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/14-p900-consonance-surface/artifacts/json/p900_phase5_binary_half_turn_holonomy.json",
+      "exists": true,
+      "sha256": "c7631f014e38f06ef2ed8db650cc464ca972fd48e4d71460ffa819171deda0ef",
+      "top_keys": [
+        "closure_type_histogram",
+        "coupling_edge_count",
+        "cycle_count",
+        "cycle_length_histogram",
+        "cycle_search_max_length",
+        "external_degree_histogram",
+        "external_degree_max",
+        "external_degree_min",
+        "first_read",
+        "g15_edges",
+        "g15_model",
+        "g15_positions",
+        "half_turn_closure_count",
+        "holonomy_shift_histogram_mod_60",
+        "identity_closure_count",
+        "name",
+        "orientation_drift_count",
+        "p900_state_count",
+        "records",
+        "status",
+        "warning"
+      ],
+      "vertex_summary": {
+        "vertex_count": 0,
+        "unique_raw_id_count": 0,
+        "parsed_vertex_count": 0,
+        "slot_count": 0,
+        "local_state_count": 0,
+        "slot_min": null,
+        "slot_max": null,
+        "local_min": null,
+        "local_max": null,
+        "pair_count": 0,
+        "per_slot_hist": {},
+        "per_local_hist": {},
+        "sample_vertices": []
+      },
+      "edge_summary": {
+        "edge_count": 0,
+        "field_union": [],
+        "field_intersection": [],
+        "kind_hist": {},
+        "law_hist": {},
+        "source_hist": {},
+        "endpoint_parse_count": 0,
+        "same_slot_edge_count": 0,
+        "different_slot_edge_count": 0,
+        "slot_delta_mod15_hist": {},
+        "local_delta_mod60_hist": {},
+        "directed_local_delta_sample": [],
+        "parsed_edge_samples": []
+      },
+      "summary_field": null,
+      "fingerprint": null,
+      "error": null
+    },
+    "p900_phase4_cycle_holonomy_stub": {
+      "name": "p900_phase4_cycle_holonomy_stub",
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/14-p900-consonance-surface/artifacts/json/p900_phase4_cycle_holonomy_stub.json",
+      "exists": true,
+      "sha256": "9a4066f124dd967d798a4c00eed97511595f31220956968db9ae244e67cd5ebc",
+      "top_keys": [
+        "closure_type_histogram",
+        "cycle_count",
+        "cycle_length_histogram",
+        "cycle_search_max_length",
+        "first_read",
+        "g15_edges",
+        "g15_model",
+        "g15_positions",
+        "half_turn_closure_count",
+        "holonomy_shift_histogram_mod_60",
+        "identity_closure_count",
+        "name",
+        "orientation_drift_count",
+        "records",
+        "status",
+        "warning"
+      ],
+      "vertex_summary": {
+        "vertex_count": 0,
+        "unique_raw_id_count": 0,
+        "parsed_vertex_count": 0,
+        "slot_count": 0,
+        "local_state_count": 0,
+        "slot_min": null,
+        "slot_max": null,
+        "local_min": null,
+        "local_max": null,
+        "pair_count": 0,
+        "per_slot_hist": {},
+        "per_local_hist": {},
+        "sample_vertices": []
+      },
+      "edge_summary": {
+        "edge_count": 0,
+        "field_union": [],
+        "field_intersection": [],
+        "kind_hist": {},
+        "law_hist": {},
+        "source_hist": {},
+        "endpoint_parse_count": 0,
+        "same_slot_edge_count": 0,
+        "different_slot_edge_count": 0,
+        "slot_delta_mod15_hist": {},
+        "local_delta_mod60_hist": {},
+        "directed_local_delta_sample": [],
+        "parsed_edge_samples": []
+      },
+      "summary_field": null,
+      "fingerprint": null,
+      "error": null
+    }
+  },
+  "edge_comparisons": {
+    "generated_untwisted_vs_twisted": {
+      "directed_kind_intersection": 0,
+      "directed_kind_only_a": 3600,
+      "directed_kind_only_b": 3600,
+      "directed_plain_intersection": 2040,
+      "directed_plain_only_a": 1560,
+      "directed_plain_only_b": 1560,
+      "undirected_plain_intersection": 2040,
+      "undirected_plain_only_a": 1560,
+      "undirected_plain_only_b": 1560,
+      "sample_directed_only_a": [
+        [
+          "T00_S00",
+          "T01_S00"
+        ],
+        [
+          "T00_S00",
+          "T04_S00"
+        ],
+        [
+          "T00_S00",
+          "T10_S00"
+        ],
+        [
+          "T00_S00",
+          "T11_S00"
+        ],
+        [
+          "T00_S01",
+          "T01_S01"
+        ],
+        [
+          "T00_S01",
+          "T04_S01"
+        ],
+        [
+          "T00_S01",
+          "T10_S01"
+        ],
+        [
+          "T00_S01",
+          "T11_S01"
+        ]
+      ],
+      "sample_directed_only_b": [
+        [
+          "T00_S00",
+          "T01_S30"
+        ],
+        [
+          "T00_S00",
+          "T04_S30"
+        ],
+        [
+          "T00_S00",
+          "T05_S30"
+        ],
+        [
+          "T00_S00",
+          "T06_S30"
+        ],
+        [
+          "T00_S01",
+          "T01_S31"
+        ],
+        [
+          "T00_S01",
+          "T04_S31"
+        ],
+        [
+          "T00_S01",
+          "T05_S31"
+        ],
+        [
+          "T00_S01",
+          "T06_S31"
+        ]
+      ]
+    },
+    "export_untwisted_vs_twisted": {
+      "directed_kind_intersection": 0,
+      "directed_kind_only_a": 3600,
+      "directed_kind_only_b": 3600,
+      "directed_plain_intersection": 2040,
+      "directed_plain_only_a": 1560,
+      "directed_plain_only_b": 1560,
+      "undirected_plain_intersection": 2040,
+      "undirected_plain_only_a": 1560,
+      "undirected_plain_only_b": 1560,
+      "sample_directed_only_a": [
+        [
+          "T00_S00",
+          "T01_S00"
+        ],
+        [
+          "T00_S00",
+          "T04_S00"
+        ],
+        [
+          "T00_S00",
+          "T10_S00"
+        ],
+        [
+          "T00_S00",
+          "T11_S00"
+        ],
+        [
+          "T00_S01",
+          "T01_S01"
+        ],
+        [
+          "T00_S01",
+          "T04_S01"
+        ],
+        [
+          "T00_S01",
+          "T10_S01"
+        ],
+        [
+          "T00_S01",
+          "T11_S01"
+        ]
+      ],
+      "sample_directed_only_b": [
+        [
+          "T00_S00",
+          "T01_S30"
+        ],
+        [
+          "T00_S00",
+          "T04_S30"
+        ],
+        [
+          "T00_S00",
+          "T05_S30"
+        ],
+        [
+          "T00_S00",
+          "T06_S30"
+        ],
+        [
+          "T00_S01",
+          "T01_S31"
+        ],
+        [
+          "T00_S01",
+          "T04_S31"
+        ],
+        [
+          "T00_S01",
+          "T05_S31"
+        ],
+        [
+          "T00_S01",
+          "T06_S31"
+        ]
+      ]
+    },
+    "generated_vs_export_untwisted": {
+      "directed_kind_intersection": 3600,
+      "directed_kind_only_a": 0,
+      "directed_kind_only_b": 0,
+      "directed_plain_intersection": 3600,
+      "directed_plain_only_a": 0,
+      "directed_plain_only_b": 0,
+      "undirected_plain_intersection": 3600,
+      "undirected_plain_only_a": 0,
+      "undirected_plain_only_b": 0,
+      "sample_directed_only_a": [],
+      "sample_directed_only_b": []
+    },
+    "generated_vs_export_twisted": {
+      "directed_kind_intersection": 3600,
+      "directed_kind_only_a": 0,
+      "directed_kind_only_b": 0,
+      "directed_plain_intersection": 3600,
+      "directed_plain_only_a": 0,
+      "directed_plain_only_b": 0,
+      "undirected_plain_intersection": 3600,
+      "undirected_plain_only_a": 0,
+      "undirected_plain_only_b": 0,
+      "sample_directed_only_a": [],
+      "sample_directed_only_b": []
+    }
+  },
+  "interpretation": {
+    "main_result": "The 15-thalion ring schema is recoverable without using Gap A residual labels.",
+    "vertex_result": "The source uses the product register Tss_Sll, giving 15 thalion slots and 60 local states per slot.",
+    "edge_result": "The candidate ring sources expose 3600 edges and an edge-kind/law basis suitable for internal-versus-carrier testing.",
+    "twist_result": "Untwisted and twisted candidates can be compared at the directed edge-set and edge-law level.",
+    "next_question": "Can all 18 WXYZTI role rows be lifted uniformly into this recovered ring schema?"
+  },
+  "checks": [
+    {
+      "id": "test_plan_loaded",
+      "status": true,
+      "detail": "status=gap_a_15_thalion_ring_test_plan_recorded"
+    },
+    {
+      "id": "source_exists_g900_candidate_edges",
+      "status": true,
+      "detail": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/16-fifteen-thalion-ring/support/generated/g900_candidate_edges.json"
+    },
+    {
+      "id": "source_no_error_g900_candidate_edges",
+      "status": true,
+      "detail": "None"
+    },
+    {
+      "id": "source_exists_g900_candidate_graph_export",
+      "status": true,
+      "detail": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/16-fifteen-thalion-ring/support/exports/g900_candidate_graph_export.json"
+    },
+    {
+      "id": "source_no_error_g900_candidate_graph_export",
+      "status": true,
+      "detail": "None"
+    },
+    {
+      "id": "source_exists_g900_twisted_ring_candidate_edges",
+      "status": true,
+      "detail": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/16-fifteen-thalion-ring/support/generated/g900_twisted_ring_candidate_edges.json"
+    },
+    {
+      "id": "source_no_error_g900_twisted_ring_candidate_edges",
+      "status": true,
+      "detail": "None"
+    },
+    {
+      "id": "source_exists_g900_twisted_ring_candidate_export",
+      "status": true,
+      "detail": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/16-fifteen-thalion-ring/support/exports/g900_twisted_ring_candidate_export.json"
+    },
+    {
+      "id": "source_no_error_g900_twisted_ring_candidate_export",
+      "status": true,
+      "detail": "None"
+    },
+    {
+      "id": "source_exists_proposed_g900_vertex_register_candidate",
+      "status": true,
+      "detail": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/16-fifteen-thalion-ring/support/artifacts/json/301_proposed_g900_vertex_register_candidate.json"
+    },
+    {
+      "id": "source_no_error_proposed_g900_vertex_register_candidate",
+      "status": true,
+      "detail": "None"
+    },
+    {
+      "id": "source_exists_p900_external_permutation_law_audit",
+      "status": true,
+      "detail": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/16-fifteen-thalion-ring/support/audits/p900_external_permutation_law_audit.json"
+    },
+    {
+      "id": "source_no_error_p900_external_permutation_law_audit",
+      "status": true,
+      "detail": "None"
+    },
+    {
+      "id": "source_exists_p900_phase5_binary_half_turn_holonomy",
+      "status": true,
+      "detail": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/14-p900-consonance-surface/artifacts/json/p900_phase5_binary_half_turn_holonomy.json"
+    },
+    {
+      "id": "source_no_error_p900_phase5_binary_half_turn_holonomy",
+      "status": true,
+      "detail": "None"
+    },
+    {
+      "id": "source_exists_p900_phase4_cycle_holonomy_stub",
+      "status": true,
+      "detail": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/14-p900-consonance-surface/artifacts/json/p900_phase4_cycle_holonomy_stub.json"
+    },
+    {
+      "id": "source_no_error_p900_phase4_cycle_holonomy_stub",
+      "status": true,
+      "detail": "None"
+    },
+    {
+      "id": "g900_candidate_graph_export_has_900_vertices",
+      "status": true,
+      "detail": "{\"local_max\": 59, \"local_min\": 0, \"local_state_count\": 60, \"pair_count\": 900, \"parsed_vertex_count\": 900, \"per_local_hist\": {\"15\": 60}, \"per_slot_hist\": {\"60\": 15}, \"sample_vertices\": [\"T00_S00\", \"T00_S01\", \"T00_S02\", \"T00_S03\", \"T00_S04\", \"T00_S05\", \"T00_S06\", \"T00_S07\"], \"slot_count\": 15, \"slot_max\": 14, \"slot_min\": 0, \"unique_raw_id_count\": 900, \"vertex_count\": 900}"
+    },
+    {
+      "id": "g900_candidate_graph_export_has_15_slots",
+      "status": true,
+      "detail": "{\"local_max\": 59, \"local_min\": 0, \"local_state_count\": 60, \"pair_count\": 900, \"parsed_vertex_count\": 900, \"per_local_hist\": {\"15\": 60}, \"per_slot_hist\": {\"60\": 15}, \"sample_vertices\": [\"T00_S00\", \"T00_S01\", \"T00_S02\", \"T00_S03\", \"T00_S04\", \"T00_S05\", \"T00_S06\", \"T00_S07\"], \"slot_count\": 15, \"slot_max\": 14, \"slot_min\": 0, \"unique_raw_id_count\": 900, \"vertex_count\": 900}"
+    },
+    {
+      "id": "g900_candidate_graph_export_has_60_locals",
+      "status": true,
+      "detail": "{\"local_max\": 59, \"local_min\": 0, \"local_state_count\": 60, \"pair_count\": 900, \"parsed_vertex_count\": 900, \"per_local_hist\": {\"15\": 60}, \"per_slot_hist\": {\"60\": 15}, \"sample_vertices\": [\"T00_S00\", \"T00_S01\", \"T00_S02\", \"T00_S03\", \"T00_S04\", \"T00_S05\", \"T00_S06\", \"T00_S07\"], \"slot_count\": 15, \"slot_max\": 14, \"slot_min\": 0, \"unique_raw_id_count\": 900, \"vertex_count\": 900}"
+    },
+    {
+      "id": "g900_twisted_ring_candidate_export_has_900_vertices",
+      "status": true,
+      "detail": "{\"local_max\": 59, \"local_min\": 0, \"local_state_count\": 60, \"pair_count\": 900, \"parsed_vertex_count\": 900, \"per_local_hist\": {\"15\": 60}, \"per_slot_hist\": {\"60\": 15}, \"sample_vertices\": [\"T00_S00\", \"T00_S01\", \"T00_S02\", \"T00_S03\", \"T00_S04\", \"T00_S05\", \"T00_S06\", \"T00_S07\"], \"slot_count\": 15, \"slot_max\": 14, \"slot_min\": 0, \"unique_raw_id_count\": 900, \"vertex_count\": 900}"
+    },
+    {
+      "id": "g900_twisted_ring_candidate_export_has_15_slots",
+      "status": true,
+      "detail": "{\"local_max\": 59, \"local_min\": 0, \"local_state_count\": 60, \"pair_count\": 900, \"parsed_vertex_count\": 900, \"per_local_hist\": {\"15\": 60}, \"per_slot_hist\": {\"60\": 15}, \"sample_vertices\": [\"T00_S00\", \"T00_S01\", \"T00_S02\", \"T00_S03\", \"T00_S04\", \"T00_S05\", \"T00_S06\", \"T00_S07\"], \"slot_count\": 15, \"slot_max\": 14, \"slot_min\": 0, \"unique_raw_id_count\": 900, \"vertex_count\": 900}"
+    },
+    {
+      "id": "g900_twisted_ring_candidate_export_has_60_locals",
+      "status": true,
+      "detail": "{\"local_max\": 59, \"local_min\": 0, \"local_state_count\": 60, \"pair_count\": 900, \"parsed_vertex_count\": 900, \"per_local_hist\": {\"15\": 60}, \"per_slot_hist\": {\"60\": 15}, \"sample_vertices\": [\"T00_S00\", \"T00_S01\", \"T00_S02\", \"T00_S03\", \"T00_S04\", \"T00_S05\", \"T00_S06\", \"T00_S07\"], \"slot_count\": 15, \"slot_max\": 14, \"slot_min\": 0, \"unique_raw_id_count\": 900, \"vertex_count\": 900}"
+    },
+    {
+      "id": "proposed_g900_vertex_register_candidate_has_900_vertices",
+      "status": true,
+      "detail": "{\"local_max\": 59, \"local_min\": 0, \"local_state_count\": 60, \"pair_count\": 900, \"parsed_vertex_count\": 900, \"per_local_hist\": {\"15\": 60}, \"per_slot_hist\": {\"60\": 15}, \"sample_vertices\": [\"T00_S00\", \"T00_S01\", \"T00_S02\", \"T00_S03\", \"T00_S04\", \"T00_S05\", \"T00_S06\", \"T00_S07\"], \"slot_count\": 15, \"slot_max\": 14, \"slot_min\": 0, \"unique_raw_id_count\": 900, \"vertex_count\": 900}"
+    },
+    {
+      "id": "proposed_g900_vertex_register_candidate_has_15_slots",
+      "status": true,
+      "detail": "{\"local_max\": 59, \"local_min\": 0, \"local_state_count\": 60, \"pair_count\": 900, \"parsed_vertex_count\": 900, \"per_local_hist\": {\"15\": 60}, \"per_slot_hist\": {\"60\": 15}, \"sample_vertices\": [\"T00_S00\", \"T00_S01\", \"T00_S02\", \"T00_S03\", \"T00_S04\", \"T00_S05\", \"T00_S06\", \"T00_S07\"], \"slot_count\": 15, \"slot_max\": 14, \"slot_min\": 0, \"unique_raw_id_count\": 900, \"vertex_count\": 900}"
+    },
+    {
+      "id": "proposed_g900_vertex_register_candidate_has_60_locals",
+      "status": true,
+      "detail": "{\"local_max\": 59, \"local_min\": 0, \"local_state_count\": 60, \"pair_count\": 900, \"parsed_vertex_count\": 900, \"per_local_hist\": {\"15\": 60}, \"per_slot_hist\": {\"60\": 15}, \"sample_vertices\": [\"T00_S00\", \"T00_S01\", \"T00_S02\", \"T00_S03\", \"T00_S04\", \"T00_S05\", \"T00_S06\", \"T00_S07\"], \"slot_count\": 15, \"slot_max\": 14, \"slot_min\": 0, \"unique_raw_id_count\": 900, \"vertex_count\": 900}"
+    },
+    {
+      "id": "g900_candidate_edges_has_3600_edges",
+      "status": true,
+      "detail": "edge_count=3600"
+    },
+    {
+      "id": "g900_candidate_edges_has_parsed_endpoints",
+      "status": true,
+      "detail": "parsed=3600"
+    },
+    {
+      "id": "g900_candidate_graph_export_has_3600_edges",
+      "status": true,
+      "detail": "edge_count=3600"
+    },
+    {
+      "id": "g900_candidate_graph_export_has_parsed_endpoints",
+      "status": true,
+      "detail": "parsed=3600"
+    },
+    {
+      "id": "g900_twisted_ring_candidate_edges_has_3600_edges",
+      "status": true,
+      "detail": "edge_count=3600"
+    },
+    {
+      "id": "g900_twisted_ring_candidate_edges_has_parsed_endpoints",
+      "status": true,
+      "detail": "parsed=3600"
+    },
+    {
+      "id": "g900_twisted_ring_candidate_export_has_3600_edges",
+      "status": true,
+      "detail": "edge_count=3600"
+    },
+    {
+      "id": "g900_twisted_ring_candidate_export_has_parsed_endpoints",
+      "status": true,
+      "detail": "parsed=3600"
+    },
+    {
+      "id": "untwisted_has_internal_edges",
+      "status": true,
+      "detail": "{\"inter_thalion_diagonal_carrier\": 1800, \"internal_thalion_copy\": 1800}"
+    },
+    {
+      "id": "twisted_has_internal_edges",
+      "status": true,
+      "detail": "{\"external_signed_carrier\": 1800, \"internal_thalion_copy\": 1800}"
+    },
+    {
+      "id": "twisted_vs_untwisted_not_identical_directed",
+      "status": true,
+      "detail": "{\"directed_kind_intersection\": 0, \"directed_kind_only_a\": 3600, \"directed_kind_only_b\": 3600, \"directed_plain_intersection\": 2040, \"directed_plain_only_a\": 1560, \"directed_plain_only_b\": 1560, \"sample_directed_only_a\": [[\"T00_S00\", \"T01_S00\"], [\"T00_S00\", \"T04_S00\"], [\"T00_S00\", \"T10_S00\"], [\"T00_S00\", \"T11_S00\"], [\"T00_S01\", \"T01_S01\"], [\"T00_S01\", \"T04_S01\"], [\"T00_S01\", \"T10_S01\"], [\"T00_S01\", \"T11_S01\"]], \"sample_directed_only_b\": [[\"T00_S00\", \"T01_S30\"], [\"T00_S00\", \"T04_S30\"], [\"T00_S00\", \"T05_S30\"], [\"T00_S00\", \"T06_S30\"], [\"T00_S01\", \"T01_S31\"], [\"T00_S01\", \"T04_S31\"], [\"T00_S01\", \"T05_S31\"], [\"T00_S01\", \"T06_S31\"]], \"undirected_plain_intersection\": 2040, \"undirected_plain_only_a\": 1560, \"undirected_plain_only_b\": 1560}"
+    }
+  ],
+  "next_script": "attempt_gap_a_uniform_15_thalion_row_lift_001.py"
+}

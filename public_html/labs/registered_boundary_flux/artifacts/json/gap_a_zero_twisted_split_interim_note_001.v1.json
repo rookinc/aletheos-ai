@@ -1,0 +1,318 @@
+{
+  "schema": "gap_a_zero_twisted_split_interim_note_001.v1",
+  "status": "gap_a_zero_twisted_split_interim_note_recorded",
+  "timestamp_utc": "2026-06-14T19:36:45.757506+00:00",
+  "purpose": "Record theorem-level interpretation of the exact tested split inside the zero-twisted-carrier neighborhood.",
+  "boundary": [
+    "This is an interim theorem note, not a closure proof.",
+    "Gap A remains open.",
+    "The exact split is restricted to the tested zero-twisted-carrier neighborhood.",
+    "No global exact selector is claimed.",
+    "No full source-derived chamber/register map is claimed.",
+    "No physical interpretation is claimed."
+  ],
+  "inputs": {
+    "fifteen_thalion_interim": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_15_thalion_interim_theorem_note_001.v1.json",
+      "sha256": "d7ccd86222ad4d75a140bbc2899d8aad6f68170078457f0886e08b1fe13a360d",
+      "status": "gap_a_15_thalion_interim_theorem_note_recorded"
+    },
+    "zero_twisted_split": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_zero_twisted_neighborhood_split_001.v1.json",
+      "sha256": "14293c9f7a362b2c9e1f50587c3222816f7d1a29050a8015e26fe49b0b018476",
+      "status": "gap_a_zero_twisted_neighborhood_split_candidate_found_not_closure"
+    },
+    "zero_twisted_split_nulls": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_zero_twisted_split_candidate_nulls_001.v1.json",
+      "sha256": "1bf05ad3f362415ccf92cf3a1a75381f3323f8db215bf4a6bc1c3f5e02cf637a",
+      "status": "gap_a_zero_twisted_split_candidate_nulls_recorded"
+    },
+    "residual_split": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_15_thalion_residual_split_001.v1.json",
+      "sha256": "59a393b876c5bfff5971ca5744dc2f8a58a15918d30bfd3f01f9d7fb6211bc33",
+      "status": "gap_a_15_thalion_residual_split_aligned_not_closed"
+    },
+    "residual_nulls": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_15_thalion_residual_split_nulls_001.v1.json",
+      "sha256": "d2b1e515a5edfddc564ceca1b8407cd3b5741879be125314e6e64ada0485eb97",
+      "status": "gap_a_15_thalion_residual_split_nulls_recorded"
+    }
+  },
+  "claim": {
+    "does_this_close_gap_a": false,
+    "does_this_solve_gap_a": false,
+    "does_this_give_global_exact_selector": false,
+    "does_this_give_exact_split_inside_zero_twisted_neighborhood": true,
+    "does_this_survive_tested_nulls": true,
+    "short_form": "Gap A remains open, but inside the load-bearing zero-twisted-carrier neighborhood, the tested split candidate is exact and every tested null breaks exactness.",
+    "candidate_rule": "branch-sensitive return OR singleton ZT selected-turn",
+    "candidate_support": [
+      3,
+      16
+    ],
+    "not_closed_reason": "The exact split is restricted to the tested zero-twisted-carrier neighborhood. No full source-derived chamber/register map is claimed."
+  },
+  "interim_theorem_statement": {
+    "name": "Gap A zero-twisted split interim theorem note",
+    "statement": "Within the load-bearing zero-twisted-carrier obstruction neighborhood, the tested candidate rule branch-sensitive return OR singleton ZT selected-turn selects exactly the two known residual rows, 3 and 16. All six tested nulls break exactness. This gives bounded interim support for the 15-thalion twisted-carrier explanation, but it does not close Gap A because the result is local to the tested obstruction neighborhood and no full source-derived chamber/register map is yet known.",
+    "admission_status": "bounded_interim_support_not_gap_closure"
+  },
+  "evidence": {
+    "neighborhood": {
+      "zero_twisted_neighborhood": [
+        3,
+        4,
+        9,
+        15,
+        16
+      ],
+      "known_residual_rows": [
+        3,
+        16
+      ],
+      "false_positive_rows_before_split": [
+        4,
+        9,
+        15
+      ]
+    },
+    "preferred_candidate": {
+      "name": "branch_sensitive_return_candidate OR singleton_ZT_selected_turn_candidate",
+      "support": [
+        3,
+        16
+      ],
+      "exact": true,
+      "precision": 1.0,
+      "recall": 1.0,
+      "reading": "branch-sensitive return OR singleton ZT selected-turn"
+    },
+    "null_summary": {
+      "baseline_exact": true,
+      "baseline_support": [
+        3,
+        16
+      ],
+      "broken_null_count": 6,
+      "null_count": 6,
+      "load_bearing": {
+        "branch_sensitivity_load_bearing": true,
+        "singleton_ZT_selected_turn_load_bearing": true,
+        "role_specificity_load_bearing": true,
+        "column_count_alone_insufficient": true,
+        "branch_placement_load_bearing": true,
+        "role_placement_load_bearing": true
+      }
+    },
+    "null_tests": [
+      {
+        "name": "baseline_branch_sensitive_return_OR_singleton_ZT_selected_turn",
+        "support": [
+          3,
+          16
+        ],
+        "precision": 1.0,
+        "recall": 1.0,
+        "exact": true,
+        "false_positives": [],
+        "misses": []
+      },
+      {
+        "name": "null_branch_blind_TI_OR_singleton_ZT",
+        "support": [
+          3,
+          4,
+          16
+        ],
+        "precision": 0.6666666666666666,
+        "recall": 1.0,
+        "exact": false,
+        "false_positives": [
+          4
+        ],
+        "misses": []
+      },
+      {
+        "name": "null_selected_turn_blind_branch_sensitive_OR_all_ZT",
+        "support": [
+          3,
+          9,
+          15,
+          16
+        ],
+        "precision": 0.5,
+        "recall": 1.0,
+        "exact": false,
+        "false_positives": [
+          9,
+          15
+        ],
+        "misses": []
+      },
+      {
+        "name": "null_role_blind_branch_sensitive_OR_all_singletons",
+        "support": [
+          3,
+          4,
+          16
+        ],
+        "precision": 0.6666666666666666,
+        "recall": 1.0,
+        "exact": false,
+        "false_positives": [
+          4
+        ],
+        "misses": []
+      },
+      {
+        "name": "null_column_count_only_1_or_2",
+        "support": [
+          3,
+          4,
+          15,
+          16
+        ],
+        "precision": 0.5,
+        "recall": 1.0,
+        "exact": false,
+        "false_positives": [
+          4,
+          15
+        ],
+        "misses": []
+      },
+      {
+        "name": "null_branch_shuffle_OR_singleton_ZT",
+        "support": [
+          3
+        ],
+        "precision": 1.0,
+        "recall": 0.5,
+        "exact": false,
+        "false_positives": [],
+        "misses": [
+          16
+        ]
+      },
+      {
+        "name": "null_role_shuffle_branch_sensitive_OR_rotated_singleton_ZT",
+        "support": [
+          4,
+          16
+        ],
+        "precision": 0.5,
+        "recall": 0.5,
+        "exact": false,
+        "false_positives": [
+          4
+        ],
+        "misses": [
+          3
+        ]
+      }
+    ],
+    "residual_alignment": {
+      "status": "gap_a_15_thalion_residual_split_aligned_not_closed",
+      "known_residual_row_ordinals": [
+        3,
+        16
+      ],
+      "zt_residual_branch_stable": true,
+      "ti_residual_branch_sensitive": true,
+      "exact_feature_names": []
+    },
+    "previous_obstruction_note": {
+      "status": "gap_a_15_thalion_interim_theorem_note_recorded",
+      "claim": {
+        "does_15_thalion_ring_close_gap_a": false,
+        "does_15_thalion_ring_solve_gap_a": false,
+        "does_15_thalion_ring_supply_source_derived_structure": true,
+        "does_15_thalion_ring_supply_exact_selector": false,
+        "interim_result": "The 15-thalion twisted ring supplies a load-bearing source-derived obstruction neighborhood for Gap A, but it does not close Gap A.",
+        "short_form": "Gap A remains open. The 15-thalion twisted carrier explains where to look: both known residuals lie in the zero-twisted-carrier obstruction neighborhood, with ZT branch-stable and TI branch-sensitive.",
+        "not_closed_reason": "The obstruction neighborhood is not exact: zero-twisted-carrier support catches five rows, not only the two residual rows, and no source-derived chamber/register map has closed the final residuals."
+      }
+    },
+    "residual_nulls": {
+      "status": "gap_a_15_thalion_residual_split_nulls_recorded",
+      "baseline_support": [
+        3,
+        4,
+        9,
+        15,
+        16
+      ],
+      "baseline_recall": 1.0,
+      "baseline_precision": 0.4
+    }
+  },
+  "next_questions": [
+    "Can the candidate rule be derived directly from the twisted carrier source, rather than described after neighborhood formation?",
+    "Can the same split be reproduced under allowed slot automorphisms rather than one derangement null?",
+    "Can a chamber/register map be constructed that makes the zero-twisted neighborhood and split appear as consequences?",
+    "Can the rule be lifted from row-level support to path-level or edge-law-level transport?"
+  ],
+  "checks": [
+    {
+      "id": "fifteen_thalion_interim_loaded",
+      "status": true,
+      "detail": "gap_a_15_thalion_interim_theorem_note_recorded"
+    },
+    {
+      "id": "zero_twisted_split_loaded",
+      "status": true,
+      "detail": "gap_a_zero_twisted_neighborhood_split_candidate_found_not_closure"
+    },
+    {
+      "id": "zero_twisted_split_nulls_loaded",
+      "status": true,
+      "detail": "gap_a_zero_twisted_split_candidate_nulls_recorded"
+    },
+    {
+      "id": "residual_split_loaded",
+      "status": true,
+      "detail": "gap_a_15_thalion_residual_split_aligned_not_closed"
+    },
+    {
+      "id": "residual_nulls_loaded",
+      "status": true,
+      "detail": "gap_a_15_thalion_residual_split_nulls_recorded"
+    },
+    {
+      "id": "preferred_candidate_exact",
+      "status": true,
+      "detail": "{\"exact\": true, \"name\": \"branch_sensitive_return_candidate OR singleton_ZT_selected_turn_candidate\", \"precision\": 1.0, \"reading\": \"branch-sensitive return OR singleton ZT selected-turn\", \"recall\": 1.0, \"support\": [3, 16]}"
+    },
+    {
+      "id": "preferred_candidate_support_3_16",
+      "status": true,
+      "detail": "[3, 16]"
+    },
+    {
+      "id": "all_tested_nulls_broken",
+      "status": true,
+      "detail": "{\"baseline_exact\": true, \"baseline_support\": [3, 16], \"broken_null_count\": 6, \"load_bearing\": {\"branch_placement_load_bearing\": true, \"branch_sensitivity_load_bearing\": true, \"column_count_alone_insufficient\": true, \"role_placement_load_bearing\": true, \"role_specificity_load_bearing\": true, \"singleton_ZT_selected_turn_load_bearing\": true}, \"null_count\": 6}"
+    },
+    {
+      "id": "branch_sensitivity_load_bearing",
+      "status": true,
+      "detail": "{\"branch_placement_load_bearing\": true, \"branch_sensitivity_load_bearing\": true, \"column_count_alone_insufficient\": true, \"role_placement_load_bearing\": true, \"role_specificity_load_bearing\": true, \"singleton_ZT_selected_turn_load_bearing\": true}"
+    },
+    {
+      "id": "singleton_zt_load_bearing",
+      "status": true,
+      "detail": "{\"branch_placement_load_bearing\": true, \"branch_sensitivity_load_bearing\": true, \"column_count_alone_insufficient\": true, \"role_placement_load_bearing\": true, \"role_specificity_load_bearing\": true, \"singleton_ZT_selected_turn_load_bearing\": true}"
+    },
+    {
+      "id": "column_count_alone_insufficient",
+      "status": true,
+      "detail": "{\"branch_placement_load_bearing\": true, \"branch_sensitivity_load_bearing\": true, \"column_count_alone_insufficient\": true, \"role_placement_load_bearing\": true, \"role_specificity_load_bearing\": true, \"singleton_ZT_selected_turn_load_bearing\": true}"
+    },
+    {
+      "id": "gap_a_not_closed",
+      "status": true,
+      "detail": "closure claim false"
+    }
+  ],
+  "next_script": "derive_gap_a_source_rule_from_zero_twisted_split_001.py"
+}

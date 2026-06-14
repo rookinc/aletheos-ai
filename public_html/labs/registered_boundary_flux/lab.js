@@ -170,6 +170,7 @@ document.getElementById("prev").addEventListener("click", () => {
   phaseIndex = (phaseIndex - 1 + data.phases.length) % data.phases.length;
   renderPhases();
   draw();
+  rbfStartLoopOnce();
 });
 
 document.getElementById("next").addEventListener("click", () => {
@@ -204,14 +205,37 @@ window.addEventListener("resize", () => {
   draw();
 });
 
+
+/* rbf single boot loop pass 001 */
+function rbfStartLoopOnce() {
+  if (window.__rbfLoopStarted) return;
+  window.__rbfLoopStarted = true;
+  playing = true;
+  lastFrameTime = null;
+  requestAnimationFrame(loop);
+}
+
 function boot(json) {
+  if (!json || typeof json !== "object") {
+    hud.textContent = "failed to load kernel";
+    throw new Error("boot requires loaded kernel JSON");
+  }
+
   data = json;
   renderKernelStatus();
   renderRegisterStatus();
   resizeCanvas();
   renderPresetOptions();
   renderPhases();
-  loop();
+
+  try {
+    if (typeof rbfApplyStageLockState === "function") rbfApplyStageLockState();
+  } catch (err) {
+    console.warn("stage lock state skipped during boot", err);
+  }
+
+  draw();
+  rbfStartLoopOnce();
 }
 
 fetch("data/kernel.v1.json")
@@ -223,7 +247,9 @@ fetch("data/kernel.v1.json")
   });
 
 function loop(now) {
+  if (!Number.isFinite(now)) now = performance.now();
   if (lastFrameTime === null) lastFrameTime = now;
+
   const elapsed = Math.max(0, Math.min(0.1, (now - lastFrameTime) / 1000));
   lastFrameTime = now;
 
@@ -372,6 +398,17 @@ const rbfCamera = {
   lastDist: 0
 };
 
+
+function rbfTouchEnabled() {
+  return !(touchResponseToggle?.checked ?? false);
+}
+
+function rbfApplyStageLockState() {
+  if (viewerCard) viewerCard.classList.toggle("stage-locked", !rbfTouchEnabled());
+  if (rbfCamera && rbfCamera.pointers) rbfCamera.pointers.clear();
+  if (rbfCamera) rbfCamera.lastDist = 0;
+}
+
 function rbfPointerDistance() {
   const pts = Array.from(rbfCamera.pointers.values());
   if (pts.length < 2) return 0;
@@ -388,6 +425,7 @@ function rbfClampCamera() {
 }
 
 canvas.addEventListener("pointerdown", (ev) => {
+  if (!rbfTouchEnabled()) return;
   canvas.setPointerCapture(ev.pointerId);
   rbfCamera.pointers.set(ev.pointerId, { x: ev.clientX, y: ev.clientY });
   rbfCamera.lastX = ev.clientX;
@@ -396,6 +434,7 @@ canvas.addEventListener("pointerdown", (ev) => {
 });
 
 canvas.addEventListener("pointermove", (ev) => {
+  if (!rbfTouchEnabled()) return;
   if (!rbfCamera.pointers.has(ev.pointerId)) return;
 
   rbfCamera.pointers.set(ev.pointerId, { x: ev.clientX, y: ev.clientY });
@@ -428,6 +467,7 @@ function rbfEndPointer(ev) {
 canvas.addEventListener("pointerup", rbfEndPointer);
 canvas.addEventListener("pointercancel", rbfEndPointer);
 canvas.addEventListener("wheel", (ev) => {
+  if (!rbfTouchEnabled()) return;
   ev.preventDefault();
   rbfCamera.zoom *= ev.deltaY < 0 ? 1.08 : 0.92;
   rbfClampCamera();

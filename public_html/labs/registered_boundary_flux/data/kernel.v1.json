@@ -1,7 +1,7 @@
 {
   "schema": "registered_boundary_flux.kernel.v1",
   "title": "Registered Boundary Flux Kernel",
-  "status": "evidence_linked_cube_register_with_k900_numeric_binding_inspector",
+  "status": "evidence_linked_cube_register_with_single_boot_loop",
   "source_project": {
     "name": "06-sonoluminescence",
     "relative_path": "../../../../research/thalean-graph-theory/06-sonoluminescence",
@@ -220,6 +220,29 @@
       "status": "visible_not_rendered",
       "surface": "K900 action binding inspector",
       "boundary": "Numeric binding is displayed for custody but not rendered into Cube Register geometry."
+    }
+  },
+  "ui": {
+    "stage_grab_bar": {
+      "status": "active",
+      "purpose": "Touch-safe page scrolling over the canvas stage.",
+      "boundary": "UI affordance only; does not alter Cube Register geometry."
+    },
+    "autostart_animation": {
+      "status": "single_boot_loop_active",
+      "purpose": "Kernel boot draws once and starts one requestAnimationFrame loop after data is loaded.",
+      "boundary": "UI/animation boot behavior only."
+    },
+    "stage_lock": {
+      "status": "active",
+      "pattern": "P900-style touch-response toggle",
+      "rule": "Unlocked stage captures drag/pinch/wheel. Locked stage releases canvas touch for easier page scrolling.",
+      "boundary": "UI behavior only; does not alter Cube Register geometry."
+    },
+    "scroll_grab_bar": {
+      "status": "active",
+      "pattern": "P900-style scroll-grab-bar",
+      "boundary": "UI affordance only."
     }
   }
 }

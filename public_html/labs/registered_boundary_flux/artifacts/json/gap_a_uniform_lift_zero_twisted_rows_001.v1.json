@@ -1,0 +1,187 @@
+{
+  "schema": "gap_a_uniform_lift_zero_twisted_rows_001.v1",
+  "status": "gap_a_uniform_lift_zero_twisted_rows_normalized",
+  "timestamp_utc": "2026-06-14T20:20:51.053843+00:00",
+  "purpose": "Normalize the zero-twisted row set from the uniform lift artifact into a canonical row-support artifact.",
+  "boundary": [
+    "This does not close Gap A.",
+    "This normalizes provenance for the zero-twisted row set only.",
+    "The source-law preimage remains mixed because branch_sensitive OR singleton ZT still survives.",
+    "No full source-derived chamber/register map is claimed.",
+    "No physical interpretation is claimed."
+  ],
+  "inputs": {
+    "uniform_lift": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_uniform_15_thalion_row_lift_001.v1.json",
+      "sha256": "746469ce14d675063543189bdf49420fa630ee0834958a0c27b4056a45364c46",
+      "status": "gap_a_uniform_15_thalion_row_lift_needs_inspection"
+    },
+    "zero_twisted_provenance": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_zero_twisted_provenance_001.v1.json",
+      "sha256": "2c45d489543430a962f9287c9e2b9aa22f65d90f266cc4e59145ed61fd189e4f",
+      "status": "gap_a_zero_twisted_provenance_tightened"
+    },
+    "source_preimage": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_source_law_preimage_candidate_001.v1.json",
+      "sha256": "13f7e6bc160115b796df7e422543e246d0dcb96efb1df2cbc4180d10c711d8af",
+      "status": "gap_a_source_law_preimage_candidate_found_not_closure"
+    },
+    "source_preimage_nulls": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_source_law_preimage_candidate_nulls_001.v1.json",
+      "sha256": "b713f6703c9d7245e4b71687a2a3fe22b7ed6299d1b7b52b8998246d57a4caf1",
+      "status": "gap_a_source_law_preimage_candidate_nulls_mixed_not_promoted"
+    },
+    "improved_provenance_note": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_source_preimage_with_improved_provenance_001.v1.json",
+      "sha256": "20bef423791909aa72408a7e226d09d8d46f66a4ddfc3faefc32ba82086f4e5f",
+      "status": "gap_a_source_preimage_with_improved_provenance_recorded_not_promoted"
+    }
+  },
+  "normalized_zero_twisted_rows": [
+    3,
+    4,
+    9,
+    15,
+    16
+  ],
+  "source_extraction": {
+    "artifact": "registered_boundary_flux/artifacts/json/gap_a_uniform_15_thalion_row_lift_001.v1.json",
+    "method": "parse uniform_lift check id all_rows_have_twisted_edges detail zero=[...]",
+    "exact_hits": [
+      {
+        "path": "$.checks[8]",
+        "id": "all_rows_have_twisted_edges",
+        "status": false,
+        "detail": "zero=[3, 4, 9, 15, 16]",
+        "zero_rows": [
+          3,
+          4,
+          9,
+          15,
+          16
+        ],
+        "source_kind": "uniform_lift_check_detail"
+      }
+    ],
+    "all_candidate_hits": [
+      {
+        "path": "$.checks[8]",
+        "id": "all_rows_have_twisted_edges",
+        "status": false,
+        "detail": "zero=[3, 4, 9, 15, 16]",
+        "zero_rows": [
+          3,
+          4,
+          9,
+          15,
+          16
+        ],
+        "source_kind": "uniform_lift_check_detail"
+      },
+      {
+        "path": "$.checks[9]",
+        "id": "all_rows_have_untwisted_edges",
+        "status": true,
+        "detail": "zero=[]",
+        "zero_rows": [],
+        "source_kind": "uniform_lift_check_detail"
+      }
+    ]
+  },
+  "cross_checks": {
+    "expected": [
+      3,
+      4,
+      9,
+      15,
+      16
+    ],
+    "source_preimage_zero_twisted_rows": [
+      3,
+      4,
+      9,
+      15,
+      16
+    ],
+    "provenance_expected_zero_twisted_rows": [
+      3,
+      4,
+      9,
+      15,
+      16
+    ],
+    "improved_note_zero_twisted_rows": [
+      3,
+      4,
+      9,
+      15,
+      16
+    ]
+  },
+  "claim": {
+    "does_this_close_gap_a": false,
+    "does_this_promote_source_law_preimage": false,
+    "does_this_normalize_zero_twisted_provenance": true,
+    "zero_twisted_rows": [
+      3,
+      4,
+      9,
+      15,
+      16
+    ],
+    "short_form": "The zero-twisted row set [3,4,9,15,16] is now normalized from the uniform_lift check all_rows_have_twisted_edges.",
+    "not_promoted_reason": "The source-law preimage still has a surviving exact substitute: branch_sensitive OR singleton ZT."
+  },
+  "interpretation": {
+    "main_result": "The zero-twisted row set is no longer merely a regex discovery or zero-split fallback; it is normalized from the uniform_lift check record.",
+    "still_open": "This improves provenance but does not eliminate the surviving substitute or produce a global chamber/register map."
+  },
+  "checks": [
+    {
+      "id": "uniform_lift_loaded",
+      "status": true,
+      "detail": "gap_a_uniform_15_thalion_row_lift_needs_inspection"
+    },
+    {
+      "id": "candidate_hit_found",
+      "status": true,
+      "detail": "[{\"detail\": \"zero=[3, 4, 9, 15, 16]\", \"id\": \"all_rows_have_twisted_edges\", \"path\": \"$.checks[8]\", \"source_kind\": \"uniform_lift_check_detail\", \"status\": false, \"zero_rows\": [3, 4, 9, 15, 16]}, {\"detail\": \"zero=[]\", \"id\": \"all_rows_have_untwisted_edges\", \"path\": \"$.checks[9]\", \"source_kind\": \"uniform_lift_check_detail\", \"status\": true, \"zero_rows\": []}]"
+    },
+    {
+      "id": "exact_uniform_check_hit_found",
+      "status": true,
+      "detail": "[{\"detail\": \"zero=[3, 4, 9, 15, 16]\", \"id\": \"all_rows_have_twisted_edges\", \"path\": \"$.checks[8]\", \"source_kind\": \"uniform_lift_check_detail\", \"status\": false, \"zero_rows\": [3, 4, 9, 15, 16]}]"
+    },
+    {
+      "id": "normalized_rows_expected",
+      "status": true,
+      "detail": "[3, 4, 9, 15, 16]"
+    },
+    {
+      "id": "matches_source_preimage_zero",
+      "status": true,
+      "detail": "[3, 4, 9, 15, 16]"
+    },
+    {
+      "id": "matches_provenance_expected",
+      "status": true,
+      "detail": "[3, 4, 9, 15, 16]"
+    },
+    {
+      "id": "matches_improved_note_zero",
+      "status": true,
+      "detail": "[3, 4, 9, 15, 16]"
+    },
+    {
+      "id": "source_preimage_still_mixed",
+      "status": true,
+      "detail": "gap_a_source_law_preimage_candidate_nulls_mixed_not_promoted"
+    },
+    {
+      "id": "not_gap_closure",
+      "status": true,
+      "detail": "normalization only"
+    }
+  ],
+  "next_script": "derive_gap_a_source_preimage_from_normalized_zero_rows_001.py"
+}

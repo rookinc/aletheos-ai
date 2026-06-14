@@ -1,0 +1,279 @@
+{
+  "schema": "gap_a_source_preimage_with_improved_provenance_001.v1",
+  "status": "gap_a_source_preimage_with_improved_provenance_recorded_not_promoted",
+  "timestamp_utc": "2026-06-14T20:19:34.320262+00:00",
+  "purpose": "Record that zero-twisted provenance improved, while the source-law preimage remains mixed and not promoted.",
+  "boundary": [
+    "This does not close Gap A.",
+    "This does not promote the source-law preimage.",
+    "The zero-twisted row set now has direct uniform_lift evidence by exact text/regex hit.",
+    "The evidence is improved but not fully canonical because it is not a strong row-support field.",
+    "The branch_sensitive OR singleton ZT substitute still survives exactly.",
+    "The strongest current result remains the null-hardened 18-row chamber/register map candidate.",
+    "No full source-derived chamber/register map is claimed.",
+    "No physical interpretation is claimed."
+  ],
+  "inputs": {
+    "source_preimage": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_source_law_preimage_candidate_001.v1.json",
+      "sha256": "13f7e6bc160115b796df7e422543e246d0dcb96efb1df2cbc4180d10c711d8af",
+      "status": "gap_a_source_law_preimage_candidate_found_not_closure"
+    },
+    "source_preimage_nulls": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_source_law_preimage_candidate_nulls_001.v1.json",
+      "sha256": "b713f6703c9d7245e4b71687a2a3fe22b7ed6299d1b7b52b8998246d57a4caf1",
+      "status": "gap_a_source_law_preimage_candidate_nulls_mixed_not_promoted"
+    },
+    "source_preimage_mixed_note": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_source_law_preimage_mixed_note_001.v1.json",
+      "sha256": "0d0ab49254204fb1675eaba536f5b660f619133d0e469e13e17570f602ba19d5",
+      "status": "gap_a_source_law_preimage_mixed_note_recorded"
+    },
+    "zero_twisted_provenance": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_zero_twisted_provenance_001.v1.json",
+      "sha256": "2c45d489543430a962f9287c9e2b9aa22f65d90f266cc4e59145ed61fd189e4f",
+      "status": "gap_a_zero_twisted_provenance_tightened"
+    },
+    "chamber_interim": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_chamber_register_candidate_interim_note_001.v1.json",
+      "sha256": "c0b10fad9afc6de3134a86cbe4d270218bf87071ce723fb52bae8607327e18e9",
+      "status": "gap_a_chamber_register_candidate_interim_note_recorded"
+    }
+  },
+  "claim": {
+    "does_this_close_gap_a": false,
+    "does_this_solve_gap_a": false,
+    "does_this_promote_source_law_preimage": false,
+    "source_preimage_baseline_exact": true,
+    "source_preimage_support": [
+      3,
+      16
+    ],
+    "source_preimage_rule": "zero-twisted carrier support AND (singleton ZT OR multi-column TI)",
+    "source_preimage_surviving_nulls": [
+      "null_branch_sensitive_OR_singleton_ZT"
+    ],
+    "zero_twisted_rows": [
+      3,
+      4,
+      9,
+      15,
+      16
+    ],
+    "zero_twisted_direct_confirmed": true,
+    "zero_twisted_direct_sources": [
+      "uniform_lift"
+    ],
+    "uniform_lift_exact_text_hit": true,
+    "uniform_lift_strong_row_field": false,
+    "uniform_inspection_weak_row_support": true,
+    "provenance_status": "improved_regex_confirmed_not_canonical_field",
+    "strongest_current_result": "null-hardened 18-row chamber/register map candidate",
+    "short_form": "Zero-twisted provenance improved via direct uniform_lift exact hit, but source-law preimage is still mixed and not promoted.",
+    "not_promoted_reason": "The zero-twisted row set is now directly seen in uniform_lift, but only as an exact text/regex hit rather than a canonical strong row-support field; also branch_sensitive OR singleton ZT still survives exactly.",
+    "not_closed_reason": "Gap A still requires a full source-derived chamber/register map or elimination/derivation of the surviving branch-sensitive substitute."
+  },
+  "evidence": {
+    "source_preimage": {
+      "status": "gap_a_source_law_preimage_candidate_found_not_closure",
+      "candidate_rule": {
+        "name": "zero_twisted_source_law_preimage_with_role_column_orientation",
+        "reading": "zero-twisted carrier support AND (singleton ZT OR multi-column TI)",
+        "preimage_support": [
+          3,
+          16
+        ],
+        "stable_complement_reading": "zero-twisted carrier support AND (singleton TI OR multi-column ZT)",
+        "stable_complement_support": [
+          4,
+          9,
+          15
+        ]
+      },
+      "summary": {
+        "row_count": 18,
+        "match_count": 18,
+        "mismatches": [],
+        "exact_18_row_candidate": true,
+        "changed_fixes": [
+          3,
+          16
+        ],
+        "changed_breaks": [],
+        "claim_closes_gap_a": false
+      }
+    },
+    "source_preimage_nulls": {
+      "status": "gap_a_source_law_preimage_candidate_nulls_mixed_not_promoted",
+      "summary": {
+        "baseline_exact": true,
+        "baseline_match_count": 18,
+        "row_count": 18,
+        "null_count": 12,
+        "broken_null_count": 11,
+        "broken_nulls": [
+          "null_no_change",
+          "null_zero_twisted_alone",
+          "null_residual_orientation_alone",
+          "null_stable_orientation_alone",
+          "null_zero_twisted_AND_stable_orientation",
+          "null_zero_twisted_AND_role_ZT",
+          "null_zero_twisted_AND_role_TI",
+          "null_zero_twisted_AND_singleton",
+          "null_zero_twisted_AND_multi_column",
+          "null_zero_source_shift_plus_one_AND_residual_orientation",
+          "null_zero_source_shift_minus_one_AND_residual_orientation"
+        ],
+        "surviving_nulls": [
+          "null_branch_sensitive_OR_singleton_ZT"
+        ],
+        "load_bearing": {
+          "zero_twisted_alone_insufficient": true,
+          "residual_orientation_alone_insufficient": true,
+          "stable_orientation_breaks": true,
+          "role_only_inside_zero_insufficient": true,
+          "shape_only_inside_zero_insufficient": true,
+          "zero_source_placement_load_bearing": true,
+          "branch_sensitive_substitute_survives": true,
+          "direct_zero_source_confirmed_from_uniform_artifact": false,
+          "fallback_zero_source_used": true,
+          "all_nonbranch_nulls_break": true
+        },
+        "claim_closes_gap_a": false
+      }
+    },
+    "zero_twisted_provenance": {
+      "status": "gap_a_zero_twisted_provenance_tightened",
+      "summary": {
+        "direct_confirmed": true,
+        "direct_confirmations": [
+          "uniform_lift"
+        ],
+        "fallback_exact_hit_present": true,
+        "status_reading": "Direct provenance tightened.",
+        "claim_closes_gap_a": false
+      },
+      "uniform_lift_compact": {
+        "direct_confirmed": true,
+        "regex_exact_hits": [
+          [
+            3,
+            4,
+            9,
+            15,
+            16
+          ]
+        ],
+        "strong_row_exact": false,
+        "weak_count_exact": false
+      },
+      "uniform_inspection_compact": {
+        "direct_confirmed": false,
+        "weak_count_row_support": [
+          3,
+          4,
+          9,
+          15,
+          16
+        ],
+        "strong_row_exact": false,
+        "weak_count_exact": true
+      }
+    },
+    "chamber_interim_claim": {
+      "does_this_close_gap_a": false,
+      "does_this_solve_gap_a": false,
+      "does_this_give_full_source_derived_chamber_register_map": false,
+      "does_this_give_row_level_chamber_register_map_candidate": true,
+      "does_this_candidate_match_all_18_rows": true,
+      "does_this_candidate_survive_tested_nulls": true,
+      "base_projection_match_count": 16,
+      "base_projection_mismatches": [
+        3,
+        16
+      ],
+      "candidate_match_count": 18,
+      "candidate_mismatches": [],
+      "changed_rows": [
+        3,
+        16
+      ],
+      "null_count": 10,
+      "broken_null_count": 10,
+      "surviving_nulls": [],
+      "residual_side": "singleton ZT OR multi-column TI",
+      "stable_complement": "singleton TI OR multi-column ZT",
+      "short_form": "Gap A remains open, but the tested 18-row WXYZTI chamber/register table now has a null-hardened row-level map candidate: W-boundary seam projection plus role-column residual-side adjustment on rows 3 and 16.",
+      "not_closed_reason": "The result is still row-table-level. It has not yet been derived as a full source-law chamber/register map from the global carrier construction."
+    }
+  },
+  "interim_statement": {
+    "name": "Gap A source preimage with improved provenance",
+    "statement": "The zero-twisted row set [3,4,9,15,16] is now directly visible in the uniform_lift artifact by exact text/regex hit, so the source-law preimage no longer rests only on the later zero-split fallback. However, this is improved provenance, not canonical provenance, because the row set is not yet exposed as a strong row-support field. The source-law preimage also remains mixed because branch_sensitive OR singleton ZT still survives as an exact substitute. Therefore the source-law preimage remains promising but not promoted; the strongest current Gap A result is still the null-hardened 18-row chamber/register map candidate.",
+    "admission_status": "improved_provenance_not_promoted_not_gap_closure"
+  },
+  "next_questions": [
+    "Can uniform_lift be normalized to expose zero_twisted_rows as a canonical row-support field?",
+    "Can branch_sensitive OR singleton ZT be derived from the zero-twisted role-column preimage instead of surviving independently?",
+    "Can the improved provenance be used to regenerate the source preimage without regex discovery?",
+    "Can the row-level chamber/register candidate be lifted to a global source-law map?"
+  ],
+  "checks": [
+    {
+      "id": "source_preimage_loaded",
+      "status": true,
+      "detail": "gap_a_source_law_preimage_candidate_found_not_closure"
+    },
+    {
+      "id": "source_preimage_nulls_loaded",
+      "status": true,
+      "detail": "gap_a_source_law_preimage_candidate_nulls_mixed_not_promoted"
+    },
+    {
+      "id": "mixed_note_loaded",
+      "status": true,
+      "detail": "gap_a_source_law_preimage_mixed_note_recorded"
+    },
+    {
+      "id": "zero_provenance_loaded",
+      "status": true,
+      "detail": "gap_a_zero_twisted_provenance_tightened"
+    },
+    {
+      "id": "chamber_interim_loaded",
+      "status": true,
+      "detail": "gap_a_chamber_register_candidate_interim_note_recorded"
+    },
+    {
+      "id": "direct_confirmed",
+      "status": true,
+      "detail": "{\"claim_closes_gap_a\": false, \"direct_confirmations\": [\"uniform_lift\"], \"direct_confirmed\": true, \"fallback_exact_hit_present\": true, \"status_reading\": \"Direct provenance tightened.\"}"
+    },
+    {
+      "id": "uniform_lift_exact_hit",
+      "status": true,
+      "detail": "[[3, 4, 9, 15, 16]]"
+    },
+    {
+      "id": "not_strong_field",
+      "status": true,
+      "detail": "{\"direct_confirmed\": true, \"regex_candidates\": [[3, 4, 9, 15, 16], [0, 1], [0, 1, 3, 4, 9, 15, 16], [0, 4], [3, 4], [0, 1, 3, 4, 9, 10, 11, 15, 16], [0], [4], [1, 2], [7, 10], [2, 3], [9], [2, 13], [13], [4, 5], [4, 10], [1, 7], [0, 5], [2, 7], [0, 11], [7, 8], [9, 11, 14], [3, 13], [4, 14], [10, 11], [5, 10], [2, 8], [1, 11], [8, 14], [6, 14], [13, 15], [5, 14], [5, 6], [0, 1, 5, 6, 7, 8, 11, 12, 13, 14, 17], [10], [2]], \"regex_exact_hits\": [[3, 4, 9, 15, 16]], \"regex_windows\": [{\"candidate\": [3, 4, 9, 15, 16], \"window\": \"_30\\\", \\\"status\\\": true}, {\\\"detail\\\": \\\"len=30\\\", \\\"id\\\": \\\"column_slot_pairs_30\\\", \\\"status\\\": true}, {\\\"detail\\\": \\\"len=18\\\", \\\"id\\\": \\\"role_row_count_18\\\", \\\"status\\\": true}, {\\\"detail\\\": \\\"empty_rows=[]\\\", \\\"id\\\": \\\"all_rows_have_columns\\\", \\\"status\\\": true}, {\\\"detail\\\": \\\"missing=[]\\\", \\\"id\\\": \\\"all_rows_have_slot_pairs\\\", \\\"status\\\": true}, {\\\"detail\\\": \\\"zero=[3, 4, 9, 15, 16]\\\", \\\"id\\\": \\\"all_rows_have_twisted_edges\\\", \\\"status\\\": false}, {\\\"detail\\\": \\\"zero=[]\\\", \\\"id\\\": \\\"all_rows_have_untwisted_edges\\\", \\\"status\\\": true}, {\\\"detail\\\": \\\"script reads prior lift rows, columns, role/cycle labels, and ring source edges; it does not read residual/mismatch"
+    },
+    {
+      "id": "branch_survivor_recorded",
+      "status": true,
+      "detail": "[\"null_branch_sensitive_OR_singleton_ZT\"]"
+    },
+    {
+      "id": "not_promoted",
+      "status": true,
+      "detail": "promotion false"
+    },
+    {
+      "id": "gap_a_not_closed",
+      "status": true,
+      "detail": "closure false"
+    }
+  ],
+  "next_script": "normalize_gap_a_uniform_lift_zero_twisted_rows_001.py"
+}

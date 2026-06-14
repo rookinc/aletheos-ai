@@ -414,3 +414,66 @@ h1 {
   color: inherit;
 }
 
+/* GAP_A_LIFT_REFINED_STATUS_START */
+.gap-a-lift-refined-card {
+  margin: 1.25rem 0;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.055);
+  backdrop-filter: blur(10px);
+}
+
+.gap-a-lift-refined-eyebrow {
+  margin-bottom: 0.35rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.72;
+}
+
+.gap-a-lift-refined-card h2 {
+  margin: 0 0 0.4rem;
+  font-size: clamp(1rem, 4vw, 1.35rem);
+  line-height: 1.15;
+}
+
+.gap-a-lift-refined-lede,
+.gap-a-lift-refined-boundary {
+  margin: 0.45rem 0 0;
+  max-width: 62rem;
+  opacity: 0.82;
+}
+
+.gap-a-lift-refined-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin-top: 0.8rem;
+}
+
+.gap-a-lift-refined-grid div {
+  padding: 0.7rem;
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.16);
+}
+
+.gap-a-lift-refined-grid span {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.72rem;
+  opacity: 0.7;
+}
+
+.gap-a-lift-refined-grid strong {
+  display: block;
+  font-size: 0.9rem;
+  line-height: 1.15;
+}
+
+@media (max-width: 720px) {
+  .gap-a-lift-refined-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+/* GAP_A_LIFT_REFINED_STATUS_END */

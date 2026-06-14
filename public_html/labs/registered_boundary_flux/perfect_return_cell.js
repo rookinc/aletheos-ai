@@ -378,3 +378,22 @@ if (document.readyState === "loading") {
   loadGapASelectorStatus();
 }
 
+/* GAP_A_LIFT_REFINED_STATUS_DATA_START */
+(function () {
+  var target = document.getElementById("gap-a-lift-refined-status");
+  if (!target) return;
+
+  fetch("data/gap_a_lift_refined_status.v1.json")
+    .then(function (response) {
+      if (!response.ok) throw new Error("status data unavailable");
+      return response.json();
+    })
+    .then(function (data) {
+      target.setAttribute("data-gap-a-status", data.status || "gap_a_open_bounded_lift_refined");
+      target.setAttribute("data-gap-a-source-status", (data.source && data.source.status) || "unknown");
+    })
+    .catch(function () {
+      target.setAttribute("data-gap-a-status", "static_fallback");
+    });
+}());
+/* GAP_A_LIFT_REFINED_STATUS_DATA_END */

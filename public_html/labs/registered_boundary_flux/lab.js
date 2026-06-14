@@ -797,3 +797,67 @@ cubeDrawSeams = function(g, s) {
   cubeDrawSeamsOriginal(g, s);
   cubeDrawCornerNodes(g, s);
 };
+
+
+/* k900 action binding inspector pass 001 */
+let k900ActionBinding = null;
+const k900ActionStatus = document.getElementById("k900-action-status");
+
+function k900Get(obj, path, fallback) {
+  let cur = obj;
+  for (const key of path) {
+    if (!cur || typeof cur !== "object" || !(key in cur)) return fallback;
+    cur = cur[key];
+  }
+  return cur;
+}
+
+function renderK900ActionBinding() {
+  if (!k900ActionStatus) return;
+
+  if (!k900ActionBinding) {
+    k900ActionStatus.textContent = "K900 action: numeric binding unavailable.";
+    return;
+  }
+
+  const status = k900ActionBinding.status || "unknown";
+  const compression = k900Get(k900ActionBinding, ["action_bindings", "compression", "raw_signals"], {});
+  const polarity = k900Get(k900ActionBinding, ["action_bindings", "polarity", "raw_signals"], {});
+  const trace = k900Get(k900ActionBinding, ["action_bindings", "registered_trace", "raw_signals"], {});
+
+  const compressedCount = compression.original_compressed_count;
+  const oddTriangleCount = compression.odd_triangle_count;
+  const oddSlotCount = compression.odd_triangle_slot_count;
+  const nonOddSlotCount = compression.non_odd_triangle_slot_count;
+  const residueVector = polarity.baseline_residue_vector || [];
+  const sourceCount = trace.source_file_count;
+  const allSources = trace.all_source_files_exist;
+
+  k900ActionStatus.innerHTML =
+    "<strong>K900 action binding</strong>" +
+    '<div class="k900-line">status: ' + status + " / renderer: not rendered</div>" +
+    '<div class="k900-line">compression: compressed_count=' + compressedCount +
+      " odd_triangles=" + oddTriangleCount +
+      " odd_slots=" + oddSlotCount +
+      " non_odd_slots=" + nonOddSlotCount + "</div>" +
+    '<div class="k900-line">polarity: baseline_residue=[' + residueVector.join(",") + "]</div>" +
+    '<div class="k900-line">sources: ' + sourceCount +
+      " files, all_present=" + allSources + "</div>" +
+    '<div class="k900-boundary">Inspector only. These K900/P19/P20 numeric signals are bound for custody, but not rendered into Cube Register geometry yet.</div>';
+}
+
+async function bootK900ActionBinding() {
+  if (!k900ActionStatus) return;
+
+  try {
+    const res = await fetch("data/k900_action_binding.v1.json", { cache: "no-store" });
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    k900ActionBinding = await res.json();
+    renderK900ActionBinding();
+  } catch (err) {
+    k900ActionStatus.textContent = "K900 action: binding inspector failed to load.";
+    console.warn("K900 action binding load failed", err);
+  }
+}
+
+bootK900ActionBinding();

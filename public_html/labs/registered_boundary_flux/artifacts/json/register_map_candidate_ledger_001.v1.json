@@ -1,0 +1,3538 @@
+{
+  "schema": "register_map_candidate_ledger_001.v1",
+  "status": "candidate_inventory_not_proof",
+  "timestamp_utc": "2026-06-14T17:46:06.865668+00:00",
+  "gap": "A_chamber_register_map",
+  "purpose": "Inventory candidate artifacts and finite predicates for the missing K900-to-chamber/register map proof.",
+  "boundary": [
+    "This ledger does not prove the chamber/register map.",
+    "This ledger does not change the Perfect Return Cell UI.",
+    "This ledger does not claim that upstairs/downstairs is a finite invariant.",
+    "This ledger only records available sources, candidate input sets, controls, and next proof scripts."
+  ],
+  "target_theorem_A0": {
+    "statement": "A finite search over candidate register keys either produces a lawful register map that recovers the selected WXYZTIW branch triple, or proves that public predicates are insufficient and row-aware incidence is the first tested exact layer.",
+    "forked_success_conditions": [
+      "lawful register map recovered",
+      "finite obstruction / insufficiency receipt emitted"
+    ]
+  },
+  "candidate_input_sets": [
+    {
+      "id": "A0_public_predicate_only",
+      "status": "control",
+      "purpose": "Test whether public chamber/triangle predicates alone recover the WXYZTIW selected branch triple.",
+      "required_artifacts": [
+        "K900 G15 carrier edge register",
+        "K900 triangle reference",
+        "selected WXYZTIW branch triple"
+      ],
+      "expected_result": "Likely reduces candidate space but does not recover exact branch law."
+    },
+    {
+      "id": "A1_row_aware_M_incidence",
+      "status": "primary_candidate",
+      "purpose": "Test whether row-aware M-incidence is the first layer that exactly recovers the selected branch triple.",
+      "required_artifacts": [
+        "matrix_M.json",
+        "row_taxonomy.json",
+        "selected branch triple",
+        "role order W,X,Y,Z,T,I"
+      ],
+      "expected_result": "Exact recovery if v21 conclusion is reproduced."
+    },
+    {
+      "id": "A2_row_shuffled_M_null",
+      "status": "null",
+      "purpose": "Control against accidental recovery by the shape of M alone.",
+      "required_artifacts": [
+        "matrix_M.json",
+        "row_taxonomy.json",
+        "row shuffle seed",
+        "selected branch triple"
+      ],
+      "expected_result": "Should fail exact recovery."
+    },
+    {
+      "id": "A3_register_key_layer",
+      "status": "candidate_if_artifacts_found",
+      "purpose": "Test whether public chamber/triangle predicates reduce the register space to Petersen mate-pairs before row-aware incidence resolves the branch law.",
+      "required_artifacts": [
+        "register-key layer artifact",
+        "Petersen mate-pair references",
+        "selected branch triple"
+      ],
+      "expected_result": "Should identify partial key reduction, not full selection."
+    }
+  ],
+  "artifact_records": [
+    {
+      "path": "aletheos.ai/public_html/json/theorem_object.json",
+      "exists": true,
+      "bytes": 13166,
+      "sha256": "82078e2a053218df43125553a274923cbac6c63e61d205e6a4ad2dd73c4723c1",
+      "summary": {
+        "json_valid": true,
+        "type": "dict",
+        "keys": [
+          "name",
+          "shape_M",
+          "shape_Q",
+          "matrix_M",
+          "gram_Q",
+          "columns",
+          "row_sums",
+          "col_sums",
+          "score_sq",
+          "stats",
+          "distance_expression",
+          "adjacency_polynomial",
+          "g15_distance_matrix",
+          "petersen_edges_indexing",
+          "source_artifact",
+          "source_artifact_status",
+          "source_artifact_note"
+        ],
+        "list_shape_M": 2,
+        "list_shape_Q": 2,
+        "list_matrix_M": 15,
+        "list_gram_Q": 15,
+        "list_columns": 30,
+        "list_row_sums": 15,
+        "list_col_sums": 30,
+        "dict_stats_keys": [
+          "bucket_hist",
+          "bucket_summary",
+          "max_abs_error",
+          "score_abs",
+          "score_sq",
+          "wrong_pair_count"
+        ],
+        "list_g15_distance_matrix": 15,
+        "list_petersen_edges_indexing": 15
+      }
+    },
+    {
+      "path": "aletheos.ai/public_html/json/gram_Q.json",
+      "exists": true,
+      "bytes": 2235,
+      "sha256": "486cc484c9dc8b17ad36cad2935caf4a93480d556a2de384b975f66d102a56de",
+      "summary": {
+        "json_valid": true,
+        "type": "dict",
+        "keys": [
+          "Q"
+        ],
+        "list_Q": 15
+      }
+    },
+    {
+      "path": "aletheos.ai/public_html/json/matrix_M.json",
+      "exists": true,
+      "bytes": 4245,
+      "sha256": "b72fc5606c60fcb3d9c76d8fbc04513730543070a31f6c382b6946e953c3074a",
+      "summary": {
+        "json_valid": true,
+        "type": "dict",
+        "keys": [
+          "M"
+        ],
+        "list_M": 15
+      }
+    },
+    {
+      "path": "aletheos.ai/public_html/json/row_taxonomy.json",
+      "exists": true,
+      "bytes": 2585,
+      "sha256": "80d88f9ba9a305dc885c870f90bcf309722ff1efe632b49192e95e5fc38042c8",
+      "summary": {
+        "json_valid": true,
+        "type": "dict",
+        "keys": [
+          "status",
+          "description",
+          "source",
+          "chamber_blocks",
+          "hinge_triple",
+          "anchor_rows",
+          "companion_classes",
+          "flank_classes",
+          "taxonomy_classes"
+        ],
+        "dict_source_keys": [
+          "theorem_object",
+          "matrix"
+        ],
+        "dict_chamber_blocks_keys": [
+          "B0",
+          "B1",
+          "B2",
+          "B3",
+          "B4"
+        ],
+        "list_hinge_triple": 3,
+        "dict_anchor_rows_keys": [
+          "A0",
+          "A1",
+          "A2"
+        ],
+        "dict_companion_classes_keys": [
+          "C2",
+          "C1",
+          "C0"
+        ],
+        "dict_flank_classes_keys": [
+          "F0",
+          "F1",
+          "F2"
+        ],
+        "list_taxonomy_classes": 9,
+        "first_taxonomy_classes_keys": [
+          "hinges",
+          "block_vector",
+          "class",
+          "rows"
+        ]
+      }
+    },
+    {
+      "path": "aletheos.ai/public_html/json/transport_cocycle.json",
+      "exists": true,
+      "bytes": 3336,
+      "sha256": "54fbfe8bbd66991beb4a185a13791d164e6686b2148ed3f17de337a907346676",
+      "summary": {
+        "json_valid": true,
+        "type": "dict",
+        "keys": [
+          "name",
+          "status",
+          "purpose",
+          "core_statement",
+          "domains",
+          "walk_state_fields",
+          "transition_classes",
+          "stairs_principle",
+          "cocycle_effects",
+          "invariants",
+          "anti_drift_rules",
+          "plain_language"
+        ],
+        "dict_domains_keys": [
+          "regions",
+          "lenses"
+        ],
+        "list_walk_state_fields": 7,
+        "list_transition_classes": 3,
+        "first_transition_classes_keys": [
+          "name",
+          "description"
+        ],
+        "dict_stairs_principle_keys": [
+          "statement",
+          "distinguished_anchor",
+          "anchor_role_cube_lens"
+        ],
+        "list_cocycle_effects": 5,
+        "first_cocycle_effects_keys": [
+          "name",
+          "description"
+        ],
+        "list_invariants": 4,
+        "list_anti_drift_rules": 4,
+        "dict_plain_language_keys": [
+          "house_picture",
+          "transport_picture"
+        ]
+      }
+    },
+    {
+      "path": "aletheos.ai/public_html/json/verify_report.json",
+      "exists": true,
+      "bytes": 8901,
+      "sha256": "70e3356e4b36ee2763146cd0f133eed9b2af29daa457370e2531fed7187e86ed",
+      "summary": {
+        "json_valid": true,
+        "type": "dict",
+        "keys": [
+          "generated_at_utc",
+          "overall_status",
+          "results",
+          "summary"
+        ],
+        "list_results": 13,
+        "first_results_keys": [
+          "checker",
+          "status",
+          "result"
+        ],
+        "list_summary": 15,
+        "first_summary_keys": [
+          "checker",
+          "claim_id",
+          "status"
+        ]
+      }
+    },
+    {
+      "path": "aletheos.ai/theorem/cocycle_data_aligned.json",
+      "exists": true,
+      "bytes": 2995,
+      "sha256": "7d9b3144524b2989d1710e317810a4e1778914c628b1ff4672e4980a5988516d",
+      "summary": {
+        "json_valid": true,
+        "type": "dict",
+        "keys": [
+          "graph",
+          "graph_description",
+          "sign_convention",
+          "source_note",
+          "alignment_note",
+          "vertex_map_archived_to_active",
+          "edge_cocycle"
+        ],
+        "dict_sign_convention_keys": [
+          "parallel",
+          "crossed"
+        ],
+        "dict_vertex_map_archived_to_active_keys": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14"
+        ],
+        "list_edge_cocycle": 30,
+        "first_edge_cocycle_keys": [
+          "edge",
+          "value"
+        ]
+      }
+    },
+    {
+      "path": "aletheos.ai/theorem/cocycle_status.json",
+      "exists": true,
+      "bytes": 729,
+      "sha256": "40e8a469109cfd98e2e6082f059fa16c8cbb4847cf38b75af67c3a5f09768547",
+      "summary": {
+        "json_valid": true,
+        "type": "dict",
+        "keys": [
+          "cocycle_layer_status",
+          "current_scope",
+          "verified_claims",
+          "theorem_file",
+          "archived_pre_alignment_file",
+          "intended_boundary"
+        ],
+        "list_current_scope": 4,
+        "dict_verified_claims_keys": [
+          "C1",
+          "C2",
+          "C3",
+          "C4"
+        ]
+      }
+    },
+    {
+      "path": "aletheos.ai/public_html/labs/registered_boundary_flux/data/g60_source_binding.v1.json",
+      "exists": true,
+      "bytes": 5793,
+      "sha256": "8dec103c109f8a93fa84f46ea8faafd5638e1e1042ef66bb9fe47c3ab976f675",
+      "summary": {
+        "json_valid": true,
+        "type": "dict",
+        "keys": [
+          "id",
+          "status",
+          "canonical_source",
+          "source_files",
+          "source_file_count",
+          "source_boundary",
+          "active_projection",
+          "available_next_projection",
+          "render_contract"
+        ],
+        "dict_canonical_source_keys": [
+          "name",
+          "graph_id",
+          "scaffolding",
+          "rule"
+        ],
+        "list_source_files": 7,
+        "first_source_files_keys": [
+          "path",
+          "exists",
+          "bytes",
+          "sha256",
+          "markers",
+          "json_valid",
+          "top_level_keys"
+        ],
+        "dict_active_projection_keys": [
+          "id",
+          "status",
+          "path",
+          "diad_edges",
+          "coupler_edges",
+          "projection_of"
+        ],
+        "dict_available_next_projection_keys": [
+          "id",
+          "status",
+          "path",
+          "projection_of",
+          "boundary"
+        ],
+        "dict_render_contract_keys": [
+          "no_visual_canonical_claim",
+          "rendered_paths_are_projection_witnesses",
+          "g60_binding_must_load_for_source_status"
+        ]
+      }
+    },
+    {
+      "path": "aletheos.ai/public_html/labs/registered_boundary_flux/data/g900_signature_binding.v1.json",
+      "exists": true,
+      "bytes": 6341,
+      "sha256": "fa5e368923d2dc05314887eb0014416606ca54727d9b4c87a040918109bf4440",
+      "summary": {
+        "json_valid": true,
+        "type": "dict",
+        "keys": [
+          "id",
+          "status",
+          "kind",
+          "role",
+          "candidate",
+          "identity_boundary",
+          "admission_signature",
+          "theorem_claims_from_main_section",
+          "source_files",
+          "source_file_count",
+          "render_boundary"
+        ],
+        "dict_candidate_keys": [
+          "name",
+          "symbol",
+          "kernel",
+          "construction",
+          "vertices",
+          "edges",
+          "source_counts"
+        ],
+        "dict_identity_boundary_keys": [
+          "external_census_identity_claimed",
+          "census_status",
+          "not_claimed"
+        ],
+        "dict_admission_signature_keys": [
+          "repository",
+          "tag",
+          "direct_kernel_claims_proved",
+          "certificate_claims_certified",
+          "qed_status",
+          "summary"
+        ],
+        "list_theorem_claims_from_main_section": 8,
+        "list_source_files": 16,
+        "first_source_files_keys": [
+          "path",
+          "exists",
+          "bytes",
+          "sha256"
+        ],
+        "dict_render_boundary_keys": [
+          "not_a_renderer_source",
+          "not_active_in_perfect_return_cell",
+          "relationship_to_current_cell"
+        ]
+      }
+    },
+    {
+      "path": "aletheos.ai/public_html/labs/registered_boundary_flux/data/perfect_return_cell.v1.json",
+      "exists": true,
+      "bytes": 8309,
+      "sha256": "a49883203ef87e3c5129f24c9a889ef0ddc5a3a1f7a60c863be6f239ef57a375",
+      "summary": {
+        "json_valid": true,
+        "type": "dict",
+        "keys": [
+          "id",
+          "title",
+          "status",
+          "principle",
+          "boundary",
+          "user_role",
+          "cycle",
+          "render_contract",
+          "projection_channels",
+          "triad_of_diads",
+          "source_object",
+          "projection",
+          "g60_source_binding",
+          "g900_signature_binding",
+          "hidden_panels",
+          "cocycle_companion_binding",
+          "projection_modes",
+          "active_projection_mode",
+          "available_projection_modes",
+          "projection_mode_selector",
+          "edge_pill_ui",
+          "upstairs_downstairs_interpretation",
+          "instructions_dropdown"
+        ],
+        "dict_cycle_keys": [
+          "stations",
+          "closed_path",
+          "edges",
+          "return_condition",
+          "edge_grammar"
+        ],
+        "dict_render_contract_keys": [
+          "no_user_attempted_coupling",
+          "no_motion_without_cycle_edge",
+          "no_glow_without_active_edge",
+          "no_return_claim_without_W_return",
+          "triad_of_diads_visible"
+        ],
+        "dict_projection_channels_keys": [
+          "station_nodes",
+          "active_edge",
+          "trace_ring",
+          "ledger",
+          "sequence_rail"
+        ],
+        "dict_triad_of_diads_keys": [
+          "diads",
+          "couplers",
+          "interpretation"
+        ],
+        "dict_source_object_keys": [
+          "name",
+          "graph_id",
+          "scaffolding",
+          "rule"
+        ],
+        "dict_projection_keys": [
+          "name",
+          "path",
+          "status",
+          "boundary",
+          "source_binding"
+        ],
+        "dict_g60_source_binding_keys": [
+          "file",
+          "status",
+          "rule"
+        ],
+        "dict_g900_signature_binding_keys": [
+          "file",
+          "status",
+          "rule"
+        ],
+        "dict_hidden_panels_keys": [
+          "status",
+          "hidden",
+          "rule"
+        ],
+        "dict_cocycle_companion_binding_keys": [
+          "status",
+          "passed",
+          "receipt",
+          "receipt_sha256",
+          "role",
+          "boundary",
+          "rule"
+        ],
+        "dict_projection_modes_keys": [
+          "mode_1_cyclic_return",
+          "mode_2_sheet_flip_return"
+        ],
+        "list_available_projection_modes": 2,
+        "dict_projection_mode_selector_keys": [
+          "status",
+          "default_mode",
+          "selectable_modes",
+          "rule"
+        ],
+        "dict_edge_pill_ui_keys": [
+          "status",
+          "reason",
+          "rule"
+        ],
+        "dict_upstairs_downstairs_interpretation_keys": [
+          "status",
+          "artifact",
+          "note",
+          "core_statement",
+          "short_form",
+          "boundary"
+        ],
+        "dict_instructions_dropdown_keys": [
+          "status",
+          "default",
+          "location",
+          "contains",
+          "rule"
+        ]
+      }
+    },
+    {
+      "path": "aletheos.ai/public_html/labs/registered_boundary_flux/artifacts/json/proof_gap_ledger_001.v1.json",
+      "exists": true,
+      "bytes": 10883,
+      "sha256": "359a0fc2a82091482c0cfe47b9c8b9f6f91d9163bbf15d6b9152f4b82590b7dc",
+      "summary": {
+        "json_valid": true,
+        "type": "dict",
+        "keys": [
+          "schema",
+          "status",
+          "timestamp_utc",
+          "program",
+          "working_rules",
+          "priority_order",
+          "first_task",
+          "gaps",
+          "source_hashes"
+        ],
+        "list_working_rules": 6,
+        "list_priority_order": 5,
+        "list_gaps": 5,
+        "first_gaps_keys": [
+          "id",
+          "name",
+          "status",
+          "current_evidence",
+          "missing_theorem_statement",
+          "minimal_input_artifacts",
+          "proposed_finite_predicate",
+          "validator_plan",
+          "null_or_control",
+          "likely_failure_mode",
+          "next_script"
+        ],
+        "list_source_hashes": 8,
+        "first_source_hashes_keys": [
+          "path",
+          "exists",
+          "sha256",
+          "bytes"
+        ]
+      }
+    },
+    {
+      "path": "aletheos.ai/public_html/labs/registered_boundary_flux/artifacts/json/perfect_return_shape.validation.v1.json",
+      "exists": true,
+      "bytes": 2382,
+      "sha256": "a529d98bd9697113bc1f01aec73fc889d7f92497822a31826bdc2bbbb5e01af6",
+      "summary": {
+        "json_valid": true,
+        "type": "dict",
+        "keys": [
+          "schema",
+          "status",
+          "passed",
+          "validator",
+          "shape",
+          "checks",
+          "summary"
+        ],
+        "dict_shape_keys": [
+          "path",
+          "sha256"
+        ],
+        "list_checks": 14,
+        "first_checks_keys": [
+          "name",
+          "passed",
+          "detail"
+        ],
+        "dict_summary_keys": [
+          "check_count",
+          "passed_count",
+          "failed_count"
+        ]
+      }
+    },
+    {
+      "path": "aletheos.ai/public_html/labs/registered_boundary_flux/artifacts/json/perfect_return_sheet_flip.validation.v1.json",
+      "exists": true,
+      "bytes": 3371,
+      "sha256": "50ddbbb268b78331716846520499e286f5d34924c7fee22d9dc329ef882b0b15",
+      "summary": {
+        "json_valid": true,
+        "type": "dict",
+        "keys": [
+          "schema",
+          "status",
+          "passed",
+          "shape",
+          "summary",
+          "checks",
+          "boundary"
+        ],
+        "dict_shape_keys": [
+          "path",
+          "sha256"
+        ],
+        "dict_summary_keys": [
+          "check_count",
+          "passed_count",
+          "failed_count"
+        ],
+        "list_checks": 12,
+        "first_checks_keys": [
+          "name",
+          "passed",
+          "detail"
+        ],
+        "dict_boundary_keys": [
+          "active_ui_mode",
+          "validated_mode",
+          "rule"
+        ]
+      }
+    },
+    {
+      "path": "aletheos.ai/public_html/labs/registered_boundary_flux/artifacts/json/cocycle_companion.validation.v1.json",
+      "exists": true,
+      "bytes": 10347,
+      "sha256": "aecb947eea376b7cbff48c29ea394224a61bb22c914c909dcae779cbb99674b4",
+      "summary": {
+        "json_valid": true,
+        "type": "dict",
+        "keys": [
+          "schema",
+          "status",
+          "passed",
+          "role",
+          "core_boundary",
+          "active_inputs",
+          "payloads",
+          "checker_runs",
+          "known_validations"
+        ],
+        "dict_core_boundary_keys": [
+          "q_role",
+          "cocycle_role",
+          "not_substitutes",
+          "strict_origin_gap_closed",
+          "origin_gap_verdict",
+          "honesty_rule"
+        ],
+        "dict_active_inputs_keys": [
+          "theorem_path",
+          "cocycle_path"
+        ],
+        "list_payloads": 9,
+        "first_payloads_keys": [
+          "path",
+          "exists",
+          "bytes",
+          "sha256",
+          "json_valid",
+          "keys"
+        ],
+        "list_checker_runs": 3,
+        "first_checker_runs_keys": [
+          "path",
+          "claim",
+          "args",
+          "exists",
+          "sha256",
+          "returncode",
+          "passed",
+          "stdout",
+          "stderr",
+          "parsed",
+          "claim_statuses"
+        ],
+        "dict_known_validations_keys": [
+          "transport_cocycle_edges_validation_valid",
+          "transport_cocycle_edges_count",
+          "transport_cocycle_unique_directed_edges",
+          "candidate_lift_old_checker_ok",
+          "candidate_lift_edge_count",
+          "candidate_lift_sign_count",
+          "candidate_lift_minimal_support_size",
+          "strict_origin_gap_real_writer_count"
+        ]
+      }
+    },
+    {
+      "path": "research/thalean-graph-theory/18-g900-kernel-admission/source/kernel_payload/g15_slot_edges.csv",
+      "exists": true,
+      "bytes": 185,
+      "sha256": "7b94834d507cf2995ec6faf73e2e227a685d831894aa98f2647556d8b922b8f6",
+      "summary": {
+        "csv_valid": true,
+        "row_count": 30,
+        "header": [
+          "slot_u",
+          "slot_v"
+        ],
+        "first_data_row": [
+          "0",
+          "1"
+        ]
+      }
+    },
+    {
+      "path": "research/thalean-graph-theory/18-g900-kernel-admission/source/kernel_payload/g60_local_edges.csv",
+      "exists": true,
+      "bytes": 817,
+      "sha256": "c700a185fab6a5f434da09b7acb716b96c76170774bee946af8ea907e4fe7f9f",
+      "summary": {
+        "csv_valid": true,
+        "row_count": 120,
+        "header": [
+          "local_u",
+          "local_v"
+        ],
+        "first_data_row": [
+          "0",
+          "16"
+        ]
+      }
+    },
+    {
+      "path": "research/thalean-graph-theory/18-g900-kernel-admission/source/kernel_payload/carrier_signing_table.csv",
+      "exists": true,
+      "bytes": 942,
+      "sha256": "9b3cf812cc0f6d7b065666c81fa6d16fd3e3b8a98955c264709337c7f3e7efb7",
+      "summary": {
+        "csv_valid": true,
+        "row_count": 30,
+        "header": [
+          "slot_u",
+          "slot_v",
+          "sign",
+          "carrier_law",
+          "external_edge_count"
+        ],
+        "first_data_row": [
+          "0",
+          "1",
+          "1",
+          "half_flip_x_plus_30_mod_60",
+          "60"
+        ]
+      }
+    },
+    {
+      "path": "research/thalean-graph-theory/18-g900-kernel-admission/source/kernel_payload/x_sigma_edges.csv",
+      "exists": true,
+      "bytes": 151574,
+      "sha256": "ea2679662f4322a9ea021fba1143c804ef73b1fae95f50c77ba76b7fe1092230",
+      "summary": {
+        "csv_valid": true,
+        "row_count": 3600,
+        "header": [
+          "u_vertex",
+          "v_vertex",
+          "u_slot",
+          "u_local",
+          "v_slot",
+          "v_local",
+          "kind"
+        ],
+        "first_data_row": [
+          "0",
+          "16",
+          "0",
+          "0",
+          "0",
+          "16",
+          "internal_thalion_copy"
+        ]
+      }
+    },
+    {
+      "path": "research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/qed_status_ledger.json",
+      "exists": true,
+      "bytes": 3873,
+      "sha256": "b71e534e65213029d0648a9f8b598ff308a219cf9fff01a9535eaca67ff7d9ab",
+      "summary": {
+        "json_valid": true,
+        "type": "dict",
+        "keys": [
+          "boundary",
+          "certified",
+          "claims",
+          "current_summary",
+          "ledger",
+          "ledger_ok",
+          "not_certified",
+          "planned",
+          "project",
+          "proved_by_kernel",
+          "status_counts",
+          "verification_checks"
+        ],
+        "list_boundary": 6,
+        "list_certified": 7,
+        "list_claims": 13,
+        "first_claims_keys": [
+          "id",
+          "status",
+          "support"
+        ],
+        "dict_current_summary_keys": [
+          "certificate_claims_certified",
+          "direct_kernel_claims_proved",
+          "not_certified_claims",
+          "qed_complete",
+          "remaining_planned_claims"
+        ],
+        "list_not_certified": 0,
+        "list_planned": 0,
+        "list_proved_by_kernel": 6,
+        "dict_status_counts_keys": [
+          "certified",
+          "proved_by_kernel"
+        ],
+        "dict_verification_checks_keys": [
+          "baseline_separation_certified",
+          "certified_count_is_7",
+          "connectedness_certified",
+          "diameter_certified",
+          "direct_kernel_proof_count_is_6",
+          "exact_edge_set_identity_certified",
+          "not_certified_count_is_0",
+          "planned_remaining_count_is_0",
+          "radius_certified",
+          "sibling_full_graph_separation_certified",
+          "sibling_non_switching_certified"
+        ]
+      }
+    },
+    {
+      "path": "research/thalean-graph-theory/11-thalean-unification/lifts/g15_candidate_cocycle_edges.json",
+      "exists": true,
+      "bytes": 9962,
+      "sha256": "031a9843d65f820fb6d6ff0d2531fd6cba203bf4873f129ea00cfb55f80c0a96",
+      "summary": {
+        "json_valid": true,
+        "type": "dict",
+        "keys": [
+          "lift_id",
+          "schema_version",
+          "status",
+          "base_graph",
+          "vertices",
+          "edges",
+          "edge_signs",
+          "gauge_convention",
+          "spanning_tree",
+          "non_tree_edges",
+          "cycle_residue_basis",
+          "source_constraints",
+          "validation_checks"
+        ],
+        "dict_base_graph_keys": [
+          "graph_id",
+          "description",
+          "vertex_count",
+          "edge_count",
+          "connected",
+          "cycle_rank_beta"
+        ],
+        "list_vertices": 15,
+        "list_edges": 30,
+        "first_edges_keys": [
+          "id",
+          "endpoints"
+        ],
+        "dict_edge_signs_keys": [
+          "e0--e1",
+          "e0--e11",
+          "e0--e14",
+          "e0--e2",
+          "e1--e13",
+          "e1--e2",
+          "e1--e8",
+          "e10--e11",
+          "e10--e13",
+          "e11--e14",
+          "e2--e12",
+          "e2--e5",
+          "e3--e10",
+          "e3--e13",
+          "e3--e4",
+          "e3--e5",
+          "e4--e14",
+          "e4--e5",
+          "e4--e7",
+          "e5--e12"
+        ],
+        "dict_gauge_convention_keys": [
+          "root_vertex",
+          "normalized_tree_edges",
+          "description"
+        ],
+        "list_spanning_tree": 14,
+        "list_non_tree_edges": 16,
+        "list_cycle_residue_basis": 16,
+        "first_cycle_residue_basis_keys": [
+          "cycle_id",
+          "non_tree_edge",
+          "walk",
+          "residue"
+        ],
+        "list_source_constraints": 2,
+        "first_source_constraints_keys": [
+          "constraint_id",
+          "kind",
+          "status",
+          "description",
+          "source_path"
+        ],
+        "list_validation_checks": 7,
+        "first_validation_checks_keys": [
+          "check_id",
+          "status",
+          "detail"
+        ]
+      }
+    },
+    {
+      "path": "research/thalean-graph-theory/11-thalean-unification/artifacts/json/018_M_Q_cocycle_compatibility.json",
+      "exists": true,
+      "bytes": 12409,
+      "sha256": "79bc583a6e6d4996355a417a301e07b72675ca77c2bb7750f9493321932f6979",
+      "summary": {
+        "json_valid": true,
+        "type": "dict",
+        "keys": [
+          "audit",
+          "timestamp_utc",
+          "files",
+          "compatibility",
+          "ok",
+          "lawful_lift_machine_status",
+          "finding",
+          "next_step"
+        ],
+        "dict_files_keys": [
+          "M",
+          "Q",
+          "theorem_object",
+          "transport_cocycle",
+          "row_taxonomy",
+          "verify_report"
+        ],
+        "dict_compatibility_keys": [
+          "M_shape",
+          "Q_shape",
+          "M_numeric",
+          "Q_numeric",
+          "Q_equals_MMt",
+          "theorem_shape_M",
+          "theorem_shape_Q",
+          "theorem_has_matrix_M",
+          "theorem_has_gram_Q",
+          "theorem_M_matches_source",
+          "theorem_Q_matches_source",
+          "row_taxonomy_counts",
+          "transport_cocycle_machine_sign_hits",
+          "transport_cocycle_has_machine_readable_signs",
+          "verify_overall_status",
+          "verify_summary"
+        ]
+      }
+    },
+    {
+      "path": "research/thalean-graph-theory/11-thalean-unification/artifacts/json/030_validate_candidate_cocycle_lift_against_old_checkers.json",
+      "exists": true,
+      "bytes": 1740,
+      "sha256": "3257d8b617397c447b9a6ed3815d0595c717805ce31b0dd8d3f726cf717405a7",
+      "summary": {
+        "json_valid": true,
+        "type": "dict",
+        "keys": [
+          "audit",
+          "timestamp_utc",
+          "ok",
+          "lift_path",
+          "lawful_claim",
+          "edge_count",
+          "sign_count",
+          "edge_sets_match",
+          "sign_counts",
+          "raw_support_size",
+          "minimal_support_size",
+          "number_of_distinct_minimal_supports",
+          "sample_minimal_support",
+          "cycle_residue_counts",
+          "checks",
+          "finding",
+          "next_step"
+        ],
+        "dict_sign_counts_keys": [
+          "1",
+          "-1"
+        ],
+        "list_sample_minimal_support": 6,
+        "dict_cycle_residue_counts_keys": [
+          "1",
+          "-1"
+        ],
+        "list_checks": 7,
+        "first_checks_keys": [
+          "check_id",
+          "status",
+          "detail"
+        ]
+      }
+    },
+    {
+      "path": "research/thalean-graph-theory/11-thalean-unification/artifacts/json/038_strict_cocycle_data_origin_gap.json",
+      "exists": true,
+      "bytes": 500,
+      "sha256": "1182f9d8c935bba4befb8c6c03fb01fdee823899a7abcf3c63e1c113d356cebe",
+      "summary": {
+        "json_valid": true,
+        "type": "dict",
+        "keys": [
+          "audit",
+          "timestamp_utc",
+          "mention_count",
+          "strict_writer_count",
+          "real_strict_writer_count",
+          "real_strict_writers",
+          "verdict",
+          "finding",
+          "next_step"
+        ],
+        "list_real_strict_writers": 0
+      }
+    },
+    {
+      "path": "research/fhe/RESULT_v21.md",
+      "exists": true,
+      "bytes": 2727,
+      "sha256": "93dfa06cbbf8b7cfdaf2aefcde41ebbaee04c1a676316a776e20ec8199a3fd00",
+      "summary": {
+        "text_lines": 104,
+        "preview": "# FHE result v21\n\nStatus: Exact selector minimizer checkpoint.\n\n## Question\n\nAfter v20 found that row-aware M-incidence exactly separates the observed selected-branch triples from rejected abstract candidates, what is the least-sharp exact selector in the tested feature family?\n\nThis matters because support_row_degree_profile is exact, but it has one distinct value per local candidate row:\n\n    values = 210\n\nSo it may be close to key material.\n\n## Result\n\nThe full minimizer scanned all tested feature combinations:\n\n    combo_count_scanned = 2047\n    exact_combo_count = 1384\n    one_feature_exact_count = 1\n\nThe only one-feature exact selector is:\n\n    support_row_degree_profile\n\nwith:\n\n    values = 210\n\nThus support_row_degree_profile is the minimal single-feature exact selector in the tested family.\n\n## Least-sharp exact tested selectors\n\nThe least-value exact selectors have:\n\n    values = 206\n    feature_count = 3\n\nThe first least-sharp exact selectors are:\n\n    block_word\n    support_intersection_size\n    support_complement\n\nand the equivalent union/complement variants:\n\n    block_word\n    support_intersection_size\n    support_union\n\n    block_word\n    support_row_degree_hist\n   "
+      }
+    },
+    {
+      "path": "research/fhe/artifacts/json/register_key_layer.v1.json",
+      "exists": false
+    },
+    {
+      "path": "research/fhe/artifacts/json/role_relative_selector.v1.json",
+      "exists": false
+    },
+    {
+      "path": "research/fhe/artifacts/json/exact_selector_minimizer.v1.json",
+      "exists": false
+    },
+    {
+      "path": "research/thalean-graph-theory/15-finite-projection-separation/paper/sections/09_companion_transport_residue.tex",
+      "exists": true,
+      "bytes": 625,
+      "sha256": "c36ec9753507339d403b8e8d87e4ac4451d5a454d86c982a7c740d2eb9d2c843",
+      "summary": {
+        "text_lines": 12,
+        "preview": "\\section{Future companion direction: quotient visibility and transport residue}\n\nA future companion result may record that quotient-visible coherence does not imply\ncomplete transport agreement.\n\nIn finite orientation-closure examples, two lifted sign systems may share the\nsame quotient-visible graph and edge partition while differing in closed-walk\norientation residue. Thus a trace space recording quotient incidence alone may\nbe insufficient to witness transport closure.\n\nThis companion result is not required for the basic three-stage separation,\nbut it strengthens the motivation for choosing trace spaces carefully.\n"
+      }
+    }
+  ],
+  "search_hits": [
+    {
+      "path": "research/fhe/paper/SOURCE_LEDGER.md",
+      "score": 13,
+      "name_score": 0,
+      "text_score": 13,
+      "bytes": 6966,
+      "sha256": "157d7c11494060533cd2dd6b54a45018ef7c4b658fc1aac3f87fa9ea41b428aa",
+      "snippets": [
+        {
+          "line": 17,
+          "text": "    The FHE branch isolates a provisional three-member K900-WXYZTIW class A_pre."
+        },
+        {
+          "line": 28,
+          "text": "    artifacts/json/apre_top_lock_and_single_flip_tamper_probe.v1.json"
+        },
+        {
+          "line": 29,
+          "text": "    artifacts/json/apre_wxyzti_anatomy.v1.json"
+        },
+        {
+          "line": 35,
+          "text": "    The three A_pre witnesses share W=0, X=1, Y=2, I=5 and differ only in the ZT branch."
+        },
+        {
+          "line": 40,
+          "text": "    paper/sections/05_apre_branch_anatomy.tex"
+        },
+        {
+          "line": 45,
+          "text": "    artifacts/json/apre_wxyzti_anatomy.v1.json"
+        },
+        {
+          "line": 46,
+          "text": "    artifacts/md/apre_wxyzti_anatomy.v1.md"
+        },
+        {
+          "line": 52,
+          "text": "    The role-relative sign pattern is WX=1, XY=1, YZ=1, ZT=0, TI=1, IW=1."
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/src/selected_branch_exact_selector_minimizer_v1.py",
+      "score": 11,
+      "name_score": 6,
+      "text_score": 5,
+      "bytes": 10500,
+      "sha256": "e611710eca09eec4d5beba388ac42efb5c1b88887ba9006ecefd0a1e0024d959",
+      "snippets": [
+        {
+          "line": 7,
+          "text": "SPACE = Path(\"artifacts/json/selected_branch_selection_space_count.v1.json\")"
+        },
+        {
+          "line": 46,
+          "text": "    M = theorem.get(\"matrix_M\") or theorem.get(\"M\")"
+        },
+        {
+          "line": 50,
+          "text": "        raise SystemExit(\"could not find matrix_M\")"
+        },
+        {
+          "line": 203,
+          "text": "        \"title\": \"Selected branch exact selector minimizer\","
+        },
+        {
+          "line": 205,
+          "text": "        \"status\": \"global_exact_selector_minimizer\","
+        },
+        {
+          "line": 215,
+          "text": "            \"This recomputes all exact selector combinations instead of reading the truncated exact list stored in v20.\","
+        },
+        {
+          "line": 216,
+          "text": "            \"The least_value_exact list identifies the least-sharp exact selectors by number of distinct predicate values.\","
+        },
+        {
+          "line": 217,
+          "text": "            \"One-feature exact selectors identify minimal single predicates.\","
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/src/extract_apre_wxyzti_anatomy_v1.py",
+      "score": 10,
+      "name_score": 4,
+      "text_score": 6,
+      "bytes": 6015,
+      "sha256": "bf67e398e05182f6a2d14c5f3e5a1fffdb4d264676ba722f2b1311dee873f7fb",
+      "snippets": [
+        {
+          "line": 6,
+          "text": "OUT_JSON = Path(\"artifacts/json/apre_wxyzti_anatomy.v1.json\")"
+        },
+        {
+          "line": 7,
+          "text": "OUT_MD = Path(\"artifacts/md/apre_wxyzti_anatomy.v1.md\")"
+        },
+        {
+          "line": 8,
+          "text": "OUT_NOTE = Path(\"notes/007_apre_wxyzti_anatomy.md\")"
+        },
+        {
+          "line": 54,
+          "text": "            \"wxyzti_mapping\": mapping,"
+        },
+        {
+          "line": 56,
+          "text": "            \"branch\": {"
+        },
+        {
+          "line": 64,
+          "text": "        r[\"branch\"][\"central_coupler\"]"
+        },
+        {
+          "line": 69,
+          "text": "        \"title\": \"A_pre WXYZTI anatomy\","
+        },
+        {
+          "line": 71,
+          "text": "        \"status\": \"provisional_anatomy_of_top_lock_class\","
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/src/selected_branch_row_aware_discriminants_v1.py",
+      "score": 10,
+      "name_score": 6,
+      "text_score": 4,
+      "bytes": 11203,
+      "sha256": "c88cb1a8b0f51e80711ec70aa10e12b6d4408bfe0498828b4969d0fa827265e3",
+      "snippets": [
+        {
+          "line": 7,
+          "text": "SPACE = Path(\"artifacts/json/selected_branch_selection_space_count.v1.json\")"
+        },
+        {
+          "line": 46,
+          "text": "    M = theorem.get(\"matrix_M\") or theorem.get(\"M\")"
+        },
+        {
+          "line": 50,
+          "text": "        raise SystemExit(\"could not find matrix_M\")"
+        },
+        {
+          "line": 168,
+          "text": "                # Row-aware features."
+        },
+        {
+          "line": 228,
+          "text": "        \"title\": \"Selected branch row-aware discriminants\","
+        },
+        {
+          "line": 242,
+          "text": "            \"This audit adds row-aware support features: support_union, support_complement, support_intersection, support_row_degree_profile.\","
+        },
+        {
+          "line": 243,
+          "text": "            \"Row-aware support is stronger than scalar support summaries but does not directly use selected column identity.\","
+        },
+        {
+          "line": 247,
+          "text": "    out_json = Path(\"artifacts/json/selected_branch_row_aware_discriminants.v1.json\")"
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/metadata/paper_manifest.json",
+      "score": 9,
+      "name_score": 0,
+      "text_score": 9,
+      "bytes": 1549,
+      "sha256": "999c4804bd9e2f89027198d4fb41a44c49ed62c00449c6ca4992f986284627b5",
+      "snippets": [
+        {
+          "line": 9,
+          "text": "  \"paper_title\": \"Finite Holonomy Evidence for Role-Relative Projection Separation in a K900 Carrier\","
+        },
+        {
+          "line": 10,
+          "text": "  \"paper_version_note\": \"v0.2 Track B register-key integration\","
+        },
+        {
+          "line": 17,
+          "text": "    \"paper/sections/04_role_relative_observables.tex\","
+        },
+        {
+          "line": 18,
+          "text": "    \"paper/sections/05_apre_branch_anatomy.tex\","
+        },
+        {
+          "line": 19,
+          "text": "    \"paper/sections/05b_k900_native_collision_bound.tex\","
+        },
+        {
+          "line": 24,
+          "text": "    \"paper/sections/05c_register_key_selection.tex\""
+        },
+        {
+          "line": 33,
+          "text": "    \"artifacts/json/selected_branch_matching_structure.v1.json\","
+        },
+        {
+          "line": 34,
+          "text": "    \"artifacts/json/selected_branch_selection_space_count.v1.json\","
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/notes/046_selected_branch_exact_selector_minimizer.md",
+      "score": 9,
+      "name_score": 6,
+      "text_score": 3,
+      "bytes": 168,
+      "sha256": "01e114029f79e09102a820d5f2921ed8928581ce5c8b025a91bdd86db8008240",
+      "snippets": [
+        {
+          "line": 1,
+          "text": "# Selected branch exact selector minimizer checkpoint"
+        },
+        {
+          "line": 5,
+          "text": "    Recompute all exact row-aware selector combinations and identify the least-sharp exact selectors."
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/paper/sections/05_apre_branch_anatomy.tex",
+      "score": 9,
+      "name_score": 4,
+      "text_score": 5,
+      "bytes": 783,
+      "sha256": "069d0ec9aacf8c2b5ff8f3e1e3030ba3e757883aa986219606ad98edb0cf6242",
+      "snippets": [
+        {
+          "line": 1,
+          "text": "\\section{\\texorpdfstring{\\(A_{\\mathrm{pre}}\\)}{Apre} branch anatomy}"
+        },
+        {
+          "line": 3,
+          "text": "The branch anatomy audit asks which zero-sign G15 carrier edges can serve as the \\(ZT\\) central coupler in the role-relative pattern"
+        },
+        {
+          "line": 8,
+          "text": "There are fifteen zero-sign carrier edges. Exactly three satisfy the top-lock \\(ZT\\) role test:"
+        },
+        {
+          "line": 13,
+          "text": "Each selected edge is an even-triangle edge whose endpoints are both odd-active. This gives the current branch-anatomy keeper line:"
+        },
+        {
+          "line": 19,
+          "text": "This establishes that the three branches are not arbitrary representatives of a shared aggregate trace. They are selected by the K900-WXYZTIW role-relative closure test."
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/paper/sections/05c_register_key_selection.tex",
+      "score": 9,
+      "name_score": 4,
+      "text_score": 5,
+      "bytes": 4014,
+      "sha256": "687dd6a56b69d330f9d48e51df28168d10b4bff8161f8196439afd21198f388e",
+      "snippets": [
+        {
+          "line": 1,
+          "text": "\\section{Register-Key Selection and Row-Aware Incidence}"
+        },
+        {
+          "line": 2,
+          "text": "\\label{sec:register-key-selection}"
+        },
+        {
+          "line": 4,
+          "text": "The K900-native collision census in Section~\\ref{sec:k900-native-collision-bound} gives the Track A result: within the K900 carrier, the target predicate selects exactly three base cycles and six oriented presentations. "
+        },
+        {
+          "line": 10,
+          "text": "The selected branch triple is an edge-level object in this register. It does not live on the fixed triangle itself. For every public keypair, the selected triple lies in the complement of the fixed Petersen-star triangle"
+        },
+        {
+          "line": 16,
+          "text": "Equivalently, the selected branch triple is a three-edge matching in \\(G_{15}\\). It uses six distinct \\(G_{15}\\) vertices arranged across exactly three \\(\\tau\\)-swapped vertex-pairs: two pairs are crosslinked by the move"
+        },
+        {
+          "line": 22,
+          "text": "Exact recovery in the tested feature family requires row-aware incidence. The row-aware support-degree profile of the sector matrix \\(M\\), recording which rows are touched and with what multiplicity, separates all \\(60\\)"
+        },
+        {
+          "line": 28,
+          "text": "As a single feature, this row-aware profile is exact but sharp: it has \\(210\\) distinct values on the \\(210\\) local candidate rows. A minimizer over the tested feature family found that the only one-feature exact selecto"
+        },
+        {
+          "line": 30,
+          "text": "This Track B result should be read with the same boundary discipline as the rest of the paper. It is not a cryptographic security theorem and not a proof over all possible predicates. It is a finite register-key audit. I"
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/artifacts/json/apre_top_lock_and_single_flip_tamper_probe.v1.json",
+      "score": 8,
+      "name_score": 6,
+      "text_score": 2,
+      "bytes": 12481,
+      "sha256": "bdd8e15e8376b8b54502c0b409da946ea5c6980cdc10e16068bb01e18334a8e1",
+      "snippets": [
+        {
+          "line": 2,
+          "text": "  \"title\": \"A_pre top-lock class and single-flip tamper probe\","
+        },
+        {
+          "line": 6,
+          "text": "  \"apre_signature\": {"
+        },
+        {
+          "line": 15,
+          "text": "  \"apre_count\": 3,"
+        },
+        {
+          "line": 16,
+          "text": "  \"apre_candidate_ids\": ["
+        },
+        {
+          "line": 21,
+          "text": "  \"apre_cycles\": ["
+        },
+        {
+          "line": 82,
+          "text": "      \"accepted_by_apre_signature\": false"
+        },
+        {
+          "line": 114,
+          "text": "      \"accepted_by_apre_signature\": false"
+        },
+        {
+          "line": 146,
+          "text": "      \"accepted_by_apre_signature\": false"
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/artifacts/json/apre_wxyzti_anatomy.v1.json",
+      "score": 8,
+      "name_score": 4,
+      "text_score": 4,
+      "bytes": 5558,
+      "sha256": "63bf2029485fd80dd364d807bbee44415c5c9dd2f68fb25b25d450f92c430b82",
+      "snippets": [
+        {
+          "line": 2,
+          "text": "  \"title\": \"A_pre WXYZTI anatomy\","
+        },
+        {
+          "line": 4,
+          "text": "  \"status\": \"provisional_anatomy_of_top_lock_class\","
+        },
+        {
+          "line": 6,
+          "text": "  \"apre_count\": 3,"
+        },
+        {
+          "line": 86,
+          "text": "      \"wxyzti_mapping\": {"
+        },
+        {
+          "line": 150,
+          "text": "      \"branch\": {"
+        },
+        {
+          "line": 169,
+          "text": "      \"wxyzti_mapping\": {"
+        },
+        {
+          "line": 233,
+          "text": "      \"branch\": {"
+        },
+        {
+          "line": 252,
+          "text": "      \"wxyzti_mapping\": {"
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/artifacts/json/selected_branch_exact_selector_minimizer.v1.json",
+      "score": 8,
+      "name_score": 6,
+      "text_score": 2,
+      "bytes": 9455,
+      "sha256": "49e2b18f3891c3b2c5c6af330b9529a9982ce06fb623563a52831e56c038bad1",
+      "snippets": [
+        {
+          "line": 2,
+          "text": "  \"title\": \"Selected branch exact selector minimizer\","
+        },
+        {
+          "line": 4,
+          "text": "  \"status\": \"global_exact_selector_minimizer\","
+        },
+        {
+          "line": 380,
+          "text": "    \"This recomputes all exact selector combinations instead of reading the truncated exact list stored in v20.\","
+        },
+        {
+          "line": 381,
+          "text": "    \"The least_value_exact list identifies the least-sharp exact selectors by number of distinct predicate values.\","
+        },
+        {
+          "line": 382,
+          "text": "    \"One-feature exact selectors identify minimal single predicates.\""
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/artifacts/json/selected_branch_row_aware_discriminants.v1.json",
+      "score": 8,
+      "name_score": 6,
+      "text_score": 2,
+      "bytes": 29021,
+      "sha256": "545e322ece3d741f3811af7200dc4bc7697d6ed6973448e1a1aaa6c0880b3522",
+      "snippets": [
+        {
+          "line": 2,
+          "text": "  \"title\": \"Selected branch row-aware discriminants\","
+        },
+        {
+          "line": 1182,
+          "text": "    \"This audit adds row-aware support features: support_union, support_complement, support_intersection, support_row_degree_profile.\","
+        },
+        {
+          "line": 1183,
+          "text": "    \"Row-aware support is stronger than scalar support summaries but does not directly use selected column identity.\""
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/artifacts/md/apre_wxyzti_anatomy.v1.md",
+      "score": 8,
+      "name_score": 4,
+      "text_score": 4,
+      "bytes": 1133,
+      "sha256": "06341db8daaea71cc63d4933d9e1f6d621a7cec5e1939f0280c9c956cb67279f",
+      "snippets": [
+        {
+          "line": 1,
+          "text": "# A_pre WXYZTI anatomy v1"
+        },
+        {
+          "line": 3,
+          "text": "Status: provisional anatomy of the top-lock class."
+        },
+        {
+          "line": 14,
+          "text": "Variable branch positions:"
+        },
+        {
+          "line": 46,
+          "text": "The top-lock class is not merely three arbitrary cycles with the same aggregate trace."
+        },
+        {
+          "line": 47,
+          "text": "It has a shared W-X-Y stem, a shared I-W return, and three branch choices for Z-T."
+        },
+        {
+          "line": 49,
+          "text": "This gives a better provisional observable: role-relative trace rather than absolute edge identity."
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/artifacts/md/selected_branch_exact_selector_minimizer.v1.md",
+      "score": 8,
+      "name_score": 6,
+      "text_score": 2,
+      "bytes": 3350,
+      "sha256": "404b377ecf95af1ddbebf63f3a34099807c5757f3a6932bd1029b94f53a684df",
+      "snippets": [
+        {
+          "line": 1,
+          "text": "# Selected branch exact selector minimizer v1"
+        },
+        {
+          "line": 12,
+          "text": "## Least-value exact selectors"
+        },
+        {
+          "line": 40,
+          "text": "## One-feature exact selectors"
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/artifacts/md/selected_branch_row_aware_discriminants.v1.md",
+      "score": 8,
+      "name_score": 6,
+      "text_score": 2,
+      "bytes": 7292,
+      "sha256": "da4ae89692fff2fae4516fbe06f5353eafbcef0642932930e47fd6c8bcf5ce7d",
+      "snippets": [
+        {
+          "line": 1,
+          "text": "# Selected branch row-aware discriminants v1"
+        },
+        {
+          "line": 79,
+          "text": "- Row-aware support predicates use row identities of M."
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/notes/045_selected_branch_row_aware_discriminants.md",
+      "score": 8,
+      "name_score": 6,
+      "text_score": 2,
+      "bytes": 163,
+      "sha256": "94c93fa77de127a9ab7d7149b86e5426bb45c530013d4a0ecbae8bebffe38ee1",
+      "snippets": [
+        {
+          "line": 1,
+          "text": "# Selected branch row-aware discriminants checkpoint"
+        },
+        {
+          "line": 5,
+          "text": "    Test whether row-aware support features resolve the four residual ambiguous rows left by v19."
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/src/register_key_space_audit_v1.py",
+      "score": 8,
+      "name_score": 4,
+      "text_score": 4,
+      "bytes": 15328,
+      "sha256": "9763fe40a9b3f1e64645afd22a195d3d6c8e0f5ffd61c2f797501c722931b4c3",
+      "snippets": [
+        {
+          "line": 11,
+          "text": "APRE_CYCLES = ["
+        },
+        {
+          "line": 164,
+          "text": "        m = theorem[\"matrix_M\"]"
+        },
+        {
+          "line": 226,
+          "text": "        apre_profiles = []"
+        },
+        {
+          "line": 227,
+          "text": "        for cyc in APRE_CYCLES:"
+        },
+        {
+          "line": 238,
+          "text": "            apre_profiles.append({"
+        },
+        {
+          "line": 277,
+          "text": "            \"apre_block_words_ordered\": str(tuple(tuple(p[\"block_word\"]) for p in apre_profiles)),"
+        },
+        {
+          "line": 278,
+          "text": "            \"apre_hinge_words_ordered\": str(tuple(tuple(p[\"hinge_word\"]) for p in apre_profiles)),"
+        },
+        {
+          "line": 293,
+          "text": "            \"apre_profiles\": apre_profiles,"
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/artifacts/json/branch_anatomy_zero_edge_census.v1.json",
+      "score": 7,
+      "name_score": 2,
+      "text_score": 5,
+      "bytes": 22187,
+      "sha256": "1ae10c4aec10740a3567a5e13584e08b0a284212e3bad4b605e9c03ec5b95d23",
+      "snippets": [
+        {
+          "line": 2,
+          "text": "  \"title\": \"Branch anatomy zero-edge census\","
+        },
+        {
+          "line": 4,
+          "text": "  \"status\": \"branch_anatomy_test\","
+        },
+        {
+          "line": 15,
+          "text": "  \"top_lock_signature\": {"
+        },
+        {
+          "line": 78,
+          "text": "      \"top_lock_oriented_match_count\": 2,"
+        },
+        {
+          "line": 79,
+          "text": "      \"top_lock_base_candidate_ids\": ["
+        },
+        {
+          "line": 82,
+          "text": "      \"top_lock_mappings\": ["
+        },
+        {
+          "line": 103,
+          "text": "          \"wxyzti_mapping\": {"
+        },
+        {
+          "line": 136,
+          "text": "          \"is_top_lock\": true"
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/artifacts/json/selected_branch_tau_action_audit.v1.json",
+      "score": 7,
+      "name_score": 4,
+      "text_score": 3,
+      "bytes": 13760,
+      "sha256": "2abd36632afbcf9432b63b0746bcccf3a5e2f8c0a0c0fc533be7b5c988237ec3",
+      "snippets": [
+        {
+          "line": 2,
+          "text": "  \"title\": \"Selected branch tau action audit\","
+        },
+        {
+          "line": 4,
+          "text": "  \"status\": \"carrier_specific_selected_branch_action\","
+        },
+        {
+          "line": 5,
+          "text": "  \"source\": \"artifacts/json/register_keypair_anatomy.v1.json\","
+        },
+        {
+          "line": 693,
+          "text": "    \"It verifies whether tau sends selected branch 0 to 1, selected branch 1 to 0, and selected branch 2 to itself.\","
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/artifacts/md/apre_top_lock_and_single_flip_tamper_probe.v1.md",
+      "score": 7,
+      "name_score": 6,
+      "text_score": 1,
+      "bytes": 686,
+      "sha256": "8c01c530c034fb6e219ac92acbb9b9bb101fc82c5b5c45628792dda5946ac11d",
+      "snippets": [
+        {
+          "line": 1,
+          "text": "# A_pre top-lock and single-flip tamper probe v1"
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/notes/004_apre_top_lock_and_tamper_probe.md",
+      "score": 7,
+      "name_score": 6,
+      "text_score": 1,
+      "bytes": 761,
+      "sha256": "34839e43a80d762332fb9380720f75ef8cf9af0805b4849291c42ba96532ca29",
+      "snippets": [
+        {
+          "line": 1,
+          "text": "# A_pre top-lock checkpoint"
+        },
+        {
+          "line": 3,
+          "text": "A_pre is the provisional top-lock class inside the K900 G15 C6 candidate scan."
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/paper/sections/00_abstract.tex",
+      "score": 7,
+      "name_score": 0,
+      "text_score": 7,
+      "bytes": 2046,
+      "sha256": "003d7af6c355401f91f53db51f32925dcdb6648cfbfcc6ee668509f68c4e59fc",
+      "snippets": [
+        {
+          "line": 4,
+          "text": "The current checkpoint isolates a provisional K900-locked WXYZTIW class, denoted \\(A_{\\mathrm{pre}}\\), consisting of three concrete six-cycle witnesses:"
+        },
+        {
+          "line": 10,
+          "text": "These witnesses share a common \\(W\\)-\\(X\\)-\\(Y\\) stem and \\(I\\)-\\(W\\) return, while differing only in the central \\(Z\\)-\\(T\\) branch. A coarse aggregate observable preserves the three-way class but fails balanced two-fli"
+        },
+        {
+          "line": 12,
+          "text": "A subsequent branch anatomy audit shows that among fifteen zero-sign carrier edges, exactly three can serve as the top-lock \\(Z T\\) coupler: \\(3\\!-\\!4\\), \\(7\\!-\\!10\\), and \\(8\\!-\\!14\\). Each is an even-triangle edge with"
+        },
+        {
+          "line": 15,
+          "text": " A second finite audit identifies a register-key layer: public chamber/triangle predicates reduce the register space to Petersen mate-pairs, while the selected branch law is recovered exactly only at the row-aware incide"
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/paper/sections/09_conclusion.tex",
+      "score": 7,
+      "name_score": 0,
+      "text_score": 7,
+      "bytes": 1919,
+      "sha256": "c9d7599453c39866d8b8aeefdc49d40cc6d69cd5e04e915dfbc8dbd9fe1e1250",
+      "snippets": [
+        {
+          "line": 3,
+          "text": "The current FHE branch establishes a finite local projection-separation checkpoint inside the imported K900 G15 carrier."
+        },
+        {
+          "line": 7,
+          "text": "  \\item a three-way K900-WXYZTIW projection is isolated;"
+        },
+        {
+          "line": 8,
+          "text": "  \\item the selected branches are exactly the zero-sign even couplers between odd-active sides satisfying the top-lock role pattern;"
+        },
+        {
+          "line": 9,
+          "text": "  \\item role-relative trace preserves the three-way projection while rejecting the tested one-edge and two-edge sign tampers;"
+        },
+        {
+          "line": 16,
+          "text": "\\paragraph{Track B register-key layer.}"
+        },
+        {
+          "line": 17,
+          "text": "The later register-key audits add a bounded explanatory layer to the K900-native collision result. Public chamber/triangle predicates reduce the register space to structured Petersen mate-pairs rather than a unique key. "
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/src/branch_anatomy_zero_edge_census_v1.py",
+      "score": 7,
+      "name_score": 2,
+      "text_score": 5,
+      "bytes": 10081,
+      "sha256": "be3ff2327bb90fce343e2ec05bd8dc11d70b4821d0dc232d7bbe32828be5bdb1",
+      "snippets": [
+        {
+          "line": 9,
+          "text": "OUT_JSON = Path(\"artifacts/json/branch_anatomy_zero_edge_census.v1.json\")"
+        },
+        {
+          "line": 10,
+          "text": "OUT_MD = Path(\"artifacts/md/branch_anatomy_zero_edge_census.v1.md\")"
+        },
+        {
+          "line": 11,
+          "text": "OUT_NOTE = Path(\"notes/013_branch_anatomy_zero_edge_census.md\")"
+        },
+        {
+          "line": 16,
+          "text": "TOP_LOCK = {"
+        },
+        {
+          "line": 85,
+          "text": "    top_lock_matches_by_zero = defaultdict(list)"
+        },
+        {
+          "line": 111,
+          "text": "            is_top_lock = all(sig[k] == v for k, v in TOP_LOCK.items())"
+        },
+        {
+          "line": 119,
+          "text": "                \"wxyzti_mapping\": mapping,"
+        },
+        {
+          "line": 124,
+          "text": "                \"is_top_lock\": is_top_lock,"
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/src/selected_branch_ambiguous_collision_audit_v1.py",
+      "score": 7,
+      "name_score": 4,
+      "text_score": 3,
+      "bytes": 10365,
+      "sha256": "8b4767357aea9dad15693ba6fe6301d6e6f0f2c44799067046df56c36bd4665c",
+      "snippets": [
+        {
+          "line": 6,
+          "text": "SPACE = Path(\"artifacts/json/selected_branch_selection_space_count.v1.json\")"
+        },
+        {
+          "line": 52,
+          "text": "    M = theorem.get(\"matrix_M\") or theorem.get(\"M\")"
+        },
+        {
+          "line": 56,
+          "text": "        raise SystemExit(\"could not find matrix_M\")"
+        },
+        {
+          "line": 195,
+          "text": "        \"title\": \"Selected branch ambiguous collision audit\","
+        },
+        {
+          "line": 209,
+          "text": "    out_json = Path(\"artifacts/json/selected_branch_ambiguous_collision_audit.v1.json\")"
+        },
+        {
+          "line": 210,
+          "text": "    out_md = Path(\"artifacts/md/selected_branch_ambiguous_collision_audit.v1.md\")"
+        },
+        {
+          "line": 211,
+          "text": "    out_note = Path(\"notes/044_selected_branch_ambiguous_collision_audit.md\")"
+        },
+        {
+          "line": 220,
+          "text": "    md.append(\"# Selected branch ambiguous collision audit v1\")"
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/src/selected_branch_discriminant_lattice_v1.py",
+      "score": 7,
+      "name_score": 4,
+      "text_score": 3,
+      "bytes": 10816,
+      "sha256": "99235b3686d70b3e9e1e137ae19d84d108a729cecd79a4b30160068c465220bb",
+      "snippets": [
+        {
+          "line": 7,
+          "text": "SPACE = Path(\"artifacts/json/selected_branch_selection_space_count.v1.json\")"
+        },
+        {
+          "line": 46,
+          "text": "    M = theorem.get(\"matrix_M\") or theorem.get(\"M\")"
+        },
+        {
+          "line": 50,
+          "text": "        raise SystemExit(\"could not find matrix_M\")"
+        },
+        {
+          "line": 219,
+          "text": "        \"title\": \"Selected branch discriminant lattice\","
+        },
+        {
+          "line": 236,
+          "text": "    out_json = Path(\"artifacts/json/selected_branch_discriminant_lattice.v1.json\")"
+        },
+        {
+          "line": 237,
+          "text": "    out_md = Path(\"artifacts/md/selected_branch_discriminant_lattice.v1.md\")"
+        },
+        {
+          "line": 238,
+          "text": "    out_note = Path(\"notes/043_selected_branch_discriminant_lattice.md\")"
+        },
+        {
+          "line": 247,
+          "text": "    md.append(\"# Selected branch discriminant lattice v1\")"
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/src/selected_branch_matching_structure_v1.py",
+      "score": 7,
+      "name_score": 4,
+      "text_score": 3,
+      "bytes": 10483,
+      "sha256": "af4abc1cf6acf8f249e3c322a8b998cb979c517a690593d9d53d83efba96e548",
+      "snippets": [
+        {
+          "line": 6,
+          "text": "ANATOMY = Path(\"artifacts/json/register_keypair_anatomy.v1.json\")"
+        },
+        {
+          "line": 175,
+          "text": "        \"title\": \"Selected branch matching structure\","
+        },
+        {
+          "line": 177,
+          "text": "        \"status\": \"selected_branch_matching_and_tau_pair_usage\","
+        },
+        {
+          "line": 186,
+          "text": "    out_json = Path(\"artifacts/json/selected_branch_matching_structure.v1.json\")"
+        },
+        {
+          "line": 187,
+          "text": "    out_md = Path(\"artifacts/md/selected_branch_matching_structure.v1.md\")"
+        },
+        {
+          "line": 188,
+          "text": "    out_note = Path(\"notes/040_selected_branch_matching_structure.md\")"
+        },
+        {
+          "line": 197,
+          "text": "    md.append(\"# Selected branch matching structure v1\")"
+        },
+        {
+          "line": 229,
+          "text": "    md.append(\"- This is a carrier-specific selected-branch audit.\")"
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/src/selected_branch_observed_vs_candidate_discriminants_v1.py",
+      "score": 7,
+      "name_score": 4,
+      "text_score": 3,
+      "bytes": 11857,
+      "sha256": "3189ed64b661ab75143537ff175d2fcaf899b83c835770384503bc2da5baabca",
+      "snippets": [
+        {
+          "line": 6,
+          "text": "SPACE = Path(\"artifacts/json/selected_branch_selection_space_count.v1.json\")"
+        },
+        {
+          "line": 45,
+          "text": "    M = theorem.get(\"matrix_M\") or theorem.get(\"M\")"
+        },
+        {
+          "line": 49,
+          "text": "        raise SystemExit(\"could not find matrix_M in theorem object\")"
+        },
+        {
+          "line": 232,
+          "text": "        \"title\": \"Selected branch observed-vs-candidate discriminants\","
+        },
+        {
+          "line": 258,
+          "text": "    out_json = Path(\"artifacts/json/selected_branch_observed_vs_candidate_discriminants.v1.json\")"
+        },
+        {
+          "line": 259,
+          "text": "    out_md = Path(\"artifacts/md/selected_branch_observed_vs_candidate_discriminants.v1.md\")"
+        },
+        {
+          "line": 260,
+          "text": "    out_note = Path(\"notes/042_selected_branch_observed_vs_candidate_discriminants.md\")"
+        },
+        {
+          "line": 269,
+          "text": "    md.append(\"# Selected branch observed-vs-candidate discriminants v1\")"
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/src/selected_branch_selection_space_count_v1.py",
+      "score": 7,
+      "name_score": 4,
+      "text_score": 3,
+      "bytes": 11793,
+      "sha256": "bc36244f704c67e7cf098308de5fd2cad1517029e0bc096589d0578458391d0b",
+      "snippets": [
+        {
+          "line": 7,
+          "text": "ANATOMY = Path(\"artifacts/json/register_keypair_anatomy.v1.json\")"
+        },
+        {
+          "line": 213,
+          "text": "        \"title\": \"Selected branch selection-space count\","
+        },
+        {
+          "line": 215,
+          "text": "        \"status\": \"selected_branch_abstract_candidate_count\","
+        },
+        {
+          "line": 231,
+          "text": "    out_json = Path(\"artifacts/json/selected_branch_selection_space_count.v1.json\")"
+        },
+        {
+          "line": 232,
+          "text": "    out_md = Path(\"artifacts/md/selected_branch_selection_space_count.v1.md\")"
+        },
+        {
+          "line": 233,
+          "text": "    out_note = Path(\"notes/041_selected_branch_selection_space_count.md\")"
+        },
+        {
+          "line": 242,
+          "text": "    md.append(\"# Selected branch selection-space count v1\")"
+        },
+        {
+          "line": 280,
+          "text": "        \"# Selected branch selection-space count checkpoint\\n\\n\""
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/src/selected_branch_tau_action_audit_v1.py",
+      "score": 7,
+      "name_score": 4,
+      "text_score": 3,
+      "bytes": 8834,
+      "sha256": "b8e2956aad749d3a6d4bdfdd73be4c4da006e9e806ece44b7edb4973f4989eb5",
+      "snippets": [
+        {
+          "line": 6,
+          "text": "ANATOMY = Path(\"artifacts/json/register_keypair_anatomy.v1.json\")"
+        },
+        {
+          "line": 162,
+          "text": "        \"title\": \"Selected branch tau action audit\","
+        },
+        {
+          "line": 164,
+          "text": "        \"status\": \"carrier_specific_selected_branch_action\","
+        },
+        {
+          "line": 170,
+          "text": "            \"It verifies whether tau sends selected branch 0 to 1, selected branch 1 to 0, and selected branch 2 to itself.\","
+        },
+        {
+          "line": 175,
+          "text": "    out_json = Path(\"artifacts/json/selected_branch_tau_action_audit.v1.json\")"
+        },
+        {
+          "line": 176,
+          "text": "    out_md = Path(\"artifacts/md/selected_branch_tau_action_audit.v1.md\")"
+        },
+        {
+          "line": 177,
+          "text": "    out_note = Path(\"notes/037_selected_branch_tau_action_audit.md\")"
+        },
+        {
+          "line": 186,
+          "text": "    md.append(\"# Selected branch tau action audit v1\")"
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/artifacts/json/fhe_checkpoint.v1.json",
+      "score": 6,
+      "name_score": 0,
+      "text_score": 6,
+      "bytes": 12321,
+      "sha256": "c4311bd4ce6fc6df72ce96289d28731e573040a0f487fea0d0ab41bd2c25676f",
+      "snippets": [
+        {
+          "line": 4,
+          "text": "  \"branch\": \"fhe\","
+        },
+        {
+          "line": 9,
+          "text": "    \"top_lock_preimage_size\": 3,"
+        },
+        {
+          "line": 10,
+          "text": "    \"apre_count\": 3,"
+        },
+        {
+          "line": 21,
+          "text": "  \"apre_definition\": {"
+        },
+        {
+          "line": 23,
+          "text": "    \"description\": \"provisional top-lock K900 C6 class\","
+        },
+        {
+          "line": 84,
+          "text": "  \"wxyzti_anatomy\": {"
+        },
+        {
+          "line": 167,
+          "text": "            \"wxyzti_mapping\": {"
+        },
+        {
+          "line": 218,
+          "text": "            \"wxyzti_mapping\": {"
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/artifacts/json/k900_source_artifact_scan.v0.json",
+      "score": 6,
+      "name_score": 0,
+      "text_score": 6,
+      "bytes": 446118,
+      "sha256": "3e9a06d18c02249a7534ff5825622705b4ac02f2009358750e5d7b276bbcb123",
+      "snippets": [
+        {
+          "line": 26,
+          "text": "    \"WXYZTI\","
+        },
+        {
+          "line": 27,
+          "text": "    \"W-X-Y-Z-T-I\""
+        },
+        {
+          "line": 261,
+          "text": "                \"- Standard Model dynamics - physical gravity ## Allowed language Use: - finite EM-like support conservation - finite polarity-support selector - residue-vector representative - paired-cancellation exact "
+        },
+        {
+          "line": 410,
+          "text": "                \"M-like support selector,enumerated finite result,\\\"Within the exhaustive five-edge census, support conservation exactly selects the 1,231 threshold-preserving variants.\\\",Finite five-edge census only. No"
+        },
+        {
+          "line": 982,
+          "text": "                \"onserved family inherits no-expansion in this census. This supports the view that EM-like support conservation is the finite selector behind the no-expansion family, while still not proving a physical fi"
+        },
+        {
+          "line": 990,
+          "text": "                \"7 shows all threshold preservers have no expansion, the support-conserved family inherits no-expansion in this census. This supports the view that EM-like support conservation is the finite selector behi"
+        },
+        {
+          "line": 991,
+          "text": "                \"his supports the view that EM-like support conservation is the finite selector behind the no-expansion family, while still not proving a physical field law.\\\", \\\"next_questions\\\": [ \\\"Can the support-con"
+        },
+        {
+          "line": 998,
+          "text": "                \"1 threshold-preserving variants. Because artifact 017 shows all threshold preservers have no expansion, the support-conserved family inherits no-expansion in this census. This supports the view that EM-l"
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/artifacts/json/register_keypair_hinge_leak_audit.v1.json",
+      "score": 6,
+      "name_score": 4,
+      "text_score": 2,
+      "bytes": 42287,
+      "sha256": "cf86059f4714094c102b5dd0953e3d1494a8c8d486e76fe0ab89b6b020d66597",
+      "snippets": [
+        {
+          "line": 5,
+          "text": "  \"source\": \"artifacts/json/register_keypair_fixed_triangle_audit.v1.json\","
+        },
+        {
+          "line": 2436,
+          "text": "    \"These exceptions mark the branch-local leak boundary.\","
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/artifacts/json/selected_branch_matching_structure.v1.json",
+      "score": 6,
+      "name_score": 4,
+      "text_score": 2,
+      "bytes": 21958,
+      "sha256": "e8c8294607337f08a98086151fc8838085408125336590d7618d73882ebfce6c",
+      "snippets": [
+        {
+          "line": 2,
+          "text": "  \"title\": \"Selected branch matching structure\","
+        },
+        {
+          "line": 4,
+          "text": "  \"status\": \"selected_branch_matching_and_tau_pair_usage\","
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/artifacts/json/selected_branch_observed_vs_candidate_discriminants.v1.json",
+      "score": 6,
+      "name_score": 4,
+      "text_score": 2,
+      "bytes": 71778,
+      "sha256": "96ae804358656ffe428f99160d42ff2dfa611463cef426fd88fe91b665f454cd",
+      "snippets": [
+        {
+          "line": 2,
+          "text": "  \"title\": \"Selected branch observed-vs-candidate discriminants\","
+        },
+        {
+          "line": 5,
+          "text": "  \"source\": \"artifacts/json/selected_branch_selection_space_count.v1.json\","
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/artifacts/json/selected_branch_selection_space_count.v1.json",
+      "score": 6,
+      "name_score": 4,
+      "text_score": 2,
+      "bytes": 55630,
+      "sha256": "0b96be0d2af39d55e2daa56fcde3492fa23d2e2001790b8c03a83cbaaaaf0ce6",
+      "snippets": [
+        {
+          "line": 2,
+          "text": "  \"title\": \"Selected branch selection-space count\","
+        },
+        {
+          "line": 4,
+          "text": "  \"status\": \"selected_branch_abstract_candidate_count\","
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/artifacts/json/source_ledger_audit.v1.json",
+      "score": 6,
+      "name_score": 0,
+      "text_score": 6,
+      "bytes": 5515,
+      "sha256": "a3cce4a9c7be355777517ce1167becaad6e88a35962e12c4abce6402724ac00c",
+      "snippets": [
+        {
+          "line": 41,
+          "text": "      \"path\": \"artifacts/json/apre_top_lock_and_single_flip_tamper_probe.v1.json\","
+        },
+        {
+          "line": 46,
+          "text": "      \"path\": \"artifacts/json/apre_two_flip_tamper_probe.v1.json\","
+        },
+        {
+          "line": 51,
+          "text": "      \"path\": \"artifacts/json/apre_wxyzti_anatomy.v1.json\","
+        },
+        {
+          "line": 56,
+          "text": "      \"path\": \"artifacts/json/branch_anatomy_zero_edge_census.v1.json\","
+        },
+        {
+          "line": 61,
+          "text": "      \"path\": \"artifacts/json/branch_edges_project20_context.v1.json\","
+        },
+        {
+          "line": 86,
+          "text": "      \"path\": \"artifacts/json/k900_native_collision_bound_census.v1.json\","
+        },
+        {
+          "line": 106,
+          "text": "      \"path\": \"artifacts/md/apre_two_flip_tamper_probe.v1.md\","
+        },
+        {
+          "line": 111,
+          "text": "      \"path\": \"artifacts/md/apre_wxyzti_anatomy.v1.md\","
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/artifacts/md/source_ledger_audit.v1.md",
+      "score": 6,
+      "name_score": 0,
+      "text_score": 6,
+      "bytes": 2963,
+      "sha256": "ea680a6cb3979be0f3eaab7f9164f0e66a3c8e6430ea65dbdca19c7d2fc3a121",
+      "snippets": [
+        {
+          "line": 16,
+          "text": "- artifacts/json/apre_top_lock_and_single_flip_tamper_probe.v1.json exists=True size=12481"
+        },
+        {
+          "line": 17,
+          "text": "- artifacts/json/apre_two_flip_tamper_probe.v1.json exists=True size=27231"
+        },
+        {
+          "line": 18,
+          "text": "- artifacts/json/apre_wxyzti_anatomy.v1.json exists=True size=5558"
+        },
+        {
+          "line": 19,
+          "text": "- artifacts/json/branch_anatomy_zero_edge_census.v1.json exists=True size=22187"
+        },
+        {
+          "line": 20,
+          "text": "- artifacts/json/branch_edges_project20_context.v1.json exists=True size=178815"
+        },
+        {
+          "line": 25,
+          "text": "- artifacts/json/k900_native_collision_bound_census.v1.json exists=True size=10392"
+        },
+        {
+          "line": 29,
+          "text": "- artifacts/md/apre_two_flip_tamper_probe.v1.md exists=True size=2087"
+        },
+        {
+          "line": 30,
+          "text": "- artifacts/md/apre_wxyzti_anatomy.v1.md exists=True size=1133"
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/notes/007_apre_wxyzti_anatomy.md",
+      "score": 6,
+      "name_score": 4,
+      "text_score": 2,
+      "bytes": 574,
+      "sha256": "229c960284fb899c8740f153c9f55e3bc53b25349dd81655d01005ed30ffa4d1",
+      "snippets": [
+        {
+          "line": 1,
+          "text": "# A_pre WXYZTI anatomy checkpoint"
+        },
+        {
+          "line": 11,
+          "text": "Under WXYZTIW labeling:"
+        },
+        {
+          "line": 16,
+          "text": "    Z = branch entry"
+        },
+        {
+          "line": 17,
+          "text": "    T = branch exit"
+        },
+        {
+          "line": 29,
+          "text": "The single zero bit is always on the central coupler ZT. This is exactly the kind of relative role trace we wanted: it preserves the 3-way branch collision without revealing absolute edge identity."
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/notes/012_branch_anatomy_hypothesis.md",
+      "score": 6,
+      "name_score": 2,
+      "text_score": 4,
+      "bytes": 979,
+      "sha256": "27c4caea64c6eecdafdc954493163fa52227a258ce390f2fa03627fe36313faa",
+      "snippets": [
+        {
+          "line": 1,
+          "text": "# Branch anatomy hypothesis"
+        },
+        {
+          "line": 16,
+          "text": "and differ only in the central ZT branch:"
+        },
+        {
+          "line": 22,
+          "text": "Each branch has the same role-relative sign pattern:"
+        },
+        {
+          "line": 38,
+          "text": "    in a WXYZTIW-oriented six-cycle with pattern [1,1,1,0,1,1]."
+        },
+        {
+          "line": 40,
+          "text": "Then determine which of those also satisfy the K900 top-lock conditions:"
+        },
+        {
+          "line": 51,
+          "text": "    Explain why the branches 3-4, 7-10, and 8-14 were selected."
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/notes/031_register_key_space_audit.md",
+      "score": 6,
+      "name_score": 4,
+      "text_score": 2,
+      "bytes": 377,
+      "sha256": "01caa5130681918166a105caa1bc202cd366576d3f3409d8651bfaf9cdcbb43e",
+      "snippets": [
+        {
+          "line": 5,
+          "text": "    Reframe Track B as a finite register-key problem."
+        },
+        {
+          "line": 14,
+          "text": "    artifacts/json/register_key_space_audit.v1.json"
+        },
+        {
+          "line": 15,
+          "text": "    artifacts/md/register_key_space_audit.v1.md"
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/paper/main.tex",
+      "score": 6,
+      "name_score": 0,
+      "text_score": 6,
+      "bytes": 1184,
+      "sha256": "de36927ae36cd26f019e551dc0468b7f814a2fa7a32e81954e22a4b8312cc2b8",
+      "snippets": [
+        {
+          "line": 22,
+          "text": "\\title{Finite Holonomy Evidence for Role-Relative Projection Separation in a K900 Carrier}"
+        },
+        {
+          "line": 34,
+          "text": "\\input{sections/04_role_relative_observables}"
+        },
+        {
+          "line": 35,
+          "text": "\\input{sections/05_apre_branch_anatomy}"
+        },
+        {
+          "line": 36,
+          "text": "\\input{sections/05b_k900_native_collision_bound}"
+        },
+        {
+          "line": 37,
+          "text": "\\input{sections/05c_register_key_selection}"
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/paper/sections/04_role_relative_observables.tex",
+      "score": 6,
+      "name_score": 4,
+      "text_score": 2,
+      "bytes": 769,
+      "sha256": "442e8769fd4f762fc55a00c243e679af4685f904e7ac61def7db7d9b3ec8739e",
+      "snippets": [
+        {
+          "line": 1,
+          "text": "\\section{Role-relative observables}"
+        },
+        {
+          "line": 5,
+          "text": "The refined observable, denoted \\(O_{\\mathrm{rel}}\\), records the role-relative sign pattern:"
+        },
+        {
+          "line": 10,
+          "text": "This refinement does not disclose absolute branch identity. It records where the zero sign occurs in the role grammar, not which absolute carrier edge carries it."
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/src/k900_native_collision_bound_census_v1.py",
+      "score": 6,
+      "name_score": 2,
+      "text_score": 4,
+      "bytes": 17603,
+      "sha256": "f57fc2bda105a9d4773ce4d7567b56acb5bd44c1149be16e20cf61e8c4a058bd",
+      "snippets": [
+        {
+          "line": 9,
+          "text": "OUT_JSON = Path(\"artifacts/json/k900_native_collision_bound_census.v1.json\")"
+        },
+        {
+          "line": 10,
+          "text": "OUT_MD = Path(\"artifacts/md/k900_native_collision_bound_census.v1.md\")"
+        },
+        {
+          "line": 11,
+          "text": "OUT_NOTE = Path(\"notes/022_k900_native_collision_bound_census.md\")"
+        },
+        {
+          "line": 274,
+          "text": "    top_lock_oriented = []"
+        },
+        {
+          "line": 275,
+          "text": "    top_lock_base_ids = set()"
+        },
+        {
+          "line": 300,
+          "text": "                \"is_top_lock_target\": pattern == TARGET_PATTERN and is_target_signature(sig),"
+        },
+        {
+          "line": 306,
+          "text": "            if row[\"is_top_lock_target\"]:"
+        },
+        {
+          "line": 307,
+          "text": "                top_lock_oriented.append(row)"
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/src/register_key_predicate_lattice_v1.py",
+      "score": 6,
+      "name_score": 4,
+      "text_score": 2,
+      "bytes": 6356,
+      "sha256": "b755a7dfefba040eaa8a790213aa74b9933d81988b0419ce5f07ea1d09e44282",
+      "snippets": [
+        {
+          "line": 7,
+          "text": "SRC = Path(\"artifacts/json/register_key_space_audit.v1.json\")"
+        },
+        {
+          "line": 16,
+          "text": "    \"apre_hinge_words_ordered\","
+        },
+        {
+          "line": 24,
+          "text": "    \"apre_block_words_ordered\","
+        },
+        {
+          "line": 55,
+          "text": "            \"reason\": \"register_key_space_audit.v1.json does not contain full_key_records.\","
+        },
+        {
+          "line": 58,
+          "text": "            \"next_step\": \"Regenerate register_key_space_audit with full_key_records.\","
+        },
+        {
+          "line": 60,
+          "text": "        out_json = Path(\"artifacts/json/register_key_predicate_lattice.v1.json\")"
+        },
+        {
+          "line": 61,
+          "text": "        out_md = Path(\"artifacts/md/register_key_predicate_lattice.v1.md\")"
+        },
+        {
+          "line": 62,
+          "text": "        out_note = Path(\"notes/032_register_key_predicate_lattice.md\")"
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/src/register_keypair_anatomy_v1.py",
+      "score": 6,
+      "name_score": 4,
+      "text_score": 2,
+      "bytes": 8622,
+      "sha256": "f34710cd2391ff0b958cfb5ee855919814429c3d966e3fcf18fbb0bb4f95bbab",
+      "snippets": [
+        {
+          "line": 6,
+          "text": "SRC = Path(\"artifacts/json/register_key_space_audit.v1.json\")"
+        },
+        {
+          "line": 150,
+          "text": "    out_json = Path(\"artifacts/json/register_keypair_anatomy.v1.json\")"
+        },
+        {
+          "line": 151,
+          "text": "    out_md = Path(\"artifacts/md/register_keypair_anatomy.v1.md\")"
+        },
+        {
+          "line": 152,
+          "text": "    out_note = Path(\"notes/033_register_keypair_anatomy.md\")"
+        },
+        {
+          "line": 198,
+          "text": "    md.append(\"- This is finite register-key anatomy, not a cryptographic security theorem.\")"
+        },
+        {
+          "line": 210,
+          "text": "        \"    artifacts/json/register_keypair_anatomy.v1.json\\n\""
+        },
+        {
+          "line": 211,
+          "text": "        \"    artifacts/md/register_keypair_anatomy.v1.md\\n\""
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/src/register_keypair_hinge_leak_audit_v1.py",
+      "score": 6,
+      "name_score": 4,
+      "text_score": 2,
+      "bytes": 6369,
+      "sha256": "caaa2c3e7fa4de4359858ef1b9a83e420ade5a9943220c9d5b321e171202b896",
+      "snippets": [
+        {
+          "line": 6,
+          "text": "SRC = Path(\"artifacts/json/register_keypair_fixed_triangle_audit.v1.json\")"
+        },
+        {
+          "line": 94,
+          "text": "            \"These exceptions mark the branch-local leak boundary.\","
+        },
+        {
+          "line": 99,
+          "text": "    out_json = Path(\"artifacts/json/register_keypair_hinge_leak_audit.v1.json\")"
+        },
+        {
+          "line": 100,
+          "text": "    out_md = Path(\"artifacts/md/register_keypair_hinge_leak_audit.v1.md\")"
+        },
+        {
+          "line": 101,
+          "text": "    out_note = Path(\"notes/035_register_keypair_hinge_leak_audit.md\")"
+        },
+        {
+          "line": 156,
+          "text": "        \"    artifacts/json/register_keypair_hinge_leak_audit.v1.json\\n\""
+        },
+        {
+          "line": 157,
+          "text": "        \"    artifacts/md/register_keypair_hinge_leak_audit.v1.md\\n\""
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/src/write_fhe_checkpoint_v1.py",
+      "score": 6,
+      "name_score": 0,
+      "text_score": 6,
+      "bytes": 7668,
+      "sha256": "c722635132e9e7328db982c76be139f1868e4c8a9ac6461cc9d0febe579ca1fc",
+      "snippets": [
+        {
+          "line": 12,
+          "text": "    \"artifacts/json/apre_top_lock_and_single_flip_tamper_probe.v1.json\","
+        },
+        {
+          "line": 13,
+          "text": "    \"artifacts/json/apre_two_flip_tamper_probe.v1.json\","
+        },
+        {
+          "line": 15,
+          "text": "    \"artifacts/json/apre_wxyzti_anatomy.v1.json\","
+        },
+        {
+          "line": 16,
+          "text": "    \"artifacts/json/oriented_wxyzti_labeling_audit.v1.json\","
+        },
+        {
+          "line": 39,
+          "text": "    apre = load(\"artifacts/json/apre_top_lock_and_single_flip_tamper_probe.v1.json\")"
+        },
+        {
+          "line": 40,
+          "text": "    two = load(\"artifacts/json/apre_two_flip_tamper_probe.v1.json\")"
+        },
+        {
+          "line": 42,
+          "text": "    anatomy = load(\"artifacts/json/apre_wxyzti_anatomy.v1.json\")"
+        },
+        {
+          "line": 43,
+          "text": "    orient = load(\"artifacts/json/oriented_wxyzti_labeling_audit.v1.json\")"
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/NEXT_STEPS.md",
+      "score": 5,
+      "name_score": 0,
+      "text_score": 5,
+      "bytes": 1941,
+      "sha256": "d65e51e54c229f6ab3b9ed1e87eafd622412bf7fdf135898205fb38a9992b57f",
+      "snippets": [
+        {
+          "line": 20,
+          "text": "After a register map exists, test whether the A_pre branches are distinguished by chamber grammar."
+        },
+        {
+          "line": 22,
+          "text": "Branches:"
+        },
+        {
+          "line": 36,
+          "text": "    Is this pattern lawful under the actual register map, or only a numerical coincidence?"
+        },
+        {
+          "line": 47,
+          "text": "    branch substitution"
+        },
+        {
+          "line": 62,
+          "text": "    or a family parameterized by role-relative branch choices."
+        },
+        {
+          "line": 68,
+          "text": "    Finite Holonomy Evidence for Role-Relative Projection Separation in a K900 Carrier"
+        },
+        {
+          "line": 72,
+          "text": "    In the imported K900 G15 carrier, a three-member WXYZTIW class shares a role-relative observable O_rel. O_rel preserves the three-way projection while rejecting all tested one-edge and two-edge sign tampers. The sele"
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/RESULT_v20.md",
+      "score": 5,
+      "name_score": 0,
+      "text_score": 5,
+      "bytes": 2883,
+      "sha256": "6bde5459eb4638569561ecdd2d9f412026ae3c04ba4ffbc67cde4b0b38a0cba4",
+      "snippets": [
+        {
+          "line": 3,
+          "text": "Status: Row-aware carrier selection law checkpoint."
+        },
+        {
+          "line": 7,
+          "text": "What recovers the observed 6-of-21 selected-branch triples inside each fixed Petersen-star triangle?"
+        },
+        {
+          "line": 18,
+          "text": "Row-aware M-incidence resolves the selection completely."
+        },
+        {
+          "line": 20,
+          "text": "The row-aware discriminant lattice found:"
+        },
+        {
+          "line": 40,
+          "text": "Thus every local candidate triple has a distinct row-aware support-degree profile, and the observed triples are fully separated from the rejected triples by this M-row incidence profile."
+        },
+        {
+          "line": 63,
+          "text": "This is stronger than scalar support shape, but it is not direct selected-column identity. It is a row-aware chamber incidence predicate."
+        },
+        {
+          "line": 79,
+          "text": "    Row-aware M-incidence resolves all remaining ambiguity."
+        },
+        {
+          "line": 80,
+          "text": "    The carrier selection law lives in the row-aware support-degree profile."
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/RESULT_v21.md",
+      "score": 5,
+      "name_score": 0,
+      "text_score": 5,
+      "bytes": 2727,
+      "sha256": "93dfa06cbbf8b7cfdaf2aefcde41ebbaee04c1a676316a776e20ec8199a3fd00",
+      "snippets": [
+        {
+          "line": 3,
+          "text": "Status: Exact selector minimizer checkpoint."
+        },
+        {
+          "line": 7,
+          "text": "After v20 found that row-aware M-incidence exactly separates the observed selected-branch triples from rejected abstract candidates, what is the least-sharp exact selector in the tested feature family?"
+        },
+        {
+          "line": 23,
+          "text": "The only one-feature exact selector is:"
+        },
+        {
+          "line": 31,
+          "text": "Thus support_row_degree_profile is the minimal single-feature exact selector in the tested family."
+        },
+        {
+          "line": 33,
+          "text": "## Least-sharp exact tested selectors"
+        },
+        {
+          "line": 35,
+          "text": "The least-value exact selectors have:"
+        },
+        {
+          "line": 40,
+          "text": "The first least-sharp exact selectors are:"
+        },
+        {
+          "line": 69,
+          "text": "There are two levels of exact row-aware recovery."
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/artifacts/json/apre_two_flip_tamper_probe.v1.json",
+      "score": 5,
+      "name_score": 2,
+      "text_score": 3,
+      "bytes": 27231,
+      "sha256": "41bbb2b296af05a68197f4b7bde321b5b7354f0a9e17dc68cd9806518b334f51",
+      "snippets": [
+        {
+          "line": 5,
+          "text": "  \"source\": \"artifacts/json/apre_top_lock_and_single_flip_tamper_probe.v1.json\","
+        },
+        {
+          "line": 6,
+          "text": "  \"apre_signature\": {"
+        },
+        {
+          "line": 14,
+          "text": "  \"apre_count\": 3,"
+        },
+        {
+          "line": 61,
+          "text": "      \"accepted_by_apre_signature\": true"
+        },
+        {
+          "line": 105,
+          "text": "      \"accepted_by_apre_signature\": true"
+        },
+        {
+          "line": 149,
+          "text": "      \"accepted_by_apre_signature\": true"
+        },
+        {
+          "line": 193,
+          "text": "      \"accepted_by_apre_signature\": true"
+        },
+        {
+          "line": 237,
+          "text": "      \"accepted_by_apre_signature\": true"
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/artifacts/json/k900_native_collision_bound_census.v1.json",
+      "score": 5,
+      "name_score": 2,
+      "text_score": 3,
+      "bytes": 10392,
+      "sha256": "6fdf7861c77973ba3529b24e2e8f7253c6356080879840da013bc16201940e5b",
+      "snippets": [
+        {
+          "line": 181,
+          "text": "  \"top_lock_oriented_rows\": ["
+        },
+        {
+          "line": 236,
+          "text": "      \"is_top_lock_target\": true"
+        },
+        {
+          "line": 292,
+          "text": "      \"is_top_lock_target\": true"
+        },
+        {
+          "line": 348,
+          "text": "      \"is_top_lock_target\": true"
+        },
+        {
+          "line": 404,
+          "text": "      \"is_top_lock_target\": true"
+        },
+        {
+          "line": 460,
+          "text": "      \"is_top_lock_target\": true"
+        },
+        {
+          "line": 516,
+          "text": "      \"is_top_lock_target\": true"
+        },
+        {
+          "line": 568,
+          "text": "      \"Using only the imported K900 carrier, the top-lock WXYZTIW role predicate selects exactly three base six-cycle witnesses.\","
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/artifacts/json/latex_scaffold_audit.v1.json",
+      "score": 5,
+      "name_score": 0,
+      "text_score": 5,
+      "bytes": 1734,
+      "sha256": "93764eabeb10e8bf68a67935042739d62c560f2d3d35ec506b44349341789fa8",
+      "snippets": [
+        {
+          "line": 21,
+          "text": "    \"paper/sections/04_role_relative_observables.tex\","
+        },
+        {
+          "line": 22,
+          "text": "    \"paper/sections/05_apre_branch_anatomy.tex\","
+        },
+        {
+          "line": 23,
+          "text": "    \"paper/sections/05b_k900_native_collision_bound.tex\","
+        },
+        {
+          "line": 24,
+          "text": "    \"paper/sections/05c_register_key_selection.tex\","
+        },
+        {
+          "line": 39,
+          "text": "    \"sections/04_role_relative_observables.tex\","
+        },
+        {
+          "line": 40,
+          "text": "    \"sections/05_apre_branch_anatomy.tex\","
+        },
+        {
+          "line": 41,
+          "text": "    \"sections/05b_k900_native_collision_bound.tex\","
+        },
+        {
+          "line": 42,
+          "text": "    \"sections/05c_register_key_selection.tex\","
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/artifacts/json/register_key_predicate_lattice.v1.json",
+      "score": 5,
+      "name_score": 4,
+      "text_score": 1,
+      "bytes": 4894156,
+      "sha256": "874fdf3a92f67c0da7d678bfe7bf13e8340813ed1e68f0a4ab2f6d944d30c60c",
+      "snippets": [
+        {
+          "line": 12,
+          "text": "    \"apre_hinge_words_ordered\","
+        },
+        {
+          "line": 19,
+          "text": "    \"apre_block_words_ordered\","
+        },
+        {
+          "line": 1263,
+          "text": "        \"apre_hinge_words_ordered\""
+        },
+        {
+          "line": 1279,
+          "text": "              \"apre_hinge_words_ordered\","
+        },
+        {
+          "line": 1288,
+          "text": "              \"apre_hinge_words_ordered\","
+        },
+        {
+          "line": 1297,
+          "text": "              \"apre_hinge_words_ordered\","
+        },
+        {
+          "line": 1306,
+          "text": "              \"apre_hinge_words_ordered\","
+        },
+        {
+          "line": 1315,
+          "text": "              \"apre_hinge_words_ordered\","
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/artifacts/json/register_key_space_audit.v1.json",
+      "score": 5,
+      "name_score": 4,
+      "text_score": 1,
+      "bytes": 1141488,
+      "sha256": "ab815ff5a3b36056224db04812f46c78e89034bf30f6aa62fe15e5abf9a6263a",
+      "snippets": [
+        {
+          "line": 14,
+          "text": "    \"apre_cycle_count\": 3,"
+        },
+        {
+          "line": 18,
+          "text": "    \"apre_block_words_ordered\": {"
+        },
+        {
+          "line": 66,
+          "text": "    \"apre_hinge_words_ordered\": {"
+        },
+        {
+          "line": 658,
+          "text": "      \"apre_profiles\": ["
+        },
+        {
+          "line": 906,
+          "text": "        \"apre_block_words_ordered\": \"(('B0', 'B0', 'B4', 'B4', 'B4', 'B0'), ('B0', 'B0', 'B4', 'B4', 'B4', 'B0'), ('B0', 'B0', 'B3', 'B3', 'B4', 'B0'))\","
+        },
+        {
+          "line": 907,
+          "text": "        \"apre_hinge_words_ordered\": \"((False, False, False, False, False, False), (False, False, False, False, False, False), (False, False, True, False, False, False))\","
+        },
+        {
+          "line": 1011,
+          "text": "      \"apre_profiles\": ["
+        },
+        {
+          "line": 1259,
+          "text": "        \"apre_block_words_ordered\": \"(('B0', 'B1', 'B4', 'B4', 'B4', 'B0'), ('B0', 'B1', 'B4', 'B4', 'B4', 'B0'), ('B0', 'B1', 'B2', 'B1', 'B2', 'B0'))\","
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/artifacts/json/register_keypair_anatomy.v1.json",
+      "score": 5,
+      "name_score": 4,
+      "text_score": 1,
+      "bytes": 608825,
+      "sha256": "2c936e537ced57a1d4219e7a1a15538ad7b4f6cee0753cab61e397386f2d8d19",
+      "snippets": [
+        {
+          "line": 5,
+          "text": "  \"source\": \"artifacts/json/register_key_space_audit.v1.json\","
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/artifacts/json/register_keypair_fixed_triangle_audit.v1.json",
+      "score": 5,
+      "name_score": 4,
+      "text_score": 1,
+      "bytes": 44289,
+      "sha256": "14d543126d0efa96ad99b294bb22db1a67a46bcfea78076d5373707a26ce60f9",
+      "snippets": [
+        {
+          "line": 5,
+          "text": "  \"source\": \"artifacts/json/register_keypair_anatomy.v1.json\","
+        },
+        {
+          "line": 2579,
+          "text": "    \"If blocked, regenerate register_keypair_anatomy with full_pairs.\","
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/artifacts/json/selected_branch_ambiguous_collision_audit.v1.json",
+      "score": 5,
+      "name_score": 4,
+      "text_score": 1,
+      "bytes": 14292,
+      "sha256": "a649d62f003a919f024e9aba8454ab8672395f4c2e3bb4366edf1d06bd9c321d",
+      "snippets": [
+        {
+          "line": 2,
+          "text": "  \"title\": \"Selected branch ambiguous collision audit\","
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/artifacts/json/selected_branch_discriminant_lattice.v1.json",
+      "score": 5,
+      "name_score": 4,
+      "text_score": 1,
+      "bytes": 18036,
+      "sha256": "ecba236999f27c818a85f60b252d68bd71b00e98595568b3430f43abd9d6a6c6",
+      "snippets": [
+        {
+          "line": 2,
+          "text": "  \"title\": \"Selected branch discriminant lattice\","
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/artifacts/md/k900_source_artifact_scan.v0.md",
+      "score": 5,
+      "name_score": 0,
+      "text_score": 5,
+      "bytes": 144059,
+      "sha256": "44e18aeef8085888242c9d2631e5eabb381ca424bbd0288bfad6530ad2e17a8a",
+      "snippets": [
+        {
+          "line": 97,
+          "text": "  - - Standard Model dynamics - physical gravity ## Allowed language Use: - finite EM-like support conservation - finite polarity-support selector - residue-vector representative - paired-cancellation exact return - five"
+        },
+        {
+          "line": 146,
+          "text": "  - M-like support selector,enumerated finite result,\"Within the exhaustive five-edge census, support conservation exactly selects the 1,231 threshold-preserving variants.\",Finite five-edge census only. Not a physical fi"
+        },
+        {
+          "line": 344,
+          "text": "  - 7 shows all threshold preservers have no expansion, the support-conserved family inherits no-expansion in this census. This supports the view that EM-like support conservation is the finite selector behind the no-exp"
+        },
+        {
+          "line": 346,
+          "text": "  - 1 threshold-preserving variants. Because artifact 017 shows all threshold preservers have no expansion, the support-conserved family inherits no-expansion in this census. This supports the view that EM-like support c"
+        },
+        {
+          "line": 399,
+          "text": "  - : \"EM-like support selector\", \"statement\": \"Within the exhaustive five-edge census, support conservation exactly selects the 1,231 threshold-preserving variants.\", \"status\": \"enumerated finite result\", \"evidence\": { "
+        },
+        {
+          "line": 949,
+          "text": "- WXYZTI: 1"
+        },
+        {
+          "line": 950,
+          "text": "  - t\": \"282_g900_graph_shadow_selection_evaluation\", \"passed\": true, \"meaning\": \"WXYZTITZYXW and related receipt-lens grammar remain preserved as branches.\" }, { \"receipt\": \"branch_ledger_preserved\", \"source_artifact\": "
+        },
+        {
+          "line": 952,
+          "text": "### ../thalean-graph-theory/16-fifteen-thalion-ring/support/artifacts/json/284_false_census_id_projection_and_branch_collapse_nulls.json"
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/artifacts/md/latex_scaffold_audit.v1.md",
+      "score": 5,
+      "name_score": 0,
+      "text_score": 5,
+      "bytes": 846,
+      "sha256": "213089bdb698c045c4579a92a4e34edbc2fb5fe8a7ffa152958aceeaa657b532",
+      "snippets": [
+        {
+          "line": 21,
+          "text": "- paper/sections/04_role_relative_observables.tex"
+        },
+        {
+          "line": 22,
+          "text": "- paper/sections/05_apre_branch_anatomy.tex"
+        },
+        {
+          "line": 23,
+          "text": "- paper/sections/05b_k900_native_collision_bound.tex"
+        },
+        {
+          "line": 24,
+          "text": "- paper/sections/05c_register_key_selection.tex"
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/artifacts/md/register_key_predicate_lattice.v1.md",
+      "score": 5,
+      "name_score": 4,
+      "text_score": 1,
+      "bytes": 4138,
+      "sha256": "eb31bcd90b2a3d8fc854be19e351ed8a0b686fcc8279813b0ae690c67fbb963c",
+      "snippets": [
+        {
+          "line": 20,
+          "text": "- features=['apre_hinge_words_ordered'] classes=19 singletons=0 min=4 max=16 hist={4: 10, 8: 8, 16: 1}"
+        },
+        {
+          "line": 21,
+          "text": "- features=['apre_hinge_words_ordered', 'selected_hinge_count'] classes=19 singletons=0 min=4 max=16 hist={4: 10, 8: 8, 16: 1}"
+        },
+        {
+          "line": 22,
+          "text": "- features=['apre_hinge_words_ordered', 'selected_hinge_word'] classes=19 singletons=0 min=4 max=16 hist={4: 10, 8: 8, 16: 1}"
+        },
+        {
+          "line": 23,
+          "text": "- features=['apre_hinge_words_ordered', 'selected_hinge_count', 'selected_hinge_word'] classes=19 singletons=0 min=4 max=16 hist={4: 10, 8: 8, 16: 1}"
+        },
+        {
+          "line": 24,
+          "text": "- features=['zero_hinge_count', 'apre_hinge_words_ordered'] classes=26 singletons=0 min=4 max=8 hist={4: 22, 8: 4}"
+        },
+        {
+          "line": 25,
+          "text": "- features=['one_hinge_count', 'apre_hinge_words_ordered'] classes=26 singletons=0 min=4 max=8 hist={4: 22, 8: 4}"
+        },
+        {
+          "line": 26,
+          "text": "- features=['zero_hinge_count', 'one_hinge_count', 'apre_hinge_words_ordered'] classes=26 singletons=0 min=4 max=8 hist={4: 22, 8: 4}"
+        },
+        {
+          "line": 27,
+          "text": "- features=['zero_hinge_count', 'apre_hinge_words_ordered', 'selected_hinge_count'] classes=26 singletons=0 min=4 max=8 hist={4: 22, 8: 4}"
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/artifacts/md/register_key_space_audit.v1.md",
+      "score": 5,
+      "name_score": 4,
+      "text_score": 1,
+      "bytes": 9545,
+      "sha256": "9a111231b4324c9c8dacbfcd0320242975a43c69e885f7da16198c03f04b3fcf",
+      "snippets": [
+        {
+          "line": 14,
+          "text": "- apre_cycle_count: 3"
+        },
+        {
+          "line": 19,
+          "text": "### apre_block_words_ordered"
+        },
+        {
+          "line": 32,
+          "text": "### apre_hinge_words_ordered"
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/artifacts/md/register_keypair_anatomy.v1.md",
+      "score": 5,
+      "name_score": 4,
+      "text_score": 1,
+      "bytes": 5960,
+      "sha256": "36e91419d91da56ea91b2b7ee4133525c00bcde81340110a9ac6a6115c4d4ca6",
+      "snippets": [
+        {
+          "line": 106,
+          "text": "- This is finite register-key anatomy, not a cryptographic security theorem."
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/artifacts/md/selected_branch_ambiguous_collision_audit.v1.md",
+      "score": 5,
+      "name_score": 4,
+      "text_score": 1,
+      "bytes": 2751,
+      "sha256": "584026ab1fcbc528c3213cfe493bc6b8eb5e1d480fc8027026c7143bc530b623",
+      "snippets": [
+        {
+          "line": 1,
+          "text": "# Selected branch ambiguous collision audit v1"
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/artifacts/md/selected_branch_discriminant_lattice.v1.md",
+      "score": 5,
+      "name_score": 4,
+      "text_score": 1,
+      "bytes": 7933,
+      "sha256": "6366b1625bbbd1989117d11ccd67e1481eb795805a94bcf7223b5d415adf6b89",
+      "snippets": [
+        {
+          "line": 1,
+          "text": "# Selected branch discriminant lattice v1"
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/artifacts/md/selected_branch_matching_structure.v1.md",
+      "score": 5,
+      "name_score": 4,
+      "text_score": 1,
+      "bytes": 4039,
+      "sha256": "5bb30aa60a2c817a94b67884a19b8cf87952fb51855c05305d44471352b8c1da",
+      "snippets": [
+        {
+          "line": 1,
+          "text": "# Selected branch matching structure v1"
+        },
+        {
+          "line": 84,
+          "text": "- This is a carrier-specific selected-branch audit."
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/artifacts/md/selected_branch_observed_vs_candidate_discriminants.v1.md",
+      "score": 5,
+      "name_score": 4,
+      "text_score": 1,
+      "bytes": 3195,
+      "sha256": "bb8b724484c90d3fbab6db553a3bebbfae950bfdec00590a34a8e1d25c071024",
+      "snippets": [
+        {
+          "line": 1,
+          "text": "# Selected branch observed-vs-candidate discriminants v1"
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/artifacts/md/selected_branch_selection_space_count.v1.md",
+      "score": 5,
+      "name_score": 4,
+      "text_score": 1,
+      "bytes": 3646,
+      "sha256": "b8da5e328074f20bbb7f5a301d8279fe560a3ab07f06e17d93a5c42b5d734466",
+      "snippets": [
+        {
+          "line": 1,
+          "text": "# Selected branch selection-space count v1"
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/artifacts/md/selected_branch_tau_action_audit.v1.md",
+      "score": 5,
+      "name_score": 4,
+      "text_score": 1,
+      "bytes": 4999,
+      "sha256": "f44fa6cbf5f9457160cf5da89599c2bb4cbe99721ce1ae40786afb053b2a355b",
+      "snippets": [
+        {
+          "line": 1,
+          "text": "# Selected branch tau action audit v1"
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/notes/013_branch_anatomy_zero_edge_census.md",
+      "score": 5,
+      "name_score": 2,
+      "text_score": 3,
+      "bytes": 406,
+      "sha256": "23b3bcd6956bd249e8da05502d9cc173615e8a3dfea10b6af2fb8dffd7c2c66d",
+      "snippets": [
+        {
+          "line": 1,
+          "text": "# Branch anatomy zero-edge census checkpoint"
+        },
+        {
+          "line": 3,
+          "text": "This test asks which zero-sign G15 carrier edges can serve as the ZT central coupler in the role-relative WXYZTIW pattern:"
+        },
+        {
+          "line": 15,
+          "text": "The selected ZT branches are structurally isolated by the K900 role-relative closure test."
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/notes/033_register_keypair_anatomy.md",
+      "score": 5,
+      "name_score": 4,
+      "text_score": 1,
+      "bytes": 277,
+      "sha256": "a236960fb2e076dfa4ba388a65fe94144fff7948a558752ece2b90457f5fc214",
+      "snippets": [
+        {
+          "line": 13,
+          "text": "    artifacts/json/register_keypair_anatomy.v1.json"
+        },
+        {
+          "line": 14,
+          "text": "    artifacts/md/register_keypair_anatomy.v1.md"
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/notes/035_register_keypair_hinge_leak_audit.md",
+      "score": 5,
+      "name_score": 4,
+      "text_score": 1,
+      "bytes": 269,
+      "sha256": "4a31606fbd131bed4aa99e2a12900796a10bf7e9d9dafcf54261b2d8f2ea671b",
+      "snippets": [
+        {
+          "line": 9,
+          "text": "    artifacts/json/register_keypair_hinge_leak_audit.v1.json"
+        },
+        {
+          "line": 10,
+          "text": "    artifacts/md/register_keypair_hinge_leak_audit.v1.md"
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/notes/037_selected_branch_tau_action_audit.md",
+      "score": 5,
+      "name_score": 4,
+      "text_score": 1,
+      "bytes": 144,
+      "sha256": "1bcd18296be9cf68ca4ff58c8e2631e52f7a6e1fd4e64cf45650cbcfe67f23e3",
+      "snippets": [
+        {
+          "line": 1,
+          "text": "# Selected branch tau action audit checkpoint"
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/notes/040_selected_branch_matching_structure.md",
+      "score": 5,
+      "name_score": 4,
+      "text_score": 1,
+      "bytes": 144,
+      "sha256": "246bae88ec7386bf37fe5f54d5eeda9874787f23ed86727dc6968025a6511e7f",
+      "snippets": [
+        {
+          "line": 1,
+          "text": "# Selected branch matching structure checkpoint"
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/notes/041_selected_branch_selection_space_count.md",
+      "score": 5,
+      "name_score": 4,
+      "text_score": 1,
+      "bytes": 160,
+      "sha256": "8e9966a6591fdec24ba58f9684008c56e64f7292cdf6ea1dd9c74a64038f4381",
+      "snippets": [
+        {
+          "line": 1,
+          "text": "# Selected branch selection-space count checkpoint"
+        },
+        {
+          "line": 5,
+          "text": "    Count all abstract triples of the v17 selected-branch type per fixed Petersen-star triangle."
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/notes/042_selected_branch_observed_vs_candidate_discriminants.md",
+      "score": 5,
+      "name_score": 4,
+      "text_score": 1,
+      "bytes": 199,
+      "sha256": "53880afea6ab746b2af9176e81de5f3a55783bc09569dfdec758d0389c476f79",
+      "snippets": [
+        {
+          "line": 1,
+          "text": "# Selected branch observed-vs-candidate discriminants checkpoint"
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/notes/043_selected_branch_discriminant_lattice.md",
+      "score": 5,
+      "name_score": 4,
+      "text_score": 1,
+      "bytes": 176,
+      "sha256": "0afc81a4248bf4edc6e6dce79b328f0ecdd252324605a59154f766adc1a82a46",
+      "snippets": [
+        {
+          "line": 1,
+          "text": "# Selected branch discriminant lattice checkpoint"
+        }
+      ]
+    },
+    {
+      "path": "research/fhe/notes/044_selected_branch_ambiguous_collision_audit.md",
+      "score": 5,
+      "name_score": 4,
+      "text_score": 1,
+      "bytes": 171,
+      "sha256": "0145dc784d67461146de167e4ea264044acaf3f0a5f60b3323a517bdf40feff8",
+      "snippets": [
+        {
+          "line": 1,
+          "text": "# Selected branch ambiguous collision audit checkpoint"
+        }
+      ]
+    }
+  ],
+  "next_steps": [
+    "Inspect search hits for exact v21 selector/minimizer artifacts.",
+    "Normalize selected WXYZTIW branch triple into a small JSON target.",
+    "Write build_register_map_candidate_inputs.py to assemble candidate inputs.",
+    "Write validate_register_map_candidate_inputs.py before attempting proof."
+  ]
+}

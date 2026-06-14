@@ -1,0 +1,820 @@
+{
+  "schema": "register_map_candidate_recovery_001.v1",
+  "status": "A0_confirms_target_A1_supported_A2_pending",
+  "timestamp_utc": "2026-06-14T17:56:47.596262+00:00",
+  "gap": "A_chamber_register_map",
+  "purpose": "Run the first recovery pass comparing public/control evidence, row-aware evidence, and the row-shuffle null boundary.",
+  "boundary": [
+    "This is not yet a chamber/register map proof.",
+    "This does not claim a lawful K900-to-chamber map has been found.",
+    "This pass uses existing FHE artifacts and does not rerun the full selector search.",
+    "A2 is not claimed until a live row-shuffle null artifact is generated."
+  ],
+  "inputs": {
+    "validation_path": "artifacts/json/register_map_candidate_inputs.validation_001.v1.json",
+    "validation_sha256": "e359200f2140c3d78b0a6951add8d11c7f7c69064309f59c8b6b619304651d9a",
+    "bundle_path": "artifacts/json/register_map_candidate_inputs_001.v1.json",
+    "bundle_sha256": "1a36a510be506c5f912841b8cd07737d4d41e8efbcaaaf8e6156bd162266aac2",
+    "target_cycles": [
+      [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      [
+        0,
+        1,
+        2,
+        7,
+        10,
+        5
+      ],
+      [
+        0,
+        1,
+        2,
+        8,
+        14,
+        5
+      ]
+    ],
+    "target_zt_edges": [
+      [
+        3,
+        4
+      ],
+      [
+        7,
+        10
+      ],
+      [
+        8,
+        14
+      ]
+    ],
+    "target_pattern": [
+      1,
+      1,
+      1,
+      0,
+      1,
+      1
+    ]
+  },
+  "results": {
+    "A0_public_predicate_only": {
+      "status": "control_layer_confirms_target_but_does_not_close_register_map",
+      "supported": true,
+      "detail": "Public/top-lock/anatomy sources confirm the selected target class and ZT edges, but this pass does not treat them as a chamber-register proof.",
+      "register_key_section_hits": [
+        {
+          "line": 1,
+          "text": "\\section{Register-Key Selection and Row-Aware Incidence}"
+        },
+        {
+          "line": 2,
+          "text": "\\label{sec:register-key-selection}"
+        },
+        {
+          "line": 4,
+          "text": "The K900-native collision census in Section~\\ref{sec:k900-native-collision-bound} gives the Track A result: within the K900 carrier, the target predicate selects exactly three base cycles and six oriented presentations. The present section records a second, bo"
+        },
+        {
+          "line": 6,
+          "text": "The starting point is the register-boundary audit summarized in Section~\\ref{sec:register-boundary}. Endpoint labels, shared edge order, bare \\(G_{15}\\) isomorphism, and the K900 odd/even triangle partition do not force a unique chamber register alignment. The"
+        },
+        {
+          "line": 8,
+          "text": "A census of the K900-to-theorem-object key space gives \\(120\\) candidate graph isomorphisms. Public chamber/triangle predicates reduce this space to \\(60\\) structured keypairs. Each keypair is explained by a Petersen line-graph involution: a mate fixes one Pet"
+        },
+        {
+          "line": 10,
+          "text": "The selected branch triple is an edge-level object in this register. It does not live on the fixed triangle itself. For every public keypair, the selected triple lies in the complement of the fixed Petersen-star triangle and has the following uniform form:"
+        },
+        {
+          "line": 16,
+          "text": "Equivalently, the selected branch triple is a three-edge matching in \\(G_{15}\\). It uses six distinct \\(G_{15}\\) vertices arranged across exactly three \\(\\tau\\)-swapped vertex-pairs: two pairs are crosslinked by the moved edge-pair, and one pair folds back by "
+        },
+        {
+          "line": 18,
+          "text": "The abstract Petersen edge-orbit structure alone does not determine the observed selection. For each fixed Petersen-star triangle, there are \\(21\\) abstract triples of the relevant type, while the carrier admits \\(6\\). Across all ten fixed triangles, this give"
+        },
+        {
+          "line": 22,
+          "text": "Exact recovery in the tested feature family requires row-aware incidence. The row-aware support-degree profile of the sector matrix \\(M\\), recording which rows are touched and with what multiplicity, separates all \\(60\\) observed selected triples from all \\(15"
+        },
+        {
+          "line": 28,
+          "text": "As a single feature, this row-aware profile is exact but sharp: it has \\(210\\) distinct values on the \\(210\\) local candidate rows. A minimizer over the tested feature family found that the only one-feature exact selector is the full row-aware support-degree p"
+        },
+        {
+          "line": 30,
+          "text": "This Track B result should be read with the same boundary discipline as the rest of the paper. It is not a cryptographic security theorem and not a proof over all possible predicates. It is a finite register-key audit. It shows that the carrier selection law i"
+        }
+      ]
+    },
+    "A1_row_aware_M_incidence": {
+      "status": "row_aware_recovery_supported_by_existing_artifacts",
+      "supported": true,
+      "row_aware_terms_ok": true,
+      "minimizer_terms_ok": true,
+      "target_cycles_seen_in_row_aware_or_minimizer": false,
+      "selector_like_values": [
+        {
+          "path": "$",
+          "kind": "dict",
+          "keys": [
+            "title",
+            "version",
+            "status",
+            "combo_count_scanned",
+            "exact_combo_count",
+            "one_feature_exact_count",
+            "least_value_exact",
+            "one_feature_exact",
+            "candidate_total_local",
+            "observed_total_local",
+            "rejected_total_local",
+            "interpretation"
+          ]
+        },
+        {
+          "path": "$.title",
+          "kind": "str",
+          "value": "Selected branch exact selector minimizer"
+        },
+        {
+          "path": "$.least_value_exact[0].combo",
+          "kind": "list",
+          "value": [
+            "block_word",
+            "support_intersection_size",
+            "support_complement"
+          ]
+        },
+        {
+          "path": "$.least_value_exact[0].combo[1]",
+          "kind": "str",
+          "value": "support_intersection_size"
+        },
+        {
+          "path": "$.least_value_exact[0].combo[2]",
+          "kind": "str",
+          "value": "support_complement"
+        },
+        {
+          "path": "$.least_value_exact[1].combo",
+          "kind": "list",
+          "value": [
+            "block_word",
+            "support_intersection_size",
+            "support_union"
+          ]
+        },
+        {
+          "path": "$.least_value_exact[1].combo[1]",
+          "kind": "str",
+          "value": "support_intersection_size"
+        },
+        {
+          "path": "$.least_value_exact[1].combo[2]",
+          "kind": "str",
+          "value": "support_union"
+        },
+        {
+          "path": "$.least_value_exact[2].combo",
+          "kind": "list",
+          "value": [
+            "block_word",
+            "support_row_degree_hist",
+            "support_complement"
+          ]
+        },
+        {
+          "path": "$.least_value_exact[2].combo[2]",
+          "kind": "str",
+          "value": "support_complement"
+        },
+        {
+          "path": "$.least_value_exact[3].combo",
+          "kind": "list",
+          "value": [
+            "block_word",
+            "support_row_degree_hist",
+            "support_union"
+          ]
+        },
+        {
+          "path": "$.least_value_exact[3].combo[2]",
+          "kind": "str",
+          "value": "support_union"
+        },
+        {
+          "path": "$.least_value_exact[4].combo",
+          "kind": "list",
+          "value": [
+            "block_word",
+            "support_intersection_size",
+            "support_row_degree_hist",
+            "support_complement"
+          ]
+        },
+        {
+          "path": "$.least_value_exact[4].combo[1]",
+          "kind": "str",
+          "value": "support_intersection_size"
+        },
+        {
+          "path": "$.least_value_exact[4].combo[3]",
+          "kind": "str",
+          "value": "support_complement"
+        },
+        {
+          "path": "$.least_value_exact[5].combo",
+          "kind": "list",
+          "value": [
+            "block_word",
+            "support_intersection_size",
+            "support_row_degree_hist",
+            "support_union"
+          ]
+        },
+        {
+          "path": "$.least_value_exact[5].combo[1]",
+          "kind": "str",
+          "value": "support_intersection_size"
+        },
+        {
+          "path": "$.least_value_exact[5].combo[3]",
+          "kind": "str",
+          "value": "support_union"
+        },
+        {
+          "path": "$.least_value_exact[6].combo",
+          "kind": "list",
+          "value": [
+            "block_word",
+            "support_intersection_size",
+            "support_union",
+            "support_complement"
+          ]
+        },
+        {
+          "path": "$.least_value_exact[6].combo[1]",
+          "kind": "str",
+          "value": "support_intersection_size"
+        },
+        {
+          "path": "$.least_value_exact[6].combo[2]",
+          "kind": "str",
+          "value": "support_union"
+        },
+        {
+          "path": "$.least_value_exact[6].combo[3]",
+          "kind": "str",
+          "value": "support_complement"
+        },
+        {
+          "path": "$.least_value_exact[7].combo",
+          "kind": "list",
+          "value": [
+            "block_word",
+            "support_row_degree_hist",
+            "support_union",
+            "support_complement"
+          ]
+        },
+        {
+          "path": "$.least_value_exact[7].combo[2]",
+          "kind": "str",
+          "value": "support_union"
+        },
+        {
+          "path": "$.least_value_exact[7].combo[3]",
+          "kind": "str",
+          "value": "support_complement"
+        },
+        {
+          "path": "$.least_value_exact[8].combo",
+          "kind": "list",
+          "value": [
+            "block_word",
+            "support_union_size",
+            "support_intersection_size",
+            "support_complement"
+          ]
+        },
+        {
+          "path": "$.least_value_exact[8].combo[1]",
+          "kind": "str",
+          "value": "support_union_size"
+        },
+        {
+          "path": "$.least_value_exact[8].combo[2]",
+          "kind": "str",
+          "value": "support_intersection_size"
+        },
+        {
+          "path": "$.least_value_exact[8].combo[3]",
+          "kind": "str",
+          "value": "support_complement"
+        },
+        {
+          "path": "$.least_value_exact[9].combo",
+          "kind": "list",
+          "value": [
+            "block_word",
+            "support_union_size",
+            "support_intersection_size",
+            "support_union"
+          ]
+        },
+        {
+          "path": "$.least_value_exact[9].combo[1]",
+          "kind": "str",
+          "value": "support_union_size"
+        },
+        {
+          "path": "$.least_value_exact[9].combo[2]",
+          "kind": "str",
+          "value": "support_intersection_size"
+        },
+        {
+          "path": "$.least_value_exact[9].combo[3]",
+          "kind": "str",
+          "value": "support_union"
+        },
+        {
+          "path": "$.least_value_exact[10].combo",
+          "kind": "list",
+          "value": [
+            "block_word",
+            "support_union_size",
+            "support_row_degree_hist",
+            "support_complement"
+          ]
+        },
+        {
+          "path": "$.least_value_exact[10].combo[1]",
+          "kind": "str",
+          "value": "support_union_size"
+        },
+        {
+          "path": "$.least_value_exact[10].combo[3]",
+          "kind": "str",
+          "value": "support_complement"
+        },
+        {
+          "path": "$.least_value_exact[11].combo",
+          "kind": "list",
+          "value": [
+            "block_word",
+            "support_union_size",
+            "support_row_degree_hist",
+            "support_union"
+          ]
+        },
+        {
+          "path": "$.least_value_exact[11].combo[1]",
+          "kind": "str",
+          "value": "support_union_size"
+        },
+        {
+          "path": "$.least_value_exact[11].combo[3]",
+          "kind": "str",
+          "value": "support_union"
+        },
+        {
+          "path": "$.least_value_exact[12].combo",
+          "kind": "list",
+          "value": [
+            "block_word",
+            "support_intersection_size",
+            "support_row_degree_hist",
+            "support_union",
+            "support_complement"
+          ]
+        },
+        {
+          "path": "$.least_value_exact[12].combo[1]",
+          "kind": "str",
+          "value": "support_intersection_size"
+        },
+        {
+          "path": "$.least_value_exact[12].combo[3]",
+          "kind": "str",
+          "value": "support_union"
+        },
+        {
+          "path": "$.least_value_exact[12].combo[4]",
+          "kind": "str",
+          "value": "support_complement"
+        },
+        {
+          "path": "$.least_value_exact[13].combo",
+          "kind": "list",
+          "value": [
+            "block_word",
+            "support_union_size",
+            "support_intersection_size",
+            "support_row_degree_hist",
+            "support_complement"
+          ]
+        },
+        {
+          "path": "$.least_value_exact[13].combo[1]",
+          "kind": "str",
+          "value": "support_union_size"
+        },
+        {
+          "path": "$.least_value_exact[13].combo[2]",
+          "kind": "str",
+          "value": "support_intersection_size"
+        },
+        {
+          "path": "$.least_value_exact[13].combo[4]",
+          "kind": "str",
+          "value": "support_complement"
+        },
+        {
+          "path": "$.least_value_exact[14].combo",
+          "kind": "list",
+          "value": [
+            "block_word",
+            "support_union_size",
+            "support_intersection_size",
+            "support_row_degree_hist",
+            "support_union"
+          ]
+        },
+        {
+          "path": "$.least_value_exact[14].combo[1]",
+          "kind": "str",
+          "value": "support_union_size"
+        },
+        {
+          "path": "$.least_value_exact[14].combo[2]",
+          "kind": "str",
+          "value": "support_intersection_size"
+        },
+        {
+          "path": "$.least_value_exact[14].combo[4]",
+          "kind": "str",
+          "value": "support_union"
+        },
+        {
+          "path": "$.least_value_exact[15].combo",
+          "kind": "list",
+          "value": [
+            "block_word",
+            "support_union_size",
+            "support_intersection_size",
+            "support_union",
+            "support_complement"
+          ]
+        },
+        {
+          "path": "$.least_value_exact[15].combo[1]",
+          "kind": "str",
+          "value": "support_union_size"
+        },
+        {
+          "path": "$.least_value_exact[15].combo[2]",
+          "kind": "str",
+          "value": "support_intersection_size"
+        },
+        {
+          "path": "$.least_value_exact[15].combo[3]",
+          "kind": "str",
+          "value": "support_union"
+        },
+        {
+          "path": "$.least_value_exact[15].combo[4]",
+          "kind": "str",
+          "value": "support_complement"
+        },
+        {
+          "path": "$.least_value_exact[16].combo",
+          "kind": "list",
+          "value": [
+            "block_word",
+            "support_union_size",
+            "support_row_degree_hist",
+            "support_union",
+            "support_complement"
+          ]
+        },
+        {
+          "path": "$.least_value_exact[16].combo[1]",
+          "kind": "str",
+          "value": "support_union_size"
+        },
+        {
+          "path": "$.least_value_exact[16].combo[3]",
+          "kind": "str",
+          "value": "support_union"
+        },
+        {
+          "path": "$.least_value_exact[16].combo[4]",
+          "kind": "str",
+          "value": "support_complement"
+        },
+        {
+          "path": "$.least_value_exact[17].combo",
+          "kind": "list",
+          "value": [
+            "block_word",
+            "support_union_size",
+            "support_intersection_size",
+            "support_row_degree_hist",
+            "support_union",
+            "support_complement"
+          ]
+        },
+        {
+          "path": "$.least_value_exact[17].combo[1]",
+          "kind": "str",
+          "value": "support_union_size"
+        },
+        {
+          "path": "$.least_value_exact[17].combo[2]",
+          "kind": "str",
+          "value": "support_intersection_size"
+        },
+        {
+          "path": "$.least_value_exact[17].combo[4]",
+          "kind": "str",
+          "value": "support_union"
+        },
+        {
+          "path": "$.least_value_exact[17].combo[5]",
+          "kind": "str",
+          "value": "support_complement"
+        },
+        {
+          "path": "$.least_value_exact[18].combo",
+          "kind": "list",
+          "value": [
+            "block_word",
+            "hinge_count",
+            "support_intersection_size",
+            "support_complement"
+          ]
+        },
+        {
+          "path": "$.least_value_exact[18].combo[2]",
+          "kind": "str",
+          "value": "support_intersection_size"
+        },
+        {
+          "path": "$.least_value_exact[18].combo[3]",
+          "kind": "str",
+          "value": "support_complement"
+        },
+        {
+          "path": "$.least_value_exact[19].combo",
+          "kind": "list",
+          "value": [
+            "block_word",
+            "hinge_count",
+            "support_intersection_size",
+            "support_union"
+          ]
+        },
+        {
+          "path": "$.least_value_exact[19].combo[2]",
+          "kind": "str",
+          "value": "support_intersection_size"
+        },
+        {
+          "path": "$.least_value_exact[19].combo[3]",
+          "kind": "str",
+          "value": "support_union"
+        },
+        {
+          "path": "$.least_value_exact[20].combo",
+          "kind": "list",
+          "value": [
+            "block_word",
+            "hinge_count",
+            "support_row_degree_hist",
+            "support_complement"
+          ]
+        },
+        {
+          "path": "$.least_value_exact[20].combo[3]",
+          "kind": "str",
+          "value": "support_complement"
+        },
+        {
+          "path": "$.least_value_exact[21].combo",
+          "kind": "list",
+          "value": [
+            "block_word",
+            "hinge_count",
+            "support_row_degree_hist",
+            "support_union"
+          ]
+        },
+        {
+          "path": "$.least_value_exact[21].combo[3]",
+          "kind": "str",
+          "value": "support_union"
+        },
+        {
+          "path": "$.least_value_exact[22].combo",
+          "kind": "list",
+          "value": [
+            "block_word",
+            "hinge_word",
+            "support_intersection_size",
+            "support_complement"
+          ]
+        },
+        {
+          "path": "$.least_value_exact[22].combo[2]",
+          "kind": "str",
+          "value": "support_intersection_size"
+        },
+        {
+          "path": "$.least_value_exact[22].combo[3]",
+          "kind": "str",
+          "value": "support_complement"
+        },
+        {
+          "path": "$.least_value_exact[23].combo",
+          "kind": "list",
+          "value": [
+            "block_word",
+            "hinge_word",
+            "support_intersection_size",
+            "support_union"
+          ]
+        },
+        {
+          "path": "$.least_value_exact[23].combo[2]",
+          "kind": "str",
+          "value": "support_intersection_size"
+        }
+      ],
+      "v21_hits": [
+        {
+          "line": 3,
+          "text": "Status: Exact selector minimizer checkpoint."
+        },
+        {
+          "line": 7,
+          "text": "After v20 found that row-aware M-incidence exactly separates the observed selected-branch triples from rejected abstract candidates, what is the least-sharp exact selector in the tested feature family?"
+        },
+        {
+          "line": 9,
+          "text": "This matters because support_row_degree_profile is exact, but it has one distinct value per local candidate row:"
+        },
+        {
+          "line": 20,
+          "text": "    exact_combo_count = 1384"
+        },
+        {
+          "line": 21,
+          "text": "    one_feature_exact_count = 1"
+        },
+        {
+          "line": 23,
+          "text": "The only one-feature exact selector is:"
+        },
+        {
+          "line": 31,
+          "text": "Thus support_row_degree_profile is the minimal single-feature exact selector in the tested family."
+        },
+        {
+          "line": 33,
+          "text": "## Least-sharp exact tested selectors"
+        },
+        {
+          "line": 35,
+          "text": "The least-value exact selectors have:"
+        },
+        {
+          "line": 40,
+          "text": "The first least-sharp exact selectors are:"
+        },
+        {
+          "line": 69,
+          "text": "There are two levels of exact row-aware recovery."
+        },
+        {
+          "line": 73,
+          "text": "    support_row_degree_profile alone is exact."
+        },
+        {
+          "line": 76,
+          "text": "Level 2: least-sharp tested recovery."
+        },
+        {
+          "line": 78,
+          "text": "    Three-feature row-aware selectors reduce sharpness slightly, to 206 values."
+        },
+        {
+          "line": 79,
+          "text": "    These combine chamber block information with row-aware support union/complement or support histogram information."
+        },
+        {
+          "line": 81,
+          "text": "Thus row-aware incidence is necessary for exact recovery in the tested feature family, but it does not have to appear only as the full row-degree profile."
+        },
+        {
+          "line": 88,
+          "text": "    Row-aware incidence sees it."
+        },
+        {
+          "line": 92,
+          "text": "    The minimal one-feature exact selector is full row-aware degree profile."
+        },
+        {
+          "line": 93,
+          "text": "    The least-sharp exact tested selectors use block word plus row-aware support location."
+        },
+        {
+          "line": 97,
+          "text": "    One row-aware profile sees everything."
+        },
+        {
+          "line": 98,
+          "text": "    Three weaker row-aware predicates nearly name the same law."
+        },
+        {
+          "line": 104,
+          "text": "It is not a proof over all possible predicates. It does show that within the tested chamber/support feature set, exact carrier selection requires row-aware incidence information."
+        }
+      ]
+    },
+    "A2_row_shuffled_M_null": {
+      "status": "pending_live_row_shuffle_null",
+      "supported": false,
+      "detail": "The input bundle declares the row-shuffled M null, but no live row-shuffle recovery/null artifact has been generated in this pass. Next script should destroy row identity deterministically and rerun the recovery predicate."
+    }
+  },
+  "artifact_summaries": {
+    "row_aware": {
+      "type": "dict",
+      "keys": [
+        "title",
+        "version",
+        "status",
+        "candidate_total_local",
+        "observed_total_local",
+        "rejected_total_local",
+        "feature_names",
+        "row_aware_features",
+        "exact_combo_count",
+        "row_aware_exact_combo_count",
+        "exact_combos",
+        "top_ranked",
+        "interpretation"
+      ],
+      "list_count_feature_names": 10,
+      "list_count_row_aware_features": 4,
+      "list_count_exact_combos": 50,
+      "list_count_top_ranked": 40,
+      "list_count_interpretation": 3
+    },
+    "minimizer": {
+      "type": "dict",
+      "keys": [
+        "title",
+        "version",
+        "status",
+        "combo_count_scanned",
+        "exact_combo_count",
+        "one_feature_exact_count",
+        "least_value_exact",
+        "one_feature_exact",
+        "candidate_total_local",
+        "observed_total_local",
+        "rejected_total_local",
+        "interpretation"
+      ],
+      "list_count_least_value_exact": 25,
+      "list_count_one_feature_exact": 1,
+      "list_count_interpretation": 3
+    },
+    "register_keypair": {
+      "type": "dict",
+      "keys": [
+        "title",
+        "version",
+        "status",
+        "source",
+        "candidate_key_count",
+        "reports",
+        "interpretation"
+      ],
+      "list_count_reports": 3,
+      "list_count_interpretation": 4
+    }
+  },
+  "next_script": "run_register_map_row_shuffle_null_001.py"
+}

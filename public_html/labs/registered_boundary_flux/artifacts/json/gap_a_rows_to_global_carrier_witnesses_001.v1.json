@@ -1,0 +1,3132 @@
+{
+  "schema": "gap_a_rows_to_global_carrier_witnesses_001.v1",
+  "status": "gap_a_rows_to_global_carrier_witnesses_needs_schema_bridge",
+  "timestamp_utc": "2026-06-14T20:31:30.882368+00:00",
+  "purpose": "Build a carrier witness table linking each of the 18 WXYZTI rows to row columns, slot pairs, and sampled global carrier edge evidence.",
+  "boundary": [
+    "This does not close Gap A.",
+    "This is a witness bridge table, not a proof of a global source-law chamber/register map.",
+    "A global edge hit is sampled evidence, not exhaustive carrier predicate evaluation.",
+    "No physical interpretation is claimed."
+  ],
+  "inputs": {
+    "global_lift_attempt": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_global_source_law_lift_attempt_001.v1.json",
+      "sha256": "c45f660a685ad5926833ccb2868be9c9e6fb505b5cf2894676c89394c307d480",
+      "status": "gap_a_global_source_law_lift_attempt_partial_not_closure"
+    },
+    "normalized_preimage": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_source_preimage_from_normalized_zero_rows_001.v1.json",
+      "sha256": "59a127a3d4e4866a43340885150f55695b28b96c4332a26402acf61e21613b1a",
+      "status": "gap_a_source_preimage_from_normalized_zero_rows_recorded_not_promoted"
+    },
+    "normalized_zero_rows": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_uniform_lift_zero_twisted_rows_001.v1.json",
+      "sha256": "60247d6a017d4da644a97d93fd55ceabb2818e5d39382ac4d19813bab8c6caeb",
+      "status": "gap_a_uniform_lift_zero_twisted_rows_normalized"
+    },
+    "uniform_lift": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_uniform_15_thalion_row_lift_001.v1.json",
+      "sha256": "746469ce14d675063543189bdf49420fa630ee0834958a0c27b4056a45364c46",
+      "status": "gap_a_uniform_15_thalion_row_lift_needs_inspection"
+    },
+    "role_geometry": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_role_column_source_geometry_001.v1.json",
+      "sha256": "f20e71ee814653a3cfef9132110f69fec036386b2806282bd15b65e495cfc19c",
+      "status": "gap_a_role_column_source_geometry_candidate_found_not_closure"
+    },
+    "boundary_projection": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_boundary_seam_projection_role_rows_001.v1.json",
+      "sha256": "4042fd58caee319fac49c6f5a09358759e82b17e7f766cd9360eb55256bc846a",
+      "status": "boundary_seam_projection_role_rows_partial_not_map_proof"
+    }
+  },
+  "global_inputs": {
+    "p900_phase30_combined_graph_export": {
+      "path": "../json/p900/p900_phase30_combined_graph_export.json",
+      "exists": true,
+      "sha256": "609720792931d5e90fb9d49d12fd2c5390e02afcc1a19976fd95c119ae95d900",
+      "loaded": true,
+      "edge_count_indexed": 7200
+    },
+    "g900_candidate_edges": {
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/16-fifteen-thalion-ring/support/generated/g900_candidate_edges.json",
+      "exists": true,
+      "sha256": "1fad85393b160e5f15c71815a82120577fc2463e708d15b67d712b17654c686f",
+      "loaded": true,
+      "edge_count_indexed": 3600
+    },
+    "g900_candidate_graph_export": {
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/16-fifteen-thalion-ring/support/exports/g900_candidate_graph_export.json",
+      "exists": true,
+      "sha256": "26592a04f1f49a63746e9190a9a5c0c3bb96a219882bdd59cacf6b16c22c0951",
+      "loaded": true,
+      "edge_count_indexed": 3600
+    },
+    "g900_twisted_ring_candidate_edges": {
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/16-fifteen-thalion-ring/support/generated/g900_twisted_ring_candidate_edges.json",
+      "exists": true,
+      "sha256": "e8ae983acccb8102261bde73cca6493d9a13958edfacad0a2cb6b3e24f4398ef",
+      "loaded": true,
+      "edge_count_indexed": 3600
+    },
+    "g900_twisted_ring_candidate_export": {
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/16-fifteen-thalion-ring/support/exports/g900_twisted_ring_candidate_export.json",
+      "exists": true,
+      "sha256": "bce9c8841c6b568fdd5f9469ef33079085f0729a6c32960b8930cf42dff3b9d3",
+      "loaded": true,
+      "edge_count_indexed": 3600
+    },
+    "g900_vertex_register_candidate": {
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/16-fifteen-thalion-ring/support/artifacts/json/301_proposed_g900_vertex_register_candidate.json",
+      "exists": true,
+      "sha256": "cfb06b672c18cddb97c482e62af9c1b49ceab0a7d028aa2cbc23cafbcbe47d20",
+      "loaded": true,
+      "edge_count_indexed": 0
+    }
+  },
+  "column_slot_pair_source": {
+    "hit_count": 0,
+    "selected": null
+  },
+  "summary": {
+    "row_count": 18,
+    "column_slot_pair_map_found": false,
+    "column_slot_pair_count": 0,
+    "rows_with_slot_pairs": [],
+    "rows_with_global_hits": [],
+    "preimage_rows_with_global_hits": [],
+    "stable_rows_with_global_hits": [],
+    "all_rows_have_slot_pairs": false,
+    "all_rows_have_global_hits": false,
+    "preimage_rows_have_global_hits": false,
+    "stable_rows_have_global_hits": false,
+    "claim_closes_gap_a": false
+  },
+  "witness_rows": [
+    {
+      "row_ordinal": 0,
+      "cycle_index": 0,
+      "role": "WX",
+      "edge": [
+        0,
+        1
+      ],
+      "columns": [
+        0
+      ],
+      "column_count": 1,
+      "column_shape": "singleton",
+      "normalized_zero_twisted_source": false,
+      "normalized_source_preimage_member": false,
+      "normalized_stable_complement_member": false,
+      "role_column_orientation": "singleton_WX",
+      "slot_pair_witnesses": [],
+      "uniform_row_records": [
+        {
+          "path": "$.lift_rows[0]",
+          "row_ordinal": 0,
+          "keys": [
+            "column_count",
+            "columns",
+            "cycle_index",
+            "derived_features",
+            "edge",
+            "feature_signature",
+            "missing_column_slot_pairs",
+            "role",
+            "row_ordinal",
+            "slot_pairs",
+            "source_row_index",
+            "twisted",
+            "untwisted"
+          ],
+          "useful": {
+            "row_ordinal": 0,
+            "cycle_index": 0,
+            "role": "WX",
+            "columns": [
+              0
+            ],
+            "column_count": 1,
+            "slot_pairs": [
+              [
+                0,
+                1
+              ]
+            ],
+            "missing_column_slot_pairs": [],
+            "untwisted": {
+              "edge_count": 60,
+              "kind_hist": {
+                "inter_thalion_diagonal_carrier": 60
+              },
+              "law_hist": {
+                "g15_line_petersen_slot_adjacency": 60
+              },
+              "slot_delta_mod15_hist": {
+                "1": 60
+              },
+              "local_delta_mod60_hist": {
+                "0": 60
+              },
+              "has_identity": false,
+              "has_half_flip_x_plus_30": false,
+              "identity_count": 0,
+              "half_flip_x_plus_30_count": 0
+            },
+            "twisted": {
+              "edge_count": 60,
+              "kind_hist": {
+                "external_signed_carrier": 60
+              },
+              "law_hist": {
+                "half_flip_x_plus_30": 60
+              },
+              "slot_delta_mod15_hist": {
+                "1": 60
+              },
+              "local_delta_mod60_hist": {
+                "30": 60
+              },
+              "has_identity": false,
+              "has_half_flip_x_plus_30": true,
+              "identity_count": 0,
+              "half_flip_x_plus_30_count": 60
+            }
+          }
+        },
+        {
+          "path": "$.role_feature_table[0]",
+          "row_ordinal": 0,
+          "keys": [
+            "columns",
+            "cycle_index",
+            "feature_signature_multiplicity",
+            "role",
+            "row_ordinal",
+            "slot_pairs",
+            "source_row_index",
+            "twisted_law_hist",
+            "twisted_local_delta_mod60_hist",
+            "twisted_slot_delta_mod15_hist"
+          ],
+          "useful": {
+            "row_ordinal": 0,
+            "cycle_index": 0,
+            "role": "WX",
+            "columns": [
+              0
+            ],
+            "slot_pairs": [
+              [
+                0,
+                1
+              ]
+            ],
+            "twisted_law_hist": {
+              "half_flip_x_plus_30": 60
+            },
+            "twisted_local_delta_mod60_hist": {
+              "30": 60
+            },
+            "twisted_slot_delta_mod15_hist": {
+              "1": 60
+            }
+          }
+        }
+      ],
+      "role_geometry_records": [],
+      "global_edge_hit_sources": [],
+      "global_edge_hits": {
+        "p900_phase30_combined_graph_export": [],
+        "g900_candidate_edges": [],
+        "g900_candidate_graph_export": [],
+        "g900_twisted_ring_candidate_edges": [],
+        "g900_twisted_ring_candidate_export": [],
+        "g900_vertex_register_candidate": []
+      },
+      "has_column_witness": true,
+      "has_slot_pair_witness": false,
+      "has_any_global_edge_hit": false
+    },
+    {
+      "row_ordinal": 1,
+      "cycle_index": 0,
+      "role": "XY",
+      "edge": [
+        1,
+        2
+      ],
+      "columns": [
+        4
+      ],
+      "column_count": 1,
+      "column_shape": "singleton",
+      "normalized_zero_twisted_source": false,
+      "normalized_source_preimage_member": false,
+      "normalized_stable_complement_member": false,
+      "role_column_orientation": "singleton_XY",
+      "slot_pair_witnesses": [],
+      "uniform_row_records": [
+        {
+          "path": "$.lift_rows[1]",
+          "row_ordinal": 1,
+          "keys": [
+            "column_count",
+            "columns",
+            "cycle_index",
+            "derived_features",
+            "edge",
+            "feature_signature",
+            "missing_column_slot_pairs",
+            "role",
+            "row_ordinal",
+            "slot_pairs",
+            "source_row_index",
+            "twisted",
+            "untwisted"
+          ],
+          "useful": {
+            "row_ordinal": 1,
+            "cycle_index": 0,
+            "role": "XY",
+            "columns": [
+              4
+            ],
+            "column_count": 1,
+            "slot_pairs": [
+              [
+                1,
+                2
+              ]
+            ],
+            "missing_column_slot_pairs": [],
+            "untwisted": {
+              "edge_count": 60,
+              "kind_hist": {
+                "inter_thalion_diagonal_carrier": 60
+              },
+              "law_hist": {
+                "g15_line_petersen_slot_adjacency": 60
+              },
+              "slot_delta_mod15_hist": {
+                "1": 60
+              },
+              "local_delta_mod60_hist": {
+                "0": 60
+              },
+              "has_identity": false,
+              "has_half_flip_x_plus_30": false,
+              "identity_count": 0,
+              "half_flip_x_plus_30_count": 0
+            },
+            "twisted": {
+              "edge_count": 60,
+              "kind_hist": {
+                "external_signed_carrier": 60
+              },
+              "law_hist": {
+                "half_flip_x_plus_30": 60
+              },
+              "slot_delta_mod15_hist": {
+                "1": 60
+              },
+              "local_delta_mod60_hist": {
+                "30": 60
+              },
+              "has_identity": false,
+              "has_half_flip_x_plus_30": true,
+              "identity_count": 0,
+              "half_flip_x_plus_30_count": 60
+            }
+          }
+        },
+        {
+          "path": "$.role_feature_table[1]",
+          "row_ordinal": 1,
+          "keys": [
+            "columns",
+            "cycle_index",
+            "feature_signature_multiplicity",
+            "role",
+            "row_ordinal",
+            "slot_pairs",
+            "source_row_index",
+            "twisted_law_hist",
+            "twisted_local_delta_mod60_hist",
+            "twisted_slot_delta_mod15_hist"
+          ],
+          "useful": {
+            "row_ordinal": 1,
+            "cycle_index": 0,
+            "role": "XY",
+            "columns": [
+              4
+            ],
+            "slot_pairs": [
+              [
+                1,
+                2
+              ]
+            ],
+            "twisted_law_hist": {
+              "half_flip_x_plus_30": 60
+            },
+            "twisted_local_delta_mod60_hist": {
+              "30": 60
+            },
+            "twisted_slot_delta_mod15_hist": {
+              "1": 60
+            }
+          }
+        }
+      ],
+      "role_geometry_records": [],
+      "global_edge_hit_sources": [],
+      "global_edge_hits": {
+        "p900_phase30_combined_graph_export": [],
+        "g900_candidate_edges": [],
+        "g900_candidate_graph_export": [],
+        "g900_twisted_ring_candidate_edges": [],
+        "g900_twisted_ring_candidate_export": [],
+        "g900_vertex_register_candidate": []
+      },
+      "has_column_witness": true,
+      "has_slot_pair_witness": false,
+      "has_any_global_edge_hit": false
+    },
+    {
+      "row_ordinal": 2,
+      "cycle_index": 0,
+      "role": "YZ",
+      "edge": [
+        2,
+        3
+      ],
+      "columns": [
+        7,
+        10
+      ],
+      "column_count": 2,
+      "column_shape": "multi_column",
+      "normalized_zero_twisted_source": false,
+      "normalized_source_preimage_member": false,
+      "normalized_stable_complement_member": false,
+      "role_column_orientation": "multi_column_YZ",
+      "slot_pair_witnesses": [],
+      "uniform_row_records": [
+        {
+          "path": "$.lift_rows[2]",
+          "row_ordinal": 2,
+          "keys": [
+            "column_count",
+            "columns",
+            "cycle_index",
+            "derived_features",
+            "edge",
+            "feature_signature",
+            "missing_column_slot_pairs",
+            "role",
+            "row_ordinal",
+            "slot_pairs",
+            "source_row_index",
+            "twisted",
+            "untwisted"
+          ],
+          "useful": {
+            "row_ordinal": 2,
+            "cycle_index": 0,
+            "role": "YZ",
+            "columns": [
+              7,
+              10
+            ],
+            "column_count": 2,
+            "slot_pairs": [
+              [
+                2,
+                3
+              ],
+              [
+                3,
+                4
+              ]
+            ],
+            "missing_column_slot_pairs": [],
+            "untwisted": {
+              "edge_count": 120,
+              "kind_hist": {
+                "inter_thalion_diagonal_carrier": 120
+              },
+              "law_hist": {
+                "g15_line_petersen_slot_adjacency": 120
+              },
+              "slot_delta_mod15_hist": {
+                "1": 120
+              },
+              "local_delta_mod60_hist": {
+                "0": 120
+              },
+              "has_identity": false,
+              "has_half_flip_x_plus_30": false,
+              "identity_count": 0,
+              "half_flip_x_plus_30_count": 0
+            },
+            "twisted": {
+              "edge_count": 120,
+              "kind_hist": {
+                "external_signed_carrier": 120
+              },
+              "law_hist": {
+                "half_flip_x_plus_30": 60,
+                "identity": 60
+              },
+              "slot_delta_mod15_hist": {
+                "1": 120
+              },
+              "local_delta_mod60_hist": {
+                "0": 60,
+                "30": 60
+              },
+              "has_identity": true,
+              "has_half_flip_x_plus_30": true,
+              "identity_count": 60,
+              "half_flip_x_plus_30_count": 60
+            }
+          }
+        },
+        {
+          "path": "$.role_feature_table[2]",
+          "row_ordinal": 2,
+          "keys": [
+            "columns",
+            "cycle_index",
+            "feature_signature_multiplicity",
+            "role",
+            "row_ordinal",
+            "slot_pairs",
+            "source_row_index",
+            "twisted_law_hist",
+            "twisted_local_delta_mod60_hist",
+            "twisted_slot_delta_mod15_hist"
+          ],
+          "useful": {
+            "row_ordinal": 2,
+            "cycle_index": 0,
+            "role": "YZ",
+            "columns": [
+              7,
+              10
+            ],
+            "slot_pairs": [
+              [
+                2,
+                3
+              ],
+              [
+                3,
+                4
+              ]
+            ],
+            "twisted_law_hist": {
+              "half_flip_x_plus_30": 60,
+              "identity": 60
+            },
+            "twisted_local_delta_mod60_hist": {
+              "0": 60,
+              "30": 60
+            },
+            "twisted_slot_delta_mod15_hist": {
+              "1": 120
+            }
+          }
+        }
+      ],
+      "role_geometry_records": [],
+      "global_edge_hit_sources": [],
+      "global_edge_hits": {
+        "p900_phase30_combined_graph_export": [],
+        "g900_candidate_edges": [],
+        "g900_candidate_graph_export": [],
+        "g900_twisted_ring_candidate_edges": [],
+        "g900_twisted_ring_candidate_export": [],
+        "g900_vertex_register_candidate": []
+      },
+      "has_column_witness": true,
+      "has_slot_pair_witness": false,
+      "has_any_global_edge_hit": false
+    },
+    {
+      "row_ordinal": 3,
+      "cycle_index": 0,
+      "role": "ZT",
+      "edge": [
+        3,
+        4
+      ],
+      "columns": [
+        9
+      ],
+      "column_count": 1,
+      "column_shape": "singleton",
+      "normalized_zero_twisted_source": true,
+      "normalized_source_preimage_member": true,
+      "normalized_stable_complement_member": false,
+      "role_column_orientation": "singleton_ZT",
+      "slot_pair_witnesses": [],
+      "uniform_row_records": [
+        {
+          "path": "$.lift_rows[3]",
+          "row_ordinal": 3,
+          "keys": [
+            "column_count",
+            "columns",
+            "cycle_index",
+            "derived_features",
+            "edge",
+            "feature_signature",
+            "missing_column_slot_pairs",
+            "role",
+            "row_ordinal",
+            "slot_pairs",
+            "source_row_index",
+            "twisted",
+            "untwisted"
+          ],
+          "useful": {
+            "row_ordinal": 3,
+            "cycle_index": 0,
+            "role": "ZT",
+            "columns": [
+              9
+            ],
+            "column_count": 1,
+            "slot_pairs": [
+              [
+                2,
+                13
+              ]
+            ],
+            "missing_column_slot_pairs": [],
+            "untwisted": {
+              "edge_count": 60,
+              "kind_hist": {
+                "inter_thalion_diagonal_carrier": 60
+              },
+              "law_hist": {
+                "g15_line_petersen_slot_adjacency": 60
+              },
+              "slot_delta_mod15_hist": {
+                "11": 60
+              },
+              "local_delta_mod60_hist": {
+                "0": 60
+              },
+              "has_identity": false,
+              "has_half_flip_x_plus_30": false,
+              "identity_count": 0,
+              "half_flip_x_plus_30_count": 0
+            },
+            "twisted": {
+              "edge_count": 0,
+              "kind_hist": {},
+              "law_hist": {},
+              "slot_delta_mod15_hist": {},
+              "local_delta_mod60_hist": {},
+              "has_identity": false,
+              "has_half_flip_x_plus_30": false,
+              "identity_count": 0,
+              "half_flip_x_plus_30_count": 0
+            }
+          }
+        },
+        {
+          "path": "$.role_feature_table[3]",
+          "row_ordinal": 3,
+          "keys": [
+            "columns",
+            "cycle_index",
+            "feature_signature_multiplicity",
+            "role",
+            "row_ordinal",
+            "slot_pairs",
+            "source_row_index",
+            "twisted_law_hist",
+            "twisted_local_delta_mod60_hist",
+            "twisted_slot_delta_mod15_hist"
+          ],
+          "useful": {
+            "row_ordinal": 3,
+            "cycle_index": 0,
+            "role": "ZT",
+            "columns": [
+              9
+            ],
+            "slot_pairs": [
+              [
+                2,
+                13
+              ]
+            ],
+            "twisted_law_hist": {},
+            "twisted_local_delta_mod60_hist": {},
+            "twisted_slot_delta_mod15_hist": {}
+          }
+        }
+      ],
+      "role_geometry_records": [
+        {
+          "path": "$.source_rows[0]",
+          "row_ordinal": 3,
+          "keys": [
+            "balanced_singleton_radius_1",
+            "branch_sensitive",
+            "branch_stable",
+            "column_count",
+            "column_shape",
+            "columns",
+            "cycle_index",
+            "dead_endpoint_count_radius_1",
+            "is_false_positive_before_split",
+            "is_known_residual",
+            "pair_degrees_radius_1",
+            "role",
+            "role_column_class",
+            "row_ordinal",
+            "slot_pair_spans",
+            "slot_pairs"
+          ],
+          "useful": {
+            "row_ordinal": 3,
+            "cycle_index": 0,
+            "role": "ZT",
+            "columns": [
+              9
+            ],
+            "column_count": 1,
+            "column_shape": "singleton",
+            "role_column_class": "singleton_ZT",
+            "slot_pairs": [
+              [
+                2,
+                13
+              ]
+            ],
+            "slot_pair_spans": [
+              4
+            ],
+            "branch_sensitive": false
+          }
+        }
+      ],
+      "global_edge_hit_sources": [],
+      "global_edge_hits": {
+        "p900_phase30_combined_graph_export": [],
+        "g900_candidate_edges": [],
+        "g900_candidate_graph_export": [],
+        "g900_twisted_ring_candidate_edges": [],
+        "g900_twisted_ring_candidate_export": [],
+        "g900_vertex_register_candidate": []
+      },
+      "has_column_witness": true,
+      "has_slot_pair_witness": false,
+      "has_any_global_edge_hit": false
+    },
+    {
+      "row_ordinal": 4,
+      "cycle_index": 0,
+      "role": "TI",
+      "edge": [
+        4,
+        5
+      ],
+      "columns": [
+        13
+      ],
+      "column_count": 1,
+      "column_shape": "singleton",
+      "normalized_zero_twisted_source": true,
+      "normalized_source_preimage_member": false,
+      "normalized_stable_complement_member": true,
+      "role_column_orientation": "singleton_TI",
+      "slot_pair_witnesses": [],
+      "uniform_row_records": [
+        {
+          "path": "$.lift_rows[4]",
+          "row_ordinal": 4,
+          "keys": [
+            "column_count",
+            "columns",
+            "cycle_index",
+            "derived_features",
+            "edge",
+            "feature_signature",
+            "missing_column_slot_pairs",
+            "role",
+            "row_ordinal",
+            "slot_pairs",
+            "source_row_index",
+            "twisted",
+            "untwisted"
+          ],
+          "useful": {
+            "row_ordinal": 4,
+            "cycle_index": 0,
+            "role": "TI",
+            "columns": [
+              13
+            ],
+            "column_count": 1,
+            "slot_pairs": [
+              [
+                4,
+                10
+              ]
+            ],
+            "missing_column_slot_pairs": [],
+            "untwisted": {
+              "edge_count": 60,
+              "kind_hist": {
+                "inter_thalion_diagonal_carrier": 60
+              },
+              "law_hist": {
+                "g15_line_petersen_slot_adjacency": 60
+              },
+              "slot_delta_mod15_hist": {
+                "6": 60
+              },
+              "local_delta_mod60_hist": {
+                "0": 60
+              },
+              "has_identity": false,
+              "has_half_flip_x_plus_30": false,
+              "identity_count": 0,
+              "half_flip_x_plus_30_count": 0
+            },
+            "twisted": {
+              "edge_count": 0,
+              "kind_hist": {},
+              "law_hist": {},
+              "slot_delta_mod15_hist": {},
+              "local_delta_mod60_hist": {},
+              "has_identity": false,
+              "has_half_flip_x_plus_30": false,
+              "identity_count": 0,
+              "half_flip_x_plus_30_count": 0
+            }
+          }
+        },
+        {
+          "path": "$.role_feature_table[4]",
+          "row_ordinal": 4,
+          "keys": [
+            "columns",
+            "cycle_index",
+            "feature_signature_multiplicity",
+            "role",
+            "row_ordinal",
+            "slot_pairs",
+            "source_row_index",
+            "twisted_law_hist",
+            "twisted_local_delta_mod60_hist",
+            "twisted_slot_delta_mod15_hist"
+          ],
+          "useful": {
+            "row_ordinal": 4,
+            "cycle_index": 0,
+            "role": "TI",
+            "columns": [
+              13
+            ],
+            "slot_pairs": [
+              [
+                4,
+                10
+              ]
+            ],
+            "twisted_law_hist": {},
+            "twisted_local_delta_mod60_hist": {},
+            "twisted_slot_delta_mod15_hist": {}
+          }
+        }
+      ],
+      "role_geometry_records": [
+        {
+          "path": "$.source_rows[1]",
+          "row_ordinal": 4,
+          "keys": [
+            "balanced_singleton_radius_1",
+            "branch_sensitive",
+            "branch_stable",
+            "column_count",
+            "column_shape",
+            "columns",
+            "cycle_index",
+            "dead_endpoint_count_radius_1",
+            "is_false_positive_before_split",
+            "is_known_residual",
+            "pair_degrees_radius_1",
+            "role",
+            "role_column_class",
+            "row_ordinal",
+            "slot_pair_spans",
+            "slot_pairs"
+          ],
+          "useful": {
+            "row_ordinal": 4,
+            "cycle_index": 0,
+            "role": "TI",
+            "columns": [
+              13
+            ],
+            "column_count": 1,
+            "column_shape": "singleton",
+            "role_column_class": "singleton_TI",
+            "slot_pairs": [
+              [
+                4,
+                10
+              ]
+            ],
+            "slot_pair_spans": [
+              6
+            ],
+            "branch_sensitive": false
+          }
+        }
+      ],
+      "global_edge_hit_sources": [],
+      "global_edge_hits": {
+        "p900_phase30_combined_graph_export": [],
+        "g900_candidate_edges": [],
+        "g900_candidate_graph_export": [],
+        "g900_twisted_ring_candidate_edges": [],
+        "g900_twisted_ring_candidate_export": [],
+        "g900_vertex_register_candidate": []
+      },
+      "has_column_witness": true,
+      "has_slot_pair_witness": false,
+      "has_any_global_edge_hit": false
+    },
+    {
+      "row_ordinal": 5,
+      "cycle_index": 0,
+      "role": "IW",
+      "edge": [
+        5,
+        0
+      ],
+      "columns": [
+        1,
+        7
+      ],
+      "column_count": 2,
+      "column_shape": "multi_column",
+      "normalized_zero_twisted_source": false,
+      "normalized_source_preimage_member": false,
+      "normalized_stable_complement_member": false,
+      "role_column_orientation": "multi_column_IW",
+      "slot_pair_witnesses": [],
+      "uniform_row_records": [
+        {
+          "path": "$.lift_rows[5]",
+          "row_ordinal": 5,
+          "keys": [
+            "column_count",
+            "columns",
+            "cycle_index",
+            "derived_features",
+            "edge",
+            "feature_signature",
+            "missing_column_slot_pairs",
+            "role",
+            "row_ordinal",
+            "slot_pairs",
+            "source_row_index",
+            "twisted",
+            "untwisted"
+          ],
+          "useful": {
+            "row_ordinal": 5,
+            "cycle_index": 0,
+            "role": "IW",
+            "columns": [
+              1,
+              7
+            ],
+            "column_count": 2,
+            "slot_pairs": [
+              [
+                0,
+                4
+              ],
+              [
+                2,
+                3
+              ]
+            ],
+            "missing_column_slot_pairs": [],
+            "untwisted": {
+              "edge_count": 120,
+              "kind_hist": {
+                "inter_thalion_diagonal_carrier": 120
+              },
+              "law_hist": {
+                "g15_line_petersen_slot_adjacency": 120
+              },
+              "slot_delta_mod15_hist": {
+                "1": 60,
+                "4": 60
+              },
+              "local_delta_mod60_hist": {
+                "0": 120
+              },
+              "has_identity": false,
+              "has_half_flip_x_plus_30": false,
+              "identity_count": 0,
+              "half_flip_x_plus_30_count": 0
+            },
+            "twisted": {
+              "edge_count": 120,
+              "kind_hist": {
+                "external_signed_carrier": 120
+              },
+              "law_hist": {
+                "half_flip_x_plus_30": 120
+              },
+              "slot_delta_mod15_hist": {
+                "1": 60,
+                "4": 60
+              },
+              "local_delta_mod60_hist": {
+                "30": 120
+              },
+              "has_identity": false,
+              "has_half_flip_x_plus_30": true,
+              "identity_count": 0,
+              "half_flip_x_plus_30_count": 120
+            }
+          }
+        },
+        {
+          "path": "$.role_feature_table[5]",
+          "row_ordinal": 5,
+          "keys": [
+            "columns",
+            "cycle_index",
+            "feature_signature_multiplicity",
+            "role",
+            "row_ordinal",
+            "slot_pairs",
+            "source_row_index",
+            "twisted_law_hist",
+            "twisted_local_delta_mod60_hist",
+            "twisted_slot_delta_mod15_hist"
+          ],
+          "useful": {
+            "row_ordinal": 5,
+            "cycle_index": 0,
+            "role": "IW",
+            "columns": [
+              1,
+              7
+            ],
+            "slot_pairs": [
+              [
+                0,
+                4
+              ],
+              [
+                2,
+                3
+              ]
+            ],
+            "twisted_law_hist": {
+              "half_flip_x_plus_30": 120
+            },
+            "twisted_local_delta_mod60_hist": {
+              "30": 120
+            },
+            "twisted_slot_delta_mod15_hist": {
+              "1": 60,
+              "4": 60
+            }
+          }
+        }
+      ],
+      "role_geometry_records": [],
+      "global_edge_hit_sources": [],
+      "global_edge_hits": {
+        "p900_phase30_combined_graph_export": [],
+        "g900_candidate_edges": [],
+        "g900_candidate_graph_export": [],
+        "g900_twisted_ring_candidate_edges": [],
+        "g900_twisted_ring_candidate_export": [],
+        "g900_vertex_register_candidate": []
+      },
+      "has_column_witness": true,
+      "has_slot_pair_witness": false,
+      "has_any_global_edge_hit": false
+    },
+    {
+      "row_ordinal": 6,
+      "cycle_index": 1,
+      "role": "WX",
+      "edge": [
+        0,
+        1
+      ],
+      "columns": [
+        0
+      ],
+      "column_count": 1,
+      "column_shape": "singleton",
+      "normalized_zero_twisted_source": false,
+      "normalized_source_preimage_member": false,
+      "normalized_stable_complement_member": false,
+      "role_column_orientation": "singleton_WX",
+      "slot_pair_witnesses": [],
+      "uniform_row_records": [
+        {
+          "path": "$.lift_rows[6]",
+          "row_ordinal": 6,
+          "keys": [
+            "column_count",
+            "columns",
+            "cycle_index",
+            "derived_features",
+            "edge",
+            "feature_signature",
+            "missing_column_slot_pairs",
+            "role",
+            "row_ordinal",
+            "slot_pairs",
+            "source_row_index",
+            "twisted",
+            "untwisted"
+          ],
+          "useful": {
+            "row_ordinal": 6,
+            "cycle_index": 1,
+            "role": "WX",
+            "columns": [
+              0
+            ],
+            "column_count": 1,
+            "slot_pairs": [
+              [
+                0,
+                1
+              ]
+            ],
+            "missing_column_slot_pairs": [],
+            "untwisted": {
+              "edge_count": 60,
+              "kind_hist": {
+                "inter_thalion_diagonal_carrier": 60
+              },
+              "law_hist": {
+                "g15_line_petersen_slot_adjacency": 60
+              },
+              "slot_delta_mod15_hist": {
+                "1": 60
+              },
+              "local_delta_mod60_hist": {
+                "0": 60
+              },
+              "has_identity": false,
+              "has_half_flip_x_plus_30": false,
+              "identity_count": 0,
+              "half_flip_x_plus_30_count": 0
+            },
+            "twisted": {
+              "edge_count": 60,
+              "kind_hist": {
+                "external_signed_carrier": 60
+              },
+              "law_hist": {
+                "half_flip_x_plus_30": 60
+              },
+              "slot_delta_mod15_hist": {
+                "1": 60
+              },
+              "local_delta_mod60_hist": {
+                "30": 60
+              },
+              "has_identity": false,
+              "has_half_flip_x_plus_30": true,
+              "identity_count": 0,
+              "half_flip_x_plus_30_count": 60
+            }
+          }
+        },
+        {
+          "path": "$.role_feature_table[6]",
+          "row_ordinal": 6,
+          "keys": [
+            "columns",
+            "cycle_index",
+            "feature_signature_multiplicity",
+            "role",
+            "row_ordinal",
+            "slot_pairs",
+            "source_row_index",
+            "twisted_law_hist",
+            "twisted_local_delta_mod60_hist",
+            "twisted_slot_delta_mod15_hist"
+          ],
+          "useful": {
+            "row_ordinal": 6,
+            "cycle_index": 1,
+            "role": "WX",
+            "columns": [
+              0
+            ],
+            "slot_pairs": [
+              [
+                0,
+                1
+              ]
+            ],
+            "twisted_law_hist": {
+              "half_flip_x_plus_30": 60
+            },
+            "twisted_local_delta_mod60_hist": {
+              "30": 60
+            },
+            "twisted_slot_delta_mod15_hist": {
+              "1": 60
+            }
+          }
+        }
+      ],
+      "role_geometry_records": [],
+      "global_edge_hit_sources": [],
+      "global_edge_hits": {
+        "p900_phase30_combined_graph_export": [],
+        "g900_candidate_edges": [],
+        "g900_candidate_graph_export": [],
+        "g900_twisted_ring_candidate_edges": [],
+        "g900_twisted_ring_candidate_export": [],
+        "g900_vertex_register_candidate": []
+      },
+      "has_column_witness": true,
+      "has_slot_pair_witness": false,
+      "has_any_global_edge_hit": false
+    },
+    {
+      "row_ordinal": 7,
+      "cycle_index": 1,
+      "role": "XY",
+      "edge": [
+        1,
+        2
+      ],
+      "columns": [
+        4
+      ],
+      "column_count": 1,
+      "column_shape": "singleton",
+      "normalized_zero_twisted_source": false,
+      "normalized_source_preimage_member": false,
+      "normalized_stable_complement_member": false,
+      "role_column_orientation": "singleton_XY",
+      "slot_pair_witnesses": [],
+      "uniform_row_records": [
+        {
+          "path": "$.lift_rows[7]",
+          "row_ordinal": 7,
+          "keys": [
+            "column_count",
+            "columns",
+            "cycle_index",
+            "derived_features",
+            "edge",
+            "feature_signature",
+            "missing_column_slot_pairs",
+            "role",
+            "row_ordinal",
+            "slot_pairs",
+            "source_row_index",
+            "twisted",
+            "untwisted"
+          ],
+          "useful": {
+            "row_ordinal": 7,
+            "cycle_index": 1,
+            "role": "XY",
+            "columns": [
+              4
+            ],
+            "column_count": 1,
+            "slot_pairs": [
+              [
+                1,
+                2
+              ]
+            ],
+            "missing_column_slot_pairs": [],
+            "untwisted": {
+              "edge_count": 60,
+              "kind_hist": {
+                "inter_thalion_diagonal_carrier": 60
+              },
+              "law_hist": {
+                "g15_line_petersen_slot_adjacency": 60
+              },
+              "slot_delta_mod15_hist": {
+                "1": 60
+              },
+              "local_delta_mod60_hist": {
+                "0": 60
+              },
+              "has_identity": false,
+              "has_half_flip_x_plus_30": false,
+              "identity_count": 0,
+              "half_flip_x_plus_30_count": 0
+            },
+            "twisted": {
+              "edge_count": 60,
+              "kind_hist": {
+                "external_signed_carrier": 60
+              },
+              "law_hist": {
+                "half_flip_x_plus_30": 60
+              },
+              "slot_delta_mod15_hist": {
+                "1": 60
+              },
+              "local_delta_mod60_hist": {
+                "30": 60
+              },
+              "has_identity": false,
+              "has_half_flip_x_plus_30": true,
+              "identity_count": 0,
+              "half_flip_x_plus_30_count": 60
+            }
+          }
+        },
+        {
+          "path": "$.role_feature_table[7]",
+          "row_ordinal": 7,
+          "keys": [
+            "columns",
+            "cycle_index",
+            "feature_signature_multiplicity",
+            "role",
+            "row_ordinal",
+            "slot_pairs",
+            "source_row_index",
+            "twisted_law_hist",
+            "twisted_local_delta_mod60_hist",
+            "twisted_slot_delta_mod15_hist"
+          ],
+          "useful": {
+            "row_ordinal": 7,
+            "cycle_index": 1,
+            "role": "XY",
+            "columns": [
+              4
+            ],
+            "slot_pairs": [
+              [
+                1,
+                2
+              ]
+            ],
+            "twisted_law_hist": {
+              "half_flip_x_plus_30": 60
+            },
+            "twisted_local_delta_mod60_hist": {
+              "30": 60
+            },
+            "twisted_slot_delta_mod15_hist": {
+              "1": 60
+            }
+          }
+        }
+      ],
+      "role_geometry_records": [],
+      "global_edge_hit_sources": [],
+      "global_edge_hits": {
+        "p900_phase30_combined_graph_export": [],
+        "g900_candidate_edges": [],
+        "g900_candidate_graph_export": [],
+        "g900_twisted_ring_candidate_edges": [],
+        "g900_twisted_ring_candidate_export": [],
+        "g900_vertex_register_candidate": []
+      },
+      "has_column_witness": true,
+      "has_slot_pair_witness": false,
+      "has_any_global_edge_hit": false
+    },
+    {
+      "row_ordinal": 8,
+      "cycle_index": 1,
+      "role": "YZ",
+      "edge": [
+        2,
+        7
+      ],
+      "columns": [
+        1,
+        3,
+        22
+      ],
+      "column_count": 3,
+      "column_shape": "multi_column",
+      "normalized_zero_twisted_source": false,
+      "normalized_source_preimage_member": false,
+      "normalized_stable_complement_member": false,
+      "role_column_orientation": "multi_column_YZ",
+      "slot_pair_witnesses": [],
+      "uniform_row_records": [
+        {
+          "path": "$.lift_rows[8]",
+          "row_ordinal": 8,
+          "keys": [
+            "column_count",
+            "columns",
+            "cycle_index",
+            "derived_features",
+            "edge",
+            "feature_signature",
+            "missing_column_slot_pairs",
+            "role",
+            "row_ordinal",
+            "slot_pairs",
+            "source_row_index",
+            "twisted",
+            "untwisted"
+          ],
+          "useful": {
+            "row_ordinal": 8,
+            "cycle_index": 1,
+            "role": "YZ",
+            "columns": [
+              1,
+              3,
+              22
+            ],
+            "column_count": 3,
+            "slot_pairs": [
+              [
+                0,
+                4
+              ],
+              [
+                0,
+                11
+              ],
+              [
+                7,
+                8
+              ]
+            ],
+            "missing_column_slot_pairs": [],
+            "untwisted": {
+              "edge_count": 180,
+              "kind_hist": {
+                "inter_thalion_diagonal_carrier": 180
+              },
+              "law_hist": {
+                "g15_line_petersen_slot_adjacency": 180
+              },
+              "slot_delta_mod15_hist": {
+                "1": 60,
+                "11": 60,
+                "4": 60
+              },
+              "local_delta_mod60_hist": {
+                "0": 180
+              },
+              "has_identity": false,
+              "has_half_flip_x_plus_30": false,
+              "identity_count": 0,
+              "half_flip_x_plus_30_count": 0
+            },
+            "twisted": {
+              "edge_count": 60,
+              "kind_hist": {
+                "external_signed_carrier": 60
+              },
+              "law_hist": {
+                "half_flip_x_plus_30": 60
+              },
+              "slot_delta_mod15_hist": {
+                "4": 60
+              },
+              "local_delta_mod60_hist": {
+                "30": 60
+              },
+              "has_identity": false,
+              "has_half_flip_x_plus_30": true,
+              "identity_count": 0,
+              "half_flip_x_plus_30_count": 60
+            }
+          }
+        },
+        {
+          "path": "$.role_feature_table[8]",
+          "row_ordinal": 8,
+          "keys": [
+            "columns",
+            "cycle_index",
+            "feature_signature_multiplicity",
+            "role",
+            "row_ordinal",
+            "slot_pairs",
+            "source_row_index",
+            "twisted_law_hist",
+            "twisted_local_delta_mod60_hist",
+            "twisted_slot_delta_mod15_hist"
+          ],
+          "useful": {
+            "row_ordinal": 8,
+            "cycle_index": 1,
+            "role": "YZ",
+            "columns": [
+              1,
+              3,
+              22
+            ],
+            "slot_pairs": [
+              [
+                0,
+                4
+              ],
+              [
+                0,
+                11
+              ],
+              [
+                7,
+                8
+              ]
+            ],
+            "twisted_law_hist": {
+              "half_flip_x_plus_30": 60
+            },
+            "twisted_local_delta_mod60_hist": {
+              "30": 60
+            },
+            "twisted_slot_delta_mod15_hist": {
+              "4": 60
+            }
+          }
+        }
+      ],
+      "role_geometry_records": [],
+      "global_edge_hit_sources": [],
+      "global_edge_hits": {
+        "p900_phase30_combined_graph_export": [],
+        "g900_candidate_edges": [],
+        "g900_candidate_graph_export": [],
+        "g900_twisted_ring_candidate_edges": [],
+        "g900_twisted_ring_candidate_export": [],
+        "g900_vertex_register_candidate": []
+      },
+      "has_column_witness": true,
+      "has_slot_pair_witness": false,
+      "has_any_global_edge_hit": false
+    },
+    {
+      "row_ordinal": 9,
+      "cycle_index": 1,
+      "role": "ZT",
+      "edge": [
+        7,
+        10
+      ],
+      "columns": [
+        14,
+        9,
+        11
+      ],
+      "column_count": 3,
+      "column_shape": "multi_column",
+      "normalized_zero_twisted_source": true,
+      "normalized_source_preimage_member": false,
+      "normalized_stable_complement_member": true,
+      "role_column_orientation": "multi_column_ZT",
+      "slot_pair_witnesses": [],
+      "uniform_row_records": [
+        {
+          "path": "$.lift_rows[9]",
+          "row_ordinal": 9,
+          "keys": [
+            "column_count",
+            "columns",
+            "cycle_index",
+            "derived_features",
+            "edge",
+            "feature_signature",
+            "missing_column_slot_pairs",
+            "role",
+            "row_ordinal",
+            "slot_pairs",
+            "source_row_index",
+            "twisted",
+            "untwisted"
+          ],
+          "useful": {
+            "row_ordinal": 9,
+            "cycle_index": 1,
+            "role": "ZT",
+            "columns": [
+              9,
+              11,
+              14
+            ],
+            "column_count": 3,
+            "slot_pairs": [
+              [
+                2,
+                13
+              ],
+              [
+                3,
+                13
+              ],
+              [
+                4,
+                14
+              ]
+            ],
+            "missing_column_slot_pairs": [],
+            "untwisted": {
+              "edge_count": 180,
+              "kind_hist": {
+                "inter_thalion_diagonal_carrier": 180
+              },
+              "law_hist": {
+                "g15_line_petersen_slot_adjacency": 180
+              },
+              "slot_delta_mod15_hist": {
+                "10": 120,
+                "11": 60
+              },
+              "local_delta_mod60_hist": {
+                "0": 180
+              },
+              "has_identity": false,
+              "has_half_flip_x_plus_30": false,
+              "identity_count": 0,
+              "half_flip_x_plus_30_count": 0
+            },
+            "twisted": {
+              "edge_count": 0,
+              "kind_hist": {},
+              "law_hist": {},
+              "slot_delta_mod15_hist": {},
+              "local_delta_mod60_hist": {},
+              "has_identity": false,
+              "has_half_flip_x_plus_30": false,
+              "identity_count": 0,
+              "half_flip_x_plus_30_count": 0
+            }
+          }
+        },
+        {
+          "path": "$.role_feature_table[9]",
+          "row_ordinal": 9,
+          "keys": [
+            "columns",
+            "cycle_index",
+            "feature_signature_multiplicity",
+            "role",
+            "row_ordinal",
+            "slot_pairs",
+            "source_row_index",
+            "twisted_law_hist",
+            "twisted_local_delta_mod60_hist",
+            "twisted_slot_delta_mod15_hist"
+          ],
+          "useful": {
+            "row_ordinal": 9,
+            "cycle_index": 1,
+            "role": "ZT",
+            "columns": [
+              9,
+              11,
+              14
+            ],
+            "slot_pairs": [
+              [
+                2,
+                13
+              ],
+              [
+                3,
+                13
+              ],
+              [
+                4,
+                14
+              ]
+            ],
+            "twisted_law_hist": {},
+            "twisted_local_delta_mod60_hist": {},
+            "twisted_slot_delta_mod15_hist": {}
+          }
+        }
+      ],
+      "role_geometry_records": [
+        {
+          "path": "$.source_rows[2]",
+          "row_ordinal": 9,
+          "keys": [
+            "balanced_singleton_radius_1",
+            "branch_sensitive",
+            "branch_stable",
+            "column_count",
+            "column_shape",
+            "columns",
+            "cycle_index",
+            "dead_endpoint_count_radius_1",
+            "is_false_positive_before_split",
+            "is_known_residual",
+            "pair_degrees_radius_1",
+            "role",
+            "role_column_class",
+            "row_ordinal",
+            "slot_pair_spans",
+            "slot_pairs"
+          ],
+          "useful": {
+            "row_ordinal": 9,
+            "cycle_index": 1,
+            "role": "ZT",
+            "columns": [
+              9,
+              11,
+              14
+            ],
+            "column_count": 3,
+            "column_shape": "multi_column",
+            "role_column_class": "multi_column_ZT",
+            "slot_pairs": [
+              [
+                2,
+                13
+              ],
+              [
+                3,
+                13
+              ],
+              [
+                4,
+                14
+              ]
+            ],
+            "slot_pair_spans": [
+              4,
+              5,
+              5
+            ],
+            "branch_sensitive": false
+          }
+        }
+      ],
+      "global_edge_hit_sources": [],
+      "global_edge_hits": {
+        "p900_phase30_combined_graph_export": [],
+        "g900_candidate_edges": [],
+        "g900_candidate_graph_export": [],
+        "g900_twisted_ring_candidate_edges": [],
+        "g900_twisted_ring_candidate_export": [],
+        "g900_vertex_register_candidate": []
+      },
+      "has_column_witness": true,
+      "has_slot_pair_witness": false,
+      "has_any_global_edge_hit": false
+    },
+    {
+      "row_ordinal": 10,
+      "cycle_index": 1,
+      "role": "TI",
+      "edge": [
+        10,
+        5
+      ],
+      "columns": [
+        10,
+        11
+      ],
+      "column_count": 2,
+      "column_shape": "multi_column",
+      "normalized_zero_twisted_source": false,
+      "normalized_source_preimage_member": false,
+      "normalized_stable_complement_member": false,
+      "role_column_orientation": "multi_column_TI",
+      "slot_pair_witnesses": [],
+      "uniform_row_records": [
+        {
+          "path": "$.lift_rows[10]",
+          "row_ordinal": 10,
+          "keys": [
+            "column_count",
+            "columns",
+            "cycle_index",
+            "derived_features",
+            "edge",
+            "feature_signature",
+            "missing_column_slot_pairs",
+            "role",
+            "row_ordinal",
+            "slot_pairs",
+            "source_row_index",
+            "twisted",
+            "untwisted"
+          ],
+          "useful": {
+            "row_ordinal": 10,
+            "cycle_index": 1,
+            "role": "TI",
+            "columns": [
+              10,
+              11
+            ],
+            "column_count": 2,
+            "slot_pairs": [
+              [
+                3,
+                4
+              ],
+              [
+                3,
+                13
+              ]
+            ],
+            "missing_column_slot_pairs": [],
+            "untwisted": {
+              "edge_count": 120,
+              "kind_hist": {
+                "inter_thalion_diagonal_carrier": 120
+              },
+              "law_hist": {
+                "g15_line_petersen_slot_adjacency": 120
+              },
+              "slot_delta_mod15_hist": {
+                "1": 60,
+                "10": 60
+              },
+              "local_delta_mod60_hist": {
+                "0": 120
+              },
+              "has_identity": false,
+              "has_half_flip_x_plus_30": false,
+              "identity_count": 0,
+              "half_flip_x_plus_30_count": 0
+            },
+            "twisted": {
+              "edge_count": 60,
+              "kind_hist": {
+                "external_signed_carrier": 60
+              },
+              "law_hist": {
+                "identity": 60
+              },
+              "slot_delta_mod15_hist": {
+                "1": 60
+              },
+              "local_delta_mod60_hist": {
+                "0": 60
+              },
+              "has_identity": true,
+              "has_half_flip_x_plus_30": false,
+              "identity_count": 60,
+              "half_flip_x_plus_30_count": 0
+            }
+          }
+        },
+        {
+          "path": "$.role_feature_table[10]",
+          "row_ordinal": 10,
+          "keys": [
+            "columns",
+            "cycle_index",
+            "feature_signature_multiplicity",
+            "role",
+            "row_ordinal",
+            "slot_pairs",
+            "source_row_index",
+            "twisted_law_hist",
+            "twisted_local_delta_mod60_hist",
+            "twisted_slot_delta_mod15_hist"
+          ],
+          "useful": {
+            "row_ordinal": 10,
+            "cycle_index": 1,
+            "role": "TI",
+            "columns": [
+              10,
+              11
+            ],
+            "slot_pairs": [
+              [
+                3,
+                4
+              ],
+              [
+                3,
+                13
+              ]
+            ],
+            "twisted_law_hist": {
+              "identity": 60
+            },
+            "twisted_local_delta_mod60_hist": {
+              "0": 60
+            },
+            "twisted_slot_delta_mod15_hist": {
+              "1": 60
+            }
+          }
+        }
+      ],
+      "role_geometry_records": [],
+      "global_edge_hit_sources": [],
+      "global_edge_hits": {
+        "p900_phase30_combined_graph_export": [],
+        "g900_candidate_edges": [],
+        "g900_candidate_graph_export": [],
+        "g900_twisted_ring_candidate_edges": [],
+        "g900_twisted_ring_candidate_export": [],
+        "g900_vertex_register_candidate": []
+      },
+      "has_column_witness": true,
+      "has_slot_pair_witness": false,
+      "has_any_global_edge_hit": false
+    },
+    {
+      "row_ordinal": 11,
+      "cycle_index": 1,
+      "role": "IW",
+      "edge": [
+        5,
+        0
+      ],
+      "columns": [
+        1,
+        7
+      ],
+      "column_count": 2,
+      "column_shape": "multi_column",
+      "normalized_zero_twisted_source": false,
+      "normalized_source_preimage_member": false,
+      "normalized_stable_complement_member": false,
+      "role_column_orientation": "multi_column_IW",
+      "slot_pair_witnesses": [],
+      "uniform_row_records": [
+        {
+          "path": "$.lift_rows[11]",
+          "row_ordinal": 11,
+          "keys": [
+            "column_count",
+            "columns",
+            "cycle_index",
+            "derived_features",
+            "edge",
+            "feature_signature",
+            "missing_column_slot_pairs",
+            "role",
+            "row_ordinal",
+            "slot_pairs",
+            "source_row_index",
+            "twisted",
+            "untwisted"
+          ],
+          "useful": {
+            "row_ordinal": 11,
+            "cycle_index": 1,
+            "role": "IW",
+            "columns": [
+              1,
+              7
+            ],
+            "column_count": 2,
+            "slot_pairs": [
+              [
+                0,
+                4
+              ],
+              [
+                2,
+                3
+              ]
+            ],
+            "missing_column_slot_pairs": [],
+            "untwisted": {
+              "edge_count": 120,
+              "kind_hist": {
+                "inter_thalion_diagonal_carrier": 120
+              },
+              "law_hist": {
+                "g15_line_petersen_slot_adjacency": 120
+              },
+              "slot_delta_mod15_hist": {
+                "1": 60,
+                "4": 60
+              },
+              "local_delta_mod60_hist": {
+                "0": 120
+              },
+              "has_identity": false,
+              "has_half_flip_x_plus_30": false,
+              "identity_count": 0,
+              "half_flip_x_plus_30_count": 0
+            },
+            "twisted": {
+              "edge_count": 120,
+              "kind_hist": {
+                "external_signed_carrier": 120
+              },
+              "law_hist": {
+                "half_flip_x_plus_30": 120
+              },
+              "slot_delta_mod15_hist": {
+                "1": 60,
+                "4": 60
+              },
+              "local_delta_mod60_hist": {
+                "30": 120
+              },
+              "has_identity": false,
+              "has_half_flip_x_plus_30": true,
+              "identity_count": 0,
+              "half_flip_x_plus_30_count": 120
+            }
+          }
+        },
+        {
+          "path": "$.role_feature_table[11]",
+          "row_ordinal": 11,
+          "keys": [
+            "columns",
+            "cycle_index",
+            "feature_signature_multiplicity",
+            "role",
+            "row_ordinal",
+            "slot_pairs",
+            "source_row_index",
+            "twisted_law_hist",
+            "twisted_local_delta_mod60_hist",
+            "twisted_slot_delta_mod15_hist"
+          ],
+          "useful": {
+            "row_ordinal": 11,
+            "cycle_index": 1,
+            "role": "IW",
+            "columns": [
+              1,
+              7
+            ],
+            "slot_pairs": [
+              [
+                0,
+                4
+              ],
+              [
+                2,
+                3
+              ]
+            ],
+            "twisted_law_hist": {
+              "half_flip_x_plus_30": 120
+            },
+            "twisted_local_delta_mod60_hist": {
+              "30": 120
+            },
+            "twisted_slot_delta_mod15_hist": {
+              "1": 60,
+              "4": 60
+            }
+          }
+        }
+      ],
+      "role_geometry_records": [],
+      "global_edge_hit_sources": [],
+      "global_edge_hits": {
+        "p900_phase30_combined_graph_export": [],
+        "g900_candidate_edges": [],
+        "g900_candidate_graph_export": [],
+        "g900_twisted_ring_candidate_edges": [],
+        "g900_twisted_ring_candidate_export": [],
+        "g900_vertex_register_candidate": []
+      },
+      "has_column_witness": true,
+      "has_slot_pair_witness": false,
+      "has_any_global_edge_hit": false
+    },
+    {
+      "row_ordinal": 12,
+      "cycle_index": 2,
+      "role": "WX",
+      "edge": [
+        0,
+        1
+      ],
+      "columns": [
+        0
+      ],
+      "column_count": 1,
+      "column_shape": "singleton",
+      "normalized_zero_twisted_source": false,
+      "normalized_source_preimage_member": false,
+      "normalized_stable_complement_member": false,
+      "role_column_orientation": "singleton_WX",
+      "slot_pair_witnesses": [],
+      "uniform_row_records": [
+        {
+          "path": "$.lift_rows[12]",
+          "row_ordinal": 12,
+          "keys": [
+            "column_count",
+            "columns",
+            "cycle_index",
+            "derived_features",
+            "edge",
+            "feature_signature",
+            "missing_column_slot_pairs",
+            "role",
+            "row_ordinal",
+            "slot_pairs",
+            "source_row_index",
+            "twisted",
+            "untwisted"
+          ],
+          "useful": {
+            "row_ordinal": 12,
+            "cycle_index": 2,
+            "role": "WX",
+            "columns": [
+              0
+            ],
+            "column_count": 1,
+            "slot_pairs": [
+              [
+                0,
+                1
+              ]
+            ],
+            "missing_column_slot_pairs": [],
+            "untwisted": {
+              "edge_count": 60,
+              "kind_hist": {
+                "inter_thalion_diagonal_carrier": 60
+              },
+              "law_hist": {
+                "g15_line_petersen_slot_adjacency": 60
+              },
+              "slot_delta_mod15_hist": {
+                "1": 60
+              },
+              "local_delta_mod60_hist": {
+                "0": 60
+              },
+              "has_identity": false,
+              "has_half_flip_x_plus_30": false,
+              "identity_count": 0,
+              "half_flip_x_plus_30_count": 0
+            },
+            "twisted": {
+              "edge_count": 60,
+              "kind_hist": {
+                "external_signed_carrier": 60
+              },
+              "law_hist": {
+                "half_flip_x_plus_30": 60
+              },
+              "slot_delta_mod15_hist": {
+                "1": 60
+              },
+              "local_delta_mod60_hist": {
+                "30": 60
+              },
+              "has_identity": false,
+              "has_half_flip_x_plus_30": true,
+              "identity_count": 0,
+              "half_flip_x_plus_30_count": 60
+            }
+          }
+        },
+        {
+          "path": "$.role_feature_table[12]",
+          "row_ordinal": 12,
+          "keys": [
+            "columns",
+            "cycle_index",
+            "feature_signature_multiplicity",
+            "role",
+            "row_ordinal",
+            "slot_pairs",
+            "source_row_index",
+            "twisted_law_hist",
+            "twisted_local_delta_mod60_hist",
+            "twisted_slot_delta_mod15_hist"
+          ],
+          "useful": {
+            "row_ordinal": 12,
+            "cycle_index": 2,
+            "role": "WX",
+            "columns": [
+              0
+            ],
+            "slot_pairs": [
+              [
+                0,
+                1
+              ]
+            ],
+            "twisted_law_hist": {
+              "half_flip_x_plus_30": 60
+            },
+            "twisted_local_delta_mod60_hist": {
+              "30": 60
+            },
+            "twisted_slot_delta_mod15_hist": {
+              "1": 60
+            }
+          }
+        }
+      ],
+      "role_geometry_records": [],
+      "global_edge_hit_sources": [],
+      "global_edge_hits": {
+        "p900_phase30_combined_graph_export": [],
+        "g900_candidate_edges": [],
+        "g900_candidate_graph_export": [],
+        "g900_twisted_ring_candidate_edges": [],
+        "g900_twisted_ring_candidate_export": [],
+        "g900_vertex_register_candidate": []
+      },
+      "has_column_witness": true,
+      "has_slot_pair_witness": false,
+      "has_any_global_edge_hit": false
+    },
+    {
+      "row_ordinal": 13,
+      "cycle_index": 2,
+      "role": "XY",
+      "edge": [
+        1,
+        2
+      ],
+      "columns": [
+        4
+      ],
+      "column_count": 1,
+      "column_shape": "singleton",
+      "normalized_zero_twisted_source": false,
+      "normalized_source_preimage_member": false,
+      "normalized_stable_complement_member": false,
+      "role_column_orientation": "singleton_XY",
+      "slot_pair_witnesses": [],
+      "uniform_row_records": [
+        {
+          "path": "$.lift_rows[13]",
+          "row_ordinal": 13,
+          "keys": [
+            "column_count",
+            "columns",
+            "cycle_index",
+            "derived_features",
+            "edge",
+            "feature_signature",
+            "missing_column_slot_pairs",
+            "role",
+            "row_ordinal",
+            "slot_pairs",
+            "source_row_index",
+            "twisted",
+            "untwisted"
+          ],
+          "useful": {
+            "row_ordinal": 13,
+            "cycle_index": 2,
+            "role": "XY",
+            "columns": [
+              4
+            ],
+            "column_count": 1,
+            "slot_pairs": [
+              [
+                1,
+                2
+              ]
+            ],
+            "missing_column_slot_pairs": [],
+            "untwisted": {
+              "edge_count": 60,
+              "kind_hist": {
+                "inter_thalion_diagonal_carrier": 60
+              },
+              "law_hist": {
+                "g15_line_petersen_slot_adjacency": 60
+              },
+              "slot_delta_mod15_hist": {
+                "1": 60
+              },
+              "local_delta_mod60_hist": {
+                "0": 60
+              },
+              "has_identity": false,
+              "has_half_flip_x_plus_30": false,
+              "identity_count": 0,
+              "half_flip_x_plus_30_count": 0
+            },
+            "twisted": {
+              "edge_count": 60,
+              "kind_hist": {
+                "external_signed_carrier": 60
+              },
+              "law_hist": {
+                "half_flip_x_plus_30": 60
+              },
+              "slot_delta_mod15_hist": {
+                "1": 60
+              },
+              "local_delta_mod60_hist": {
+                "30": 60
+              },
+              "has_identity": false,
+              "has_half_flip_x_plus_30": true,
+              "identity_count": 0,
+              "half_flip_x_plus_30_count": 60
+            }
+          }
+        },
+        {
+          "path": "$.role_feature_table[13]",
+          "row_ordinal": 13,
+          "keys": [
+            "columns",
+            "cycle_index",
+            "feature_signature_multiplicity",
+            "role",
+            "row_ordinal",
+            "slot_pairs",
+            "source_row_index",
+            "twisted_law_hist",
+            "twisted_local_delta_mod60_hist",
+            "twisted_slot_delta_mod15_hist"
+          ],
+          "useful": {
+            "row_ordinal": 13,
+            "cycle_index": 2,
+            "role": "XY",
+            "columns": [
+              4
+            ],
+            "slot_pairs": [
+              [
+                1,
+                2
+              ]
+            ],
+            "twisted_law_hist": {
+              "half_flip_x_plus_30": 60
+            },
+            "twisted_local_delta_mod60_hist": {
+              "30": 60
+            },
+            "twisted_slot_delta_mod15_hist": {
+              "1": 60
+            }
+          }
+        }
+      ],
+      "role_geometry_records": [],
+      "global_edge_hit_sources": [],
+      "global_edge_hits": {
+        "p900_phase30_combined_graph_export": [],
+        "g900_candidate_edges": [],
+        "g900_candidate_graph_export": [],
+        "g900_twisted_ring_candidate_edges": [],
+        "g900_twisted_ring_candidate_export": [],
+        "g900_vertex_register_candidate": []
+      },
+      "has_column_witness": true,
+      "has_slot_pair_witness": false,
+      "has_any_global_edge_hit": false
+    },
+    {
+      "row_ordinal": 14,
+      "cycle_index": 2,
+      "role": "YZ",
+      "edge": [
+        2,
+        8
+      ],
+      "columns": [
+        4,
+        5
+      ],
+      "column_count": 2,
+      "column_shape": "multi_column",
+      "normalized_zero_twisted_source": false,
+      "normalized_source_preimage_member": false,
+      "normalized_stable_complement_member": false,
+      "role_column_orientation": "multi_column_YZ",
+      "slot_pair_witnesses": [],
+      "uniform_row_records": [
+        {
+          "path": "$.lift_rows[14]",
+          "row_ordinal": 14,
+          "keys": [
+            "column_count",
+            "columns",
+            "cycle_index",
+            "derived_features",
+            "edge",
+            "feature_signature",
+            "missing_column_slot_pairs",
+            "role",
+            "row_ordinal",
+            "slot_pairs",
+            "source_row_index",
+            "twisted",
+            "untwisted"
+          ],
+          "useful": {
+            "row_ordinal": 14,
+            "cycle_index": 2,
+            "role": "YZ",
+            "columns": [
+              4,
+              5
+            ],
+            "column_count": 2,
+            "slot_pairs": [
+              [
+                1,
+                2
+              ],
+              [
+                1,
+                11
+              ]
+            ],
+            "missing_column_slot_pairs": [],
+            "untwisted": {
+              "edge_count": 120,
+              "kind_hist": {
+                "inter_thalion_diagonal_carrier": 120
+              },
+              "law_hist": {
+                "g15_line_petersen_slot_adjacency": 120
+              },
+              "slot_delta_mod15_hist": {
+                "1": 60,
+                "10": 60
+              },
+              "local_delta_mod60_hist": {
+                "0": 120
+              },
+              "has_identity": false,
+              "has_half_flip_x_plus_30": false,
+              "identity_count": 0,
+              "half_flip_x_plus_30_count": 0
+            },
+            "twisted": {
+              "edge_count": 60,
+              "kind_hist": {
+                "external_signed_carrier": 60
+              },
+              "law_hist": {
+                "half_flip_x_plus_30": 60
+              },
+              "slot_delta_mod15_hist": {
+                "1": 60
+              },
+              "local_delta_mod60_hist": {
+                "30": 60
+              },
+              "has_identity": false,
+              "has_half_flip_x_plus_30": true,
+              "identity_count": 0,
+              "half_flip_x_plus_30_count": 60
+            }
+          }
+        },
+        {
+          "path": "$.role_feature_table[14]",
+          "row_ordinal": 14,
+          "keys": [
+            "columns",
+            "cycle_index",
+            "feature_signature_multiplicity",
+            "role",
+            "row_ordinal",
+            "slot_pairs",
+            "source_row_index",
+            "twisted_law_hist",
+            "twisted_local_delta_mod60_hist",
+            "twisted_slot_delta_mod15_hist"
+          ],
+          "useful": {
+            "row_ordinal": 14,
+            "cycle_index": 2,
+            "role": "YZ",
+            "columns": [
+              4,
+              5
+            ],
+            "slot_pairs": [
+              [
+                1,
+                2
+              ],
+              [
+                1,
+                11
+              ]
+            ],
+            "twisted_law_hist": {
+              "half_flip_x_plus_30": 60
+            },
+            "twisted_local_delta_mod60_hist": {
+              "30": 60
+            },
+            "twisted_slot_delta_mod15_hist": {
+              "1": 60
+            }
+          }
+        }
+      ],
+      "role_geometry_records": [],
+      "global_edge_hit_sources": [],
+      "global_edge_hits": {
+        "p900_phase30_combined_graph_export": [],
+        "g900_candidate_edges": [],
+        "g900_candidate_graph_export": [],
+        "g900_twisted_ring_candidate_edges": [],
+        "g900_twisted_ring_candidate_export": [],
+        "g900_vertex_register_candidate": []
+      },
+      "has_column_witness": true,
+      "has_slot_pair_witness": false,
+      "has_any_global_edge_hit": false
+    },
+    {
+      "row_ordinal": 15,
+      "cycle_index": 2,
+      "role": "ZT",
+      "edge": [
+        8,
+        14
+      ],
+      "columns": [
+        21,
+        22
+      ],
+      "column_count": 2,
+      "column_shape": "multi_column",
+      "normalized_zero_twisted_source": true,
+      "normalized_source_preimage_member": false,
+      "normalized_stable_complement_member": true,
+      "role_column_orientation": "multi_column_ZT",
+      "slot_pair_witnesses": [],
+      "uniform_row_records": [
+        {
+          "path": "$.lift_rows[15]",
+          "row_ordinal": 15,
+          "keys": [
+            "column_count",
+            "columns",
+            "cycle_index",
+            "derived_features",
+            "edge",
+            "feature_signature",
+            "missing_column_slot_pairs",
+            "role",
+            "row_ordinal",
+            "slot_pairs",
+            "source_row_index",
+            "twisted",
+            "untwisted"
+          ],
+          "useful": {
+            "row_ordinal": 15,
+            "cycle_index": 2,
+            "role": "ZT",
+            "columns": [
+              21,
+              22
+            ],
+            "column_count": 2,
+            "slot_pairs": [
+              [
+                6,
+                14
+              ],
+              [
+                7,
+                8
+              ]
+            ],
+            "missing_column_slot_pairs": [],
+            "untwisted": {
+              "edge_count": 120,
+              "kind_hist": {
+                "inter_thalion_diagonal_carrier": 120
+              },
+              "law_hist": {
+                "g15_line_petersen_slot_adjacency": 120
+              },
+              "slot_delta_mod15_hist": {
+                "1": 60,
+                "8": 60
+              },
+              "local_delta_mod60_hist": {
+                "0": 120
+              },
+              "has_identity": false,
+              "has_half_flip_x_plus_30": false,
+              "identity_count": 0,
+              "half_flip_x_plus_30_count": 0
+            },
+            "twisted": {
+              "edge_count": 0,
+              "kind_hist": {},
+              "law_hist": {},
+              "slot_delta_mod15_hist": {},
+              "local_delta_mod60_hist": {},
+              "has_identity": false,
+              "has_half_flip_x_plus_30": false,
+              "identity_count": 0,
+              "half_flip_x_plus_30_count": 0
+            }
+          }
+        },
+        {
+          "path": "$.role_feature_table[15]",
+          "row_ordinal": 15,
+          "keys": [
+            "columns",
+            "cycle_index",
+            "feature_signature_multiplicity",
+            "role",
+            "row_ordinal",
+            "slot_pairs",
+            "source_row_index",
+            "twisted_law_hist",
+            "twisted_local_delta_mod60_hist",
+            "twisted_slot_delta_mod15_hist"
+          ],
+          "useful": {
+            "row_ordinal": 15,
+            "cycle_index": 2,
+            "role": "ZT",
+            "columns": [
+              21,
+              22
+            ],
+            "slot_pairs": [
+              [
+                6,
+                14
+              ],
+              [
+                7,
+                8
+              ]
+            ],
+            "twisted_law_hist": {},
+            "twisted_local_delta_mod60_hist": {},
+            "twisted_slot_delta_mod15_hist": {}
+          }
+        }
+      ],
+      "role_geometry_records": [
+        {
+          "path": "$.source_rows[3]",
+          "row_ordinal": 15,
+          "keys": [
+            "balanced_singleton_radius_1",
+            "branch_sensitive",
+            "branch_stable",
+            "column_count",
+            "column_shape",
+            "columns",
+            "cycle_index",
+            "dead_endpoint_count_radius_1",
+            "is_false_positive_before_split",
+            "is_known_residual",
+            "pair_degrees_radius_1",
+            "role",
+            "role_column_class",
+            "row_ordinal",
+            "slot_pair_spans",
+            "slot_pairs"
+          ],
+          "useful": {
+            "row_ordinal": 15,
+            "cycle_index": 2,
+            "role": "ZT",
+            "columns": [
+              21,
+              22
+            ],
+            "column_count": 2,
+            "column_shape": "multi_column",
+            "role_column_class": "multi_column_ZT",
+            "slot_pairs": [
+              [
+                6,
+                14
+              ],
+              [
+                7,
+                8
+              ]
+            ],
+            "slot_pair_spans": [
+              1,
+              7
+            ],
+            "branch_sensitive": false
+          }
+        }
+      ],
+      "global_edge_hit_sources": [],
+      "global_edge_hits": {
+        "p900_phase30_combined_graph_export": [],
+        "g900_candidate_edges": [],
+        "g900_candidate_graph_export": [],
+        "g900_twisted_ring_candidate_edges": [],
+        "g900_twisted_ring_candidate_export": [],
+        "g900_vertex_register_candidate": []
+      },
+      "has_column_witness": true,
+      "has_slot_pair_witness": false,
+      "has_any_global_edge_hit": false
+    },
+    {
+      "row_ordinal": 16,
+      "cycle_index": 2,
+      "role": "TI",
+      "edge": [
+        14,
+        5
+      ],
+      "columns": [
+        13,
+        15
+      ],
+      "column_count": 2,
+      "column_shape": "multi_column",
+      "normalized_zero_twisted_source": true,
+      "normalized_source_preimage_member": true,
+      "normalized_stable_complement_member": false,
+      "role_column_orientation": "multi_column_TI",
+      "slot_pair_witnesses": [],
+      "uniform_row_records": [
+        {
+          "path": "$.lift_rows[16]",
+          "row_ordinal": 16,
+          "keys": [
+            "column_count",
+            "columns",
+            "cycle_index",
+            "derived_features",
+            "edge",
+            "feature_signature",
+            "missing_column_slot_pairs",
+            "role",
+            "row_ordinal",
+            "slot_pairs",
+            "source_row_index",
+            "twisted",
+            "untwisted"
+          ],
+          "useful": {
+            "row_ordinal": 16,
+            "cycle_index": 2,
+            "role": "TI",
+            "columns": [
+              13,
+              15
+            ],
+            "column_count": 2,
+            "slot_pairs": [
+              [
+                4,
+                10
+              ],
+              [
+                5,
+                6
+              ]
+            ],
+            "missing_column_slot_pairs": [],
+            "untwisted": {
+              "edge_count": 120,
+              "kind_hist": {
+                "inter_thalion_diagonal_carrier": 120
+              },
+              "law_hist": {
+                "g15_line_petersen_slot_adjacency": 120
+              },
+              "slot_delta_mod15_hist": {
+                "1": 60,
+                "6": 60
+              },
+              "local_delta_mod60_hist": {
+                "0": 120
+              },
+              "has_identity": false,
+              "has_half_flip_x_plus_30": false,
+              "identity_count": 0,
+              "half_flip_x_plus_30_count": 0
+            },
+            "twisted": {
+              "edge_count": 0,
+              "kind_hist": {},
+              "law_hist": {},
+              "slot_delta_mod15_hist": {},
+              "local_delta_mod60_hist": {},
+              "has_identity": false,
+              "has_half_flip_x_plus_30": false,
+              "identity_count": 0,
+              "half_flip_x_plus_30_count": 0
+            }
+          }
+        },
+        {
+          "path": "$.role_feature_table[16]",
+          "row_ordinal": 16,
+          "keys": [
+            "columns",
+            "cycle_index",
+            "feature_signature_multiplicity",
+            "role",
+            "row_ordinal",
+            "slot_pairs",
+            "source_row_index",
+            "twisted_law_hist",
+            "twisted_local_delta_mod60_hist",
+            "twisted_slot_delta_mod15_hist"
+          ],
+          "useful": {
+            "row_ordinal": 16,
+            "cycle_index": 2,
+            "role": "TI",
+            "columns": [
+              13,
+              15
+            ],
+            "slot_pairs": [
+              [
+                4,
+                10
+              ],
+              [
+                5,
+                6
+              ]
+            ],
+            "twisted_law_hist": {},
+            "twisted_local_delta_mod60_hist": {},
+            "twisted_slot_delta_mod15_hist": {}
+          }
+        }
+      ],
+      "role_geometry_records": [
+        {
+          "path": "$.source_rows[4]",
+          "row_ordinal": 16,
+          "keys": [
+            "balanced_singleton_radius_1",
+            "branch_sensitive",
+            "branch_stable",
+            "column_count",
+            "column_shape",
+            "columns",
+            "cycle_index",
+            "dead_endpoint_count_radius_1",
+            "is_false_positive_before_split",
+            "is_known_residual",
+            "pair_degrees_radius_1",
+            "role",
+            "role_column_class",
+            "row_ordinal",
+            "slot_pair_spans",
+            "slot_pairs"
+          ],
+          "useful": {
+            "row_ordinal": 16,
+            "cycle_index": 2,
+            "role": "TI",
+            "columns": [
+              13,
+              15
+            ],
+            "column_count": 2,
+            "column_shape": "multi_column",
+            "role_column_class": "multi_column_TI",
+            "slot_pairs": [
+              [
+                4,
+                10
+              ],
+              [
+                5,
+                6
+              ]
+            ],
+            "slot_pair_spans": [
+              1,
+              6
+            ],
+            "branch_sensitive": true
+          }
+        }
+      ],
+      "global_edge_hit_sources": [],
+      "global_edge_hits": {
+        "p900_phase30_combined_graph_export": [],
+        "g900_candidate_edges": [],
+        "g900_candidate_graph_export": [],
+        "g900_twisted_ring_candidate_edges": [],
+        "g900_twisted_ring_candidate_export": [],
+        "g900_vertex_register_candidate": []
+      },
+      "has_column_witness": true,
+      "has_slot_pair_witness": false,
+      "has_any_global_edge_hit": false
+    },
+    {
+      "row_ordinal": 17,
+      "cycle_index": 2,
+      "role": "IW",
+      "edge": [
+        5,
+        0
+      ],
+      "columns": [
+        1,
+        7
+      ],
+      "column_count": 2,
+      "column_shape": "multi_column",
+      "normalized_zero_twisted_source": false,
+      "normalized_source_preimage_member": false,
+      "normalized_stable_complement_member": false,
+      "role_column_orientation": "multi_column_IW",
+      "slot_pair_witnesses": [],
+      "uniform_row_records": [
+        {
+          "path": "$.lift_rows[17]",
+          "row_ordinal": 17,
+          "keys": [
+            "column_count",
+            "columns",
+            "cycle_index",
+            "derived_features",
+            "edge",
+            "feature_signature",
+            "missing_column_slot_pairs",
+            "role",
+            "row_ordinal",
+            "slot_pairs",
+            "source_row_index",
+            "twisted",
+            "untwisted"
+          ],
+          "useful": {
+            "row_ordinal": 17,
+            "cycle_index": 2,
+            "role": "IW",
+            "columns": [
+              1,
+              7
+            ],
+            "column_count": 2,
+            "slot_pairs": [
+              [
+                0,
+                4
+              ],
+              [
+                2,
+                3
+              ]
+            ],
+            "missing_column_slot_pairs": [],
+            "untwisted": {
+              "edge_count": 120,
+              "kind_hist": {
+                "inter_thalion_diagonal_carrier": 120
+              },
+              "law_hist": {
+                "g15_line_petersen_slot_adjacency": 120
+              },
+              "slot_delta_mod15_hist": {
+                "1": 60,
+                "4": 60
+              },
+              "local_delta_mod60_hist": {
+                "0": 120
+              },
+              "has_identity": false,
+              "has_half_flip_x_plus_30": false,
+              "identity_count": 0,
+              "half_flip_x_plus_30_count": 0
+            },
+            "twisted": {
+              "edge_count": 120,
+              "kind_hist": {
+                "external_signed_carrier": 120
+              },
+              "law_hist": {
+                "half_flip_x_plus_30": 120
+              },
+              "slot_delta_mod15_hist": {
+                "1": 60,
+                "4": 60
+              },
+              "local_delta_mod60_hist": {
+                "30": 120
+              },
+              "has_identity": false,
+              "has_half_flip_x_plus_30": true,
+              "identity_count": 0,
+              "half_flip_x_plus_30_count": 120
+            }
+          }
+        },
+        {
+          "path": "$.role_feature_table[17]",
+          "row_ordinal": 17,
+          "keys": [
+            "columns",
+            "cycle_index",
+            "feature_signature_multiplicity",
+            "role",
+            "row_ordinal",
+            "slot_pairs",
+            "source_row_index",
+            "twisted_law_hist",
+            "twisted_local_delta_mod60_hist",
+            "twisted_slot_delta_mod15_hist"
+          ],
+          "useful": {
+            "row_ordinal": 17,
+            "cycle_index": 2,
+            "role": "IW",
+            "columns": [
+              1,
+              7
+            ],
+            "slot_pairs": [
+              [
+                0,
+                4
+              ],
+              [
+                2,
+                3
+              ]
+            ],
+            "twisted_law_hist": {
+              "half_flip_x_plus_30": 120
+            },
+            "twisted_local_delta_mod60_hist": {
+              "30": 120
+            },
+            "twisted_slot_delta_mod15_hist": {
+              "1": 60,
+              "4": 60
+            }
+          }
+        }
+      ],
+      "role_geometry_records": [],
+      "global_edge_hit_sources": [],
+      "global_edge_hits": {
+        "p900_phase30_combined_graph_export": [],
+        "g900_candidate_edges": [],
+        "g900_candidate_graph_export": [],
+        "g900_twisted_ring_candidate_edges": [],
+        "g900_twisted_ring_candidate_export": [],
+        "g900_vertex_register_candidate": []
+      },
+      "has_column_witness": true,
+      "has_slot_pair_witness": false,
+      "has_any_global_edge_hit": false
+    }
+  ],
+  "claim": {
+    "does_this_close_gap_a": false,
+    "does_this_construct_global_source_law_map": false,
+    "does_this_build_row_to_global_witness_table": false,
+    "row_count": 18,
+    "all_rows_have_slot_pairs": false,
+    "all_rows_have_global_hits": false,
+    "preimage_rows_have_global_hits": false,
+    "stable_rows_have_global_hits": false,
+    "short_form": "The 18 WXYZTI rows are now linked to column/slot-pair witnesses and sampled global carrier edge evidence where schema matching succeeds.",
+    "not_closed_reason": "The table is a witness bridge; it does not yet evaluate a full global source-law predicate over the carrier."
+  },
+  "interpretation": {
+    "main_result": "This records the carrier evidence available for each row.",
+    "if_all_rows_have_global_hits": "The next step is to evaluate a full carrier predicate rather than sampled row witnesses.",
+    "if_partial": "The next step is to inspect the global edge schema for rows without hits and strengthen the matching adapter."
+  },
+  "checks": [
+    {
+      "id": "global_lift_attempt_loaded",
+      "status": true,
+      "detail": "gap_a_global_source_law_lift_attempt_partial_not_closure"
+    },
+    {
+      "id": "normalized_preimage_loaded",
+      "status": true,
+      "detail": "gap_a_source_preimage_from_normalized_zero_rows_recorded_not_promoted"
+    },
+    {
+      "id": "zero_rows_loaded",
+      "status": true,
+      "detail": "gap_a_uniform_lift_zero_twisted_rows_normalized"
+    },
+    {
+      "id": "uniform_lift_loaded",
+      "status": true,
+      "detail": "gap_a_uniform_15_thalion_row_lift_needs_inspection"
+    },
+    {
+      "id": "source_rows_18",
+      "status": true,
+      "detail": "count=18"
+    },
+    {
+      "id": "column_slot_pairs_found",
+      "status": false,
+      "detail": "count=0"
+    },
+    {
+      "id": "column_slot_pairs_30",
+      "status": false,
+      "detail": "count=0"
+    },
+    {
+      "id": "all_rows_have_slot_pairs",
+      "status": false,
+      "detail": "[]"
+    },
+    {
+      "id": "global_sources_loaded",
+      "status": true,
+      "detail": "[\"p900_phase30_combined_graph_export\", \"g900_candidate_edges\", \"g900_candidate_graph_export\", \"g900_twisted_ring_candidate_edges\", \"g900_twisted_ring_candidate_export\", \"g900_vertex_register_candidate\"]"
+    },
+    {
+      "id": "gap_a_not_closed",
+      "status": true,
+      "detail": "witness bridge only"
+    }
+  ],
+  "next_script": "inspect_gap_a_global_edge_schema_for_row_embedding_001.py"
+}

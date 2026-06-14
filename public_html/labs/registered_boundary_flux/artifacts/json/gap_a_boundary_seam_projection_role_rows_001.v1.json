@@ -1,0 +1,687 @@
+{
+  "schema": "gap_a_boundary_seam_projection_role_rows_001.v1",
+  "status": "boundary_seam_projection_role_rows_partial_not_map_proof",
+  "timestamp_utc": "2026-06-14T18:45:35.422736+00:00",
+  "gap": "A_chamber_register_map",
+  "purpose": "Apply the geometrically justified W-boundary seam projection to individual WXYZTI role rows.",
+  "boundary": [
+    "This is not a chamber/register map proof.",
+    "This applies the seam rule row-by-row rather than by role majority.",
+    "A partial result is not a failure; it localizes residual cycle-role rows.",
+    "No extra role choices are added in this pass."
+  ],
+  "inputs": {
+    "boundary_seam_geometry": "registered_boundary_flux/artifacts/json/gap_a_boundary_seam_rule_geometry_001.v1.json",
+    "boundary_seam_geometry_sha256": "91c84eb60ad5c3b91f485c3b08ca21114372734ac192e488fee372b4af968e6f",
+    "role_pattern": "registered_boundary_flux/artifacts/json/gap_a_bridge_paths_wxyzti_role_pattern_001.v1.json",
+    "role_pattern_sha256": "32ce791b382062f7f3d9f559a0b0d23de803509ed7b34f77a85b7366cfe3a6e6",
+    "selected_wxyzti_target": "registered_boundary_flux/artifacts/json/selected_wxyzti_target_001.v1.json",
+    "selected_wxyzti_target_sha256": "70bd9ff63bfbd58e888f8380c1eced8ad2c03fe4c7d07f1838bd2a52d94613a3"
+  },
+  "role_order": [
+    "WX",
+    "XY",
+    "YZ",
+    "ZT",
+    "TI",
+    "IW"
+  ],
+  "target_pattern": [
+    1,
+    1,
+    1,
+    0,
+    1,
+    1
+  ],
+  "seam_mask": {
+    "WX": true,
+    "XY": false,
+    "YZ": false,
+    "ZT": false,
+    "TI": false,
+    "IW": true
+  },
+  "summary": {
+    "total_role_rows": 18,
+    "matching_role_rows": 16,
+    "mismatching_role_rows": 2,
+    "cycle_count": 3,
+    "matching_cycles": 1,
+    "mismatching_cycles": 2,
+    "mismatch_cycle_indices": [
+      0,
+      2
+    ],
+    "mismatch_roles_by_cycle": {
+      "0": [
+        "ZT"
+      ],
+      "2": [
+        "TI"
+      ]
+    }
+  },
+  "cycle_results": [
+    {
+      "cycle_index": 0,
+      "raw_pattern": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      "projected_pattern": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "target_pattern": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "missing_roles": [],
+      "mismatch_roles": [
+        "ZT"
+      ],
+      "hamming_distance_to_target": 1,
+      "matches_target_pattern": false
+    },
+    {
+      "cycle_index": 1,
+      "raw_pattern": [
+        0,
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      "projected_pattern": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "target_pattern": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "missing_roles": [],
+      "mismatch_roles": [],
+      "hamming_distance_to_target": 0,
+      "matches_target_pattern": true
+    },
+    {
+      "cycle_index": 2,
+      "raw_pattern": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "projected_pattern": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "target_pattern": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "missing_roles": [],
+      "mismatch_roles": [
+        "TI"
+      ],
+      "hamming_distance_to_target": 1,
+      "matches_target_pattern": false
+    }
+  ],
+  "role_summary": {
+    "WX": {
+      "count": 3,
+      "raw_values": [
+        0,
+        0,
+        0
+      ],
+      "projected_values": [
+        1,
+        1,
+        1
+      ],
+      "expected_value": 1,
+      "match_count": 3,
+      "mismatch_count": 0,
+      "mismatch_rows": []
+    },
+    "XY": {
+      "count": 3,
+      "raw_values": [
+        1,
+        1,
+        1
+      ],
+      "projected_values": [
+        1,
+        1,
+        1
+      ],
+      "expected_value": 1,
+      "match_count": 3,
+      "mismatch_count": 0,
+      "mismatch_rows": []
+    },
+    "YZ": {
+      "count": 3,
+      "raw_values": [
+        1,
+        1,
+        1
+      ],
+      "projected_values": [
+        1,
+        1,
+        1
+      ],
+      "expected_value": 1,
+      "match_count": 3,
+      "mismatch_count": 0,
+      "mismatch_rows": []
+    },
+    "ZT": {
+      "count": 3,
+      "raw_values": [
+        1,
+        0,
+        0
+      ],
+      "projected_values": [
+        1,
+        0,
+        0
+      ],
+      "expected_value": 0,
+      "match_count": 2,
+      "mismatch_count": 1,
+      "mismatch_rows": [
+        {
+          "cycle_index": 0,
+          "edge": [
+            3,
+            4
+          ],
+          "transport_kind": "direct_edge_column",
+          "path_length": 1,
+          "raw": 1,
+          "projected": 1,
+          "expected": 0
+        }
+      ]
+    },
+    "TI": {
+      "count": 3,
+      "raw_values": [
+        1,
+        1,
+        0
+      ],
+      "projected_values": [
+        1,
+        1,
+        0
+      ],
+      "expected_value": 1,
+      "match_count": 2,
+      "mismatch_count": 1,
+      "mismatch_rows": [
+        {
+          "cycle_index": 2,
+          "edge": [
+            14,
+            5
+          ],
+          "transport_kind": "bridge_path",
+          "path_length": 2,
+          "raw": 0,
+          "projected": 0,
+          "expected": 1
+        }
+      ]
+    },
+    "IW": {
+      "count": 3,
+      "raw_values": [
+        0,
+        0,
+        0
+      ],
+      "projected_values": [
+        1,
+        1,
+        1
+      ],
+      "expected_value": 1,
+      "match_count": 3,
+      "mismatch_count": 0,
+      "mismatch_rows": []
+    }
+  },
+  "projected_role_rows": [
+    {
+      "cycle_index": 0,
+      "role": "WX",
+      "edge": [
+        0,
+        1
+      ],
+      "transport_kind": "direct_edge_column",
+      "path_length": 1,
+      "columns": [
+        0
+      ],
+      "raw_role_cocycle_sum_mod2": 0,
+      "seam_flip_applied": true,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "matches_target_value": true
+    },
+    {
+      "cycle_index": 0,
+      "role": "XY",
+      "edge": [
+        1,
+        2
+      ],
+      "transport_kind": "direct_edge_column",
+      "path_length": 1,
+      "columns": [
+        4
+      ],
+      "raw_role_cocycle_sum_mod2": 1,
+      "seam_flip_applied": false,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "matches_target_value": true
+    },
+    {
+      "cycle_index": 0,
+      "role": "YZ",
+      "edge": [
+        2,
+        3
+      ],
+      "transport_kind": "bridge_path",
+      "path_length": 2,
+      "columns": [
+        7,
+        10
+      ],
+      "raw_role_cocycle_sum_mod2": 1,
+      "seam_flip_applied": false,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "matches_target_value": true
+    },
+    {
+      "cycle_index": 0,
+      "role": "ZT",
+      "edge": [
+        3,
+        4
+      ],
+      "transport_kind": "direct_edge_column",
+      "path_length": 1,
+      "columns": [
+        9
+      ],
+      "raw_role_cocycle_sum_mod2": 1,
+      "seam_flip_applied": false,
+      "projected_value": 1,
+      "expected_target_value": 0,
+      "matches_target_value": false
+    },
+    {
+      "cycle_index": 0,
+      "role": "TI",
+      "edge": [
+        4,
+        5
+      ],
+      "transport_kind": "direct_edge_column",
+      "path_length": 1,
+      "columns": [
+        13
+      ],
+      "raw_role_cocycle_sum_mod2": 1,
+      "seam_flip_applied": false,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "matches_target_value": true
+    },
+    {
+      "cycle_index": 0,
+      "role": "IW",
+      "edge": [
+        5,
+        0
+      ],
+      "transport_kind": "bridge_path",
+      "path_length": 2,
+      "columns": [
+        1,
+        7
+      ],
+      "raw_role_cocycle_sum_mod2": 0,
+      "seam_flip_applied": true,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "matches_target_value": true
+    },
+    {
+      "cycle_index": 1,
+      "role": "WX",
+      "edge": [
+        0,
+        1
+      ],
+      "transport_kind": "direct_edge_column",
+      "path_length": 1,
+      "columns": [
+        0
+      ],
+      "raw_role_cocycle_sum_mod2": 0,
+      "seam_flip_applied": true,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "matches_target_value": true
+    },
+    {
+      "cycle_index": 1,
+      "role": "XY",
+      "edge": [
+        1,
+        2
+      ],
+      "transport_kind": "direct_edge_column",
+      "path_length": 1,
+      "columns": [
+        4
+      ],
+      "raw_role_cocycle_sum_mod2": 1,
+      "seam_flip_applied": false,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "matches_target_value": true
+    },
+    {
+      "cycle_index": 1,
+      "role": "YZ",
+      "edge": [
+        2,
+        7
+      ],
+      "transport_kind": "bridge_path",
+      "path_length": 3,
+      "columns": [
+        1,
+        3,
+        22
+      ],
+      "raw_role_cocycle_sum_mod2": 1,
+      "seam_flip_applied": false,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "matches_target_value": true
+    },
+    {
+      "cycle_index": 1,
+      "role": "ZT",
+      "edge": [
+        7,
+        10
+      ],
+      "transport_kind": "bridge_path",
+      "path_length": 3,
+      "columns": [
+        14,
+        9,
+        11
+      ],
+      "raw_role_cocycle_sum_mod2": 0,
+      "seam_flip_applied": false,
+      "projected_value": 0,
+      "expected_target_value": 0,
+      "matches_target_value": true
+    },
+    {
+      "cycle_index": 1,
+      "role": "TI",
+      "edge": [
+        10,
+        5
+      ],
+      "transport_kind": "bridge_path",
+      "path_length": 2,
+      "columns": [
+        10,
+        11
+      ],
+      "raw_role_cocycle_sum_mod2": 1,
+      "seam_flip_applied": false,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "matches_target_value": true
+    },
+    {
+      "cycle_index": 1,
+      "role": "IW",
+      "edge": [
+        5,
+        0
+      ],
+      "transport_kind": "bridge_path",
+      "path_length": 2,
+      "columns": [
+        1,
+        7
+      ],
+      "raw_role_cocycle_sum_mod2": 0,
+      "seam_flip_applied": true,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "matches_target_value": true
+    },
+    {
+      "cycle_index": 2,
+      "role": "WX",
+      "edge": [
+        0,
+        1
+      ],
+      "transport_kind": "direct_edge_column",
+      "path_length": 1,
+      "columns": [
+        0
+      ],
+      "raw_role_cocycle_sum_mod2": 0,
+      "seam_flip_applied": true,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "matches_target_value": true
+    },
+    {
+      "cycle_index": 2,
+      "role": "XY",
+      "edge": [
+        1,
+        2
+      ],
+      "transport_kind": "direct_edge_column",
+      "path_length": 1,
+      "columns": [
+        4
+      ],
+      "raw_role_cocycle_sum_mod2": 1,
+      "seam_flip_applied": false,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "matches_target_value": true
+    },
+    {
+      "cycle_index": 2,
+      "role": "YZ",
+      "edge": [
+        2,
+        8
+      ],
+      "transport_kind": "bridge_path",
+      "path_length": 2,
+      "columns": [
+        4,
+        5
+      ],
+      "raw_role_cocycle_sum_mod2": 1,
+      "seam_flip_applied": false,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "matches_target_value": true
+    },
+    {
+      "cycle_index": 2,
+      "role": "ZT",
+      "edge": [
+        8,
+        14
+      ],
+      "transport_kind": "bridge_path",
+      "path_length": 2,
+      "columns": [
+        21,
+        22
+      ],
+      "raw_role_cocycle_sum_mod2": 0,
+      "seam_flip_applied": false,
+      "projected_value": 0,
+      "expected_target_value": 0,
+      "matches_target_value": true
+    },
+    {
+      "cycle_index": 2,
+      "role": "TI",
+      "edge": [
+        14,
+        5
+      ],
+      "transport_kind": "bridge_path",
+      "path_length": 2,
+      "columns": [
+        13,
+        15
+      ],
+      "raw_role_cocycle_sum_mod2": 0,
+      "seam_flip_applied": false,
+      "projected_value": 0,
+      "expected_target_value": 1,
+      "matches_target_value": false
+    },
+    {
+      "cycle_index": 2,
+      "role": "IW",
+      "edge": [
+        5,
+        0
+      ],
+      "transport_kind": "bridge_path",
+      "path_length": 2,
+      "columns": [
+        1,
+        7
+      ],
+      "raw_role_cocycle_sum_mod2": 0,
+      "seam_flip_applied": true,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "matches_target_value": true
+    }
+  ],
+  "interpretation": {
+    "main_result": "The W-boundary seam projection has been applied to every selected WXYZTI role row without adding new choices.",
+    "if_partial": "If partial, the seam rule explains the boundary roles but leaves cycle-specific residuals in non-boundary roles.",
+    "what_this_gives": "The row-level residuals are now explicit and finite.",
+    "what_remains_open": "Gap A still requires explaining any residual rows by source transport, selected ZT behavior, or another bounded register rule.",
+    "next_question": "Do the residual rows cluster around selected ZT/TI behavior in a way that can be explained without overfitting?"
+  },
+  "checks": [
+    {
+      "id": "geometry_loaded",
+      "status": true,
+      "detail": "status=boundary_seam_rule_geometrically_justified_not_map_proof"
+    },
+    {
+      "id": "role_pattern_loaded",
+      "status": true,
+      "detail": "status=wxyzti_bridge_path_role_pattern_partial_not_map_proof"
+    },
+    {
+      "id": "target_loaded",
+      "status": true,
+      "detail": "status=normalized_target_not_proof"
+    },
+    {
+      "id": "role_order_len_6",
+      "status": true,
+      "detail": "role_order=[\"WX\", \"XY\", \"YZ\", \"ZT\", \"TI\", \"IW\"]"
+    },
+    {
+      "id": "target_pattern_len_6",
+      "status": true,
+      "detail": "target=[1, 1, 1, 0, 1, 1]"
+    },
+    {
+      "id": "seam_mask_is_W_incident",
+      "status": true,
+      "detail": "mask=[true, false, false, false, false, true]"
+    },
+    {
+      "id": "role_rows_count_18",
+      "status": true,
+      "detail": "count=18"
+    },
+    {
+      "id": "cycle_count_3",
+      "status": true,
+      "detail": "cycle_count=3"
+    },
+    {
+      "id": "all_cycles_have_all_roles",
+      "status": true,
+      "detail": "missing={\"0\": [], \"1\": [], \"2\": []}"
+    }
+  ],
+  "next_script": "analyze_gap_a_row_level_seam_projection_residuals_001.py"
+}

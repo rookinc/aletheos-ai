@@ -290,3 +290,251 @@ function draw() {
 
   hud.textContent = "phase=" + phase.id + " t=" + t.toFixed(2);
 }
+
+/* 3d camera interaction pass 001 */
+const rbfCamera = {
+  yaw: -0.35,
+  pitch: 0.35,
+  zoom: 1.0,
+  pointers: new Map(),
+  lastX: 0,
+  lastY: 0,
+  lastDist: 0
+};
+
+function rbfPointerDistance() {
+  const pts = Array.from(rbfCamera.pointers.values());
+  if (pts.length < 2) return 0;
+  const dx = pts[0].x - pts[1].x;
+  const dy = pts[0].y - pts[1].y;
+  return Math.sqrt(dx * dx + dy * dy);
+}
+
+function rbfClampCamera() {
+  if (rbfCamera.pitch > 1.35) rbfCamera.pitch = 1.35;
+  if (rbfCamera.pitch < -1.35) rbfCamera.pitch = -1.35;
+  if (rbfCamera.zoom > 2.8) rbfCamera.zoom = 2.8;
+  if (rbfCamera.zoom < 0.45) rbfCamera.zoom = 0.45;
+}
+
+canvas.addEventListener("pointerdown", (ev) => {
+  canvas.setPointerCapture(ev.pointerId);
+  rbfCamera.pointers.set(ev.pointerId, { x: ev.clientX, y: ev.clientY });
+  rbfCamera.lastX = ev.clientX;
+  rbfCamera.lastY = ev.clientY;
+  rbfCamera.lastDist = rbfPointerDistance();
+});
+
+canvas.addEventListener("pointermove", (ev) => {
+  if (!rbfCamera.pointers.has(ev.pointerId)) return;
+
+  rbfCamera.pointers.set(ev.pointerId, { x: ev.clientX, y: ev.clientY });
+
+  if (rbfCamera.pointers.size >= 2) {
+    const d = rbfPointerDistance();
+    if (rbfCamera.lastDist > 0 && d > 0) {
+      rbfCamera.zoom *= d / rbfCamera.lastDist;
+      rbfClampCamera();
+    }
+    rbfCamera.lastDist = d;
+  } else {
+    const dx = ev.clientX - rbfCamera.lastX;
+    const dy = ev.clientY - rbfCamera.lastY;
+    rbfCamera.yaw += dx * 0.008;
+    rbfCamera.pitch += dy * 0.008;
+    rbfClampCamera();
+    rbfCamera.lastX = ev.clientX;
+    rbfCamera.lastY = ev.clientY;
+  }
+
+  draw();
+});
+
+function rbfEndPointer(ev) {
+  rbfCamera.pointers.delete(ev.pointerId);
+  rbfCamera.lastDist = rbfPointerDistance();
+}
+
+canvas.addEventListener("pointerup", rbfEndPointer);
+canvas.addEventListener("pointercancel", rbfEndPointer);
+canvas.addEventListener("wheel", (ev) => {
+  ev.preventDefault();
+  rbfCamera.zoom *= ev.deltaY < 0 ? 1.08 : 0.92;
+  rbfClampCamera();
+  draw();
+}, { passive: false });
+
+/* 3d projection renderer pass 001 */
+function rbfProject(g, x, y, z) {
+  const cy = Math.cos(rbfCamera.yaw);
+  const sy = Math.sin(rbfCamera.yaw);
+  const cp = Math.cos(rbfCamera.pitch);
+  const sp = Math.sin(rbfCamera.pitch);
+
+  const x1 = x * cy + z * sy;
+  const z1 = -x * sy + z * cy;
+  const y1 = y * cp - z1 * sp;
+  const z2 = y * sp + z1 * cp;
+
+  const f = 3.4;
+  const scale = (g.rad * rbfCamera.zoom * f) / (f + z2);
+  return {
+    x: g.cx + x1 * scale,
+    y: g.cy + y1 * scale,
+    z: z2,
+    scale: scale / g.rad
+  };
+}
+
+function rbfRingPoint(a, radius, z, warp) {
+  const w =
+    1 +
+    warp * 0.07 * Math.sin(a * 5 + t * 1.4) +
+    warp * 0.04 * Math.cos(a * 9 - t);
+  return {
+    x: Math.cos(a) * radius * w,
+    y: Math.sin(a) * radius * w,
+    z: z
+  };
+}
+
+function rbfStroke3(g, a, b, color, width, alpha) {
+  const pa = rbfProject(g, a.x, a.y, a.z);
+  const pb = rbfProject(g, b.x, b.y, b.z);
+  const depth = Math.max(0.22, Math.min(1.0, 0.72 - (pa.z + pb.z) * 0.08));
+  ctx.globalAlpha = alpha * depth;
+  ctx.strokeStyle = color;
+  ctx.lineWidth = width * Math.max(0.35, (pa.scale + pb.scale) * 0.5);
+  ctx.beginPath();
+  ctx.moveTo(pa.x, pa.y);
+  ctx.lineTo(pb.x, pb.y);
+  ctx.stroke();
+  ctx.globalAlpha = 1;
+}
+
+function rbfDot3(g, p, color, size, alpha) {
+  const pp = rbfProject(g, p.x, p.y, p.z);
+  const depth = Math.max(0.25, Math.min(1.0, 0.75 - pp.z * 0.08));
+  ctx.globalAlpha = alpha * depth;
+  ctx.fillStyle = color;
+  ctx.beginPath();
+  ctx.arc(pp.x, pp.y, size * Math.max(0.45, pp.scale), 0, Math.PI * 2);
+  ctx.fill();
+  ctx.globalAlpha = 1;
+}
+
+function rbfDrawBoundary3(g, s) {
+  const loops = 3 + Math.floor(s.boundary * 8);
+  for (let k = 0; k < loops; k++) {
+    const z = -0.18 + k * 0.045;
+    const r = 0.82 + k * 0.015;
+    let prev = null;
+    for (let i = 0; i <= 180; i++) {
+      const a = Math.PI * 2 * i / 180;
+      const p = rbfRingPoint(a, r, z, s.boundary);
+      if (prev) {
+        const color = k % 2
+          ? rgba(85, 212, 230, 0.48)
+          : rgba(216, 188, 118, 0.48);
+        rbfStroke3(g, prev, p, color, 1.1 + s.boundary * 1.5, 0.65);
+      }
+      prev = p;
+    }
+  }
+}
+
+function rbfDrawInterior3(g, s) {
+  const n = 75 + Math.floor(s.interior * 190);
+  for (let i = 0; i < n; i++) {
+    const a = i * 2.399963 + t * 0.045;
+    const rr = 0.62 * Math.sqrt(i / n) * (0.45 + s.interior * 0.65);
+    const z = Math.sin(i * 1.7 + t * 0.7) * 0.34 * s.interior;
+    const p = {
+      x: Math.cos(a) * rr,
+      y: Math.sin(a) * rr,
+      z: z
+    };
+    const color = i % 3 === 0
+      ? rgba(158, 224, 178, 0.70)
+      : rgba(156, 200, 255, 0.58);
+    rbfDot3(g, p, color, 1.2 + s.interior * 2.0, 0.88);
+  }
+}
+
+function rbfDrawFlux3(g, s) {
+  const phaseLift = data.phases.length
+    ? phaseIndex / Math.max(1, data.phases.length - 1)
+    : 0;
+  const n = 24 + Math.floor(s.flux * 105);
+  for (let i = 0; i < n; i++) {
+    const a = Math.PI * 2 * i / n + t * 0.030;
+    const b = a + Math.PI * (0.56 + 0.34 * Math.sin(i * 0.7 + t));
+    const z1 = Math.sin(i * 0.41 + t) * 0.34;
+    const z2 = Math.cos(i * 0.53 - t * 0.5) * 0.34;
+    const p1 = rbfRingPoint(a, 0.24 + s.boundary * 0.52, z1, s.flux);
+    const p2 = rbfRingPoint(b, 0.18 + s.boundary * 0.58, z2, s.flux);
+    const color = i % 2
+      ? rgba(216, 188, 118, 0.75)
+      : rgba(156, 200, 255, 0.70);
+    rbfStroke3(g, p1, p2, color, 0.7 + s.flux * 1.8, 0.16 + s.flux * 0.58 + phaseLift * 0.10);
+  }
+}
+
+function rbfDrawEmission3(g, s) {
+  const boost = phaseIndex === 3 ? 1.45 : 1.0;
+  const n = 8 + Math.floor(s.emission * 48);
+  const source = { x: 0.08, y: 0.02, z: 0.05 };
+  for (let i = 0; i < n; i++) {
+    const a = -0.52 + i / Math.max(1, n - 1) * 1.10 + Math.sin(t + i) * 0.025;
+    const len = 0.42 + s.emission * 0.72 * boost;
+    const p2 = {
+      x: source.x + Math.cos(a) * len,
+      y: source.y + Math.sin(a) * len * 0.55,
+      z: Math.sin(i * 0.45 + t) * 0.20
+    };
+    rbfStroke3(g, source, p2, rgba(255, 238, 170, 0.88), 0.7 + s.emission * 2.3, 0.16 + s.emission * 0.72);
+  }
+}
+
+function rbfDrawTrace3(g, s) {
+  const n = 10 + Math.floor(s.trace * 36);
+  for (let k = 0; k < n; k++) {
+    const z = -0.42 + k * 0.024;
+    const r = 0.18 + k * 0.018;
+    const start = t * 0.035 + k * 0.22;
+    const end = start + 0.70 + s.trace * 1.60;
+    let prev = null;
+    for (let i = 0; i <= 24; i++) {
+      const a = start + (end - start) * i / 24;
+      const p = rbfRingPoint(a, r, z, s.trace);
+      if (prev) {
+        const color = k % 2
+          ? rgba(85, 212, 230, 0.58)
+          : rgba(185, 149, 255, 0.50);
+        rbfStroke3(g, prev, p, color, 1.0 + s.trace * 1.8, 0.10 + s.trace * 0.38);
+      }
+      prev = p;
+    }
+  }
+}
+
+function draw() {
+  const g = getSize();
+  const s = settings();
+  const phase = currentPhase();
+
+  ctx.clearRect(0, 0, g.w, g.h);
+
+  rbfDrawTrace3(g, s);
+  rbfDrawBoundary3(g, s);
+  rbfDrawFlux3(g, s);
+  rbfDrawInterior3(g, s);
+  rbfDrawEmission3(g, s);
+
+  hud.textContent =
+    "phase=" + phase.id +
+    " t=" + t.toFixed(2) +
+    " yaw=" + rbfCamera.yaw.toFixed(2) +
+    " pitch=" + rbfCamera.pitch.toFixed(2) +
+    " zoom=" + rbfCamera.zoom.toFixed(2);
+}

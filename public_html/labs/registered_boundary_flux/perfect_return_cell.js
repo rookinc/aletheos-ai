@@ -10,6 +10,7 @@ const boundaryReadout = document.getElementById("boundary-readout");
 const g60SourceStatus = document.getElementById("g60-source-status");
 const g900SignatureStatus = document.getElementById("g900-signature-status");
 const cocycleCompanionStatus = document.getElementById("cocycle-companion-status");
+const gapASelectorStatus = document.getElementById("gap-a-selector-status");
 
 let model = null;
 let startTime = null;
@@ -345,3 +346,35 @@ boot().catch((err) => {
   console.error(err);
   boundaryReadout.textContent = "Failed to load Perfect Return Cell model.";
 });
+
+/* gap a selector status pass 001 */
+async function loadGapASelectorStatus() {
+  const target = document.getElementById("gap-a-selector-status");
+  if (!target) return;
+
+  try {
+    const receipt = await fetch("artifacts/json/gap_a_selector_theorem_note_001.v1.json", { cache: "no-store" }).then((r) => r.json());
+    const statement = receipt.statement || {};
+    const evidence = receipt.evidence_summary || {};
+    const exact = evidence.exact_selector || {};
+
+    target.textContent = [
+      "Gap A selector status",
+      "status: " + (receipt.status || "unknown"),
+      "A0: public predicates reduce, not close",
+      "A1: row-aware incidence exact in tested family",
+      "A2: row identity load-bearing under null",
+      "selector: " + (exact.one_feature_exact_selector || "unknown"),
+      "boundary: " + (statement.proof_status || "bounded theorem note")
+    ].join("\n");
+  } catch (err) {
+    target.textContent = "Gap A selector status: receipt unavailable.";
+  }
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", loadGapASelectorStatus);
+} else {
+  loadGapASelectorStatus();
+}
+

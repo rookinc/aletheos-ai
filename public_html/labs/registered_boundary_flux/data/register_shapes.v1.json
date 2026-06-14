@@ -1,0 +1,59 @@
+{
+  "schema": "registered_boundary_flux.register_shapes.v1",
+  "status": "shape_agnostic_register_scaffold",
+  "default_register": "cube_register",
+  "registers": [
+    {
+      "id": "cube_register",
+      "label": "Cube Register",
+      "status": "active_first_register",
+      "boundary": "The Cube Register is a simplified face projection, not the theorem object.",
+      "roles": {
+        "top": {
+          "label": "Top polarity cap",
+          "meaning": "Upper face carries polarity, orientation, or drive-side emphasis."
+        },
+        "bottom": {
+          "label": "Bottom polarity cap",
+          "meaning": "Lower face carries return, counter-polarity, or closure-side emphasis."
+        },
+        "sides": {
+          "label": "Relationship walls",
+          "meaning": "Four side faces carry lateral relationship, transport, adjacency, and coupling."
+        },
+        "edges": {
+          "label": "Coupling seams",
+          "meaning": "Edges and corners are seams where polarity caps meet relationship walls."
+        },
+        "interior": {
+          "label": "Registered carrier volume",
+          "meaning": "Interior volume stages loading, compression, focus, release, and trace."
+        }
+      },
+      "face_projection_rule": {
+        "top_bottom": "polarity",
+        "side_faces": "relationship",
+        "edges_corners": "coupling",
+        "interior": "carrier_volume"
+      }
+    },
+    {
+      "id": "sphere_register",
+      "label": "Sphere Register",
+      "status": "future",
+      "boundary": "Continuous boundary register; no privileged walls unless an axis is imposed."
+    },
+    {
+      "id": "cylinder_register",
+      "label": "Cylinder Register",
+      "status": "future",
+      "boundary": "Two polarity caps with one continuous relationship wall."
+    },
+    {
+      "id": "dodeca_register",
+      "label": "Dodeca Register",
+      "status": "future",
+      "boundary": "Higher-face projection body for later Thalean-adjacent register experiments."
+    }
+  ]
+}

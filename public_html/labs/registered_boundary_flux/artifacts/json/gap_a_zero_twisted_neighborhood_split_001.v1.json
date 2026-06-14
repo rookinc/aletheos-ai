@@ -1,0 +1,741 @@
+{
+  "schema": "gap_a_zero_twisted_neighborhood_split_001.v1",
+  "status": "gap_a_zero_twisted_neighborhood_split_candidate_found_not_closure",
+  "timestamp_utc": "2026-06-14T19:33:10.530854+00:00",
+  "purpose": "Attempt to split the five-row zero-twisted-carrier obstruction neighborhood using precomputed source-derived features.",
+  "boundary": [
+    "This does not close Gap A.",
+    "This is exact only inside the tested zero-twisted neighborhood feature family.",
+    "No full source-derived chamber/register map is claimed.",
+    "No residual flip rule is accepted.",
+    "The preferred candidate must be attacked by nulls before being promoted."
+  ],
+  "inputs": {
+    "interim": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_15_thalion_interim_theorem_note_001.v1.json",
+      "sha256": "d7ccd86222ad4d75a140bbc2899d8aad6f68170078457f0886e08b1fe13a360d",
+      "status": "gap_a_15_thalion_interim_theorem_note_recorded"
+    },
+    "split": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_15_thalion_residual_split_001.v1.json",
+      "sha256": "59a393b876c5bfff5971ca5744dc2f8a58a15918d30bfd3f01f9d7fb6211bc33",
+      "status": "gap_a_15_thalion_residual_split_aligned_not_closed"
+    },
+    "nulls": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_15_thalion_residual_split_nulls_001.v1.json",
+      "sha256": "d2b1e515a5edfddc564ceca1b8407cd3b5741879be125314e6e64ada0485eb97",
+      "status": "gap_a_15_thalion_residual_split_nulls_recorded"
+    },
+    "lift": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_uniform_15_thalion_row_lift_001.v1.json",
+      "sha256": "746469ce14d675063543189bdf49420fa630ee0834958a0c27b4056a45364c46",
+      "status": "gap_a_uniform_15_thalion_row_lift_needs_inspection"
+    },
+    "inspection": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_uniform_15_thalion_row_lift_inspection_001.v1.json",
+      "sha256": "c9a4565ebea0849738a7ca99011ac506b4796ba7fbf438f80a01eb950db65d66",
+      "status": "uniform_15_thalion_lift_inspected_twisted_absence_feature_found"
+    },
+    "directed": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_directed_p900_edge_lift_001.v1.json",
+      "sha256": "983e02d6b50cf5eea58cc8423d64f32b362b0a8a7c12a20d55626bf739d564da",
+      "status": "directed_p900_edge_lift_marks_TI_residual_not_gap_closure"
+    }
+  },
+  "zero_twisted_neighborhood": [
+    3,
+    4,
+    9,
+    15,
+    16
+  ],
+  "known_residual_rows": [
+    3,
+    16
+  ],
+  "false_positive_rows": [
+    4,
+    9,
+    15
+  ],
+  "zero_detail": [
+    {
+      "row_ordinal": 3,
+      "cycle_index": 0,
+      "role": "ZT",
+      "columns": [
+        9
+      ],
+      "column_count": 1,
+      "slot_pairs": [
+        [
+          2,
+          13
+        ]
+      ],
+      "slot_pair_count": 1,
+      "untwisted_edge_count": 60,
+      "twisted_edge_count": 0,
+      "branch_sensitive": false,
+      "branch_stable": true
+    },
+    {
+      "row_ordinal": 4,
+      "cycle_index": 0,
+      "role": "TI",
+      "columns": [
+        13
+      ],
+      "column_count": 1,
+      "slot_pairs": [
+        [
+          4,
+          10
+        ]
+      ],
+      "slot_pair_count": 1,
+      "untwisted_edge_count": 60,
+      "twisted_edge_count": 0,
+      "branch_sensitive": false,
+      "branch_stable": true
+    },
+    {
+      "row_ordinal": 9,
+      "cycle_index": 1,
+      "role": "ZT",
+      "columns": [
+        9,
+        11,
+        14
+      ],
+      "column_count": 3,
+      "slot_pairs": [
+        [
+          2,
+          13
+        ],
+        [
+          3,
+          13
+        ],
+        [
+          4,
+          14
+        ]
+      ],
+      "slot_pair_count": 3,
+      "untwisted_edge_count": 180,
+      "twisted_edge_count": 0,
+      "branch_sensitive": false,
+      "branch_stable": true
+    },
+    {
+      "row_ordinal": 15,
+      "cycle_index": 2,
+      "role": "ZT",
+      "columns": [
+        21,
+        22
+      ],
+      "column_count": 2,
+      "slot_pairs": [
+        [
+          6,
+          14
+        ],
+        [
+          7,
+          8
+        ]
+      ],
+      "slot_pair_count": 2,
+      "untwisted_edge_count": 120,
+      "twisted_edge_count": 0,
+      "branch_sensitive": false,
+      "branch_stable": true
+    },
+    {
+      "row_ordinal": 16,
+      "cycle_index": 2,
+      "role": "TI",
+      "columns": [
+        13,
+        15
+      ],
+      "column_count": 2,
+      "slot_pairs": [
+        [
+          4,
+          10
+        ],
+        [
+          5,
+          6
+        ]
+      ],
+      "slot_pair_count": 2,
+      "untwisted_edge_count": 120,
+      "twisted_edge_count": 0,
+      "branch_sensitive": true,
+      "branch_stable": false
+    }
+  ],
+  "preferred_candidate": {
+    "name": "branch_sensitive_return_candidate OR singleton_ZT_selected_turn_candidate",
+    "support": [
+      3,
+      16
+    ],
+    "exact": true,
+    "precision": 1.0,
+    "recall": 1.0,
+    "reading": "branch-sensitive return OR singleton ZT selected-turn"
+  },
+  "false_positive_explanations": [
+    {
+      "row_ordinal": 4,
+      "role": "TI",
+      "cycle_index": 0,
+      "columns": [
+        13
+      ],
+      "column_count": 1,
+      "branch_sensitive": false,
+      "branch_stable": true,
+      "candidate_explanation": "branch-stable singleton TI, not branch-sensitive return"
+    },
+    {
+      "row_ordinal": 9,
+      "role": "ZT",
+      "cycle_index": 1,
+      "columns": [
+        9,
+        11,
+        14
+      ],
+      "column_count": 3,
+      "branch_sensitive": false,
+      "branch_stable": true,
+      "candidate_explanation": "branch-stable multi-column ZT, not singleton selected-turn"
+    },
+    {
+      "row_ordinal": 15,
+      "role": "ZT",
+      "cycle_index": 2,
+      "columns": [
+        21,
+        22
+      ],
+      "column_count": 2,
+      "branch_sensitive": false,
+      "branch_stable": true,
+      "candidate_explanation": "branch-stable multi-column ZT, not singleton selected-turn"
+    }
+  ],
+  "feature_tests": [
+    {
+      "name": "branch_sensitive_return_candidate",
+      "support": [
+        16
+      ],
+      "support_count": 1,
+      "residual_hits": [
+        16
+      ],
+      "false_positives": [],
+      "misses": [
+        3
+      ],
+      "precision": 1.0,
+      "recall": 0.5,
+      "exact": false
+    },
+    {
+      "name": "branch_stable_candidate",
+      "support": [
+        3,
+        4,
+        9,
+        15
+      ],
+      "support_count": 4,
+      "residual_hits": [
+        3
+      ],
+      "false_positives": [
+        4,
+        9,
+        15
+      ],
+      "misses": [
+        16
+      ],
+      "precision": 0.25,
+      "recall": 0.5,
+      "exact": false
+    },
+    {
+      "name": "candidate_core_branch_sensitive_or_singleton_ZT",
+      "support": [
+        3,
+        16
+      ],
+      "support_count": 2,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [],
+      "misses": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "exact": true
+    },
+    {
+      "name": "column_count_1",
+      "support": [
+        3,
+        4
+      ],
+      "support_count": 2,
+      "residual_hits": [
+        3
+      ],
+      "false_positives": [
+        4
+      ],
+      "misses": [
+        16
+      ],
+      "precision": 0.5,
+      "recall": 0.5,
+      "exact": false
+    },
+    {
+      "name": "column_count_2",
+      "support": [
+        15,
+        16
+      ],
+      "support_count": 2,
+      "residual_hits": [
+        16
+      ],
+      "false_positives": [
+        15
+      ],
+      "misses": [
+        3
+      ],
+      "precision": 0.5,
+      "recall": 0.5,
+      "exact": false
+    },
+    {
+      "name": "column_count_3",
+      "support": [
+        9
+      ],
+      "support_count": 1,
+      "residual_hits": [],
+      "false_positives": [
+        9
+      ],
+      "misses": [
+        3,
+        16
+      ],
+      "precision": 0.0,
+      "recall": 0.0,
+      "exact": false
+    },
+    {
+      "name": "multi_column_TI_candidate",
+      "support": [
+        16
+      ],
+      "support_count": 1,
+      "residual_hits": [
+        16
+      ],
+      "false_positives": [],
+      "misses": [
+        3
+      ],
+      "precision": 1.0,
+      "recall": 0.5,
+      "exact": false
+    },
+    {
+      "name": "multi_column_ZT_candidate",
+      "support": [
+        9,
+        15
+      ],
+      "support_count": 2,
+      "residual_hits": [],
+      "false_positives": [
+        9,
+        15
+      ],
+      "misses": [
+        3,
+        16
+      ],
+      "precision": 0.0,
+      "recall": 0.0,
+      "exact": false
+    },
+    {
+      "name": "role_TI",
+      "support": [
+        4,
+        16
+      ],
+      "support_count": 2,
+      "residual_hits": [
+        16
+      ],
+      "false_positives": [
+        4
+      ],
+      "misses": [
+        3
+      ],
+      "precision": 0.5,
+      "recall": 0.5,
+      "exact": false
+    },
+    {
+      "name": "role_ZT",
+      "support": [
+        3,
+        9,
+        15
+      ],
+      "support_count": 3,
+      "residual_hits": [
+        3
+      ],
+      "false_positives": [
+        9,
+        15
+      ],
+      "misses": [
+        16
+      ],
+      "precision": 0.3333333333333333,
+      "recall": 0.5,
+      "exact": false
+    },
+    {
+      "name": "singleton_TI_candidate",
+      "support": [
+        4
+      ],
+      "support_count": 1,
+      "residual_hits": [],
+      "false_positives": [
+        4
+      ],
+      "misses": [
+        3,
+        16
+      ],
+      "precision": 0.0,
+      "recall": 0.0,
+      "exact": false
+    },
+    {
+      "name": "singleton_ZT_selected_turn_candidate",
+      "support": [
+        3
+      ],
+      "support_count": 1,
+      "residual_hits": [
+        3
+      ],
+      "false_positives": [],
+      "misses": [
+        16
+      ],
+      "precision": 1.0,
+      "recall": 0.5,
+      "exact": false
+    },
+    {
+      "name": "untwisted_edge_count_120",
+      "support": [
+        15,
+        16
+      ],
+      "support_count": 2,
+      "residual_hits": [
+        16
+      ],
+      "false_positives": [
+        15
+      ],
+      "misses": [
+        3
+      ],
+      "precision": 0.5,
+      "recall": 0.5,
+      "exact": false
+    },
+    {
+      "name": "untwisted_edge_count_180",
+      "support": [
+        9
+      ],
+      "support_count": 1,
+      "residual_hits": [],
+      "false_positives": [
+        9
+      ],
+      "misses": [
+        3,
+        16
+      ],
+      "precision": 0.0,
+      "recall": 0.0,
+      "exact": false
+    },
+    {
+      "name": "untwisted_edge_count_60",
+      "support": [
+        3,
+        4
+      ],
+      "support_count": 2,
+      "residual_hits": [
+        3
+      ],
+      "false_positives": [
+        4
+      ],
+      "misses": [
+        16
+      ],
+      "precision": 0.5,
+      "recall": 0.5,
+      "exact": false
+    },
+    {
+      "name": "zero_twisted_neighborhood",
+      "support": [
+        3,
+        4,
+        9,
+        15,
+        16
+      ],
+      "support_count": 5,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [
+        4,
+        9,
+        15
+      ],
+      "misses": [],
+      "precision": 0.4,
+      "recall": 1.0,
+      "exact": false
+    }
+  ],
+  "pairwise_exact_count": 6,
+  "pairwise_exact_examples": [
+    {
+      "name": "branch_sensitive_return_candidate OR candidate_core_branch_sensitive_or_singleton_ZT",
+      "support": [
+        3,
+        16
+      ],
+      "support_count": 2,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [],
+      "misses": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "exact": true
+    },
+    {
+      "name": "branch_sensitive_return_candidate OR singleton_ZT_selected_turn_candidate",
+      "support": [
+        3,
+        16
+      ],
+      "support_count": 2,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [],
+      "misses": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "exact": true
+    },
+    {
+      "name": "candidate_core_branch_sensitive_or_singleton_ZT OR candidate_core_branch_sensitive_or_singleton_ZT",
+      "support": [
+        3,
+        16
+      ],
+      "support_count": 2,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [],
+      "misses": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "exact": true
+    },
+    {
+      "name": "candidate_core_branch_sensitive_or_singleton_ZT OR multi_column_TI_candidate",
+      "support": [
+        3,
+        16
+      ],
+      "support_count": 2,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [],
+      "misses": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "exact": true
+    },
+    {
+      "name": "candidate_core_branch_sensitive_or_singleton_ZT OR singleton_ZT_selected_turn_candidate",
+      "support": [
+        3,
+        16
+      ],
+      "support_count": 2,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [],
+      "misses": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "exact": true
+    },
+    {
+      "name": "multi_column_TI_candidate OR singleton_ZT_selected_turn_candidate",
+      "support": [
+        3,
+        16
+      ],
+      "support_count": 2,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [],
+      "misses": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "exact": true
+    }
+  ],
+  "pairwise_intersection_exact_count": 2,
+  "pairwise_intersection_exact_examples": [
+    {
+      "name": "candidate_core_branch_sensitive_or_singleton_ZT AND candidate_core_branch_sensitive_or_singleton_ZT",
+      "support": [
+        3,
+        16
+      ],
+      "support_count": 2,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [],
+      "misses": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "exact": true
+    },
+    {
+      "name": "candidate_core_branch_sensitive_or_singleton_ZT AND zero_twisted_neighborhood",
+      "support": [
+        3,
+        16
+      ],
+      "support_count": 2,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [],
+      "misses": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "exact": true
+    }
+  ],
+  "interpretation": {
+    "main_result": "The five-row zero-twisted-carrier neighborhood admits an exact tested split by a simple candidate rule.",
+    "candidate_rule": "branch-sensitive return OR singleton ZT selected-turn.",
+    "residual_rows": "The rule selects rows 3 and 16, matching the known residual rows inside the tested neighborhood.",
+    "false_positive_read": "Row 4 is branch-stable singleton TI; rows 9 and 15 are branch-stable multi-column ZT rows.",
+    "not_closure": "This is not Gap A closure; it is an exact split candidate inside a restricted, already-load-bearing obstruction neighborhood."
+  },
+  "checks": [
+    {
+      "id": "interim_loaded",
+      "status": true,
+      "detail": "gap_a_15_thalion_interim_theorem_note_recorded"
+    },
+    {
+      "id": "split_loaded",
+      "status": true,
+      "detail": "gap_a_15_thalion_residual_split_aligned_not_closed"
+    },
+    {
+      "id": "nulls_loaded",
+      "status": true,
+      "detail": "gap_a_15_thalion_residual_split_nulls_recorded"
+    },
+    {
+      "id": "inspection_loaded",
+      "status": true,
+      "detail": "uniform_15_thalion_lift_inspected_twisted_absence_feature_found"
+    },
+    {
+      "id": "zero_neighborhood_count_5",
+      "status": true,
+      "detail": "[3, 4, 9, 15, 16]"
+    },
+    {
+      "id": "residuals_subset_zero",
+      "status": true,
+      "detail": "[3, 16]"
+    },
+    {
+      "id": "preferred_candidate_exact",
+      "status": true,
+      "detail": "{\"exact\": true, \"false_positives\": [], \"misses\": [], \"name\": \"branch_sensitive_return_candidate OR singleton_ZT_selected_turn_candidate\", \"precision\": 1.0, \"recall\": 1.0, \"residual_hits\": [3, 16], \"support\": [3, 16], \"support_count\": 2}"
+    },
+    {
+      "id": "preferred_candidate_not_claimed_as_closure",
+      "status": true,
+      "detail": "candidate is exact only inside tested zero-neighborhood feature family"
+    }
+  ],
+  "next_script": "null_gap_a_zero_twisted_split_candidate_001.py"
+}

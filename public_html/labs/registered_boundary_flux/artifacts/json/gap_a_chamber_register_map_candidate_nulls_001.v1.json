@@ -1,0 +1,2581 @@
+{
+  "schema": "gap_a_chamber_register_map_candidate_nulls_001.v1",
+  "status": "gap_a_chamber_register_map_candidate_nulls_recorded",
+  "timestamp_utc": "2026-06-14T20:06:34.229250+00:00",
+  "purpose": "Attack the row-level chamber/register map candidate by replacing its changed rows with role-only, shape-only, complement, rotation, and swap substitutes.",
+  "boundary": [
+    "This does not close Gap A.",
+    "The tested object is still a row-level candidate over the 18 WXYZTI role rows.",
+    "No full source-derived chamber/register map is claimed.",
+    "No global exact selector is claimed.",
+    "No physical interpretation is claimed."
+  ],
+  "inputs": {
+    "chamber_register_candidate": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_chamber_register_map_candidate_001.v1.json",
+      "sha256": "c9759c997a6948f98e33c73de4f3ea035d5f791349cb3d67d70191f004ec0210",
+      "status": "gap_a_chamber_register_map_candidate_found_not_closure"
+    },
+    "role_column_nulls": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_role_column_source_geometry_nulls_001.v1.json",
+      "sha256": "288c091a2944c791928e21115afe506080129b31dfd5b6bfc34e7e811982749f",
+      "status": "gap_a_role_column_source_geometry_nulls_recorded"
+    },
+    "role_column_geometry": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_role_column_source_geometry_001.v1.json",
+      "sha256": "f20e71ee814653a3cfef9132110f69fec036386b2806282bd15b65e495cfc19c",
+      "status": "gap_a_role_column_source_geometry_candidate_found_not_closure"
+    },
+    "boundary_projection": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_boundary_seam_projection_role_rows_001.v1.json",
+      "sha256": "4042fd58caee319fac49c6f5a09358759e82b17e7f766cd9360eb55256bc846a",
+      "status": "boundary_seam_projection_role_rows_partial_not_map_proof"
+    }
+  },
+  "baseline": {
+    "base_mismatches": [
+      3,
+      16
+    ],
+    "baseline_changed_rows": [
+      3,
+      16
+    ],
+    "residual_support": [
+      3,
+      16
+    ],
+    "stable_complement_support": [
+      4,
+      9,
+      15
+    ]
+  },
+  "null_tests": [
+    {
+      "name": "baseline_change_residual_side_3_16",
+      "changed_rows": [
+        3,
+        16
+      ],
+      "match_count": 18,
+      "row_count": 18,
+      "mismatches": [],
+      "exact": true,
+      "changed_fixes": [
+        3,
+        16
+      ],
+      "changed_breaks": [],
+      "rows": [
+        {
+          "row_ordinal": 0,
+          "cycle_index": 0,
+          "role": "WX",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 1,
+          "cycle_index": 0,
+          "role": "XY",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 2,
+          "cycle_index": 0,
+          "role": "YZ",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 3,
+          "cycle_index": 0,
+          "role": "ZT",
+          "base_projected": 1,
+          "expected": 0,
+          "changed": true,
+          "candidate_projected": 0,
+          "matches_expected": true,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 4,
+          "cycle_index": 0,
+          "role": "TI",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 5,
+          "cycle_index": 0,
+          "role": "IW",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 6,
+          "cycle_index": 1,
+          "role": "WX",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 7,
+          "cycle_index": 1,
+          "role": "XY",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 8,
+          "cycle_index": 1,
+          "role": "YZ",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 9,
+          "cycle_index": 1,
+          "role": "ZT",
+          "base_projected": 0,
+          "expected": 0,
+          "changed": false,
+          "candidate_projected": 0,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 10,
+          "cycle_index": 1,
+          "role": "TI",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 11,
+          "cycle_index": 1,
+          "role": "IW",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 12,
+          "cycle_index": 2,
+          "role": "WX",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 13,
+          "cycle_index": 2,
+          "role": "XY",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 14,
+          "cycle_index": 2,
+          "role": "YZ",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 15,
+          "cycle_index": 2,
+          "role": "ZT",
+          "base_projected": 0,
+          "expected": 0,
+          "changed": false,
+          "candidate_projected": 0,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 16,
+          "cycle_index": 2,
+          "role": "TI",
+          "base_projected": 0,
+          "expected": 1,
+          "changed": true,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 17,
+          "cycle_index": 2,
+          "role": "IW",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        }
+      ]
+    },
+    {
+      "name": "null_no_change_w_boundary_only",
+      "changed_rows": [],
+      "match_count": 16,
+      "row_count": 18,
+      "mismatches": [
+        3,
+        16
+      ],
+      "exact": false,
+      "changed_fixes": [],
+      "changed_breaks": [],
+      "rows": [
+        {
+          "row_ordinal": 0,
+          "cycle_index": 0,
+          "role": "WX",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 1,
+          "cycle_index": 0,
+          "role": "XY",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 2,
+          "cycle_index": 0,
+          "role": "YZ",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 3,
+          "cycle_index": 0,
+          "role": "ZT",
+          "base_projected": 1,
+          "expected": 0,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": false,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 4,
+          "cycle_index": 0,
+          "role": "TI",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 5,
+          "cycle_index": 0,
+          "role": "IW",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 6,
+          "cycle_index": 1,
+          "role": "WX",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 7,
+          "cycle_index": 1,
+          "role": "XY",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 8,
+          "cycle_index": 1,
+          "role": "YZ",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 9,
+          "cycle_index": 1,
+          "role": "ZT",
+          "base_projected": 0,
+          "expected": 0,
+          "changed": false,
+          "candidate_projected": 0,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 10,
+          "cycle_index": 1,
+          "role": "TI",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 11,
+          "cycle_index": 1,
+          "role": "IW",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 12,
+          "cycle_index": 2,
+          "role": "WX",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 13,
+          "cycle_index": 2,
+          "role": "XY",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 14,
+          "cycle_index": 2,
+          "role": "YZ",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 15,
+          "cycle_index": 2,
+          "role": "ZT",
+          "base_projected": 0,
+          "expected": 0,
+          "changed": false,
+          "candidate_projected": 0,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 16,
+          "cycle_index": 2,
+          "role": "TI",
+          "base_projected": 0,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 0,
+          "matches_expected": false,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 17,
+          "cycle_index": 2,
+          "role": "IW",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        }
+      ]
+    },
+    {
+      "name": "null_role_only_ZT",
+      "changed_rows": [
+        3,
+        9,
+        15
+      ],
+      "match_count": 15,
+      "row_count": 18,
+      "mismatches": [
+        9,
+        15,
+        16
+      ],
+      "exact": false,
+      "changed_fixes": [
+        3
+      ],
+      "changed_breaks": [
+        9,
+        15
+      ],
+      "rows": [
+        {
+          "row_ordinal": 0,
+          "cycle_index": 0,
+          "role": "WX",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 1,
+          "cycle_index": 0,
+          "role": "XY",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 2,
+          "cycle_index": 0,
+          "role": "YZ",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 3,
+          "cycle_index": 0,
+          "role": "ZT",
+          "base_projected": 1,
+          "expected": 0,
+          "changed": true,
+          "candidate_projected": 0,
+          "matches_expected": true,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 4,
+          "cycle_index": 0,
+          "role": "TI",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 5,
+          "cycle_index": 0,
+          "role": "IW",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 6,
+          "cycle_index": 1,
+          "role": "WX",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 7,
+          "cycle_index": 1,
+          "role": "XY",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 8,
+          "cycle_index": 1,
+          "role": "YZ",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 9,
+          "cycle_index": 1,
+          "role": "ZT",
+          "base_projected": 0,
+          "expected": 0,
+          "changed": true,
+          "candidate_projected": 1,
+          "matches_expected": false,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 10,
+          "cycle_index": 1,
+          "role": "TI",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 11,
+          "cycle_index": 1,
+          "role": "IW",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 12,
+          "cycle_index": 2,
+          "role": "WX",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 13,
+          "cycle_index": 2,
+          "role": "XY",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 14,
+          "cycle_index": 2,
+          "role": "YZ",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 15,
+          "cycle_index": 2,
+          "role": "ZT",
+          "base_projected": 0,
+          "expected": 0,
+          "changed": true,
+          "candidate_projected": 1,
+          "matches_expected": false,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 16,
+          "cycle_index": 2,
+          "role": "TI",
+          "base_projected": 0,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 0,
+          "matches_expected": false,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 17,
+          "cycle_index": 2,
+          "role": "IW",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        }
+      ]
+    },
+    {
+      "name": "null_role_only_TI",
+      "changed_rows": [
+        4,
+        16
+      ],
+      "match_count": 16,
+      "row_count": 18,
+      "mismatches": [
+        3,
+        4
+      ],
+      "exact": false,
+      "changed_fixes": [
+        16
+      ],
+      "changed_breaks": [
+        4
+      ],
+      "rows": [
+        {
+          "row_ordinal": 0,
+          "cycle_index": 0,
+          "role": "WX",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 1,
+          "cycle_index": 0,
+          "role": "XY",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 2,
+          "cycle_index": 0,
+          "role": "YZ",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 3,
+          "cycle_index": 0,
+          "role": "ZT",
+          "base_projected": 1,
+          "expected": 0,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": false,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 4,
+          "cycle_index": 0,
+          "role": "TI",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": true,
+          "candidate_projected": 0,
+          "matches_expected": false,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 5,
+          "cycle_index": 0,
+          "role": "IW",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 6,
+          "cycle_index": 1,
+          "role": "WX",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 7,
+          "cycle_index": 1,
+          "role": "XY",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 8,
+          "cycle_index": 1,
+          "role": "YZ",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 9,
+          "cycle_index": 1,
+          "role": "ZT",
+          "base_projected": 0,
+          "expected": 0,
+          "changed": false,
+          "candidate_projected": 0,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 10,
+          "cycle_index": 1,
+          "role": "TI",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 11,
+          "cycle_index": 1,
+          "role": "IW",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 12,
+          "cycle_index": 2,
+          "role": "WX",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 13,
+          "cycle_index": 2,
+          "role": "XY",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 14,
+          "cycle_index": 2,
+          "role": "YZ",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 15,
+          "cycle_index": 2,
+          "role": "ZT",
+          "base_projected": 0,
+          "expected": 0,
+          "changed": false,
+          "candidate_projected": 0,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 16,
+          "cycle_index": 2,
+          "role": "TI",
+          "base_projected": 0,
+          "expected": 1,
+          "changed": true,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 17,
+          "cycle_index": 2,
+          "role": "IW",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        }
+      ]
+    },
+    {
+      "name": "null_shape_only_singleton",
+      "changed_rows": [
+        3,
+        4
+      ],
+      "match_count": 16,
+      "row_count": 18,
+      "mismatches": [
+        4,
+        16
+      ],
+      "exact": false,
+      "changed_fixes": [
+        3
+      ],
+      "changed_breaks": [
+        4
+      ],
+      "rows": [
+        {
+          "row_ordinal": 0,
+          "cycle_index": 0,
+          "role": "WX",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 1,
+          "cycle_index": 0,
+          "role": "XY",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 2,
+          "cycle_index": 0,
+          "role": "YZ",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 3,
+          "cycle_index": 0,
+          "role": "ZT",
+          "base_projected": 1,
+          "expected": 0,
+          "changed": true,
+          "candidate_projected": 0,
+          "matches_expected": true,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 4,
+          "cycle_index": 0,
+          "role": "TI",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": true,
+          "candidate_projected": 0,
+          "matches_expected": false,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 5,
+          "cycle_index": 0,
+          "role": "IW",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 6,
+          "cycle_index": 1,
+          "role": "WX",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 7,
+          "cycle_index": 1,
+          "role": "XY",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 8,
+          "cycle_index": 1,
+          "role": "YZ",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 9,
+          "cycle_index": 1,
+          "role": "ZT",
+          "base_projected": 0,
+          "expected": 0,
+          "changed": false,
+          "candidate_projected": 0,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 10,
+          "cycle_index": 1,
+          "role": "TI",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 11,
+          "cycle_index": 1,
+          "role": "IW",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 12,
+          "cycle_index": 2,
+          "role": "WX",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 13,
+          "cycle_index": 2,
+          "role": "XY",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 14,
+          "cycle_index": 2,
+          "role": "YZ",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 15,
+          "cycle_index": 2,
+          "role": "ZT",
+          "base_projected": 0,
+          "expected": 0,
+          "changed": false,
+          "candidate_projected": 0,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 16,
+          "cycle_index": 2,
+          "role": "TI",
+          "base_projected": 0,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 0,
+          "matches_expected": false,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 17,
+          "cycle_index": 2,
+          "role": "IW",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        }
+      ]
+    },
+    {
+      "name": "null_shape_only_multi_column",
+      "changed_rows": [
+        9,
+        15,
+        16
+      ],
+      "match_count": 15,
+      "row_count": 18,
+      "mismatches": [
+        3,
+        9,
+        15
+      ],
+      "exact": false,
+      "changed_fixes": [
+        16
+      ],
+      "changed_breaks": [
+        9,
+        15
+      ],
+      "rows": [
+        {
+          "row_ordinal": 0,
+          "cycle_index": 0,
+          "role": "WX",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 1,
+          "cycle_index": 0,
+          "role": "XY",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 2,
+          "cycle_index": 0,
+          "role": "YZ",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 3,
+          "cycle_index": 0,
+          "role": "ZT",
+          "base_projected": 1,
+          "expected": 0,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": false,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 4,
+          "cycle_index": 0,
+          "role": "TI",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 5,
+          "cycle_index": 0,
+          "role": "IW",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 6,
+          "cycle_index": 1,
+          "role": "WX",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 7,
+          "cycle_index": 1,
+          "role": "XY",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 8,
+          "cycle_index": 1,
+          "role": "YZ",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 9,
+          "cycle_index": 1,
+          "role": "ZT",
+          "base_projected": 0,
+          "expected": 0,
+          "changed": true,
+          "candidate_projected": 1,
+          "matches_expected": false,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 10,
+          "cycle_index": 1,
+          "role": "TI",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 11,
+          "cycle_index": 1,
+          "role": "IW",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 12,
+          "cycle_index": 2,
+          "role": "WX",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 13,
+          "cycle_index": 2,
+          "role": "XY",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 14,
+          "cycle_index": 2,
+          "role": "YZ",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 15,
+          "cycle_index": 2,
+          "role": "ZT",
+          "base_projected": 0,
+          "expected": 0,
+          "changed": true,
+          "candidate_projected": 1,
+          "matches_expected": false,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 16,
+          "cycle_index": 2,
+          "role": "TI",
+          "base_projected": 0,
+          "expected": 1,
+          "changed": true,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 17,
+          "cycle_index": 2,
+          "role": "IW",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        }
+      ]
+    },
+    {
+      "name": "null_complement_pairing_singleton_TI_OR_multi_column_ZT",
+      "changed_rows": [
+        4,
+        9,
+        15
+      ],
+      "match_count": 13,
+      "row_count": 18,
+      "mismatches": [
+        3,
+        4,
+        9,
+        15,
+        16
+      ],
+      "exact": false,
+      "changed_fixes": [],
+      "changed_breaks": [
+        4,
+        9,
+        15
+      ],
+      "rows": [
+        {
+          "row_ordinal": 0,
+          "cycle_index": 0,
+          "role": "WX",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 1,
+          "cycle_index": 0,
+          "role": "XY",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 2,
+          "cycle_index": 0,
+          "role": "YZ",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 3,
+          "cycle_index": 0,
+          "role": "ZT",
+          "base_projected": 1,
+          "expected": 0,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": false,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 4,
+          "cycle_index": 0,
+          "role": "TI",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": true,
+          "candidate_projected": 0,
+          "matches_expected": false,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 5,
+          "cycle_index": 0,
+          "role": "IW",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 6,
+          "cycle_index": 1,
+          "role": "WX",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 7,
+          "cycle_index": 1,
+          "role": "XY",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 8,
+          "cycle_index": 1,
+          "role": "YZ",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 9,
+          "cycle_index": 1,
+          "role": "ZT",
+          "base_projected": 0,
+          "expected": 0,
+          "changed": true,
+          "candidate_projected": 1,
+          "matches_expected": false,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 10,
+          "cycle_index": 1,
+          "role": "TI",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 11,
+          "cycle_index": 1,
+          "role": "IW",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 12,
+          "cycle_index": 2,
+          "role": "WX",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 13,
+          "cycle_index": 2,
+          "role": "XY",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 14,
+          "cycle_index": 2,
+          "role": "YZ",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 15,
+          "cycle_index": 2,
+          "role": "ZT",
+          "base_projected": 0,
+          "expected": 0,
+          "changed": true,
+          "candidate_projected": 1,
+          "matches_expected": false,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 16,
+          "cycle_index": 2,
+          "role": "TI",
+          "base_projected": 0,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 0,
+          "matches_expected": false,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 17,
+          "cycle_index": 2,
+          "role": "IW",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        }
+      ]
+    },
+    {
+      "name": "null_rotated_roles_keep_shapes",
+      "changed_rows": [
+        4,
+        15
+      ],
+      "match_count": 14,
+      "row_count": 18,
+      "mismatches": [
+        3,
+        4,
+        15,
+        16
+      ],
+      "exact": false,
+      "changed_fixes": [],
+      "changed_breaks": [
+        4,
+        15
+      ],
+      "rows": [
+        {
+          "row_ordinal": 0,
+          "cycle_index": 0,
+          "role": "WX",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 1,
+          "cycle_index": 0,
+          "role": "XY",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 2,
+          "cycle_index": 0,
+          "role": "YZ",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 3,
+          "cycle_index": 0,
+          "role": "ZT",
+          "base_projected": 1,
+          "expected": 0,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": false,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 4,
+          "cycle_index": 0,
+          "role": "TI",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": true,
+          "candidate_projected": 0,
+          "matches_expected": false,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 5,
+          "cycle_index": 0,
+          "role": "IW",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 6,
+          "cycle_index": 1,
+          "role": "WX",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 7,
+          "cycle_index": 1,
+          "role": "XY",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 8,
+          "cycle_index": 1,
+          "role": "YZ",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 9,
+          "cycle_index": 1,
+          "role": "ZT",
+          "base_projected": 0,
+          "expected": 0,
+          "changed": false,
+          "candidate_projected": 0,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 10,
+          "cycle_index": 1,
+          "role": "TI",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 11,
+          "cycle_index": 1,
+          "role": "IW",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 12,
+          "cycle_index": 2,
+          "role": "WX",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 13,
+          "cycle_index": 2,
+          "role": "XY",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 14,
+          "cycle_index": 2,
+          "role": "YZ",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 15,
+          "cycle_index": 2,
+          "role": "ZT",
+          "base_projected": 0,
+          "expected": 0,
+          "changed": true,
+          "candidate_projected": 1,
+          "matches_expected": false,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 16,
+          "cycle_index": 2,
+          "role": "TI",
+          "base_projected": 0,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 0,
+          "matches_expected": false,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 17,
+          "cycle_index": 2,
+          "role": "IW",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        }
+      ]
+    },
+    {
+      "name": "null_rotated_shapes_keep_roles",
+      "changed_rows": [
+        3,
+        4
+      ],
+      "match_count": 16,
+      "row_count": 18,
+      "mismatches": [
+        4,
+        16
+      ],
+      "exact": false,
+      "changed_fixes": [
+        3
+      ],
+      "changed_breaks": [
+        4
+      ],
+      "rows": [
+        {
+          "row_ordinal": 0,
+          "cycle_index": 0,
+          "role": "WX",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 1,
+          "cycle_index": 0,
+          "role": "XY",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 2,
+          "cycle_index": 0,
+          "role": "YZ",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 3,
+          "cycle_index": 0,
+          "role": "ZT",
+          "base_projected": 1,
+          "expected": 0,
+          "changed": true,
+          "candidate_projected": 0,
+          "matches_expected": true,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 4,
+          "cycle_index": 0,
+          "role": "TI",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": true,
+          "candidate_projected": 0,
+          "matches_expected": false,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 5,
+          "cycle_index": 0,
+          "role": "IW",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 6,
+          "cycle_index": 1,
+          "role": "WX",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 7,
+          "cycle_index": 1,
+          "role": "XY",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 8,
+          "cycle_index": 1,
+          "role": "YZ",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 9,
+          "cycle_index": 1,
+          "role": "ZT",
+          "base_projected": 0,
+          "expected": 0,
+          "changed": false,
+          "candidate_projected": 0,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 10,
+          "cycle_index": 1,
+          "role": "TI",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 11,
+          "cycle_index": 1,
+          "role": "IW",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 12,
+          "cycle_index": 2,
+          "role": "WX",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 13,
+          "cycle_index": 2,
+          "role": "XY",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 14,
+          "cycle_index": 2,
+          "role": "YZ",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 15,
+          "cycle_index": 2,
+          "role": "ZT",
+          "base_projected": 0,
+          "expected": 0,
+          "changed": false,
+          "candidate_projected": 0,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 16,
+          "cycle_index": 2,
+          "role": "TI",
+          "base_projected": 0,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 0,
+          "matches_expected": false,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 17,
+          "cycle_index": 2,
+          "role": "IW",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        }
+      ]
+    },
+    {
+      "name": "null_swapped_roles_keep_shapes",
+      "changed_rows": [
+        4,
+        9,
+        15
+      ],
+      "match_count": 13,
+      "row_count": 18,
+      "mismatches": [
+        3,
+        4,
+        9,
+        15,
+        16
+      ],
+      "exact": false,
+      "changed_fixes": [],
+      "changed_breaks": [
+        4,
+        9,
+        15
+      ],
+      "rows": [
+        {
+          "row_ordinal": 0,
+          "cycle_index": 0,
+          "role": "WX",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 1,
+          "cycle_index": 0,
+          "role": "XY",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 2,
+          "cycle_index": 0,
+          "role": "YZ",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 3,
+          "cycle_index": 0,
+          "role": "ZT",
+          "base_projected": 1,
+          "expected": 0,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": false,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 4,
+          "cycle_index": 0,
+          "role": "TI",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": true,
+          "candidate_projected": 0,
+          "matches_expected": false,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 5,
+          "cycle_index": 0,
+          "role": "IW",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 6,
+          "cycle_index": 1,
+          "role": "WX",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 7,
+          "cycle_index": 1,
+          "role": "XY",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 8,
+          "cycle_index": 1,
+          "role": "YZ",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 9,
+          "cycle_index": 1,
+          "role": "ZT",
+          "base_projected": 0,
+          "expected": 0,
+          "changed": true,
+          "candidate_projected": 1,
+          "matches_expected": false,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 10,
+          "cycle_index": 1,
+          "role": "TI",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 11,
+          "cycle_index": 1,
+          "role": "IW",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 12,
+          "cycle_index": 2,
+          "role": "WX",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 13,
+          "cycle_index": 2,
+          "role": "XY",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 14,
+          "cycle_index": 2,
+          "role": "YZ",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 15,
+          "cycle_index": 2,
+          "role": "ZT",
+          "base_projected": 0,
+          "expected": 0,
+          "changed": true,
+          "candidate_projected": 1,
+          "matches_expected": false,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 16,
+          "cycle_index": 2,
+          "role": "TI",
+          "base_projected": 0,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 0,
+          "matches_expected": false,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 17,
+          "cycle_index": 2,
+          "role": "IW",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        }
+      ]
+    },
+    {
+      "name": "null_swapped_shapes_keep_roles",
+      "changed_rows": [
+        4,
+        9,
+        15
+      ],
+      "match_count": 13,
+      "row_count": 18,
+      "mismatches": [
+        3,
+        4,
+        9,
+        15,
+        16
+      ],
+      "exact": false,
+      "changed_fixes": [],
+      "changed_breaks": [
+        4,
+        9,
+        15
+      ],
+      "rows": [
+        {
+          "row_ordinal": 0,
+          "cycle_index": 0,
+          "role": "WX",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 1,
+          "cycle_index": 0,
+          "role": "XY",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 2,
+          "cycle_index": 0,
+          "role": "YZ",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 3,
+          "cycle_index": 0,
+          "role": "ZT",
+          "base_projected": 1,
+          "expected": 0,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": false,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 4,
+          "cycle_index": 0,
+          "role": "TI",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": true,
+          "candidate_projected": 0,
+          "matches_expected": false,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 5,
+          "cycle_index": 0,
+          "role": "IW",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 6,
+          "cycle_index": 1,
+          "role": "WX",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 7,
+          "cycle_index": 1,
+          "role": "XY",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 8,
+          "cycle_index": 1,
+          "role": "YZ",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 9,
+          "cycle_index": 1,
+          "role": "ZT",
+          "base_projected": 0,
+          "expected": 0,
+          "changed": true,
+          "candidate_projected": 1,
+          "matches_expected": false,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 10,
+          "cycle_index": 1,
+          "role": "TI",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 11,
+          "cycle_index": 1,
+          "role": "IW",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 12,
+          "cycle_index": 2,
+          "role": "WX",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 13,
+          "cycle_index": 2,
+          "role": "XY",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 14,
+          "cycle_index": 2,
+          "role": "YZ",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 15,
+          "cycle_index": 2,
+          "role": "ZT",
+          "base_projected": 0,
+          "expected": 0,
+          "changed": true,
+          "candidate_projected": 1,
+          "matches_expected": false,
+          "base_matches_expected": true
+        },
+        {
+          "row_ordinal": 16,
+          "cycle_index": 2,
+          "role": "TI",
+          "base_projected": 0,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 0,
+          "matches_expected": false,
+          "base_matches_expected": false
+        },
+        {
+          "row_ordinal": 17,
+          "cycle_index": 2,
+          "role": "IW",
+          "base_projected": 1,
+          "expected": 1,
+          "changed": false,
+          "candidate_projected": 1,
+          "matches_expected": true,
+          "base_matches_expected": true
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "baseline_exact": true,
+    "baseline_match_count": 18,
+    "row_count": 18,
+    "null_count": 10,
+    "broken_null_count": 10,
+    "broken_nulls": [
+      "null_no_change_w_boundary_only",
+      "null_role_only_ZT",
+      "null_role_only_TI",
+      "null_shape_only_singleton",
+      "null_shape_only_multi_column",
+      "null_complement_pairing_singleton_TI_OR_multi_column_ZT",
+      "null_rotated_roles_keep_shapes",
+      "null_rotated_shapes_keep_roles",
+      "null_swapped_roles_keep_shapes",
+      "null_swapped_shapes_keep_roles"
+    ],
+    "surviving_nulls": [],
+    "load_bearing": {
+      "w_boundary_only_insufficient": true,
+      "role_only_insufficient": true,
+      "shape_only_insufficient": true,
+      "complement_pairing_breaks": true,
+      "role_rotation_breaks": true,
+      "shape_rotation_breaks": true,
+      "role_swap_breaks": true,
+      "shape_swap_breaks": true,
+      "all_nulls_break_exactness": true
+    },
+    "claim_closes_gap_a": false
+  },
+  "interpretation": {
+    "main_result": "The row-level map candidate is exact only for the role-column residual-side adjustment [3, 16] among the tested substitutes.",
+    "w_boundary_result": "W-boundary seam projection alone remains insufficient.",
+    "role_column_result": "Role-only and shape-only substitutes fail; the paired role-column orientation remains load-bearing.",
+    "complement_result": "The stable complement is not interchangeable with the residual side.",
+    "not_closure": "This is strong row-level support, but still not a full source-derived chamber/register map."
+  },
+  "checks": [
+    {
+      "id": "candidate_loaded",
+      "status": true,
+      "detail": "gap_a_chamber_register_map_candidate_found_not_closure"
+    },
+    {
+      "id": "role_column_nulls_loaded",
+      "status": true,
+      "detail": "gap_a_role_column_source_geometry_nulls_recorded"
+    },
+    {
+      "id": "geometry_loaded",
+      "status": true,
+      "detail": "gap_a_role_column_source_geometry_candidate_found_not_closure"
+    },
+    {
+      "id": "boundary_loaded",
+      "status": true,
+      "detail": "boundary_seam_projection_role_rows_partial_not_map_proof"
+    },
+    {
+      "id": "baseline_exact",
+      "status": true,
+      "detail": "{\"changed_breaks\": [], \"changed_fixes\": [3, 16], \"changed_rows\": [3, 16], \"exact\": true, \"match_count\": 18, \"mismatches\": [], \"name\": \"baseline_change_residual_side_3_16\", \"row_count\": 18, \"rows\": [{\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 0, \"expected\": 1, \"matches_expected\": true, \"role\": \"WX\", \"row_ordinal\": 0}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 0, \"expected\": 1, \"matches_expected\": true, \"role\": \"XY\", \"row_ordinal\": 1}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 0, \"expected\": 1, \"matches_expected\": true, \"role\": \"YZ\", \"row_ordinal\": 2}, {\"base_matches_expected\": false, \"base_projected\": 1, \"candidate_projected\": 0, \"changed\": true, \"cycle_index\": 0, \"expected\": 0, \"matches_expected\": true, \"role\": \"ZT\", \"row_ordinal\": 3}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 0, \"expected\": 1, \"matches_expected\": true, \"role\": \"TI\", \"row_ordinal\": 4}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 0, \"expected\": 1, \"matches_expected\": true, \"role\": \"IW\", \"row_ordinal\": 5}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 1, \"expected\": 1, \"matches_expected\": true, \"role\": \"WX\", \"row_ordinal\": 6}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 1, \"expected\": 1, \"matches_expected\": true, \"role\": \"XY\", \"row_ordinal\": 7}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 1, \"expected\": 1, \"matches_expected\": true, \"role\": \"YZ\", \"row_ordinal\": 8}, {\"base_matches_expected\": true, \"base_projected\": 0, \"candidate_projected\": 0, \"changed\": false, \"cycle_index\": 1, \"expected\": 0, \"matches_expected\": true, \"role\": \"ZT\", \"row_ordinal\": 9}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 1, \"expected\": 1, \"matches_expected\": true, \"role\": \"TI\", \"row_ordinal\": 10}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 1, \"expected\": 1, \"matches_expected\": true, \"role\": \"IW\", \"row_ordinal\": 11}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 2, \"expected\": 1, \"matches_expected\": true, \"role\": \"WX\", \"row_ordinal\": 12}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 2, \"expected\": 1, \"matches_expected\": true, \"role\": \"XY\", \"row_ordinal\": 13}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 2, \"expected\": 1, \"matches_expected\": true, \"role\": \"YZ\", \"row_ordinal\": 14}, {\"base_matches_expected\": true, \"base_projected\": 0, \"candidate_projected\": 0, \"changed\": false, \"cycle_index\": 2, \"expected\": 0, \"matches_expected\": true, \"role\": \"ZT\", \"row_ordinal\": 15}, {\"base_matches_expected\": false, \"base_projected\": 0, \"candidate_projected\": 1, \"changed\": true, \"cycle_index\": 2, \"expected\": 1, \"matches_expected\": true, \"role\": \"TI\", \"row_ordinal\": 16}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 2, \"expected\": 1, \"matches_expected\": true, \"role\": \"IW\", \"row_ordinal\": 17}]}"
+    },
+    {
+      "id": "baseline_changed_3_16",
+      "status": true,
+      "detail": "[3, 16]"
+    },
+    {
+      "id": "w_boundary_only_breaks",
+      "status": true,
+      "detail": "{\"changed_breaks\": [], \"changed_fixes\": [], \"changed_rows\": [], \"exact\": false, \"match_count\": 16, \"mismatches\": [3, 16], \"name\": \"null_no_change_w_boundary_only\", \"row_count\": 18, \"rows\": [{\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 0, \"expected\": 1, \"matches_expected\": true, \"role\": \"WX\", \"row_ordinal\": 0}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 0, \"expected\": 1, \"matches_expected\": true, \"role\": \"XY\", \"row_ordinal\": 1}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 0, \"expected\": 1, \"matches_expected\": true, \"role\": \"YZ\", \"row_ordinal\": 2}, {\"base_matches_expected\": false, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 0, \"expected\": 0, \"matches_expected\": false, \"role\": \"ZT\", \"row_ordinal\": 3}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 0, \"expected\": 1, \"matches_expected\": true, \"role\": \"TI\", \"row_ordinal\": 4}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 0, \"expected\": 1, \"matches_expected\": true, \"role\": \"IW\", \"row_ordinal\": 5}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 1, \"expected\": 1, \"matches_expected\": true, \"role\": \"WX\", \"row_ordinal\": 6}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 1, \"expected\": 1, \"matches_expected\": true, \"role\": \"XY\", \"row_ordinal\": 7}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 1, \"expected\": 1, \"matches_expected\": true, \"role\": \"YZ\", \"row_ordinal\": 8}, {\"base_matches_expected\": true, \"base_projected\": 0, \"candidate_projected\": 0, \"changed\": false, \"cycle_index\": 1, \"expected\": 0, \"matches_expected\": true, \"role\": \"ZT\", \"row_ordinal\": 9}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 1, \"expected\": 1, \"matches_expected\": true, \"role\": \"TI\", \"row_ordinal\": 10}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 1, \"expected\": 1, \"matches_expected\": true, \"role\": \"IW\", \"row_ordinal\": 11}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 2, \"expected\": 1, \"matches_expected\": true, \"role\": \"WX\", \"row_ordinal\": 12}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 2, \"expected\": 1, \"matches_expected\": true, \"role\": \"XY\", \"row_ordinal\": 13}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 2, \"expected\": 1, \"matches_expected\": true, \"role\": \"YZ\", \"row_ordinal\": 14}, {\"base_matches_expected\": true, \"base_projected\": 0, \"candidate_projected\": 0, \"changed\": false, \"cycle_index\": 2, \"expected\": 0, \"matches_expected\": true, \"role\": \"ZT\", \"row_ordinal\": 15}, {\"base_matches_expected\": false, \"base_projected\": 0, \"candidate_projected\": 0, \"changed\": false, \"cycle_index\": 2, \"expected\": 1, \"matches_expected\": false, \"role\": \"TI\", \"row_ordinal\": 16}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 2, \"expected\": 1, \"matches_expected\": true, \"role\": \"IW\", \"row_ordinal\": 17}]}"
+    },
+    {
+      "id": "role_only_breaks",
+      "status": true,
+      "detail": "[{\"changed_breaks\": [9, 15], \"changed_fixes\": [3], \"changed_rows\": [3, 9, 15], \"exact\": false, \"match_count\": 15, \"mismatches\": [9, 15, 16], \"name\": \"null_role_only_ZT\", \"row_count\": 18, \"rows\": [{\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 0, \"expected\": 1, \"matches_expected\": true, \"role\": \"WX\", \"row_ordinal\": 0}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 0, \"expected\": 1, \"matches_expected\": true, \"role\": \"XY\", \"row_ordinal\": 1}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 0, \"expected\": 1, \"matches_expected\": true, \"role\": \"YZ\", \"row_ordinal\": 2}, {\"base_matches_expected\": false, \"base_projected\": 1, \"candidate_projected\": 0, \"changed\": true, \"cycle_index\": 0, \"expected\": 0, \"matches_expected\": true, \"role\": \"ZT\", \"row_ordinal\": 3}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 0, \"expected\": 1, \"matches_expected\": true, \"role\": \"TI\", \"row_ordinal\": 4}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 0, \"expected\": 1, \"matches_expected\": true, \"role\": \"IW\", \"row_ordinal\": 5}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 1, \"expected\": 1, \"matches_expected\": true, \"role\": \"WX\", \"row_ordinal\": 6}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 1, \"expected\": 1, \"matches_expected\": true, \"role\": \"XY\", \"row_ordinal\": 7}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 1, \"expected\": 1, \"matches_expected\": true, \"role\": \"YZ\", \"row_ordinal\": 8}, {\"base_matches_expected\": true, \"base_projected\": 0, \"candidate_projected\": 1, \"changed\": true, \"cycle_index\": 1, \"expected\": 0, \"matches_expected\": false, \"role\": \"ZT\", \"row_ordinal\": 9}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 1, \"expected\": 1, \"matches_expected\": true, \"role\": \"TI\", \"row_ordinal\": 10}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 1, \"expected\": 1, \"matches_expected\": true, \"role\": \"IW\", \"row_ordinal\": 11}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 2, \"expected\": 1, \"matches_expected\": true, \"role\": \"WX\", \"row_ordinal\": 12}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 2, \"expected\": 1, \"matches_expected\": true, \"role\": \"XY\", \"row_ordinal\": 13}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 2, \"expected\": 1, \"matches_expected\": true, \"role\": \"YZ\", \"row_ordinal\": 14}, {\"base_matches_expected\": true, \"base_projected\": 0, \"candidate_projected\": 1, \"changed\": true, \"cycle_index\": 2, \"expected\": 0, \"matches_expected\": false, \"role\": \"ZT\", \"row_ordinal\": 15}, {\"base_matches_expected\": false, \"base_projected\": 0, \"candidate_projected\": 0, \"changed\": false, \"cycle_index\": 2, \"expected\": 1, \"matches_expected\": false, \"role\": \"TI\", \"row_ordinal\": 16}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 2, \"expected\": 1, \"matches_expected\": true, \"role\": \"IW\", \"row_ordinal\": 17}]}, {\"changed_breaks\": [4], \"changed_fixes\": [16], \"changed_rows\": [4, 16], \"exact\": false, \"match_count\": 16, \"mismatches\": [3, 4], \"name\": \"null_role_only_TI\", \"row_count\": 18, \"rows\": [{\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 0, \"expected\": 1, \"matches_expected\": true, \"role\": \"WX\", \"row_ordinal\": 0}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 0, \"expected\": 1, \"matches_expected\": true, \"role\": \"XY\", \"row_ordinal\": 1}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 0, \"expected\": 1, \"matches_expected\": true, \"role\": \"YZ\", \"row_ordinal\": 2}, {\"base_matches_expected\": false, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 0, \"expected\": 0, \"matches_expected\": false, \"role\": \"ZT\", \"row_ordinal\": 3}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 0, \"changed\": true, \"cycle_index\": 0, \"expected\": 1, \"matches_expected\": false, \"role\": \"TI\", \"row_ordinal\": 4}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 0, \"expected\": 1, \"matches_expected\": true, \"role\": \"IW\", \"row_ordinal\": 5}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 1, \"expected\": 1, \"matches_expected\": true, \"role\": \"WX\", \"row_ordinal\": 6}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 1, \"expected\": 1, \"matches_expected\": true, \"role\": \"XY\", \"row_ordinal\": 7}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 1, \"expected\": 1, \"matches_expected\": true, \"role\": \"YZ\", \"row_ordinal\": 8}, {\"base_matches_expected\": true, \"base_projected\": 0, \"candidate_projected\": 0, \"changed\": false, \"cycle_index\": 1, \"expected\": 0, \"matches_expected\": true, \"role\": \"ZT\", \"row_ordinal\": 9}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 1, \"expected\": 1, \"matches_expected\": true, \"role\": \"TI\", \"row_ordinal\": 10}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 1, \"expected\": 1, \"matches_expected\": true, \"role\": \"IW\", \"row_ordinal\": 11}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 2, \"expected\": 1, \"matches_expected\": true, \"role\": \"WX\", \"row_ordinal\": 12}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 2, \"expected\": 1, \"matches_expected\": true, \"role\": \"XY\", \"row_ordinal\": 13}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 2, \"expected\": 1, \"matches_expected\": true, \"role\": \"YZ\", \"row_ordinal\": 14}, {\"base_matches_expected\": true, \"base_projected\": 0, \"candidate_projected\": 0, \"changed\": false, \"cycle_index\": 2, \"expected\": 0, \"matches_expected\": true, \"role\": \"ZT\", \"row_ordinal\": 15}, {\"base_matches_expected\": false, \"base_projected\": 0, \"candidate_projected\": 1, \"changed\": true, \"cycle_index\": 2, \"expected\": 1, \"matches_expected\": true, \"role\": \"TI\", \"row_ordinal\": 16}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 2, \"expected\": 1, \"matches_expected\": true, \"role\": \"IW\", \"row_ordinal\": 17}]}]"
+    },
+    {
+      "id": "shape_only_breaks",
+      "status": true,
+      "detail": "[{\"changed_breaks\": [4], \"changed_fixes\": [3], \"changed_rows\": [3, 4], \"exact\": false, \"match_count\": 16, \"mismatches\": [4, 16], \"name\": \"null_shape_only_singleton\", \"row_count\": 18, \"rows\": [{\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 0, \"expected\": 1, \"matches_expected\": true, \"role\": \"WX\", \"row_ordinal\": 0}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 0, \"expected\": 1, \"matches_expected\": true, \"role\": \"XY\", \"row_ordinal\": 1}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 0, \"expected\": 1, \"matches_expected\": true, \"role\": \"YZ\", \"row_ordinal\": 2}, {\"base_matches_expected\": false, \"base_projected\": 1, \"candidate_projected\": 0, \"changed\": true, \"cycle_index\": 0, \"expected\": 0, \"matches_expected\": true, \"role\": \"ZT\", \"row_ordinal\": 3}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 0, \"changed\": true, \"cycle_index\": 0, \"expected\": 1, \"matches_expected\": false, \"role\": \"TI\", \"row_ordinal\": 4}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 0, \"expected\": 1, \"matches_expected\": true, \"role\": \"IW\", \"row_ordinal\": 5}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 1, \"expected\": 1, \"matches_expected\": true, \"role\": \"WX\", \"row_ordinal\": 6}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 1, \"expected\": 1, \"matches_expected\": true, \"role\": \"XY\", \"row_ordinal\": 7}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 1, \"expected\": 1, \"matches_expected\": true, \"role\": \"YZ\", \"row_ordinal\": 8}, {\"base_matches_expected\": true, \"base_projected\": 0, \"candidate_projected\": 0, \"changed\": false, \"cycle_index\": 1, \"expected\": 0, \"matches_expected\": true, \"role\": \"ZT\", \"row_ordinal\": 9}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 1, \"expected\": 1, \"matches_expected\": true, \"role\": \"TI\", \"row_ordinal\": 10}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 1, \"expected\": 1, \"matches_expected\": true, \"role\": \"IW\", \"row_ordinal\": 11}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 2, \"expected\": 1, \"matches_expected\": true, \"role\": \"WX\", \"row_ordinal\": 12}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 2, \"expected\": 1, \"matches_expected\": true, \"role\": \"XY\", \"row_ordinal\": 13}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 2, \"expected\": 1, \"matches_expected\": true, \"role\": \"YZ\", \"row_ordinal\": 14}, {\"base_matches_expected\": true, \"base_projected\": 0, \"candidate_projected\": 0, \"changed\": false, \"cycle_index\": 2, \"expected\": 0, \"matches_expected\": true, \"role\": \"ZT\", \"row_ordinal\": 15}, {\"base_matches_expected\": false, \"base_projected\": 0, \"candidate_projected\": 0, \"changed\": false, \"cycle_index\": 2, \"expected\": 1, \"matches_expected\": false, \"role\": \"TI\", \"row_ordinal\": 16}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 2, \"expected\": 1, \"matches_expected\": true, \"role\": \"IW\", \"row_ordinal\": 17}]}, {\"changed_breaks\": [9, 15], \"changed_fixes\": [16], \"changed_rows\": [9, 15, 16], \"exact\": false, \"match_count\": 15, \"mismatches\": [3, 9, 15], \"name\": \"null_shape_only_multi_column\", \"row_count\": 18, \"rows\": [{\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 0, \"expected\": 1, \"matches_expected\": true, \"role\": \"WX\", \"row_ordinal\": 0}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 0, \"expected\": 1, \"matches_expected\": true, \"role\": \"XY\", \"row_ordinal\": 1}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 0, \"expected\": 1, \"matches_expected\": true, \"role\": \"YZ\", \"row_ordinal\": 2}, {\"base_matches_expected\": false, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 0, \"expected\": 0, \"matches_expected\": false, \"role\": \"ZT\", \"row_ordinal\": 3}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 0, \"expected\": 1, \"matches_expected\": true, \"role\": \"TI\", \"row_ordinal\": 4}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 0, \"expected\": 1, \"matches_expected\": true, \"role\": \"IW\", \"row_ordinal\": 5}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 1, \"expected\": 1, \"matches_expected\": true, \"role\": \"WX\", \"row_ordinal\": 6}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 1, \"expected\": 1, \"matches_expected\": true, \"role\": \"XY\", \"row_ordinal\": 7}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 1, \"expected\": 1, \"matches_expected\": true, \"role\": \"YZ\", \"row_ordinal\": 8}, {\"base_matches_expected\": true, \"base_projected\": 0, \"candidate_projected\": 1, \"changed\": true, \"cycle_index\": 1, \"expected\": 0, \"matches_expected\": false, \"role\": \"ZT\", \"row_ordinal\": 9}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 1, \"expected\": 1, \"matches_expected\": true, \"role\": \"TI\", \"row_ordinal\": 10}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 1, \"expected\": 1, \"matches_expected\": true, \"role\": \"IW\", \"row_ordinal\": 11}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 2, \"expected\": 1, \"matches_expected\": true, \"role\": \"WX\", \"row_ordinal\": 12}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 2, \"expected\": 1, \"matches_expected\": true, \"role\": \"XY\", \"row_ordinal\": 13}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 2, \"expected\": 1, \"matches_expected\": true, \"role\": \"YZ\", \"row_ordinal\": 14}, {\"base_matches_expected\": true, \"base_projected\": 0, \"candidate_projected\": 1, \"changed\": true, \"cycle_index\": 2, \"expected\": 0, \"matches_expected\": false, \"role\": \"ZT\", \"row_ordinal\": 15}, {\"base_matches_expected\": false, \"base_projected\": 0, \"candidate_projected\": 1, \"changed\": true, \"cycle_index\": 2, \"expected\": 1, \"matches_expected\": true, \"role\": \"TI\", \"row_ordinal\": 16}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 2, \"expected\": 1, \"matches_expected\": true, \"role\": \"IW\", \"row_ordinal\": 17}]}]"
+    },
+    {
+      "id": "complement_breaks",
+      "status": true,
+      "detail": "{\"changed_breaks\": [4, 9, 15], \"changed_fixes\": [], \"changed_rows\": [4, 9, 15], \"exact\": false, \"match_count\": 13, \"mismatches\": [3, 4, 9, 15, 16], \"name\": \"null_complement_pairing_singleton_TI_OR_multi_column_ZT\", \"row_count\": 18, \"rows\": [{\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 0, \"expected\": 1, \"matches_expected\": true, \"role\": \"WX\", \"row_ordinal\": 0}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 0, \"expected\": 1, \"matches_expected\": true, \"role\": \"XY\", \"row_ordinal\": 1}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 0, \"expected\": 1, \"matches_expected\": true, \"role\": \"YZ\", \"row_ordinal\": 2}, {\"base_matches_expected\": false, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 0, \"expected\": 0, \"matches_expected\": false, \"role\": \"ZT\", \"row_ordinal\": 3}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 0, \"changed\": true, \"cycle_index\": 0, \"expected\": 1, \"matches_expected\": false, \"role\": \"TI\", \"row_ordinal\": 4}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 0, \"expected\": 1, \"matches_expected\": true, \"role\": \"IW\", \"row_ordinal\": 5}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 1, \"expected\": 1, \"matches_expected\": true, \"role\": \"WX\", \"row_ordinal\": 6}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 1, \"expected\": 1, \"matches_expected\": true, \"role\": \"XY\", \"row_ordinal\": 7}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 1, \"expected\": 1, \"matches_expected\": true, \"role\": \"YZ\", \"row_ordinal\": 8}, {\"base_matches_expected\": true, \"base_projected\": 0, \"candidate_projected\": 1, \"changed\": true, \"cycle_index\": 1, \"expected\": 0, \"matches_expected\": false, \"role\": \"ZT\", \"row_ordinal\": 9}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 1, \"expected\": 1, \"matches_expected\": true, \"role\": \"TI\", \"row_ordinal\": 10}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 1, \"expected\": 1, \"matches_expected\": true, \"role\": \"IW\", \"row_ordinal\": 11}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 2, \"expected\": 1, \"matches_expected\": true, \"role\": \"WX\", \"row_ordinal\": 12}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 2, \"expected\": 1, \"matches_expected\": true, \"role\": \"XY\", \"row_ordinal\": 13}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 2, \"expected\": 1, \"matches_expected\": true, \"role\": \"YZ\", \"row_ordinal\": 14}, {\"base_matches_expected\": true, \"base_projected\": 0, \"candidate_projected\": 1, \"changed\": true, \"cycle_index\": 2, \"expected\": 0, \"matches_expected\": false, \"role\": \"ZT\", \"row_ordinal\": 15}, {\"base_matches_expected\": false, \"base_projected\": 0, \"candidate_projected\": 0, \"changed\": false, \"cycle_index\": 2, \"expected\": 1, \"matches_expected\": false, \"role\": \"TI\", \"row_ordinal\": 16}, {\"base_matches_expected\": true, \"base_projected\": 1, \"candidate_projected\": 1, \"changed\": false, \"cycle_index\": 2, \"expected\": 1, \"matches_expected\": true, \"role\": \"IW\", \"row_ordinal\": 17}]}"
+    },
+    {
+      "id": "all_nulls_break",
+      "status": true,
+      "detail": "[]"
+    }
+  ],
+  "next_script": "record_gap_a_chamber_register_candidate_interim_note_001.py"
+}

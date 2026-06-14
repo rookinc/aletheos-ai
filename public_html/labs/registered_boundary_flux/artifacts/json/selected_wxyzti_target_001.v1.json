@@ -1,0 +1,274 @@
+{
+  "schema": "selected_wxyzti_target_001.v1",
+  "status": "normalized_target_not_proof",
+  "timestamp_utc": "2026-06-14T17:48:52.578460+00:00",
+  "title": "Selected WXYZTI target class",
+  "purpose": "Normalize the selected FHE/K900 WXYZTI target object that future register-map proofs must recover.",
+  "boundary": [
+    "This artifact records the target class; it does not prove the chamber/register map.",
+    "This artifact does not change the Perfect Return Cell UI.",
+    "This artifact does not claim a physical interpretation.",
+    "Future proof scripts must recover this target from finite predicates rather than assuming it."
+  ],
+  "role_order": [
+    "W",
+    "X",
+    "Y",
+    "Z",
+    "T",
+    "I"
+  ],
+  "edge_role_order": [
+    "WX",
+    "XY",
+    "YZ",
+    "ZT",
+    "TI",
+    "IW"
+  ],
+  "role_relative_sign_pattern": {
+    "WX": 1,
+    "XY": 1,
+    "YZ": 1,
+    "ZT": 0,
+    "TI": 1,
+    "IW": 1
+  },
+  "target_class": {
+    "name": "Apre",
+    "count": 3,
+    "base_cycles": [
+      [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      [
+        0,
+        1,
+        2,
+        7,
+        10,
+        5
+      ],
+      [
+        0,
+        1,
+        2,
+        8,
+        14,
+        5
+      ]
+    ],
+    "shared_positions": {
+      "W": 0,
+      "X": 1,
+      "Y": 2,
+      "I": 5
+    },
+    "variable_positions": [
+      {
+        "Z": 3,
+        "T": 4,
+        "ZT": [
+          3,
+          4
+        ]
+      },
+      {
+        "Z": 7,
+        "T": 10,
+        "ZT": [
+          7,
+          10
+        ]
+      },
+      {
+        "Z": 8,
+        "T": 14,
+        "ZT": [
+          8,
+          14
+        ]
+      }
+    ],
+    "shared_stem": [
+      0,
+      1,
+      2
+    ],
+    "shared_return": [
+      5,
+      0
+    ],
+    "selected_zt_edges": [
+      [
+        3,
+        4
+      ],
+      [
+        7,
+        10
+      ],
+      [
+        8,
+        14
+      ]
+    ]
+  },
+  "known_predicate_summary": {
+    "keeper_line": "Apre closes through an even central coupler between odd-active sides.",
+    "top_lock_role": "ZT",
+    "zero_sign_role": "ZT",
+    "target_role_pattern": [
+      1,
+      1,
+      1,
+      0,
+      1,
+      1
+    ],
+    "selected_base_cycle_count": 3,
+    "selected_oriented_presentation_count": 6
+  },
+  "proof_gap_link": {
+    "gap": "A_chamber_register_map",
+    "next_use": "This target becomes the expected output for register-map candidate tests and row-aware M-incidence recovery checks."
+  },
+  "source_records": [
+    {
+      "path": "research/fhe/artifacts/json/apre_wxyzti_anatomy.v1.json",
+      "exists": true,
+      "bytes": 5558,
+      "sha256": "63bf2029485fd80dd364d807bbee44415c5c9dd2f68fb25b25d450f92c430b82",
+      "confirmations": {
+        "cycle_[0,1,2,3,4,5]": true,
+        "cycle_[0,1,2,7,10,5]": true,
+        "cycle_[0,1,2,8,14,5]": true,
+        "zt_[3,4]": true,
+        "zt_[7,10]": true,
+        "zt_[8,14]": true
+      }
+    },
+    {
+      "path": "research/fhe/artifacts/json/apre_top_lock_and_single_flip_tamper_probe.v1.json",
+      "exists": true,
+      "bytes": 12481,
+      "sha256": "bdd8e15e8376b8b54502c0b409da946ea5c6980cdc10e16068bb01e18334a8e1",
+      "confirmations": {
+        "cycle_[0,1,2,3,4,5]": true,
+        "cycle_[0,1,2,7,10,5]": true,
+        "cycle_[0,1,2,8,14,5]": true,
+        "zt_[3,4]": true,
+        "zt_[7,10]": true,
+        "zt_[8,14]": true
+      }
+    },
+    {
+      "path": "research/fhe/artifacts/json/branch_anatomy_zero_edge_census.v1.json",
+      "exists": true,
+      "bytes": 22187,
+      "sha256": "1ae10c4aec10740a3567a5e13584e08b0a284212e3bad4b605e9c03ec5b95d23",
+      "confirmations": {
+        "cycle_[0,1,2,3,4,5]": true,
+        "cycle_[0,1,2,7,10,5]": true,
+        "cycle_[0,1,2,8,14,5]": true,
+        "zt_[3,4]": true,
+        "zt_[7,10]": true,
+        "zt_[8,14]": true
+      }
+    },
+    {
+      "path": "research/fhe/artifacts/json/selected_branch_row_aware_discriminants.v1.json",
+      "exists": true,
+      "bytes": 29021,
+      "sha256": "545e322ece3d741f3811af7200dc4bc7697d6ed6973448e1a1aaa6c0880b3522",
+      "confirmations": {
+        "cycle_[0,1,2,3,4,5]": false,
+        "cycle_[0,1,2,7,10,5]": false,
+        "cycle_[0,1,2,8,14,5]": false,
+        "zt_[3,4]": false,
+        "zt_[7,10]": false,
+        "zt_[8,14]": false
+      }
+    },
+    {
+      "path": "research/fhe/artifacts/json/selected_branch_exact_selector_minimizer.v1.json",
+      "exists": true,
+      "bytes": 9455,
+      "sha256": "49e2b18f3891c3b2c5c6af330b9529a9982ce06fb623563a52831e56c038bad1",
+      "confirmations": {
+        "cycle_[0,1,2,3,4,5]": false,
+        "cycle_[0,1,2,7,10,5]": false,
+        "cycle_[0,1,2,8,14,5]": false,
+        "zt_[3,4]": false,
+        "zt_[7,10]": false,
+        "zt_[8,14]": false
+      }
+    },
+    {
+      "path": "research/fhe/RESULT_v21.md",
+      "exists": true,
+      "bytes": 2727,
+      "sha256": "93dfa06cbbf8b7cfdaf2aefcde41ebbaee04c1a676316a776e20ec8199a3fd00",
+      "confirmations": {
+        "cycle_[0,1,2,3,4,5]": false,
+        "cycle_[0,1,2,7,10,5]": false,
+        "cycle_[0,1,2,8,14,5]": false,
+        "zt_[3,4]": false,
+        "zt_[7,10]": false,
+        "zt_[8,14]": false
+      }
+    },
+    {
+      "path": "research/fhe/paper/sections/05_apre_branch_anatomy.tex",
+      "exists": true,
+      "bytes": 783,
+      "sha256": "069d0ec9aacf8c2b5ff8f3e1e3030ba3e757883aa986219606ad98edb0cf6242",
+      "confirmations": {
+        "cycle_[0,1,2,3,4,5]": false,
+        "cycle_[0,1,2,7,10,5]": false,
+        "cycle_[0,1,2,8,14,5]": false,
+        "zt_[3,4]": false,
+        "zt_[7,10]": false,
+        "zt_[8,14]": false
+      }
+    },
+    {
+      "path": "research/fhe/paper/sections/05c_register_key_selection.tex",
+      "exists": true,
+      "bytes": 4014,
+      "sha256": "687dd6a56b69d330f9d48e51df28168d10b4bff8161f8196439afd21198f388e",
+      "confirmations": {
+        "cycle_[0,1,2,3,4,5]": false,
+        "cycle_[0,1,2,7,10,5]": false,
+        "cycle_[0,1,2,8,14,5]": false,
+        "zt_[3,4]": false,
+        "zt_[7,10]": false,
+        "zt_[8,14]": false
+      }
+    },
+    {
+      "path": "research/fhe/paper/sections/00_abstract.tex",
+      "exists": true,
+      "bytes": 2046,
+      "sha256": "003d7af6c355401f91f53db51f32925dcdb6648cfbfcc6ee668509f68c4e59fc",
+      "confirmations": {
+        "cycle_[0,1,2,3,4,5]": true,
+        "cycle_[0,1,2,7,10,5]": true,
+        "cycle_[0,1,2,8,14,5]": true,
+        "zt_[3,4]": false,
+        "zt_[7,10]": false,
+        "zt_[8,14]": false
+      }
+    }
+  ],
+  "confirmation_summary": {
+    "all_three_cycles_seen_in_some_source": true,
+    "all_three_zt_edges_seen_in_some_source": true,
+    "source_count": 9
+  }
+}

@@ -1,0 +1,990 @@
+{
+  "schema": "register_map_candidate_inputs_001.v1",
+  "status": "ready_for_candidate_input_validation",
+  "timestamp_utc": "2026-06-14T17:50:45.799103+00:00",
+  "gap": "A_chamber_register_map",
+  "purpose": "Assemble selected target, M, row taxonomy, and FHE selector artifacts into one ready-to-test input bundle.",
+  "boundary": [
+    "This is not a proof of the register map.",
+    "This does not run selector recovery.",
+    "This does not modify the UI.",
+    "This only confirms that proof-input artifacts are present and summarized."
+  ],
+  "required_missing": [],
+  "required_bad": [],
+  "input_records": [
+    {
+      "id": "selected_wxyzti_target",
+      "role": "expected_output_target",
+      "path": "aletheos.ai/public_html/labs/registered_boundary_flux/artifacts/json/selected_wxyzti_target_001.v1.json",
+      "required": true,
+      "exists": true,
+      "bytes": 6683,
+      "sha256": "70bd9ff63bfbd58e888f8380c1eced8ad2c03fe4c7d07f1838bd2a52d94613a3",
+      "status": "loaded",
+      "json_summary": {
+        "type": "dict",
+        "keys": [
+          "schema",
+          "status",
+          "timestamp_utc",
+          "title",
+          "purpose",
+          "boundary",
+          "role_order",
+          "edge_role_order",
+          "role_relative_sign_pattern",
+          "target_class",
+          "known_predicate_summary",
+          "proof_gap_link",
+          "source_records",
+          "confirmation_summary"
+        ],
+        "list_count_boundary": 4,
+        "list_count_role_order": 6,
+        "list_count_edge_role_order": 6,
+        "dict_role_relative_sign_pattern_keys": [
+          "WX",
+          "XY",
+          "YZ",
+          "ZT",
+          "TI",
+          "IW"
+        ],
+        "dict_target_class_keys": [
+          "name",
+          "count",
+          "base_cycles",
+          "shared_positions",
+          "variable_positions",
+          "shared_stem",
+          "shared_return",
+          "selected_zt_edges"
+        ],
+        "dict_known_predicate_summary_keys": [
+          "keeper_line",
+          "top_lock_role",
+          "zero_sign_role",
+          "target_role_pattern",
+          "selected_base_cycle_count",
+          "selected_oriented_presentation_count"
+        ],
+        "dict_proof_gap_link_keys": [
+          "gap",
+          "next_use"
+        ],
+        "list_count_source_records": 9,
+        "first_source_records_keys": [
+          "path",
+          "exists",
+          "bytes",
+          "sha256",
+          "confirmations"
+        ],
+        "dict_confirmation_summary_keys": [
+          "all_three_cycles_seen_in_some_source",
+          "all_three_zt_edges_seen_in_some_source",
+          "source_count"
+        ]
+      },
+      "selected_fields": {
+        "status": "normalized_target_not_proof",
+        "title": "Selected WXYZTI target class",
+        "schema": "selected_wxyzti_target_001.v1",
+        "target_class": {
+          "name": "Apre",
+          "count": 3,
+          "base_cycles": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            [
+              0,
+              1,
+              2,
+              7,
+              10,
+              5
+            ],
+            [
+              0,
+              1,
+              2,
+              8,
+              14,
+              5
+            ]
+          ],
+          "shared_positions": {
+            "W": 0,
+            "X": 1,
+            "Y": 2,
+            "I": 5
+          },
+          "variable_positions": [
+            {
+              "Z": 3,
+              "T": 4,
+              "ZT": [
+                3,
+                4
+              ]
+            },
+            {
+              "Z": 7,
+              "T": 10,
+              "ZT": [
+                7,
+                10
+              ]
+            },
+            {
+              "Z": 8,
+              "T": 14,
+              "ZT": [
+                8,
+                14
+              ]
+            }
+          ],
+          "shared_stem": [
+            0,
+            1,
+            2
+          ],
+          "shared_return": [
+            5,
+            0
+          ],
+          "selected_zt_edges": [
+            [
+              3,
+              4
+            ],
+            [
+              7,
+              10
+            ],
+            [
+              8,
+              14
+            ]
+          ]
+        },
+        "role_order": [
+          "W",
+          "X",
+          "Y",
+          "Z",
+          "T",
+          "I"
+        ],
+        "edge_role_order": [
+          "WX",
+          "XY",
+          "YZ",
+          "ZT",
+          "TI",
+          "IW"
+        ],
+        "role_relative_sign_pattern": {
+          "WX": 1,
+          "XY": 1,
+          "YZ": 1,
+          "ZT": 0,
+          "TI": 1,
+          "IW": 1
+        },
+        "known_predicate_summary": {
+          "keeper_line": "Apre closes through an even central coupler between odd-active sides.",
+          "top_lock_role": "ZT",
+          "zero_sign_role": "ZT",
+          "target_role_pattern": [
+            1,
+            1,
+            1,
+            0,
+            1,
+            1
+          ],
+          "selected_base_cycle_count": 3,
+          "selected_oriented_presentation_count": 6
+        },
+        "confirmation_summary": {
+          "all_three_cycles_seen_in_some_source": true,
+          "all_three_zt_edges_seen_in_some_source": true,
+          "source_count": 9
+        }
+      }
+    },
+    {
+      "id": "matrix_M",
+      "role": "row_aware_incidence_source",
+      "path": "aletheos.ai/public_html/json/matrix_M.json",
+      "required": true,
+      "exists": true,
+      "bytes": 4245,
+      "sha256": "b72fc5606c60fcb3d9c76d8fbc04513730543070a31f6c382b6946e953c3074a",
+      "status": "loaded",
+      "json_summary": {
+        "type": "dict",
+        "keys": [
+          "M"
+        ],
+        "list_count_M": 15
+      },
+      "matrix_shape": {
+        "rows": 15,
+        "cols": 30
+      },
+      "selected_fields": {}
+    },
+    {
+      "id": "row_taxonomy",
+      "role": "row_identity_and_taxonomy_source",
+      "path": "aletheos.ai/public_html/json/row_taxonomy.json",
+      "required": true,
+      "exists": true,
+      "bytes": 2585,
+      "sha256": "80d88f9ba9a305dc885c870f90bcf309722ff1efe632b49192e95e5fc38042c8",
+      "status": "loaded",
+      "json_summary": {
+        "type": "dict",
+        "keys": [
+          "status",
+          "description",
+          "source",
+          "chamber_blocks",
+          "hinge_triple",
+          "anchor_rows",
+          "companion_classes",
+          "flank_classes",
+          "taxonomy_classes"
+        ],
+        "dict_source_keys": [
+          "theorem_object",
+          "matrix"
+        ],
+        "dict_chamber_blocks_keys": [
+          "B0",
+          "B1",
+          "B2",
+          "B3",
+          "B4"
+        ],
+        "list_count_hinge_triple": 3,
+        "dict_anchor_rows_keys": [
+          "A0",
+          "A1",
+          "A2"
+        ],
+        "dict_companion_classes_keys": [
+          "C2",
+          "C1",
+          "C0"
+        ],
+        "dict_flank_classes_keys": [
+          "F0",
+          "F1",
+          "F2"
+        ],
+        "list_count_taxonomy_classes": 9,
+        "first_taxonomy_classes_keys": [
+          "hinges",
+          "block_vector",
+          "class",
+          "rows"
+        ]
+      },
+      "selected_fields": {
+        "status": "provisional_derived"
+      }
+    },
+    {
+      "id": "theorem_object",
+      "role": "theorem_object_source",
+      "path": "aletheos.ai/public_html/json/theorem_object.json",
+      "required": true,
+      "exists": true,
+      "bytes": 13166,
+      "sha256": "82078e2a053218df43125553a274923cbac6c63e61d205e6a4ad2dd73c4723c1",
+      "status": "loaded",
+      "json_summary": {
+        "type": "dict",
+        "keys": [
+          "name",
+          "shape_M",
+          "shape_Q",
+          "matrix_M",
+          "gram_Q",
+          "columns",
+          "row_sums",
+          "col_sums",
+          "score_sq",
+          "stats",
+          "distance_expression",
+          "adjacency_polynomial",
+          "g15_distance_matrix",
+          "petersen_edges_indexing",
+          "source_artifact",
+          "source_artifact_status",
+          "source_artifact_note"
+        ],
+        "list_count_shape_M": 2,
+        "list_count_shape_Q": 2,
+        "list_count_matrix_M": 15,
+        "list_count_gram_Q": 15,
+        "list_count_columns": 30,
+        "list_count_row_sums": 15,
+        "list_count_col_sums": 30,
+        "dict_stats_keys": [
+          "bucket_hist",
+          "bucket_summary",
+          "max_abs_error",
+          "score_abs",
+          "score_sq",
+          "wrong_pair_count"
+        ],
+        "list_count_g15_distance_matrix": 15,
+        "list_count_petersen_edges_indexing": 15
+      },
+      "matrix_shape": {
+        "rows": 15,
+        "cols": 30
+      },
+      "selected_fields": {}
+    },
+    {
+      "id": "fhe_anatomy",
+      "role": "apre_branch_anatomy_source",
+      "path": "research/fhe/artifacts/json/apre_wxyzti_anatomy.v1.json",
+      "required": true,
+      "exists": true,
+      "bytes": 5558,
+      "sha256": "63bf2029485fd80dd364d807bbee44415c5c9dd2f68fb25b25d450f92c430b82",
+      "status": "loaded",
+      "json_summary": {
+        "type": "dict",
+        "keys": [
+          "title",
+          "version",
+          "status",
+          "source",
+          "apre_count",
+          "common_positions",
+          "variable_positions",
+          "edge_role_order",
+          "relative_edge_sign_pattern",
+          "central_zero_role",
+          "central_zero_kind",
+          "central_couplers",
+          "members",
+          "interpretation"
+        ],
+        "dict_common_positions_keys": [
+          "W",
+          "X",
+          "Y",
+          "I"
+        ],
+        "dict_variable_positions_keys": [
+          "Z",
+          "T"
+        ],
+        "list_count_edge_role_order": 6,
+        "list_count_relative_edge_sign_pattern": 6,
+        "list_count_central_couplers": 3,
+        "list_count_members": 3,
+        "first_members_keys": [
+          "candidate_id",
+          "cycle_slots",
+          "wxyzti_mapping",
+          "edge_roles",
+          "branch"
+        ],
+        "list_count_interpretation": 5
+      },
+      "selected_fields": {
+        "status": "provisional_anatomy_of_top_lock_class",
+        "title": "A_pre WXYZTI anatomy",
+        "edge_role_order": [
+          [
+            "WX",
+            "diad"
+          ],
+          [
+            "XY",
+            "coupler"
+          ],
+          [
+            "YZ",
+            "diad"
+          ],
+          [
+            "ZT",
+            "coupler"
+          ],
+          [
+            "TI",
+            "diad"
+          ],
+          [
+            "IW",
+            "coupler"
+          ]
+        ],
+        "apre_count": 3
+      }
+    },
+    {
+      "id": "fhe_top_lock_probe",
+      "role": "top_lock_and_tamper_source",
+      "path": "research/fhe/artifacts/json/apre_top_lock_and_single_flip_tamper_probe.v1.json",
+      "required": true,
+      "exists": true,
+      "bytes": 12481,
+      "sha256": "bdd8e15e8376b8b54502c0b409da946ea5c6980cdc10e16068bb01e18334a8e1",
+      "status": "loaded",
+      "json_summary": {
+        "type": "dict",
+        "keys": [
+          "title",
+          "version",
+          "status",
+          "source",
+          "apre_signature",
+          "candidate_count",
+          "apre_count",
+          "apre_candidate_ids",
+          "apre_cycles",
+          "outsider_count",
+          "single_flip_tamper_count",
+          "accepted_after_single_flip_tamper",
+          "rejected_after_single_flip_tamper",
+          "single_flip_tamper_rows",
+          "boundary"
+        ],
+        "dict_apre_signature_keys": [
+          "residue_bit",
+          "edge_sign_sum",
+          "odd_triangle_touch_count",
+          "even_triangle_touch_count",
+          "odd_slot_count",
+          "even_only_slot_count"
+        ],
+        "list_count_apre_candidate_ids": 3,
+        "list_count_apre_cycles": 3,
+        "list_count_single_flip_tamper_rows": 18,
+        "first_single_flip_tamper_rows_keys": [
+          "source_candidate_id",
+          "source_cycle_slots",
+          "flipped_edge_index",
+          "flipped_edge",
+          "old_bit",
+          "new_bit",
+          "new_edge_sign_bits",
+          "new_signature",
+          "accepted_by_apre_signature"
+        ],
+        "list_count_boundary": 4
+      },
+      "selected_fields": {
+        "status": "provisional_admissible_class_not_final_A",
+        "title": "A_pre top-lock class and single-flip tamper probe",
+        "apre_count": 3,
+        "apre_cycles": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            7,
+            10,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            8,
+            14,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "id": "fhe_zero_edge_census",
+      "role": "zt_zero_edge_census_source",
+      "path": "research/fhe/artifacts/json/branch_anatomy_zero_edge_census.v1.json",
+      "required": true,
+      "exists": true,
+      "bytes": 22187,
+      "sha256": "1ae10c4aec10740a3567a5e13584e08b0a284212e3bad4b605e9c03ec5b95d23",
+      "status": "loaded",
+      "json_summary": {
+        "type": "dict",
+        "keys": [
+          "title",
+          "version",
+          "status",
+          "zero_edge_count",
+          "one_edge_count",
+          "role_pattern",
+          "top_lock_signature",
+          "selected_zero_edges",
+          "selected_count",
+          "zero_edge_records",
+          "interpretation"
+        ],
+        "list_count_role_pattern": 6,
+        "dict_top_lock_signature_keys": [
+          "residue_bit",
+          "edge_sign_sum",
+          "odd_triangle_touch_count",
+          "even_triangle_touch_count",
+          "odd_slot_count",
+          "even_only_slot_count"
+        ],
+        "list_count_selected_zero_edges": 3,
+        "list_count_zero_edge_records": 15,
+        "first_zero_edge_records_keys": [
+          "edge",
+          "endpoints",
+          "sign",
+          "endpoint_odd_active",
+          "both_endpoints_odd_active",
+          "endpoint_non_odd",
+          "triangle_memberships",
+          "triangle_kinds",
+          "c6_candidate_count_containing_edge",
+          "c6_candidate_ids_containing_edge",
+          "role_pattern_oriented_match_count",
+          "top_lock_oriented_match_count",
+          "top_lock_base_candidate_ids",
+          "top_lock_mappings"
+        ],
+        "list_count_interpretation": 3
+      },
+      "selected_fields": {
+        "status": "branch_anatomy_test",
+        "title": "Branch anatomy zero-edge census",
+        "top_lock_signature": {
+          "residue_bit": 1,
+          "edge_sign_sum": 5,
+          "odd_triangle_touch_count": 5,
+          "even_triangle_touch_count": 1,
+          "odd_slot_count": 6,
+          "even_only_slot_count": 0
+        }
+      }
+    },
+    {
+      "id": "fhe_selection_space",
+      "role": "selection_space_source",
+      "path": "research/fhe/artifacts/json/selected_branch_selection_space_count.v1.json",
+      "required": false,
+      "exists": true,
+      "bytes": 55630,
+      "sha256": "0b96be0d2af39d55e2daa56fcde3492fa23d2e2001790b8c03a83cbaaaaf0ce6",
+      "status": "loaded",
+      "json_summary": {
+        "type": "dict",
+        "keys": [
+          "title",
+          "version",
+          "status",
+          "fixed_triangle_count",
+          "global_candidate_triple_count",
+          "global_observed_triple_count",
+          "all_fixed_candidate_counts",
+          "all_fixed_observed_counts",
+          "all_observed_are_candidates",
+          "all_candidates_are_observed",
+          "fixed_reports",
+          "interpretation"
+        ],
+        "dict_all_fixed_candidate_counts_keys": [
+          "21"
+        ],
+        "dict_all_fixed_observed_counts_keys": [
+          "6"
+        ],
+        "list_count_fixed_reports": 10,
+        "first_fixed_reports_keys": [
+          "fixed_triangle",
+          "record_count",
+          "moved_orbit_count_outside_fixed",
+          "endpoint_fixed_edge_count_outside_fixed",
+          "candidate_count",
+          "observed_unique_count",
+          "observed_all_candidates",
+          "candidate_all_observed",
+          "candidate_minus_observed_count",
+          "observed_minus_candidate_count",
+          "candidate_triples",
+          "observed_triples"
+        ],
+        "list_count_interpretation": 3
+      },
+      "selected_fields": {
+        "status": "selected_branch_abstract_candidate_count",
+        "title": "Selected branch selection-space count"
+      }
+    },
+    {
+      "id": "fhe_row_aware_discriminants",
+      "role": "row_aware_feature_source",
+      "path": "research/fhe/artifacts/json/selected_branch_row_aware_discriminants.v1.json",
+      "required": true,
+      "exists": true,
+      "bytes": 29021,
+      "sha256": "545e322ece3d741f3811af7200dc4bc7697d6ed6973448e1a1aaa6c0880b3522",
+      "status": "loaded",
+      "json_summary": {
+        "type": "dict",
+        "keys": [
+          "title",
+          "version",
+          "status",
+          "candidate_total_local",
+          "observed_total_local",
+          "rejected_total_local",
+          "feature_names",
+          "row_aware_features",
+          "exact_combo_count",
+          "row_aware_exact_combo_count",
+          "exact_combos",
+          "top_ranked",
+          "interpretation"
+        ],
+        "list_count_feature_names": 10,
+        "list_count_row_aware_features": 4,
+        "list_count_exact_combos": 50,
+        "first_exact_combos_keys": [
+          "combo",
+          "feature_count",
+          "value_count",
+          "observed_only_total",
+          "rejected_only_total",
+          "mixed_observed_total",
+          "mixed_rejected_total"
+        ],
+        "list_count_top_ranked": 40,
+        "first_top_ranked_keys": [
+          "combo",
+          "feature_count",
+          "value_count",
+          "observed_only_total",
+          "rejected_only_total",
+          "mixed_observed_total",
+          "mixed_rejected_total"
+        ],
+        "list_count_interpretation": 3
+      },
+      "selected_fields": {
+        "status": "row_aware_selection_law_probe",
+        "title": "Selected branch row-aware discriminants",
+        "row_aware_features": [
+          "support_union",
+          "support_complement",
+          "support_intersection",
+          "support_row_degree_profile"
+        ]
+      }
+    },
+    {
+      "id": "fhe_exact_selector_minimizer",
+      "role": "least_sharp_exact_selector_source",
+      "path": "research/fhe/artifacts/json/selected_branch_exact_selector_minimizer.v1.json",
+      "required": true,
+      "exists": true,
+      "bytes": 9455,
+      "sha256": "49e2b18f3891c3b2c5c6af330b9529a9982ce06fb623563a52831e56c038bad1",
+      "status": "loaded",
+      "json_summary": {
+        "type": "dict",
+        "keys": [
+          "title",
+          "version",
+          "status",
+          "combo_count_scanned",
+          "exact_combo_count",
+          "one_feature_exact_count",
+          "least_value_exact",
+          "one_feature_exact",
+          "candidate_total_local",
+          "observed_total_local",
+          "rejected_total_local",
+          "interpretation"
+        ],
+        "list_count_least_value_exact": 25,
+        "first_least_value_exact_keys": [
+          "combo",
+          "feature_count",
+          "value_count",
+          "observed_only_total",
+          "rejected_only_total",
+          "mixed_observed_total",
+          "mixed_rejected_total"
+        ],
+        "list_count_one_feature_exact": 1,
+        "first_one_feature_exact_keys": [
+          "combo",
+          "feature_count",
+          "value_count",
+          "observed_only_total",
+          "rejected_only_total",
+          "mixed_observed_total",
+          "mixed_rejected_total"
+        ],
+        "list_count_interpretation": 3
+      },
+      "selected_fields": {
+        "status": "global_exact_selector_minimizer",
+        "title": "Selected branch exact selector minimizer"
+      }
+    },
+    {
+      "id": "fhe_register_keypair_anatomy",
+      "role": "register_keypair_source_if_present",
+      "path": "research/fhe/artifacts/json/register_keypair_anatomy.v1.json",
+      "required": false,
+      "exists": true,
+      "bytes": 608825,
+      "sha256": "2c936e537ced57a1d4219e7a1a15538ad7b4f6cee0753cab61e397386f2d8d19",
+      "status": "loaded",
+      "json_summary": {
+        "type": "dict",
+        "keys": [
+          "title",
+          "version",
+          "status",
+          "source",
+          "candidate_key_count",
+          "reports",
+          "interpretation"
+        ],
+        "list_count_reports": 3,
+        "first_reports_keys": [
+          "features",
+          "group_count",
+          "pair_count",
+          "bad_group_count",
+          "bad_groups",
+          "tau_cycle_type_counts",
+          "tau_fixed_count_counts",
+          "same_selected_sorted_blocks_count",
+          "same_selected_hinge_word_count",
+          "sample_pairs",
+          "full_pairs"
+        ],
+        "list_count_interpretation": 4
+      },
+      "selected_fields": {
+        "status": "track_b_keypair_anatomy",
+        "title": "Register keypair anatomy"
+      }
+    },
+    {
+      "id": "fhe_register_key_section",
+      "role": "paper_section_context",
+      "path": "research/fhe/paper/sections/05c_register_key_selection.tex",
+      "required": true,
+      "exists": true,
+      "bytes": 4014,
+      "sha256": "687dd6a56b69d330f9d48e51df28168d10b4bff8161f8196439afd21198f388e",
+      "status": "loaded",
+      "text_summary": {
+        "line_count": 30,
+        "needle_hits": [
+          {
+            "line": 1,
+            "text": "\\section{Register-Key Selection and Row-Aware Incidence}"
+          },
+          {
+            "line": 2,
+            "text": "\\label{sec:register-key-selection}"
+          },
+          {
+            "line": 4,
+            "text": "The K900-native collision census in Section~\\ref{sec:k900-native-collision-bound} gives the Track A result: within the K900 carrier, the target predicate selects exactly three base cycles and six oriented presentations. The present section "
+          },
+          {
+            "line": 6,
+            "text": "The starting point is the register-boundary audit summarized in Section~\\ref{sec:register-boundary}. Endpoint labels, shared edge order, bare \\(G_{15}\\) isomorphism, and the K900 odd/even triangle partition do not force a unique chamber reg"
+          },
+          {
+            "line": 8,
+            "text": "A census of the K900-to-theorem-object key space gives \\(120\\) candidate graph isomorphisms. Public chamber/triangle predicates reduce this space to \\(60\\) structured keypairs. Each keypair is explained by a Petersen line-graph involution: "
+          },
+          {
+            "line": 10,
+            "text": "The selected branch triple is an edge-level object in this register. It does not live on the fixed triangle itself. For every public keypair, the selected triple lies in the complement of the fixed Petersen-star triangle and has the followi"
+          },
+          {
+            "line": 18,
+            "text": "The abstract Petersen edge-orbit structure alone does not determine the observed selection. For each fixed Petersen-star triangle, there are \\(21\\) abstract triples of the relevant type, while the carrier admits \\(6\\). Across all ten fixed "
+          },
+          {
+            "line": 22,
+            "text": "Exact recovery in the tested feature family requires row-aware incidence. The row-aware support-degree profile of the sector matrix \\(M\\), recording which rows are touched and with what multiplicity, separates all \\(60\\) observed selected t"
+          },
+          {
+            "line": 28,
+            "text": "As a single feature, this row-aware profile is exact but sharp: it has \\(210\\) distinct values on the \\(210\\) local candidate rows. A minimizer over the tested feature family found that the only one-feature exact selector is the full row-aw"
+          },
+          {
+            "line": 30,
+            "text": "This Track B result should be read with the same boundary discipline as the rest of the paper. It is not a cryptographic security theorem and not a proof over all possible predicates. It is a finite register-key audit. It shows that the car"
+          }
+        ],
+        "preview": "\\section{Register-Key Selection and Row-Aware Incidence}\n\\label{sec:register-key-selection}\n\nThe K900-native collision census in Section~\\ref{sec:k900-native-collision-bound} gives the Track A result: within the K900 carrier, the target predicate selects exactly three base cycles and six oriented presentations. The present section records a second, bounded Track B audit. Its purpose is not to replace the collision bound, but to locate where the associated register-key structure becomes visible.\n\nThe starting point is the register-boundary audit summarized in Section~\\ref{sec:register-boundary}. Endpoint labels, shared edge order, bare \\(G_{15}\\) isomorphism, and the K900 odd/even triangle partition do not force a unique chamber register alignment. The bridge is therefore not treated as a shadow determined by public surface data. It is treated as a finite register key.\n\nA census of the K900-to-theorem-object key space gives \\(120\\) candidate graph isomorphisms. Public chamber/triangle p"
+      }
+    },
+    {
+      "id": "fhe_result_v21",
+      "role": "checkpoint_context",
+      "path": "research/fhe/RESULT_v21.md",
+      "required": true,
+      "exists": true,
+      "bytes": 2727,
+      "sha256": "93dfa06cbbf8b7cfdaf2aefcde41ebbaee04c1a676316a776e20ec8199a3fd00",
+      "status": "loaded",
+      "text_summary": {
+        "line_count": 104,
+        "needle_hits": [
+          {
+            "line": 3,
+            "text": "Status: Exact selector minimizer checkpoint."
+          },
+          {
+            "line": 7,
+            "text": "After v20 found that row-aware M-incidence exactly separates the observed selected-branch triples from rejected abstract candidates, what is the least-sharp exact selector in the tested feature family?"
+          },
+          {
+            "line": 23,
+            "text": "The only one-feature exact selector is:"
+          },
+          {
+            "line": 31,
+            "text": "Thus support_row_degree_profile is the minimal single-feature exact selector in the tested family."
+          },
+          {
+            "line": 33,
+            "text": "## Least-sharp exact tested selectors"
+          },
+          {
+            "line": 35,
+            "text": "The least-value exact selectors have:"
+          },
+          {
+            "line": 40,
+            "text": "The first least-sharp exact selectors are:"
+          },
+          {
+            "line": 69,
+            "text": "There are two levels of exact row-aware recovery."
+          },
+          {
+            "line": 76,
+            "text": "Level 2: least-sharp tested recovery."
+          },
+          {
+            "line": 78,
+            "text": "    Three-feature row-aware selectors reduce sharpness slightly, to 206 values."
+          },
+          {
+            "line": 79,
+            "text": "    These combine chamber block information with row-aware support union/complement or support histogram information."
+          },
+          {
+            "line": 81,
+            "text": "Thus row-aware incidence is necessary for exact recovery in the tested feature family, but it does not have to appear only as the full row-degree profile."
+          },
+          {
+            "line": 88,
+            "text": "    Row-aware incidence sees it."
+          },
+          {
+            "line": 92,
+            "text": "    The minimal one-feature exact selector is full row-aware degree profile."
+          },
+          {
+            "line": 93,
+            "text": "    The least-sharp exact tested selectors use block word plus row-aware support location."
+          },
+          {
+            "line": 97,
+            "text": "    One row-aware profile sees everything."
+          },
+          {
+            "line": 98,
+            "text": "    Three weaker row-aware predicates nearly name the same law."
+          },
+          {
+            "line": 104,
+            "text": "It is not a proof over all possible predicates. It does show that within the tested chamber/support feature set, exact carrier selection requires row-aware incidence information."
+          }
+        ],
+        "preview": "# FHE result v21\n\nStatus: Exact selector minimizer checkpoint.\n\n## Question\n\nAfter v20 found that row-aware M-incidence exactly separates the observed selected-branch triples from rejected abstract candidates, what is the least-sharp exact selector in the tested feature family?\n\nThis matters because support_row_degree_profile is exact, but it has one distinct value per local candidate row:\n\n    values = 210\n\nSo it may be close to key material.\n\n## Result\n\nThe full minimizer scanned all tested feature combinations:\n\n    combo_count_scanned = 2047\n    exact_combo_count = 1384\n    one_feature_exact_count = 1\n\nThe only one-feature exact selector is:\n\n    support_row_degree_profile\n\nwith:\n\n    values = 210\n\nThus support_row_degree_profile is the minimal single-feature exact selector in the tested family.\n\n## Least-sharp exact tested selectors\n\nThe least-value exact selectors have:\n\n    values = 206\n    feature_count = 3\n\nThe first least-sharp exact selectors are:\n\n    block_word\n    support"
+      }
+    }
+  ],
+  "candidate_tests": [
+    {
+      "id": "A0_public_predicate_only",
+      "status": "prepared_as_control",
+      "input_sources": [
+        "fhe_anatomy",
+        "fhe_top_lock_probe",
+        "fhe_zero_edge_census",
+        "selected_wxyzti_target"
+      ],
+      "expected": "partial selection or ambiguity, not exact row-aware recovery"
+    },
+    {
+      "id": "A1_row_aware_M_incidence",
+      "status": "prepared_as_primary",
+      "input_sources": [
+        "matrix_M",
+        "row_taxonomy",
+        "selected_wxyzti_target",
+        "fhe_row_aware_discriminants",
+        "fhe_exact_selector_minimizer"
+      ],
+      "expected": "recover target class if v21 exact selector conclusion is reproducible"
+    },
+    {
+      "id": "A2_row_shuffled_M_null",
+      "status": "declared_not_run",
+      "input_sources": [
+        "matrix_M",
+        "row_taxonomy",
+        "selected_wxyzti_target"
+      ],
+      "expected": "fail exact recovery after row identity is destroyed"
+    }
+  ],
+  "quick_shapes": {
+    "matrix_M": {
+      "rows": 15,
+      "cols": 30
+    },
+    "row_taxonomy_status": "loaded",
+    "target_status": "loaded"
+  },
+  "next_script": "validate_register_map_candidate_inputs_001.py"
+}

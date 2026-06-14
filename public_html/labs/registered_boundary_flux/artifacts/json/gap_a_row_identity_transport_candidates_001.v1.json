@@ -1,0 +1,2510 @@
+{
+  "schema": "gap_a_row_identity_transport_candidates_001.v1",
+  "status": "row_identity_transport_candidates_derived_not_map_proof",
+  "timestamp_utc": "2026-06-14T18:27:39.343134+00:00",
+  "gap": "A_chamber_register_map",
+  "purpose": "Derive candidate row-identity transport signatures before attempting a lawful source-derived register map.",
+  "boundary": [
+    "This is not a chamber/register map proof.",
+    "Exact matrix-derived signatures are not automatically source-derived transport laws.",
+    "A lawful Gap A map still has to explain row identity from the source object, not merely name it in M."
+  ],
+  "inputs": {
+    "carrier_audit": "registered_boundary_flux/artifacts/json/gap_a_row_identity_carrier_audit_001.v1.json",
+    "carrier_audit_sha256": "2ce89d00e6f760e81516abd3fd6835077fdf74e3e516dd56b226851c20092fb4",
+    "matrix_M": "../json/matrix_M.json",
+    "matrix_M_sha256": "b72fc5606c60fcb3d9c76d8fbc04513730543070a31f6c382b6946e953c3074a",
+    "row_taxonomy": "../json/row_taxonomy.json",
+    "row_taxonomy_sha256": "80d88f9ba9a305dc885c870f90bcf309722ff1efe632b49192e95e5fc38042c8",
+    "theorem_object": "../json/theorem_object.json",
+    "theorem_object_sha256": "82078e2a053218df43125553a274923cbac6c63e61d205e6a4ad2dd73c4723c1",
+    "transport_cocycle": "../json/transport_cocycle.json",
+    "transport_cocycle_sha256": "54fbfe8bbd66991beb4a185a13791d164e6686b2148ed3f17de337a907346676"
+  },
+  "row_count": 15,
+  "column_count": 30,
+  "rows": [
+    {
+      "row": 0,
+      "taxonomy_class": "A0",
+      "hinges": [
+        18
+      ],
+      "block_vector": [
+        0,
+        0,
+        0,
+        5,
+        9
+      ],
+      "support_columns": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "complement_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "overlap_vector_by_row_order": [
+        14,
+        9,
+        9,
+        4,
+        5,
+        5,
+        4,
+        5,
+        5,
+        5,
+        5,
+        9,
+        5,
+        5,
+        9
+      ],
+      "overlap_multiset_without_self": [
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        9,
+        9,
+        9,
+        9
+      ],
+      "supported_column_row_degrees": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "complement_column_row_degrees": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    {
+      "row": 1,
+      "taxonomy_class": "A1",
+      "hinges": [
+        14
+      ],
+      "block_vector": [
+        0,
+        0,
+        5,
+        0,
+        9
+      ],
+      "support_columns": [
+        11,
+        12,
+        13,
+        14,
+        15,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "complement_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "overlap_vector_by_row_order": [
+        9,
+        14,
+        9,
+        5,
+        4,
+        5,
+        5,
+        5,
+        9,
+        4,
+        5,
+        5,
+        5,
+        9,
+        5
+      ],
+      "overlap_multiset_without_self": [
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        9,
+        9,
+        9,
+        9
+      ],
+      "supported_column_row_degrees": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "complement_column_row_degrees": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    {
+      "row": 2,
+      "taxonomy_class": "A2",
+      "hinges": [
+        10
+      ],
+      "block_vector": [
+        0,
+        5,
+        0,
+        0,
+        9
+      ],
+      "support_columns": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "complement_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "overlap_vector_by_row_order": [
+        9,
+        9,
+        14,
+        5,
+        5,
+        9,
+        5,
+        4,
+        5,
+        5,
+        4,
+        5,
+        9,
+        5,
+        5
+      ],
+      "overlap_multiset_without_self": [
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        9,
+        9,
+        9,
+        9
+      ],
+      "supported_column_row_degrees": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "complement_column_row_degrees": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    {
+      "row": 3,
+      "taxonomy_class": "F0\u00b1",
+      "hinges": [
+        10,
+        14
+      ],
+      "block_vector": [
+        4,
+        3,
+        3,
+        2,
+        2
+      ],
+      "support_columns": [
+        2,
+        3,
+        4,
+        5,
+        8,
+        9,
+        10,
+        13,
+        14,
+        15,
+        19,
+        20,
+        28,
+        29
+      ],
+      "complement_columns": [
+        0,
+        1,
+        6,
+        7,
+        11,
+        12,
+        16,
+        17,
+        18,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "overlap_vector_by_row_order": [
+        4,
+        5,
+        5,
+        14,
+        9,
+        9,
+        4,
+        5,
+        5,
+        5,
+        9,
+        5,
+        5,
+        9,
+        5
+      ],
+      "overlap_multiset_without_self": [
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        9,
+        9,
+        9,
+        9
+      ],
+      "supported_column_row_degrees": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "complement_column_row_degrees": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    {
+      "row": 4,
+      "taxonomy_class": "F1\u00b1",
+      "hinges": [
+        10,
+        18
+      ],
+      "block_vector": [
+        4,
+        3,
+        2,
+        3,
+        2
+      ],
+      "support_columns": [
+        1,
+        3,
+        4,
+        5,
+        7,
+        9,
+        10,
+        12,
+        15,
+        18,
+        19,
+        20,
+        27,
+        29
+      ],
+      "complement_columns": [
+        0,
+        2,
+        6,
+        8,
+        11,
+        13,
+        14,
+        16,
+        17,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        28
+      ],
+      "overlap_vector_by_row_order": [
+        5,
+        4,
+        5,
+        9,
+        14,
+        9,
+        5,
+        9,
+        5,
+        4,
+        5,
+        5,
+        5,
+        5,
+        9
+      ],
+      "overlap_multiset_without_self": [
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        9,
+        9,
+        9,
+        9
+      ],
+      "supported_column_row_degrees": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "complement_column_row_degrees": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    {
+      "row": 5,
+      "taxonomy_class": "C2\u00b1",
+      "hinges": [
+        10
+      ],
+      "block_vector": [
+        3,
+        5,
+        1,
+        1,
+        4
+      ],
+      "support_columns": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        15,
+        20,
+        24,
+        25,
+        26,
+        29
+      ],
+      "complement_columns": [
+        0,
+        1,
+        2,
+        11,
+        12,
+        13,
+        14,
+        16,
+        17,
+        18,
+        19,
+        21,
+        22,
+        23,
+        27,
+        28
+      ],
+      "overlap_vector_by_row_order": [
+        5,
+        5,
+        9,
+        9,
+        9,
+        14,
+        5,
+        5,
+        4,
+        5,
+        5,
+        4,
+        9,
+        5,
+        5
+      ],
+      "overlap_multiset_without_self": [
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        9,
+        9,
+        9,
+        9
+      ],
+      "supported_column_row_degrees": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "complement_column_row_degrees": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    {
+      "row": 6,
+      "taxonomy_class": "F0\u00b1",
+      "hinges": [
+        10,
+        14
+      ],
+      "block_vector": [
+        4,
+        3,
+        3,
+        2,
+        2
+      ],
+      "support_columns": [
+        0,
+        1,
+        2,
+        5,
+        6,
+        7,
+        10,
+        11,
+        12,
+        14,
+        16,
+        17,
+        23,
+        26
+      ],
+      "complement_columns": [
+        3,
+        4,
+        8,
+        9,
+        13,
+        15,
+        18,
+        19,
+        20,
+        21,
+        22,
+        24,
+        25,
+        27,
+        28,
+        29
+      ],
+      "overlap_vector_by_row_order": [
+        4,
+        5,
+        5,
+        4,
+        5,
+        5,
+        14,
+        9,
+        9,
+        9,
+        5,
+        5,
+        9,
+        5,
+        5
+      ],
+      "overlap_multiset_without_self": [
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        9,
+        9,
+        9,
+        9
+      ],
+      "supported_column_row_degrees": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "complement_column_row_degrees": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    {
+      "row": 7,
+      "taxonomy_class": "F2\u00b1",
+      "hinges": [
+        14,
+        18
+      ],
+      "block_vector": [
+        4,
+        2,
+        3,
+        3,
+        2
+      ],
+      "support_columns": [
+        0,
+        1,
+        4,
+        5,
+        7,
+        9,
+        11,
+        12,
+        14,
+        17,
+        18,
+        20,
+        23,
+        27
+      ],
+      "complement_columns": [
+        2,
+        3,
+        6,
+        8,
+        10,
+        13,
+        15,
+        16,
+        19,
+        21,
+        22,
+        24,
+        25,
+        26,
+        28,
+        29
+      ],
+      "overlap_vector_by_row_order": [
+        5,
+        5,
+        4,
+        5,
+        9,
+        5,
+        9,
+        14,
+        9,
+        5,
+        4,
+        5,
+        5,
+        5,
+        9
+      ],
+      "overlap_multiset_without_self": [
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        9,
+        9,
+        9,
+        9
+      ],
+      "supported_column_row_degrees": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "complement_column_row_degrees": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    {
+      "row": 8,
+      "taxonomy_class": "C1\u00b1",
+      "hinges": [
+        14
+      ],
+      "block_vector": [
+        3,
+        1,
+        5,
+        1,
+        4
+      ],
+      "support_columns": [
+        0,
+        2,
+        5,
+        7,
+        11,
+        12,
+        13,
+        14,
+        15,
+        17,
+        22,
+        23,
+        25,
+        27
+      ],
+      "complement_columns": [
+        1,
+        3,
+        4,
+        6,
+        8,
+        9,
+        10,
+        16,
+        18,
+        19,
+        20,
+        21,
+        24,
+        26,
+        28,
+        29
+      ],
+      "overlap_vector_by_row_order": [
+        5,
+        9,
+        5,
+        5,
+        5,
+        4,
+        9,
+        9,
+        14,
+        5,
+        5,
+        4,
+        5,
+        9,
+        5
+      ],
+      "overlap_multiset_without_self": [
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        9,
+        9,
+        9,
+        9
+      ],
+      "supported_column_row_degrees": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "complement_column_row_degrees": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    {
+      "row": 9,
+      "taxonomy_class": "F1\u00b1",
+      "hinges": [
+        10,
+        18
+      ],
+      "block_vector": [
+        4,
+        3,
+        2,
+        3,
+        2
+      ],
+      "support_columns": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        8,
+        10,
+        11,
+        13,
+        16,
+        17,
+        18,
+        21,
+        26
+      ],
+      "complement_columns": [
+        4,
+        5,
+        7,
+        9,
+        12,
+        14,
+        15,
+        19,
+        20,
+        22,
+        23,
+        24,
+        25,
+        27,
+        28,
+        29
+      ],
+      "overlap_vector_by_row_order": [
+        5,
+        4,
+        5,
+        5,
+        4,
+        5,
+        9,
+        5,
+        5,
+        14,
+        9,
+        9,
+        9,
+        5,
+        5
+      ],
+      "overlap_multiset_without_self": [
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        9,
+        9,
+        9,
+        9
+      ],
+      "supported_column_row_degrees": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "complement_column_row_degrees": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    {
+      "row": 10,
+      "taxonomy_class": "F2\u00b1",
+      "hinges": [
+        14,
+        18
+      ],
+      "block_vector": [
+        4,
+        2,
+        3,
+        3,
+        2
+      ],
+      "support_columns": [
+        0,
+        2,
+        3,
+        4,
+        6,
+        8,
+        13,
+        14,
+        15,
+        16,
+        18,
+        19,
+        21,
+        28
+      ],
+      "complement_columns": [
+        1,
+        5,
+        7,
+        9,
+        10,
+        11,
+        12,
+        17,
+        20,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        29
+      ],
+      "overlap_vector_by_row_order": [
+        5,
+        5,
+        4,
+        9,
+        5,
+        5,
+        5,
+        4,
+        5,
+        9,
+        14,
+        9,
+        5,
+        9,
+        5
+      ],
+      "overlap_multiset_without_self": [
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        9,
+        9,
+        9,
+        9
+      ],
+      "supported_column_row_degrees": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "complement_column_row_degrees": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    {
+      "row": 11,
+      "taxonomy_class": "C0\u00b1",
+      "hinges": [
+        18
+      ],
+      "block_vector": [
+        3,
+        1,
+        1,
+        5,
+        4
+      ],
+      "support_columns": [
+        0,
+        1,
+        3,
+        6,
+        13,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        24,
+        28
+      ],
+      "complement_columns": [
+        2,
+        4,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        14,
+        15,
+        23,
+        25,
+        26,
+        27,
+        29
+      ],
+      "overlap_vector_by_row_order": [
+        9,
+        5,
+        5,
+        5,
+        5,
+        4,
+        5,
+        5,
+        4,
+        9,
+        9,
+        14,
+        5,
+        5,
+        9
+      ],
+      "overlap_multiset_without_self": [
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        9,
+        9,
+        9,
+        9
+      ],
+      "supported_column_row_degrees": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "complement_column_row_degrees": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    {
+      "row": 12,
+      "taxonomy_class": "C2\u00b1",
+      "hinges": [
+        10
+      ],
+      "block_vector": [
+        3,
+        5,
+        1,
+        1,
+        4
+      ],
+      "support_columns": [
+        0,
+        1,
+        2,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        16,
+        24,
+        25,
+        26,
+        29
+      ],
+      "complement_columns": [
+        3,
+        4,
+        5,
+        12,
+        13,
+        14,
+        15,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        27,
+        28
+      ],
+      "overlap_vector_by_row_order": [
+        5,
+        5,
+        9,
+        5,
+        5,
+        9,
+        9,
+        5,
+        5,
+        9,
+        5,
+        5,
+        14,
+        4,
+        4
+      ],
+      "overlap_multiset_without_self": [
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        9,
+        9,
+        9,
+        9
+      ],
+      "supported_column_row_degrees": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "complement_column_row_degrees": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    {
+      "row": 13,
+      "taxonomy_class": "C1\u00b1",
+      "hinges": [
+        14
+      ],
+      "block_vector": [
+        3,
+        1,
+        5,
+        1,
+        4
+      ],
+      "support_columns": [
+        2,
+        4,
+        5,
+        8,
+        11,
+        12,
+        13,
+        14,
+        15,
+        19,
+        21,
+        22,
+        25,
+        28
+      ],
+      "complement_columns": [
+        0,
+        1,
+        3,
+        6,
+        7,
+        9,
+        10,
+        16,
+        17,
+        18,
+        20,
+        23,
+        24,
+        26,
+        27,
+        29
+      ],
+      "overlap_vector_by_row_order": [
+        5,
+        9,
+        5,
+        9,
+        5,
+        5,
+        5,
+        5,
+        9,
+        5,
+        9,
+        5,
+        4,
+        14,
+        4
+      ],
+      "overlap_multiset_without_self": [
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        9,
+        9,
+        9,
+        9
+      ],
+      "supported_column_row_degrees": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "complement_column_row_degrees": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    {
+      "row": 14,
+      "taxonomy_class": "C0\u00b1",
+      "hinges": [
+        18
+      ],
+      "block_vector": [
+        3,
+        1,
+        1,
+        5,
+        4
+      ],
+      "support_columns": [
+        1,
+        3,
+        4,
+        9,
+        12,
+        16,
+        17,
+        18,
+        19,
+        20,
+        22,
+        23,
+        24,
+        27
+      ],
+      "complement_columns": [
+        0,
+        2,
+        5,
+        6,
+        7,
+        8,
+        10,
+        11,
+        13,
+        14,
+        15,
+        21,
+        25,
+        26,
+        28,
+        29
+      ],
+      "overlap_vector_by_row_order": [
+        9,
+        5,
+        5,
+        5,
+        9,
+        5,
+        5,
+        9,
+        5,
+        5,
+        5,
+        9,
+        4,
+        4,
+        14
+      ],
+      "overlap_multiset_without_self": [
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        9,
+        9,
+        9,
+        9
+      ],
+      "supported_column_row_degrees": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "complement_column_row_degrees": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    }
+  ],
+  "schemes": {
+    "taxonomy_class": {
+      "source_status": "row_taxonomy",
+      "identity_report": {
+        "bucket_count": 9,
+        "unique_count": 3,
+        "collision_count": 6,
+        "collisions": [
+          {
+            "key": "F0\u00b1",
+            "rows": [
+              3,
+              6
+            ]
+          },
+          {
+            "key": "F1\u00b1",
+            "rows": [
+              4,
+              9
+            ]
+          },
+          {
+            "key": "C2\u00b1",
+            "rows": [
+              5,
+              12
+            ]
+          },
+          {
+            "key": "F2\u00b1",
+            "rows": [
+              7,
+              10
+            ]
+          },
+          {
+            "key": "C1\u00b1",
+            "rows": [
+              8,
+              13
+            ]
+          },
+          {
+            "key": "C0\u00b1",
+            "rows": [
+              11,
+              14
+            ]
+          }
+        ]
+      },
+      "interpretation": "Organizes rows but collides."
+    },
+    "block_vector": {
+      "source_status": "row_taxonomy",
+      "identity_report": {
+        "bucket_count": 9,
+        "unique_count": 3,
+        "collision_count": 6,
+        "collisions": [
+          {
+            "key": [
+              4,
+              3,
+              3,
+              2,
+              2
+            ],
+            "rows": [
+              3,
+              6
+            ]
+          },
+          {
+            "key": [
+              4,
+              3,
+              2,
+              3,
+              2
+            ],
+            "rows": [
+              4,
+              9
+            ]
+          },
+          {
+            "key": [
+              3,
+              5,
+              1,
+              1,
+              4
+            ],
+            "rows": [
+              5,
+              12
+            ]
+          },
+          {
+            "key": [
+              4,
+              2,
+              3,
+              3,
+              2
+            ],
+            "rows": [
+              7,
+              10
+            ]
+          },
+          {
+            "key": [
+              3,
+              1,
+              5,
+              1,
+              4
+            ],
+            "rows": [
+              8,
+              13
+            ]
+          },
+          {
+            "key": [
+              3,
+              1,
+              1,
+              5,
+              4
+            ],
+            "rows": [
+              11,
+              14
+            ]
+          }
+        ]
+      },
+      "interpretation": "Tests whether block counts alone identify rows."
+    },
+    "taxonomy_class_plus_block_vector": {
+      "source_status": "row_taxonomy",
+      "identity_report": {
+        "bucket_count": 9,
+        "unique_count": 3,
+        "collision_count": 6,
+        "collisions": [
+          {
+            "key": {
+              "block_vector": [
+                4,
+                3,
+                3,
+                2,
+                2
+              ],
+              "class": "F0\u00b1"
+            },
+            "rows": [
+              3,
+              6
+            ]
+          },
+          {
+            "key": {
+              "block_vector": [
+                4,
+                3,
+                2,
+                3,
+                2
+              ],
+              "class": "F1\u00b1"
+            },
+            "rows": [
+              4,
+              9
+            ]
+          },
+          {
+            "key": {
+              "block_vector": [
+                3,
+                5,
+                1,
+                1,
+                4
+              ],
+              "class": "C2\u00b1"
+            },
+            "rows": [
+              5,
+              12
+            ]
+          },
+          {
+            "key": {
+              "block_vector": [
+                4,
+                2,
+                3,
+                3,
+                2
+              ],
+              "class": "F2\u00b1"
+            },
+            "rows": [
+              7,
+              10
+            ]
+          },
+          {
+            "key": {
+              "block_vector": [
+                3,
+                1,
+                5,
+                1,
+                4
+              ],
+              "class": "C1\u00b1"
+            },
+            "rows": [
+              8,
+              13
+            ]
+          },
+          {
+            "key": {
+              "block_vector": [
+                3,
+                1,
+                1,
+                5,
+                4
+              ],
+              "class": "C0\u00b1"
+            },
+            "rows": [
+              11,
+              14
+            ]
+          }
+        ]
+      },
+      "interpretation": "Tests taxonomy plus block vector."
+    },
+    "support_columns": {
+      "source_status": "matrix_assigned_not_source_derived",
+      "identity_report": {
+        "bucket_count": 15,
+        "unique_count": 15,
+        "collision_count": 0,
+        "collisions": []
+      },
+      "interpretation": "Exact in M, but still needs source derivation."
+    },
+    "complement_columns": {
+      "source_status": "matrix_assigned_not_source_derived",
+      "identity_report": {
+        "bucket_count": 15,
+        "unique_count": 15,
+        "collision_count": 0,
+        "collisions": []
+      },
+      "interpretation": "Equivalent exact carrier to support columns."
+    },
+    "overlap_vector_by_row_order": {
+      "source_status": "matrix_derived_depends_on_row_order",
+      "identity_report": {
+        "bucket_count": 15,
+        "unique_count": 15,
+        "collision_count": 0,
+        "collisions": []
+      },
+      "interpretation": "Tests ordered row-overlap identity."
+    },
+    "overlap_multiset_without_self": {
+      "source_status": "matrix_derived_partly_forgets_row_order",
+      "identity_report": {
+        "bucket_count": 1,
+        "unique_count": 0,
+        "collision_count": 1,
+        "collisions": [
+          {
+            "key": [
+              4,
+              4,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              9,
+              9,
+              9,
+              9
+            ],
+            "rows": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14
+            ]
+          }
+        ]
+      },
+      "interpretation": "Tests unnamed row-overlap identity."
+    },
+    "taxonomy_plus_overlap_multiset": {
+      "source_status": "matrix_derived_partly_forgets_row_order",
+      "identity_report": {
+        "bucket_count": 9,
+        "unique_count": 3,
+        "collision_count": 6,
+        "collisions": [
+          {
+            "key": {
+              "class": "F0\u00b1",
+              "overlap_multiset": [
+                4,
+                4,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                9,
+                9,
+                9,
+                9
+              ]
+            },
+            "rows": [
+              3,
+              6
+            ]
+          },
+          {
+            "key": {
+              "class": "F1\u00b1",
+              "overlap_multiset": [
+                4,
+                4,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                9,
+                9,
+                9,
+                9
+              ]
+            },
+            "rows": [
+              4,
+              9
+            ]
+          },
+          {
+            "key": {
+              "class": "C2\u00b1",
+              "overlap_multiset": [
+                4,
+                4,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                9,
+                9,
+                9,
+                9
+              ]
+            },
+            "rows": [
+              5,
+              12
+            ]
+          },
+          {
+            "key": {
+              "class": "F2\u00b1",
+              "overlap_multiset": [
+                4,
+                4,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                9,
+                9,
+                9,
+                9
+              ]
+            },
+            "rows": [
+              7,
+              10
+            ]
+          },
+          {
+            "key": {
+              "class": "C1\u00b1",
+              "overlap_multiset": [
+                4,
+                4,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                9,
+                9,
+                9,
+                9
+              ]
+            },
+            "rows": [
+              8,
+              13
+            ]
+          },
+          {
+            "key": {
+              "class": "C0\u00b1",
+              "overlap_multiset": [
+                4,
+                4,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                9,
+                9,
+                9,
+                9
+              ]
+            },
+            "rows": [
+              11,
+              14
+            ]
+          }
+        ]
+      },
+      "interpretation": "Tests taxonomy plus unnamed overlap."
+    },
+    "supported_column_row_degrees": {
+      "source_status": "matrix_derived_column_side_scalar",
+      "identity_report": {
+        "bucket_count": 1,
+        "unique_count": 0,
+        "collision_count": 1,
+        "collisions": [
+          {
+            "key": [
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7
+            ],
+            "rows": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14
+            ]
+          }
+        ]
+      },
+      "interpretation": "Tests column-side degree scalar profile."
+    },
+    "taxonomy_plus_supported_column_row_degrees": {
+      "source_status": "matrix_derived_column_side_scalar",
+      "identity_report": {
+        "bucket_count": 9,
+        "unique_count": 3,
+        "collision_count": 6,
+        "collisions": [
+          {
+            "key": {
+              "class": "F0\u00b1",
+              "supported_column_row_degrees": [
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7
+              ]
+            },
+            "rows": [
+              3,
+              6
+            ]
+          },
+          {
+            "key": {
+              "class": "F1\u00b1",
+              "supported_column_row_degrees": [
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7
+              ]
+            },
+            "rows": [
+              4,
+              9
+            ]
+          },
+          {
+            "key": {
+              "class": "C2\u00b1",
+              "supported_column_row_degrees": [
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7
+              ]
+            },
+            "rows": [
+              5,
+              12
+            ]
+          },
+          {
+            "key": {
+              "class": "F2\u00b1",
+              "supported_column_row_degrees": [
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7
+              ]
+            },
+            "rows": [
+              7,
+              10
+            ]
+          },
+          {
+            "key": {
+              "class": "C1\u00b1",
+              "supported_column_row_degrees": [
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7
+              ]
+            },
+            "rows": [
+              8,
+              13
+            ]
+          },
+          {
+            "key": {
+              "class": "C0\u00b1",
+              "supported_column_row_degrees": [
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7
+              ]
+            },
+            "rows": [
+              11,
+              14
+            ]
+          }
+        ]
+      },
+      "interpretation": "Tests taxonomy plus column-side scalar profile."
+    }
+  },
+  "exact_schemes": [
+    "support_columns",
+    "complement_columns",
+    "overlap_vector_by_row_order"
+  ],
+  "candidate_classes": {
+    "source_derived_candidate_now": [],
+    "matrix_exact_but_needs_source_derivation": [
+      "support_columns",
+      "complement_columns",
+      "overlap_vector_by_row_order"
+    ],
+    "organizing_but_colliding": [
+      "taxonomy_class",
+      "block_vector",
+      "taxonomy_class_plus_block_vector",
+      "overlap_multiset_without_self",
+      "taxonomy_plus_overlap_multiset",
+      "supported_column_row_degrees",
+      "taxonomy_plus_supported_column_row_degrees"
+    ]
+  },
+  "interpretation": {
+    "main_result": "Several matrix-derived signatures can identify rows exactly, but the source-derived explanation is still missing.",
+    "useful_failure": "taxonomy_class alone collides, so the map cannot stop at row class.",
+    "strong_candidate": "support_columns remains the cleanest exact carrier, but it is still matrix-assigned until derived from source transport.",
+    "next_question": "Which source-side finite structure names the 30 columns or their supports so that row support identity becomes transported rather than assigned?"
+  },
+  "checks": [
+    {
+      "id": "audit_loaded",
+      "status": true,
+      "detail": "audit status=row_identity_carriers_extracted_not_map_proof"
+    },
+    {
+      "id": "matrix_shape_15x30",
+      "status": true,
+      "detail": "shape=15x30"
+    },
+    {
+      "id": "support_columns_exact",
+      "status": true,
+      "detail": "collision_count=0"
+    },
+    {
+      "id": "taxonomy_class_collides",
+      "status": true,
+      "detail": "collision_count=6"
+    },
+    {
+      "id": "at_least_one_matrix_exact_candidate",
+      "status": true,
+      "detail": "candidates=[\"support_columns\", \"complement_columns\", \"overlap_vector_by_row_order\"]"
+    }
+  ],
+  "next_script": "audit_gap_a_column_identity_source_links_001.py"
+}

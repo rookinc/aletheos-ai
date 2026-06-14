@@ -1,0 +1,1879 @@
+{
+  "schema": "register_map_exact_selectors_001.v1",
+  "status": "exact_selector_structure_extracted",
+  "timestamp_utc": "2026-06-14T18:03:28.666293+00:00",
+  "gap": "A_chamber_register_map",
+  "purpose": "Extract exact selector structure from FHE minimizer artifacts for the register-map proof program.",
+  "boundary": [
+    "This extraction does not prove the chamber/register map.",
+    "This extraction does not rerun the selector minimizer.",
+    "This extraction records what existing FHE artifacts say about exact row-aware recovery.",
+    "The row-aware recovery evidence is treated as selector-structural, not as literal target-cycle echo."
+  ],
+  "inputs": {
+    "recovery_002": "artifacts/json/register_map_candidate_recovery_002.v1.json",
+    "recovery_002_sha256": "df7f3498c21df3f9060861cf5731b337eb3be18905b103025db8fbefe1432003",
+    "minimizer": "research/fhe/artifacts/json/selected_branch_exact_selector_minimizer.v1.json",
+    "minimizer_sha256": "49e2b18f3891c3b2c5c6af330b9529a9982ce06fb623563a52831e56c038bad1",
+    "row_aware_discriminants": "research/fhe/artifacts/json/selected_branch_row_aware_discriminants.v1.json",
+    "row_aware_discriminants_sha256": "545e322ece3d741f3811af7200dc4bc7697d6ed6973448e1a1aaa6c0880b3522",
+    "result_v21": "research/fhe/RESULT_v21.md",
+    "result_v21_sha256": "93dfa06cbbf8b7cfdaf2aefcde41ebbaee04c1a676316a776e20ec8199a3fd00",
+    "register_key_section": "research/fhe/paper/sections/05c_register_key_selection.tex",
+    "register_key_section_sha256": "687dd6a56b69d330f9d48e51df28168d10b4bff8161f8196439afd21198f388e"
+  },
+  "derived_summary": {
+    "one_feature_exact_selector": "support_row_degree_profile",
+    "row_aware_recovery_levels_seen": true,
+    "least_sharp_mentions_three_feature": true,
+    "row_aware_needed_in_tested_family": true,
+    "one_row_aware_profile_line_seen": true
+  },
+  "feature_names_seen": [
+    "block_word",
+    "support_complement",
+    "support_intersection",
+    "support_row_degree_profile",
+    "support_union"
+  ],
+  "count_like_fields": [
+    {
+      "path": "$.combo_count_scanned",
+      "value": 2047
+    },
+    {
+      "path": "$.exact_combo_count",
+      "value": 1384
+    },
+    {
+      "path": "$.one_feature_exact_count",
+      "value": 1
+    },
+    {
+      "path": "$.least_value_exact[0].feature_count",
+      "value": 3
+    },
+    {
+      "path": "$.least_value_exact[0].value_count",
+      "value": 206
+    },
+    {
+      "path": "$.least_value_exact[1].feature_count",
+      "value": 3
+    },
+    {
+      "path": "$.least_value_exact[1].value_count",
+      "value": 206
+    },
+    {
+      "path": "$.least_value_exact[2].feature_count",
+      "value": 3
+    },
+    {
+      "path": "$.least_value_exact[2].value_count",
+      "value": 206
+    },
+    {
+      "path": "$.least_value_exact[3].feature_count",
+      "value": 3
+    },
+    {
+      "path": "$.least_value_exact[3].value_count",
+      "value": 206
+    },
+    {
+      "path": "$.least_value_exact[4].feature_count",
+      "value": 4
+    },
+    {
+      "path": "$.least_value_exact[4].value_count",
+      "value": 206
+    },
+    {
+      "path": "$.least_value_exact[5].feature_count",
+      "value": 4
+    },
+    {
+      "path": "$.least_value_exact[5].value_count",
+      "value": 206
+    },
+    {
+      "path": "$.least_value_exact[6].feature_count",
+      "value": 4
+    },
+    {
+      "path": "$.least_value_exact[6].value_count",
+      "value": 206
+    },
+    {
+      "path": "$.least_value_exact[7].feature_count",
+      "value": 4
+    },
+    {
+      "path": "$.least_value_exact[7].value_count",
+      "value": 206
+    },
+    {
+      "path": "$.least_value_exact[8].feature_count",
+      "value": 4
+    },
+    {
+      "path": "$.least_value_exact[8].value_count",
+      "value": 206
+    },
+    {
+      "path": "$.least_value_exact[9].feature_count",
+      "value": 4
+    },
+    {
+      "path": "$.least_value_exact[9].value_count",
+      "value": 206
+    },
+    {
+      "path": "$.least_value_exact[10].feature_count",
+      "value": 4
+    },
+    {
+      "path": "$.least_value_exact[10].value_count",
+      "value": 206
+    },
+    {
+      "path": "$.least_value_exact[11].feature_count",
+      "value": 4
+    },
+    {
+      "path": "$.least_value_exact[11].value_count",
+      "value": 206
+    },
+    {
+      "path": "$.least_value_exact[12].feature_count",
+      "value": 5
+    },
+    {
+      "path": "$.least_value_exact[12].value_count",
+      "value": 206
+    },
+    {
+      "path": "$.least_value_exact[13].feature_count",
+      "value": 5
+    },
+    {
+      "path": "$.least_value_exact[13].value_count",
+      "value": 206
+    },
+    {
+      "path": "$.least_value_exact[14].feature_count",
+      "value": 5
+    },
+    {
+      "path": "$.least_value_exact[14].value_count",
+      "value": 206
+    },
+    {
+      "path": "$.least_value_exact[15].feature_count",
+      "value": 5
+    },
+    {
+      "path": "$.least_value_exact[15].value_count",
+      "value": 206
+    },
+    {
+      "path": "$.least_value_exact[16].feature_count",
+      "value": 5
+    },
+    {
+      "path": "$.least_value_exact[16].value_count",
+      "value": 206
+    },
+    {
+      "path": "$.least_value_exact[17].feature_count",
+      "value": 6
+    },
+    {
+      "path": "$.least_value_exact[17].value_count",
+      "value": 206
+    },
+    {
+      "path": "$.least_value_exact[18].feature_count",
+      "value": 4
+    },
+    {
+      "path": "$.least_value_exact[18].value_count",
+      "value": 207
+    },
+    {
+      "path": "$.least_value_exact[19].feature_count",
+      "value": 4
+    },
+    {
+      "path": "$.least_value_exact[19].value_count",
+      "value": 207
+    },
+    {
+      "path": "$.least_value_exact[20].feature_count",
+      "value": 4
+    },
+    {
+      "path": "$.least_value_exact[20].value_count",
+      "value": 207
+    },
+    {
+      "path": "$.least_value_exact[21].feature_count",
+      "value": 4
+    },
+    {
+      "path": "$.least_value_exact[21].value_count",
+      "value": 207
+    },
+    {
+      "path": "$.least_value_exact[22].feature_count",
+      "value": 4
+    },
+    {
+      "path": "$.least_value_exact[22].value_count",
+      "value": 207
+    },
+    {
+      "path": "$.least_value_exact[23].feature_count",
+      "value": 4
+    },
+    {
+      "path": "$.least_value_exact[23].value_count",
+      "value": 207
+    },
+    {
+      "path": "$.least_value_exact[24].feature_count",
+      "value": 4
+    },
+    {
+      "path": "$.least_value_exact[24].value_count",
+      "value": 207
+    },
+    {
+      "path": "$.one_feature_exact[0].feature_count",
+      "value": 1
+    },
+    {
+      "path": "$.one_feature_exact[0].value_count",
+      "value": 210
+    }
+  ],
+  "one_feature_like_nodes": [
+    {
+      "path": "$",
+      "keys": [
+        "title",
+        "version",
+        "status",
+        "combo_count_scanned",
+        "exact_combo_count",
+        "one_feature_exact_count",
+        "least_value_exact",
+        "one_feature_exact",
+        "candidate_total_local",
+        "observed_total_local",
+        "rejected_total_local",
+        "interpretation"
+      ],
+      "preview": "{\"candidate_total_local\":210,\"combo_count_scanned\":2047,\"exact_combo_count\":1384,\"interpretation\":[\"This recomputes all exact selector combinations instead of reading the truncated exact list stored in v20.\",\"The least_value_exact list identifies the least-sharp exact selectors by number of distinct predicate values.\",\"One-feature exact selectors identify minimal single predicates.\"],\"least_value_exact\":[{\"combo\":[\"block_word\",\"support_intersection_size\",\"support_complement\"],\"feature_count\":3,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":206},{\"combo\":[\"block_word\",\"support_intersection_size\",\"support_union\"],\"feature_count\":3,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":206},{\"combo\":[\"block_word\",\"support_row_degree_hist\",\"support_complement\"],\"feature_count\":3,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_o"
+    },
+    {
+      "path": "$.interpretation",
+      "length": 3,
+      "preview": "[\"This recomputes all exact selector combinations instead of reading the truncated exact list stored in v20.\",\"The least_value_exact list identifies the least-sharp exact selectors by number of distinct predicate values.\",\"One-feature exact selectors identify minimal single predicates.\"]"
+    }
+  ],
+  "selector_like_nodes": [
+    {
+      "path": "$",
+      "kind": "dict",
+      "keys": [
+        "title",
+        "version",
+        "status",
+        "combo_count_scanned",
+        "exact_combo_count",
+        "one_feature_exact_count",
+        "least_value_exact",
+        "one_feature_exact",
+        "candidate_total_local",
+        "observed_total_local",
+        "rejected_total_local",
+        "interpretation"
+      ],
+      "preview": "{\"candidate_total_local\":210,\"combo_count_scanned\":2047,\"exact_combo_count\":1384,\"interpretation\":[\"This recomputes all exact selector combinations instead of reading the truncated exact list stored in v20.\",\"The least_value_exact list identifies the least-sharp exact selectors by number of distinct predicate values.\",\"One-feature exact selectors identify minimal single predicates.\"],\"least_value_exact\":[{\"combo\":[\"block_word\",\"support_intersection_size\",\"support_complement\"],\"feature_count\":3,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":206},{\"combo\":[\"block_word\",\"support_intersection_size\",\"support_union\"],\"feature_count\":3,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total"
+    },
+    {
+      "path": "$.title",
+      "kind": "str",
+      "preview": "Selected branch exact selector minimizer"
+    },
+    {
+      "path": "$.status",
+      "kind": "str",
+      "preview": "global_exact_selector_minimizer"
+    },
+    {
+      "path": "$.least_value_exact",
+      "kind": "list",
+      "length": 25,
+      "preview": "[{\"combo\":[\"block_word\",\"support_intersection_size\",\"support_complement\"],\"feature_count\":3,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":206},{\"combo\":[\"block_word\",\"support_intersection_size\",\"support_union\"],\"feature_count\":3,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":206},{\"combo\":[\"block_word\",\"support_row_degree_hist\",\"support_complement\"],\"feature_count\":3,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":206},{\"combo\":[\"block_word\",\"support_row_degree_hist\",\"support_union\"],\"feature_count\":3,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only"
+    },
+    {
+      "path": "$.least_value_exact[0]",
+      "kind": "dict",
+      "keys": [
+        "combo",
+        "feature_count",
+        "value_count",
+        "observed_only_total",
+        "rejected_only_total",
+        "mixed_observed_total",
+        "mixed_rejected_total"
+      ],
+      "preview": "{\"combo\":[\"block_word\",\"support_intersection_size\",\"support_complement\"],\"feature_count\":3,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":206}"
+    },
+    {
+      "path": "$.least_value_exact[0].combo",
+      "kind": "list",
+      "length": 3,
+      "preview": "[\"block_word\",\"support_intersection_size\",\"support_complement\"]"
+    },
+    {
+      "path": "$.least_value_exact[0].combo[0]",
+      "kind": "str",
+      "preview": "block_word"
+    },
+    {
+      "path": "$.least_value_exact[0].combo[1]",
+      "kind": "str",
+      "preview": "support_intersection_size"
+    },
+    {
+      "path": "$.least_value_exact[0].combo[2]",
+      "kind": "str",
+      "preview": "support_complement"
+    },
+    {
+      "path": "$.least_value_exact[1]",
+      "kind": "dict",
+      "keys": [
+        "combo",
+        "feature_count",
+        "value_count",
+        "observed_only_total",
+        "rejected_only_total",
+        "mixed_observed_total",
+        "mixed_rejected_total"
+      ],
+      "preview": "{\"combo\":[\"block_word\",\"support_intersection_size\",\"support_union\"],\"feature_count\":3,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":206}"
+    },
+    {
+      "path": "$.least_value_exact[1].combo",
+      "kind": "list",
+      "length": 3,
+      "preview": "[\"block_word\",\"support_intersection_size\",\"support_union\"]"
+    },
+    {
+      "path": "$.least_value_exact[1].combo[0]",
+      "kind": "str",
+      "preview": "block_word"
+    },
+    {
+      "path": "$.least_value_exact[1].combo[1]",
+      "kind": "str",
+      "preview": "support_intersection_size"
+    },
+    {
+      "path": "$.least_value_exact[1].combo[2]",
+      "kind": "str",
+      "preview": "support_union"
+    },
+    {
+      "path": "$.least_value_exact[2]",
+      "kind": "dict",
+      "keys": [
+        "combo",
+        "feature_count",
+        "value_count",
+        "observed_only_total",
+        "rejected_only_total",
+        "mixed_observed_total",
+        "mixed_rejected_total"
+      ],
+      "preview": "{\"combo\":[\"block_word\",\"support_row_degree_hist\",\"support_complement\"],\"feature_count\":3,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":206}"
+    },
+    {
+      "path": "$.least_value_exact[2].combo",
+      "kind": "list",
+      "length": 3,
+      "preview": "[\"block_word\",\"support_row_degree_hist\",\"support_complement\"]"
+    },
+    {
+      "path": "$.least_value_exact[2].combo[0]",
+      "kind": "str",
+      "preview": "block_word"
+    },
+    {
+      "path": "$.least_value_exact[2].combo[2]",
+      "kind": "str",
+      "preview": "support_complement"
+    },
+    {
+      "path": "$.least_value_exact[3]",
+      "kind": "dict",
+      "keys": [
+        "combo",
+        "feature_count",
+        "value_count",
+        "observed_only_total",
+        "rejected_only_total",
+        "mixed_observed_total",
+        "mixed_rejected_total"
+      ],
+      "preview": "{\"combo\":[\"block_word\",\"support_row_degree_hist\",\"support_union\"],\"feature_count\":3,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":206}"
+    },
+    {
+      "path": "$.least_value_exact[3].combo",
+      "kind": "list",
+      "length": 3,
+      "preview": "[\"block_word\",\"support_row_degree_hist\",\"support_union\"]"
+    },
+    {
+      "path": "$.least_value_exact[3].combo[0]",
+      "kind": "str",
+      "preview": "block_word"
+    },
+    {
+      "path": "$.least_value_exact[3].combo[2]",
+      "kind": "str",
+      "preview": "support_union"
+    },
+    {
+      "path": "$.least_value_exact[4]",
+      "kind": "dict",
+      "keys": [
+        "combo",
+        "feature_count",
+        "value_count",
+        "observed_only_total",
+        "rejected_only_total",
+        "mixed_observed_total",
+        "mixed_rejected_total"
+      ],
+      "preview": "{\"combo\":[\"block_word\",\"support_intersection_size\",\"support_row_degree_hist\",\"support_complement\"],\"feature_count\":4,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":206}"
+    },
+    {
+      "path": "$.least_value_exact[4].combo",
+      "kind": "list",
+      "length": 4,
+      "preview": "[\"block_word\",\"support_intersection_size\",\"support_row_degree_hist\",\"support_complement\"]"
+    },
+    {
+      "path": "$.least_value_exact[4].combo[0]",
+      "kind": "str",
+      "preview": "block_word"
+    },
+    {
+      "path": "$.least_value_exact[4].combo[1]",
+      "kind": "str",
+      "preview": "support_intersection_size"
+    },
+    {
+      "path": "$.least_value_exact[4].combo[3]",
+      "kind": "str",
+      "preview": "support_complement"
+    },
+    {
+      "path": "$.least_value_exact[5]",
+      "kind": "dict",
+      "keys": [
+        "combo",
+        "feature_count",
+        "value_count",
+        "observed_only_total",
+        "rejected_only_total",
+        "mixed_observed_total",
+        "mixed_rejected_total"
+      ],
+      "preview": "{\"combo\":[\"block_word\",\"support_intersection_size\",\"support_row_degree_hist\",\"support_union\"],\"feature_count\":4,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":206}"
+    },
+    {
+      "path": "$.least_value_exact[5].combo",
+      "kind": "list",
+      "length": 4,
+      "preview": "[\"block_word\",\"support_intersection_size\",\"support_row_degree_hist\",\"support_union\"]"
+    },
+    {
+      "path": "$.least_value_exact[5].combo[0]",
+      "kind": "str",
+      "preview": "block_word"
+    },
+    {
+      "path": "$.least_value_exact[5].combo[1]",
+      "kind": "str",
+      "preview": "support_intersection_size"
+    },
+    {
+      "path": "$.least_value_exact[5].combo[3]",
+      "kind": "str",
+      "preview": "support_union"
+    },
+    {
+      "path": "$.least_value_exact[6]",
+      "kind": "dict",
+      "keys": [
+        "combo",
+        "feature_count",
+        "value_count",
+        "observed_only_total",
+        "rejected_only_total",
+        "mixed_observed_total",
+        "mixed_rejected_total"
+      ],
+      "preview": "{\"combo\":[\"block_word\",\"support_intersection_size\",\"support_union\",\"support_complement\"],\"feature_count\":4,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":206}"
+    },
+    {
+      "path": "$.least_value_exact[6].combo",
+      "kind": "list",
+      "length": 4,
+      "preview": "[\"block_word\",\"support_intersection_size\",\"support_union\",\"support_complement\"]"
+    },
+    {
+      "path": "$.least_value_exact[6].combo[0]",
+      "kind": "str",
+      "preview": "block_word"
+    },
+    {
+      "path": "$.least_value_exact[6].combo[1]",
+      "kind": "str",
+      "preview": "support_intersection_size"
+    },
+    {
+      "path": "$.least_value_exact[6].combo[2]",
+      "kind": "str",
+      "preview": "support_union"
+    },
+    {
+      "path": "$.least_value_exact[6].combo[3]",
+      "kind": "str",
+      "preview": "support_complement"
+    },
+    {
+      "path": "$.least_value_exact[7]",
+      "kind": "dict",
+      "keys": [
+        "combo",
+        "feature_count",
+        "value_count",
+        "observed_only_total",
+        "rejected_only_total",
+        "mixed_observed_total",
+        "mixed_rejected_total"
+      ],
+      "preview": "{\"combo\":[\"block_word\",\"support_row_degree_hist\",\"support_union\",\"support_complement\"],\"feature_count\":4,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":206}"
+    },
+    {
+      "path": "$.least_value_exact[7].combo",
+      "kind": "list",
+      "length": 4,
+      "preview": "[\"block_word\",\"support_row_degree_hist\",\"support_union\",\"support_complement\"]"
+    },
+    {
+      "path": "$.least_value_exact[7].combo[0]",
+      "kind": "str",
+      "preview": "block_word"
+    },
+    {
+      "path": "$.least_value_exact[7].combo[2]",
+      "kind": "str",
+      "preview": "support_union"
+    },
+    {
+      "path": "$.least_value_exact[7].combo[3]",
+      "kind": "str",
+      "preview": "support_complement"
+    },
+    {
+      "path": "$.least_value_exact[8]",
+      "kind": "dict",
+      "keys": [
+        "combo",
+        "feature_count",
+        "value_count",
+        "observed_only_total",
+        "rejected_only_total",
+        "mixed_observed_total",
+        "mixed_rejected_total"
+      ],
+      "preview": "{\"combo\":[\"block_word\",\"support_union_size\",\"support_intersection_size\",\"support_complement\"],\"feature_count\":4,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":206}"
+    },
+    {
+      "path": "$.least_value_exact[8].combo",
+      "kind": "list",
+      "length": 4,
+      "preview": "[\"block_word\",\"support_union_size\",\"support_intersection_size\",\"support_complement\"]"
+    },
+    {
+      "path": "$.least_value_exact[8].combo[0]",
+      "kind": "str",
+      "preview": "block_word"
+    },
+    {
+      "path": "$.least_value_exact[8].combo[1]",
+      "kind": "str",
+      "preview": "support_union_size"
+    },
+    {
+      "path": "$.least_value_exact[8].combo[2]",
+      "kind": "str",
+      "preview": "support_intersection_size"
+    },
+    {
+      "path": "$.least_value_exact[8].combo[3]",
+      "kind": "str",
+      "preview": "support_complement"
+    },
+    {
+      "path": "$.least_value_exact[9]",
+      "kind": "dict",
+      "keys": [
+        "combo",
+        "feature_count",
+        "value_count",
+        "observed_only_total",
+        "rejected_only_total",
+        "mixed_observed_total",
+        "mixed_rejected_total"
+      ],
+      "preview": "{\"combo\":[\"block_word\",\"support_union_size\",\"support_intersection_size\",\"support_union\"],\"feature_count\":4,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":206}"
+    },
+    {
+      "path": "$.least_value_exact[9].combo",
+      "kind": "list",
+      "length": 4,
+      "preview": "[\"block_word\",\"support_union_size\",\"support_intersection_size\",\"support_union\"]"
+    },
+    {
+      "path": "$.least_value_exact[9].combo[0]",
+      "kind": "str",
+      "preview": "block_word"
+    },
+    {
+      "path": "$.least_value_exact[9].combo[1]",
+      "kind": "str",
+      "preview": "support_union_size"
+    },
+    {
+      "path": "$.least_value_exact[9].combo[2]",
+      "kind": "str",
+      "preview": "support_intersection_size"
+    },
+    {
+      "path": "$.least_value_exact[9].combo[3]",
+      "kind": "str",
+      "preview": "support_union"
+    },
+    {
+      "path": "$.least_value_exact[10]",
+      "kind": "dict",
+      "keys": [
+        "combo",
+        "feature_count",
+        "value_count",
+        "observed_only_total",
+        "rejected_only_total",
+        "mixed_observed_total",
+        "mixed_rejected_total"
+      ],
+      "preview": "{\"combo\":[\"block_word\",\"support_union_size\",\"support_row_degree_hist\",\"support_complement\"],\"feature_count\":4,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":206}"
+    },
+    {
+      "path": "$.least_value_exact[10].combo",
+      "kind": "list",
+      "length": 4,
+      "preview": "[\"block_word\",\"support_union_size\",\"support_row_degree_hist\",\"support_complement\"]"
+    },
+    {
+      "path": "$.least_value_exact[10].combo[0]",
+      "kind": "str",
+      "preview": "block_word"
+    },
+    {
+      "path": "$.least_value_exact[10].combo[1]",
+      "kind": "str",
+      "preview": "support_union_size"
+    },
+    {
+      "path": "$.least_value_exact[10].combo[3]",
+      "kind": "str",
+      "preview": "support_complement"
+    },
+    {
+      "path": "$.least_value_exact[11]",
+      "kind": "dict",
+      "keys": [
+        "combo",
+        "feature_count",
+        "value_count",
+        "observed_only_total",
+        "rejected_only_total",
+        "mixed_observed_total",
+        "mixed_rejected_total"
+      ],
+      "preview": "{\"combo\":[\"block_word\",\"support_union_size\",\"support_row_degree_hist\",\"support_union\"],\"feature_count\":4,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":206}"
+    },
+    {
+      "path": "$.least_value_exact[11].combo",
+      "kind": "list",
+      "length": 4,
+      "preview": "[\"block_word\",\"support_union_size\",\"support_row_degree_hist\",\"support_union\"]"
+    },
+    {
+      "path": "$.least_value_exact[11].combo[0]",
+      "kind": "str",
+      "preview": "block_word"
+    },
+    {
+      "path": "$.least_value_exact[11].combo[1]",
+      "kind": "str",
+      "preview": "support_union_size"
+    },
+    {
+      "path": "$.least_value_exact[11].combo[3]",
+      "kind": "str",
+      "preview": "support_union"
+    },
+    {
+      "path": "$.least_value_exact[12]",
+      "kind": "dict",
+      "keys": [
+        "combo",
+        "feature_count",
+        "value_count",
+        "observed_only_total",
+        "rejected_only_total",
+        "mixed_observed_total",
+        "mixed_rejected_total"
+      ],
+      "preview": "{\"combo\":[\"block_word\",\"support_intersection_size\",\"support_row_degree_hist\",\"support_union\",\"support_complement\"],\"feature_count\":5,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":206}"
+    },
+    {
+      "path": "$.least_value_exact[12].combo",
+      "kind": "list",
+      "length": 5,
+      "preview": "[\"block_word\",\"support_intersection_size\",\"support_row_degree_hist\",\"support_union\",\"support_complement\"]"
+    },
+    {
+      "path": "$.least_value_exact[12].combo[0]",
+      "kind": "str",
+      "preview": "block_word"
+    },
+    {
+      "path": "$.least_value_exact[12].combo[1]",
+      "kind": "str",
+      "preview": "support_intersection_size"
+    },
+    {
+      "path": "$.least_value_exact[12].combo[3]",
+      "kind": "str",
+      "preview": "support_union"
+    },
+    {
+      "path": "$.least_value_exact[12].combo[4]",
+      "kind": "str",
+      "preview": "support_complement"
+    },
+    {
+      "path": "$.least_value_exact[13]",
+      "kind": "dict",
+      "keys": [
+        "combo",
+        "feature_count",
+        "value_count",
+        "observed_only_total",
+        "rejected_only_total",
+        "mixed_observed_total",
+        "mixed_rejected_total"
+      ],
+      "preview": "{\"combo\":[\"block_word\",\"support_union_size\",\"support_intersection_size\",\"support_row_degree_hist\",\"support_complement\"],\"feature_count\":5,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":206}"
+    },
+    {
+      "path": "$.least_value_exact[13].combo",
+      "kind": "list",
+      "length": 5,
+      "preview": "[\"block_word\",\"support_union_size\",\"support_intersection_size\",\"support_row_degree_hist\",\"support_complement\"]"
+    },
+    {
+      "path": "$.least_value_exact[13].combo[0]",
+      "kind": "str",
+      "preview": "block_word"
+    },
+    {
+      "path": "$.least_value_exact[13].combo[1]",
+      "kind": "str",
+      "preview": "support_union_size"
+    },
+    {
+      "path": "$.least_value_exact[13].combo[2]",
+      "kind": "str",
+      "preview": "support_intersection_size"
+    },
+    {
+      "path": "$.least_value_exact[13].combo[4]",
+      "kind": "str",
+      "preview": "support_complement"
+    },
+    {
+      "path": "$.least_value_exact[14]",
+      "kind": "dict",
+      "keys": [
+        "combo",
+        "feature_count",
+        "value_count",
+        "observed_only_total",
+        "rejected_only_total",
+        "mixed_observed_total",
+        "mixed_rejected_total"
+      ],
+      "preview": "{\"combo\":[\"block_word\",\"support_union_size\",\"support_intersection_size\",\"support_row_degree_hist\",\"support_union\"],\"feature_count\":5,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":206}"
+    },
+    {
+      "path": "$.least_value_exact[14].combo",
+      "kind": "list",
+      "length": 5,
+      "preview": "[\"block_word\",\"support_union_size\",\"support_intersection_size\",\"support_row_degree_hist\",\"support_union\"]"
+    },
+    {
+      "path": "$.least_value_exact[14].combo[0]",
+      "kind": "str",
+      "preview": "block_word"
+    },
+    {
+      "path": "$.least_value_exact[14].combo[1]",
+      "kind": "str",
+      "preview": "support_union_size"
+    },
+    {
+      "path": "$.least_value_exact[14].combo[2]",
+      "kind": "str",
+      "preview": "support_intersection_size"
+    },
+    {
+      "path": "$.least_value_exact[14].combo[4]",
+      "kind": "str",
+      "preview": "support_union"
+    },
+    {
+      "path": "$.least_value_exact[15]",
+      "kind": "dict",
+      "keys": [
+        "combo",
+        "feature_count",
+        "value_count",
+        "observed_only_total",
+        "rejected_only_total",
+        "mixed_observed_total",
+        "mixed_rejected_total"
+      ],
+      "preview": "{\"combo\":[\"block_word\",\"support_union_size\",\"support_intersection_size\",\"support_union\",\"support_complement\"],\"feature_count\":5,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":206}"
+    },
+    {
+      "path": "$.least_value_exact[15].combo",
+      "kind": "list",
+      "length": 5,
+      "preview": "[\"block_word\",\"support_union_size\",\"support_intersection_size\",\"support_union\",\"support_complement\"]"
+    },
+    {
+      "path": "$.least_value_exact[15].combo[0]",
+      "kind": "str",
+      "preview": "block_word"
+    },
+    {
+      "path": "$.least_value_exact[15].combo[1]",
+      "kind": "str",
+      "preview": "support_union_size"
+    },
+    {
+      "path": "$.least_value_exact[15].combo[2]",
+      "kind": "str",
+      "preview": "support_intersection_size"
+    },
+    {
+      "path": "$.least_value_exact[15].combo[3]",
+      "kind": "str",
+      "preview": "support_union"
+    },
+    {
+      "path": "$.least_value_exact[15].combo[4]",
+      "kind": "str",
+      "preview": "support_complement"
+    },
+    {
+      "path": "$.least_value_exact[16]",
+      "kind": "dict",
+      "keys": [
+        "combo",
+        "feature_count",
+        "value_count",
+        "observed_only_total",
+        "rejected_only_total",
+        "mixed_observed_total",
+        "mixed_rejected_total"
+      ],
+      "preview": "{\"combo\":[\"block_word\",\"support_union_size\",\"support_row_degree_hist\",\"support_union\",\"support_complement\"],\"feature_count\":5,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":206}"
+    },
+    {
+      "path": "$.least_value_exact[16].combo",
+      "kind": "list",
+      "length": 5,
+      "preview": "[\"block_word\",\"support_union_size\",\"support_row_degree_hist\",\"support_union\",\"support_complement\"]"
+    },
+    {
+      "path": "$.least_value_exact[16].combo[0]",
+      "kind": "str",
+      "preview": "block_word"
+    },
+    {
+      "path": "$.least_value_exact[16].combo[1]",
+      "kind": "str",
+      "preview": "support_union_size"
+    },
+    {
+      "path": "$.least_value_exact[16].combo[3]",
+      "kind": "str",
+      "preview": "support_union"
+    },
+    {
+      "path": "$.least_value_exact[16].combo[4]",
+      "kind": "str",
+      "preview": "support_complement"
+    },
+    {
+      "path": "$.least_value_exact[17]",
+      "kind": "dict",
+      "keys": [
+        "combo",
+        "feature_count",
+        "value_count",
+        "observed_only_total",
+        "rejected_only_total",
+        "mixed_observed_total",
+        "mixed_rejected_total"
+      ],
+      "preview": "{\"combo\":[\"block_word\",\"support_union_size\",\"support_intersection_size\",\"support_row_degree_hist\",\"support_union\",\"support_complement\"],\"feature_count\":6,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":206}"
+    },
+    {
+      "path": "$.least_value_exact[17].combo",
+      "kind": "list",
+      "length": 6,
+      "preview": "[\"block_word\",\"support_union_size\",\"support_intersection_size\",\"support_row_degree_hist\",\"support_union\"]"
+    },
+    {
+      "path": "$.least_value_exact[17].combo[0]",
+      "kind": "str",
+      "preview": "block_word"
+    },
+    {
+      "path": "$.least_value_exact[17].combo[1]",
+      "kind": "str",
+      "preview": "support_union_size"
+    },
+    {
+      "path": "$.least_value_exact[17].combo[2]",
+      "kind": "str",
+      "preview": "support_intersection_size"
+    },
+    {
+      "path": "$.least_value_exact[17].combo[4]",
+      "kind": "str",
+      "preview": "support_union"
+    },
+    {
+      "path": "$.least_value_exact[17].combo[5]",
+      "kind": "str",
+      "preview": "support_complement"
+    },
+    {
+      "path": "$.least_value_exact[18]",
+      "kind": "dict",
+      "keys": [
+        "combo",
+        "feature_count",
+        "value_count",
+        "observed_only_total",
+        "rejected_only_total",
+        "mixed_observed_total",
+        "mixed_rejected_total"
+      ],
+      "preview": "{\"combo\":[\"block_word\",\"hinge_count\",\"support_intersection_size\",\"support_complement\"],\"feature_count\":4,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":207}"
+    },
+    {
+      "path": "$.least_value_exact[18].combo",
+      "kind": "list",
+      "length": 4,
+      "preview": "[\"block_word\",\"hinge_count\",\"support_intersection_size\",\"support_complement\"]"
+    },
+    {
+      "path": "$.least_value_exact[18].combo[0]",
+      "kind": "str",
+      "preview": "block_word"
+    },
+    {
+      "path": "$.least_value_exact[18].combo[2]",
+      "kind": "str",
+      "preview": "support_intersection_size"
+    },
+    {
+      "path": "$.least_value_exact[18].combo[3]",
+      "kind": "str",
+      "preview": "support_complement"
+    },
+    {
+      "path": "$.least_value_exact[19]",
+      "kind": "dict",
+      "keys": [
+        "combo",
+        "feature_count",
+        "value_count",
+        "observed_only_total",
+        "rejected_only_total",
+        "mixed_observed_total",
+        "mixed_rejected_total"
+      ],
+      "preview": "{\"combo\":[\"block_word\",\"hinge_count\",\"support_intersection_size\",\"support_union\"],\"feature_count\":4,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":207}"
+    },
+    {
+      "path": "$.least_value_exact[19].combo",
+      "kind": "list",
+      "length": 4,
+      "preview": "[\"block_word\",\"hinge_count\",\"support_intersection_size\",\"support_union\"]"
+    },
+    {
+      "path": "$.least_value_exact[19].combo[0]",
+      "kind": "str",
+      "preview": "block_word"
+    },
+    {
+      "path": "$.least_value_exact[19].combo[2]",
+      "kind": "str",
+      "preview": "support_intersection_size"
+    },
+    {
+      "path": "$.least_value_exact[19].combo[3]",
+      "kind": "str",
+      "preview": "support_union"
+    },
+    {
+      "path": "$.least_value_exact[20]",
+      "kind": "dict",
+      "keys": [
+        "combo",
+        "feature_count",
+        "value_count",
+        "observed_only_total",
+        "rejected_only_total",
+        "mixed_observed_total",
+        "mixed_rejected_total"
+      ],
+      "preview": "{\"combo\":[\"block_word\",\"hinge_count\",\"support_row_degree_hist\",\"support_complement\"],\"feature_count\":4,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":207}"
+    },
+    {
+      "path": "$.least_value_exact[20].combo",
+      "kind": "list",
+      "length": 4,
+      "preview": "[\"block_word\",\"hinge_count\",\"support_row_degree_hist\",\"support_complement\"]"
+    },
+    {
+      "path": "$.least_value_exact[20].combo[0]",
+      "kind": "str",
+      "preview": "block_word"
+    },
+    {
+      "path": "$.least_value_exact[20].combo[3]",
+      "kind": "str",
+      "preview": "support_complement"
+    },
+    {
+      "path": "$.least_value_exact[21]",
+      "kind": "dict",
+      "keys": [
+        "combo",
+        "feature_count",
+        "value_count",
+        "observed_only_total",
+        "rejected_only_total",
+        "mixed_observed_total",
+        "mixed_rejected_total"
+      ],
+      "preview": "{\"combo\":[\"block_word\",\"hinge_count\",\"support_row_degree_hist\",\"support_union\"],\"feature_count\":4,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":207}"
+    },
+    {
+      "path": "$.least_value_exact[21].combo",
+      "kind": "list",
+      "length": 4,
+      "preview": "[\"block_word\",\"hinge_count\",\"support_row_degree_hist\",\"support_union\"]"
+    },
+    {
+      "path": "$.least_value_exact[21].combo[0]",
+      "kind": "str",
+      "preview": "block_word"
+    }
+  ],
+  "row_aware_like_nodes": [
+    {
+      "path": "$",
+      "kind": "dict",
+      "keys": [
+        "title",
+        "version",
+        "status",
+        "candidate_total_local",
+        "observed_total_local",
+        "rejected_total_local",
+        "feature_names",
+        "row_aware_features",
+        "exact_combo_count",
+        "row_aware_exact_combo_count",
+        "exact_combos",
+        "top_ranked",
+        "interpretation"
+      ],
+      "preview": "{\"candidate_total_local\":210,\"exact_combo_count\":692,\"exact_combos\":[{\"combo\":[\"support_row_degree_profile\"],\"feature_count\":1,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":210},{\"combo\":[\"block_word\",\"support_row_degree_profile\"],\"feature_count\":2,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":210},{\"combo\":[\"hinge_word\",\"support_row_degree_profile\"],\"feature_count\":2,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":210},{\"combo\":[\"support_pair_intersections\",\"support_row_degree_profile\"],\"feature_count\":2,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected"
+    },
+    {
+      "path": "$.title",
+      "kind": "str",
+      "preview": "Selected branch row-aware discriminants"
+    },
+    {
+      "path": "$.status",
+      "kind": "str",
+      "preview": "row_aware_selection_law_probe"
+    },
+    {
+      "path": "$.feature_names",
+      "kind": "list",
+      "length": 10,
+      "preview": "[\"block_word\",\"hinge_word\",\"support_pair_intersections\",\"support_union_size\",\"support_intersection_size\"]"
+    },
+    {
+      "path": "$.feature_names[0]",
+      "kind": "str",
+      "preview": "block_word"
+    },
+    {
+      "path": "$.feature_names[3]",
+      "kind": "str",
+      "preview": "support_union_size"
+    },
+    {
+      "path": "$.feature_names[4]",
+      "kind": "str",
+      "preview": "support_intersection_size"
+    },
+    {
+      "path": "$.feature_names[6]",
+      "kind": "str",
+      "preview": "support_union"
+    },
+    {
+      "path": "$.feature_names[7]",
+      "kind": "str",
+      "preview": "support_complement"
+    },
+    {
+      "path": "$.feature_names[8]",
+      "kind": "str",
+      "preview": "support_intersection"
+    },
+    {
+      "path": "$.feature_names[9]",
+      "kind": "str",
+      "preview": "support_row_degree_profile"
+    },
+    {
+      "path": "$.row_aware_features",
+      "kind": "list",
+      "length": 4,
+      "preview": "[\"support_union\",\"support_complement\",\"support_intersection\",\"support_row_degree_profile\"]"
+    },
+    {
+      "path": "$.row_aware_features[0]",
+      "kind": "str",
+      "preview": "support_union"
+    },
+    {
+      "path": "$.row_aware_features[1]",
+      "kind": "str",
+      "preview": "support_complement"
+    },
+    {
+      "path": "$.row_aware_features[2]",
+      "kind": "str",
+      "preview": "support_intersection"
+    },
+    {
+      "path": "$.row_aware_features[3]",
+      "kind": "str",
+      "preview": "support_row_degree_profile"
+    },
+    {
+      "path": "$.exact_combos",
+      "kind": "list",
+      "length": 50,
+      "preview": "[{\"combo\":[\"support_row_degree_profile\"],\"feature_count\":1,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":210},{\"combo\":[\"block_word\",\"support_row_degree_profile\"],\"feature_count\":2,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":210},{\"combo\":[\"hinge_word\",\"support_row_degree_profile\"],\"feature_count\":2,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":210},{\"combo\":[\"support_pair_intersections\",\"support_row_degree_profile\"],\"feature_count\":2,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":210},{\"combo\":[\"support_union_size\",\""
+    },
+    {
+      "path": "$.exact_combos[0]",
+      "kind": "dict",
+      "keys": [
+        "combo",
+        "feature_count",
+        "value_count",
+        "observed_only_total",
+        "rejected_only_total",
+        "mixed_observed_total",
+        "mixed_rejected_total"
+      ],
+      "preview": "{\"combo\":[\"support_row_degree_profile\"],\"feature_count\":1,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":210}"
+    },
+    {
+      "path": "$.exact_combos[0].combo",
+      "kind": "list",
+      "length": 1,
+      "preview": "[\"support_row_degree_profile\"]"
+    },
+    {
+      "path": "$.exact_combos[0].combo[0]",
+      "kind": "str",
+      "preview": "support_row_degree_profile"
+    },
+    {
+      "path": "$.exact_combos[1]",
+      "kind": "dict",
+      "keys": [
+        "combo",
+        "feature_count",
+        "value_count",
+        "observed_only_total",
+        "rejected_only_total",
+        "mixed_observed_total",
+        "mixed_rejected_total"
+      ],
+      "preview": "{\"combo\":[\"block_word\",\"support_row_degree_profile\"],\"feature_count\":2,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":210}"
+    },
+    {
+      "path": "$.exact_combos[1].combo",
+      "kind": "list",
+      "length": 2,
+      "preview": "[\"block_word\",\"support_row_degree_profile\"]"
+    },
+    {
+      "path": "$.exact_combos[1].combo[0]",
+      "kind": "str",
+      "preview": "block_word"
+    },
+    {
+      "path": "$.exact_combos[1].combo[1]",
+      "kind": "str",
+      "preview": "support_row_degree_profile"
+    },
+    {
+      "path": "$.exact_combos[2]",
+      "kind": "dict",
+      "keys": [
+        "combo",
+        "feature_count",
+        "value_count",
+        "observed_only_total",
+        "rejected_only_total",
+        "mixed_observed_total",
+        "mixed_rejected_total"
+      ],
+      "preview": "{\"combo\":[\"hinge_word\",\"support_row_degree_profile\"],\"feature_count\":2,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":210}"
+    },
+    {
+      "path": "$.exact_combos[2].combo",
+      "kind": "list",
+      "length": 2,
+      "preview": "[\"hinge_word\",\"support_row_degree_profile\"]"
+    },
+    {
+      "path": "$.exact_combos[2].combo[1]",
+      "kind": "str",
+      "preview": "support_row_degree_profile"
+    },
+    {
+      "path": "$.exact_combos[3]",
+      "kind": "dict",
+      "keys": [
+        "combo",
+        "feature_count",
+        "value_count",
+        "observed_only_total",
+        "rejected_only_total",
+        "mixed_observed_total",
+        "mixed_rejected_total"
+      ],
+      "preview": "{\"combo\":[\"support_pair_intersections\",\"support_row_degree_profile\"],\"feature_count\":2,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":210}"
+    },
+    {
+      "path": "$.exact_combos[3].combo",
+      "kind": "list",
+      "length": 2,
+      "preview": "[\"support_pair_intersections\",\"support_row_degree_profile\"]"
+    },
+    {
+      "path": "$.exact_combos[3].combo[1]",
+      "kind": "str",
+      "preview": "support_row_degree_profile"
+    },
+    {
+      "path": "$.exact_combos[4]",
+      "kind": "dict",
+      "keys": [
+        "combo",
+        "feature_count",
+        "value_count",
+        "observed_only_total",
+        "rejected_only_total",
+        "mixed_observed_total",
+        "mixed_rejected_total"
+      ],
+      "preview": "{\"combo\":[\"support_union_size\",\"support_row_degree_profile\"],\"feature_count\":2,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":210}"
+    },
+    {
+      "path": "$.exact_combos[4].combo",
+      "kind": "list",
+      "length": 2,
+      "preview": "[\"support_union_size\",\"support_row_degree_profile\"]"
+    },
+    {
+      "path": "$.exact_combos[4].combo[0]",
+      "kind": "str",
+      "preview": "support_union_size"
+    },
+    {
+      "path": "$.exact_combos[4].combo[1]",
+      "kind": "str",
+      "preview": "support_row_degree_profile"
+    },
+    {
+      "path": "$.exact_combos[5]",
+      "kind": "dict",
+      "keys": [
+        "combo",
+        "feature_count",
+        "value_count",
+        "observed_only_total",
+        "rejected_only_total",
+        "mixed_observed_total",
+        "mixed_rejected_total"
+      ],
+      "preview": "{\"combo\":[\"support_intersection_size\",\"support_row_degree_profile\"],\"feature_count\":2,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":210}"
+    },
+    {
+      "path": "$.exact_combos[5].combo",
+      "kind": "list",
+      "length": 2,
+      "preview": "[\"support_intersection_size\",\"support_row_degree_profile\"]"
+    },
+    {
+      "path": "$.exact_combos[5].combo[0]",
+      "kind": "str",
+      "preview": "support_intersection_size"
+    },
+    {
+      "path": "$.exact_combos[5].combo[1]",
+      "kind": "str",
+      "preview": "support_row_degree_profile"
+    },
+    {
+      "path": "$.exact_combos[6]",
+      "kind": "dict",
+      "keys": [
+        "combo",
+        "feature_count",
+        "value_count",
+        "observed_only_total",
+        "rejected_only_total",
+        "mixed_observed_total",
+        "mixed_rejected_total"
+      ],
+      "preview": "{\"combo\":[\"support_row_degree_hist\",\"support_row_degree_profile\"],\"feature_count\":2,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":210}"
+    },
+    {
+      "path": "$.exact_combos[6].combo",
+      "kind": "list",
+      "length": 2,
+      "preview": "[\"support_row_degree_hist\",\"support_row_degree_profile\"]"
+    },
+    {
+      "path": "$.exact_combos[6].combo[1]",
+      "kind": "str",
+      "preview": "support_row_degree_profile"
+    },
+    {
+      "path": "$.exact_combos[7]",
+      "kind": "dict",
+      "keys": [
+        "combo",
+        "feature_count",
+        "value_count",
+        "observed_only_total",
+        "rejected_only_total",
+        "mixed_observed_total",
+        "mixed_rejected_total"
+      ],
+      "preview": "{\"combo\":[\"support_union\",\"support_row_degree_profile\"],\"feature_count\":2,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":210}"
+    },
+    {
+      "path": "$.exact_combos[7].combo",
+      "kind": "list",
+      "length": 2,
+      "preview": "[\"support_union\",\"support_row_degree_profile\"]"
+    },
+    {
+      "path": "$.exact_combos[7].combo[0]",
+      "kind": "str",
+      "preview": "support_union"
+    },
+    {
+      "path": "$.exact_combos[7].combo[1]",
+      "kind": "str",
+      "preview": "support_row_degree_profile"
+    },
+    {
+      "path": "$.exact_combos[8]",
+      "kind": "dict",
+      "keys": [
+        "combo",
+        "feature_count",
+        "value_count",
+        "observed_only_total",
+        "rejected_only_total",
+        "mixed_observed_total",
+        "mixed_rejected_total"
+      ],
+      "preview": "{\"combo\":[\"support_complement\",\"support_row_degree_profile\"],\"feature_count\":2,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":210}"
+    },
+    {
+      "path": "$.exact_combos[8].combo",
+      "kind": "list",
+      "length": 2,
+      "preview": "[\"support_complement\",\"support_row_degree_profile\"]"
+    },
+    {
+      "path": "$.exact_combos[8].combo[0]",
+      "kind": "str",
+      "preview": "support_complement"
+    },
+    {
+      "path": "$.exact_combos[8].combo[1]",
+      "kind": "str",
+      "preview": "support_row_degree_profile"
+    },
+    {
+      "path": "$.exact_combos[9]",
+      "kind": "dict",
+      "keys": [
+        "combo",
+        "feature_count",
+        "value_count",
+        "observed_only_total",
+        "rejected_only_total",
+        "mixed_observed_total",
+        "mixed_rejected_total"
+      ],
+      "preview": "{\"combo\":[\"support_intersection\",\"support_row_degree_profile\"],\"feature_count\":2,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":210}"
+    },
+    {
+      "path": "$.exact_combos[9].combo",
+      "kind": "list",
+      "length": 2,
+      "preview": "[\"support_intersection\",\"support_row_degree_profile\"]"
+    },
+    {
+      "path": "$.exact_combos[9].combo[0]",
+      "kind": "str",
+      "preview": "support_intersection"
+    },
+    {
+      "path": "$.exact_combos[9].combo[1]",
+      "kind": "str",
+      "preview": "support_row_degree_profile"
+    },
+    {
+      "path": "$.exact_combos[10]",
+      "kind": "dict",
+      "keys": [
+        "combo",
+        "feature_count",
+        "value_count",
+        "observed_only_total",
+        "rejected_only_total",
+        "mixed_observed_total",
+        "mixed_rejected_total"
+      ],
+      "preview": "{\"combo\":[\"block_word\",\"support_intersection_size\",\"support_union\"],\"feature_count\":3,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":206}"
+    },
+    {
+      "path": "$.exact_combos[10].combo",
+      "kind": "list",
+      "length": 3,
+      "preview": "[\"block_word\",\"support_intersection_size\",\"support_union\"]"
+    },
+    {
+      "path": "$.exact_combos[10].combo[0]",
+      "kind": "str",
+      "preview": "block_word"
+    },
+    {
+      "path": "$.exact_combos[10].combo[1]",
+      "kind": "str",
+      "preview": "support_intersection_size"
+    },
+    {
+      "path": "$.exact_combos[10].combo[2]",
+      "kind": "str",
+      "preview": "support_union"
+    },
+    {
+      "path": "$.exact_combos[11]",
+      "kind": "dict",
+      "keys": [
+        "combo",
+        "feature_count",
+        "value_count",
+        "observed_only_total",
+        "rejected_only_total",
+        "mixed_observed_total",
+        "mixed_rejected_total"
+      ],
+      "preview": "{\"combo\":[\"block_word\",\"support_intersection_size\",\"support_complement\"],\"feature_count\":3,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":206}"
+    },
+    {
+      "path": "$.exact_combos[11].combo",
+      "kind": "list",
+      "length": 3,
+      "preview": "[\"block_word\",\"support_intersection_size\",\"support_complement\"]"
+    },
+    {
+      "path": "$.exact_combos[11].combo[0]",
+      "kind": "str",
+      "preview": "block_word"
+    },
+    {
+      "path": "$.exact_combos[11].combo[1]",
+      "kind": "str",
+      "preview": "support_intersection_size"
+    },
+    {
+      "path": "$.exact_combos[11].combo[2]",
+      "kind": "str",
+      "preview": "support_complement"
+    },
+    {
+      "path": "$.exact_combos[12]",
+      "kind": "dict",
+      "keys": [
+        "combo",
+        "feature_count",
+        "value_count",
+        "observed_only_total",
+        "rejected_only_total",
+        "mixed_observed_total",
+        "mixed_rejected_total"
+      ],
+      "preview": "{\"combo\":[\"block_word\",\"support_row_degree_hist\",\"support_union\"],\"feature_count\":3,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":206}"
+    },
+    {
+      "path": "$.exact_combos[12].combo",
+      "kind": "list",
+      "length": 3,
+      "preview": "[\"block_word\",\"support_row_degree_hist\",\"support_union\"]"
+    },
+    {
+      "path": "$.exact_combos[12].combo[0]",
+      "kind": "str",
+      "preview": "block_word"
+    },
+    {
+      "path": "$.exact_combos[12].combo[2]",
+      "kind": "str",
+      "preview": "support_union"
+    },
+    {
+      "path": "$.exact_combos[13]",
+      "kind": "dict",
+      "keys": [
+        "combo",
+        "feature_count",
+        "value_count",
+        "observed_only_total",
+        "rejected_only_total",
+        "mixed_observed_total",
+        "mixed_rejected_total"
+      ],
+      "preview": "{\"combo\":[\"block_word\",\"support_row_degree_hist\",\"support_complement\"],\"feature_count\":3,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":206}"
+    },
+    {
+      "path": "$.exact_combos[13].combo",
+      "kind": "list",
+      "length": 3,
+      "preview": "[\"block_word\",\"support_row_degree_hist\",\"support_complement\"]"
+    },
+    {
+      "path": "$.exact_combos[13].combo[0]",
+      "kind": "str",
+      "preview": "block_word"
+    },
+    {
+      "path": "$.exact_combos[13].combo[2]",
+      "kind": "str",
+      "preview": "support_complement"
+    },
+    {
+      "path": "$.exact_combos[14]",
+      "kind": "dict",
+      "keys": [
+        "combo",
+        "feature_count",
+        "value_count",
+        "observed_only_total",
+        "rejected_only_total",
+        "mixed_observed_total",
+        "mixed_rejected_total"
+      ],
+      "preview": "{\"combo\":[\"block_word\",\"support_pair_intersections\",\"support_union\"],\"feature_count\":3,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":208}"
+    },
+    {
+      "path": "$.exact_combos[14].combo",
+      "kind": "list",
+      "length": 3,
+      "preview": "[\"block_word\",\"support_pair_intersections\",\"support_union\"]"
+    },
+    {
+      "path": "$.exact_combos[14].combo[0]",
+      "kind": "str",
+      "preview": "block_word"
+    },
+    {
+      "path": "$.exact_combos[14].combo[2]",
+      "kind": "str",
+      "preview": "support_union"
+    },
+    {
+      "path": "$.exact_combos[15]",
+      "kind": "dict",
+      "keys": [
+        "combo",
+        "feature_count",
+        "value_count",
+        "observed_only_total",
+        "rejected_only_total",
+        "mixed_observed_total",
+        "mixed_rejected_total"
+      ],
+      "preview": "{\"combo\":[\"block_word\",\"support_pair_intersections\",\"support_complement\"],\"feature_count\":3,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":208}"
+    },
+    {
+      "path": "$.exact_combos[15].combo",
+      "kind": "list",
+      "length": 3,
+      "preview": "[\"block_word\",\"support_pair_intersections\",\"support_complement\"]"
+    },
+    {
+      "path": "$.exact_combos[15].combo[0]",
+      "kind": "str",
+      "preview": "block_word"
+    },
+    {
+      "path": "$.exact_combos[15].combo[2]",
+      "kind": "str",
+      "preview": "support_complement"
+    },
+    {
+      "path": "$.exact_combos[16]",
+      "kind": "dict",
+      "keys": [
+        "combo",
+        "feature_count",
+        "value_count",
+        "observed_only_total",
+        "rejected_only_total",
+        "mixed_observed_total",
+        "mixed_rejected_total"
+      ],
+      "preview": "{\"combo\":[\"block_word\",\"support_union\",\"support_intersection\"],\"feature_count\":3,\"mixed_observed_total\":0,\"mixed_rejected_total\":0,\"observed_only_total\":60,\"rejected_only_total\":150,\"value_count\":209}"
+    }
+  ],
+  "v21_hits": [
+    {
+      "line": 3,
+      "text": "Status: Exact selector minimizer checkpoint."
+    },
+    {
+      "line": 7,
+      "text": "After v20 found that row-aware M-incidence exactly separates the observed selected-branch triples from rejected abstract candidates, what is the least-sharp exact selector in the tested feature family?"
+    },
+    {
+      "line": 9,
+      "text": "This matters because support_row_degree_profile is exact, but it has one distinct value per local candidate row:"
+    },
+    {
+      "line": 23,
+      "text": "The only one-feature exact selector is:"
+    },
+    {
+      "line": 25,
+      "text": "    support_row_degree_profile"
+    },
+    {
+      "line": 31,
+      "text": "Thus support_row_degree_profile is the minimal single-feature exact selector in the tested family."
+    },
+    {
+      "line": 33,
+      "text": "## Least-sharp exact tested selectors"
+    },
+    {
+      "line": 35,
+      "text": "The least-value exact selectors have:"
+    },
+    {
+      "line": 40,
+      "text": "The first least-sharp exact selectors are:"
+    },
+    {
+      "line": 43,
+      "text": "    support_intersection_size"
+    },
+    {
+      "line": 44,
+      "text": "    support_complement"
+    },
+    {
+      "line": 49,
+      "text": "    support_intersection_size"
+    },
+    {
+      "line": 50,
+      "text": "    support_union"
+    },
+    {
+      "line": 54,
+      "text": "    support_complement"
+    },
+    {
+      "line": 58,
+      "text": "    support_union"
+    },
+    {
+      "line": 69,
+      "text": "There are two levels of exact row-aware recovery."
+    },
+    {
+      "line": 73,
+      "text": "    support_row_degree_profile alone is exact."
+    },
+    {
+      "line": 76,
+      "text": "Level 2: least-sharp tested recovery."
+    },
+    {
+      "line": 78,
+      "text": "    Three-feature row-aware selectors reduce sharpness slightly, to 206 values."
+    },
+    {
+      "line": 79,
+      "text": "    These combine chamber block information with row-aware support union/complement or support histogram information."
+    },
+    {
+      "line": 81,
+      "text": "Thus row-aware incidence is necessary for exact recovery in the tested feature family, but it does not have to appear only as the full row-degree profile."
+    },
+    {
+      "line": 88,
+      "text": "    Row-aware incidence sees it."
+    },
+    {
+      "line": 92,
+      "text": "    The minimal one-feature exact selector is full row-aware degree profile."
+    },
+    {
+      "line": 93,
+      "text": "    The least-sharp exact tested selectors use block word plus row-aware support location."
+    },
+    {
+      "line": 97,
+      "text": "    One row-aware profile sees everything."
+    },
+    {
+      "line": 98,
+      "text": "    Three weaker row-aware predicates nearly name the same law."
+    },
+    {
+      "line": 104,
+      "text": "It is not a proof over all possible predicates. It does show that within the tested chamber/support feature set, exact carrier selection requires row-aware incidence information."
+    }
+  ],
+  "register_key_section_hits": [
+    {
+      "line": 1,
+      "text": "\\section{Register-Key Selection and Row-Aware Incidence}"
+    },
+    {
+      "line": 2,
+      "text": "\\label{sec:register-key-selection}"
+    },
+    {
+      "line": 4,
+      "text": "The K900-native collision census in Section~\\ref{sec:k900-native-collision-bound} gives the Track A result: within the K900 carrier, the target predicate selects exactly three base cycles and six oriented presentations. The present section records a second, bounded Track B audit. Its purpose is not "
+    },
+    {
+      "line": 6,
+      "text": "The starting point is the register-boundary audit summarized in Section~\\ref{sec:register-boundary}. Endpoint labels, shared edge order, bare \\(G_{15}\\) isomorphism, and the K900 odd/even triangle partition do not force a unique chamber register alignment. The bridge is therefore not treated as a sh"
+    },
+    {
+      "line": 8,
+      "text": "A census of the K900-to-theorem-object key space gives \\(120\\) candidate graph isomorphisms. Public chamber/triangle predicates reduce this space to \\(60\\) structured keypairs. Each keypair is explained by a Petersen line-graph involution: a mate fixes one Petersen-star triangle and swaps the remain"
+    },
+    {
+      "line": 10,
+      "text": "The selected branch triple is an edge-level object in this register. It does not live on the fixed triangle itself. For every public keypair, the selected triple lies in the complement of the fixed Petersen-star triangle and has the following uniform form:"
+    },
+    {
+      "line": 16,
+      "text": "Equivalently, the selected branch triple is a three-edge matching in \\(G_{15}\\). It uses six distinct \\(G_{15}\\) vertices arranged across exactly three \\(\\tau\\)-swapped vertex-pairs: two pairs are crosslinked by the moved edge-pair, and one pair folds back by endpoint swap."
+    },
+    {
+      "line": 18,
+      "text": "The abstract Petersen edge-orbit structure alone does not determine the observed selection. For each fixed Petersen-star triangle, there are \\(21\\) abstract triples of the relevant type, while the carrier admits \\(6\\). Across all ten fixed triangles, this gives \\(210\\) local abstract candidates and "
+    },
+    {
+      "line": 20,
+      "text": "The resulting selection law is not recovered by scalar summaries alone. Chamber block words, hinge words, support sizes, support pair-intersection counts, support union size, support intersection size, and support row-degree histograms nearly recover the law, but leave two observed/rejected collisio"
+    },
+    {
+      "line": 22,
+      "text": "Exact recovery in the tested feature family requires row-aware incidence. The row-aware support-degree profile of the sector matrix \\(M\\), recording which rows are touched and with what multiplicity, separates all \\(60\\) observed selected triples from all \\(150\\) rejected local candidates:"
+    },
+    {
+      "line": 28,
+      "text": "As a single feature, this row-aware profile is exact but sharp: it has \\(210\\) distinct values on the \\(210\\) local candidate rows. A minimizer over the tested feature family found that the only one-feature exact selector is the full row-aware support-degree profile. The least-sharp exact tested sel"
+    },
+    {
+      "line": 30,
+      "text": "This Track B result should be read with the same boundary discipline as the rest of the paper. It is not a cryptographic security theorem and not a proof over all possible predicates. It is a finite register-key audit. It shows that the carrier selection law is not visible in scalar support size alo"
+    }
+  ],
+  "current_interpretation": {
+    "public_layer": "confirms target class and ZT edges but does not close register map",
+    "exact_layer": "support_row_degree_profile is the minimal single-feature exact selector in the tested family, per v21",
+    "least_sharp_layer": "least-sharp tested exact selectors combine chamber block information with row-aware support location/histogram information, per v21",
+    "null_boundary": "row identity is load-bearing under the first live row-shuffle null"
+  },
+  "next_script": "write_gap_a_selector_theorem_note_001.py"
+}

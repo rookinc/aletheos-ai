@@ -7,6 +7,7 @@ Status: gap_a_mode2_projection_mirror_boundary_note_recorded
 - This does not close Gap A.
 - Mode 2 mirror is projection-level evidence, not source-derived closure.
 - The mirror is source-backed columnwise but not source-derived from the tested 30-column, 900-vertex, or orbit probes.
+- The kappa/phi framing is conceptual language only and is not admitted as finite proof evidence.
 - The remaining missing object is the source-native WXYZTI row/register generator.
 - No physical interpretation is claimed.
 
@@ -50,11 +51,19 @@ Status: gap_a_mode2_projection_mirror_boundary_note_recorded
 - The mirror rule remains stated over projection/register cycle labels.
 - No source-native WXYZTI cycle labels or full row generator have been found in the global carrier source.
 
+## Conceptual context, not proof evidence
+
+- status: "non_proof_context_only"
+- source: "On the Effects of Choosing Planck or the Golden Ratio for kappa"
+- useful_contrast: "Planck-side/discrete/accountable source law versus golden-side/recursive/self-similar projection symmetry."
+- finite_project_translation: {"discrete_source_side": ["30 source columns", "900 source vertices", "exact carrier records", "source-native row/register generator still required"], "recursive_projection_side": ["Mode 2 mirror path", "return-cycle symmetry", "boundary reversal", "central hinge row 10"]}
+- boundary: "This context may guide language, but it is not evidence for Gap A closure."
+
 ## Classification
 
 - mode2_mirror_class: projection_level_register_symmetry
-- allowed_use: ["diagnostic witness", "register/projection explanation", "heuristic guide for turn-block structure", "boundary note for Gap A"]
-- forbidden_use: ["do not claim Gap A closure", "do not claim source-derived mirror law", "do not use as full 900 carrier-to-WXYZTI generator", "do not promote to physical interpretation"]
+- allowed_use: ["diagnostic witness", "register/projection explanation", "heuristic guide for turn-block structure", "boundary note for Gap A", "conceptual contrast with discrete source law"]
+- forbidden_use: ["do not claim Gap A closure", "do not claim source-derived mirror law", "do not use as full 900 carrier-to-WXYZTI generator", "do not promote conceptual kappa framing into finite proof evidence", "do not promote to physical interpretation"]
 
 ## Claim
 
@@ -77,6 +86,7 @@ Status: gap_a_mode2_projection_mirror_boundary_note_recorded
 - PASS projection_candidate_supported: Mode 2 mirror supported as projection candidate
 - PASS source_derived_false: source derivation not found
 - PASS source_promotion_forbidden: not promoted
+- PASS conceptual_context_non_proof_only: non_proof_context_only
 - PASS gap_a_not_closed: boundary note only
 
 ## Next script

@@ -21,6 +21,7 @@ include __DIR__ . '/includes/site_header.php';
     <div class="hero-actions">
       <a class="button button--primary" href="/labs/p900_observatory/lab.html">Open P900</a>
       <a class="button button--secondary" href="/labs/informative_action/">Try Informative Action</a>
+      <a href="labs/registered_boundary_flux/lab.html" class="button button--primary">Open Boundary Flux</a>
     </div>
   </section>
 

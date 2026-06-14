@@ -1,0 +1,1123 @@
+{
+  "schema": "gap_a_bruteforce_selector_overfit_audit_001.v1",
+  "status": "gap_a_bruteforce_selector_overfit_audited_reusable_subgrammar_salvaged_not_generator",
+  "timestamp_utc": "2026-06-14T21:55:15.631151+00:00",
+  "purpose": "Audit the exact bounded selector family for overfit and isolate reusable source-native subgrammar, if any.",
+  "boundary": [
+    "This does not close Gap A.",
+    "The exact selector family is not a source-native row/register generator.",
+    "Singleton-heavy and feature-heavy formulas are treated as overfit evidence.",
+    "Reusable subgrammar may be kept only as a hint for the next generator search.",
+    "Mode 2 mirror remains projection-level evidence and is not promoted here.",
+    "No physical interpretation is claimed."
+  ],
+  "summary": {
+    "audit_result": "overfit_audited",
+    "gap_a_closed": false,
+    "exact_selector_family_found": true,
+    "source_native_generator_found": false,
+    "total_rows": 18,
+    "hard_rows": [
+      3,
+      4,
+      5,
+      8,
+      9,
+      11,
+      15,
+      16,
+      17
+    ],
+    "non_path_rows": [
+      5,
+      8,
+      9,
+      11,
+      15,
+      16,
+      17
+    ],
+    "preimage_rows": [
+      3,
+      16
+    ],
+    "stable_rows": [
+      4,
+      9,
+      15
+    ],
+    "zero_rows": [
+      3,
+      4,
+      9,
+      15,
+      16
+    ],
+    "total_cost": 1153,
+    "singleton_row_count": 11,
+    "singleton_rows": [
+      0,
+      1,
+      3,
+      4,
+      6,
+      7,
+      8,
+      10,
+      12,
+      13,
+      14
+    ],
+    "distinct_feature_count": 17,
+    "exact_formula_reuse_group_count": 3,
+    "role_cycle_invariant_group_count": 3,
+    "role_cycle_invariant_rows": [
+      0,
+      1,
+      5,
+      6,
+      7,
+      11,
+      12,
+      13,
+      17
+    ],
+    "role_cycle_invariant_nonlookup_rows": [
+      5,
+      11,
+      17
+    ],
+    "role_cycle_invariant_lookup_like_rows": [
+      0,
+      1,
+      6,
+      7,
+      12,
+      13
+    ],
+    "compact_unique_nonlookup_rows": [
+      2,
+      15,
+      16
+    ],
+    "composite_unique_nonlookup_rows": [
+      9
+    ],
+    "lookup_like_rows": [
+      3,
+      4,
+      8,
+      10,
+      14
+    ],
+    "risk_counts": {
+      "high": 5,
+      "low": 3,
+      "medium": 9,
+      "medium_high": 1
+    },
+    "classification_counts": {
+      "compact_unique_nonlookup_selector": 3,
+      "composite_unique_nonlookup_selector": 1,
+      "lookup_like_selector": 5,
+      "reusable_role_cycle_invariant_but_lookup_like": 6,
+      "reusable_role_cycle_invariant_nonlookup": 3
+    },
+    "common_features": [
+      [
+        "g900_slot_edge.a_mod5",
+        8
+      ],
+      [
+        "g900_slot_edge.a",
+        4
+      ],
+      [
+        "g900_slot_edge.diff_mod15",
+        4
+      ],
+      [
+        "p900_candidate0_edge_law.sector.diff_mod15",
+        4
+      ],
+      [
+        "p900_candidate0_edge_law.label",
+        4
+      ],
+      [
+        "p900_candidate0_edge_law.petersen_b.endpoint",
+        3
+      ]
+    ],
+    "overfit_diagnosis": [
+      "singleton_heavy",
+      "feature_family_heavy",
+      "high_cost",
+      "small_nonlookup_reusable_core"
+    ],
+    "claim_closes_gap_a": false
+  },
+  "exact_formula_reuse_groups": [
+    {
+      "signature": [
+        "g900_slot_edge.a == 0 AND g900_slot_edge.diff_mod15 == 1"
+      ],
+      "rows": [
+        0,
+        6,
+        12
+      ],
+      "roles": [
+        "WX"
+      ],
+      "cycles": [
+        0,
+        1,
+        2
+      ],
+      "support_union": [
+        0
+      ],
+      "has_singleton_terms": true
+    },
+    {
+      "signature": [
+        "g900_slot_edge.a_mod5 == 1 AND p900_candidate0_edge_law.sector.diff_mod15 == 1"
+      ],
+      "rows": [
+        1,
+        7,
+        13
+      ],
+      "roles": [
+        "XY"
+      ],
+      "cycles": [
+        0,
+        1,
+        2
+      ],
+      "support_union": [
+        4
+      ],
+      "has_singleton_terms": true
+    },
+    {
+      "signature": [
+        "p900_candidate0_edge_law.petersen_b.endpoint == 4 AND p900_candidate0_edge_law.label == \"half_turn\""
+      ],
+      "rows": [
+        5,
+        11,
+        17
+      ],
+      "roles": [
+        "IW"
+      ],
+      "cycles": [
+        0,
+        1,
+        2
+      ],
+      "support_union": [
+        1,
+        7
+      ],
+      "has_singleton_terms": false
+    }
+  ],
+  "salvage_candidates": {
+    "role_cycle_invariant_groups": [
+      {
+        "role": "WX",
+        "signature": [
+          "g900_slot_edge.a == 0 AND g900_slot_edge.diff_mod15 == 1"
+        ],
+        "rows": [
+          0,
+          6,
+          12
+        ],
+        "cycles": [
+          0,
+          1,
+          2
+        ],
+        "support_union": [
+          0
+        ],
+        "has_singleton_terms": true,
+        "term_count": 1,
+        "formula_cost_each": [
+          56,
+          56,
+          56
+        ],
+        "terms": [
+          {
+            "term": "g900_slot_edge.a == 0 AND g900_slot_edge.diff_mod15 == 1",
+            "support": [
+              0
+            ],
+            "term_cost": 56
+          }
+        ]
+      },
+      {
+        "role": "XY",
+        "signature": [
+          "g900_slot_edge.a_mod5 == 1 AND p900_candidate0_edge_law.sector.diff_mod15 == 1"
+        ],
+        "rows": [
+          1,
+          7,
+          13
+        ],
+        "cycles": [
+          0,
+          1,
+          2
+        ],
+        "support_union": [
+          4
+        ],
+        "has_singleton_terms": true,
+        "term_count": 1,
+        "formula_cost_each": [
+          56,
+          56,
+          56
+        ],
+        "terms": [
+          {
+            "term": "g900_slot_edge.a_mod5 == 1 AND p900_candidate0_edge_law.sector.diff_mod15 == 1",
+            "support": [
+              4
+            ],
+            "term_cost": 56
+          }
+        ]
+      },
+      {
+        "role": "IW",
+        "signature": [
+          "p900_candidate0_edge_law.petersen_b.endpoint == 4 AND p900_candidate0_edge_law.label == \"half_turn\""
+        ],
+        "rows": [
+          5,
+          11,
+          17
+        ],
+        "cycles": [
+          0,
+          1,
+          2
+        ],
+        "support_union": [
+          1,
+          7
+        ],
+        "has_singleton_terms": false,
+        "term_count": 1,
+        "formula_cost_each": [
+          45,
+          45,
+          45
+        ],
+        "terms": [
+          {
+            "term": "p900_candidate0_edge_law.petersen_b.endpoint == 4 AND p900_candidate0_edge_law.label == \"half_turn\"",
+            "support": [
+              1,
+              7
+            ],
+            "term_cost": 45
+          }
+        ]
+      }
+    ],
+    "reusable_nonlookup_rows": [
+      5,
+      11,
+      17
+    ],
+    "reusable_lookup_like_rows": [
+      0,
+      1,
+      6,
+      7,
+      12,
+      13
+    ],
+    "compact_unique_nonlookup_rows": [
+      2,
+      15,
+      16
+    ],
+    "composite_unique_nonlookup_rows": [
+      9
+    ],
+    "lookup_like_rows": [
+      3,
+      4,
+      8,
+      10,
+      14
+    ]
+  },
+  "row_audits": [
+    {
+      "row_ordinal": 0,
+      "cycle": 0,
+      "role": "WX",
+      "columns": [
+        0
+      ],
+      "preimage": false,
+      "stable_complement": false,
+      "zero_twisted_source_row": false,
+      "hard_row": false,
+      "formula_cost": 56,
+      "term_count": 1,
+      "singleton_term_count": 1,
+      "uses_singleton_terms": true,
+      "features": [
+        "g900_slot_edge.a",
+        "g900_slot_edge.diff_mod15"
+      ],
+      "classification": "reusable_role_cycle_invariant_but_lookup_like",
+      "overfit_risk": "medium",
+      "role_cycles_for_same_formula": [
+        0,
+        1,
+        2
+      ],
+      "terms": [
+        {
+          "term": "g900_slot_edge.a == 0 AND g900_slot_edge.diff_mod15 == 1",
+          "support": [
+            0
+          ],
+          "term_cost": 56
+        }
+      ]
+    },
+    {
+      "row_ordinal": 1,
+      "cycle": 0,
+      "role": "XY",
+      "columns": [
+        4
+      ],
+      "preimage": false,
+      "stable_complement": false,
+      "zero_twisted_source_row": false,
+      "hard_row": false,
+      "formula_cost": 56,
+      "term_count": 1,
+      "singleton_term_count": 1,
+      "uses_singleton_terms": true,
+      "features": [
+        "g900_slot_edge.a_mod5",
+        "p900_candidate0_edge_law.sector.diff_mod15"
+      ],
+      "classification": "reusable_role_cycle_invariant_but_lookup_like",
+      "overfit_risk": "medium",
+      "role_cycles_for_same_formula": [
+        0,
+        1,
+        2
+      ],
+      "terms": [
+        {
+          "term": "g900_slot_edge.a_mod5 == 1 AND p900_candidate0_edge_law.sector.diff_mod15 == 1",
+          "support": [
+            4
+          ],
+          "term_cost": 56
+        }
+      ]
+    },
+    {
+      "row_ordinal": 2,
+      "cycle": 0,
+      "role": "YZ",
+      "columns": [
+        7,
+        10
+      ],
+      "preimage": false,
+      "stable_complement": false,
+      "zero_twisted_source_row": false,
+      "hard_row": false,
+      "formula_cost": 45,
+      "term_count": 1,
+      "singleton_term_count": 0,
+      "uses_singleton_terms": false,
+      "features": [
+        "g900_slot_edge.cycle_b_5x3",
+        "g900_slot_edge.endpoint_mod5"
+      ],
+      "classification": "compact_unique_nonlookup_selector",
+      "overfit_risk": "medium",
+      "role_cycles_for_same_formula": [
+        0
+      ],
+      "terms": [
+        {
+          "term": "g900_slot_edge.cycle_b_5x3 == 0 AND g900_slot_edge.endpoint_mod5 == 3",
+          "support": [
+            7,
+            10
+          ],
+          "term_cost": 45
+        }
+      ]
+    },
+    {
+      "row_ordinal": 3,
+      "cycle": 0,
+      "role": "ZT",
+      "columns": [
+        9
+      ],
+      "preimage": true,
+      "stable_complement": false,
+      "zero_twisted_source_row": true,
+      "hard_row": true,
+      "formula_cost": 56,
+      "term_count": 1,
+      "singleton_term_count": 1,
+      "uses_singleton_terms": true,
+      "features": [
+        "g900_slot_edge.a_mod5",
+        "p900_candidate0_edge_law.petersen_b.b_mod5"
+      ],
+      "classification": "lookup_like_selector",
+      "overfit_risk": "high",
+      "role_cycles_for_same_formula": [
+        0
+      ],
+      "terms": [
+        {
+          "term": "g900_slot_edge.a_mod5 == 2 AND p900_candidate0_edge_law.petersen_b.b_mod5 == 3",
+          "support": [
+            9
+          ],
+          "term_cost": 56
+        }
+      ]
+    },
+    {
+      "row_ordinal": 4,
+      "cycle": 0,
+      "role": "TI",
+      "columns": [
+        13
+      ],
+      "preimage": false,
+      "stable_complement": true,
+      "zero_twisted_source_row": true,
+      "hard_row": true,
+      "formula_cost": 56,
+      "term_count": 1,
+      "singleton_term_count": 1,
+      "uses_singleton_terms": true,
+      "features": [
+        "g900_slot_edge.a_mod5",
+        "p900_candidate0_edge_law.label"
+      ],
+      "classification": "lookup_like_selector",
+      "overfit_risk": "high",
+      "role_cycles_for_same_formula": [
+        0
+      ],
+      "terms": [
+        {
+          "term": "g900_slot_edge.a_mod5 == 4 AND p900_candidate0_edge_law.label == \"half_turn\"",
+          "support": [
+            13
+          ],
+          "term_cost": 56
+        }
+      ]
+    },
+    {
+      "row_ordinal": 5,
+      "cycle": 0,
+      "role": "IW",
+      "columns": [
+        1,
+        7
+      ],
+      "preimage": false,
+      "stable_complement": false,
+      "zero_twisted_source_row": false,
+      "hard_row": true,
+      "formula_cost": 45,
+      "term_count": 1,
+      "singleton_term_count": 0,
+      "uses_singleton_terms": false,
+      "features": [
+        "p900_candidate0_edge_law.label",
+        "p900_candidate0_edge_law.petersen_b.endpoint"
+      ],
+      "classification": "reusable_role_cycle_invariant_nonlookup",
+      "overfit_risk": "low",
+      "role_cycles_for_same_formula": [
+        0,
+        1,
+        2
+      ],
+      "terms": [
+        {
+          "term": "p900_candidate0_edge_law.petersen_b.endpoint == 4 AND p900_candidate0_edge_law.label == \"half_turn\"",
+          "support": [
+            1,
+            7
+          ],
+          "term_cost": 45
+        }
+      ]
+    },
+    {
+      "row_ordinal": 6,
+      "cycle": 1,
+      "role": "WX",
+      "columns": [
+        0
+      ],
+      "preimage": false,
+      "stable_complement": false,
+      "zero_twisted_source_row": false,
+      "hard_row": false,
+      "formula_cost": 56,
+      "term_count": 1,
+      "singleton_term_count": 1,
+      "uses_singleton_terms": true,
+      "features": [
+        "g900_slot_edge.a",
+        "g900_slot_edge.diff_mod15"
+      ],
+      "classification": "reusable_role_cycle_invariant_but_lookup_like",
+      "overfit_risk": "medium",
+      "role_cycles_for_same_formula": [
+        0,
+        1,
+        2
+      ],
+      "terms": [
+        {
+          "term": "g900_slot_edge.a == 0 AND g900_slot_edge.diff_mod15 == 1",
+          "support": [
+            0
+          ],
+          "term_cost": 56
+        }
+      ]
+    },
+    {
+      "row_ordinal": 7,
+      "cycle": 1,
+      "role": "XY",
+      "columns": [
+        4
+      ],
+      "preimage": false,
+      "stable_complement": false,
+      "zero_twisted_source_row": false,
+      "hard_row": false,
+      "formula_cost": 56,
+      "term_count": 1,
+      "singleton_term_count": 1,
+      "uses_singleton_terms": true,
+      "features": [
+        "g900_slot_edge.a_mod5",
+        "p900_candidate0_edge_law.sector.diff_mod15"
+      ],
+      "classification": "reusable_role_cycle_invariant_but_lookup_like",
+      "overfit_risk": "medium",
+      "role_cycles_for_same_formula": [
+        0,
+        1,
+        2
+      ],
+      "terms": [
+        {
+          "term": "g900_slot_edge.a_mod5 == 1 AND p900_candidate0_edge_law.sector.diff_mod15 == 1",
+          "support": [
+            4
+          ],
+          "term_cost": 56
+        }
+      ]
+    },
+    {
+      "row_ordinal": 8,
+      "cycle": 1,
+      "role": "YZ",
+      "columns": [
+        1,
+        3,
+        22
+      ],
+      "preimage": false,
+      "stable_complement": false,
+      "zero_twisted_source_row": false,
+      "hard_row": true,
+      "formula_cost": 111,
+      "term_count": 2,
+      "singleton_term_count": 1,
+      "uses_singleton_terms": true,
+      "features": [
+        "g900_slot_edge.a",
+        "g900_slot_edge.a_mod5",
+        "g900_slot_edge.distance_mod15",
+        "p900_candidate0_edge_law.petersen_b.b"
+      ],
+      "classification": "lookup_like_selector",
+      "overfit_risk": "high",
+      "role_cycles_for_same_formula": [
+        1
+      ],
+      "terms": [
+        {
+          "term": "g900_slot_edge.a == 0 AND g900_slot_edge.distance_mod15 == 4",
+          "support": [
+            1,
+            3
+          ],
+          "term_cost": 45
+        },
+        {
+          "term": "g900_slot_edge.a_mod5 == 2 AND p900_candidate0_edge_law.petersen_b.b == 5",
+          "support": [
+            22
+          ],
+          "term_cost": 56
+        }
+      ]
+    },
+    {
+      "row_ordinal": 9,
+      "cycle": 1,
+      "role": "ZT",
+      "columns": [
+        9,
+        11,
+        14
+      ],
+      "preimage": false,
+      "stable_complement": true,
+      "zero_twisted_source_row": true,
+      "hard_row": true,
+      "formula_cost": 90,
+      "term_count": 2,
+      "singleton_term_count": 0,
+      "uses_singleton_terms": false,
+      "features": [
+        "g900_slot_edge.diff_mod15",
+        "p900_candidate0_edge_law.petersen_a.endpoint",
+        "p900_candidate0_edge_law.petersen_b.sum_mod15"
+      ],
+      "classification": "composite_unique_nonlookup_selector",
+      "overfit_risk": "medium_high",
+      "role_cycles_for_same_formula": [
+        1
+      ],
+      "terms": [
+        {
+          "term": "p900_candidate0_edge_law.petersen_b.sum_mod15 == 11",
+          "support": [
+            9,
+            11
+          ],
+          "term_cost": 35
+        },
+        {
+          "term": "g900_slot_edge.diff_mod15 == 10 AND p900_candidate0_edge_law.petersen_a.endpoint == 4",
+          "support": [
+            11,
+            14
+          ],
+          "term_cost": 45
+        }
+      ]
+    },
+    {
+      "row_ordinal": 10,
+      "cycle": 1,
+      "role": "TI",
+      "columns": [
+        10,
+        11
+      ],
+      "preimage": false,
+      "stable_complement": false,
+      "zero_twisted_source_row": false,
+      "hard_row": false,
+      "formula_cost": 122,
+      "term_count": 2,
+      "singleton_term_count": 2,
+      "uses_singleton_terms": true,
+      "features": [
+        "g900_slot_edge.a_mod5",
+        "g900_slot_edge.cycle_b_5x3",
+        "p900_candidate0_edge_law.petersen_b.b_mod5"
+      ],
+      "classification": "lookup_like_selector",
+      "overfit_risk": "high",
+      "role_cycles_for_same_formula": [
+        1
+      ],
+      "terms": [
+        {
+          "term": "g900_slot_edge.a_mod5 == 3 AND p900_candidate0_edge_law.petersen_b.b_mod5 == 3",
+          "support": [
+            11
+          ],
+          "term_cost": 56
+        },
+        {
+          "term": "g900_slot_edge.cycle_b_5x3 == 0 AND g900_slot_edge.a_mod5 == 3",
+          "support": [
+            10
+          ],
+          "term_cost": 56
+        }
+      ]
+    },
+    {
+      "row_ordinal": 11,
+      "cycle": 1,
+      "role": "IW",
+      "columns": [
+        1,
+        7
+      ],
+      "preimage": false,
+      "stable_complement": false,
+      "zero_twisted_source_row": false,
+      "hard_row": true,
+      "formula_cost": 45,
+      "term_count": 1,
+      "singleton_term_count": 0,
+      "uses_singleton_terms": false,
+      "features": [
+        "p900_candidate0_edge_law.label",
+        "p900_candidate0_edge_law.petersen_b.endpoint"
+      ],
+      "classification": "reusable_role_cycle_invariant_nonlookup",
+      "overfit_risk": "low",
+      "role_cycles_for_same_formula": [
+        0,
+        1,
+        2
+      ],
+      "terms": [
+        {
+          "term": "p900_candidate0_edge_law.petersen_b.endpoint == 4 AND p900_candidate0_edge_law.label == \"half_turn\"",
+          "support": [
+            1,
+            7
+          ],
+          "term_cost": 45
+        }
+      ]
+    },
+    {
+      "row_ordinal": 12,
+      "cycle": 2,
+      "role": "WX",
+      "columns": [
+        0
+      ],
+      "preimage": false,
+      "stable_complement": false,
+      "zero_twisted_source_row": false,
+      "hard_row": false,
+      "formula_cost": 56,
+      "term_count": 1,
+      "singleton_term_count": 1,
+      "uses_singleton_terms": true,
+      "features": [
+        "g900_slot_edge.a",
+        "g900_slot_edge.diff_mod15"
+      ],
+      "classification": "reusable_role_cycle_invariant_but_lookup_like",
+      "overfit_risk": "medium",
+      "role_cycles_for_same_formula": [
+        0,
+        1,
+        2
+      ],
+      "terms": [
+        {
+          "term": "g900_slot_edge.a == 0 AND g900_slot_edge.diff_mod15 == 1",
+          "support": [
+            0
+          ],
+          "term_cost": 56
+        }
+      ]
+    },
+    {
+      "row_ordinal": 13,
+      "cycle": 2,
+      "role": "XY",
+      "columns": [
+        4
+      ],
+      "preimage": false,
+      "stable_complement": false,
+      "zero_twisted_source_row": false,
+      "hard_row": false,
+      "formula_cost": 56,
+      "term_count": 1,
+      "singleton_term_count": 1,
+      "uses_singleton_terms": true,
+      "features": [
+        "g900_slot_edge.a_mod5",
+        "p900_candidate0_edge_law.sector.diff_mod15"
+      ],
+      "classification": "reusable_role_cycle_invariant_but_lookup_like",
+      "overfit_risk": "medium",
+      "role_cycles_for_same_formula": [
+        0,
+        1,
+        2
+      ],
+      "terms": [
+        {
+          "term": "g900_slot_edge.a_mod5 == 1 AND p900_candidate0_edge_law.sector.diff_mod15 == 1",
+          "support": [
+            4
+          ],
+          "term_cost": 56
+        }
+      ]
+    },
+    {
+      "row_ordinal": 14,
+      "cycle": 2,
+      "role": "YZ",
+      "columns": [
+        4,
+        5
+      ],
+      "preimage": false,
+      "stable_complement": false,
+      "zero_twisted_source_row": false,
+      "hard_row": false,
+      "formula_cost": 122,
+      "term_count": 2,
+      "singleton_term_count": 2,
+      "uses_singleton_terms": true,
+      "features": [
+        "g900_slot_edge.a_mod5",
+        "g900_slot_edge.b_mod5",
+        "p900_candidate0_edge_law.sector.diff_mod15"
+      ],
+      "classification": "lookup_like_selector",
+      "overfit_risk": "high",
+      "role_cycles_for_same_formula": [
+        2
+      ],
+      "terms": [
+        {
+          "term": "g900_slot_edge.a_mod5 == 1 AND g900_slot_edge.b_mod5 == 1",
+          "support": [
+            5
+          ],
+          "term_cost": 56
+        },
+        {
+          "term": "g900_slot_edge.a_mod5 == 1 AND p900_candidate0_edge_law.sector.diff_mod15 == 1",
+          "support": [
+            4
+          ],
+          "term_cost": 56
+        }
+      ]
+    },
+    {
+      "row_ordinal": 15,
+      "cycle": 2,
+      "role": "ZT",
+      "columns": [
+        21,
+        22
+      ],
+      "preimage": false,
+      "stable_complement": true,
+      "zero_twisted_source_row": true,
+      "hard_row": true,
+      "formula_cost": 35,
+      "term_count": 1,
+      "singleton_term_count": 0,
+      "uses_singleton_terms": false,
+      "features": [
+        "p900_candidate0_edge_law.petersen_a.sum_mod15"
+      ],
+      "classification": "compact_unique_nonlookup_selector",
+      "overfit_risk": "medium",
+      "role_cycles_for_same_formula": [
+        2
+      ],
+      "terms": [
+        {
+          "term": "p900_candidate0_edge_law.petersen_a.sum_mod15 == 11",
+          "support": [
+            21,
+            22
+          ],
+          "term_cost": 35
+        }
+      ]
+    },
+    {
+      "row_ordinal": 16,
+      "cycle": 2,
+      "role": "TI",
+      "columns": [
+        13,
+        15
+      ],
+      "preimage": true,
+      "stable_complement": false,
+      "zero_twisted_source_row": true,
+      "hard_row": true,
+      "formula_cost": 45,
+      "term_count": 1,
+      "singleton_term_count": 0,
+      "uses_singleton_terms": false,
+      "features": [
+        "p900_candidate0_edge_law.petersen_a.b_mod5",
+        "p900_candidate0_edge_law.petersen_b.a_mod5"
+      ],
+      "classification": "compact_unique_nonlookup_selector",
+      "overfit_risk": "medium",
+      "role_cycles_for_same_formula": [
+        2
+      ],
+      "terms": [
+        {
+          "term": "p900_candidate0_edge_law.petersen_a.b_mod5 == 0 AND p900_candidate0_edge_law.petersen_b.a_mod5 == 0",
+          "support": [
+            13,
+            15
+          ],
+          "term_cost": 45
+        }
+      ]
+    },
+    {
+      "row_ordinal": 17,
+      "cycle": 2,
+      "role": "IW",
+      "columns": [
+        1,
+        7
+      ],
+      "preimage": false,
+      "stable_complement": false,
+      "zero_twisted_source_row": false,
+      "hard_row": true,
+      "formula_cost": 45,
+      "term_count": 1,
+      "singleton_term_count": 0,
+      "uses_singleton_terms": false,
+      "features": [
+        "p900_candidate0_edge_law.label",
+        "p900_candidate0_edge_law.petersen_b.endpoint"
+      ],
+      "classification": "reusable_role_cycle_invariant_nonlookup",
+      "overfit_risk": "low",
+      "role_cycles_for_same_formula": [
+        0,
+        1,
+        2
+      ],
+      "terms": [
+        {
+          "term": "p900_candidate0_edge_law.petersen_b.endpoint == 4 AND p900_candidate0_edge_law.label == \"half_turn\"",
+          "support": [
+            1,
+            7
+          ],
+          "term_cost": 45
+        }
+      ]
+    }
+  ],
+  "interpretation": {
+    "main_result": "The exact selector family is overfit as a generator, but it contains a reusable role-cycle invariant subgrammar.",
+    "salvaged_core": "The strongest reusable non-lookup core is the IW row selector repeated across cycles: columns [1,7] from half_turn with petersen_b endpoint 4.",
+    "lookup_like_core": "WX and XY repeat across cycles, but the formulas are singleton-like and must remain quarantined unless a separate role generator explains them.",
+    "unique_nonlookup_residue": "Rows with compact non-lookup selectors may guide the next station-variable grammar, but they are not a generator by themselves.",
+    "why_not_closure": "A row-local exact selector can choose the right columns without explaining why those columns are arranged as WXYZTI roles across cycles.",
+    "next_move": "Search station-variable grammars that generate roles and cycles together, using the salvaged reusable subgrammar as hints only."
+  },
+  "claim": {
+    "does_this_close_gap_a": false,
+    "does_this_validate_exact_selector_as_generator": false,
+    "does_this_salvage_reusable_subgrammar": true,
+    "does_this_find_iw_nonlookup_core": true,
+    "short_form": "The exact selector family is overfit as a generator, but it contains a reusable role-cycle invariant subgrammar.",
+    "not_closed_reason": "A row-local exact selector can choose the right columns without explaining why those columns are arranged as WXYZTI roles across cycles.",
+    "next_problem": "Search station-variable grammars that generate roles and cycles together, using the salvaged reusable subgrammar as hints only."
+  },
+  "checks": [
+    {
+      "id": "bruteforce_loaded",
+      "status": true,
+      "detail": "gap_a_bruteforce_wxyzti_register_exact_selector_family_found_not_generator"
+    },
+    {
+      "id": "column_hypergraph_loaded",
+      "status": true,
+      "detail": "gap_a_column_hypergraph_register_generator_candidate_not_found"
+    },
+    {
+      "id": "derivation_return_loaded",
+      "status": true,
+      "detail": "gap_a_wxyzti_register_generator_slot_path_candidate_not_found"
+    },
+    {
+      "id": "mode2_boundary_loaded",
+      "status": true,
+      "detail": "gap_a_mode2_projection_mirror_boundary_note_recorded"
+    },
+    {
+      "id": "boundary_theorem_loaded",
+      "status": true,
+      "detail": "gap_a_boundary_theorem_note_recorded"
+    },
+    {
+      "id": "all_rows_exact_selector_loaded",
+      "status": true,
+      "detail": "True"
+    },
+    {
+      "id": "overfit_detected",
+      "status": true,
+      "detail": "[\"singleton_heavy\", \"feature_family_heavy\", \"high_cost\", \"small_nonlookup_reusable_core\"]"
+    },
+    {
+      "id": "reusable_role_cycle_groups_found",
+      "status": true,
+      "detail": "3"
+    },
+    {
+      "id": "iw_nonlookup_core_found",
+      "status": true,
+      "detail": "[5, 11, 17]"
+    },
+    {
+      "id": "gap_a_not_closed",
+      "status": true,
+      "detail": "overfit audit only"
+    }
+  ],
+  "next_script": "sat_gap_a_wxyzti_register_generator_with_station_variables_001.py"
+}

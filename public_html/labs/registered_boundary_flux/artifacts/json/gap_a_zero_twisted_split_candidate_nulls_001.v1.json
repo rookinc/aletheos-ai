@@ -1,0 +1,294 @@
+{
+  "schema": "gap_a_zero_twisted_split_candidate_nulls_001.v1",
+  "status": "gap_a_zero_twisted_split_candidate_nulls_recorded",
+  "timestamp_utc": "2026-06-14T19:35:13.898588+00:00",
+  "purpose": "Attack the exact split candidate inside the zero-twisted-carrier neighborhood.",
+  "boundary": [
+    "This does not close Gap A.",
+    "The baseline split is still restricted to the tested zero-twisted neighborhood.",
+    "No full source-derived chamber/register map is claimed.",
+    "These nulls test whether the split depends on branch sensitivity, singleton ZT selected-turn structure, role specificity, and placement.",
+    "The candidate may be promoted only to interim support, not proof."
+  ],
+  "inputs": {
+    "split_candidate": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_zero_twisted_neighborhood_split_001.v1.json",
+      "sha256": "14293c9f7a362b2c9e1f50587c3222816f7d1a29050a8015e26fe49b0b018476",
+      "status": "gap_a_zero_twisted_neighborhood_split_candidate_found_not_closure"
+    },
+    "residual_nulls": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_15_thalion_residual_split_nulls_001.v1.json",
+      "sha256": "d2b1e515a5edfddc564ceca1b8407cd3b5741879be125314e6e64ada0485eb97",
+      "status": "gap_a_15_thalion_residual_split_nulls_recorded"
+    },
+    "interim": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_15_thalion_interim_theorem_note_001.v1.json",
+      "sha256": "d7ccd86222ad4d75a140bbc2899d8aad6f68170078457f0886e08b1fe13a360d",
+      "status": "gap_a_15_thalion_interim_theorem_note_recorded"
+    }
+  },
+  "zero_twisted_neighborhood": [
+    3,
+    4,
+    9,
+    15,
+    16
+  ],
+  "known_residual_rows": [
+    3,
+    16
+  ],
+  "baseline_components": {
+    "branch_sensitive_rows": [
+      16
+    ],
+    "singleton_ZT_selected_turn_rows": [
+      3
+    ],
+    "baseline_support": [
+      3,
+      16
+    ]
+  },
+  "null_setup": {
+    "branch_shuffle_map": {
+      "3": 4,
+      "4": 9,
+      "9": 15,
+      "15": 16,
+      "16": 3
+    },
+    "role_shuffle_by_row": {
+      "3": "TI",
+      "4": "ZT",
+      "9": "ZT",
+      "15": "TI",
+      "16": "ZT"
+    }
+  },
+  "null_tests": [
+    {
+      "name": "baseline_branch_sensitive_return_OR_singleton_ZT_selected_turn",
+      "support": [
+        3,
+        16
+      ],
+      "support_count": 2,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [],
+      "misses": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "exact": true
+    },
+    {
+      "name": "null_branch_blind_TI_OR_singleton_ZT",
+      "support": [
+        3,
+        4,
+        16
+      ],
+      "support_count": 3,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [
+        4
+      ],
+      "misses": [],
+      "precision": 0.6666666666666666,
+      "recall": 1.0,
+      "exact": false
+    },
+    {
+      "name": "null_selected_turn_blind_branch_sensitive_OR_all_ZT",
+      "support": [
+        3,
+        9,
+        15,
+        16
+      ],
+      "support_count": 4,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [
+        9,
+        15
+      ],
+      "misses": [],
+      "precision": 0.5,
+      "recall": 1.0,
+      "exact": false
+    },
+    {
+      "name": "null_role_blind_branch_sensitive_OR_all_singletons",
+      "support": [
+        3,
+        4,
+        16
+      ],
+      "support_count": 3,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [
+        4
+      ],
+      "misses": [],
+      "precision": 0.6666666666666666,
+      "recall": 1.0,
+      "exact": false
+    },
+    {
+      "name": "null_column_count_only_1_or_2",
+      "support": [
+        3,
+        4,
+        15,
+        16
+      ],
+      "support_count": 4,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [
+        4,
+        15
+      ],
+      "misses": [],
+      "precision": 0.5,
+      "recall": 1.0,
+      "exact": false
+    },
+    {
+      "name": "null_branch_shuffle_OR_singleton_ZT",
+      "support": [
+        3
+      ],
+      "support_count": 1,
+      "residual_hits": [
+        3
+      ],
+      "false_positives": [],
+      "misses": [
+        16
+      ],
+      "precision": 1.0,
+      "recall": 0.5,
+      "exact": false
+    },
+    {
+      "name": "null_role_shuffle_branch_sensitive_OR_rotated_singleton_ZT",
+      "support": [
+        4,
+        16
+      ],
+      "support_count": 2,
+      "residual_hits": [
+        16
+      ],
+      "false_positives": [
+        4
+      ],
+      "misses": [
+        3
+      ],
+      "precision": 0.5,
+      "recall": 0.5,
+      "exact": false
+    }
+  ],
+  "load_bearing": {
+    "branch_sensitivity_load_bearing": true,
+    "singleton_ZT_selected_turn_load_bearing": true,
+    "role_specificity_load_bearing": true,
+    "column_count_alone_insufficient": true,
+    "branch_placement_load_bearing": true,
+    "role_placement_load_bearing": true
+  },
+  "summary": {
+    "baseline_exact": true,
+    "baseline_support": [
+      3,
+      16
+    ],
+    "broken_null_count": 6,
+    "null_count": 6,
+    "load_bearing": {
+      "branch_sensitivity_load_bearing": true,
+      "singleton_ZT_selected_turn_load_bearing": true,
+      "role_specificity_load_bearing": true,
+      "column_count_alone_insufficient": true,
+      "branch_placement_load_bearing": true,
+      "role_placement_load_bearing": true
+    }
+  },
+  "interpretation": {
+    "main_result": "Every tested null breaks the exact split candidate.",
+    "branch_result": "Replacing branch-sensitive return with all TI rows introduces row 4 as a false positive.",
+    "selected_turn_result": "Replacing singleton ZT selected-turn with all ZT rows introduces rows 9 and 15 as false positives.",
+    "placement_result": "Branch and role shuffles break the exact support.",
+    "not_closure": "The result supports the candidate inside the zero-twisted neighborhood but does not close Gap A."
+  },
+  "checks": [
+    {
+      "id": "split_candidate_loaded",
+      "status": true,
+      "detail": "gap_a_zero_twisted_neighborhood_split_candidate_found_not_closure"
+    },
+    {
+      "id": "residual_nulls_loaded",
+      "status": true,
+      "detail": "gap_a_15_thalion_residual_split_nulls_recorded"
+    },
+    {
+      "id": "interim_loaded",
+      "status": true,
+      "detail": "gap_a_15_thalion_interim_theorem_note_recorded"
+    },
+    {
+      "id": "baseline_exact",
+      "status": true,
+      "detail": "{\"exact\": true, \"false_positives\": [], \"misses\": [], \"name\": \"baseline_branch_sensitive_return_OR_singleton_ZT_selected_turn\", \"precision\": 1.0, \"recall\": 1.0, \"residual_hits\": [3, 16], \"support\": [3, 16], \"support_count\": 2}"
+    },
+    {
+      "id": "branch_blind_breaks_exact",
+      "status": true,
+      "detail": "{\"exact\": false, \"false_positives\": [4], \"misses\": [], \"precision\": 0.6666666666666666, \"recall\": 1.0, \"support\": [3, 4, 16]}"
+    },
+    {
+      "id": "selected_turn_blind_breaks_exact",
+      "status": true,
+      "detail": "{\"exact\": false, \"false_positives\": [9, 15], \"misses\": [], \"precision\": 0.5, \"recall\": 1.0, \"support\": [3, 9, 15, 16]}"
+    },
+    {
+      "id": "role_blind_breaks_exact",
+      "status": true,
+      "detail": "{\"exact\": false, \"false_positives\": [4], \"misses\": [], \"precision\": 0.6666666666666666, \"recall\": 1.0, \"support\": [3, 4, 16]}"
+    },
+    {
+      "id": "column_count_only_breaks_exact",
+      "status": true,
+      "detail": "{\"exact\": false, \"false_positives\": [4, 15], \"misses\": [], \"precision\": 0.5, \"recall\": 1.0, \"support\": [3, 4, 15, 16]}"
+    },
+    {
+      "id": "branch_shuffle_breaks_exact",
+      "status": true,
+      "detail": "{\"exact\": false, \"false_positives\": [], \"misses\": [16], \"precision\": 1.0, \"recall\": 0.5, \"support\": [3]}"
+    },
+    {
+      "id": "role_shuffle_breaks_exact",
+      "status": true,
+      "detail": "{\"exact\": false, \"false_positives\": [4], \"misses\": [3], \"precision\": 0.5, \"recall\": 0.5, \"support\": [4, 16]}"
+    }
+  ],
+  "next_script": "record_gap_a_zero_twisted_split_interim_note_001.py"
+}

@@ -1,0 +1,145 @@
+{
+  "schema": "register_map_row_shuffle_null_001.v1",
+  "status": "passed_row_identity_destroyed_null",
+  "timestamp_utc": "2026-06-14T17:58:58.323608+00:00",
+  "gap": "A_chamber_register_map",
+  "test": "A2_row_shuffled_M_null",
+  "purpose": "Create a deterministic row-shuffle null that preserves M shape and row multiset while destroying row identity.",
+  "boundary": [
+    "This is a live row-identity destruction null, not a full rerun of the FHE selector search.",
+    "It does not prove that no possible shuffled selector can be invented.",
+    "It does show that any row-aware recovery cannot be claimed after row shuffle unless row identity/taxonomy is transported or recomputed.",
+    "This is the correct first null before attempting a heavier full selector rerun."
+  ],
+  "inputs": {
+    "candidate_inputs": "artifacts/json/register_map_candidate_inputs_001.v1.json",
+    "candidate_inputs_sha256": "1a36a510be506c5f912841b8cd07737d4d41e8efbcaaaf8e6156bd162266aac2",
+    "validation": "artifacts/json/register_map_candidate_inputs.validation_001.v1.json",
+    "validation_sha256": "e359200f2140c3d78b0a6951add8d11c7f7c69064309f59c8b6b619304651d9a",
+    "recovery": "artifacts/json/register_map_candidate_recovery_001.v1.json",
+    "recovery_sha256": "2b265ad7bf1a3da072e0b34621981296d3bf0fdd3454d0d9042944b74ac54c12"
+  },
+  "shuffle": {
+    "convention": "shuffled_M[i] = original_M[perm[i]]",
+    "perm": [
+      7,
+      0,
+      13,
+      5,
+      1,
+      14,
+      2,
+      10,
+      3,
+      12,
+      4,
+      9,
+      6,
+      11,
+      8
+    ],
+    "fixed_points": [],
+    "changed_positions": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "original_position_hash": "53d0ca57fc6891d5ee1c0a22953c37463d91c93b635520b0ce792f2deb0bf959",
+    "shuffled_position_hash": "b7e3b45b0e363f7e8df664edd5c875731d941cd1dc9d6092bfedafe2c0010ab1",
+    "original_multiset_hash": "c59f0d45df7808eb626eb55c85c3aaead233668967de7dc9b026b4b6e8526cb7",
+    "shuffled_multiset_hash": "c59f0d45df7808eb626eb55c85c3aaead233668967de7dc9b026b4b6e8526cb7"
+  },
+  "interpretation": {
+    "null_result": "row identity destroyed while row multiset and matrix shape are preserved",
+    "implication": "The row-aware recovery evidence is identity-sensitive. A chamber/register proof must preserve or lawfully transport row identity; scalar row multiset shape is insufficient.",
+    "what_remains_open": "A heavier pass may rerun the exact selector search on shuffled/transported inputs, but this first null already blocks treating row-aware recovery as shape-only."
+  },
+  "summary": {
+    "check_count": 12,
+    "passed_count": 12,
+    "failed_count": 0,
+    "matrix_shape": {
+      "rows": 15,
+      "cols": 30
+    },
+    "row_multiset_preserved": true,
+    "row_position_hash_changed": true,
+    "fixed_point_count": 0,
+    "changed_position_count": 15
+  },
+  "checks": [
+    {
+      "id": "validation_passed",
+      "status": true,
+      "detail": "validation status=passed"
+    },
+    {
+      "id": "recovery_a2_was_pending",
+      "status": true,
+      "detail": "A2 prior status=pending_live_row_shuffle_null"
+    },
+    {
+      "id": "matrix_shape_15x30",
+      "status": true,
+      "detail": "shape={\"rows\": 15, \"cols\": 30}"
+    },
+    {
+      "id": "perm_is_permutation_0_to_14",
+      "status": true,
+      "detail": "perm=[7, 0, 13, 5, 1, 14, 2, 10, 3, 12, 4, 9, 6, 11, 8]"
+    },
+    {
+      "id": "perm_is_derangement",
+      "status": true,
+      "detail": "fixed_points=[]"
+    },
+    {
+      "id": "shuffled_matrix_shape_preserved",
+      "status": true,
+      "detail": "shuffled_shape={\"rows\": 15, \"cols\": 30}"
+    },
+    {
+      "id": "row_multiset_preserved",
+      "status": true,
+      "detail": "original_multiset_hash=c59f0d45df7808eb shuffled_multiset_hash=c59f0d45df7808eb"
+    },
+    {
+      "id": "row_position_hash_changed",
+      "status": true,
+      "detail": "original_position_hash=53d0ca57fc6891d5 shuffled_position_hash=b7e3b45b0e363f7e"
+    },
+    {
+      "id": "all_row_positions_changed",
+      "status": true,
+      "detail": "changed_positions=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]"
+    },
+    {
+      "id": "row_taxonomy_partition_unchanged_as_labels",
+      "status": true,
+      "detail": "taxonomy_rows=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]"
+    },
+    {
+      "id": "row_aware_artifacts_use_row_features",
+      "status": true,
+      "detail": "row-aware support feature names are present"
+    },
+    {
+      "id": "minimizer_records_exact_row_aware_selector_terms",
+      "status": true,
+      "detail": "exact selector and support_row_degree_profile are present"
+    }
+  ],
+  "next_script": "update_register_map_candidate_recovery_with_a2_null_001.py"
+}

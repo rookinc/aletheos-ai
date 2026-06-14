@@ -178,5 +178,69 @@
     "role": "companion memory layer for G60 projection work",
     "boundary": "Validated active aligned cocycle payload; strict origin writer gap remains open.",
     "rule": "Q sees overlap. The cocycle sees return memory. They are companion layers, not substitutes."
-  }
+  },
+  "projection_modes": {
+    "mode_1_cyclic_return": {
+      "id": "triad_of_diads_cyclic_return",
+      "status": "active",
+      "path": [
+        "W",
+        "X",
+        "Y",
+        "Z",
+        "T",
+        "I",
+        "W"
+      ],
+      "path_string": "W-X-Y-Z-T-I-W",
+      "boundary": "Active visible projection witness."
+    },
+    "mode_2_sheet_flip_return": {
+      "id": "sheet_flip_return",
+      "label": "Projection Mode 2: sheet-flip return",
+      "status": "declared_validated_not_active",
+      "path": [
+        "W",
+        "X",
+        "Y",
+        "Z",
+        "T",
+        "I",
+        "T",
+        "Z",
+        "Y",
+        "X",
+        "W"
+      ],
+      "path_string": "W-X-Y-Z-T-I-T-Z-Y-X-W",
+      "edge_labels": [
+        "WX",
+        "XY",
+        "YZ",
+        "ZT",
+        "TI",
+        "IT",
+        "TZ",
+        "ZY",
+        "YX",
+        "XW"
+      ],
+      "unique_undirected_edge_count": 5,
+      "unique_undirected_edges": [
+        "WX",
+        "XY",
+        "YZ",
+        "TZ",
+        "IT"
+      ],
+      "source_rule": "Projection of G60 / AT4val[60,6] with 5,3,4 scaffolding.",
+      "boundary": "This is a projection witness path, not the canonical source object and not the active rendered cell.",
+      "relationship_to_mode_1": "Mode 1 closes by cyclic edge I-W. Mode 2 returns by reversing through the chain I-T-Z-Y-X-W."
+    }
+  },
+  "active_projection_mode": "mode_1_cyclic_return",
+  "available_projection_modes": [
+    "mode_1_cyclic_return",
+    "mode_2_sheet_flip_return"
+  ]
 }

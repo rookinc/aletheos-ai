@@ -1,0 +1,165 @@
+{
+  "schema": "perfect_return_sheet_flip_validation.v1",
+  "status": "verified_not_active",
+  "passed": true,
+  "shape": {
+    "path": "registered_boundary_flux/artifacts/json/perfect_return_sheet_flip_shape.v1.json",
+    "sha256": "70512d8801a6c472f42be18bb642156686d9b18d150d433697bbbd04b7d50cd2"
+  },
+  "summary": {
+    "check_count": 12,
+    "passed_count": 12,
+    "failed_count": 0
+  },
+  "checks": [
+    {
+      "name": "source_graph_is_g60",
+      "passed": true,
+      "detail": {
+        "name": "G60 Thalean source form",
+        "graph_id": "AT4val[60,6]",
+        "scaffolding": "5,3,4",
+        "rule": "G60 is the thing. Rendered paths are projection witnesses."
+      }
+    },
+    {
+      "name": "source_scaffolding_is_5_3_4",
+      "passed": true,
+      "detail": {
+        "name": "G60 Thalean source form",
+        "graph_id": "AT4val[60,6]",
+        "scaffolding": "5,3,4",
+        "rule": "G60 is the thing. Rendered paths are projection witnesses."
+      }
+    },
+    {
+      "name": "mode_id_exact",
+      "passed": true,
+      "detail": "sheet_flip_return"
+    },
+    {
+      "name": "path_exact",
+      "passed": true,
+      "detail": [
+        "W",
+        "X",
+        "Y",
+        "Z",
+        "T",
+        "I",
+        "T",
+        "Z",
+        "Y",
+        "X",
+        "W"
+      ]
+    },
+    {
+      "name": "starts_and_returns_to_W",
+      "passed": true,
+      "detail": [
+        "W",
+        "X",
+        "Y",
+        "Z",
+        "T",
+        "I",
+        "T",
+        "Z",
+        "Y",
+        "X",
+        "W"
+      ]
+    },
+    {
+      "name": "turnaround_at_I",
+      "passed": true,
+      "detail": [
+        "T",
+        "I",
+        "T"
+      ]
+    },
+    {
+      "name": "edge_labels_exact",
+      "passed": true,
+      "detail": [
+        "WX",
+        "XY",
+        "YZ",
+        "ZT",
+        "TI",
+        "IT",
+        "TZ",
+        "ZY",
+        "YX",
+        "XW"
+      ]
+    },
+    {
+      "name": "five_unique_undirected_edges",
+      "passed": true,
+      "detail": [
+        "WX",
+        "XY",
+        "YZ",
+        "TZ",
+        "IT"
+      ]
+    },
+    {
+      "name": "does_not_use_cyclic_closure_IW",
+      "passed": true,
+      "detail": [
+        "WX",
+        "XY",
+        "YZ",
+        "ZT",
+        "TI",
+        "IT",
+        "TZ",
+        "ZY",
+        "YX",
+        "XW"
+      ]
+    },
+    {
+      "name": "returns_by_reverse_chain",
+      "passed": true,
+      "detail": [
+        "IT",
+        "TZ",
+        "ZY",
+        "YX",
+        "XW"
+      ]
+    },
+    {
+      "name": "not_active_rendered_cell",
+      "passed": true,
+      "detail": {
+        "not_active_rendered_cell": true,
+        "observer_only": true,
+        "no_user_attempted_coupling": true,
+        "no_physical_force_claim": true,
+        "not_canonical_source_object": true
+      }
+    },
+    {
+      "name": "not_canonical_source_object",
+      "passed": true,
+      "detail": {
+        "not_active_rendered_cell": true,
+        "observer_only": true,
+        "no_user_attempted_coupling": true,
+        "no_physical_force_claim": true,
+        "not_canonical_source_object": true
+      }
+    }
+  ],
+  "boundary": {
+    "active_ui_mode": "mode_1_cyclic_return",
+    "validated_mode": "mode_2_sheet_flip_return",
+    "rule": "Sheet flip is validated as an available projection mode but is not active in the renderer yet."
+  }
+}

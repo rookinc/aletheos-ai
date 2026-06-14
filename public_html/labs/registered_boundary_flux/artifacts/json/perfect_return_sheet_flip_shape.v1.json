@@ -1,0 +1,70 @@
+{
+  "schema": "perfect_return_sheet_flip_shape.v1",
+  "status": "exported",
+  "timestamp_utc": "2026-06-14T16:57:29.423436+00:00",
+  "source_object": {
+    "name": "G60 Thalean source form",
+    "graph_id": "AT4val[60,6]",
+    "scaffolding": "5,3,4",
+    "rule": "G60 is the thing. Rendered paths are projection witnesses."
+  },
+  "projection": {
+    "id": "sheet_flip_return",
+    "label": "Projection Mode 2: sheet-flip return",
+    "status": "declared_validated_not_active",
+    "path": [
+      "W",
+      "X",
+      "Y",
+      "Z",
+      "T",
+      "I",
+      "T",
+      "Z",
+      "Y",
+      "X",
+      "W"
+    ],
+    "path_string": "W-X-Y-Z-T-I-T-Z-Y-X-W",
+    "edge_labels": [
+      "WX",
+      "XY",
+      "YZ",
+      "ZT",
+      "TI",
+      "IT",
+      "TZ",
+      "ZY",
+      "YX",
+      "XW"
+    ],
+    "unique_undirected_edge_count": 5,
+    "unique_undirected_edges": [
+      "WX",
+      "XY",
+      "YZ",
+      "TZ",
+      "IT"
+    ],
+    "source_rule": "Projection of G60 / AT4val[60,6] with 5,3,4 scaffolding.",
+    "boundary": "This is a projection witness path, not the canonical source object and not the active rendered cell.",
+    "relationship_to_mode_1": "Mode 1 closes by cyclic edge I-W. Mode 2 returns by reversing through the chain I-T-Z-Y-X-W."
+  },
+  "render_contract": {
+    "not_active_rendered_cell": true,
+    "observer_only": true,
+    "no_user_attempted_coupling": true,
+    "no_physical_force_claim": true,
+    "not_canonical_source_object": true
+  },
+  "provenance": {
+    "cell_data": {
+      "path": "registered_boundary_flux/data/perfect_return_cell.v1.json",
+      "sha256": "1cb671487181798874a0b696e9ae291adda50081b8f79efc80bac723675cc255"
+    },
+    "g60_source_binding": {
+      "path": "registered_boundary_flux/data/g60_source_binding.v1.json",
+      "sha256": "8dec103c109f8a93fa84f46ea8faafd5638e1e1042ef66bb9fe47c3ab976f675"
+    }
+  }
+}

@@ -4,6 +4,7 @@ const hud = document.getElementById("hud");
 const presetSelect = document.getElementById("preset");
 const phaseBox = document.getElementById("phases");
 const kernelStatus = document.getElementById("kernel-status");
+const registerStatus = document.getElementById("register-status");
 
 const sliderIds = ["boundary", "interior", "flux", "emission", "trace"];
 const sliders = {};
@@ -44,6 +45,24 @@ function applyPreset(preset) {
   });
 }
 
+
+
+function renderRegisterStatus() {
+  if (!registerStatus) return;
+
+  const body = data.register_body || {};
+  const active = body.active_projection || {};
+  const label = body.default || "unknown_register";
+  const topBottom = active.top_bottom || "unknown";
+  const sides = active.side_faces || "unknown";
+  const seams = active.edges_corners || "unknown";
+
+  registerStatus.textContent =
+    "Register: " + label.replaceAll("_", " ") +
+    " | caps: " + topBottom +
+    " | sides: " + sides +
+    " | seams: " + seams;
+}
 
 function renderKernelStatus() {
   if (!kernelStatus) return;
@@ -146,6 +165,7 @@ window.addEventListener("resize", () => {
 function boot(json) {
   data = json;
   renderKernelStatus();
+  renderRegisterStatus();
   resizeCanvas();
   renderPresetOptions();
   renderPhases();
@@ -533,5 +553,172 @@ function draw() {
 
   hud.textContent =
     "phase=" + phase.id +
+    " zoom=" + rbfCamera.zoom.toFixed(2);
+}
+
+/* cube register face projection pass 001 */
+function cubeP(x, y, z) {
+  return { x: x, y: y, z: z };
+}
+
+function cubeFacePoint(face, u, v) {
+  if (face === "top") return cubeP(u, -0.78, v);
+  if (face === "bottom") return cubeP(u, 0.78, v);
+  if (face === "front") return cubeP(u, v, 0.78);
+  if (face === "back") return cubeP(u, v, -0.78);
+  if (face === "left") return cubeP(-0.78, u, v);
+  if (face === "right") return cubeP(0.78, u, v);
+  return cubeP(u, v, 0);
+}
+
+function cubeDrawEdges(g, s) {
+  const a = 0.78;
+  const pts = [
+    cubeP(-a,-a,-a), cubeP(a,-a,-a), cubeP(a,a,-a), cubeP(-a,a,-a),
+    cubeP(-a,-a,a),  cubeP(a,-a,a),  cubeP(a,a,a),  cubeP(-a,a,a)
+  ];
+  const edges = [
+    [0,1],[1,2],[2,3],[3,0],
+    [4,5],[5,6],[6,7],[7,4],
+    [0,4],[1,5],[2,6],[3,7]
+  ];
+  edges.forEach((e) => {
+    rbfStroke3(g, pts[e[0]], pts[e[1]], rgba(216,188,118,0.70), 1.5 + s.boundary, 0.72);
+  });
+}
+
+function cubeDrawFaceGrid(g, face, color, weight, alpha) {
+  const steps = 5;
+  for (let i = -steps; i <= steps; i++) {
+    const u = i / steps * 0.78;
+    rbfStroke3(g, cubeFacePoint(face, u, -0.78), cubeFacePoint(face, u, 0.78), color, weight, alpha);
+    rbfStroke3(g, cubeFacePoint(face, -0.78, u), cubeFacePoint(face, 0.78, u), color, weight, alpha);
+  }
+
+  for (let i = -steps; i < steps; i++) {
+    const u0 = i / steps * 0.78;
+    const u1 = (i + 1) / steps * 0.78;
+    rbfStroke3(g, cubeFacePoint(face, u0, -0.78), cubeFacePoint(face, u1, 0.78), color, weight * 0.72, alpha * 0.55);
+    rbfStroke3(g, cubeFacePoint(face, -0.78, u0), cubeFacePoint(face, 0.78, u1), color, weight * 0.72, alpha * 0.55);
+  }
+}
+
+function cubeDrawPolarityCap(g, face, s, sign) {
+  const center = cubeFacePoint(face, 0, 0);
+  const n = 16;
+  const radius = 0.52 + s.boundary * 0.18;
+  const color = sign > 0 ? rgba(156,200,255,0.78) : rgba(216,188,118,0.72);
+
+  for (let i = 0; i < n; i++) {
+    const a = Math.PI * 2 * i / n + t * 0.02 * sign;
+    const p = cubeFacePoint(face, Math.cos(a) * radius, Math.sin(a) * radius);
+    rbfStroke3(g, center, p, color, 0.8 + s.boundary * 1.2, 0.42 + s.boundary * 0.35);
+  }
+
+  let prev = null;
+  for (let i = 0; i <= 96; i++) {
+    const a = Math.PI * 2 * i / 96 + t * 0.02 * sign;
+    const p = cubeFacePoint(face, Math.cos(a) * radius, Math.sin(a) * radius);
+    if (prev) rbfStroke3(g, prev, p, color, 1.0 + s.boundary, 0.50);
+    prev = p;
+  }
+}
+
+function cubeDrawRelationshipWall(g, face, s, offset) {
+  const n = 14 + Math.floor(s.flux * 42);
+  for (let i = 0; i < n; i++) {
+    const a = i * 1.618 + offset;
+    const u1 = Math.sin(a + t * 0.05) * 0.72;
+    const v1 = Math.cos(a * 1.7) * 0.72;
+    const u2 = Math.sin(a * 2.1 + 1.2) * 0.72;
+    const v2 = Math.cos(a * 1.3 + t * 0.04) * 0.72;
+    const color = i % 2 ? rgba(158,224,178,0.54) : rgba(156,200,255,0.50);
+    rbfStroke3(g, cubeFacePoint(face, u1, v1), cubeFacePoint(face, u2, v2), color, 0.6 + s.flux * 1.6, 0.18 + s.flux * 0.45);
+  }
+}
+
+function cubeDrawInteriorCarrier(g, s) {
+  const n = 70 + Math.floor(s.interior * 170);
+  for (let i = 0; i < n; i++) {
+    const a = i * 2.399963 + t * 0.035;
+    const r = Math.sqrt(i / n) * 0.55 * (0.45 + s.interior * 0.75);
+    const p = cubeP(
+      Math.cos(a) * r,
+      Math.sin(a) * r,
+      Math.sin(i * 1.37 + t * 0.5) * 0.52 * s.interior
+    );
+    const color = i % 3 === 0 ? rgba(158,224,178,0.76) : rgba(156,200,255,0.60);
+    rbfDot3(g, p, color, 1.2 + s.interior * 1.8, 0.82);
+  }
+}
+
+function cubeDrawSeams(g, s) {
+  const faces = ["front", "back", "left", "right"];
+  faces.forEach((face, k) => {
+    const color = k % 2 ? rgba(216,188,118,0.62) : rgba(85,212,230,0.58);
+    rbfStroke3(g, cubeFacePoint(face, -0.78, -0.78), cubeFacePoint(face, 0.78, 0.78), color, 0.9 + s.boundary, 0.35);
+    rbfStroke3(g, cubeFacePoint(face, -0.78, 0.78), cubeFacePoint(face, 0.78, -0.78), color, 0.9 + s.boundary, 0.35);
+  });
+}
+
+function cubeDrawEmission(g, s) {
+  const boost = phaseIndex === 3 ? 1.45 : 1.0;
+  const n = 8 + Math.floor(s.emission * 44);
+  const source = cubeP(0, 0, 0);
+  for (let i = 0; i < n; i++) {
+    const a = -0.55 + i / Math.max(1, n - 1) * 1.10;
+    const end = cubeP(
+      0.78 + s.emission * 0.32 * boost,
+      Math.sin(a) * 0.42,
+      Math.cos(a) * 0.42
+    );
+    rbfStroke3(g, source, end, rgba(255,238,170,0.88), 0.7 + s.emission * 2.2, 0.16 + s.emission * 0.70);
+  }
+}
+
+function cubeDrawFaceTrace(g, s) {
+  const n = 8 + Math.floor(s.trace * 34);
+  for (let k = 0; k < n; k++) {
+    const face = k % 2 ? "top" : "front";
+    const r = 0.20 + k * 0.015;
+    let prev = null;
+    for (let i = 0; i <= 32; i++) {
+      const a = t * 0.025 + k * 0.24 + i / 32 * (0.80 + s.trace * 1.60);
+      const p = cubeFacePoint(face, Math.cos(a) * r, Math.sin(a) * r);
+      if (prev) {
+        const color = k % 2 ? rgba(185,149,255,0.54) : rgba(85,212,230,0.50);
+        rbfStroke3(g, prev, p, color, 0.8 + s.trace * 1.6, 0.10 + s.trace * 0.34);
+      }
+      prev = p;
+    }
+  }
+}
+
+function draw() {
+  const g = getSize();
+  const s = settings();
+  const phase = currentPhase();
+
+  ctx.clearRect(0, 0, g.w, g.h);
+
+  cubeDrawFaceTrace(g, s);
+  cubeDrawEdges(g, s);
+
+  cubeDrawFaceGrid(g, "top", rgba(156,200,255,0.34), 0.7 + s.boundary, 0.38);
+  cubeDrawFaceGrid(g, "bottom", rgba(216,188,118,0.28), 0.7 + s.boundary, 0.30);
+
+  cubeDrawRelationshipWall(g, "front", s, 0.1);
+  cubeDrawRelationshipWall(g, "back", s, 1.4);
+  cubeDrawRelationshipWall(g, "left", s, 2.7);
+  cubeDrawRelationshipWall(g, "right", s, 4.0);
+
+  cubeDrawPolarityCap(g, "top", s, 1);
+  cubeDrawPolarityCap(g, "bottom", s, -1);
+  cubeDrawSeams(g, s);
+  cubeDrawInteriorCarrier(g, s);
+  cubeDrawEmission(g, s);
+
+  hud.textContent =
+    "cube phase=" + phase.id +
     " zoom=" + rbfCamera.zoom.toFixed(2);
 }

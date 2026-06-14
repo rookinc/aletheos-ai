@@ -1,0 +1,1060 @@
+{
+  "schema": "gap_a_source_preimage_from_normalized_zero_rows_001.v1",
+  "status": "gap_a_source_preimage_from_normalized_zero_rows_recorded_not_promoted",
+  "timestamp_utc": "2026-06-14T20:23:08.382294+00:00",
+  "purpose": "Regenerate the source-law preimage candidate from the normalized uniform-lift zero-twisted row set.",
+  "boundary": [
+    "This does not close Gap A.",
+    "This does not promote the source-law preimage.",
+    "The candidate now uses normalized uniform-lift zero-twisted rows rather than fallback zero-split rows.",
+    "The branch_sensitive OR singleton ZT substitute still survives exactly.",
+    "The strongest current result remains the null-hardened 18-row chamber/register map candidate.",
+    "No full source-derived chamber/register map is claimed.",
+    "No physical interpretation is claimed."
+  ],
+  "inputs": {
+    "normalized_zero_rows": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_uniform_lift_zero_twisted_rows_001.v1.json",
+      "sha256": "60247d6a017d4da644a97d93fd55ceabb2818e5d39382ac4d19813bab8c6caeb",
+      "status": "gap_a_uniform_lift_zero_twisted_rows_normalized"
+    },
+    "boundary_projection": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_boundary_seam_projection_role_rows_001.v1.json",
+      "sha256": "4042fd58caee319fac49c6f5a09358759e82b17e7f766cd9360eb55256bc846a",
+      "status": "boundary_seam_projection_role_rows_partial_not_map_proof"
+    },
+    "source_preimage_original": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_source_law_preimage_candidate_001.v1.json",
+      "sha256": "13f7e6bc160115b796df7e422543e246d0dcb96efb1df2cbc4180d10c711d8af",
+      "status": "gap_a_source_law_preimage_candidate_found_not_closure"
+    },
+    "source_preimage_nulls": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_source_law_preimage_candidate_nulls_001.v1.json",
+      "sha256": "b713f6703c9d7245e4b71687a2a3fe22b7ed6299d1b7b52b8998246d57a4caf1",
+      "status": "gap_a_source_law_preimage_candidate_nulls_mixed_not_promoted"
+    },
+    "improved_provenance": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_source_preimage_with_improved_provenance_001.v1.json",
+      "sha256": "20bef423791909aa72408a7e226d09d8d46f66a4ddfc3faefc32ba82086f4e5f",
+      "status": "gap_a_source_preimage_with_improved_provenance_recorded_not_promoted"
+    },
+    "chamber_interim": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_chamber_register_candidate_interim_note_001.v1.json",
+      "sha256": "c0b10fad9afc6de3134a86cbe4d270218bf87071ce723fb52bae8607327e18e9",
+      "status": "gap_a_chamber_register_candidate_interim_note_recorded"
+    }
+  },
+  "candidate_rule": {
+    "name": "normalized_zero_twisted_rows_AND_role_column_residual_orientation",
+    "reading": "normalized uniform-lift zero-twisted rows AND (singleton ZT OR multi-column TI)",
+    "zero_twisted_rows": [
+      3,
+      4,
+      9,
+      15,
+      16
+    ],
+    "preimage_support": [
+      3,
+      16
+    ],
+    "stable_complement_reading": "normalized uniform-lift zero-twisted rows AND (singleton TI OR multi-column ZT)",
+    "stable_complement_support": [
+      4,
+      9,
+      15
+    ]
+  },
+  "summary": {
+    "row_count": 18,
+    "match_count": 18,
+    "mismatches": [],
+    "exact_18_row_candidate": true,
+    "changed_fixes": [
+      3,
+      16
+    ],
+    "changed_breaks": [],
+    "surviving_nulls": [
+      "null_branch_sensitive_OR_singleton_ZT"
+    ],
+    "claim_closes_gap_a": false,
+    "claim_promotes_source_preimage": false
+  },
+  "source_rows": [
+    {
+      "row_ordinal": 0,
+      "cycle_index": 0,
+      "role": "WX",
+      "edge": [
+        0,
+        1
+      ],
+      "columns": [
+        0
+      ],
+      "column_count": 1,
+      "column_shape": "singleton",
+      "transport_kind": "direct_edge_column",
+      "path_length": 1,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": true,
+      "normalized_zero_twisted_source": false,
+      "role_column_orientation": "singleton_WX",
+      "normalized_source_preimage_member": false,
+      "normalized_stable_complement_member": false
+    },
+    {
+      "row_ordinal": 1,
+      "cycle_index": 0,
+      "role": "XY",
+      "edge": [
+        1,
+        2
+      ],
+      "columns": [
+        4
+      ],
+      "column_count": 1,
+      "column_shape": "singleton",
+      "transport_kind": "direct_edge_column",
+      "path_length": 1,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": false,
+      "normalized_zero_twisted_source": false,
+      "role_column_orientation": "singleton_XY",
+      "normalized_source_preimage_member": false,
+      "normalized_stable_complement_member": false
+    },
+    {
+      "row_ordinal": 2,
+      "cycle_index": 0,
+      "role": "YZ",
+      "edge": [
+        2,
+        3
+      ],
+      "columns": [
+        7,
+        10
+      ],
+      "column_count": 2,
+      "column_shape": "multi_column",
+      "transport_kind": "bridge_path",
+      "path_length": 2,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": false,
+      "normalized_zero_twisted_source": false,
+      "role_column_orientation": "multi_column_YZ",
+      "normalized_source_preimage_member": false,
+      "normalized_stable_complement_member": false
+    },
+    {
+      "row_ordinal": 3,
+      "cycle_index": 0,
+      "role": "ZT",
+      "edge": [
+        3,
+        4
+      ],
+      "columns": [
+        9
+      ],
+      "column_count": 1,
+      "column_shape": "singleton",
+      "transport_kind": "direct_edge_column",
+      "path_length": 1,
+      "projected_value": 1,
+      "expected_target_value": 0,
+      "base_matches_expected": false,
+      "seam_flip_applied": false,
+      "normalized_zero_twisted_source": true,
+      "role_column_orientation": "singleton_ZT",
+      "normalized_source_preimage_member": true,
+      "normalized_stable_complement_member": false
+    },
+    {
+      "row_ordinal": 4,
+      "cycle_index": 0,
+      "role": "TI",
+      "edge": [
+        4,
+        5
+      ],
+      "columns": [
+        13
+      ],
+      "column_count": 1,
+      "column_shape": "singleton",
+      "transport_kind": "direct_edge_column",
+      "path_length": 1,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": false,
+      "normalized_zero_twisted_source": true,
+      "role_column_orientation": "singleton_TI",
+      "normalized_source_preimage_member": false,
+      "normalized_stable_complement_member": true
+    },
+    {
+      "row_ordinal": 5,
+      "cycle_index": 0,
+      "role": "IW",
+      "edge": [
+        5,
+        0
+      ],
+      "columns": [
+        1,
+        7
+      ],
+      "column_count": 2,
+      "column_shape": "multi_column",
+      "transport_kind": "bridge_path",
+      "path_length": 2,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": true,
+      "normalized_zero_twisted_source": false,
+      "role_column_orientation": "multi_column_IW",
+      "normalized_source_preimage_member": false,
+      "normalized_stable_complement_member": false
+    },
+    {
+      "row_ordinal": 6,
+      "cycle_index": 1,
+      "role": "WX",
+      "edge": [
+        0,
+        1
+      ],
+      "columns": [
+        0
+      ],
+      "column_count": 1,
+      "column_shape": "singleton",
+      "transport_kind": "direct_edge_column",
+      "path_length": 1,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": true,
+      "normalized_zero_twisted_source": false,
+      "role_column_orientation": "singleton_WX",
+      "normalized_source_preimage_member": false,
+      "normalized_stable_complement_member": false
+    },
+    {
+      "row_ordinal": 7,
+      "cycle_index": 1,
+      "role": "XY",
+      "edge": [
+        1,
+        2
+      ],
+      "columns": [
+        4
+      ],
+      "column_count": 1,
+      "column_shape": "singleton",
+      "transport_kind": "direct_edge_column",
+      "path_length": 1,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": false,
+      "normalized_zero_twisted_source": false,
+      "role_column_orientation": "singleton_XY",
+      "normalized_source_preimage_member": false,
+      "normalized_stable_complement_member": false
+    },
+    {
+      "row_ordinal": 8,
+      "cycle_index": 1,
+      "role": "YZ",
+      "edge": [
+        2,
+        7
+      ],
+      "columns": [
+        1,
+        3,
+        22
+      ],
+      "column_count": 3,
+      "column_shape": "multi_column",
+      "transport_kind": "bridge_path",
+      "path_length": 3,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": false,
+      "normalized_zero_twisted_source": false,
+      "role_column_orientation": "multi_column_YZ",
+      "normalized_source_preimage_member": false,
+      "normalized_stable_complement_member": false
+    },
+    {
+      "row_ordinal": 9,
+      "cycle_index": 1,
+      "role": "ZT",
+      "edge": [
+        7,
+        10
+      ],
+      "columns": [
+        14,
+        9,
+        11
+      ],
+      "column_count": 3,
+      "column_shape": "multi_column",
+      "transport_kind": "bridge_path",
+      "path_length": 3,
+      "projected_value": 0,
+      "expected_target_value": 0,
+      "base_matches_expected": true,
+      "seam_flip_applied": false,
+      "normalized_zero_twisted_source": true,
+      "role_column_orientation": "multi_column_ZT",
+      "normalized_source_preimage_member": false,
+      "normalized_stable_complement_member": true
+    },
+    {
+      "row_ordinal": 10,
+      "cycle_index": 1,
+      "role": "TI",
+      "edge": [
+        10,
+        5
+      ],
+      "columns": [
+        10,
+        11
+      ],
+      "column_count": 2,
+      "column_shape": "multi_column",
+      "transport_kind": "bridge_path",
+      "path_length": 2,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": false,
+      "normalized_zero_twisted_source": false,
+      "role_column_orientation": "multi_column_TI",
+      "normalized_source_preimage_member": false,
+      "normalized_stable_complement_member": false
+    },
+    {
+      "row_ordinal": 11,
+      "cycle_index": 1,
+      "role": "IW",
+      "edge": [
+        5,
+        0
+      ],
+      "columns": [
+        1,
+        7
+      ],
+      "column_count": 2,
+      "column_shape": "multi_column",
+      "transport_kind": "bridge_path",
+      "path_length": 2,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": true,
+      "normalized_zero_twisted_source": false,
+      "role_column_orientation": "multi_column_IW",
+      "normalized_source_preimage_member": false,
+      "normalized_stable_complement_member": false
+    },
+    {
+      "row_ordinal": 12,
+      "cycle_index": 2,
+      "role": "WX",
+      "edge": [
+        0,
+        1
+      ],
+      "columns": [
+        0
+      ],
+      "column_count": 1,
+      "column_shape": "singleton",
+      "transport_kind": "direct_edge_column",
+      "path_length": 1,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": true,
+      "normalized_zero_twisted_source": false,
+      "role_column_orientation": "singleton_WX",
+      "normalized_source_preimage_member": false,
+      "normalized_stable_complement_member": false
+    },
+    {
+      "row_ordinal": 13,
+      "cycle_index": 2,
+      "role": "XY",
+      "edge": [
+        1,
+        2
+      ],
+      "columns": [
+        4
+      ],
+      "column_count": 1,
+      "column_shape": "singleton",
+      "transport_kind": "direct_edge_column",
+      "path_length": 1,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": false,
+      "normalized_zero_twisted_source": false,
+      "role_column_orientation": "singleton_XY",
+      "normalized_source_preimage_member": false,
+      "normalized_stable_complement_member": false
+    },
+    {
+      "row_ordinal": 14,
+      "cycle_index": 2,
+      "role": "YZ",
+      "edge": [
+        2,
+        8
+      ],
+      "columns": [
+        4,
+        5
+      ],
+      "column_count": 2,
+      "column_shape": "multi_column",
+      "transport_kind": "bridge_path",
+      "path_length": 2,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": false,
+      "normalized_zero_twisted_source": false,
+      "role_column_orientation": "multi_column_YZ",
+      "normalized_source_preimage_member": false,
+      "normalized_stable_complement_member": false
+    },
+    {
+      "row_ordinal": 15,
+      "cycle_index": 2,
+      "role": "ZT",
+      "edge": [
+        8,
+        14
+      ],
+      "columns": [
+        21,
+        22
+      ],
+      "column_count": 2,
+      "column_shape": "multi_column",
+      "transport_kind": "bridge_path",
+      "path_length": 2,
+      "projected_value": 0,
+      "expected_target_value": 0,
+      "base_matches_expected": true,
+      "seam_flip_applied": false,
+      "normalized_zero_twisted_source": true,
+      "role_column_orientation": "multi_column_ZT",
+      "normalized_source_preimage_member": false,
+      "normalized_stable_complement_member": true
+    },
+    {
+      "row_ordinal": 16,
+      "cycle_index": 2,
+      "role": "TI",
+      "edge": [
+        14,
+        5
+      ],
+      "columns": [
+        13,
+        15
+      ],
+      "column_count": 2,
+      "column_shape": "multi_column",
+      "transport_kind": "bridge_path",
+      "path_length": 2,
+      "projected_value": 0,
+      "expected_target_value": 1,
+      "base_matches_expected": false,
+      "seam_flip_applied": false,
+      "normalized_zero_twisted_source": true,
+      "role_column_orientation": "multi_column_TI",
+      "normalized_source_preimage_member": true,
+      "normalized_stable_complement_member": false
+    },
+    {
+      "row_ordinal": 17,
+      "cycle_index": 2,
+      "role": "IW",
+      "edge": [
+        5,
+        0
+      ],
+      "columns": [
+        1,
+        7
+      ],
+      "column_count": 2,
+      "column_shape": "multi_column",
+      "transport_kind": "bridge_path",
+      "path_length": 2,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": true,
+      "normalized_zero_twisted_source": false,
+      "role_column_orientation": "multi_column_IW",
+      "normalized_source_preimage_member": false,
+      "normalized_stable_complement_member": false
+    }
+  ],
+  "candidate_rows": [
+    {
+      "row_ordinal": 0,
+      "cycle_index": 0,
+      "role": "WX",
+      "edge": [
+        0,
+        1
+      ],
+      "columns": [
+        0
+      ],
+      "column_count": 1,
+      "column_shape": "singleton",
+      "transport_kind": "direct_edge_column",
+      "path_length": 1,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": true,
+      "normalized_source_preimage_member": false,
+      "candidate_projected_value": 1,
+      "candidate_matches_expected": true,
+      "changed_by_normalized_preimage": false
+    },
+    {
+      "row_ordinal": 1,
+      "cycle_index": 0,
+      "role": "XY",
+      "edge": [
+        1,
+        2
+      ],
+      "columns": [
+        4
+      ],
+      "column_count": 1,
+      "column_shape": "singleton",
+      "transport_kind": "direct_edge_column",
+      "path_length": 1,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": false,
+      "normalized_source_preimage_member": false,
+      "candidate_projected_value": 1,
+      "candidate_matches_expected": true,
+      "changed_by_normalized_preimage": false
+    },
+    {
+      "row_ordinal": 2,
+      "cycle_index": 0,
+      "role": "YZ",
+      "edge": [
+        2,
+        3
+      ],
+      "columns": [
+        7,
+        10
+      ],
+      "column_count": 2,
+      "column_shape": "multi_column",
+      "transport_kind": "bridge_path",
+      "path_length": 2,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": false,
+      "normalized_source_preimage_member": false,
+      "candidate_projected_value": 1,
+      "candidate_matches_expected": true,
+      "changed_by_normalized_preimage": false
+    },
+    {
+      "row_ordinal": 3,
+      "cycle_index": 0,
+      "role": "ZT",
+      "edge": [
+        3,
+        4
+      ],
+      "columns": [
+        9
+      ],
+      "column_count": 1,
+      "column_shape": "singleton",
+      "transport_kind": "direct_edge_column",
+      "path_length": 1,
+      "projected_value": 1,
+      "expected_target_value": 0,
+      "base_matches_expected": false,
+      "seam_flip_applied": false,
+      "normalized_source_preimage_member": true,
+      "candidate_projected_value": 0,
+      "candidate_matches_expected": true,
+      "changed_by_normalized_preimage": true
+    },
+    {
+      "row_ordinal": 4,
+      "cycle_index": 0,
+      "role": "TI",
+      "edge": [
+        4,
+        5
+      ],
+      "columns": [
+        13
+      ],
+      "column_count": 1,
+      "column_shape": "singleton",
+      "transport_kind": "direct_edge_column",
+      "path_length": 1,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": false,
+      "normalized_source_preimage_member": false,
+      "candidate_projected_value": 1,
+      "candidate_matches_expected": true,
+      "changed_by_normalized_preimage": false
+    },
+    {
+      "row_ordinal": 5,
+      "cycle_index": 0,
+      "role": "IW",
+      "edge": [
+        5,
+        0
+      ],
+      "columns": [
+        1,
+        7
+      ],
+      "column_count": 2,
+      "column_shape": "multi_column",
+      "transport_kind": "bridge_path",
+      "path_length": 2,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": true,
+      "normalized_source_preimage_member": false,
+      "candidate_projected_value": 1,
+      "candidate_matches_expected": true,
+      "changed_by_normalized_preimage": false
+    },
+    {
+      "row_ordinal": 6,
+      "cycle_index": 1,
+      "role": "WX",
+      "edge": [
+        0,
+        1
+      ],
+      "columns": [
+        0
+      ],
+      "column_count": 1,
+      "column_shape": "singleton",
+      "transport_kind": "direct_edge_column",
+      "path_length": 1,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": true,
+      "normalized_source_preimage_member": false,
+      "candidate_projected_value": 1,
+      "candidate_matches_expected": true,
+      "changed_by_normalized_preimage": false
+    },
+    {
+      "row_ordinal": 7,
+      "cycle_index": 1,
+      "role": "XY",
+      "edge": [
+        1,
+        2
+      ],
+      "columns": [
+        4
+      ],
+      "column_count": 1,
+      "column_shape": "singleton",
+      "transport_kind": "direct_edge_column",
+      "path_length": 1,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": false,
+      "normalized_source_preimage_member": false,
+      "candidate_projected_value": 1,
+      "candidate_matches_expected": true,
+      "changed_by_normalized_preimage": false
+    },
+    {
+      "row_ordinal": 8,
+      "cycle_index": 1,
+      "role": "YZ",
+      "edge": [
+        2,
+        7
+      ],
+      "columns": [
+        1,
+        3,
+        22
+      ],
+      "column_count": 3,
+      "column_shape": "multi_column",
+      "transport_kind": "bridge_path",
+      "path_length": 3,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": false,
+      "normalized_source_preimage_member": false,
+      "candidate_projected_value": 1,
+      "candidate_matches_expected": true,
+      "changed_by_normalized_preimage": false
+    },
+    {
+      "row_ordinal": 9,
+      "cycle_index": 1,
+      "role": "ZT",
+      "edge": [
+        7,
+        10
+      ],
+      "columns": [
+        14,
+        9,
+        11
+      ],
+      "column_count": 3,
+      "column_shape": "multi_column",
+      "transport_kind": "bridge_path",
+      "path_length": 3,
+      "projected_value": 0,
+      "expected_target_value": 0,
+      "base_matches_expected": true,
+      "seam_flip_applied": false,
+      "normalized_source_preimage_member": false,
+      "candidate_projected_value": 0,
+      "candidate_matches_expected": true,
+      "changed_by_normalized_preimage": false
+    },
+    {
+      "row_ordinal": 10,
+      "cycle_index": 1,
+      "role": "TI",
+      "edge": [
+        10,
+        5
+      ],
+      "columns": [
+        10,
+        11
+      ],
+      "column_count": 2,
+      "column_shape": "multi_column",
+      "transport_kind": "bridge_path",
+      "path_length": 2,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": false,
+      "normalized_source_preimage_member": false,
+      "candidate_projected_value": 1,
+      "candidate_matches_expected": true,
+      "changed_by_normalized_preimage": false
+    },
+    {
+      "row_ordinal": 11,
+      "cycle_index": 1,
+      "role": "IW",
+      "edge": [
+        5,
+        0
+      ],
+      "columns": [
+        1,
+        7
+      ],
+      "column_count": 2,
+      "column_shape": "multi_column",
+      "transport_kind": "bridge_path",
+      "path_length": 2,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": true,
+      "normalized_source_preimage_member": false,
+      "candidate_projected_value": 1,
+      "candidate_matches_expected": true,
+      "changed_by_normalized_preimage": false
+    },
+    {
+      "row_ordinal": 12,
+      "cycle_index": 2,
+      "role": "WX",
+      "edge": [
+        0,
+        1
+      ],
+      "columns": [
+        0
+      ],
+      "column_count": 1,
+      "column_shape": "singleton",
+      "transport_kind": "direct_edge_column",
+      "path_length": 1,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": true,
+      "normalized_source_preimage_member": false,
+      "candidate_projected_value": 1,
+      "candidate_matches_expected": true,
+      "changed_by_normalized_preimage": false
+    },
+    {
+      "row_ordinal": 13,
+      "cycle_index": 2,
+      "role": "XY",
+      "edge": [
+        1,
+        2
+      ],
+      "columns": [
+        4
+      ],
+      "column_count": 1,
+      "column_shape": "singleton",
+      "transport_kind": "direct_edge_column",
+      "path_length": 1,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": false,
+      "normalized_source_preimage_member": false,
+      "candidate_projected_value": 1,
+      "candidate_matches_expected": true,
+      "changed_by_normalized_preimage": false
+    },
+    {
+      "row_ordinal": 14,
+      "cycle_index": 2,
+      "role": "YZ",
+      "edge": [
+        2,
+        8
+      ],
+      "columns": [
+        4,
+        5
+      ],
+      "column_count": 2,
+      "column_shape": "multi_column",
+      "transport_kind": "bridge_path",
+      "path_length": 2,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": false,
+      "normalized_source_preimage_member": false,
+      "candidate_projected_value": 1,
+      "candidate_matches_expected": true,
+      "changed_by_normalized_preimage": false
+    },
+    {
+      "row_ordinal": 15,
+      "cycle_index": 2,
+      "role": "ZT",
+      "edge": [
+        8,
+        14
+      ],
+      "columns": [
+        21,
+        22
+      ],
+      "column_count": 2,
+      "column_shape": "multi_column",
+      "transport_kind": "bridge_path",
+      "path_length": 2,
+      "projected_value": 0,
+      "expected_target_value": 0,
+      "base_matches_expected": true,
+      "seam_flip_applied": false,
+      "normalized_source_preimage_member": false,
+      "candidate_projected_value": 0,
+      "candidate_matches_expected": true,
+      "changed_by_normalized_preimage": false
+    },
+    {
+      "row_ordinal": 16,
+      "cycle_index": 2,
+      "role": "TI",
+      "edge": [
+        14,
+        5
+      ],
+      "columns": [
+        13,
+        15
+      ],
+      "column_count": 2,
+      "column_shape": "multi_column",
+      "transport_kind": "bridge_path",
+      "path_length": 2,
+      "projected_value": 0,
+      "expected_target_value": 1,
+      "base_matches_expected": false,
+      "seam_flip_applied": false,
+      "normalized_source_preimage_member": true,
+      "candidate_projected_value": 1,
+      "candidate_matches_expected": true,
+      "changed_by_normalized_preimage": true
+    },
+    {
+      "row_ordinal": 17,
+      "cycle_index": 2,
+      "role": "IW",
+      "edge": [
+        5,
+        0
+      ],
+      "columns": [
+        1,
+        7
+      ],
+      "column_count": 2,
+      "column_shape": "multi_column",
+      "transport_kind": "bridge_path",
+      "path_length": 2,
+      "projected_value": 1,
+      "expected_target_value": 1,
+      "base_matches_expected": true,
+      "seam_flip_applied": true,
+      "normalized_source_preimage_member": false,
+      "candidate_projected_value": 1,
+      "candidate_matches_expected": true,
+      "changed_by_normalized_preimage": false
+    }
+  ],
+  "interpretation": {
+    "main_result": "The source preimage regenerates cleanly from normalized uniform-lift zero-twisted rows.",
+    "provenance_result": "The fallback zero-split dependency has been removed for the zero-row input.",
+    "promotion_blocker": "The source preimage is still not promoted because branch_sensitive OR singleton ZT remains an exact substitute.",
+    "not_closure": "Gap A still requires a global source-law chamber/register map or elimination/derivation of the surviving substitute."
+  },
+  "checks": [
+    {
+      "id": "normalized_zero_loaded",
+      "status": true,
+      "detail": "gap_a_uniform_lift_zero_twisted_rows_normalized"
+    },
+    {
+      "id": "boundary_loaded",
+      "status": true,
+      "detail": "boundary_seam_projection_role_rows_partial_not_map_proof"
+    },
+    {
+      "id": "original_preimage_loaded",
+      "status": true,
+      "detail": "gap_a_source_law_preimage_candidate_found_not_closure"
+    },
+    {
+      "id": "nulls_loaded",
+      "status": true,
+      "detail": "gap_a_source_law_preimage_candidate_nulls_mixed_not_promoted"
+    },
+    {
+      "id": "improved_loaded",
+      "status": true,
+      "detail": "gap_a_source_preimage_with_improved_provenance_recorded_not_promoted"
+    },
+    {
+      "id": "chamber_loaded",
+      "status": true,
+      "detail": "gap_a_chamber_register_candidate_interim_note_recorded"
+    },
+    {
+      "id": "projection_rows_18",
+      "status": true,
+      "detail": "count=18"
+    },
+    {
+      "id": "zero_rows_3_4_9_15_16",
+      "status": true,
+      "detail": "[3, 4, 9, 15, 16]"
+    },
+    {
+      "id": "preimage_support_3_16",
+      "status": true,
+      "detail": "[3, 16]"
+    },
+    {
+      "id": "stable_support_4_9_15",
+      "status": true,
+      "detail": "[4, 9, 15]"
+    },
+    {
+      "id": "exact_18",
+      "status": true,
+      "detail": "{\"changed_breaks\": [], \"changed_fixes\": [3, 16], \"exact\": true, \"match_count\": 18, \"mismatches\": [], \"row_count\": 18, \"support\": [3, 16]}"
+    },
+    {
+      "id": "changed_fixes_3_16",
+      "status": true,
+      "detail": "[3, 16]"
+    },
+    {
+      "id": "changed_breaks_none",
+      "status": true,
+      "detail": "[]"
+    },
+    {
+      "id": "branch_survivor_still_blocks_promotion",
+      "status": true,
+      "detail": "[\"null_branch_sensitive_OR_singleton_ZT\"]"
+    },
+    {
+      "id": "not_gap_closure",
+      "status": true,
+      "detail": "still candidate only"
+    }
+  ],
+  "next_script": "compare_gap_a_branch_sensitive_survivor_to_normalized_preimage_001.py"
+}

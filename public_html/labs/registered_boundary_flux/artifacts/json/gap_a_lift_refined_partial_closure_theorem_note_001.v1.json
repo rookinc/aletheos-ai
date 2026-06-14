@@ -1,0 +1,598 @@
+{
+  "schema": "gap_a_lift_refined_partial_closure_theorem_note_001.v1",
+  "status": "gap_a_lift_refined_partial_closure_theorem_note_recorded",
+  "timestamp_utc": "2026-06-14T19:06:08.326412+00:00",
+  "gap": "A_chamber_register_map",
+  "purpose": "Record the lift-refined bounded partial closure theorem note for Gap A.",
+  "claim": {
+    "closed": false,
+    "bounded_partial_closure": true,
+    "lift_refined": true,
+    "short_form": "Gap A remains open, but the obstruction is sharply bounded and lift-refined: 16/18 rows close after the W-boundary seam; the two residuals lift cleanly upstairs and split into a branch-stable ZT selected-turn residue and a branch-sensitive TI return-path residue.",
+    "not_closed_reason": "No accepted source-derived chamber/register map or bounded anti-overfit rule closes the final two residual rows."
+  },
+  "boundary": [
+    "Gap A is not closed.",
+    "This is a bounded partial closure theorem note, not a full chamber/register map proof.",
+    "No residual flip rule is accepted.",
+    "The G900/P900 lift refines the obstruction but does not eliminate it.",
+    "Future closure must come from source-derived register geometry, source transport orientation, or an independently justified chamber map."
+  ],
+  "inputs": {
+    "selector_theorem_note": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_selector_theorem_note_001.v1.json",
+      "sha256": "fa4b1dae0d479bebe61a1086aa29387b433cbb1183e2a0ce8500ec8472a17c4b",
+      "status": "bounded_gap_a_selector_theorem_note_recorded"
+    },
+    "candidate_recovery": {
+      "path": "registered_boundary_flux/artifacts/json/register_map_candidate_recovery_002.v1.json",
+      "sha256": "df7f3498c21df3f9060861cf5731b337eb3be18905b103025db8fbefe1432003",
+      "status": "A0_confirms_A1_supported_A2_row_identity_null_passed"
+    },
+    "row_identity_carriers": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_row_identity_carrier_audit_001.v1.json",
+      "sha256": "2ce89d00e6f760e81516abd3fd6835077fdf74e3e516dd56b226851c20092fb4",
+      "status": "row_identity_carriers_extracted_not_map_proof"
+    },
+    "row_identity_transport_candidates": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_row_identity_transport_candidates_001.v1.json",
+      "sha256": "7e576b0bc6d65e5220b5e957c8a7299fd0b214a2fbd60a1af18709702a0f99b0",
+      "status": "row_identity_transport_candidates_derived_not_map_proof"
+    },
+    "column_source_links": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_column_identity_source_links_001.v1.json",
+      "sha256": "1b0f5d9bd9eba321085abfbad2aa5795197e10b3bbe4d7d0a4cd1c9a08c4879c",
+      "status": "column_identity_source_links_audited_not_map_proof"
+    },
+    "edge_column_assignment_bridge": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_edge_column_assignment_bridge_001.v1.json",
+      "sha256": "881b64ae66e18998cda772c9fa127b76af13b63e683f06d2e61151285a374d78",
+      "status": "edge_column_assignment_bridge_verified_not_map_proof"
+    },
+    "edge_column_transport_alignment": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_edge_column_transport_role_alignment_001.v1.json",
+      "sha256": "2de9b470a6917b578e35e63e914e69948b05c963c32a6cbdae5646f3fc40db3d",
+      "status": "edge_column_transport_role_alignment_verified_not_map_proof"
+    },
+    "selected_wxyzti_projection": {
+      "path": "registered_boundary_flux/artifacts/json/selected_wxyzti_edge_column_projection_001.v1.json",
+      "sha256": "c8d45f7a956cc5c4ee7df0e212ac795308210a29b120ac7e5696ace1cd1e3b55",
+      "status": "selected_wxyzti_projection_partial_not_map_proof"
+    },
+    "missing_edge_transport": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_missing_wxyzti_edge_transport_001.v1.json",
+      "sha256": "a64c40a520a12193623bd5243d8f23019c0c397614d0c9dfbdeefc0aaa15ab19",
+      "status": "missing_wxyzti_edges_have_bridge_paths_not_map_proof"
+    },
+    "bridge_path_role_pattern": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_bridge_paths_wxyzti_role_pattern_001.v1.json",
+      "sha256": "32ce791b382062f7f3d9f559a0b0d23de803509ed7b34f77a85b7366cfe3a6e6",
+      "status": "wxyzti_bridge_path_role_pattern_partial_not_map_proof"
+    },
+    "bounded_role_projection_rule": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_bounded_role_projection_rule_001.v1.json",
+      "sha256": "68806cb0e20fa8027b0b9166a830f9fb788c903239663db953a2bbca8ce08537",
+      "status": "bounded_boundary_seam_projection_candidate_found_not_map_proof"
+    },
+    "boundary_seam_geometry": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_boundary_seam_rule_geometry_001.v1.json",
+      "sha256": "91c84eb60ad5c3b91f485c3b08ca21114372734ac192e488fee372b4af968e6f",
+      "status": "boundary_seam_rule_geometrically_justified_not_map_proof"
+    },
+    "boundary_seam_projection_role_rows": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_boundary_seam_projection_role_rows_001.v1.json",
+      "sha256": "4042fd58caee319fac49c6f5a09358759e82b17e7f766cd9360eb55256bc846a",
+      "status": "boundary_seam_projection_role_rows_partial_not_map_proof"
+    },
+    "row_level_residuals": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_row_level_seam_projection_residuals_001.v1.json",
+      "sha256": "51d73f08946693988d3468c6ec8a6b917747c2901be53c47cc1edc3f34b4b170",
+      "status": "row_level_seam_projection_residuals_localized_not_map_proof"
+    },
+    "residual_rule_search": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_residual_rule_search_001.v1.json",
+      "sha256": "f3c66e66de1f8931ab51d27be60de72e7905c41c0428e695518ace3a8a34f457",
+      "status": "no_bounded_residual_rule_found_keep_residuals_open"
+    },
+    "g900_lift_source_inventory": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_g900_lift_source_inventory_001.v1.json",
+      "sha256": "41b53b486a66ee9667a1a28af216dd7d2b236f67cb6a598b9efb7760c2793e5a",
+      "status": "gap_a_g900_lift_sources_inventoried_ready_for_schema_inspection"
+    },
+    "g900_lift_binding_schema": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_g900_lift_binding_schema_001.v1.json",
+      "sha256": "4573d10b5ec9fb91aaee3fe1d761539cc8087dedd5a9a569bdd29e11a5017e1b",
+      "status": "gap_a_g900_lift_binding_schema_inspected_ready_for_row_lift_attempt"
+    },
+    "uniform_g900_row_lift": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_uniform_g900_row_lift_001.v1.json",
+      "sha256": "9dea3b881ea6e3f6005e5cf00a2b5679cc148d60b33f471d8a4ae2c2ccaeed6b",
+      "status": "uniform_g900_row_lift_available_residuals_not_separated"
+    },
+    "g900_lift_residual_separation": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_g900_lift_residual_separation_001.v1.json",
+      "sha256": "2e6fa2dd069615c365bb65d0b3367e3ce2b7bfbfeab4244789e2f4227bfb5b9f",
+      "status": "g900_lift_residuals_upstairs_distinct_not_class_separated"
+    },
+    "directed_p900_edge_lift": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_directed_p900_edge_lift_001.v1.json",
+      "sha256": "983e02d6b50cf5eea58cc8423d64f32b362b0a8a7c12a20d55626bf739d564da",
+      "status": "directed_p900_edge_lift_marks_TI_residual_not_gap_closure"
+    }
+  },
+  "closure_ladder": [
+    {
+      "step": "A0 public predicates",
+      "result": "confirm selected WXYZTI target but do not close the register map",
+      "status": "A0_confirms_A1_supported_A2_row_identity_null_passed"
+    },
+    {
+      "step": "A1 row-aware incidence",
+      "result": "row-aware M incidence is exact in the tested feature family",
+      "status": "bounded_gap_a_selector_theorem_note_recorded"
+    },
+    {
+      "step": "A2 row identity",
+      "result": "row identity is load-bearing; exact row carriers exist but still require source derivation",
+      "status": "row_identity_transport_candidates_derived_not_map_proof"
+    },
+    {
+      "step": "A3 edge-column bridge",
+      "result": "30 M columns bind to edge/signature records with explicit indexing repair",
+      "status": "edge_column_assignment_bridge_verified_not_map_proof"
+    },
+    {
+      "step": "A4 selected WXYZTI projection",
+      "result": "direct projection sees 8 of 18 role edges and leaves 10 direct edges missing",
+      "status": "selected_wxyzti_projection_partial_not_map_proof"
+    },
+    {
+      "step": "A5 bridge paths",
+      "result": "all 10 missing direct WXYZTI edges have short bridge paths in the verified source layer",
+      "status": "missing_wxyzti_edges_have_bridge_paths_not_map_proof"
+    },
+    {
+      "step": "A6 boundary seam",
+      "result": "W-boundary seam rule is geometrically justified and closes the role-level majority profile",
+      "status": "boundary_seam_rule_geometrically_justified_not_map_proof"
+    },
+    {
+      "step": "A7 row-level seam projection",
+      "result": "W-boundary seam projection closes 16 of 18 role rows",
+      "status": "boundary_seam_projection_role_rows_partial_not_map_proof"
+    },
+    {
+      "step": "A8 anti-overfit residual search",
+      "result": "no accepted bounded rule closes the final two residuals",
+      "status": "no_bounded_residual_rule_found_keep_residuals_open"
+    },
+    {
+      "step": "A9 uniform G900 lift",
+      "result": "all 18 role rows lift into P900/G900 edge data, but the residuals do not form one shared class",
+      "status": "uniform_g900_row_lift_available_residuals_not_separated"
+    },
+    {
+      "step": "A10 directed P900 lift",
+      "result": "directed lift splits the obstruction: ZT branch-stable, TI branch-sensitive, no matching row branch-sensitive",
+      "status": "directed_p900_edge_lift_marks_TI_residual_not_gap_closure"
+    }
+  ],
+  "key_numbers": {
+    "direct_visible_selected_wxyzti_role_edges": 8,
+    "missing_direct_selected_wxyzti_role_edges": 10,
+    "missing_edges_without_bridge_path": [],
+    "role_rows_after_W_seam_matching": 16,
+    "role_rows_after_W_seam_mismatching": 2,
+    "matching_cycles_after_W_seam": 1,
+    "mismatching_cycles_after_W_seam": 2,
+    "allowed_exact_residual_rules": [],
+    "disallowed_exact_residual_rules": [
+      "flip_residual_rows",
+      "flip_ZT_raw1_or_TI_raw0"
+    ],
+    "uniform_g900_lift_rows": 18,
+    "uniform_g900_rows_with_combined_edge_matches": 18,
+    "g900_class_separation_feature_count": 0,
+    "g900_individual_anomaly_feature_count": 8,
+    "directed_branch_sensitive_residual_count": 1,
+    "directed_branch_sensitive_matching_count": 0,
+    "zt_residual_branch_sensitive": false,
+    "ti_residual_branch_sensitive": true
+  },
+  "open_residuals": [
+    {
+      "cycle_index": 0,
+      "role": "ZT",
+      "edge": [
+        3,
+        4
+      ],
+      "transport_kind": "direct_edge_column",
+      "path_length": 1,
+      "raw": 1,
+      "projected": 1,
+      "expected": 0,
+      "is_selected_zt_edge": true,
+      "selected_zt_edge_for_cycle": [
+        3,
+        4
+      ]
+    },
+    {
+      "cycle_index": 2,
+      "role": "TI",
+      "edge": [
+        14,
+        5
+      ],
+      "transport_kind": "bridge_path",
+      "path_length": 2,
+      "raw": 0,
+      "projected": 0,
+      "expected": 1,
+      "is_selected_zt_edge": false,
+      "selected_zt_edge_for_cycle": [
+        8,
+        14
+      ]
+    }
+  ],
+  "directed_residuals": [
+    {
+      "row_index": 3,
+      "cycle_index": 0,
+      "role": "ZT",
+      "edge": [
+        3,
+        4
+      ],
+      "columns": [
+        9
+      ],
+      "branch_sensitive": false,
+      "branch_difference_fields": [],
+      "candidate_records": [
+        {
+          "candidate_index": 0,
+          "all_matched_edge_count": 60,
+          "directed_signature_prefix": "545a35b121ea3d18",
+          "shift_mod60_hist": {
+            "30": 60
+          },
+          "residue_delta_mod30_hist": {
+            "0": 60
+          },
+          "bit_transition_hist": {
+            "[0, 1]": 30,
+            "[1, 0]": 30
+          }
+        },
+        {
+          "candidate_index": 1,
+          "all_matched_edge_count": 60,
+          "directed_signature_prefix": "545a35b121ea3d18",
+          "shift_mod60_hist": {
+            "30": 60
+          },
+          "residue_delta_mod30_hist": {
+            "0": 60
+          },
+          "bit_transition_hist": {
+            "[0, 1]": 30,
+            "[1, 0]": 30
+          }
+        }
+      ]
+    },
+    {
+      "row_index": 16,
+      "cycle_index": 2,
+      "role": "TI",
+      "edge": [
+        14,
+        5
+      ],
+      "columns": [
+        13,
+        15
+      ],
+      "branch_sensitive": true,
+      "branch_difference_fields": [
+        "directed_signature",
+        "bit_transition_hist",
+        "shift_mod60_hist"
+      ],
+      "candidate_records": [
+        {
+          "candidate_index": 0,
+          "all_matched_edge_count": 120,
+          "directed_signature_prefix": "94f2cc694ce4f652",
+          "shift_mod60_hist": {
+            "30": 120
+          },
+          "residue_delta_mod30_hist": {
+            "0": 120
+          },
+          "bit_transition_hist": {
+            "[0, 1]": 60,
+            "[1, 0]": 60
+          }
+        },
+        {
+          "candidate_index": 1,
+          "all_matched_edge_count": 120,
+          "directed_signature_prefix": "4fe193663401084e",
+          "shift_mod60_hist": {
+            "0": 60,
+            "30": 60
+          },
+          "residue_delta_mod30_hist": {
+            "0": 120
+          },
+          "bit_transition_hist": {
+            "[0, 0]": 30,
+            "[0, 1]": 30,
+            "[1, 0]": 30,
+            "[1, 1]": 30
+          }
+        }
+      ]
+    }
+  ],
+  "interpretation": {
+    "main_result": "Gap A is open but no longer vague.",
+    "bounded_result": "The register-map obstruction is reduced to two row-level residuals after row-aware incidence, edge-column transport, bridge paths, and W-boundary seam projection.",
+    "lift_result": "Both residuals lift into the G900/P900 layer, but they do not form one common lifted residual class.",
+    "directed_result": "The directed P900 lift splits the residuals: ZT is branch-stable, while TI is branch-sensitive and no matching row shares that branch sensitivity.",
+    "working_meaning": "The two residuals are two different upstairs events, not one generic failure.",
+    "next_question": "Either freeze this as the current Gap A theorem-note endpoint or begin a new phase seeking a source-derived oriented chamber/register map."
+  },
+  "checks": [
+    {
+      "id": "input_exists_selector_theorem_note",
+      "status": true,
+      "detail": "registered_boundary_flux/artifacts/json/gap_a_selector_theorem_note_001.v1.json"
+    },
+    {
+      "id": "input_exists_candidate_recovery",
+      "status": true,
+      "detail": "registered_boundary_flux/artifacts/json/register_map_candidate_recovery_002.v1.json"
+    },
+    {
+      "id": "input_exists_row_identity_carriers",
+      "status": true,
+      "detail": "registered_boundary_flux/artifacts/json/gap_a_row_identity_carrier_audit_001.v1.json"
+    },
+    {
+      "id": "input_exists_row_identity_transport_candidates",
+      "status": true,
+      "detail": "registered_boundary_flux/artifacts/json/gap_a_row_identity_transport_candidates_001.v1.json"
+    },
+    {
+      "id": "input_exists_column_source_links",
+      "status": true,
+      "detail": "registered_boundary_flux/artifacts/json/gap_a_column_identity_source_links_001.v1.json"
+    },
+    {
+      "id": "input_exists_edge_column_assignment_bridge",
+      "status": true,
+      "detail": "registered_boundary_flux/artifacts/json/gap_a_edge_column_assignment_bridge_001.v1.json"
+    },
+    {
+      "id": "input_exists_edge_column_transport_alignment",
+      "status": true,
+      "detail": "registered_boundary_flux/artifacts/json/gap_a_edge_column_transport_role_alignment_001.v1.json"
+    },
+    {
+      "id": "input_exists_selected_wxyzti_projection",
+      "status": true,
+      "detail": "registered_boundary_flux/artifacts/json/selected_wxyzti_edge_column_projection_001.v1.json"
+    },
+    {
+      "id": "input_exists_missing_edge_transport",
+      "status": true,
+      "detail": "registered_boundary_flux/artifacts/json/gap_a_missing_wxyzti_edge_transport_001.v1.json"
+    },
+    {
+      "id": "input_exists_bridge_path_role_pattern",
+      "status": true,
+      "detail": "registered_boundary_flux/artifacts/json/gap_a_bridge_paths_wxyzti_role_pattern_001.v1.json"
+    },
+    {
+      "id": "input_exists_bounded_role_projection_rule",
+      "status": true,
+      "detail": "registered_boundary_flux/artifacts/json/gap_a_bounded_role_projection_rule_001.v1.json"
+    },
+    {
+      "id": "input_exists_boundary_seam_geometry",
+      "status": true,
+      "detail": "registered_boundary_flux/artifacts/json/gap_a_boundary_seam_rule_geometry_001.v1.json"
+    },
+    {
+      "id": "input_exists_boundary_seam_projection_role_rows",
+      "status": true,
+      "detail": "registered_boundary_flux/artifacts/json/gap_a_boundary_seam_projection_role_rows_001.v1.json"
+    },
+    {
+      "id": "input_exists_row_level_residuals",
+      "status": true,
+      "detail": "registered_boundary_flux/artifacts/json/gap_a_row_level_seam_projection_residuals_001.v1.json"
+    },
+    {
+      "id": "input_exists_residual_rule_search",
+      "status": true,
+      "detail": "registered_boundary_flux/artifacts/json/gap_a_residual_rule_search_001.v1.json"
+    },
+    {
+      "id": "input_exists_g900_lift_source_inventory",
+      "status": true,
+      "detail": "registered_boundary_flux/artifacts/json/gap_a_g900_lift_source_inventory_001.v1.json"
+    },
+    {
+      "id": "input_exists_g900_lift_binding_schema",
+      "status": true,
+      "detail": "registered_boundary_flux/artifacts/json/gap_a_g900_lift_binding_schema_001.v1.json"
+    },
+    {
+      "id": "input_exists_uniform_g900_row_lift",
+      "status": true,
+      "detail": "registered_boundary_flux/artifacts/json/gap_a_uniform_g900_row_lift_001.v1.json"
+    },
+    {
+      "id": "input_exists_g900_lift_residual_separation",
+      "status": true,
+      "detail": "registered_boundary_flux/artifacts/json/gap_a_g900_lift_residual_separation_001.v1.json"
+    },
+    {
+      "id": "input_exists_directed_p900_edge_lift",
+      "status": true,
+      "detail": "registered_boundary_flux/artifacts/json/gap_a_directed_p900_edge_lift_001.v1.json"
+    },
+    {
+      "id": "status_selector_theorem_note",
+      "status": true,
+      "detail": "expected=bounded_gap_a_selector_theorem_note_recorded got=bounded_gap_a_selector_theorem_note_recorded"
+    },
+    {
+      "id": "status_candidate_recovery",
+      "status": true,
+      "detail": "expected=A0_confirms_A1_supported_A2_row_identity_null_passed got=A0_confirms_A1_supported_A2_row_identity_null_passed"
+    },
+    {
+      "id": "status_row_identity_carriers",
+      "status": true,
+      "detail": "expected=row_identity_carriers_extracted_not_map_proof got=row_identity_carriers_extracted_not_map_proof"
+    },
+    {
+      "id": "status_row_identity_transport_candidates",
+      "status": true,
+      "detail": "expected=row_identity_transport_candidates_derived_not_map_proof got=row_identity_transport_candidates_derived_not_map_proof"
+    },
+    {
+      "id": "status_column_source_links",
+      "status": true,
+      "detail": "expected=column_identity_source_links_audited_not_map_proof got=column_identity_source_links_audited_not_map_proof"
+    },
+    {
+      "id": "status_edge_column_assignment_bridge",
+      "status": true,
+      "detail": "expected=edge_column_assignment_bridge_verified_not_map_proof got=edge_column_assignment_bridge_verified_not_map_proof"
+    },
+    {
+      "id": "status_edge_column_transport_alignment",
+      "status": true,
+      "detail": "expected=edge_column_transport_role_alignment_verified_not_map_proof got=edge_column_transport_role_alignment_verified_not_map_proof"
+    },
+    {
+      "id": "status_selected_wxyzti_projection",
+      "status": true,
+      "detail": "expected=selected_wxyzti_projection_partial_not_map_proof got=selected_wxyzti_projection_partial_not_map_proof"
+    },
+    {
+      "id": "status_missing_edge_transport",
+      "status": true,
+      "detail": "expected=missing_wxyzti_edges_have_bridge_paths_not_map_proof got=missing_wxyzti_edges_have_bridge_paths_not_map_proof"
+    },
+    {
+      "id": "status_bridge_path_role_pattern",
+      "status": true,
+      "detail": "expected=wxyzti_bridge_path_role_pattern_partial_not_map_proof got=wxyzti_bridge_path_role_pattern_partial_not_map_proof"
+    },
+    {
+      "id": "status_bounded_role_projection_rule",
+      "status": true,
+      "detail": "expected=bounded_boundary_seam_projection_candidate_found_not_map_proof got=bounded_boundary_seam_projection_candidate_found_not_map_proof"
+    },
+    {
+      "id": "status_boundary_seam_geometry",
+      "status": true,
+      "detail": "expected=boundary_seam_rule_geometrically_justified_not_map_proof got=boundary_seam_rule_geometrically_justified_not_map_proof"
+    },
+    {
+      "id": "status_boundary_seam_projection_role_rows",
+      "status": true,
+      "detail": "expected=boundary_seam_projection_role_rows_partial_not_map_proof got=boundary_seam_projection_role_rows_partial_not_map_proof"
+    },
+    {
+      "id": "status_row_level_residuals",
+      "status": true,
+      "detail": "expected=row_level_seam_projection_residuals_localized_not_map_proof got=row_level_seam_projection_residuals_localized_not_map_proof"
+    },
+    {
+      "id": "status_residual_rule_search",
+      "status": true,
+      "detail": "expected=no_bounded_residual_rule_found_keep_residuals_open got=no_bounded_residual_rule_found_keep_residuals_open"
+    },
+    {
+      "id": "status_g900_lift_source_inventory",
+      "status": true,
+      "detail": "expected=gap_a_g900_lift_sources_inventoried_ready_for_schema_inspection got=gap_a_g900_lift_sources_inventoried_ready_for_schema_inspection"
+    },
+    {
+      "id": "status_g900_lift_binding_schema",
+      "status": true,
+      "detail": "expected=gap_a_g900_lift_binding_schema_inspected_ready_for_row_lift_attempt got=gap_a_g900_lift_binding_schema_inspected_ready_for_row_lift_attempt"
+    },
+    {
+      "id": "status_uniform_g900_row_lift",
+      "status": true,
+      "detail": "expected=uniform_g900_row_lift_available_residuals_not_separated got=uniform_g900_row_lift_available_residuals_not_separated"
+    },
+    {
+      "id": "status_g900_lift_residual_separation",
+      "status": true,
+      "detail": "expected=g900_lift_residuals_upstairs_distinct_not_class_separated got=g900_lift_residuals_upstairs_distinct_not_class_separated"
+    },
+    {
+      "id": "status_directed_p900_edge_lift",
+      "status": true,
+      "detail": "expected=directed_p900_edge_lift_marks_TI_residual_not_gap_closure got=directed_p900_edge_lift_marks_TI_residual_not_gap_closure"
+    },
+    {
+      "id": "role_rows_16_of_18_match",
+      "status": true,
+      "detail": "{\"cycle_count\": 3, \"matching_cycles\": 1, \"matching_role_rows\": 16, \"mismatch_cycle_indices\": [0, 2], \"mismatch_roles_by_cycle\": {\"0\": [\"ZT\"], \"2\": [\"TI\"]}, \"mismatching_cycles\": 2, \"mismatching_role_rows\": 2, \"total_role_rows\": 18}"
+    },
+    {
+      "id": "residual_count_2",
+      "status": true,
+      "detail": "{\"TI_residual_count\": 1, \"ZT_residual_count\": 1, \"matching_role_rows\": 16, \"non_ZT_TI_residual_count\": 0, \"residual_cycles\": [0, 2], \"residual_path_lengths\": [\"1\", \"2\"], \"residual_role_rows\": 2, \"residual_roles\": [\"TI\", \"ZT\"], \"residual_transport_kinds\": [\"bridge_path\", \"direct_edge_column\"]}"
+    },
+    {
+      "id": "residual_roles_TI_ZT",
+      "status": true,
+      "detail": "residual_roles=[\"TI\", \"ZT\"]"
+    },
+    {
+      "id": "no_allowed_exact_residual_rule",
+      "status": true,
+      "detail": "allowed_exact=[]"
+    },
+    {
+      "id": "uniform_g900_lifts_all_18",
+      "status": true,
+      "detail": "{\"disjoint_feature_count\": 8, \"disjoint_features\": [{\"candidate_index\": 0, \"feature\": \"lift_signature\", \"matching_value_count\": 10, \"residual_value_count\": 2, \"residual_values\": [\"87005b957a90aeda05de446f157150739c27a9b50ca784cade8ea6826a227727\", \"f25a155e492740d1aa6f4ce0f95b44423f91015309ceb84c1c7ce6340aa04024\"], \"residual_values_disjoint_from_matching\": true, \"residuals_share_single_value\": false, \"separates_residuals_as_class\": false}, {\"candidate_index\": 0, \"feature\": \"law_sector_pair_sequence\", \"matching_value_count\": 10, \"residual_value_count\": 2, \"residual_values\": [\"[[2, 8]]\", \"[[4, 5], [5, 10]]\"], \"residual_values_disjoint_from_matching\": true, \"residuals_share_single_value\": false, \"separates_residuals_as_class\": false}, {\"candidate_index\": 0, \"feature\": \"law_shared_vertex_sequence\", \"matching_value_count\": 10, \"residual_value_count\": 2, \"residual_values\": [\"[0, 5]\", \"[3]\"], \"residual_values_disjoint_from_matching\": true, \"residuals_share_single_value\": false, \"separates_residuals_as_class\": false}, {\"candidate_index\": 0, \"feature\": \"shared_petersen_vertex_hist\", \"matching_value_count\": 9, \"residual_value_count\": 2, \"residual_values\": [\"{\\\"0\\\": 60, \\\"5\\\": 60}\", \"{\\\"3\\\": 60}\"], \"residual_values_disjoint_from_matching\": true, \"residuals_share_single_value\": false, \"separates_residuals_as_class\": false}, {\"candidate_index\": 1, \"feature\": \"lift_signature\", \"matching_value_count\": 10, \"residual_value_count\": 2, \"residual_values\": [\"87005b957a90aeda05de446f157150739c27a9b50ca784cade8ea6826a227727\", \"c9b43fc146c0dd42b59de3ebf4bdcaaf55cdb1a0276f75ed06d6df2ab357cfab\"], \"residual_values_disjoint_from_matching\": true, \"residuals_share_single_value\": false, \"separates_residuals_as_class\": false}, {\"candidate_index\": 1, \"feature\": \"law_sector_pair_sequence\", \"matching_value_count\": 10, \"residual_value_count\": 2, \"residual_values\": [\"[[2, 8]]\", \"[[4, 5], [5, 10]]\"], \"residual_values_disjoint_from_matching\": true, \"residuals_share_single_value\": false, \"separates_residuals_as_class\": false}, {\"candidate_index\": 1, \"feature\": \"law_shared_vertex_sequence\", \"matching_value_count\": 10, \"residual_value_count\": 2, \"residual_values\": [\"[0, 5]\", \"[3]\"], \"residual_values_disjoint_from_matching\": true, \"residuals_share_single_value\": false, \"separates_residuals_as_class\": false}, {\"candidate_index\": 1, \"feature\": \"shared_petersen_vertex_hist\", \"matching_value_count\": 9, \"residual_value_count\": 2, \"residual_values\": [\"{\\\"0\\\": 60, \\\"5\\\": 60}\", \"{\\\"3\\\": 60}\"], \"residual_values_disjoint_from_matching\": true, \"residuals_share_single_value\": false, \"separates_residuals_as_class\": false}], \"matching_rows\": 16, \"p900_candidates\": 2, \"p900_vertices\": 900, \"residual_rows\": 2, \"role_rows\": 18, \"rows_with_combined_edge_matches\": 18, \"separating_feature_count\": 0, \"separating_features\": []}"
+    },
+    {
+      "id": "g900_no_class_separation",
+      "status": true,
+      "detail": "{\"candidate_branch_sensitive_matching_count\": 0, \"candidate_branch_sensitive_residual_count\": 1, \"candidate_divergence_row_count\": 1, \"class_separation_feature_count\": 0, \"individual_anomaly_feature_count\": 8, \"matching_count\": 16, \"residual_columns\": [[9], [13, 15]], \"residual_count\": 2, \"residual_cycles\": [\"0\", \"2\"], \"residual_edge_counts\": [{\"candidate0_edge_count\": 60, \"candidate1_edge_count\": 60, \"role\": \"ZT\", \"row_index\": 3}, {\"candidate0_edge_count\": 120, \"candidate1_edge_count\": 120, \"role\": \"TI\", \"row_index\": 16}], \"residual_roles\": [\"TI\", \"ZT\"], \"row_count\": 18}"
+    },
+    {
+      "id": "g900_individual_anomaly_features",
+      "status": true,
+      "detail": "{\"candidate_branch_sensitive_matching_count\": 0, \"candidate_branch_sensitive_residual_count\": 1, \"candidate_divergence_row_count\": 1, \"class_separation_feature_count\": 0, \"individual_anomaly_feature_count\": 8, \"matching_count\": 16, \"residual_columns\": [[9], [13, 15]], \"residual_count\": 2, \"residual_cycles\": [\"0\", \"2\"], \"residual_edge_counts\": [{\"candidate0_edge_count\": 60, \"candidate1_edge_count\": 60, \"role\": \"ZT\", \"row_index\": 3}, {\"candidate0_edge_count\": 120, \"candidate1_edge_count\": 120, \"role\": \"TI\", \"row_index\": 16}], \"residual_roles\": [\"TI\", \"ZT\"], \"row_count\": 18}"
+    },
+    {
+      "id": "directed_marks_TI_only",
+      "status": true,
+      "detail": "{\"both_residual_class_feature_count\": 0, \"branch_sensitive_matching_count\": 0, \"branch_sensitive_matching_rows\": [], \"branch_sensitive_residual_count\": 1, \"branch_sensitive_residual_rows\": [{\"branch_difference_fields\": [\"directed_signature\", \"bit_transition_hist\", \"shift_mod60_hist\"], \"columns\": [13, 15], \"cycle_index\": 2, \"role\": \"TI\", \"row_index\": 16}], \"matching_count\": 16, \"one_residual_marker_count\": 1, \"residual_count\": 2, \"row_count\": 18, \"ti_residual_branch_sensitive\": true, \"zt_residual_branch_sensitive\": false}"
+    },
+    {
+      "id": "no_matching_branch_sensitive",
+      "status": true,
+      "detail": "{\"both_residual_class_feature_count\": 0, \"branch_sensitive_matching_count\": 0, \"branch_sensitive_matching_rows\": [], \"branch_sensitive_residual_count\": 1, \"branch_sensitive_residual_rows\": [{\"branch_difference_fields\": [\"directed_signature\", \"bit_transition_hist\", \"shift_mod60_hist\"], \"columns\": [13, 15], \"cycle_index\": 2, \"role\": \"TI\", \"row_index\": 16}], \"matching_count\": 16, \"one_residual_marker_count\": 1, \"residual_count\": 2, \"row_count\": 18, \"ti_residual_branch_sensitive\": true, \"zt_residual_branch_sensitive\": false}"
+    }
+  ],
+  "next_script": "wire_gap_a_lift_refined_status_into_perfect_return_cell_001.py"
+}

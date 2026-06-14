@@ -1,0 +1,723 @@
+{
+  "schema": "gap_a_projection_row_generator_rule_distilled_001.v1",
+  "status": "gap_a_projection_row_generator_rule_distilled_not_source_native",
+  "timestamp_utc": "2026-06-14T21:14:51.766404+00:00",
+  "purpose": "Distill the exact projection-derived WXYZTI row generator into an explicit rule and classify its ingredients by provenance.",
+  "boundary": [
+    "This does not close Gap A.",
+    "The distilled rule is projection-derived, not source-native.",
+    "The rule imports an artifact that already contains WXYZTI row structure.",
+    "The purpose is to identify which ingredients must still be moved upstream.",
+    "No physical interpretation is claimed."
+  ],
+  "distilled_rule": {
+    "name": "projection_chamber_register_row_generator_rule",
+    "status": "projection_derived_not_source_native",
+    "input_artifact": "registered_boundary_flux/artifacts/json/gap_a_chamber_register_map_candidate_001.v1.json",
+    "row_table_path": "$.candidate_rows",
+    "column_support_path": "columns",
+    "algorithm": [
+      "Read the 18-row chamber/register candidate table.",
+      "Use row_ordinal to assign cycle=floor(row_ordinal/6) and role_index=row_ordinal mod 6.",
+      "Use WXYZTI role order [WX, XY, YZ, ZT, TI, IW].",
+      "Read the row support from candidate_rows[*].columns.",
+      "Mark the residual preimage side by zero_twisted_source_row AND (singleton_ZT OR multi_column_TI).",
+      "Mark the stable complement by zero_twisted_source_row AND (singleton_TI OR multi_column_ZT)."
+    ],
+    "exactness": {
+      "row_supports_exact_against_target": true,
+      "exact_rows": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "preimage_support": [
+        3,
+        16
+      ],
+      "preimage_exact": true,
+      "stable_complement_support": [
+        4,
+        9,
+        15
+      ],
+      "stable_complement_exact": true
+    },
+    "gap_a_boundary": "The rule imports a projection artifact that already contains WXYZTI row structure."
+  },
+  "ingredient_provenance": [
+    {
+      "ingredient": "30 indexed carrier-law columns",
+      "classification": "source_native_global",
+      "evidence": "p900 edge_law_table and g900 slot_edges_g15_line_petersen",
+      "status": "available"
+    },
+    {
+      "ingredient": "global direct-or-indexed witness coverage",
+      "classification": "source_anchored_witness_layer",
+      "evidence": "gap_a_global_carrier_map_with_indexed_witnesses_001",
+      "status": "complete_30_columns_18_rows"
+    },
+    {
+      "ingredient": "WXYZTI role order and 18-row register frame",
+      "classification": "projection_derived",
+      "evidence": "gap_a_chamber_register_map_candidate_001 and boundary seam projection artifacts",
+      "status": "available_downstream_not_source_native"
+    },
+    {
+      "ingredient": "row support table columns",
+      "classification": "projection_derived",
+      "evidence": "gap_a_chamber_register_map_candidate_001 $.candidate_rows[*].columns",
+      "status": "exact_against_target"
+    },
+    {
+      "ingredient": "zero-twisted row neighborhood",
+      "classification": "source_anchored_but_row_table_dependent",
+      "evidence": "normalized zero rows and 15-thalion uniform lift lineage",
+      "status": "exact_on_18_row_table"
+    },
+    {
+      "ingredient": "residual preimage selector",
+      "classification": "bounded_indexed_predicate",
+      "evidence": "zero_twisted_source_row AND (singleton_ZT OR multi_column_TI)",
+      "status": "selects_rows_3_16"
+    },
+    {
+      "ingredient": "stable complement selector",
+      "classification": "bounded_indexed_predicate",
+      "evidence": "zero_twisted_source_row AND (singleton_TI OR multi_column_ZT)",
+      "status": "selects_rows_4_9_15"
+    },
+    {
+      "ingredient": "full 900 carrier-to-WXYZTI row generator",
+      "classification": "missing",
+      "evidence": "source-native search and full-map attempt",
+      "status": "not_constructed"
+    }
+  ],
+  "distilled_rows": [
+    {
+      "row_ordinal": 0,
+      "cycle": 0,
+      "role_index": 0,
+      "role": "WX",
+      "columns": [
+        0
+      ],
+      "target_columns": [
+        0
+      ],
+      "columns_exact_against_target": true,
+      "jaccard_against_target": 1.0,
+      "zero_twisted_source_row": false,
+      "singleton_ZT": false,
+      "multi_column_TI": false,
+      "singleton_TI": false,
+      "multi_column_ZT": false,
+      "preimage_truth": false,
+      "stable_complement_truth": false,
+      "distilled_preimage_rule": false,
+      "distilled_stable_complement_rule": false,
+      "needs_residual_side_adjustment": false
+    },
+    {
+      "row_ordinal": 1,
+      "cycle": 0,
+      "role_index": 1,
+      "role": "XY",
+      "columns": [
+        4
+      ],
+      "target_columns": [
+        4
+      ],
+      "columns_exact_against_target": true,
+      "jaccard_against_target": 1.0,
+      "zero_twisted_source_row": false,
+      "singleton_ZT": false,
+      "multi_column_TI": false,
+      "singleton_TI": false,
+      "multi_column_ZT": false,
+      "preimage_truth": false,
+      "stable_complement_truth": false,
+      "distilled_preimage_rule": false,
+      "distilled_stable_complement_rule": false,
+      "needs_residual_side_adjustment": false
+    },
+    {
+      "row_ordinal": 2,
+      "cycle": 0,
+      "role_index": 2,
+      "role": "YZ",
+      "columns": [
+        7,
+        10
+      ],
+      "target_columns": [
+        7,
+        10
+      ],
+      "columns_exact_against_target": true,
+      "jaccard_against_target": 1.0,
+      "zero_twisted_source_row": false,
+      "singleton_ZT": false,
+      "multi_column_TI": false,
+      "singleton_TI": false,
+      "multi_column_ZT": false,
+      "preimage_truth": false,
+      "stable_complement_truth": false,
+      "distilled_preimage_rule": false,
+      "distilled_stable_complement_rule": false,
+      "needs_residual_side_adjustment": false
+    },
+    {
+      "row_ordinal": 3,
+      "cycle": 0,
+      "role_index": 3,
+      "role": "ZT",
+      "columns": [
+        9
+      ],
+      "target_columns": [
+        9
+      ],
+      "columns_exact_against_target": true,
+      "jaccard_against_target": 1.0,
+      "zero_twisted_source_row": true,
+      "singleton_ZT": true,
+      "multi_column_TI": false,
+      "singleton_TI": false,
+      "multi_column_ZT": false,
+      "preimage_truth": true,
+      "stable_complement_truth": false,
+      "distilled_preimage_rule": true,
+      "distilled_stable_complement_rule": false,
+      "needs_residual_side_adjustment": true
+    },
+    {
+      "row_ordinal": 4,
+      "cycle": 0,
+      "role_index": 4,
+      "role": "TI",
+      "columns": [
+        13
+      ],
+      "target_columns": [
+        13
+      ],
+      "columns_exact_against_target": true,
+      "jaccard_against_target": 1.0,
+      "zero_twisted_source_row": true,
+      "singleton_ZT": false,
+      "multi_column_TI": false,
+      "singleton_TI": true,
+      "multi_column_ZT": false,
+      "preimage_truth": false,
+      "stable_complement_truth": true,
+      "distilled_preimage_rule": false,
+      "distilled_stable_complement_rule": true,
+      "needs_residual_side_adjustment": false
+    },
+    {
+      "row_ordinal": 5,
+      "cycle": 0,
+      "role_index": 5,
+      "role": "IW",
+      "columns": [
+        1,
+        7
+      ],
+      "target_columns": [
+        1,
+        7
+      ],
+      "columns_exact_against_target": true,
+      "jaccard_against_target": 1.0,
+      "zero_twisted_source_row": false,
+      "singleton_ZT": false,
+      "multi_column_TI": false,
+      "singleton_TI": false,
+      "multi_column_ZT": false,
+      "preimage_truth": false,
+      "stable_complement_truth": false,
+      "distilled_preimage_rule": false,
+      "distilled_stable_complement_rule": false,
+      "needs_residual_side_adjustment": false
+    },
+    {
+      "row_ordinal": 6,
+      "cycle": 1,
+      "role_index": 0,
+      "role": "WX",
+      "columns": [
+        0
+      ],
+      "target_columns": [
+        0
+      ],
+      "columns_exact_against_target": true,
+      "jaccard_against_target": 1.0,
+      "zero_twisted_source_row": false,
+      "singleton_ZT": false,
+      "multi_column_TI": false,
+      "singleton_TI": false,
+      "multi_column_ZT": false,
+      "preimage_truth": false,
+      "stable_complement_truth": false,
+      "distilled_preimage_rule": false,
+      "distilled_stable_complement_rule": false,
+      "needs_residual_side_adjustment": false
+    },
+    {
+      "row_ordinal": 7,
+      "cycle": 1,
+      "role_index": 1,
+      "role": "XY",
+      "columns": [
+        4
+      ],
+      "target_columns": [
+        4
+      ],
+      "columns_exact_against_target": true,
+      "jaccard_against_target": 1.0,
+      "zero_twisted_source_row": false,
+      "singleton_ZT": false,
+      "multi_column_TI": false,
+      "singleton_TI": false,
+      "multi_column_ZT": false,
+      "preimage_truth": false,
+      "stable_complement_truth": false,
+      "distilled_preimage_rule": false,
+      "distilled_stable_complement_rule": false,
+      "needs_residual_side_adjustment": false
+    },
+    {
+      "row_ordinal": 8,
+      "cycle": 1,
+      "role_index": 2,
+      "role": "YZ",
+      "columns": [
+        1,
+        3,
+        22
+      ],
+      "target_columns": [
+        1,
+        3,
+        22
+      ],
+      "columns_exact_against_target": true,
+      "jaccard_against_target": 1.0,
+      "zero_twisted_source_row": false,
+      "singleton_ZT": false,
+      "multi_column_TI": false,
+      "singleton_TI": false,
+      "multi_column_ZT": false,
+      "preimage_truth": false,
+      "stable_complement_truth": false,
+      "distilled_preimage_rule": false,
+      "distilled_stable_complement_rule": false,
+      "needs_residual_side_adjustment": false
+    },
+    {
+      "row_ordinal": 9,
+      "cycle": 1,
+      "role_index": 3,
+      "role": "ZT",
+      "columns": [
+        9,
+        11,
+        14
+      ],
+      "target_columns": [
+        9,
+        11,
+        14
+      ],
+      "columns_exact_against_target": true,
+      "jaccard_against_target": 1.0,
+      "zero_twisted_source_row": true,
+      "singleton_ZT": false,
+      "multi_column_TI": false,
+      "singleton_TI": false,
+      "multi_column_ZT": true,
+      "preimage_truth": false,
+      "stable_complement_truth": true,
+      "distilled_preimage_rule": false,
+      "distilled_stable_complement_rule": true,
+      "needs_residual_side_adjustment": false
+    },
+    {
+      "row_ordinal": 10,
+      "cycle": 1,
+      "role_index": 4,
+      "role": "TI",
+      "columns": [
+        10,
+        11
+      ],
+      "target_columns": [
+        10,
+        11
+      ],
+      "columns_exact_against_target": true,
+      "jaccard_against_target": 1.0,
+      "zero_twisted_source_row": false,
+      "singleton_ZT": false,
+      "multi_column_TI": true,
+      "singleton_TI": false,
+      "multi_column_ZT": false,
+      "preimage_truth": false,
+      "stable_complement_truth": false,
+      "distilled_preimage_rule": false,
+      "distilled_stable_complement_rule": false,
+      "needs_residual_side_adjustment": false
+    },
+    {
+      "row_ordinal": 11,
+      "cycle": 1,
+      "role_index": 5,
+      "role": "IW",
+      "columns": [
+        1,
+        7
+      ],
+      "target_columns": [
+        1,
+        7
+      ],
+      "columns_exact_against_target": true,
+      "jaccard_against_target": 1.0,
+      "zero_twisted_source_row": false,
+      "singleton_ZT": false,
+      "multi_column_TI": false,
+      "singleton_TI": false,
+      "multi_column_ZT": false,
+      "preimage_truth": false,
+      "stable_complement_truth": false,
+      "distilled_preimage_rule": false,
+      "distilled_stable_complement_rule": false,
+      "needs_residual_side_adjustment": false
+    },
+    {
+      "row_ordinal": 12,
+      "cycle": 2,
+      "role_index": 0,
+      "role": "WX",
+      "columns": [
+        0
+      ],
+      "target_columns": [
+        0
+      ],
+      "columns_exact_against_target": true,
+      "jaccard_against_target": 1.0,
+      "zero_twisted_source_row": false,
+      "singleton_ZT": false,
+      "multi_column_TI": false,
+      "singleton_TI": false,
+      "multi_column_ZT": false,
+      "preimage_truth": false,
+      "stable_complement_truth": false,
+      "distilled_preimage_rule": false,
+      "distilled_stable_complement_rule": false,
+      "needs_residual_side_adjustment": false
+    },
+    {
+      "row_ordinal": 13,
+      "cycle": 2,
+      "role_index": 1,
+      "role": "XY",
+      "columns": [
+        4
+      ],
+      "target_columns": [
+        4
+      ],
+      "columns_exact_against_target": true,
+      "jaccard_against_target": 1.0,
+      "zero_twisted_source_row": false,
+      "singleton_ZT": false,
+      "multi_column_TI": false,
+      "singleton_TI": false,
+      "multi_column_ZT": false,
+      "preimage_truth": false,
+      "stable_complement_truth": false,
+      "distilled_preimage_rule": false,
+      "distilled_stable_complement_rule": false,
+      "needs_residual_side_adjustment": false
+    },
+    {
+      "row_ordinal": 14,
+      "cycle": 2,
+      "role_index": 2,
+      "role": "YZ",
+      "columns": [
+        4,
+        5
+      ],
+      "target_columns": [
+        4,
+        5
+      ],
+      "columns_exact_against_target": true,
+      "jaccard_against_target": 1.0,
+      "zero_twisted_source_row": false,
+      "singleton_ZT": false,
+      "multi_column_TI": false,
+      "singleton_TI": false,
+      "multi_column_ZT": false,
+      "preimage_truth": false,
+      "stable_complement_truth": false,
+      "distilled_preimage_rule": false,
+      "distilled_stable_complement_rule": false,
+      "needs_residual_side_adjustment": false
+    },
+    {
+      "row_ordinal": 15,
+      "cycle": 2,
+      "role_index": 3,
+      "role": "ZT",
+      "columns": [
+        21,
+        22
+      ],
+      "target_columns": [
+        21,
+        22
+      ],
+      "columns_exact_against_target": true,
+      "jaccard_against_target": 1.0,
+      "zero_twisted_source_row": true,
+      "singleton_ZT": false,
+      "multi_column_TI": false,
+      "singleton_TI": false,
+      "multi_column_ZT": true,
+      "preimage_truth": false,
+      "stable_complement_truth": true,
+      "distilled_preimage_rule": false,
+      "distilled_stable_complement_rule": true,
+      "needs_residual_side_adjustment": false
+    },
+    {
+      "row_ordinal": 16,
+      "cycle": 2,
+      "role_index": 4,
+      "role": "TI",
+      "columns": [
+        13,
+        15
+      ],
+      "target_columns": [
+        13,
+        15
+      ],
+      "columns_exact_against_target": true,
+      "jaccard_against_target": 1.0,
+      "zero_twisted_source_row": true,
+      "singleton_ZT": false,
+      "multi_column_TI": true,
+      "singleton_TI": false,
+      "multi_column_ZT": false,
+      "preimage_truth": true,
+      "stable_complement_truth": false,
+      "distilled_preimage_rule": true,
+      "distilled_stable_complement_rule": false,
+      "needs_residual_side_adjustment": true
+    },
+    {
+      "row_ordinal": 17,
+      "cycle": 2,
+      "role_index": 5,
+      "role": "IW",
+      "columns": [
+        1,
+        7
+      ],
+      "target_columns": [
+        1,
+        7
+      ],
+      "columns_exact_against_target": true,
+      "jaccard_against_target": 1.0,
+      "zero_twisted_source_row": false,
+      "singleton_ZT": false,
+      "multi_column_TI": false,
+      "singleton_TI": false,
+      "multi_column_ZT": false,
+      "preimage_truth": false,
+      "stable_complement_truth": false,
+      "distilled_preimage_rule": false,
+      "distilled_stable_complement_rule": false,
+      "needs_residual_side_adjustment": false
+    }
+  ],
+  "summary": {
+    "distillation_result": "projection_rule_distilled_not_source_native",
+    "gap_a_closed": false,
+    "selected_input_artifact": "registered_boundary_flux/artifacts/json/gap_a_chamber_register_map_candidate_001.v1.json",
+    "selected_row_table_path": "$.candidate_rows",
+    "selected_column_support_path": "columns",
+    "row_count": 18,
+    "row_supports_exact": true,
+    "exact_rows": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "preimage_support": [
+      3,
+      16
+    ],
+    "preimage_exact": true,
+    "stable_complement_support": [
+      4,
+      9,
+      15
+    ],
+    "stable_complement_exact": true,
+    "residual_rows_reported": [
+      3,
+      16
+    ],
+    "source_native_components": [
+      "30 indexed carrier-law columns"
+    ],
+    "projection_derived_components": [
+      "WXYZTI role order and 18-row register frame",
+      "row support table columns"
+    ],
+    "still_missing_components": [
+      "full 900 carrier-to-WXYZTI row generator"
+    ],
+    "claim_closes_gap_a": false
+  },
+  "claim": {
+    "does_this_close_gap_a": false,
+    "does_this_distill_projection_row_generator": true,
+    "does_this_find_source_native_generator": false,
+    "does_this_construct_full_900_carrier_to_register_map": false,
+    "short_form": "The WXYZTI row generator can be stated exactly from the chamber/register projection artifact, but the full source-native generator remains missing.",
+    "not_closed_reason": "The rule still imports WXYZTI row structure from a projection artifact."
+  },
+  "interpretation": {
+    "main_result": "The downstream generator is now explicit: read chamber candidate rows and classify zero-twisted ZT/TI orientation for preimage and stable complement.",
+    "what_is_source_native": "The 30-column carrier-law indexing is source-native.",
+    "what_is_not_source_native": "The grouping of those columns into 18 WXYZTI rows is still imported from projection/register artifacts.",
+    "next_move": "Try to upstream the projection row supports by explaining each candidate_rows[*].columns support from source carrier-law records."
+  },
+  "checks": [
+    {
+      "id": "projection_generator_loaded",
+      "status": true,
+      "detail": "gap_a_candidate_row_generator_from_projection_artifacts_exact_projection_candidate"
+    },
+    {
+      "id": "cycle_generator_test_loaded",
+      "status": true,
+      "detail": "gap_a_wxyzti_cycle_generator_from_30_columns_no_exact_candidate"
+    },
+    {
+      "id": "source_native_search_loaded",
+      "status": true,
+      "detail": "gap_a_source_native_row_generator_search_no_source_native_generator"
+    },
+    {
+      "id": "full_map_attempt_loaded",
+      "status": true,
+      "detail": "gap_a_full_carrier_to_wxyzti_register_map_attempt_source_map_missing"
+    },
+    {
+      "id": "boundary_theorem_loaded",
+      "status": true,
+      "detail": "gap_a_boundary_theorem_note_recorded"
+    },
+    {
+      "id": "indexed_predicate_loaded",
+      "status": true,
+      "detail": "gap_a_indexed_global_carrier_predicate_exact"
+    },
+    {
+      "id": "global_indexed_map_loaded",
+      "status": true,
+      "detail": "gap_a_global_carrier_map_with_indexed_witnesses_complete"
+    },
+    {
+      "id": "chamber_candidate_loaded",
+      "status": true,
+      "detail": "gap_a_chamber_register_map_candidate_found_not_closure"
+    },
+    {
+      "id": "column_edge_map_loaded",
+      "status": true,
+      "detail": "gap_a_column_edge_witness_map_extracted"
+    },
+    {
+      "id": "chamber_rows_18",
+      "status": true,
+      "detail": "18"
+    },
+    {
+      "id": "target_rows_18",
+      "status": true,
+      "detail": "18"
+    },
+    {
+      "id": "row_supports_exact",
+      "status": true,
+      "detail": "[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]"
+    },
+    {
+      "id": "preimage_exact",
+      "status": true,
+      "detail": "[3, 16]"
+    },
+    {
+      "id": "stable_complement_exact",
+      "status": true,
+      "detail": "[4, 9, 15]"
+    },
+    {
+      "id": "missing_full_source_generator_recorded",
+      "status": true,
+      "detail": "[\"full 900 carrier-to-WXYZTI row generator\"]"
+    },
+    {
+      "id": "gap_a_not_closed",
+      "status": true,
+      "detail": "projection-derived rule only"
+    }
+  ],
+  "next_script": "upstream_gap_a_projection_row_supports_to_source_columns_001.py"
+}

@@ -1,0 +1,182 @@
+{
+  "schema": "gap_a_selector_theorem_note_001.v1",
+  "status": "bounded_gap_a_selector_theorem_note_recorded",
+  "timestamp_utc": "2026-06-14T18:07:05.112258+00:00",
+  "gap": "A_chamber_register_map",
+  "purpose": "Record the current bounded selector theorem note for Gap A after A0/A1/A2 receipts.",
+  "inputs": {
+    "recovery_002": "artifacts/json/register_map_candidate_recovery_002.v1.json",
+    "recovery_002_sha256": "df7f3498c21df3f9060861cf5731b337eb3be18905b103025db8fbefe1432003",
+    "exact_selectors_001": "artifacts/json/register_map_exact_selectors_001.v1.json",
+    "exact_selectors_001_sha256": "75ffa0602978fe178d8c1742961bf0c239f4aa6af12ffe2feeffa80d8e7b2ac4",
+    "row_shuffle_null_001": "artifacts/json/register_map_row_shuffle_null_001.v1.json",
+    "row_shuffle_null_001_sha256": "a67c86e5c1a161f025ff8d18706a9871e2c740f514e825fb2f96168cc48ddb32"
+  },
+  "statement": {
+    "name": "Bounded Gap A selector theorem note 001",
+    "short_form": "Public predicates reduce but do not close; row-aware incidence closes in the tested family; row identity is load-bearing under null.",
+    "theorem_note": [
+      "Within the tested FHE chamber/support feature family, public predicates confirm the selected target class and ZT edge pattern but do not close the chamber/register map.",
+      "Within that tested feature family, exact recovery requires row-aware M-incidence information.",
+      "The minimal one-feature exact selector recorded by the minimizer is support_row_degree_profile.",
+      "The least-sharp exact tested selectors combine chamber block information with row-aware support-location information.",
+      "A deterministic row-shuffle null preserves the shape and row multiset of M while destroying row identity, so row-aware recovery cannot be treated as shape-only."
+    ],
+    "not_claimed": [
+      "a lawful K900-to-chamber register map",
+      "a proof over all possible predicates",
+      "a full selector rerun on shuffled or transported inputs",
+      "a physical interpretation",
+      "a claim that the lab rendering itself proves the theorem"
+    ],
+    "proof_status": "bounded finite audit theorem-note, not full Gap A closure"
+  },
+  "evidence_summary": {
+    "A0": {
+      "status": "control_layer_confirms_target_but_does_not_close_register_map",
+      "supported": true,
+      "interpretation": "The target class and ZT edges are confirmed, but this layer does not close the chamber/register map."
+    },
+    "A1": {
+      "status": "row_aware_recovery_supported_by_existing_artifacts",
+      "supported": true,
+      "interpretation": "Existing FHE artifacts support row-aware recovery; the evidence is selector-structural rather than literal target echo."
+    },
+    "A2": {
+      "status": "passed_row_identity_destroyed_null",
+      "supported": true,
+      "interpretation": "The null preserves M shape and row multiset while destroying row identity. Therefore row-aware recovery is not shape-only; a lawful register map must preserve or explicitly transport row identity.",
+      "null_summary": {
+        "check_count": 12,
+        "passed_count": 12,
+        "failed_count": 0,
+        "matrix_shape": {
+          "rows": 15,
+          "cols": 30
+        },
+        "row_multiset_preserved": true,
+        "row_position_hash_changed": true,
+        "fixed_point_count": 0,
+        "changed_position_count": 15
+      },
+      "shuffle": {
+        "convention": "shuffled_M[i] = original_M[perm[i]]",
+        "perm": [
+          7,
+          0,
+          13,
+          5,
+          1,
+          14,
+          2,
+          10,
+          3,
+          12,
+          4,
+          9,
+          6,
+          11,
+          8
+        ],
+        "fixed_points": [],
+        "changed_positions": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "original_position_hash": "53d0ca57fc6891d5ee1c0a22953c37463d91c93b635520b0ce792f2deb0bf959",
+        "shuffled_position_hash": "b7e3b45b0e363f7e8df664edd5c875731d941cd1dc9d6092bfedafe2c0010ab1",
+        "original_multiset_hash": "c59f0d45df7808eb626eb55c85c3aaead233668967de7dc9b026b4b6e8526cb7",
+        "shuffled_multiset_hash": "c59f0d45df7808eb626eb55c85c3aaead233668967de7dc9b026b4b6e8526cb7"
+      }
+    },
+    "exact_selector": {
+      "one_feature_exact_selector": "support_row_degree_profile",
+      "row_aware_recovery_levels_seen": true,
+      "least_sharp_mentions_three_feature": true,
+      "row_aware_needed_in_tested_family": true,
+      "one_row_aware_profile_line_seen": true
+    },
+    "features_seen": [
+      "block_word",
+      "support_complement",
+      "support_intersection",
+      "support_row_degree_profile",
+      "support_union"
+    ],
+    "row_shuffle_summary": {
+      "check_count": 12,
+      "passed_count": 12,
+      "failed_count": 0,
+      "matrix_shape": {
+        "rows": 15,
+        "cols": 30
+      },
+      "row_multiset_preserved": true,
+      "row_position_hash_changed": true,
+      "fixed_point_count": 0,
+      "changed_position_count": 15
+    }
+  },
+  "checks": [
+    {
+      "id": "recovery_002_expected_status",
+      "status": true,
+      "detail": "status=A0_confirms_A1_supported_A2_row_identity_null_passed"
+    },
+    {
+      "id": "selectors_extracted",
+      "status": true,
+      "detail": "status=exact_selector_structure_extracted"
+    },
+    {
+      "id": "one_feature_selector_is_support_row_degree_profile",
+      "status": true,
+      "detail": "one_feature_exact_selector=support_row_degree_profile"
+    },
+    {
+      "id": "row_aware_needed_in_tested_family",
+      "status": true,
+      "detail": "row_aware_needed=True"
+    },
+    {
+      "id": "row_shuffle_null_passed",
+      "status": true,
+      "detail": "status=passed_row_identity_destroyed_null"
+    },
+    {
+      "id": "row_multiset_preserved",
+      "status": true,
+      "detail": "row_multiset_preserved=True"
+    },
+    {
+      "id": "row_position_hash_changed",
+      "status": true,
+      "detail": "row_position_hash_changed=True"
+    },
+    {
+      "id": "no_fixed_points",
+      "status": true,
+      "detail": "fixed_point_count=0"
+    }
+  ],
+  "next_work": [
+    "Decide whether to run a heavier shuffled-selector rerun.",
+    "Separate public register-key reduction from row-aware exact recovery in a concise proof note.",
+    "Use this note as the Gap A status surface for the Perfect Return Cell lab.",
+    "Do not claim full chamber/register map closure until a lawful map is constructed."
+  ],
+  "next_script": "wire_gap_a_status_into_perfect_return_cell_001.py"
+}

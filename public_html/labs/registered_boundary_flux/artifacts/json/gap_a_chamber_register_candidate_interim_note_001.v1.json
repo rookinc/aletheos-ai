@@ -1,0 +1,258 @@
+{
+  "schema": "gap_a_chamber_register_candidate_interim_note_001.v1",
+  "status": "gap_a_chamber_register_candidate_interim_note_recorded",
+  "timestamp_utc": "2026-06-14T20:08:22.128649+00:00",
+  "purpose": "Record the null-hardened row-level chamber/register map candidate for Gap A.",
+  "boundary": [
+    "This is an interim theorem note, not a closure proof.",
+    "Gap A remains open.",
+    "The candidate is exact over the tested 18 WXYZTI role rows.",
+    "The candidate is null-hardened against the ten tested row-level substitutes.",
+    "No full source-derived chamber/register map is claimed.",
+    "No global exact selector is claimed.",
+    "No physical interpretation is claimed."
+  ],
+  "inputs": {
+    "chamber_candidate": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_chamber_register_map_candidate_001.v1.json",
+      "sha256": "c9759c997a6948f98e33c73de4f3ea035d5f791349cb3d67d70191f004ec0210",
+      "status": "gap_a_chamber_register_map_candidate_found_not_closure"
+    },
+    "chamber_candidate_nulls": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_chamber_register_map_candidate_nulls_001.v1.json",
+      "sha256": "49f7bf3f38e0088e1a130f00d54f745cafd751d64410f1edde6494518f5d53ce",
+      "status": "gap_a_chamber_register_map_candidate_nulls_recorded"
+    },
+    "role_column_interim": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_role_column_interim_note_001.v1.json",
+      "sha256": "79f09f32585122f024b1003408b8e7326cce5c3d855bb41bf3748fe912b1dc62",
+      "status": "gap_a_role_column_interim_note_recorded"
+    },
+    "role_column_geometry": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_role_column_source_geometry_001.v1.json",
+      "sha256": "f20e71ee814653a3cfef9132110f69fec036386b2806282bd15b65e495cfc19c",
+      "status": "gap_a_role_column_source_geometry_candidate_found_not_closure"
+    },
+    "role_column_nulls": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_role_column_source_geometry_nulls_001.v1.json",
+      "sha256": "288c091a2944c791928e21115afe506080129b31dfd5b6bfc34e7e811982749f",
+      "status": "gap_a_role_column_source_geometry_nulls_recorded"
+    },
+    "boundary_projection": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_boundary_seam_projection_role_rows_001.v1.json",
+      "sha256": "4042fd58caee319fac49c6f5a09358759e82b17e7f766cd9360eb55256bc846a",
+      "status": "boundary_seam_projection_role_rows_partial_not_map_proof"
+    }
+  },
+  "claim": {
+    "does_this_close_gap_a": false,
+    "does_this_solve_gap_a": false,
+    "does_this_give_full_source_derived_chamber_register_map": false,
+    "does_this_give_row_level_chamber_register_map_candidate": true,
+    "does_this_candidate_match_all_18_rows": true,
+    "does_this_candidate_survive_tested_nulls": true,
+    "base_projection_match_count": 16,
+    "base_projection_mismatches": [
+      3,
+      16
+    ],
+    "candidate_match_count": 18,
+    "candidate_mismatches": [],
+    "changed_rows": [
+      3,
+      16
+    ],
+    "null_count": 10,
+    "broken_null_count": 10,
+    "surviving_nulls": [],
+    "residual_side": "singleton ZT OR multi-column TI",
+    "stable_complement": "singleton TI OR multi-column ZT",
+    "short_form": "Gap A remains open, but the tested 18-row WXYZTI chamber/register table now has a null-hardened row-level map candidate: W-boundary seam projection plus role-column residual-side adjustment on rows 3 and 16.",
+    "not_closed_reason": "The result is still row-table-level. It has not yet been derived as a full source-law chamber/register map from the global carrier construction."
+  },
+  "interim_theorem_statement": {
+    "name": "Gap A chamber/register row-level candidate interim note",
+    "statement": "W-boundary seam projection alone matches 16 of 18 WXYZTI role rows, with residual mismatches at rows 3 and 16. Adding the role-column residual-side adjustment, singleton ZT OR multi-column TI, changes exactly rows 3 and 16 and yields an 18 of 18 row-level chamber/register map candidate. All ten tested chamber/register nulls break exactness, including no-change, role-only, column-shape-only, complement, rotation, and swap substitutes. This is strong row-level support for the candidate map, but it does not close Gap A because the map has not yet been derived as a full source-law chamber/register construction from the global carrier.",
+    "admission_status": "null_hardened_row_level_candidate_not_gap_closure"
+  },
+  "evidence": {
+    "candidate_rule": {
+      "name": "W_boundary_seam_plus_role_column_obstruction_orientation",
+      "reading": "Use W-boundary seam projection for all rows; for rows in the source-geometry residual side, apply the obstruction-side adjustment.",
+      "residual_side": "singleton ZT OR multi-column TI",
+      "residual_support": [
+        3,
+        16
+      ],
+      "stable_complement": "singleton TI OR multi-column ZT",
+      "stable_complement_support": [
+        4,
+        9,
+        15
+      ]
+    },
+    "candidate_summary": {
+      "row_count": 18,
+      "base_match_count": 16,
+      "base_mismatches": [
+        3,
+        16
+      ],
+      "candidate_match_count": 18,
+      "candidate_mismatches": [],
+      "changed_rows": [
+        3,
+        16
+      ],
+      "stable_complement_changed": [],
+      "stable_complement_matches": [
+        4,
+        9,
+        15
+      ],
+      "claim_closes_gap_a": false
+    },
+    "null_summary": {
+      "baseline_exact": true,
+      "baseline_match_count": 18,
+      "row_count": 18,
+      "null_count": 10,
+      "broken_null_count": 10,
+      "broken_nulls": [
+        "null_no_change_w_boundary_only",
+        "null_role_only_ZT",
+        "null_role_only_TI",
+        "null_shape_only_singleton",
+        "null_shape_only_multi_column",
+        "null_complement_pairing_singleton_TI_OR_multi_column_ZT",
+        "null_rotated_roles_keep_shapes",
+        "null_rotated_shapes_keep_roles",
+        "null_swapped_roles_keep_shapes",
+        "null_swapped_shapes_keep_roles"
+      ],
+      "surviving_nulls": [],
+      "load_bearing": {
+        "w_boundary_only_insufficient": true,
+        "role_only_insufficient": true,
+        "shape_only_insufficient": true,
+        "complement_pairing_breaks": true,
+        "role_rotation_breaks": true,
+        "shape_rotation_breaks": true,
+        "role_swap_breaks": true,
+        "shape_swap_breaks": true,
+        "all_nulls_break_exactness": true
+      },
+      "claim_closes_gap_a": false
+    },
+    "role_column_claim": {
+      "does_this_close_gap_a": false,
+      "does_this_solve_gap_a": false,
+      "does_this_give_full_chamber_register_map": false,
+      "does_this_give_bounded_interim_support": true,
+      "local_domain": "tested zero-twisted-carrier obstruction neighborhood",
+      "residual_rule": "singleton ZT OR multi-column TI",
+      "residual_support": [
+        3,
+        16
+      ],
+      "stable_complement_rule": "singleton TI OR multi-column ZT",
+      "stable_complement_support": [
+        4,
+        9,
+        15
+      ],
+      "all_residual_nulls_broken": true,
+      "short_form": "Gap A remains open, but inside the zero-twisted obstruction the role-column orientation is load-bearing: singleton ZT plus multi-column TI selects the residuals, while singleton TI plus multi-column ZT selects the stable false positives.",
+      "not_closed_reason": "The result is local to the tested zero-twisted-carrier neighborhood and does not yet derive a full source chamber/register map."
+    },
+    "role_column_null_load_bearing": {
+      "role_only_insufficient": true,
+      "shape_only_insufficient": true,
+      "pairing_orientation_load_bearing": true,
+      "role_placement_load_bearing": true,
+      "shape_placement_load_bearing": true,
+      "role_swap_breaks_residual_exactness": true,
+      "shape_swap_breaks_residual_exactness": true,
+      "complement_selects_false_positives": true
+    }
+  },
+  "next_questions": [
+    "Can the 18-row candidate be derived from source edge-law geometry without referencing residual labels?",
+    "Can the chamber/register map be lifted from the WXYZTI row table to the global carrier construction?",
+    "Can the map be expressed as a lawful source preimage rather than a row-level correction?",
+    "Can the stable complement rows be characterized as lawful stable support rather than merely non-residual rows?"
+  ],
+  "checks": [
+    {
+      "id": "candidate_loaded",
+      "status": true,
+      "detail": "gap_a_chamber_register_map_candidate_found_not_closure"
+    },
+    {
+      "id": "candidate_nulls_loaded",
+      "status": true,
+      "detail": "gap_a_chamber_register_map_candidate_nulls_recorded"
+    },
+    {
+      "id": "role_interim_loaded",
+      "status": true,
+      "detail": "gap_a_role_column_interim_note_recorded"
+    },
+    {
+      "id": "role_geometry_loaded",
+      "status": true,
+      "detail": "gap_a_role_column_source_geometry_candidate_found_not_closure"
+    },
+    {
+      "id": "role_nulls_loaded",
+      "status": true,
+      "detail": "gap_a_role_column_source_geometry_nulls_recorded"
+    },
+    {
+      "id": "boundary_loaded",
+      "status": true,
+      "detail": "boundary_seam_projection_role_rows_partial_not_map_proof"
+    },
+    {
+      "id": "base_16_of_18",
+      "status": true,
+      "detail": "{\"base_match_count\": 16, \"base_mismatches\": [3, 16], \"candidate_match_count\": 18, \"candidate_mismatches\": [], \"changed_rows\": [3, 16], \"claim_closes_gap_a\": false, \"row_count\": 18, \"stable_complement_changed\": [], \"stable_complement_matches\": [4, 9, 15]}"
+    },
+    {
+      "id": "base_mismatches_3_16",
+      "status": true,
+      "detail": "{\"base_match_count\": 16, \"base_mismatches\": [3, 16], \"candidate_match_count\": 18, \"candidate_mismatches\": [], \"changed_rows\": [3, 16], \"claim_closes_gap_a\": false, \"row_count\": 18, \"stable_complement_changed\": [], \"stable_complement_matches\": [4, 9, 15]}"
+    },
+    {
+      "id": "candidate_18_of_18",
+      "status": true,
+      "detail": "{\"base_match_count\": 16, \"base_mismatches\": [3, 16], \"candidate_match_count\": 18, \"candidate_mismatches\": [], \"changed_rows\": [3, 16], \"claim_closes_gap_a\": false, \"row_count\": 18, \"stable_complement_changed\": [], \"stable_complement_matches\": [4, 9, 15]}"
+    },
+    {
+      "id": "candidate_no_mismatches",
+      "status": true,
+      "detail": "{\"base_match_count\": 16, \"base_mismatches\": [3, 16], \"candidate_match_count\": 18, \"candidate_mismatches\": [], \"changed_rows\": [3, 16], \"claim_closes_gap_a\": false, \"row_count\": 18, \"stable_complement_changed\": [], \"stable_complement_matches\": [4, 9, 15]}"
+    },
+    {
+      "id": "changed_rows_3_16",
+      "status": true,
+      "detail": "{\"base_match_count\": 16, \"base_mismatches\": [3, 16], \"candidate_match_count\": 18, \"candidate_mismatches\": [], \"changed_rows\": [3, 16], \"claim_closes_gap_a\": false, \"row_count\": 18, \"stable_complement_changed\": [], \"stable_complement_matches\": [4, 9, 15]}"
+    },
+    {
+      "id": "all_chamber_nulls_break",
+      "status": true,
+      "detail": "{\"baseline_exact\": true, \"baseline_match_count\": 18, \"broken_null_count\": 10, \"broken_nulls\": [\"null_no_change_w_boundary_only\", \"null_role_only_ZT\", \"null_role_only_TI\", \"null_shape_only_singleton\", \"null_shape_only_multi_column\", \"null_complement_pairing_singleton_TI_OR_multi_column_ZT\", \"null_rotated_roles_keep_shapes\", \"null_rotated_shapes_keep_roles\", \"null_swapped_roles_keep_shapes\", \"null_swapped_shapes_keep_roles\"], \"claim_closes_gap_a\": false, \"load_bearing\": {\"all_nulls_break_exactness\": true, \"complement_pairing_breaks\": true, \"role_only_insufficient\": true, \"role_rotation_breaks\": true, \"role_swap_breaks\": true, \"shape_only_insufficient\": true, \"shape_rotation_breaks\": true, \"shape_swap_breaks\": true, \"w_boundary_only_insufficient\": true}, \"null_count\": 10, \"row_count\": 18, \"surviving_nulls\": []}"
+    },
+    {
+      "id": "no_surviving_chamber_nulls",
+      "status": true,
+      "detail": "{\"baseline_exact\": true, \"baseline_match_count\": 18, \"broken_null_count\": 10, \"broken_nulls\": [\"null_no_change_w_boundary_only\", \"null_role_only_ZT\", \"null_role_only_TI\", \"null_shape_only_singleton\", \"null_shape_only_multi_column\", \"null_complement_pairing_singleton_TI_OR_multi_column_ZT\", \"null_rotated_roles_keep_shapes\", \"null_rotated_shapes_keep_roles\", \"null_swapped_roles_keep_shapes\", \"null_swapped_shapes_keep_roles\"], \"claim_closes_gap_a\": false, \"load_bearing\": {\"all_nulls_break_exactness\": true, \"complement_pairing_breaks\": true, \"role_only_insufficient\": true, \"role_rotation_breaks\": true, \"role_swap_breaks\": true, \"shape_only_insufficient\": true, \"shape_rotation_breaks\": true, \"shape_swap_breaks\": true, \"w_boundary_only_insufficient\": true}, \"null_count\": 10, \"row_count\": 18, \"surviving_nulls\": []}"
+    },
+    {
+      "id": "gap_a_not_closed",
+      "status": true,
+      "detail": "closure false"
+    }
+  ],
+  "next_script": "derive_gap_a_source_law_preimage_candidate_001.py"
+}

@@ -3,6 +3,7 @@ const ctx = canvas.getContext("2d");
 const hud = document.getElementById("hud");
 const presetSelect = document.getElementById("preset");
 const phaseBox = document.getElementById("phases");
+const sheetsPerSecondInput = document.getElementById("sheetsPerSecond");
 const kernelStatus = document.getElementById("kernel-status");
 const registerStatus = document.getElementById("register-status");
 
@@ -19,7 +20,9 @@ let data = {
 
 let phaseIndex = 0;
 let t = 0;
+let sheetTick = 0;
 let playing = true;
+let lastFrameTime = null;
 
 function resizeCanvas() {
   const r = canvas.getBoundingClientRect();
@@ -27,6 +30,29 @@ function resizeCanvas() {
   canvas.width = Math.max(1, Math.floor(r.width * dpr));
   canvas.height = Math.max(1, Math.floor(r.height * dpr));
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+}
+
+
+
+function sheetCount() {
+  const n = data && data.sheet_clock ? Number(data.sheet_clock.sheet_count) : NaN;
+  return Number.isFinite(n) && n > 0 ? n : 30;
+}
+
+function currentSheetIndex() {
+  const n = sheetCount();
+  return ((Math.floor(sheetTick) % n) + n) % n;
+}
+
+function syncVisualPhaseToSheetTick() {
+  const n = sheetCount();
+  t = (sheetTick % n) / n * Math.PI * 2;
+}
+
+function sheetsPerSecond() {
+  if (!sheetsPerSecondInput) return 30;
+  const v = Number(sheetsPerSecondInput.value);
+  return Number.isFinite(v) ? v : 30;
 }
 
 function settings() {
@@ -143,6 +169,7 @@ document.getElementById("next").addEventListener("click", () => {
 
 document.getElementById("reset").addEventListener("click", () => {
   t = 0;
+  sheetTick = 0;
   phaseIndex = 0;
   renderPhases();
   draw();
@@ -156,6 +183,10 @@ document.getElementById("play").addEventListener("click", (ev) => {
 sliderIds.forEach((id) => {
   sliders[id].addEventListener("input", draw);
 });
+
+if (sheetsPerSecondInput) {
+  sheetsPerSecondInput.addEventListener("input", draw);
+}
 
 window.addEventListener("resize", () => {
   resizeCanvas();
@@ -180,8 +211,16 @@ fetch("data/kernel.v1.json")
     hud.textContent = "failed to load regimes";
   });
 
-function loop() {
-  if (playing) t += 0.018;
+function loop(now) {
+  if (lastFrameTime === null) lastFrameTime = now;
+  const elapsed = Math.max(0, Math.min(0.1, (now - lastFrameTime) / 1000));
+  lastFrameTime = now;
+
+  if (playing) {
+    sheetTick += elapsed * sheetsPerSecond();
+    syncVisualPhaseToSheetTick();
+  }
+
   draw();
   requestAnimationFrame(loop);
 }
@@ -553,7 +592,8 @@ function draw() {
 
   hud.textContent =
     "phase=" + phase.id +
-    " zoom=" + rbfCamera.zoom.toFixed(2);
+    " zoom=" + rbfCamera.zoom.toFixed(2) +
+    " sps=" + sheetsPerSecond().toFixed(0);
 }
 
 /* cube register face projection pass 001 */
@@ -607,7 +647,7 @@ function cubeDrawPolarityCap(g, face, s, sign) {
   const center = cubeFacePoint(face, 0, 0);
   const n = 16;
   const radius = 0.52 + s.boundary * 0.18;
-  const color = sign > 0 ? rgba(156,200,255,0.78) : rgba(216,188,118,0.72);
+  const color = sign > 0 ? rgba(156,200,255,0.86) : rgba(216,188,118,0.82);
 
   for (let i = 0; i < n; i++) {
     const a = Math.PI * 2 * i / n + t * 0.02 * sign;
@@ -625,7 +665,7 @@ function cubeDrawPolarityCap(g, face, s, sign) {
 }
 
 function cubeDrawRelationshipWall(g, face, s, offset) {
-  const n = 14 + Math.floor(s.flux * 42);
+  const n = 9 + Math.floor(s.flux * 26);
   for (let i = 0; i < n; i++) {
     const a = i * 1.618 + offset;
     const u1 = Math.sin(a + t * 0.05) * 0.72;
@@ -656,8 +696,8 @@ function cubeDrawSeams(g, s) {
   const faces = ["front", "back", "left", "right"];
   faces.forEach((face, k) => {
     const color = k % 2 ? rgba(216,188,118,0.62) : rgba(85,212,230,0.58);
-    rbfStroke3(g, cubeFacePoint(face, -0.78, -0.78), cubeFacePoint(face, 0.78, 0.78), color, 0.9 + s.boundary, 0.35);
-    rbfStroke3(g, cubeFacePoint(face, -0.78, 0.78), cubeFacePoint(face, 0.78, -0.78), color, 0.9 + s.boundary, 0.35);
+    rbfStroke3(g, cubeFacePoint(face, -0.78, -0.78), cubeFacePoint(face, 0.78, 0.78), color, 1.1 + s.boundary * 1.4, 0.46);
+    rbfStroke3(g, cubeFacePoint(face, -0.78, 0.78), cubeFacePoint(face, 0.78, -0.78), color, 1.1 + s.boundary * 1.4, 0.46);
   });
 }
 
@@ -719,6 +759,29 @@ function draw() {
   cubeDrawEmission(g, s);
 
   hud.textContent =
-    "cube phase=" + phase.id +
-    " zoom=" + rbfCamera.zoom.toFixed(2);
+    "cube face=true sheet=" + currentSheetIndex().toString().padStart(2, "0") +
+    "/" + sheetCount() +
+    " phase=" + phase.id +
+    " zoom=" + rbfCamera.zoom.toFixed(2) +
+    " sps=" + sheetsPerSecond().toFixed(0);
 }
+
+
+/* cube register face refinement pass 001 */
+function cubeDrawCornerNodes(g, s) {
+  const a = 0.78;
+  const pts = [
+    cubeP(-a,-a,-a), cubeP(a,-a,-a), cubeP(a,a,-a), cubeP(-a,a,-a),
+    cubeP(-a,-a,a),  cubeP(a,-a,a),  cubeP(a,a,a),  cubeP(-a,a,a)
+  ];
+  pts.forEach((p, i) => {
+    const color = i % 2 ? rgba(216,188,118,0.78) : rgba(156,200,255,0.78);
+    rbfDot3(g, p, color, 2.0 + s.boundary * 2.0, 0.85);
+  });
+}
+
+const cubeDrawSeamsOriginal = cubeDrawSeams;
+cubeDrawSeams = function(g, s) {
+  cubeDrawSeamsOriginal(g, s);
+  cubeDrawCornerNodes(g, s);
+};

@@ -26,10 +26,17 @@
           <li>Use PAUSE to freeze the renderer for inspection.</li>
           <li>Tune Boundary, Interior, Flux, Emission, and Trace.</li>
           <li>Drag the renderer to rotate it. Pinch to zoom.</li>
+          <li>Adjust Sheets/sec to advance the Cube Register through a P900-style sheet clock.</li>
         </ol>
+        <p>
+          Cube Register roles: top and bottom faces are polarity caps; side
+          faces are relationship walls; edges and corners are coupling seams;
+          the interior is the registered carrier volume.
+        </p>
         <p class="small-boundary">
           Boundary: this is a visual grammar only. It is not a hydrodynamic
-          solver and not a physical-force simulation.
+          solver and not a physical-force simulation. The Cube Register is a
+          simplified face projection, not the theorem object.
         </p>
       </div>
     </details>
@@ -49,6 +56,7 @@
       </div>
 
       <div class="sliders">
+        <label>Sheets/sec <input id="sheetsPerSecond" type="range" min="0.25" max="960" value="30" step="0.25"></label>
         <label>Boundary <input id="boundary" type="range" min="0" max="100" value="72"></label>
         <label>Interior <input id="interior" type="range" min="0" max="100" value="54"></label>
         <label>Flux <input id="flux" type="range" min="0" max="100" value="48"></label>

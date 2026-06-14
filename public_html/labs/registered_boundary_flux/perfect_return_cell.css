@@ -356,3 +356,39 @@ h1 {
 #edge-pill-grid {
   display: none !important;
 }
+
+
+/* instructions dropdown pass 001 */
+.instructions-toggle {
+  margin: 0.9rem 0 1rem;
+  border: 1px solid rgba(220, 245, 230, 0.14);
+  border-radius: 10px;
+  background: rgba(2, 10, 8, 0.42);
+  color: rgba(220, 238, 228, 0.78);
+  overflow: hidden;
+}
+
+.instructions-toggle summary {
+  cursor: pointer;
+  padding: 0.72rem 0.85rem;
+  color: rgba(235, 250, 240, 0.9);
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.instructions-toggle summary::marker {
+  color: rgba(150, 255, 200, 0.8);
+}
+
+.instructions-body {
+  border-top: 1px solid rgba(220, 245, 230, 0.1);
+  padding: 0.1rem 0.85rem 0.8rem;
+}
+
+.instructions-body p {
+  margin: 0.65rem 0 0;
+  font-size: 0.84rem;
+  line-height: 1.45;
+}

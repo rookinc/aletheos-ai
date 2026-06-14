@@ -16,6 +16,16 @@
   </header>
 
   <main class="shell">
+  <details class="instructions-toggle" id="perfect-return-instructions">
+    <summary>Instructions</summary>
+    <div class="instructions-body">
+      <p>This lab shows a declared projection of G60, not the source object itself. The animation is observer-only.</p>
+      <p>Mode 1 returns directly after inscription. Mode 2 returns through the prior seams as history-bearing motion.</p>
+      <p>Before I: upstairs motion. At I: writing. After I: downstairs return.</p>
+    </div>
+  </details>
+
+
 <section class="panel source-object">
       <h2>0. Source Object</h2>
       <p>
@@ -29,6 +39,12 @@
 
 <section class="panel contract">
       <h2>1. Projection Contract</h2>
+      <div class="projection-mode-control">
+        <label for="projection-mode-select">Projection Mode</label>
+        <select id="projection-mode-select" aria-label="Projection Mode"></select>
+        <div class="projection-mode-status" id="projection-mode-status">Projection mode: loading.</div>
+      </div>
+
       <p>Projection contract: the visible W-X-Y-Z-T-I-W cell may move only as a declared projection of G60 / AT4val[60,6] with 5,3,4 scaffolding.</p>
     </section>
 
@@ -79,6 +95,85 @@
     </section>
 </main>
 
-  <script src="perfect_return_cell.js"></script>
+  <script id="projection-mode-preloader">
+(function () {
+  const key = "perfect_return_projection_mode";
+  const originalFetch = window.fetch.bind(window);
+
+  function edgeKind(label, index, modeId) {
+    if (modeId === "mode_1_cyclic_return") {
+      if (label === "WX" || label === "YZ" || label === "TI") return "diad";
+      return "coupler";
+    }
+
+    if (modeId === "mode_2_sheet_flip_return") {
+      if (index < 5) return "outbound";
+      if (index === 5) return "turnaround";
+      return "return";
+    }
+
+    return "projection_edge";
+  }
+
+  function makeEdges(path, modeId) {
+    const edges = [];
+    for (let i = 0; i < path.length - 1; i += 1) {
+      const from = path[i];
+      const to = path[i + 1];
+      const label = from + to;
+      edges.push({
+        from,
+        to,
+        label,
+        kind: edgeKind(label, i, modeId),
+        step: i + 1
+      });
+    }
+    return edges;
+  }
+
+  window.fetch = async function (input, init) {
+    const url = typeof input === "string" ? input : (input && input.url ? input.url : "");
+    const response = await originalFetch(input, init);
+
+    if (!url || !url.includes("data/perfect_return_cell.v1.json")) {
+      return response;
+    }
+
+    try {
+      const data = await response.clone().json();
+      const stored = localStorage.getItem(key);
+      const modeId = stored || data.active_projection_mode || "mode_1_cyclic_return";
+      const modes = data.projection_modes || {};
+      const mode = modes[modeId];
+
+      if (!mode || !Array.isArray(mode.path)) {
+        return response;
+      }
+
+      data.active_projection_mode = modeId;
+      data.active_projection = mode.id || modeId;
+      data.cycle = data.cycle || {};
+      data.cycle.closed_path = mode.path;
+      data.cycle.path_string = mode.path_string || mode.path.join("-");
+      data.cycle.edges = makeEdges(mode.path, modeId);
+      data.projection_contract = data.projection_contract || {};
+      data.projection_contract.active_projection_mode = modeId;
+      data.projection_contract.active_projection_path = data.cycle.path_string;
+
+      return new Response(JSON.stringify(data), {
+        status: response.status,
+        statusText: response.statusText,
+        headers: response.headers
+      });
+    } catch (err) {
+      console.warn("Projection mode preloader failed", err);
+      return response;
+    }
+  };
+})();
+</script>
+
+<script src="perfect_return_cell.js"></script>
 </body>
 </html>

@@ -1,0 +1,380 @@
+{
+  "schema": "gap_a_15_thalion_ring_test_plan_001.v1",
+  "status": "gap_a_15_thalion_ring_test_plan_recorded",
+  "timestamp_utc": "2026-06-14T19:18:14.427875+00:00",
+  "purpose": "Derive a non-overfit test plan for whether the 15-thalion witness ring can supply the missing source-derived Gap A chamber/register map.",
+  "boundary": [
+    "This is a test plan, not a proof.",
+    "The 15-thalion witness ring is not claimed to solve Gap A yet.",
+    "Construction tests must precede residual evaluation.",
+    "Residual labels may only be used after a uniform row-to-ring lift exists.",
+    "Nulls are required before any explanatory claim is admitted."
+  ],
+  "claim_status": {
+    "does_15_thalion_ring_solve_gap_a_now": false,
+    "is_15_thalion_ring_leading_candidate": true,
+    "reason": "The inventory found explicit 15-thalion G900 and twisted-ring source materials, but no source-derived chamber/register map has yet been constructed.",
+    "current_hypothesis": "Gap A may be a quotient of a 15-thalion oriented transport ring. The twisted ring should explain ZT as branch-stable selected-turn residue and TI as branch-sensitive return-path residue if the hypothesis is correct."
+  },
+  "source_records": {
+    "g900_candidate_edges": {
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/16-fifteen-thalion-ring/support/generated/g900_candidate_edges.json",
+      "exists": true,
+      "sha256": "1fad85393b160e5f15c71815a82120577fc2463e708d15b67d712b17654c686f",
+      "top_keys": [
+        "summary",
+        "vertices",
+        "slot_edges_g15_line_petersen",
+        "edges"
+      ]
+    },
+    "g900_candidate_graph_export": {
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/16-fifteen-thalion-ring/support/exports/g900_candidate_graph_export.json",
+      "exists": true,
+      "sha256": "26592a04f1f49a63746e9190a9a5c0c3bb96a219882bdd59cacf6b16c22c0951",
+      "top_keys": [
+        "status",
+        "vertices",
+        "edges",
+        "fingerprint"
+      ]
+    },
+    "g900_twisted_ring_candidate_edges": {
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/16-fifteen-thalion-ring/support/generated/g900_twisted_ring_candidate_edges.json",
+      "exists": true,
+      "sha256": "e8ae983acccb8102261bde73cca6493d9a13958edfacad0a2cb6b3e24f4398ef",
+      "top_keys": [
+        "summary",
+        "edges"
+      ]
+    },
+    "g900_twisted_ring_candidate_export": {
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/16-fifteen-thalion-ring/support/exports/g900_twisted_ring_candidate_export.json",
+      "exists": true,
+      "sha256": "bce9c8841c6b568fdd5f9469ef33079085f0729a6c32960b8930cf42dff3b9d3",
+      "top_keys": [
+        "status",
+        "vertices",
+        "edges",
+        "fingerprint"
+      ]
+    },
+    "proposed_g900_vertex_register_candidate": {
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/16-fifteen-thalion-ring/support/artifacts/json/301_proposed_g900_vertex_register_candidate.json",
+      "exists": true,
+      "sha256": "cfb06b672c18cddb97c482e62af9c1b49ceab0a7d028aa2cbc23cafbcbe47d20",
+      "top_keys": [
+        "artifact",
+        "status",
+        "source_status",
+        "phase",
+        "thalean_iteration_cycle",
+        "source_rule",
+        "census_search_target",
+        "construction_basis",
+        "vertex_count",
+        "unique_vertex_ids",
+        "vertices",
+        "boundary"
+      ]
+    },
+    "p900_external_permutation_law_audit": {
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/16-fifteen-thalion-ring/support/audits/p900_external_permutation_law_audit.json",
+      "exists": true,
+      "sha256": "eab85ec94716c49626a97cb02aa478c31b03514506490c204d5f49f43804cd36",
+      "top_keys": [
+        "status",
+        "audit_count",
+        "preferred_external_audit",
+        "audits",
+        "interpretation",
+        "boundary"
+      ]
+    },
+    "p900_phase5_binary_half_turn_holonomy": {
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/14-p900-consonance-surface/artifacts/json/p900_phase5_binary_half_turn_holonomy.json",
+      "exists": true,
+      "sha256": "c7631f014e38f06ef2ed8db650cc464ca972fd48e4d71460ffa819171deda0ef",
+      "top_keys": [
+        "closure_type_histogram",
+        "coupling_edge_count",
+        "cycle_count",
+        "cycle_length_histogram",
+        "cycle_search_max_length",
+        "external_degree_histogram",
+        "external_degree_max",
+        "external_degree_min",
+        "first_read",
+        "g15_edges",
+        "g15_model",
+        "g15_positions",
+        "half_turn_closure_count",
+        "holonomy_shift_histogram_mod_60",
+        "identity_closure_count",
+        "name",
+        "orientation_drift_count",
+        "p900_state_count",
+        "records",
+        "status",
+        "warning"
+      ]
+    },
+    "p900_phase4_cycle_holonomy_stub": {
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/14-p900-consonance-surface/artifacts/json/p900_phase4_cycle_holonomy_stub.json",
+      "exists": true,
+      "sha256": "9a4066f124dd967d798a4c00eed97511595f31220956968db9ae244e67cd5ebc",
+      "top_keys": [
+        "closure_type_histogram",
+        "cycle_count",
+        "cycle_length_histogram",
+        "cycle_search_max_length",
+        "first_read",
+        "g15_edges",
+        "g15_model",
+        "g15_positions",
+        "half_turn_closure_count",
+        "holonomy_shift_histogram_mod_60",
+        "identity_closure_count",
+        "name",
+        "orientation_drift_count",
+        "records",
+        "status",
+        "warning"
+      ]
+    },
+    "gap_a_directed_p900_edge_lift": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_directed_p900_edge_lift_001.v1.json",
+      "exists": true,
+      "sha256": "983e02d6b50cf5eea58cc8423d64f32b362b0a8a7c12a20d55626bf739d564da",
+      "top_keys": [
+        "schema",
+        "status",
+        "timestamp_utc",
+        "gap",
+        "purpose",
+        "boundary",
+        "inputs",
+        "summary",
+        "directed_rows",
+        "feature_tests",
+        "interpretation",
+        "checks",
+        "next_script"
+      ]
+    },
+    "gap_a_uniform_g900_row_lift": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_uniform_g900_row_lift_001.v1.json",
+      "exists": true,
+      "sha256": "9dea3b881ea6e3f6005e5cf00a2b5679cc148d60b33f471d8a4ae2c2ccaeed6b",
+      "top_keys": [
+        "schema",
+        "status",
+        "timestamp_utc",
+        "gap",
+        "purpose",
+        "boundary",
+        "inputs",
+        "summary",
+        "lift_rows",
+        "candidate_feature_tests",
+        "interpretation",
+        "checks",
+        "next_script"
+      ]
+    }
+  },
+  "test_plan": [
+    {
+      "id": "T0_source_schema_recovery",
+      "name": "Recover 15-thalion ring schemas",
+      "question": "What exact fields define thalion slot, local G60 state, internal copy edge, inter-thalion carrier edge, twist, and export identity?",
+      "uses_residual_labels": false,
+      "inputs": [
+        "g900_candidate_edges",
+        "g900_candidate_graph_export",
+        "g900_twisted_ring_candidate_edges",
+        "g900_twisted_ring_candidate_export",
+        "proposed_g900_vertex_register_candidate"
+      ],
+      "success_criterion": "A schema map is extracted for 900 vertices, 3600 edges, 15 slots, 60 local states per thalion, and the edge-kind partition.",
+      "failure_meaning": "The 15-thalion source is not yet structured enough to test Gap A."
+    },
+    {
+      "id": "T1_edge_kind_partition",
+      "name": "Audit internal versus carrier edge partition",
+      "question": "Does the ring split into internal_thalion_copy and inter_thalion_diagonal_carrier layers with stable counts and fields?",
+      "uses_residual_labels": false,
+      "inputs": [
+        "g900_candidate_edges",
+        "g900_twisted_ring_candidate_edges"
+      ],
+      "success_criterion": "The edge-kind partition is explicit, count-stable, and source-recorded before Gap A residual evaluation.",
+      "failure_meaning": "The ring does not yet provide a reliable source-layer distinction."
+    },
+    {
+      "id": "T2_twisted_vs_untwisted_comparison",
+      "name": "Compare untwisted and twisted ring candidates",
+      "question": "What structural difference does the twisted ring introduce relative to the untwisted ring?",
+      "uses_residual_labels": false,
+      "inputs": [
+        "g900_candidate_graph_export",
+        "g900_twisted_ring_candidate_export",
+        "p900_external_permutation_law_audit"
+      ],
+      "success_criterion": "A twist feature is extracted independently of Gap A row labels.",
+      "failure_meaning": "Twist cannot yet serve as source-derived orientation."
+    },
+    {
+      "id": "T3_uniform_row_to_ring_lift",
+      "name": "Lift all 18 WXYZTI role rows into the 15-thalion ring",
+      "question": "Can every WXYZTI role row be assigned thalion slot, local state, edge kind, and twist/carrier features by a uniform source rule?",
+      "uses_residual_labels": false,
+      "inputs": [
+        "gap_a_uniform_g900_row_lift",
+        "g900_twisted_ring_candidate_edges",
+        "proposed_g900_vertex_register_candidate"
+      ],
+      "success_criterion": "All 18 role rows receive source-derived ring features without using residual labels.",
+      "failure_meaning": "The 15-thalion ring does not yet provide the missing chamber/register map."
+    },
+    {
+      "id": "T4_evaluate_ZT_TI_after_uniform_lift",
+      "name": "Evaluate residual split only after uniform ring lift",
+      "question": "After the uniform ring lift, do ZT and TI residuals match the predicted selected-turn and return-path categories?",
+      "uses_residual_labels": true,
+      "inputs": [
+        "gap_a_lift_refined_partial_closure_theorem_note",
+        "gap_a_directed_p900_edge_lift",
+        "T3_uniform_row_to_ring_lift_output"
+      ],
+      "success_criterion": "ZT is predicted as branch-stable selected-turn residue and TI as branch-sensitive return-path residue by features derived before residual evaluation.",
+      "failure_meaning": "The ring lift does not explain the two residuals."
+    },
+    {
+      "id": "T5_null_untwisted_ring",
+      "name": "Untwisted-ring null",
+      "question": "Does the untwisted ring fail to reproduce the same residual split that the twisted ring predicts?",
+      "uses_residual_labels": true,
+      "inputs": [
+        "g900_candidate_edges",
+        "g900_twisted_ring_candidate_edges",
+        "T3_uniform_row_to_ring_lift_output"
+      ],
+      "success_criterion": "Twist contributes load-bearing explanatory power beyond generic 15-thalion product structure.",
+      "failure_meaning": "The residual split may not require the twisted ring."
+    },
+    {
+      "id": "T6_null_slot_shuffle",
+      "name": "Thalion-slot shuffle null",
+      "question": "Does shuffling thalion slot identity destroy the source-derived prediction?",
+      "uses_residual_labels": true,
+      "inputs": [
+        "T3_uniform_row_to_ring_lift_output"
+      ],
+      "success_criterion": "Slot identity is load-bearing; shuffled slots degrade or destroy the predicted split.",
+      "failure_meaning": "The explanation may be generic or overfit."
+    },
+    {
+      "id": "T7_null_edge_kind_collapse",
+      "name": "Edge-kind collapse null",
+      "question": "Does collapsing internal and carrier edge kinds destroy the selected-turn versus return-path distinction?",
+      "uses_residual_labels": true,
+      "inputs": [
+        "T3_uniform_row_to_ring_lift_output"
+      ],
+      "success_criterion": "Internal/carry distinction is load-bearing for the residual split.",
+      "failure_meaning": "The ring explanation does not depend on the expected edge-kind structure."
+    }
+  ],
+  "phase_order": [
+    {
+      "phase": "schema_before_residuals",
+      "tests": [
+        "T0_source_schema_recovery",
+        "T1_edge_kind_partition",
+        "T2_twisted_vs_untwisted_comparison"
+      ],
+      "rule": "No residual labels are used."
+    },
+    {
+      "phase": "uniform_lift_before_evaluation",
+      "tests": [
+        "T3_uniform_row_to_ring_lift"
+      ],
+      "rule": "Apply the same source rule to all 18 rows."
+    },
+    {
+      "phase": "residual_evaluation",
+      "tests": [
+        "T4_evaluate_ZT_TI_after_uniform_lift"
+      ],
+      "rule": "Only now evaluate ZT and TI residual behavior."
+    },
+    {
+      "phase": "nulls",
+      "tests": [
+        "T5_null_untwisted_ring",
+        "T6_null_slot_shuffle",
+        "T7_null_edge_kind_collapse"
+      ],
+      "rule": "Attack the explanation with ablations."
+    }
+  ],
+  "next_scripts": [
+    "inspect_gap_a_15_thalion_ring_schema_001.py",
+    "attempt_gap_a_uniform_15_thalion_row_lift_001.py",
+    "evaluate_gap_a_15_thalion_residual_split_001.py"
+  ],
+  "checks": [
+    {
+      "id": "inventory_loaded",
+      "status": true,
+      "detail": "status=gap_a_15_thalion_ring_sources_inventoried"
+    },
+    {
+      "id": "gap_note_loaded",
+      "status": true,
+      "detail": "status=gap_a_lift_refined_partial_closure_theorem_note_recorded"
+    },
+    {
+      "id": "source_exists_g900_candidate_edges",
+      "status": true,
+      "detail": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/16-fifteen-thalion-ring/support/generated/g900_candidate_edges.json"
+    },
+    {
+      "id": "source_exists_g900_candidate_graph_export",
+      "status": true,
+      "detail": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/16-fifteen-thalion-ring/support/exports/g900_candidate_graph_export.json"
+    },
+    {
+      "id": "source_exists_g900_twisted_ring_candidate_edges",
+      "status": true,
+      "detail": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/16-fifteen-thalion-ring/support/generated/g900_twisted_ring_candidate_edges.json"
+    },
+    {
+      "id": "source_exists_g900_twisted_ring_candidate_export",
+      "status": true,
+      "detail": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/16-fifteen-thalion-ring/support/exports/g900_twisted_ring_candidate_export.json"
+    },
+    {
+      "id": "source_exists_proposed_g900_vertex_register_candidate",
+      "status": true,
+      "detail": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/16-fifteen-thalion-ring/support/artifacts/json/301_proposed_g900_vertex_register_candidate.json"
+    },
+    {
+      "id": "source_exists_p900_external_permutation_law_audit",
+      "status": true,
+      "detail": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/16-fifteen-thalion-ring/support/audits/p900_external_permutation_law_audit.json"
+    },
+    {
+      "id": "test_plan_has_no_residual_first",
+      "status": true,
+      "detail": "first four tests residual-free"
+    },
+    {
+      "id": "test_plan_has_nulls",
+      "status": true,
+      "detail": "null tests present"
+    }
+  ]
+}

@@ -303,3 +303,56 @@ h1 {
 .cocycle-companion-status strong {
   color: rgba(145, 220, 255, 0.94);
 }
+
+
+/* projection mode selector pass 001 */
+.projection-mode-control {
+  margin-top: 0.9rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.projection-mode-control label {
+  color: rgba(224, 238, 228, 0.72);
+  font-size: 0.68rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.projection-mode-control select {
+  width: 100%;
+  border: 1px solid rgba(150, 255, 200, 0.22);
+  border-radius: 8px;
+  background: rgba(3, 12, 10, 0.78);
+  color: rgba(230, 246, 238, 0.92);
+  padding: 0.58rem 0.65rem;
+  font: inherit;
+}
+
+.projection-mode-status {
+  border: 1px solid rgba(150, 255, 200, 0.18);
+  border-radius: 6px;
+  background: rgba(2, 10, 8, 0.42);
+  color: rgba(206, 232, 220, 0.76);
+  padding: 0.55rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
+
+/* hide redundant edge pill ui pass 001 */
+.is-hidden-edge-pill-ui,
+.sequence-rail,
+.sequence-title,
+.edge-sequence,
+.cycle-sequence,
+.return-sequence,
+.edge-pill-grid,
+.edge-pill,
+#sequence-rail,
+#cycle-sequence,
+#edge-sequence,
+#edge-pill-grid {
+  display: none !important;
+}

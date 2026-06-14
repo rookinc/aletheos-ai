@@ -258,10 +258,82 @@ async function loadCocycleCompanionReceipt() {
   }
 }
 
+
+async function loadProjectionModeSelector() {
+  const select = document.getElementById("projection-mode-select");
+  const status = document.getElementById("projection-mode-status");
+  if (!select || !status) return null;
+
+  const storageKey = "perfect_return_projection_mode";
+  const cell = await fetch("data/perfect_return_cell.v1.json", { cache: "no-store" }).then((r) => r.json());
+  const modes = cell.projection_modes || {};
+  const active = localStorage.getItem(storageKey) || cell.active_projection_mode || "mode_1_cyclic_return";
+
+  const labels = {
+    mode_1_cyclic_return: "Mode 1 - cyclic return",
+    mode_2_sheet_flip_return: "Mode 2 - sheet-flip return"
+  };
+
+  select.innerHTML = "";
+
+  Object.keys(modes).forEach((modeId) => {
+    const mode = modes[modeId];
+    const option = document.createElement("option");
+    option.value = modeId;
+    option.textContent = labels[modeId] || mode.label || modeId;
+    select.appendChild(option);
+  });
+
+  if (modes[active]) {
+    select.value = active;
+  }
+
+  function renderStatus(modeId) {
+    const mode = modes[modeId] || {};
+    const path = mode.path_string || (Array.isArray(mode.path) ? mode.path.join("-") : "unknown");
+    const modeStatus = mode.status || (modeId === "mode_1_cyclic_return" ? "active default" : "declared");
+    status.textContent = "status: " + modeStatus + " | path: " + path;
+  }
+
+  renderStatus(select.value || active);
+
+  select.addEventListener("change", () => {
+    localStorage.setItem(storageKey, select.value);
+    renderStatus(select.value);
+    window.location.reload();
+  });
+
+  return cell;
+}
+
+
+function hideRedundantEdgePillUi() {
+  const needles = new Set([
+    "OBSERVER-ONLY AUTONOMOUS CYCLE",
+    "Observer-only autonomous cycle"
+  ]);
+
+  const candidates = Array.from(document.querySelectorAll("h1,h2,h3,h4,p,div,span"));
+
+  candidates.forEach((el) => {
+    const text = (el.textContent || "").trim().replace(/\s+/g, " ");
+    if (!needles.has(text)) return;
+
+    el.classList.add("is-hidden-edge-pill-ui");
+
+    const next = el.nextElementSibling;
+    if (next) {
+      next.classList.add("is-hidden-edge-pill-ui");
+    }
+  });
+}
+
 async function boot() {
+  hideRedundantEdgePillUi();
   resizeCanvas();
   model = await fetch("data/perfect_return_cell.v1.json", { cache: "no-store" }).then((r) => r.json());
   await loadG60SourceBinding();
+  await loadProjectionModeSelector();
   await loadG900SignatureBinding();
   await loadCocycleCompanionReceipt();
   boundaryReadout.textContent = model.boundary;

@@ -242,5 +242,31 @@
   "available_projection_modes": [
     "mode_1_cyclic_return",
     "mode_2_sheet_flip_return"
-  ]
+  ],
+  "projection_mode_selector": {
+    "status": "wired",
+    "default_mode": "mode_1_cyclic_return",
+    "selectable_modes": [
+      {
+        "id": "mode_1_cyclic_return",
+        "label": "Mode 1 - cyclic return",
+        "receipt": "artifacts/json/perfect_return_shape.validation.v1.json",
+        "default": true
+      },
+      {
+        "id": "mode_2_sheet_flip_return",
+        "label": "Mode 2 - sheet-flip return",
+        "receipt": "artifacts/json/perfect_return_sheet_flip.validation.v1.json",
+        "default": false,
+        "status": "verified_not_active",
+        "receipt_sha256": "50ddbbb268b78331716846520499e286f5d34924c7fee22d9dc329ef882b0b15"
+      }
+    ],
+    "rule": "The UI may select only declared projection modes. Mode 1 remains the stored default; user selection is applied in browser memory."
+  },
+  "edge_pill_ui": {
+    "status": "hidden",
+    "reason": "Redundant with canvas animation and Cycle Clock. Old pill activation was Mode-1-oriented and did not cleanly represent reverse-chain sheet-flip return labels.",
+    "rule": "Projection mode truth is carried by validated path data, canvas animation, and Cycle Clock, not by edge-pill UI."
+  }
 }

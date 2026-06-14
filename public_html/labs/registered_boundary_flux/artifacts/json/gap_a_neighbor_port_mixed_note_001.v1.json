@@ -1,0 +1,196 @@
+{
+  "schema": "gap_a_neighbor_port_mixed_note_001.v1",
+  "status": "gap_a_neighbor_port_mixed_note_recorded",
+  "timestamp_utc": "2026-06-14T19:52:39.785511+00:00",
+  "purpose": "Record the mixed null outcome for the Gap A neighbor-port rule.",
+  "boundary": [
+    "This is an interim note, not a closure proof.",
+    "Gap A remains open.",
+    "The neighbor-port rule is not promoted as independently load-bearing.",
+    "The exact support remains local to the tested zero-twisted-carrier neighborhood.",
+    "No full chamber/register map is claimed.",
+    "No physical interpretation is claimed."
+  ],
+  "inputs": {
+    "neighbor_port_rule": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_neighbor_port_rule_001.v1.json",
+      "sha256": "6041bcf4ac3f4a32858c0334934e3cc208d5bdfc56f4a15e4ef345e3ef7b4489",
+      "status": "gap_a_neighbor_port_rule_candidate_found_not_closure"
+    },
+    "neighbor_port_nulls": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_neighbor_port_rule_nulls_001.v1.json",
+      "sha256": "1d6a481f7213a074a3aa639438187ed61e59cf1b636551001226a72cc0383b77",
+      "status": "gap_a_neighbor_port_rule_nulls_mixed_not_promoted"
+    },
+    "surrounding_context_probe": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_surrounding_cell_context_probe_001.v1.json",
+      "sha256": "3ecfbca2c2fae088ba878944c9d7a42765f2430ffe7bc2d814a229f13299cad7",
+      "status": "gap_a_surrounding_cell_context_probe_recorded"
+    },
+    "zero_twisted_split_interim": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_zero_twisted_split_interim_note_001.v1.json",
+      "sha256": "be90d3544a0078d91846b12c591d809e49c0342e1ca2987ad41a59d0628fcf6d",
+      "status": "gap_a_zero_twisted_split_interim_note_recorded"
+    },
+    "zero_twisted_split": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_zero_twisted_neighborhood_split_001.v1.json",
+      "sha256": "14293c9f7a362b2c9e1f50587c3222816f7d1a29050a8015e26fe49b0b018476",
+      "status": "gap_a_zero_twisted_neighborhood_split_candidate_found_not_closure"
+    }
+  },
+  "claim": {
+    "does_neighbor_port_rule_close_gap_a": false,
+    "does_neighbor_port_rule_solve_gap_a": false,
+    "does_neighbor_port_rule_remain_exact_inside_zero_twisted_neighborhood": true,
+    "is_neighbor_port_rule_independently_load_bearing_after_nulls": false,
+    "should_neighbor_port_rule_be_promoted": false,
+    "short_form": "The neighbor-port rule is exact but not promoted: mixed nulls show weaker role/column substitutes still reproduce the same support.",
+    "surviving_simpler_pattern": "singleton ZT OR multi-column TI",
+    "next_source_question": "Why does the zero-twisted obstruction split into singleton ZT and multi-column TI?"
+  },
+  "evidence": {
+    "neighbor_port_rule": {
+      "status": "gap_a_neighbor_port_rule_candidate_found_not_closure",
+      "reading": "balanced singleton ZT port OR multi-column TI return with a dead neighbor port",
+      "support": [
+        3,
+        16
+      ],
+      "exact_inside_neighborhood": true
+    },
+    "mixed_nulls": {
+      "status": "gap_a_neighbor_port_rule_nulls_mixed_not_promoted",
+      "baseline_support": [
+        3,
+        16
+      ],
+      "broken_null_count": 5,
+      "null_count": 8,
+      "review_result": "mixed_not_promoted",
+      "exact_surviving_nulls": [
+        "null_balance_blind_singleton_ZT_OR_TI_dead_port",
+        "null_column_role_only_singleton_ZT_OR_multi_TI",
+        "null_shift_dead_port_placement"
+      ],
+      "broken_nulls": [
+        "null_role_blind_balanced_singleton_OR_any_dead_port",
+        "null_dead_role_blind_balanced_ZT_OR_any_dead_port",
+        "null_radius2_neighbor_port_rule",
+        "null_shift_balanced_singleton_placement",
+        "null_role_rotation_neighbor_port_rule"
+      ],
+      "load_bearing": {
+        "role_specificity_load_bearing": true,
+        "dead_port_role_specificity_load_bearing": true,
+        "radius1_locality_load_bearing": true,
+        "dead_port_placement_load_bearing": false,
+        "balanced_singleton_placement_load_bearing": true,
+        "role_placement_load_bearing": true
+      }
+    },
+    "zero_twisted_split": {
+      "status": "gap_a_zero_twisted_neighborhood_split_candidate_found_not_closure",
+      "zero_twisted_neighborhood": [
+        3,
+        4,
+        9,
+        15,
+        16
+      ],
+      "known_residual_rows": [
+        3,
+        16
+      ],
+      "preferred_candidate": {
+        "name": "branch_sensitive_return_candidate OR singleton_ZT_selected_turn_candidate",
+        "support": [
+          3,
+          16
+        ],
+        "exact": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "reading": "branch-sensitive return OR singleton ZT selected-turn"
+      }
+    },
+    "surrounding_context": {
+      "status": "gap_a_surrounding_cell_context_probe_recorded",
+      "working_conjecture": {
+        "statement": "Surrounding perfect cells supply neighbor boundary conditions for the local WXYZTI register.",
+        "meaning": "A single Perfect Return Cell displays the local witness, while the 15-thalion ring supplies the environment that distinguishes selected-turn residue from return-path residue.",
+        "current_status": "plausible_source_rule_vector_not_closure"
+      }
+    },
+    "previous_interim": {
+      "status": "gap_a_zero_twisted_split_interim_note_recorded",
+      "claim": {
+        "does_this_close_gap_a": false,
+        "does_this_solve_gap_a": false,
+        "does_this_give_global_exact_selector": false,
+        "does_this_give_exact_split_inside_zero_twisted_neighborhood": true,
+        "does_this_survive_tested_nulls": true,
+        "short_form": "Gap A remains open, but inside the load-bearing zero-twisted-carrier neighborhood, the tested split candidate is exact and every tested null breaks exactness.",
+        "candidate_rule": "branch-sensitive return OR singleton ZT selected-turn",
+        "candidate_support": [
+          3,
+          16
+        ],
+        "not_closed_reason": "The exact split is restricted to the tested zero-twisted-carrier neighborhood. No full source-derived chamber/register map is claimed."
+      }
+    }
+  },
+  "interim_statement": {
+    "name": "Gap A neighbor-port mixed-note checkpoint",
+    "statement": "The neighbor-port rewrite is exact inside the zero-twisted-carrier neighborhood, but mixed nulls prevent promotion. The evidence still supports surrounding-cell context as relevant, yet the exact support may be explained by a simpler role/column pattern: singleton ZT OR multi-column TI. The next source question is why the zero-twisted obstruction splits along that role/column geometry.",
+    "admission_status": "mixed_interim_support_not_promoted_not_gap_closure"
+  },
+  "next_questions": [
+    "Can singleton ZT and multi-column TI be derived from the twisted carrier source geometry?",
+    "Are singleton ZT and multi-column TI invariant under allowed slot symmetries?",
+    "Can the role/column split be lifted from row-level description to source edge-law geometry?",
+    "Does this explain the stable false positives: singleton TI and multi-column ZT?"
+  ],
+  "checks": [
+    {
+      "id": "rule_loaded",
+      "status": true,
+      "detail": "gap_a_neighbor_port_rule_candidate_found_not_closure"
+    },
+    {
+      "id": "nulls_mixed_loaded",
+      "status": true,
+      "detail": "gap_a_neighbor_port_rule_nulls_mixed_not_promoted"
+    },
+    {
+      "id": "context_loaded",
+      "status": true,
+      "detail": "gap_a_surrounding_cell_context_probe_recorded"
+    },
+    {
+      "id": "split_interim_loaded",
+      "status": true,
+      "detail": "gap_a_zero_twisted_split_interim_note_recorded"
+    },
+    {
+      "id": "split_loaded",
+      "status": true,
+      "detail": "gap_a_zero_twisted_neighborhood_split_candidate_found_not_closure"
+    },
+    {
+      "id": "surviving_nulls_present",
+      "status": true,
+      "detail": "[\"null_balance_blind_singleton_ZT_OR_TI_dead_port\", \"null_column_role_only_singleton_ZT_OR_multi_TI\", \"null_shift_dead_port_placement\"]"
+    },
+    {
+      "id": "not_promoted",
+      "status": true,
+      "detail": "promotion false"
+    },
+    {
+      "id": "gap_a_not_closed",
+      "status": true,
+      "detail": "closure false"
+    }
+  ],
+  "next_script": "derive_gap_a_role_column_source_geometry_001.py"
+}

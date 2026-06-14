@@ -533,8 +533,5 @@ function draw() {
 
   hud.textContent =
     "phase=" + phase.id +
-    " t=" + t.toFixed(2) +
-    " yaw=" + rbfCamera.yaw.toFixed(2) +
-    " pitch=" + rbfCamera.pitch.toFixed(2) +
     " zoom=" + rbfCamera.zoom.toFixed(2);
 }

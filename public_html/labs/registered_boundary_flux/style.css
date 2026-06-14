@@ -355,3 +355,56 @@ canvas {
 .viewer-label {
   content: none;
 }
+
+/* 3d polish pass 001 */
+.viewer-label {
+  opacity: 0.42;
+  font-size: 0.74rem;
+}
+
+.hud {
+  opacity: 0.70;
+}
+
+/* layout polish pass 002 */
+.compact-hero {
+  padding: 14px 18px;
+}
+
+.compact-hero h1 {
+  margin-top: 8px;
+}
+
+.back-link {
+  display: inline-flex;
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+}
+
+.back-link::before {
+  content: "< ";
+}
+
+.panel .sliders {
+  margin: 4px 0 18px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(156, 200, 255, 0.14);
+}
+
+.panel .phases {
+  margin-top: 14px;
+}
+
+@media (max-width: 759px) {
+  .compact-hero {
+    padding: 12px 16px;
+  }
+
+  .compact-hero h1 {
+    font-size: 1.55rem;
+  }
+}

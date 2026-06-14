@@ -8,16 +8,9 @@
 </head>
 <body>
   <main class="lab">
-    <section class="topbar">
-      <div class="eyebrow">Registered Boundary Flux</div>
+    <section class="topbar compact-hero">
+      <a class="back-link" href="../../labs.php">Aletheos Labs</a>
       <h1>Boundary Flux Renderer</h1>
-      <p>
-        A visual instrument for constrained loading, collapse, release,
-        and registered trace.
-      </p>
-      <p class="boundary">
-        Boundary-flux lens. Not a hydrodynamic solver.
-      </p>
     </section>
 
     <details class="instructions">
@@ -55,13 +48,6 @@
         <button id="reset">RESET</button>
       </div>
 
-      <label for="preset">Regime</label>
-      <select id="preset"></select>
-
-      <div id="kernel-status" class="kernel-status">Kernel loading...</div>
-
-      <div id="phases" class="phases"></div>
-
       <div class="sliders">
         <label>Boundary <input id="boundary" type="range" min="0" max="100" value="72"></label>
         <label>Interior <input id="interior" type="range" min="0" max="100" value="54"></label>
@@ -69,6 +55,14 @@
         <label>Emission <input id="emission" type="range" min="0" max="100" value="36"></label>
         <label>Trace <input id="trace" type="range" min="0" max="100" value="42"></label>
       </div>
+
+      <label for="preset">Regime</label>
+      <select id="preset"></select>
+
+      <div id="kernel-status" class="kernel-status">Kernel loading...</div>
+
+      <div id="phases" class="phases"></div>
+
 
       <p class="note">
         This renderer shows boundary loading, compression, focused release,

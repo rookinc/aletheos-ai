@@ -7,6 +7,7 @@ const kindReadout = document.getElementById("kind-readout");
 const cycleReadout = document.getElementById("cycle-readout");
 const returnReadout = document.getElementById("return-readout");
 const boundaryReadout = document.getElementById("boundary-readout");
+const g60SourceStatus = document.getElementById("g60-source-status");
 
 let model = null;
 let startTime = null;
@@ -164,9 +165,42 @@ function draw(now) {
   requestAnimationFrame(draw);
 }
 
+
+async function loadG60SourceBinding() {
+  if (!g60SourceStatus) return null;
+
+  try {
+    const binding = await fetch("data/g60_source_binding.v1.json", { cache: "no-store" }).then((r) => r.json());
+    const source = binding.canonical_source || {};
+    const found = binding.source_file_count || 0;
+    const active = binding.active_projection || {};
+    const files = (binding.source_files || []).filter((f) => f.exists);
+
+    const primary = files.slice(0, 3).map((f) => {
+      const hash = f.sha256 ? f.sha256.slice(0, 12) : "nohash";
+      return f.path + " @" + hash;
+    }).join("<br>");
+
+    g60SourceStatus.innerHTML =
+      "<strong>G60 source binding</strong><br>" +
+      "source: " + (source.graph_id || "unknown") + " / scaffold " + (source.scaffolding || "unknown") + "<br>" +
+      "rule: G60 is the thing; this cell is a projection witness.<br>" +
+      "active projection: " + (active.id || "unknown") + "<br>" +
+      "source files found: " + found +
+      (primary ? "<br>" + primary : "");
+
+    return binding;
+  } catch (err) {
+    g60SourceStatus.textContent = "G60 source binding failed to load.";
+    console.warn("G60 source binding load failed", err);
+    return null;
+  }
+}
+
 async function boot() {
   resizeCanvas();
   model = await fetch("data/perfect_return_cell.v1.json", { cache: "no-store" }).then((r) => r.json());
+  await loadG60SourceBinding();
   boundaryReadout.textContent = model.boundary;
   requestAnimationFrame(draw);
 }

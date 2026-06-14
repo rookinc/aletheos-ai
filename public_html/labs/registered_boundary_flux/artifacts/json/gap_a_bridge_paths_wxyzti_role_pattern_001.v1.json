@@ -1,0 +1,905 @@
+{
+  "schema": "gap_a_bridge_paths_wxyzti_role_pattern_001.v1",
+  "status": "wxyzti_bridge_path_role_pattern_partial_not_map_proof",
+  "timestamp_utc": "2026-06-14T18:40:03.862756+00:00",
+  "gap": "A_chamber_register_map",
+  "purpose": "Test direct and bridge-path representations against the WXYZTI role pattern.",
+  "boundary": [
+    "This is not a chamber/register map proof.",
+    "This does not assume cocycle sums are identical to the target pattern.",
+    "It records whether the verified edge-column bridge and bridge paths reproduce, partially reproduce, or fail to reproduce the WXYZTI role pattern.",
+    "A partial result is useful because it localizes which roles need a second transport or interpretation layer."
+  ],
+  "inputs": {
+    "selected_wxyzti_edge_column_projection": "registered_boundary_flux/artifacts/json/selected_wxyzti_edge_column_projection_001.v1.json",
+    "selected_wxyzti_edge_column_projection_sha256": "c8d45f7a956cc5c4ee7df0e212ac795308210a29b120ac7e5696ace1cd1e3b55",
+    "missing_wxyzti_edge_transport": "registered_boundary_flux/artifacts/json/gap_a_missing_wxyzti_edge_transport_001.v1.json",
+    "missing_wxyzti_edge_transport_sha256": "a64c40a520a12193623bd5243d8f23019c0c397614d0c9dfbdeefc0aaa15ab19",
+    "selected_wxyzti_target": "registered_boundary_flux/artifacts/json/selected_wxyzti_target_001.v1.json",
+    "selected_wxyzti_target_sha256": "70bd9ff63bfbd58e888f8380c1eced8ad2c03fe4c7d07f1838bd2a52d94613a3"
+  },
+  "target_pattern": {
+    "role_order": [
+      "WX",
+      "XY",
+      "YZ",
+      "ZT",
+      "TI",
+      "IW"
+    ],
+    "pattern": [
+      1,
+      1,
+      1,
+      0,
+      1,
+      1
+    ]
+  },
+  "summary": {
+    "role_row_count": 18,
+    "majority_matches_target_pattern": 4,
+    "majority_mismatches_target_pattern": 2,
+    "stable_cocycle_roles": [
+      "WX",
+      "XY",
+      "YZ",
+      "IW"
+    ],
+    "mixed_cocycle_roles": [
+      "ZT",
+      "TI"
+    ],
+    "direct_role_rows": 8,
+    "bridge_path_role_rows": 10
+  },
+  "role_summary": {
+    "WX": {
+      "expected_target_pattern_value": 1,
+      "count": 3,
+      "transport_kinds": [
+        "direct_edge_column",
+        "direct_edge_column",
+        "direct_edge_column"
+      ],
+      "path_lengths": [
+        1,
+        1,
+        1
+      ],
+      "cocycle_sums_mod2": [
+        0,
+        0,
+        0
+      ],
+      "cocycle_sum_histogram": {
+        "0": 3
+      },
+      "majority_cocycle_sum_mod2": 0,
+      "majority_matches_target_pattern": false,
+      "all_cocycle_sums_equal": true,
+      "all_path_lengths_equal": true,
+      "direct_count": 3,
+      "bridge_path_count": 0,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    "XY": {
+      "expected_target_pattern_value": 1,
+      "count": 3,
+      "transport_kinds": [
+        "direct_edge_column",
+        "direct_edge_column",
+        "direct_edge_column"
+      ],
+      "path_lengths": [
+        1,
+        1,
+        1
+      ],
+      "cocycle_sums_mod2": [
+        1,
+        1,
+        1
+      ],
+      "cocycle_sum_histogram": {
+        "1": 3
+      },
+      "majority_cocycle_sum_mod2": 1,
+      "majority_matches_target_pattern": true,
+      "all_cocycle_sums_equal": true,
+      "all_path_lengths_equal": true,
+      "direct_count": 3,
+      "bridge_path_count": 0,
+      "edges": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    },
+    "YZ": {
+      "expected_target_pattern_value": 1,
+      "count": 3,
+      "transport_kinds": [
+        "bridge_path",
+        "bridge_path",
+        "bridge_path"
+      ],
+      "path_lengths": [
+        2,
+        3,
+        2
+      ],
+      "cocycle_sums_mod2": [
+        1,
+        1,
+        1
+      ],
+      "cocycle_sum_histogram": {
+        "1": 3
+      },
+      "majority_cocycle_sum_mod2": 1,
+      "majority_matches_target_pattern": true,
+      "all_cocycle_sums_equal": true,
+      "all_path_lengths_equal": false,
+      "direct_count": 0,
+      "bridge_path_count": 3,
+      "edges": [
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          2,
+          8
+        ]
+      ]
+    },
+    "ZT": {
+      "expected_target_pattern_value": 0,
+      "count": 3,
+      "transport_kinds": [
+        "direct_edge_column",
+        "bridge_path",
+        "bridge_path"
+      ],
+      "path_lengths": [
+        1,
+        3,
+        2
+      ],
+      "cocycle_sums_mod2": [
+        1,
+        0,
+        0
+      ],
+      "cocycle_sum_histogram": {
+        "1": 1,
+        "0": 2
+      },
+      "majority_cocycle_sum_mod2": 0,
+      "majority_matches_target_pattern": true,
+      "all_cocycle_sums_equal": false,
+      "all_path_lengths_equal": false,
+      "direct_count": 1,
+      "bridge_path_count": 2,
+      "edges": [
+        [
+          3,
+          4
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          8,
+          14
+        ]
+      ]
+    },
+    "TI": {
+      "expected_target_pattern_value": 1,
+      "count": 3,
+      "transport_kinds": [
+        "direct_edge_column",
+        "bridge_path",
+        "bridge_path"
+      ],
+      "path_lengths": [
+        1,
+        2,
+        2
+      ],
+      "cocycle_sums_mod2": [
+        1,
+        1,
+        0
+      ],
+      "cocycle_sum_histogram": {
+        "1": 2,
+        "0": 1
+      },
+      "majority_cocycle_sum_mod2": 1,
+      "majority_matches_target_pattern": true,
+      "all_cocycle_sums_equal": false,
+      "all_path_lengths_equal": false,
+      "direct_count": 1,
+      "bridge_path_count": 2,
+      "edges": [
+        [
+          4,
+          5
+        ],
+        [
+          10,
+          5
+        ],
+        [
+          14,
+          5
+        ]
+      ]
+    },
+    "IW": {
+      "expected_target_pattern_value": 1,
+      "count": 3,
+      "transport_kinds": [
+        "bridge_path",
+        "bridge_path",
+        "bridge_path"
+      ],
+      "path_lengths": [
+        2,
+        2,
+        2
+      ],
+      "cocycle_sums_mod2": [
+        0,
+        0,
+        0
+      ],
+      "cocycle_sum_histogram": {
+        "0": 3
+      },
+      "majority_cocycle_sum_mod2": 0,
+      "majority_matches_target_pattern": false,
+      "all_cocycle_sums_equal": true,
+      "all_path_lengths_equal": true,
+      "direct_count": 0,
+      "bridge_path_count": 3,
+      "edges": [
+        [
+          5,
+          0
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          5,
+          0
+        ]
+      ]
+    }
+  },
+  "role_rows": [
+    {
+      "cycle_index": 0,
+      "role": "WX",
+      "edge": [
+        0,
+        1
+      ],
+      "transport_kind": "direct_edge_column",
+      "path": null,
+      "path_length": 1,
+      "path_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "columns": [
+        0
+      ],
+      "cocycle_values": [
+        0
+      ],
+      "role_cocycle_sum_mod2": 0
+    },
+    {
+      "cycle_index": 0,
+      "role": "XY",
+      "edge": [
+        1,
+        2
+      ],
+      "transport_kind": "direct_edge_column",
+      "path": null,
+      "path_length": 1,
+      "path_edges": [
+        [
+          1,
+          2
+        ]
+      ],
+      "columns": [
+        4
+      ],
+      "cocycle_values": [
+        1
+      ],
+      "role_cocycle_sum_mod2": 1
+    },
+    {
+      "cycle_index": 0,
+      "role": "YZ",
+      "edge": [
+        2,
+        3
+      ],
+      "transport_kind": "bridge_path",
+      "path": [
+        2,
+        5,
+        3
+      ],
+      "path_length": 2,
+      "path_edges": [
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "columns": [
+        7,
+        10
+      ],
+      "cocycle_values": [
+        1,
+        0
+      ],
+      "role_cocycle_sum_mod2": 1
+    },
+    {
+      "cycle_index": 0,
+      "role": "ZT",
+      "edge": [
+        3,
+        4
+      ],
+      "transport_kind": "direct_edge_column",
+      "path": null,
+      "path_length": 1,
+      "path_edges": [
+        [
+          3,
+          4
+        ]
+      ],
+      "columns": [
+        9
+      ],
+      "cocycle_values": [
+        1
+      ],
+      "role_cocycle_sum_mod2": 1
+    },
+    {
+      "cycle_index": 0,
+      "role": "TI",
+      "edge": [
+        4,
+        5
+      ],
+      "transport_kind": "direct_edge_column",
+      "path": null,
+      "path_length": 1,
+      "path_edges": [
+        [
+          4,
+          5
+        ]
+      ],
+      "columns": [
+        13
+      ],
+      "cocycle_values": [
+        1
+      ],
+      "role_cocycle_sum_mod2": 1
+    },
+    {
+      "cycle_index": 0,
+      "role": "IW",
+      "edge": [
+        5,
+        0
+      ],
+      "transport_kind": "bridge_path",
+      "path": [
+        0,
+        2,
+        5
+      ],
+      "path_length": 2,
+      "path_edges": [
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      "columns": [
+        1,
+        7
+      ],
+      "cocycle_values": [
+        1,
+        1
+      ],
+      "role_cocycle_sum_mod2": 0
+    },
+    {
+      "cycle_index": 1,
+      "role": "WX",
+      "edge": [
+        0,
+        1
+      ],
+      "transport_kind": "direct_edge_column",
+      "path": null,
+      "path_length": 1,
+      "path_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "columns": [
+        0
+      ],
+      "cocycle_values": [
+        0
+      ],
+      "role_cocycle_sum_mod2": 0
+    },
+    {
+      "cycle_index": 1,
+      "role": "XY",
+      "edge": [
+        1,
+        2
+      ],
+      "transport_kind": "direct_edge_column",
+      "path": null,
+      "path_length": 1,
+      "path_edges": [
+        [
+          1,
+          2
+        ]
+      ],
+      "columns": [
+        4
+      ],
+      "cocycle_values": [
+        1
+      ],
+      "role_cocycle_sum_mod2": 1
+    },
+    {
+      "cycle_index": 1,
+      "role": "YZ",
+      "edge": [
+        2,
+        7
+      ],
+      "transport_kind": "bridge_path",
+      "path": [
+        2,
+        0,
+        14,
+        7
+      ],
+      "path_length": 3,
+      "path_edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          14
+        ],
+        [
+          7,
+          14
+        ]
+      ],
+      "columns": [
+        1,
+        3,
+        22
+      ],
+      "cocycle_values": [
+        1,
+        1,
+        1
+      ],
+      "role_cocycle_sum_mod2": 1
+    },
+    {
+      "cycle_index": 1,
+      "role": "ZT",
+      "edge": [
+        7,
+        10
+      ],
+      "transport_kind": "bridge_path",
+      "path": [
+        7,
+        4,
+        3,
+        10
+      ],
+      "path_length": 3,
+      "path_edges": [
+        [
+          4,
+          7
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          10
+        ]
+      ],
+      "columns": [
+        14,
+        9,
+        11
+      ],
+      "cocycle_values": [
+        0,
+        1,
+        1
+      ],
+      "role_cocycle_sum_mod2": 0
+    },
+    {
+      "cycle_index": 1,
+      "role": "TI",
+      "edge": [
+        10,
+        5
+      ],
+      "transport_kind": "bridge_path",
+      "path": [
+        5,
+        3,
+        10
+      ],
+      "path_length": 2,
+      "path_edges": [
+        [
+          3,
+          5
+        ],
+        [
+          3,
+          10
+        ]
+      ],
+      "columns": [
+        10,
+        11
+      ],
+      "cocycle_values": [
+        0,
+        1
+      ],
+      "role_cocycle_sum_mod2": 1
+    },
+    {
+      "cycle_index": 1,
+      "role": "IW",
+      "edge": [
+        5,
+        0
+      ],
+      "transport_kind": "bridge_path",
+      "path": [
+        0,
+        2,
+        5
+      ],
+      "path_length": 2,
+      "path_edges": [
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      "columns": [
+        1,
+        7
+      ],
+      "cocycle_values": [
+        1,
+        1
+      ],
+      "role_cocycle_sum_mod2": 0
+    },
+    {
+      "cycle_index": 2,
+      "role": "WX",
+      "edge": [
+        0,
+        1
+      ],
+      "transport_kind": "direct_edge_column",
+      "path": null,
+      "path_length": 1,
+      "path_edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "columns": [
+        0
+      ],
+      "cocycle_values": [
+        0
+      ],
+      "role_cocycle_sum_mod2": 0
+    },
+    {
+      "cycle_index": 2,
+      "role": "XY",
+      "edge": [
+        1,
+        2
+      ],
+      "transport_kind": "direct_edge_column",
+      "path": null,
+      "path_length": 1,
+      "path_edges": [
+        [
+          1,
+          2
+        ]
+      ],
+      "columns": [
+        4
+      ],
+      "cocycle_values": [
+        1
+      ],
+      "role_cocycle_sum_mod2": 1
+    },
+    {
+      "cycle_index": 2,
+      "role": "YZ",
+      "edge": [
+        2,
+        8
+      ],
+      "transport_kind": "bridge_path",
+      "path": [
+        2,
+        1,
+        8
+      ],
+      "path_length": 2,
+      "path_edges": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          8
+        ]
+      ],
+      "columns": [
+        4,
+        5
+      ],
+      "cocycle_values": [
+        1,
+        0
+      ],
+      "role_cocycle_sum_mod2": 1
+    },
+    {
+      "cycle_index": 2,
+      "role": "ZT",
+      "edge": [
+        8,
+        14
+      ],
+      "transport_kind": "bridge_path",
+      "path": [
+        8,
+        7,
+        14
+      ],
+      "path_length": 2,
+      "path_edges": [
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          14
+        ]
+      ],
+      "columns": [
+        21,
+        22
+      ],
+      "cocycle_values": [
+        1,
+        1
+      ],
+      "role_cocycle_sum_mod2": 0
+    },
+    {
+      "cycle_index": 2,
+      "role": "TI",
+      "edge": [
+        14,
+        5
+      ],
+      "transport_kind": "bridge_path",
+      "path": [
+        5,
+        4,
+        14
+      ],
+      "path_length": 2,
+      "path_edges": [
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          14
+        ]
+      ],
+      "columns": [
+        13,
+        15
+      ],
+      "cocycle_values": [
+        1,
+        1
+      ],
+      "role_cocycle_sum_mod2": 0
+    },
+    {
+      "cycle_index": 2,
+      "role": "IW",
+      "edge": [
+        5,
+        0
+      ],
+      "transport_kind": "bridge_path",
+      "path": [
+        0,
+        2,
+        5
+      ],
+      "path_length": 2,
+      "path_edges": [
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      "columns": [
+        1,
+        7
+      ],
+      "cocycle_values": [
+        1,
+        1
+      ],
+      "role_cocycle_sum_mod2": 0
+    }
+  ],
+  "interpretation": {
+    "main_result": "The WXYZTI role pattern has been tested against direct edge-column values plus bridge-path cocycle sums.",
+    "observed_profile": "WX and IW are stable-zero, XY and YZ are stable-one, ZT is majority-zero, and TI is mixed in this layer.",
+    "what_this_gives": "The role pattern is partly visible but not fully identical to the target pattern at the simple bridge-path cocycle-sum layer.",
+    "what_remains_open": "A second role-projection rule may be needed, especially for WX, IW, and mixed TI behavior.",
+    "next_question": "Can a bounded role-projection rule account for the partial mismatch without adding arbitrary choices?"
+  },
+  "checks": [
+    {
+      "id": "projection_loaded",
+      "status": true,
+      "detail": "status=selected_wxyzti_projection_partial_not_map_proof"
+    },
+    {
+      "id": "missing_transport_loaded",
+      "status": true,
+      "detail": "status=missing_wxyzti_edges_have_bridge_paths_not_map_proof"
+    },
+    {
+      "id": "target_loaded",
+      "status": true,
+      "detail": "status=normalized_target_not_proof"
+    },
+    {
+      "id": "role_rows_count_18",
+      "status": true,
+      "detail": "count=18"
+    },
+    {
+      "id": "all_roles_have_3_rows",
+      "status": true,
+      "detail": "counts={\"IW\": 3, \"TI\": 3, \"WX\": 3, \"XY\": 3, \"YZ\": 3, \"ZT\": 3}"
+    },
+    {
+      "id": "all_role_rows_have_transport",
+      "status": true,
+      "detail": "missing_transport=[]"
+    },
+    {
+      "id": "target_pattern_len_6",
+      "status": true,
+      "detail": "pattern=[1, 1, 1, 0, 1, 1]"
+    }
+  ],
+  "next_script": "search_gap_a_bounded_role_projection_rule_001.py"
+}

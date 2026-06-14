@@ -1,0 +1,652 @@
+{
+  "schema": "selected_wxyzti_edge_column_projection_001.v1",
+  "status": "selected_wxyzti_projection_partial_not_map_proof",
+  "timestamp_utc": "2026-06-14T18:36:03.794314+00:00",
+  "gap": "A_chamber_register_map",
+  "purpose": "Project the selected WXYZTI target cycles through the verified edge-column transport-role bridge.",
+  "boundary": [
+    "This is not a chamber/register map proof.",
+    "This checks visibility of selected WXYZTI cycle edges in the verified 30-column edge layer.",
+    "Missing edges are not treated as failure; they localize where another register-transport step may be needed.",
+    "The edge-column bridge remains verified, but WXYZTI cycle visibility may be partial."
+  ],
+  "inputs": {
+    "edge_column_transport_role_alignment": "registered_boundary_flux/artifacts/json/gap_a_edge_column_transport_role_alignment_001.v1.json",
+    "edge_column_transport_role_alignment_sha256": "2de9b470a6917b578e35e63e914e69948b05c963c32a6cbdae5646f3fc40db3d",
+    "selected_wxyzti_target": "registered_boundary_flux/artifacts/json/selected_wxyzti_target_001.v1.json",
+    "selected_wxyzti_target_sha256": "70bd9ff63bfbd58e888f8380c1eced8ad2c03fe4c7d07f1838bd2a52d94613a3"
+  },
+  "summary": {
+    "target_cycle_count": 3,
+    "total_cycle_edges": 18,
+    "present_cycle_edges": 8,
+    "missing_cycle_edges": 10,
+    "selected_zt_edges": [
+      [
+        3,
+        4
+      ],
+      [
+        7,
+        10
+      ],
+      [
+        8,
+        14
+      ]
+    ],
+    "selected_zt_present": 1,
+    "selected_zt_missing": 2,
+    "all_target_edges_present": false,
+    "all_selected_zt_edges_present": false
+  },
+  "role_summary": {
+    "WX": {
+      "total": 3,
+      "present": 3,
+      "missing": 0,
+      "present_edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "missing_edges": []
+    },
+    "XY": {
+      "total": 3,
+      "present": 3,
+      "missing": 0,
+      "present_edges": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "missing_edges": []
+    },
+    "YZ": {
+      "total": 3,
+      "present": 0,
+      "missing": 3,
+      "present_edges": [],
+      "missing_edges": [
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          2,
+          8
+        ]
+      ]
+    },
+    "ZT": {
+      "total": 3,
+      "present": 1,
+      "missing": 2,
+      "present_edges": [
+        [
+          3,
+          4
+        ]
+      ],
+      "missing_edges": [
+        [
+          7,
+          10
+        ],
+        [
+          8,
+          14
+        ]
+      ]
+    },
+    "TI": {
+      "total": 3,
+      "present": 1,
+      "missing": 2,
+      "present_edges": [
+        [
+          4,
+          5
+        ]
+      ],
+      "missing_edges": [
+        [
+          10,
+          5
+        ],
+        [
+          14,
+          5
+        ]
+      ]
+    },
+    "IW": {
+      "total": 3,
+      "present": 0,
+      "missing": 3,
+      "present_edges": [],
+      "missing_edges": [
+        [
+          5,
+          0
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          5,
+          0
+        ]
+      ]
+    }
+  },
+  "zt_projection": [
+    {
+      "edge": [
+        3,
+        4
+      ],
+      "edge_key": [
+        3,
+        4
+      ],
+      "present_in_edge_column_bridge": true,
+      "bridge_column": 9,
+      "bridge_cocycle_value": 1,
+      "bridge_support": [
+        2,
+        3,
+        4,
+        5,
+        7,
+        12,
+        14
+      ]
+    },
+    {
+      "edge": [
+        7,
+        10
+      ],
+      "edge_key": [
+        7,
+        10
+      ],
+      "present_in_edge_column_bridge": false,
+      "bridge_column": null,
+      "bridge_cocycle_value": null,
+      "bridge_support": null
+    },
+    {
+      "edge": [
+        8,
+        14
+      ],
+      "edge_key": [
+        8,
+        14
+      ],
+      "present_in_edge_column_bridge": false,
+      "bridge_column": null,
+      "bridge_cocycle_value": null,
+      "bridge_support": null
+    }
+  ],
+  "projected_cycles": [
+    {
+      "cycle_index": 0,
+      "cycle": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "projected_edges": [
+        {
+          "cycle_index": 0,
+          "role": "WX",
+          "edge": [
+            0,
+            1
+          ],
+          "edge_key": [
+            0,
+            1
+          ],
+          "present_in_edge_column_bridge": true,
+          "bridge_column": 0,
+          "bridge_cocycle_value": 0,
+          "bridge_support": [
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ]
+        },
+        {
+          "cycle_index": 0,
+          "role": "XY",
+          "edge": [
+            1,
+            2
+          ],
+          "edge_key": [
+            1,
+            2
+          ],
+          "present_in_edge_column_bridge": true,
+          "bridge_column": 4,
+          "bridge_cocycle_value": 1,
+          "bridge_support": [
+            3,
+            4,
+            5,
+            7,
+            10,
+            13,
+            14
+          ]
+        },
+        {
+          "cycle_index": 0,
+          "role": "YZ",
+          "edge": [
+            2,
+            3
+          ],
+          "edge_key": [
+            2,
+            3
+          ],
+          "present_in_edge_column_bridge": false,
+          "bridge_column": null,
+          "bridge_cocycle_value": null,
+          "bridge_support": null
+        },
+        {
+          "cycle_index": 0,
+          "role": "ZT",
+          "edge": [
+            3,
+            4
+          ],
+          "edge_key": [
+            3,
+            4
+          ],
+          "present_in_edge_column_bridge": true,
+          "bridge_column": 9,
+          "bridge_cocycle_value": 1,
+          "bridge_support": [
+            2,
+            3,
+            4,
+            5,
+            7,
+            12,
+            14
+          ]
+        },
+        {
+          "cycle_index": 0,
+          "role": "TI",
+          "edge": [
+            4,
+            5
+          ],
+          "edge_key": [
+            4,
+            5
+          ],
+          "present_in_edge_column_bridge": true,
+          "bridge_column": 13,
+          "bridge_cocycle_value": 1,
+          "bridge_support": [
+            1,
+            3,
+            8,
+            9,
+            10,
+            11,
+            13
+          ]
+        },
+        {
+          "cycle_index": 0,
+          "role": "IW",
+          "edge": [
+            5,
+            0
+          ],
+          "edge_key": [
+            0,
+            5
+          ],
+          "present_in_edge_column_bridge": false,
+          "bridge_column": null,
+          "bridge_cocycle_value": null,
+          "bridge_support": null
+        }
+      ],
+      "present_edge_count": 4,
+      "missing_edge_count": 2
+    },
+    {
+      "cycle_index": 1,
+      "cycle": [
+        0,
+        1,
+        2,
+        7,
+        10,
+        5
+      ],
+      "projected_edges": [
+        {
+          "cycle_index": 1,
+          "role": "WX",
+          "edge": [
+            0,
+            1
+          ],
+          "edge_key": [
+            0,
+            1
+          ],
+          "present_in_edge_column_bridge": true,
+          "bridge_column": 0,
+          "bridge_cocycle_value": 0,
+          "bridge_support": [
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ]
+        },
+        {
+          "cycle_index": 1,
+          "role": "XY",
+          "edge": [
+            1,
+            2
+          ],
+          "edge_key": [
+            1,
+            2
+          ],
+          "present_in_edge_column_bridge": true,
+          "bridge_column": 4,
+          "bridge_cocycle_value": 1,
+          "bridge_support": [
+            3,
+            4,
+            5,
+            7,
+            10,
+            13,
+            14
+          ]
+        },
+        {
+          "cycle_index": 1,
+          "role": "YZ",
+          "edge": [
+            2,
+            7
+          ],
+          "edge_key": [
+            2,
+            7
+          ],
+          "present_in_edge_column_bridge": false,
+          "bridge_column": null,
+          "bridge_cocycle_value": null,
+          "bridge_support": null
+        },
+        {
+          "cycle_index": 1,
+          "role": "ZT",
+          "edge": [
+            7,
+            10
+          ],
+          "edge_key": [
+            7,
+            10
+          ],
+          "present_in_edge_column_bridge": false,
+          "bridge_column": null,
+          "bridge_cocycle_value": null,
+          "bridge_support": null
+        },
+        {
+          "cycle_index": 1,
+          "role": "TI",
+          "edge": [
+            10,
+            5
+          ],
+          "edge_key": [
+            5,
+            10
+          ],
+          "present_in_edge_column_bridge": false,
+          "bridge_column": null,
+          "bridge_cocycle_value": null,
+          "bridge_support": null
+        },
+        {
+          "cycle_index": 1,
+          "role": "IW",
+          "edge": [
+            5,
+            0
+          ],
+          "edge_key": [
+            0,
+            5
+          ],
+          "present_in_edge_column_bridge": false,
+          "bridge_column": null,
+          "bridge_cocycle_value": null,
+          "bridge_support": null
+        }
+      ],
+      "present_edge_count": 2,
+      "missing_edge_count": 4
+    },
+    {
+      "cycle_index": 2,
+      "cycle": [
+        0,
+        1,
+        2,
+        8,
+        14,
+        5
+      ],
+      "projected_edges": [
+        {
+          "cycle_index": 2,
+          "role": "WX",
+          "edge": [
+            0,
+            1
+          ],
+          "edge_key": [
+            0,
+            1
+          ],
+          "present_in_edge_column_bridge": true,
+          "bridge_column": 0,
+          "bridge_cocycle_value": 0,
+          "bridge_support": [
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ]
+        },
+        {
+          "cycle_index": 2,
+          "role": "XY",
+          "edge": [
+            1,
+            2
+          ],
+          "edge_key": [
+            1,
+            2
+          ],
+          "present_in_edge_column_bridge": true,
+          "bridge_column": 4,
+          "bridge_cocycle_value": 1,
+          "bridge_support": [
+            3,
+            4,
+            5,
+            7,
+            10,
+            13,
+            14
+          ]
+        },
+        {
+          "cycle_index": 2,
+          "role": "YZ",
+          "edge": [
+            2,
+            8
+          ],
+          "edge_key": [
+            2,
+            8
+          ],
+          "present_in_edge_column_bridge": false,
+          "bridge_column": null,
+          "bridge_cocycle_value": null,
+          "bridge_support": null
+        },
+        {
+          "cycle_index": 2,
+          "role": "ZT",
+          "edge": [
+            8,
+            14
+          ],
+          "edge_key": [
+            8,
+            14
+          ],
+          "present_in_edge_column_bridge": false,
+          "bridge_column": null,
+          "bridge_cocycle_value": null,
+          "bridge_support": null
+        },
+        {
+          "cycle_index": 2,
+          "role": "TI",
+          "edge": [
+            14,
+            5
+          ],
+          "edge_key": [
+            5,
+            14
+          ],
+          "present_in_edge_column_bridge": false,
+          "bridge_column": null,
+          "bridge_cocycle_value": null,
+          "bridge_support": null
+        },
+        {
+          "cycle_index": 2,
+          "role": "IW",
+          "edge": [
+            5,
+            0
+          ],
+          "edge_key": [
+            0,
+            5
+          ],
+          "present_in_edge_column_bridge": false,
+          "bridge_column": null,
+          "bridge_cocycle_value": null,
+          "bridge_support": null
+        }
+      ],
+      "present_edge_count": 2,
+      "missing_edge_count": 4
+    }
+  ],
+  "interpretation": {
+    "main_result": "The selected WXYZTI target has been projected against the verified edge-column bridge.",
+    "if_partial": "A partial result means the 30-column source edge layer is not identical to the selected WXYZTI cycle-edge register.",
+    "what_this_gives": "The register-map problem is now localized to the missing role edges or to the transport that carries them into the WXYZTI witness register.",
+    "what_remains_open": "Full Gap A closure still requires a lawful map from G60/source structure into the WXYZTI register."
+  },
+  "checks": [
+    {
+      "id": "alignment_loaded",
+      "status": true,
+      "detail": "status=edge_column_transport_role_alignment_verified_not_map_proof"
+    },
+    {
+      "id": "target_loaded",
+      "status": true,
+      "detail": "status=normalized_target_not_proof"
+    },
+    {
+      "id": "edge_lookup_has_30_edges",
+      "status": true,
+      "detail": "edge_count=30"
+    },
+    {
+      "id": "target_has_3_cycles",
+      "status": true,
+      "detail": "cycle_count=3"
+    },
+    {
+      "id": "target_has_3_selected_zt_edges",
+      "status": true,
+      "detail": "zt_count=3"
+    }
+  ],
+  "next_script": "derive_gap_a_missing_wxyzti_edge_transport_001.py"
+}

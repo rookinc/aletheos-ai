@@ -1,0 +1,602 @@
+{
+  "schema": "gap_a_neighbor_port_rule_001.v1",
+  "status": "gap_a_neighbor_port_rule_candidate_found_not_closure",
+  "timestamp_utc": "2026-06-14T19:47:30.178790+00:00",
+  "purpose": "Derive a neighbor-port rewrite of the zero-twisted split candidate from surrounding-cell context.",
+  "boundary": [
+    "This does not close Gap A.",
+    "This is exact only inside the tested zero-twisted-carrier neighborhood.",
+    "The rule uses surrounding-cell port context, but no full chamber/register map is claimed.",
+    "No residual flip rule is accepted.",
+    "The rule must be attacked by nulls before promotion."
+  ],
+  "inputs": {
+    "context_probe": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_surrounding_cell_context_probe_001.v1.json",
+      "sha256": "3ecfbca2c2fae088ba878944c9d7a42765f2430ffe7bc2d814a229f13299cad7",
+      "status": "gap_a_surrounding_cell_context_probe_recorded"
+    },
+    "zero_twisted_split": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_zero_twisted_neighborhood_split_001.v1.json",
+      "sha256": "14293c9f7a362b2c9e1f50587c3222816f7d1a29050a8015e26fe49b0b018476",
+      "status": "gap_a_zero_twisted_neighborhood_split_candidate_found_not_closure"
+    },
+    "interim_note": {
+      "path": "registered_boundary_flux/artifacts/json/gap_a_zero_twisted_split_interim_note_001.v1.json",
+      "sha256": "be90d3544a0078d91846b12c591d809e49c0342e1ca2987ad41a59d0628fcf6d",
+      "status": "gap_a_zero_twisted_split_interim_note_recorded"
+    }
+  },
+  "zero_twisted_neighborhood": [
+    3,
+    4,
+    9,
+    15,
+    16
+  ],
+  "known_residual_rows": [
+    3,
+    16
+  ],
+  "rule": {
+    "name": "neighbor_port_rule_balanced_singleton_ZT_OR_TI_dead_port",
+    "reading": "balanced singleton ZT port OR multi-column TI return with a dead neighbor port",
+    "support": [
+      3,
+      16
+    ],
+    "components": {
+      "balanced_singleton_ZT_port": [
+        3
+      ],
+      "TI_dead_neighbor_port": [
+        16
+      ]
+    },
+    "exact_inside_neighborhood": true
+  },
+  "comparison_to_previous_rule": {
+    "old_reading": "branch-sensitive return OR singleton ZT selected-turn",
+    "old_support": [
+      3,
+      16
+    ],
+    "new_reading": "balanced singleton ZT port OR multi-column TI return with a dead neighbor port",
+    "new_support": [
+      3,
+      16
+    ],
+    "same_support": true
+  },
+  "port_rows": [
+    {
+      "row_ordinal": 3,
+      "cycle_index": 0,
+      "role": "ZT",
+      "columns": [
+        9
+      ],
+      "column_count": 1,
+      "slot_pairs": [
+        [
+          2,
+          13
+        ]
+      ],
+      "slot_pair_spans": [
+        4
+      ],
+      "slot_degrees_radius_1": {
+        "2": 2,
+        "13": 2
+      },
+      "active_pairs_by_slot_radius_1": {
+        "2": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "13": [
+          [
+            12,
+            13
+          ],
+          [
+            13,
+            14
+          ]
+        ]
+      },
+      "pair_degrees_radius_1": [
+        [
+          2,
+          2
+        ]
+      ],
+      "dead_endpoint_count_radius_1": 0,
+      "balanced_singleton_radius_1": true,
+      "branch_sensitive": false,
+      "branch_stable": true,
+      "is_known_residual": true,
+      "is_balanced_singleton_ZT_port": true,
+      "is_TI_dead_neighbor_port": false,
+      "is_neighbor_port_candidate": true
+    },
+    {
+      "row_ordinal": 4,
+      "cycle_index": 0,
+      "role": "TI",
+      "columns": [
+        13
+      ],
+      "column_count": 1,
+      "slot_pairs": [
+        [
+          4,
+          10
+        ]
+      ],
+      "slot_pair_spans": [
+        6
+      ],
+      "slot_degrees_radius_1": {
+        "4": 3,
+        "10": 2
+      },
+      "active_pairs_by_slot_radius_1": {
+        "4": [
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            9
+          ]
+        ],
+        "10": [
+          [
+            5,
+            10
+          ],
+          [
+            10,
+            11
+          ]
+        ]
+      },
+      "pair_degrees_radius_1": [
+        [
+          3,
+          2
+        ]
+      ],
+      "dead_endpoint_count_radius_1": 0,
+      "balanced_singleton_radius_1": false,
+      "branch_sensitive": false,
+      "branch_stable": true,
+      "is_known_residual": false,
+      "is_balanced_singleton_ZT_port": false,
+      "is_TI_dead_neighbor_port": false,
+      "is_neighbor_port_candidate": false
+    },
+    {
+      "row_ordinal": 9,
+      "cycle_index": 1,
+      "role": "ZT",
+      "columns": [
+        9,
+        11,
+        14
+      ],
+      "column_count": 3,
+      "slot_pairs": [
+        [
+          2,
+          13
+        ],
+        [
+          3,
+          13
+        ],
+        [
+          4,
+          14
+        ]
+      ],
+      "slot_pair_spans": [
+        4,
+        5,
+        5
+      ],
+      "slot_degrees_radius_1": {
+        "2": 2,
+        "3": 2,
+        "4": 3,
+        "13": 2,
+        "14": 2
+      },
+      "active_pairs_by_slot_radius_1": {
+        "2": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "3": [
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "4": [
+          [
+            0,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ]
+        ],
+        "13": [
+          [
+            12,
+            13
+          ],
+          [
+            13,
+            14
+          ]
+        ],
+        "14": [
+          [
+            5,
+            14
+          ],
+          [
+            13,
+            14
+          ]
+        ]
+      },
+      "pair_degrees_radius_1": [
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "dead_endpoint_count_radius_1": 0,
+      "balanced_singleton_radius_1": false,
+      "branch_sensitive": false,
+      "branch_stable": true,
+      "is_known_residual": false,
+      "is_balanced_singleton_ZT_port": false,
+      "is_TI_dead_neighbor_port": false,
+      "is_neighbor_port_candidate": false
+    },
+    {
+      "row_ordinal": 15,
+      "cycle_index": 2,
+      "role": "ZT",
+      "columns": [
+        21,
+        22
+      ],
+      "column_count": 2,
+      "slot_pairs": [
+        [
+          6,
+          14
+        ],
+        [
+          7,
+          8
+        ]
+      ],
+      "slot_pair_spans": [
+        1,
+        7
+      ],
+      "slot_degrees_radius_1": {
+        "6": 2,
+        "7": 0,
+        "8": 2,
+        "14": 3
+      },
+      "active_pairs_by_slot_radius_1": {
+        "6": [
+          [
+            0,
+            6
+          ],
+          [
+            6,
+            13
+          ]
+        ],
+        "7": [],
+        "8": [
+          [
+            8,
+            13
+          ],
+          [
+            8,
+            14
+          ]
+        ],
+        "14": [
+          [
+            5,
+            14
+          ],
+          [
+            8,
+            14
+          ],
+          [
+            13,
+            14
+          ]
+        ]
+      },
+      "pair_degrees_radius_1": [
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "dead_endpoint_count_radius_1": 1,
+      "balanced_singleton_radius_1": false,
+      "branch_sensitive": false,
+      "branch_stable": true,
+      "is_known_residual": false,
+      "is_balanced_singleton_ZT_port": false,
+      "is_TI_dead_neighbor_port": false,
+      "is_neighbor_port_candidate": false
+    },
+    {
+      "row_ordinal": 16,
+      "cycle_index": 2,
+      "role": "TI",
+      "columns": [
+        13,
+        15
+      ],
+      "column_count": 2,
+      "slot_pairs": [
+        [
+          4,
+          10
+        ],
+        [
+          5,
+          6
+        ]
+      ],
+      "slot_pair_spans": [
+        1,
+        6
+      ],
+      "slot_degrees_radius_1": {
+        "4": 3,
+        "5": 2,
+        "6": 0,
+        "10": 3
+      },
+      "active_pairs_by_slot_radius_1": {
+        "4": [
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            9
+          ]
+        ],
+        "5": [
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            10
+          ]
+        ],
+        "6": [],
+        "10": [
+          [
+            5,
+            10
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            10,
+            11
+          ]
+        ]
+      },
+      "pair_degrees_radius_1": [
+        [
+          3,
+          3
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "dead_endpoint_count_radius_1": 1,
+      "balanced_singleton_radius_1": false,
+      "branch_sensitive": true,
+      "branch_stable": false,
+      "is_known_residual": true,
+      "is_balanced_singleton_ZT_port": false,
+      "is_TI_dead_neighbor_port": true,
+      "is_neighbor_port_candidate": true
+    }
+  ],
+  "feature_tests": [
+    {
+      "name": "balanced_singleton_ZT_port",
+      "support": [
+        3
+      ],
+      "support_count": 1,
+      "residual_hits": [
+        3
+      ],
+      "false_positives": [],
+      "misses": [
+        16
+      ],
+      "precision": 1.0,
+      "recall": 0.5,
+      "exact": false
+    },
+    {
+      "name": "TI_dead_neighbor_port",
+      "support": [
+        16
+      ],
+      "support_count": 1,
+      "residual_hits": [
+        16
+      ],
+      "false_positives": [],
+      "misses": [
+        3
+      ],
+      "precision": 1.0,
+      "recall": 0.5,
+      "exact": false
+    },
+    {
+      "name": "neighbor_port_rule_balanced_singleton_ZT_OR_TI_dead_port",
+      "support": [
+        3,
+        16
+      ],
+      "support_count": 2,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [],
+      "misses": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "exact": true
+    },
+    {
+      "name": "old_rule_branch_sensitive_return_OR_singleton_ZT",
+      "support": [
+        3,
+        16
+      ],
+      "support_count": 2,
+      "residual_hits": [
+        3,
+        16
+      ],
+      "false_positives": [],
+      "misses": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "exact": true
+    }
+  ],
+  "interpretation": {
+    "main_result": "The exact split can be rewritten as a neighbor-port condition inside the zero-twisted neighborhood.",
+    "zt_read": "Row 3 is the only balanced singleton ZT port: both endpoints are served symmetrically by radius-1 twisted neighbor context.",
+    "ti_read": "Row 16 is the only multi-column TI row with a dead neighbor port in radius-1 twisted context.",
+    "surrounding_cell_read": "Surrounding cells appear to supply the boundary-port information needed to distinguish true residual rows from stable zero-twisted false positives.",
+    "not_closure": "This remains a local split candidate, not a full source-derived chamber/register map."
+  },
+  "checks": [
+    {
+      "id": "context_loaded",
+      "status": true,
+      "detail": "gap_a_surrounding_cell_context_probe_recorded"
+    },
+    {
+      "id": "split_loaded",
+      "status": true,
+      "detail": "gap_a_zero_twisted_neighborhood_split_candidate_found_not_closure"
+    },
+    {
+      "id": "interim_loaded",
+      "status": true,
+      "detail": "gap_a_zero_twisted_split_interim_note_recorded"
+    },
+    {
+      "id": "zero_rows_expected",
+      "status": true,
+      "detail": "[3, 4, 9, 15, 16]"
+    },
+    {
+      "id": "port_rows_5",
+      "status": true,
+      "detail": "5"
+    },
+    {
+      "id": "balanced_singleton_zt_selects_3",
+      "status": true,
+      "detail": "[3]"
+    },
+    {
+      "id": "ti_dead_neighbor_port_selects_16",
+      "status": true,
+      "detail": "[16]"
+    },
+    {
+      "id": "neighbor_port_rule_exact",
+      "status": true,
+      "detail": "[3, 16]"
+    }
+  ],
+  "next_script": "null_gap_a_neighbor_port_rule_001.py"
+}

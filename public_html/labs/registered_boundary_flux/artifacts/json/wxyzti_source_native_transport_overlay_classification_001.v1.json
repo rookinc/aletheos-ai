@@ -1,0 +1,2119 @@
+{
+  "schema": "wxyzti_source_native_transport_overlay_classification_001.v1",
+  "status": "wxyzti_source_native_transport_overlay_classified",
+  "timestamp_utc": "2026-06-15T13:29:47.745941+00:00",
+  "purpose": "Classify WXYZTI witness edges after proving they are not literal X_sigma carrier edges.",
+  "claim": "The WXYZTI witness is a source-native transport overlay. reverse_partner edges preserve A and columns. shared_B edges preserve B and slot. The overlay lives over station provenance fields rather than as literal adjacency in the Project16/X_sigma carrier.",
+  "summary": {
+    "edge_count": 24,
+    "label_counts": {
+      "reverse_partner": 12,
+      "shared_B": 12
+    },
+    "overlay_rule_counts": {
+      "reverse_partner_preserves_A_and_columns": 12,
+      "shared_B_preserves_B_and_slot": 12
+    },
+    "role_rule_counts": {
+      "reverse_partner -> reverse_partner_preserves_A_and_columns": 12,
+      "shared_B -> shared_B_preserves_B_and_slot": 12
+    },
+    "reverse_partner_exact": true,
+    "shared_B_exact": true,
+    "labels_exact": true,
+    "bad_edge_count": 0,
+    "project16_edge_law_match": true,
+    "literal_carrier_wiring_success": false,
+    "overlay_classified": true,
+    "classification": {
+      "reverse_partner": "source-native relation preserving A and preserving station/edge columns",
+      "shared_B": "source-native relation preserving B and staying in the same slot",
+      "wxyzti": "six-edge alternating source-native transport overlay, not literal X_sigma adjacency"
+    },
+    "gap_a_closed": false,
+    "full_g900_admission_found": false,
+    "next_step": "test_overlay_against_admission_blind_nrc_witness"
+  },
+  "bad_edges": [],
+  "edge_reports": [
+    {
+      "form_index": 0,
+      "edge_index": 0,
+      "edge_role": "WX",
+      "label": "reverse_partner",
+      "from_key": "11|7|14|23,24",
+      "to_key": "14|7|11|23,24",
+      "from_address": {
+        "slot": 11,
+        "fiber": 14,
+        "local": 14,
+        "vertex": 674,
+        "key": "11|7|14|23,24",
+        "role": "W",
+        "A": 7,
+        "B": 11,
+        "C": 14,
+        "C_plus_1": 15,
+        "columns": [
+          23,
+          24
+        ],
+        "address_pair_source": [
+          11,
+          15
+        ],
+        "handedness_word": "L"
+      },
+      "to_address": {
+        "slot": 14,
+        "fiber": 11,
+        "local": 11,
+        "vertex": 851,
+        "key": "14|7|11|23,24",
+        "role": "X",
+        "A": 7,
+        "B": 14,
+        "C": 11,
+        "C_plus_1": 12,
+        "columns": [
+          23,
+          24
+        ],
+        "address_pair_source": [
+          14,
+          12
+        ],
+        "handedness_word": "R"
+      },
+      "slot_delta_mod15": 3,
+      "local_delta_mod60": 57,
+      "vertex_delta": 177,
+      "from_BAC": [
+        11,
+        7,
+        14
+      ],
+      "to_BAC": [
+        14,
+        7,
+        11
+      ],
+      "from_columns": [
+        23,
+        24
+      ],
+      "to_columns": [
+        23,
+        24
+      ],
+      "pattern": {
+        "same_slot": false,
+        "same_local": false,
+        "half_flip_local": false,
+        "same_A": true,
+        "same_B": false,
+        "same_C": false,
+        "swap_A_C": false,
+        "same_station_columns": true,
+        "same_edge_columns": true
+      },
+      "pattern_key": "same_A|same_edge_columns|same_station_columns",
+      "source_native_check": true
+    },
+    {
+      "form_index": 0,
+      "edge_index": 1,
+      "edge_role": "XY",
+      "label": "shared_B",
+      "from_key": "14|7|11|23,24",
+      "to_key": "14|3|2|7,12",
+      "from_address": {
+        "slot": 14,
+        "fiber": 11,
+        "local": 11,
+        "vertex": 851,
+        "key": "14|7|11|23,24",
+        "role": "X",
+        "A": 7,
+        "B": 14,
+        "C": 11,
+        "C_plus_1": 12,
+        "columns": [
+          23,
+          24
+        ],
+        "address_pair_source": [
+          14,
+          12
+        ],
+        "handedness_word": "R"
+      },
+      "to_address": {
+        "slot": 14,
+        "fiber": 2,
+        "local": 2,
+        "vertex": 842,
+        "key": "14|3|2|7,12",
+        "role": "Y",
+        "A": 3,
+        "B": 14,
+        "C": 2,
+        "C_plus_1": 3,
+        "columns": [
+          7,
+          12
+        ],
+        "address_pair_source": [
+          14,
+          3
+        ],
+        "handedness_word": "L"
+      },
+      "slot_delta_mod15": 0,
+      "local_delta_mod60": 51,
+      "vertex_delta": -9,
+      "from_BAC": [
+        14,
+        7,
+        11
+      ],
+      "to_BAC": [
+        14,
+        3,
+        2
+      ],
+      "from_columns": [
+        23,
+        24
+      ],
+      "to_columns": [
+        7,
+        12
+      ],
+      "pattern": {
+        "same_slot": true,
+        "same_local": false,
+        "half_flip_local": false,
+        "same_A": false,
+        "same_B": true,
+        "same_C": false,
+        "swap_A_C": false,
+        "same_station_columns": false,
+        "same_edge_columns": false
+      },
+      "pattern_key": "same_B|same_slot",
+      "source_native_check": true
+    },
+    {
+      "form_index": 0,
+      "edge_index": 2,
+      "edge_role": "YZ",
+      "label": "reverse_partner",
+      "from_key": "14|3|2|7,12",
+      "to_key": "2|3|14|7,12",
+      "from_address": {
+        "slot": 14,
+        "fiber": 2,
+        "local": 2,
+        "vertex": 842,
+        "key": "14|3|2|7,12",
+        "role": "Y",
+        "A": 3,
+        "B": 14,
+        "C": 2,
+        "C_plus_1": 3,
+        "columns": [
+          7,
+          12
+        ],
+        "address_pair_source": [
+          14,
+          3
+        ],
+        "handedness_word": "L"
+      },
+      "to_address": {
+        "slot": 2,
+        "fiber": 14,
+        "local": 14,
+        "vertex": 134,
+        "key": "2|3|14|7,12",
+        "role": "Z",
+        "A": 3,
+        "B": 2,
+        "C": 14,
+        "C_plus_1": 15,
+        "columns": [
+          7,
+          12
+        ],
+        "address_pair_source": [
+          2,
+          15
+        ],
+        "handedness_word": "R"
+      },
+      "slot_delta_mod15": 3,
+      "local_delta_mod60": 12,
+      "vertex_delta": -708,
+      "from_BAC": [
+        14,
+        3,
+        2
+      ],
+      "to_BAC": [
+        2,
+        3,
+        14
+      ],
+      "from_columns": [
+        7,
+        12
+      ],
+      "to_columns": [
+        7,
+        12
+      ],
+      "pattern": {
+        "same_slot": false,
+        "same_local": false,
+        "half_flip_local": false,
+        "same_A": true,
+        "same_B": false,
+        "same_C": false,
+        "swap_A_C": false,
+        "same_station_columns": true,
+        "same_edge_columns": true
+      },
+      "pattern_key": "same_A|same_edge_columns|same_station_columns",
+      "source_native_check": true
+    },
+    {
+      "form_index": 0,
+      "edge_index": 3,
+      "edge_role": "ZT",
+      "label": "shared_B",
+      "from_key": "2|3|14|7,12",
+      "to_key": "2|1|11|4,5",
+      "from_address": {
+        "slot": 2,
+        "fiber": 14,
+        "local": 14,
+        "vertex": 134,
+        "key": "2|3|14|7,12",
+        "role": "Z",
+        "A": 3,
+        "B": 2,
+        "C": 14,
+        "C_plus_1": 15,
+        "columns": [
+          7,
+          12
+        ],
+        "address_pair_source": [
+          2,
+          15
+        ],
+        "handedness_word": "R"
+      },
+      "to_address": {
+        "slot": 2,
+        "fiber": 11,
+        "local": 11,
+        "vertex": 131,
+        "key": "2|1|11|4,5",
+        "role": "T",
+        "A": 1,
+        "B": 2,
+        "C": 11,
+        "C_plus_1": 12,
+        "columns": [
+          4,
+          5
+        ],
+        "address_pair_source": [
+          2,
+          12
+        ],
+        "handedness_word": "R"
+      },
+      "slot_delta_mod15": 0,
+      "local_delta_mod60": 57,
+      "vertex_delta": -3,
+      "from_BAC": [
+        2,
+        3,
+        14
+      ],
+      "to_BAC": [
+        2,
+        1,
+        11
+      ],
+      "from_columns": [
+        7,
+        12
+      ],
+      "to_columns": [
+        4,
+        5
+      ],
+      "pattern": {
+        "same_slot": true,
+        "same_local": false,
+        "half_flip_local": false,
+        "same_A": false,
+        "same_B": true,
+        "same_C": false,
+        "swap_A_C": false,
+        "same_station_columns": false,
+        "same_edge_columns": false
+      },
+      "pattern_key": "same_B|same_slot",
+      "source_native_check": true
+    },
+    {
+      "form_index": 0,
+      "edge_index": 4,
+      "edge_role": "TI",
+      "label": "reverse_partner",
+      "from_key": "2|1|11|4,5",
+      "to_key": "11|1|2|4,5",
+      "from_address": {
+        "slot": 2,
+        "fiber": 11,
+        "local": 11,
+        "vertex": 131,
+        "key": "2|1|11|4,5",
+        "role": "T",
+        "A": 1,
+        "B": 2,
+        "C": 11,
+        "C_plus_1": 12,
+        "columns": [
+          4,
+          5
+        ],
+        "address_pair_source": [
+          2,
+          12
+        ],
+        "handedness_word": "R"
+      },
+      "to_address": {
+        "slot": 11,
+        "fiber": 2,
+        "local": 2,
+        "vertex": 662,
+        "key": "11|1|2|4,5",
+        "role": "I",
+        "A": 1,
+        "B": 11,
+        "C": 2,
+        "C_plus_1": 3,
+        "columns": [
+          4,
+          5
+        ],
+        "address_pair_source": [
+          11,
+          3
+        ],
+        "handedness_word": "L"
+      },
+      "slot_delta_mod15": 9,
+      "local_delta_mod60": 51,
+      "vertex_delta": 531,
+      "from_BAC": [
+        2,
+        1,
+        11
+      ],
+      "to_BAC": [
+        11,
+        1,
+        2
+      ],
+      "from_columns": [
+        4,
+        5
+      ],
+      "to_columns": [
+        4,
+        5
+      ],
+      "pattern": {
+        "same_slot": false,
+        "same_local": false,
+        "half_flip_local": false,
+        "same_A": true,
+        "same_B": false,
+        "same_C": false,
+        "swap_A_C": false,
+        "same_station_columns": true,
+        "same_edge_columns": true
+      },
+      "pattern_key": "same_A|same_edge_columns|same_station_columns",
+      "source_native_check": true
+    },
+    {
+      "form_index": 0,
+      "edge_index": 5,
+      "edge_role": "IW",
+      "label": "shared_B",
+      "from_key": "11|1|2|4,5",
+      "to_key": "11|7|14|23,24",
+      "from_address": {
+        "slot": 11,
+        "fiber": 2,
+        "local": 2,
+        "vertex": 662,
+        "key": "11|1|2|4,5",
+        "role": "I",
+        "A": 1,
+        "B": 11,
+        "C": 2,
+        "C_plus_1": 3,
+        "columns": [
+          4,
+          5
+        ],
+        "address_pair_source": [
+          11,
+          3
+        ],
+        "handedness_word": "L"
+      },
+      "to_address": {
+        "slot": 11,
+        "fiber": 14,
+        "local": 14,
+        "vertex": 674,
+        "key": "11|7|14|23,24",
+        "role": "W",
+        "A": 7,
+        "B": 11,
+        "C": 14,
+        "C_plus_1": 15,
+        "columns": [
+          23,
+          24
+        ],
+        "address_pair_source": [
+          11,
+          15
+        ],
+        "handedness_word": "L"
+      },
+      "slot_delta_mod15": 0,
+      "local_delta_mod60": 12,
+      "vertex_delta": 12,
+      "from_BAC": [
+        11,
+        1,
+        2
+      ],
+      "to_BAC": [
+        11,
+        7,
+        14
+      ],
+      "from_columns": [
+        4,
+        5
+      ],
+      "to_columns": [
+        23,
+        24
+      ],
+      "pattern": {
+        "same_slot": true,
+        "same_local": false,
+        "half_flip_local": false,
+        "same_A": false,
+        "same_B": true,
+        "same_C": false,
+        "swap_A_C": false,
+        "same_station_columns": false,
+        "same_edge_columns": false
+      },
+      "pattern_key": "same_B|same_slot",
+      "source_native_check": true
+    },
+    {
+      "form_index": 1,
+      "edge_index": 0,
+      "edge_role": "WX",
+      "label": "reverse_partner",
+      "from_key": "13|9|10|28,29",
+      "to_key": "10|9|13|28,29",
+      "from_address": {
+        "slot": 13,
+        "fiber": 10,
+        "local": 10,
+        "vertex": 790,
+        "key": "13|9|10|28,29",
+        "role": "W",
+        "A": 9,
+        "B": 13,
+        "C": 10,
+        "C_plus_1": 11,
+        "columns": [
+          28,
+          29
+        ],
+        "address_pair_source": [
+          13,
+          11
+        ],
+        "handedness_word": "R"
+      },
+      "to_address": {
+        "slot": 10,
+        "fiber": 13,
+        "local": 13,
+        "vertex": 613,
+        "key": "10|9|13|28,29",
+        "role": "X",
+        "A": 9,
+        "B": 10,
+        "C": 13,
+        "C_plus_1": 14,
+        "columns": [
+          28,
+          29
+        ],
+        "address_pair_source": [
+          10,
+          14
+        ],
+        "handedness_word": "L"
+      },
+      "slot_delta_mod15": 12,
+      "local_delta_mod60": 3,
+      "vertex_delta": -177,
+      "from_BAC": [
+        13,
+        9,
+        10
+      ],
+      "to_BAC": [
+        10,
+        9,
+        13
+      ],
+      "from_columns": [
+        28,
+        29
+      ],
+      "to_columns": [
+        28,
+        29
+      ],
+      "pattern": {
+        "same_slot": false,
+        "same_local": false,
+        "half_flip_local": false,
+        "same_A": true,
+        "same_B": false,
+        "same_C": false,
+        "swap_A_C": false,
+        "same_station_columns": true,
+        "same_edge_columns": true
+      },
+      "pattern_key": "same_A|same_edge_columns|same_station_columns",
+      "source_native_check": true
+    },
+    {
+      "form_index": 1,
+      "edge_index": 1,
+      "edge_role": "XY",
+      "label": "shared_B",
+      "from_key": "10|9|13|28,29",
+      "to_key": "10|0|1|0,2",
+      "from_address": {
+        "slot": 10,
+        "fiber": 13,
+        "local": 13,
+        "vertex": 613,
+        "key": "10|9|13|28,29",
+        "role": "X",
+        "A": 9,
+        "B": 10,
+        "C": 13,
+        "C_plus_1": 14,
+        "columns": [
+          28,
+          29
+        ],
+        "address_pair_source": [
+          10,
+          14
+        ],
+        "handedness_word": "L"
+      },
+      "to_address": {
+        "slot": 10,
+        "fiber": 1,
+        "local": 1,
+        "vertex": 601,
+        "key": "10|0|1|0,2",
+        "role": "Y",
+        "A": 0,
+        "B": 10,
+        "C": 1,
+        "C_plus_1": 2,
+        "columns": [
+          0,
+          2
+        ],
+        "address_pair_source": [
+          10,
+          2
+        ],
+        "handedness_word": "L"
+      },
+      "slot_delta_mod15": 0,
+      "local_delta_mod60": 48,
+      "vertex_delta": -12,
+      "from_BAC": [
+        10,
+        9,
+        13
+      ],
+      "to_BAC": [
+        10,
+        0,
+        1
+      ],
+      "from_columns": [
+        28,
+        29
+      ],
+      "to_columns": [
+        0,
+        2
+      ],
+      "pattern": {
+        "same_slot": true,
+        "same_local": false,
+        "half_flip_local": false,
+        "same_A": false,
+        "same_B": true,
+        "same_C": false,
+        "swap_A_C": false,
+        "same_station_columns": false,
+        "same_edge_columns": false
+      },
+      "pattern_key": "same_B|same_slot",
+      "source_native_check": true
+    },
+    {
+      "form_index": 1,
+      "edge_index": 2,
+      "edge_role": "YZ",
+      "label": "reverse_partner",
+      "from_key": "10|0|1|0,2",
+      "to_key": "1|0|10|0,2",
+      "from_address": {
+        "slot": 10,
+        "fiber": 1,
+        "local": 1,
+        "vertex": 601,
+        "key": "10|0|1|0,2",
+        "role": "Y",
+        "A": 0,
+        "B": 10,
+        "C": 1,
+        "C_plus_1": 2,
+        "columns": [
+          0,
+          2
+        ],
+        "address_pair_source": [
+          10,
+          2
+        ],
+        "handedness_word": "L"
+      },
+      "to_address": {
+        "slot": 1,
+        "fiber": 10,
+        "local": 10,
+        "vertex": 70,
+        "key": "1|0|10|0,2",
+        "role": "Z",
+        "A": 0,
+        "B": 1,
+        "C": 10,
+        "C_plus_1": 11,
+        "columns": [
+          0,
+          2
+        ],
+        "address_pair_source": [
+          1,
+          11
+        ],
+        "handedness_word": "R"
+      },
+      "slot_delta_mod15": 6,
+      "local_delta_mod60": 9,
+      "vertex_delta": -531,
+      "from_BAC": [
+        10,
+        0,
+        1
+      ],
+      "to_BAC": [
+        1,
+        0,
+        10
+      ],
+      "from_columns": [
+        0,
+        2
+      ],
+      "to_columns": [
+        0,
+        2
+      ],
+      "pattern": {
+        "same_slot": false,
+        "same_local": false,
+        "half_flip_local": false,
+        "same_A": true,
+        "same_B": false,
+        "same_C": false,
+        "swap_A_C": false,
+        "same_station_columns": true,
+        "same_edge_columns": true
+      },
+      "pattern_key": "same_A|same_edge_columns|same_station_columns",
+      "source_native_check": true
+    },
+    {
+      "form_index": 1,
+      "edge_index": 3,
+      "edge_role": "ZT",
+      "label": "shared_B",
+      "from_key": "1|0|10|0,2",
+      "to_key": "1|2|13|4,9",
+      "from_address": {
+        "slot": 1,
+        "fiber": 10,
+        "local": 10,
+        "vertex": 70,
+        "key": "1|0|10|0,2",
+        "role": "Z",
+        "A": 0,
+        "B": 1,
+        "C": 10,
+        "C_plus_1": 11,
+        "columns": [
+          0,
+          2
+        ],
+        "address_pair_source": [
+          1,
+          11
+        ],
+        "handedness_word": "R"
+      },
+      "to_address": {
+        "slot": 1,
+        "fiber": 13,
+        "local": 13,
+        "vertex": 73,
+        "key": "1|2|13|4,9",
+        "role": "T",
+        "A": 2,
+        "B": 1,
+        "C": 13,
+        "C_plus_1": 14,
+        "columns": [
+          4,
+          9
+        ],
+        "address_pair_source": [
+          1,
+          14
+        ],
+        "handedness_word": "R"
+      },
+      "slot_delta_mod15": 0,
+      "local_delta_mod60": 3,
+      "vertex_delta": 3,
+      "from_BAC": [
+        1,
+        0,
+        10
+      ],
+      "to_BAC": [
+        1,
+        2,
+        13
+      ],
+      "from_columns": [
+        0,
+        2
+      ],
+      "to_columns": [
+        4,
+        9
+      ],
+      "pattern": {
+        "same_slot": true,
+        "same_local": false,
+        "half_flip_local": false,
+        "same_A": false,
+        "same_B": true,
+        "same_C": false,
+        "swap_A_C": false,
+        "same_station_columns": false,
+        "same_edge_columns": false
+      },
+      "pattern_key": "same_B|same_slot",
+      "source_native_check": true
+    },
+    {
+      "form_index": 1,
+      "edge_index": 4,
+      "edge_role": "TI",
+      "label": "reverse_partner",
+      "from_key": "1|2|13|4,9",
+      "to_key": "13|2|1|4,9",
+      "from_address": {
+        "slot": 1,
+        "fiber": 13,
+        "local": 13,
+        "vertex": 73,
+        "key": "1|2|13|4,9",
+        "role": "T",
+        "A": 2,
+        "B": 1,
+        "C": 13,
+        "C_plus_1": 14,
+        "columns": [
+          4,
+          9
+        ],
+        "address_pair_source": [
+          1,
+          14
+        ],
+        "handedness_word": "R"
+      },
+      "to_address": {
+        "slot": 13,
+        "fiber": 1,
+        "local": 1,
+        "vertex": 781,
+        "key": "13|2|1|4,9",
+        "role": "I",
+        "A": 2,
+        "B": 13,
+        "C": 1,
+        "C_plus_1": 2,
+        "columns": [
+          4,
+          9
+        ],
+        "address_pair_source": [
+          13,
+          2
+        ],
+        "handedness_word": "L"
+      },
+      "slot_delta_mod15": 12,
+      "local_delta_mod60": 48,
+      "vertex_delta": 708,
+      "from_BAC": [
+        1,
+        2,
+        13
+      ],
+      "to_BAC": [
+        13,
+        2,
+        1
+      ],
+      "from_columns": [
+        4,
+        9
+      ],
+      "to_columns": [
+        4,
+        9
+      ],
+      "pattern": {
+        "same_slot": false,
+        "same_local": false,
+        "half_flip_local": false,
+        "same_A": true,
+        "same_B": false,
+        "same_C": false,
+        "swap_A_C": false,
+        "same_station_columns": true,
+        "same_edge_columns": true
+      },
+      "pattern_key": "same_A|same_edge_columns|same_station_columns",
+      "source_native_check": true
+    },
+    {
+      "form_index": 1,
+      "edge_index": 5,
+      "edge_role": "IW",
+      "label": "shared_B",
+      "from_key": "13|2|1|4,9",
+      "to_key": "13|9|10|28,29",
+      "from_address": {
+        "slot": 13,
+        "fiber": 1,
+        "local": 1,
+        "vertex": 781,
+        "key": "13|2|1|4,9",
+        "role": "I",
+        "A": 2,
+        "B": 13,
+        "C": 1,
+        "C_plus_1": 2,
+        "columns": [
+          4,
+          9
+        ],
+        "address_pair_source": [
+          13,
+          2
+        ],
+        "handedness_word": "L"
+      },
+      "to_address": {
+        "slot": 13,
+        "fiber": 10,
+        "local": 10,
+        "vertex": 790,
+        "key": "13|9|10|28,29",
+        "role": "W",
+        "A": 9,
+        "B": 13,
+        "C": 10,
+        "C_plus_1": 11,
+        "columns": [
+          28,
+          29
+        ],
+        "address_pair_source": [
+          13,
+          11
+        ],
+        "handedness_word": "R"
+      },
+      "slot_delta_mod15": 0,
+      "local_delta_mod60": 9,
+      "vertex_delta": 9,
+      "from_BAC": [
+        13,
+        2,
+        1
+      ],
+      "to_BAC": [
+        13,
+        9,
+        10
+      ],
+      "from_columns": [
+        4,
+        9
+      ],
+      "to_columns": [
+        28,
+        29
+      ],
+      "pattern": {
+        "same_slot": true,
+        "same_local": false,
+        "half_flip_local": false,
+        "same_A": false,
+        "same_B": true,
+        "same_C": false,
+        "swap_A_C": false,
+        "same_station_columns": false,
+        "same_edge_columns": false
+      },
+      "pattern_key": "same_B|same_slot",
+      "source_native_check": true
+    },
+    {
+      "form_index": 2,
+      "edge_index": 0,
+      "edge_role": "WX",
+      "label": "reverse_partner",
+      "from_key": "2|1|0|0,4",
+      "to_key": "0|1|2|0,4",
+      "from_address": {
+        "slot": 2,
+        "fiber": 0,
+        "local": 0,
+        "vertex": 120,
+        "key": "2|1|0|0,4",
+        "role": "W",
+        "A": 1,
+        "B": 2,
+        "C": 0,
+        "C_plus_1": 1,
+        "columns": [
+          0,
+          4
+        ],
+        "address_pair_source": [
+          2,
+          1
+        ],
+        "handedness_word": "R"
+      },
+      "to_address": {
+        "slot": 0,
+        "fiber": 2,
+        "local": 2,
+        "vertex": 2,
+        "key": "0|1|2|0,4",
+        "role": "X",
+        "A": 1,
+        "B": 0,
+        "C": 2,
+        "C_plus_1": 3,
+        "columns": [
+          0,
+          4
+        ],
+        "address_pair_source": [
+          0,
+          3
+        ],
+        "handedness_word": "L"
+      },
+      "slot_delta_mod15": 13,
+      "local_delta_mod60": 2,
+      "vertex_delta": -118,
+      "from_BAC": [
+        2,
+        1,
+        0
+      ],
+      "to_BAC": [
+        0,
+        1,
+        2
+      ],
+      "from_columns": [
+        0,
+        4
+      ],
+      "to_columns": [
+        0,
+        4
+      ],
+      "pattern": {
+        "same_slot": false,
+        "same_local": false,
+        "half_flip_local": false,
+        "same_A": true,
+        "same_B": false,
+        "same_C": false,
+        "swap_A_C": false,
+        "same_station_columns": true,
+        "same_edge_columns": true
+      },
+      "pattern_key": "same_A|same_edge_columns|same_station_columns",
+      "source_native_check": true
+    },
+    {
+      "form_index": 2,
+      "edge_index": 1,
+      "edge_role": "XY",
+      "label": "shared_B",
+      "from_key": "0|1|2|0,4",
+      "to_key": "0|10|5|2,17",
+      "from_address": {
+        "slot": 0,
+        "fiber": 2,
+        "local": 2,
+        "vertex": 2,
+        "key": "0|1|2|0,4",
+        "role": "X",
+        "A": 1,
+        "B": 0,
+        "C": 2,
+        "C_plus_1": 3,
+        "columns": [
+          0,
+          4
+        ],
+        "address_pair_source": [
+          0,
+          3
+        ],
+        "handedness_word": "L"
+      },
+      "to_address": {
+        "slot": 0,
+        "fiber": 5,
+        "local": 5,
+        "vertex": 5,
+        "key": "0|10|5|2,17",
+        "role": "Y",
+        "A": 10,
+        "B": 0,
+        "C": 5,
+        "C_plus_1": 6,
+        "columns": [
+          2,
+          17
+        ],
+        "address_pair_source": [
+          0,
+          6
+        ],
+        "handedness_word": "L"
+      },
+      "slot_delta_mod15": 0,
+      "local_delta_mod60": 3,
+      "vertex_delta": 3,
+      "from_BAC": [
+        0,
+        1,
+        2
+      ],
+      "to_BAC": [
+        0,
+        10,
+        5
+      ],
+      "from_columns": [
+        0,
+        4
+      ],
+      "to_columns": [
+        2,
+        17
+      ],
+      "pattern": {
+        "same_slot": true,
+        "same_local": false,
+        "half_flip_local": false,
+        "same_A": false,
+        "same_B": true,
+        "same_C": false,
+        "swap_A_C": false,
+        "same_station_columns": false,
+        "same_edge_columns": false
+      },
+      "pattern_key": "same_B|same_slot",
+      "source_native_check": true
+    },
+    {
+      "form_index": 2,
+      "edge_index": 2,
+      "edge_role": "YZ",
+      "label": "reverse_partner",
+      "from_key": "0|10|5|2,17",
+      "to_key": "5|10|0|2,17",
+      "from_address": {
+        "slot": 0,
+        "fiber": 5,
+        "local": 5,
+        "vertex": 5,
+        "key": "0|10|5|2,17",
+        "role": "Y",
+        "A": 10,
+        "B": 0,
+        "C": 5,
+        "C_plus_1": 6,
+        "columns": [
+          2,
+          17
+        ],
+        "address_pair_source": [
+          0,
+          6
+        ],
+        "handedness_word": "L"
+      },
+      "to_address": {
+        "slot": 5,
+        "fiber": 0,
+        "local": 0,
+        "vertex": 300,
+        "key": "5|10|0|2,17",
+        "role": "Z",
+        "A": 10,
+        "B": 5,
+        "C": 0,
+        "C_plus_1": 1,
+        "columns": [
+          2,
+          17
+        ],
+        "address_pair_source": [
+          5,
+          1
+        ],
+        "handedness_word": "R"
+      },
+      "slot_delta_mod15": 5,
+      "local_delta_mod60": 55,
+      "vertex_delta": 295,
+      "from_BAC": [
+        0,
+        10,
+        5
+      ],
+      "to_BAC": [
+        5,
+        10,
+        0
+      ],
+      "from_columns": [
+        2,
+        17
+      ],
+      "to_columns": [
+        2,
+        17
+      ],
+      "pattern": {
+        "same_slot": false,
+        "same_local": false,
+        "half_flip_local": false,
+        "same_A": true,
+        "same_B": false,
+        "same_C": false,
+        "swap_A_C": false,
+        "same_station_columns": true,
+        "same_edge_columns": true
+      },
+      "pattern_key": "same_A|same_edge_columns|same_station_columns",
+      "source_native_check": true
+    },
+    {
+      "form_index": 2,
+      "edge_index": 3,
+      "edge_role": "ZT",
+      "label": "shared_B",
+      "from_key": "5|10|0|2,17",
+      "to_key": "5|12|2|8,18",
+      "from_address": {
+        "slot": 5,
+        "fiber": 0,
+        "local": 0,
+        "vertex": 300,
+        "key": "5|10|0|2,17",
+        "role": "Z",
+        "A": 10,
+        "B": 5,
+        "C": 0,
+        "C_plus_1": 1,
+        "columns": [
+          2,
+          17
+        ],
+        "address_pair_source": [
+          5,
+          1
+        ],
+        "handedness_word": "R"
+      },
+      "to_address": {
+        "slot": 5,
+        "fiber": 2,
+        "local": 2,
+        "vertex": 302,
+        "key": "5|12|2|8,18",
+        "role": "T",
+        "A": 12,
+        "B": 5,
+        "C": 2,
+        "C_plus_1": 3,
+        "columns": [
+          8,
+          18
+        ],
+        "address_pair_source": [
+          5,
+          3
+        ],
+        "handedness_word": "R"
+      },
+      "slot_delta_mod15": 0,
+      "local_delta_mod60": 2,
+      "vertex_delta": 2,
+      "from_BAC": [
+        5,
+        10,
+        0
+      ],
+      "to_BAC": [
+        5,
+        12,
+        2
+      ],
+      "from_columns": [
+        2,
+        17
+      ],
+      "to_columns": [
+        8,
+        18
+      ],
+      "pattern": {
+        "same_slot": true,
+        "same_local": false,
+        "half_flip_local": false,
+        "same_A": false,
+        "same_B": true,
+        "same_C": false,
+        "swap_A_C": false,
+        "same_station_columns": false,
+        "same_edge_columns": false
+      },
+      "pattern_key": "same_B|same_slot",
+      "source_native_check": true
+    },
+    {
+      "form_index": 2,
+      "edge_index": 4,
+      "edge_role": "TI",
+      "label": "reverse_partner",
+      "from_key": "5|12|2|8,18",
+      "to_key": "2|12|5|8,18",
+      "from_address": {
+        "slot": 5,
+        "fiber": 2,
+        "local": 2,
+        "vertex": 302,
+        "key": "5|12|2|8,18",
+        "role": "T",
+        "A": 12,
+        "B": 5,
+        "C": 2,
+        "C_plus_1": 3,
+        "columns": [
+          8,
+          18
+        ],
+        "address_pair_source": [
+          5,
+          3
+        ],
+        "handedness_word": "R"
+      },
+      "to_address": {
+        "slot": 2,
+        "fiber": 5,
+        "local": 5,
+        "vertex": 125,
+        "key": "2|12|5|8,18",
+        "role": "I",
+        "A": 12,
+        "B": 2,
+        "C": 5,
+        "C_plus_1": 6,
+        "columns": [
+          8,
+          18
+        ],
+        "address_pair_source": [
+          2,
+          6
+        ],
+        "handedness_word": "L"
+      },
+      "slot_delta_mod15": 12,
+      "local_delta_mod60": 3,
+      "vertex_delta": -177,
+      "from_BAC": [
+        5,
+        12,
+        2
+      ],
+      "to_BAC": [
+        2,
+        12,
+        5
+      ],
+      "from_columns": [
+        8,
+        18
+      ],
+      "to_columns": [
+        8,
+        18
+      ],
+      "pattern": {
+        "same_slot": false,
+        "same_local": false,
+        "half_flip_local": false,
+        "same_A": true,
+        "same_B": false,
+        "same_C": false,
+        "swap_A_C": false,
+        "same_station_columns": true,
+        "same_edge_columns": true
+      },
+      "pattern_key": "same_A|same_edge_columns|same_station_columns",
+      "source_native_check": true
+    },
+    {
+      "form_index": 2,
+      "edge_index": 5,
+      "edge_role": "IW",
+      "label": "shared_B",
+      "from_key": "2|12|5|8,18",
+      "to_key": "2|1|0|0,4",
+      "from_address": {
+        "slot": 2,
+        "fiber": 5,
+        "local": 5,
+        "vertex": 125,
+        "key": "2|12|5|8,18",
+        "role": "I",
+        "A": 12,
+        "B": 2,
+        "C": 5,
+        "C_plus_1": 6,
+        "columns": [
+          8,
+          18
+        ],
+        "address_pair_source": [
+          2,
+          6
+        ],
+        "handedness_word": "L"
+      },
+      "to_address": {
+        "slot": 2,
+        "fiber": 0,
+        "local": 0,
+        "vertex": 120,
+        "key": "2|1|0|0,4",
+        "role": "W",
+        "A": 1,
+        "B": 2,
+        "C": 0,
+        "C_plus_1": 1,
+        "columns": [
+          0,
+          4
+        ],
+        "address_pair_source": [
+          2,
+          1
+        ],
+        "handedness_word": "R"
+      },
+      "slot_delta_mod15": 0,
+      "local_delta_mod60": 55,
+      "vertex_delta": -5,
+      "from_BAC": [
+        2,
+        12,
+        5
+      ],
+      "to_BAC": [
+        2,
+        1,
+        0
+      ],
+      "from_columns": [
+        8,
+        18
+      ],
+      "to_columns": [
+        0,
+        4
+      ],
+      "pattern": {
+        "same_slot": true,
+        "same_local": false,
+        "half_flip_local": false,
+        "same_A": false,
+        "same_B": true,
+        "same_C": false,
+        "swap_A_C": false,
+        "same_station_columns": false,
+        "same_edge_columns": false
+      },
+      "pattern_key": "same_B|same_slot",
+      "source_native_check": true
+    },
+    {
+      "form_index": 3,
+      "edge_index": 0,
+      "edge_role": "WX",
+      "label": "reverse_partner",
+      "from_key": "4|3|2|7,10",
+      "to_key": "2|3|4|7,10",
+      "from_address": {
+        "slot": 4,
+        "fiber": 2,
+        "local": 2,
+        "vertex": 242,
+        "key": "4|3|2|7,10",
+        "role": "W",
+        "A": 3,
+        "B": 4,
+        "C": 2,
+        "C_plus_1": 3,
+        "columns": [
+          7,
+          10
+        ],
+        "address_pair_source": [
+          4,
+          3
+        ],
+        "handedness_word": "R"
+      },
+      "to_address": {
+        "slot": 2,
+        "fiber": 4,
+        "local": 4,
+        "vertex": 124,
+        "key": "2|3|4|7,10",
+        "role": "X",
+        "A": 3,
+        "B": 2,
+        "C": 4,
+        "C_plus_1": 5,
+        "columns": [
+          7,
+          10
+        ],
+        "address_pair_source": [
+          2,
+          5
+        ],
+        "handedness_word": "L"
+      },
+      "slot_delta_mod15": 13,
+      "local_delta_mod60": 2,
+      "vertex_delta": -118,
+      "from_BAC": [
+        4,
+        3,
+        2
+      ],
+      "to_BAC": [
+        2,
+        3,
+        4
+      ],
+      "from_columns": [
+        7,
+        10
+      ],
+      "to_columns": [
+        7,
+        10
+      ],
+      "pattern": {
+        "same_slot": false,
+        "same_local": false,
+        "half_flip_local": false,
+        "same_A": true,
+        "same_B": false,
+        "same_C": false,
+        "swap_A_C": false,
+        "same_station_columns": true,
+        "same_edge_columns": true
+      },
+      "pattern_key": "same_A|same_edge_columns|same_station_columns",
+      "source_native_check": true
+    },
+    {
+      "form_index": 3,
+      "edge_index": 1,
+      "edge_role": "XY",
+      "label": "shared_B",
+      "from_key": "2|3|4|7,10",
+      "to_key": "2|12|5|8,18",
+      "from_address": {
+        "slot": 2,
+        "fiber": 4,
+        "local": 4,
+        "vertex": 124,
+        "key": "2|3|4|7,10",
+        "role": "X",
+        "A": 3,
+        "B": 2,
+        "C": 4,
+        "C_plus_1": 5,
+        "columns": [
+          7,
+          10
+        ],
+        "address_pair_source": [
+          2,
+          5
+        ],
+        "handedness_word": "L"
+      },
+      "to_address": {
+        "slot": 2,
+        "fiber": 5,
+        "local": 5,
+        "vertex": 125,
+        "key": "2|12|5|8,18",
+        "role": "Y",
+        "A": 12,
+        "B": 2,
+        "C": 5,
+        "C_plus_1": 6,
+        "columns": [
+          8,
+          18
+        ],
+        "address_pair_source": [
+          2,
+          6
+        ],
+        "handedness_word": "L"
+      },
+      "slot_delta_mod15": 0,
+      "local_delta_mod60": 1,
+      "vertex_delta": 1,
+      "from_BAC": [
+        2,
+        3,
+        4
+      ],
+      "to_BAC": [
+        2,
+        12,
+        5
+      ],
+      "from_columns": [
+        7,
+        10
+      ],
+      "to_columns": [
+        8,
+        18
+      ],
+      "pattern": {
+        "same_slot": true,
+        "same_local": false,
+        "half_flip_local": false,
+        "same_A": false,
+        "same_B": true,
+        "same_C": false,
+        "swap_A_C": false,
+        "same_station_columns": false,
+        "same_edge_columns": false
+      },
+      "pattern_key": "same_B|same_slot",
+      "source_native_check": true
+    },
+    {
+      "form_index": 3,
+      "edge_index": 2,
+      "edge_role": "YZ",
+      "label": "reverse_partner",
+      "from_key": "2|12|5|8,18",
+      "to_key": "5|12|2|8,18",
+      "from_address": {
+        "slot": 2,
+        "fiber": 5,
+        "local": 5,
+        "vertex": 125,
+        "key": "2|12|5|8,18",
+        "role": "Y",
+        "A": 12,
+        "B": 2,
+        "C": 5,
+        "C_plus_1": 6,
+        "columns": [
+          8,
+          18
+        ],
+        "address_pair_source": [
+          2,
+          6
+        ],
+        "handedness_word": "L"
+      },
+      "to_address": {
+        "slot": 5,
+        "fiber": 2,
+        "local": 2,
+        "vertex": 302,
+        "key": "5|12|2|8,18",
+        "role": "Z",
+        "A": 12,
+        "B": 5,
+        "C": 2,
+        "C_plus_1": 3,
+        "columns": [
+          8,
+          18
+        ],
+        "address_pair_source": [
+          5,
+          3
+        ],
+        "handedness_word": "R"
+      },
+      "slot_delta_mod15": 3,
+      "local_delta_mod60": 57,
+      "vertex_delta": 177,
+      "from_BAC": [
+        2,
+        12,
+        5
+      ],
+      "to_BAC": [
+        5,
+        12,
+        2
+      ],
+      "from_columns": [
+        8,
+        18
+      ],
+      "to_columns": [
+        8,
+        18
+      ],
+      "pattern": {
+        "same_slot": false,
+        "same_local": false,
+        "half_flip_local": false,
+        "same_A": true,
+        "same_B": false,
+        "same_C": false,
+        "swap_A_C": false,
+        "same_station_columns": true,
+        "same_edge_columns": true
+      },
+      "pattern_key": "same_A|same_edge_columns|same_station_columns",
+      "source_native_check": true
+    },
+    {
+      "form_index": 3,
+      "edge_index": 3,
+      "edge_role": "ZT",
+      "label": "shared_B",
+      "from_key": "5|12|2|8,18",
+      "to_key": "5|10|4|13,17",
+      "from_address": {
+        "slot": 5,
+        "fiber": 2,
+        "local": 2,
+        "vertex": 302,
+        "key": "5|12|2|8,18",
+        "role": "Z",
+        "A": 12,
+        "B": 5,
+        "C": 2,
+        "C_plus_1": 3,
+        "columns": [
+          8,
+          18
+        ],
+        "address_pair_source": [
+          5,
+          3
+        ],
+        "handedness_word": "R"
+      },
+      "to_address": {
+        "slot": 5,
+        "fiber": 4,
+        "local": 4,
+        "vertex": 304,
+        "key": "5|10|4|13,17",
+        "role": "T",
+        "A": 10,
+        "B": 5,
+        "C": 4,
+        "C_plus_1": 5,
+        "columns": [
+          13,
+          17
+        ],
+        "address_pair_source": [
+          5,
+          5
+        ],
+        "handedness_word": "R"
+      },
+      "slot_delta_mod15": 0,
+      "local_delta_mod60": 2,
+      "vertex_delta": 2,
+      "from_BAC": [
+        5,
+        12,
+        2
+      ],
+      "to_BAC": [
+        5,
+        10,
+        4
+      ],
+      "from_columns": [
+        8,
+        18
+      ],
+      "to_columns": [
+        13,
+        17
+      ],
+      "pattern": {
+        "same_slot": true,
+        "same_local": false,
+        "half_flip_local": false,
+        "same_A": false,
+        "same_B": true,
+        "same_C": false,
+        "swap_A_C": false,
+        "same_station_columns": false,
+        "same_edge_columns": false
+      },
+      "pattern_key": "same_B|same_slot",
+      "source_native_check": true
+    },
+    {
+      "form_index": 3,
+      "edge_index": 4,
+      "edge_role": "TI",
+      "label": "reverse_partner",
+      "from_key": "5|10|4|13,17",
+      "to_key": "4|10|5|13,17",
+      "from_address": {
+        "slot": 5,
+        "fiber": 4,
+        "local": 4,
+        "vertex": 304,
+        "key": "5|10|4|13,17",
+        "role": "T",
+        "A": 10,
+        "B": 5,
+        "C": 4,
+        "C_plus_1": 5,
+        "columns": [
+          13,
+          17
+        ],
+        "address_pair_source": [
+          5,
+          5
+        ],
+        "handedness_word": "R"
+      },
+      "to_address": {
+        "slot": 4,
+        "fiber": 5,
+        "local": 5,
+        "vertex": 245,
+        "key": "4|10|5|13,17",
+        "role": "I",
+        "A": 10,
+        "B": 4,
+        "C": 5,
+        "C_plus_1": 6,
+        "columns": [
+          13,
+          17
+        ],
+        "address_pair_source": [
+          4,
+          6
+        ],
+        "handedness_word": "L"
+      },
+      "slot_delta_mod15": 14,
+      "local_delta_mod60": 1,
+      "vertex_delta": -59,
+      "from_BAC": [
+        5,
+        10,
+        4
+      ],
+      "to_BAC": [
+        4,
+        10,
+        5
+      ],
+      "from_columns": [
+        13,
+        17
+      ],
+      "to_columns": [
+        13,
+        17
+      ],
+      "pattern": {
+        "same_slot": false,
+        "same_local": false,
+        "half_flip_local": false,
+        "same_A": true,
+        "same_B": false,
+        "same_C": false,
+        "swap_A_C": false,
+        "same_station_columns": true,
+        "same_edge_columns": true
+      },
+      "pattern_key": "same_A|same_edge_columns|same_station_columns",
+      "source_native_check": true
+    },
+    {
+      "form_index": 3,
+      "edge_index": 5,
+      "edge_role": "IW",
+      "label": "shared_B",
+      "from_key": "4|10|5|13,17",
+      "to_key": "4|3|2|7,10",
+      "from_address": {
+        "slot": 4,
+        "fiber": 5,
+        "local": 5,
+        "vertex": 245,
+        "key": "4|10|5|13,17",
+        "role": "I",
+        "A": 10,
+        "B": 4,
+        "C": 5,
+        "C_plus_1": 6,
+        "columns": [
+          13,
+          17
+        ],
+        "address_pair_source": [
+          4,
+          6
+        ],
+        "handedness_word": "L"
+      },
+      "to_address": {
+        "slot": 4,
+        "fiber": 2,
+        "local": 2,
+        "vertex": 242,
+        "key": "4|3|2|7,10",
+        "role": "W",
+        "A": 3,
+        "B": 4,
+        "C": 2,
+        "C_plus_1": 3,
+        "columns": [
+          7,
+          10
+        ],
+        "address_pair_source": [
+          4,
+          3
+        ],
+        "handedness_word": "R"
+      },
+      "slot_delta_mod15": 0,
+      "local_delta_mod60": 57,
+      "vertex_delta": -3,
+      "from_BAC": [
+        4,
+        10,
+        5
+      ],
+      "to_BAC": [
+        4,
+        3,
+        2
+      ],
+      "from_columns": [
+        13,
+        17
+      ],
+      "to_columns": [
+        7,
+        10
+      ],
+      "pattern": {
+        "same_slot": true,
+        "same_local": false,
+        "half_flip_local": false,
+        "same_A": false,
+        "same_B": true,
+        "same_C": false,
+        "swap_A_C": false,
+        "same_station_columns": false,
+        "same_edge_columns": false
+      },
+      "pattern_key": "same_B|same_slot",
+      "source_native_check": true
+    }
+  ],
+  "checks": [
+    {
+      "id": "deltas_loaded",
+      "status": true,
+      "detail": "wxyzti_not_found_edge_deltas_recorded"
+    },
+    {
+      "id": "edge_count_24",
+      "status": true,
+      "detail": 24
+    },
+    {
+      "id": "labels_exact_12_12",
+      "status": true,
+      "detail": {
+        "reverse_partner": 12,
+        "shared_B": 12
+      }
+    },
+    {
+      "id": "reverse_partner_exact",
+      "status": true,
+      "detail": {
+        "reverse_partner_preserves_A_and_columns": 12,
+        "shared_B_preserves_B_and_slot": 12
+      }
+    },
+    {
+      "id": "shared_B_exact",
+      "status": true,
+      "detail": {
+        "reverse_partner_preserves_A_and_columns": 12,
+        "shared_B_preserves_B_and_slot": 12
+      }
+    },
+    {
+      "id": "literal_carrier_wiring_failed",
+      "status": true,
+      "detail": false
+    },
+    {
+      "id": "project16_edge_law_match",
+      "status": true,
+      "detail": true
+    },
+    {
+      "id": "overlay_classified",
+      "status": true,
+      "detail": true
+    },
+    {
+      "id": "no_gap_a_claim_made",
+      "status": true,
+      "detail": "classification only"
+    }
+  ],
+  "boundary": [
+    "This classifies the WXYZTI relation layer.",
+    "This does not claim the WXYZTI edges are literal X_sigma carrier edges.",
+    "This does not derive a G60-native generator.",
+    "This does not close Gap A.",
+    "This does not prove full G900."
+  ]
+}

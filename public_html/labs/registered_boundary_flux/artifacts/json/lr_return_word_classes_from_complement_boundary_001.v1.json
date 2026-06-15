@@ -1,0 +1,279 @@
+{
+  "schema": "lr_return_word_classes_from_complement_boundary_001.v1",
+  "status": "lr_return_word_classes_supported_not_independent_witness_not_full_g900",
+  "timestamp_utc": "2026-06-15T03:08:26.010319+00:00",
+  "purpose": "Test L/R return-word classes on the admitted complement-readable pairs.",
+  "boundary": [
+    "This does not close Gap A.",
+    "This does not prove full G900.",
+    "This tests L/R return-word shadows on the admitted complement pairs.",
+    "L/R classes are not an independent witness layer by themselves.",
+    "No 41-seam lift or 120-to-900 map is constructed.",
+    "No physical interpretation is claimed."
+  ],
+  "summary": {
+    "test_result": "lr_return_word_classes_supported",
+    "gap_a_status": "open",
+    "gap_a_closed": false,
+    "hand_rule_candidate": "i -> 41 - i",
+    "canonical_sparse_law": "shared_B+reverse_partner",
+    "source_reading": "anchor-and-reverse transport on oriented length-2 source-shell records",
+    "admitted_count": 4,
+    "admitted_keys": [
+      "11|7|14|23,24",
+      "13|9|10|28,29",
+      "2|1|0|0,4",
+      "4|3|2|7,10"
+    ],
+    "quotient_complement_shadow_found": true,
+    "B_complement_boundary_K": 15,
+    "A_complement_boundary_K": 10,
+    "pair_count": 2,
+    "pair_reports": [
+      {
+        "unordered_pair": [
+          "11|7|14|23,24",
+          "4|3|2|7,10"
+        ],
+        "row_count": 2,
+        "directed_words": [
+          "LR",
+          "RL"
+        ],
+        "word_class": "mixed_LR",
+        "letters": [
+          "L",
+          "R"
+        ],
+        "B_pairs": [
+          [
+            11,
+            4
+          ],
+          [
+            4,
+            11
+          ]
+        ],
+        "A_pairs": [
+          [
+            7,
+            3
+          ],
+          [
+            3,
+            7
+          ]
+        ],
+        "C_pairs": [
+          [
+            14,
+            2
+          ],
+          [
+            2,
+            14
+          ]
+        ],
+        "column_pair_sum_options": [
+          [
+            [
+              30,
+              34
+            ],
+            [
+              31,
+              33
+            ]
+          ],
+          [
+            [
+              30,
+              34
+            ],
+            [
+              31,
+              33
+            ]
+          ]
+        ],
+        "reciprocal_rows_present": true,
+        "all_words_nonzero": true
+      },
+      {
+        "unordered_pair": [
+          "13|9|10|28,29",
+          "2|1|0|0,4"
+        ],
+        "row_count": 2,
+        "directed_words": [
+          "RR"
+        ],
+        "word_class": "uniform_R",
+        "letters": [
+          "R"
+        ],
+        "B_pairs": [
+          [
+            13,
+            2
+          ],
+          [
+            2,
+            13
+          ]
+        ],
+        "A_pairs": [
+          [
+            9,
+            1
+          ],
+          [
+            1,
+            9
+          ]
+        ],
+        "C_pairs": [
+          [
+            10,
+            0
+          ],
+          [
+            0,
+            10
+          ]
+        ],
+        "column_pair_sum_options": [
+          [
+            [
+              28,
+              33
+            ],
+            [
+              29,
+              32
+            ]
+          ],
+          [
+            [
+              28,
+              33
+            ],
+            [
+              29,
+              32
+            ]
+          ]
+        ],
+        "reciprocal_rows_present": true,
+        "all_words_nonzero": true
+      }
+    ],
+    "reciprocal_pair_rows_ok": true,
+    "all_return_words_nonzero": true,
+    "directed_word_counts": {
+      "LR": 1,
+      "RL": 1,
+      "RR": 2
+    },
+    "word_class_counts": {
+      "mixed_LR": 1,
+      "uniform_R": 1
+    },
+    "unique_word_classes": [
+      "mixed_LR",
+      "uniform_R"
+    ],
+    "single_global_word_class": false,
+    "lr_word_layer_candidate_supported": true,
+    "single_word_witness_found": false,
+    "independent_witness_layer_found": false,
+    "full_41_lift_found": false,
+    "anchor_reverse_to_900_map_found": false,
+    "full_g900_admission_found": false,
+    "source_native_wxyzti_generator_found": false,
+    "claim_closes_gap_a": false,
+    "terminal_reason": "The admitted complement pairs carry L/R return-word classes, but the classes do not yet form an independent witness layer or a full lift."
+  },
+  "interpretation": {
+    "main_result": "The admitted complement pairs carry a bounded L/R return-word shadow.",
+    "meaning": "The complement assignment has a handedness layer, but it is not yet an independent witness.",
+    "why_this_matters": "This gives the complement-readable lift conjecture a second executable shadow after the B/A complement pairing.",
+    "why_not_closure": "The L/R word classes do not construct a 41-seam lift, 900-state map, return cycle, or independent witness.",
+    "next_move": "Record the L/R return-word boundary."
+  },
+  "claim": {
+    "does_this_close_gap_a": false,
+    "does_this_support_lr_return_word_shadow": true,
+    "does_this_find_independent_witness_layer": false,
+    "does_this_construct_full_41_lift": false,
+    "does_this_find_900_state_lift": false,
+    "does_this_find_full_g900_admission": false,
+    "short_form": "The admitted complement pairs carry a bounded L/R return-word shadow.",
+    "not_closed_reason": "The L/R word classes do not construct a 41-seam lift, 900-state map, return cycle, or independent witness.",
+    "next_problem": "Record the L/R return-word boundary."
+  },
+  "checks": [
+    {
+      "id": "assignment_loaded",
+      "status": true,
+      "detail": "complement_readable_assignments_supported_not_full_lift"
+    },
+    {
+      "id": "boundary_loaded",
+      "status": true,
+      "detail": "complement_assignment_boundary_recorded"
+    },
+    {
+      "id": "admitted_count_4",
+      "status": true,
+      "detail": "4"
+    },
+    {
+      "id": "pair_count_2",
+      "status": true,
+      "detail": "2"
+    },
+    {
+      "id": "reciprocal_pair_rows",
+      "status": true,
+      "detail": "[{'unordered_pair': ['11|7|14|23,24', '4|3|2|7,10'], 'row_count': 2, 'directed_words': ['LR', 'RL'], 'word_class': 'mixed_LR', 'letters': ['L', 'R'], 'B_pairs': [[11, 4], [4, 11]], 'A_pairs': [[7, 3], [3, 7]], 'C_pairs': [[14, 2], [2, 14]], 'column_pair_sum_options': [[[30, 34], [31, 33]], [[30, 34], [31, 33]]], 'reciprocal_rows_present': True, 'all_words_nonzero': True}, {'unordered_pair': ['13|9|10|28,29', '2|1|0|0,4'], 'row_count': 2, 'directed_words': ['RR'], 'word_class': 'uniform_R', 'letters': ['R'], 'B_pairs': [[13, 2], [2, 13]], 'A_pairs': [[9, 1], [1, 9]], 'C_pairs': [[10, 0], [0, 10]], 'column_pair_sum_options': [[[28, 33], [29, 32]], [[28, 33], [29, 32]]], 'reciprocal_rows_present': True, 'all_words_nonzero': True}]"
+    },
+    {
+      "id": "all_words_nonzero",
+      "status": true,
+      "detail": "{'LR': 1, 'RL': 1, 'RR': 2}"
+    },
+    {
+      "id": "lr_candidate_supported",
+      "status": true,
+      "detail": "['mixed_LR', 'uniform_R']"
+    },
+    {
+      "id": "not_independent_witness",
+      "status": true,
+      "detail": "False"
+    },
+    {
+      "id": "no_full_41_lift",
+      "status": true,
+      "detail": "False"
+    },
+    {
+      "id": "no_900_map",
+      "status": true,
+      "detail": "False"
+    },
+    {
+      "id": "full_g900_not_found",
+      "status": true,
+      "detail": "False"
+    },
+    {
+      "id": "gap_a_not_closed",
+      "status": true,
+      "detail": "test only"
+    }
+  ],
+  "next_script": "record_lr_return_word_boundary_001.py"
+}

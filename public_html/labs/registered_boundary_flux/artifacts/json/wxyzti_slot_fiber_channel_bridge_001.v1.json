@@ -1,0 +1,1778 @@
+{
+  "schema": "wxyzti_slot_fiber_channel_bridge_001.v1",
+  "status": "wxyzti_slot_fiber_channel_bridge_failed",
+  "timestamp_utc": "2026-06-15T13:17:01.462921+00:00",
+  "purpose": "Use explicit WXYZTI station slot/fiber provenance to bridge station records into the channel-aware G60-G15 carrier.",
+  "claim": "The WXYZTI station records expose slot and fiber fields that define channel addresses by vertex = slot*60 + fiber.",
+  "summary": {
+    "forms_key": "wxyzti_admitted_forms",
+    "form_count": 4,
+    "station_total": 28,
+    "station_addressed": 28,
+    "all_station_addressed": true,
+    "edge_total": 24,
+    "edge_resolved": 0,
+    "all_edges_resolved": false,
+    "edge_channel_counts": {
+      "unresolved": 24
+    },
+    "label_channel_counts": {
+      "reverse_partner -> unresolved": 12,
+      "shared_B -> unresolved": 12
+    },
+    "expected_role_fit": false,
+    "address_conflict_count": 0,
+    "bridge_constructed": false,
+    "bridge_rule": "station.slot + station.fiber -> (slot, local=fiber), vertex=slot*60+fiber",
+    "gap_a_closed": false,
+    "full_g900_admission_found": false,
+    "next_step": "inspect_failed_slot_fiber_bridge_edges"
+  },
+  "form_reports": [
+    {
+      "form_index": 0,
+      "station_count": 7,
+      "station_address_count": 6,
+      "edge_count": 6,
+      "edge_resolved_count": 0,
+      "all_edges_resolved": false,
+      "station_reports": [
+        {
+          "station_index": 0,
+          "label": "W",
+          "address": {
+            "slot": 11,
+            "fiber": 14,
+            "local": 14,
+            "vertex": 674,
+            "method": "station.slot + station.fiber"
+          },
+          "error": null,
+          "raw_key": "11|7|14|23,24",
+          "role": "W",
+          "A": 7,
+          "B": 11,
+          "C": 14,
+          "C_plus_1": 15,
+          "columns": [
+            23,
+            24
+          ],
+          "address_pair_source": [
+            11,
+            15
+          ]
+        },
+        {
+          "station_index": 1,
+          "label": "X",
+          "address": {
+            "slot": 14,
+            "fiber": 11,
+            "local": 11,
+            "vertex": 851,
+            "method": "station.slot + station.fiber"
+          },
+          "error": null,
+          "raw_key": "14|7|11|23,24",
+          "role": "X",
+          "A": 7,
+          "B": 14,
+          "C": 11,
+          "C_plus_1": 12,
+          "columns": [
+            23,
+            24
+          ],
+          "address_pair_source": [
+            14,
+            12
+          ]
+        },
+        {
+          "station_index": 2,
+          "label": "Y",
+          "address": {
+            "slot": 14,
+            "fiber": 2,
+            "local": 2,
+            "vertex": 842,
+            "method": "station.slot + station.fiber"
+          },
+          "error": null,
+          "raw_key": "14|3|2|7,12",
+          "role": "Y",
+          "A": 3,
+          "B": 14,
+          "C": 2,
+          "C_plus_1": 3,
+          "columns": [
+            7,
+            12
+          ],
+          "address_pair_source": [
+            14,
+            3
+          ]
+        },
+        {
+          "station_index": 3,
+          "label": "Z",
+          "address": {
+            "slot": 2,
+            "fiber": 14,
+            "local": 14,
+            "vertex": 134,
+            "method": "station.slot + station.fiber"
+          },
+          "error": null,
+          "raw_key": "2|3|14|7,12",
+          "role": "Z",
+          "A": 3,
+          "B": 2,
+          "C": 14,
+          "C_plus_1": 15,
+          "columns": [
+            7,
+            12
+          ],
+          "address_pair_source": [
+            2,
+            15
+          ]
+        },
+        {
+          "station_index": 4,
+          "label": "T",
+          "address": {
+            "slot": 2,
+            "fiber": 11,
+            "local": 11,
+            "vertex": 131,
+            "method": "station.slot + station.fiber"
+          },
+          "error": null,
+          "raw_key": "2|1|11|4,5",
+          "role": "T",
+          "A": 1,
+          "B": 2,
+          "C": 11,
+          "C_plus_1": 12,
+          "columns": [
+            4,
+            5
+          ],
+          "address_pair_source": [
+            2,
+            12
+          ]
+        },
+        {
+          "station_index": 5,
+          "label": "I",
+          "address": {
+            "slot": 11,
+            "fiber": 2,
+            "local": 2,
+            "vertex": 662,
+            "method": "station.slot + station.fiber"
+          },
+          "error": null,
+          "raw_key": "11|1|2|4,5",
+          "role": "I",
+          "A": 1,
+          "B": 11,
+          "C": 2,
+          "C_plus_1": 3,
+          "columns": [
+            4,
+            5
+          ],
+          "address_pair_source": [
+            11,
+            3
+          ]
+        },
+        {
+          "station_index": 6,
+          "label": "W",
+          "address": {
+            "slot": 11,
+            "fiber": 14,
+            "local": 14,
+            "vertex": 674,
+            "method": "station.slot + station.fiber"
+          },
+          "error": null,
+          "raw_key": "11|7|14|23,24",
+          "role": "W",
+          "A": 7,
+          "B": 11,
+          "C": 14,
+          "C_plus_1": 15,
+          "columns": [
+            23,
+            24
+          ],
+          "address_pair_source": [
+            11,
+            15
+          ]
+        }
+      ],
+      "edge_reports": [
+        {
+          "edge_index": 0,
+          "from": "11|7|14|23,24",
+          "to": "14|7|11|23,24",
+          "label": "reverse_partner",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_labels": [
+              "11|7|14|23,24",
+              "14|7|11|23,24"
+            ]
+          },
+          "raw": {
+            "edge_role": "WX",
+            "from": "11|7|14|23,24",
+            "to": "14|7|11|23,24",
+            "transport_label": "reverse_partner",
+            "source_native_check": true,
+            "from_BAC": [
+              11,
+              7,
+              14
+            ],
+            "to_BAC": [
+              14,
+              7,
+              11
+            ],
+            "from_columns": [
+              23,
+              24
+            ],
+            "to_columns": [
+              23,
+              24
+            ]
+          }
+        },
+        {
+          "edge_index": 1,
+          "from": "14|7|11|23,24",
+          "to": "14|3|2|7,12",
+          "label": "shared_B",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_labels": [
+              "14|7|11|23,24",
+              "14|3|2|7,12"
+            ]
+          },
+          "raw": {
+            "edge_role": "XY",
+            "from": "14|7|11|23,24",
+            "to": "14|3|2|7,12",
+            "transport_label": "shared_B",
+            "source_native_check": true,
+            "from_BAC": [
+              14,
+              7,
+              11
+            ],
+            "to_BAC": [
+              14,
+              3,
+              2
+            ],
+            "from_columns": [
+              23,
+              24
+            ],
+            "to_columns": [
+              7,
+              12
+            ]
+          }
+        },
+        {
+          "edge_index": 2,
+          "from": "14|3|2|7,12",
+          "to": "2|3|14|7,12",
+          "label": "reverse_partner",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_labels": [
+              "14|3|2|7,12",
+              "2|3|14|7,12"
+            ]
+          },
+          "raw": {
+            "edge_role": "YZ",
+            "from": "14|3|2|7,12",
+            "to": "2|3|14|7,12",
+            "transport_label": "reverse_partner",
+            "source_native_check": true,
+            "from_BAC": [
+              14,
+              3,
+              2
+            ],
+            "to_BAC": [
+              2,
+              3,
+              14
+            ],
+            "from_columns": [
+              7,
+              12
+            ],
+            "to_columns": [
+              7,
+              12
+            ]
+          }
+        },
+        {
+          "edge_index": 3,
+          "from": "2|3|14|7,12",
+          "to": "2|1|11|4,5",
+          "label": "shared_B",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_labels": [
+              "2|3|14|7,12",
+              "2|1|11|4,5"
+            ]
+          },
+          "raw": {
+            "edge_role": "ZT",
+            "from": "2|3|14|7,12",
+            "to": "2|1|11|4,5",
+            "transport_label": "shared_B",
+            "source_native_check": true,
+            "from_BAC": [
+              2,
+              3,
+              14
+            ],
+            "to_BAC": [
+              2,
+              1,
+              11
+            ],
+            "from_columns": [
+              7,
+              12
+            ],
+            "to_columns": [
+              4,
+              5
+            ]
+          }
+        },
+        {
+          "edge_index": 4,
+          "from": "2|1|11|4,5",
+          "to": "11|1|2|4,5",
+          "label": "reverse_partner",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_labels": [
+              "2|1|11|4,5",
+              "11|1|2|4,5"
+            ]
+          },
+          "raw": {
+            "edge_role": "TI",
+            "from": "2|1|11|4,5",
+            "to": "11|1|2|4,5",
+            "transport_label": "reverse_partner",
+            "source_native_check": true,
+            "from_BAC": [
+              2,
+              1,
+              11
+            ],
+            "to_BAC": [
+              11,
+              1,
+              2
+            ],
+            "from_columns": [
+              4,
+              5
+            ],
+            "to_columns": [
+              4,
+              5
+            ]
+          }
+        },
+        {
+          "edge_index": 5,
+          "from": "11|1|2|4,5",
+          "to": "11|7|14|23,24",
+          "label": "shared_B",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_labels": [
+              "11|1|2|4,5",
+              "11|7|14|23,24"
+            ]
+          },
+          "raw": {
+            "edge_role": "IW",
+            "from": "11|1|2|4,5",
+            "to": "11|7|14|23,24",
+            "transport_label": "shared_B",
+            "source_native_check": true,
+            "from_BAC": [
+              11,
+              1,
+              2
+            ],
+            "to_BAC": [
+              11,
+              7,
+              14
+            ],
+            "from_columns": [
+              4,
+              5
+            ],
+            "to_columns": [
+              23,
+              24
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "form_index": 1,
+      "station_count": 7,
+      "station_address_count": 6,
+      "edge_count": 6,
+      "edge_resolved_count": 0,
+      "all_edges_resolved": false,
+      "station_reports": [
+        {
+          "station_index": 0,
+          "label": "W",
+          "address": {
+            "slot": 13,
+            "fiber": 10,
+            "local": 10,
+            "vertex": 790,
+            "method": "station.slot + station.fiber"
+          },
+          "error": null,
+          "raw_key": "13|9|10|28,29",
+          "role": "W",
+          "A": 9,
+          "B": 13,
+          "C": 10,
+          "C_plus_1": 11,
+          "columns": [
+            28,
+            29
+          ],
+          "address_pair_source": [
+            13,
+            11
+          ]
+        },
+        {
+          "station_index": 1,
+          "label": "X",
+          "address": {
+            "slot": 10,
+            "fiber": 13,
+            "local": 13,
+            "vertex": 613,
+            "method": "station.slot + station.fiber"
+          },
+          "error": null,
+          "raw_key": "10|9|13|28,29",
+          "role": "X",
+          "A": 9,
+          "B": 10,
+          "C": 13,
+          "C_plus_1": 14,
+          "columns": [
+            28,
+            29
+          ],
+          "address_pair_source": [
+            10,
+            14
+          ]
+        },
+        {
+          "station_index": 2,
+          "label": "Y",
+          "address": {
+            "slot": 10,
+            "fiber": 1,
+            "local": 1,
+            "vertex": 601,
+            "method": "station.slot + station.fiber"
+          },
+          "error": null,
+          "raw_key": "10|0|1|0,2",
+          "role": "Y",
+          "A": 0,
+          "B": 10,
+          "C": 1,
+          "C_plus_1": 2,
+          "columns": [
+            0,
+            2
+          ],
+          "address_pair_source": [
+            10,
+            2
+          ]
+        },
+        {
+          "station_index": 3,
+          "label": "Z",
+          "address": {
+            "slot": 1,
+            "fiber": 10,
+            "local": 10,
+            "vertex": 70,
+            "method": "station.slot + station.fiber"
+          },
+          "error": null,
+          "raw_key": "1|0|10|0,2",
+          "role": "Z",
+          "A": 0,
+          "B": 1,
+          "C": 10,
+          "C_plus_1": 11,
+          "columns": [
+            0,
+            2
+          ],
+          "address_pair_source": [
+            1,
+            11
+          ]
+        },
+        {
+          "station_index": 4,
+          "label": "T",
+          "address": {
+            "slot": 1,
+            "fiber": 13,
+            "local": 13,
+            "vertex": 73,
+            "method": "station.slot + station.fiber"
+          },
+          "error": null,
+          "raw_key": "1|2|13|4,9",
+          "role": "T",
+          "A": 2,
+          "B": 1,
+          "C": 13,
+          "C_plus_1": 14,
+          "columns": [
+            4,
+            9
+          ],
+          "address_pair_source": [
+            1,
+            14
+          ]
+        },
+        {
+          "station_index": 5,
+          "label": "I",
+          "address": {
+            "slot": 13,
+            "fiber": 1,
+            "local": 1,
+            "vertex": 781,
+            "method": "station.slot + station.fiber"
+          },
+          "error": null,
+          "raw_key": "13|2|1|4,9",
+          "role": "I",
+          "A": 2,
+          "B": 13,
+          "C": 1,
+          "C_plus_1": 2,
+          "columns": [
+            4,
+            9
+          ],
+          "address_pair_source": [
+            13,
+            2
+          ]
+        },
+        {
+          "station_index": 6,
+          "label": "W",
+          "address": {
+            "slot": 13,
+            "fiber": 10,
+            "local": 10,
+            "vertex": 790,
+            "method": "station.slot + station.fiber"
+          },
+          "error": null,
+          "raw_key": "13|9|10|28,29",
+          "role": "W",
+          "A": 9,
+          "B": 13,
+          "C": 10,
+          "C_plus_1": 11,
+          "columns": [
+            28,
+            29
+          ],
+          "address_pair_source": [
+            13,
+            11
+          ]
+        }
+      ],
+      "edge_reports": [
+        {
+          "edge_index": 0,
+          "from": "13|9|10|28,29",
+          "to": "10|9|13|28,29",
+          "label": "reverse_partner",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_labels": [
+              "13|9|10|28,29",
+              "10|9|13|28,29"
+            ]
+          },
+          "raw": {
+            "edge_role": "WX",
+            "from": "13|9|10|28,29",
+            "to": "10|9|13|28,29",
+            "transport_label": "reverse_partner",
+            "source_native_check": true,
+            "from_BAC": [
+              13,
+              9,
+              10
+            ],
+            "to_BAC": [
+              10,
+              9,
+              13
+            ],
+            "from_columns": [
+              28,
+              29
+            ],
+            "to_columns": [
+              28,
+              29
+            ]
+          }
+        },
+        {
+          "edge_index": 1,
+          "from": "10|9|13|28,29",
+          "to": "10|0|1|0,2",
+          "label": "shared_B",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_labels": [
+              "10|9|13|28,29",
+              "10|0|1|0,2"
+            ]
+          },
+          "raw": {
+            "edge_role": "XY",
+            "from": "10|9|13|28,29",
+            "to": "10|0|1|0,2",
+            "transport_label": "shared_B",
+            "source_native_check": true,
+            "from_BAC": [
+              10,
+              9,
+              13
+            ],
+            "to_BAC": [
+              10,
+              0,
+              1
+            ],
+            "from_columns": [
+              28,
+              29
+            ],
+            "to_columns": [
+              0,
+              2
+            ]
+          }
+        },
+        {
+          "edge_index": 2,
+          "from": "10|0|1|0,2",
+          "to": "1|0|10|0,2",
+          "label": "reverse_partner",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_labels": [
+              "10|0|1|0,2",
+              "1|0|10|0,2"
+            ]
+          },
+          "raw": {
+            "edge_role": "YZ",
+            "from": "10|0|1|0,2",
+            "to": "1|0|10|0,2",
+            "transport_label": "reverse_partner",
+            "source_native_check": true,
+            "from_BAC": [
+              10,
+              0,
+              1
+            ],
+            "to_BAC": [
+              1,
+              0,
+              10
+            ],
+            "from_columns": [
+              0,
+              2
+            ],
+            "to_columns": [
+              0,
+              2
+            ]
+          }
+        },
+        {
+          "edge_index": 3,
+          "from": "1|0|10|0,2",
+          "to": "1|2|13|4,9",
+          "label": "shared_B",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_labels": [
+              "1|0|10|0,2",
+              "1|2|13|4,9"
+            ]
+          },
+          "raw": {
+            "edge_role": "ZT",
+            "from": "1|0|10|0,2",
+            "to": "1|2|13|4,9",
+            "transport_label": "shared_B",
+            "source_native_check": true,
+            "from_BAC": [
+              1,
+              0,
+              10
+            ],
+            "to_BAC": [
+              1,
+              2,
+              13
+            ],
+            "from_columns": [
+              0,
+              2
+            ],
+            "to_columns": [
+              4,
+              9
+            ]
+          }
+        },
+        {
+          "edge_index": 4,
+          "from": "1|2|13|4,9",
+          "to": "13|2|1|4,9",
+          "label": "reverse_partner",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_labels": [
+              "1|2|13|4,9",
+              "13|2|1|4,9"
+            ]
+          },
+          "raw": {
+            "edge_role": "TI",
+            "from": "1|2|13|4,9",
+            "to": "13|2|1|4,9",
+            "transport_label": "reverse_partner",
+            "source_native_check": true,
+            "from_BAC": [
+              1,
+              2,
+              13
+            ],
+            "to_BAC": [
+              13,
+              2,
+              1
+            ],
+            "from_columns": [
+              4,
+              9
+            ],
+            "to_columns": [
+              4,
+              9
+            ]
+          }
+        },
+        {
+          "edge_index": 5,
+          "from": "13|2|1|4,9",
+          "to": "13|9|10|28,29",
+          "label": "shared_B",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_labels": [
+              "13|2|1|4,9",
+              "13|9|10|28,29"
+            ]
+          },
+          "raw": {
+            "edge_role": "IW",
+            "from": "13|2|1|4,9",
+            "to": "13|9|10|28,29",
+            "transport_label": "shared_B",
+            "source_native_check": true,
+            "from_BAC": [
+              13,
+              2,
+              1
+            ],
+            "to_BAC": [
+              13,
+              9,
+              10
+            ],
+            "from_columns": [
+              4,
+              9
+            ],
+            "to_columns": [
+              28,
+              29
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "form_index": 2,
+      "station_count": 7,
+      "station_address_count": 6,
+      "edge_count": 6,
+      "edge_resolved_count": 0,
+      "all_edges_resolved": false,
+      "station_reports": [
+        {
+          "station_index": 0,
+          "label": "W",
+          "address": {
+            "slot": 2,
+            "fiber": 0,
+            "local": 0,
+            "vertex": 120,
+            "method": "station.slot + station.fiber"
+          },
+          "error": null,
+          "raw_key": "2|1|0|0,4",
+          "role": "W",
+          "A": 1,
+          "B": 2,
+          "C": 0,
+          "C_plus_1": 1,
+          "columns": [
+            0,
+            4
+          ],
+          "address_pair_source": [
+            2,
+            1
+          ]
+        },
+        {
+          "station_index": 1,
+          "label": "X",
+          "address": {
+            "slot": 0,
+            "fiber": 2,
+            "local": 2,
+            "vertex": 2,
+            "method": "station.slot + station.fiber"
+          },
+          "error": null,
+          "raw_key": "0|1|2|0,4",
+          "role": "X",
+          "A": 1,
+          "B": 0,
+          "C": 2,
+          "C_plus_1": 3,
+          "columns": [
+            0,
+            4
+          ],
+          "address_pair_source": [
+            0,
+            3
+          ]
+        },
+        {
+          "station_index": 2,
+          "label": "Y",
+          "address": {
+            "slot": 0,
+            "fiber": 5,
+            "local": 5,
+            "vertex": 5,
+            "method": "station.slot + station.fiber"
+          },
+          "error": null,
+          "raw_key": "0|10|5|2,17",
+          "role": "Y",
+          "A": 10,
+          "B": 0,
+          "C": 5,
+          "C_plus_1": 6,
+          "columns": [
+            2,
+            17
+          ],
+          "address_pair_source": [
+            0,
+            6
+          ]
+        },
+        {
+          "station_index": 3,
+          "label": "Z",
+          "address": {
+            "slot": 5,
+            "fiber": 0,
+            "local": 0,
+            "vertex": 300,
+            "method": "station.slot + station.fiber"
+          },
+          "error": null,
+          "raw_key": "5|10|0|2,17",
+          "role": "Z",
+          "A": 10,
+          "B": 5,
+          "C": 0,
+          "C_plus_1": 1,
+          "columns": [
+            2,
+            17
+          ],
+          "address_pair_source": [
+            5,
+            1
+          ]
+        },
+        {
+          "station_index": 4,
+          "label": "T",
+          "address": {
+            "slot": 5,
+            "fiber": 2,
+            "local": 2,
+            "vertex": 302,
+            "method": "station.slot + station.fiber"
+          },
+          "error": null,
+          "raw_key": "5|12|2|8,18",
+          "role": "T",
+          "A": 12,
+          "B": 5,
+          "C": 2,
+          "C_plus_1": 3,
+          "columns": [
+            8,
+            18
+          ],
+          "address_pair_source": [
+            5,
+            3
+          ]
+        },
+        {
+          "station_index": 5,
+          "label": "I",
+          "address": {
+            "slot": 2,
+            "fiber": 5,
+            "local": 5,
+            "vertex": 125,
+            "method": "station.slot + station.fiber"
+          },
+          "error": null,
+          "raw_key": "2|12|5|8,18",
+          "role": "I",
+          "A": 12,
+          "B": 2,
+          "C": 5,
+          "C_plus_1": 6,
+          "columns": [
+            8,
+            18
+          ],
+          "address_pair_source": [
+            2,
+            6
+          ]
+        },
+        {
+          "station_index": 6,
+          "label": "W",
+          "address": {
+            "slot": 2,
+            "fiber": 0,
+            "local": 0,
+            "vertex": 120,
+            "method": "station.slot + station.fiber"
+          },
+          "error": null,
+          "raw_key": "2|1|0|0,4",
+          "role": "W",
+          "A": 1,
+          "B": 2,
+          "C": 0,
+          "C_plus_1": 1,
+          "columns": [
+            0,
+            4
+          ],
+          "address_pair_source": [
+            2,
+            1
+          ]
+        }
+      ],
+      "edge_reports": [
+        {
+          "edge_index": 0,
+          "from": "2|1|0|0,4",
+          "to": "0|1|2|0,4",
+          "label": "reverse_partner",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_labels": [
+              "2|1|0|0,4",
+              "0|1|2|0,4"
+            ]
+          },
+          "raw": {
+            "edge_role": "WX",
+            "from": "2|1|0|0,4",
+            "to": "0|1|2|0,4",
+            "transport_label": "reverse_partner",
+            "source_native_check": true,
+            "from_BAC": [
+              2,
+              1,
+              0
+            ],
+            "to_BAC": [
+              0,
+              1,
+              2
+            ],
+            "from_columns": [
+              0,
+              4
+            ],
+            "to_columns": [
+              0,
+              4
+            ]
+          }
+        },
+        {
+          "edge_index": 1,
+          "from": "0|1|2|0,4",
+          "to": "0|10|5|2,17",
+          "label": "shared_B",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_labels": [
+              "0|1|2|0,4",
+              "0|10|5|2,17"
+            ]
+          },
+          "raw": {
+            "edge_role": "XY",
+            "from": "0|1|2|0,4",
+            "to": "0|10|5|2,17",
+            "transport_label": "shared_B",
+            "source_native_check": true,
+            "from_BAC": [
+              0,
+              1,
+              2
+            ],
+            "to_BAC": [
+              0,
+              10,
+              5
+            ],
+            "from_columns": [
+              0,
+              4
+            ],
+            "to_columns": [
+              2,
+              17
+            ]
+          }
+        },
+        {
+          "edge_index": 2,
+          "from": "0|10|5|2,17",
+          "to": "5|10|0|2,17",
+          "label": "reverse_partner",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_labels": [
+              "0|10|5|2,17",
+              "5|10|0|2,17"
+            ]
+          },
+          "raw": {
+            "edge_role": "YZ",
+            "from": "0|10|5|2,17",
+            "to": "5|10|0|2,17",
+            "transport_label": "reverse_partner",
+            "source_native_check": true,
+            "from_BAC": [
+              0,
+              10,
+              5
+            ],
+            "to_BAC": [
+              5,
+              10,
+              0
+            ],
+            "from_columns": [
+              2,
+              17
+            ],
+            "to_columns": [
+              2,
+              17
+            ]
+          }
+        },
+        {
+          "edge_index": 3,
+          "from": "5|10|0|2,17",
+          "to": "5|12|2|8,18",
+          "label": "shared_B",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_labels": [
+              "5|10|0|2,17",
+              "5|12|2|8,18"
+            ]
+          },
+          "raw": {
+            "edge_role": "ZT",
+            "from": "5|10|0|2,17",
+            "to": "5|12|2|8,18",
+            "transport_label": "shared_B",
+            "source_native_check": true,
+            "from_BAC": [
+              5,
+              10,
+              0
+            ],
+            "to_BAC": [
+              5,
+              12,
+              2
+            ],
+            "from_columns": [
+              2,
+              17
+            ],
+            "to_columns": [
+              8,
+              18
+            ]
+          }
+        },
+        {
+          "edge_index": 4,
+          "from": "5|12|2|8,18",
+          "to": "2|12|5|8,18",
+          "label": "reverse_partner",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_labels": [
+              "5|12|2|8,18",
+              "2|12|5|8,18"
+            ]
+          },
+          "raw": {
+            "edge_role": "TI",
+            "from": "5|12|2|8,18",
+            "to": "2|12|5|8,18",
+            "transport_label": "reverse_partner",
+            "source_native_check": true,
+            "from_BAC": [
+              5,
+              12,
+              2
+            ],
+            "to_BAC": [
+              2,
+              12,
+              5
+            ],
+            "from_columns": [
+              8,
+              18
+            ],
+            "to_columns": [
+              8,
+              18
+            ]
+          }
+        },
+        {
+          "edge_index": 5,
+          "from": "2|12|5|8,18",
+          "to": "2|1|0|0,4",
+          "label": "shared_B",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_labels": [
+              "2|12|5|8,18",
+              "2|1|0|0,4"
+            ]
+          },
+          "raw": {
+            "edge_role": "IW",
+            "from": "2|12|5|8,18",
+            "to": "2|1|0|0,4",
+            "transport_label": "shared_B",
+            "source_native_check": true,
+            "from_BAC": [
+              2,
+              12,
+              5
+            ],
+            "to_BAC": [
+              2,
+              1,
+              0
+            ],
+            "from_columns": [
+              8,
+              18
+            ],
+            "to_columns": [
+              0,
+              4
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "form_index": 3,
+      "station_count": 7,
+      "station_address_count": 6,
+      "edge_count": 6,
+      "edge_resolved_count": 0,
+      "all_edges_resolved": false,
+      "station_reports": [
+        {
+          "station_index": 0,
+          "label": "W",
+          "address": {
+            "slot": 4,
+            "fiber": 2,
+            "local": 2,
+            "vertex": 242,
+            "method": "station.slot + station.fiber"
+          },
+          "error": null,
+          "raw_key": "4|3|2|7,10",
+          "role": "W",
+          "A": 3,
+          "B": 4,
+          "C": 2,
+          "C_plus_1": 3,
+          "columns": [
+            7,
+            10
+          ],
+          "address_pair_source": [
+            4,
+            3
+          ]
+        },
+        {
+          "station_index": 1,
+          "label": "X",
+          "address": {
+            "slot": 2,
+            "fiber": 4,
+            "local": 4,
+            "vertex": 124,
+            "method": "station.slot + station.fiber"
+          },
+          "error": null,
+          "raw_key": "2|3|4|7,10",
+          "role": "X",
+          "A": 3,
+          "B": 2,
+          "C": 4,
+          "C_plus_1": 5,
+          "columns": [
+            7,
+            10
+          ],
+          "address_pair_source": [
+            2,
+            5
+          ]
+        },
+        {
+          "station_index": 2,
+          "label": "Y",
+          "address": {
+            "slot": 2,
+            "fiber": 5,
+            "local": 5,
+            "vertex": 125,
+            "method": "station.slot + station.fiber"
+          },
+          "error": null,
+          "raw_key": "2|12|5|8,18",
+          "role": "Y",
+          "A": 12,
+          "B": 2,
+          "C": 5,
+          "C_plus_1": 6,
+          "columns": [
+            8,
+            18
+          ],
+          "address_pair_source": [
+            2,
+            6
+          ]
+        },
+        {
+          "station_index": 3,
+          "label": "Z",
+          "address": {
+            "slot": 5,
+            "fiber": 2,
+            "local": 2,
+            "vertex": 302,
+            "method": "station.slot + station.fiber"
+          },
+          "error": null,
+          "raw_key": "5|12|2|8,18",
+          "role": "Z",
+          "A": 12,
+          "B": 5,
+          "C": 2,
+          "C_plus_1": 3,
+          "columns": [
+            8,
+            18
+          ],
+          "address_pair_source": [
+            5,
+            3
+          ]
+        },
+        {
+          "station_index": 4,
+          "label": "T",
+          "address": {
+            "slot": 5,
+            "fiber": 4,
+            "local": 4,
+            "vertex": 304,
+            "method": "station.slot + station.fiber"
+          },
+          "error": null,
+          "raw_key": "5|10|4|13,17",
+          "role": "T",
+          "A": 10,
+          "B": 5,
+          "C": 4,
+          "C_plus_1": 5,
+          "columns": [
+            13,
+            17
+          ],
+          "address_pair_source": [
+            5,
+            5
+          ]
+        },
+        {
+          "station_index": 5,
+          "label": "I",
+          "address": {
+            "slot": 4,
+            "fiber": 5,
+            "local": 5,
+            "vertex": 245,
+            "method": "station.slot + station.fiber"
+          },
+          "error": null,
+          "raw_key": "4|10|5|13,17",
+          "role": "I",
+          "A": 10,
+          "B": 4,
+          "C": 5,
+          "C_plus_1": 6,
+          "columns": [
+            13,
+            17
+          ],
+          "address_pair_source": [
+            4,
+            6
+          ]
+        },
+        {
+          "station_index": 6,
+          "label": "W",
+          "address": {
+            "slot": 4,
+            "fiber": 2,
+            "local": 2,
+            "vertex": 242,
+            "method": "station.slot + station.fiber"
+          },
+          "error": null,
+          "raw_key": "4|3|2|7,10",
+          "role": "W",
+          "A": 3,
+          "B": 4,
+          "C": 2,
+          "C_plus_1": 3,
+          "columns": [
+            7,
+            10
+          ],
+          "address_pair_source": [
+            4,
+            3
+          ]
+        }
+      ],
+      "edge_reports": [
+        {
+          "edge_index": 0,
+          "from": "4|3|2|7,10",
+          "to": "2|3|4|7,10",
+          "label": "reverse_partner",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_labels": [
+              "4|3|2|7,10",
+              "2|3|4|7,10"
+            ]
+          },
+          "raw": {
+            "edge_role": "WX",
+            "from": "4|3|2|7,10",
+            "to": "2|3|4|7,10",
+            "transport_label": "reverse_partner",
+            "source_native_check": true,
+            "from_BAC": [
+              4,
+              3,
+              2
+            ],
+            "to_BAC": [
+              2,
+              3,
+              4
+            ],
+            "from_columns": [
+              7,
+              10
+            ],
+            "to_columns": [
+              7,
+              10
+            ]
+          }
+        },
+        {
+          "edge_index": 1,
+          "from": "2|3|4|7,10",
+          "to": "2|12|5|8,18",
+          "label": "shared_B",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_labels": [
+              "2|3|4|7,10",
+              "2|12|5|8,18"
+            ]
+          },
+          "raw": {
+            "edge_role": "XY",
+            "from": "2|3|4|7,10",
+            "to": "2|12|5|8,18",
+            "transport_label": "shared_B",
+            "source_native_check": true,
+            "from_BAC": [
+              2,
+              3,
+              4
+            ],
+            "to_BAC": [
+              2,
+              12,
+              5
+            ],
+            "from_columns": [
+              7,
+              10
+            ],
+            "to_columns": [
+              8,
+              18
+            ]
+          }
+        },
+        {
+          "edge_index": 2,
+          "from": "2|12|5|8,18",
+          "to": "5|12|2|8,18",
+          "label": "reverse_partner",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_labels": [
+              "2|12|5|8,18",
+              "5|12|2|8,18"
+            ]
+          },
+          "raw": {
+            "edge_role": "YZ",
+            "from": "2|12|5|8,18",
+            "to": "5|12|2|8,18",
+            "transport_label": "reverse_partner",
+            "source_native_check": true,
+            "from_BAC": [
+              2,
+              12,
+              5
+            ],
+            "to_BAC": [
+              5,
+              12,
+              2
+            ],
+            "from_columns": [
+              8,
+              18
+            ],
+            "to_columns": [
+              8,
+              18
+            ]
+          }
+        },
+        {
+          "edge_index": 3,
+          "from": "5|12|2|8,18",
+          "to": "5|10|4|13,17",
+          "label": "shared_B",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_labels": [
+              "5|12|2|8,18",
+              "5|10|4|13,17"
+            ]
+          },
+          "raw": {
+            "edge_role": "ZT",
+            "from": "5|12|2|8,18",
+            "to": "5|10|4|13,17",
+            "transport_label": "shared_B",
+            "source_native_check": true,
+            "from_BAC": [
+              5,
+              12,
+              2
+            ],
+            "to_BAC": [
+              5,
+              10,
+              4
+            ],
+            "from_columns": [
+              8,
+              18
+            ],
+            "to_columns": [
+              13,
+              17
+            ]
+          }
+        },
+        {
+          "edge_index": 4,
+          "from": "5|10|4|13,17",
+          "to": "4|10|5|13,17",
+          "label": "reverse_partner",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_labels": [
+              "5|10|4|13,17",
+              "4|10|5|13,17"
+            ]
+          },
+          "raw": {
+            "edge_role": "TI",
+            "from": "5|10|4|13,17",
+            "to": "4|10|5|13,17",
+            "transport_label": "reverse_partner",
+            "source_native_check": true,
+            "from_BAC": [
+              5,
+              10,
+              4
+            ],
+            "to_BAC": [
+              4,
+              10,
+              5
+            ],
+            "from_columns": [
+              13,
+              17
+            ],
+            "to_columns": [
+              13,
+              17
+            ]
+          }
+        },
+        {
+          "edge_index": 5,
+          "from": "4|10|5|13,17",
+          "to": "4|3|2|7,10",
+          "label": "shared_B",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_labels": [
+              "4|10|5|13,17",
+              "4|3|2|7,10"
+            ]
+          },
+          "raw": {
+            "edge_role": "IW",
+            "from": "4|10|5|13,17",
+            "to": "4|3|2|7,10",
+            "transport_label": "shared_B",
+            "source_native_check": true,
+            "from_BAC": [
+              4,
+              10,
+              5
+            ],
+            "to_BAC": [
+              4,
+              3,
+              2
+            ],
+            "from_columns": [
+              13,
+              17
+            ],
+            "to_columns": [
+              7,
+              10
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "address_conflicts": [],
+  "checks": [
+    {
+      "id": "channel_join_loaded",
+      "status": true,
+      "detail": "channel_aware_g60_g15_join_constructed"
+    },
+    {
+      "id": "provenance_keys_loaded",
+      "status": true,
+      "detail": "wxyzti_station_record_provenance_keys_recorded"
+    },
+    {
+      "id": "forms_present",
+      "status": true,
+      "detail": 4
+    },
+    {
+      "id": "all_station_addressed",
+      "status": true,
+      "detail": "28/28"
+    },
+    {
+      "id": "all_edges_resolved",
+      "status": false,
+      "detail": "0/24"
+    },
+    {
+      "id": "expected_role_fit",
+      "status": false,
+      "detail": {
+        "reverse_partner -> unresolved": 12,
+        "shared_B -> unresolved": 12
+      }
+    },
+    {
+      "id": "no_address_conflicts",
+      "status": true,
+      "detail": 0
+    },
+    {
+      "id": "bridge_constructed",
+      "status": false,
+      "detail": false
+    },
+    {
+      "id": "no_generator_claim_made",
+      "status": true,
+      "detail": "bridge only"
+    }
+  ],
+  "boundary": [
+    "This constructs a WXYZTI station-to-channel bridge if checks pass.",
+    "This does not yet prove a G60-native NRC generator.",
+    "This does not close Gap A.",
+    "This does not prove full G900."
+  ]
+}

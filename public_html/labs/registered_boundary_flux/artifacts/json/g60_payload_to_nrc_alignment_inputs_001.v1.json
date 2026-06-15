@@ -1,0 +1,1623 @@
+{
+  "schema": "g60_payload_to_nrc_alignment_inputs_001.v1",
+  "status": "g60_payload_to_nrc_alignment_inputs_recorded",
+  "timestamp_utc": "2026-06-15T12:47:47.456080+00:00",
+  "purpose": "Inspect the canonical G60 payload and kernel payload CSVs before attempting G60-to-NRC alignment.",
+  "summary": {
+    "canonical_g60_payload_loaded": true,
+    "canonical_g60_vertex_count": 60,
+    "canonical_g60_edge_count": 120,
+    "canonical_g60_degree_counts": {
+      "4": 60
+    },
+    "g60_local_edges_csv_exists": true,
+    "g60_local_edges_csv_matches_imported_payload": true,
+    "g15_slot_edges_csv_exists": true,
+    "g15_slot_pair_count": 30,
+    "g15_slot_vertex_count": 15,
+    "carrier_signing_table_exists": true,
+    "carrier_signing_table_bridge_column_hits": [
+      "slot_u",
+      "slot_v",
+      "sign",
+      "external_edge_count"
+    ],
+    "x_sigma_edges_exists": true,
+    "source_counts_from_binding": {
+      "g15_slots": 15,
+      "g60_fiber_states": 60,
+      "product_vertices": "15 * 60 = 900",
+      "recorded_x_sigma_edge_rows": 3600,
+      "recorded_g60_local_edge_rows": 120,
+      "recorded_g15_slot_edge_rows": 30
+    },
+    "wxyzti_form_count": 4,
+    "wxyzti_station_key_count": 28,
+    "wxyzti_edge_role_counts": {
+      "reverse_partner": 12,
+      "shared_B": 12
+    },
+    "alignment_inputs_available": true,
+    "gap_a_closed": false,
+    "full_g900_admission_found": false,
+    "next_step": "inspect_carrier_signing_table_for_g60_to_g15_join"
+  },
+  "csv_reports": {
+    "g60_local_edges": {
+      "name": "g60_local_edges",
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/source/kernel_payload/g60_local_edges.csv",
+      "exists": true,
+      "sha256": "c700a185fab6a5f434da09b7acb716b96c76170774bee946af8ea907e4fe7f9f",
+      "row_count": 120,
+      "headers": [
+        "local_u",
+        "local_v"
+      ],
+      "column_info": [
+        {
+          "column": "local_u",
+          "sample_values": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ],
+          "blank_count": 0,
+          "numeric": true,
+          "min": 0,
+          "max": 53,
+          "unique_count": 47,
+          "value_count": 120,
+          "looks_like_g60_vertex": true,
+          "looks_like_g15_slot": false,
+          "looks_like_g900_vertex": true
+        },
+        {
+          "column": "local_v",
+          "sample_values": [
+            "16",
+            "19",
+            "25",
+            "55",
+            "15"
+          ],
+          "blank_count": 0,
+          "numeric": true,
+          "min": 10,
+          "max": 59,
+          "unique_count": 48,
+          "value_count": 120,
+          "looks_like_g60_vertex": true,
+          "looks_like_g15_slot": false,
+          "looks_like_g900_vertex": true
+        }
+      ],
+      "pair_candidates_first_20": [
+        {
+          "columns": [
+            "local_u",
+            "local_v"
+          ],
+          "row_count": 120,
+          "unique_pair_count": 120,
+          "vertex_count": 60,
+          "min_vertex": 0,
+          "max_vertex": 59,
+          "degree_values": [
+            4
+          ],
+          "looks_like_g60_edges": true,
+          "looks_like_g15_edges": false,
+          "looks_like_g900_edges": false,
+          "first_5_pairs": [
+            [
+              0,
+              16
+            ],
+            [
+              0,
+              19
+            ],
+            [
+              0,
+              25
+            ],
+            [
+              0,
+              55
+            ],
+            [
+              1,
+              15
+            ]
+          ]
+        }
+      ],
+      "first_rows": [
+        {
+          "local_u": "0",
+          "local_v": "16"
+        },
+        {
+          "local_u": "0",
+          "local_v": "19"
+        },
+        {
+          "local_u": "0",
+          "local_v": "25"
+        },
+        {
+          "local_u": "0",
+          "local_v": "55"
+        },
+        {
+          "local_u": "1",
+          "local_v": "15"
+        }
+      ]
+    },
+    "g15_slot_edges": {
+      "name": "g15_slot_edges",
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/source/kernel_payload/g15_slot_edges.csv",
+      "exists": true,
+      "sha256": "7b94834d507cf2995ec6faf73e2e227a685d831894aa98f2647556d8b922b8f6",
+      "row_count": 30,
+      "headers": [
+        "slot_u",
+        "slot_v"
+      ],
+      "column_info": [
+        {
+          "column": "slot_u",
+          "sample_values": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ],
+          "blank_count": 0,
+          "numeric": true,
+          "min": 0,
+          "max": 13,
+          "unique_count": 14,
+          "value_count": 30,
+          "looks_like_g60_vertex": true,
+          "looks_like_g15_slot": true,
+          "looks_like_g900_vertex": true
+        },
+        {
+          "column": "slot_v",
+          "sample_values": [
+            "1",
+            "4",
+            "5",
+            "6",
+            "2"
+          ],
+          "blank_count": 0,
+          "numeric": true,
+          "min": 1,
+          "max": 14,
+          "unique_count": 14,
+          "value_count": 30,
+          "looks_like_g60_vertex": true,
+          "looks_like_g15_slot": true,
+          "looks_like_g900_vertex": true
+        }
+      ],
+      "pair_candidates_first_20": [
+        {
+          "columns": [
+            "slot_u",
+            "slot_v"
+          ],
+          "row_count": 30,
+          "unique_pair_count": 30,
+          "vertex_count": 15,
+          "min_vertex": 0,
+          "max_vertex": 14,
+          "degree_values": [
+            4
+          ],
+          "looks_like_g60_edges": false,
+          "looks_like_g15_edges": true,
+          "looks_like_g900_edges": false,
+          "first_5_pairs": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              1,
+              2
+            ]
+          ]
+        }
+      ],
+      "first_rows": [
+        {
+          "slot_u": "0",
+          "slot_v": "1"
+        },
+        {
+          "slot_u": "0",
+          "slot_v": "4"
+        },
+        {
+          "slot_u": "0",
+          "slot_v": "5"
+        },
+        {
+          "slot_u": "0",
+          "slot_v": "6"
+        },
+        {
+          "slot_u": "1",
+          "slot_v": "2"
+        }
+      ]
+    },
+    "carrier_signing_table": {
+      "name": "carrier_signing_table",
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/source/kernel_payload/carrier_signing_table.csv",
+      "exists": true,
+      "sha256": "9b3cf812cc0f6d7b065666c81fa6d16fd3e3b8a98955c264709337c7f3e7efb7",
+      "row_count": 30,
+      "headers": [
+        "slot_u",
+        "slot_v",
+        "sign",
+        "carrier_law",
+        "external_edge_count"
+      ],
+      "column_info": [
+        {
+          "column": "slot_u",
+          "sample_values": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ],
+          "blank_count": 0,
+          "numeric": true,
+          "min": 0,
+          "max": 13,
+          "unique_count": 14,
+          "value_count": 30,
+          "looks_like_g60_vertex": true,
+          "looks_like_g15_slot": true,
+          "looks_like_g900_vertex": true
+        },
+        {
+          "column": "slot_v",
+          "sample_values": [
+            "1",
+            "4",
+            "5",
+            "6",
+            "2"
+          ],
+          "blank_count": 0,
+          "numeric": true,
+          "min": 1,
+          "max": 14,
+          "unique_count": 14,
+          "value_count": 30,
+          "looks_like_g60_vertex": true,
+          "looks_like_g15_slot": true,
+          "looks_like_g900_vertex": true
+        },
+        {
+          "column": "sign",
+          "sample_values": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "blank_count": 0,
+          "numeric": true,
+          "min": 0,
+          "max": 1,
+          "unique_count": 2,
+          "value_count": 30,
+          "looks_like_g60_vertex": true,
+          "looks_like_g15_slot": true,
+          "looks_like_g900_vertex": true
+        },
+        {
+          "column": "carrier_law",
+          "sample_values": [
+            "half_flip_x_plus_30_mod_60"
+          ],
+          "blank_count": 0,
+          "numeric": false
+        },
+        {
+          "column": "external_edge_count",
+          "sample_values": [
+            "60",
+            "60",
+            "60",
+            "60",
+            "60"
+          ],
+          "blank_count": 0,
+          "numeric": true,
+          "min": 60,
+          "max": 60,
+          "unique_count": 1,
+          "value_count": 30,
+          "looks_like_g60_vertex": false,
+          "looks_like_g15_slot": false,
+          "looks_like_g900_vertex": true
+        }
+      ],
+      "pair_candidates_first_20": [
+        {
+          "columns": [
+            "slot_u",
+            "external_edge_count"
+          ],
+          "row_count": 30,
+          "unique_pair_count": 14,
+          "vertex_count": 15,
+          "min_vertex": 0,
+          "max_vertex": 60,
+          "degree_values": [
+            1,
+            2,
+            3,
+            4,
+            30
+          ],
+          "looks_like_g60_edges": false,
+          "looks_like_g15_edges": true,
+          "looks_like_g900_edges": false,
+          "first_5_pairs": [
+            [
+              0,
+              60
+            ],
+            [
+              0,
+              60
+            ],
+            [
+              0,
+              60
+            ],
+            [
+              0,
+              60
+            ],
+            [
+              1,
+              60
+            ]
+          ]
+        },
+        {
+          "columns": [
+            "slot_u",
+            "slot_v"
+          ],
+          "row_count": 30,
+          "unique_pair_count": 30,
+          "vertex_count": 15,
+          "min_vertex": 0,
+          "max_vertex": 14,
+          "degree_values": [
+            4
+          ],
+          "looks_like_g60_edges": false,
+          "looks_like_g15_edges": true,
+          "looks_like_g900_edges": false,
+          "first_5_pairs": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "columns": [
+            "slot_v",
+            "external_edge_count"
+          ],
+          "row_count": 30,
+          "unique_pair_count": 14,
+          "vertex_count": 15,
+          "min_vertex": 1,
+          "max_vertex": 60,
+          "degree_values": [
+            1,
+            2,
+            3,
+            4,
+            30
+          ],
+          "looks_like_g60_edges": false,
+          "looks_like_g15_edges": true,
+          "looks_like_g900_edges": false,
+          "first_5_pairs": [
+            [
+              1,
+              60
+            ],
+            [
+              4,
+              60
+            ],
+            [
+              5,
+              60
+            ],
+            [
+              6,
+              60
+            ],
+            [
+              2,
+              60
+            ]
+          ]
+        },
+        {
+          "columns": [
+            "slot_v",
+            "sign"
+          ],
+          "row_count": 30,
+          "unique_pair_count": 17,
+          "vertex_count": 15,
+          "min_vertex": 0,
+          "max_vertex": 14,
+          "degree_values": [
+            1,
+            2,
+            3,
+            4,
+            15,
+            16
+          ],
+          "looks_like_g60_edges": false,
+          "looks_like_g15_edges": true,
+          "looks_like_g900_edges": false,
+          "first_5_pairs": [
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "columns": [
+            "sign",
+            "external_edge_count"
+          ],
+          "row_count": 30,
+          "unique_pair_count": 2,
+          "vertex_count": 3,
+          "min_vertex": 0,
+          "max_vertex": 60,
+          "degree_values": [
+            15,
+            30
+          ],
+          "looks_like_g60_edges": false,
+          "looks_like_g15_edges": false,
+          "looks_like_g900_edges": false,
+          "first_5_pairs": [
+            [
+              1,
+              60
+            ],
+            [
+              1,
+              60
+            ],
+            [
+              1,
+              60
+            ],
+            [
+              1,
+              60
+            ],
+            [
+              1,
+              60
+            ]
+          ]
+        },
+        {
+          "columns": [
+            "slot_u",
+            "sign"
+          ],
+          "row_count": 30,
+          "unique_pair_count": 17,
+          "vertex_count": 14,
+          "min_vertex": 0,
+          "max_vertex": 13,
+          "degree_values": [
+            1,
+            2,
+            3,
+            18,
+            19
+          ],
+          "looks_like_g60_edges": false,
+          "looks_like_g15_edges": false,
+          "looks_like_g900_edges": false,
+          "first_5_pairs": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        }
+      ],
+      "first_rows": [
+        {
+          "slot_u": "0",
+          "slot_v": "1",
+          "sign": "1",
+          "carrier_law": "half_flip_x_plus_30_mod_60",
+          "external_edge_count": "60"
+        },
+        {
+          "slot_u": "0",
+          "slot_v": "4",
+          "sign": "1",
+          "carrier_law": "half_flip_x_plus_30_mod_60",
+          "external_edge_count": "60"
+        },
+        {
+          "slot_u": "0",
+          "slot_v": "5",
+          "sign": "1",
+          "carrier_law": "half_flip_x_plus_30_mod_60",
+          "external_edge_count": "60"
+        },
+        {
+          "slot_u": "0",
+          "slot_v": "6",
+          "sign": "1",
+          "carrier_law": "half_flip_x_plus_30_mod_60",
+          "external_edge_count": "60"
+        },
+        {
+          "slot_u": "1",
+          "slot_v": "2",
+          "sign": "1",
+          "carrier_law": "half_flip_x_plus_30_mod_60",
+          "external_edge_count": "60"
+        }
+      ]
+    },
+    "x_sigma_edges": {
+      "name": "x_sigma_edges",
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/source/kernel_payload/x_sigma_edges.csv",
+      "exists": true,
+      "sha256": "ea2679662f4322a9ea021fba1143c804ef73b1fae95f50c77ba76b7fe1092230",
+      "row_count": 3600,
+      "headers": [
+        "u_vertex",
+        "v_vertex",
+        "u_slot",
+        "u_local",
+        "v_slot",
+        "v_local",
+        "kind"
+      ],
+      "column_info": [
+        {
+          "column": "u_vertex",
+          "sample_values": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "blank_count": 0,
+          "numeric": true,
+          "min": 0,
+          "max": 893,
+          "unique_count": 887,
+          "value_count": 3600,
+          "looks_like_g60_vertex": false,
+          "looks_like_g15_slot": false,
+          "looks_like_g900_vertex": true
+        },
+        {
+          "column": "v_vertex",
+          "sample_values": [
+            "16",
+            "19",
+            "25",
+            "55",
+            "90"
+          ],
+          "blank_count": 0,
+          "numeric": true,
+          "min": 10,
+          "max": 899,
+          "unique_count": 888,
+          "value_count": 3600,
+          "looks_like_g60_vertex": false,
+          "looks_like_g15_slot": false,
+          "looks_like_g900_vertex": true
+        },
+        {
+          "column": "u_slot",
+          "sample_values": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "blank_count": 0,
+          "numeric": true,
+          "min": 0,
+          "max": 14,
+          "unique_count": 15,
+          "value_count": 3600,
+          "looks_like_g60_vertex": true,
+          "looks_like_g15_slot": true,
+          "looks_like_g900_vertex": true
+        },
+        {
+          "column": "u_local",
+          "sample_values": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "blank_count": 0,
+          "numeric": true,
+          "min": 0,
+          "max": 59,
+          "unique_count": 60,
+          "value_count": 3600,
+          "looks_like_g60_vertex": true,
+          "looks_like_g15_slot": false,
+          "looks_like_g900_vertex": true
+        },
+        {
+          "column": "v_slot",
+          "sample_values": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ],
+          "blank_count": 0,
+          "numeric": true,
+          "min": 0,
+          "max": 14,
+          "unique_count": 15,
+          "value_count": 3600,
+          "looks_like_g60_vertex": true,
+          "looks_like_g15_slot": true,
+          "looks_like_g900_vertex": true
+        },
+        {
+          "column": "v_local",
+          "sample_values": [
+            "16",
+            "19",
+            "25",
+            "55",
+            "30"
+          ],
+          "blank_count": 0,
+          "numeric": true,
+          "min": 0,
+          "max": 59,
+          "unique_count": 60,
+          "value_count": 3600,
+          "looks_like_g60_vertex": true,
+          "looks_like_g15_slot": false,
+          "looks_like_g900_vertex": true
+        },
+        {
+          "column": "kind",
+          "sample_values": [
+            "internal_thalion_copy"
+          ],
+          "blank_count": 0,
+          "numeric": false
+        }
+      ],
+      "pair_candidates_first_20": [
+        {
+          "columns": [
+            "u_vertex",
+            "v_vertex"
+          ],
+          "row_count": 3600,
+          "unique_pair_count": 3600,
+          "vertex_count": 900,
+          "min_vertex": 0,
+          "max_vertex": 899,
+          "degree_values": [
+            8
+          ],
+          "looks_like_g60_edges": false,
+          "looks_like_g15_edges": false,
+          "looks_like_g900_edges": true,
+          "first_5_pairs": [
+            [
+              0,
+              16
+            ],
+            [
+              0,
+              19
+            ],
+            [
+              0,
+              25
+            ],
+            [
+              0,
+              55
+            ],
+            [
+              0,
+              90
+            ]
+          ]
+        },
+        {
+          "columns": [
+            "v_vertex",
+            "u_local"
+          ],
+          "row_count": 3600,
+          "unique_pair_count": 2820,
+          "vertex_count": 900,
+          "min_vertex": 0,
+          "max_vertex": 899,
+          "degree_values": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            34,
+            48,
+            62,
+            76,
+            90
+          ],
+          "looks_like_g60_edges": false,
+          "looks_like_g15_edges": false,
+          "looks_like_g900_edges": true,
+          "first_5_pairs": [
+            [
+              0,
+              16
+            ],
+            [
+              0,
+              19
+            ],
+            [
+              0,
+              25
+            ],
+            [
+              0,
+              55
+            ],
+            [
+              0,
+              90
+            ]
+          ]
+        },
+        {
+          "columns": [
+            "v_vertex",
+            "u_slot"
+          ],
+          "row_count": 3600,
+          "unique_pair_count": 2520,
+          "vertex_count": 900,
+          "min_vertex": 0,
+          "max_vertex": 899,
+          "degree_values": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            121,
+            180,
+            181,
+            240,
+            242,
+            300,
+            360
+          ],
+          "looks_like_g60_edges": false,
+          "looks_like_g15_edges": false,
+          "looks_like_g900_edges": true,
+          "first_5_pairs": [
+            [
+              0,
+              16
+            ],
+            [
+              0,
+              19
+            ],
+            [
+              0,
+              25
+            ],
+            [
+              0,
+              55
+            ],
+            [
+              0,
+              90
+            ]
+          ]
+        },
+        {
+          "columns": [
+            "v_vertex",
+            "v_local"
+          ],
+          "row_count": 3600,
+          "unique_pair_count": 888,
+          "vertex_count": 900,
+          "min_vertex": 0,
+          "max_vertex": 899,
+          "degree_values": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            30,
+            46,
+            62,
+            78,
+            94
+          ],
+          "looks_like_g60_edges": false,
+          "looks_like_g15_edges": false,
+          "looks_like_g900_edges": true,
+          "first_5_pairs": [
+            [
+              16,
+              16
+            ],
+            [
+              19,
+              19
+            ],
+            [
+              25,
+              25
+            ],
+            [
+              55,
+              55
+            ],
+            [
+              30,
+              90
+            ]
+          ]
+        },
+        {
+          "columns": [
+            "v_vertex",
+            "v_slot"
+          ],
+          "row_count": 3600,
+          "unique_pair_count": 888,
+          "vertex_count": 900,
+          "min_vertex": 0,
+          "max_vertex": 899,
+          "degree_values": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            120,
+            180,
+            240,
+            242,
+            300,
+            301,
+            361
+          ],
+          "looks_like_g60_edges": false,
+          "looks_like_g15_edges": false,
+          "looks_like_g900_edges": true,
+          "first_5_pairs": [
+            [
+              0,
+              16
+            ],
+            [
+              0,
+              19
+            ],
+            [
+              0,
+              25
+            ],
+            [
+              0,
+              55
+            ],
+            [
+              1,
+              90
+            ]
+          ]
+        },
+        {
+          "columns": [
+            "u_local",
+            "v_local"
+          ],
+          "row_count": 3600,
+          "unique_pair_count": 210,
+          "vertex_count": 60,
+          "min_vertex": 0,
+          "max_vertex": 59,
+          "degree_values": [
+            120
+          ],
+          "looks_like_g60_edges": false,
+          "looks_like_g15_edges": false,
+          "looks_like_g900_edges": false,
+          "first_5_pairs": [
+            [
+              0,
+              16
+            ],
+            [
+              0,
+              19
+            ],
+            [
+              0,
+              25
+            ],
+            [
+              0,
+              55
+            ],
+            [
+              0,
+              30
+            ]
+          ]
+        },
+        {
+          "columns": [
+            "u_local",
+            "v_slot"
+          ],
+          "row_count": 3600,
+          "unique_pair_count": 782,
+          "vertex_count": 60,
+          "min_vertex": 0,
+          "max_vertex": 59,
+          "degree_values": [
+            30,
+            45,
+            60,
+            75,
+            210,
+            270,
+            300,
+            330,
+            375,
+            390,
+            435
+          ],
+          "looks_like_g60_edges": false,
+          "looks_like_g15_edges": false,
+          "looks_like_g900_edges": false,
+          "first_5_pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "columns": [
+            "u_slot",
+            "u_local"
+          ],
+          "row_count": 3600,
+          "unique_pair_count": 782,
+          "vertex_count": 60,
+          "min_vertex": 0,
+          "max_vertex": 59,
+          "degree_values": [
+            30,
+            45,
+            60,
+            75,
+            195,
+            255,
+            270,
+            300,
+            330,
+            390,
+            450
+          ],
+          "looks_like_g60_edges": false,
+          "looks_like_g15_edges": false,
+          "looks_like_g900_edges": false,
+          "first_5_pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "columns": [
+            "u_slot",
+            "v_local"
+          ],
+          "row_count": 3600,
+          "unique_pair_count": 795,
+          "vertex_count": 60,
+          "min_vertex": 0,
+          "max_vertex": 59,
+          "degree_values": [
+            45,
+            60,
+            75,
+            90,
+            165,
+            210,
+            225,
+            270,
+            300,
+            330,
+            390
+          ],
+          "looks_like_g60_edges": false,
+          "looks_like_g15_edges": false,
+          "looks_like_g900_edges": false,
+          "first_5_pairs": [
+            [
+              0,
+              16
+            ],
+            [
+              0,
+              19
+            ],
+            [
+              0,
+              25
+            ],
+            [
+              0,
+              55
+            ],
+            [
+              0,
+              30
+            ]
+          ]
+        },
+        {
+          "columns": [
+            "u_slot",
+            "v_slot"
+          ],
+          "row_count": 3600,
+          "unique_pair_count": 45,
+          "vertex_count": 15,
+          "min_vertex": 0,
+          "max_vertex": 14,
+          "degree_values": [
+            480
+          ],
+          "looks_like_g60_edges": false,
+          "looks_like_g15_edges": false,
+          "looks_like_g900_edges": false,
+          "first_5_pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "columns": [
+            "u_vertex",
+            "u_local"
+          ],
+          "row_count": 3600,
+          "unique_pair_count": 887,
+          "vertex_count": 887,
+          "min_vertex": 0,
+          "max_vertex": 893,
+          "degree_values": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            34,
+            50,
+            66,
+            82,
+            98
+          ],
+          "looks_like_g60_edges": false,
+          "looks_like_g15_edges": false,
+          "looks_like_g900_edges": false,
+          "first_5_pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "columns": [
+            "u_vertex",
+            "u_slot"
+          ],
+          "row_count": 3600,
+          "unique_pair_count": 887,
+          "vertex_count": 887,
+          "min_vertex": 0,
+          "max_vertex": 893,
+          "degree_values": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            127,
+            187,
+            188,
+            246,
+            248,
+            308,
+            368
+          ],
+          "looks_like_g60_edges": false,
+          "looks_like_g15_edges": false,
+          "looks_like_g900_edges": false,
+          "first_5_pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "columns": [
+            "u_vertex",
+            "v_local"
+          ],
+          "row_count": 3600,
+          "unique_pair_count": 2790,
+          "vertex_count": 887,
+          "min_vertex": 0,
+          "max_vertex": 893,
+          "degree_values": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            38,
+            52,
+            66,
+            80,
+            94
+          ],
+          "looks_like_g60_edges": false,
+          "looks_like_g15_edges": false,
+          "looks_like_g900_edges": false,
+          "first_5_pairs": [
+            [
+              0,
+              16
+            ],
+            [
+              0,
+              19
+            ],
+            [
+              0,
+              25
+            ],
+            [
+              0,
+              55
+            ],
+            [
+              0,
+              30
+            ]
+          ]
+        },
+        {
+          "columns": [
+            "u_vertex",
+            "v_slot"
+          ],
+          "row_count": 3600,
+          "unique_pair_count": 2495,
+          "vertex_count": 887,
+          "min_vertex": 0,
+          "max_vertex": 893,
+          "degree_values": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            128,
+            188,
+            246,
+            248,
+            307,
+            308,
+            367
+          ],
+          "looks_like_g60_edges": false,
+          "looks_like_g15_edges": false,
+          "looks_like_g900_edges": false,
+          "first_5_pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "columns": [
+            "v_slot",
+            "v_local"
+          ],
+          "row_count": 3600,
+          "unique_pair_count": 794,
+          "vertex_count": 60,
+          "min_vertex": 0,
+          "max_vertex": 59,
+          "degree_values": [
+            45,
+            60,
+            75,
+            90,
+            150,
+            210,
+            270,
+            300,
+            330,
+            345,
+            405
+          ],
+          "looks_like_g60_edges": false,
+          "looks_like_g15_edges": false,
+          "looks_like_g900_edges": false,
+          "first_5_pairs": [
+            [
+              0,
+              16
+            ],
+            [
+              0,
+              19
+            ],
+            [
+              0,
+              25
+            ],
+            [
+              0,
+              55
+            ],
+            [
+              1,
+              30
+            ]
+          ]
+        }
+      ],
+      "first_rows": [
+        {
+          "u_vertex": "0",
+          "v_vertex": "16",
+          "u_slot": "0",
+          "u_local": "0",
+          "v_slot": "0",
+          "v_local": "16",
+          "kind": "internal_thalion_copy"
+        },
+        {
+          "u_vertex": "0",
+          "v_vertex": "19",
+          "u_slot": "0",
+          "u_local": "0",
+          "v_slot": "0",
+          "v_local": "19",
+          "kind": "internal_thalion_copy"
+        },
+        {
+          "u_vertex": "0",
+          "v_vertex": "25",
+          "u_slot": "0",
+          "u_local": "0",
+          "v_slot": "0",
+          "v_local": "25",
+          "kind": "internal_thalion_copy"
+        },
+        {
+          "u_vertex": "0",
+          "v_vertex": "55",
+          "u_slot": "0",
+          "u_local": "0",
+          "v_slot": "0",
+          "v_local": "55",
+          "kind": "internal_thalion_copy"
+        },
+        {
+          "u_vertex": "0",
+          "v_vertex": "90",
+          "u_slot": "0",
+          "u_local": "0",
+          "v_slot": "1",
+          "v_local": "30",
+          "kind": "external_signed_carrier"
+        }
+      ]
+    }
+  },
+  "checks": [
+    {
+      "id": "canonical_g60_payload_loaded",
+      "status": true,
+      "detail": "canonical_g60_payload_imported"
+    },
+    {
+      "id": "g60_csv_matches_payload",
+      "status": true,
+      "detail": "exact edge set match"
+    },
+    {
+      "id": "g15_slot_edges_exists",
+      "status": true,
+      "detail": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/source/kernel_payload/g15_slot_edges.csv"
+    },
+    {
+      "id": "carrier_signing_table_exists",
+      "status": true,
+      "detail": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/source/kernel_payload/carrier_signing_table.csv"
+    },
+    {
+      "id": "x_sigma_edges_exists",
+      "status": true,
+      "detail": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/source/kernel_payload/x_sigma_edges.csv"
+    },
+    {
+      "id": "wxyzti_forms_present",
+      "status": true,
+      "detail": 4
+    },
+    {
+      "id": "no_generator_claim_made",
+      "status": true,
+      "detail": "alignment input inspection only"
+    }
+  ],
+  "boundary": [
+    "This is an alignment-input inspection, not an NRC generator.",
+    "This does not close Gap A.",
+    "This does not prove full G900.",
+    "The next alignment step must identify join columns from carrier_signing_table or related kernel payloads."
+  ]
+}

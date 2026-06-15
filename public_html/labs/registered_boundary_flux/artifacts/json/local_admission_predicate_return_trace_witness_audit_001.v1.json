@@ -1,0 +1,853 @@
+{
+  "schema": "local_admission_predicate_return_trace_witness_audit_001.v1",
+  "status": "local_admission_predicate_return_trace_witness_proxy_supported_not_full_g900",
+  "timestamp_utc": "2026-06-15T01:53:50.706916+00:00",
+  "purpose": "Audit whether the local admission predicate carries a return-with-trace witness proxy.",
+  "boundary": [
+    "This does not close Gap A.",
+    "This does not prove full G900 admission.",
+    "This audits a local return-with-trace witness proxy.",
+    "Radius-1 row/support absorption is a register-internal proxy, not an independent witness.",
+    "No physical interpretation is claimed."
+  ],
+  "summary": {
+    "audit_result": "local_return_trace_witness_proxy_supported_not_full_g900",
+    "gap_a_closed": false,
+    "full_g900_admission_found": false,
+    "local_admission_predicate_exact_background": true,
+    "admitted_background_count": 4,
+    "selected_background_count": 4,
+    "admitted_nonselected_count": 0,
+    "nonadmitted_selected_count": 0,
+    "witness_proxy_supported": true,
+    "witness_proxy": "radius-1 row/support absorption",
+    "admitted_trace_strengths": [
+      19,
+      21,
+      6,
+      6
+    ],
+    "admitted_role_class_shapes": {
+      "interior": 2,
+      "interior,outer": 2
+    },
+    "admitted_role_counts": {
+      "IW": 2,
+      "TI": 2,
+      "WX": 1,
+      "XY": 2,
+      "YZ": 3,
+      "ZT": 4
+    },
+    "admitted_cycle_counts": {
+      "0": 3,
+      "1": 4,
+      "2": 4
+    },
+    "admitted_have_trace_hits": true,
+    "admitted_have_distinct_rows": true,
+    "admitted_have_distinct_roles": true,
+    "admitted_have_distinct_cycles": true,
+    "claim_closes_gap_a": false
+  },
+  "admission_stack": {
+    "environment_source_condition": "source_shell_polarity_condition",
+    "registered_trace_condition": "proper_internalization_gate_r1_row_hit_count_ge5",
+    "witness_proxy": "radius-1 row/support absorption",
+    "admitted_records": [
+      {
+        "B": 2,
+        "A": 1,
+        "C": 0,
+        "columns": [
+          0,
+          4
+        ],
+        "r1_row_hit_count": 19,
+        "r1_distinct_row_count": 14,
+        "r1_distinct_role_count": 5,
+        "r1_distinct_cycle_count": 3,
+        "r1_role_classes": [
+          "interior",
+          "outer"
+        ]
+      },
+      {
+        "B": 4,
+        "A": 3,
+        "C": 2,
+        "columns": [
+          7,
+          10
+        ],
+        "r1_row_hit_count": 21,
+        "r1_distinct_row_count": 14,
+        "r1_distinct_role_count": 5,
+        "r1_distinct_cycle_count": 3,
+        "r1_role_classes": [
+          "interior",
+          "outer"
+        ]
+      },
+      {
+        "B": 11,
+        "A": 7,
+        "C": 14,
+        "columns": [
+          23,
+          24
+        ],
+        "r1_row_hit_count": 6,
+        "r1_distinct_row_count": 4,
+        "r1_distinct_role_count": 2,
+        "r1_distinct_cycle_count": 2,
+        "r1_role_classes": [
+          "interior"
+        ]
+      },
+      {
+        "B": 13,
+        "A": 9,
+        "C": 10,
+        "columns": [
+          28,
+          29
+        ],
+        "r1_row_hit_count": 6,
+        "r1_distinct_row_count": 5,
+        "r1_distinct_role_count": 2,
+        "r1_distinct_cycle_count": 3,
+        "r1_role_classes": [
+          "interior"
+        ]
+      }
+    ],
+    "blocked_promotion": "No full 900-state return cycle or independent witness is proven here."
+  },
+  "admitted_background_records": [
+    {
+      "B": 2,
+      "A": 1,
+      "C": 0,
+      "columns": [
+        0,
+        4
+      ],
+      "source_condition": true,
+      "proper_internalization": true,
+      "admitted": true,
+      "selected": true,
+      "key": [
+        2,
+        1,
+        0,
+        [
+          0,
+          4
+        ]
+      ],
+      "r1_neighborhood_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "r1_hit_columns": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        7,
+        9
+      ],
+      "r1_row_hits": [
+        {
+          "column": 0,
+          "row_ordinal": 0,
+          "cycle": 0,
+          "role": "WX",
+          "role_class": "outer"
+        },
+        {
+          "column": 0,
+          "row_ordinal": 6,
+          "cycle": 1,
+          "role": "WX",
+          "role_class": "outer"
+        },
+        {
+          "column": 0,
+          "row_ordinal": 12,
+          "cycle": 2,
+          "role": "WX",
+          "role_class": "outer"
+        },
+        {
+          "column": 1,
+          "row_ordinal": 5,
+          "cycle": 0,
+          "role": "IW",
+          "role_class": "outer"
+        },
+        {
+          "column": 1,
+          "row_ordinal": 8,
+          "cycle": 1,
+          "role": "YZ",
+          "role_class": "interior"
+        },
+        {
+          "column": 1,
+          "row_ordinal": 11,
+          "cycle": 1,
+          "role": "IW",
+          "role_class": "outer"
+        },
+        {
+          "column": 1,
+          "row_ordinal": 17,
+          "cycle": 2,
+          "role": "IW",
+          "role_class": "outer"
+        },
+        {
+          "column": 3,
+          "row_ordinal": 8,
+          "cycle": 1,
+          "role": "YZ",
+          "role_class": "interior"
+        },
+        {
+          "column": 4,
+          "row_ordinal": 1,
+          "cycle": 0,
+          "role": "XY",
+          "role_class": "outer"
+        },
+        {
+          "column": 4,
+          "row_ordinal": 7,
+          "cycle": 1,
+          "role": "XY",
+          "role_class": "outer"
+        },
+        {
+          "column": 4,
+          "row_ordinal": 13,
+          "cycle": 2,
+          "role": "XY",
+          "role_class": "outer"
+        },
+        {
+          "column": 4,
+          "row_ordinal": 14,
+          "cycle": 2,
+          "role": "YZ",
+          "role_class": "interior"
+        },
+        {
+          "column": 5,
+          "row_ordinal": 14,
+          "cycle": 2,
+          "role": "YZ",
+          "role_class": "interior"
+        },
+        {
+          "column": 7,
+          "row_ordinal": 2,
+          "cycle": 0,
+          "role": "YZ",
+          "role_class": "interior"
+        },
+        {
+          "column": 7,
+          "row_ordinal": 5,
+          "cycle": 0,
+          "role": "IW",
+          "role_class": "outer"
+        },
+        {
+          "column": 7,
+          "row_ordinal": 11,
+          "cycle": 1,
+          "role": "IW",
+          "role_class": "outer"
+        },
+        {
+          "column": 7,
+          "row_ordinal": 17,
+          "cycle": 2,
+          "role": "IW",
+          "role_class": "outer"
+        },
+        {
+          "column": 9,
+          "row_ordinal": 3,
+          "cycle": 0,
+          "role": "ZT",
+          "role_class": "interior"
+        },
+        {
+          "column": 9,
+          "row_ordinal": 9,
+          "cycle": 1,
+          "role": "ZT",
+          "role_class": "interior"
+        }
+      ],
+      "r1_row_hit_count": 19,
+      "r1_distinct_rows": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9,
+        11,
+        12,
+        13,
+        14,
+        17
+      ],
+      "r1_distinct_row_count": 14,
+      "r1_distinct_roles": [
+        "IW",
+        "WX",
+        "XY",
+        "YZ",
+        "ZT"
+      ],
+      "r1_distinct_role_count": 5,
+      "r1_distinct_cycles": [
+        0,
+        1,
+        2
+      ],
+      "r1_distinct_cycle_count": 3,
+      "r1_role_classes": [
+        "interior",
+        "outer"
+      ],
+      "r1_has_outer": true,
+      "r1_has_interior": true,
+      "r1_has_outer_and_interior": true
+    },
+    {
+      "B": 4,
+      "A": 3,
+      "C": 2,
+      "columns": [
+        7,
+        10
+      ],
+      "source_condition": true,
+      "proper_internalization": true,
+      "admitted": true,
+      "selected": true,
+      "key": [
+        4,
+        3,
+        2,
+        [
+          7,
+          10
+        ]
+      ],
+      "r1_neighborhood_columns": [
+        1,
+        4,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "r1_hit_columns": [
+        1,
+        4,
+        7,
+        9,
+        10,
+        11,
+        13,
+        14
+      ],
+      "r1_row_hits": [
+        {
+          "column": 1,
+          "row_ordinal": 5,
+          "cycle": 0,
+          "role": "IW",
+          "role_class": "outer"
+        },
+        {
+          "column": 1,
+          "row_ordinal": 8,
+          "cycle": 1,
+          "role": "YZ",
+          "role_class": "interior"
+        },
+        {
+          "column": 1,
+          "row_ordinal": 11,
+          "cycle": 1,
+          "role": "IW",
+          "role_class": "outer"
+        },
+        {
+          "column": 1,
+          "row_ordinal": 17,
+          "cycle": 2,
+          "role": "IW",
+          "role_class": "outer"
+        },
+        {
+          "column": 4,
+          "row_ordinal": 1,
+          "cycle": 0,
+          "role": "XY",
+          "role_class": "outer"
+        },
+        {
+          "column": 4,
+          "row_ordinal": 7,
+          "cycle": 1,
+          "role": "XY",
+          "role_class": "outer"
+        },
+        {
+          "column": 4,
+          "row_ordinal": 13,
+          "cycle": 2,
+          "role": "XY",
+          "role_class": "outer"
+        },
+        {
+          "column": 4,
+          "row_ordinal": 14,
+          "cycle": 2,
+          "role": "YZ",
+          "role_class": "interior"
+        },
+        {
+          "column": 7,
+          "row_ordinal": 2,
+          "cycle": 0,
+          "role": "YZ",
+          "role_class": "interior"
+        },
+        {
+          "column": 7,
+          "row_ordinal": 5,
+          "cycle": 0,
+          "role": "IW",
+          "role_class": "outer"
+        },
+        {
+          "column": 7,
+          "row_ordinal": 11,
+          "cycle": 1,
+          "role": "IW",
+          "role_class": "outer"
+        },
+        {
+          "column": 7,
+          "row_ordinal": 17,
+          "cycle": 2,
+          "role": "IW",
+          "role_class": "outer"
+        },
+        {
+          "column": 9,
+          "row_ordinal": 3,
+          "cycle": 0,
+          "role": "ZT",
+          "role_class": "interior"
+        },
+        {
+          "column": 9,
+          "row_ordinal": 9,
+          "cycle": 1,
+          "role": "ZT",
+          "role_class": "interior"
+        },
+        {
+          "column": 10,
+          "row_ordinal": 2,
+          "cycle": 0,
+          "role": "YZ",
+          "role_class": "interior"
+        },
+        {
+          "column": 10,
+          "row_ordinal": 10,
+          "cycle": 1,
+          "role": "TI",
+          "role_class": "interior"
+        },
+        {
+          "column": 11,
+          "row_ordinal": 9,
+          "cycle": 1,
+          "role": "ZT",
+          "role_class": "interior"
+        },
+        {
+          "column": 11,
+          "row_ordinal": 10,
+          "cycle": 1,
+          "role": "TI",
+          "role_class": "interior"
+        },
+        {
+          "column": 13,
+          "row_ordinal": 4,
+          "cycle": 0,
+          "role": "TI",
+          "role_class": "interior"
+        },
+        {
+          "column": 13,
+          "row_ordinal": 16,
+          "cycle": 2,
+          "role": "TI",
+          "role_class": "interior"
+        },
+        {
+          "column": 14,
+          "row_ordinal": 9,
+          "cycle": 1,
+          "role": "ZT",
+          "role_class": "interior"
+        }
+      ],
+      "r1_row_hit_count": 21,
+      "r1_distinct_rows": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        13,
+        14,
+        16,
+        17
+      ],
+      "r1_distinct_row_count": 14,
+      "r1_distinct_roles": [
+        "IW",
+        "TI",
+        "XY",
+        "YZ",
+        "ZT"
+      ],
+      "r1_distinct_role_count": 5,
+      "r1_distinct_cycles": [
+        0,
+        1,
+        2
+      ],
+      "r1_distinct_cycle_count": 3,
+      "r1_role_classes": [
+        "interior",
+        "outer"
+      ],
+      "r1_has_outer": true,
+      "r1_has_interior": true,
+      "r1_has_outer_and_interior": true
+    },
+    {
+      "B": 11,
+      "A": 7,
+      "C": 14,
+      "columns": [
+        23,
+        24
+      ],
+      "source_condition": true,
+      "proper_internalization": true,
+      "admitted": true,
+      "selected": true,
+      "key": [
+        11,
+        7,
+        14,
+        [
+          23,
+          24
+        ]
+      ],
+      "r1_neighborhood_columns": [
+        3,
+        5,
+        12,
+        14,
+        19,
+        21,
+        22,
+        23,
+        24,
+        26
+      ],
+      "r1_hit_columns": [
+        3,
+        5,
+        14,
+        21,
+        22
+      ],
+      "r1_row_hits": [
+        {
+          "column": 3,
+          "row_ordinal": 8,
+          "cycle": 1,
+          "role": "YZ",
+          "role_class": "interior"
+        },
+        {
+          "column": 5,
+          "row_ordinal": 14,
+          "cycle": 2,
+          "role": "YZ",
+          "role_class": "interior"
+        },
+        {
+          "column": 14,
+          "row_ordinal": 9,
+          "cycle": 1,
+          "role": "ZT",
+          "role_class": "interior"
+        },
+        {
+          "column": 21,
+          "row_ordinal": 15,
+          "cycle": 2,
+          "role": "ZT",
+          "role_class": "interior"
+        },
+        {
+          "column": 22,
+          "row_ordinal": 8,
+          "cycle": 1,
+          "role": "YZ",
+          "role_class": "interior"
+        },
+        {
+          "column": 22,
+          "row_ordinal": 15,
+          "cycle": 2,
+          "role": "ZT",
+          "role_class": "interior"
+        }
+      ],
+      "r1_row_hit_count": 6,
+      "r1_distinct_rows": [
+        8,
+        9,
+        14,
+        15
+      ],
+      "r1_distinct_row_count": 4,
+      "r1_distinct_roles": [
+        "YZ",
+        "ZT"
+      ],
+      "r1_distinct_role_count": 2,
+      "r1_distinct_cycles": [
+        1,
+        2
+      ],
+      "r1_distinct_cycle_count": 2,
+      "r1_role_classes": [
+        "interior"
+      ],
+      "r1_has_outer": false,
+      "r1_has_interior": true,
+      "r1_has_outer_and_interior": false
+    },
+    {
+      "B": 13,
+      "A": 9,
+      "C": 10,
+      "columns": [
+        28,
+        29
+      ],
+      "source_condition": true,
+      "proper_internalization": true,
+      "admitted": true,
+      "selected": true,
+      "key": [
+        13,
+        9,
+        10,
+        [
+          28,
+          29
+        ]
+      ],
+      "r1_neighborhood_columns": [
+        2,
+        9,
+        11,
+        13,
+        16,
+        17,
+        25,
+        27,
+        28,
+        29
+      ],
+      "r1_hit_columns": [
+        9,
+        11,
+        13
+      ],
+      "r1_row_hits": [
+        {
+          "column": 9,
+          "row_ordinal": 3,
+          "cycle": 0,
+          "role": "ZT",
+          "role_class": "interior"
+        },
+        {
+          "column": 9,
+          "row_ordinal": 9,
+          "cycle": 1,
+          "role": "ZT",
+          "role_class": "interior"
+        },
+        {
+          "column": 11,
+          "row_ordinal": 9,
+          "cycle": 1,
+          "role": "ZT",
+          "role_class": "interior"
+        },
+        {
+          "column": 11,
+          "row_ordinal": 10,
+          "cycle": 1,
+          "role": "TI",
+          "role_class": "interior"
+        },
+        {
+          "column": 13,
+          "row_ordinal": 4,
+          "cycle": 0,
+          "role": "TI",
+          "role_class": "interior"
+        },
+        {
+          "column": 13,
+          "row_ordinal": 16,
+          "cycle": 2,
+          "role": "TI",
+          "role_class": "interior"
+        }
+      ],
+      "r1_row_hit_count": 6,
+      "r1_distinct_rows": [
+        3,
+        4,
+        9,
+        10,
+        16
+      ],
+      "r1_distinct_row_count": 5,
+      "r1_distinct_roles": [
+        "TI",
+        "ZT"
+      ],
+      "r1_distinct_role_count": 2,
+      "r1_distinct_cycles": [
+        0,
+        1,
+        2
+      ],
+      "r1_distinct_cycle_count": 3,
+      "r1_role_classes": [
+        "interior"
+      ],
+      "r1_has_outer": false,
+      "r1_has_interior": true,
+      "r1_has_outer_and_interior": false
+    }
+  ],
+  "interpretation": {
+    "main_result": "The local admission predicate supports a return-with-trace witness proxy, but not full G900 admission.",
+    "why_this_matters": "The predicate is not merely surface visibility. It combines a source condition with register-internal absorption that leaves a queryable support trace.",
+    "why_not_full_g900": "The audit proves only a local witness proxy. It does not prove a full 900-state evaluator, full return cycle, or independent witness layer.",
+    "next_move": "Record this as a local G900-shaped admission boundary, then search separately for full 900-state return-cycle evidence."
+  },
+  "claim": {
+    "does_this_close_gap_a": false,
+    "does_this_support_local_return_trace_witness_proxy": true,
+    "does_this_find_full_g900_admission": false,
+    "short_form": "The local admission predicate supports a return-with-trace witness proxy, but not full G900 admission.",
+    "not_closed_reason": "The audit proves only a local witness proxy. It does not prove a full 900-state evaluator, full return cycle, or independent witness layer.",
+    "next_problem": "Record this as a local G900-shaped admission boundary, then search separately for full 900-state return-cycle evidence."
+  },
+  "checks": [
+    {
+      "id": "g900_local_loaded",
+      "status": true,
+      "detail": "g900_admission_predicate_local_candidate_exact_background_not_full_g900"
+    },
+    {
+      "id": "internal_audit_loaded",
+      "status": true,
+      "detail": "proper_internalization_gate_survives_audit_register_internal_not_generator"
+    },
+    {
+      "id": "projection_search_loaded",
+      "status": true,
+      "detail": "source_native_projection_family_generator_search_family_signal_persists_no_generator"
+    },
+    {
+      "id": "plateau_loaded",
+      "status": true,
+      "detail": "gap_a_open_with_source_shell_lift_conjecture_recorded"
+    },
+    {
+      "id": "exact_background",
+      "status": true,
+      "detail": "admitted=4"
+    },
+    {
+      "id": "witness_proxy_supported",
+      "status": true,
+      "detail": "True"
+    },
+    {
+      "id": "not_full_g900",
+      "status": true,
+      "detail": "False"
+    },
+    {
+      "id": "gap_a_not_closed",
+      "status": true,
+      "detail": "local witness audit only"
+    }
+  ],
+  "next_script": "record_local_g900_shaped_admission_boundary_001.py"
+}

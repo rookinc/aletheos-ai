@@ -1,0 +1,2158 @@
+{
+  "schema": "strict_return_validation_predicate_001.v1",
+  "status": "sharp_return_signature_selector_found_basic_not_found_not_g900",
+  "timestamp_utc": "2026-06-15T03:58:54.228248+00:00",
+  "purpose": "Search for return-validation predicates that separate admitted starts from all 120 starts.",
+  "boundary": [
+    "This does not close Gap A.",
+    "This does not prove full G900.",
+    "This searches finite validation predicates only.",
+    "Basic return-only predicates are separated from sharp return signatures and source/context selectors.",
+    "A source/context selector is not an independent return validation predicate.",
+    "No physical interpretation is claimed."
+  ],
+  "summary": {
+    "search_result": "sharp_return_signature_selector_found_basic_not_found",
+    "gap_a_status": "open",
+    "gap_a_closed": false,
+    "record_count": 120,
+    "admitted_count": 4,
+    "nonadmitted_count": 116,
+    "candidate_available_count": 120,
+    "candidate_available_for_all_records": true,
+    "basic_return_feature_count": 13,
+    "sharp_return_feature_count": 20,
+    "context_feature_count": 15,
+    "basic_return_search": {
+      "feature_count": 13,
+      "max_combo_size": 3,
+      "tested_count": 377,
+      "exact_selector_found": false,
+      "exact_selector_count": 0,
+      "best_exact_selector": null,
+      "best_near_selector": {
+        "features": [
+          "basic_internal_admitted_count"
+        ],
+        "admitted_tuple_count": 1,
+        "accepted_count": 98,
+        "false_positive_count": 94,
+        "miss_count": 0,
+        "exact": false,
+        "false_positives_first_20": [
+          "0|11|7|3,23",
+          "0|1|12|0,6",
+          "0|4|3|1,10",
+          "10|0|11|2,3",
+          "10|0|1|0,2",
+          "10|4|3|10,13",
+          "10|5|12|17,18",
+          "10|5|6|15,17",
+          "10|9|8|25,28",
+          "11|0|4|1,3",
+          "11|1|12|5,6",
+          "11|1|2|4,5",
+          "11|7|6|19,23",
+          "11|8|13|26,27",
+          "11|8|9|25,26",
+          "12|1|0|0,6",
+          "12|1|11|5,6",
+          "12|2|13|8,9",
+          "12|2|3|7,8",
+          "12|5|10|17,18"
+        ],
+        "misses": [],
+        "admitted_tuples": [
+          [
+            "0"
+          ]
+        ]
+      },
+      "exact_selectors_first_20": []
+    },
+    "sharp_return_search": {
+      "feature_count": 20,
+      "max_combo_size": 2,
+      "tested_count": 210,
+      "exact_selector_found": true,
+      "exact_selector_count": 45,
+      "best_exact_selector": {
+        "features": [
+          "sharp_fiber_sequence"
+        ],
+        "admitted_tuple_count": 4,
+        "accepted_count": 4,
+        "false_positive_count": 0,
+        "miss_count": 0,
+        "exact": true,
+        "false_positives_first_20": [],
+        "misses": [],
+        "admitted_tuples": [
+          [
+            "[0, 2, 5, 0, 2, 5, 0]"
+          ],
+          [
+            "[10, 13, 11, 10, 13, 11, 10]"
+          ],
+          [
+            "[14, 11, 13, 14, 11, 13, 14]"
+          ],
+          [
+            "[2, 4, 5, 2, 4, 5, 2]"
+          ]
+        ]
+      },
+      "best_near_selector": {
+        "features": [
+          "sharp_fiber_sequence"
+        ],
+        "admitted_tuple_count": 4,
+        "accepted_count": 4,
+        "false_positive_count": 0,
+        "miss_count": 0,
+        "exact": true,
+        "false_positives_first_20": [],
+        "misses": [],
+        "admitted_tuples": [
+          [
+            "[0, 2, 5, 0, 2, 5, 0]"
+          ],
+          [
+            "[10, 13, 11, 10, 13, 11, 10]"
+          ],
+          [
+            "[14, 11, 13, 14, 11, 13, 14]"
+          ],
+          [
+            "[2, 4, 5, 2, 4, 5, 2]"
+          ]
+        ]
+      },
+      "exact_selectors_first_20": [
+        {
+          "features": [
+            "sharp_fiber_sequence"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "[0, 2, 5, 0, 2, 5, 0]"
+            ],
+            [
+              "[10, 13, 11, 10, 13, 11, 10]"
+            ],
+            [
+              "[14, 11, 13, 14, 11, 13, 14]"
+            ],
+            [
+              "[2, 4, 5, 2, 4, 5, 2]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "sharp_slot_sequence"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "[11, 14, 14, 13, 13, 11, 11]"
+            ],
+            [
+              "[13, 10, 10, 11, 11, 13, 13]"
+            ],
+            [
+              "[2, 0, 0, 5, 5, 2, 2]"
+            ],
+            [
+              "[4, 2, 2, 5, 5, 4, 4]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "basic_candidate_found",
+            "sharp_fiber_sequence"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "True",
+              "[0, 2, 5, 0, 2, 5, 0]"
+            ],
+            [
+              "True",
+              "[10, 13, 11, 10, 13, 11, 10]"
+            ],
+            [
+              "True",
+              "[14, 11, 13, 14, 11, 13, 14]"
+            ],
+            [
+              "True",
+              "[2, 4, 5, 2, 4, 5, 2]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "basic_candidate_found",
+            "sharp_slot_sequence"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "True",
+              "[11, 14, 14, 13, 13, 11, 11]"
+            ],
+            [
+              "True",
+              "[13, 10, 10, 11, 11, 13, 13]"
+            ],
+            [
+              "True",
+              "[2, 0, 0, 5, 5, 2, 2]"
+            ],
+            [
+              "True",
+              "[4, 2, 2, 5, 5, 4, 4]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "basic_distinct_cycle_fibers",
+            "sharp_fiber_sequence"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "3",
+              "[0, 2, 5, 0, 2, 5, 0]"
+            ],
+            [
+              "3",
+              "[10, 13, 11, 10, 13, 11, 10]"
+            ],
+            [
+              "3",
+              "[14, 11, 13, 14, 11, 13, 14]"
+            ],
+            [
+              "3",
+              "[2, 4, 5, 2, 4, 5, 2]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "basic_distinct_cycle_fibers",
+            "sharp_slot_sequence"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "3",
+              "[11, 14, 14, 13, 13, 11, 11]"
+            ],
+            [
+              "3",
+              "[13, 10, 10, 11, 11, 13, 13]"
+            ],
+            [
+              "3",
+              "[2, 0, 0, 5, 5, 2, 2]"
+            ],
+            [
+              "3",
+              "[4, 2, 2, 5, 5, 4, 4]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "basic_distinct_cycle_slots",
+            "sharp_fiber_sequence"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "3",
+              "[0, 2, 5, 0, 2, 5, 0]"
+            ],
+            [
+              "3",
+              "[10, 13, 11, 10, 13, 11, 10]"
+            ],
+            [
+              "3",
+              "[14, 11, 13, 14, 11, 13, 14]"
+            ],
+            [
+              "3",
+              "[2, 4, 5, 2, 4, 5, 2]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "basic_distinct_cycle_slots",
+            "sharp_slot_sequence"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "3",
+              "[11, 14, 14, 13, 13, 11, 11]"
+            ],
+            [
+              "3",
+              "[13, 10, 10, 11, 11, 13, 13]"
+            ],
+            [
+              "3",
+              "[2, 0, 0, 5, 5, 2, 2]"
+            ],
+            [
+              "3",
+              "[4, 2, 2, 5, 5, 4, 4]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "basic_distinct_internal_fibers",
+            "sharp_fiber_sequence"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "3",
+              "[0, 2, 5, 0, 2, 5, 0]"
+            ],
+            [
+              "3",
+              "[10, 13, 11, 10, 13, 11, 10]"
+            ],
+            [
+              "3",
+              "[14, 11, 13, 14, 11, 13, 14]"
+            ],
+            [
+              "3",
+              "[2, 4, 5, 2, 4, 5, 2]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "basic_distinct_internal_fibers",
+            "sharp_slot_sequence"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "3",
+              "[11, 14, 14, 13, 13, 11, 11]"
+            ],
+            [
+              "3",
+              "[13, 10, 10, 11, 11, 13, 13]"
+            ],
+            [
+              "3",
+              "[2, 0, 0, 5, 5, 2, 2]"
+            ],
+            [
+              "3",
+              "[4, 2, 2, 5, 5, 4, 4]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "basic_distinct_internal_slots",
+            "sharp_fiber_sequence"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "3",
+              "[0, 2, 5, 0, 2, 5, 0]"
+            ],
+            [
+              "3",
+              "[10, 13, 11, 10, 13, 11, 10]"
+            ],
+            [
+              "3",
+              "[14, 11, 13, 14, 11, 13, 14]"
+            ],
+            [
+              "3",
+              "[2, 4, 5, 2, 4, 5, 2]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "basic_distinct_internal_slots",
+            "sharp_slot_sequence"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "3",
+              "[11, 14, 14, 13, 13, 11, 11]"
+            ],
+            [
+              "3",
+              "[13, 10, 10, 11, 11, 13, 13]"
+            ],
+            [
+              "3",
+              "[2, 0, 0, 5, 5, 2, 2]"
+            ],
+            [
+              "3",
+              "[4, 2, 2, 5, 5, 4, 4]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "basic_edge_count",
+            "sharp_fiber_sequence"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "6",
+              "[0, 2, 5, 0, 2, 5, 0]"
+            ],
+            [
+              "6",
+              "[10, 13, 11, 10, 13, 11, 10]"
+            ],
+            [
+              "6",
+              "[14, 11, 13, 14, 11, 13, 14]"
+            ],
+            [
+              "6",
+              "[2, 4, 5, 2, 4, 5, 2]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "basic_edge_count",
+            "sharp_slot_sequence"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "6",
+              "[11, 14, 14, 13, 13, 11, 11]"
+            ],
+            [
+              "6",
+              "[13, 10, 10, 11, 11, 13, 13]"
+            ],
+            [
+              "6",
+              "[2, 0, 0, 5, 5, 2, 2]"
+            ],
+            [
+              "6",
+              "[4, 2, 2, 5, 5, 4, 4]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "basic_first_label",
+            "sharp_fiber_sequence"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "reverse_partner",
+              "[0, 2, 5, 0, 2, 5, 0]"
+            ],
+            [
+              "reverse_partner",
+              "[10, 13, 11, 10, 13, 11, 10]"
+            ],
+            [
+              "reverse_partner",
+              "[14, 11, 13, 14, 11, 13, 14]"
+            ],
+            [
+              "reverse_partner",
+              "[2, 4, 5, 2, 4, 5, 2]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "basic_first_label",
+            "sharp_slot_sequence"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "reverse_partner",
+              "[11, 14, 14, 13, 13, 11, 11]"
+            ],
+            [
+              "reverse_partner",
+              "[13, 10, 10, 11, 11, 13, 13]"
+            ],
+            [
+              "reverse_partner",
+              "[2, 0, 0, 5, 5, 2, 2]"
+            ],
+            [
+              "reverse_partner",
+              "[4, 2, 2, 5, 5, 4, 4]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "basic_internal_admitted_count",
+            "sharp_address_delta_sig"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "0",
+              "[-118, 1, 177, 2, -59, -3]"
+            ],
+            [
+              "0",
+              "[-118, 3, 295, 2, -177, -5]"
+            ],
+            [
+              "0",
+              "[-177, -2, 59, 3, 118, -1]"
+            ],
+            [
+              "0",
+              "[177, 2, -59, -3, -118, 1]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "basic_internal_admitted_count",
+            "sharp_fiber_delta_sig"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "0",
+              "[-3, 2, 1, -3, 2, 1]"
+            ],
+            [
+              "0",
+              "[2, 1, -3, 2, 1, -3]"
+            ],
+            [
+              "0",
+              "[2, 3, -5, 2, 3, -5]"
+            ],
+            [
+              "0",
+              "[3, -2, -1, 3, -2, -1]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "basic_internal_admitted_count",
+            "sharp_fiber_sequence"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "0",
+              "[0, 2, 5, 0, 2, 5, 0]"
+            ],
+            [
+              "0",
+              "[10, 13, 11, 10, 13, 11, 10]"
+            ],
+            [
+              "0",
+              "[14, 11, 13, 14, 11, 13, 14]"
+            ],
+            [
+              "0",
+              "[2, 4, 5, 2, 4, 5, 2]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "basic_internal_admitted_count",
+            "sharp_label_and_fiber_delta"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "0",
+              "[[\"reverse_partner\", -3], [\"shared_B\", 2], [\"reverse_partner\", 1], [\"shared_B\", -3], [\"reverse_partner\", 2], [\"shared_B\", 1]]"
+            ],
+            [
+              "0",
+              "[[\"reverse_partner\", 2], [\"shared_B\", 1], [\"reverse_partner\", -3], [\"shared_B\", 2], [\"reverse_partner\", 1], [\"shared_B\", -3]]"
+            ],
+            [
+              "0",
+              "[[\"reverse_partner\", 2], [\"shared_B\", 3], [\"reverse_partner\", -5], [\"shared_B\", 2], [\"reverse_partner\", 3], [\"shared_B\", -5]]"
+            ],
+            [
+              "0",
+              "[[\"reverse_partner\", 3], [\"shared_B\", -2], [\"reverse_partner\", -1], [\"shared_B\", 3], [\"reverse_partner\", -2], [\"shared_B\", -1]]"
+            ]
+          ]
+        }
+      ]
+    },
+    "context_search": {
+      "feature_count": 15,
+      "max_combo_size": 2,
+      "tested_count": 120,
+      "exact_selector_found": true,
+      "exact_selector_count": 45,
+      "best_exact_selector": {
+        "features": [
+          "context_A_B_C"
+        ],
+        "admitted_tuple_count": 4,
+        "accepted_count": 4,
+        "false_positive_count": 0,
+        "miss_count": 0,
+        "exact": true,
+        "false_positives_first_20": [],
+        "misses": [],
+        "admitted_tuples": [
+          [
+            "[1, 2, 0]"
+          ],
+          [
+            "[3, 4, 2]"
+          ],
+          [
+            "[7, 11, 14]"
+          ],
+          [
+            "[9, 13, 10]"
+          ]
+        ]
+      },
+      "best_near_selector": {
+        "features": [
+          "context_A_B_C"
+        ],
+        "admitted_tuple_count": 4,
+        "accepted_count": 4,
+        "false_positive_count": 0,
+        "miss_count": 0,
+        "exact": true,
+        "false_positives_first_20": [],
+        "misses": [],
+        "admitted_tuples": [
+          [
+            "[1, 2, 0]"
+          ],
+          [
+            "[3, 4, 2]"
+          ],
+          [
+            "[7, 11, 14]"
+          ],
+          [
+            "[9, 13, 10]"
+          ]
+        ]
+      },
+      "exact_selectors_first_20": [
+        {
+          "features": [
+            "context_A_B_C"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "[1, 2, 0]"
+            ],
+            [
+              "[3, 4, 2]"
+            ],
+            [
+              "[7, 11, 14]"
+            ],
+            [
+              "[9, 13, 10]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "context_B_plus_1_and_C_plus_1"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "[12, 15]"
+            ],
+            [
+              "[14, 11]"
+            ],
+            [
+              "[3, 1]"
+            ],
+            [
+              "[5, 3]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "context_A",
+            "context_A_B_C"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "1",
+              "[1, 2, 0]"
+            ],
+            [
+              "3",
+              "[3, 4, 2]"
+            ],
+            [
+              "7",
+              "[7, 11, 14]"
+            ],
+            [
+              "9",
+              "[9, 13, 10]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "context_A",
+            "context_B_plus_1_and_C_plus_1"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "1",
+              "[3, 1]"
+            ],
+            [
+              "3",
+              "[5, 3]"
+            ],
+            [
+              "7",
+              "[12, 15]"
+            ],
+            [
+              "9",
+              "[14, 11]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "context_A_B_C",
+            "context_A_plus_1"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "[1, 2, 0]",
+              "2"
+            ],
+            [
+              "[3, 4, 2]",
+              "4"
+            ],
+            [
+              "[7, 11, 14]",
+              "8"
+            ],
+            [
+              "[9, 13, 10]",
+              "10"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "context_A_B_C",
+            "context_A_plus_1_and_C_plus_1"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "[1, 2, 0]",
+              "[2, 1]"
+            ],
+            [
+              "[3, 4, 2]",
+              "[4, 3]"
+            ],
+            [
+              "[7, 11, 14]",
+              "[8, 15]"
+            ],
+            [
+              "[9, 13, 10]",
+              "[10, 11]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "context_A_B_C",
+            "context_B"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "[1, 2, 0]",
+              "2"
+            ],
+            [
+              "[3, 4, 2]",
+              "4"
+            ],
+            [
+              "[7, 11, 14]",
+              "11"
+            ],
+            [
+              "[9, 13, 10]",
+              "13"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "context_A_B_C",
+            "context_B_plus_1"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "[1, 2, 0]",
+              "3"
+            ],
+            [
+              "[3, 4, 2]",
+              "5"
+            ],
+            [
+              "[7, 11, 14]",
+              "12"
+            ],
+            [
+              "[9, 13, 10]",
+              "14"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "context_A_B_C",
+            "context_B_plus_1_and_C_plus_1"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "[1, 2, 0]",
+              "[3, 1]"
+            ],
+            [
+              "[3, 4, 2]",
+              "[5, 3]"
+            ],
+            [
+              "[7, 11, 14]",
+              "[12, 15]"
+            ],
+            [
+              "[9, 13, 10]",
+              "[14, 11]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "context_A_B_C",
+            "context_C"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "[1, 2, 0]",
+              "0"
+            ],
+            [
+              "[3, 4, 2]",
+              "2"
+            ],
+            [
+              "[7, 11, 14]",
+              "14"
+            ],
+            [
+              "[9, 13, 10]",
+              "10"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "context_A_B_C",
+            "context_C_plus_1"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "[1, 2, 0]",
+              "1"
+            ],
+            [
+              "[3, 4, 2]",
+              "3"
+            ],
+            [
+              "[7, 11, 14]",
+              "15"
+            ],
+            [
+              "[9, 13, 10]",
+              "11"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "context_A_B_C",
+            "context_column_0"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "[1, 2, 0]",
+              "0"
+            ],
+            [
+              "[3, 4, 2]",
+              "7"
+            ],
+            [
+              "[7, 11, 14]",
+              "23"
+            ],
+            [
+              "[9, 13, 10]",
+              "28"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "context_A_B_C",
+            "context_column_0_plus_1"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "[1, 2, 0]",
+              "1"
+            ],
+            [
+              "[3, 4, 2]",
+              "8"
+            ],
+            [
+              "[7, 11, 14]",
+              "24"
+            ],
+            [
+              "[9, 13, 10]",
+              "29"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "context_A_B_C",
+            "context_column_1"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "[1, 2, 0]",
+              "4"
+            ],
+            [
+              "[3, 4, 2]",
+              "10"
+            ],
+            [
+              "[7, 11, 14]",
+              "24"
+            ],
+            [
+              "[9, 13, 10]",
+              "29"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "context_A_B_C",
+            "context_column_1_plus_1"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "[1, 2, 0]",
+              "5"
+            ],
+            [
+              "[3, 4, 2]",
+              "11"
+            ],
+            [
+              "[7, 11, 14]",
+              "25"
+            ],
+            [
+              "[9, 13, 10]",
+              "30"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "context_A_B_C",
+            "context_columns"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "[1, 2, 0]",
+              "[0, 4]"
+            ],
+            [
+              "[3, 4, 2]",
+              "[7, 10]"
+            ],
+            [
+              "[7, 11, 14]",
+              "[23, 24]"
+            ],
+            [
+              "[9, 13, 10]",
+              "[28, 29]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "context_A_B_C",
+            "context_handedness_word"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "[1, 2, 0]",
+              "R"
+            ],
+            [
+              "[3, 4, 2]",
+              "R"
+            ],
+            [
+              "[7, 11, 14]",
+              "L"
+            ],
+            [
+              "[9, 13, 10]",
+              "R"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "context_A_plus_1",
+            "context_B_plus_1_and_C_plus_1"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "10",
+              "[14, 11]"
+            ],
+            [
+              "2",
+              "[3, 1]"
+            ],
+            [
+              "4",
+              "[5, 3]"
+            ],
+            [
+              "8",
+              "[12, 15]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "context_A_plus_1_and_C_plus_1",
+            "context_B"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "[10, 11]",
+              "13"
+            ],
+            [
+              "[2, 1]",
+              "2"
+            ],
+            [
+              "[4, 3]",
+              "4"
+            ],
+            [
+              "[8, 15]",
+              "11"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "context_A_plus_1_and_C_plus_1",
+            "context_B_plus_1"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "[10, 11]",
+              "14"
+            ],
+            [
+              "[2, 1]",
+              "3"
+            ],
+            [
+              "[4, 3]",
+              "5"
+            ],
+            [
+              "[8, 15]",
+              "12"
+            ]
+          ]
+        }
+      ]
+    },
+    "mixed_basic_plus_context_search": {
+      "feature_count": 28,
+      "max_combo_size": 3,
+      "tested_count": 3682,
+      "exact_selector_found": true,
+      "exact_selector_count": 1152,
+      "best_exact_selector": {
+        "features": [
+          "context_A_B_C"
+        ],
+        "admitted_tuple_count": 4,
+        "accepted_count": 4,
+        "false_positive_count": 0,
+        "miss_count": 0,
+        "exact": true,
+        "false_positives_first_20": [],
+        "misses": [],
+        "admitted_tuples": [
+          [
+            "[1, 2, 0]"
+          ],
+          [
+            "[3, 4, 2]"
+          ],
+          [
+            "[7, 11, 14]"
+          ],
+          [
+            "[9, 13, 10]"
+          ]
+        ]
+      },
+      "best_near_selector": {
+        "features": [
+          "context_A_B_C"
+        ],
+        "admitted_tuple_count": 4,
+        "accepted_count": 4,
+        "false_positive_count": 0,
+        "miss_count": 0,
+        "exact": true,
+        "false_positives_first_20": [],
+        "misses": [],
+        "admitted_tuples": [
+          [
+            "[1, 2, 0]"
+          ],
+          [
+            "[3, 4, 2]"
+          ],
+          [
+            "[7, 11, 14]"
+          ],
+          [
+            "[9, 13, 10]"
+          ]
+        ]
+      },
+      "exact_selectors_first_20": [
+        {
+          "features": [
+            "context_A_B_C"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "[1, 2, 0]"
+            ],
+            [
+              "[3, 4, 2]"
+            ],
+            [
+              "[7, 11, 14]"
+            ],
+            [
+              "[9, 13, 10]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "context_B_plus_1_and_C_plus_1"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "[12, 15]"
+            ],
+            [
+              "[14, 11]"
+            ],
+            [
+              "[3, 1]"
+            ],
+            [
+              "[5, 3]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "basic_candidate_found",
+            "context_A_B_C"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "True",
+              "[1, 2, 0]"
+            ],
+            [
+              "True",
+              "[3, 4, 2]"
+            ],
+            [
+              "True",
+              "[7, 11, 14]"
+            ],
+            [
+              "True",
+              "[9, 13, 10]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "basic_candidate_found",
+            "context_B_plus_1_and_C_plus_1"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "True",
+              "[12, 15]"
+            ],
+            [
+              "True",
+              "[14, 11]"
+            ],
+            [
+              "True",
+              "[3, 1]"
+            ],
+            [
+              "True",
+              "[5, 3]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "basic_distinct_cycle_fibers",
+            "context_A_B_C"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "3",
+              "[1, 2, 0]"
+            ],
+            [
+              "3",
+              "[3, 4, 2]"
+            ],
+            [
+              "3",
+              "[7, 11, 14]"
+            ],
+            [
+              "3",
+              "[9, 13, 10]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "basic_distinct_cycle_fibers",
+            "context_B_plus_1_and_C_plus_1"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "3",
+              "[12, 15]"
+            ],
+            [
+              "3",
+              "[14, 11]"
+            ],
+            [
+              "3",
+              "[3, 1]"
+            ],
+            [
+              "3",
+              "[5, 3]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "basic_distinct_cycle_slots",
+            "context_A_B_C"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "3",
+              "[1, 2, 0]"
+            ],
+            [
+              "3",
+              "[3, 4, 2]"
+            ],
+            [
+              "3",
+              "[7, 11, 14]"
+            ],
+            [
+              "3",
+              "[9, 13, 10]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "basic_distinct_cycle_slots",
+            "context_B_plus_1_and_C_plus_1"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "3",
+              "[12, 15]"
+            ],
+            [
+              "3",
+              "[14, 11]"
+            ],
+            [
+              "3",
+              "[3, 1]"
+            ],
+            [
+              "3",
+              "[5, 3]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "basic_distinct_internal_fibers",
+            "context_A_B_C"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "3",
+              "[1, 2, 0]"
+            ],
+            [
+              "3",
+              "[3, 4, 2]"
+            ],
+            [
+              "3",
+              "[7, 11, 14]"
+            ],
+            [
+              "3",
+              "[9, 13, 10]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "basic_distinct_internal_fibers",
+            "context_B_plus_1_and_C_plus_1"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "3",
+              "[12, 15]"
+            ],
+            [
+              "3",
+              "[14, 11]"
+            ],
+            [
+              "3",
+              "[3, 1]"
+            ],
+            [
+              "3",
+              "[5, 3]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "basic_distinct_internal_slots",
+            "context_A_B_C"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "3",
+              "[1, 2, 0]"
+            ],
+            [
+              "3",
+              "[3, 4, 2]"
+            ],
+            [
+              "3",
+              "[7, 11, 14]"
+            ],
+            [
+              "3",
+              "[9, 13, 10]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "basic_distinct_internal_slots",
+            "context_B_plus_1_and_C_plus_1"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "3",
+              "[12, 15]"
+            ],
+            [
+              "3",
+              "[14, 11]"
+            ],
+            [
+              "3",
+              "[3, 1]"
+            ],
+            [
+              "3",
+              "[5, 3]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "basic_edge_count",
+            "context_A_B_C"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "6",
+              "[1, 2, 0]"
+            ],
+            [
+              "6",
+              "[3, 4, 2]"
+            ],
+            [
+              "6",
+              "[7, 11, 14]"
+            ],
+            [
+              "6",
+              "[9, 13, 10]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "basic_edge_count",
+            "context_B_plus_1_and_C_plus_1"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "6",
+              "[12, 15]"
+            ],
+            [
+              "6",
+              "[14, 11]"
+            ],
+            [
+              "6",
+              "[3, 1]"
+            ],
+            [
+              "6",
+              "[5, 3]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "basic_first_label",
+            "context_A_B_C"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "reverse_partner",
+              "[1, 2, 0]"
+            ],
+            [
+              "reverse_partner",
+              "[3, 4, 2]"
+            ],
+            [
+              "reverse_partner",
+              "[7, 11, 14]"
+            ],
+            [
+              "reverse_partner",
+              "[9, 13, 10]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "basic_first_label",
+            "context_B_plus_1_and_C_plus_1"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "reverse_partner",
+              "[12, 15]"
+            ],
+            [
+              "reverse_partner",
+              "[14, 11]"
+            ],
+            [
+              "reverse_partner",
+              "[3, 1]"
+            ],
+            [
+              "reverse_partner",
+              "[5, 3]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "basic_internal_admitted_count",
+            "context_A_B_C"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "0",
+              "[1, 2, 0]"
+            ],
+            [
+              "0",
+              "[3, 4, 2]"
+            ],
+            [
+              "0",
+              "[7, 11, 14]"
+            ],
+            [
+              "0",
+              "[9, 13, 10]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "basic_internal_admitted_count",
+            "context_B_plus_1_and_C_plus_1"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "0",
+              "[12, 15]"
+            ],
+            [
+              "0",
+              "[14, 11]"
+            ],
+            [
+              "0",
+              "[3, 1]"
+            ],
+            [
+              "0",
+              "[5, 3]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "basic_internal_admitted_count",
+            "context_columns"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "0",
+              "[0, 4]"
+            ],
+            [
+              "0",
+              "[23, 24]"
+            ],
+            [
+              "0",
+              "[28, 29]"
+            ],
+            [
+              "0",
+              "[7, 10]"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "basic_internal_node_count",
+            "context_A_B_C"
+          ],
+          "admitted_tuple_count": 4,
+          "accepted_count": 4,
+          "false_positive_count": 0,
+          "miss_count": 0,
+          "exact": true,
+          "false_positives_first_20": [],
+          "misses": [],
+          "admitted_tuples": [
+            [
+              "5",
+              "[1, 2, 0]"
+            ],
+            [
+              "5",
+              "[3, 4, 2]"
+            ],
+            [
+              "5",
+              "[7, 11, 14]"
+            ],
+            [
+              "5",
+              "[9, 13, 10]"
+            ]
+          ]
+        }
+      ]
+    },
+    "strict_basic_return_predicate_found": false,
+    "sharp_return_signature_selector_found": true,
+    "context_selector_found": true,
+    "mixed_selector_found": true,
+    "selected_interpretation": "No basic return-only validation predicate was found.",
+    "selector_boundary": "If a selector is found only in sharp or context features, it is evidence for structure but not yet an independent return validation predicate.",
+    "validated_return_cycle_found": false,
+    "independent_witness_layer_found": false,
+    "full_41_lift_found": false,
+    "full_g900_admission_found": false,
+    "source_native_wxyzti_generator_found": false,
+    "claim_closes_gap_a": false,
+    "terminal_reason": "The strict validation search separates basic return-derived predicates from sharper identity-rich return signatures and source/context selectors."
+  },
+  "interpretation": {
+    "main_result": "sharp_return_signature_selector_found_basic_not_found_not_g900",
+    "meaning": "No basic return-only validation predicate was found.",
+    "why_this_matters": "This tests whether return evidence can become a stricter validation predicate rather than merely showing abundant return candidates.",
+    "selector_boundary": "If a selector is found only in sharp or context features, it is evidence for structure but not yet an independent return validation predicate.",
+    "why_not_closure": "Even an exact finite selector here is not full G900 unless it is independently witnessed and tied to a validated return cycle.",
+    "next_move": "Record the strict return validation predicate boundary."
+  },
+  "claim": {
+    "does_this_close_gap_a": false,
+    "does_this_find_basic_return_validation_predicate": false,
+    "does_this_find_sharp_return_signature_selector": true,
+    "does_this_find_context_selector": true,
+    "does_this_validate_full_return_cycle": false,
+    "does_this_find_independent_witness_layer": false,
+    "does_this_find_full_g900_admission": false,
+    "short_form": "No basic return-only validation predicate was found.",
+    "not_closed_reason": "Even an exact finite selector here is not full G900 unless it is independently witnessed and tied to a validated return cycle.",
+    "next_problem": "Record the strict return validation predicate boundary."
+  },
+  "checks": [
+    {
+      "id": "perturbation_boundary_loaded",
+      "status": true,
+      "detail": "return_cycle_perturbation_boundary_recorded"
+    },
+    {
+      "id": "record_count_120",
+      "status": true,
+      "detail": "120"
+    },
+    {
+      "id": "candidate_for_all_records",
+      "status": true,
+      "detail": "120"
+    },
+    {
+      "id": "searches_completed",
+      "status": true,
+      "detail": "completed"
+    },
+    {
+      "id": "validated_return_cycle_false",
+      "status": true,
+      "detail": "False"
+    },
+    {
+      "id": "full_g900_false",
+      "status": true,
+      "detail": "False"
+    },
+    {
+      "id": "gap_a_not_closed",
+      "status": true,
+      "detail": "search only"
+    }
+  ],
+  "next_script": "record_strict_return_validation_predicate_boundary_001.py"
+}

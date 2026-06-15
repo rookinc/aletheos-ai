@@ -1,0 +1,219 @@
+{
+  "schema": "gap_a_odd_hinge_source_shell_grammar_audit_001.v1",
+  "status": "gap_a_odd_hinge_source_shell_audit_enriched_not_generator",
+  "timestamp_utc": "2026-06-15T00:40:23.442039+00:00",
+  "purpose": "Audit whether the odd A/B/C hinge signal is special against length-2 source-shell background paths.",
+  "boundary": [
+    "This does not close Gap A.",
+    "This audits an odd-hinge primitive, not a generator.",
+    "Single-projection WXYZTI closure remains open.",
+    "No physical interpretation is claimed."
+  ],
+  "summary": {
+    "audit_result": "odd_hinge_enriched_against_unique_length2_background",
+    "gap_a_closed": false,
+    "selected_record_count": 4,
+    "selected_odd_hinge_count": 4,
+    "selected_all_odd_hinge": true,
+    "selected_all_unique_shortest_len2": true,
+    "selected_hinges": {
+      "1": 1,
+      "3": 1,
+      "7": 1,
+      "9": 1
+    },
+    "selected_stations": {
+      "T": 1,
+      "Y": 1,
+      "Z": 2
+    },
+    "selected_role_pairs": {
+      "XY->YZ": 1,
+      "YZ->ZT": 2,
+      "ZT->TI": 1
+    },
+    "background_all_simple_length2": {
+      "name": "all_simple_length2_paths",
+      "path_count": 90,
+      "odd_hinge_count": 42,
+      "even_hinge_count": 48,
+      "odd_hinge_fraction": 0.46666667,
+      "hinge_counts": {
+        "0": 6,
+        "1": 6,
+        "10": 6,
+        "11": 6,
+        "12": 6,
+        "13": 6,
+        "14": 6,
+        "2": 6,
+        "3": 6,
+        "4": 6,
+        "5": 6,
+        "6": 6,
+        "7": 6,
+        "8": 6,
+        "9": 6
+      }
+    },
+    "background_unique_shortest_length2": {
+      "name": "unique_shortest_length2_paths",
+      "path_count": 60,
+      "odd_hinge_count": 28,
+      "even_hinge_count": 32,
+      "odd_hinge_fraction": 0.46666667,
+      "hinge_counts": {
+        "0": 4,
+        "1": 4,
+        "10": 4,
+        "11": 4,
+        "12": 4,
+        "13": 4,
+        "14": 4,
+        "2": 4,
+        "3": 4,
+        "4": 4,
+        "5": 4,
+        "6": 4,
+        "7": 4,
+        "8": 4,
+        "9": 4
+      }
+    },
+    "probability_all_selected_odd_under_unique_shortest_background_hypergeom": 0.041988372,
+    "probability_all_selected_odd_under_unique_shortest_background_binomial": 0.047427162,
+    "claim_closes_gap_a": false
+  },
+  "selected_records": [
+    {
+      "cycle": 0,
+      "station": "Z",
+      "role_pair": "YZ->ZT",
+      "B": 4,
+      "A": 3,
+      "C": 2,
+      "path_vertices": [
+        4,
+        3,
+        2
+      ],
+      "path_columns": [
+        10,
+        7
+      ],
+      "hinge_parity": "odd",
+      "is_odd_hinge": true,
+      "background_shortest_len2_for_endpoint": 1,
+      "selected_endpoint_unique_shortest_len2": true
+    },
+    {
+      "cycle": 0,
+      "station": "T",
+      "role_pair": "ZT->TI",
+      "B": 13,
+      "A": 9,
+      "C": 10,
+      "path_vertices": [
+        13,
+        9,
+        10
+      ],
+      "path_columns": [
+        29,
+        28
+      ],
+      "hinge_parity": "odd",
+      "is_odd_hinge": true,
+      "background_shortest_len2_for_endpoint": 1,
+      "selected_endpoint_unique_shortest_len2": true
+    },
+    {
+      "cycle": 1,
+      "station": "Y",
+      "role_pair": "XY->YZ",
+      "B": 2,
+      "A": 1,
+      "C": 0,
+      "path_vertices": [
+        2,
+        1,
+        0
+      ],
+      "path_columns": [
+        4,
+        0
+      ],
+      "hinge_parity": "odd",
+      "is_odd_hinge": true,
+      "background_shortest_len2_for_endpoint": 1,
+      "selected_endpoint_unique_shortest_len2": true
+    },
+    {
+      "cycle": 2,
+      "station": "Z",
+      "role_pair": "YZ->ZT",
+      "B": 11,
+      "A": 7,
+      "C": 14,
+      "path_vertices": [
+        11,
+        7,
+        14
+      ],
+      "path_columns": [
+        23,
+        24
+      ],
+      "hinge_parity": "odd",
+      "is_odd_hinge": true,
+      "background_shortest_len2_for_endpoint": 1,
+      "selected_endpoint_unique_shortest_len2": true
+    }
+  ],
+  "claim": {
+    "does_this_close_gap_a": false,
+    "does_this_audit_odd_hinge_against_background": true,
+    "does_this_find_enrichment": true,
+    "does_this_find_generator": false,
+    "short_form": "odd_hinge_enriched_against_unique_length2_background",
+    "not_closed_reason": "Odd-hinge enrichment or survival is weaker than a source-native projection-family generator."
+  },
+  "checks": [
+    {
+      "id": "abc_loaded",
+      "status": true,
+      "detail": "source_shell_signed_abc_primitives_extracted_odd_hinge_signal_found_not_generator"
+    },
+    {
+      "id": "branch_loaded",
+      "status": true,
+      "detail": "source_shell_projection_family_generator_branch_started"
+    },
+    {
+      "id": "source_columns_loaded",
+      "status": true,
+      "detail": "30"
+    },
+    {
+      "id": "selected_records_loaded",
+      "status": true,
+      "detail": "4"
+    },
+    {
+      "id": "selected_all_odd_hinge",
+      "status": true,
+      "detail": "True"
+    },
+    {
+      "id": "selected_all_unique_shortest_len2",
+      "status": true,
+      "detail": "True"
+    },
+    {
+      "id": "gap_a_not_closed",
+      "status": true,
+      "detail": "audit only"
+    }
+  ],
+  "next_script": "search_gap_a_polarity_aware_odd_hinge_family_grammar_001.py"
+}

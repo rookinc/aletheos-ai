@@ -1,0 +1,127 @@
+{
+  "schema": "canonical_g60_payload_import_001.v1",
+  "status": "canonical_g60_payload_import_recorded",
+  "timestamp_utc": "2026-06-15T12:45:11.630147+00:00",
+  "purpose": "Import and validate the machine-readable canonical G60 edge payload for NRC generator work.",
+  "claim": "A verified machine-readable G60 edge payload is now bound into the registered boundary flux lab. The imported CSV has 120 local edges on 60 vertices, is 4-regular and connected, has diameter 6, and has shell vector (1,4,8,16,24,6,1) from every root.",
+  "source_pdf_provenance": {
+    "title": "Dodecahedral Transport, Sector Geometry on L(Petersen), and the Identity MMT = A3 + 2A2 + 2I",
+    "source_invariants": [
+      "|V|=60",
+      "|E|=120",
+      "4-regular",
+      "diameter=6",
+      "shell vector=(1,4,8,16,24,6,1)",
+      "AT4val[60,6]",
+      "Graph52002"
+    ]
+  },
+  "payload_file": "public_html/labs/registered_boundary_flux/data/canonical_g60_payload.v1.json",
+  "csv_file": "public_html/labs/registered_boundary_flux/data/canonical_g60_local_edges.v1.csv",
+  "source_csv": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/source/kernel_payload/g60_local_edges.csv",
+  "source_sha256": "c700a185fab6a5f434da09b7acb716b96c76170774bee946af8ea907e4fe7f9f",
+  "local_sha256": "c700a185fab6a5f434da09b7acb716b96c76170774bee946af8ea907e4fe7f9f",
+  "summary": {
+    "canonical_g60_payload_imported": true,
+    "vertex_count": 60,
+    "edge_count": 120,
+    "degree_counts": {
+      "4": 60
+    },
+    "connected": true,
+    "diameter": 6,
+    "shell_vector_counts": [
+      {
+        "shell_vector": [
+          1,
+          4,
+          8,
+          16,
+          24,
+          6,
+          1
+        ],
+        "count": 60
+      }
+    ],
+    "triangle_count": 40,
+    "gap_a_closed": false,
+    "full_g900_admission_found": false,
+    "next_step": "g60_payload_to_nrc_generator_alignment"
+  },
+  "checks": [
+    {
+      "id": "source_csv_exists",
+      "status": true,
+      "detail": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/source/kernel_payload/g60_local_edges.csv"
+    },
+    {
+      "id": "copy_sha_matches",
+      "status": true,
+      "detail": "c700a185fab6a5f434da09b7acb716b96c76170774bee946af8ea907e4fe7f9f"
+    },
+    {
+      "id": "vertex_count_60",
+      "status": true,
+      "detail": 60
+    },
+    {
+      "id": "edge_count_120",
+      "status": true,
+      "detail": 120
+    },
+    {
+      "id": "vertices_0_to_59",
+      "status": true,
+      "detail": [
+        0,
+        59
+      ]
+    },
+    {
+      "id": "degree_4_regular",
+      "status": true,
+      "detail": {
+        "4": 60
+      }
+    },
+    {
+      "id": "connected",
+      "status": true,
+      "detail": true
+    },
+    {
+      "id": "diameter_6",
+      "status": true,
+      "detail": 6
+    },
+    {
+      "id": "shell_vector_expected_all_roots",
+      "status": true,
+      "detail": [
+        {
+          "shell_vector": [
+            1,
+            4,
+            8,
+            16,
+            24,
+            6,
+            1
+          ],
+          "count": 60
+        }
+      ]
+    },
+    {
+      "id": "triangle_count_40",
+      "status": true,
+      "detail": 40
+    },
+    {
+      "id": "resolution_source_strong",
+      "status": true,
+      "detail": true
+    }
+  ]
+}

@@ -1,0 +1,2122 @@
+{
+  "schema": "g60_payload_binding_resolution_001.v1",
+  "status": "g60_payload_binding_resolution_recorded",
+  "timestamp_utc": "2026-06-15T12:43:34.485592+00:00",
+  "purpose": "Resolve binding-layer source paths and inspect whether a machine-readable G60 60-vertex/120-edge payload is available.",
+  "summary": {
+    "binding_files_checked": [
+      "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g60_source_binding.v1.json",
+      "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g900_signature_binding.v1.json",
+      "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/k900_action_binding.v1.json",
+      "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/k900_action_source_index.v1.json"
+    ],
+    "raw_path_records": 41,
+    "resolved_existing_record_count": 22,
+    "existing_file_inspections": 22,
+    "strong_g60_csv_edge_candidate_count": 1,
+    "strong_g60_payload_found": true,
+    "best_strong_g60_candidate": {
+      "file": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/source/kernel_payload/g60_local_edges.csv",
+      "raw_path": "research/thalean-graph-theory/18-g900-kernel-admission/source/kernel_payload/g60_local_edges.csv",
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g900_signature_binding.v1.json",
+      "cols": [
+        "local_u",
+        "local_v"
+      ],
+      "row_count": 120,
+      "vertex_count": 60,
+      "min_vertex": 0,
+      "max_vertex": 59,
+      "degree_values": [
+        4
+      ],
+      "strong_g60_edge_candidate": true,
+      "first_5_pairs": [
+        [
+          0,
+          16
+        ],
+        [
+          0,
+          19
+        ],
+        [
+          0,
+          25
+        ],
+        [
+          0,
+          55
+        ],
+        [
+          1,
+          15
+        ]
+      ]
+    },
+    "next_step": "import_verified_g60_local_edges_payload"
+  },
+  "strong_g60_csv_candidates": [
+    {
+      "file": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/source/kernel_payload/g60_local_edges.csv",
+      "raw_path": "research/thalean-graph-theory/18-g900-kernel-admission/source/kernel_payload/g60_local_edges.csv",
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g900_signature_binding.v1.json",
+      "cols": [
+        "local_u",
+        "local_v"
+      ],
+      "row_count": 120,
+      "vertex_count": 60,
+      "min_vertex": 0,
+      "max_vertex": 59,
+      "degree_values": [
+        4
+      ],
+      "strong_g60_edge_candidate": true,
+      "first_5_pairs": [
+        [
+          0,
+          16
+        ],
+        [
+          0,
+          19
+        ],
+        [
+          0,
+          25
+        ],
+        [
+          0,
+          55
+        ],
+        [
+          1,
+          15
+        ]
+      ]
+    }
+  ],
+  "existing_file_inspections": [
+    {
+      "path": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/json/theorem_object.json",
+      "exists": true,
+      "size_bytes": 13166,
+      "suffix": ".json",
+      "json_status": "json_read",
+      "top_keys": [
+        "adjacency_polynomial",
+        "col_sums",
+        "columns",
+        "distance_expression",
+        "g15_distance_matrix",
+        "gram_Q",
+        "matrix_M",
+        "name",
+        "petersen_edges_indexing",
+        "row_sums",
+        "score_sq",
+        "shape_M",
+        "shape_Q",
+        "source_artifact",
+        "source_artifact_note",
+        "source_artifact_status",
+        "stats"
+      ],
+      "top_type": "dict",
+      "raw_path": "../json/theorem_object.json",
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g60_source_binding.v1.json"
+    },
+    {
+      "path": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/json/transport_cocycle.json",
+      "exists": true,
+      "size_bytes": 3336,
+      "suffix": ".json",
+      "json_status": "json_read",
+      "top_keys": [
+        "anti_drift_rules",
+        "cocycle_effects",
+        "core_statement",
+        "domains",
+        "invariants",
+        "name",
+        "plain_language",
+        "purpose",
+        "stairs_principle",
+        "status",
+        "transition_classes",
+        "walk_state_fields"
+      ],
+      "top_type": "dict",
+      "raw_path": "../json/transport_cocycle.json",
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g60_source_binding.v1.json"
+    },
+    {
+      "path": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/json/row_taxonomy.json",
+      "exists": true,
+      "size_bytes": 2585,
+      "suffix": ".json",
+      "json_status": "json_read",
+      "top_keys": [
+        "anchor_rows",
+        "chamber_blocks",
+        "companion_classes",
+        "description",
+        "flank_classes",
+        "hinge_triple",
+        "source",
+        "status",
+        "taxonomy_classes"
+      ],
+      "top_type": "dict",
+      "raw_path": "../json/row_taxonomy.json",
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g60_source_binding.v1.json"
+    },
+    {
+      "path": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/json/matrix_M.json",
+      "exists": true,
+      "size_bytes": 4245,
+      "suffix": ".json",
+      "json_status": "json_read",
+      "top_keys": [
+        "M"
+      ],
+      "top_type": "dict",
+      "raw_path": "../json/matrix_M.json",
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g60_source_binding.v1.json"
+    },
+    {
+      "path": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/json/gram_Q.json",
+      "exists": true,
+      "size_bytes": 2235,
+      "suffix": ".json",
+      "json_status": "json_read",
+      "top_keys": [
+        "Q"
+      ],
+      "top_type": "dict",
+      "raw_path": "../json/gram_Q.json",
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g60_source_binding.v1.json"
+    },
+    {
+      "path": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/json/verify_report.json",
+      "exists": true,
+      "size_bytes": 8901,
+      "suffix": ".json",
+      "json_status": "json_read",
+      "top_keys": [
+        "generated_at_utc",
+        "overall_status",
+        "results",
+        "summary"
+      ],
+      "top_type": "dict",
+      "raw_path": "../json/verify_report.json",
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g60_source_binding.v1.json"
+    },
+    {
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/paper/sections/03_main_theorem.tex",
+      "exists": true,
+      "size_bytes": 1760,
+      "suffix": ".tex",
+      "raw_path": "research/thalean-graph-theory/18-g900-kernel-admission/paper/sections/03_main_theorem.tex",
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g900_signature_binding.v1.json"
+    },
+    {
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/paper/sections/00_abstract.tex",
+      "exists": true,
+      "size_bytes": 1001,
+      "suffix": ".tex",
+      "raw_path": "research/thalean-graph-theory/18-g900-kernel-admission/paper/sections/00_abstract.tex",
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g900_signature_binding.v1.json"
+    },
+    {
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/qed_status_ledger.json",
+      "exists": true,
+      "size_bytes": 3873,
+      "suffix": ".json",
+      "json_status": "json_read",
+      "top_keys": [
+        "boundary",
+        "certified",
+        "claims",
+        "current_summary",
+        "ledger",
+        "ledger_ok",
+        "not_certified",
+        "planned",
+        "project",
+        "proved_by_kernel",
+        "status_counts",
+        "verification_checks"
+      ],
+      "top_type": "dict",
+      "raw_path": "research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/qed_status_ledger.json",
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g900_signature_binding.v1.json"
+    },
+    {
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/manuscript_manifest.json",
+      "exists": true,
+      "size_bytes": 307,
+      "suffix": ".json",
+      "json_status": "json_read",
+      "top_keys": [
+        "certificate_claims_certified",
+        "direct_kernel_claims_proved",
+        "entrypoint",
+        "not_certified_claims",
+        "qed_complete",
+        "remaining_planned_claims",
+        "tag",
+        "zip"
+      ],
+      "top_type": "dict",
+      "raw_path": "research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/manuscript_manifest.json",
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g900_signature_binding.v1.json"
+    },
+    {
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/kernel_payload_manifest.json",
+      "exists": true,
+      "size_bytes": 2010,
+      "suffix": ".json",
+      "json_status": "json_read",
+      "top_keys": [
+        "boundary",
+        "kernel_payload_independent_of_project17",
+        "missing",
+        "project",
+        "purpose",
+        "records",
+        "source_project"
+      ],
+      "top_type": "dict",
+      "raw_path": "research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/kernel_payload_manifest.json",
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g900_signature_binding.v1.json"
+    },
+    {
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/construction_independence_status.json",
+      "exists": true,
+      "size_bytes": 881,
+      "suffix": ".json",
+      "json_status": "json_read",
+      "top_keys": [
+        "construction_independent_of_project17",
+        "kernel_payload",
+        "not_claimed",
+        "project",
+        "qed_independent",
+        "remaining_certificate_targets",
+        "source_project",
+        "source_role",
+        "source_tag",
+        "status"
+      ],
+      "top_type": "dict",
+      "raw_path": "research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/construction_independence_status.json",
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g900_signature_binding.v1.json"
+    },
+    {
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/exact_edge_set_identity_certificate.json",
+      "exists": true,
+      "size_bytes": 1168,
+      "suffix": ".json",
+      "json_status": "json_read",
+      "top_keys": [
+        "boundary",
+        "certificate",
+        "claim",
+        "counts",
+        "hashes",
+        "source_files",
+        "verification_ok"
+      ],
+      "top_type": "dict",
+      "raw_path": "research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/exact_edge_set_identity_certificate.json",
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g900_signature_binding.v1.json"
+    },
+    {
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/connectedness_certificate.json",
+      "exists": true,
+      "size_bytes": 98048,
+      "suffix": ".json",
+      "json_status": "json_read",
+      "top_keys": [
+        "bfs_parent_certificate",
+        "boundary",
+        "certificate",
+        "checks",
+        "claim",
+        "edge_count",
+        "hashes",
+        "max_bfs_depth_from_root",
+        "method",
+        "reached_vertex_count",
+        "root",
+        "source_edge_file",
+        "tree_edge_count",
+        "verification_ok",
+        "vertex_count"
+      ],
+      "top_type": "dict",
+      "raw_path": "research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/connectedness_certificate.json",
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g900_signature_binding.v1.json"
+    },
+    {
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/metric_certificate.json",
+      "exists": true,
+      "size_bytes": 90205,
+      "suffix": ".json",
+      "json_status": "json_read",
+      "top_keys": [
+        "boundary",
+        "center_count",
+        "center_vertices",
+        "certificate",
+        "checks",
+        "claim",
+        "diameter",
+        "diameter_vertex_count",
+        "diameter_vertices",
+        "distance_distribution",
+        "eccentricity_counts",
+        "eccentricity_table",
+        "edge_count",
+        "first_diameter_witness_pair",
+        "hashes",
+        "method",
+        "radius",
+        "sample_diameter_witness_pairs",
+        "source_edge_file",
+        "verification_ok",
+        "vertex_count"
+      ],
+      "top_type": "dict",
+      "raw_path": "research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/metric_certificate.json",
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g900_signature_binding.v1.json"
+    },
+    {
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/baseline_separation_certificate.json",
+      "exists": true,
+      "size_bytes": 2142,
+      "suffix": ".json",
+      "json_status": "json_read",
+      "top_keys": [
+        "boundary",
+        "certificate",
+        "checks",
+        "claim",
+        "counts",
+        "hashes",
+        "method",
+        "source_files",
+        "untwisted_baseline",
+        "verification_ok",
+        "x_sigma"
+      ],
+      "top_type": "dict",
+      "raw_path": "research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/baseline_separation_certificate.json",
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g900_signature_binding.v1.json"
+    },
+    {
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/sibling_non_switching_certificate.json",
+      "exists": true,
+      "size_bytes": 5087,
+      "suffix": ".json",
+      "json_status": "json_read",
+      "top_keys": [
+        "assignment_contradictions_sample",
+        "boundary",
+        "certificate",
+        "checks",
+        "claim",
+        "counts",
+        "interpretation",
+        "linear_obstruction",
+        "method",
+        "source_files",
+        "support",
+        "verification_ok"
+      ],
+      "top_type": "dict",
+      "raw_path": "research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/sibling_non_switching_certificate.json",
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g900_signature_binding.v1.json"
+    },
+    {
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/sibling_full_graph_separation_certificate.json",
+      "exists": true,
+      "size_bytes": 3245,
+      "suffix": ".json",
+      "json_status": "json_read",
+      "top_keys": [
+        "boundary",
+        "canonical_metric",
+        "certificate",
+        "checks",
+        "claim",
+        "edge_set_comparison",
+        "hashes",
+        "method",
+        "separation_flags",
+        "sibling_metric",
+        "source_files",
+        "verification_ok"
+      ],
+      "top_type": "dict",
+      "raw_path": "research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/sibling_full_graph_separation_certificate.json",
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g900_signature_binding.v1.json"
+    },
+    {
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/source/kernel_payload/g15_slot_edges.csv",
+      "exists": true,
+      "size_bytes": 185,
+      "suffix": ".csv",
+      "csv": {
+        "status": "csv_read",
+        "row_count": 30,
+        "headers": [
+          "slot_u",
+          "slot_v"
+        ],
+        "numeric_cols": [
+          "slot_u",
+          "slot_v"
+        ],
+        "pair_candidates_first_20": [
+          {
+            "cols": [
+              "slot_u",
+              "slot_v"
+            ],
+            "row_count": 30,
+            "vertex_count": 15,
+            "min_vertex": 0,
+            "max_vertex": 14,
+            "degree_values": [
+              4
+            ],
+            "strong_g60_edge_candidate": false,
+            "first_5_pairs": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                4
+              ],
+              [
+                0,
+                5
+              ],
+              [
+                0,
+                6
+              ],
+              [
+                1,
+                2
+              ]
+            ]
+          }
+        ],
+        "strong_g60_pair_candidates": [],
+        "first_rows": [
+          {
+            "slot_u": "0",
+            "slot_v": "1"
+          },
+          {
+            "slot_u": "0",
+            "slot_v": "4"
+          },
+          {
+            "slot_u": "0",
+            "slot_v": "5"
+          },
+          {
+            "slot_u": "0",
+            "slot_v": "6"
+          },
+          {
+            "slot_u": "1",
+            "slot_v": "2"
+          }
+        ]
+      },
+      "raw_path": "research/thalean-graph-theory/18-g900-kernel-admission/source/kernel_payload/g15_slot_edges.csv",
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g900_signature_binding.v1.json"
+    },
+    {
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/source/kernel_payload/g60_local_edges.csv",
+      "exists": true,
+      "size_bytes": 817,
+      "suffix": ".csv",
+      "csv": {
+        "status": "csv_read",
+        "row_count": 120,
+        "headers": [
+          "local_u",
+          "local_v"
+        ],
+        "numeric_cols": [
+          "local_u",
+          "local_v"
+        ],
+        "pair_candidates_first_20": [
+          {
+            "cols": [
+              "local_u",
+              "local_v"
+            ],
+            "row_count": 120,
+            "vertex_count": 60,
+            "min_vertex": 0,
+            "max_vertex": 59,
+            "degree_values": [
+              4
+            ],
+            "strong_g60_edge_candidate": true,
+            "first_5_pairs": [
+              [
+                0,
+                16
+              ],
+              [
+                0,
+                19
+              ],
+              [
+                0,
+                25
+              ],
+              [
+                0,
+                55
+              ],
+              [
+                1,
+                15
+              ]
+            ]
+          }
+        ],
+        "strong_g60_pair_candidates": [
+          {
+            "cols": [
+              "local_u",
+              "local_v"
+            ],
+            "row_count": 120,
+            "vertex_count": 60,
+            "min_vertex": 0,
+            "max_vertex": 59,
+            "degree_values": [
+              4
+            ],
+            "strong_g60_edge_candidate": true,
+            "first_5_pairs": [
+              [
+                0,
+                16
+              ],
+              [
+                0,
+                19
+              ],
+              [
+                0,
+                25
+              ],
+              [
+                0,
+                55
+              ],
+              [
+                1,
+                15
+              ]
+            ]
+          }
+        ],
+        "first_rows": [
+          {
+            "local_u": "0",
+            "local_v": "16"
+          },
+          {
+            "local_u": "0",
+            "local_v": "19"
+          },
+          {
+            "local_u": "0",
+            "local_v": "25"
+          },
+          {
+            "local_u": "0",
+            "local_v": "55"
+          },
+          {
+            "local_u": "1",
+            "local_v": "15"
+          }
+        ]
+      },
+      "raw_path": "research/thalean-graph-theory/18-g900-kernel-admission/source/kernel_payload/g60_local_edges.csv",
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g900_signature_binding.v1.json"
+    },
+    {
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/source/kernel_payload/carrier_signing_table.csv",
+      "exists": true,
+      "size_bytes": 942,
+      "suffix": ".csv",
+      "csv": {
+        "status": "csv_read",
+        "row_count": 30,
+        "headers": [
+          "slot_u",
+          "slot_v",
+          "sign",
+          "carrier_law",
+          "external_edge_count"
+        ],
+        "numeric_cols": [
+          "slot_u",
+          "slot_v",
+          "sign",
+          "external_edge_count"
+        ],
+        "pair_candidates_first_20": [
+          {
+            "cols": [
+              "slot_u",
+              "external_edge_count"
+            ],
+            "row_count": 30,
+            "vertex_count": 15,
+            "min_vertex": 0,
+            "max_vertex": 60,
+            "degree_values": [
+              1,
+              2,
+              3,
+              4,
+              30
+            ],
+            "strong_g60_edge_candidate": false,
+            "first_5_pairs": [
+              [
+                0,
+                60
+              ],
+              [
+                0,
+                60
+              ],
+              [
+                0,
+                60
+              ],
+              [
+                0,
+                60
+              ],
+              [
+                1,
+                60
+              ]
+            ]
+          },
+          {
+            "cols": [
+              "slot_u",
+              "slot_v"
+            ],
+            "row_count": 30,
+            "vertex_count": 15,
+            "min_vertex": 0,
+            "max_vertex": 14,
+            "degree_values": [
+              4
+            ],
+            "strong_g60_edge_candidate": false,
+            "first_5_pairs": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                4
+              ],
+              [
+                0,
+                5
+              ],
+              [
+                0,
+                6
+              ],
+              [
+                1,
+                2
+              ]
+            ]
+          },
+          {
+            "cols": [
+              "slot_v",
+              "external_edge_count"
+            ],
+            "row_count": 30,
+            "vertex_count": 15,
+            "min_vertex": 1,
+            "max_vertex": 60,
+            "degree_values": [
+              1,
+              2,
+              3,
+              4,
+              30
+            ],
+            "strong_g60_edge_candidate": false,
+            "first_5_pairs": [
+              [
+                1,
+                60
+              ],
+              [
+                4,
+                60
+              ],
+              [
+                5,
+                60
+              ],
+              [
+                6,
+                60
+              ],
+              [
+                2,
+                60
+              ]
+            ]
+          },
+          {
+            "cols": [
+              "slot_v",
+              "sign"
+            ],
+            "row_count": 30,
+            "vertex_count": 15,
+            "min_vertex": 0,
+            "max_vertex": 14,
+            "degree_values": [
+              1,
+              2,
+              3,
+              4,
+              15,
+              16
+            ],
+            "strong_g60_edge_candidate": false,
+            "first_5_pairs": [
+              [
+                1,
+                1
+              ],
+              [
+                4,
+                1
+              ],
+              [
+                5,
+                1
+              ],
+              [
+                6,
+                1
+              ],
+              [
+                2,
+                1
+              ]
+            ]
+          },
+          {
+            "cols": [
+              "slot_u",
+              "sign"
+            ],
+            "row_count": 30,
+            "vertex_count": 14,
+            "min_vertex": 0,
+            "max_vertex": 13,
+            "degree_values": [
+              1,
+              2,
+              3,
+              18,
+              19
+            ],
+            "strong_g60_edge_candidate": false,
+            "first_5_pairs": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "cols": [
+              "sign",
+              "external_edge_count"
+            ],
+            "row_count": 30,
+            "vertex_count": 3,
+            "min_vertex": 0,
+            "max_vertex": 60,
+            "degree_values": [
+              15,
+              30
+            ],
+            "strong_g60_edge_candidate": false,
+            "first_5_pairs": [
+              [
+                1,
+                60
+              ],
+              [
+                1,
+                60
+              ],
+              [
+                1,
+                60
+              ],
+              [
+                1,
+                60
+              ],
+              [
+                1,
+                60
+              ]
+            ]
+          }
+        ],
+        "strong_g60_pair_candidates": [],
+        "first_rows": [
+          {
+            "slot_u": "0",
+            "slot_v": "1",
+            "sign": "1",
+            "carrier_law": "half_flip_x_plus_30_mod_60",
+            "external_edge_count": "60"
+          },
+          {
+            "slot_u": "0",
+            "slot_v": "4",
+            "sign": "1",
+            "carrier_law": "half_flip_x_plus_30_mod_60",
+            "external_edge_count": "60"
+          },
+          {
+            "slot_u": "0",
+            "slot_v": "5",
+            "sign": "1",
+            "carrier_law": "half_flip_x_plus_30_mod_60",
+            "external_edge_count": "60"
+          },
+          {
+            "slot_u": "0",
+            "slot_v": "6",
+            "sign": "1",
+            "carrier_law": "half_flip_x_plus_30_mod_60",
+            "external_edge_count": "60"
+          },
+          {
+            "slot_u": "1",
+            "slot_v": "2",
+            "sign": "1",
+            "carrier_law": "half_flip_x_plus_30_mod_60",
+            "external_edge_count": "60"
+          }
+        ]
+      },
+      "raw_path": "research/thalean-graph-theory/18-g900-kernel-admission/source/kernel_payload/carrier_signing_table.csv",
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g900_signature_binding.v1.json"
+    },
+    {
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/source/kernel_payload/x_sigma_edges.csv",
+      "exists": true,
+      "size_bytes": 151574,
+      "suffix": ".csv",
+      "csv": {
+        "status": "csv_read",
+        "row_count": 3600,
+        "headers": [
+          "u_vertex",
+          "v_vertex",
+          "u_slot",
+          "u_local",
+          "v_slot",
+          "v_local",
+          "kind"
+        ],
+        "numeric_cols": [
+          "u_vertex",
+          "v_vertex",
+          "u_slot",
+          "u_local",
+          "v_slot",
+          "v_local"
+        ],
+        "pair_candidates_first_20": [
+          {
+            "cols": [
+              "u_local",
+              "v_local"
+            ],
+            "row_count": 3600,
+            "vertex_count": 60,
+            "min_vertex": 0,
+            "max_vertex": 59,
+            "degree_values": [
+              120
+            ],
+            "strong_g60_edge_candidate": false,
+            "first_5_pairs": [
+              [
+                0,
+                16
+              ],
+              [
+                0,
+                19
+              ],
+              [
+                0,
+                25
+              ],
+              [
+                0,
+                55
+              ],
+              [
+                0,
+                30
+              ]
+            ]
+          },
+          {
+            "cols": [
+              "u_local",
+              "v_slot"
+            ],
+            "row_count": 3600,
+            "vertex_count": 60,
+            "min_vertex": 0,
+            "max_vertex": 59,
+            "degree_values": [
+              30,
+              45,
+              60,
+              75,
+              210,
+              270,
+              300,
+              330,
+              375,
+              390,
+              435
+            ],
+            "strong_g60_edge_candidate": false,
+            "first_5_pairs": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ]
+            ]
+          },
+          {
+            "cols": [
+              "u_slot",
+              "u_local"
+            ],
+            "row_count": 3600,
+            "vertex_count": 60,
+            "min_vertex": 0,
+            "max_vertex": 59,
+            "degree_values": [
+              30,
+              45,
+              60,
+              75,
+              195,
+              255,
+              270,
+              300,
+              330,
+              390,
+              450
+            ],
+            "strong_g60_edge_candidate": false,
+            "first_5_pairs": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ]
+            ]
+          },
+          {
+            "cols": [
+              "u_slot",
+              "v_local"
+            ],
+            "row_count": 3600,
+            "vertex_count": 60,
+            "min_vertex": 0,
+            "max_vertex": 59,
+            "degree_values": [
+              45,
+              60,
+              75,
+              90,
+              165,
+              210,
+              225,
+              270,
+              300,
+              330,
+              390
+            ],
+            "strong_g60_edge_candidate": false,
+            "first_5_pairs": [
+              [
+                0,
+                16
+              ],
+              [
+                0,
+                19
+              ],
+              [
+                0,
+                25
+              ],
+              [
+                0,
+                55
+              ],
+              [
+                0,
+                30
+              ]
+            ]
+          },
+          {
+            "cols": [
+              "v_slot",
+              "v_local"
+            ],
+            "row_count": 3600,
+            "vertex_count": 60,
+            "min_vertex": 0,
+            "max_vertex": 59,
+            "degree_values": [
+              45,
+              60,
+              75,
+              90,
+              150,
+              210,
+              270,
+              300,
+              330,
+              345,
+              405
+            ],
+            "strong_g60_edge_candidate": false,
+            "first_5_pairs": [
+              [
+                0,
+                16
+              ],
+              [
+                0,
+                19
+              ],
+              [
+                0,
+                25
+              ],
+              [
+                0,
+                55
+              ],
+              [
+                1,
+                30
+              ]
+            ]
+          },
+          {
+            "cols": [
+              "u_slot",
+              "v_slot"
+            ],
+            "row_count": 3600,
+            "vertex_count": 15,
+            "min_vertex": 0,
+            "max_vertex": 14,
+            "degree_values": [
+              480
+            ],
+            "strong_g60_edge_candidate": false,
+            "first_5_pairs": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ]
+            ]
+          },
+          {
+            "cols": [
+              "u_vertex",
+              "u_local"
+            ],
+            "row_count": 3600,
+            "vertex_count": 887,
+            "min_vertex": 0,
+            "max_vertex": 893,
+            "degree_values": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              34,
+              50,
+              66,
+              82,
+              98
+            ],
+            "strong_g60_edge_candidate": false,
+            "first_5_pairs": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ]
+            ]
+          },
+          {
+            "cols": [
+              "u_vertex",
+              "u_slot"
+            ],
+            "row_count": 3600,
+            "vertex_count": 887,
+            "min_vertex": 0,
+            "max_vertex": 893,
+            "degree_values": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              127,
+              187,
+              188,
+              246,
+              248,
+              308,
+              368
+            ],
+            "strong_g60_edge_candidate": false,
+            "first_5_pairs": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ]
+            ]
+          },
+          {
+            "cols": [
+              "u_vertex",
+              "v_local"
+            ],
+            "row_count": 3600,
+            "vertex_count": 887,
+            "min_vertex": 0,
+            "max_vertex": 893,
+            "degree_values": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              38,
+              52,
+              66,
+              80,
+              94
+            ],
+            "strong_g60_edge_candidate": false,
+            "first_5_pairs": [
+              [
+                0,
+                16
+              ],
+              [
+                0,
+                19
+              ],
+              [
+                0,
+                25
+              ],
+              [
+                0,
+                55
+              ],
+              [
+                0,
+                30
+              ]
+            ]
+          },
+          {
+            "cols": [
+              "u_vertex",
+              "v_slot"
+            ],
+            "row_count": 3600,
+            "vertex_count": 887,
+            "min_vertex": 0,
+            "max_vertex": 893,
+            "degree_values": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              128,
+              188,
+              246,
+              248,
+              307,
+              308,
+              367
+            ],
+            "strong_g60_edge_candidate": false,
+            "first_5_pairs": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ]
+            ]
+          },
+          {
+            "cols": [
+              "u_vertex",
+              "v_vertex"
+            ],
+            "row_count": 3600,
+            "vertex_count": 900,
+            "min_vertex": 0,
+            "max_vertex": 899,
+            "degree_values": [
+              8
+            ],
+            "strong_g60_edge_candidate": false,
+            "first_5_pairs": [
+              [
+                0,
+                16
+              ],
+              [
+                0,
+                19
+              ],
+              [
+                0,
+                25
+              ],
+              [
+                0,
+                55
+              ],
+              [
+                0,
+                90
+              ]
+            ]
+          },
+          {
+            "cols": [
+              "v_vertex",
+              "u_local"
+            ],
+            "row_count": 3600,
+            "vertex_count": 900,
+            "min_vertex": 0,
+            "max_vertex": 899,
+            "degree_values": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              34,
+              48,
+              62,
+              76,
+              90
+            ],
+            "strong_g60_edge_candidate": false,
+            "first_5_pairs": [
+              [
+                16,
+                0
+              ],
+              [
+                19,
+                0
+              ],
+              [
+                25,
+                0
+              ],
+              [
+                55,
+                0
+              ],
+              [
+                90,
+                0
+              ]
+            ]
+          },
+          {
+            "cols": [
+              "v_vertex",
+              "u_slot"
+            ],
+            "row_count": 3600,
+            "vertex_count": 900,
+            "min_vertex": 0,
+            "max_vertex": 899,
+            "degree_values": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              121,
+              180,
+              181,
+              240,
+              242,
+              300,
+              360
+            ],
+            "strong_g60_edge_candidate": false,
+            "first_5_pairs": [
+              [
+                16,
+                0
+              ],
+              [
+                19,
+                0
+              ],
+              [
+                25,
+                0
+              ],
+              [
+                55,
+                0
+              ],
+              [
+                90,
+                0
+              ]
+            ]
+          },
+          {
+            "cols": [
+              "v_vertex",
+              "v_local"
+            ],
+            "row_count": 3600,
+            "vertex_count": 900,
+            "min_vertex": 0,
+            "max_vertex": 899,
+            "degree_values": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              30,
+              46,
+              62,
+              78,
+              94
+            ],
+            "strong_g60_edge_candidate": false,
+            "first_5_pairs": [
+              [
+                16,
+                16
+              ],
+              [
+                19,
+                19
+              ],
+              [
+                25,
+                25
+              ],
+              [
+                55,
+                55
+              ],
+              [
+                90,
+                30
+              ]
+            ]
+          },
+          {
+            "cols": [
+              "v_vertex",
+              "v_slot"
+            ],
+            "row_count": 3600,
+            "vertex_count": 900,
+            "min_vertex": 0,
+            "max_vertex": 899,
+            "degree_values": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              120,
+              180,
+              240,
+              242,
+              300,
+              301,
+              361
+            ],
+            "strong_g60_edge_candidate": false,
+            "first_5_pairs": [
+              [
+                16,
+                0
+              ],
+              [
+                19,
+                0
+              ],
+              [
+                25,
+                0
+              ],
+              [
+                55,
+                0
+              ],
+              [
+                90,
+                1
+              ]
+            ]
+          }
+        ],
+        "strong_g60_pair_candidates": [],
+        "first_rows": [
+          {
+            "u_vertex": "0",
+            "v_vertex": "16",
+            "u_slot": "0",
+            "u_local": "0",
+            "v_slot": "0",
+            "v_local": "16",
+            "kind": "internal_thalion_copy"
+          },
+          {
+            "u_vertex": "0",
+            "v_vertex": "19",
+            "u_slot": "0",
+            "u_local": "0",
+            "v_slot": "0",
+            "v_local": "19",
+            "kind": "internal_thalion_copy"
+          },
+          {
+            "u_vertex": "0",
+            "v_vertex": "25",
+            "u_slot": "0",
+            "u_local": "0",
+            "v_slot": "0",
+            "v_local": "25",
+            "kind": "internal_thalion_copy"
+          },
+          {
+            "u_vertex": "0",
+            "v_vertex": "55",
+            "u_slot": "0",
+            "u_local": "0",
+            "v_slot": "0",
+            "v_local": "55",
+            "kind": "internal_thalion_copy"
+          },
+          {
+            "u_vertex": "0",
+            "v_vertex": "90",
+            "u_slot": "0",
+            "u_local": "0",
+            "v_slot": "1",
+            "v_local": "30",
+            "kind": "external_signed_carrier"
+          }
+        ]
+      },
+      "raw_path": "research/thalean-graph-theory/18-g900-kernel-admission/source/kernel_payload/x_sigma_edges.csv",
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g900_signature_binding.v1.json"
+    }
+  ],
+  "resolved_path_records": [
+    {
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g60_source_binding.v1.json",
+      "json_path": "$.source_files[0].path",
+      "raw_path": "../json/theorem_object.json",
+      "candidate_count": 11,
+      "existing_paths": [
+        "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/json/theorem_object.json"
+      ],
+      "found": true
+    },
+    {
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g60_source_binding.v1.json",
+      "json_path": "$.source_files[1].path",
+      "raw_path": "../json/transport_cocycle.json",
+      "candidate_count": 11,
+      "existing_paths": [
+        "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/json/transport_cocycle.json"
+      ],
+      "found": true
+    },
+    {
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g60_source_binding.v1.json",
+      "json_path": "$.source_files[2].path",
+      "raw_path": "../json/row_taxonomy.json",
+      "candidate_count": 11,
+      "existing_paths": [
+        "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/json/row_taxonomy.json"
+      ],
+      "found": true
+    },
+    {
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g60_source_binding.v1.json",
+      "json_path": "$.source_files[3].path",
+      "raw_path": "../json/matrix_M.json",
+      "candidate_count": 11,
+      "existing_paths": [
+        "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/json/matrix_M.json"
+      ],
+      "found": true
+    },
+    {
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g60_source_binding.v1.json",
+      "json_path": "$.source_files[4].path",
+      "raw_path": "../json/gram_Q.json",
+      "candidate_count": 11,
+      "existing_paths": [
+        "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/json/gram_Q.json"
+      ],
+      "found": true
+    },
+    {
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g60_source_binding.v1.json",
+      "json_path": "$.source_files[5].path",
+      "raw_path": "../json/verify_report.json",
+      "candidate_count": 11,
+      "existing_paths": [
+        "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/json/verify_report.json"
+      ],
+      "found": true
+    },
+    {
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g60_source_binding.v1.json",
+      "json_path": "$.source_files[6].path",
+      "raw_path": "registered_boundary_flux/data/perfect_return_cell.v1.json",
+      "candidate_count": 12,
+      "existing_paths": [],
+      "found": false
+    },
+    {
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g900_signature_binding.v1.json",
+      "json_path": "$.source_files[0].path",
+      "raw_path": "research/thalean-graph-theory/18-g900-kernel-admission/paper/sections/03_main_theorem.tex",
+      "candidate_count": 12,
+      "existing_paths": [
+        "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/paper/sections/03_main_theorem.tex"
+      ],
+      "found": true
+    },
+    {
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g900_signature_binding.v1.json",
+      "json_path": "$.source_files[1].path",
+      "raw_path": "research/thalean-graph-theory/18-g900-kernel-admission/paper/sections/00_abstract.tex",
+      "candidate_count": 12,
+      "existing_paths": [
+        "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/paper/sections/00_abstract.tex"
+      ],
+      "found": true
+    },
+    {
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g900_signature_binding.v1.json",
+      "json_path": "$.source_files[2].path",
+      "raw_path": "research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/qed_status_ledger.json",
+      "candidate_count": 12,
+      "existing_paths": [
+        "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/qed_status_ledger.json"
+      ],
+      "found": true
+    },
+    {
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g900_signature_binding.v1.json",
+      "json_path": "$.source_files[3].path",
+      "raw_path": "research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/manuscript_manifest.json",
+      "candidate_count": 12,
+      "existing_paths": [
+        "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/manuscript_manifest.json"
+      ],
+      "found": true
+    },
+    {
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g900_signature_binding.v1.json",
+      "json_path": "$.source_files[4].path",
+      "raw_path": "research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/kernel_payload_manifest.json",
+      "candidate_count": 12,
+      "existing_paths": [
+        "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/kernel_payload_manifest.json"
+      ],
+      "found": true
+    },
+    {
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g900_signature_binding.v1.json",
+      "json_path": "$.source_files[5].path",
+      "raw_path": "research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/construction_independence_status.json",
+      "candidate_count": 12,
+      "existing_paths": [
+        "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/construction_independence_status.json"
+      ],
+      "found": true
+    },
+    {
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g900_signature_binding.v1.json",
+      "json_path": "$.source_files[6].path",
+      "raw_path": "research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/exact_edge_set_identity_certificate.json",
+      "candidate_count": 12,
+      "existing_paths": [
+        "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/exact_edge_set_identity_certificate.json"
+      ],
+      "found": true
+    },
+    {
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g900_signature_binding.v1.json",
+      "json_path": "$.source_files[7].path",
+      "raw_path": "research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/connectedness_certificate.json",
+      "candidate_count": 12,
+      "existing_paths": [
+        "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/connectedness_certificate.json"
+      ],
+      "found": true
+    },
+    {
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g900_signature_binding.v1.json",
+      "json_path": "$.source_files[8].path",
+      "raw_path": "research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/metric_certificate.json",
+      "candidate_count": 12,
+      "existing_paths": [
+        "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/metric_certificate.json"
+      ],
+      "found": true
+    },
+    {
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g900_signature_binding.v1.json",
+      "json_path": "$.source_files[9].path",
+      "raw_path": "research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/baseline_separation_certificate.json",
+      "candidate_count": 12,
+      "existing_paths": [
+        "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/baseline_separation_certificate.json"
+      ],
+      "found": true
+    },
+    {
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g900_signature_binding.v1.json",
+      "json_path": "$.source_files[10].path",
+      "raw_path": "research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/sibling_non_switching_certificate.json",
+      "candidate_count": 12,
+      "existing_paths": [
+        "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/sibling_non_switching_certificate.json"
+      ],
+      "found": true
+    },
+    {
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g900_signature_binding.v1.json",
+      "json_path": "$.source_files[11].path",
+      "raw_path": "research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/sibling_full_graph_separation_certificate.json",
+      "candidate_count": 12,
+      "existing_paths": [
+        "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/artifacts/json/sibling_full_graph_separation_certificate.json"
+      ],
+      "found": true
+    },
+    {
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g900_signature_binding.v1.json",
+      "json_path": "$.source_files[12].path",
+      "raw_path": "research/thalean-graph-theory/18-g900-kernel-admission/source/kernel_payload/g15_slot_edges.csv",
+      "candidate_count": 11,
+      "existing_paths": [
+        "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/source/kernel_payload/g15_slot_edges.csv"
+      ],
+      "found": true
+    },
+    {
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g900_signature_binding.v1.json",
+      "json_path": "$.source_files[13].path",
+      "raw_path": "research/thalean-graph-theory/18-g900-kernel-admission/source/kernel_payload/g60_local_edges.csv",
+      "candidate_count": 11,
+      "existing_paths": [
+        "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/source/kernel_payload/g60_local_edges.csv"
+      ],
+      "found": true
+    },
+    {
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g900_signature_binding.v1.json",
+      "json_path": "$.source_files[14].path",
+      "raw_path": "research/thalean-graph-theory/18-g900-kernel-admission/source/kernel_payload/carrier_signing_table.csv",
+      "candidate_count": 11,
+      "existing_paths": [
+        "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/source/kernel_payload/carrier_signing_table.csv"
+      ],
+      "found": true
+    },
+    {
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/g900_signature_binding.v1.json",
+      "json_path": "$.source_files[15].path",
+      "raw_path": "research/thalean-graph-theory/18-g900-kernel-admission/source/kernel_payload/x_sigma_edges.csv",
+      "candidate_count": 11,
+      "existing_paths": [
+        "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/source/kernel_payload/x_sigma_edges.csv"
+      ],
+      "found": true
+    },
+    {
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/k900_action_binding.v1.json",
+      "json_path": "$.source_files.p20_force.path",
+      "raw_path": "../../../research/thalean-graph-theory/20-oriented-carrier-circulation/artifacts/json/019_project20_force_analogue_checkpoint.json",
+      "candidate_count": 10,
+      "existing_paths": [],
+      "found": false
+    },
+    {
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/k900_action_binding.v1.json",
+      "json_path": "$.source_files.p20_synthesis.path",
+      "raw_path": "../../../research/thalean-graph-theory/20-oriented-carrier-circulation/artifacts/json/022_project20_synthesis_checkpoint.json",
+      "candidate_count": 10,
+      "existing_paths": [],
+      "found": false
+    },
+    {
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/k900_action_binding.v1.json",
+      "json_path": "$.source_files.p20_em_residue.path",
+      "raw_path": "../../../research/thalean-graph-theory/20-oriented-carrier-circulation/artifacts/json/029_em_residue_representative_audit.json",
+      "candidate_count": 10,
+      "existing_paths": [],
+      "found": false
+    },
+    {
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/k900_action_binding.v1.json",
+      "json_path": "$.source_files.p20_leftover.path",
+      "raw_path": "../../../research/thalean-graph-theory/20-oriented-carrier-circulation/artifacts/json/033_em_leftover_vector_predictor.json",
+      "candidate_count": 10,
+      "existing_paths": [],
+      "found": false
+    },
+    {
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/k900_action_binding.v1.json",
+      "json_path": "$.source_files.p20_claims_csv.path",
+      "raw_path": "../../../research/thalean-graph-theory/20-oriented-carrier-circulation/artifacts/csv/035_project20_theorem_status_synthesis.csv",
+      "candidate_count": 10,
+      "existing_paths": [],
+      "found": false
+    },
+    {
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/k900_action_binding.v1.json",
+      "json_path": "$.source_files.p19_compression.path",
+      "raw_path": "../../../research/thalean-graph-theory/19-thalean-gravity-finite-tests/artifacts/json/010_holonomy_return_compression_audit.json",
+      "candidate_count": 10,
+      "existing_paths": [],
+      "found": false
+    },
+    {
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/k900_action_binding.v1.json",
+      "json_path": "$.source_files.p19_localization.path",
+      "raw_path": "../../../research/thalean-graph-theory/19-thalean-gravity-finite-tests/artifacts/json/011_odd_triangle_localization_audit.json",
+      "candidate_count": 10,
+      "existing_paths": [],
+      "found": false
+    },
+    {
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/k900_action_binding.v1.json",
+      "json_path": "$.source_files.p19_ablation.path",
+      "raw_path": "../../../research/thalean-graph-theory/19-thalean-gravity-finite-tests/artifacts/json/012_odd_triangle_ablation_audit.json",
+      "candidate_count": 10,
+      "existing_paths": [],
+      "found": false
+    },
+    {
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/k900_action_source_index.v1.json",
+      "json_path": "$.records[0].path",
+      "raw_path": "artifacts/json/019_project20_force_analogue_checkpoint.json",
+      "candidate_count": 11,
+      "existing_paths": [],
+      "found": false
+    },
+    {
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/k900_action_source_index.v1.json",
+      "json_path": "$.records[1].path",
+      "raw_path": "artifacts/json/022_project20_synthesis_checkpoint.json",
+      "candidate_count": 11,
+      "existing_paths": [],
+      "found": false
+    },
+    {
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/k900_action_source_index.v1.json",
+      "json_path": "$.records[2].path",
+      "raw_path": "artifacts/csv/035_project20_theorem_status_synthesis.csv",
+      "candidate_count": 12,
+      "existing_paths": [],
+      "found": false
+    },
+    {
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/k900_action_source_index.v1.json",
+      "json_path": "$.records[3].path",
+      "raw_path": "artifacts/json/033_em_leftover_vector_predictor.json",
+      "candidate_count": 11,
+      "existing_paths": [],
+      "found": false
+    },
+    {
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/k900_action_source_index.v1.json",
+      "json_path": "$.records[4].path",
+      "raw_path": "artifacts/json/029_em_residue_representative_audit.json",
+      "candidate_count": 11,
+      "existing_paths": [],
+      "found": false
+    },
+    {
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/k900_action_source_index.v1.json",
+      "json_path": "$.records[5].path",
+      "raw_path": "artifacts/json/018_strong_weak_candidate_probe.json",
+      "candidate_count": 11,
+      "existing_paths": [],
+      "found": false
+    },
+    {
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/k900_action_source_index.v1.json",
+      "json_path": "$.records[6].path",
+      "raw_path": "artifacts/json/010_holonomy_return_compression_audit.json",
+      "candidate_count": 11,
+      "existing_paths": [],
+      "found": false
+    },
+    {
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/k900_action_source_index.v1.json",
+      "json_path": "$.records[7].path",
+      "raw_path": "artifacts/json/011_odd_triangle_localization_audit.json",
+      "candidate_count": 11,
+      "existing_paths": [],
+      "found": false
+    },
+    {
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/k900_action_source_index.v1.json",
+      "json_path": "$.records[8].path",
+      "raw_path": "artifacts/json/012_odd_triangle_ablation_audit.json",
+      "candidate_count": 11,
+      "existing_paths": [],
+      "found": false
+    },
+    {
+      "source_binding": "/data/data/com.termux/files/home/dev/cori/aletheos.ai/public_html/labs/registered_boundary_flux/data/k900_action_source_index.v1.json",
+      "json_path": "$.records[9].path",
+      "raw_path": "notes/008_odd_triangle_metric_gradient.md",
+      "candidate_count": 12,
+      "existing_paths": [],
+      "found": false
+    }
+  ],
+  "checks": [
+    {
+      "id": "found_binding_paths",
+      "status": true,
+      "detail": 41
+    },
+    {
+      "id": "inspected_existing_files",
+      "status": true,
+      "detail": 22
+    },
+    {
+      "id": "no_generator_claim_made",
+      "status": true,
+      "detail": "resolution only"
+    }
+  ],
+  "boundary": [
+    "This resolves source payload paths only.",
+    "This does not claim a G60-native NRC generator.",
+    "A generator search should not resume until a verified G60 payload is imported or bound."
+  ]
+}

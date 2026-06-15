@@ -1,0 +1,515 @@
+{
+  "schema": "carrier_signing_table_join_inspection_001.v1",
+  "status": "carrier_signing_table_join_inspection_recorded",
+  "timestamp_utc": "2026-06-15T12:49:12.338080+00:00",
+  "purpose": "Inspect carrier_signing_table.csv as the possible G15 slot-edge signing layer connecting G60 and x_sigma.",
+  "summary": {
+    "carrier_signing_table_rows": 30,
+    "g15_slot_edges_rows": 30,
+    "g60_local_edges_rows": 120,
+    "x_sigma_edges_rows": 3600,
+    "carrier_signing_headers": [
+      "slot_u",
+      "slot_v",
+      "sign",
+      "carrier_law",
+      "external_edge_count"
+    ],
+    "g15_headers": [
+      "slot_u",
+      "slot_v"
+    ],
+    "x_sigma_headers": [
+      "u_vertex",
+      "v_vertex",
+      "u_slot",
+      "u_local",
+      "v_slot",
+      "v_local",
+      "kind"
+    ],
+    "missing_required_sign_cols": [],
+    "signing_slot_edge_count": 30,
+    "g15_slot_edge_count": 30,
+    "signing_slot_edges_match_g15_edges": true,
+    "slot_edge_count_values_in_signing_table": [
+      1
+    ],
+    "sign_counts": {
+      "0": 15,
+      "1": 15
+    },
+    "external_edge_count_values": [
+      60
+    ],
+    "expected_g15_edges_times_120": 3600,
+    "x_sigma_rows_match_30_times_120": true,
+    "best_g15_pair_candidate": {
+      "cols": [
+        "slot_u",
+        "slot_v"
+      ],
+      "row_count": 30,
+      "unique_pair_count": 30,
+      "vertex_count": 15,
+      "min_vertex": 0,
+      "max_vertex": 14,
+      "matches_signing_slot_edges": true,
+      "first_5_pairs": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    },
+    "sample_signing_rows_by_slot_edge_first_5": [
+      {
+        "slot_edge": [
+          0,
+          1
+        ],
+        "count": 1,
+        "sign_counts": {
+          "1": 1
+        },
+        "sample_rows": [
+          {
+            "slot_u": "0",
+            "slot_v": "1",
+            "sign": "1",
+            "carrier_law": "half_flip_x_plus_30_mod_60",
+            "external_edge_count": "60"
+          }
+        ]
+      },
+      {
+        "slot_edge": [
+          0,
+          4
+        ],
+        "count": 1,
+        "sign_counts": {
+          "1": 1
+        },
+        "sample_rows": [
+          {
+            "slot_u": "0",
+            "slot_v": "4",
+            "sign": "1",
+            "carrier_law": "half_flip_x_plus_30_mod_60",
+            "external_edge_count": "60"
+          }
+        ]
+      },
+      {
+        "slot_edge": [
+          0,
+          5
+        ],
+        "count": 1,
+        "sign_counts": {
+          "1": 1
+        },
+        "sample_rows": [
+          {
+            "slot_u": "0",
+            "slot_v": "5",
+            "sign": "1",
+            "carrier_law": "half_flip_x_plus_30_mod_60",
+            "external_edge_count": "60"
+          }
+        ]
+      },
+      {
+        "slot_edge": [
+          0,
+          6
+        ],
+        "count": 1,
+        "sign_counts": {
+          "1": 1
+        },
+        "sample_rows": [
+          {
+            "slot_u": "0",
+            "slot_v": "6",
+            "sign": "1",
+            "carrier_law": "half_flip_x_plus_30_mod_60",
+            "external_edge_count": "60"
+          }
+        ]
+      },
+      {
+        "slot_edge": [
+          1,
+          2
+        ],
+        "count": 1,
+        "sign_counts": {
+          "1": 1
+        },
+        "sample_rows": [
+          {
+            "slot_u": "1",
+            "slot_v": "2",
+            "sign": "1",
+            "carrier_law": "half_flip_x_plus_30_mod_60",
+            "external_edge_count": "60"
+          }
+        ]
+      }
+    ],
+    "join_hypothesis_supported": true,
+    "gap_a_closed": false,
+    "full_g900_admission_found": false,
+    "next_step": "inspect_x_sigma_edges_for_slot_edge_and_g60_edge_join"
+  },
+  "column_profiles": {
+    "carrier_signing_table": [
+      {
+        "column": "slot_u",
+        "sample": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        "numeric_count": 30,
+        "row_count": 30,
+        "min": 0,
+        "max": 13,
+        "unique_count": 14,
+        "looks_like_g15_slot": true,
+        "looks_like_g60_vertex": true,
+        "looks_like_g900_vertex": true
+      },
+      {
+        "column": "slot_v",
+        "sample": [
+          "1",
+          "4",
+          "5",
+          "6",
+          "2"
+        ],
+        "numeric_count": 30,
+        "row_count": 30,
+        "min": 1,
+        "max": 14,
+        "unique_count": 14,
+        "looks_like_g15_slot": true,
+        "looks_like_g60_vertex": true,
+        "looks_like_g900_vertex": true
+      },
+      {
+        "column": "sign",
+        "sample": [
+          "1",
+          "1",
+          "1",
+          "1",
+          "1"
+        ],
+        "numeric_count": 30,
+        "row_count": 30,
+        "min": 0,
+        "max": 1,
+        "unique_count": 2,
+        "looks_like_g15_slot": true,
+        "looks_like_g60_vertex": true,
+        "looks_like_g900_vertex": true
+      },
+      {
+        "column": "carrier_law",
+        "sample": [
+          "half_flip_x_plus_30_mod_60",
+          "half_flip_x_plus_30_mod_60",
+          "half_flip_x_plus_30_mod_60",
+          "half_flip_x_plus_30_mod_60",
+          "half_flip_x_plus_30_mod_60"
+        ],
+        "numeric_count": 0,
+        "row_count": 30
+      },
+      {
+        "column": "external_edge_count",
+        "sample": [
+          "60",
+          "60",
+          "60",
+          "60",
+          "60"
+        ],
+        "numeric_count": 30,
+        "row_count": 30,
+        "min": 60,
+        "max": 60,
+        "unique_count": 1,
+        "looks_like_g15_slot": false,
+        "looks_like_g60_vertex": false,
+        "looks_like_g900_vertex": true
+      }
+    ],
+    "x_sigma_edges": [
+      {
+        "column": "u_vertex",
+        "sample": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "numeric_count": 3600,
+        "row_count": 3600,
+        "min": 0,
+        "max": 893,
+        "unique_count": 887,
+        "looks_like_g15_slot": false,
+        "looks_like_g60_vertex": false,
+        "looks_like_g900_vertex": true
+      },
+      {
+        "column": "v_vertex",
+        "sample": [
+          "16",
+          "19",
+          "25",
+          "55",
+          "90"
+        ],
+        "numeric_count": 3600,
+        "row_count": 3600,
+        "min": 10,
+        "max": 899,
+        "unique_count": 888,
+        "looks_like_g15_slot": false,
+        "looks_like_g60_vertex": false,
+        "looks_like_g900_vertex": true
+      },
+      {
+        "column": "u_slot",
+        "sample": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "numeric_count": 3600,
+        "row_count": 3600,
+        "min": 0,
+        "max": 14,
+        "unique_count": 15,
+        "looks_like_g15_slot": true,
+        "looks_like_g60_vertex": true,
+        "looks_like_g900_vertex": true
+      },
+      {
+        "column": "u_local",
+        "sample": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "numeric_count": 3600,
+        "row_count": 3600,
+        "min": 0,
+        "max": 59,
+        "unique_count": 60,
+        "looks_like_g15_slot": false,
+        "looks_like_g60_vertex": true,
+        "looks_like_g900_vertex": true
+      },
+      {
+        "column": "v_slot",
+        "sample": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        "numeric_count": 3600,
+        "row_count": 3600,
+        "min": 0,
+        "max": 14,
+        "unique_count": 15,
+        "looks_like_g15_slot": true,
+        "looks_like_g60_vertex": true,
+        "looks_like_g900_vertex": true
+      },
+      {
+        "column": "v_local",
+        "sample": [
+          "16",
+          "19",
+          "25",
+          "55",
+          "30"
+        ],
+        "numeric_count": 3600,
+        "row_count": 3600,
+        "min": 0,
+        "max": 59,
+        "unique_count": 60,
+        "looks_like_g15_slot": false,
+        "looks_like_g60_vertex": true,
+        "looks_like_g900_vertex": true
+      },
+      {
+        "column": "kind",
+        "sample": [
+          "internal_thalion_copy",
+          "internal_thalion_copy",
+          "internal_thalion_copy",
+          "internal_thalion_copy",
+          "external_signed_carrier"
+        ],
+        "numeric_count": 0,
+        "row_count": 3600
+      }
+    ]
+  },
+  "g15_pair_candidates": [
+    {
+      "cols": [
+        "slot_u",
+        "slot_v"
+      ],
+      "row_count": 30,
+      "unique_pair_count": 30,
+      "vertex_count": 15,
+      "min_vertex": 0,
+      "max_vertex": 14,
+      "matches_signing_slot_edges": true,
+      "first_5_pairs": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "id": "alignment_inputs_loaded",
+      "status": true,
+      "detail": "g60_payload_to_nrc_alignment_inputs_recorded"
+    },
+    {
+      "id": "canonical_payload_loaded",
+      "status": true,
+      "detail": "canonical_g60_payload_imported"
+    },
+    {
+      "id": "required_sign_cols_present",
+      "status": true,
+      "detail": []
+    },
+    {
+      "id": "g15_pair_candidate_found",
+      "status": true,
+      "detail": {
+        "cols": [
+          "slot_u",
+          "slot_v"
+        ],
+        "row_count": 30,
+        "unique_pair_count": 30,
+        "vertex_count": 15,
+        "min_vertex": 0,
+        "max_vertex": 14,
+        "matches_signing_slot_edges": true,
+        "first_5_pairs": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "id": "signing_slot_edges_30",
+      "status": true,
+      "detail": 30
+    },
+    {
+      "id": "signing_matches_g15",
+      "status": true,
+      "detail": "slot edge sets equal"
+    },
+    {
+      "id": "g60_rows_120",
+      "status": true,
+      "detail": 120
+    },
+    {
+      "id": "x_sigma_rows_3600",
+      "status": true,
+      "detail": 3600
+    },
+    {
+      "id": "no_generator_claim_made",
+      "status": true,
+      "detail": "join inspection only"
+    }
+  ],
+  "boundary": [
+    "This inspects join structure only.",
+    "This does not derive the G60-native NRC generator.",
+    "This does not close Gap A.",
+    "The next step should inspect x_sigma_edges for columns joining slot edges to G60 local edges."
+  ]
+}

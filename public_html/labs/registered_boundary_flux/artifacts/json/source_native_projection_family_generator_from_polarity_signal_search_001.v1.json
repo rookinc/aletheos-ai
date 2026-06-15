@@ -1,0 +1,1491 @@
+{
+  "schema": "source_native_projection_family_generator_from_polarity_signal_search_001.v1",
+  "status": "source_native_projection_family_generator_search_family_signal_persists_no_generator",
+  "timestamp_utc": "2026-06-15T00:47:53.962804+00:00",
+  "purpose": "Search whether the lookup-safe polarity family can be upgraded to a source/projection-family generator candidate.",
+  "boundary": [
+    "This does not close Gap A.",
+    "This searches within the lookup-safe polarity family.",
+    "Exact subselectors are not automatically generators.",
+    "Projection-family features are coarse role-class visibility features, not row ids.",
+    "No physical interpretation is claimed."
+  ],
+  "summary": {
+    "search_result": "family_signal_persists_but_no_generator",
+    "gap_a_closed": false,
+    "record_count": 8,
+    "selected_count": 4,
+    "nonselected_count": 4,
+    "common_selected_feature_count": 9,
+    "candidate_report_count": 129,
+    "best_overall": {
+      "features": [
+        "source:p900_candidate0_edge_law:sector_delta_abs_small=True"
+      ],
+      "mode": "source_only",
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "exact_selected": false,
+      "covers_all_selected": true,
+      "has_nonselected_family": true,
+      "lookup_terms": [],
+      "score": 4
+    },
+    "best_exact_source": null,
+    "best_exact_projection": null,
+    "best_family_source": {
+      "features": [
+        "source:p900_candidate0_edge_law:sector_delta_abs_small=True"
+      ],
+      "mode": "source_only",
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "exact_selected": false,
+      "covers_all_selected": true,
+      "has_nonselected_family": true,
+      "lookup_terms": [],
+      "score": 4
+    },
+    "best_family_projection": null,
+    "claim_closes_gap_a": false
+  },
+  "records": [
+    {
+      "index": 0,
+      "B": 2,
+      "A": 1,
+      "C": 0,
+      "columns": [
+        0,
+        4
+      ],
+      "selected": true,
+      "features": [
+        "proj:any_col_unseen=False",
+        "proj:both_cols_visible=True",
+        "proj:cycle_span_count=3",
+        "proj:has_interior_role_class=True",
+        "proj:has_outer_and_interior=True",
+        "proj:has_outer_role_class=True",
+        "proj:nohit_col_count=0",
+        "proj:role_class_sig=['interior','outer','outer']",
+        "proj:visible_col_count=2",
+        "source:AC_abs_small=True",
+        "source:AC_sign=neg",
+        "source:A_parity=odd",
+        "source:BA_AC_signs=neg_to_neg",
+        "source:BA_abs_small=True",
+        "source:BA_sign=neg",
+        "source:BC_abs_2_or_3=True",
+        "source:BC_sign=neg",
+        "source:B_parity=even",
+        "source:C_parity=even",
+        "source:endpoint_parity=even_to_even",
+        "source:p900_candidate0_edge_law:label_sig=['half_turn','half_turn']",
+        "source:p900_candidate0_edge_law:same_label=True",
+        "source:p900_candidate0_edge_law:same_shift=True",
+        "source:p900_candidate0_edge_law:sector_delta_abs_small=True",
+        "source:p900_candidate0_edge_law:sector_delta_signs=['pos','pos']",
+        "source:p900_candidate0_edge_law:shared_parity_sig=['odd','even']",
+        "source:p900_candidate0_edge_law:shared_same=False",
+        "source:p900_candidate0_edge_law:shift_sig=[30,30]",
+        "source:p900_candidate1_edge_law:label_sig=['half_turn','half_turn']",
+        "source:p900_candidate1_edge_law:same_label=True",
+        "source:p900_candidate1_edge_law:same_shift=True",
+        "source:p900_candidate1_edge_law:sector_delta_abs_small=True",
+        "source:p900_candidate1_edge_law:sector_delta_signs=['pos','pos']",
+        "source:p900_candidate1_edge_law:shared_parity_sig=['odd','even']",
+        "source:p900_candidate1_edge_law:shared_same=False",
+        "source:p900_candidate1_edge_law:shift_sig=[30,30]"
+      ]
+    },
+    {
+      "index": 1,
+      "B": 4,
+      "A": 3,
+      "C": 2,
+      "columns": [
+        7,
+        10
+      ],
+      "selected": true,
+      "features": [
+        "proj:any_col_unseen=False",
+        "proj:both_cols_visible=True",
+        "proj:cycle_span_count=3",
+        "proj:has_interior_role_class=True",
+        "proj:has_outer_and_interior=True",
+        "proj:has_outer_role_class=True",
+        "proj:nohit_col_count=0",
+        "proj:role_class_sig=['interior','interior','outer']",
+        "proj:visible_col_count=2",
+        "source:AC_abs_small=True",
+        "source:AC_sign=neg",
+        "source:A_parity=odd",
+        "source:BA_AC_signs=neg_to_neg",
+        "source:BA_abs_small=True",
+        "source:BA_sign=neg",
+        "source:BC_abs_2_or_3=True",
+        "source:BC_sign=neg",
+        "source:B_parity=even",
+        "source:C_parity=even",
+        "source:endpoint_parity=even_to_even",
+        "source:p900_candidate0_edge_law:label_sig=['half_turn','identity']",
+        "source:p900_candidate0_edge_law:same_label=False",
+        "source:p900_candidate0_edge_law:same_shift=False",
+        "source:p900_candidate0_edge_law:sector_delta_abs_small=True",
+        "source:p900_candidate0_edge_law:sector_delta_signs=['pos','pos']",
+        "source:p900_candidate0_edge_law:shared_parity_sig=['odd','even']",
+        "source:p900_candidate0_edge_law:shared_same=False",
+        "source:p900_candidate0_edge_law:shift_sig=[30,0]",
+        "source:p900_candidate1_edge_law:label_sig=['half_turn','identity']",
+        "source:p900_candidate1_edge_law:same_label=False",
+        "source:p900_candidate1_edge_law:same_shift=False",
+        "source:p900_candidate1_edge_law:sector_delta_abs_small=True",
+        "source:p900_candidate1_edge_law:sector_delta_signs=['pos','pos']",
+        "source:p900_candidate1_edge_law:shared_parity_sig=['odd','even']",
+        "source:p900_candidate1_edge_law:shared_same=False",
+        "source:p900_candidate1_edge_law:shift_sig=[30,0]"
+      ]
+    },
+    {
+      "index": 2,
+      "B": 9,
+      "A": 5,
+      "C": 6,
+      "columns": [
+        15,
+        16
+      ],
+      "selected": false,
+      "features": [
+        "proj:any_col_unseen=True",
+        "proj:both_cols_visible=False",
+        "proj:cycle_span_count=1",
+        "proj:has_interior_role_class=True",
+        "proj:has_outer_and_interior=False",
+        "proj:has_outer_role_class=False",
+        "proj:nohit_col_count=1",
+        "proj:role_class_sig=['interior']",
+        "proj:visible_col_count=1",
+        "source:AC_abs_small=True",
+        "source:AC_sign=pos",
+        "source:A_parity=odd",
+        "source:BA_AC_signs=neg_to_pos",
+        "source:BA_abs_small=True",
+        "source:BA_sign=neg",
+        "source:BC_abs_2_or_3=True",
+        "source:BC_sign=neg",
+        "source:B_parity=odd",
+        "source:C_parity=even",
+        "source:endpoint_parity=odd_to_even",
+        "source:p900_candidate0_edge_law:label_sig=['half_turn','half_turn']",
+        "source:p900_candidate0_edge_law:same_label=True",
+        "source:p900_candidate0_edge_law:same_shift=True",
+        "source:p900_candidate0_edge_law:sector_delta_abs_small=False",
+        "source:p900_candidate0_edge_law:sector_delta_signs=['pos','neg']",
+        "source:p900_candidate0_edge_law:shared_parity_sig=['odd','odd']",
+        "source:p900_candidate0_edge_law:shared_same=True",
+        "source:p900_candidate0_edge_law:shift_sig=[30,30]",
+        "source:p900_candidate1_edge_law:label_sig=['identity','identity']",
+        "source:p900_candidate1_edge_law:same_label=True",
+        "source:p900_candidate1_edge_law:same_shift=True",
+        "source:p900_candidate1_edge_law:sector_delta_abs_small=False",
+        "source:p900_candidate1_edge_law:sector_delta_signs=['pos','neg']",
+        "source:p900_candidate1_edge_law:shared_parity_sig=['odd','odd']",
+        "source:p900_candidate1_edge_law:shared_same=True",
+        "source:p900_candidate1_edge_law:shift_sig=[0,0]"
+      ]
+    },
+    {
+      "index": 3,
+      "B": 9,
+      "A": 5,
+      "C": 12,
+      "columns": [
+        16,
+        18
+      ],
+      "selected": false,
+      "features": [
+        "proj:any_col_unseen=True",
+        "proj:both_cols_visible=False",
+        "proj:cycle_span_count=0",
+        "proj:has_interior_role_class=False",
+        "proj:has_outer_and_interior=False",
+        "proj:has_outer_role_class=False",
+        "proj:nohit_col_count=2",
+        "proj:role_class_sig=[]",
+        "proj:visible_col_count=0",
+        "source:AC_abs_small=False",
+        "source:AC_sign=pos",
+        "source:A_parity=odd",
+        "source:BA_AC_signs=neg_to_pos",
+        "source:BA_abs_small=True",
+        "source:BA_sign=neg",
+        "source:BC_abs_2_or_3=True",
+        "source:BC_sign=pos",
+        "source:B_parity=odd",
+        "source:C_parity=even",
+        "source:endpoint_parity=odd_to_even",
+        "source:p900_candidate0_edge_law:label_sig=['half_turn','identity']",
+        "source:p900_candidate0_edge_law:same_label=False",
+        "source:p900_candidate0_edge_law:same_shift=False",
+        "source:p900_candidate0_edge_law:sector_delta_abs_small=False",
+        "source:p900_candidate0_edge_law:sector_delta_signs=['neg','pos']",
+        "source:p900_candidate0_edge_law:shared_parity_sig=['odd','even']",
+        "source:p900_candidate0_edge_law:shared_same=False",
+        "source:p900_candidate0_edge_law:shift_sig=[30,0]",
+        "source:p900_candidate1_edge_law:label_sig=['identity','identity']",
+        "source:p900_candidate1_edge_law:same_label=True",
+        "source:p900_candidate1_edge_law:same_shift=True",
+        "source:p900_candidate1_edge_law:sector_delta_abs_small=False",
+        "source:p900_candidate1_edge_law:sector_delta_signs=['neg','pos']",
+        "source:p900_candidate1_edge_law:shared_parity_sig=['odd','even']",
+        "source:p900_candidate1_edge_law:shared_same=False",
+        "source:p900_candidate1_edge_law:shift_sig=[0,0]"
+      ]
+    },
+    {
+      "index": 4,
+      "B": 8,
+      "A": 7,
+      "C": 6,
+      "columns": [
+        19,
+        22
+      ],
+      "selected": false,
+      "features": [
+        "proj:any_col_unseen=True",
+        "proj:both_cols_visible=False",
+        "proj:cycle_span_count=2",
+        "proj:has_interior_role_class=True",
+        "proj:has_outer_and_interior=False",
+        "proj:has_outer_role_class=False",
+        "proj:nohit_col_count=1",
+        "proj:role_class_sig=['interior','interior']",
+        "proj:visible_col_count=1",
+        "source:AC_abs_small=True",
+        "source:AC_sign=neg",
+        "source:A_parity=odd",
+        "source:BA_AC_signs=neg_to_neg",
+        "source:BA_abs_small=True",
+        "source:BA_sign=neg",
+        "source:BC_abs_2_or_3=True",
+        "source:BC_sign=neg",
+        "source:B_parity=even",
+        "source:C_parity=even",
+        "source:endpoint_parity=even_to_even",
+        "source:p900_candidate0_edge_law:label_sig=['identity','identity']",
+        "source:p900_candidate0_edge_law:same_label=True",
+        "source:p900_candidate0_edge_law:same_shift=True",
+        "source:p900_candidate0_edge_law:sector_delta_abs_small=False",
+        "source:p900_candidate0_edge_law:sector_delta_signs=['pos','pos']",
+        "source:p900_candidate0_edge_law:shared_parity_sig=['odd','even']",
+        "source:p900_candidate0_edge_law:shared_same=False",
+        "source:p900_candidate0_edge_law:shift_sig=[0,0]",
+        "source:p900_candidate1_edge_law:label_sig=['identity','identity']",
+        "source:p900_candidate1_edge_law:same_label=True",
+        "source:p900_candidate1_edge_law:same_shift=True",
+        "source:p900_candidate1_edge_law:sector_delta_abs_small=False",
+        "source:p900_candidate1_edge_law:sector_delta_signs=['pos','pos']",
+        "source:p900_candidate1_edge_law:shared_parity_sig=['odd','even']",
+        "source:p900_candidate1_edge_law:shared_same=False",
+        "source:p900_candidate1_edge_law:shift_sig=[0,0]"
+      ]
+    },
+    {
+      "index": 5,
+      "B": 11,
+      "A": 7,
+      "C": 14,
+      "columns": [
+        23,
+        24
+      ],
+      "selected": true,
+      "features": [
+        "proj:any_col_unseen=True",
+        "proj:both_cols_visible=False",
+        "proj:cycle_span_count=0",
+        "proj:has_interior_role_class=False",
+        "proj:has_outer_and_interior=False",
+        "proj:has_outer_role_class=False",
+        "proj:nohit_col_count=2",
+        "proj:role_class_sig=[]",
+        "proj:visible_col_count=0",
+        "source:AC_abs_small=False",
+        "source:AC_sign=pos",
+        "source:A_parity=odd",
+        "source:BA_AC_signs=neg_to_pos",
+        "source:BA_abs_small=True",
+        "source:BA_sign=neg",
+        "source:BC_abs_2_or_3=True",
+        "source:BC_sign=pos",
+        "source:B_parity=odd",
+        "source:C_parity=even",
+        "source:endpoint_parity=odd_to_even",
+        "source:p900_candidate0_edge_law:label_sig=['identity','identity']",
+        "source:p900_candidate0_edge_law:same_label=True",
+        "source:p900_candidate0_edge_law:same_shift=True",
+        "source:p900_candidate0_edge_law:sector_delta_abs_small=True",
+        "source:p900_candidate0_edge_law:sector_delta_signs=['pos','pos']",
+        "source:p900_candidate0_edge_law:shared_parity_sig=['odd','odd']",
+        "source:p900_candidate0_edge_law:shared_same=True",
+        "source:p900_candidate0_edge_law:shift_sig=[0,0]",
+        "source:p900_candidate1_edge_law:label_sig=['half_turn','half_turn']",
+        "source:p900_candidate1_edge_law:same_label=True",
+        "source:p900_candidate1_edge_law:same_shift=True",
+        "source:p900_candidate1_edge_law:sector_delta_abs_small=True",
+        "source:p900_candidate1_edge_law:sector_delta_signs=['pos','pos']",
+        "source:p900_candidate1_edge_law:shared_parity_sig=['odd','odd']",
+        "source:p900_candidate1_edge_law:shared_same=True",
+        "source:p900_candidate1_edge_law:shift_sig=[30,30]"
+      ]
+    },
+    {
+      "index": 6,
+      "B": 10,
+      "A": 9,
+      "C": 8,
+      "columns": [
+        25,
+        28
+      ],
+      "selected": false,
+      "features": [
+        "proj:any_col_unseen=True",
+        "proj:both_cols_visible=False",
+        "proj:cycle_span_count=0",
+        "proj:has_interior_role_class=False",
+        "proj:has_outer_and_interior=False",
+        "proj:has_outer_role_class=False",
+        "proj:nohit_col_count=2",
+        "proj:role_class_sig=[]",
+        "proj:visible_col_count=0",
+        "source:AC_abs_small=True",
+        "source:AC_sign=neg",
+        "source:A_parity=odd",
+        "source:BA_AC_signs=neg_to_neg",
+        "source:BA_abs_small=True",
+        "source:BA_sign=neg",
+        "source:BC_abs_2_or_3=True",
+        "source:BC_sign=neg",
+        "source:B_parity=even",
+        "source:C_parity=even",
+        "source:endpoint_parity=even_to_even",
+        "source:p900_candidate0_edge_law:label_sig=['identity','identity']",
+        "source:p900_candidate0_edge_law:same_label=True",
+        "source:p900_candidate0_edge_law:same_shift=True",
+        "source:p900_candidate0_edge_law:sector_delta_abs_small=True",
+        "source:p900_candidate0_edge_law:sector_delta_signs=['pos','pos']",
+        "source:p900_candidate0_edge_law:shared_parity_sig=['odd','even']",
+        "source:p900_candidate0_edge_law:shared_same=False",
+        "source:p900_candidate0_edge_law:shift_sig=[0,0]",
+        "source:p900_candidate1_edge_law:label_sig=['identity','identity']",
+        "source:p900_candidate1_edge_law:same_label=True",
+        "source:p900_candidate1_edge_law:same_shift=True",
+        "source:p900_candidate1_edge_law:sector_delta_abs_small=True",
+        "source:p900_candidate1_edge_law:sector_delta_signs=['pos','pos']",
+        "source:p900_candidate1_edge_law:shared_parity_sig=['odd','even']",
+        "source:p900_candidate1_edge_law:shared_same=False",
+        "source:p900_candidate1_edge_law:shift_sig=[0,0]"
+      ]
+    },
+    {
+      "index": 7,
+      "B": 13,
+      "A": 9,
+      "C": 10,
+      "columns": [
+        28,
+        29
+      ],
+      "selected": true,
+      "features": [
+        "proj:any_col_unseen=True",
+        "proj:both_cols_visible=False",
+        "proj:cycle_span_count=0",
+        "proj:has_interior_role_class=False",
+        "proj:has_outer_and_interior=False",
+        "proj:has_outer_role_class=False",
+        "proj:nohit_col_count=2",
+        "proj:role_class_sig=[]",
+        "proj:visible_col_count=0",
+        "source:AC_abs_small=True",
+        "source:AC_sign=pos",
+        "source:A_parity=odd",
+        "source:BA_AC_signs=neg_to_pos",
+        "source:BA_abs_small=True",
+        "source:BA_sign=neg",
+        "source:BC_abs_2_or_3=True",
+        "source:BC_sign=neg",
+        "source:B_parity=odd",
+        "source:C_parity=even",
+        "source:endpoint_parity=odd_to_even",
+        "source:p900_candidate0_edge_law:label_sig=['identity','identity']",
+        "source:p900_candidate0_edge_law:same_label=True",
+        "source:p900_candidate0_edge_law:same_shift=True",
+        "source:p900_candidate0_edge_law:sector_delta_abs_small=True",
+        "source:p900_candidate0_edge_law:sector_delta_signs=['pos','pos']",
+        "source:p900_candidate0_edge_law:shared_parity_sig=['even','even']",
+        "source:p900_candidate0_edge_law:shared_same=False",
+        "source:p900_candidate0_edge_law:shift_sig=[0,0]",
+        "source:p900_candidate1_edge_law:label_sig=['identity','identity']",
+        "source:p900_candidate1_edge_law:same_label=True",
+        "source:p900_candidate1_edge_law:same_shift=True",
+        "source:p900_candidate1_edge_law:sector_delta_abs_small=True",
+        "source:p900_candidate1_edge_law:sector_delta_signs=['pos','pos']",
+        "source:p900_candidate1_edge_law:shared_parity_sig=['even','even']",
+        "source:p900_candidate1_edge_law:shared_same=False",
+        "source:p900_candidate1_edge_law:shift_sig=[0,0]"
+      ]
+    }
+  ],
+  "top_reports": [
+    {
+      "features": [
+        "source:p900_candidate0_edge_law:sector_delta_abs_small=True"
+      ],
+      "mode": "source_only",
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "exact_selected": false,
+      "covers_all_selected": true,
+      "has_nonselected_family": true,
+      "lookup_terms": [],
+      "score": 4
+    },
+    {
+      "features": [
+        "source:p900_candidate1_edge_law:sector_delta_abs_small=True"
+      ],
+      "mode": "source_only",
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "exact_selected": false,
+      "covers_all_selected": true,
+      "has_nonselected_family": true,
+      "lookup_terms": [],
+      "score": 4
+    },
+    {
+      "features": [
+        "source:A_parity=odd",
+        "source:p900_candidate0_edge_law:sector_delta_abs_small=True"
+      ],
+      "mode": "source_only",
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "exact_selected": false,
+      "covers_all_selected": true,
+      "has_nonselected_family": true,
+      "lookup_terms": [],
+      "score": 5
+    },
+    {
+      "features": [
+        "source:A_parity=odd",
+        "source:p900_candidate1_edge_law:sector_delta_abs_small=True"
+      ],
+      "mode": "source_only",
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "exact_selected": false,
+      "covers_all_selected": true,
+      "has_nonselected_family": true,
+      "lookup_terms": [],
+      "score": 5
+    },
+    {
+      "features": [
+        "source:BA_abs_small=True",
+        "source:p900_candidate0_edge_law:sector_delta_abs_small=True"
+      ],
+      "mode": "source_only",
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "exact_selected": false,
+      "covers_all_selected": true,
+      "has_nonselected_family": true,
+      "lookup_terms": [],
+      "score": 5
+    },
+    {
+      "features": [
+        "source:BA_abs_small=True",
+        "source:p900_candidate1_edge_law:sector_delta_abs_small=True"
+      ],
+      "mode": "source_only",
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "exact_selected": false,
+      "covers_all_selected": true,
+      "has_nonselected_family": true,
+      "lookup_terms": [],
+      "score": 5
+    },
+    {
+      "features": [
+        "source:BA_sign=neg",
+        "source:p900_candidate0_edge_law:sector_delta_abs_small=True"
+      ],
+      "mode": "source_only",
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "exact_selected": false,
+      "covers_all_selected": true,
+      "has_nonselected_family": true,
+      "lookup_terms": [],
+      "score": 5
+    },
+    {
+      "features": [
+        "source:BA_sign=neg",
+        "source:p900_candidate1_edge_law:sector_delta_abs_small=True"
+      ],
+      "mode": "source_only",
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "exact_selected": false,
+      "covers_all_selected": true,
+      "has_nonselected_family": true,
+      "lookup_terms": [],
+      "score": 5
+    },
+    {
+      "features": [
+        "source:BC_abs_2_or_3=True",
+        "source:p900_candidate0_edge_law:sector_delta_abs_small=True"
+      ],
+      "mode": "source_only",
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "exact_selected": false,
+      "covers_all_selected": true,
+      "has_nonselected_family": true,
+      "lookup_terms": [],
+      "score": 5
+    },
+    {
+      "features": [
+        "source:BC_abs_2_or_3=True",
+        "source:p900_candidate1_edge_law:sector_delta_abs_small=True"
+      ],
+      "mode": "source_only",
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "exact_selected": false,
+      "covers_all_selected": true,
+      "has_nonselected_family": true,
+      "lookup_terms": [],
+      "score": 5
+    },
+    {
+      "features": [
+        "source:C_parity=even",
+        "source:p900_candidate0_edge_law:sector_delta_abs_small=True"
+      ],
+      "mode": "source_only",
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "exact_selected": false,
+      "covers_all_selected": true,
+      "has_nonselected_family": true,
+      "lookup_terms": [],
+      "score": 5
+    },
+    {
+      "features": [
+        "source:C_parity=even",
+        "source:p900_candidate1_edge_law:sector_delta_abs_small=True"
+      ],
+      "mode": "source_only",
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "exact_selected": false,
+      "covers_all_selected": true,
+      "has_nonselected_family": true,
+      "lookup_terms": [],
+      "score": 5
+    },
+    {
+      "features": [
+        "source:p900_candidate0_edge_law:sector_delta_abs_small=True",
+        "source:p900_candidate0_edge_law:sector_delta_signs=['pos','pos']"
+      ],
+      "mode": "source_only",
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "exact_selected": false,
+      "covers_all_selected": true,
+      "has_nonselected_family": true,
+      "lookup_terms": [],
+      "score": 5
+    },
+    {
+      "features": [
+        "source:p900_candidate0_edge_law:sector_delta_abs_small=True",
+        "source:p900_candidate1_edge_law:sector_delta_abs_small=True"
+      ],
+      "mode": "source_only",
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "exact_selected": false,
+      "covers_all_selected": true,
+      "has_nonselected_family": true,
+      "lookup_terms": [],
+      "score": 5
+    },
+    {
+      "features": [
+        "source:p900_candidate0_edge_law:sector_delta_abs_small=True",
+        "source:p900_candidate1_edge_law:sector_delta_signs=['pos','pos']"
+      ],
+      "mode": "source_only",
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "exact_selected": false,
+      "covers_all_selected": true,
+      "has_nonselected_family": true,
+      "lookup_terms": [],
+      "score": 5
+    },
+    {
+      "features": [
+        "source:p900_candidate0_edge_law:sector_delta_signs=['pos','pos']",
+        "source:p900_candidate1_edge_law:sector_delta_abs_small=True"
+      ],
+      "mode": "source_only",
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "exact_selected": false,
+      "covers_all_selected": true,
+      "has_nonselected_family": true,
+      "lookup_terms": [],
+      "score": 5
+    },
+    {
+      "features": [
+        "source:p900_candidate1_edge_law:sector_delta_abs_small=True",
+        "source:p900_candidate1_edge_law:sector_delta_signs=['pos','pos']"
+      ],
+      "mode": "source_only",
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "exact_selected": false,
+      "covers_all_selected": true,
+      "has_nonselected_family": true,
+      "lookup_terms": [],
+      "score": 5
+    },
+    {
+      "features": [
+        "source:A_parity=odd",
+        "source:BA_abs_small=True",
+        "source:p900_candidate0_edge_law:sector_delta_abs_small=True"
+      ],
+      "mode": "source_only",
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "exact_selected": false,
+      "covers_all_selected": true,
+      "has_nonselected_family": true,
+      "lookup_terms": [],
+      "score": 6
+    },
+    {
+      "features": [
+        "source:A_parity=odd",
+        "source:BA_abs_small=True",
+        "source:p900_candidate1_edge_law:sector_delta_abs_small=True"
+      ],
+      "mode": "source_only",
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "exact_selected": false,
+      "covers_all_selected": true,
+      "has_nonselected_family": true,
+      "lookup_terms": [],
+      "score": 6
+    },
+    {
+      "features": [
+        "source:A_parity=odd",
+        "source:BA_sign=neg",
+        "source:p900_candidate0_edge_law:sector_delta_abs_small=True"
+      ],
+      "mode": "source_only",
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "exact_selected": false,
+      "covers_all_selected": true,
+      "has_nonselected_family": true,
+      "lookup_terms": [],
+      "score": 6
+    },
+    {
+      "features": [
+        "source:A_parity=odd",
+        "source:BA_sign=neg",
+        "source:p900_candidate1_edge_law:sector_delta_abs_small=True"
+      ],
+      "mode": "source_only",
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "exact_selected": false,
+      "covers_all_selected": true,
+      "has_nonselected_family": true,
+      "lookup_terms": [],
+      "score": 6
+    },
+    {
+      "features": [
+        "source:A_parity=odd",
+        "source:BC_abs_2_or_3=True",
+        "source:p900_candidate0_edge_law:sector_delta_abs_small=True"
+      ],
+      "mode": "source_only",
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "exact_selected": false,
+      "covers_all_selected": true,
+      "has_nonselected_family": true,
+      "lookup_terms": [],
+      "score": 6
+    },
+    {
+      "features": [
+        "source:A_parity=odd",
+        "source:BC_abs_2_or_3=True",
+        "source:p900_candidate1_edge_law:sector_delta_abs_small=True"
+      ],
+      "mode": "source_only",
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "exact_selected": false,
+      "covers_all_selected": true,
+      "has_nonselected_family": true,
+      "lookup_terms": [],
+      "score": 6
+    },
+    {
+      "features": [
+        "source:A_parity=odd",
+        "source:C_parity=even",
+        "source:p900_candidate0_edge_law:sector_delta_abs_small=True"
+      ],
+      "mode": "source_only",
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "exact_selected": false,
+      "covers_all_selected": true,
+      "has_nonselected_family": true,
+      "lookup_terms": [],
+      "score": 6
+    },
+    {
+      "features": [
+        "source:A_parity=odd",
+        "source:C_parity=even",
+        "source:p900_candidate1_edge_law:sector_delta_abs_small=True"
+      ],
+      "mode": "source_only",
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "exact_selected": false,
+      "covers_all_selected": true,
+      "has_nonselected_family": true,
+      "lookup_terms": [],
+      "score": 6
+    },
+    {
+      "features": [
+        "source:A_parity=odd",
+        "source:p900_candidate0_edge_law:sector_delta_abs_small=True",
+        "source:p900_candidate0_edge_law:sector_delta_signs=['pos','pos']"
+      ],
+      "mode": "source_only",
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "exact_selected": false,
+      "covers_all_selected": true,
+      "has_nonselected_family": true,
+      "lookup_terms": [],
+      "score": 6
+    },
+    {
+      "features": [
+        "source:A_parity=odd",
+        "source:p900_candidate0_edge_law:sector_delta_abs_small=True",
+        "source:p900_candidate1_edge_law:sector_delta_abs_small=True"
+      ],
+      "mode": "source_only",
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "exact_selected": false,
+      "covers_all_selected": true,
+      "has_nonselected_family": true,
+      "lookup_terms": [],
+      "score": 6
+    },
+    {
+      "features": [
+        "source:A_parity=odd",
+        "source:p900_candidate0_edge_law:sector_delta_abs_small=True",
+        "source:p900_candidate1_edge_law:sector_delta_signs=['pos','pos']"
+      ],
+      "mode": "source_only",
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "exact_selected": false,
+      "covers_all_selected": true,
+      "has_nonselected_family": true,
+      "lookup_terms": [],
+      "score": 6
+    },
+    {
+      "features": [
+        "source:A_parity=odd",
+        "source:p900_candidate0_edge_law:sector_delta_signs=['pos','pos']",
+        "source:p900_candidate1_edge_law:sector_delta_abs_small=True"
+      ],
+      "mode": "source_only",
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "exact_selected": false,
+      "covers_all_selected": true,
+      "has_nonselected_family": true,
+      "lookup_terms": [],
+      "score": 6
+    },
+    {
+      "features": [
+        "source:A_parity=odd",
+        "source:p900_candidate1_edge_law:sector_delta_abs_small=True",
+        "source:p900_candidate1_edge_law:sector_delta_signs=['pos','pos']"
+      ],
+      "mode": "source_only",
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "exact_selected": false,
+      "covers_all_selected": true,
+      "has_nonselected_family": true,
+      "lookup_terms": [],
+      "score": 6
+    }
+  ],
+  "interpretation": {
+    "main_result": "The polarity family persists as a family signal, but no generator candidate was found.",
+    "why_this_matters": "The test asks whether the lookup-safe polarity family can be upgraded from classification to a projection-family generator candidate.",
+    "why_not_closure": "A subselector inside an 8-path family is still weaker than deriving the WXYZTI projection-family generator from source law.",
+    "next_move": "Record the polarity family as a strong non-generator signal."
+  },
+  "claim": {
+    "does_this_close_gap_a": false,
+    "does_this_find_exact_source_subselector": false,
+    "does_this_find_exact_projection_subselector": false,
+    "does_this_find_generator": false,
+    "short_form": "The polarity family persists as a family signal, but no generator candidate was found.",
+    "not_closed_reason": "A subselector inside an 8-path family is still weaker than deriving the WXYZTI projection-family generator from source law.",
+    "next_problem": "Record the polarity family as a strong non-generator signal."
+  },
+  "checks": [
+    {
+      "id": "polarity_audit_loaded",
+      "status": true,
+      "detail": "gap_a_polarity_aware_odd_hinge_candidate_survives_lookup_audit_not_generator"
+    },
+    {
+      "id": "polarity_search_loaded",
+      "status": true,
+      "detail": "gap_a_polarity_aware_odd_hinge_family_candidate_found_not_generator"
+    },
+    {
+      "id": "odd_audit_loaded",
+      "status": true,
+      "detail": "gap_a_odd_hinge_source_shell_audit_enriched_not_generator"
+    },
+    {
+      "id": "abc_loaded",
+      "status": true,
+      "detail": "source_shell_signed_abc_primitives_extracted_odd_hinge_signal_found_not_generator"
+    },
+    {
+      "id": "branch_loaded",
+      "status": true,
+      "detail": "source_shell_projection_family_generator_branch_started"
+    },
+    {
+      "id": "records_loaded",
+      "status": true,
+      "detail": "8"
+    },
+    {
+      "id": "selected_count_4",
+      "status": true,
+      "detail": "4"
+    },
+    {
+      "id": "nonselected_count_4",
+      "status": true,
+      "detail": "4"
+    },
+    {
+      "id": "no_lookup_in_common_features",
+      "status": true,
+      "detail": "ok"
+    },
+    {
+      "id": "gap_a_not_closed",
+      "status": true,
+      "detail": "projection family search only"
+    }
+  ],
+  "next_script": "record_polarity_family_non_generator_boundary_001.py"
+}

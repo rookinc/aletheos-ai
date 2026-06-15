@@ -1,0 +1,3991 @@
+{
+  "schema": "source_native_nrc_wxyzti_to_channel_join_alignment_001.v1",
+  "status": "source_native_nrc_wxyzti_channel_alignment_needs_bridge",
+  "timestamp_utc": "2026-06-15T13:04:51.303880+00:00",
+  "purpose": "Attempt to align the four source-native NRC WXYZTI witness forms to the channel-aware G60-G15 product join.",
+  "summary": {
+    "join_loaded": "channel_aware_g60_g15_join_constructed",
+    "forms_loaded_from_key": "wxyzti_admitted_forms",
+    "form_count": 4,
+    "station_total": 28,
+    "edge_total": 24,
+    "fully_addressed_station_count": 0,
+    "edge_resolved_count": 0,
+    "direct_forms_aligned_count": 0,
+    "direct_alignment_possible": false,
+    "edge_channel_counts": {
+      "unresolved": 24
+    },
+    "label_channel_counts": {
+      "reverse_partner -> unresolved": 12,
+      "shared_B -> unresolved": 12
+    },
+    "station_key_inventory_top_40": {
+      "columns": 56,
+      "address_pair_source": 56,
+      "role": 28,
+      "key": 28,
+      "B": 28,
+      "A": 28,
+      "C": 28,
+      "C_plus_1": 28,
+      "handedness_word": 28,
+      "slot": 28,
+      "fiber": 28
+    },
+    "expected_label_channels": {
+      "reverse_partner": "internal_or_local_reciprocal_candidate",
+      "shared_B": "external_or_shared_boundary_candidate"
+    },
+    "bridge_needed": true,
+    "bridge_reason": "WXYZTI station records do not yet expose a complete direct slot/local or 900-vertex address",
+    "gap_a_closed": false,
+    "full_g900_admission_found": false,
+    "next_step": "derive_120_record_to_channel_join_bridge"
+  },
+  "form_reports": [
+    {
+      "form_index": 0,
+      "station_count": 7,
+      "edge_count": 6,
+      "direct_station_address_count": 0,
+      "direct_form_alignment_possible": false,
+      "station_reports": [
+        {
+          "station_index": 0,
+          "label": "W",
+          "direct_address_candidate_count": 3,
+          "chosen_address": null,
+          "address_candidates": {
+            "slots": [
+              {
+                "path": "$.slot",
+                "value": 11
+              }
+            ],
+            "locals": [
+              {
+                "path": "$.fiber",
+                "value": 14
+              }
+            ],
+            "vertices": [
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 11
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 15
+              }
+            ],
+            "record_ids": [
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 11
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 15
+              }
+            ],
+            "derived_addresses": [
+              {
+                "vertex": 11,
+                "slot": 0,
+                "local": 11,
+                "source": "$.address_pair_source[0]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 15,
+                "slot": 0,
+                "local": 15,
+                "source": "$.address_pair_source[1]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 674,
+                "slot": 11,
+                "local": 14,
+                "source": "$.slot + $.fiber",
+                "method": "from_slot_local"
+              }
+            ],
+            "other_integer_count": 10,
+            "other_integer_examples": [
+              {
+                "path": "$.B",
+                "value": 11
+              },
+              {
+                "path": "$.A",
+                "value": 7
+              },
+              {
+                "path": "$.C",
+                "value": 14
+              },
+              {
+                "path": "$.C_plus_1",
+                "value": 15
+              },
+              {
+                "path": "$.columns[0]",
+                "value": 23
+              },
+              {
+                "path": "$.columns[1]",
+                "value": 24
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 11
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 15
+              },
+              {
+                "path": "$.slot",
+                "value": 11
+              },
+              {
+                "path": "$.fiber",
+                "value": 14
+              }
+            ]
+          }
+        },
+        {
+          "station_index": 1,
+          "label": "X",
+          "direct_address_candidate_count": 3,
+          "chosen_address": null,
+          "address_candidates": {
+            "slots": [
+              {
+                "path": "$.slot",
+                "value": 14
+              }
+            ],
+            "locals": [
+              {
+                "path": "$.fiber",
+                "value": 11
+              }
+            ],
+            "vertices": [
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 12
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 14
+              }
+            ],
+            "record_ids": [
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 12
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 14
+              }
+            ],
+            "derived_addresses": [
+              {
+                "vertex": 12,
+                "slot": 0,
+                "local": 12,
+                "source": "$.address_pair_source[1]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 14,
+                "slot": 0,
+                "local": 14,
+                "source": "$.address_pair_source[0]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 851,
+                "slot": 14,
+                "local": 11,
+                "source": "$.slot + $.fiber",
+                "method": "from_slot_local"
+              }
+            ],
+            "other_integer_count": 10,
+            "other_integer_examples": [
+              {
+                "path": "$.B",
+                "value": 14
+              },
+              {
+                "path": "$.A",
+                "value": 7
+              },
+              {
+                "path": "$.C",
+                "value": 11
+              },
+              {
+                "path": "$.C_plus_1",
+                "value": 12
+              },
+              {
+                "path": "$.columns[0]",
+                "value": 23
+              },
+              {
+                "path": "$.columns[1]",
+                "value": 24
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 14
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 12
+              },
+              {
+                "path": "$.slot",
+                "value": 14
+              },
+              {
+                "path": "$.fiber",
+                "value": 11
+              }
+            ]
+          }
+        },
+        {
+          "station_index": 2,
+          "label": "Y",
+          "direct_address_candidate_count": 3,
+          "chosen_address": null,
+          "address_candidates": {
+            "slots": [
+              {
+                "path": "$.slot",
+                "value": 14
+              }
+            ],
+            "locals": [
+              {
+                "path": "$.fiber",
+                "value": 2
+              }
+            ],
+            "vertices": [
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 3
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 14
+              }
+            ],
+            "record_ids": [
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 3
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 14
+              }
+            ],
+            "derived_addresses": [
+              {
+                "vertex": 3,
+                "slot": 0,
+                "local": 3,
+                "source": "$.address_pair_source[1]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 14,
+                "slot": 0,
+                "local": 14,
+                "source": "$.address_pair_source[0]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 842,
+                "slot": 14,
+                "local": 2,
+                "source": "$.slot + $.fiber",
+                "method": "from_slot_local"
+              }
+            ],
+            "other_integer_count": 10,
+            "other_integer_examples": [
+              {
+                "path": "$.B",
+                "value": 14
+              },
+              {
+                "path": "$.A",
+                "value": 3
+              },
+              {
+                "path": "$.C",
+                "value": 2
+              },
+              {
+                "path": "$.C_plus_1",
+                "value": 3
+              },
+              {
+                "path": "$.columns[0]",
+                "value": 7
+              },
+              {
+                "path": "$.columns[1]",
+                "value": 12
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 14
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 3
+              },
+              {
+                "path": "$.slot",
+                "value": 14
+              },
+              {
+                "path": "$.fiber",
+                "value": 2
+              }
+            ]
+          }
+        },
+        {
+          "station_index": 3,
+          "label": "Z",
+          "direct_address_candidate_count": 3,
+          "chosen_address": null,
+          "address_candidates": {
+            "slots": [
+              {
+                "path": "$.slot",
+                "value": 2
+              }
+            ],
+            "locals": [
+              {
+                "path": "$.fiber",
+                "value": 14
+              }
+            ],
+            "vertices": [
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 2
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 15
+              }
+            ],
+            "record_ids": [
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 2
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 15
+              }
+            ],
+            "derived_addresses": [
+              {
+                "vertex": 2,
+                "slot": 0,
+                "local": 2,
+                "source": "$.address_pair_source[0]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 15,
+                "slot": 0,
+                "local": 15,
+                "source": "$.address_pair_source[1]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 134,
+                "slot": 2,
+                "local": 14,
+                "source": "$.slot + $.fiber",
+                "method": "from_slot_local"
+              }
+            ],
+            "other_integer_count": 10,
+            "other_integer_examples": [
+              {
+                "path": "$.B",
+                "value": 2
+              },
+              {
+                "path": "$.A",
+                "value": 3
+              },
+              {
+                "path": "$.C",
+                "value": 14
+              },
+              {
+                "path": "$.C_plus_1",
+                "value": 15
+              },
+              {
+                "path": "$.columns[0]",
+                "value": 7
+              },
+              {
+                "path": "$.columns[1]",
+                "value": 12
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 2
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 15
+              },
+              {
+                "path": "$.slot",
+                "value": 2
+              },
+              {
+                "path": "$.fiber",
+                "value": 14
+              }
+            ]
+          }
+        },
+        {
+          "station_index": 4,
+          "label": "T",
+          "direct_address_candidate_count": 3,
+          "chosen_address": null,
+          "address_candidates": {
+            "slots": [
+              {
+                "path": "$.slot",
+                "value": 2
+              }
+            ],
+            "locals": [
+              {
+                "path": "$.fiber",
+                "value": 11
+              }
+            ],
+            "vertices": [
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 2
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 12
+              }
+            ],
+            "record_ids": [
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 2
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 12
+              }
+            ],
+            "derived_addresses": [
+              {
+                "vertex": 2,
+                "slot": 0,
+                "local": 2,
+                "source": "$.address_pair_source[0]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 12,
+                "slot": 0,
+                "local": 12,
+                "source": "$.address_pair_source[1]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 131,
+                "slot": 2,
+                "local": 11,
+                "source": "$.slot + $.fiber",
+                "method": "from_slot_local"
+              }
+            ],
+            "other_integer_count": 10,
+            "other_integer_examples": [
+              {
+                "path": "$.B",
+                "value": 2
+              },
+              {
+                "path": "$.A",
+                "value": 1
+              },
+              {
+                "path": "$.C",
+                "value": 11
+              },
+              {
+                "path": "$.C_plus_1",
+                "value": 12
+              },
+              {
+                "path": "$.columns[0]",
+                "value": 4
+              },
+              {
+                "path": "$.columns[1]",
+                "value": 5
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 2
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 12
+              },
+              {
+                "path": "$.slot",
+                "value": 2
+              },
+              {
+                "path": "$.fiber",
+                "value": 11
+              }
+            ]
+          }
+        },
+        {
+          "station_index": 5,
+          "label": "I",
+          "direct_address_candidate_count": 3,
+          "chosen_address": null,
+          "address_candidates": {
+            "slots": [
+              {
+                "path": "$.slot",
+                "value": 11
+              }
+            ],
+            "locals": [
+              {
+                "path": "$.fiber",
+                "value": 2
+              }
+            ],
+            "vertices": [
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 3
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 11
+              }
+            ],
+            "record_ids": [
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 3
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 11
+              }
+            ],
+            "derived_addresses": [
+              {
+                "vertex": 3,
+                "slot": 0,
+                "local": 3,
+                "source": "$.address_pair_source[1]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 11,
+                "slot": 0,
+                "local": 11,
+                "source": "$.address_pair_source[0]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 662,
+                "slot": 11,
+                "local": 2,
+                "source": "$.slot + $.fiber",
+                "method": "from_slot_local"
+              }
+            ],
+            "other_integer_count": 10,
+            "other_integer_examples": [
+              {
+                "path": "$.B",
+                "value": 11
+              },
+              {
+                "path": "$.A",
+                "value": 1
+              },
+              {
+                "path": "$.C",
+                "value": 2
+              },
+              {
+                "path": "$.C_plus_1",
+                "value": 3
+              },
+              {
+                "path": "$.columns[0]",
+                "value": 4
+              },
+              {
+                "path": "$.columns[1]",
+                "value": 5
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 11
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 3
+              },
+              {
+                "path": "$.slot",
+                "value": 11
+              },
+              {
+                "path": "$.fiber",
+                "value": 2
+              }
+            ]
+          }
+        },
+        {
+          "station_index": 6,
+          "label": "W",
+          "direct_address_candidate_count": 3,
+          "chosen_address": null,
+          "address_candidates": {
+            "slots": [
+              {
+                "path": "$.slot",
+                "value": 11
+              }
+            ],
+            "locals": [
+              {
+                "path": "$.fiber",
+                "value": 14
+              }
+            ],
+            "vertices": [
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 11
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 15
+              }
+            ],
+            "record_ids": [
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 11
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 15
+              }
+            ],
+            "derived_addresses": [
+              {
+                "vertex": 11,
+                "slot": 0,
+                "local": 11,
+                "source": "$.address_pair_source[0]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 15,
+                "slot": 0,
+                "local": 15,
+                "source": "$.address_pair_source[1]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 674,
+                "slot": 11,
+                "local": 14,
+                "source": "$.slot + $.fiber",
+                "method": "from_slot_local"
+              }
+            ],
+            "other_integer_count": 10,
+            "other_integer_examples": [
+              {
+                "path": "$.B",
+                "value": 11
+              },
+              {
+                "path": "$.A",
+                "value": 7
+              },
+              {
+                "path": "$.C",
+                "value": 14
+              },
+              {
+                "path": "$.C_plus_1",
+                "value": 15
+              },
+              {
+                "path": "$.columns[0]",
+                "value": 23
+              },
+              {
+                "path": "$.columns[1]",
+                "value": 24
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 11
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 15
+              },
+              {
+                "path": "$.slot",
+                "value": 11
+              },
+              {
+                "path": "$.fiber",
+                "value": 14
+              }
+            ]
+          }
+        }
+      ],
+      "edge_reports": [
+        {
+          "edge_index": 0,
+          "from": "11|7|14|23,24",
+          "to": "14|7|11|23,24",
+          "label": "reverse_partner",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_address": [
+              "11|7|14|23,24",
+              "14|7|11|23,24"
+            ]
+          },
+          "raw": {
+            "edge_role": "WX",
+            "from": "11|7|14|23,24",
+            "to": "14|7|11|23,24",
+            "transport_label": "reverse_partner",
+            "source_native_check": true,
+            "from_BAC": [
+              11,
+              7,
+              14
+            ],
+            "to_BAC": [
+              14,
+              7,
+              11
+            ],
+            "from_columns": [
+              23,
+              24
+            ],
+            "to_columns": [
+              23,
+              24
+            ]
+          }
+        },
+        {
+          "edge_index": 1,
+          "from": "14|7|11|23,24",
+          "to": "14|3|2|7,12",
+          "label": "shared_B",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_address": [
+              "14|7|11|23,24",
+              "14|3|2|7,12"
+            ]
+          },
+          "raw": {
+            "edge_role": "XY",
+            "from": "14|7|11|23,24",
+            "to": "14|3|2|7,12",
+            "transport_label": "shared_B",
+            "source_native_check": true,
+            "from_BAC": [
+              14,
+              7,
+              11
+            ],
+            "to_BAC": [
+              14,
+              3,
+              2
+            ],
+            "from_columns": [
+              23,
+              24
+            ],
+            "to_columns": [
+              7,
+              12
+            ]
+          }
+        },
+        {
+          "edge_index": 2,
+          "from": "14|3|2|7,12",
+          "to": "2|3|14|7,12",
+          "label": "reverse_partner",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_address": [
+              "14|3|2|7,12",
+              "2|3|14|7,12"
+            ]
+          },
+          "raw": {
+            "edge_role": "YZ",
+            "from": "14|3|2|7,12",
+            "to": "2|3|14|7,12",
+            "transport_label": "reverse_partner",
+            "source_native_check": true,
+            "from_BAC": [
+              14,
+              3,
+              2
+            ],
+            "to_BAC": [
+              2,
+              3,
+              14
+            ],
+            "from_columns": [
+              7,
+              12
+            ],
+            "to_columns": [
+              7,
+              12
+            ]
+          }
+        },
+        {
+          "edge_index": 3,
+          "from": "2|3|14|7,12",
+          "to": "2|1|11|4,5",
+          "label": "shared_B",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_address": [
+              "2|3|14|7,12",
+              "2|1|11|4,5"
+            ]
+          },
+          "raw": {
+            "edge_role": "ZT",
+            "from": "2|3|14|7,12",
+            "to": "2|1|11|4,5",
+            "transport_label": "shared_B",
+            "source_native_check": true,
+            "from_BAC": [
+              2,
+              3,
+              14
+            ],
+            "to_BAC": [
+              2,
+              1,
+              11
+            ],
+            "from_columns": [
+              7,
+              12
+            ],
+            "to_columns": [
+              4,
+              5
+            ]
+          }
+        },
+        {
+          "edge_index": 4,
+          "from": "2|1|11|4,5",
+          "to": "11|1|2|4,5",
+          "label": "reverse_partner",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_address": [
+              "2|1|11|4,5",
+              "11|1|2|4,5"
+            ]
+          },
+          "raw": {
+            "edge_role": "TI",
+            "from": "2|1|11|4,5",
+            "to": "11|1|2|4,5",
+            "transport_label": "reverse_partner",
+            "source_native_check": true,
+            "from_BAC": [
+              2,
+              1,
+              11
+            ],
+            "to_BAC": [
+              11,
+              1,
+              2
+            ],
+            "from_columns": [
+              4,
+              5
+            ],
+            "to_columns": [
+              4,
+              5
+            ]
+          }
+        },
+        {
+          "edge_index": 5,
+          "from": "11|1|2|4,5",
+          "to": "11|7|14|23,24",
+          "label": "shared_B",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_address": [
+              "11|1|2|4,5",
+              "11|7|14|23,24"
+            ]
+          },
+          "raw": {
+            "edge_role": "IW",
+            "from": "11|1|2|4,5",
+            "to": "11|7|14|23,24",
+            "transport_label": "shared_B",
+            "source_native_check": true,
+            "from_BAC": [
+              11,
+              1,
+              2
+            ],
+            "to_BAC": [
+              11,
+              7,
+              14
+            ],
+            "from_columns": [
+              4,
+              5
+            ],
+            "to_columns": [
+              23,
+              24
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "form_index": 1,
+      "station_count": 7,
+      "edge_count": 6,
+      "direct_station_address_count": 0,
+      "direct_form_alignment_possible": false,
+      "station_reports": [
+        {
+          "station_index": 0,
+          "label": "W",
+          "direct_address_candidate_count": 3,
+          "chosen_address": null,
+          "address_candidates": {
+            "slots": [
+              {
+                "path": "$.slot",
+                "value": 13
+              }
+            ],
+            "locals": [
+              {
+                "path": "$.fiber",
+                "value": 10
+              }
+            ],
+            "vertices": [
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 11
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 13
+              }
+            ],
+            "record_ids": [
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 11
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 13
+              }
+            ],
+            "derived_addresses": [
+              {
+                "vertex": 11,
+                "slot": 0,
+                "local": 11,
+                "source": "$.address_pair_source[1]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 13,
+                "slot": 0,
+                "local": 13,
+                "source": "$.address_pair_source[0]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 790,
+                "slot": 13,
+                "local": 10,
+                "source": "$.slot + $.fiber",
+                "method": "from_slot_local"
+              }
+            ],
+            "other_integer_count": 10,
+            "other_integer_examples": [
+              {
+                "path": "$.B",
+                "value": 13
+              },
+              {
+                "path": "$.A",
+                "value": 9
+              },
+              {
+                "path": "$.C",
+                "value": 10
+              },
+              {
+                "path": "$.C_plus_1",
+                "value": 11
+              },
+              {
+                "path": "$.columns[0]",
+                "value": 28
+              },
+              {
+                "path": "$.columns[1]",
+                "value": 29
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 13
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 11
+              },
+              {
+                "path": "$.slot",
+                "value": 13
+              },
+              {
+                "path": "$.fiber",
+                "value": 10
+              }
+            ]
+          }
+        },
+        {
+          "station_index": 1,
+          "label": "X",
+          "direct_address_candidate_count": 3,
+          "chosen_address": null,
+          "address_candidates": {
+            "slots": [
+              {
+                "path": "$.slot",
+                "value": 10
+              }
+            ],
+            "locals": [
+              {
+                "path": "$.fiber",
+                "value": 13
+              }
+            ],
+            "vertices": [
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 10
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 14
+              }
+            ],
+            "record_ids": [
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 10
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 14
+              }
+            ],
+            "derived_addresses": [
+              {
+                "vertex": 10,
+                "slot": 0,
+                "local": 10,
+                "source": "$.address_pair_source[0]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 14,
+                "slot": 0,
+                "local": 14,
+                "source": "$.address_pair_source[1]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 613,
+                "slot": 10,
+                "local": 13,
+                "source": "$.slot + $.fiber",
+                "method": "from_slot_local"
+              }
+            ],
+            "other_integer_count": 10,
+            "other_integer_examples": [
+              {
+                "path": "$.B",
+                "value": 10
+              },
+              {
+                "path": "$.A",
+                "value": 9
+              },
+              {
+                "path": "$.C",
+                "value": 13
+              },
+              {
+                "path": "$.C_plus_1",
+                "value": 14
+              },
+              {
+                "path": "$.columns[0]",
+                "value": 28
+              },
+              {
+                "path": "$.columns[1]",
+                "value": 29
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 10
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 14
+              },
+              {
+                "path": "$.slot",
+                "value": 10
+              },
+              {
+                "path": "$.fiber",
+                "value": 13
+              }
+            ]
+          }
+        },
+        {
+          "station_index": 2,
+          "label": "Y",
+          "direct_address_candidate_count": 3,
+          "chosen_address": null,
+          "address_candidates": {
+            "slots": [
+              {
+                "path": "$.slot",
+                "value": 10
+              }
+            ],
+            "locals": [
+              {
+                "path": "$.fiber",
+                "value": 1
+              }
+            ],
+            "vertices": [
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 2
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 10
+              }
+            ],
+            "record_ids": [
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 2
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 10
+              }
+            ],
+            "derived_addresses": [
+              {
+                "vertex": 2,
+                "slot": 0,
+                "local": 2,
+                "source": "$.address_pair_source[1]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 10,
+                "slot": 0,
+                "local": 10,
+                "source": "$.address_pair_source[0]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 601,
+                "slot": 10,
+                "local": 1,
+                "source": "$.slot + $.fiber",
+                "method": "from_slot_local"
+              }
+            ],
+            "other_integer_count": 10,
+            "other_integer_examples": [
+              {
+                "path": "$.B",
+                "value": 10
+              },
+              {
+                "path": "$.A",
+                "value": 0
+              },
+              {
+                "path": "$.C",
+                "value": 1
+              },
+              {
+                "path": "$.C_plus_1",
+                "value": 2
+              },
+              {
+                "path": "$.columns[0]",
+                "value": 0
+              },
+              {
+                "path": "$.columns[1]",
+                "value": 2
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 10
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 2
+              },
+              {
+                "path": "$.slot",
+                "value": 10
+              },
+              {
+                "path": "$.fiber",
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
+          "station_index": 3,
+          "label": "Z",
+          "direct_address_candidate_count": 3,
+          "chosen_address": null,
+          "address_candidates": {
+            "slots": [
+              {
+                "path": "$.slot",
+                "value": 1
+              }
+            ],
+            "locals": [
+              {
+                "path": "$.fiber",
+                "value": 10
+              }
+            ],
+            "vertices": [
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 1
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 11
+              }
+            ],
+            "record_ids": [
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 1
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 11
+              }
+            ],
+            "derived_addresses": [
+              {
+                "vertex": 1,
+                "slot": 0,
+                "local": 1,
+                "source": "$.address_pair_source[0]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 11,
+                "slot": 0,
+                "local": 11,
+                "source": "$.address_pair_source[1]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 70,
+                "slot": 1,
+                "local": 10,
+                "source": "$.slot + $.fiber",
+                "method": "from_slot_local"
+              }
+            ],
+            "other_integer_count": 10,
+            "other_integer_examples": [
+              {
+                "path": "$.B",
+                "value": 1
+              },
+              {
+                "path": "$.A",
+                "value": 0
+              },
+              {
+                "path": "$.C",
+                "value": 10
+              },
+              {
+                "path": "$.C_plus_1",
+                "value": 11
+              },
+              {
+                "path": "$.columns[0]",
+                "value": 0
+              },
+              {
+                "path": "$.columns[1]",
+                "value": 2
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 1
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 11
+              },
+              {
+                "path": "$.slot",
+                "value": 1
+              },
+              {
+                "path": "$.fiber",
+                "value": 10
+              }
+            ]
+          }
+        },
+        {
+          "station_index": 4,
+          "label": "T",
+          "direct_address_candidate_count": 3,
+          "chosen_address": null,
+          "address_candidates": {
+            "slots": [
+              {
+                "path": "$.slot",
+                "value": 1
+              }
+            ],
+            "locals": [
+              {
+                "path": "$.fiber",
+                "value": 13
+              }
+            ],
+            "vertices": [
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 1
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 14
+              }
+            ],
+            "record_ids": [
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 1
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 14
+              }
+            ],
+            "derived_addresses": [
+              {
+                "vertex": 1,
+                "slot": 0,
+                "local": 1,
+                "source": "$.address_pair_source[0]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 14,
+                "slot": 0,
+                "local": 14,
+                "source": "$.address_pair_source[1]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 73,
+                "slot": 1,
+                "local": 13,
+                "source": "$.slot + $.fiber",
+                "method": "from_slot_local"
+              }
+            ],
+            "other_integer_count": 10,
+            "other_integer_examples": [
+              {
+                "path": "$.B",
+                "value": 1
+              },
+              {
+                "path": "$.A",
+                "value": 2
+              },
+              {
+                "path": "$.C",
+                "value": 13
+              },
+              {
+                "path": "$.C_plus_1",
+                "value": 14
+              },
+              {
+                "path": "$.columns[0]",
+                "value": 4
+              },
+              {
+                "path": "$.columns[1]",
+                "value": 9
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 1
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 14
+              },
+              {
+                "path": "$.slot",
+                "value": 1
+              },
+              {
+                "path": "$.fiber",
+                "value": 13
+              }
+            ]
+          }
+        },
+        {
+          "station_index": 5,
+          "label": "I",
+          "direct_address_candidate_count": 3,
+          "chosen_address": null,
+          "address_candidates": {
+            "slots": [
+              {
+                "path": "$.slot",
+                "value": 13
+              }
+            ],
+            "locals": [
+              {
+                "path": "$.fiber",
+                "value": 1
+              }
+            ],
+            "vertices": [
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 2
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 13
+              }
+            ],
+            "record_ids": [
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 2
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 13
+              }
+            ],
+            "derived_addresses": [
+              {
+                "vertex": 2,
+                "slot": 0,
+                "local": 2,
+                "source": "$.address_pair_source[1]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 13,
+                "slot": 0,
+                "local": 13,
+                "source": "$.address_pair_source[0]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 781,
+                "slot": 13,
+                "local": 1,
+                "source": "$.slot + $.fiber",
+                "method": "from_slot_local"
+              }
+            ],
+            "other_integer_count": 10,
+            "other_integer_examples": [
+              {
+                "path": "$.B",
+                "value": 13
+              },
+              {
+                "path": "$.A",
+                "value": 2
+              },
+              {
+                "path": "$.C",
+                "value": 1
+              },
+              {
+                "path": "$.C_plus_1",
+                "value": 2
+              },
+              {
+                "path": "$.columns[0]",
+                "value": 4
+              },
+              {
+                "path": "$.columns[1]",
+                "value": 9
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 13
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 2
+              },
+              {
+                "path": "$.slot",
+                "value": 13
+              },
+              {
+                "path": "$.fiber",
+                "value": 1
+              }
+            ]
+          }
+        },
+        {
+          "station_index": 6,
+          "label": "W",
+          "direct_address_candidate_count": 3,
+          "chosen_address": null,
+          "address_candidates": {
+            "slots": [
+              {
+                "path": "$.slot",
+                "value": 13
+              }
+            ],
+            "locals": [
+              {
+                "path": "$.fiber",
+                "value": 10
+              }
+            ],
+            "vertices": [
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 11
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 13
+              }
+            ],
+            "record_ids": [
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 11
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 13
+              }
+            ],
+            "derived_addresses": [
+              {
+                "vertex": 11,
+                "slot": 0,
+                "local": 11,
+                "source": "$.address_pair_source[1]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 13,
+                "slot": 0,
+                "local": 13,
+                "source": "$.address_pair_source[0]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 790,
+                "slot": 13,
+                "local": 10,
+                "source": "$.slot + $.fiber",
+                "method": "from_slot_local"
+              }
+            ],
+            "other_integer_count": 10,
+            "other_integer_examples": [
+              {
+                "path": "$.B",
+                "value": 13
+              },
+              {
+                "path": "$.A",
+                "value": 9
+              },
+              {
+                "path": "$.C",
+                "value": 10
+              },
+              {
+                "path": "$.C_plus_1",
+                "value": 11
+              },
+              {
+                "path": "$.columns[0]",
+                "value": 28
+              },
+              {
+                "path": "$.columns[1]",
+                "value": 29
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 13
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 11
+              },
+              {
+                "path": "$.slot",
+                "value": 13
+              },
+              {
+                "path": "$.fiber",
+                "value": 10
+              }
+            ]
+          }
+        }
+      ],
+      "edge_reports": [
+        {
+          "edge_index": 0,
+          "from": "13|9|10|28,29",
+          "to": "10|9|13|28,29",
+          "label": "reverse_partner",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_address": [
+              "13|9|10|28,29",
+              "10|9|13|28,29"
+            ]
+          },
+          "raw": {
+            "edge_role": "WX",
+            "from": "13|9|10|28,29",
+            "to": "10|9|13|28,29",
+            "transport_label": "reverse_partner",
+            "source_native_check": true,
+            "from_BAC": [
+              13,
+              9,
+              10
+            ],
+            "to_BAC": [
+              10,
+              9,
+              13
+            ],
+            "from_columns": [
+              28,
+              29
+            ],
+            "to_columns": [
+              28,
+              29
+            ]
+          }
+        },
+        {
+          "edge_index": 1,
+          "from": "10|9|13|28,29",
+          "to": "10|0|1|0,2",
+          "label": "shared_B",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_address": [
+              "10|9|13|28,29",
+              "10|0|1|0,2"
+            ]
+          },
+          "raw": {
+            "edge_role": "XY",
+            "from": "10|9|13|28,29",
+            "to": "10|0|1|0,2",
+            "transport_label": "shared_B",
+            "source_native_check": true,
+            "from_BAC": [
+              10,
+              9,
+              13
+            ],
+            "to_BAC": [
+              10,
+              0,
+              1
+            ],
+            "from_columns": [
+              28,
+              29
+            ],
+            "to_columns": [
+              0,
+              2
+            ]
+          }
+        },
+        {
+          "edge_index": 2,
+          "from": "10|0|1|0,2",
+          "to": "1|0|10|0,2",
+          "label": "reverse_partner",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_address": [
+              "10|0|1|0,2",
+              "1|0|10|0,2"
+            ]
+          },
+          "raw": {
+            "edge_role": "YZ",
+            "from": "10|0|1|0,2",
+            "to": "1|0|10|0,2",
+            "transport_label": "reverse_partner",
+            "source_native_check": true,
+            "from_BAC": [
+              10,
+              0,
+              1
+            ],
+            "to_BAC": [
+              1,
+              0,
+              10
+            ],
+            "from_columns": [
+              0,
+              2
+            ],
+            "to_columns": [
+              0,
+              2
+            ]
+          }
+        },
+        {
+          "edge_index": 3,
+          "from": "1|0|10|0,2",
+          "to": "1|2|13|4,9",
+          "label": "shared_B",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_address": [
+              "1|0|10|0,2",
+              "1|2|13|4,9"
+            ]
+          },
+          "raw": {
+            "edge_role": "ZT",
+            "from": "1|0|10|0,2",
+            "to": "1|2|13|4,9",
+            "transport_label": "shared_B",
+            "source_native_check": true,
+            "from_BAC": [
+              1,
+              0,
+              10
+            ],
+            "to_BAC": [
+              1,
+              2,
+              13
+            ],
+            "from_columns": [
+              0,
+              2
+            ],
+            "to_columns": [
+              4,
+              9
+            ]
+          }
+        },
+        {
+          "edge_index": 4,
+          "from": "1|2|13|4,9",
+          "to": "13|2|1|4,9",
+          "label": "reverse_partner",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_address": [
+              "1|2|13|4,9",
+              "13|2|1|4,9"
+            ]
+          },
+          "raw": {
+            "edge_role": "TI",
+            "from": "1|2|13|4,9",
+            "to": "13|2|1|4,9",
+            "transport_label": "reverse_partner",
+            "source_native_check": true,
+            "from_BAC": [
+              1,
+              2,
+              13
+            ],
+            "to_BAC": [
+              13,
+              2,
+              1
+            ],
+            "from_columns": [
+              4,
+              9
+            ],
+            "to_columns": [
+              4,
+              9
+            ]
+          }
+        },
+        {
+          "edge_index": 5,
+          "from": "13|2|1|4,9",
+          "to": "13|9|10|28,29",
+          "label": "shared_B",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_address": [
+              "13|2|1|4,9",
+              "13|9|10|28,29"
+            ]
+          },
+          "raw": {
+            "edge_role": "IW",
+            "from": "13|2|1|4,9",
+            "to": "13|9|10|28,29",
+            "transport_label": "shared_B",
+            "source_native_check": true,
+            "from_BAC": [
+              13,
+              2,
+              1
+            ],
+            "to_BAC": [
+              13,
+              9,
+              10
+            ],
+            "from_columns": [
+              4,
+              9
+            ],
+            "to_columns": [
+              28,
+              29
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "form_index": 2,
+      "station_count": 7,
+      "edge_count": 6,
+      "direct_station_address_count": 0,
+      "direct_form_alignment_possible": false,
+      "station_reports": [
+        {
+          "station_index": 0,
+          "label": "W",
+          "direct_address_candidate_count": 3,
+          "chosen_address": null,
+          "address_candidates": {
+            "slots": [
+              {
+                "path": "$.slot",
+                "value": 2
+              }
+            ],
+            "locals": [
+              {
+                "path": "$.fiber",
+                "value": 0
+              }
+            ],
+            "vertices": [
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 1
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 2
+              }
+            ],
+            "record_ids": [
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 1
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 2
+              }
+            ],
+            "derived_addresses": [
+              {
+                "vertex": 1,
+                "slot": 0,
+                "local": 1,
+                "source": "$.address_pair_source[1]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 2,
+                "slot": 0,
+                "local": 2,
+                "source": "$.address_pair_source[0]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 120,
+                "slot": 2,
+                "local": 0,
+                "source": "$.slot + $.fiber",
+                "method": "from_slot_local"
+              }
+            ],
+            "other_integer_count": 10,
+            "other_integer_examples": [
+              {
+                "path": "$.B",
+                "value": 2
+              },
+              {
+                "path": "$.A",
+                "value": 1
+              },
+              {
+                "path": "$.C",
+                "value": 0
+              },
+              {
+                "path": "$.C_plus_1",
+                "value": 1
+              },
+              {
+                "path": "$.columns[0]",
+                "value": 0
+              },
+              {
+                "path": "$.columns[1]",
+                "value": 4
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 2
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 1
+              },
+              {
+                "path": "$.slot",
+                "value": 2
+              },
+              {
+                "path": "$.fiber",
+                "value": 0
+              }
+            ]
+          }
+        },
+        {
+          "station_index": 1,
+          "label": "X",
+          "direct_address_candidate_count": 3,
+          "chosen_address": null,
+          "address_candidates": {
+            "slots": [
+              {
+                "path": "$.slot",
+                "value": 0
+              }
+            ],
+            "locals": [
+              {
+                "path": "$.fiber",
+                "value": 2
+              }
+            ],
+            "vertices": [
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 0
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 3
+              }
+            ],
+            "record_ids": [
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 0
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 3
+              }
+            ],
+            "derived_addresses": [
+              {
+                "vertex": 0,
+                "slot": 0,
+                "local": 0,
+                "source": "$.address_pair_source[0]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 3,
+                "slot": 0,
+                "local": 3,
+                "source": "$.address_pair_source[1]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 2,
+                "slot": 0,
+                "local": 2,
+                "source": "$.slot + $.fiber",
+                "method": "from_slot_local"
+              }
+            ],
+            "other_integer_count": 10,
+            "other_integer_examples": [
+              {
+                "path": "$.B",
+                "value": 0
+              },
+              {
+                "path": "$.A",
+                "value": 1
+              },
+              {
+                "path": "$.C",
+                "value": 2
+              },
+              {
+                "path": "$.C_plus_1",
+                "value": 3
+              },
+              {
+                "path": "$.columns[0]",
+                "value": 0
+              },
+              {
+                "path": "$.columns[1]",
+                "value": 4
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 0
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 3
+              },
+              {
+                "path": "$.slot",
+                "value": 0
+              },
+              {
+                "path": "$.fiber",
+                "value": 2
+              }
+            ]
+          }
+        },
+        {
+          "station_index": 2,
+          "label": "Y",
+          "direct_address_candidate_count": 3,
+          "chosen_address": null,
+          "address_candidates": {
+            "slots": [
+              {
+                "path": "$.slot",
+                "value": 0
+              }
+            ],
+            "locals": [
+              {
+                "path": "$.fiber",
+                "value": 5
+              }
+            ],
+            "vertices": [
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 0
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 6
+              }
+            ],
+            "record_ids": [
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 0
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 6
+              }
+            ],
+            "derived_addresses": [
+              {
+                "vertex": 0,
+                "slot": 0,
+                "local": 0,
+                "source": "$.address_pair_source[0]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 6,
+                "slot": 0,
+                "local": 6,
+                "source": "$.address_pair_source[1]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 5,
+                "slot": 0,
+                "local": 5,
+                "source": "$.slot + $.fiber",
+                "method": "from_slot_local"
+              }
+            ],
+            "other_integer_count": 10,
+            "other_integer_examples": [
+              {
+                "path": "$.B",
+                "value": 0
+              },
+              {
+                "path": "$.A",
+                "value": 10
+              },
+              {
+                "path": "$.C",
+                "value": 5
+              },
+              {
+                "path": "$.C_plus_1",
+                "value": 6
+              },
+              {
+                "path": "$.columns[0]",
+                "value": 2
+              },
+              {
+                "path": "$.columns[1]",
+                "value": 17
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 0
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 6
+              },
+              {
+                "path": "$.slot",
+                "value": 0
+              },
+              {
+                "path": "$.fiber",
+                "value": 5
+              }
+            ]
+          }
+        },
+        {
+          "station_index": 3,
+          "label": "Z",
+          "direct_address_candidate_count": 3,
+          "chosen_address": null,
+          "address_candidates": {
+            "slots": [
+              {
+                "path": "$.slot",
+                "value": 5
+              }
+            ],
+            "locals": [
+              {
+                "path": "$.fiber",
+                "value": 0
+              }
+            ],
+            "vertices": [
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 1
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 5
+              }
+            ],
+            "record_ids": [
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 1
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 5
+              }
+            ],
+            "derived_addresses": [
+              {
+                "vertex": 1,
+                "slot": 0,
+                "local": 1,
+                "source": "$.address_pair_source[1]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 5,
+                "slot": 0,
+                "local": 5,
+                "source": "$.address_pair_source[0]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 300,
+                "slot": 5,
+                "local": 0,
+                "source": "$.slot + $.fiber",
+                "method": "from_slot_local"
+              }
+            ],
+            "other_integer_count": 10,
+            "other_integer_examples": [
+              {
+                "path": "$.B",
+                "value": 5
+              },
+              {
+                "path": "$.A",
+                "value": 10
+              },
+              {
+                "path": "$.C",
+                "value": 0
+              },
+              {
+                "path": "$.C_plus_1",
+                "value": 1
+              },
+              {
+                "path": "$.columns[0]",
+                "value": 2
+              },
+              {
+                "path": "$.columns[1]",
+                "value": 17
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 5
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 1
+              },
+              {
+                "path": "$.slot",
+                "value": 5
+              },
+              {
+                "path": "$.fiber",
+                "value": 0
+              }
+            ]
+          }
+        },
+        {
+          "station_index": 4,
+          "label": "T",
+          "direct_address_candidate_count": 3,
+          "chosen_address": null,
+          "address_candidates": {
+            "slots": [
+              {
+                "path": "$.slot",
+                "value": 5
+              }
+            ],
+            "locals": [
+              {
+                "path": "$.fiber",
+                "value": 2
+              }
+            ],
+            "vertices": [
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 3
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 5
+              }
+            ],
+            "record_ids": [
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 3
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 5
+              }
+            ],
+            "derived_addresses": [
+              {
+                "vertex": 3,
+                "slot": 0,
+                "local": 3,
+                "source": "$.address_pair_source[1]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 5,
+                "slot": 0,
+                "local": 5,
+                "source": "$.address_pair_source[0]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 302,
+                "slot": 5,
+                "local": 2,
+                "source": "$.slot + $.fiber",
+                "method": "from_slot_local"
+              }
+            ],
+            "other_integer_count": 10,
+            "other_integer_examples": [
+              {
+                "path": "$.B",
+                "value": 5
+              },
+              {
+                "path": "$.A",
+                "value": 12
+              },
+              {
+                "path": "$.C",
+                "value": 2
+              },
+              {
+                "path": "$.C_plus_1",
+                "value": 3
+              },
+              {
+                "path": "$.columns[0]",
+                "value": 8
+              },
+              {
+                "path": "$.columns[1]",
+                "value": 18
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 5
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 3
+              },
+              {
+                "path": "$.slot",
+                "value": 5
+              },
+              {
+                "path": "$.fiber",
+                "value": 2
+              }
+            ]
+          }
+        },
+        {
+          "station_index": 5,
+          "label": "I",
+          "direct_address_candidate_count": 3,
+          "chosen_address": null,
+          "address_candidates": {
+            "slots": [
+              {
+                "path": "$.slot",
+                "value": 2
+              }
+            ],
+            "locals": [
+              {
+                "path": "$.fiber",
+                "value": 5
+              }
+            ],
+            "vertices": [
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 2
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 6
+              }
+            ],
+            "record_ids": [
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 2
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 6
+              }
+            ],
+            "derived_addresses": [
+              {
+                "vertex": 2,
+                "slot": 0,
+                "local": 2,
+                "source": "$.address_pair_source[0]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 6,
+                "slot": 0,
+                "local": 6,
+                "source": "$.address_pair_source[1]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 125,
+                "slot": 2,
+                "local": 5,
+                "source": "$.slot + $.fiber",
+                "method": "from_slot_local"
+              }
+            ],
+            "other_integer_count": 10,
+            "other_integer_examples": [
+              {
+                "path": "$.B",
+                "value": 2
+              },
+              {
+                "path": "$.A",
+                "value": 12
+              },
+              {
+                "path": "$.C",
+                "value": 5
+              },
+              {
+                "path": "$.C_plus_1",
+                "value": 6
+              },
+              {
+                "path": "$.columns[0]",
+                "value": 8
+              },
+              {
+                "path": "$.columns[1]",
+                "value": 18
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 2
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 6
+              },
+              {
+                "path": "$.slot",
+                "value": 2
+              },
+              {
+                "path": "$.fiber",
+                "value": 5
+              }
+            ]
+          }
+        },
+        {
+          "station_index": 6,
+          "label": "W",
+          "direct_address_candidate_count": 3,
+          "chosen_address": null,
+          "address_candidates": {
+            "slots": [
+              {
+                "path": "$.slot",
+                "value": 2
+              }
+            ],
+            "locals": [
+              {
+                "path": "$.fiber",
+                "value": 0
+              }
+            ],
+            "vertices": [
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 1
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 2
+              }
+            ],
+            "record_ids": [
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 1
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 2
+              }
+            ],
+            "derived_addresses": [
+              {
+                "vertex": 1,
+                "slot": 0,
+                "local": 1,
+                "source": "$.address_pair_source[1]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 2,
+                "slot": 0,
+                "local": 2,
+                "source": "$.address_pair_source[0]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 120,
+                "slot": 2,
+                "local": 0,
+                "source": "$.slot + $.fiber",
+                "method": "from_slot_local"
+              }
+            ],
+            "other_integer_count": 10,
+            "other_integer_examples": [
+              {
+                "path": "$.B",
+                "value": 2
+              },
+              {
+                "path": "$.A",
+                "value": 1
+              },
+              {
+                "path": "$.C",
+                "value": 0
+              },
+              {
+                "path": "$.C_plus_1",
+                "value": 1
+              },
+              {
+                "path": "$.columns[0]",
+                "value": 0
+              },
+              {
+                "path": "$.columns[1]",
+                "value": 4
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 2
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 1
+              },
+              {
+                "path": "$.slot",
+                "value": 2
+              },
+              {
+                "path": "$.fiber",
+                "value": 0
+              }
+            ]
+          }
+        }
+      ],
+      "edge_reports": [
+        {
+          "edge_index": 0,
+          "from": "2|1|0|0,4",
+          "to": "0|1|2|0,4",
+          "label": "reverse_partner",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_address": [
+              "2|1|0|0,4",
+              "0|1|2|0,4"
+            ]
+          },
+          "raw": {
+            "edge_role": "WX",
+            "from": "2|1|0|0,4",
+            "to": "0|1|2|0,4",
+            "transport_label": "reverse_partner",
+            "source_native_check": true,
+            "from_BAC": [
+              2,
+              1,
+              0
+            ],
+            "to_BAC": [
+              0,
+              1,
+              2
+            ],
+            "from_columns": [
+              0,
+              4
+            ],
+            "to_columns": [
+              0,
+              4
+            ]
+          }
+        },
+        {
+          "edge_index": 1,
+          "from": "0|1|2|0,4",
+          "to": "0|10|5|2,17",
+          "label": "shared_B",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_address": [
+              "0|1|2|0,4",
+              "0|10|5|2,17"
+            ]
+          },
+          "raw": {
+            "edge_role": "XY",
+            "from": "0|1|2|0,4",
+            "to": "0|10|5|2,17",
+            "transport_label": "shared_B",
+            "source_native_check": true,
+            "from_BAC": [
+              0,
+              1,
+              2
+            ],
+            "to_BAC": [
+              0,
+              10,
+              5
+            ],
+            "from_columns": [
+              0,
+              4
+            ],
+            "to_columns": [
+              2,
+              17
+            ]
+          }
+        },
+        {
+          "edge_index": 2,
+          "from": "0|10|5|2,17",
+          "to": "5|10|0|2,17",
+          "label": "reverse_partner",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_address": [
+              "0|10|5|2,17",
+              "5|10|0|2,17"
+            ]
+          },
+          "raw": {
+            "edge_role": "YZ",
+            "from": "0|10|5|2,17",
+            "to": "5|10|0|2,17",
+            "transport_label": "reverse_partner",
+            "source_native_check": true,
+            "from_BAC": [
+              0,
+              10,
+              5
+            ],
+            "to_BAC": [
+              5,
+              10,
+              0
+            ],
+            "from_columns": [
+              2,
+              17
+            ],
+            "to_columns": [
+              2,
+              17
+            ]
+          }
+        },
+        {
+          "edge_index": 3,
+          "from": "5|10|0|2,17",
+          "to": "5|12|2|8,18",
+          "label": "shared_B",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_address": [
+              "5|10|0|2,17",
+              "5|12|2|8,18"
+            ]
+          },
+          "raw": {
+            "edge_role": "ZT",
+            "from": "5|10|0|2,17",
+            "to": "5|12|2|8,18",
+            "transport_label": "shared_B",
+            "source_native_check": true,
+            "from_BAC": [
+              5,
+              10,
+              0
+            ],
+            "to_BAC": [
+              5,
+              12,
+              2
+            ],
+            "from_columns": [
+              2,
+              17
+            ],
+            "to_columns": [
+              8,
+              18
+            ]
+          }
+        },
+        {
+          "edge_index": 4,
+          "from": "5|12|2|8,18",
+          "to": "2|12|5|8,18",
+          "label": "reverse_partner",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_address": [
+              "5|12|2|8,18",
+              "2|12|5|8,18"
+            ]
+          },
+          "raw": {
+            "edge_role": "TI",
+            "from": "5|12|2|8,18",
+            "to": "2|12|5|8,18",
+            "transport_label": "reverse_partner",
+            "source_native_check": true,
+            "from_BAC": [
+              5,
+              12,
+              2
+            ],
+            "to_BAC": [
+              2,
+              12,
+              5
+            ],
+            "from_columns": [
+              8,
+              18
+            ],
+            "to_columns": [
+              8,
+              18
+            ]
+          }
+        },
+        {
+          "edge_index": 5,
+          "from": "2|12|5|8,18",
+          "to": "2|1|0|0,4",
+          "label": "shared_B",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_address": [
+              "2|12|5|8,18",
+              "2|1|0|0,4"
+            ]
+          },
+          "raw": {
+            "edge_role": "IW",
+            "from": "2|12|5|8,18",
+            "to": "2|1|0|0,4",
+            "transport_label": "shared_B",
+            "source_native_check": true,
+            "from_BAC": [
+              2,
+              12,
+              5
+            ],
+            "to_BAC": [
+              2,
+              1,
+              0
+            ],
+            "from_columns": [
+              8,
+              18
+            ],
+            "to_columns": [
+              0,
+              4
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "form_index": 3,
+      "station_count": 7,
+      "edge_count": 6,
+      "direct_station_address_count": 0,
+      "direct_form_alignment_possible": false,
+      "station_reports": [
+        {
+          "station_index": 0,
+          "label": "W",
+          "direct_address_candidate_count": 3,
+          "chosen_address": null,
+          "address_candidates": {
+            "slots": [
+              {
+                "path": "$.slot",
+                "value": 4
+              }
+            ],
+            "locals": [
+              {
+                "path": "$.fiber",
+                "value": 2
+              }
+            ],
+            "vertices": [
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 3
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 4
+              }
+            ],
+            "record_ids": [
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 3
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 4
+              }
+            ],
+            "derived_addresses": [
+              {
+                "vertex": 3,
+                "slot": 0,
+                "local": 3,
+                "source": "$.address_pair_source[1]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 4,
+                "slot": 0,
+                "local": 4,
+                "source": "$.address_pair_source[0]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 242,
+                "slot": 4,
+                "local": 2,
+                "source": "$.slot + $.fiber",
+                "method": "from_slot_local"
+              }
+            ],
+            "other_integer_count": 10,
+            "other_integer_examples": [
+              {
+                "path": "$.B",
+                "value": 4
+              },
+              {
+                "path": "$.A",
+                "value": 3
+              },
+              {
+                "path": "$.C",
+                "value": 2
+              },
+              {
+                "path": "$.C_plus_1",
+                "value": 3
+              },
+              {
+                "path": "$.columns[0]",
+                "value": 7
+              },
+              {
+                "path": "$.columns[1]",
+                "value": 10
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 4
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 3
+              },
+              {
+                "path": "$.slot",
+                "value": 4
+              },
+              {
+                "path": "$.fiber",
+                "value": 2
+              }
+            ]
+          }
+        },
+        {
+          "station_index": 1,
+          "label": "X",
+          "direct_address_candidate_count": 3,
+          "chosen_address": null,
+          "address_candidates": {
+            "slots": [
+              {
+                "path": "$.slot",
+                "value": 2
+              }
+            ],
+            "locals": [
+              {
+                "path": "$.fiber",
+                "value": 4
+              }
+            ],
+            "vertices": [
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 2
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 5
+              }
+            ],
+            "record_ids": [
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 2
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 5
+              }
+            ],
+            "derived_addresses": [
+              {
+                "vertex": 2,
+                "slot": 0,
+                "local": 2,
+                "source": "$.address_pair_source[0]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 5,
+                "slot": 0,
+                "local": 5,
+                "source": "$.address_pair_source[1]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 124,
+                "slot": 2,
+                "local": 4,
+                "source": "$.slot + $.fiber",
+                "method": "from_slot_local"
+              }
+            ],
+            "other_integer_count": 10,
+            "other_integer_examples": [
+              {
+                "path": "$.B",
+                "value": 2
+              },
+              {
+                "path": "$.A",
+                "value": 3
+              },
+              {
+                "path": "$.C",
+                "value": 4
+              },
+              {
+                "path": "$.C_plus_1",
+                "value": 5
+              },
+              {
+                "path": "$.columns[0]",
+                "value": 7
+              },
+              {
+                "path": "$.columns[1]",
+                "value": 10
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 2
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 5
+              },
+              {
+                "path": "$.slot",
+                "value": 2
+              },
+              {
+                "path": "$.fiber",
+                "value": 4
+              }
+            ]
+          }
+        },
+        {
+          "station_index": 2,
+          "label": "Y",
+          "direct_address_candidate_count": 3,
+          "chosen_address": null,
+          "address_candidates": {
+            "slots": [
+              {
+                "path": "$.slot",
+                "value": 2
+              }
+            ],
+            "locals": [
+              {
+                "path": "$.fiber",
+                "value": 5
+              }
+            ],
+            "vertices": [
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 2
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 6
+              }
+            ],
+            "record_ids": [
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 2
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 6
+              }
+            ],
+            "derived_addresses": [
+              {
+                "vertex": 2,
+                "slot": 0,
+                "local": 2,
+                "source": "$.address_pair_source[0]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 6,
+                "slot": 0,
+                "local": 6,
+                "source": "$.address_pair_source[1]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 125,
+                "slot": 2,
+                "local": 5,
+                "source": "$.slot + $.fiber",
+                "method": "from_slot_local"
+              }
+            ],
+            "other_integer_count": 10,
+            "other_integer_examples": [
+              {
+                "path": "$.B",
+                "value": 2
+              },
+              {
+                "path": "$.A",
+                "value": 12
+              },
+              {
+                "path": "$.C",
+                "value": 5
+              },
+              {
+                "path": "$.C_plus_1",
+                "value": 6
+              },
+              {
+                "path": "$.columns[0]",
+                "value": 8
+              },
+              {
+                "path": "$.columns[1]",
+                "value": 18
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 2
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 6
+              },
+              {
+                "path": "$.slot",
+                "value": 2
+              },
+              {
+                "path": "$.fiber",
+                "value": 5
+              }
+            ]
+          }
+        },
+        {
+          "station_index": 3,
+          "label": "Z",
+          "direct_address_candidate_count": 3,
+          "chosen_address": null,
+          "address_candidates": {
+            "slots": [
+              {
+                "path": "$.slot",
+                "value": 5
+              }
+            ],
+            "locals": [
+              {
+                "path": "$.fiber",
+                "value": 2
+              }
+            ],
+            "vertices": [
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 3
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 5
+              }
+            ],
+            "record_ids": [
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 3
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 5
+              }
+            ],
+            "derived_addresses": [
+              {
+                "vertex": 3,
+                "slot": 0,
+                "local": 3,
+                "source": "$.address_pair_source[1]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 5,
+                "slot": 0,
+                "local": 5,
+                "source": "$.address_pair_source[0]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 302,
+                "slot": 5,
+                "local": 2,
+                "source": "$.slot + $.fiber",
+                "method": "from_slot_local"
+              }
+            ],
+            "other_integer_count": 10,
+            "other_integer_examples": [
+              {
+                "path": "$.B",
+                "value": 5
+              },
+              {
+                "path": "$.A",
+                "value": 12
+              },
+              {
+                "path": "$.C",
+                "value": 2
+              },
+              {
+                "path": "$.C_plus_1",
+                "value": 3
+              },
+              {
+                "path": "$.columns[0]",
+                "value": 8
+              },
+              {
+                "path": "$.columns[1]",
+                "value": 18
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 5
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 3
+              },
+              {
+                "path": "$.slot",
+                "value": 5
+              },
+              {
+                "path": "$.fiber",
+                "value": 2
+              }
+            ]
+          }
+        },
+        {
+          "station_index": 4,
+          "label": "T",
+          "direct_address_candidate_count": 2,
+          "chosen_address": null,
+          "address_candidates": {
+            "slots": [
+              {
+                "path": "$.slot",
+                "value": 5
+              }
+            ],
+            "locals": [
+              {
+                "path": "$.fiber",
+                "value": 4
+              }
+            ],
+            "vertices": [
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 5
+              }
+            ],
+            "record_ids": [
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 5
+              }
+            ],
+            "derived_addresses": [
+              {
+                "vertex": 5,
+                "slot": 0,
+                "local": 5,
+                "source": "$.address_pair_source[0]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 304,
+                "slot": 5,
+                "local": 4,
+                "source": "$.slot + $.fiber",
+                "method": "from_slot_local"
+              }
+            ],
+            "other_integer_count": 10,
+            "other_integer_examples": [
+              {
+                "path": "$.B",
+                "value": 5
+              },
+              {
+                "path": "$.A",
+                "value": 10
+              },
+              {
+                "path": "$.C",
+                "value": 4
+              },
+              {
+                "path": "$.C_plus_1",
+                "value": 5
+              },
+              {
+                "path": "$.columns[0]",
+                "value": 13
+              },
+              {
+                "path": "$.columns[1]",
+                "value": 17
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 5
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 5
+              },
+              {
+                "path": "$.slot",
+                "value": 5
+              },
+              {
+                "path": "$.fiber",
+                "value": 4
+              }
+            ]
+          }
+        },
+        {
+          "station_index": 5,
+          "label": "I",
+          "direct_address_candidate_count": 3,
+          "chosen_address": null,
+          "address_candidates": {
+            "slots": [
+              {
+                "path": "$.slot",
+                "value": 4
+              }
+            ],
+            "locals": [
+              {
+                "path": "$.fiber",
+                "value": 5
+              }
+            ],
+            "vertices": [
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 4
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 6
+              }
+            ],
+            "record_ids": [
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 4
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 6
+              }
+            ],
+            "derived_addresses": [
+              {
+                "vertex": 4,
+                "slot": 0,
+                "local": 4,
+                "source": "$.address_pair_source[0]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 6,
+                "slot": 0,
+                "local": 6,
+                "source": "$.address_pair_source[1]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 245,
+                "slot": 4,
+                "local": 5,
+                "source": "$.slot + $.fiber",
+                "method": "from_slot_local"
+              }
+            ],
+            "other_integer_count": 10,
+            "other_integer_examples": [
+              {
+                "path": "$.B",
+                "value": 4
+              },
+              {
+                "path": "$.A",
+                "value": 10
+              },
+              {
+                "path": "$.C",
+                "value": 5
+              },
+              {
+                "path": "$.C_plus_1",
+                "value": 6
+              },
+              {
+                "path": "$.columns[0]",
+                "value": 13
+              },
+              {
+                "path": "$.columns[1]",
+                "value": 17
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 4
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 6
+              },
+              {
+                "path": "$.slot",
+                "value": 4
+              },
+              {
+                "path": "$.fiber",
+                "value": 5
+              }
+            ]
+          }
+        },
+        {
+          "station_index": 6,
+          "label": "W",
+          "direct_address_candidate_count": 3,
+          "chosen_address": null,
+          "address_candidates": {
+            "slots": [
+              {
+                "path": "$.slot",
+                "value": 4
+              }
+            ],
+            "locals": [
+              {
+                "path": "$.fiber",
+                "value": 2
+              }
+            ],
+            "vertices": [
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 3
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 4
+              }
+            ],
+            "record_ids": [
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 3
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 4
+              }
+            ],
+            "derived_addresses": [
+              {
+                "vertex": 3,
+                "slot": 0,
+                "local": 3,
+                "source": "$.address_pair_source[1]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 4,
+                "slot": 0,
+                "local": 4,
+                "source": "$.address_pair_source[0]",
+                "method": "from_vertex"
+              },
+              {
+                "vertex": 242,
+                "slot": 4,
+                "local": 2,
+                "source": "$.slot + $.fiber",
+                "method": "from_slot_local"
+              }
+            ],
+            "other_integer_count": 10,
+            "other_integer_examples": [
+              {
+                "path": "$.B",
+                "value": 4
+              },
+              {
+                "path": "$.A",
+                "value": 3
+              },
+              {
+                "path": "$.C",
+                "value": 2
+              },
+              {
+                "path": "$.C_plus_1",
+                "value": 3
+              },
+              {
+                "path": "$.columns[0]",
+                "value": 7
+              },
+              {
+                "path": "$.columns[1]",
+                "value": 10
+              },
+              {
+                "path": "$.address_pair_source[0]",
+                "value": 4
+              },
+              {
+                "path": "$.address_pair_source[1]",
+                "value": 3
+              },
+              {
+                "path": "$.slot",
+                "value": 4
+              },
+              {
+                "path": "$.fiber",
+                "value": 2
+              }
+            ]
+          }
+        }
+      ],
+      "edge_reports": [
+        {
+          "edge_index": 0,
+          "from": "4|3|2|7,10",
+          "to": "2|3|4|7,10",
+          "label": "reverse_partner",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_address": [
+              "4|3|2|7,10",
+              "2|3|4|7,10"
+            ]
+          },
+          "raw": {
+            "edge_role": "WX",
+            "from": "4|3|2|7,10",
+            "to": "2|3|4|7,10",
+            "transport_label": "reverse_partner",
+            "source_native_check": true,
+            "from_BAC": [
+              4,
+              3,
+              2
+            ],
+            "to_BAC": [
+              2,
+              3,
+              4
+            ],
+            "from_columns": [
+              7,
+              10
+            ],
+            "to_columns": [
+              7,
+              10
+            ]
+          }
+        },
+        {
+          "edge_index": 1,
+          "from": "2|3|4|7,10",
+          "to": "2|12|5|8,18",
+          "label": "shared_B",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_address": [
+              "2|3|4|7,10",
+              "2|12|5|8,18"
+            ]
+          },
+          "raw": {
+            "edge_role": "XY",
+            "from": "2|3|4|7,10",
+            "to": "2|12|5|8,18",
+            "transport_label": "shared_B",
+            "source_native_check": true,
+            "from_BAC": [
+              2,
+              3,
+              4
+            ],
+            "to_BAC": [
+              2,
+              12,
+              5
+            ],
+            "from_columns": [
+              7,
+              10
+            ],
+            "to_columns": [
+              8,
+              18
+            ]
+          }
+        },
+        {
+          "edge_index": 2,
+          "from": "2|12|5|8,18",
+          "to": "5|12|2|8,18",
+          "label": "reverse_partner",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_address": [
+              "2|12|5|8,18",
+              "5|12|2|8,18"
+            ]
+          },
+          "raw": {
+            "edge_role": "YZ",
+            "from": "2|12|5|8,18",
+            "to": "5|12|2|8,18",
+            "transport_label": "reverse_partner",
+            "source_native_check": true,
+            "from_BAC": [
+              2,
+              12,
+              5
+            ],
+            "to_BAC": [
+              5,
+              12,
+              2
+            ],
+            "from_columns": [
+              8,
+              18
+            ],
+            "to_columns": [
+              8,
+              18
+            ]
+          }
+        },
+        {
+          "edge_index": 3,
+          "from": "5|12|2|8,18",
+          "to": "5|10|4|13,17",
+          "label": "shared_B",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_address": [
+              "5|12|2|8,18",
+              "5|10|4|13,17"
+            ]
+          },
+          "raw": {
+            "edge_role": "ZT",
+            "from": "5|12|2|8,18",
+            "to": "5|10|4|13,17",
+            "transport_label": "shared_B",
+            "source_native_check": true,
+            "from_BAC": [
+              5,
+              12,
+              2
+            ],
+            "to_BAC": [
+              5,
+              10,
+              4
+            ],
+            "from_columns": [
+              8,
+              18
+            ],
+            "to_columns": [
+              13,
+              17
+            ]
+          }
+        },
+        {
+          "edge_index": 4,
+          "from": "5|10|4|13,17",
+          "to": "4|10|5|13,17",
+          "label": "reverse_partner",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_address": [
+              "5|10|4|13,17",
+              "4|10|5|13,17"
+            ]
+          },
+          "raw": {
+            "edge_role": "TI",
+            "from": "5|10|4|13,17",
+            "to": "4|10|5|13,17",
+            "transport_label": "reverse_partner",
+            "source_native_check": true,
+            "from_BAC": [
+              5,
+              10,
+              4
+            ],
+            "to_BAC": [
+              4,
+              10,
+              5
+            ],
+            "from_columns": [
+              13,
+              17
+            ],
+            "to_columns": [
+              13,
+              17
+            ]
+          }
+        },
+        {
+          "edge_index": 5,
+          "from": "4|10|5|13,17",
+          "to": "4|3|2|7,10",
+          "label": "shared_B",
+          "channel": "unresolved",
+          "detail": {
+            "missing_endpoint_address": [
+              "4|10|5|13,17",
+              "4|3|2|7,10"
+            ]
+          },
+          "raw": {
+            "edge_role": "IW",
+            "from": "4|10|5|13,17",
+            "to": "4|3|2|7,10",
+            "transport_label": "shared_B",
+            "source_native_check": true,
+            "from_BAC": [
+              4,
+              10,
+              5
+            ],
+            "to_BAC": [
+              4,
+              3,
+              2
+            ],
+            "from_columns": [
+              13,
+              17
+            ],
+            "to_columns": [
+              7,
+              10
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "id": "channel_join_loaded",
+      "status": true,
+      "detail": "channel_aware_g60_g15_join_constructed"
+    },
+    {
+      "id": "source_forms_present",
+      "status": true,
+      "detail": 4
+    },
+    {
+      "id": "join_constructed_input",
+      "status": true,
+      "detail": true
+    },
+    {
+      "id": "alignment_attempt_recorded",
+      "status": true,
+      "detail": "direct_alignment_possible=False"
+    },
+    {
+      "id": "no_generator_claim_made",
+      "status": true,
+      "detail": "alignment inspection only"
+    }
+  ],
+  "boundary": [
+    "This attempts WXYZTI-to-channel alignment.",
+    "This does not claim a G60-native NRC generator.",
+    "This does not close Gap A.",
+    "This does not prove full G900.",
+    "If direct alignment is not possible, the next required object is a 120-record-to-(slot,local) bridge."
+  ]
+}

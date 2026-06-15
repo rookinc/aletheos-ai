@@ -1,0 +1,253 @@
+{
+  "schema": "return_cycle_candidate_perturbation_stability_001.v1",
+  "status": "return_candidate_perturbation_tested_transport_specific_not_selector_not_g900",
+  "timestamp_utc": "2026-06-15T03:49:25.271346+00:00",
+  "purpose": "Test whether return-cycle candidates depend on the transport-preserving address grammar under perturbation.",
+  "boundary": [
+    "This does not close Gap A.",
+    "This does not prove full G900.",
+    "This tests perturbation behavior of return-cycle candidates.",
+    "Perturbation stability is not full return-cycle validation.",
+    "Return candidates are not an admission selector by themselves.",
+    "No independent witness layer is proven.",
+    "No physical interpretation is claimed."
+  ],
+  "summary": {
+    "test_result": "transport_specific_under_perturbation",
+    "gap_a_status": "open",
+    "gap_a_closed": false,
+    "trial_count": 200,
+    "random_seed": 410900,
+    "record_count": 120,
+    "admitted_count": 4,
+    "nonadmitted_count": 116,
+    "address_fields": [
+      "B",
+      "C_plus_1"
+    ],
+    "unique_address_count": 120,
+    "collision_count": 0,
+    "shared_B_edge_count": 420,
+    "reverse_partner_edge_count": 60,
+    "anchor_reverse_union_edge_count": 480,
+    "original_model_success": true,
+    "original_transport": {
+      "shared_B_edge_count": 420,
+      "reverse_partner_edge_count": 60,
+      "union_edge_count": 480,
+      "shared_B_slot_preserved": true,
+      "reverse_partner_coordinate_swap_preserved": true,
+      "shared_B_failure_count": 0,
+      "reverse_swap_failure_count": 0,
+      "transport_preserved": true
+    },
+    "original_candidates": {
+      "candidate_found_for_all_admitted": true,
+      "candidate_count": 4,
+      "without_candidate": [],
+      "cycle_edge_counts": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "min_edge_count": 6,
+      "max_edge_count": 6,
+      "label_totals": {
+        "reverse_partner": 12,
+        "shared_B": 12
+      },
+      "all_return_to_start_address": true,
+      "all_nonadmitted_internal": true,
+      "all_both_labels": true
+    },
+    "ablation_results": {
+      "shared_B_only": {
+        "transport": {
+          "shared_B_edge_count": 420,
+          "reverse_partner_edge_count": 0,
+          "union_edge_count": 420,
+          "shared_B_slot_preserved": true,
+          "reverse_partner_coordinate_swap_preserved": false,
+          "shared_B_failure_count": 0,
+          "reverse_swap_failure_count": 0,
+          "transport_preserved": false
+        },
+        "candidates": {
+          "candidate_found_for_all_admitted": false,
+          "candidate_count": 0,
+          "without_candidate": [
+            "11|7|14|23,24",
+            "13|9|10|28,29",
+            "2|1|0|0,4",
+            "4|3|2|7,10"
+          ],
+          "cycle_edge_counts": [],
+          "min_edge_count": null,
+          "max_edge_count": null,
+          "label_totals": {},
+          "all_return_to_start_address": false,
+          "all_nonadmitted_internal": false,
+          "all_both_labels": false
+        },
+        "model_success": false
+      },
+      "reverse_partner_only": {
+        "transport": {
+          "shared_B_edge_count": 0,
+          "reverse_partner_edge_count": 60,
+          "union_edge_count": 60,
+          "shared_B_slot_preserved": false,
+          "reverse_partner_coordinate_swap_preserved": true,
+          "shared_B_failure_count": 0,
+          "reverse_swap_failure_count": 0,
+          "transport_preserved": false
+        },
+        "candidates": {
+          "candidate_found_for_all_admitted": false,
+          "candidate_count": 0,
+          "without_candidate": [
+            "11|7|14|23,24",
+            "13|9|10|28,29",
+            "2|1|0|0,4",
+            "4|3|2|7,10"
+          ],
+          "cycle_edge_counts": [],
+          "min_edge_count": null,
+          "max_edge_count": null,
+          "label_totals": {},
+          "all_return_to_start_address": false,
+          "all_nonadmitted_internal": false,
+          "all_both_labels": false
+        },
+        "model_success": false
+      }
+    },
+    "control_counts": {
+      "address_shuffle": {
+        "candidate_success": 200,
+        "model_success": 0,
+        "transport_success": 0
+      },
+      "reverse_edge_shuffle": {
+        "candidate_success": 41,
+        "model_success": 0,
+        "transport_success": 0
+      },
+      "label_shuffle": {
+        "candidate_success": 200,
+        "model_success": 0,
+        "transport_success": 0
+      },
+      "random_admitted_seed": {
+        "candidate_success": 200
+      }
+    },
+    "control_examples": {
+      "address_shuffle_success_first": null,
+      "reverse_edge_shuffle_success_first": null,
+      "label_shuffle_success_first": null,
+      "random_admitted_seed_success_first": {
+        "trial": 1,
+        "starts": [
+          "13|9|10|28,29",
+          "4|10|5|13,17",
+          "8|9|10|25,28",
+          "9|8|11|25,26"
+        ],
+        "edge_counts": [
+          6,
+          6,
+          6,
+          6
+        ]
+      }
+    },
+    "transport_specific_under_controls": true,
+    "candidate_abundant_under_random_starts": true,
+    "perturbation_stability_supported": true,
+    "validated_return_cycle_found": false,
+    "independent_witness_layer_found": false,
+    "full_41_lift_found": false,
+    "full_g900_admission_found": false,
+    "source_native_wxyzti_generator_found": false,
+    "claim_closes_gap_a": false,
+    "terminal_reason": "The original transport-preserving address model succeeds, while address shuffles, reverse-edge shuffles, and label shuffles did not reproduce the full transport-plus-return model in the tested trials. However, random admitted starts can still have return-shaped candidates, so the return-candidate property is not a selector by itself. This supports transport-specific return evidence, not validated closure, not an independent witness, not full G900, and not Gap A closure."
+  },
+  "interpretation": {
+    "main_result": "Return evidence is transport-specific under the tested perturbations.",
+    "meaning": "The result depends on the actual B plus C_plus_1 address grammar and anchor-and-reverse relation labels.",
+    "selector_boundary": "Return candidates are not an admission selector by themselves because random admitted starts may also show return-shaped candidates.",
+    "why_this_matters": "This separates transport-specific structure from mere cycle existence.",
+    "why_not_closure": "Perturbation stability is not a validated full return cycle, independent witness, full 41-seam lift, or full G900 admission.",
+    "next_move": "Record the perturbation-stability boundary, then search for a stricter validation predicate."
+  },
+  "claim": {
+    "does_this_close_gap_a": false,
+    "does_this_support_transport_specific_return_evidence": true,
+    "does_this_validate_full_return_cycle": false,
+    "does_this_find_independent_witness_layer": false,
+    "does_this_find_full_g900_admission": false,
+    "short_form": "Return evidence is transport-specific under the tested perturbations.",
+    "not_closed_reason": "Perturbation stability is not a validated full return cycle, independent witness, full 41-seam lift, or full G900 admission.",
+    "next_problem": "Record the perturbation-stability boundary, then search for a stricter validation predicate."
+  },
+  "checks": [
+    {
+      "id": "return_boundary_loaded",
+      "status": true,
+      "detail": "return_cycle_candidate_boundary_recorded"
+    },
+    {
+      "id": "return_candidates_loaded",
+      "status": true,
+      "detail": "return_cycle_candidates_found_not_validated_not_g900"
+    },
+    {
+      "id": "record_count_120",
+      "status": true,
+      "detail": "120"
+    },
+    {
+      "id": "unique_addresses_120",
+      "status": true,
+      "detail": "120"
+    },
+    {
+      "id": "collision_zero",
+      "status": true,
+      "detail": "0"
+    },
+    {
+      "id": "original_model_success",
+      "status": true,
+      "detail": "True"
+    },
+    {
+      "id": "original_candidates_all_admitted",
+      "status": true,
+      "detail": "{'candidate_found_for_all_admitted': True, 'candidate_count': 4, 'without_candidate': [], 'cycle_edge_counts': [6, 6, 6, 6], 'min_edge_count': 6, 'max_edge_count': 6, 'label_totals': {'reverse_partner': 12, 'shared_B': 12}, 'all_return_to_start_address': True, 'all_nonadmitted_internal': True, 'all_both_labels': True}"
+    },
+    {
+      "id": "transport_specific_controls",
+      "status": true,
+      "detail": "{'address_shuffle': {'candidate_success': 200, 'model_success': 0, 'transport_success': 0}, 'reverse_edge_shuffle': {'candidate_success': 41, 'model_success': 0, 'transport_success': 0}, 'label_shuffle': {'candidate_success': 200, 'model_success': 0, 'transport_success': 0}, 'random_admitted_seed': {'candidate_success': 200}}"
+    },
+    {
+      "id": "validated_return_cycle_false",
+      "status": true,
+      "detail": "False"
+    },
+    {
+      "id": "full_g900_false",
+      "status": true,
+      "detail": "False"
+    },
+    {
+      "id": "gap_a_not_closed",
+      "status": true,
+      "detail": "test only"
+    }
+  ],
+  "next_script": "record_return_cycle_perturbation_boundary_001.py"
+}

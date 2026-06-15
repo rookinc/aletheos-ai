@@ -1,0 +1,141 @@
+# Source-shell projection-family generator branch 001
+
+Status: source_shell_projection_family_generator_branch_started
+
+## Boundary
+
+- This does not close Gap A.
+- This starts a new conjectural branch.
+- Single-projection WXYZTI closure remains open.
+- The source-shell lift signal is evidence to explain, not proof.
+- No uniform upstairs rule was found in the previous audit.
+- No physical interpretation is claimed.
+
+## Summary
+
+- branch_result: "source_shell_projection_family_generator_branch_started"
+- gap_a_status_inherited: "open"
+- single_projection_gap_a_closed: false
+- source_shell_lift_conjecture_active: true
+- source_shell_lift_signal_survives: true
+- uniform_upstairs_rule_found: false
+- outer_frame_stable: ["IW", "WX", "XY"]
+- interior_turn_unstable: ["TI", "YZ", "ZT"]
+- new_branch_target: "source_native_projection_family_generator"
+- claim_closes_gap_a: false
+
+## Sketch interpretation
+
+- The side frames are projection bodies.
+- The central hourglass or X is the source-shell seam.
+- The seam is not a local defect; it is a handoff locus.
+- A/B/C labels mark a minimal three-port seam grammar.
+- A+ and A- suggest vertical polarity.
+- C+ and C- suggest lateral polarity.
+- B is the interior coupling point.
+- The hex-chain sketch suggests realized past, active now, and potential future projection neighborhoods.
+
+Working hypothesis:
+
+Gap A does not close as one WXYZTI projection. The interior seam lifts into a signed source-shell family where neighboring projections share a coupling seam.
+
+Keeper lines:
+
+- The seam does not close in the projection rows.
+- It lifts into the source shell.
+- The missing generator is not a row selector.
+- It is a neighbouring projection-family grammar.
+- The source shell must be tested as a family, not as one local register.
+
+## Candidate grammar
+
+- name: Signed A/B/C Source-Shell Seam Grammar
+- status: hypothesis_seed
+- testable_question: Can a signed A/B/C projection-family grammar generate the observed source-shell correction paths without row lookup and without promoting the old overfit selector?
+
+Objects:
+
+- A: upstairs source junction or apex seam
+- B: interior coupling point / central registered seam
+- C: neighboring projection endpoint or lateral seam
+- A_plus: upstairs positive polarity sector
+- A_minus: downstairs negative polarity sector
+- B_plus: positive interior coupling orientation
+- B_minus: negative interior coupling orientation
+- C_plus: left/right positive lateral projection sector
+- C_minus: opposed lateral projection sector
+- source_shell_radius_1: minimal source-neighbor shell that covered all correction paths
+- projection_family: coupled set of local projection rows sharing source-shell correction paths
+
+Inherited positive facts:
+
+- WX, XY, and IW form the stable outer frame.
+- YZ, ZT, and TI form the unstable interior turn seam.
+- All four interior mismatches are unique length-2 source-slot paths.
+- All four interior mismatches are covered by local source-shell radius 1.
+
+Inherited negative facts:
+
+- Single-projection WXYZTI closure was not found.
+- Neighbor projection rows did not cover all corrections.
+- Projection rows did not cover all corrections.
+- No uniform upstairs label or shift rule was found.
+- No source-native projection-family generator has been derived.
+
+## Test plan
+
+- {"name": "extract correction path primitives", "purpose": "Represent each length-2 correction path as A/B/C or A/B/C polarity data.", "step": 1}
+- {"name": "build source-shell seam signatures", "purpose": "Search for shared features among correction paths after allowing polarity classes, not exact label uniformity.", "step": 2}
+- {"name": "test projection-family cover", "purpose": "Ask whether a family of neighboring projection bodies covers the seam when signed sectors are included.", "step": 3}
+- {"name": "reject lookup-like grammars", "purpose": "Prevent per-row or per-cycle selector overfit from masquerading as a generator.", "step": 4}
+- {"name": "record candidate or open boundary", "purpose": "Either produce a reusable generator candidate or preserve the conjecture as unresolved.", "step": 5}
+
+## Forbidden promotions
+
+- Do not claim Gap A closure.
+- Do not call the source-shell lift a generator.
+- Do not reuse the exact selector family as proof.
+- Do not promote Mode 2 mirror to source law.
+- Do not attach physical interpretation.
+- Do not force uniformity where the audit already failed.
+
+## Allowed next work
+
+- Use signed sectors A+/A-/B+/B-/C+/C- as a new hypothesis class.
+- Use the stable outer frame as a protected boundary condition.
+- Use the interior turn seam as the active target.
+- Use length-2 source-shell paths as evidence to explain, not as proof.
+- Search for a family generator rather than a single projection closure.
+
+## Interpretation
+
+- main_result: A new source-shell projection-family generator branch is opened from the Gap A plateau.
+- why_this_is_not_more_bruteforce: The old local selector route is closed. This branch searches for a family-level seam grammar.
+- why_this_matters: It matches the sketches: projection bodies do not close alone; they share a signed source-shell seam.
+- next_move: Extract A/B/C seam primitives from the four correction paths and test polarity-aware source-shell signatures.
+
+## Claim
+
+- does_this_close_gap_a: false
+- does_this_start_new_branch: true
+- does_this_record_signed_abc_seam_hypothesis: true
+- does_this_find_generator: false
+- short_form: "Start the source-shell projection-family generator branch from the signed A/B/C seam hypothesis."
+- not_closed_reason: "This is a branch seed, not a generator proof."
+- next_problem: "Extract A/B/C seam primitives from the four correction paths and test polarity-aware source-shell signatures."
+
+## Checks
+
+- PASS plateau_loaded: gap_a_open_with_source_shell_lift_conjecture_recorded
+- PASS uniformity_loaded: gap_a_upstairs_source_shell_uniformity_audited_no_uniform_rule
+- PASS upstairs_loaded: gap_a_upstairs_source_shell_candidate_found_not_closure
+- PASS correction_audit_loaded: gap_a_interior_turn_correction_paths_audited_projection_fit_risk_remains
+- PASS station_obstruction_loaded: gap_a_station_variable_obstruction_recorded
+- PASS gap_a_inherited_open: open
+- PASS source_shell_signal_available: True
+- PASS uniform_rule_absent: False
+- PASS no_closure_claim: branch seed only
+
+## Next script
+
+    extract_source_shell_signed_abc_seam_primitives_001.py

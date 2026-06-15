@@ -1,0 +1,1231 @@
+{
+  "schema": "x_sigma_channel_split_inspection_001.v1",
+  "status": "x_sigma_channel_split_inspection_recorded",
+  "timestamp_utc": "2026-06-15T12:52:27.297562+00:00",
+  "purpose": "Refine the failed naive product-join inspection by splitting x_sigma_edges into internal and external channels.",
+  "claim": "The naive all-rows product join is false because x_sigma has two channels. The internal_thalion_copy channel copies canonical G60 edges inside each of the 15 G15 slots. The external_signed_carrier channel carries 60 local-state rows across each of the 30 signed G15 slot edges.",
+  "source_files": {
+    "x_sigma_edges": {
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/source/kernel_payload/x_sigma_edges.csv",
+      "sha256": "ea2679662f4322a9ea021fba1143c804ef73b1fae95f50c77ba76b7fe1092230"
+    },
+    "g60_local_edges": {
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/source/kernel_payload/g60_local_edges.csv",
+      "sha256": "c700a185fab6a5f434da09b7acb716b96c76170774bee946af8ea907e4fe7f9f"
+    },
+    "g15_slot_edges": {
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/source/kernel_payload/g15_slot_edges.csv",
+      "sha256": "7b94834d507cf2995ec6faf73e2e227a685d831894aa98f2647556d8b922b8f6"
+    },
+    "carrier_signing_table": {
+      "path": "/data/data/com.termux/files/home/dev/cori/research/thalean-graph-theory/18-g900-kernel-admission/source/kernel_payload/carrier_signing_table.csv",
+      "sha256": "9b3cf812cc0f6d7b065666c81fa6d16fd3e3b8a98955c264709337c7f3e7efb7"
+    }
+  },
+  "summary": {
+    "previous_naive_join_confirmed": false,
+    "x_sigma_rows": 3600,
+    "kind_counts": {
+      "external_signed_carrier": 1800,
+      "internal_thalion_copy": 1800
+    },
+    "product_vertex_formula": "vertex = slot * 60 + local",
+    "product_vertex_formula_all_rows": true,
+    "internal_channel": {
+      "meaning": "within each G15 slot, copy the canonical G60 local edge graph",
+      "row_count": 1800,
+      "expected_row_count": 1800,
+      "slot_count": 15,
+      "slot_count_values": [
+        120
+      ],
+      "each_slot_has_all_g60_edges": true,
+      "bad_rows_first_10": [],
+      "confirmed": true
+    },
+    "external_channel": {
+      "meaning": "across each signed G15 slot edge, carry 60 local-state rows",
+      "row_count": 1800,
+      "expected_row_count": 1800,
+      "slot_edge_count": 30,
+      "slot_edge_count_values": [
+        60
+      ],
+      "slot_edges_match_g15": true,
+      "slot_edge_sign_counts": {
+        "0": 15,
+        "1": 15
+      },
+      "sign_identity_row_counts": {
+        "0": 900,
+        "1": 0
+      },
+      "sign_nonidentity_row_counts": {
+        "0": 0,
+        "1": 900
+      },
+      "sign_bijection_good": {
+        "0": 15,
+        "1": 15
+      },
+      "sign_bijection_bad": {},
+      "sign0_identity_all": true,
+      "sign1_bijection_all": true,
+      "sign1_nonidentity_any": true,
+      "unique_mapping_fingerprint_count_by_sign": {
+        "0": 1,
+        "1": 1
+      },
+      "bad_slot_rows_first_10": [],
+      "confirmed": true
+    },
+    "channel_split_confirmed": true,
+    "gap_a_closed": false,
+    "full_g900_admission_found": false,
+    "next_step": "construct_channel_aware_g60_g15_join_for_nrc_alignment"
+  },
+  "external_profiles_first_30": [
+    {
+      "slot_edge": [
+        0,
+        1
+      ],
+      "sign": "1",
+      "row_count": 60,
+      "domain_count": 60,
+      "image_count": 60,
+      "bijection": true,
+      "identity_rows": 0,
+      "nonidentity_rows": 60,
+      "first_5_pairs": [
+        [
+          0,
+          30
+        ],
+        [
+          1,
+          31
+        ],
+        [
+          2,
+          32
+        ],
+        [
+          3,
+          33
+        ],
+        [
+          4,
+          34
+        ]
+      ]
+    },
+    {
+      "slot_edge": [
+        0,
+        4
+      ],
+      "sign": "1",
+      "row_count": 60,
+      "domain_count": 60,
+      "image_count": 60,
+      "bijection": true,
+      "identity_rows": 0,
+      "nonidentity_rows": 60,
+      "first_5_pairs": [
+        [
+          0,
+          30
+        ],
+        [
+          1,
+          31
+        ],
+        [
+          2,
+          32
+        ],
+        [
+          3,
+          33
+        ],
+        [
+          4,
+          34
+        ]
+      ]
+    },
+    {
+      "slot_edge": [
+        0,
+        5
+      ],
+      "sign": "1",
+      "row_count": 60,
+      "domain_count": 60,
+      "image_count": 60,
+      "bijection": true,
+      "identity_rows": 0,
+      "nonidentity_rows": 60,
+      "first_5_pairs": [
+        [
+          0,
+          30
+        ],
+        [
+          1,
+          31
+        ],
+        [
+          2,
+          32
+        ],
+        [
+          3,
+          33
+        ],
+        [
+          4,
+          34
+        ]
+      ]
+    },
+    {
+      "slot_edge": [
+        0,
+        6
+      ],
+      "sign": "1",
+      "row_count": 60,
+      "domain_count": 60,
+      "image_count": 60,
+      "bijection": true,
+      "identity_rows": 0,
+      "nonidentity_rows": 60,
+      "first_5_pairs": [
+        [
+          0,
+          30
+        ],
+        [
+          1,
+          31
+        ],
+        [
+          2,
+          32
+        ],
+        [
+          3,
+          33
+        ],
+        [
+          4,
+          34
+        ]
+      ]
+    },
+    {
+      "slot_edge": [
+        1,
+        2
+      ],
+      "sign": "1",
+      "row_count": 60,
+      "domain_count": 60,
+      "image_count": 60,
+      "bijection": true,
+      "identity_rows": 0,
+      "nonidentity_rows": 60,
+      "first_5_pairs": [
+        [
+          0,
+          30
+        ],
+        [
+          1,
+          31
+        ],
+        [
+          2,
+          32
+        ],
+        [
+          3,
+          33
+        ],
+        [
+          4,
+          34
+        ]
+      ]
+    },
+    {
+      "slot_edge": [
+        1,
+        6
+      ],
+      "sign": "1",
+      "row_count": 60,
+      "domain_count": 60,
+      "image_count": 60,
+      "bijection": true,
+      "identity_rows": 0,
+      "nonidentity_rows": 60,
+      "first_5_pairs": [
+        [
+          0,
+          30
+        ],
+        [
+          1,
+          31
+        ],
+        [
+          2,
+          32
+        ],
+        [
+          3,
+          33
+        ],
+        [
+          4,
+          34
+        ]
+      ]
+    },
+    {
+      "slot_edge": [
+        1,
+        7
+      ],
+      "sign": "1",
+      "row_count": 60,
+      "domain_count": 60,
+      "image_count": 60,
+      "bijection": true,
+      "identity_rows": 0,
+      "nonidentity_rows": 60,
+      "first_5_pairs": [
+        [
+          0,
+          30
+        ],
+        [
+          1,
+          31
+        ],
+        [
+          2,
+          32
+        ],
+        [
+          3,
+          33
+        ],
+        [
+          4,
+          34
+        ]
+      ]
+    },
+    {
+      "slot_edge": [
+        2,
+        3
+      ],
+      "sign": "1",
+      "row_count": 60,
+      "domain_count": 60,
+      "image_count": 60,
+      "bijection": true,
+      "identity_rows": 0,
+      "nonidentity_rows": 60,
+      "first_5_pairs": [
+        [
+          0,
+          30
+        ],
+        [
+          1,
+          31
+        ],
+        [
+          2,
+          32
+        ],
+        [
+          3,
+          33
+        ],
+        [
+          4,
+          34
+        ]
+      ]
+    },
+    {
+      "slot_edge": [
+        2,
+        7
+      ],
+      "sign": "1",
+      "row_count": 60,
+      "domain_count": 60,
+      "image_count": 60,
+      "bijection": true,
+      "identity_rows": 0,
+      "nonidentity_rows": 60,
+      "first_5_pairs": [
+        [
+          0,
+          30
+        ],
+        [
+          1,
+          31
+        ],
+        [
+          2,
+          32
+        ],
+        [
+          3,
+          33
+        ],
+        [
+          4,
+          34
+        ]
+      ]
+    },
+    {
+      "slot_edge": [
+        2,
+        8
+      ],
+      "sign": "1",
+      "row_count": 60,
+      "domain_count": 60,
+      "image_count": 60,
+      "bijection": true,
+      "identity_rows": 0,
+      "nonidentity_rows": 60,
+      "first_5_pairs": [
+        [
+          0,
+          30
+        ],
+        [
+          1,
+          31
+        ],
+        [
+          2,
+          32
+        ],
+        [
+          3,
+          33
+        ],
+        [
+          4,
+          34
+        ]
+      ]
+    },
+    {
+      "slot_edge": [
+        3,
+        4
+      ],
+      "sign": "0",
+      "row_count": 60,
+      "domain_count": 60,
+      "image_count": 60,
+      "bijection": true,
+      "identity_rows": 60,
+      "nonidentity_rows": 0,
+      "first_5_pairs": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "slot_edge": [
+        3,
+        8
+      ],
+      "sign": "1",
+      "row_count": 60,
+      "domain_count": 60,
+      "image_count": 60,
+      "bijection": true,
+      "identity_rows": 0,
+      "nonidentity_rows": 60,
+      "first_5_pairs": [
+        [
+          0,
+          30
+        ],
+        [
+          1,
+          31
+        ],
+        [
+          2,
+          32
+        ],
+        [
+          3,
+          33
+        ],
+        [
+          4,
+          34
+        ]
+      ]
+    },
+    {
+      "slot_edge": [
+        3,
+        9
+      ],
+      "sign": "0",
+      "row_count": 60,
+      "domain_count": 60,
+      "image_count": 60,
+      "bijection": true,
+      "identity_rows": 60,
+      "nonidentity_rows": 0,
+      "first_5_pairs": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "slot_edge": [
+        4,
+        5
+      ],
+      "sign": "1",
+      "row_count": 60,
+      "domain_count": 60,
+      "image_count": 60,
+      "bijection": true,
+      "identity_rows": 0,
+      "nonidentity_rows": 60,
+      "first_5_pairs": [
+        [
+          0,
+          30
+        ],
+        [
+          1,
+          31
+        ],
+        [
+          2,
+          32
+        ],
+        [
+          3,
+          33
+        ],
+        [
+          4,
+          34
+        ]
+      ]
+    },
+    {
+      "slot_edge": [
+        4,
+        9
+      ],
+      "sign": "0",
+      "row_count": 60,
+      "domain_count": 60,
+      "image_count": 60,
+      "bijection": true,
+      "identity_rows": 60,
+      "nonidentity_rows": 0,
+      "first_5_pairs": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "slot_edge": [
+        5,
+        10
+      ],
+      "sign": "1",
+      "row_count": 60,
+      "domain_count": 60,
+      "image_count": 60,
+      "bijection": true,
+      "identity_rows": 0,
+      "nonidentity_rows": 60,
+      "first_5_pairs": [
+        [
+          0,
+          30
+        ],
+        [
+          1,
+          31
+        ],
+        [
+          2,
+          32
+        ],
+        [
+          3,
+          33
+        ],
+        [
+          4,
+          34
+        ]
+      ]
+    },
+    {
+      "slot_edge": [
+        5,
+        14
+      ],
+      "sign": "1",
+      "row_count": 60,
+      "domain_count": 60,
+      "image_count": 60,
+      "bijection": true,
+      "identity_rows": 0,
+      "nonidentity_rows": 60,
+      "first_5_pairs": [
+        [
+          0,
+          30
+        ],
+        [
+          1,
+          31
+        ],
+        [
+          2,
+          32
+        ],
+        [
+          3,
+          33
+        ],
+        [
+          4,
+          34
+        ]
+      ]
+    },
+    {
+      "slot_edge": [
+        6,
+        12
+      ],
+      "sign": "0",
+      "row_count": 60,
+      "domain_count": 60,
+      "image_count": 60,
+      "bijection": true,
+      "identity_rows": 60,
+      "nonidentity_rows": 0,
+      "first_5_pairs": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "slot_edge": [
+        6,
+        13
+      ],
+      "sign": "0",
+      "row_count": 60,
+      "domain_count": 60,
+      "image_count": 60,
+      "bijection": true,
+      "identity_rows": 60,
+      "nonidentity_rows": 0,
+      "first_5_pairs": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "slot_edge": [
+        7,
+        10
+      ],
+      "sign": "0",
+      "row_count": 60,
+      "domain_count": 60,
+      "image_count": 60,
+      "bijection": true,
+      "identity_rows": 60,
+      "nonidentity_rows": 0,
+      "first_5_pairs": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "slot_edge": [
+        7,
+        11
+      ],
+      "sign": "0",
+      "row_count": 60,
+      "domain_count": 60,
+      "image_count": 60,
+      "bijection": true,
+      "identity_rows": 60,
+      "nonidentity_rows": 0,
+      "first_5_pairs": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "slot_edge": [
+        8,
+        13
+      ],
+      "sign": "0",
+      "row_count": 60,
+      "domain_count": 60,
+      "image_count": 60,
+      "bijection": true,
+      "identity_rows": 60,
+      "nonidentity_rows": 0,
+      "first_5_pairs": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "slot_edge": [
+        8,
+        14
+      ],
+      "sign": "0",
+      "row_count": 60,
+      "domain_count": 60,
+      "image_count": 60,
+      "bijection": true,
+      "identity_rows": 60,
+      "nonidentity_rows": 0,
+      "first_5_pairs": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "slot_edge": [
+        9,
+        11
+      ],
+      "sign": "0",
+      "row_count": 60,
+      "domain_count": 60,
+      "image_count": 60,
+      "bijection": true,
+      "identity_rows": 60,
+      "nonidentity_rows": 0,
+      "first_5_pairs": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "slot_edge": [
+        9,
+        12
+      ],
+      "sign": "0",
+      "row_count": 60,
+      "domain_count": 60,
+      "image_count": 60,
+      "bijection": true,
+      "identity_rows": 60,
+      "nonidentity_rows": 0,
+      "first_5_pairs": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "slot_edge": [
+        10,
+        11
+      ],
+      "sign": "0",
+      "row_count": 60,
+      "domain_count": 60,
+      "image_count": 60,
+      "bijection": true,
+      "identity_rows": 60,
+      "nonidentity_rows": 0,
+      "first_5_pairs": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "slot_edge": [
+        10,
+        14
+      ],
+      "sign": "1",
+      "row_count": 60,
+      "domain_count": 60,
+      "image_count": 60,
+      "bijection": true,
+      "identity_rows": 0,
+      "nonidentity_rows": 60,
+      "first_5_pairs": [
+        [
+          0,
+          30
+        ],
+        [
+          1,
+          31
+        ],
+        [
+          2,
+          32
+        ],
+        [
+          3,
+          33
+        ],
+        [
+          4,
+          34
+        ]
+      ]
+    },
+    {
+      "slot_edge": [
+        11,
+        12
+      ],
+      "sign": "0",
+      "row_count": 60,
+      "domain_count": 60,
+      "image_count": 60,
+      "bijection": true,
+      "identity_rows": 60,
+      "nonidentity_rows": 0,
+      "first_5_pairs": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "slot_edge": [
+        12,
+        13
+      ],
+      "sign": "0",
+      "row_count": 60,
+      "domain_count": 60,
+      "image_count": 60,
+      "bijection": true,
+      "identity_rows": 60,
+      "nonidentity_rows": 0,
+      "first_5_pairs": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "slot_edge": [
+        13,
+        14
+      ],
+      "sign": "0",
+      "row_count": 60,
+      "domain_count": 60,
+      "image_count": 60,
+      "bijection": true,
+      "identity_rows": 60,
+      "nonidentity_rows": 0,
+      "first_5_pairs": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "id": "previous_naive_join_was_false",
+      "status": true,
+      "detail": false
+    },
+    {
+      "id": "product_vertex_formula_all_rows",
+      "status": true,
+      "detail": 0
+    },
+    {
+      "id": "kind_counts_1800_1800",
+      "status": true,
+      "detail": {
+        "internal_thalion_copy": 1800,
+        "external_signed_carrier": 1800
+      }
+    },
+    {
+      "id": "internal_channel_confirmed",
+      "status": true,
+      "detail": {
+        "meaning": "within each G15 slot, copy the canonical G60 local edge graph",
+        "row_count": 1800,
+        "expected_row_count": 1800,
+        "slot_count": 15,
+        "slot_count_values": [
+          120
+        ],
+        "each_slot_has_all_g60_edges": true,
+        "bad_rows_first_10": [],
+        "confirmed": true
+      }
+    },
+    {
+      "id": "external_channel_confirmed",
+      "status": true,
+      "detail": {
+        "meaning": "across each signed G15 slot edge, carry 60 local-state rows",
+        "row_count": 1800,
+        "expected_row_count": 1800,
+        "slot_edge_count": 30,
+        "slot_edge_count_values": [
+          60
+        ],
+        "slot_edges_match_g15": true,
+        "slot_edge_sign_counts": {
+          "0": 15,
+          "1": 15
+        },
+        "sign_identity_row_counts": {
+          "0": 900,
+          "1": 0
+        },
+        "sign_nonidentity_row_counts": {
+          "0": 0,
+          "1": 900
+        },
+        "sign_bijection_good": {
+          "0": 15,
+          "1": 15
+        },
+        "sign_bijection_bad": {},
+        "sign0_identity_all": true,
+        "sign1_bijection_all": true,
+        "sign1_nonidentity_any": true,
+        "unique_mapping_fingerprint_count_by_sign": {
+          "0": 1,
+          "1": 1
+        },
+        "bad_slot_rows_first_10": [],
+        "confirmed": true
+      }
+    },
+    {
+      "id": "channel_split_confirmed",
+      "status": true,
+      "detail": true
+    },
+    {
+      "id": "no_generator_claim_made",
+      "status": true,
+      "detail": "channel split inspection only"
+    }
+  ],
+  "boundary": [
+    "This confirms channel-aware product structure.",
+    "This does not yet derive an NRC generator.",
+    "This does not close Gap A.",
+    "This does not prove full G900."
+  ]
+}

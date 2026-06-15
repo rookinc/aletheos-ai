@@ -1,0 +1,230 @@
+{
+  "schema": "x_sigma_product_join_inspection_001.v1",
+  "status": "x_sigma_product_join_inspection_recorded",
+  "timestamp_utc": "2026-06-15T12:50:42.024875+00:00",
+  "purpose": "Inspect x_sigma_edges.csv as the explicit product join between G15 slot edges and canonical G60 local edges.",
+  "summary": {
+    "x_sigma_row_count": 3600,
+    "x_sigma_headers": [
+      "u_vertex",
+      "v_vertex",
+      "u_slot",
+      "u_local",
+      "v_slot",
+      "v_local",
+      "kind"
+    ],
+    "kind_counts": {
+      "external_signed_carrier": 1800,
+      "internal_thalion_copy": 1800
+    },
+    "sample_by_kind": {
+      "internal_thalion_copy": [
+        {
+          "u_vertex": "0",
+          "v_vertex": "16",
+          "u_slot": "0",
+          "u_local": "0",
+          "v_slot": "0",
+          "v_local": "16",
+          "kind": "internal_thalion_copy"
+        },
+        {
+          "u_vertex": "0",
+          "v_vertex": "19",
+          "u_slot": "0",
+          "u_local": "0",
+          "v_slot": "0",
+          "v_local": "19",
+          "kind": "internal_thalion_copy"
+        },
+        {
+          "u_vertex": "0",
+          "v_vertex": "25",
+          "u_slot": "0",
+          "u_local": "0",
+          "v_slot": "0",
+          "v_local": "25",
+          "kind": "internal_thalion_copy"
+        },
+        {
+          "u_vertex": "0",
+          "v_vertex": "55",
+          "u_slot": "0",
+          "u_local": "0",
+          "v_slot": "0",
+          "v_local": "55",
+          "kind": "internal_thalion_copy"
+        },
+        {
+          "u_vertex": "1",
+          "v_vertex": "15",
+          "u_slot": "0",
+          "u_local": "1",
+          "v_slot": "0",
+          "v_local": "15",
+          "kind": "internal_thalion_copy"
+        }
+      ],
+      "external_signed_carrier": [
+        {
+          "u_vertex": "0",
+          "v_vertex": "90",
+          "u_slot": "0",
+          "u_local": "0",
+          "v_slot": "1",
+          "v_local": "30",
+          "kind": "external_signed_carrier"
+        },
+        {
+          "u_vertex": "0",
+          "v_vertex": "270",
+          "u_slot": "0",
+          "u_local": "0",
+          "v_slot": "4",
+          "v_local": "30",
+          "kind": "external_signed_carrier"
+        },
+        {
+          "u_vertex": "0",
+          "v_vertex": "330",
+          "u_slot": "0",
+          "u_local": "0",
+          "v_slot": "5",
+          "v_local": "30",
+          "kind": "external_signed_carrier"
+        },
+        {
+          "u_vertex": "0",
+          "v_vertex": "390",
+          "u_slot": "0",
+          "u_local": "0",
+          "v_slot": "6",
+          "v_local": "30",
+          "kind": "external_signed_carrier"
+        },
+        {
+          "u_vertex": "1",
+          "v_vertex": "91",
+          "u_slot": "0",
+          "u_local": "1",
+          "v_slot": "1",
+          "v_local": "31",
+          "kind": "external_signed_carrier"
+        }
+      ]
+    },
+    "product_vertex_formula": "vertex = slot * 60 + local",
+    "product_vertex_ok_count": 3600,
+    "product_vertex_ok_all_rows": true,
+    "bad_product_rows_first_10": [],
+    "g15_slot_edge_columns": [
+      "slot_u",
+      "slot_v"
+    ],
+    "g15_slot_edge_count": 30,
+    "g60_local_edge_count": 120,
+    "slot_pair_is_g15_edge_count": 1800,
+    "slot_pair_all_rows_are_g15_edges": false,
+    "local_pair_is_g60_edge_count": 1800,
+    "local_pair_all_rows_are_g60_edges": false,
+    "unique_slot_pair_count_in_x_sigma": 45,
+    "slot_edge_row_count_values": [
+      60,
+      120
+    ],
+    "slot_edges_all_have_120_local_pairs": false,
+    "unique_local_pair_count_in_x_sigma": 210,
+    "local_edge_row_count_values": [
+      15,
+      30
+    ],
+    "each_g60_edge_appears_for_all_30_slot_edges": false,
+    "fiber_same_count": 900,
+    "slot_same_count": 1800,
+    "row_class_counts": {
+      "across_slot_same_fiber": 900,
+      "other": 900,
+      "within_slot_g60_edge": 1800
+    },
+    "sign_kind_counts": {
+      "0": {
+        "external_signed_carrier": 900
+      },
+      "1": {
+        "external_signed_carrier": 900
+      },
+      "missing": {
+        "internal_thalion_copy": 1800
+      }
+    },
+    "join_confirmed": false,
+    "gap_a_closed": false,
+    "full_g900_admission_found": false,
+    "next_step": "construct_g60_g15_product_join_for_nrc_alignment"
+  },
+  "checks": [
+    {
+      "id": "carrier_join_loaded",
+      "status": true,
+      "detail": "carrier_signing_table_join_inspection_recorded"
+    },
+    {
+      "id": "canonical_payload_loaded",
+      "status": true,
+      "detail": "canonical_g60_payload_imported"
+    },
+    {
+      "id": "x_sigma_rows_3600",
+      "status": true,
+      "detail": 3600
+    },
+    {
+      "id": "product_vertex_formula_all_rows",
+      "status": true,
+      "detail": 3600
+    },
+    {
+      "id": "slot_pairs_are_g15_edges_all_rows",
+      "status": false,
+      "detail": 1800
+    },
+    {
+      "id": "local_pairs_are_g60_edges_all_rows",
+      "status": false,
+      "detail": 1800
+    },
+    {
+      "id": "slot_edges_all_have_120_local_pairs",
+      "status": false,
+      "detail": [
+        60,
+        120
+      ]
+    },
+    {
+      "id": "g60_edges_all_have_30_slot_edges",
+      "status": false,
+      "detail": [
+        15,
+        30
+      ]
+    },
+    {
+      "id": "join_confirmed",
+      "status": false,
+      "detail": false
+    },
+    {
+      "id": "no_generator_claim_made",
+      "status": true,
+      "detail": "product join inspection only"
+    }
+  ],
+  "boundary": [
+    "This confirms or refutes product join structure only.",
+    "This does not yet construct an NRC generator.",
+    "This does not close Gap A.",
+    "This does not prove full G900."
+  ]
+}

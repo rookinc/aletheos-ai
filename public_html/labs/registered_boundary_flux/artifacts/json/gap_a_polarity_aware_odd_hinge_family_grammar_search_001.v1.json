@@ -1,0 +1,396 @@
+{
+  "schema": "gap_a_polarity_aware_odd_hinge_family_grammar_search_001.v1",
+  "status": "gap_a_polarity_aware_odd_hinge_family_candidate_found_not_generator",
+  "timestamp_utc": "2026-06-15T00:43:38.617843+00:00",
+  "purpose": "Search for a polarity-aware family rule explaining the enriched odd-hinge A/B/C correction paths.",
+  "boundary": [
+    "This does not close Gap A.",
+    "This searches coarse polarity features, not a source-native generator.",
+    "Exact hinge values, row selectors, cycles, and stations are not used as generator features.",
+    "A polarity family candidate must still be audited before promotion.",
+    "No physical interpretation is claimed."
+  ],
+  "summary": {
+    "search_result": "polarity_aware_odd_hinge_family_candidate_found",
+    "gap_a_closed": false,
+    "background_population": "oriented_unique_shortest_length2_source_shell_paths",
+    "background_count": 120,
+    "selected_count": 4,
+    "selected_common_feature_count": 11,
+    "selected_common_features": [
+      "A_odd_BA_neg=True",
+      "A_odd_C_even=True",
+      "A_odd_C_even_BA_neg=True",
+      "A_odd_C_even_BC_2or3=True",
+      "A_parity=odd",
+      "A_to_C_parity=odd_to_even",
+      "BA_abs_small=True",
+      "BA_sign=neg",
+      "BC_abs_2_or_3=True",
+      "C_parity=even",
+      "source_shell_polarity_core=True"
+    ],
+    "best_candidate": {
+      "feature": "A_odd_BA_neg=True AND A_odd_C_even_BC_2or3=True AND BA_abs_small=True",
+      "background_support": 8,
+      "background_total": 120,
+      "background_fraction": 0.066666667,
+      "selected_support": 4,
+      "hypergeom_all_selected_probability": 8.5214442e-06
+    },
+    "top_candidate_count": 20,
+    "claim_closes_gap_a": false
+  },
+  "selected_records": [
+    {
+      "cycle": 0,
+      "station": "Z",
+      "role_pair": "YZ->ZT",
+      "B": 4,
+      "A": 3,
+      "C": 2,
+      "columns": [
+        10,
+        7
+      ],
+      "features": [
+        "AC_abs=1",
+        "AC_abs_small=True",
+        "AC_sign=neg",
+        "A_odd_BA_neg=True",
+        "A_odd_C_even=True",
+        "A_odd_C_even_BA_neg=True",
+        "A_odd_C_even_BC_2or3=True",
+        "A_parity=odd",
+        "A_to_C_parity=odd_to_even",
+        "BA_abs=1",
+        "BA_abs_small=True",
+        "BA_sign=neg",
+        "BC_abs=2",
+        "BC_abs_2_or_3=True",
+        "BC_sign=neg",
+        "B_parity=even",
+        "B_to_A_parity=even_to_odd",
+        "C_parity=even",
+        "endpoint_parity=even_to_even",
+        "source_shell_polarity_core=True"
+      ]
+    },
+    {
+      "cycle": 0,
+      "station": "T",
+      "role_pair": "ZT->TI",
+      "B": 13,
+      "A": 9,
+      "C": 10,
+      "columns": [
+        29,
+        28
+      ],
+      "features": [
+        "AC_abs=1",
+        "AC_abs_small=True",
+        "AC_sign=pos",
+        "A_odd_BA_neg=True",
+        "A_odd_C_even=True",
+        "A_odd_C_even_BA_neg=True",
+        "A_odd_C_even_BC_2or3=True",
+        "A_parity=odd",
+        "A_to_C_parity=odd_to_even",
+        "BA_abs=4",
+        "BA_abs_small=True",
+        "BA_sign=neg",
+        "BC_abs=3",
+        "BC_abs_2_or_3=True",
+        "BC_sign=neg",
+        "B_parity=odd",
+        "B_to_A_parity=odd_to_odd",
+        "C_parity=even",
+        "endpoint_parity=odd_to_even",
+        "source_shell_polarity_core=True"
+      ]
+    },
+    {
+      "cycle": 1,
+      "station": "Y",
+      "role_pair": "XY->YZ",
+      "B": 2,
+      "A": 1,
+      "C": 0,
+      "columns": [
+        4,
+        0
+      ],
+      "features": [
+        "AC_abs=1",
+        "AC_abs_small=True",
+        "AC_sign=neg",
+        "A_odd_BA_neg=True",
+        "A_odd_C_even=True",
+        "A_odd_C_even_BA_neg=True",
+        "A_odd_C_even_BC_2or3=True",
+        "A_parity=odd",
+        "A_to_C_parity=odd_to_even",
+        "BA_abs=1",
+        "BA_abs_small=True",
+        "BA_sign=neg",
+        "BC_abs=2",
+        "BC_abs_2_or_3=True",
+        "BC_sign=neg",
+        "B_parity=even",
+        "B_to_A_parity=even_to_odd",
+        "C_parity=even",
+        "endpoint_parity=even_to_even",
+        "source_shell_polarity_core=True"
+      ]
+    },
+    {
+      "cycle": 2,
+      "station": "Z",
+      "role_pair": "YZ->ZT",
+      "B": 11,
+      "A": 7,
+      "C": 14,
+      "columns": [
+        23,
+        24
+      ],
+      "features": [
+        "AC_abs=7",
+        "AC_abs_small=False",
+        "AC_sign=pos",
+        "A_odd_BA_neg=True",
+        "A_odd_C_even=True",
+        "A_odd_C_even_BA_neg=True",
+        "A_odd_C_even_BC_2or3=True",
+        "A_parity=odd",
+        "A_to_C_parity=odd_to_even",
+        "BA_abs=4",
+        "BA_abs_small=True",
+        "BA_sign=neg",
+        "BC_abs=3",
+        "BC_abs_2_or_3=True",
+        "BC_sign=pos",
+        "B_parity=odd",
+        "B_to_A_parity=odd_to_odd",
+        "C_parity=even",
+        "endpoint_parity=odd_to_even",
+        "source_shell_polarity_core=True"
+      ]
+    }
+  ],
+  "top_candidates": [
+    {
+      "feature": "A_odd_BA_neg=True AND A_odd_C_even_BC_2or3=True AND BA_abs_small=True",
+      "background_support": 8,
+      "background_total": 120,
+      "background_fraction": 0.066666667,
+      "selected_support": 4,
+      "hypergeom_all_selected_probability": 8.5214442e-06
+    },
+    {
+      "feature": "A_odd_BA_neg=True AND BA_abs_small=True AND source_shell_polarity_core=True",
+      "background_support": 8,
+      "background_total": 120,
+      "background_fraction": 0.066666667,
+      "selected_support": 4,
+      "hypergeom_all_selected_probability": 8.5214442e-06
+    },
+    {
+      "feature": "A_odd_C_even=True AND BA_abs_small=True AND source_shell_polarity_core=True",
+      "background_support": 8,
+      "background_total": 120,
+      "background_fraction": 0.066666667,
+      "selected_support": 4,
+      "hypergeom_all_selected_probability": 8.5214442e-06
+    },
+    {
+      "feature": "A_odd_C_even_BA_neg=True AND A_odd_C_even_BC_2or3=True AND BA_abs_small=True",
+      "background_support": 8,
+      "background_total": 120,
+      "background_fraction": 0.066666667,
+      "selected_support": 4,
+      "hypergeom_all_selected_probability": 8.5214442e-06
+    },
+    {
+      "feature": "A_odd_C_even_BA_neg=True AND BA_abs_small=True AND BC_abs_2_or_3=True",
+      "background_support": 8,
+      "background_total": 120,
+      "background_fraction": 0.066666667,
+      "selected_support": 4,
+      "hypergeom_all_selected_probability": 8.5214442e-06
+    },
+    {
+      "feature": "A_odd_C_even_BA_neg=True AND BA_abs_small=True AND source_shell_polarity_core=True",
+      "background_support": 8,
+      "background_total": 120,
+      "background_fraction": 0.066666667,
+      "selected_support": 4,
+      "hypergeom_all_selected_probability": 8.5214442e-06
+    },
+    {
+      "feature": "A_odd_C_even_BC_2or3=True AND BA_abs_small=True AND BA_sign=neg",
+      "background_support": 8,
+      "background_total": 120,
+      "background_fraction": 0.066666667,
+      "selected_support": 4,
+      "hypergeom_all_selected_probability": 8.5214442e-06
+    },
+    {
+      "feature": "A_odd_C_even_BC_2or3=True AND BA_abs_small=True AND source_shell_polarity_core=True",
+      "background_support": 8,
+      "background_total": 120,
+      "background_fraction": 0.066666667,
+      "selected_support": 4,
+      "hypergeom_all_selected_probability": 8.5214442e-06
+    },
+    {
+      "feature": "A_parity=odd AND BA_abs_small=True AND source_shell_polarity_core=True",
+      "background_support": 8,
+      "background_total": 120,
+      "background_fraction": 0.066666667,
+      "selected_support": 4,
+      "hypergeom_all_selected_probability": 8.5214442e-06
+    },
+    {
+      "feature": "A_to_C_parity=odd_to_even AND BA_abs_small=True AND source_shell_polarity_core=True",
+      "background_support": 8,
+      "background_total": 120,
+      "background_fraction": 0.066666667,
+      "selected_support": 4,
+      "hypergeom_all_selected_probability": 8.5214442e-06
+    },
+    {
+      "feature": "BA_abs_small=True AND BA_sign=neg AND source_shell_polarity_core=True",
+      "background_support": 8,
+      "background_total": 120,
+      "background_fraction": 0.066666667,
+      "selected_support": 4,
+      "hypergeom_all_selected_probability": 8.5214442e-06
+    },
+    {
+      "feature": "BA_abs_small=True AND BC_abs_2_or_3=True AND source_shell_polarity_core=True",
+      "background_support": 8,
+      "background_total": 120,
+      "background_fraction": 0.066666667,
+      "selected_support": 4,
+      "hypergeom_all_selected_probability": 8.5214442e-06
+    },
+    {
+      "feature": "BA_abs_small=True AND C_parity=even AND source_shell_polarity_core=True",
+      "background_support": 8,
+      "background_total": 120,
+      "background_fraction": 0.066666667,
+      "selected_support": 4,
+      "hypergeom_all_selected_probability": 8.5214442e-06
+    },
+    {
+      "feature": "BA_abs_small=True AND source_shell_polarity_core=True",
+      "background_support": 8,
+      "background_total": 120,
+      "background_fraction": 0.066666667,
+      "selected_support": 4,
+      "hypergeom_all_selected_probability": 8.5214442e-06
+    },
+    {
+      "feature": "A_odd_BA_neg=True AND A_odd_C_even=True AND A_odd_C_even_BC_2or3=True",
+      "background_support": 10,
+      "background_total": 120,
+      "background_fraction": 0.083333333,
+      "selected_support": 4,
+      "hypergeom_all_selected_probability": 2.5564333e-05
+    },
+    {
+      "feature": "A_odd_BA_neg=True AND A_odd_C_even=True AND BC_abs_2_or_3=True",
+      "background_support": 10,
+      "background_total": 120,
+      "background_fraction": 0.083333333,
+      "selected_support": 4,
+      "hypergeom_all_selected_probability": 2.5564333e-05
+    },
+    {
+      "feature": "A_odd_BA_neg=True AND A_odd_C_even=True AND source_shell_polarity_core=True",
+      "background_support": 10,
+      "background_total": 120,
+      "background_fraction": 0.083333333,
+      "selected_support": 4,
+      "hypergeom_all_selected_probability": 2.5564333e-05
+    },
+    {
+      "feature": "A_odd_BA_neg=True AND A_odd_C_even_BA_neg=True AND A_odd_C_even_BC_2or3=True",
+      "background_support": 10,
+      "background_total": 120,
+      "background_fraction": 0.083333333,
+      "selected_support": 4,
+      "hypergeom_all_selected_probability": 2.5564333e-05
+    },
+    {
+      "feature": "A_odd_BA_neg=True AND A_odd_C_even_BA_neg=True AND BC_abs_2_or_3=True",
+      "background_support": 10,
+      "background_total": 120,
+      "background_fraction": 0.083333333,
+      "selected_support": 4,
+      "hypergeom_all_selected_probability": 2.5564333e-05
+    },
+    {
+      "feature": "A_odd_BA_neg=True AND A_odd_C_even_BA_neg=True AND source_shell_polarity_core=True",
+      "background_support": 10,
+      "background_total": 120,
+      "background_fraction": 0.083333333,
+      "selected_support": 4,
+      "hypergeom_all_selected_probability": 2.5564333e-05
+    }
+  ],
+  "interpretation": {
+    "main_result": "A polarity-aware odd-hinge family candidate was found, but it is not a generator.",
+    "why_this_matters": "This tests whether the odd hinge becomes more structured when orientation and coarse polarity are allowed.",
+    "why_not_closure": "A polarity feature family is still weaker than a source-native projection-family generator.",
+    "next_move": "Audit the candidate against lookup risk and projection-family generation."
+  },
+  "claim": {
+    "does_this_close_gap_a": false,
+    "does_this_find_polarity_candidate": true,
+    "does_this_find_generator": false,
+    "short_form": "A polarity-aware odd-hinge family candidate was found, but it is not a generator.",
+    "not_closed_reason": "A polarity feature family is still weaker than a source-native projection-family generator.",
+    "next_problem": "Audit the candidate against lookup risk and projection-family generation."
+  },
+  "checks": [
+    {
+      "id": "odd_audit_loaded",
+      "status": true,
+      "detail": "gap_a_odd_hinge_source_shell_audit_enriched_not_generator"
+    },
+    {
+      "id": "abc_loaded",
+      "status": true,
+      "detail": "source_shell_signed_abc_primitives_extracted_odd_hinge_signal_found_not_generator"
+    },
+    {
+      "id": "branch_loaded",
+      "status": true,
+      "detail": "source_shell_projection_family_generator_branch_started"
+    },
+    {
+      "id": "background_available",
+      "status": true,
+      "detail": "120"
+    },
+    {
+      "id": "selected_loaded",
+      "status": true,
+      "detail": "4"
+    },
+    {
+      "id": "best_candidate_exists",
+      "status": true,
+      "detail": "A_odd_BA_neg=True AND A_odd_C_even_BC_2or3=True AND BA_abs_small=True"
+    },
+    {
+      "id": "gap_a_not_closed",
+      "status": true,
+      "detail": "polarity search only"
+    }
+  ],
+  "next_script": "audit_gap_a_polarity_aware_odd_hinge_family_candidate_001.py"
+}

@@ -1,0 +1,117 @@
+{
+  "schema": "overlay_against_admission_blind_nrc_witness_001.v1",
+  "status": "overlay_not_yet_consistent_with_admission_blind_nrc_witness",
+  "timestamp_utc": "2026-06-15T13:31:11.578690+00:00",
+  "purpose": "Check that the classified WXYZTI source-native overlay is consistent with the earlier admission-blind NRC witness result.",
+  "summary": {
+    "nrc_status": "admission_blind_nrc_witness_exact_not_g900",
+    "nrc_exact": null,
+    "nrc_accepted": 4,
+    "nrc_false_pos": 0,
+    "nrc_miss": 0,
+    "nrc_count": 120,
+    "wxyzti_forms_key": "wxyzti_admitted_forms",
+    "wxyzti_form_count": 4,
+    "wxyzti_edge_count": 24,
+    "wxyzti_label_counts": {
+      "reverse_partner": 12,
+      "shared_B": 12
+    },
+    "source_native_check_counts": {
+      "True": 24
+    },
+    "overlay_status": "wxyzti_source_native_transport_overlay_classified",
+    "overlay_classified": true,
+    "overlay_rule_counts": {
+      "reverse_partner_preserves_A_and_columns": 12,
+      "shared_B_preserves_B_and_slot": 12
+    },
+    "overlay_nrc_consistent": false,
+    "gap_a_closed": false,
+    "full_g900_admission_found": false,
+    "next_step": "record_overlay_nrc_consistency_boundary"
+  },
+  "checks": [
+    {
+      "id": "nrc_artifact_loaded",
+      "status": true,
+      "detail": "admission_blind_nrc_witness_exact_not_g900"
+    },
+    {
+      "id": "nrc_exact",
+      "status": false,
+      "detail": null
+    },
+    {
+      "id": "nrc_accepted_count_4",
+      "status": true,
+      "detail": 4
+    },
+    {
+      "id": "nrc_false_pos_zero",
+      "status": true,
+      "detail": 0
+    },
+    {
+      "id": "nrc_miss_zero",
+      "status": true,
+      "detail": 0
+    },
+    {
+      "id": "wxyzti_form_count_4",
+      "status": true,
+      "detail": 4
+    },
+    {
+      "id": "wxyzti_edge_count_24",
+      "status": true,
+      "detail": 24
+    },
+    {
+      "id": "wxyzti_label_split_12_12",
+      "status": true,
+      "detail": {
+        "reverse_partner": 12,
+        "shared_B": 12
+      }
+    },
+    {
+      "id": "wxyzti_edges_source_native",
+      "status": true,
+      "detail": {
+        "True": 24
+      }
+    },
+    {
+      "id": "overlay_classified",
+      "status": true,
+      "detail": true
+    },
+    {
+      "id": "overlay_bad_edge_count_zero",
+      "status": true,
+      "detail": 0
+    },
+    {
+      "id": "delta_labels_match_overlay",
+      "status": true,
+      "detail": {
+        "deltas": {
+          "reverse_partner": 12,
+          "shared_B": 12
+        },
+        "overlay": {
+          "reverse_partner": 12,
+          "shared_B": 12
+        }
+      }
+    }
+  ],
+  "boundary": [
+    "This is a custody/consistency check.",
+    "It confirms relation-layer consistency with the admission-blind NRC witness if checks pass.",
+    "It does not derive a G60-native generator.",
+    "It does not close Gap A.",
+    "It does not prove full G900."
+  ]
+}

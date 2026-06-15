@@ -1,0 +1,1863 @@
+{
+  "schema": "polarity_family_nonselected_companion_inspection_001.v1",
+  "status": "polarity_family_nonselected_companion_inspected_no_neighbor_candidate",
+  "timestamp_utc": "2026-06-15T01:18:01.995767+00:00",
+  "purpose": "Inspect the nonselected companion path inside the best persistent source-only polarity family.",
+  "boundary": [
+    "This does not close Gap A.",
+    "This inspects the extra companion path left by the non-generator boundary.",
+    "A candidate neighbouring projection-family clue is weaker than a generator.",
+    "No physical interpretation is claimed."
+  ],
+  "summary": {
+    "inspection_result": "nonselected_companion_not_enough_for_neighbor_candidate",
+    "gap_a_closed": false,
+    "best_family_features": [
+      "source:p900_candidate0_edge_law:sector_delta_abs_small=True"
+    ],
+    "best_family_support_count": 5,
+    "selected_count": 4,
+    "companion_count": 1,
+    "companion_indices": [
+      6
+    ],
+    "companion_projection_visible": false,
+    "companion_projection_roles": [],
+    "companion_projection_role_classes": [],
+    "companion_projection_cycles": [],
+    "candidate_neighbor_projection_member": false,
+    "nearest_selected_by_feature": {
+      "6": {
+        "a_index": 6,
+        "b_index": 7,
+        "shared_columns": [
+          28
+        ],
+        "shared_column_count": 1,
+        "shared_projection_roles": [],
+        "shared_projection_role_classes": [],
+        "same_A": true,
+        "same_B": false,
+        "same_C": false,
+        "same_path_shape": true,
+        "feature_overlap_count": 30,
+        "feature_union_count": 42,
+        "feature_overlap_ratio": 0.7142857142857143
+      }
+    },
+    "claim_closes_gap_a": false
+  },
+  "companion_records": [
+    {
+      "index": 6,
+      "selected": false,
+      "columns": [
+        25,
+        28
+      ],
+      "path_shape": {
+        "B": 10,
+        "A": 9,
+        "C": 8,
+        "path": [
+          10,
+          9,
+          8
+        ],
+        "B_parity": "even",
+        "A_parity": "odd",
+        "C_parity": "even",
+        "BA_delta": -1,
+        "AC_delta": -1,
+        "BC_delta": -2,
+        "BA_sign": "neg",
+        "AC_sign": "neg",
+        "BC_sign": "neg",
+        "BA_abs_small": true,
+        "BC_abs_2_or_3": true
+      },
+      "projection_hit_count": 0,
+      "projection_hits": [],
+      "projection_roles": [],
+      "projection_role_classes": [],
+      "projection_cycles": [],
+      "candidate0_laws": [
+        {
+          "label": "identity",
+          "shift_mod60": 0,
+          "sector_pair": [
+            10,
+            11
+          ],
+          "petersen_edge_a": [
+            5,
+            7
+          ],
+          "petersen_edge_b": [
+            7,
+            9
+          ],
+          "shared_petersen_vertex": 7
+        },
+        {
+          "label": "identity",
+          "shift_mod60": 0,
+          "sector_pair": [
+            12,
+            13
+          ],
+          "petersen_edge_a": [
+            9,
+            6
+          ],
+          "petersen_edge_b": [
+            6,
+            8
+          ],
+          "shared_petersen_vertex": 6
+        }
+      ],
+      "candidate1_laws": [
+        {
+          "label": "identity",
+          "shift_mod60": 0,
+          "sector_pair": [
+            10,
+            11
+          ],
+          "petersen_edge_a": [
+            5,
+            7
+          ],
+          "petersen_edge_b": [
+            7,
+            9
+          ],
+          "shared_petersen_vertex": 7
+        },
+        {
+          "label": "identity",
+          "shift_mod60": 0,
+          "sector_pair": [
+            12,
+            13
+          ],
+          "petersen_edge_a": [
+            9,
+            6
+          ],
+          "petersen_edge_b": [
+            6,
+            8
+          ],
+          "shared_petersen_vertex": 6
+        }
+      ],
+      "features": [
+        "proj:any_col_unseen=True",
+        "proj:both_cols_visible=False",
+        "proj:cycle_span_count=0",
+        "proj:has_interior_role_class=False",
+        "proj:has_outer_and_interior=False",
+        "proj:has_outer_role_class=False",
+        "proj:nohit_col_count=2",
+        "proj:role_class_sig=[]",
+        "proj:visible_col_count=0",
+        "source:AC_abs_small=True",
+        "source:AC_sign=neg",
+        "source:A_parity=odd",
+        "source:BA_AC_signs=neg_to_neg",
+        "source:BA_abs_small=True",
+        "source:BA_sign=neg",
+        "source:BC_abs_2_or_3=True",
+        "source:BC_sign=neg",
+        "source:B_parity=even",
+        "source:C_parity=even",
+        "source:endpoint_parity=even_to_even",
+        "source:p900_candidate0_edge_law:label_sig=['identity','identity']",
+        "source:p900_candidate0_edge_law:same_label=True",
+        "source:p900_candidate0_edge_law:same_shift=True",
+        "source:p900_candidate0_edge_law:sector_delta_abs_small=True",
+        "source:p900_candidate0_edge_law:sector_delta_signs=['pos','pos']",
+        "source:p900_candidate0_edge_law:shared_parity_sig=['odd','even']",
+        "source:p900_candidate0_edge_law:shared_same=False",
+        "source:p900_candidate0_edge_law:shift_sig=[0,0]",
+        "source:p900_candidate1_edge_law:label_sig=['identity','identity']",
+        "source:p900_candidate1_edge_law:same_label=True",
+        "source:p900_candidate1_edge_law:same_shift=True",
+        "source:p900_candidate1_edge_law:sector_delta_abs_small=True",
+        "source:p900_candidate1_edge_law:sector_delta_signs=['pos','pos']",
+        "source:p900_candidate1_edge_law:shared_parity_sig=['odd','even']",
+        "source:p900_candidate1_edge_law:shared_same=False",
+        "source:p900_candidate1_edge_law:shift_sig=[0,0]"
+      ]
+    }
+  ],
+  "selected_family_records": [
+    {
+      "index": 0,
+      "selected": true,
+      "columns": [
+        0,
+        4
+      ],
+      "path_shape": {
+        "B": 2,
+        "A": 1,
+        "C": 0,
+        "path": [
+          2,
+          1,
+          0
+        ],
+        "B_parity": "even",
+        "A_parity": "odd",
+        "C_parity": "even",
+        "BA_delta": -1,
+        "AC_delta": -1,
+        "BC_delta": -2,
+        "BA_sign": "neg",
+        "AC_sign": "neg",
+        "BC_sign": "neg",
+        "BA_abs_small": true,
+        "BC_abs_2_or_3": true
+      },
+      "projection_hit_count": 7,
+      "projection_hits": [
+        {
+          "column": 0,
+          "row_ordinal": 0,
+          "cycle": 0,
+          "role": "WX",
+          "role_class": "outer"
+        },
+        {
+          "column": 0,
+          "row_ordinal": 6,
+          "cycle": 1,
+          "role": "WX",
+          "role_class": "outer"
+        },
+        {
+          "column": 0,
+          "row_ordinal": 12,
+          "cycle": 2,
+          "role": "WX",
+          "role_class": "outer"
+        },
+        {
+          "column": 4,
+          "row_ordinal": 1,
+          "cycle": 0,
+          "role": "XY",
+          "role_class": "outer"
+        },
+        {
+          "column": 4,
+          "row_ordinal": 7,
+          "cycle": 1,
+          "role": "XY",
+          "role_class": "outer"
+        },
+        {
+          "column": 4,
+          "row_ordinal": 13,
+          "cycle": 2,
+          "role": "XY",
+          "role_class": "outer"
+        },
+        {
+          "column": 4,
+          "row_ordinal": 14,
+          "cycle": 2,
+          "role": "YZ",
+          "role_class": "interior"
+        }
+      ],
+      "projection_roles": [
+        "WX",
+        "XY",
+        "YZ"
+      ],
+      "projection_role_classes": [
+        "interior",
+        "outer"
+      ],
+      "projection_cycles": [
+        0,
+        1,
+        2
+      ],
+      "candidate0_laws": [
+        {
+          "label": "half_turn",
+          "shift_mod60": 30,
+          "sector_pair": [
+            0,
+            1
+          ],
+          "petersen_edge_a": [
+            0,
+            1
+          ],
+          "petersen_edge_b": [
+            1,
+            2
+          ],
+          "shared_petersen_vertex": 1
+        },
+        {
+          "label": "half_turn",
+          "shift_mod60": 30,
+          "sector_pair": [
+            1,
+            2
+          ],
+          "petersen_edge_a": [
+            1,
+            2
+          ],
+          "petersen_edge_b": [
+            2,
+            3
+          ],
+          "shared_petersen_vertex": 2
+        }
+      ],
+      "candidate1_laws": [
+        {
+          "label": "half_turn",
+          "shift_mod60": 30,
+          "sector_pair": [
+            0,
+            1
+          ],
+          "petersen_edge_a": [
+            0,
+            1
+          ],
+          "petersen_edge_b": [
+            1,
+            2
+          ],
+          "shared_petersen_vertex": 1
+        },
+        {
+          "label": "half_turn",
+          "shift_mod60": 30,
+          "sector_pair": [
+            1,
+            2
+          ],
+          "petersen_edge_a": [
+            1,
+            2
+          ],
+          "petersen_edge_b": [
+            2,
+            3
+          ],
+          "shared_petersen_vertex": 2
+        }
+      ],
+      "features": [
+        "proj:any_col_unseen=False",
+        "proj:both_cols_visible=True",
+        "proj:cycle_span_count=3",
+        "proj:has_interior_role_class=True",
+        "proj:has_outer_and_interior=True",
+        "proj:has_outer_role_class=True",
+        "proj:nohit_col_count=0",
+        "proj:role_class_sig=['interior','outer','outer']",
+        "proj:visible_col_count=2",
+        "source:AC_abs_small=True",
+        "source:AC_sign=neg",
+        "source:A_parity=odd",
+        "source:BA_AC_signs=neg_to_neg",
+        "source:BA_abs_small=True",
+        "source:BA_sign=neg",
+        "source:BC_abs_2_or_3=True",
+        "source:BC_sign=neg",
+        "source:B_parity=even",
+        "source:C_parity=even",
+        "source:endpoint_parity=even_to_even",
+        "source:p900_candidate0_edge_law:label_sig=['half_turn','half_turn']",
+        "source:p900_candidate0_edge_law:same_label=True",
+        "source:p900_candidate0_edge_law:same_shift=True",
+        "source:p900_candidate0_edge_law:sector_delta_abs_small=True",
+        "source:p900_candidate0_edge_law:sector_delta_signs=['pos','pos']",
+        "source:p900_candidate0_edge_law:shared_parity_sig=['odd','even']",
+        "source:p900_candidate0_edge_law:shared_same=False",
+        "source:p900_candidate0_edge_law:shift_sig=[30,30]",
+        "source:p900_candidate1_edge_law:label_sig=['half_turn','half_turn']",
+        "source:p900_candidate1_edge_law:same_label=True",
+        "source:p900_candidate1_edge_law:same_shift=True",
+        "source:p900_candidate1_edge_law:sector_delta_abs_small=True",
+        "source:p900_candidate1_edge_law:sector_delta_signs=['pos','pos']",
+        "source:p900_candidate1_edge_law:shared_parity_sig=['odd','even']",
+        "source:p900_candidate1_edge_law:shared_same=False",
+        "source:p900_candidate1_edge_law:shift_sig=[30,30]"
+      ]
+    },
+    {
+      "index": 1,
+      "selected": true,
+      "columns": [
+        7,
+        10
+      ],
+      "path_shape": {
+        "B": 4,
+        "A": 3,
+        "C": 2,
+        "path": [
+          4,
+          3,
+          2
+        ],
+        "B_parity": "even",
+        "A_parity": "odd",
+        "C_parity": "even",
+        "BA_delta": -1,
+        "AC_delta": -1,
+        "BC_delta": -2,
+        "BA_sign": "neg",
+        "AC_sign": "neg",
+        "BC_sign": "neg",
+        "BA_abs_small": true,
+        "BC_abs_2_or_3": true
+      },
+      "projection_hit_count": 6,
+      "projection_hits": [
+        {
+          "column": 7,
+          "row_ordinal": 2,
+          "cycle": 0,
+          "role": "YZ",
+          "role_class": "interior"
+        },
+        {
+          "column": 7,
+          "row_ordinal": 5,
+          "cycle": 0,
+          "role": "IW",
+          "role_class": "outer"
+        },
+        {
+          "column": 7,
+          "row_ordinal": 11,
+          "cycle": 1,
+          "role": "IW",
+          "role_class": "outer"
+        },
+        {
+          "column": 7,
+          "row_ordinal": 17,
+          "cycle": 2,
+          "role": "IW",
+          "role_class": "outer"
+        },
+        {
+          "column": 10,
+          "row_ordinal": 2,
+          "cycle": 0,
+          "role": "YZ",
+          "role_class": "interior"
+        },
+        {
+          "column": 10,
+          "row_ordinal": 10,
+          "cycle": 1,
+          "role": "TI",
+          "role_class": "interior"
+        }
+      ],
+      "projection_roles": [
+        "IW",
+        "TI",
+        "YZ"
+      ],
+      "projection_role_classes": [
+        "interior",
+        "outer"
+      ],
+      "projection_cycles": [
+        0,
+        1,
+        2
+      ],
+      "candidate0_laws": [
+        {
+          "label": "half_turn",
+          "shift_mod60": 30,
+          "sector_pair": [
+            2,
+            3
+          ],
+          "petersen_edge_a": [
+            2,
+            3
+          ],
+          "petersen_edge_b": [
+            3,
+            4
+          ],
+          "shared_petersen_vertex": 3
+        },
+        {
+          "label": "identity",
+          "shift_mod60": 0,
+          "sector_pair": [
+            3,
+            4
+          ],
+          "petersen_edge_a": [
+            3,
+            4
+          ],
+          "petersen_edge_b": [
+            4,
+            0
+          ],
+          "shared_petersen_vertex": 4
+        }
+      ],
+      "candidate1_laws": [
+        {
+          "label": "half_turn",
+          "shift_mod60": 30,
+          "sector_pair": [
+            2,
+            3
+          ],
+          "petersen_edge_a": [
+            2,
+            3
+          ],
+          "petersen_edge_b": [
+            3,
+            4
+          ],
+          "shared_petersen_vertex": 3
+        },
+        {
+          "label": "identity",
+          "shift_mod60": 0,
+          "sector_pair": [
+            3,
+            4
+          ],
+          "petersen_edge_a": [
+            3,
+            4
+          ],
+          "petersen_edge_b": [
+            4,
+            0
+          ],
+          "shared_petersen_vertex": 4
+        }
+      ],
+      "features": [
+        "proj:any_col_unseen=False",
+        "proj:both_cols_visible=True",
+        "proj:cycle_span_count=3",
+        "proj:has_interior_role_class=True",
+        "proj:has_outer_and_interior=True",
+        "proj:has_outer_role_class=True",
+        "proj:nohit_col_count=0",
+        "proj:role_class_sig=['interior','interior','outer']",
+        "proj:visible_col_count=2",
+        "source:AC_abs_small=True",
+        "source:AC_sign=neg",
+        "source:A_parity=odd",
+        "source:BA_AC_signs=neg_to_neg",
+        "source:BA_abs_small=True",
+        "source:BA_sign=neg",
+        "source:BC_abs_2_or_3=True",
+        "source:BC_sign=neg",
+        "source:B_parity=even",
+        "source:C_parity=even",
+        "source:endpoint_parity=even_to_even",
+        "source:p900_candidate0_edge_law:label_sig=['half_turn','identity']",
+        "source:p900_candidate0_edge_law:same_label=False",
+        "source:p900_candidate0_edge_law:same_shift=False",
+        "source:p900_candidate0_edge_law:sector_delta_abs_small=True",
+        "source:p900_candidate0_edge_law:sector_delta_signs=['pos','pos']",
+        "source:p900_candidate0_edge_law:shared_parity_sig=['odd','even']",
+        "source:p900_candidate0_edge_law:shared_same=False",
+        "source:p900_candidate0_edge_law:shift_sig=[30,0]",
+        "source:p900_candidate1_edge_law:label_sig=['half_turn','identity']",
+        "source:p900_candidate1_edge_law:same_label=False",
+        "source:p900_candidate1_edge_law:same_shift=False",
+        "source:p900_candidate1_edge_law:sector_delta_abs_small=True",
+        "source:p900_candidate1_edge_law:sector_delta_signs=['pos','pos']",
+        "source:p900_candidate1_edge_law:shared_parity_sig=['odd','even']",
+        "source:p900_candidate1_edge_law:shared_same=False",
+        "source:p900_candidate1_edge_law:shift_sig=[30,0]"
+      ]
+    },
+    {
+      "index": 5,
+      "selected": true,
+      "columns": [
+        23,
+        24
+      ],
+      "path_shape": {
+        "B": 11,
+        "A": 7,
+        "C": 14,
+        "path": [
+          11,
+          7,
+          14
+        ],
+        "B_parity": "odd",
+        "A_parity": "odd",
+        "C_parity": "even",
+        "BA_delta": -4,
+        "AC_delta": 7,
+        "BC_delta": 3,
+        "BA_sign": "neg",
+        "AC_sign": "pos",
+        "BC_sign": "pos",
+        "BA_abs_small": true,
+        "BC_abs_2_or_3": true
+      },
+      "projection_hit_count": 0,
+      "projection_hits": [],
+      "projection_roles": [],
+      "projection_role_classes": [],
+      "projection_cycles": [],
+      "candidate0_laws": [
+        {
+          "label": "identity",
+          "shift_mod60": 0,
+          "sector_pair": [
+            9,
+            11
+          ],
+          "petersen_edge_a": [
+            4,
+            9
+          ],
+          "petersen_edge_b": [
+            7,
+            9
+          ],
+          "shared_petersen_vertex": 9
+        },
+        {
+          "label": "identity",
+          "shift_mod60": 0,
+          "sector_pair": [
+            9,
+            12
+          ],
+          "petersen_edge_a": [
+            4,
+            9
+          ],
+          "petersen_edge_b": [
+            9,
+            6
+          ],
+          "shared_petersen_vertex": 9
+        }
+      ],
+      "candidate1_laws": [
+        {
+          "label": "half_turn",
+          "shift_mod60": 30,
+          "sector_pair": [
+            9,
+            11
+          ],
+          "petersen_edge_a": [
+            4,
+            9
+          ],
+          "petersen_edge_b": [
+            7,
+            9
+          ],
+          "shared_petersen_vertex": 9
+        },
+        {
+          "label": "half_turn",
+          "shift_mod60": 30,
+          "sector_pair": [
+            9,
+            12
+          ],
+          "petersen_edge_a": [
+            4,
+            9
+          ],
+          "petersen_edge_b": [
+            9,
+            6
+          ],
+          "shared_petersen_vertex": 9
+        }
+      ],
+      "features": [
+        "proj:any_col_unseen=True",
+        "proj:both_cols_visible=False",
+        "proj:cycle_span_count=0",
+        "proj:has_interior_role_class=False",
+        "proj:has_outer_and_interior=False",
+        "proj:has_outer_role_class=False",
+        "proj:nohit_col_count=2",
+        "proj:role_class_sig=[]",
+        "proj:visible_col_count=0",
+        "source:AC_abs_small=False",
+        "source:AC_sign=pos",
+        "source:A_parity=odd",
+        "source:BA_AC_signs=neg_to_pos",
+        "source:BA_abs_small=True",
+        "source:BA_sign=neg",
+        "source:BC_abs_2_or_3=True",
+        "source:BC_sign=pos",
+        "source:B_parity=odd",
+        "source:C_parity=even",
+        "source:endpoint_parity=odd_to_even",
+        "source:p900_candidate0_edge_law:label_sig=['identity','identity']",
+        "source:p900_candidate0_edge_law:same_label=True",
+        "source:p900_candidate0_edge_law:same_shift=True",
+        "source:p900_candidate0_edge_law:sector_delta_abs_small=True",
+        "source:p900_candidate0_edge_law:sector_delta_signs=['pos','pos']",
+        "source:p900_candidate0_edge_law:shared_parity_sig=['odd','odd']",
+        "source:p900_candidate0_edge_law:shared_same=True",
+        "source:p900_candidate0_edge_law:shift_sig=[0,0]",
+        "source:p900_candidate1_edge_law:label_sig=['half_turn','half_turn']",
+        "source:p900_candidate1_edge_law:same_label=True",
+        "source:p900_candidate1_edge_law:same_shift=True",
+        "source:p900_candidate1_edge_law:sector_delta_abs_small=True",
+        "source:p900_candidate1_edge_law:sector_delta_signs=['pos','pos']",
+        "source:p900_candidate1_edge_law:shared_parity_sig=['odd','odd']",
+        "source:p900_candidate1_edge_law:shared_same=True",
+        "source:p900_candidate1_edge_law:shift_sig=[30,30]"
+      ]
+    },
+    {
+      "index": 7,
+      "selected": true,
+      "columns": [
+        28,
+        29
+      ],
+      "path_shape": {
+        "B": 13,
+        "A": 9,
+        "C": 10,
+        "path": [
+          13,
+          9,
+          10
+        ],
+        "B_parity": "odd",
+        "A_parity": "odd",
+        "C_parity": "even",
+        "BA_delta": -4,
+        "AC_delta": 1,
+        "BC_delta": -3,
+        "BA_sign": "neg",
+        "AC_sign": "pos",
+        "BC_sign": "neg",
+        "BA_abs_small": true,
+        "BC_abs_2_or_3": true
+      },
+      "projection_hit_count": 0,
+      "projection_hits": [],
+      "projection_roles": [],
+      "projection_role_classes": [],
+      "projection_cycles": [],
+      "candidate0_laws": [
+        {
+          "label": "identity",
+          "shift_mod60": 0,
+          "sector_pair": [
+            12,
+            13
+          ],
+          "petersen_edge_a": [
+            9,
+            6
+          ],
+          "petersen_edge_b": [
+            6,
+            8
+          ],
+          "shared_petersen_vertex": 6
+        },
+        {
+          "label": "identity",
+          "shift_mod60": 0,
+          "sector_pair": [
+            13,
+            14
+          ],
+          "petersen_edge_a": [
+            6,
+            8
+          ],
+          "petersen_edge_b": [
+            8,
+            5
+          ],
+          "shared_petersen_vertex": 8
+        }
+      ],
+      "candidate1_laws": [
+        {
+          "label": "identity",
+          "shift_mod60": 0,
+          "sector_pair": [
+            12,
+            13
+          ],
+          "petersen_edge_a": [
+            9,
+            6
+          ],
+          "petersen_edge_b": [
+            6,
+            8
+          ],
+          "shared_petersen_vertex": 6
+        },
+        {
+          "label": "identity",
+          "shift_mod60": 0,
+          "sector_pair": [
+            13,
+            14
+          ],
+          "petersen_edge_a": [
+            6,
+            8
+          ],
+          "petersen_edge_b": [
+            8,
+            5
+          ],
+          "shared_petersen_vertex": 8
+        }
+      ],
+      "features": [
+        "proj:any_col_unseen=True",
+        "proj:both_cols_visible=False",
+        "proj:cycle_span_count=0",
+        "proj:has_interior_role_class=False",
+        "proj:has_outer_and_interior=False",
+        "proj:has_outer_role_class=False",
+        "proj:nohit_col_count=2",
+        "proj:role_class_sig=[]",
+        "proj:visible_col_count=0",
+        "source:AC_abs_small=True",
+        "source:AC_sign=pos",
+        "source:A_parity=odd",
+        "source:BA_AC_signs=neg_to_pos",
+        "source:BA_abs_small=True",
+        "source:BA_sign=neg",
+        "source:BC_abs_2_or_3=True",
+        "source:BC_sign=neg",
+        "source:B_parity=odd",
+        "source:C_parity=even",
+        "source:endpoint_parity=odd_to_even",
+        "source:p900_candidate0_edge_law:label_sig=['identity','identity']",
+        "source:p900_candidate0_edge_law:same_label=True",
+        "source:p900_candidate0_edge_law:same_shift=True",
+        "source:p900_candidate0_edge_law:sector_delta_abs_small=True",
+        "source:p900_candidate0_edge_law:sector_delta_signs=['pos','pos']",
+        "source:p900_candidate0_edge_law:shared_parity_sig=['even','even']",
+        "source:p900_candidate0_edge_law:shared_same=False",
+        "source:p900_candidate0_edge_law:shift_sig=[0,0]",
+        "source:p900_candidate1_edge_law:label_sig=['identity','identity']",
+        "source:p900_candidate1_edge_law:same_label=True",
+        "source:p900_candidate1_edge_law:same_shift=True",
+        "source:p900_candidate1_edge_law:sector_delta_abs_small=True",
+        "source:p900_candidate1_edge_law:sector_delta_signs=['pos','pos']",
+        "source:p900_candidate1_edge_law:shared_parity_sig=['even','even']",
+        "source:p900_candidate1_edge_law:shared_same=False",
+        "source:p900_candidate1_edge_law:shift_sig=[0,0]"
+      ]
+    }
+  ],
+  "support_family_records": [
+    {
+      "index": 0,
+      "selected": true,
+      "columns": [
+        0,
+        4
+      ],
+      "path_shape": {
+        "B": 2,
+        "A": 1,
+        "C": 0,
+        "path": [
+          2,
+          1,
+          0
+        ],
+        "B_parity": "even",
+        "A_parity": "odd",
+        "C_parity": "even",
+        "BA_delta": -1,
+        "AC_delta": -1,
+        "BC_delta": -2,
+        "BA_sign": "neg",
+        "AC_sign": "neg",
+        "BC_sign": "neg",
+        "BA_abs_small": true,
+        "BC_abs_2_or_3": true
+      },
+      "projection_hit_count": 7,
+      "projection_hits": [
+        {
+          "column": 0,
+          "row_ordinal": 0,
+          "cycle": 0,
+          "role": "WX",
+          "role_class": "outer"
+        },
+        {
+          "column": 0,
+          "row_ordinal": 6,
+          "cycle": 1,
+          "role": "WX",
+          "role_class": "outer"
+        },
+        {
+          "column": 0,
+          "row_ordinal": 12,
+          "cycle": 2,
+          "role": "WX",
+          "role_class": "outer"
+        },
+        {
+          "column": 4,
+          "row_ordinal": 1,
+          "cycle": 0,
+          "role": "XY",
+          "role_class": "outer"
+        },
+        {
+          "column": 4,
+          "row_ordinal": 7,
+          "cycle": 1,
+          "role": "XY",
+          "role_class": "outer"
+        },
+        {
+          "column": 4,
+          "row_ordinal": 13,
+          "cycle": 2,
+          "role": "XY",
+          "role_class": "outer"
+        },
+        {
+          "column": 4,
+          "row_ordinal": 14,
+          "cycle": 2,
+          "role": "YZ",
+          "role_class": "interior"
+        }
+      ],
+      "projection_roles": [
+        "WX",
+        "XY",
+        "YZ"
+      ],
+      "projection_role_classes": [
+        "interior",
+        "outer"
+      ],
+      "projection_cycles": [
+        0,
+        1,
+        2
+      ],
+      "candidate0_laws": [
+        {
+          "label": "half_turn",
+          "shift_mod60": 30,
+          "sector_pair": [
+            0,
+            1
+          ],
+          "petersen_edge_a": [
+            0,
+            1
+          ],
+          "petersen_edge_b": [
+            1,
+            2
+          ],
+          "shared_petersen_vertex": 1
+        },
+        {
+          "label": "half_turn",
+          "shift_mod60": 30,
+          "sector_pair": [
+            1,
+            2
+          ],
+          "petersen_edge_a": [
+            1,
+            2
+          ],
+          "petersen_edge_b": [
+            2,
+            3
+          ],
+          "shared_petersen_vertex": 2
+        }
+      ],
+      "candidate1_laws": [
+        {
+          "label": "half_turn",
+          "shift_mod60": 30,
+          "sector_pair": [
+            0,
+            1
+          ],
+          "petersen_edge_a": [
+            0,
+            1
+          ],
+          "petersen_edge_b": [
+            1,
+            2
+          ],
+          "shared_petersen_vertex": 1
+        },
+        {
+          "label": "half_turn",
+          "shift_mod60": 30,
+          "sector_pair": [
+            1,
+            2
+          ],
+          "petersen_edge_a": [
+            1,
+            2
+          ],
+          "petersen_edge_b": [
+            2,
+            3
+          ],
+          "shared_petersen_vertex": 2
+        }
+      ],
+      "features": [
+        "proj:any_col_unseen=False",
+        "proj:both_cols_visible=True",
+        "proj:cycle_span_count=3",
+        "proj:has_interior_role_class=True",
+        "proj:has_outer_and_interior=True",
+        "proj:has_outer_role_class=True",
+        "proj:nohit_col_count=0",
+        "proj:role_class_sig=['interior','outer','outer']",
+        "proj:visible_col_count=2",
+        "source:AC_abs_small=True",
+        "source:AC_sign=neg",
+        "source:A_parity=odd",
+        "source:BA_AC_signs=neg_to_neg",
+        "source:BA_abs_small=True",
+        "source:BA_sign=neg",
+        "source:BC_abs_2_or_3=True",
+        "source:BC_sign=neg",
+        "source:B_parity=even",
+        "source:C_parity=even",
+        "source:endpoint_parity=even_to_even",
+        "source:p900_candidate0_edge_law:label_sig=['half_turn','half_turn']",
+        "source:p900_candidate0_edge_law:same_label=True",
+        "source:p900_candidate0_edge_law:same_shift=True",
+        "source:p900_candidate0_edge_law:sector_delta_abs_small=True",
+        "source:p900_candidate0_edge_law:sector_delta_signs=['pos','pos']",
+        "source:p900_candidate0_edge_law:shared_parity_sig=['odd','even']",
+        "source:p900_candidate0_edge_law:shared_same=False",
+        "source:p900_candidate0_edge_law:shift_sig=[30,30]",
+        "source:p900_candidate1_edge_law:label_sig=['half_turn','half_turn']",
+        "source:p900_candidate1_edge_law:same_label=True",
+        "source:p900_candidate1_edge_law:same_shift=True",
+        "source:p900_candidate1_edge_law:sector_delta_abs_small=True",
+        "source:p900_candidate1_edge_law:sector_delta_signs=['pos','pos']",
+        "source:p900_candidate1_edge_law:shared_parity_sig=['odd','even']",
+        "source:p900_candidate1_edge_law:shared_same=False",
+        "source:p900_candidate1_edge_law:shift_sig=[30,30]"
+      ]
+    },
+    {
+      "index": 1,
+      "selected": true,
+      "columns": [
+        7,
+        10
+      ],
+      "path_shape": {
+        "B": 4,
+        "A": 3,
+        "C": 2,
+        "path": [
+          4,
+          3,
+          2
+        ],
+        "B_parity": "even",
+        "A_parity": "odd",
+        "C_parity": "even",
+        "BA_delta": -1,
+        "AC_delta": -1,
+        "BC_delta": -2,
+        "BA_sign": "neg",
+        "AC_sign": "neg",
+        "BC_sign": "neg",
+        "BA_abs_small": true,
+        "BC_abs_2_or_3": true
+      },
+      "projection_hit_count": 6,
+      "projection_hits": [
+        {
+          "column": 7,
+          "row_ordinal": 2,
+          "cycle": 0,
+          "role": "YZ",
+          "role_class": "interior"
+        },
+        {
+          "column": 7,
+          "row_ordinal": 5,
+          "cycle": 0,
+          "role": "IW",
+          "role_class": "outer"
+        },
+        {
+          "column": 7,
+          "row_ordinal": 11,
+          "cycle": 1,
+          "role": "IW",
+          "role_class": "outer"
+        },
+        {
+          "column": 7,
+          "row_ordinal": 17,
+          "cycle": 2,
+          "role": "IW",
+          "role_class": "outer"
+        },
+        {
+          "column": 10,
+          "row_ordinal": 2,
+          "cycle": 0,
+          "role": "YZ",
+          "role_class": "interior"
+        },
+        {
+          "column": 10,
+          "row_ordinal": 10,
+          "cycle": 1,
+          "role": "TI",
+          "role_class": "interior"
+        }
+      ],
+      "projection_roles": [
+        "IW",
+        "TI",
+        "YZ"
+      ],
+      "projection_role_classes": [
+        "interior",
+        "outer"
+      ],
+      "projection_cycles": [
+        0,
+        1,
+        2
+      ],
+      "candidate0_laws": [
+        {
+          "label": "half_turn",
+          "shift_mod60": 30,
+          "sector_pair": [
+            2,
+            3
+          ],
+          "petersen_edge_a": [
+            2,
+            3
+          ],
+          "petersen_edge_b": [
+            3,
+            4
+          ],
+          "shared_petersen_vertex": 3
+        },
+        {
+          "label": "identity",
+          "shift_mod60": 0,
+          "sector_pair": [
+            3,
+            4
+          ],
+          "petersen_edge_a": [
+            3,
+            4
+          ],
+          "petersen_edge_b": [
+            4,
+            0
+          ],
+          "shared_petersen_vertex": 4
+        }
+      ],
+      "candidate1_laws": [
+        {
+          "label": "half_turn",
+          "shift_mod60": 30,
+          "sector_pair": [
+            2,
+            3
+          ],
+          "petersen_edge_a": [
+            2,
+            3
+          ],
+          "petersen_edge_b": [
+            3,
+            4
+          ],
+          "shared_petersen_vertex": 3
+        },
+        {
+          "label": "identity",
+          "shift_mod60": 0,
+          "sector_pair": [
+            3,
+            4
+          ],
+          "petersen_edge_a": [
+            3,
+            4
+          ],
+          "petersen_edge_b": [
+            4,
+            0
+          ],
+          "shared_petersen_vertex": 4
+        }
+      ],
+      "features": [
+        "proj:any_col_unseen=False",
+        "proj:both_cols_visible=True",
+        "proj:cycle_span_count=3",
+        "proj:has_interior_role_class=True",
+        "proj:has_outer_and_interior=True",
+        "proj:has_outer_role_class=True",
+        "proj:nohit_col_count=0",
+        "proj:role_class_sig=['interior','interior','outer']",
+        "proj:visible_col_count=2",
+        "source:AC_abs_small=True",
+        "source:AC_sign=neg",
+        "source:A_parity=odd",
+        "source:BA_AC_signs=neg_to_neg",
+        "source:BA_abs_small=True",
+        "source:BA_sign=neg",
+        "source:BC_abs_2_or_3=True",
+        "source:BC_sign=neg",
+        "source:B_parity=even",
+        "source:C_parity=even",
+        "source:endpoint_parity=even_to_even",
+        "source:p900_candidate0_edge_law:label_sig=['half_turn','identity']",
+        "source:p900_candidate0_edge_law:same_label=False",
+        "source:p900_candidate0_edge_law:same_shift=False",
+        "source:p900_candidate0_edge_law:sector_delta_abs_small=True",
+        "source:p900_candidate0_edge_law:sector_delta_signs=['pos','pos']",
+        "source:p900_candidate0_edge_law:shared_parity_sig=['odd','even']",
+        "source:p900_candidate0_edge_law:shared_same=False",
+        "source:p900_candidate0_edge_law:shift_sig=[30,0]",
+        "source:p900_candidate1_edge_law:label_sig=['half_turn','identity']",
+        "source:p900_candidate1_edge_law:same_label=False",
+        "source:p900_candidate1_edge_law:same_shift=False",
+        "source:p900_candidate1_edge_law:sector_delta_abs_small=True",
+        "source:p900_candidate1_edge_law:sector_delta_signs=['pos','pos']",
+        "source:p900_candidate1_edge_law:shared_parity_sig=['odd','even']",
+        "source:p900_candidate1_edge_law:shared_same=False",
+        "source:p900_candidate1_edge_law:shift_sig=[30,0]"
+      ]
+    },
+    {
+      "index": 5,
+      "selected": true,
+      "columns": [
+        23,
+        24
+      ],
+      "path_shape": {
+        "B": 11,
+        "A": 7,
+        "C": 14,
+        "path": [
+          11,
+          7,
+          14
+        ],
+        "B_parity": "odd",
+        "A_parity": "odd",
+        "C_parity": "even",
+        "BA_delta": -4,
+        "AC_delta": 7,
+        "BC_delta": 3,
+        "BA_sign": "neg",
+        "AC_sign": "pos",
+        "BC_sign": "pos",
+        "BA_abs_small": true,
+        "BC_abs_2_or_3": true
+      },
+      "projection_hit_count": 0,
+      "projection_hits": [],
+      "projection_roles": [],
+      "projection_role_classes": [],
+      "projection_cycles": [],
+      "candidate0_laws": [
+        {
+          "label": "identity",
+          "shift_mod60": 0,
+          "sector_pair": [
+            9,
+            11
+          ],
+          "petersen_edge_a": [
+            4,
+            9
+          ],
+          "petersen_edge_b": [
+            7,
+            9
+          ],
+          "shared_petersen_vertex": 9
+        },
+        {
+          "label": "identity",
+          "shift_mod60": 0,
+          "sector_pair": [
+            9,
+            12
+          ],
+          "petersen_edge_a": [
+            4,
+            9
+          ],
+          "petersen_edge_b": [
+            9,
+            6
+          ],
+          "shared_petersen_vertex": 9
+        }
+      ],
+      "candidate1_laws": [
+        {
+          "label": "half_turn",
+          "shift_mod60": 30,
+          "sector_pair": [
+            9,
+            11
+          ],
+          "petersen_edge_a": [
+            4,
+            9
+          ],
+          "petersen_edge_b": [
+            7,
+            9
+          ],
+          "shared_petersen_vertex": 9
+        },
+        {
+          "label": "half_turn",
+          "shift_mod60": 30,
+          "sector_pair": [
+            9,
+            12
+          ],
+          "petersen_edge_a": [
+            4,
+            9
+          ],
+          "petersen_edge_b": [
+            9,
+            6
+          ],
+          "shared_petersen_vertex": 9
+        }
+      ],
+      "features": [
+        "proj:any_col_unseen=True",
+        "proj:both_cols_visible=False",
+        "proj:cycle_span_count=0",
+        "proj:has_interior_role_class=False",
+        "proj:has_outer_and_interior=False",
+        "proj:has_outer_role_class=False",
+        "proj:nohit_col_count=2",
+        "proj:role_class_sig=[]",
+        "proj:visible_col_count=0",
+        "source:AC_abs_small=False",
+        "source:AC_sign=pos",
+        "source:A_parity=odd",
+        "source:BA_AC_signs=neg_to_pos",
+        "source:BA_abs_small=True",
+        "source:BA_sign=neg",
+        "source:BC_abs_2_or_3=True",
+        "source:BC_sign=pos",
+        "source:B_parity=odd",
+        "source:C_parity=even",
+        "source:endpoint_parity=odd_to_even",
+        "source:p900_candidate0_edge_law:label_sig=['identity','identity']",
+        "source:p900_candidate0_edge_law:same_label=True",
+        "source:p900_candidate0_edge_law:same_shift=True",
+        "source:p900_candidate0_edge_law:sector_delta_abs_small=True",
+        "source:p900_candidate0_edge_law:sector_delta_signs=['pos','pos']",
+        "source:p900_candidate0_edge_law:shared_parity_sig=['odd','odd']",
+        "source:p900_candidate0_edge_law:shared_same=True",
+        "source:p900_candidate0_edge_law:shift_sig=[0,0]",
+        "source:p900_candidate1_edge_law:label_sig=['half_turn','half_turn']",
+        "source:p900_candidate1_edge_law:same_label=True",
+        "source:p900_candidate1_edge_law:same_shift=True",
+        "source:p900_candidate1_edge_law:sector_delta_abs_small=True",
+        "source:p900_candidate1_edge_law:sector_delta_signs=['pos','pos']",
+        "source:p900_candidate1_edge_law:shared_parity_sig=['odd','odd']",
+        "source:p900_candidate1_edge_law:shared_same=True",
+        "source:p900_candidate1_edge_law:shift_sig=[30,30]"
+      ]
+    },
+    {
+      "index": 6,
+      "selected": false,
+      "columns": [
+        25,
+        28
+      ],
+      "path_shape": {
+        "B": 10,
+        "A": 9,
+        "C": 8,
+        "path": [
+          10,
+          9,
+          8
+        ],
+        "B_parity": "even",
+        "A_parity": "odd",
+        "C_parity": "even",
+        "BA_delta": -1,
+        "AC_delta": -1,
+        "BC_delta": -2,
+        "BA_sign": "neg",
+        "AC_sign": "neg",
+        "BC_sign": "neg",
+        "BA_abs_small": true,
+        "BC_abs_2_or_3": true
+      },
+      "projection_hit_count": 0,
+      "projection_hits": [],
+      "projection_roles": [],
+      "projection_role_classes": [],
+      "projection_cycles": [],
+      "candidate0_laws": [
+        {
+          "label": "identity",
+          "shift_mod60": 0,
+          "sector_pair": [
+            10,
+            11
+          ],
+          "petersen_edge_a": [
+            5,
+            7
+          ],
+          "petersen_edge_b": [
+            7,
+            9
+          ],
+          "shared_petersen_vertex": 7
+        },
+        {
+          "label": "identity",
+          "shift_mod60": 0,
+          "sector_pair": [
+            12,
+            13
+          ],
+          "petersen_edge_a": [
+            9,
+            6
+          ],
+          "petersen_edge_b": [
+            6,
+            8
+          ],
+          "shared_petersen_vertex": 6
+        }
+      ],
+      "candidate1_laws": [
+        {
+          "label": "identity",
+          "shift_mod60": 0,
+          "sector_pair": [
+            10,
+            11
+          ],
+          "petersen_edge_a": [
+            5,
+            7
+          ],
+          "petersen_edge_b": [
+            7,
+            9
+          ],
+          "shared_petersen_vertex": 7
+        },
+        {
+          "label": "identity",
+          "shift_mod60": 0,
+          "sector_pair": [
+            12,
+            13
+          ],
+          "petersen_edge_a": [
+            9,
+            6
+          ],
+          "petersen_edge_b": [
+            6,
+            8
+          ],
+          "shared_petersen_vertex": 6
+        }
+      ],
+      "features": [
+        "proj:any_col_unseen=True",
+        "proj:both_cols_visible=False",
+        "proj:cycle_span_count=0",
+        "proj:has_interior_role_class=False",
+        "proj:has_outer_and_interior=False",
+        "proj:has_outer_role_class=False",
+        "proj:nohit_col_count=2",
+        "proj:role_class_sig=[]",
+        "proj:visible_col_count=0",
+        "source:AC_abs_small=True",
+        "source:AC_sign=neg",
+        "source:A_parity=odd",
+        "source:BA_AC_signs=neg_to_neg",
+        "source:BA_abs_small=True",
+        "source:BA_sign=neg",
+        "source:BC_abs_2_or_3=True",
+        "source:BC_sign=neg",
+        "source:B_parity=even",
+        "source:C_parity=even",
+        "source:endpoint_parity=even_to_even",
+        "source:p900_candidate0_edge_law:label_sig=['identity','identity']",
+        "source:p900_candidate0_edge_law:same_label=True",
+        "source:p900_candidate0_edge_law:same_shift=True",
+        "source:p900_candidate0_edge_law:sector_delta_abs_small=True",
+        "source:p900_candidate0_edge_law:sector_delta_signs=['pos','pos']",
+        "source:p900_candidate0_edge_law:shared_parity_sig=['odd','even']",
+        "source:p900_candidate0_edge_law:shared_same=False",
+        "source:p900_candidate0_edge_law:shift_sig=[0,0]",
+        "source:p900_candidate1_edge_law:label_sig=['identity','identity']",
+        "source:p900_candidate1_edge_law:same_label=True",
+        "source:p900_candidate1_edge_law:same_shift=True",
+        "source:p900_candidate1_edge_law:sector_delta_abs_small=True",
+        "source:p900_candidate1_edge_law:sector_delta_signs=['pos','pos']",
+        "source:p900_candidate1_edge_law:shared_parity_sig=['odd','even']",
+        "source:p900_candidate1_edge_law:shared_same=False",
+        "source:p900_candidate1_edge_law:shift_sig=[0,0]"
+      ]
+    },
+    {
+      "index": 7,
+      "selected": true,
+      "columns": [
+        28,
+        29
+      ],
+      "path_shape": {
+        "B": 13,
+        "A": 9,
+        "C": 10,
+        "path": [
+          13,
+          9,
+          10
+        ],
+        "B_parity": "odd",
+        "A_parity": "odd",
+        "C_parity": "even",
+        "BA_delta": -4,
+        "AC_delta": 1,
+        "BC_delta": -3,
+        "BA_sign": "neg",
+        "AC_sign": "pos",
+        "BC_sign": "neg",
+        "BA_abs_small": true,
+        "BC_abs_2_or_3": true
+      },
+      "projection_hit_count": 0,
+      "projection_hits": [],
+      "projection_roles": [],
+      "projection_role_classes": [],
+      "projection_cycles": [],
+      "candidate0_laws": [
+        {
+          "label": "identity",
+          "shift_mod60": 0,
+          "sector_pair": [
+            12,
+            13
+          ],
+          "petersen_edge_a": [
+            9,
+            6
+          ],
+          "petersen_edge_b": [
+            6,
+            8
+          ],
+          "shared_petersen_vertex": 6
+        },
+        {
+          "label": "identity",
+          "shift_mod60": 0,
+          "sector_pair": [
+            13,
+            14
+          ],
+          "petersen_edge_a": [
+            6,
+            8
+          ],
+          "petersen_edge_b": [
+            8,
+            5
+          ],
+          "shared_petersen_vertex": 8
+        }
+      ],
+      "candidate1_laws": [
+        {
+          "label": "identity",
+          "shift_mod60": 0,
+          "sector_pair": [
+            12,
+            13
+          ],
+          "petersen_edge_a": [
+            9,
+            6
+          ],
+          "petersen_edge_b": [
+            6,
+            8
+          ],
+          "shared_petersen_vertex": 6
+        },
+        {
+          "label": "identity",
+          "shift_mod60": 0,
+          "sector_pair": [
+            13,
+            14
+          ],
+          "petersen_edge_a": [
+            6,
+            8
+          ],
+          "petersen_edge_b": [
+            8,
+            5
+          ],
+          "shared_petersen_vertex": 8
+        }
+      ],
+      "features": [
+        "proj:any_col_unseen=True",
+        "proj:both_cols_visible=False",
+        "proj:cycle_span_count=0",
+        "proj:has_interior_role_class=False",
+        "proj:has_outer_and_interior=False",
+        "proj:has_outer_role_class=False",
+        "proj:nohit_col_count=2",
+        "proj:role_class_sig=[]",
+        "proj:visible_col_count=0",
+        "source:AC_abs_small=True",
+        "source:AC_sign=pos",
+        "source:A_parity=odd",
+        "source:BA_AC_signs=neg_to_pos",
+        "source:BA_abs_small=True",
+        "source:BA_sign=neg",
+        "source:BC_abs_2_or_3=True",
+        "source:BC_sign=neg",
+        "source:B_parity=odd",
+        "source:C_parity=even",
+        "source:endpoint_parity=odd_to_even",
+        "source:p900_candidate0_edge_law:label_sig=['identity','identity']",
+        "source:p900_candidate0_edge_law:same_label=True",
+        "source:p900_candidate0_edge_law:same_shift=True",
+        "source:p900_candidate0_edge_law:sector_delta_abs_small=True",
+        "source:p900_candidate0_edge_law:sector_delta_signs=['pos','pos']",
+        "source:p900_candidate0_edge_law:shared_parity_sig=['even','even']",
+        "source:p900_candidate0_edge_law:shared_same=False",
+        "source:p900_candidate0_edge_law:shift_sig=[0,0]",
+        "source:p900_candidate1_edge_law:label_sig=['identity','identity']",
+        "source:p900_candidate1_edge_law:same_label=True",
+        "source:p900_candidate1_edge_law:same_shift=True",
+        "source:p900_candidate1_edge_law:sector_delta_abs_small=True",
+        "source:p900_candidate1_edge_law:sector_delta_signs=['pos','pos']",
+        "source:p900_candidate1_edge_law:shared_parity_sig=['even','even']",
+        "source:p900_candidate1_edge_law:shared_same=False",
+        "source:p900_candidate1_edge_law:shift_sig=[0,0]"
+      ]
+    }
+  ],
+  "comparisons_to_selected": [
+    {
+      "a_index": 6,
+      "b_index": 0,
+      "shared_columns": [],
+      "shared_column_count": 0,
+      "shared_projection_roles": [],
+      "shared_projection_role_classes": [],
+      "same_A": false,
+      "same_B": false,
+      "same_C": false,
+      "same_path_shape": true,
+      "feature_overlap_count": 23,
+      "feature_union_count": 49,
+      "feature_overlap_ratio": 0.46938775510204084
+    },
+    {
+      "a_index": 6,
+      "b_index": 1,
+      "shared_columns": [],
+      "shared_column_count": 0,
+      "shared_projection_roles": [],
+      "shared_projection_role_classes": [],
+      "same_A": false,
+      "same_B": false,
+      "same_C": false,
+      "same_path_shape": true,
+      "feature_overlap_count": 19,
+      "feature_union_count": 53,
+      "feature_overlap_ratio": 0.3584905660377358
+    },
+    {
+      "a_index": 6,
+      "b_index": 5,
+      "shared_columns": [],
+      "shared_column_count": 0,
+      "shared_projection_roles": [],
+      "shared_projection_role_classes": [],
+      "same_A": false,
+      "same_B": false,
+      "same_C": false,
+      "same_path_shape": true,
+      "feature_overlap_count": 24,
+      "feature_union_count": 48,
+      "feature_overlap_ratio": 0.5
+    },
+    {
+      "a_index": 6,
+      "b_index": 7,
+      "shared_columns": [
+        28
+      ],
+      "shared_column_count": 1,
+      "shared_projection_roles": [],
+      "shared_projection_role_classes": [],
+      "same_A": true,
+      "same_B": false,
+      "same_C": false,
+      "same_path_shape": true,
+      "feature_overlap_count": 30,
+      "feature_union_count": 42,
+      "feature_overlap_ratio": 0.7142857142857143
+    }
+  ],
+  "boundary_record": {
+    "short_form": "The extra companion path was inspected but did not qualify as a neighbouring projection-family clue.",
+    "what_this_inspects": [
+      "The single nonselected companion inside the best persistent source-only family.",
+      "Whether the companion is projection-visible.",
+      "Whether the companion shares source/projection features with the four selected correction paths."
+    ],
+    "what_this_does_not_do": [
+      "It does not close Gap A.",
+      "It does not derive the WXYZTI generator.",
+      "It does not promote the companion to a proven projection member.",
+      "It does not attach physical interpretation."
+    ],
+    "next_question": "The polarity branch should remain bounded unless another source-side object is found."
+  },
+  "interpretation": {
+    "main_result": "The extra companion path was inspected but did not qualify as a neighbouring projection-family clue.",
+    "why_this_matters": "The nonselected path is the obstruction that kept the polarity family from becoming an exact generator. Inspecting it tells us whether the extra member is meaningful.",
+    "why_not_closure": "Projection visibility and feature similarity are not enough to derive the full source-native WXYZTI projection-family generator.",
+    "next_move": "The polarity branch should remain bounded unless another source-side object is found."
+  },
+  "claim": {
+    "does_this_close_gap_a": false,
+    "does_this_inspect_companion": true,
+    "does_this_identify_neighbor_candidate": false,
+    "does_this_find_generator": false,
+    "short_form": "The extra companion path was inspected but did not qualify as a neighbouring projection-family clue.",
+    "not_closed_reason": "Projection visibility and feature similarity are not enough to derive the full source-native WXYZTI projection-family generator.",
+    "next_problem": "The polarity branch should remain bounded unless another source-side object is found."
+  },
+  "checks": [
+    {
+      "id": "boundary_loaded",
+      "status": true,
+      "detail": "polarity_family_non_generator_boundary_recorded"
+    },
+    {
+      "id": "projection_search_loaded",
+      "status": true,
+      "detail": "source_native_projection_family_generator_search_family_signal_persists_no_generator"
+    },
+    {
+      "id": "candidate_audit_loaded",
+      "status": true,
+      "detail": "gap_a_polarity_aware_odd_hinge_candidate_survives_lookup_audit_not_generator"
+    },
+    {
+      "id": "best_family_loaded",
+      "status": true,
+      "detail": "['source:p900_candidate0_edge_law:sector_delta_abs_small=True']"
+    },
+    {
+      "id": "selected_count_4",
+      "status": true,
+      "detail": "4"
+    },
+    {
+      "id": "single_companion",
+      "status": true,
+      "detail": "1"
+    },
+    {
+      "id": "source_only_no_lookup",
+      "status": true,
+      "detail": "{'features': ['source:p900_candidate0_edge_law:sector_delta_abs_small=True'], 'mode': 'source_only', 'support_count': 5, 'selected_support_count': 4, 'nonselected_support_count': 1, 'support_indices': [0, 1, 5, 6, 7], 'selected_indices': [0, 1, 5, 7], 'nonselected_indices': [6], 'exact_selected': False, 'covers_all_selected': True, 'has_nonselected_family': True, 'lookup_terms': [], 'score': 4}"
+    },
+    {
+      "id": "gap_a_not_closed",
+      "status": true,
+      "detail": "inspection only"
+    }
+  ],
+  "next_script": "record_polarity_branch_terminal_boundary_001.py"
+}

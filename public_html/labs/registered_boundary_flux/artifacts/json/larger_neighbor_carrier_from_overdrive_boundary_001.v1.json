@@ -1,0 +1,2248 @@
+{
+  "schema": "larger_neighbor_carrier_from_overdrive_boundary_001.v1",
+  "status": "larger_neighbor_carrier_signal_supported_not_full_g900",
+  "timestamp_utc": "2026-06-15T02:23:08.487759+00:00",
+  "purpose": "Build and test a larger neighbor carrier induced by admitted traces after neighbor-overdrive boundary.",
+  "boundary": [
+    "This does not close Gap A.",
+    "This does not prove full G900.",
+    "This builds a 120-record source-shell/register neighbor carrier, not a 900-state evaluator.",
+    "Neighbor-carrier expansion is finite relational exposure, not physical expansion.",
+    "No independent witness layer is proven."
+  ],
+  "summary": {
+    "search_result": "larger_neighbor_carrier_signal_supported",
+    "gap_a_closed": false,
+    "full_g900_admission_found": false,
+    "larger_neighbor_carrier_built": true,
+    "carrier_node_count": 120,
+    "admitted_count": 4,
+    "admitted_keys": [
+      "11|7|14|23,24",
+      "13|9|10|28,29",
+      "2|1|0|0,4",
+      "4|3|2|7,10"
+    ],
+    "combined_carrier_edge_count": 7140,
+    "combined_carrier_component_count": 1,
+    "combined_carrier_largest_component_size": 120,
+    "combined_admitted_in_single_component": true,
+    "combined_reachable_from_admitted_count": 120,
+    "combined_reaches_all_records": true,
+    "combined_settles_all_shells_to_admitted": true,
+    "source_neighbor_carrier_edge_count": 6306,
+    "source_neighbor_reachable_from_admitted_count": 120,
+    "source_neighbor_carrier_nontrivial": true,
+    "carrier_reports": [
+      {
+        "carrier_name": "source_neighbor",
+        "node_count": 120,
+        "edge_count": 6306,
+        "component_count": 1,
+        "largest_component_size": 120,
+        "admitted_component_ids": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "admitted_in_single_component": true,
+        "reachable_from_admitted_count": 120,
+        "reachable_from_admitted_fraction": 1.0,
+        "shell_reports": [
+          {
+            "radius": 0,
+            "node_count": 4,
+            "settled_count": 4,
+            "loose_count": 0,
+            "settles_to_admitted": true,
+            "admitted_preserved": true
+          },
+          {
+            "radius": 1,
+            "node_count": 120,
+            "settled_count": 4,
+            "loose_count": 116,
+            "settles_to_admitted": true,
+            "admitted_preserved": true
+          },
+          {
+            "radius": 2,
+            "node_count": 120,
+            "settled_count": 4,
+            "loose_count": 116,
+            "settles_to_admitted": true,
+            "admitted_preserved": true
+          },
+          {
+            "radius": 3,
+            "node_count": 120,
+            "settled_count": 4,
+            "loose_count": 116,
+            "settles_to_admitted": true,
+            "admitted_preserved": true
+          },
+          {
+            "radius": 4,
+            "node_count": 120,
+            "settled_count": 4,
+            "loose_count": 116,
+            "settles_to_admitted": true,
+            "admitted_preserved": true
+          },
+          {
+            "radius": 5,
+            "node_count": 120,
+            "settled_count": 4,
+            "loose_count": 116,
+            "settles_to_admitted": true,
+            "admitted_preserved": true
+          },
+          {
+            "radius": 6,
+            "node_count": 120,
+            "settled_count": 4,
+            "loose_count": 116,
+            "settles_to_admitted": true,
+            "admitted_preserved": true
+          }
+        ],
+        "relation_counts": {
+          "reverse_partner": 60,
+          "same_source_polarity_family": 28,
+          "shared_B": 420,
+          "shared_C": 420,
+          "shared_column": 780,
+          "shared_endpoint": 1740,
+          "shared_r1_column_neighborhood": 6300,
+          "shared_source_hinge_A": 420
+        }
+      },
+      {
+        "carrier_name": "support_neighbor",
+        "node_count": 120,
+        "edge_count": 7140,
+        "component_count": 1,
+        "largest_component_size": 120,
+        "admitted_component_ids": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "admitted_in_single_component": true,
+        "reachable_from_admitted_count": 120,
+        "reachable_from_admitted_fraction": 1.0,
+        "shell_reports": [
+          {
+            "radius": 0,
+            "node_count": 4,
+            "settled_count": 4,
+            "loose_count": 0,
+            "settles_to_admitted": true,
+            "admitted_preserved": true
+          },
+          {
+            "radius": 1,
+            "node_count": 120,
+            "settled_count": 4,
+            "loose_count": 116,
+            "settles_to_admitted": true,
+            "admitted_preserved": true
+          },
+          {
+            "radius": 2,
+            "node_count": 120,
+            "settled_count": 4,
+            "loose_count": 116,
+            "settles_to_admitted": true,
+            "admitted_preserved": true
+          },
+          {
+            "radius": 3,
+            "node_count": 120,
+            "settled_count": 4,
+            "loose_count": 116,
+            "settles_to_admitted": true,
+            "admitted_preserved": true
+          },
+          {
+            "radius": 4,
+            "node_count": 120,
+            "settled_count": 4,
+            "loose_count": 116,
+            "settles_to_admitted": true,
+            "admitted_preserved": true
+          },
+          {
+            "radius": 5,
+            "node_count": 120,
+            "settled_count": 4,
+            "loose_count": 116,
+            "settles_to_admitted": true,
+            "admitted_preserved": true
+          },
+          {
+            "radius": 6,
+            "node_count": 120,
+            "settled_count": 4,
+            "loose_count": 116,
+            "settles_to_admitted": true,
+            "admitted_preserved": true
+          }
+        ],
+        "relation_counts": {
+          "shared_r1_cycle": 7140,
+          "shared_r1_role": 6996,
+          "shared_r1_support_row": 6572
+        }
+      },
+      {
+        "carrier_name": "combined_neighbor",
+        "node_count": 120,
+        "edge_count": 7140,
+        "component_count": 1,
+        "largest_component_size": 120,
+        "admitted_component_ids": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "admitted_in_single_component": true,
+        "reachable_from_admitted_count": 120,
+        "reachable_from_admitted_fraction": 1.0,
+        "shell_reports": [
+          {
+            "radius": 0,
+            "node_count": 4,
+            "settled_count": 4,
+            "loose_count": 0,
+            "settles_to_admitted": true,
+            "admitted_preserved": true
+          },
+          {
+            "radius": 1,
+            "node_count": 120,
+            "settled_count": 4,
+            "loose_count": 116,
+            "settles_to_admitted": true,
+            "admitted_preserved": true
+          },
+          {
+            "radius": 2,
+            "node_count": 120,
+            "settled_count": 4,
+            "loose_count": 116,
+            "settles_to_admitted": true,
+            "admitted_preserved": true
+          },
+          {
+            "radius": 3,
+            "node_count": 120,
+            "settled_count": 4,
+            "loose_count": 116,
+            "settles_to_admitted": true,
+            "admitted_preserved": true
+          },
+          {
+            "radius": 4,
+            "node_count": 120,
+            "settled_count": 4,
+            "loose_count": 116,
+            "settles_to_admitted": true,
+            "admitted_preserved": true
+          },
+          {
+            "radius": 5,
+            "node_count": 120,
+            "settled_count": 4,
+            "loose_count": 116,
+            "settles_to_admitted": true,
+            "admitted_preserved": true
+          },
+          {
+            "radius": 6,
+            "node_count": 120,
+            "settled_count": 4,
+            "loose_count": 116,
+            "settles_to_admitted": true,
+            "admitted_preserved": true
+          }
+        ],
+        "relation_counts": {
+          "reverse_partner": 60,
+          "same_source_polarity_family": 28,
+          "shared_B": 420,
+          "shared_C": 420,
+          "shared_column": 780,
+          "shared_endpoint": 1740,
+          "shared_r1_column_neighborhood": 6300,
+          "shared_r1_cycle": 7140,
+          "shared_r1_role": 6996,
+          "shared_r1_support_row": 6572,
+          "shared_source_hinge_A": 420
+        }
+      }
+    ],
+    "claim_closes_gap_a": false
+  },
+  "edge_records_sample": [
+    {
+      "a": "1|0|4|0,1",
+      "b": "4|0|1|0,1",
+      "relations": [
+        "reverse_partner",
+        "shared_column",
+        "shared_endpoint",
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row",
+        "shared_source_hinge_A"
+      ],
+      "source_relations": [
+        "reverse_partner",
+        "shared_column",
+        "shared_endpoint",
+        "shared_r1_column_neighborhood",
+        "shared_source_hinge_A"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "1|0|10|0,2",
+      "relations": [
+        "shared_B",
+        "shared_column",
+        "shared_endpoint",
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row",
+        "shared_source_hinge_A"
+      ],
+      "source_relations": [
+        "shared_B",
+        "shared_column",
+        "shared_endpoint",
+        "shared_r1_column_neighborhood",
+        "shared_source_hinge_A"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "10|0|1|0,2",
+      "relations": [
+        "shared_column",
+        "shared_endpoint",
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row",
+        "shared_source_hinge_A"
+      ],
+      "source_relations": [
+        "shared_column",
+        "shared_endpoint",
+        "shared_r1_column_neighborhood",
+        "shared_source_hinge_A"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "4|0|11|1,3",
+      "relations": [
+        "shared_column",
+        "shared_endpoint",
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row",
+        "shared_source_hinge_A"
+      ],
+      "source_relations": [
+        "shared_column",
+        "shared_endpoint",
+        "shared_r1_column_neighborhood",
+        "shared_source_hinge_A"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "11|0|4|1,3",
+      "relations": [
+        "shared_C",
+        "shared_column",
+        "shared_endpoint",
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row",
+        "shared_source_hinge_A"
+      ],
+      "source_relations": [
+        "shared_C",
+        "shared_column",
+        "shared_endpoint",
+        "shared_r1_column_neighborhood",
+        "shared_source_hinge_A"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "10|0|11|2,3",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row",
+        "shared_source_hinge_A"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood",
+        "shared_source_hinge_A"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "11|0|10|2,3",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row",
+        "shared_source_hinge_A"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood",
+        "shared_source_hinge_A"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "0|1|2|0,4",
+      "relations": [
+        "shared_column",
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_column",
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "2|1|0|0,4",
+      "relations": [
+        "shared_column",
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_column",
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "0|1|12|0,6",
+      "relations": [
+        "shared_column",
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_column",
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "12|1|0|0,6",
+      "relations": [
+        "shared_column",
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_column",
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "2|1|11|4,5",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "11|1|2|4,5",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "11|1|12|5,6",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "12|1|11|5,6",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "1|2|3|4,7",
+      "relations": [
+        "shared_B",
+        "shared_endpoint",
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_B",
+        "shared_endpoint",
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "3|2|1|4,7",
+      "relations": [
+        "shared_endpoint",
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_endpoint",
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "1|2|13|4,9",
+      "relations": [
+        "shared_B",
+        "shared_endpoint",
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_B",
+        "shared_endpoint",
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "13|2|1|4,9",
+      "relations": [
+        "shared_endpoint",
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_endpoint",
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "3|2|12|7,8",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "12|2|3|7,8",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "12|2|13|8,9",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "13|2|12|8,9",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "2|3|4|7,10",
+      "relations": [
+        "shared_C",
+        "shared_endpoint",
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_C",
+        "shared_endpoint",
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "4|3|2|7,10",
+      "relations": [
+        "shared_endpoint",
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_endpoint",
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "2|3|14|7,12",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "14|3|2|7,12",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "4|3|13|10,11",
+      "relations": [
+        "shared_endpoint",
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_endpoint",
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "13|3|4|10,11",
+      "relations": [
+        "shared_C",
+        "shared_endpoint",
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_C",
+        "shared_endpoint",
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "13|3|14|11,12",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "14|3|13|11,12",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "0|4|3|1,10",
+      "relations": [
+        "shared_column",
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_column",
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "3|4|0|1,10",
+      "relations": [
+        "shared_column",
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_column",
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "0|4|14|1,14",
+      "relations": [
+        "shared_column",
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_column",
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "14|4|0|1,14",
+      "relations": [
+        "shared_column",
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_column",
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "3|4|10|10,13",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "10|4|3|10,13",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "10|4|14|13,14",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "14|4|10|13,14",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "6|5|9|15,16",
+      "relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "9|5|6|15,16",
+      "relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "6|5|10|15,17",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "10|5|6|15,17",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "9|5|12|16,18",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "12|5|9|16,18",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "10|5|12|17,18",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "12|5|10|17,18",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "5|6|7|15,19",
+      "relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "7|6|5|15,19",
+      "relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "5|6|14|15,21",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "14|6|5|15,21",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "7|6|12|19,20",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "12|6|7|19,20",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "12|6|14|20,21",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "14|6|12|20,21",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "6|7|8|19,22",
+      "relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "8|7|6|19,22",
+      "relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "6|7|11|19,23",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "11|7|6|19,23",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "8|7|14|22,24",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "14|7|8|22,24",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "11|7|14|23,24",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "14|7|11|23,24",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "7|8|9|22,25",
+      "relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "9|8|7|22,25",
+      "relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "7|8|13|22,27",
+      "relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "13|8|7|22,27",
+      "relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "9|8|11|25,26",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "11|8|9|25,26",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "11|8|13|26,27",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "13|8|11|26,27",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "5|9|8|16,25",
+      "relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "8|9|5|16,25",
+      "relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "5|9|13|16,29",
+      "relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "13|9|5|16,29",
+      "relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "8|9|10|25,28",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "10|9|8|25,28",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "10|9|13|28,29",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "13|9|10|28,29",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "0|10|5|2,17",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "5|10|0|2,17",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "0|10|9|2,28",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "9|10|0|2,28",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "4|10|5|13,17",
+      "relations": [
+        "shared_endpoint",
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_endpoint",
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "5|10|4|13,17",
+      "relations": [
+        "shared_C",
+        "shared_endpoint",
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_C",
+        "shared_endpoint",
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "4|10|9|13,28",
+      "relations": [
+        "shared_endpoint",
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_endpoint",
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "9|10|4|13,28",
+      "relations": [
+        "shared_C",
+        "shared_endpoint",
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_C",
+        "shared_endpoint",
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "0|11|7|3,23",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "7|11|0|3,23",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "0|11|8|3,26",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "8|11|0|3,26",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "1|11|7|5,23",
+      "relations": [
+        "shared_B",
+        "shared_endpoint",
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_B",
+        "shared_endpoint",
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "7|11|1|5,23",
+      "relations": [
+        "shared_endpoint",
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_endpoint",
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "1|11|8|5,26",
+      "relations": [
+        "shared_B",
+        "shared_endpoint",
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_B",
+        "shared_endpoint",
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "8|11|1|5,26",
+      "relations": [
+        "shared_endpoint",
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_endpoint",
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "1|12|5|6,18",
+      "relations": [
+        "shared_B",
+        "shared_endpoint",
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_B",
+        "shared_endpoint",
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "5|12|1|6,18",
+      "relations": [
+        "shared_endpoint",
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_endpoint",
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "1|12|6|6,20",
+      "relations": [
+        "shared_B",
+        "shared_endpoint",
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_B",
+        "shared_endpoint",
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "6|12|1|6,20",
+      "relations": [
+        "shared_endpoint",
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_endpoint",
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    },
+    {
+      "a": "1|0|4|0,1",
+      "b": "2|12|5|8,18",
+      "relations": [
+        "shared_r1_column_neighborhood",
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ],
+      "source_relations": [
+        "shared_r1_column_neighborhood"
+      ],
+      "support_relations": [
+        "shared_r1_cycle",
+        "shared_r1_role",
+        "shared_r1_support_row"
+      ]
+    }
+  ],
+  "interpretation": {
+    "main_result": "A larger 120-record neighbor carrier is supported: admitted traces induce a connected overdrive carrier whose expansion settles back to the admitted residue.",
+    "why_this_matters": "The neighbor-overdrive mechanism is no longer only a column-shell proxy; it can be represented as a path-neighbor carrier.",
+    "why_not_full_g900": "This is still a 120-record source-shell/register carrier, not a full 900-state evaluator with independent witness.",
+    "next_move": "Record the larger neighbor-carrier boundary, then search for an independent witness layer or a 900-state lift."
+  },
+  "claim": {
+    "does_this_close_gap_a": false,
+    "does_this_support_larger_neighbor_carrier": true,
+    "does_this_find_full_g900_admission": false,
+    "short_form": "A larger 120-record neighbor carrier is supported: admitted traces induce a connected overdrive carrier whose expansion settles back to the admitted residue.",
+    "not_closed_reason": "This is still a 120-record source-shell/register carrier, not a full 900-state evaluator with independent witness.",
+    "next_problem": "Record the larger neighbor-carrier boundary, then search for an independent witness layer or a 900-state lift."
+  },
+  "checks": [
+    {
+      "id": "neighbor_summary_loaded",
+      "status": true,
+      "detail": "gap_a_neighbor_overdrive_branch_summary_recorded"
+    },
+    {
+      "id": "neighbor_boundary_loaded",
+      "status": true,
+      "detail": "neighbor_induced_overdrive_boundary_recorded"
+    },
+    {
+      "id": "neighbor_search_loaded",
+      "status": true,
+      "detail": "neighbor_induced_overdrive_signal_supported_not_full_g900"
+    },
+    {
+      "id": "ratchet_boundary_loaded",
+      "status": true,
+      "detail": "internalization_ratchet_boundary_recorded"
+    },
+    {
+      "id": "local_boundary_loaded",
+      "status": true,
+      "detail": "local_g900_shaped_admission_boundary_recorded"
+    },
+    {
+      "id": "node_count_120",
+      "status": true,
+      "detail": "120"
+    },
+    {
+      "id": "larger_carrier_built",
+      "status": true,
+      "detail": "7140"
+    },
+    {
+      "id": "admitted_connected",
+      "status": true,
+      "detail": "[0, 0, 0, 0]"
+    },
+    {
+      "id": "carrier_reaches_all",
+      "status": true,
+      "detail": "120"
+    },
+    {
+      "id": "settles_all_shells",
+      "status": true,
+      "detail": "[{'radius': 0, 'node_count': 4, 'settled_count': 4, 'loose_count': 0, 'settles_to_admitted': True, 'admitted_preserved': True}, {'radius': 1, 'node_count': 120, 'settled_count': 4, 'loose_count': 116, 'settles_to_admitted': True, 'admitted_preserved': True}, {'radius': 2, 'node_count': 120, 'settled_count': 4, 'loose_count': 116, 'settles_to_admitted': True, 'admitted_preserved': True}, {'radius': 3, 'node_count': 120, 'settled_count': 4, 'loose_count': 116, 'settles_to_admitted': True, 'admitted_preserved': True}, {'radius': 4, 'node_count': 120, 'settled_count': 4, 'loose_count': 116, 'settles_to_admitted': True, 'admitted_preserved': True}, {'radius': 5, 'node_count': 120, 'settled_count': 4, 'loose_count': 116, 'settles_to_admitted': True, 'admitted_preserved': True}, {'radius': 6, 'node_count': 120, 'settled_count': 4, 'loose_count': 116, 'settles_to_admitted': True, 'admitted_preserved': True}]"
+    },
+    {
+      "id": "source_carrier_nontrivial",
+      "status": true,
+      "detail": "120"
+    },
+    {
+      "id": "not_full_g900",
+      "status": true,
+      "detail": "False"
+    },
+    {
+      "id": "gap_a_not_closed",
+      "status": true,
+      "detail": "search only"
+    }
+  ],
+  "next_script": "record_larger_neighbor_carrier_boundary_001.py"
+}

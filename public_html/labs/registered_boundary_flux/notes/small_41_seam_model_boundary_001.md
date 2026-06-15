@@ -1,0 +1,167 @@
+# Small 41-seam model boundary 001
+
+Status: small_41_seam_model_boundary_recorded
+
+## Boundary
+
+- This does not close Gap A.
+- This does not prove full G900.
+- This records a seam-readability shadow on admitted complement records.
+- The admitted-only test saturated and is not selector-sharp.
+- A seam-signature model is not a full 41-seam lift.
+- No 120-to-900 map is constructed.
+- No independent witness layer is proven.
+- No physical interpretation is claimed.
+
+## Keeper lines
+
+- The 41-seam signature is real on the admitted complement records.
+- The best one-field witness is A_plus_1.
+- The tested family is saturated: all 31 field subsets work.
+- Saturation means this is not a sharp selector.
+- This supports seam readability, not lift construction.
+- No full 41-seam lift is constructed.
+- No 120-to-900 map is constructed.
+- No independent witness layer is found.
+- Full G900 remains unproven.
+- Gap A remains open.
+
+## Positive results
+
+- A small 41-seam signature model was supported.
+- All 41 assignments were valid.
+- The best supported field was A_plus_1.
+- The model carried the complement-pair split.
+- The model carried the L/R return-word split.
+- The observed word classes remained mixed_LR and uniform_R.
+
+## Negative results
+
+- The test was saturated on admitted records.
+- No sharp selector was found.
+- No single global L/R word class was found.
+- No full 41-seam lift was constructed.
+- No 120-to-900 map was constructed.
+- No independent witness layer was found.
+- No full G900 admission was found.
+- Gap A was not closed.
+
+## Blocked promotions
+
+- Do not call the seam signature a full lift.
+- Do not call saturation selector sharpness.
+- Do not call A_plus_1 a source-native WXYZTI generator.
+- Do not call this a 120-to-900 map.
+- Do not call this full G900.
+- Do not call this Gap A closure.
+- Do not claim physical interpretation.
+
+## Allowed next work
+
+- Search the 41-seam model against non-admitted records.
+- Search a 120-to-900 lift map using anchor, complement side, and L/R word fields.
+- Test whether A_plus_1 remains meaningful outside the admitted-only subset.
+- Return to WXYZTI generator derivation with seam-readability as a constraint.
+
+## Interpretation
+
+- main_result: A small 41-seam signature model was supported, but the search saturated.
+- meaning: The admitted records are already separated enough that every tested seam-field subset works.
+- why_this_matters: The hand-sketch 41 rule has a finite seam-readability shadow beyond raw indexing.
+- why_not_closure: The model is admitted-only and saturated; it does not construct a full seam lift, 120-to-900 map, independent witness, or return cycle.
+- next_move: Search the 41-seam model against non-admitted records or search a 120-to-900 lift map.
+
+## Summary
+
+- record_result: "small_41_seam_model_boundary_recorded"
+- gap_a_status: "open"
+- gap_a_closed: false
+- small_41_search_result: "small_41_seam_signature_model_supported"
+- small_41_model_supported: true
+- field_universe: ["A_plus_1", "B_plus_1", "C_plus_1", "column_0_plus_1", "column_1_plus_1"]
+- candidate_count: 31
+- supported_candidate_count: 31
+- supported_fraction: 1.0
+- saturation_warning: true
+- best_fields: ["A_plus_1"]
+- best_field_count: 1
+- hand_rule_candidate: "i -> 41 - i"
+- quotient_complement_shadow_found: true
+- B_complement_boundary_K: 15
+- A_complement_boundary_K: 10
+- lr_word_layer_candidate_supported: true
+- directed_word_counts: {"LR": 1, "RL": 1, "RR": 2}
+- word_class_counts: {"mixed_LR": 1, "uniform_R": 1}
+- single_global_word_class: false
+- canonical_sparse_law: "shared_B+reverse_partner"
+- source_reading: "anchor-and-reverse transport on oriented length-2 source-shell records"
+- admitted_count: 4
+- admitted_keys: ["11|7|14|23,24", "13|9|10|28,29", "2|1|0|0,4", "4|3|2|7,10"]
+- all_41_assignments_valid: true
+- independent_witness_layer_found: false
+- full_41_lift_found: false
+- anchor_reverse_to_900_map_found: false
+- full_g900_admission_found: false
+- source_native_wxyzti_generator_found: false
+- claim_closes_gap_a: false
+- terminal_reason: "The 41-seam signature is real on the admitted complement records, but the admitted-only test is saturated: every tested field subset supports the model. This supports seam readability, not selector sharpness, not lift construction, and not full G900."
+
+## Best candidate
+
+{
+  "directed_signature_count": 4,
+  "directed_signature_words": {
+    "[[[\"A_plus_1\", [10, 31]]], [[\"A_plus_1\", [2, 39]]]]": [
+      "RR"
+    ],
+    "[[[\"A_plus_1\", [2, 39]]], [[\"A_plus_1\", [10, 31]]]]": [
+      "RR"
+    ],
+    "[[[\"A_plus_1\", [4, 37]]], [[\"A_plus_1\", [8, 33]]]]": [
+      "RL"
+    ],
+    "[[[\"A_plus_1\", [8, 33]]], [[\"A_plus_1\", [4, 37]]]]": [
+      "LR"
+    ]
+  },
+  "directed_word_predictive": true,
+  "field_count": 1,
+  "fields": [
+    "A_plus_1"
+  ],
+  "pair_class_predictive": true,
+  "pair_signature_classes": {
+    "[[[\"A_plus_1\", [10, 31]]], [[\"A_plus_1\", [2, 39]]]]": [
+      "uniform_R"
+    ],
+    "[[[\"A_plus_1\", [4, 37]]], [[\"A_plus_1\", [8, 33]]]]": [
+      "mixed_LR"
+    ]
+  },
+  "pair_signature_count": 2,
+  "seam_atom_count_per_record": 1,
+  "separates_two_pairs": true,
+  "supported_small_41_seam_signature_model": true
+}
+
+## Checks
+
+- PASS small_search_loaded: small_41_seam_signature_model_supported_not_full_lift_not_g900
+- PASS lr_boundary_loaded: lr_return_word_boundary_recorded
+- PASS complement_boundary_loaded: complement_assignment_boundary_recorded
+- PASS assignment_loaded: complement_readable_assignments_supported_not_full_lift
+- PASS small_model_supported: True
+- PASS candidate_count_31: 31
+- PASS supported_count_31: 31
+- PASS saturation_warning_true: True
+- PASS best_A_plus_1: ['A_plus_1']
+- PASS best_field_count_1: 1
+- PASS not_independent_witness: False
+- PASS no_full_41_lift: False
+- PASS no_900_map: False
+- PASS full_g900_not_found: False
+- PASS gap_a_not_closed: boundary record only
+
+## Next script
+
+    search_41_seam_against_nonadmitted_records_001.py

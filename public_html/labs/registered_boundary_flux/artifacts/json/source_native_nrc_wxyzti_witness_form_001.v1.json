@@ -1,0 +1,2167 @@
+{
+  "schema": "source_native_nrc_wxyzti_witness_form_001.v1",
+  "status": "source_native_nrc_wxyzti_witness_form_found",
+  "timestamp_utc": "2026-06-15T12:26:12.033672+00:00",
+  "purpose": "Derive the admission-blind NRC witness as a six-step WXYZTI reciprocal witness form over source fields.",
+  "claim": "The admitted admission-blind NRC cycles are six-edge WXYZTI witness forms whose transitions are source-field checks: shared_B preserves source anchor B, and reverse_partner reciprocates the oriented record.",
+  "boundary": [
+    "This is a source-field WXYZTI witness form, not yet a G60-native generator.",
+    "This does not close Gap A.",
+    "This does not prove full G900.",
+    "This does not claim physical interpretation."
+  ],
+  "construction_inputs": {
+    "record_language": "oriented length-2 source records B-A-C with source column pair",
+    "relations": [
+      "shared_B",
+      "reverse_partner"
+    ],
+    "address_readout": "B + C_plus_1",
+    "role_cycle": [
+      "W",
+      "X",
+      "Y",
+      "Z",
+      "T",
+      "I",
+      "W"
+    ],
+    "edge_roles": [
+      "WX",
+      "XY",
+      "YZ",
+      "ZT",
+      "TI",
+      "IW"
+    ]
+  },
+  "summary": {
+    "result": "source_native_nrc_wxyzti_witness_form_found",
+    "source_field_record_count": 120,
+    "nrc_constructed_count": 120,
+    "missing_nrc_count": 0,
+    "admitted_count": 4,
+    "wxyzti_forms_for_admitted_count": 4,
+    "all_admitted_forms_are_six_edge_hex_witnesses": true,
+    "all_wxyzti_forms_source_native": true,
+    "exact_over_120_record_carrier": true,
+    "accepted_count": 4,
+    "false_positive_count": 0,
+    "miss_count": 0,
+    "admitted_trace_class": [
+      [
+        0,
+        2,
+        5,
+        0,
+        2,
+        5,
+        0
+      ],
+      [
+        2,
+        4,
+        5,
+        2,
+        4,
+        5,
+        2
+      ],
+      [
+        10,
+        13,
+        1,
+        10,
+        13,
+        1,
+        10
+      ],
+      [
+        14,
+        11,
+        2,
+        14,
+        11,
+        2,
+        14
+      ]
+    ],
+    "diad_label_totals": {
+      "reverse_partner": 12
+    },
+    "coupler_label_totals": {
+      "shared_B": 12
+    },
+    "source_native_wxyzti_witness_form_found": true,
+    "source_native_wxyzti_generator_found": false,
+    "gap_a_closed": false,
+    "full_g900_admission_found": false,
+    "keeper": "The admission-blind reciprocal trace has a WXYZTI witness form over source fields.",
+    "next_step": "derive_or_refute_g60_native_nrc_generator"
+  },
+  "wxyzti_admitted_forms": [
+    {
+      "center_key": "11|7|14|23,24",
+      "roles": [
+        "W",
+        "X",
+        "Y",
+        "Z",
+        "T",
+        "I",
+        "W"
+      ],
+      "edge_roles": [
+        "WX",
+        "XY",
+        "YZ",
+        "ZT",
+        "TI",
+        "IW"
+      ],
+      "stations": [
+        {
+          "role": "W",
+          "key": "11|7|14|23,24",
+          "B": 11,
+          "A": 7,
+          "C": 14,
+          "C_plus_1": 15,
+          "columns": [
+            23,
+            24
+          ],
+          "handedness_word": "L",
+          "address_pair_source": [
+            11,
+            15
+          ],
+          "slot": 11,
+          "fiber": 14
+        },
+        {
+          "role": "X",
+          "key": "14|7|11|23,24",
+          "B": 14,
+          "A": 7,
+          "C": 11,
+          "C_plus_1": 12,
+          "columns": [
+            23,
+            24
+          ],
+          "handedness_word": "R",
+          "address_pair_source": [
+            14,
+            12
+          ],
+          "slot": 14,
+          "fiber": 11
+        },
+        {
+          "role": "Y",
+          "key": "14|3|2|7,12",
+          "B": 14,
+          "A": 3,
+          "C": 2,
+          "C_plus_1": 3,
+          "columns": [
+            7,
+            12
+          ],
+          "handedness_word": "L",
+          "address_pair_source": [
+            14,
+            3
+          ],
+          "slot": 14,
+          "fiber": 2
+        },
+        {
+          "role": "Z",
+          "key": "2|3|14|7,12",
+          "B": 2,
+          "A": 3,
+          "C": 14,
+          "C_plus_1": 15,
+          "columns": [
+            7,
+            12
+          ],
+          "handedness_word": "R",
+          "address_pair_source": [
+            2,
+            15
+          ],
+          "slot": 2,
+          "fiber": 14
+        },
+        {
+          "role": "T",
+          "key": "2|1|11|4,5",
+          "B": 2,
+          "A": 1,
+          "C": 11,
+          "C_plus_1": 12,
+          "columns": [
+            4,
+            5
+          ],
+          "handedness_word": "R",
+          "address_pair_source": [
+            2,
+            12
+          ],
+          "slot": 2,
+          "fiber": 11
+        },
+        {
+          "role": "I",
+          "key": "11|1|2|4,5",
+          "B": 11,
+          "A": 1,
+          "C": 2,
+          "C_plus_1": 3,
+          "columns": [
+            4,
+            5
+          ],
+          "handedness_word": "L",
+          "address_pair_source": [
+            11,
+            3
+          ],
+          "slot": 11,
+          "fiber": 2
+        },
+        {
+          "role": "W",
+          "key": "11|7|14|23,24",
+          "B": 11,
+          "A": 7,
+          "C": 14,
+          "C_plus_1": 15,
+          "columns": [
+            23,
+            24
+          ],
+          "handedness_word": "L",
+          "address_pair_source": [
+            11,
+            15
+          ],
+          "slot": 11,
+          "fiber": 14
+        }
+      ],
+      "edges": [
+        {
+          "edge_role": "WX",
+          "from": "11|7|14|23,24",
+          "to": "14|7|11|23,24",
+          "transport_label": "reverse_partner",
+          "source_native_check": true,
+          "from_BAC": [
+            11,
+            7,
+            14
+          ],
+          "to_BAC": [
+            14,
+            7,
+            11
+          ],
+          "from_columns": [
+            23,
+            24
+          ],
+          "to_columns": [
+            23,
+            24
+          ]
+        },
+        {
+          "edge_role": "XY",
+          "from": "14|7|11|23,24",
+          "to": "14|3|2|7,12",
+          "transport_label": "shared_B",
+          "source_native_check": true,
+          "from_BAC": [
+            14,
+            7,
+            11
+          ],
+          "to_BAC": [
+            14,
+            3,
+            2
+          ],
+          "from_columns": [
+            23,
+            24
+          ],
+          "to_columns": [
+            7,
+            12
+          ]
+        },
+        {
+          "edge_role": "YZ",
+          "from": "14|3|2|7,12",
+          "to": "2|3|14|7,12",
+          "transport_label": "reverse_partner",
+          "source_native_check": true,
+          "from_BAC": [
+            14,
+            3,
+            2
+          ],
+          "to_BAC": [
+            2,
+            3,
+            14
+          ],
+          "from_columns": [
+            7,
+            12
+          ],
+          "to_columns": [
+            7,
+            12
+          ]
+        },
+        {
+          "edge_role": "ZT",
+          "from": "2|3|14|7,12",
+          "to": "2|1|11|4,5",
+          "transport_label": "shared_B",
+          "source_native_check": true,
+          "from_BAC": [
+            2,
+            3,
+            14
+          ],
+          "to_BAC": [
+            2,
+            1,
+            11
+          ],
+          "from_columns": [
+            7,
+            12
+          ],
+          "to_columns": [
+            4,
+            5
+          ]
+        },
+        {
+          "edge_role": "TI",
+          "from": "2|1|11|4,5",
+          "to": "11|1|2|4,5",
+          "transport_label": "reverse_partner",
+          "source_native_check": true,
+          "from_BAC": [
+            2,
+            1,
+            11
+          ],
+          "to_BAC": [
+            11,
+            1,
+            2
+          ],
+          "from_columns": [
+            4,
+            5
+          ],
+          "to_columns": [
+            4,
+            5
+          ]
+        },
+        {
+          "edge_role": "IW",
+          "from": "11|1|2|4,5",
+          "to": "11|7|14|23,24",
+          "transport_label": "shared_B",
+          "source_native_check": true,
+          "from_BAC": [
+            11,
+            1,
+            2
+          ],
+          "to_BAC": [
+            11,
+            7,
+            14
+          ],
+          "from_columns": [
+            4,
+            5
+          ],
+          "to_columns": [
+            23,
+            24
+          ]
+        }
+      ],
+      "diad_edges": [
+        {
+          "edge_role": "WX",
+          "from": "11|7|14|23,24",
+          "to": "14|7|11|23,24",
+          "transport_label": "reverse_partner",
+          "source_native_check": true,
+          "from_BAC": [
+            11,
+            7,
+            14
+          ],
+          "to_BAC": [
+            14,
+            7,
+            11
+          ],
+          "from_columns": [
+            23,
+            24
+          ],
+          "to_columns": [
+            23,
+            24
+          ]
+        },
+        {
+          "edge_role": "YZ",
+          "from": "14|3|2|7,12",
+          "to": "2|3|14|7,12",
+          "transport_label": "reverse_partner",
+          "source_native_check": true,
+          "from_BAC": [
+            14,
+            3,
+            2
+          ],
+          "to_BAC": [
+            2,
+            3,
+            14
+          ],
+          "from_columns": [
+            7,
+            12
+          ],
+          "to_columns": [
+            7,
+            12
+          ]
+        },
+        {
+          "edge_role": "TI",
+          "from": "2|1|11|4,5",
+          "to": "11|1|2|4,5",
+          "transport_label": "reverse_partner",
+          "source_native_check": true,
+          "from_BAC": [
+            2,
+            1,
+            11
+          ],
+          "to_BAC": [
+            11,
+            1,
+            2
+          ],
+          "from_columns": [
+            4,
+            5
+          ],
+          "to_columns": [
+            4,
+            5
+          ]
+        }
+      ],
+      "coupler_edges": [
+        {
+          "edge_role": "XY",
+          "from": "14|7|11|23,24",
+          "to": "14|3|2|7,12",
+          "transport_label": "shared_B",
+          "source_native_check": true,
+          "from_BAC": [
+            14,
+            7,
+            11
+          ],
+          "to_BAC": [
+            14,
+            3,
+            2
+          ],
+          "from_columns": [
+            23,
+            24
+          ],
+          "to_columns": [
+            7,
+            12
+          ]
+        },
+        {
+          "edge_role": "ZT",
+          "from": "2|3|14|7,12",
+          "to": "2|1|11|4,5",
+          "transport_label": "shared_B",
+          "source_native_check": true,
+          "from_BAC": [
+            2,
+            3,
+            14
+          ],
+          "to_BAC": [
+            2,
+            1,
+            11
+          ],
+          "from_columns": [
+            7,
+            12
+          ],
+          "to_columns": [
+            4,
+            5
+          ]
+        },
+        {
+          "edge_role": "IW",
+          "from": "11|1|2|4,5",
+          "to": "11|7|14|23,24",
+          "transport_label": "shared_B",
+          "source_native_check": true,
+          "from_BAC": [
+            11,
+            1,
+            2
+          ],
+          "to_BAC": [
+            11,
+            7,
+            14
+          ],
+          "from_columns": [
+            4,
+            5
+          ],
+          "to_columns": [
+            23,
+            24
+          ]
+        }
+      ],
+      "sharp_fiber_sequence": [
+        14,
+        11,
+        2,
+        14,
+        11,
+        2,
+        14
+      ],
+      "slot_sequence": [
+        11,
+        14,
+        14,
+        2,
+        2,
+        11,
+        11
+      ],
+      "address_sequence": [
+        674,
+        851,
+        842,
+        134,
+        131,
+        662,
+        674
+      ],
+      "label_counts": {
+        "reverse_partner": 3,
+        "shared_B": 3
+      },
+      "return_to_start_key": true,
+      "return_to_start_address": true,
+      "all_transitions_source_native": true,
+      "contains_shared_B": true,
+      "contains_reverse_partner": true
+    },
+    {
+      "center_key": "13|9|10|28,29",
+      "roles": [
+        "W",
+        "X",
+        "Y",
+        "Z",
+        "T",
+        "I",
+        "W"
+      ],
+      "edge_roles": [
+        "WX",
+        "XY",
+        "YZ",
+        "ZT",
+        "TI",
+        "IW"
+      ],
+      "stations": [
+        {
+          "role": "W",
+          "key": "13|9|10|28,29",
+          "B": 13,
+          "A": 9,
+          "C": 10,
+          "C_plus_1": 11,
+          "columns": [
+            28,
+            29
+          ],
+          "handedness_word": "R",
+          "address_pair_source": [
+            13,
+            11
+          ],
+          "slot": 13,
+          "fiber": 10
+        },
+        {
+          "role": "X",
+          "key": "10|9|13|28,29",
+          "B": 10,
+          "A": 9,
+          "C": 13,
+          "C_plus_1": 14,
+          "columns": [
+            28,
+            29
+          ],
+          "handedness_word": "L",
+          "address_pair_source": [
+            10,
+            14
+          ],
+          "slot": 10,
+          "fiber": 13
+        },
+        {
+          "role": "Y",
+          "key": "10|0|1|0,2",
+          "B": 10,
+          "A": 0,
+          "C": 1,
+          "C_plus_1": 2,
+          "columns": [
+            0,
+            2
+          ],
+          "handedness_word": "L",
+          "address_pair_source": [
+            10,
+            2
+          ],
+          "slot": 10,
+          "fiber": 1
+        },
+        {
+          "role": "Z",
+          "key": "1|0|10|0,2",
+          "B": 1,
+          "A": 0,
+          "C": 10,
+          "C_plus_1": 11,
+          "columns": [
+            0,
+            2
+          ],
+          "handedness_word": "R",
+          "address_pair_source": [
+            1,
+            11
+          ],
+          "slot": 1,
+          "fiber": 10
+        },
+        {
+          "role": "T",
+          "key": "1|2|13|4,9",
+          "B": 1,
+          "A": 2,
+          "C": 13,
+          "C_plus_1": 14,
+          "columns": [
+            4,
+            9
+          ],
+          "handedness_word": "R",
+          "address_pair_source": [
+            1,
+            14
+          ],
+          "slot": 1,
+          "fiber": 13
+        },
+        {
+          "role": "I",
+          "key": "13|2|1|4,9",
+          "B": 13,
+          "A": 2,
+          "C": 1,
+          "C_plus_1": 2,
+          "columns": [
+            4,
+            9
+          ],
+          "handedness_word": "L",
+          "address_pair_source": [
+            13,
+            2
+          ],
+          "slot": 13,
+          "fiber": 1
+        },
+        {
+          "role": "W",
+          "key": "13|9|10|28,29",
+          "B": 13,
+          "A": 9,
+          "C": 10,
+          "C_plus_1": 11,
+          "columns": [
+            28,
+            29
+          ],
+          "handedness_word": "R",
+          "address_pair_source": [
+            13,
+            11
+          ],
+          "slot": 13,
+          "fiber": 10
+        }
+      ],
+      "edges": [
+        {
+          "edge_role": "WX",
+          "from": "13|9|10|28,29",
+          "to": "10|9|13|28,29",
+          "transport_label": "reverse_partner",
+          "source_native_check": true,
+          "from_BAC": [
+            13,
+            9,
+            10
+          ],
+          "to_BAC": [
+            10,
+            9,
+            13
+          ],
+          "from_columns": [
+            28,
+            29
+          ],
+          "to_columns": [
+            28,
+            29
+          ]
+        },
+        {
+          "edge_role": "XY",
+          "from": "10|9|13|28,29",
+          "to": "10|0|1|0,2",
+          "transport_label": "shared_B",
+          "source_native_check": true,
+          "from_BAC": [
+            10,
+            9,
+            13
+          ],
+          "to_BAC": [
+            10,
+            0,
+            1
+          ],
+          "from_columns": [
+            28,
+            29
+          ],
+          "to_columns": [
+            0,
+            2
+          ]
+        },
+        {
+          "edge_role": "YZ",
+          "from": "10|0|1|0,2",
+          "to": "1|0|10|0,2",
+          "transport_label": "reverse_partner",
+          "source_native_check": true,
+          "from_BAC": [
+            10,
+            0,
+            1
+          ],
+          "to_BAC": [
+            1,
+            0,
+            10
+          ],
+          "from_columns": [
+            0,
+            2
+          ],
+          "to_columns": [
+            0,
+            2
+          ]
+        },
+        {
+          "edge_role": "ZT",
+          "from": "1|0|10|0,2",
+          "to": "1|2|13|4,9",
+          "transport_label": "shared_B",
+          "source_native_check": true,
+          "from_BAC": [
+            1,
+            0,
+            10
+          ],
+          "to_BAC": [
+            1,
+            2,
+            13
+          ],
+          "from_columns": [
+            0,
+            2
+          ],
+          "to_columns": [
+            4,
+            9
+          ]
+        },
+        {
+          "edge_role": "TI",
+          "from": "1|2|13|4,9",
+          "to": "13|2|1|4,9",
+          "transport_label": "reverse_partner",
+          "source_native_check": true,
+          "from_BAC": [
+            1,
+            2,
+            13
+          ],
+          "to_BAC": [
+            13,
+            2,
+            1
+          ],
+          "from_columns": [
+            4,
+            9
+          ],
+          "to_columns": [
+            4,
+            9
+          ]
+        },
+        {
+          "edge_role": "IW",
+          "from": "13|2|1|4,9",
+          "to": "13|9|10|28,29",
+          "transport_label": "shared_B",
+          "source_native_check": true,
+          "from_BAC": [
+            13,
+            2,
+            1
+          ],
+          "to_BAC": [
+            13,
+            9,
+            10
+          ],
+          "from_columns": [
+            4,
+            9
+          ],
+          "to_columns": [
+            28,
+            29
+          ]
+        }
+      ],
+      "diad_edges": [
+        {
+          "edge_role": "WX",
+          "from": "13|9|10|28,29",
+          "to": "10|9|13|28,29",
+          "transport_label": "reverse_partner",
+          "source_native_check": true,
+          "from_BAC": [
+            13,
+            9,
+            10
+          ],
+          "to_BAC": [
+            10,
+            9,
+            13
+          ],
+          "from_columns": [
+            28,
+            29
+          ],
+          "to_columns": [
+            28,
+            29
+          ]
+        },
+        {
+          "edge_role": "YZ",
+          "from": "10|0|1|0,2",
+          "to": "1|0|10|0,2",
+          "transport_label": "reverse_partner",
+          "source_native_check": true,
+          "from_BAC": [
+            10,
+            0,
+            1
+          ],
+          "to_BAC": [
+            1,
+            0,
+            10
+          ],
+          "from_columns": [
+            0,
+            2
+          ],
+          "to_columns": [
+            0,
+            2
+          ]
+        },
+        {
+          "edge_role": "TI",
+          "from": "1|2|13|4,9",
+          "to": "13|2|1|4,9",
+          "transport_label": "reverse_partner",
+          "source_native_check": true,
+          "from_BAC": [
+            1,
+            2,
+            13
+          ],
+          "to_BAC": [
+            13,
+            2,
+            1
+          ],
+          "from_columns": [
+            4,
+            9
+          ],
+          "to_columns": [
+            4,
+            9
+          ]
+        }
+      ],
+      "coupler_edges": [
+        {
+          "edge_role": "XY",
+          "from": "10|9|13|28,29",
+          "to": "10|0|1|0,2",
+          "transport_label": "shared_B",
+          "source_native_check": true,
+          "from_BAC": [
+            10,
+            9,
+            13
+          ],
+          "to_BAC": [
+            10,
+            0,
+            1
+          ],
+          "from_columns": [
+            28,
+            29
+          ],
+          "to_columns": [
+            0,
+            2
+          ]
+        },
+        {
+          "edge_role": "ZT",
+          "from": "1|0|10|0,2",
+          "to": "1|2|13|4,9",
+          "transport_label": "shared_B",
+          "source_native_check": true,
+          "from_BAC": [
+            1,
+            0,
+            10
+          ],
+          "to_BAC": [
+            1,
+            2,
+            13
+          ],
+          "from_columns": [
+            0,
+            2
+          ],
+          "to_columns": [
+            4,
+            9
+          ]
+        },
+        {
+          "edge_role": "IW",
+          "from": "13|2|1|4,9",
+          "to": "13|9|10|28,29",
+          "transport_label": "shared_B",
+          "source_native_check": true,
+          "from_BAC": [
+            13,
+            2,
+            1
+          ],
+          "to_BAC": [
+            13,
+            9,
+            10
+          ],
+          "from_columns": [
+            4,
+            9
+          ],
+          "to_columns": [
+            28,
+            29
+          ]
+        }
+      ],
+      "sharp_fiber_sequence": [
+        10,
+        13,
+        1,
+        10,
+        13,
+        1,
+        10
+      ],
+      "slot_sequence": [
+        13,
+        10,
+        10,
+        1,
+        1,
+        13,
+        13
+      ],
+      "address_sequence": [
+        790,
+        613,
+        601,
+        70,
+        73,
+        781,
+        790
+      ],
+      "label_counts": {
+        "reverse_partner": 3,
+        "shared_B": 3
+      },
+      "return_to_start_key": true,
+      "return_to_start_address": true,
+      "all_transitions_source_native": true,
+      "contains_shared_B": true,
+      "contains_reverse_partner": true
+    },
+    {
+      "center_key": "2|1|0|0,4",
+      "roles": [
+        "W",
+        "X",
+        "Y",
+        "Z",
+        "T",
+        "I",
+        "W"
+      ],
+      "edge_roles": [
+        "WX",
+        "XY",
+        "YZ",
+        "ZT",
+        "TI",
+        "IW"
+      ],
+      "stations": [
+        {
+          "role": "W",
+          "key": "2|1|0|0,4",
+          "B": 2,
+          "A": 1,
+          "C": 0,
+          "C_plus_1": 1,
+          "columns": [
+            0,
+            4
+          ],
+          "handedness_word": "R",
+          "address_pair_source": [
+            2,
+            1
+          ],
+          "slot": 2,
+          "fiber": 0
+        },
+        {
+          "role": "X",
+          "key": "0|1|2|0,4",
+          "B": 0,
+          "A": 1,
+          "C": 2,
+          "C_plus_1": 3,
+          "columns": [
+            0,
+            4
+          ],
+          "handedness_word": "L",
+          "address_pair_source": [
+            0,
+            3
+          ],
+          "slot": 0,
+          "fiber": 2
+        },
+        {
+          "role": "Y",
+          "key": "0|10|5|2,17",
+          "B": 0,
+          "A": 10,
+          "C": 5,
+          "C_plus_1": 6,
+          "columns": [
+            2,
+            17
+          ],
+          "handedness_word": "L",
+          "address_pair_source": [
+            0,
+            6
+          ],
+          "slot": 0,
+          "fiber": 5
+        },
+        {
+          "role": "Z",
+          "key": "5|10|0|2,17",
+          "B": 5,
+          "A": 10,
+          "C": 0,
+          "C_plus_1": 1,
+          "columns": [
+            2,
+            17
+          ],
+          "handedness_word": "R",
+          "address_pair_source": [
+            5,
+            1
+          ],
+          "slot": 5,
+          "fiber": 0
+        },
+        {
+          "role": "T",
+          "key": "5|12|2|8,18",
+          "B": 5,
+          "A": 12,
+          "C": 2,
+          "C_plus_1": 3,
+          "columns": [
+            8,
+            18
+          ],
+          "handedness_word": "R",
+          "address_pair_source": [
+            5,
+            3
+          ],
+          "slot": 5,
+          "fiber": 2
+        },
+        {
+          "role": "I",
+          "key": "2|12|5|8,18",
+          "B": 2,
+          "A": 12,
+          "C": 5,
+          "C_plus_1": 6,
+          "columns": [
+            8,
+            18
+          ],
+          "handedness_word": "L",
+          "address_pair_source": [
+            2,
+            6
+          ],
+          "slot": 2,
+          "fiber": 5
+        },
+        {
+          "role": "W",
+          "key": "2|1|0|0,4",
+          "B": 2,
+          "A": 1,
+          "C": 0,
+          "C_plus_1": 1,
+          "columns": [
+            0,
+            4
+          ],
+          "handedness_word": "R",
+          "address_pair_source": [
+            2,
+            1
+          ],
+          "slot": 2,
+          "fiber": 0
+        }
+      ],
+      "edges": [
+        {
+          "edge_role": "WX",
+          "from": "2|1|0|0,4",
+          "to": "0|1|2|0,4",
+          "transport_label": "reverse_partner",
+          "source_native_check": true,
+          "from_BAC": [
+            2,
+            1,
+            0
+          ],
+          "to_BAC": [
+            0,
+            1,
+            2
+          ],
+          "from_columns": [
+            0,
+            4
+          ],
+          "to_columns": [
+            0,
+            4
+          ]
+        },
+        {
+          "edge_role": "XY",
+          "from": "0|1|2|0,4",
+          "to": "0|10|5|2,17",
+          "transport_label": "shared_B",
+          "source_native_check": true,
+          "from_BAC": [
+            0,
+            1,
+            2
+          ],
+          "to_BAC": [
+            0,
+            10,
+            5
+          ],
+          "from_columns": [
+            0,
+            4
+          ],
+          "to_columns": [
+            2,
+            17
+          ]
+        },
+        {
+          "edge_role": "YZ",
+          "from": "0|10|5|2,17",
+          "to": "5|10|0|2,17",
+          "transport_label": "reverse_partner",
+          "source_native_check": true,
+          "from_BAC": [
+            0,
+            10,
+            5
+          ],
+          "to_BAC": [
+            5,
+            10,
+            0
+          ],
+          "from_columns": [
+            2,
+            17
+          ],
+          "to_columns": [
+            2,
+            17
+          ]
+        },
+        {
+          "edge_role": "ZT",
+          "from": "5|10|0|2,17",
+          "to": "5|12|2|8,18",
+          "transport_label": "shared_B",
+          "source_native_check": true,
+          "from_BAC": [
+            5,
+            10,
+            0
+          ],
+          "to_BAC": [
+            5,
+            12,
+            2
+          ],
+          "from_columns": [
+            2,
+            17
+          ],
+          "to_columns": [
+            8,
+            18
+          ]
+        },
+        {
+          "edge_role": "TI",
+          "from": "5|12|2|8,18",
+          "to": "2|12|5|8,18",
+          "transport_label": "reverse_partner",
+          "source_native_check": true,
+          "from_BAC": [
+            5,
+            12,
+            2
+          ],
+          "to_BAC": [
+            2,
+            12,
+            5
+          ],
+          "from_columns": [
+            8,
+            18
+          ],
+          "to_columns": [
+            8,
+            18
+          ]
+        },
+        {
+          "edge_role": "IW",
+          "from": "2|12|5|8,18",
+          "to": "2|1|0|0,4",
+          "transport_label": "shared_B",
+          "source_native_check": true,
+          "from_BAC": [
+            2,
+            12,
+            5
+          ],
+          "to_BAC": [
+            2,
+            1,
+            0
+          ],
+          "from_columns": [
+            8,
+            18
+          ],
+          "to_columns": [
+            0,
+            4
+          ]
+        }
+      ],
+      "diad_edges": [
+        {
+          "edge_role": "WX",
+          "from": "2|1|0|0,4",
+          "to": "0|1|2|0,4",
+          "transport_label": "reverse_partner",
+          "source_native_check": true,
+          "from_BAC": [
+            2,
+            1,
+            0
+          ],
+          "to_BAC": [
+            0,
+            1,
+            2
+          ],
+          "from_columns": [
+            0,
+            4
+          ],
+          "to_columns": [
+            0,
+            4
+          ]
+        },
+        {
+          "edge_role": "YZ",
+          "from": "0|10|5|2,17",
+          "to": "5|10|0|2,17",
+          "transport_label": "reverse_partner",
+          "source_native_check": true,
+          "from_BAC": [
+            0,
+            10,
+            5
+          ],
+          "to_BAC": [
+            5,
+            10,
+            0
+          ],
+          "from_columns": [
+            2,
+            17
+          ],
+          "to_columns": [
+            2,
+            17
+          ]
+        },
+        {
+          "edge_role": "TI",
+          "from": "5|12|2|8,18",
+          "to": "2|12|5|8,18",
+          "transport_label": "reverse_partner",
+          "source_native_check": true,
+          "from_BAC": [
+            5,
+            12,
+            2
+          ],
+          "to_BAC": [
+            2,
+            12,
+            5
+          ],
+          "from_columns": [
+            8,
+            18
+          ],
+          "to_columns": [
+            8,
+            18
+          ]
+        }
+      ],
+      "coupler_edges": [
+        {
+          "edge_role": "XY",
+          "from": "0|1|2|0,4",
+          "to": "0|10|5|2,17",
+          "transport_label": "shared_B",
+          "source_native_check": true,
+          "from_BAC": [
+            0,
+            1,
+            2
+          ],
+          "to_BAC": [
+            0,
+            10,
+            5
+          ],
+          "from_columns": [
+            0,
+            4
+          ],
+          "to_columns": [
+            2,
+            17
+          ]
+        },
+        {
+          "edge_role": "ZT",
+          "from": "5|10|0|2,17",
+          "to": "5|12|2|8,18",
+          "transport_label": "shared_B",
+          "source_native_check": true,
+          "from_BAC": [
+            5,
+            10,
+            0
+          ],
+          "to_BAC": [
+            5,
+            12,
+            2
+          ],
+          "from_columns": [
+            2,
+            17
+          ],
+          "to_columns": [
+            8,
+            18
+          ]
+        },
+        {
+          "edge_role": "IW",
+          "from": "2|12|5|8,18",
+          "to": "2|1|0|0,4",
+          "transport_label": "shared_B",
+          "source_native_check": true,
+          "from_BAC": [
+            2,
+            12,
+            5
+          ],
+          "to_BAC": [
+            2,
+            1,
+            0
+          ],
+          "from_columns": [
+            8,
+            18
+          ],
+          "to_columns": [
+            0,
+            4
+          ]
+        }
+      ],
+      "sharp_fiber_sequence": [
+        0,
+        2,
+        5,
+        0,
+        2,
+        5,
+        0
+      ],
+      "slot_sequence": [
+        2,
+        0,
+        0,
+        5,
+        5,
+        2,
+        2
+      ],
+      "address_sequence": [
+        120,
+        2,
+        5,
+        300,
+        302,
+        125,
+        120
+      ],
+      "label_counts": {
+        "reverse_partner": 3,
+        "shared_B": 3
+      },
+      "return_to_start_key": true,
+      "return_to_start_address": true,
+      "all_transitions_source_native": true,
+      "contains_shared_B": true,
+      "contains_reverse_partner": true
+    },
+    {
+      "center_key": "4|3|2|7,10",
+      "roles": [
+        "W",
+        "X",
+        "Y",
+        "Z",
+        "T",
+        "I",
+        "W"
+      ],
+      "edge_roles": [
+        "WX",
+        "XY",
+        "YZ",
+        "ZT",
+        "TI",
+        "IW"
+      ],
+      "stations": [
+        {
+          "role": "W",
+          "key": "4|3|2|7,10",
+          "B": 4,
+          "A": 3,
+          "C": 2,
+          "C_plus_1": 3,
+          "columns": [
+            7,
+            10
+          ],
+          "handedness_word": "R",
+          "address_pair_source": [
+            4,
+            3
+          ],
+          "slot": 4,
+          "fiber": 2
+        },
+        {
+          "role": "X",
+          "key": "2|3|4|7,10",
+          "B": 2,
+          "A": 3,
+          "C": 4,
+          "C_plus_1": 5,
+          "columns": [
+            7,
+            10
+          ],
+          "handedness_word": "L",
+          "address_pair_source": [
+            2,
+            5
+          ],
+          "slot": 2,
+          "fiber": 4
+        },
+        {
+          "role": "Y",
+          "key": "2|12|5|8,18",
+          "B": 2,
+          "A": 12,
+          "C": 5,
+          "C_plus_1": 6,
+          "columns": [
+            8,
+            18
+          ],
+          "handedness_word": "L",
+          "address_pair_source": [
+            2,
+            6
+          ],
+          "slot": 2,
+          "fiber": 5
+        },
+        {
+          "role": "Z",
+          "key": "5|12|2|8,18",
+          "B": 5,
+          "A": 12,
+          "C": 2,
+          "C_plus_1": 3,
+          "columns": [
+            8,
+            18
+          ],
+          "handedness_word": "R",
+          "address_pair_source": [
+            5,
+            3
+          ],
+          "slot": 5,
+          "fiber": 2
+        },
+        {
+          "role": "T",
+          "key": "5|10|4|13,17",
+          "B": 5,
+          "A": 10,
+          "C": 4,
+          "C_plus_1": 5,
+          "columns": [
+            13,
+            17
+          ],
+          "handedness_word": "R",
+          "address_pair_source": [
+            5,
+            5
+          ],
+          "slot": 5,
+          "fiber": 4
+        },
+        {
+          "role": "I",
+          "key": "4|10|5|13,17",
+          "B": 4,
+          "A": 10,
+          "C": 5,
+          "C_plus_1": 6,
+          "columns": [
+            13,
+            17
+          ],
+          "handedness_word": "L",
+          "address_pair_source": [
+            4,
+            6
+          ],
+          "slot": 4,
+          "fiber": 5
+        },
+        {
+          "role": "W",
+          "key": "4|3|2|7,10",
+          "B": 4,
+          "A": 3,
+          "C": 2,
+          "C_plus_1": 3,
+          "columns": [
+            7,
+            10
+          ],
+          "handedness_word": "R",
+          "address_pair_source": [
+            4,
+            3
+          ],
+          "slot": 4,
+          "fiber": 2
+        }
+      ],
+      "edges": [
+        {
+          "edge_role": "WX",
+          "from": "4|3|2|7,10",
+          "to": "2|3|4|7,10",
+          "transport_label": "reverse_partner",
+          "source_native_check": true,
+          "from_BAC": [
+            4,
+            3,
+            2
+          ],
+          "to_BAC": [
+            2,
+            3,
+            4
+          ],
+          "from_columns": [
+            7,
+            10
+          ],
+          "to_columns": [
+            7,
+            10
+          ]
+        },
+        {
+          "edge_role": "XY",
+          "from": "2|3|4|7,10",
+          "to": "2|12|5|8,18",
+          "transport_label": "shared_B",
+          "source_native_check": true,
+          "from_BAC": [
+            2,
+            3,
+            4
+          ],
+          "to_BAC": [
+            2,
+            12,
+            5
+          ],
+          "from_columns": [
+            7,
+            10
+          ],
+          "to_columns": [
+            8,
+            18
+          ]
+        },
+        {
+          "edge_role": "YZ",
+          "from": "2|12|5|8,18",
+          "to": "5|12|2|8,18",
+          "transport_label": "reverse_partner",
+          "source_native_check": true,
+          "from_BAC": [
+            2,
+            12,
+            5
+          ],
+          "to_BAC": [
+            5,
+            12,
+            2
+          ],
+          "from_columns": [
+            8,
+            18
+          ],
+          "to_columns": [
+            8,
+            18
+          ]
+        },
+        {
+          "edge_role": "ZT",
+          "from": "5|12|2|8,18",
+          "to": "5|10|4|13,17",
+          "transport_label": "shared_B",
+          "source_native_check": true,
+          "from_BAC": [
+            5,
+            12,
+            2
+          ],
+          "to_BAC": [
+            5,
+            10,
+            4
+          ],
+          "from_columns": [
+            8,
+            18
+          ],
+          "to_columns": [
+            13,
+            17
+          ]
+        },
+        {
+          "edge_role": "TI",
+          "from": "5|10|4|13,17",
+          "to": "4|10|5|13,17",
+          "transport_label": "reverse_partner",
+          "source_native_check": true,
+          "from_BAC": [
+            5,
+            10,
+            4
+          ],
+          "to_BAC": [
+            4,
+            10,
+            5
+          ],
+          "from_columns": [
+            13,
+            17
+          ],
+          "to_columns": [
+            13,
+            17
+          ]
+        },
+        {
+          "edge_role": "IW",
+          "from": "4|10|5|13,17",
+          "to": "4|3|2|7,10",
+          "transport_label": "shared_B",
+          "source_native_check": true,
+          "from_BAC": [
+            4,
+            10,
+            5
+          ],
+          "to_BAC": [
+            4,
+            3,
+            2
+          ],
+          "from_columns": [
+            13,
+            17
+          ],
+          "to_columns": [
+            7,
+            10
+          ]
+        }
+      ],
+      "diad_edges": [
+        {
+          "edge_role": "WX",
+          "from": "4|3|2|7,10",
+          "to": "2|3|4|7,10",
+          "transport_label": "reverse_partner",
+          "source_native_check": true,
+          "from_BAC": [
+            4,
+            3,
+            2
+          ],
+          "to_BAC": [
+            2,
+            3,
+            4
+          ],
+          "from_columns": [
+            7,
+            10
+          ],
+          "to_columns": [
+            7,
+            10
+          ]
+        },
+        {
+          "edge_role": "YZ",
+          "from": "2|12|5|8,18",
+          "to": "5|12|2|8,18",
+          "transport_label": "reverse_partner",
+          "source_native_check": true,
+          "from_BAC": [
+            2,
+            12,
+            5
+          ],
+          "to_BAC": [
+            5,
+            12,
+            2
+          ],
+          "from_columns": [
+            8,
+            18
+          ],
+          "to_columns": [
+            8,
+            18
+          ]
+        },
+        {
+          "edge_role": "TI",
+          "from": "5|10|4|13,17",
+          "to": "4|10|5|13,17",
+          "transport_label": "reverse_partner",
+          "source_native_check": true,
+          "from_BAC": [
+            5,
+            10,
+            4
+          ],
+          "to_BAC": [
+            4,
+            10,
+            5
+          ],
+          "from_columns": [
+            13,
+            17
+          ],
+          "to_columns": [
+            13,
+            17
+          ]
+        }
+      ],
+      "coupler_edges": [
+        {
+          "edge_role": "XY",
+          "from": "2|3|4|7,10",
+          "to": "2|12|5|8,18",
+          "transport_label": "shared_B",
+          "source_native_check": true,
+          "from_BAC": [
+            2,
+            3,
+            4
+          ],
+          "to_BAC": [
+            2,
+            12,
+            5
+          ],
+          "from_columns": [
+            7,
+            10
+          ],
+          "to_columns": [
+            8,
+            18
+          ]
+        },
+        {
+          "edge_role": "ZT",
+          "from": "5|12|2|8,18",
+          "to": "5|10|4|13,17",
+          "transport_label": "shared_B",
+          "source_native_check": true,
+          "from_BAC": [
+            5,
+            12,
+            2
+          ],
+          "to_BAC": [
+            5,
+            10,
+            4
+          ],
+          "from_columns": [
+            8,
+            18
+          ],
+          "to_columns": [
+            13,
+            17
+          ]
+        },
+        {
+          "edge_role": "IW",
+          "from": "4|10|5|13,17",
+          "to": "4|3|2|7,10",
+          "transport_label": "shared_B",
+          "source_native_check": true,
+          "from_BAC": [
+            4,
+            10,
+            5
+          ],
+          "to_BAC": [
+            4,
+            3,
+            2
+          ],
+          "from_columns": [
+            13,
+            17
+          ],
+          "to_columns": [
+            7,
+            10
+          ]
+        }
+      ],
+      "sharp_fiber_sequence": [
+        2,
+        4,
+        5,
+        2,
+        4,
+        5,
+        2
+      ],
+      "slot_sequence": [
+        4,
+        2,
+        2,
+        5,
+        5,
+        4,
+        4
+      ],
+      "address_sequence": [
+        242,
+        124,
+        125,
+        302,
+        304,
+        245,
+        242
+      ],
+      "label_counts": {
+        "reverse_partner": 3,
+        "shared_B": 3
+      },
+      "return_to_start_key": true,
+      "return_to_start_address": true,
+      "all_transitions_source_native": true,
+      "contains_shared_B": true,
+      "contains_reverse_partner": true
+    }
+  ],
+  "checks": [
+    {
+      "id": "boundary_loaded",
+      "status": true,
+      "detail": "admission_blind_nrc_witness_boundary_recorded"
+    },
+    {
+      "id": "prior_nrc_exact",
+      "status": true,
+      "detail": true
+    },
+    {
+      "id": "source_field_record_count_120",
+      "status": true,
+      "detail": 120
+    },
+    {
+      "id": "nrc_for_all_120",
+      "status": true,
+      "detail": [
+        120,
+        0
+      ]
+    },
+    {
+      "id": "admitted_forms_4",
+      "status": true,
+      "detail": 4
+    },
+    {
+      "id": "admitted_edge_counts_all_6",
+      "status": true,
+      "detail": [
+        6,
+        6,
+        6,
+        6
+      ]
+    },
+    {
+      "id": "wxyzti_forms_valid",
+      "status": true,
+      "detail": true
+    },
+    {
+      "id": "source_transitions_valid",
+      "status": true,
+      "detail": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "id": "exact_true",
+      "status": true,
+      "detail": true
+    },
+    {
+      "id": "false_pos_zero",
+      "status": true,
+      "detail": []
+    },
+    {
+      "id": "miss_zero",
+      "status": true,
+      "detail": []
+    },
+    {
+      "id": "gap_a_open",
+      "status": true,
+      "detail": false
+    }
+  ]
+}

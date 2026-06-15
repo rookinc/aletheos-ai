@@ -1,0 +1,282 @@
+{
+  "schema": "transport_preservation_on_120_to_900_address_map_001.v1",
+  "status": "transport_preservation_supported_not_closure_not_g900",
+  "timestamp_utc": "2026-06-15T03:37:14.672700+00:00",
+  "purpose": "Test whether the B plus C_plus_1 120-to-900 address embedding preserves anchor-and-reverse transport classes.",
+  "boundary": [
+    "This does not close Gap A.",
+    "This does not prove full G900.",
+    "This tests transport preservation for source-facing relation classes.",
+    "Transport preservation is not a full return cycle.",
+    "Transport preservation is not an independent witness layer.",
+    "Transport preservation is not a full 41-seam lift.",
+    "No physical interpretation is claimed."
+  ],
+  "summary": {
+    "test_result": "transport_preservation_supported",
+    "gap_a_status": "open",
+    "gap_a_closed": false,
+    "record_count": 120,
+    "admitted_count": 4,
+    "nonadmitted_count": 116,
+    "address_space_size": 900,
+    "address_fields": [
+      "B",
+      "C_plus_1"
+    ],
+    "unique_address_count": 120,
+    "collision_count": 0,
+    "collision_examples": [],
+    "shared_B_edge_count": 420,
+    "reverse_partner_edge_count": 60,
+    "anchor_reverse_union_edge_count": 480,
+    "shared_B_slot_preserved": true,
+    "shared_B_failures_first_10": [],
+    "reverse_partner_coordinate_swap_preserved": true,
+    "reverse_swap_failures_first_10": [],
+    "union_connected_from_admitted": true,
+    "admitted_reach_count": 120,
+    "admitted_subgraph_closed": false,
+    "admitted_boundary_edge_count": 32,
+    "admitted_boundary_edges_first_20": [
+      [
+        "0|1|2|0,4",
+        "2|1|0|0,4"
+      ],
+      [
+        "10|9|13|28,29",
+        "13|9|10|28,29"
+      ],
+      [
+        "11|0|10|2,3",
+        "11|7|14|23,24"
+      ],
+      [
+        "11|0|4|1,3",
+        "11|7|14|23,24"
+      ],
+      [
+        "11|1|12|5,6",
+        "11|7|14|23,24"
+      ],
+      [
+        "11|1|2|4,5",
+        "11|7|14|23,24"
+      ],
+      [
+        "11|7|14|23,24",
+        "11|7|6|19,23"
+      ],
+      [
+        "11|7|14|23,24",
+        "11|8|13|26,27"
+      ],
+      [
+        "11|7|14|23,24",
+        "11|8|9|25,26"
+      ],
+      [
+        "11|7|14|23,24",
+        "14|7|11|23,24"
+      ],
+      [
+        "13|2|12|8,9",
+        "13|9|10|28,29"
+      ],
+      [
+        "13|2|1|4,9",
+        "13|9|10|28,29"
+      ],
+      [
+        "13|3|14|11,12",
+        "13|9|10|28,29"
+      ],
+      [
+        "13|3|4|10,11",
+        "13|9|10|28,29"
+      ],
+      [
+        "13|8|11|26,27",
+        "13|9|10|28,29"
+      ],
+      [
+        "13|8|7|22,27",
+        "13|9|10|28,29"
+      ],
+      [
+        "13|9|10|28,29",
+        "13|9|5|16,29"
+      ],
+      [
+        "2|12|5|8,18",
+        "2|1|0|0,4"
+      ],
+      [
+        "2|12|6|8,20",
+        "2|1|0|0,4"
+      ],
+      [
+        "2|13|8|9,27",
+        "2|1|0|0,4"
+      ]
+    ],
+    "address_delta_counts": {
+      "-708": 2,
+      "-531": 5,
+      "-472": 1,
+      "-413": 2,
+      "-354": 2,
+      "-295": 2,
+      "-236": 1,
+      "-177": 1,
+      "-118": 2,
+      "-13": 1,
+      "-12": 1,
+      "-11": 6,
+      "-10": 8,
+      "-9": 6,
+      "-8": 11,
+      "-7": 12,
+      "-6": 15,
+      "-5": 19,
+      "-4": 17,
+      "-3": 17,
+      "-2": 24,
+      "-1": 21,
+      "1": 35,
+      "2": 28,
+      "3": 31,
+      "4": 27,
+      "5": 21,
+      "6": 21,
+      "7": 20,
+      "8": 17,
+      "9": 18,
+      "10": 12,
+      "11": 10,
+      "12": 11,
+      "13": 7,
+      "14": 4,
+      "59": 5,
+      "118": 10,
+      "177": 9,
+      "236": 4,
+      "295": 4,
+      "354": 3,
+      "413": 3,
+      "472": 1,
+      "531": 1,
+      "708": 1,
+      "826": 1
+    },
+    "transport_preservation_supported": true,
+    "full_transport_closure_found": false,
+    "return_cycle_found": false,
+    "independent_witness_layer_found": false,
+    "full_41_lift_found": false,
+    "full_g900_admission_found": false,
+    "source_native_wxyzti_generator_found": false,
+    "claim_closes_gap_a": false,
+    "terminal_reason": "The B plus C_plus_1 address embedding preserves the sparse anchor-and-reverse transport classes: shared_B preserves address slot and reverse_partner swaps slot/fiber coordinates. The admitted records also expose the whole 120-record carrier through the anchor-and-reverse graph. However, the admitted subgraph is not closed, no return cycle is proven, no independent witness is proven, and full G900 is not proven."
+  },
+  "interpretation": {
+    "main_result": "Transport preservation is supported for the 120-to-900 address embedding.",
+    "meaning": "The address embedding is no longer just injective: it preserves the two source-facing relation types tested.",
+    "why_this_matters": "This is the first test connecting the 900-address frame to anchor-and-reverse transport behavior.",
+    "why_not_closure": "Preservation of relation types is not a full return cycle, not an independent witness, not a full 41-seam lift, and not full G900.",
+    "next_move": "Record the transport-preservation boundary, then test for return-cycle candidates."
+  },
+  "claim": {
+    "does_this_close_gap_a": false,
+    "does_this_support_transport_preservation": true,
+    "does_this_prove_full_transport_closure": false,
+    "does_this_find_return_cycle": false,
+    "does_this_find_full_g900_admission": false,
+    "short_form": "Transport preservation is supported for the 120-to-900 address embedding.",
+    "not_closed_reason": "Preservation of relation types is not a full return cycle, not an independent witness, not a full 41-seam lift, and not full G900.",
+    "next_problem": "Record the transport-preservation boundary, then test for return-cycle candidates."
+  },
+  "checks": [
+    {
+      "id": "address_boundary_loaded",
+      "status": true,
+      "detail": "120_to_900_address_map_boundary_recorded"
+    },
+    {
+      "id": "record_count_120",
+      "status": true,
+      "detail": "120"
+    },
+    {
+      "id": "unique_address_count_120",
+      "status": true,
+      "detail": "120"
+    },
+    {
+      "id": "collision_count_zero",
+      "status": true,
+      "detail": "0"
+    },
+    {
+      "id": "shared_B_edges_420",
+      "status": true,
+      "detail": "420"
+    },
+    {
+      "id": "reverse_edges_60",
+      "status": true,
+      "detail": "60"
+    },
+    {
+      "id": "union_edges_480",
+      "status": true,
+      "detail": "480"
+    },
+    {
+      "id": "shared_B_slot_preserved",
+      "status": true,
+      "detail": "[]"
+    },
+    {
+      "id": "reverse_swap_preserved",
+      "status": true,
+      "detail": "[]"
+    },
+    {
+      "id": "union_connected_from_admitted",
+      "status": true,
+      "detail": "120"
+    },
+    {
+      "id": "admitted_subgraph_not_closed",
+      "status": true,
+      "detail": "32"
+    },
+    {
+      "id": "transport_supported",
+      "status": true,
+      "detail": "True"
+    },
+    {
+      "id": "full_transport_closure_false",
+      "status": true,
+      "detail": "False"
+    },
+    {
+      "id": "return_cycle_false",
+      "status": true,
+      "detail": "False"
+    },
+    {
+      "id": "full_g900_false",
+      "status": true,
+      "detail": "False"
+    },
+    {
+      "id": "gap_a_not_closed",
+      "status": true,
+      "detail": "test only"
+    }
+  ],
+  "next_script": "record_transport_preservation_boundary_001.py"
+}

@@ -1,0 +1,761 @@
+{
+  "schema": "reverse_gap_a_visibility_gate_exploration_001.v1",
+  "status": "reverse_gap_a_visibility_gate_not_found",
+  "timestamp_utc": "2026-06-15T01:30:34.351859+00:00",
+  "purpose": "Explore reverse Gap A by testing whether projection visibility gates source-shell polarity paths into registered trace.",
+  "boundary": [
+    "This does not close Gap A.",
+    "This is a reverse-maze exploration.",
+    "Projection visibility is not automatically source-native derivation.",
+    "A visibility gate is weaker than a WXYZTI projection-family generator.",
+    "No physical interpretation is claimed."
+  ],
+  "summary": {
+    "exploration_result": "visibility_gate_not_exact",
+    "gap_a_closed": false,
+    "reverse_maze_frame": true,
+    "best_source_family_feature": [
+      "source:p900_candidate0_edge_law:sector_delta_abs_small=True"
+    ],
+    "best_source_family_indices": [
+      0,
+      1,
+      5,
+      6,
+      7
+    ],
+    "full_polarity_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "best_family_projection_visible_gate": {
+      "gate": "projection_visible",
+      "universe_size": 5,
+      "selected_count": 4,
+      "nonselected_count": 1,
+      "true_positive_indices": [
+        0,
+        1
+      ],
+      "false_negative_indices": [
+        5,
+        7
+      ],
+      "false_positive_indices": [],
+      "true_negative_indices": [
+        6
+      ],
+      "exact_on_universe": false
+    },
+    "full_polarity_projection_visible_gate": {
+      "gate": "projection_visible",
+      "universe_size": 8,
+      "selected_count": 4,
+      "nonselected_count": 4,
+      "true_positive_indices": [
+        0,
+        1
+      ],
+      "false_negative_indices": [
+        5,
+        7
+      ],
+      "false_positive_indices": [
+        2,
+        4
+      ],
+      "true_negative_indices": [
+        3,
+        6
+      ],
+      "exact_on_universe": false
+    },
+    "best_family_exact_gates": [],
+    "full_polarity_exact_gates": [],
+    "claim_closes_gap_a": false
+  },
+  "records": [
+    {
+      "index": 0,
+      "selected": true,
+      "in_best_source_family": true,
+      "columns": [
+        0,
+        4
+      ],
+      "B": 2,
+      "A": 1,
+      "C": 0,
+      "projection_hits": [
+        {
+          "column": 0,
+          "row_ordinal": 0,
+          "cycle": 0,
+          "role": "WX",
+          "role_class": "outer"
+        },
+        {
+          "column": 0,
+          "row_ordinal": 6,
+          "cycle": 1,
+          "role": "WX",
+          "role_class": "outer"
+        },
+        {
+          "column": 0,
+          "row_ordinal": 12,
+          "cycle": 2,
+          "role": "WX",
+          "role_class": "outer"
+        },
+        {
+          "column": 4,
+          "row_ordinal": 1,
+          "cycle": 0,
+          "role": "XY",
+          "role_class": "outer"
+        },
+        {
+          "column": 4,
+          "row_ordinal": 7,
+          "cycle": 1,
+          "role": "XY",
+          "role_class": "outer"
+        },
+        {
+          "column": 4,
+          "row_ordinal": 13,
+          "cycle": 2,
+          "role": "XY",
+          "role_class": "outer"
+        },
+        {
+          "column": 4,
+          "row_ordinal": 14,
+          "cycle": 2,
+          "role": "YZ",
+          "role_class": "interior"
+        }
+      ],
+      "visibility": {
+        "projection_visible": true,
+        "both_columns_visible": true,
+        "visible_column_count": 2,
+        "hit_count": 7,
+        "roles": [
+          "WX",
+          "XY",
+          "YZ"
+        ],
+        "role_classes": [
+          "interior",
+          "outer"
+        ],
+        "cycles": [
+          0,
+          1,
+          2
+        ],
+        "has_outer": true,
+        "has_interior": true,
+        "has_outer_and_interior": true
+      },
+      "gates": {
+        "projection_visible": true,
+        "both_columns_visible": true,
+        "has_interior": true,
+        "has_outer": true,
+        "has_outer_and_interior": true
+      }
+    },
+    {
+      "index": 1,
+      "selected": true,
+      "in_best_source_family": true,
+      "columns": [
+        7,
+        10
+      ],
+      "B": 4,
+      "A": 3,
+      "C": 2,
+      "projection_hits": [
+        {
+          "column": 7,
+          "row_ordinal": 2,
+          "cycle": 0,
+          "role": "YZ",
+          "role_class": "interior"
+        },
+        {
+          "column": 7,
+          "row_ordinal": 5,
+          "cycle": 0,
+          "role": "IW",
+          "role_class": "outer"
+        },
+        {
+          "column": 7,
+          "row_ordinal": 11,
+          "cycle": 1,
+          "role": "IW",
+          "role_class": "outer"
+        },
+        {
+          "column": 7,
+          "row_ordinal": 17,
+          "cycle": 2,
+          "role": "IW",
+          "role_class": "outer"
+        },
+        {
+          "column": 10,
+          "row_ordinal": 2,
+          "cycle": 0,
+          "role": "YZ",
+          "role_class": "interior"
+        },
+        {
+          "column": 10,
+          "row_ordinal": 10,
+          "cycle": 1,
+          "role": "TI",
+          "role_class": "interior"
+        }
+      ],
+      "visibility": {
+        "projection_visible": true,
+        "both_columns_visible": true,
+        "visible_column_count": 2,
+        "hit_count": 6,
+        "roles": [
+          "IW",
+          "TI",
+          "YZ"
+        ],
+        "role_classes": [
+          "interior",
+          "outer"
+        ],
+        "cycles": [
+          0,
+          1,
+          2
+        ],
+        "has_outer": true,
+        "has_interior": true,
+        "has_outer_and_interior": true
+      },
+      "gates": {
+        "projection_visible": true,
+        "both_columns_visible": true,
+        "has_interior": true,
+        "has_outer": true,
+        "has_outer_and_interior": true
+      }
+    },
+    {
+      "index": 2,
+      "selected": false,
+      "in_best_source_family": false,
+      "columns": [
+        15,
+        16
+      ],
+      "B": 9,
+      "A": 5,
+      "C": 6,
+      "projection_hits": [
+        {
+          "column": 15,
+          "row_ordinal": 16,
+          "cycle": 2,
+          "role": "TI",
+          "role_class": "interior"
+        }
+      ],
+      "visibility": {
+        "projection_visible": true,
+        "both_columns_visible": false,
+        "visible_column_count": 1,
+        "hit_count": 1,
+        "roles": [
+          "TI"
+        ],
+        "role_classes": [
+          "interior"
+        ],
+        "cycles": [
+          2
+        ],
+        "has_outer": false,
+        "has_interior": true,
+        "has_outer_and_interior": false
+      },
+      "gates": {
+        "projection_visible": true,
+        "both_columns_visible": false,
+        "has_interior": true,
+        "has_outer": false,
+        "has_outer_and_interior": false
+      }
+    },
+    {
+      "index": 3,
+      "selected": false,
+      "in_best_source_family": false,
+      "columns": [
+        16,
+        18
+      ],
+      "B": 9,
+      "A": 5,
+      "C": 12,
+      "projection_hits": [],
+      "visibility": {
+        "projection_visible": false,
+        "both_columns_visible": false,
+        "visible_column_count": 0,
+        "hit_count": 0,
+        "roles": [],
+        "role_classes": [],
+        "cycles": [],
+        "has_outer": false,
+        "has_interior": false,
+        "has_outer_and_interior": false
+      },
+      "gates": {
+        "projection_visible": false,
+        "both_columns_visible": false,
+        "has_interior": false,
+        "has_outer": false,
+        "has_outer_and_interior": false
+      }
+    },
+    {
+      "index": 4,
+      "selected": false,
+      "in_best_source_family": false,
+      "columns": [
+        19,
+        22
+      ],
+      "B": 8,
+      "A": 7,
+      "C": 6,
+      "projection_hits": [
+        {
+          "column": 22,
+          "row_ordinal": 8,
+          "cycle": 1,
+          "role": "YZ",
+          "role_class": "interior"
+        },
+        {
+          "column": 22,
+          "row_ordinal": 15,
+          "cycle": 2,
+          "role": "ZT",
+          "role_class": "interior"
+        }
+      ],
+      "visibility": {
+        "projection_visible": true,
+        "both_columns_visible": false,
+        "visible_column_count": 1,
+        "hit_count": 2,
+        "roles": [
+          "YZ",
+          "ZT"
+        ],
+        "role_classes": [
+          "interior"
+        ],
+        "cycles": [
+          1,
+          2
+        ],
+        "has_outer": false,
+        "has_interior": true,
+        "has_outer_and_interior": false
+      },
+      "gates": {
+        "projection_visible": true,
+        "both_columns_visible": false,
+        "has_interior": true,
+        "has_outer": false,
+        "has_outer_and_interior": false
+      }
+    },
+    {
+      "index": 5,
+      "selected": true,
+      "in_best_source_family": true,
+      "columns": [
+        23,
+        24
+      ],
+      "B": 11,
+      "A": 7,
+      "C": 14,
+      "projection_hits": [],
+      "visibility": {
+        "projection_visible": false,
+        "both_columns_visible": false,
+        "visible_column_count": 0,
+        "hit_count": 0,
+        "roles": [],
+        "role_classes": [],
+        "cycles": [],
+        "has_outer": false,
+        "has_interior": false,
+        "has_outer_and_interior": false
+      },
+      "gates": {
+        "projection_visible": false,
+        "both_columns_visible": false,
+        "has_interior": false,
+        "has_outer": false,
+        "has_outer_and_interior": false
+      }
+    },
+    {
+      "index": 6,
+      "selected": false,
+      "in_best_source_family": true,
+      "columns": [
+        25,
+        28
+      ],
+      "B": 10,
+      "A": 9,
+      "C": 8,
+      "projection_hits": [],
+      "visibility": {
+        "projection_visible": false,
+        "both_columns_visible": false,
+        "visible_column_count": 0,
+        "hit_count": 0,
+        "roles": [],
+        "role_classes": [],
+        "cycles": [],
+        "has_outer": false,
+        "has_interior": false,
+        "has_outer_and_interior": false
+      },
+      "gates": {
+        "projection_visible": false,
+        "both_columns_visible": false,
+        "has_interior": false,
+        "has_outer": false,
+        "has_outer_and_interior": false
+      }
+    },
+    {
+      "index": 7,
+      "selected": true,
+      "in_best_source_family": true,
+      "columns": [
+        28,
+        29
+      ],
+      "B": 13,
+      "A": 9,
+      "C": 10,
+      "projection_hits": [],
+      "visibility": {
+        "projection_visible": false,
+        "both_columns_visible": false,
+        "visible_column_count": 0,
+        "hit_count": 0,
+        "roles": [],
+        "role_classes": [],
+        "cycles": [],
+        "has_outer": false,
+        "has_interior": false,
+        "has_outer_and_interior": false
+      },
+      "gates": {
+        "projection_visible": false,
+        "both_columns_visible": false,
+        "has_interior": false,
+        "has_outer": false,
+        "has_outer_and_interior": false
+      }
+    }
+  ],
+  "best_family_gate_results": [
+    {
+      "gate": "projection_visible",
+      "universe_size": 5,
+      "selected_count": 4,
+      "nonselected_count": 1,
+      "true_positive_indices": [
+        0,
+        1
+      ],
+      "false_negative_indices": [
+        5,
+        7
+      ],
+      "false_positive_indices": [],
+      "true_negative_indices": [
+        6
+      ],
+      "exact_on_universe": false
+    },
+    {
+      "gate": "both_columns_visible",
+      "universe_size": 5,
+      "selected_count": 4,
+      "nonselected_count": 1,
+      "true_positive_indices": [
+        0,
+        1
+      ],
+      "false_negative_indices": [
+        5,
+        7
+      ],
+      "false_positive_indices": [],
+      "true_negative_indices": [
+        6
+      ],
+      "exact_on_universe": false
+    },
+    {
+      "gate": "has_interior",
+      "universe_size": 5,
+      "selected_count": 4,
+      "nonselected_count": 1,
+      "true_positive_indices": [
+        0,
+        1
+      ],
+      "false_negative_indices": [
+        5,
+        7
+      ],
+      "false_positive_indices": [],
+      "true_negative_indices": [
+        6
+      ],
+      "exact_on_universe": false
+    },
+    {
+      "gate": "has_outer",
+      "universe_size": 5,
+      "selected_count": 4,
+      "nonselected_count": 1,
+      "true_positive_indices": [
+        0,
+        1
+      ],
+      "false_negative_indices": [
+        5,
+        7
+      ],
+      "false_positive_indices": [],
+      "true_negative_indices": [
+        6
+      ],
+      "exact_on_universe": false
+    },
+    {
+      "gate": "has_outer_and_interior",
+      "universe_size": 5,
+      "selected_count": 4,
+      "nonselected_count": 1,
+      "true_positive_indices": [
+        0,
+        1
+      ],
+      "false_negative_indices": [
+        5,
+        7
+      ],
+      "false_positive_indices": [],
+      "true_negative_indices": [
+        6
+      ],
+      "exact_on_universe": false
+    }
+  ],
+  "full_polarity_gate_results": [
+    {
+      "gate": "projection_visible",
+      "universe_size": 8,
+      "selected_count": 4,
+      "nonselected_count": 4,
+      "true_positive_indices": [
+        0,
+        1
+      ],
+      "false_negative_indices": [
+        5,
+        7
+      ],
+      "false_positive_indices": [
+        2,
+        4
+      ],
+      "true_negative_indices": [
+        3,
+        6
+      ],
+      "exact_on_universe": false
+    },
+    {
+      "gate": "both_columns_visible",
+      "universe_size": 8,
+      "selected_count": 4,
+      "nonselected_count": 4,
+      "true_positive_indices": [
+        0,
+        1
+      ],
+      "false_negative_indices": [
+        5,
+        7
+      ],
+      "false_positive_indices": [],
+      "true_negative_indices": [
+        2,
+        3,
+        4,
+        6
+      ],
+      "exact_on_universe": false
+    },
+    {
+      "gate": "has_interior",
+      "universe_size": 8,
+      "selected_count": 4,
+      "nonselected_count": 4,
+      "true_positive_indices": [
+        0,
+        1
+      ],
+      "false_negative_indices": [
+        5,
+        7
+      ],
+      "false_positive_indices": [
+        2,
+        4
+      ],
+      "true_negative_indices": [
+        3,
+        6
+      ],
+      "exact_on_universe": false
+    },
+    {
+      "gate": "has_outer",
+      "universe_size": 8,
+      "selected_count": 4,
+      "nonselected_count": 4,
+      "true_positive_indices": [
+        0,
+        1
+      ],
+      "false_negative_indices": [
+        5,
+        7
+      ],
+      "false_positive_indices": [],
+      "true_negative_indices": [
+        2,
+        3,
+        4,
+        6
+      ],
+      "exact_on_universe": false
+    },
+    {
+      "gate": "has_outer_and_interior",
+      "universe_size": 8,
+      "selected_count": 4,
+      "nonselected_count": 4,
+      "true_positive_indices": [
+        0,
+        1
+      ],
+      "false_negative_indices": [
+        5,
+        7
+      ],
+      "false_positive_indices": [],
+      "true_negative_indices": [
+        2,
+        3,
+        4,
+        6
+      ],
+      "exact_on_universe": false
+    }
+  ],
+  "interpretation": {
+    "main_result": "Projection visibility did not form an exact reverse gate in the tested family.",
+    "why_this_matters": "Reverse search asks what gate admits source-shell paths as registered trace. This tests visibility before trying another generator search.",
+    "why_not_closure": "Projection visibility is an observed gate on the current surface, not a source-native derivation of the WXYZTI register generator.",
+    "next_move": "Record reverse Gap A visibility-gate boundary and return to source-native generator search."
+  },
+  "claim": {
+    "does_this_close_gap_a": false,
+    "does_this_find_reverse_visibility_gate": false,
+    "does_this_find_source_native_generator": false,
+    "short_form": "Projection visibility did not form an exact reverse gate in the tested family.",
+    "not_closed_reason": "Projection visibility is an observed gate on the current surface, not a source-native derivation of the WXYZTI register generator.",
+    "next_problem": "Record reverse Gap A visibility-gate boundary and return to source-native generator search."
+  },
+  "checks": [
+    {
+      "id": "companion_loaded",
+      "status": true,
+      "detail": "polarity_family_nonselected_companion_inspected_no_neighbor_candidate"
+    },
+    {
+      "id": "projection_search_loaded",
+      "status": true,
+      "detail": "source_native_projection_family_generator_search_family_signal_persists_no_generator"
+    },
+    {
+      "id": "candidate_audit_loaded",
+      "status": true,
+      "detail": "gap_a_polarity_aware_odd_hinge_candidate_survives_lookup_audit_not_generator"
+    },
+    {
+      "id": "plateau_loaded",
+      "status": true,
+      "detail": "gap_a_open_with_source_shell_lift_conjecture_recorded"
+    },
+    {
+      "id": "records_loaded",
+      "status": true,
+      "detail": "8"
+    },
+    {
+      "id": "best_family_size_5",
+      "status": true,
+      "detail": "5"
+    },
+    {
+      "id": "best_family_has_4_selected",
+      "status": true,
+      "detail": "{'gate': 'projection_visible', 'universe_size': 5, 'selected_count': 4, 'nonselected_count': 1, 'true_positive_indices': [0, 1], 'false_negative_indices': [5, 7], 'false_positive_indices': [], 'true_negative_indices': [6], 'exact_on_universe': False}"
+    },
+    {
+      "id": "gap_a_not_closed",
+      "status": true,
+      "detail": "visibility gate exploration only"
+    }
+  ],
+  "next_script": "record_reverse_gap_a_visibility_gate_boundary_001.py"
+}

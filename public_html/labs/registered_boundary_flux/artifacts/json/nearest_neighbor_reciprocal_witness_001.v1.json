@@ -1,0 +1,162 @@
+{
+  "schema": "nearest_neighbor_reciprocal_witness_001.v1",
+  "status": "nearest_neighbor_reciprocal_witness_recorded",
+  "timestamp_utc": "2026-06-15T12:09:57.773215+00:00",
+  "purpose": "Define and fit the nearest-neighbor reciprocal witness for the Sharp Fiber Return Plateau.",
+  "definition": {
+    "name": "Nearest-Neighbor Reciprocal Witness",
+    "short_name": "NRC witness",
+    "universe": "U = 120-record carrier",
+    "target": "A = admitted four records",
+    "address_frame": "B + C_plus_1",
+    "transport_context": {
+      "shared_B": "nearest anchor-neighbor relation",
+      "reverse_partner": "reciprocal answer relation",
+      "transport_union": "anchor-and-reverse transport"
+    },
+    "informal_definition": "For a record x, NRC(x) is the local reciprocal witness context formed when x is answered by its nearest transport neighbors: one side preserves local anchor context and the reciprocal side answers through reverse_partner. The witness is the trace left by that reciprocal return.",
+    "formal_shape": {
+      "NRC_x": "nearest-neighbor reciprocal couple around x",
+      "W_NRC_x": "sharp_fiber_sequence produced by NRC(x)",
+      "admission_rule": "x is admitted iff W_NRC(x) is in W_NRC(A)"
+    },
+    "time_reading": {
+      "t0": "local present record",
+      "t1": "nearest-neighbor response shell",
+      "t1_plus": "reciprocal answer / next update",
+      "now": "active seam where the neighbor answer is read as trace"
+    }
+  },
+  "fit": {
+    "witness_map": "W_NRC(x) = sharp_fiber_sequence(x)",
+    "admitted_trace_class": [
+      [
+        "[0, 2, 5, 0, 2, 5, 0]"
+      ],
+      [
+        "[10, 13, 11, 10, 13, 11, 10]"
+      ],
+      [
+        "[14, 11, 13, 14, 11, 13, 14]"
+      ],
+      [
+        "[2, 4, 5, 2, 4, 5, 2]"
+      ]
+    ],
+    "accepted_count": 4,
+    "false_positive_count": 0,
+    "miss_count": 0,
+    "exact_over_120_record_carrier": true,
+    "basic_return_only_exact_predicate_found": false,
+    "context_selector_found": true,
+    "context_best_fields": [
+      "context_A_B_C"
+    ],
+    "grade": "Grade 1 internal reciprocal witness",
+    "grade_reason": "The witness is not external independence. It is internal to the declared nearest-neighbor reciprocal transport context. It is stronger than context naming because it is read from the return trace, but it is not a Grade 2 cross-context witness."
+  },
+  "evidence": {
+    "address_embedding_found": true,
+    "address_embedding_fields": [
+      "B",
+      "C_plus_1"
+    ],
+    "address_unique_count": 120,
+    "address_collision_count": 0,
+    "transport_preservation_supported": true,
+    "shared_B_slot_preserved": true,
+    "reverse_partner_coordinate_swap_preserved": true,
+    "transport_exposes_120": true,
+    "admitted_subgraph_closed": false,
+    "return_candidates_found": true,
+    "return_candidate_count": 4,
+    "return_candidate_edge_counts": [
+      6,
+      6,
+      6,
+      6
+    ],
+    "return_candidates_return_to_start_address": true,
+    "return_candidates_use_both_labels": true,
+    "transport_specific_under_perturbation": true,
+    "perturbation_supported": true,
+    "random_start_return_abundant": true,
+    "sharp_fiber_sequence_exact": true,
+    "sharp_fiber_sequence_accepted_count": 4,
+    "sharp_fiber_sequence_false_positive_count": 0,
+    "sharp_fiber_sequence_miss_count": 0
+  },
+  "result": {
+    "result_name": "Sharp Fiber Return Witness",
+    "keeper": "The witness is the nearest neighbor that answers back.",
+    "claim": "Within the declared 120-record carrier, B + C_plus_1 address frame, and anchor-and-reverse transport grammar, sharp_fiber_sequence is an exact internal reciprocal witness for the admitted four.",
+    "not_claimed": [
+      "not external independence",
+      "not validated full closure",
+      "not full 41-seam lift",
+      "not full G900",
+      "not Gap A closure",
+      "not physical interpretation"
+    ],
+    "corrected_question": "Not: can the witness avoid context? But: is the context priced as nearest-neighbor reciprocal coupling?",
+    "tomorrow_question": "Can the NRC witness be derived directly from nearest-neighbor reciprocal couple structure, rather than only named from sharp_fiber_sequence after the fit?"
+  },
+  "summary": {
+    "record_result": "nearest_neighbor_reciprocal_witness_recorded",
+    "witness_found": true,
+    "witness_name": "Sharp Fiber Return Witness",
+    "witness_grade": "Grade 1 internal reciprocal witness",
+    "witness_map": "W_NRC(x) = sharp_fiber_sequence(x)",
+    "exact_over_120_record_carrier": true,
+    "accepted_count": 4,
+    "false_positive_count": 0,
+    "miss_count": 0,
+    "basic_return_only_exact_predicate_found": false,
+    "transport_specific_under_perturbation": true,
+    "random_start_return_abundant": true,
+    "validated_return_cycle_found": false,
+    "independent_external_witness_found": false,
+    "full_41_lift_found": false,
+    "full_g900_admission_found": false,
+    "gap_a_closed": false,
+    "keeper": "The witness is the nearest neighbor that answers back."
+  },
+  "checks": [
+    {
+      "id": "plateau_loaded",
+      "status": true
+    },
+    {
+      "id": "strict_loaded",
+      "status": true
+    },
+    {
+      "id": "sharp_fiber_sequence",
+      "status": true
+    },
+    {
+      "id": "accepted_4",
+      "status": true
+    },
+    {
+      "id": "false_positive_zero",
+      "status": true
+    },
+    {
+      "id": "miss_zero",
+      "status": true
+    },
+    {
+      "id": "basic_return_not_exact",
+      "status": true
+    },
+    {
+      "id": "transport_specific",
+      "status": true
+    },
+    {
+      "id": "gap_a_open",
+      "status": true
+    }
+  ]
+}

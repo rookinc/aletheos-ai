@@ -1,0 +1,130 @@
+{
+  "schema": "gap_a_return_evidence_plateau_summary_001.v1",
+  "status": "gap_a_return_evidence_plateau_summary_recorded",
+  "timestamp_utc": "2026-06-15T04:12:55.777012+00:00",
+  "purpose": "Finish the current Gap A return-evidence branch with a final plateau summary.",
+  "boundary": [
+    "This finishes the current branch, not Gap A.",
+    "This does not prove full G900.",
+    "This does not validate full return-cycle closure.",
+    "This does not provide an independent witness layer.",
+    "This does not construct a full 41-seam lift.",
+    "No physical interpretation is claimed."
+  ],
+  "summary": {
+    "record_result": "gap_a_return_evidence_plateau_summary_recorded",
+    "plateau_name": "Sharp Fiber Return Plateau",
+    "gap_a_status": "open",
+    "gap_a_closed": false,
+    "address_embedding_found": true,
+    "address_embedding_fields": [
+      "B",
+      "C_plus_1"
+    ],
+    "address_unique_count": 120,
+    "address_collision_count": 0,
+    "transport_preservation_supported": true,
+    "shared_B_slot_preserved": true,
+    "reverse_partner_coordinate_swap_preserved": true,
+    "transport_exposes_120": true,
+    "admitted_subgraph_closed": false,
+    "return_candidates_found": true,
+    "return_candidate_count": 4,
+    "return_candidate_edge_counts": [
+      6,
+      6,
+      6,
+      6
+    ],
+    "return_candidates_return_to_start_address": true,
+    "transport_specific_under_perturbation": true,
+    "perturbation_supported": true,
+    "random_start_return_abundant": true,
+    "basic_return_only_exact_predicate_found": false,
+    "sharp_return_signature_selector_found": true,
+    "sharp_best_exact_fields": [
+      "sharp_fiber_sequence"
+    ],
+    "sharp_best_exact_accepted_count": 4,
+    "sharp_best_exact_false_positive_count": 0,
+    "sharp_best_exact_miss_count": 0,
+    "context_selector_found": true,
+    "context_best_exact_fields": [
+      "context_A_B_C"
+    ],
+    "validated_return_cycle_found": false,
+    "independent_witness_layer_found": false,
+    "full_41_lift_found": false,
+    "full_g900_admission_found": false,
+    "source_native_wxyzti_generator_found": false,
+    "keeper": "Basic return is not enough. Sharp fiber return separates. The grammar matters. Independent validation is still missing.",
+    "terminal_conclusion": "This branch reached a clean plateau. B plus C_plus_1 gives a collision-free 120-to-900 address embedding. Anchor-and-reverse transport is preserved. Admitted records have six-edge return-shaped candidates. The full transport-plus-return model is transport-specific under tested perturbations. Basic return existence is too abundant. sharp_fiber_sequence exactly separates the admitted four. This is strong return-trace structure, not validated closure."
+  },
+  "checks": [
+    {
+      "id": "address_embedding_found",
+      "status": true
+    },
+    {
+      "id": "address_unique_120",
+      "status": true
+    },
+    {
+      "id": "address_collision_zero",
+      "status": true
+    },
+    {
+      "id": "transport_supported",
+      "status": true
+    },
+    {
+      "id": "return_candidates_found",
+      "status": true
+    },
+    {
+      "id": "perturbation_supported",
+      "status": true
+    },
+    {
+      "id": "basic_return_not_exact",
+      "status": true
+    },
+    {
+      "id": "sharp_selector_found",
+      "status": true
+    },
+    {
+      "id": "sharp_fiber_sequence",
+      "status": true
+    },
+    {
+      "id": "sharp_accepts_4",
+      "status": true
+    },
+    {
+      "id": "sharp_fp_zero",
+      "status": true
+    },
+    {
+      "id": "sharp_miss_zero",
+      "status": true
+    },
+    {
+      "id": "validated_return_false",
+      "status": true
+    },
+    {
+      "id": "full_g900_false",
+      "status": true
+    },
+    {
+      "id": "gap_a_open",
+      "status": true
+    }
+  ],
+  "branch_status": {
+    "finished_for_now": true,
+    "reason_to_stop": "The branch has reached a clean audited plateau.",
+    "next_real_question": "Can sharp_fiber_sequence be independently derived or witnessed without reusing admission context?"
+  }
+}

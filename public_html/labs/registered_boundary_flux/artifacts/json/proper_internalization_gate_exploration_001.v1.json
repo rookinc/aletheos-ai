@@ -1,0 +1,2557 @@
+{
+  "schema": "proper_internalization_gate_exploration_001.v1",
+  "status": "proper_internalization_gate_candidate_found_inside_best_family_not_generator",
+  "timestamp_utc": "2026-06-15T01:46:11.911777+00:00",
+  "purpose": "Explore whether closure comes from proper internalization rather than visibility.",
+  "boundary": [
+    "This does not close Gap A.",
+    "This tests internal support/return absorption, not direct visibility.",
+    "A gate candidate is weaker than a WXYZTI projection-family generator.",
+    "Neighborhood support features are hypothesis probes and require audit before promotion.",
+    "No physical interpretation is claimed."
+  ],
+  "summary": {
+    "exploration_result": "proper_internalization_gate_candidate_found_inside_best_family",
+    "gap_a_closed": false,
+    "record_count": 8,
+    "best_family_indices": [
+      0,
+      1,
+      5,
+      6,
+      7
+    ],
+    "common_selected_internal_feature_count": 58,
+    "candidate_report_count": 456837,
+    "best_exact_low_inside_best_family": {
+      "features": [
+        "internal:r1:row_hit_count_ge5=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 5,
+      "support_count": 4,
+      "selected_support_count": 4,
+      "nonselected_support_count": 0,
+      "support_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [],
+      "covers_all_selected": true,
+      "exact_selected": true,
+      "score": 1
+    },
+    "best_exact_low_full_universe": {
+      "features": [
+        "internal:r1:row_hit_count_ge5=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 8,
+      "support_count": 4,
+      "selected_support_count": 4,
+      "nonselected_support_count": 0,
+      "support_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [],
+      "covers_all_selected": true,
+      "exact_selected": true,
+      "score": 1
+    },
+    "best_exact_any_inside_best_family": {
+      "features": [
+        "internal:r1:row_hit_count_ge5=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 5,
+      "support_count": 4,
+      "selected_support_count": 4,
+      "nonselected_support_count": 0,
+      "support_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [],
+      "covers_all_selected": true,
+      "exact_selected": true,
+      "score": 1
+    },
+    "best_exact_any_full_universe": {
+      "features": [
+        "internal:r1:row_hit_count_ge5=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 8,
+      "support_count": 4,
+      "selected_support_count": 4,
+      "nonselected_support_count": 0,
+      "support_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [],
+      "covers_all_selected": true,
+      "exact_selected": true,
+      "score": 1
+    },
+    "best_family_low_inside_best_family": {
+      "features": [
+        "internal:path_columns_are_A_incident=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 5,
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "covers_all_selected": true,
+      "exact_selected": false,
+      "score": 6
+    },
+    "best_family_low_full_universe": {
+      "features": [
+        "internal:path_columns_are_A_incident=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 8,
+      "support_count": 8,
+      "selected_support_count": 4,
+      "nonselected_support_count": 4,
+      "support_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        2,
+        3,
+        4,
+        6
+      ],
+      "covers_all_selected": true,
+      "exact_selected": false,
+      "score": 21
+    },
+    "best_overall_inside_best_family": {
+      "features": [
+        "internal:r1:row_hit_count_ge5=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 5,
+      "support_count": 4,
+      "selected_support_count": 4,
+      "nonselected_support_count": 0,
+      "support_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [],
+      "covers_all_selected": true,
+      "exact_selected": true,
+      "score": 1
+    },
+    "claim_closes_gap_a": false
+  },
+  "records": [
+    {
+      "index": 0,
+      "selected": true,
+      "B": 2,
+      "A": 1,
+      "C": 0,
+      "columns": [
+        0,
+        4
+      ],
+      "features": [
+        "internal:path_columns_are_A_incident=True",
+        "internal:path_columns_touch_A_incident=True",
+        "internal:path_columns_touch_B_incident=True",
+        "internal:path_columns_touch_C_incident=True",
+        "internal:path_columns_touch_all_BAC=True",
+        "internal:r0:A_and_C_incident_absorbed=True",
+        "internal:r0:A_incident_absorbed=True",
+        "internal:r0:A_incident_hit_count_ge1=True",
+        "internal:r0:A_incident_hit_count_ge2=True",
+        "internal:r0:A_incident_hit_count_ge3=True",
+        "internal:r0:B_incident_absorbed=True",
+        "internal:r0:B_incident_hit_count_ge1=True",
+        "internal:r0:B_incident_hit_count_ge2=True",
+        "internal:r0:B_incident_hit_count_ge3=True",
+        "internal:r0:C_incident_absorbed=True",
+        "internal:r0:C_incident_hit_count_ge1=True",
+        "internal:r0:C_incident_hit_count_ge2=True",
+        "internal:r0:C_incident_hit_count_ge3=True",
+        "internal:r0:any_support_absorption=True",
+        "internal:r0:both_path_columns_reach_support=True",
+        "internal:r0:has_interior_support=True",
+        "internal:r0:has_outer_and_interior_support=True",
+        "internal:r0:has_outer_support=True",
+        "internal:r0:neighborhood_column_count_ge2=True",
+        "internal:r0:neighborhood_column_count_ge3=False",
+        "internal:r0:neighborhood_column_count_ge4=False",
+        "internal:r0:neighborhood_column_count_ge5=False",
+        "internal:r0:neighborhood_column_count_ge6=False",
+        "internal:r0:neighborhood_column_count_ge8=False",
+        "internal:r0:role_class_shape=interior,outer",
+        "internal:r0:row_hit_count_ge1=True",
+        "internal:r0:row_hit_count_ge2=True",
+        "internal:r0:row_hit_count_ge3=True",
+        "internal:r0:row_hit_count_ge4=True",
+        "internal:r0:row_hit_count_ge5=True",
+        "internal:r0:row_hit_count_ge6=True",
+        "internal:r0:visible_column_count_ge1=True",
+        "internal:r0:visible_column_count_ge2=True",
+        "internal:r0:visible_column_count_ge3=False",
+        "internal:r0:visible_column_count_ge4=False",
+        "internal:r1:A_and_C_incident_absorbed=True",
+        "internal:r1:A_incident_absorbed=True",
+        "internal:r1:A_incident_hit_count_ge1=True",
+        "internal:r1:A_incident_hit_count_ge2=True",
+        "internal:r1:A_incident_hit_count_ge3=True",
+        "internal:r1:B_incident_absorbed=True",
+        "internal:r1:B_incident_hit_count_ge1=True",
+        "internal:r1:B_incident_hit_count_ge2=True",
+        "internal:r1:B_incident_hit_count_ge3=True",
+        "internal:r1:C_incident_absorbed=True",
+        "internal:r1:C_incident_hit_count_ge1=True",
+        "internal:r1:C_incident_hit_count_ge2=True",
+        "internal:r1:C_incident_hit_count_ge3=True",
+        "internal:r1:any_support_absorption=True",
+        "internal:r1:both_path_columns_reach_support=True",
+        "internal:r1:has_interior_support=True",
+        "internal:r1:has_outer_and_interior_support=True",
+        "internal:r1:has_outer_support=True",
+        "internal:r1:neighborhood_column_count_ge2=True",
+        "internal:r1:neighborhood_column_count_ge3=True",
+        "internal:r1:neighborhood_column_count_ge4=True",
+        "internal:r1:neighborhood_column_count_ge5=True",
+        "internal:r1:neighborhood_column_count_ge6=True",
+        "internal:r1:neighborhood_column_count_ge8=True",
+        "internal:r1:role_class_shape=interior,outer",
+        "internal:r1:row_hit_count_ge1=True",
+        "internal:r1:row_hit_count_ge2=True",
+        "internal:r1:row_hit_count_ge3=True",
+        "internal:r1:row_hit_count_ge4=True",
+        "internal:r1:row_hit_count_ge5=True",
+        "internal:r1:row_hit_count_ge6=True",
+        "internal:r1:visible_column_count_ge1=True",
+        "internal:r1:visible_column_count_ge2=True",
+        "internal:r1:visible_column_count_ge3=True",
+        "internal:r1:visible_column_count_ge4=True",
+        "internal:r2:A_and_C_incident_absorbed=True",
+        "internal:r2:A_incident_absorbed=True",
+        "internal:r2:A_incident_hit_count_ge1=True",
+        "internal:r2:A_incident_hit_count_ge2=True",
+        "internal:r2:A_incident_hit_count_ge3=True",
+        "internal:r2:B_incident_absorbed=True",
+        "internal:r2:B_incident_hit_count_ge1=True",
+        "internal:r2:B_incident_hit_count_ge2=True",
+        "internal:r2:B_incident_hit_count_ge3=True",
+        "internal:r2:C_incident_absorbed=True",
+        "internal:r2:C_incident_hit_count_ge1=True",
+        "internal:r2:C_incident_hit_count_ge2=True",
+        "internal:r2:C_incident_hit_count_ge3=True",
+        "internal:r2:any_support_absorption=True",
+        "internal:r2:both_path_columns_reach_support=True",
+        "internal:r2:has_interior_support=True",
+        "internal:r2:has_outer_and_interior_support=True",
+        "internal:r2:has_outer_support=True",
+        "internal:r2:neighborhood_column_count_ge2=True",
+        "internal:r2:neighborhood_column_count_ge3=True",
+        "internal:r2:neighborhood_column_count_ge4=True",
+        "internal:r2:neighborhood_column_count_ge5=True",
+        "internal:r2:neighborhood_column_count_ge6=True",
+        "internal:r2:neighborhood_column_count_ge8=True",
+        "internal:r2:role_class_shape=interior,outer",
+        "internal:r2:row_hit_count_ge1=True",
+        "internal:r2:row_hit_count_ge2=True",
+        "internal:r2:row_hit_count_ge3=True",
+        "internal:r2:row_hit_count_ge4=True",
+        "internal:r2:row_hit_count_ge5=True",
+        "internal:r2:row_hit_count_ge6=True",
+        "internal:r2:visible_column_count_ge1=True",
+        "internal:r2:visible_column_count_ge2=True",
+        "internal:r2:visible_column_count_ge3=True",
+        "internal:r2:visible_column_count_ge4=True",
+        "source:A_odd=True",
+        "source:BA_abs_small=True",
+        "source:BA_neg=True",
+        "source:BC_abs_2_or_3=True",
+        "source:C_even=True"
+      ]
+    },
+    {
+      "index": 1,
+      "selected": true,
+      "B": 4,
+      "A": 3,
+      "C": 2,
+      "columns": [
+        7,
+        10
+      ],
+      "features": [
+        "internal:path_columns_are_A_incident=True",
+        "internal:path_columns_touch_A_incident=True",
+        "internal:path_columns_touch_B_incident=True",
+        "internal:path_columns_touch_C_incident=True",
+        "internal:path_columns_touch_all_BAC=True",
+        "internal:r0:A_and_C_incident_absorbed=True",
+        "internal:r0:A_incident_absorbed=True",
+        "internal:r0:A_incident_hit_count_ge1=True",
+        "internal:r0:A_incident_hit_count_ge2=True",
+        "internal:r0:A_incident_hit_count_ge3=True",
+        "internal:r0:B_incident_absorbed=True",
+        "internal:r0:B_incident_hit_count_ge1=True",
+        "internal:r0:B_incident_hit_count_ge2=True",
+        "internal:r0:B_incident_hit_count_ge3=False",
+        "internal:r0:C_incident_absorbed=True",
+        "internal:r0:C_incident_hit_count_ge1=True",
+        "internal:r0:C_incident_hit_count_ge2=True",
+        "internal:r0:C_incident_hit_count_ge3=True",
+        "internal:r0:any_support_absorption=True",
+        "internal:r0:both_path_columns_reach_support=True",
+        "internal:r0:has_interior_support=True",
+        "internal:r0:has_outer_and_interior_support=True",
+        "internal:r0:has_outer_support=True",
+        "internal:r0:neighborhood_column_count_ge2=True",
+        "internal:r0:neighborhood_column_count_ge3=False",
+        "internal:r0:neighborhood_column_count_ge4=False",
+        "internal:r0:neighborhood_column_count_ge5=False",
+        "internal:r0:neighborhood_column_count_ge6=False",
+        "internal:r0:neighborhood_column_count_ge8=False",
+        "internal:r0:role_class_shape=interior,outer",
+        "internal:r0:row_hit_count_ge1=True",
+        "internal:r0:row_hit_count_ge2=True",
+        "internal:r0:row_hit_count_ge3=True",
+        "internal:r0:row_hit_count_ge4=True",
+        "internal:r0:row_hit_count_ge5=True",
+        "internal:r0:row_hit_count_ge6=True",
+        "internal:r0:visible_column_count_ge1=True",
+        "internal:r0:visible_column_count_ge2=True",
+        "internal:r0:visible_column_count_ge3=False",
+        "internal:r0:visible_column_count_ge4=False",
+        "internal:r1:A_and_C_incident_absorbed=True",
+        "internal:r1:A_incident_absorbed=True",
+        "internal:r1:A_incident_hit_count_ge1=True",
+        "internal:r1:A_incident_hit_count_ge2=True",
+        "internal:r1:A_incident_hit_count_ge3=True",
+        "internal:r1:B_incident_absorbed=True",
+        "internal:r1:B_incident_hit_count_ge1=True",
+        "internal:r1:B_incident_hit_count_ge2=True",
+        "internal:r1:B_incident_hit_count_ge3=True",
+        "internal:r1:C_incident_absorbed=True",
+        "internal:r1:C_incident_hit_count_ge1=True",
+        "internal:r1:C_incident_hit_count_ge2=True",
+        "internal:r1:C_incident_hit_count_ge3=True",
+        "internal:r1:any_support_absorption=True",
+        "internal:r1:both_path_columns_reach_support=True",
+        "internal:r1:has_interior_support=True",
+        "internal:r1:has_outer_and_interior_support=True",
+        "internal:r1:has_outer_support=True",
+        "internal:r1:neighborhood_column_count_ge2=True",
+        "internal:r1:neighborhood_column_count_ge3=True",
+        "internal:r1:neighborhood_column_count_ge4=True",
+        "internal:r1:neighborhood_column_count_ge5=True",
+        "internal:r1:neighborhood_column_count_ge6=True",
+        "internal:r1:neighborhood_column_count_ge8=True",
+        "internal:r1:role_class_shape=interior,outer",
+        "internal:r1:row_hit_count_ge1=True",
+        "internal:r1:row_hit_count_ge2=True",
+        "internal:r1:row_hit_count_ge3=True",
+        "internal:r1:row_hit_count_ge4=True",
+        "internal:r1:row_hit_count_ge5=True",
+        "internal:r1:row_hit_count_ge6=True",
+        "internal:r1:visible_column_count_ge1=True",
+        "internal:r1:visible_column_count_ge2=True",
+        "internal:r1:visible_column_count_ge3=True",
+        "internal:r1:visible_column_count_ge4=True",
+        "internal:r2:A_and_C_incident_absorbed=True",
+        "internal:r2:A_incident_absorbed=True",
+        "internal:r2:A_incident_hit_count_ge1=True",
+        "internal:r2:A_incident_hit_count_ge2=True",
+        "internal:r2:A_incident_hit_count_ge3=True",
+        "internal:r2:B_incident_absorbed=True",
+        "internal:r2:B_incident_hit_count_ge1=True",
+        "internal:r2:B_incident_hit_count_ge2=True",
+        "internal:r2:B_incident_hit_count_ge3=True",
+        "internal:r2:C_incident_absorbed=True",
+        "internal:r2:C_incident_hit_count_ge1=True",
+        "internal:r2:C_incident_hit_count_ge2=True",
+        "internal:r2:C_incident_hit_count_ge3=True",
+        "internal:r2:any_support_absorption=True",
+        "internal:r2:both_path_columns_reach_support=True",
+        "internal:r2:has_interior_support=True",
+        "internal:r2:has_outer_and_interior_support=True",
+        "internal:r2:has_outer_support=True",
+        "internal:r2:neighborhood_column_count_ge2=True",
+        "internal:r2:neighborhood_column_count_ge3=True",
+        "internal:r2:neighborhood_column_count_ge4=True",
+        "internal:r2:neighborhood_column_count_ge5=True",
+        "internal:r2:neighborhood_column_count_ge6=True",
+        "internal:r2:neighborhood_column_count_ge8=True",
+        "internal:r2:role_class_shape=interior,outer",
+        "internal:r2:row_hit_count_ge1=True",
+        "internal:r2:row_hit_count_ge2=True",
+        "internal:r2:row_hit_count_ge3=True",
+        "internal:r2:row_hit_count_ge4=True",
+        "internal:r2:row_hit_count_ge5=True",
+        "internal:r2:row_hit_count_ge6=True",
+        "internal:r2:visible_column_count_ge1=True",
+        "internal:r2:visible_column_count_ge2=True",
+        "internal:r2:visible_column_count_ge3=True",
+        "internal:r2:visible_column_count_ge4=True",
+        "source:A_odd=True",
+        "source:BA_abs_small=True",
+        "source:BA_neg=True",
+        "source:BC_abs_2_or_3=True",
+        "source:C_even=True"
+      ]
+    },
+    {
+      "index": 2,
+      "selected": false,
+      "B": 9,
+      "A": 5,
+      "C": 6,
+      "columns": [
+        15,
+        16
+      ],
+      "features": [
+        "internal:path_columns_are_A_incident=True",
+        "internal:path_columns_touch_A_incident=True",
+        "internal:path_columns_touch_B_incident=True",
+        "internal:path_columns_touch_C_incident=True",
+        "internal:path_columns_touch_all_BAC=True",
+        "internal:r0:A_and_C_incident_absorbed=True",
+        "internal:r0:A_incident_absorbed=True",
+        "internal:r0:A_incident_hit_count_ge1=True",
+        "internal:r0:A_incident_hit_count_ge2=False",
+        "internal:r0:A_incident_hit_count_ge3=False",
+        "internal:r0:B_incident_absorbed=False",
+        "internal:r0:B_incident_hit_count_ge1=False",
+        "internal:r0:B_incident_hit_count_ge2=False",
+        "internal:r0:B_incident_hit_count_ge3=False",
+        "internal:r0:C_incident_absorbed=True",
+        "internal:r0:C_incident_hit_count_ge1=True",
+        "internal:r0:C_incident_hit_count_ge2=False",
+        "internal:r0:C_incident_hit_count_ge3=False",
+        "internal:r0:any_support_absorption=True",
+        "internal:r0:both_path_columns_reach_support=False",
+        "internal:r0:has_interior_support=True",
+        "internal:r0:has_outer_and_interior_support=False",
+        "internal:r0:has_outer_support=False",
+        "internal:r0:neighborhood_column_count_ge2=True",
+        "internal:r0:neighborhood_column_count_ge3=False",
+        "internal:r0:neighborhood_column_count_ge4=False",
+        "internal:r0:neighborhood_column_count_ge5=False",
+        "internal:r0:neighborhood_column_count_ge6=False",
+        "internal:r0:neighborhood_column_count_ge8=False",
+        "internal:r0:role_class_shape=interior",
+        "internal:r0:row_hit_count_ge1=True",
+        "internal:r0:row_hit_count_ge2=False",
+        "internal:r0:row_hit_count_ge3=False",
+        "internal:r0:row_hit_count_ge4=False",
+        "internal:r0:row_hit_count_ge5=False",
+        "internal:r0:row_hit_count_ge6=False",
+        "internal:r0:visible_column_count_ge1=True",
+        "internal:r0:visible_column_count_ge2=False",
+        "internal:r0:visible_column_count_ge3=False",
+        "internal:r0:visible_column_count_ge4=False",
+        "internal:r1:A_and_C_incident_absorbed=True",
+        "internal:r1:A_incident_absorbed=True",
+        "internal:r1:A_incident_hit_count_ge1=True",
+        "internal:r1:A_incident_hit_count_ge2=False",
+        "internal:r1:A_incident_hit_count_ge3=False",
+        "internal:r1:B_incident_absorbed=False",
+        "internal:r1:B_incident_hit_count_ge1=False",
+        "internal:r1:B_incident_hit_count_ge2=False",
+        "internal:r1:B_incident_hit_count_ge3=False",
+        "internal:r1:C_incident_absorbed=True",
+        "internal:r1:C_incident_hit_count_ge1=True",
+        "internal:r1:C_incident_hit_count_ge2=True",
+        "internal:r1:C_incident_hit_count_ge3=False",
+        "internal:r1:any_support_absorption=True",
+        "internal:r1:both_path_columns_reach_support=True",
+        "internal:r1:has_interior_support=True",
+        "internal:r1:has_outer_and_interior_support=False",
+        "internal:r1:has_outer_support=False",
+        "internal:r1:neighborhood_column_count_ge2=True",
+        "internal:r1:neighborhood_column_count_ge3=True",
+        "internal:r1:neighborhood_column_count_ge4=True",
+        "internal:r1:neighborhood_column_count_ge5=True",
+        "internal:r1:neighborhood_column_count_ge6=True",
+        "internal:r1:neighborhood_column_count_ge8=True",
+        "internal:r1:role_class_shape=interior",
+        "internal:r1:row_hit_count_ge1=True",
+        "internal:r1:row_hit_count_ge2=True",
+        "internal:r1:row_hit_count_ge3=False",
+        "internal:r1:row_hit_count_ge4=False",
+        "internal:r1:row_hit_count_ge5=False",
+        "internal:r1:row_hit_count_ge6=False",
+        "internal:r1:visible_column_count_ge1=True",
+        "internal:r1:visible_column_count_ge2=True",
+        "internal:r1:visible_column_count_ge3=False",
+        "internal:r1:visible_column_count_ge4=False",
+        "internal:r2:A_and_C_incident_absorbed=True",
+        "internal:r2:A_incident_absorbed=True",
+        "internal:r2:A_incident_hit_count_ge1=True",
+        "internal:r2:A_incident_hit_count_ge2=False",
+        "internal:r2:A_incident_hit_count_ge3=False",
+        "internal:r2:B_incident_absorbed=False",
+        "internal:r2:B_incident_hit_count_ge1=False",
+        "internal:r2:B_incident_hit_count_ge2=False",
+        "internal:r2:B_incident_hit_count_ge3=False",
+        "internal:r2:C_incident_absorbed=True",
+        "internal:r2:C_incident_hit_count_ge1=True",
+        "internal:r2:C_incident_hit_count_ge2=True",
+        "internal:r2:C_incident_hit_count_ge3=False",
+        "internal:r2:any_support_absorption=True",
+        "internal:r2:both_path_columns_reach_support=True",
+        "internal:r2:has_interior_support=True",
+        "internal:r2:has_outer_and_interior_support=False",
+        "internal:r2:has_outer_support=False",
+        "internal:r2:neighborhood_column_count_ge2=True",
+        "internal:r2:neighborhood_column_count_ge3=True",
+        "internal:r2:neighborhood_column_count_ge4=True",
+        "internal:r2:neighborhood_column_count_ge5=True",
+        "internal:r2:neighborhood_column_count_ge6=True",
+        "internal:r2:neighborhood_column_count_ge8=True",
+        "internal:r2:role_class_shape=interior",
+        "internal:r2:row_hit_count_ge1=True",
+        "internal:r2:row_hit_count_ge2=True",
+        "internal:r2:row_hit_count_ge3=True",
+        "internal:r2:row_hit_count_ge4=True",
+        "internal:r2:row_hit_count_ge5=True",
+        "internal:r2:row_hit_count_ge6=True",
+        "internal:r2:visible_column_count_ge1=True",
+        "internal:r2:visible_column_count_ge2=True",
+        "internal:r2:visible_column_count_ge3=True",
+        "internal:r2:visible_column_count_ge4=True",
+        "source:A_odd=True",
+        "source:BA_abs_small=True",
+        "source:BA_neg=True",
+        "source:BC_abs_2_or_3=True",
+        "source:C_even=True"
+      ]
+    },
+    {
+      "index": 3,
+      "selected": false,
+      "B": 9,
+      "A": 5,
+      "C": 12,
+      "columns": [
+        16,
+        18
+      ],
+      "features": [
+        "internal:path_columns_are_A_incident=True",
+        "internal:path_columns_touch_A_incident=True",
+        "internal:path_columns_touch_B_incident=True",
+        "internal:path_columns_touch_C_incident=True",
+        "internal:path_columns_touch_all_BAC=True",
+        "internal:r0:A_and_C_incident_absorbed=False",
+        "internal:r0:A_incident_absorbed=False",
+        "internal:r0:A_incident_hit_count_ge1=False",
+        "internal:r0:A_incident_hit_count_ge2=False",
+        "internal:r0:A_incident_hit_count_ge3=False",
+        "internal:r0:B_incident_absorbed=False",
+        "internal:r0:B_incident_hit_count_ge1=False",
+        "internal:r0:B_incident_hit_count_ge2=False",
+        "internal:r0:B_incident_hit_count_ge3=False",
+        "internal:r0:C_incident_absorbed=False",
+        "internal:r0:C_incident_hit_count_ge1=False",
+        "internal:r0:C_incident_hit_count_ge2=False",
+        "internal:r0:C_incident_hit_count_ge3=False",
+        "internal:r0:any_support_absorption=False",
+        "internal:r0:both_path_columns_reach_support=False",
+        "internal:r0:has_interior_support=False",
+        "internal:r0:has_outer_and_interior_support=False",
+        "internal:r0:has_outer_support=False",
+        "internal:r0:neighborhood_column_count_ge2=True",
+        "internal:r0:neighborhood_column_count_ge3=False",
+        "internal:r0:neighborhood_column_count_ge4=False",
+        "internal:r0:neighborhood_column_count_ge5=False",
+        "internal:r0:neighborhood_column_count_ge6=False",
+        "internal:r0:neighborhood_column_count_ge8=False",
+        "internal:r0:role_class_shape=none",
+        "internal:r0:row_hit_count_ge1=False",
+        "internal:r0:row_hit_count_ge2=False",
+        "internal:r0:row_hit_count_ge3=False",
+        "internal:r0:row_hit_count_ge4=False",
+        "internal:r0:row_hit_count_ge5=False",
+        "internal:r0:row_hit_count_ge6=False",
+        "internal:r0:visible_column_count_ge1=False",
+        "internal:r0:visible_column_count_ge2=False",
+        "internal:r0:visible_column_count_ge3=False",
+        "internal:r0:visible_column_count_ge4=False",
+        "internal:r1:A_and_C_incident_absorbed=False",
+        "internal:r1:A_incident_absorbed=True",
+        "internal:r1:A_incident_hit_count_ge1=True",
+        "internal:r1:A_incident_hit_count_ge2=False",
+        "internal:r1:A_incident_hit_count_ge3=False",
+        "internal:r1:B_incident_absorbed=False",
+        "internal:r1:B_incident_hit_count_ge1=False",
+        "internal:r1:B_incident_hit_count_ge2=False",
+        "internal:r1:B_incident_hit_count_ge3=False",
+        "internal:r1:C_incident_absorbed=False",
+        "internal:r1:C_incident_hit_count_ge1=False",
+        "internal:r1:C_incident_hit_count_ge2=False",
+        "internal:r1:C_incident_hit_count_ge3=False",
+        "internal:r1:any_support_absorption=True",
+        "internal:r1:both_path_columns_reach_support=True",
+        "internal:r1:has_interior_support=True",
+        "internal:r1:has_outer_and_interior_support=False",
+        "internal:r1:has_outer_support=False",
+        "internal:r1:neighborhood_column_count_ge2=True",
+        "internal:r1:neighborhood_column_count_ge3=True",
+        "internal:r1:neighborhood_column_count_ge4=True",
+        "internal:r1:neighborhood_column_count_ge5=True",
+        "internal:r1:neighborhood_column_count_ge6=True",
+        "internal:r1:neighborhood_column_count_ge8=True",
+        "internal:r1:role_class_shape=interior",
+        "internal:r1:row_hit_count_ge1=True",
+        "internal:r1:row_hit_count_ge2=False",
+        "internal:r1:row_hit_count_ge3=False",
+        "internal:r1:row_hit_count_ge4=False",
+        "internal:r1:row_hit_count_ge5=False",
+        "internal:r1:row_hit_count_ge6=False",
+        "internal:r1:visible_column_count_ge1=True",
+        "internal:r1:visible_column_count_ge2=False",
+        "internal:r1:visible_column_count_ge3=False",
+        "internal:r1:visible_column_count_ge4=False",
+        "internal:r2:A_and_C_incident_absorbed=False",
+        "internal:r2:A_incident_absorbed=True",
+        "internal:r2:A_incident_hit_count_ge1=True",
+        "internal:r2:A_incident_hit_count_ge2=False",
+        "internal:r2:A_incident_hit_count_ge3=False",
+        "internal:r2:B_incident_absorbed=False",
+        "internal:r2:B_incident_hit_count_ge1=False",
+        "internal:r2:B_incident_hit_count_ge2=False",
+        "internal:r2:B_incident_hit_count_ge3=False",
+        "internal:r2:C_incident_absorbed=False",
+        "internal:r2:C_incident_hit_count_ge1=False",
+        "internal:r2:C_incident_hit_count_ge2=False",
+        "internal:r2:C_incident_hit_count_ge3=False",
+        "internal:r2:any_support_absorption=True",
+        "internal:r2:both_path_columns_reach_support=True",
+        "internal:r2:has_interior_support=True",
+        "internal:r2:has_outer_and_interior_support=True",
+        "internal:r2:has_outer_support=True",
+        "internal:r2:neighborhood_column_count_ge2=True",
+        "internal:r2:neighborhood_column_count_ge3=True",
+        "internal:r2:neighborhood_column_count_ge4=True",
+        "internal:r2:neighborhood_column_count_ge5=True",
+        "internal:r2:neighborhood_column_count_ge6=True",
+        "internal:r2:neighborhood_column_count_ge8=True",
+        "internal:r2:role_class_shape=interior,outer",
+        "internal:r2:row_hit_count_ge1=True",
+        "internal:r2:row_hit_count_ge2=True",
+        "internal:r2:row_hit_count_ge3=True",
+        "internal:r2:row_hit_count_ge4=True",
+        "internal:r2:row_hit_count_ge5=True",
+        "internal:r2:row_hit_count_ge6=True",
+        "internal:r2:visible_column_count_ge1=True",
+        "internal:r2:visible_column_count_ge2=True",
+        "internal:r2:visible_column_count_ge3=True",
+        "internal:r2:visible_column_count_ge4=True",
+        "source:A_odd=True",
+        "source:BA_abs_small=True",
+        "source:BA_neg=True",
+        "source:BC_abs_2_or_3=True",
+        "source:C_even=True"
+      ]
+    },
+    {
+      "index": 4,
+      "selected": false,
+      "B": 8,
+      "A": 7,
+      "C": 6,
+      "columns": [
+        19,
+        22
+      ],
+      "features": [
+        "internal:path_columns_are_A_incident=True",
+        "internal:path_columns_touch_A_incident=True",
+        "internal:path_columns_touch_B_incident=True",
+        "internal:path_columns_touch_C_incident=True",
+        "internal:path_columns_touch_all_BAC=True",
+        "internal:r0:A_and_C_incident_absorbed=False",
+        "internal:r0:A_incident_absorbed=True",
+        "internal:r0:A_incident_hit_count_ge1=True",
+        "internal:r0:A_incident_hit_count_ge2=True",
+        "internal:r0:A_incident_hit_count_ge3=False",
+        "internal:r0:B_incident_absorbed=True",
+        "internal:r0:B_incident_hit_count_ge1=True",
+        "internal:r0:B_incident_hit_count_ge2=True",
+        "internal:r0:B_incident_hit_count_ge3=False",
+        "internal:r0:C_incident_absorbed=False",
+        "internal:r0:C_incident_hit_count_ge1=False",
+        "internal:r0:C_incident_hit_count_ge2=False",
+        "internal:r0:C_incident_hit_count_ge3=False",
+        "internal:r0:any_support_absorption=True",
+        "internal:r0:both_path_columns_reach_support=False",
+        "internal:r0:has_interior_support=True",
+        "internal:r0:has_outer_and_interior_support=False",
+        "internal:r0:has_outer_support=False",
+        "internal:r0:neighborhood_column_count_ge2=True",
+        "internal:r0:neighborhood_column_count_ge3=False",
+        "internal:r0:neighborhood_column_count_ge4=False",
+        "internal:r0:neighborhood_column_count_ge5=False",
+        "internal:r0:neighborhood_column_count_ge6=False",
+        "internal:r0:neighborhood_column_count_ge8=False",
+        "internal:r0:role_class_shape=interior",
+        "internal:r0:row_hit_count_ge1=True",
+        "internal:r0:row_hit_count_ge2=True",
+        "internal:r0:row_hit_count_ge3=False",
+        "internal:r0:row_hit_count_ge4=False",
+        "internal:r0:row_hit_count_ge5=False",
+        "internal:r0:row_hit_count_ge6=False",
+        "internal:r0:visible_column_count_ge1=True",
+        "internal:r0:visible_column_count_ge2=False",
+        "internal:r0:visible_column_count_ge3=False",
+        "internal:r0:visible_column_count_ge4=False",
+        "internal:r1:A_and_C_incident_absorbed=True",
+        "internal:r1:A_incident_absorbed=True",
+        "internal:r1:A_incident_hit_count_ge1=True",
+        "internal:r1:A_incident_hit_count_ge2=True",
+        "internal:r1:A_incident_hit_count_ge3=False",
+        "internal:r1:B_incident_absorbed=True",
+        "internal:r1:B_incident_hit_count_ge1=True",
+        "internal:r1:B_incident_hit_count_ge2=True",
+        "internal:r1:B_incident_hit_count_ge3=False",
+        "internal:r1:C_incident_absorbed=True",
+        "internal:r1:C_incident_hit_count_ge1=True",
+        "internal:r1:C_incident_hit_count_ge2=True",
+        "internal:r1:C_incident_hit_count_ge3=False",
+        "internal:r1:any_support_absorption=True",
+        "internal:r1:both_path_columns_reach_support=True",
+        "internal:r1:has_interior_support=True",
+        "internal:r1:has_outer_and_interior_support=False",
+        "internal:r1:has_outer_support=False",
+        "internal:r1:neighborhood_column_count_ge2=True",
+        "internal:r1:neighborhood_column_count_ge3=True",
+        "internal:r1:neighborhood_column_count_ge4=True",
+        "internal:r1:neighborhood_column_count_ge5=True",
+        "internal:r1:neighborhood_column_count_ge6=True",
+        "internal:r1:neighborhood_column_count_ge8=True",
+        "internal:r1:role_class_shape=interior",
+        "internal:r1:row_hit_count_ge1=True",
+        "internal:r1:row_hit_count_ge2=True",
+        "internal:r1:row_hit_count_ge3=True",
+        "internal:r1:row_hit_count_ge4=True",
+        "internal:r1:row_hit_count_ge5=False",
+        "internal:r1:row_hit_count_ge6=False",
+        "internal:r1:visible_column_count_ge1=True",
+        "internal:r1:visible_column_count_ge2=True",
+        "internal:r1:visible_column_count_ge3=True",
+        "internal:r1:visible_column_count_ge4=False",
+        "internal:r2:A_and_C_incident_absorbed=True",
+        "internal:r2:A_incident_absorbed=True",
+        "internal:r2:A_incident_hit_count_ge1=True",
+        "internal:r2:A_incident_hit_count_ge2=True",
+        "internal:r2:A_incident_hit_count_ge3=False",
+        "internal:r2:B_incident_absorbed=True",
+        "internal:r2:B_incident_hit_count_ge1=True",
+        "internal:r2:B_incident_hit_count_ge2=True",
+        "internal:r2:B_incident_hit_count_ge3=False",
+        "internal:r2:C_incident_absorbed=True",
+        "internal:r2:C_incident_hit_count_ge1=True",
+        "internal:r2:C_incident_hit_count_ge2=True",
+        "internal:r2:C_incident_hit_count_ge3=False",
+        "internal:r2:any_support_absorption=True",
+        "internal:r2:both_path_columns_reach_support=True",
+        "internal:r2:has_interior_support=True",
+        "internal:r2:has_outer_and_interior_support=False",
+        "internal:r2:has_outer_support=False",
+        "internal:r2:neighborhood_column_count_ge2=True",
+        "internal:r2:neighborhood_column_count_ge3=True",
+        "internal:r2:neighborhood_column_count_ge4=True",
+        "internal:r2:neighborhood_column_count_ge5=True",
+        "internal:r2:neighborhood_column_count_ge6=True",
+        "internal:r2:neighborhood_column_count_ge8=True",
+        "internal:r2:role_class_shape=interior",
+        "internal:r2:row_hit_count_ge1=True",
+        "internal:r2:row_hit_count_ge2=True",
+        "internal:r2:row_hit_count_ge3=True",
+        "internal:r2:row_hit_count_ge4=True",
+        "internal:r2:row_hit_count_ge5=True",
+        "internal:r2:row_hit_count_ge6=True",
+        "internal:r2:visible_column_count_ge1=True",
+        "internal:r2:visible_column_count_ge2=True",
+        "internal:r2:visible_column_count_ge3=True",
+        "internal:r2:visible_column_count_ge4=True",
+        "source:A_odd=True",
+        "source:BA_abs_small=True",
+        "source:BA_neg=True",
+        "source:BC_abs_2_or_3=True",
+        "source:C_even=True"
+      ]
+    },
+    {
+      "index": 5,
+      "selected": true,
+      "B": 11,
+      "A": 7,
+      "C": 14,
+      "columns": [
+        23,
+        24
+      ],
+      "features": [
+        "internal:path_columns_are_A_incident=True",
+        "internal:path_columns_touch_A_incident=True",
+        "internal:path_columns_touch_B_incident=True",
+        "internal:path_columns_touch_C_incident=True",
+        "internal:path_columns_touch_all_BAC=True",
+        "internal:r0:A_and_C_incident_absorbed=False",
+        "internal:r0:A_incident_absorbed=False",
+        "internal:r0:A_incident_hit_count_ge1=False",
+        "internal:r0:A_incident_hit_count_ge2=False",
+        "internal:r0:A_incident_hit_count_ge3=False",
+        "internal:r0:B_incident_absorbed=False",
+        "internal:r0:B_incident_hit_count_ge1=False",
+        "internal:r0:B_incident_hit_count_ge2=False",
+        "internal:r0:B_incident_hit_count_ge3=False",
+        "internal:r0:C_incident_absorbed=False",
+        "internal:r0:C_incident_hit_count_ge1=False",
+        "internal:r0:C_incident_hit_count_ge2=False",
+        "internal:r0:C_incident_hit_count_ge3=False",
+        "internal:r0:any_support_absorption=False",
+        "internal:r0:both_path_columns_reach_support=False",
+        "internal:r0:has_interior_support=False",
+        "internal:r0:has_outer_and_interior_support=False",
+        "internal:r0:has_outer_support=False",
+        "internal:r0:neighborhood_column_count_ge2=True",
+        "internal:r0:neighborhood_column_count_ge3=False",
+        "internal:r0:neighborhood_column_count_ge4=False",
+        "internal:r0:neighborhood_column_count_ge5=False",
+        "internal:r0:neighborhood_column_count_ge6=False",
+        "internal:r0:neighborhood_column_count_ge8=False",
+        "internal:r0:role_class_shape=none",
+        "internal:r0:row_hit_count_ge1=False",
+        "internal:r0:row_hit_count_ge2=False",
+        "internal:r0:row_hit_count_ge3=False",
+        "internal:r0:row_hit_count_ge4=False",
+        "internal:r0:row_hit_count_ge5=False",
+        "internal:r0:row_hit_count_ge6=False",
+        "internal:r0:visible_column_count_ge1=False",
+        "internal:r0:visible_column_count_ge2=False",
+        "internal:r0:visible_column_count_ge3=False",
+        "internal:r0:visible_column_count_ge4=False",
+        "internal:r1:A_and_C_incident_absorbed=True",
+        "internal:r1:A_incident_absorbed=True",
+        "internal:r1:A_incident_hit_count_ge1=True",
+        "internal:r1:A_incident_hit_count_ge2=True",
+        "internal:r1:A_incident_hit_count_ge3=False",
+        "internal:r1:B_incident_absorbed=True",
+        "internal:r1:B_incident_hit_count_ge1=True",
+        "internal:r1:B_incident_hit_count_ge2=True",
+        "internal:r1:B_incident_hit_count_ge3=False",
+        "internal:r1:C_incident_absorbed=True",
+        "internal:r1:C_incident_hit_count_ge1=True",
+        "internal:r1:C_incident_hit_count_ge2=True",
+        "internal:r1:C_incident_hit_count_ge3=False",
+        "internal:r1:any_support_absorption=True",
+        "internal:r1:both_path_columns_reach_support=True",
+        "internal:r1:has_interior_support=True",
+        "internal:r1:has_outer_and_interior_support=False",
+        "internal:r1:has_outer_support=False",
+        "internal:r1:neighborhood_column_count_ge2=True",
+        "internal:r1:neighborhood_column_count_ge3=True",
+        "internal:r1:neighborhood_column_count_ge4=True",
+        "internal:r1:neighborhood_column_count_ge5=True",
+        "internal:r1:neighborhood_column_count_ge6=True",
+        "internal:r1:neighborhood_column_count_ge8=True",
+        "internal:r1:role_class_shape=interior",
+        "internal:r1:row_hit_count_ge1=True",
+        "internal:r1:row_hit_count_ge2=True",
+        "internal:r1:row_hit_count_ge3=True",
+        "internal:r1:row_hit_count_ge4=True",
+        "internal:r1:row_hit_count_ge5=True",
+        "internal:r1:row_hit_count_ge6=True",
+        "internal:r1:visible_column_count_ge1=True",
+        "internal:r1:visible_column_count_ge2=True",
+        "internal:r1:visible_column_count_ge3=True",
+        "internal:r1:visible_column_count_ge4=True",
+        "internal:r2:A_and_C_incident_absorbed=True",
+        "internal:r2:A_incident_absorbed=True",
+        "internal:r2:A_incident_hit_count_ge1=True",
+        "internal:r2:A_incident_hit_count_ge2=True",
+        "internal:r2:A_incident_hit_count_ge3=False",
+        "internal:r2:B_incident_absorbed=True",
+        "internal:r2:B_incident_hit_count_ge1=True",
+        "internal:r2:B_incident_hit_count_ge2=True",
+        "internal:r2:B_incident_hit_count_ge3=False",
+        "internal:r2:C_incident_absorbed=True",
+        "internal:r2:C_incident_hit_count_ge1=True",
+        "internal:r2:C_incident_hit_count_ge2=True",
+        "internal:r2:C_incident_hit_count_ge3=False",
+        "internal:r2:any_support_absorption=True",
+        "internal:r2:both_path_columns_reach_support=True",
+        "internal:r2:has_interior_support=True",
+        "internal:r2:has_outer_and_interior_support=True",
+        "internal:r2:has_outer_support=True",
+        "internal:r2:neighborhood_column_count_ge2=True",
+        "internal:r2:neighborhood_column_count_ge3=True",
+        "internal:r2:neighborhood_column_count_ge4=True",
+        "internal:r2:neighborhood_column_count_ge5=True",
+        "internal:r2:neighborhood_column_count_ge6=True",
+        "internal:r2:neighborhood_column_count_ge8=True",
+        "internal:r2:role_class_shape=interior,outer",
+        "internal:r2:row_hit_count_ge1=True",
+        "internal:r2:row_hit_count_ge2=True",
+        "internal:r2:row_hit_count_ge3=True",
+        "internal:r2:row_hit_count_ge4=True",
+        "internal:r2:row_hit_count_ge5=True",
+        "internal:r2:row_hit_count_ge6=True",
+        "internal:r2:visible_column_count_ge1=True",
+        "internal:r2:visible_column_count_ge2=True",
+        "internal:r2:visible_column_count_ge3=True",
+        "internal:r2:visible_column_count_ge4=True",
+        "source:A_odd=True",
+        "source:BA_abs_small=True",
+        "source:BA_neg=True",
+        "source:BC_abs_2_or_3=True",
+        "source:C_even=True"
+      ]
+    },
+    {
+      "index": 6,
+      "selected": false,
+      "B": 10,
+      "A": 9,
+      "C": 8,
+      "columns": [
+        25,
+        28
+      ],
+      "features": [
+        "internal:path_columns_are_A_incident=True",
+        "internal:path_columns_touch_A_incident=True",
+        "internal:path_columns_touch_B_incident=True",
+        "internal:path_columns_touch_C_incident=True",
+        "internal:path_columns_touch_all_BAC=True",
+        "internal:r0:A_and_C_incident_absorbed=False",
+        "internal:r0:A_incident_absorbed=False",
+        "internal:r0:A_incident_hit_count_ge1=False",
+        "internal:r0:A_incident_hit_count_ge2=False",
+        "internal:r0:A_incident_hit_count_ge3=False",
+        "internal:r0:B_incident_absorbed=False",
+        "internal:r0:B_incident_hit_count_ge1=False",
+        "internal:r0:B_incident_hit_count_ge2=False",
+        "internal:r0:B_incident_hit_count_ge3=False",
+        "internal:r0:C_incident_absorbed=False",
+        "internal:r0:C_incident_hit_count_ge1=False",
+        "internal:r0:C_incident_hit_count_ge2=False",
+        "internal:r0:C_incident_hit_count_ge3=False",
+        "internal:r0:any_support_absorption=False",
+        "internal:r0:both_path_columns_reach_support=False",
+        "internal:r0:has_interior_support=False",
+        "internal:r0:has_outer_and_interior_support=False",
+        "internal:r0:has_outer_support=False",
+        "internal:r0:neighborhood_column_count_ge2=True",
+        "internal:r0:neighborhood_column_count_ge3=False",
+        "internal:r0:neighborhood_column_count_ge4=False",
+        "internal:r0:neighborhood_column_count_ge5=False",
+        "internal:r0:neighborhood_column_count_ge6=False",
+        "internal:r0:neighborhood_column_count_ge8=False",
+        "internal:r0:role_class_shape=none",
+        "internal:r0:row_hit_count_ge1=False",
+        "internal:r0:row_hit_count_ge2=False",
+        "internal:r0:row_hit_count_ge3=False",
+        "internal:r0:row_hit_count_ge4=False",
+        "internal:r0:row_hit_count_ge5=False",
+        "internal:r0:row_hit_count_ge6=False",
+        "internal:r0:visible_column_count_ge1=False",
+        "internal:r0:visible_column_count_ge2=False",
+        "internal:r0:visible_column_count_ge3=False",
+        "internal:r0:visible_column_count_ge4=False",
+        "internal:r1:A_and_C_incident_absorbed=False",
+        "internal:r1:A_incident_absorbed=False",
+        "internal:r1:A_incident_hit_count_ge1=False",
+        "internal:r1:A_incident_hit_count_ge2=False",
+        "internal:r1:A_incident_hit_count_ge3=False",
+        "internal:r1:B_incident_absorbed=True",
+        "internal:r1:B_incident_hit_count_ge1=True",
+        "internal:r1:B_incident_hit_count_ge2=True",
+        "internal:r1:B_incident_hit_count_ge3=False",
+        "internal:r1:C_incident_absorbed=True",
+        "internal:r1:C_incident_hit_count_ge1=True",
+        "internal:r1:C_incident_hit_count_ge2=True",
+        "internal:r1:C_incident_hit_count_ge3=False",
+        "internal:r1:any_support_absorption=True",
+        "internal:r1:both_path_columns_reach_support=True",
+        "internal:r1:has_interior_support=True",
+        "internal:r1:has_outer_and_interior_support=False",
+        "internal:r1:has_outer_support=False",
+        "internal:r1:neighborhood_column_count_ge2=True",
+        "internal:r1:neighborhood_column_count_ge3=True",
+        "internal:r1:neighborhood_column_count_ge4=True",
+        "internal:r1:neighborhood_column_count_ge5=True",
+        "internal:r1:neighborhood_column_count_ge6=True",
+        "internal:r1:neighborhood_column_count_ge8=True",
+        "internal:r1:role_class_shape=interior",
+        "internal:r1:row_hit_count_ge1=True",
+        "internal:r1:row_hit_count_ge2=True",
+        "internal:r1:row_hit_count_ge3=True",
+        "internal:r1:row_hit_count_ge4=True",
+        "internal:r1:row_hit_count_ge5=False",
+        "internal:r1:row_hit_count_ge6=False",
+        "internal:r1:visible_column_count_ge1=True",
+        "internal:r1:visible_column_count_ge2=True",
+        "internal:r1:visible_column_count_ge3=False",
+        "internal:r1:visible_column_count_ge4=False",
+        "internal:r2:A_and_C_incident_absorbed=False",
+        "internal:r2:A_incident_absorbed=False",
+        "internal:r2:A_incident_hit_count_ge1=False",
+        "internal:r2:A_incident_hit_count_ge2=False",
+        "internal:r2:A_incident_hit_count_ge3=False",
+        "internal:r2:B_incident_absorbed=True",
+        "internal:r2:B_incident_hit_count_ge1=True",
+        "internal:r2:B_incident_hit_count_ge2=True",
+        "internal:r2:B_incident_hit_count_ge3=False",
+        "internal:r2:C_incident_absorbed=True",
+        "internal:r2:C_incident_hit_count_ge1=True",
+        "internal:r2:C_incident_hit_count_ge2=True",
+        "internal:r2:C_incident_hit_count_ge3=False",
+        "internal:r2:any_support_absorption=True",
+        "internal:r2:both_path_columns_reach_support=True",
+        "internal:r2:has_interior_support=True",
+        "internal:r2:has_outer_and_interior_support=True",
+        "internal:r2:has_outer_support=True",
+        "internal:r2:neighborhood_column_count_ge2=True",
+        "internal:r2:neighborhood_column_count_ge3=True",
+        "internal:r2:neighborhood_column_count_ge4=True",
+        "internal:r2:neighborhood_column_count_ge5=True",
+        "internal:r2:neighborhood_column_count_ge6=True",
+        "internal:r2:neighborhood_column_count_ge8=True",
+        "internal:r2:role_class_shape=interior,outer",
+        "internal:r2:row_hit_count_ge1=True",
+        "internal:r2:row_hit_count_ge2=True",
+        "internal:r2:row_hit_count_ge3=True",
+        "internal:r2:row_hit_count_ge4=True",
+        "internal:r2:row_hit_count_ge5=True",
+        "internal:r2:row_hit_count_ge6=True",
+        "internal:r2:visible_column_count_ge1=True",
+        "internal:r2:visible_column_count_ge2=True",
+        "internal:r2:visible_column_count_ge3=True",
+        "internal:r2:visible_column_count_ge4=True",
+        "source:A_odd=True",
+        "source:BA_abs_small=True",
+        "source:BA_neg=True",
+        "source:BC_abs_2_or_3=True",
+        "source:C_even=True"
+      ]
+    },
+    {
+      "index": 7,
+      "selected": true,
+      "B": 13,
+      "A": 9,
+      "C": 10,
+      "columns": [
+        28,
+        29
+      ],
+      "features": [
+        "internal:path_columns_are_A_incident=True",
+        "internal:path_columns_touch_A_incident=True",
+        "internal:path_columns_touch_B_incident=True",
+        "internal:path_columns_touch_C_incident=True",
+        "internal:path_columns_touch_all_BAC=True",
+        "internal:r0:A_and_C_incident_absorbed=False",
+        "internal:r0:A_incident_absorbed=False",
+        "internal:r0:A_incident_hit_count_ge1=False",
+        "internal:r0:A_incident_hit_count_ge2=False",
+        "internal:r0:A_incident_hit_count_ge3=False",
+        "internal:r0:B_incident_absorbed=False",
+        "internal:r0:B_incident_hit_count_ge1=False",
+        "internal:r0:B_incident_hit_count_ge2=False",
+        "internal:r0:B_incident_hit_count_ge3=False",
+        "internal:r0:C_incident_absorbed=False",
+        "internal:r0:C_incident_hit_count_ge1=False",
+        "internal:r0:C_incident_hit_count_ge2=False",
+        "internal:r0:C_incident_hit_count_ge3=False",
+        "internal:r0:any_support_absorption=False",
+        "internal:r0:both_path_columns_reach_support=False",
+        "internal:r0:has_interior_support=False",
+        "internal:r0:has_outer_and_interior_support=False",
+        "internal:r0:has_outer_support=False",
+        "internal:r0:neighborhood_column_count_ge2=True",
+        "internal:r0:neighborhood_column_count_ge3=False",
+        "internal:r0:neighborhood_column_count_ge4=False",
+        "internal:r0:neighborhood_column_count_ge5=False",
+        "internal:r0:neighborhood_column_count_ge6=False",
+        "internal:r0:neighborhood_column_count_ge8=False",
+        "internal:r0:role_class_shape=none",
+        "internal:r0:row_hit_count_ge1=False",
+        "internal:r0:row_hit_count_ge2=False",
+        "internal:r0:row_hit_count_ge3=False",
+        "internal:r0:row_hit_count_ge4=False",
+        "internal:r0:row_hit_count_ge5=False",
+        "internal:r0:row_hit_count_ge6=False",
+        "internal:r0:visible_column_count_ge1=False",
+        "internal:r0:visible_column_count_ge2=False",
+        "internal:r0:visible_column_count_ge3=False",
+        "internal:r0:visible_column_count_ge4=False",
+        "internal:r1:A_and_C_incident_absorbed=False",
+        "internal:r1:A_incident_absorbed=False",
+        "internal:r1:A_incident_hit_count_ge1=False",
+        "internal:r1:A_incident_hit_count_ge2=False",
+        "internal:r1:A_incident_hit_count_ge3=False",
+        "internal:r1:B_incident_absorbed=True",
+        "internal:r1:B_incident_hit_count_ge1=True",
+        "internal:r1:B_incident_hit_count_ge2=True",
+        "internal:r1:B_incident_hit_count_ge3=True",
+        "internal:r1:C_incident_absorbed=True",
+        "internal:r1:C_incident_hit_count_ge1=True",
+        "internal:r1:C_incident_hit_count_ge2=True",
+        "internal:r1:C_incident_hit_count_ge3=False",
+        "internal:r1:any_support_absorption=True",
+        "internal:r1:both_path_columns_reach_support=True",
+        "internal:r1:has_interior_support=True",
+        "internal:r1:has_outer_and_interior_support=False",
+        "internal:r1:has_outer_support=False",
+        "internal:r1:neighborhood_column_count_ge2=True",
+        "internal:r1:neighborhood_column_count_ge3=True",
+        "internal:r1:neighborhood_column_count_ge4=True",
+        "internal:r1:neighborhood_column_count_ge5=True",
+        "internal:r1:neighborhood_column_count_ge6=True",
+        "internal:r1:neighborhood_column_count_ge8=True",
+        "internal:r1:role_class_shape=interior",
+        "internal:r1:row_hit_count_ge1=True",
+        "internal:r1:row_hit_count_ge2=True",
+        "internal:r1:row_hit_count_ge3=True",
+        "internal:r1:row_hit_count_ge4=True",
+        "internal:r1:row_hit_count_ge5=True",
+        "internal:r1:row_hit_count_ge6=True",
+        "internal:r1:visible_column_count_ge1=True",
+        "internal:r1:visible_column_count_ge2=True",
+        "internal:r1:visible_column_count_ge3=True",
+        "internal:r1:visible_column_count_ge4=False",
+        "internal:r2:A_and_C_incident_absorbed=False",
+        "internal:r2:A_incident_absorbed=False",
+        "internal:r2:A_incident_hit_count_ge1=False",
+        "internal:r2:A_incident_hit_count_ge2=False",
+        "internal:r2:A_incident_hit_count_ge3=False",
+        "internal:r2:B_incident_absorbed=True",
+        "internal:r2:B_incident_hit_count_ge1=True",
+        "internal:r2:B_incident_hit_count_ge2=True",
+        "internal:r2:B_incident_hit_count_ge3=True",
+        "internal:r2:C_incident_absorbed=True",
+        "internal:r2:C_incident_hit_count_ge1=True",
+        "internal:r2:C_incident_hit_count_ge2=True",
+        "internal:r2:C_incident_hit_count_ge3=False",
+        "internal:r2:any_support_absorption=True",
+        "internal:r2:both_path_columns_reach_support=True",
+        "internal:r2:has_interior_support=True",
+        "internal:r2:has_outer_and_interior_support=True",
+        "internal:r2:has_outer_support=True",
+        "internal:r2:neighborhood_column_count_ge2=True",
+        "internal:r2:neighborhood_column_count_ge3=True",
+        "internal:r2:neighborhood_column_count_ge4=True",
+        "internal:r2:neighborhood_column_count_ge5=True",
+        "internal:r2:neighborhood_column_count_ge6=True",
+        "internal:r2:neighborhood_column_count_ge8=True",
+        "internal:r2:role_class_shape=interior,outer",
+        "internal:r2:row_hit_count_ge1=True",
+        "internal:r2:row_hit_count_ge2=True",
+        "internal:r2:row_hit_count_ge3=True",
+        "internal:r2:row_hit_count_ge4=True",
+        "internal:r2:row_hit_count_ge5=True",
+        "internal:r2:row_hit_count_ge6=True",
+        "internal:r2:visible_column_count_ge1=True",
+        "internal:r2:visible_column_count_ge2=True",
+        "internal:r2:visible_column_count_ge3=True",
+        "internal:r2:visible_column_count_ge4=True",
+        "source:A_odd=True",
+        "source:BA_abs_small=True",
+        "source:BA_neg=True",
+        "source:BC_abs_2_or_3=True",
+        "source:C_even=True"
+      ]
+    }
+  ],
+  "top_reports_best_family": [
+    {
+      "features": [
+        "internal:path_columns_are_A_incident=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 5,
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "covers_all_selected": true,
+      "exact_selected": false,
+      "score": 6
+    },
+    {
+      "features": [
+        "internal:path_columns_touch_A_incident=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 5,
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "covers_all_selected": true,
+      "exact_selected": false,
+      "score": 6
+    },
+    {
+      "features": [
+        "internal:path_columns_touch_B_incident=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 5,
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "covers_all_selected": true,
+      "exact_selected": false,
+      "score": 6
+    },
+    {
+      "features": [
+        "internal:path_columns_touch_C_incident=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 5,
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "covers_all_selected": true,
+      "exact_selected": false,
+      "score": 6
+    },
+    {
+      "features": [
+        "internal:path_columns_touch_all_BAC=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 5,
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "covers_all_selected": true,
+      "exact_selected": false,
+      "score": 6
+    },
+    {
+      "features": [
+        "internal:r0:neighborhood_column_count_ge2=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 5,
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "covers_all_selected": true,
+      "exact_selected": false,
+      "score": 6
+    },
+    {
+      "features": [
+        "internal:r1:B_incident_absorbed=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 5,
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "covers_all_selected": true,
+      "exact_selected": false,
+      "score": 6
+    },
+    {
+      "features": [
+        "internal:r1:B_incident_hit_count_ge1=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 5,
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "covers_all_selected": true,
+      "exact_selected": false,
+      "score": 6
+    },
+    {
+      "features": [
+        "internal:r1:B_incident_hit_count_ge2=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 5,
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "covers_all_selected": true,
+      "exact_selected": false,
+      "score": 6
+    },
+    {
+      "features": [
+        "internal:r1:C_incident_absorbed=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 5,
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "covers_all_selected": true,
+      "exact_selected": false,
+      "score": 6
+    },
+    {
+      "features": [
+        "internal:r1:C_incident_hit_count_ge1=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 5,
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "covers_all_selected": true,
+      "exact_selected": false,
+      "score": 6
+    },
+    {
+      "features": [
+        "internal:r1:C_incident_hit_count_ge2=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 5,
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "covers_all_selected": true,
+      "exact_selected": false,
+      "score": 6
+    },
+    {
+      "features": [
+        "internal:r1:any_support_absorption=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 5,
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "covers_all_selected": true,
+      "exact_selected": false,
+      "score": 6
+    },
+    {
+      "features": [
+        "internal:r1:both_path_columns_reach_support=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 5,
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "covers_all_selected": true,
+      "exact_selected": false,
+      "score": 6
+    },
+    {
+      "features": [
+        "internal:r1:has_interior_support=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 5,
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "covers_all_selected": true,
+      "exact_selected": false,
+      "score": 6
+    },
+    {
+      "features": [
+        "internal:r1:neighborhood_column_count_ge2=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 5,
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "covers_all_selected": true,
+      "exact_selected": false,
+      "score": 6
+    },
+    {
+      "features": [
+        "internal:r1:neighborhood_column_count_ge3=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 5,
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "covers_all_selected": true,
+      "exact_selected": false,
+      "score": 6
+    },
+    {
+      "features": [
+        "internal:r1:neighborhood_column_count_ge4=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 5,
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "covers_all_selected": true,
+      "exact_selected": false,
+      "score": 6
+    },
+    {
+      "features": [
+        "internal:r1:neighborhood_column_count_ge5=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 5,
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "covers_all_selected": true,
+      "exact_selected": false,
+      "score": 6
+    },
+    {
+      "features": [
+        "internal:r1:neighborhood_column_count_ge6=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 5,
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "covers_all_selected": true,
+      "exact_selected": false,
+      "score": 6
+    },
+    {
+      "features": [
+        "internal:r1:neighborhood_column_count_ge8=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 5,
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "covers_all_selected": true,
+      "exact_selected": false,
+      "score": 6
+    },
+    {
+      "features": [
+        "internal:r1:row_hit_count_ge1=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 5,
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "covers_all_selected": true,
+      "exact_selected": false,
+      "score": 6
+    },
+    {
+      "features": [
+        "internal:r1:row_hit_count_ge2=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 5,
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "covers_all_selected": true,
+      "exact_selected": false,
+      "score": 6
+    },
+    {
+      "features": [
+        "internal:r1:row_hit_count_ge3=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 5,
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "covers_all_selected": true,
+      "exact_selected": false,
+      "score": 6
+    },
+    {
+      "features": [
+        "internal:r1:row_hit_count_ge4=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 5,
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "covers_all_selected": true,
+      "exact_selected": false,
+      "score": 6
+    },
+    {
+      "features": [
+        "internal:r1:row_hit_count_ge5=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 5,
+      "support_count": 4,
+      "selected_support_count": 4,
+      "nonselected_support_count": 0,
+      "support_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [],
+      "covers_all_selected": true,
+      "exact_selected": true,
+      "score": 1
+    },
+    {
+      "features": [
+        "internal:r1:row_hit_count_ge6=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 5,
+      "support_count": 4,
+      "selected_support_count": 4,
+      "nonselected_support_count": 0,
+      "support_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [],
+      "covers_all_selected": true,
+      "exact_selected": true,
+      "score": 1
+    },
+    {
+      "features": [
+        "internal:r1:visible_column_count_ge1=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 5,
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "covers_all_selected": true,
+      "exact_selected": false,
+      "score": 6
+    },
+    {
+      "features": [
+        "internal:r1:visible_column_count_ge2=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 5,
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "covers_all_selected": true,
+      "exact_selected": false,
+      "score": 6
+    },
+    {
+      "features": [
+        "internal:r1:visible_column_count_ge3=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 5,
+      "support_count": 4,
+      "selected_support_count": 4,
+      "nonselected_support_count": 0,
+      "support_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [],
+      "covers_all_selected": true,
+      "exact_selected": true,
+      "score": 1
+    },
+    {
+      "features": [
+        "internal:r2:B_incident_absorbed=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 5,
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "covers_all_selected": true,
+      "exact_selected": false,
+      "score": 6
+    },
+    {
+      "features": [
+        "internal:r2:B_incident_hit_count_ge1=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 5,
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "covers_all_selected": true,
+      "exact_selected": false,
+      "score": 6
+    },
+    {
+      "features": [
+        "internal:r2:B_incident_hit_count_ge2=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 5,
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "covers_all_selected": true,
+      "exact_selected": false,
+      "score": 6
+    },
+    {
+      "features": [
+        "internal:r2:C_incident_absorbed=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 5,
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "covers_all_selected": true,
+      "exact_selected": false,
+      "score": 6
+    },
+    {
+      "features": [
+        "internal:r2:C_incident_hit_count_ge1=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 5,
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "covers_all_selected": true,
+      "exact_selected": false,
+      "score": 6
+    },
+    {
+      "features": [
+        "internal:r2:C_incident_hit_count_ge2=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 5,
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "covers_all_selected": true,
+      "exact_selected": false,
+      "score": 6
+    },
+    {
+      "features": [
+        "internal:r2:any_support_absorption=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 5,
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "covers_all_selected": true,
+      "exact_selected": false,
+      "score": 6
+    },
+    {
+      "features": [
+        "internal:r2:both_path_columns_reach_support=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 5,
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "covers_all_selected": true,
+      "exact_selected": false,
+      "score": 6
+    },
+    {
+      "features": [
+        "internal:r2:has_interior_support=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 5,
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "covers_all_selected": true,
+      "exact_selected": false,
+      "score": 6
+    },
+    {
+      "features": [
+        "internal:r2:has_outer_and_interior_support=True"
+      ],
+      "risk_classes": [
+        "low"
+      ],
+      "universe_size": 5,
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "covers_all_selected": true,
+      "exact_selected": false,
+      "score": 6
+    }
+  ],
+  "interpretation": {
+    "main_result": "A low-risk proper-internalization gate candidate was found inside the persistent source/lift family, but it is not yet a generator.",
+    "why_this_matters": "This tests the new hypothesis that closure depends on internal absorption into return/support structure rather than direct visibility.",
+    "why_not_closure": "An internalization gate candidate inside a five-path family is weaker than a source-native WXYZTI projection-family generator.",
+    "next_move": "Audit the proper-internalization gate candidate for lookup risk and source-native meaning."
+  },
+  "claim": {
+    "does_this_close_gap_a": false,
+    "does_this_find_proper_internalization_candidate": true,
+    "does_this_find_source_native_generator": false,
+    "short_form": "A low-risk proper-internalization gate candidate was found inside the persistent source/lift family, but it is not yet a generator.",
+    "not_closed_reason": "An internalization gate candidate inside a five-path family is weaker than a source-native WXYZTI projection-family generator.",
+    "next_problem": "Audit the proper-internalization gate candidate for lookup risk and source-native meaning."
+  },
+  "checks": [
+    {
+      "id": "marked_boundary_loaded",
+      "status": true,
+      "detail": "marked_port_lift_gate_boundary_recorded"
+    },
+    {
+      "id": "marked_loaded",
+      "status": true,
+      "detail": "marked_port_lift_family_signal_persists_no_gate"
+    },
+    {
+      "id": "projection_search_loaded",
+      "status": true,
+      "detail": "source_native_projection_family_generator_search_family_signal_persists_no_generator"
+    },
+    {
+      "id": "candidate_audit_loaded",
+      "status": true,
+      "detail": "gap_a_polarity_aware_odd_hinge_candidate_survives_lookup_audit_not_generator"
+    },
+    {
+      "id": "plateau_loaded",
+      "status": true,
+      "detail": "gap_a_open_with_source_shell_lift_conjecture_recorded"
+    },
+    {
+      "id": "records_loaded",
+      "status": true,
+      "detail": "8"
+    },
+    {
+      "id": "best_family_size_5",
+      "status": true,
+      "detail": "5"
+    },
+    {
+      "id": "selected_in_best_count_4",
+      "status": true,
+      "detail": "4"
+    },
+    {
+      "id": "gap_a_not_closed",
+      "status": true,
+      "detail": "proper internalization exploration only"
+    }
+  ],
+  "next_script": "audit_proper_internalization_gate_candidate_001.py"
+}

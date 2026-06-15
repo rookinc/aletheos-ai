@@ -1,0 +1,101 @@
+{
+  "schema": "g60_native_nrc_generator_refutation_boundary_001.v1",
+  "status": "g60_native_nrc_generator_refutation_boundary_recorded",
+  "timestamp_utc": "2026-06-15T12:32:27.061092+00:00",
+  "source": "public_html/labs/registered_boundary_flux/artifacts/json/g60_native_nrc_generator_search_001.v1.json",
+  "result_name": "G60-native NRC generator tested-family refutation",
+  "keeper": "The NRC witness survives; the tested generator family does not.",
+  "claim": "No deterministic NRC generator was found in the tested strict source-field or address-readable source-field feature families. This refutes the tested ranking-rule generator family, not the admission-blind NRC witness and not the source-native WXYZTI witness form.",
+  "what_succeeded_before_this_boundary": {
+    "admission_blind_nrc_witness_exact": true,
+    "source_native_wxyzti_witness_form_found": true,
+    "wxyzti_form_exact_over_120": true,
+    "accepted": 4,
+    "false_positives": 0,
+    "misses": 0
+  },
+  "what_failed_here": {
+    "strict_source_field_generator_found": false,
+    "address_readable_generator_found": false,
+    "winning_family": null,
+    "local_gap_a_nrc_generator_success": false
+  },
+  "tested_family": {
+    "strict_source_field_meaning": "Uses only source record fields B,A,C,C_plus_1, column pair, deltas, shared-column counts, reverse-closure checks, and handedness.",
+    "address_readable_meaning": "Allows slot/fiber/address readout from B + C_plus_1 in addition to strict fields.",
+    "admission_blind": "Generator construction does not use the admitted label. Admission is checked only afterward.",
+    "strict_selector_pair_count_tested": 2360,
+    "strict_exact_found": false,
+    "address_selector_pair_count_tested": 3128,
+    "address_exact_found": false
+  },
+  "boundary": {
+    "refutes_tested_generator_family": true,
+    "refutes_nrc_witness": false,
+    "refutes_source_native_wxyzti_witness_form": false,
+    "gap_a_closed": false,
+    "full_g900_admission_found": false,
+    "physical_interpretation_claimed": false
+  },
+  "not_claimed": [
+    "does not disprove the NRC witness",
+    "does not disprove the WXYZTI witness form",
+    "does not disprove a G60-native generator outside the tested feature family",
+    "does not close Gap A",
+    "does not prove full G900"
+  ],
+  "next_question": "Can a generator be derived from the canonical G60 / AT4val[60,6] source object itself, rather than from ranked source-field candidate features on the 120-record reconstruction?",
+  "summary": {
+    "refutation_boundary_recorded": true,
+    "strict_source_field_generator_found": false,
+    "address_readable_generator_found": false,
+    "tested_family_refuted": true,
+    "nrc_witness_still_success": true,
+    "source_native_wxyzti_witness_form_still_success": true,
+    "gap_a_closed": false,
+    "full_g900_admission_found": false,
+    "next_step": "canonical_g60_native_generator_search"
+  },
+  "checks": [
+    {
+      "id": "source_status_negative",
+      "status": true,
+      "detail": "g60_native_nrc_generator_not_found_in_tested_family"
+    },
+    {
+      "id": "strict_not_found",
+      "status": true,
+      "detail": false
+    },
+    {
+      "id": "address_not_found",
+      "status": true,
+      "detail": false
+    },
+    {
+      "id": "no_winning_family",
+      "status": true,
+      "detail": null
+    },
+    {
+      "id": "local_gap_a_generator_false",
+      "status": true,
+      "detail": false
+    },
+    {
+      "id": "source_native_wxyzti_generator_false",
+      "status": true,
+      "detail": false
+    },
+    {
+      "id": "gap_a_open",
+      "status": true,
+      "detail": false
+    },
+    {
+      "id": "full_g900_false",
+      "status": true,
+      "detail": false
+    }
+  ]
+}

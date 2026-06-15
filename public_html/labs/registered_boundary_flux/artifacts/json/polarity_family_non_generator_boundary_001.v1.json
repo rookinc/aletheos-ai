@@ -1,0 +1,162 @@
+{
+  "schema": "polarity_family_non_generator_boundary_001.v1",
+  "status": "polarity_family_non_generator_boundary_recorded",
+  "timestamp_utc": "2026-06-15T00:49:42.457052+00:00",
+  "purpose": "Record the boundary that the polarity-aware odd-hinge family is a real lookup-safe source-shell signal, but not a projection-family generator.",
+  "boundary": [
+    "This does not close Gap A.",
+    "This records a non-generator boundary.",
+    "The polarity family survives as a family signal.",
+    "The best family is broader than the selected correction target.",
+    "No source-native projection-family generator has been derived.",
+    "No physical interpretation is claimed."
+  ],
+  "summary": {
+    "record_result": "polarity_family_non_generator_boundary_recorded",
+    "gap_a_status": "open",
+    "gap_a_closed": false,
+    "polarity_family_survives_lookup_audit": true,
+    "polarity_family_support_count": 8,
+    "polarity_family_selected_support_count": 4,
+    "polarity_family_nonselected_support_count": 4,
+    "best_polarity_feature": "A_odd_BA_neg=True AND A_odd_C_even_BC_2or3=True AND BA_abs_small=True",
+    "best_polarity_hypergeom_probability": 8.5214442e-06,
+    "projection_family_generator_found": false,
+    "best_persistent_family": {
+      "features": [
+        "source:p900_candidate0_edge_law:sector_delta_abs_small=True"
+      ],
+      "mode": "source_only",
+      "support_count": 5,
+      "selected_support_count": 4,
+      "nonselected_support_count": 1,
+      "support_indices": [
+        0,
+        1,
+        5,
+        6,
+        7
+      ],
+      "selected_indices": [
+        0,
+        1,
+        5,
+        7
+      ],
+      "nonselected_indices": [
+        6
+      ],
+      "exact_selected": false,
+      "covers_all_selected": true,
+      "has_nonselected_family": true,
+      "lookup_terms": [],
+      "score": 4
+    },
+    "exact_source_subselector_found": false,
+    "exact_projection_subselector_found": false,
+    "claim_closes_gap_a": false
+  },
+  "boundary_record": {
+    "short_form": "The polarity family is real enough to survive lookup audit, but too broad to serve as the projection-family generator.",
+    "what_survived": [
+      "The odd-hinge A/B/C primitive is enriched against background.",
+      "The polarity-aware family covers all four selected correction paths.",
+      "The polarity family has no lookup violations.",
+      "The polarity family has nonselected support, so it is not merely row lookup.",
+      "The best persistent source-only family covers 4 selected paths plus 1 companion path."
+    ],
+    "what_failed": [
+      "No exact source-side projection-family generator was found.",
+      "No exact projection-family subselector was found.",
+      "The best surviving family is broader than the target.",
+      "The extra companion path prevents generator promotion.",
+      "Gap A remains open."
+    ],
+    "blocked_promotions": [
+      "Do not call Gap A closed.",
+      "Do not call the polarity family a generator.",
+      "Do not treat the selected four as source-derived closure.",
+      "Do not ignore the nonselected companion path.",
+      "Do not attach physical interpretation."
+    ],
+    "allowed_next_work": [
+      "Inspect the nonselected companion path.",
+      "Ask whether the companion path is a missing neighbouring projection member.",
+      "Search for a larger projection-family object that includes selected plus companion structure.",
+      "Keep the polarity family as a strong non-generator signal."
+    ]
+  },
+  "interpretation": {
+    "main_result": "The polarity-aware source-shell family survives as a real family signal but not as a generator.",
+    "why_this_matters": "The search stopped forcing exact selection and found a small source-side family. The extra companion path is now load-bearing evidence, not garbage.",
+    "why_not_closure": "A source-side family that also contains a nonselected companion path is broader than the WXYZTI correction target.",
+    "next_move": "Inspect the nonselected companion path and ask whether it belongs to a neighbouring projection-family completion."
+  },
+  "claim": {
+    "does_this_close_gap_a": false,
+    "does_this_record_real_family_signal": true,
+    "does_this_record_non_generator_boundary": true,
+    "does_this_find_generator": false,
+    "short_form": "The polarity family is real enough to survive lookup audit, but too broad to serve as the projection-family generator.",
+    "not_closed_reason": "A source-side family that also contains a nonselected companion path is broader than the WXYZTI correction target.",
+    "next_problem": "Inspect the nonselected companion path and ask whether it belongs to a neighbouring projection-family completion."
+  },
+  "checks": [
+    {
+      "id": "projection_search_loaded",
+      "status": true,
+      "detail": "source_native_projection_family_generator_search_family_signal_persists_no_generator"
+    },
+    {
+      "id": "candidate_audit_loaded",
+      "status": true,
+      "detail": "gap_a_polarity_aware_odd_hinge_candidate_survives_lookup_audit_not_generator"
+    },
+    {
+      "id": "polarity_search_loaded",
+      "status": true,
+      "detail": "gap_a_polarity_aware_odd_hinge_family_candidate_found_not_generator"
+    },
+    {
+      "id": "odd_audit_loaded",
+      "status": true,
+      "detail": "gap_a_odd_hinge_source_shell_audit_enriched_not_generator"
+    },
+    {
+      "id": "abc_loaded",
+      "status": true,
+      "detail": "source_shell_signed_abc_primitives_extracted_odd_hinge_signal_found_not_generator"
+    },
+    {
+      "id": "plateau_loaded",
+      "status": true,
+      "detail": "gap_a_open_with_source_shell_lift_conjecture_recorded"
+    },
+    {
+      "id": "polarity_family_survives",
+      "status": true,
+      "detail": "True"
+    },
+    {
+      "id": "selected_4",
+      "status": true,
+      "detail": "4"
+    },
+    {
+      "id": "nonselected_companion_present",
+      "status": true,
+      "detail": "4"
+    },
+    {
+      "id": "no_exact_generator",
+      "status": true,
+      "detail": "False"
+    },
+    {
+      "id": "gap_a_not_closed",
+      "status": true,
+      "detail": "boundary record only"
+    }
+  ],
+  "next_script": "inspect_polarity_family_nonselected_companion_001.py"
+}

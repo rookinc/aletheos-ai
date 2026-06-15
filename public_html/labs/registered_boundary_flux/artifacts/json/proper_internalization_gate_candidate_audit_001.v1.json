@@ -1,0 +1,966 @@
+{
+  "schema": "proper_internalization_gate_candidate_audit_001.v1",
+  "status": "proper_internalization_gate_survives_audit_register_internal_not_generator",
+  "timestamp_utc": "2026-06-15T01:48:32.878424+00:00",
+  "purpose": "Audit whether the proper internalization gate candidate is a real register-internal admission signal rather than a lucky cutoff.",
+  "boundary": [
+    "This does not close Gap A.",
+    "This audits internalization as register support absorption.",
+    "Register-internal admission is weaker than source-native generator derivation.",
+    "The candidate uses row/support absorption, so it is not pure source law.",
+    "No physical interpretation is claimed."
+  ],
+  "summary": {
+    "audit_result": "proper_internalization_gate_survives_audit_register_internal_not_generator",
+    "gap_a_closed": false,
+    "candidate_feature": "internal:r1:row_hit_count_ge5=True",
+    "candidate_meaning": "radius-1 column neighborhood has at least five row/support hits",
+    "exact_on_polarity_universe": true,
+    "polarity_universe_size": 8,
+    "selected_indices": [
+      0,
+      1,
+      5,
+      7
+    ],
+    "gate_indices": [
+      0,
+      1,
+      5,
+      7
+    ],
+    "selected_gate_indices": [
+      0,
+      1,
+      5,
+      7
+    ],
+    "nonselected_gate_indices": [],
+    "false_negative_indices": [],
+    "selected_r1_row_hit_counts": [
+      19,
+      21,
+      6,
+      6
+    ],
+    "nonselected_r1_row_hit_counts": [
+      2,
+      1,
+      4,
+      4
+    ],
+    "selected_min": 6,
+    "nonselected_max": 4,
+    "separation_margin": 2,
+    "exact_thresholds": [
+      {
+        "threshold": 5,
+        "selected_support": 4,
+        "nonselected_support": 0,
+        "false_negative_count": 0,
+        "exact_on_polarity": true,
+        "background_support": 92,
+        "background_fraction": 0.76666667,
+        "hypergeom_all_selected_probability": 0.34014623
+      },
+      {
+        "threshold": 6,
+        "selected_support": 4,
+        "nonselected_support": 0,
+        "false_negative_count": 0,
+        "exact_on_polarity": true,
+        "background_support": 90,
+        "background_fraction": 0.75,
+        "hypergeom_all_selected_probability": 0.31105584
+      }
+    ],
+    "background_oriented_unique_len2_count": 120,
+    "background_gate_ge5_support": 92,
+    "background_gate_ge5_fraction": 0.76666667,
+    "background_hypergeom_all_selected_ge5_probability": 0.34014623,
+    "background_binomial_all_selected_ge5_probability": 0.34548272,
+    "register_internal_gate": true,
+    "source_native_generator_found": false,
+    "claim_closes_gap_a": false
+  },
+  "polarity_records": [
+    {
+      "index": 0,
+      "selected": true,
+      "columns": [
+        0,
+        4
+      ],
+      "B": 2,
+      "A": 1,
+      "C": 0,
+      "r1_neighborhood_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "r1_row_hit_count": 19,
+      "gate_ge5": true,
+      "row_hits": [
+        {
+          "column": 0,
+          "row_ordinal": 0,
+          "cycle": 0,
+          "role": "WX"
+        },
+        {
+          "column": 0,
+          "row_ordinal": 6,
+          "cycle": 1,
+          "role": "WX"
+        },
+        {
+          "column": 0,
+          "row_ordinal": 12,
+          "cycle": 2,
+          "role": "WX"
+        },
+        {
+          "column": 1,
+          "row_ordinal": 5,
+          "cycle": 0,
+          "role": "IW"
+        },
+        {
+          "column": 1,
+          "row_ordinal": 8,
+          "cycle": 1,
+          "role": "YZ"
+        },
+        {
+          "column": 1,
+          "row_ordinal": 11,
+          "cycle": 1,
+          "role": "IW"
+        },
+        {
+          "column": 1,
+          "row_ordinal": 17,
+          "cycle": 2,
+          "role": "IW"
+        },
+        {
+          "column": 3,
+          "row_ordinal": 8,
+          "cycle": 1,
+          "role": "YZ"
+        },
+        {
+          "column": 4,
+          "row_ordinal": 1,
+          "cycle": 0,
+          "role": "XY"
+        },
+        {
+          "column": 4,
+          "row_ordinal": 7,
+          "cycle": 1,
+          "role": "XY"
+        },
+        {
+          "column": 4,
+          "row_ordinal": 13,
+          "cycle": 2,
+          "role": "XY"
+        },
+        {
+          "column": 4,
+          "row_ordinal": 14,
+          "cycle": 2,
+          "role": "YZ"
+        },
+        {
+          "column": 5,
+          "row_ordinal": 14,
+          "cycle": 2,
+          "role": "YZ"
+        },
+        {
+          "column": 7,
+          "row_ordinal": 2,
+          "cycle": 0,
+          "role": "YZ"
+        },
+        {
+          "column": 7,
+          "row_ordinal": 5,
+          "cycle": 0,
+          "role": "IW"
+        },
+        {
+          "column": 7,
+          "row_ordinal": 11,
+          "cycle": 1,
+          "role": "IW"
+        },
+        {
+          "column": 7,
+          "row_ordinal": 17,
+          "cycle": 2,
+          "role": "IW"
+        },
+        {
+          "column": 9,
+          "row_ordinal": 3,
+          "cycle": 0,
+          "role": "ZT"
+        },
+        {
+          "column": 9,
+          "row_ordinal": 9,
+          "cycle": 1,
+          "role": "ZT"
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "selected": true,
+      "columns": [
+        7,
+        10
+      ],
+      "B": 4,
+      "A": 3,
+      "C": 2,
+      "r1_neighborhood_columns": [
+        1,
+        4,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "r1_row_hit_count": 21,
+      "gate_ge5": true,
+      "row_hits": [
+        {
+          "column": 1,
+          "row_ordinal": 5,
+          "cycle": 0,
+          "role": "IW"
+        },
+        {
+          "column": 1,
+          "row_ordinal": 8,
+          "cycle": 1,
+          "role": "YZ"
+        },
+        {
+          "column": 1,
+          "row_ordinal": 11,
+          "cycle": 1,
+          "role": "IW"
+        },
+        {
+          "column": 1,
+          "row_ordinal": 17,
+          "cycle": 2,
+          "role": "IW"
+        },
+        {
+          "column": 4,
+          "row_ordinal": 1,
+          "cycle": 0,
+          "role": "XY"
+        },
+        {
+          "column": 4,
+          "row_ordinal": 7,
+          "cycle": 1,
+          "role": "XY"
+        },
+        {
+          "column": 4,
+          "row_ordinal": 13,
+          "cycle": 2,
+          "role": "XY"
+        },
+        {
+          "column": 4,
+          "row_ordinal": 14,
+          "cycle": 2,
+          "role": "YZ"
+        },
+        {
+          "column": 7,
+          "row_ordinal": 2,
+          "cycle": 0,
+          "role": "YZ"
+        },
+        {
+          "column": 7,
+          "row_ordinal": 5,
+          "cycle": 0,
+          "role": "IW"
+        },
+        {
+          "column": 7,
+          "row_ordinal": 11,
+          "cycle": 1,
+          "role": "IW"
+        },
+        {
+          "column": 7,
+          "row_ordinal": 17,
+          "cycle": 2,
+          "role": "IW"
+        },
+        {
+          "column": 9,
+          "row_ordinal": 3,
+          "cycle": 0,
+          "role": "ZT"
+        },
+        {
+          "column": 9,
+          "row_ordinal": 9,
+          "cycle": 1,
+          "role": "ZT"
+        },
+        {
+          "column": 10,
+          "row_ordinal": 2,
+          "cycle": 0,
+          "role": "YZ"
+        },
+        {
+          "column": 10,
+          "row_ordinal": 10,
+          "cycle": 1,
+          "role": "TI"
+        },
+        {
+          "column": 11,
+          "row_ordinal": 9,
+          "cycle": 1,
+          "role": "ZT"
+        },
+        {
+          "column": 11,
+          "row_ordinal": 10,
+          "cycle": 1,
+          "role": "TI"
+        },
+        {
+          "column": 13,
+          "row_ordinal": 4,
+          "cycle": 0,
+          "role": "TI"
+        },
+        {
+          "column": 13,
+          "row_ordinal": 16,
+          "cycle": 2,
+          "role": "TI"
+        },
+        {
+          "column": 14,
+          "row_ordinal": 9,
+          "cycle": 1,
+          "role": "ZT"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "selected": false,
+      "columns": [
+        15,
+        16
+      ],
+      "B": 9,
+      "A": 5,
+      "C": 6,
+      "r1_neighborhood_columns": [
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        25,
+        28,
+        29
+      ],
+      "r1_row_hit_count": 2,
+      "gate_ge5": false,
+      "row_hits": [
+        {
+          "column": 15,
+          "row_ordinal": 16,
+          "cycle": 2,
+          "role": "TI"
+        },
+        {
+          "column": 21,
+          "row_ordinal": 15,
+          "cycle": 2,
+          "role": "ZT"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "selected": false,
+      "columns": [
+        16,
+        18
+      ],
+      "B": 9,
+      "A": 5,
+      "C": 12,
+      "r1_neighborhood_columns": [
+        6,
+        8,
+        15,
+        16,
+        17,
+        18,
+        20,
+        25,
+        28,
+        29
+      ],
+      "r1_row_hit_count": 1,
+      "gate_ge5": false,
+      "row_hits": [
+        {
+          "column": 15,
+          "row_ordinal": 16,
+          "cycle": 2,
+          "role": "TI"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "selected": false,
+      "columns": [
+        19,
+        22
+      ],
+      "B": 8,
+      "A": 7,
+      "C": 6,
+      "r1_neighborhood_columns": [
+        15,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "r1_row_hit_count": 4,
+      "gate_ge5": false,
+      "row_hits": [
+        {
+          "column": 15,
+          "row_ordinal": 16,
+          "cycle": 2,
+          "role": "TI"
+        },
+        {
+          "column": 21,
+          "row_ordinal": 15,
+          "cycle": 2,
+          "role": "ZT"
+        },
+        {
+          "column": 22,
+          "row_ordinal": 8,
+          "cycle": 1,
+          "role": "YZ"
+        },
+        {
+          "column": 22,
+          "row_ordinal": 15,
+          "cycle": 2,
+          "role": "ZT"
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "selected": true,
+      "columns": [
+        23,
+        24
+      ],
+      "B": 11,
+      "A": 7,
+      "C": 14,
+      "r1_neighborhood_columns": [
+        3,
+        5,
+        12,
+        14,
+        19,
+        21,
+        22,
+        23,
+        24,
+        26
+      ],
+      "r1_row_hit_count": 6,
+      "gate_ge5": true,
+      "row_hits": [
+        {
+          "column": 3,
+          "row_ordinal": 8,
+          "cycle": 1,
+          "role": "YZ"
+        },
+        {
+          "column": 5,
+          "row_ordinal": 14,
+          "cycle": 2,
+          "role": "YZ"
+        },
+        {
+          "column": 14,
+          "row_ordinal": 9,
+          "cycle": 1,
+          "role": "ZT"
+        },
+        {
+          "column": 21,
+          "row_ordinal": 15,
+          "cycle": 2,
+          "role": "ZT"
+        },
+        {
+          "column": 22,
+          "row_ordinal": 8,
+          "cycle": 1,
+          "role": "YZ"
+        },
+        {
+          "column": 22,
+          "row_ordinal": 15,
+          "cycle": 2,
+          "role": "ZT"
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "selected": false,
+      "columns": [
+        25,
+        28
+      ],
+      "B": 10,
+      "A": 9,
+      "C": 8,
+      "r1_neighborhood_columns": [
+        2,
+        13,
+        16,
+        17,
+        22,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "r1_row_hit_count": 4,
+      "gate_ge5": false,
+      "row_hits": [
+        {
+          "column": 13,
+          "row_ordinal": 4,
+          "cycle": 0,
+          "role": "TI"
+        },
+        {
+          "column": 13,
+          "row_ordinal": 16,
+          "cycle": 2,
+          "role": "TI"
+        },
+        {
+          "column": 22,
+          "row_ordinal": 8,
+          "cycle": 1,
+          "role": "YZ"
+        },
+        {
+          "column": 22,
+          "row_ordinal": 15,
+          "cycle": 2,
+          "role": "ZT"
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "selected": true,
+      "columns": [
+        28,
+        29
+      ],
+      "B": 13,
+      "A": 9,
+      "C": 10,
+      "r1_neighborhood_columns": [
+        2,
+        9,
+        11,
+        13,
+        16,
+        17,
+        25,
+        27,
+        28,
+        29
+      ],
+      "r1_row_hit_count": 6,
+      "gate_ge5": true,
+      "row_hits": [
+        {
+          "column": 9,
+          "row_ordinal": 3,
+          "cycle": 0,
+          "role": "ZT"
+        },
+        {
+          "column": 9,
+          "row_ordinal": 9,
+          "cycle": 1,
+          "role": "ZT"
+        },
+        {
+          "column": 11,
+          "row_ordinal": 9,
+          "cycle": 1,
+          "role": "ZT"
+        },
+        {
+          "column": 11,
+          "row_ordinal": 10,
+          "cycle": 1,
+          "role": "TI"
+        },
+        {
+          "column": 13,
+          "row_ordinal": 4,
+          "cycle": 0,
+          "role": "TI"
+        },
+        {
+          "column": 13,
+          "row_ordinal": 16,
+          "cycle": 2,
+          "role": "TI"
+        }
+      ]
+    }
+  ],
+  "cutoff_scan": [
+    {
+      "threshold": 0,
+      "selected_support": 4,
+      "nonselected_support": 4,
+      "false_negative_count": 0,
+      "exact_on_polarity": false,
+      "background_support": 120,
+      "background_fraction": 1.0,
+      "hypergeom_all_selected_probability": 1.0
+    },
+    {
+      "threshold": 1,
+      "selected_support": 4,
+      "nonselected_support": 4,
+      "false_negative_count": 0,
+      "exact_on_polarity": false,
+      "background_support": 120,
+      "background_fraction": 1.0,
+      "hypergeom_all_selected_probability": 1.0
+    },
+    {
+      "threshold": 2,
+      "selected_support": 4,
+      "nonselected_support": 3,
+      "false_negative_count": 0,
+      "exact_on_polarity": false,
+      "background_support": 118,
+      "background_fraction": 0.98333333,
+      "hypergeom_all_selected_probability": 0.93417367
+    },
+    {
+      "threshold": 3,
+      "selected_support": 4,
+      "nonselected_support": 2,
+      "false_negative_count": 0,
+      "exact_on_polarity": false,
+      "background_support": 114,
+      "background_fraction": 0.95,
+      "hypergeom_all_selected_probability": 0.81232201
+    },
+    {
+      "threshold": 4,
+      "selected_support": 4,
+      "nonselected_support": 2,
+      "false_negative_count": 0,
+      "exact_on_polarity": false,
+      "background_support": 106,
+      "background_fraction": 0.88333333,
+      "hypergeom_all_selected_probability": 0.60474133
+    },
+    {
+      "threshold": 5,
+      "selected_support": 4,
+      "nonselected_support": 0,
+      "false_negative_count": 0,
+      "exact_on_polarity": true,
+      "background_support": 92,
+      "background_fraction": 0.76666667,
+      "hypergeom_all_selected_probability": 0.34014623
+    },
+    {
+      "threshold": 6,
+      "selected_support": 4,
+      "nonselected_support": 0,
+      "false_negative_count": 0,
+      "exact_on_polarity": true,
+      "background_support": 90,
+      "background_fraction": 0.75,
+      "hypergeom_all_selected_probability": 0.31105584
+    },
+    {
+      "threshold": 7,
+      "selected_support": 2,
+      "nonselected_support": 0,
+      "false_negative_count": 2,
+      "exact_on_polarity": false,
+      "background_support": 82,
+      "background_fraction": 0.68333333,
+      "hypergeom_all_selected_probability": 0.21292167
+    },
+    {
+      "threshold": 8,
+      "selected_support": 2,
+      "nonselected_support": 0,
+      "false_negative_count": 2,
+      "exact_on_polarity": false,
+      "background_support": 82,
+      "background_fraction": 0.68333333,
+      "hypergeom_all_selected_probability": 0.21292167
+    },
+    {
+      "threshold": 9,
+      "selected_support": 2,
+      "nonselected_support": 0,
+      "false_negative_count": 2,
+      "exact_on_polarity": false,
+      "background_support": 80,
+      "background_fraction": 0.66666667,
+      "hypergeom_all_selected_probability": 0.19253351
+    },
+    {
+      "threshold": 10,
+      "selected_support": 2,
+      "nonselected_support": 0,
+      "false_negative_count": 2,
+      "exact_on_polarity": false,
+      "background_support": 74,
+      "background_fraction": 0.61666667,
+      "hypergeom_all_selected_probability": 0.14007136
+    },
+    {
+      "threshold": 11,
+      "selected_support": 2,
+      "nonselected_support": 0,
+      "false_negative_count": 2,
+      "exact_on_polarity": false,
+      "background_support": 64,
+      "background_fraction": 0.53333333,
+      "hypergeom_all_selected_probability": 0.077347445
+    },
+    {
+      "threshold": 12,
+      "selected_support": 2,
+      "nonselected_support": 0,
+      "false_negative_count": 2,
+      "exact_on_polarity": false,
+      "background_support": 46,
+      "background_fraction": 0.38333333,
+      "hypergeom_all_selected_probability": 0.019865312
+    },
+    {
+      "threshold": 13,
+      "selected_support": 2,
+      "nonselected_support": 0,
+      "false_negative_count": 2,
+      "exact_on_polarity": false,
+      "background_support": 32,
+      "background_fraction": 0.26666667,
+      "hypergeom_all_selected_probability": 0.0043775876
+    },
+    {
+      "threshold": 14,
+      "selected_support": 2,
+      "nonselected_support": 0,
+      "false_negative_count": 2,
+      "exact_on_polarity": false,
+      "background_support": 30,
+      "background_fraction": 0.25,
+      "hypergeom_all_selected_probability": 0.0033361454
+    },
+    {
+      "threshold": 15,
+      "selected_support": 2,
+      "nonselected_support": 0,
+      "false_negative_count": 2,
+      "exact_on_polarity": false,
+      "background_support": 22,
+      "background_fraction": 0.18333333,
+      "hypergeom_all_selected_probability": 0.00089049092
+    },
+    {
+      "threshold": 16,
+      "selected_support": 2,
+      "nonselected_support": 0,
+      "false_negative_count": 2,
+      "exact_on_polarity": false,
+      "background_support": 16,
+      "background_fraction": 0.13333333,
+      "hypergeom_all_selected_probability": 0.00022155755
+    },
+    {
+      "threshold": 17,
+      "selected_support": 2,
+      "nonselected_support": 0,
+      "false_negative_count": 2,
+      "exact_on_polarity": false,
+      "background_support": 12,
+      "background_fraction": 0.1,
+      "hypergeom_all_selected_probability": 6.0258784e-05
+    },
+    {
+      "threshold": 18,
+      "selected_support": 2,
+      "nonselected_support": 0,
+      "false_negative_count": 2,
+      "exact_on_polarity": false,
+      "background_support": 10,
+      "background_fraction": 0.083333333,
+      "hypergeom_all_selected_probability": 2.5564333e-05
+    },
+    {
+      "threshold": 19,
+      "selected_support": 2,
+      "nonselected_support": 0,
+      "false_negative_count": 2,
+      "exact_on_polarity": false,
+      "background_support": 6,
+      "background_fraction": 0.05,
+      "hypergeom_all_selected_probability": 1.8260238e-06
+    },
+    {
+      "threshold": 20,
+      "selected_support": 1,
+      "nonselected_support": 0,
+      "false_negative_count": 3,
+      "exact_on_polarity": false,
+      "background_support": 2,
+      "background_fraction": 0.016666667,
+      "hypergeom_all_selected_probability": null
+    },
+    {
+      "threshold": 21,
+      "selected_support": 1,
+      "nonselected_support": 0,
+      "false_negative_count": 3,
+      "exact_on_polarity": false,
+      "background_support": 2,
+      "background_fraction": 0.016666667,
+      "hypergeom_all_selected_probability": null
+    }
+  ],
+  "interpretation": {
+    "main_result": "The proper-internalization gate survives audit as a register-internal admission candidate, but not as a source-native generator.",
+    "why_this_matters": "The selected paths are separated by support absorption, not by direct visibility. This matches the hypothesis that closure comes from proper internalization.",
+    "why_not_closure": "The gate uses register support absorption and does not derive the source-native WXYZTI projection-family generator.",
+    "next_move": "Search whether this register-internal gate can be promoted into an admission predicate linked to G900-style return with trace."
+  },
+  "claim": {
+    "does_this_close_gap_a": false,
+    "does_this_find_register_internal_admission_candidate": true,
+    "does_this_find_source_native_generator": false,
+    "short_form": "The proper-internalization gate survives audit as a register-internal admission candidate, but not as a source-native generator.",
+    "not_closed_reason": "The gate uses register support absorption and does not derive the source-native WXYZTI projection-family generator.",
+    "next_problem": "Search whether this register-internal gate can be promoted into an admission predicate linked to G900-style return with trace."
+  },
+  "checks": [
+    {
+      "id": "internalization_loaded",
+      "status": true,
+      "detail": "proper_internalization_gate_candidate_found_inside_best_family_not_generator"
+    },
+    {
+      "id": "marked_boundary_loaded",
+      "status": true,
+      "detail": "marked_port_lift_gate_boundary_recorded"
+    },
+    {
+      "id": "projection_search_loaded",
+      "status": true,
+      "detail": "source_native_projection_family_generator_search_family_signal_persists_no_generator"
+    },
+    {
+      "id": "plateau_loaded",
+      "status": true,
+      "detail": "gap_a_open_with_source_shell_lift_conjecture_recorded"
+    },
+    {
+      "id": "exact_on_polarity",
+      "status": true,
+      "detail": "[0, 1, 5, 7]"
+    },
+    {
+      "id": "positive_separation_margin",
+      "status": true,
+      "detail": "2"
+    },
+    {
+      "id": "background_available",
+      "status": true,
+      "detail": "120"
+    },
+    {
+      "id": "register_internal_not_source_generator",
+      "status": true,
+      "detail": "ok"
+    },
+    {
+      "id": "gap_a_not_closed",
+      "status": true,
+      "detail": "audit only"
+    }
+  ],
+  "next_script": "search_g900_admission_predicate_from_internalization_gate_001.py"
+}

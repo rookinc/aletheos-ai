@@ -1,0 +1,227 @@
+{
+  "schema": "sparse_law_source_meaning_boundary_001.v1",
+  "status": "sparse_law_source_meaning_boundary_recorded",
+  "timestamp_utc": "2026-06-15T02:34:45.860893+00:00",
+  "purpose": "Record the source-facing meaning boundary for shared_B plus reverse_partner.",
+  "boundary": [
+    "This does not close Gap A.",
+    "This does not prove full G900.",
+    "This records source-facing meaning for the sparse 120-record carrier law.",
+    "Source-facing meaning is not the same as source-native WXYZTI generation.",
+    "No independent witness layer is proven.",
+    "No physical interpretation is claimed."
+  ],
+  "summary": {
+    "record_result": "sparse_law_source_meaning_boundary_recorded",
+    "gap_a_status": "open",
+    "gap_a_closed": false,
+    "law_name": "shared_B+reverse_partner",
+    "relations": [
+      "reverse_partner",
+      "shared_B"
+    ],
+    "source_native_reading": "anchor-and-reverse transport on oriented length-2 source-shell records",
+    "combined_meaning": "within an anchor bucket, vary outgoing two-step records; by reversal, move the anchor to the opposite endpoint; repeat",
+    "shared_B_meaning": "same oriented source endpoint B; records live in the same source-anchor bucket",
+    "reverse_partner_meaning": "same length-2 path with B and C exchanged; orientation flips across the same hinge A and same two columns",
+    "quotient_meaning": "shared_B creates local cliques over each B anchor, while reverse_partner supplies the inter-bucket transport on B labels",
+    "source_only": true,
+    "row_support_free": true,
+    "uses_only_oriented_record_data": true,
+    "record_count": 120,
+    "admitted_count": 4,
+    "admitted_keys": [
+      "11|7|14|23,24",
+      "13|9|10|28,29",
+      "2|1|0|0,4",
+      "4|3|2|7,10"
+    ],
+    "admitted_B_labels": [
+      2,
+      4,
+      11,
+      13
+    ],
+    "B_bucket_count": 15,
+    "B_bucket_size_values": [
+      8
+    ],
+    "all_B_buckets_same_size": true,
+    "shared_B_edges": 420,
+    "reverse_partner_edges": 60,
+    "union_edges": 480,
+    "complete_graph_edges": 7140,
+    "union_density": 0.06722689075630252,
+    "quotient_B_node_count": 15,
+    "quotient_B_edge_count": 60,
+    "quotient_B_connected": true,
+    "union_component_count": 1,
+    "union_reaches_all_records_from_admitted": true,
+    "union_settles_all_shells_to_admitted": true,
+    "sparse_neighbor_carrier_law_supported": true,
+    "larger_neighbor_carrier_supported": true,
+    "neighbor_induced_overdrive_supported": true,
+    "local_g900_shaped_boundary_reached": true,
+    "full_900_state_return_cycle_found": false,
+    "heuristic_900_return_signal_found": false,
+    "full_g900_admission_found": false,
+    "independent_witness_layer_found": false,
+    "source_native_wxyzti_generator_found": false,
+    "terminal_reason": "shared_B plus reverse_partner has source-facing meaning as anchor-and-reverse transport, but it remains a 120-record source-shell carrier rather than a full G900 evaluator or WXYZTI generator.",
+    "claim_closes_gap_a": false
+  },
+  "boundary_record": {
+    "short_form": "shared_B plus reverse_partner means anchor-and-reverse transport.",
+    "keeper_lines": [
+      "shared_B creates source-anchor buckets.",
+      "reverse_partner supplies orientation-flip transport between buckets.",
+      "Together they form anchor-and-reverse transport on oriented length-2 source-shell records.",
+      "The law is source-facing and row/support-free.",
+      "The quotient B carrier is connected.",
+      "The law reaches all 120 records and settles to the admitted four.",
+      "This is not full G900.",
+      "Gap A remains open."
+    ],
+    "positive_results": [
+      "The sparse law has a clean source-facing meaning.",
+      "The law uses only oriented record data.",
+      "The law is row/support-free.",
+      "There are 15 B buckets of size 8.",
+      "shared_B contributes 420 edges.",
+      "reverse_partner contributes 60 edges.",
+      "The union has 480 edges.",
+      "The quotient B carrier is connected.",
+      "The union reaches all 120 records from the admitted residue.",
+      "The union settles all shells to the admitted four."
+    ],
+    "negative_results": [
+      "No full 900-state return cycle was found.",
+      "No independent witness layer was found.",
+      "No full G900 admission was found.",
+      "No source-native WXYZTI generator was derived.",
+      "Gap A was not closed."
+    ],
+    "blocked_promotions": [
+      "Do not call this full G900.",
+      "Do not call Gap A closed.",
+      "Do not call source-facing meaning a source-native generator.",
+      "Do not call the 120-record carrier a 900-state evaluator.",
+      "Do not claim physical interpretation."
+    ],
+    "allowed_next_work": [
+      "Compare anchor-and-reverse transport against shared_column.",
+      "Search for an independent witness layer over the sparse carrier.",
+      "Search for a 900-state lift from anchor-and-reverse transport.",
+      "Return to WXYZTI generator derivation with anchor-and-reverse transport as a constraint."
+    ]
+  },
+  "interpretation": {
+    "main_result": "The winning sparse carrier law has source-facing meaning.",
+    "meaning": "Within a B-anchor bucket, vary outgoing two-step records; by reversal, move the anchor to the opposite endpoint; repeat.",
+    "why_this_matters": "The sparse law is not just a successful subset. It expresses a lawful anchor-and-reverse transport pattern.",
+    "why_not_closure": "It is still a 120-record source-shell carrier, not full G900 and not a WXYZTI generator.",
+    "next_move": "Compare shared_B plus reverse_partner with shared_column, or search for a 900-state lift."
+  },
+  "claim": {
+    "does_this_close_gap_a": false,
+    "does_this_record_source_meaning_boundary": true,
+    "does_this_support_anchor_and_reverse_transport": true,
+    "does_this_find_full_g900_admission": false,
+    "short_form": "shared_B plus reverse_partner means anchor-and-reverse transport.",
+    "not_closed_reason": "It is still a 120-record source-shell carrier, not full G900 and not a WXYZTI generator.",
+    "next_problem": "Compare shared_B plus reverse_partner with shared_column, or search for a 900-state lift."
+  },
+  "checks": [
+    {
+      "id": "source_meaning_audit_loaded",
+      "status": true,
+      "detail": "sparse_law_shared_B_reverse_partner_source_meaning_supported_not_full_g900"
+    },
+    {
+      "id": "sparse_boundary_loaded",
+      "status": true,
+      "detail": "sparse_neighbor_carrier_boundary_recorded"
+    },
+    {
+      "id": "sparse_search_loaded",
+      "status": true,
+      "detail": "sparse_neighbor_carrier_law_supported_not_full_g900"
+    },
+    {
+      "id": "larger_boundary_loaded",
+      "status": true,
+      "detail": "larger_neighbor_carrier_boundary_recorded"
+    },
+    {
+      "id": "neighbor_boundary_loaded",
+      "status": true,
+      "detail": "neighbor_induced_overdrive_boundary_recorded"
+    },
+    {
+      "id": "local_boundary_loaded",
+      "status": true,
+      "detail": "local_g900_shaped_admission_boundary_recorded"
+    },
+    {
+      "id": "full_return_search_loaded",
+      "status": true,
+      "detail": "full_g900_return_cycle_not_found"
+    },
+    {
+      "id": "law_expected",
+      "status": true,
+      "detail": "shared_B+reverse_partner"
+    },
+    {
+      "id": "source_only",
+      "status": true,
+      "detail": "True"
+    },
+    {
+      "id": "row_support_free",
+      "status": true,
+      "detail": "True"
+    },
+    {
+      "id": "bucket_count_15",
+      "status": true,
+      "detail": "15"
+    },
+    {
+      "id": "bucket_size_8",
+      "status": true,
+      "detail": "[8]"
+    },
+    {
+      "id": "union_edges_480",
+      "status": true,
+      "detail": "480"
+    },
+    {
+      "id": "quotient_connected",
+      "status": true,
+      "detail": "True"
+    },
+    {
+      "id": "reaches_all",
+      "status": true,
+      "detail": "True"
+    },
+    {
+      "id": "settles",
+      "status": true,
+      "detail": "True"
+    },
+    {
+      "id": "full_g900_not_found",
+      "status": true,
+      "detail": "False"
+    },
+    {
+      "id": "gap_a_not_closed",
+      "status": true,
+      "detail": "boundary record only"
+    }
+  ],
+  "next_script": "compare_anchor_reverse_vs_shared_column_001.py"
+}

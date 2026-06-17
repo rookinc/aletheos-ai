@@ -1,0 +1,168 @@
+{
+  "schema": "g900.edge_tuple_census",
+  "version": "0.1",
+  "body": "g900",
+  "body_version": "0.1",
+  "counts": {
+    "vertices": 900,
+    "vertex_ids": 900,
+    "unique_vertex_ids": 900,
+    "edges": 3600,
+    "tuple_edges": 3600,
+    "bad_edge_rows": 0,
+    "missing_endpoint_edges": 0
+  },
+  "profiles": {
+    "degree_counts": {
+      "8": 900
+    },
+    "component_count": 1,
+    "component_sizes": [
+      900
+    ]
+  },
+  "samples": {
+    "tuple_edges_first_10": [
+      {
+        "id": "tuple_edge_0000",
+        "u": "0:0",
+        "v": "0:16",
+        "index": 0
+      },
+      {
+        "id": "tuple_edge_0001",
+        "u": "0:0",
+        "v": "0:19",
+        "index": 1
+      },
+      {
+        "id": "tuple_edge_0002",
+        "u": "0:0",
+        "v": "0:25",
+        "index": 2
+      },
+      {
+        "id": "tuple_edge_0003",
+        "u": "0:0",
+        "v": "4:30",
+        "index": 3
+      },
+      {
+        "id": "tuple_edge_0004",
+        "u": "0:0",
+        "v": "5:30",
+        "index": 4
+      },
+      {
+        "id": "tuple_edge_0005",
+        "u": "0:0",
+        "v": "6:30",
+        "index": 5
+      },
+      {
+        "id": "tuple_edge_0006",
+        "u": "0:0",
+        "v": "0:55",
+        "index": 6
+      },
+      {
+        "id": "tuple_edge_0007",
+        "u": "0:0",
+        "v": "1:30",
+        "index": 7
+      },
+      {
+        "id": "tuple_edge_0008",
+        "u": "1:40",
+        "v": "1:54",
+        "index": 8
+      },
+      {
+        "id": "tuple_edge_0009",
+        "u": "1:40",
+        "v": "2:10",
+        "index": 9
+      }
+    ],
+    "bad_edges_first_10": [],
+    "missing_endpoint_edges_first_10": []
+  },
+  "selector_candidates": [
+    {
+      "id": "first_15_tuple_edges_by_index",
+      "kind": "edge_tuple_selector",
+      "description": "First 15 edge tuples by body edge index. Deterministic smoke selector only.",
+      "vertex_ids": [],
+      "edge_ids": [
+        "tuple_edge_0000",
+        "tuple_edge_0001",
+        "tuple_edge_0002",
+        "tuple_edge_0003",
+        "tuple_edge_0004",
+        "tuple_edge_0005",
+        "tuple_edge_0006",
+        "tuple_edge_0007",
+        "tuple_edge_0008",
+        "tuple_edge_0009",
+        "tuple_edge_0010",
+        "tuple_edge_0011",
+        "tuple_edge_0012",
+        "tuple_edge_0013",
+        "tuple_edge_0014"
+      ],
+      "admissibility": "deterministic over receipted body edge tuple order; weak structural meaning"
+    },
+    {
+      "id": "root_tuple_shell_depth_2",
+      "kind": "adjacency_shell_selector",
+      "description": "Tuple-edge shell from lexicographically first vertex, bounded to depth 2.",
+      "root_vertex_id": "0:0",
+      "vertex_ids": [
+        "0:0",
+        "0:16",
+        "0:19",
+        "0:25",
+        "4:30"
+      ],
+      "edge_ids": [
+        "tuple_edge_0000",
+        "tuple_edge_0001",
+        "tuple_edge_0002",
+        "tuple_edge_0003",
+        "tuple_edge_0004",
+        "tuple_edge_0005",
+        "tuple_edge_0006",
+        "tuple_edge_0007",
+        "tuple_edge_0172",
+        "tuple_edge_0396",
+        "tuple_edge_0397",
+        "tuple_edge_0398",
+        "tuple_edge_0399",
+        "tuple_edge_0400",
+        "tuple_edge_0401",
+        "tuple_edge_0577",
+        "tuple_edge_0578",
+        "tuple_edge_0579",
+        "tuple_edge_0580",
+        "tuple_edge_0581",
+        "tuple_edge_0582",
+        "tuple_edge_0583",
+        "tuple_edge_0900",
+        "tuple_edge_0901",
+        "tuple_edge_0902",
+        "tuple_edge_0903",
+        "tuple_edge_0904",
+        "tuple_edge_1060",
+        "tuple_edge_0644",
+        "tuple_edge_0827"
+      ],
+      "admissibility": "deterministic over receipted body tuple adjacency; source-provenance smoke rail candidate, not a force claim"
+    }
+  ],
+  "boundary": {
+    "admits_carrier_rail": false,
+    "mutates_body": false,
+    "physics_claim": false,
+    "purpose": "array-aware endpoint census before choosing first source-provenance rail"
+  }
+}

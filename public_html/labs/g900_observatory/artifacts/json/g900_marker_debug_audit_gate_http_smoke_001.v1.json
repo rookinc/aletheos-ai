@@ -1,0 +1,141 @@
+{
+  "schema": "g900.marker_debug_audit_gate_http_smoke",
+  "version": 1,
+  "status": "g900_marker_debug_audit_gate_http_smoke_passed",
+  "created_utc": "2026-06-17T23:45:40Z",
+  "base_url": "http://127.0.0.1:8000/labs/g900_observatory",
+  "audit_pass": true,
+  "resources": {
+    "debug_html": {
+      "url": "http://127.0.0.1:8000/labs/g900_observatory/marker_debug.html",
+      "status": 200,
+      "byte_count": 4357,
+      "sha256": "cea0af0af1b1fecd78cc56dff5a7e16c1e3bb4684a83e8801d243d21a1b122fe"
+    },
+    "debug_js": {
+      "url": "http://127.0.0.1:8000/labs/g900_observatory/kernel/g900_marker_debug.js",
+      "status": 200,
+      "byte_count": 8370,
+      "sha256": "d762d3f37db031f2c9f4eeb1acc1f17adb55c3080fa2a4122ce77769a7646f21"
+    },
+    "marker_kernel": {
+      "url": "http://127.0.0.1:8000/labs/g900_observatory/kernel/g900_markers.js",
+      "status": 200,
+      "byte_count": 5938,
+      "sha256": "db0121cf2fe1488c566c4a1b0b04708dc059663b0bcfeb586653ff225d5664f1"
+    },
+    "marker_registry": {
+      "url": "http://127.0.0.1:8000/labs/g900_observatory/data/g900_markers.v0.1.json",
+      "status": 200,
+      "byte_count": 5765,
+      "sha256": "9dc9a48226550ce6cfb90d008aea791a886f7393e7d5eb8c0b1243f1499f7ce9"
+    },
+    "marker_receipt": {
+      "url": "http://127.0.0.1:8000/labs/g900_observatory/artifacts/json/g900_unsupported_phase_marker_6_9_001.v1.json",
+      "status": 200,
+      "byte_count": 25355,
+      "sha256": "a92bfaf4758e8624be0ec31af7da3cbc4764586bdd9c1f75af459df8b5d07afa"
+    },
+    "edge_index_audit": {
+      "url": "http://127.0.0.1:8000/labs/g900_observatory/artifacts/json/g900_marker_edge_index_audit_001.v1.json",
+      "status": 200,
+      "byte_count": 5101,
+      "sha256": "ccfce7fe007493754df62e665aad4ff7b73fb1d37e801ff685b3d9582b697705"
+    },
+    "body": {
+      "url": "http://127.0.0.1:8000/labs/g900_observatory/data/g900_static_body.v1.json",
+      "status": 200,
+      "byte_count": 272265,
+      "sha256": "6a2cb6b9892a78d4559ec61cf946b0021962cc6819311234b8bf14102b3b7f63"
+    },
+    "channels": {
+      "url": "http://127.0.0.1:8000/labs/g900_observatory/data/g900_channels.v0.1.json",
+      "status": 200,
+      "byte_count": 732,
+      "sha256": "c49da60e9e9b372cab4079f06ece969a127f010ddce1d059fe18a0f816f05f32"
+    },
+    "live_lab": {
+      "url": "http://127.0.0.1:8000/labs/g900_observatory/lab.html",
+      "status": 200,
+      "byte_count": 6747,
+      "sha256": "784aafce3078200a60c8404eefb0fcb347702cdab2d68c770ab25b290b406fa0"
+    },
+    "live_stage": {
+      "url": "http://127.0.0.1:8000/labs/g900_observatory/g900_grammar_stage_v0.js",
+      "status": 200,
+      "byte_count": 24979,
+      "sha256": "cf8152ccf1db895a902651480e69da162806b10b6b7ba00bfeceeef82cfa845c"
+    }
+  },
+  "marker_summary": {
+    "marker_id": "unsupported_phase_step_6_9",
+    "edge_count": 60,
+    "vertex_count": 120,
+    "source_receipt": "artifacts/json/g900_unsupported_phase_marker_6_9_001.v1.json"
+  },
+  "edge_index_audit_summary": {
+    "audit_pass": true,
+    "marker_id": "unsupported_phase_step_6_9",
+    "min_index": 2180,
+    "max_index": 2434,
+    "failure_count": 0
+  },
+  "body_summary": {
+    "vertex_count": 900,
+    "edge_count": 3600
+  },
+  "channel_summary": {
+    "channel_set_count": 0,
+    "channel_count": 0,
+    "channels_admitted": false,
+    "channels_rendered": false
+  },
+  "checks": {
+    "all_resources_served_200": true,
+    "debug_page_uses_debug_js": true,
+    "debug_page_has_audit_status_row": true,
+    "debug_page_has_index_range_row": true,
+    "debug_page_has_audit_failures_row": true,
+    "debug_js_loads_edge_index_audit": true,
+    "debug_js_validates_edge_index_audit": true,
+    "debug_js_references_edge_index_audit_receipt": true,
+    "debug_page_does_not_import_live_stage": true,
+    "debug_page_has_no_old_graph_toggle": true,
+    "debug_page_has_no_marker_overlay_api": true,
+    "live_lab_untouched_by_debug_page": true,
+    "live_stage_untouched_by_debug_page": true,
+    "live_stage_has_no_marker_registry_import": true,
+    "live_stage_has_no_marker_draw_hook": true,
+    "live_stage_has_no_marker_overlay_api": true,
+    "marker_registry_schema": true,
+    "marker_count_is_one": true,
+    "marker_id_is_6_9": true,
+    "marker_edge_count_is_60": true,
+    "marker_vertex_count_is_120": true,
+    "marker_registry_data_only": true,
+    "marker_registry_does_not_admit_channels": true,
+    "marker_receipt_passed": true,
+    "edge_index_audit_passed": true,
+    "edge_index_audit_marker_id_matches": true,
+    "edge_index_audit_edge_count_matches": true,
+    "edge_index_audit_vertex_count_matches": true,
+    "edge_index_audit_failure_count_zero": true,
+    "edge_index_audit_touches_live_stage_false": true,
+    "edge_index_audit_channel_admission_false": true,
+    "body_vertex_count_is_900": true,
+    "body_edge_count_is_3600": true,
+    "channel_count_is_zero": true,
+    "channel_set_count_is_zero": true
+  },
+  "boundary": {
+    "isolated_debug_page_only": true,
+    "audit_gated_debug_only": true,
+    "live_stage_import": false,
+    "live_stage_render_hook": false,
+    "live_observatory_ui_change": false,
+    "channel_admission": false,
+    "body_mutation": false,
+    "force_claim": false,
+    "physics_claim": false
+  }
+}

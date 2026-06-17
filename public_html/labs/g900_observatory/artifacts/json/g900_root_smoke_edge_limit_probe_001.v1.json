@@ -1,0 +1,5289 @@
+{
+  "schema": "g900.root_smoke_edge_limit_probe",
+  "version": "1",
+  "status": "root_smoke_edge_limit_probe_recorded",
+  "audit_pass": true,
+  "body": "g900",
+  "boundary": {
+    "probe_only": true,
+    "channels_admitted": false,
+    "channel_registry_modified": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "physics_claim": false,
+    "force_claim": false
+  },
+  "checks": {
+    "source_tmp_probe_exists": true,
+    "exact_reconstructs_existing_smoke_rail": true,
+    "selector_is_bounded_depth2_edge_limit30": true,
+    "root_count_is_900": true,
+    "root0_edge_hit_count_is_7": true,
+    "root0_max_edge_overlap_is_12": true,
+    "same_exact_signature_count_is_9": true,
+    "same_count_signature_count_is_9": true,
+    "all_roots_have_30_edges": true,
+    "channel_registry_still_zero_sets": true,
+    "channel_registry_still_zero_channels": true,
+    "channel_registry_admits_channels_false": true,
+    "channel_registry_renders_channels_false": true
+  },
+  "result": {
+    "status": "root_smoke_edge_limit_probe_recorded",
+    "selector": "bounded_root_tuple_shell_depth_2_edge_limit_30",
+    "exact_reconstructs_existing_smoke_rail": true,
+    "root_count": 900,
+    "root0": {
+      "root": "0:0",
+      "count_signature": [
+        29,
+        30,
+        7,
+        12
+      ],
+      "edge_hit_count": 7,
+      "max_edge_overlap": 12,
+      "hits": [
+        {
+          "rail_id": "slot_00_internal_carrier",
+          "set_id": "slot_internal_carriers",
+          "vertex_overlap": 11,
+          "edge_overlap": 12,
+          "slot": 0,
+          "slot_pair": null
+        },
+        {
+          "rail_id": "slot_pair_00_04_boundary_carrier",
+          "set_id": "slot_pair_boundary_carriers",
+          "vertex_overlap": 16,
+          "edge_overlap": 4,
+          "slot": null,
+          "slot_pair": [
+            0,
+            4
+          ]
+        },
+        {
+          "rail_id": "slot_pair_00_01_boundary_carrier",
+          "set_id": "slot_pair_boundary_carriers",
+          "vertex_overlap": 15,
+          "edge_overlap": 4,
+          "slot": null,
+          "slot_pair": [
+            0,
+            1
+          ]
+        },
+        {
+          "rail_id": "slot_pair_00_05_boundary_carrier",
+          "set_id": "slot_pair_boundary_carriers",
+          "vertex_overlap": 15,
+          "edge_overlap": 4,
+          "slot": null,
+          "slot_pair": [
+            0,
+            5
+          ]
+        },
+        {
+          "rail_id": "slot_pair_00_06_boundary_carrier",
+          "set_id": "slot_pair_boundary_carriers",
+          "vertex_overlap": 15,
+          "edge_overlap": 4,
+          "slot": null,
+          "slot_pair": [
+            0,
+            6
+          ]
+        },
+        {
+          "rail_id": "slot_pair_03_04_boundary_carrier",
+          "set_id": "slot_pair_boundary_carriers",
+          "vertex_overlap": 6,
+          "edge_overlap": 1,
+          "slot": null,
+          "slot_pair": [
+            3,
+            4
+          ]
+        },
+        {
+          "rail_id": "slot_04_internal_carrier",
+          "set_id": "slot_internal_carriers",
+          "vertex_overlap": 5,
+          "edge_overlap": 1,
+          "slot": 4,
+          "slot_pair": null
+        }
+      ]
+    },
+    "same_exact_signature_count": 9,
+    "same_exact_signature_roots": [
+      "0:0",
+      "0:5",
+      "0:6",
+      "0:33",
+      "0:34",
+      "0:37",
+      "0:43",
+      "0:44",
+      "0:54"
+    ],
+    "same_count_signature_count": 9,
+    "same_count_signature_roots": [
+      "0:0",
+      "0:5",
+      "0:6",
+      "0:33",
+      "0:34",
+      "0:37",
+      "0:43",
+      "0:44",
+      "0:54"
+    ],
+    "distributions": {
+      "edge_hit_count": {
+        "5": 62,
+        "6": 11,
+        "7": 11,
+        "9": 282,
+        "10": 4,
+        "11": 1,
+        "12": 165,
+        "13": 115,
+        "14": 2,
+        "16": 184,
+        "17": 3,
+        "18": 60
+      },
+      "max_edge_overlap": {
+        "4": 245,
+        "5": 2,
+        "7": 278,
+        "8": 4,
+        "9": 16,
+        "10": 250,
+        "11": 21,
+        "12": 26,
+        "13": 17,
+        "14": 41
+      },
+      "vertex_count": {
+        "25": 144,
+        "26": 39,
+        "27": 141,
+        "28": 96,
+        "29": 349,
+        "30": 124,
+        "31": 7
+      },
+      "edge_count": {
+        "30": 900
+      }
+    },
+    "top_by_max_edge_overlap": [
+      {
+        "root": "0:57",
+        "slot": 0,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 5,
+        "max_edge_overlap": 14,
+        "hits": [
+          {
+            "rail_id": "slot_00_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 13,
+            "edge_overlap": 14,
+            "slot": 0,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_00_01_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              0,
+              1
+            ]
+          },
+          {
+            "rail_id": "slot_pair_00_04_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              0,
+              4
+            ]
+          },
+          {
+            "rail_id": "slot_pair_00_05_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              0,
+              5
+            ]
+          },
+          {
+            "rail_id": "slot_pair_00_06_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              0,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "root": "1:39",
+        "slot": 1,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 5,
+        "max_edge_overlap": 14,
+        "hits": [
+          {
+            "rail_id": "slot_01_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 13,
+            "edge_overlap": 14,
+            "slot": 1,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_00_01_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              0,
+              1
+            ]
+          },
+          {
+            "rail_id": "slot_pair_01_02_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              1,
+              2
+            ]
+          },
+          {
+            "rail_id": "slot_pair_01_06_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              1,
+              6
+            ]
+          },
+          {
+            "rail_id": "slot_pair_01_07_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              1,
+              7
+            ]
+          }
+        ]
+      },
+      {
+        "root": "2:0",
+        "slot": 2,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 5,
+        "max_edge_overlap": 14,
+        "hits": [
+          {
+            "rail_id": "slot_02_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 13,
+            "edge_overlap": 14,
+            "slot": 2,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_01_02_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              1,
+              2
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_03_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              3
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_07_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              7
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "2:1",
+        "slot": 2,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 5,
+        "max_edge_overlap": 14,
+        "hits": [
+          {
+            "rail_id": "slot_02_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 13,
+            "edge_overlap": 14,
+            "slot": 2,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_01_02_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              1,
+              2
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_03_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              3
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_07_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              7
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "2:2",
+        "slot": 2,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 5,
+        "max_edge_overlap": 14,
+        "hits": [
+          {
+            "rail_id": "slot_02_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 13,
+            "edge_overlap": 14,
+            "slot": 2,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_01_02_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              1,
+              2
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_03_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              3
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_07_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              7
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "2:3",
+        "slot": 2,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 5,
+        "max_edge_overlap": 14,
+        "hits": [
+          {
+            "rail_id": "slot_02_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 13,
+            "edge_overlap": 14,
+            "slot": 2,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_01_02_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              1,
+              2
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_03_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              3
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_07_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              7
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "2:30",
+        "slot": 2,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 5,
+        "max_edge_overlap": 14,
+        "hits": [
+          {
+            "rail_id": "slot_02_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 13,
+            "edge_overlap": 14,
+            "slot": 2,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_01_02_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              1,
+              2
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_03_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              3
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_07_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              7
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "2:31",
+        "slot": 2,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 5,
+        "max_edge_overlap": 14,
+        "hits": [
+          {
+            "rail_id": "slot_02_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 13,
+            "edge_overlap": 14,
+            "slot": 2,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_01_02_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              1,
+              2
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_03_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              3
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_07_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              7
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "2:32",
+        "slot": 2,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 5,
+        "max_edge_overlap": 14,
+        "hits": [
+          {
+            "rail_id": "slot_02_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 13,
+            "edge_overlap": 14,
+            "slot": 2,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_01_02_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              1,
+              2
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_03_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              3
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_07_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              7
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "2:33",
+        "slot": 2,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 5,
+        "max_edge_overlap": 14,
+        "hits": [
+          {
+            "rail_id": "slot_02_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 13,
+            "edge_overlap": 14,
+            "slot": 2,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_01_02_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              1,
+              2
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_03_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              3
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_07_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              7
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "2:35",
+        "slot": 2,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 5,
+        "max_edge_overlap": 14,
+        "hits": [
+          {
+            "rail_id": "slot_02_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 13,
+            "edge_overlap": 14,
+            "slot": 2,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_01_02_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              1,
+              2
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_03_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              3
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_07_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              7
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "2:36",
+        "slot": 2,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 5,
+        "max_edge_overlap": 14,
+        "hits": [
+          {
+            "rail_id": "slot_02_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 13,
+            "edge_overlap": 14,
+            "slot": 2,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_01_02_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              1,
+              2
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_03_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              3
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_07_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              7
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "2:37",
+        "slot": 2,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 5,
+        "max_edge_overlap": 14,
+        "hits": [
+          {
+            "rail_id": "slot_02_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 13,
+            "edge_overlap": 14,
+            "slot": 2,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_01_02_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              1,
+              2
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_03_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              3
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_07_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              7
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "2:38",
+        "slot": 2,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 5,
+        "max_edge_overlap": 14,
+        "hits": [
+          {
+            "rail_id": "slot_02_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 13,
+            "edge_overlap": 14,
+            "slot": 2,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_01_02_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              1,
+              2
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_03_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              3
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_07_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              7
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "2:39",
+        "slot": 2,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 5,
+        "max_edge_overlap": 14,
+        "hits": [
+          {
+            "rail_id": "slot_02_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 13,
+            "edge_overlap": 14,
+            "slot": 2,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_01_02_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              1,
+              2
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_03_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              3
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_07_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              7
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "2:4",
+        "slot": 2,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 5,
+        "max_edge_overlap": 14,
+        "hits": [
+          {
+            "rail_id": "slot_02_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 13,
+            "edge_overlap": 14,
+            "slot": 2,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_01_02_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              1,
+              2
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_03_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              3
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_07_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              7
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "2:40",
+        "slot": 2,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 5,
+        "max_edge_overlap": 14,
+        "hits": [
+          {
+            "rail_id": "slot_02_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 13,
+            "edge_overlap": 14,
+            "slot": 2,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_01_02_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              1,
+              2
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_03_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              3
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_07_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              7
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "2:41",
+        "slot": 2,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 5,
+        "max_edge_overlap": 14,
+        "hits": [
+          {
+            "rail_id": "slot_02_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 13,
+            "edge_overlap": 14,
+            "slot": 2,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_01_02_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              1,
+              2
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_03_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              3
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_07_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              7
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "2:42",
+        "slot": 2,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 5,
+        "max_edge_overlap": 14,
+        "hits": [
+          {
+            "rail_id": "slot_02_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 13,
+            "edge_overlap": 14,
+            "slot": 2,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_01_02_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              1,
+              2
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_03_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              3
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_07_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              7
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "2:43",
+        "slot": 2,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 5,
+        "max_edge_overlap": 14,
+        "hits": [
+          {
+            "rail_id": "slot_02_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 13,
+            "edge_overlap": 14,
+            "slot": 2,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_01_02_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              1,
+              2
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_03_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              3
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_07_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              7
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "2:44",
+        "slot": 2,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 5,
+        "max_edge_overlap": 14,
+        "hits": [
+          {
+            "rail_id": "slot_02_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 13,
+            "edge_overlap": 14,
+            "slot": 2,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_01_02_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              1,
+              2
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_03_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              3
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_07_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              7
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "2:45",
+        "slot": 2,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 5,
+        "max_edge_overlap": 14,
+        "hits": [
+          {
+            "rail_id": "slot_02_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 13,
+            "edge_overlap": 14,
+            "slot": 2,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_01_02_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              1,
+              2
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_03_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              3
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_07_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              7
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "2:46",
+        "slot": 2,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 5,
+        "max_edge_overlap": 14,
+        "hits": [
+          {
+            "rail_id": "slot_02_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 13,
+            "edge_overlap": 14,
+            "slot": 2,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_01_02_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              1,
+              2
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_03_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              3
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_07_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              7
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "2:47",
+        "slot": 2,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 5,
+        "max_edge_overlap": 14,
+        "hits": [
+          {
+            "rail_id": "slot_02_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 13,
+            "edge_overlap": 14,
+            "slot": 2,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_01_02_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              1,
+              2
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_03_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              3
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_07_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              7
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "2:48",
+        "slot": 2,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 5,
+        "max_edge_overlap": 14,
+        "hits": [
+          {
+            "rail_id": "slot_02_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 13,
+            "edge_overlap": 14,
+            "slot": 2,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_01_02_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              1,
+              2
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_03_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              3
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_07_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              7
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "2:49",
+        "slot": 2,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 5,
+        "max_edge_overlap": 14,
+        "hits": [
+          {
+            "rail_id": "slot_02_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 13,
+            "edge_overlap": 14,
+            "slot": 2,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_01_02_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              1,
+              2
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_03_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              3
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_07_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              7
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "2:5",
+        "slot": 2,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 5,
+        "max_edge_overlap": 14,
+        "hits": [
+          {
+            "rail_id": "slot_02_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 13,
+            "edge_overlap": 14,
+            "slot": 2,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_01_02_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              1,
+              2
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_03_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              3
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_07_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              7
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "2:50",
+        "slot": 2,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 5,
+        "max_edge_overlap": 14,
+        "hits": [
+          {
+            "rail_id": "slot_02_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 13,
+            "edge_overlap": 14,
+            "slot": 2,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_01_02_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              1,
+              2
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_03_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              3
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_07_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              7
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "2:51",
+        "slot": 2,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 5,
+        "max_edge_overlap": 14,
+        "hits": [
+          {
+            "rail_id": "slot_02_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 13,
+            "edge_overlap": 14,
+            "slot": 2,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_01_02_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              1,
+              2
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_03_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              3
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_07_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              7
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "2:52",
+        "slot": 2,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 5,
+        "max_edge_overlap": 14,
+        "hits": [
+          {
+            "rail_id": "slot_02_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 13,
+            "edge_overlap": 14,
+            "slot": 2,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_01_02_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              1,
+              2
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_03_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              3
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_07_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              7
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 17,
+            "edge_overlap": 4,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      }
+    ],
+    "top_by_hit_count": [
+      {
+        "root": "14:0",
+        "slot": 14,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 18,
+        "max_edge_overlap": 4,
+        "hits": [
+          {
+            "rail_id": "slot_05_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 5,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_08_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 8,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_10_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 10,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_14_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 14,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_05_10_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              10
+            ]
+          },
+          {
+            "rail_id": "slot_pair_05_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_08_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              8,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_10_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              10,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_00_05_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              0,
+              5
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "14:1",
+        "slot": 14,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 18,
+        "max_edge_overlap": 4,
+        "hits": [
+          {
+            "rail_id": "slot_05_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 5,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_08_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 8,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_10_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 10,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_14_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 14,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_05_10_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              10
+            ]
+          },
+          {
+            "rail_id": "slot_pair_05_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_08_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              8,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_10_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              10,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_00_05_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              0,
+              5
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "14:10",
+        "slot": 14,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 18,
+        "max_edge_overlap": 4,
+        "hits": [
+          {
+            "rail_id": "slot_05_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 5,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_08_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 8,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_10_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 10,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_14_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 14,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_05_10_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              10
+            ]
+          },
+          {
+            "rail_id": "slot_pair_05_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_08_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              8,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_10_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              10,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_00_05_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              0,
+              5
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "14:11",
+        "slot": 14,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 18,
+        "max_edge_overlap": 4,
+        "hits": [
+          {
+            "rail_id": "slot_05_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 5,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_08_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 8,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_10_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 10,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_14_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 14,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_05_10_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              10
+            ]
+          },
+          {
+            "rail_id": "slot_pair_05_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_08_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              8,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_10_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              10,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_00_05_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              0,
+              5
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "14:12",
+        "slot": 14,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 18,
+        "max_edge_overlap": 4,
+        "hits": [
+          {
+            "rail_id": "slot_05_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 5,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_08_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 8,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_10_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 10,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_14_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 14,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_05_10_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              10
+            ]
+          },
+          {
+            "rail_id": "slot_pair_05_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_08_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              8,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_10_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              10,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_00_05_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              0,
+              5
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "14:13",
+        "slot": 14,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 18,
+        "max_edge_overlap": 4,
+        "hits": [
+          {
+            "rail_id": "slot_05_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 5,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_08_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 8,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_10_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 10,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_14_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 14,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_05_10_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              10
+            ]
+          },
+          {
+            "rail_id": "slot_pair_05_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_08_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              8,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_10_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              10,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_00_05_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              0,
+              5
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "14:14",
+        "slot": 14,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 18,
+        "max_edge_overlap": 4,
+        "hits": [
+          {
+            "rail_id": "slot_05_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 5,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_08_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 8,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_10_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 10,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_14_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 14,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_05_10_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              10
+            ]
+          },
+          {
+            "rail_id": "slot_pair_05_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_08_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              8,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_10_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              10,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_00_05_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              0,
+              5
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "14:15",
+        "slot": 14,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 18,
+        "max_edge_overlap": 4,
+        "hits": [
+          {
+            "rail_id": "slot_05_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 5,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_08_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 8,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_10_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 10,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_14_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 14,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_05_10_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              10
+            ]
+          },
+          {
+            "rail_id": "slot_pair_05_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_08_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              8,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_10_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              10,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_00_05_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              0,
+              5
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "14:16",
+        "slot": 14,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 18,
+        "max_edge_overlap": 4,
+        "hits": [
+          {
+            "rail_id": "slot_05_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 5,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_08_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 8,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_10_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 10,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_14_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 14,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_05_10_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              10
+            ]
+          },
+          {
+            "rail_id": "slot_pair_05_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_08_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              8,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_10_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              10,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_00_05_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              0,
+              5
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "14:17",
+        "slot": 14,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 18,
+        "max_edge_overlap": 4,
+        "hits": [
+          {
+            "rail_id": "slot_05_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 5,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_08_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 8,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_10_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 10,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_14_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 14,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_05_10_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              10
+            ]
+          },
+          {
+            "rail_id": "slot_pair_05_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_08_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              8,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_10_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              10,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_00_05_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              0,
+              5
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "14:18",
+        "slot": 14,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 18,
+        "max_edge_overlap": 4,
+        "hits": [
+          {
+            "rail_id": "slot_05_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 5,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_08_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 8,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_10_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 10,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_14_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 14,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_05_10_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              10
+            ]
+          },
+          {
+            "rail_id": "slot_pair_05_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_08_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              8,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_10_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              10,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_00_05_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              0,
+              5
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "14:19",
+        "slot": 14,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 18,
+        "max_edge_overlap": 4,
+        "hits": [
+          {
+            "rail_id": "slot_05_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 5,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_08_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 8,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_10_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 10,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_14_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 14,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_05_10_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              10
+            ]
+          },
+          {
+            "rail_id": "slot_pair_05_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_08_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              8,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_10_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              10,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_00_05_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              0,
+              5
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "14:2",
+        "slot": 14,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 18,
+        "max_edge_overlap": 4,
+        "hits": [
+          {
+            "rail_id": "slot_05_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 5,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_08_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 8,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_10_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 10,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_14_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 14,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_05_10_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              10
+            ]
+          },
+          {
+            "rail_id": "slot_pair_05_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_08_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              8,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_10_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              10,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_00_05_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              0,
+              5
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "14:20",
+        "slot": 14,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 18,
+        "max_edge_overlap": 4,
+        "hits": [
+          {
+            "rail_id": "slot_05_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 5,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_08_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 8,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_10_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 10,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_14_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 14,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_05_10_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              10
+            ]
+          },
+          {
+            "rail_id": "slot_pair_05_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_08_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              8,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_10_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              10,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_00_05_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              0,
+              5
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "14:21",
+        "slot": 14,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 18,
+        "max_edge_overlap": 4,
+        "hits": [
+          {
+            "rail_id": "slot_05_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 5,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_08_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 8,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_10_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 10,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_14_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 14,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_05_10_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              10
+            ]
+          },
+          {
+            "rail_id": "slot_pair_05_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_08_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              8,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_10_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              10,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_00_05_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              0,
+              5
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "14:22",
+        "slot": 14,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 18,
+        "max_edge_overlap": 4,
+        "hits": [
+          {
+            "rail_id": "slot_05_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 5,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_08_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 8,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_10_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 10,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_14_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 14,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_05_10_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              10
+            ]
+          },
+          {
+            "rail_id": "slot_pair_05_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_08_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              8,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_10_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              10,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_00_05_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              0,
+              5
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "14:23",
+        "slot": 14,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 18,
+        "max_edge_overlap": 4,
+        "hits": [
+          {
+            "rail_id": "slot_05_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 5,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_08_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 8,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_10_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 10,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_14_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 14,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_05_10_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              10
+            ]
+          },
+          {
+            "rail_id": "slot_pair_05_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_08_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              8,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_10_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              10,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_00_05_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              0,
+              5
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "14:24",
+        "slot": 14,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 18,
+        "max_edge_overlap": 4,
+        "hits": [
+          {
+            "rail_id": "slot_05_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 5,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_08_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 8,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_10_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 10,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_14_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 14,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_05_10_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              10
+            ]
+          },
+          {
+            "rail_id": "slot_pair_05_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_08_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              8,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_10_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              10,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_00_05_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              0,
+              5
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "14:25",
+        "slot": 14,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 18,
+        "max_edge_overlap": 4,
+        "hits": [
+          {
+            "rail_id": "slot_05_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 5,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_08_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 8,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_10_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 10,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_14_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 14,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_05_10_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              10
+            ]
+          },
+          {
+            "rail_id": "slot_pair_05_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_08_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              8,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_10_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              10,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_00_05_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              0,
+              5
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "14:26",
+        "slot": 14,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 18,
+        "max_edge_overlap": 4,
+        "hits": [
+          {
+            "rail_id": "slot_05_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 5,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_08_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 8,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_10_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 10,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_14_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 14,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_05_10_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              10
+            ]
+          },
+          {
+            "rail_id": "slot_pair_05_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_08_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              8,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_10_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              10,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_00_05_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              0,
+              5
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "14:27",
+        "slot": 14,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 18,
+        "max_edge_overlap": 4,
+        "hits": [
+          {
+            "rail_id": "slot_05_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 5,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_08_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 8,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_10_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 10,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_14_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 14,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_05_10_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              10
+            ]
+          },
+          {
+            "rail_id": "slot_pair_05_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_08_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              8,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_10_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              10,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_00_05_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              0,
+              5
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "14:28",
+        "slot": 14,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 18,
+        "max_edge_overlap": 4,
+        "hits": [
+          {
+            "rail_id": "slot_05_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 5,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_08_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 8,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_10_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 10,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_14_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 14,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_05_10_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              10
+            ]
+          },
+          {
+            "rail_id": "slot_pair_05_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_08_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              8,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_10_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              10,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_00_05_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              0,
+              5
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "14:29",
+        "slot": 14,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 18,
+        "max_edge_overlap": 4,
+        "hits": [
+          {
+            "rail_id": "slot_05_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 5,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_08_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 8,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_10_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 10,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_14_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 14,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_05_10_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              10
+            ]
+          },
+          {
+            "rail_id": "slot_pair_05_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_08_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              8,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_10_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              10,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_00_05_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              0,
+              5
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "14:3",
+        "slot": 14,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 18,
+        "max_edge_overlap": 4,
+        "hits": [
+          {
+            "rail_id": "slot_05_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 5,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_08_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 8,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_10_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 10,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_14_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 14,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_05_10_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              10
+            ]
+          },
+          {
+            "rail_id": "slot_pair_05_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_08_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              8,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_10_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              10,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_00_05_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              0,
+              5
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "14:30",
+        "slot": 14,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 18,
+        "max_edge_overlap": 4,
+        "hits": [
+          {
+            "rail_id": "slot_05_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 5,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_08_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 8,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_10_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 10,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_14_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 14,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_05_10_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              10
+            ]
+          },
+          {
+            "rail_id": "slot_pair_05_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_08_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              8,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_10_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              10,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_00_05_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              0,
+              5
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "14:31",
+        "slot": 14,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 18,
+        "max_edge_overlap": 4,
+        "hits": [
+          {
+            "rail_id": "slot_05_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 5,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_08_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 8,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_10_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 10,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_14_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 14,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_05_10_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              10
+            ]
+          },
+          {
+            "rail_id": "slot_pair_05_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_08_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              8,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_10_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              10,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_00_05_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              0,
+              5
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "14:32",
+        "slot": 14,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 18,
+        "max_edge_overlap": 4,
+        "hits": [
+          {
+            "rail_id": "slot_05_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 5,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_08_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 8,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_10_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 10,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_14_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 14,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_05_10_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              10
+            ]
+          },
+          {
+            "rail_id": "slot_pair_05_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_08_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              8,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_10_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              10,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_00_05_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              0,
+              5
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "14:33",
+        "slot": 14,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 18,
+        "max_edge_overlap": 4,
+        "hits": [
+          {
+            "rail_id": "slot_05_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 5,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_08_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 8,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_10_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 10,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_14_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 14,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_05_10_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              10
+            ]
+          },
+          {
+            "rail_id": "slot_pair_05_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_08_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              8,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_10_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              10,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_00_05_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              0,
+              5
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "14:34",
+        "slot": 14,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 18,
+        "max_edge_overlap": 4,
+        "hits": [
+          {
+            "rail_id": "slot_05_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 5,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_08_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 8,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_10_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 10,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_14_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 14,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_05_10_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              10
+            ]
+          },
+          {
+            "rail_id": "slot_pair_05_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_08_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              8,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_10_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              10,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_00_05_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              0,
+              5
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "root": "14:35",
+        "slot": 14,
+        "vertex_count": 29,
+        "edge_count": 30,
+        "edge_hit_count": 18,
+        "max_edge_overlap": 4,
+        "hits": [
+          {
+            "rail_id": "slot_05_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 5,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_08_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 8,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_10_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 10,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_14_internal_carrier",
+            "set_id": "slot_internal_carriers",
+            "vertex_overlap": 5,
+            "edge_overlap": 4,
+            "slot": 14,
+            "slot_pair": null
+          },
+          {
+            "rail_id": "slot_pair_05_10_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              10
+            ]
+          },
+          {
+            "rail_id": "slot_pair_05_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              5,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_08_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              8,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_10_14_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 10,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              10,
+              14
+            ]
+          },
+          {
+            "rail_id": "slot_pair_00_05_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              0,
+              5
+            ]
+          },
+          {
+            "rail_id": "slot_pair_02_08_boundary_carrier",
+            "set_id": "slot_pair_boundary_carriers",
+            "vertex_overlap": 6,
+            "edge_overlap": 1,
+            "slot": null,
+            "slot_pair": [
+              2,
+              8
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

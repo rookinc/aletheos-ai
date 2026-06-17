@@ -791,3 +791,33 @@ h1 {
     height: 2.72rem;
   }
 }
+
+/* KISS state JSON download link */
+.stage-console-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 1.9rem;
+  padding: 0 0.75rem;
+  border: 1px solid rgba(223, 195, 123, 0.34);
+  border-radius: 999px;
+  background: rgba(223, 195, 123, 0.08);
+  color: rgba(237, 246, 255, 0.88);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.stage-console-action:active {
+  transform: translateY(1px);
+}
+
+@media (max-width: 440px) {
+  .stage-console-action {
+    min-height: 1.75rem;
+    padding: 0 0.62rem;
+    font-size: 0.58rem;
+  }
+}

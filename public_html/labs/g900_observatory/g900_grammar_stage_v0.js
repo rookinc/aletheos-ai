@@ -196,15 +196,15 @@ function readRange01(id, fallback) {
 }
 
 function buildG900ViewerStateObject(state) {
-  const grammarVersion = document.documentElement.dataset.g900Grammar || null;
-  const kernelVersion = document.documentElement.dataset.g900Kernel || null;
+  const grammarVersion = document.documentElement.dataset.g900Grammar || "grammar-001";
+  const kernelVersion = document.documentElement.dataset.g900Kernel || "hello-001";
   const bodyVersion = activeStaticBody ? activeStaticBody.version : null;
 
   return {
     schema: "g900.viewer.state",
     version: "state-001",
     export_ready: false,
-    stage: "g900_blank_rebuild",
+    stage: "g900_full_body_observatory",
     kernel: {
       version: kernelVersion
     },
@@ -460,6 +460,24 @@ function ensureSheetControls() {
   });
 }
 
+
+function bindVisibleStateJsonDownload() {
+  const link = document.getElementById("download-state-json");
+  if (!link || link.dataset.bound === "1") return;
+
+  link.dataset.bound = "1";
+
+  link.addEventListener("click", () => {
+    const pre = document.getElementById("viewer-state-object");
+    const payload = pre ? pre.textContent : "{}";
+    const stamp = new Date().toISOString().replace(/[:.]/g, "-");
+
+    link.href = "data:application/json;charset=utf-8," + encodeURIComponent(payload + "\n");
+    link.download = "g900_viewer_state_" + stamp + ".json";
+  });
+}
+
+
 function boot() {
   loadStaticBodyReadout();
   const canvas = document.getElementById("stage-canvas");
@@ -467,6 +485,7 @@ function boot() {
 
   ensureSheetControls();
   bindGraphLayerPanel();
+  bindVisibleStateJsonDownload();
 
   const ctx = canvas.getContext("2d");
 

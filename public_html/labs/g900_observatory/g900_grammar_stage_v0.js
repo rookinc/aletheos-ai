@@ -1,7 +1,6 @@
 import { readG900StaticBody, getStaticBodySummary } from "./kernel/g900_static_body.js";
 import { readG900OverlayRegistry, getG900OverlaySummary } from "./kernel/g900_overlays.js";
 import { readG900CarrierRegistry, getG900CarrierSummary } from "./kernel/g900_carriers.js";
-import { readG900MarkerRegistry, getG900MarkerSummary } from "./kernel/g900_markers.js";
 import { readG900ChannelRegistry, getG900ChannelSummary } from "./kernel/g900_channels.js";
 const TAU = Math.PI * 2;
 const DEFAULT_SHEET_RATE = 333;
@@ -60,7 +59,6 @@ function getCarrierRailIdsForFamily(familyMode) {
 let activeStaticBody = null;
 let activeOverlayRegistry = null;
 let activeCarrierRegistry = null;
-let activeMarkerRegistry = null;
 let activeChannelRegistry = null;
 let carrierRenderState = {
   version: "0.1",
@@ -336,7 +334,6 @@ function buildG900ViewerStateObject(state) {
     },
     overlays: activeOverlayRegistry ? getG900OverlaySummary(activeOverlayRegistry) : null,
     carriers: activeCarrierRegistry ? getG900CarrierSummary(activeCarrierRegistry) : null,
-    markers: activeMarkerRegistry ? getG900MarkerSummary(activeMarkerRegistry) : null,
     channels: activeChannelRegistry ? getG900ChannelSummary(activeChannelRegistry) : null,
     render: {
       carriers: {
@@ -445,13 +442,6 @@ async function loadStaticBodyReadout() {
     }
 
     console.info("[G900 static body]", activeStaticBody);
-  }
-
-  try {
-    activeMarkerRegistry = await readG900MarkerRegistry();
-  } catch (error) {
-    console.warn("G900 marker registry unavailable", error);
-    activeMarkerRegistry = null;
   } catch (error) {
     activeStaticBody = null;
 

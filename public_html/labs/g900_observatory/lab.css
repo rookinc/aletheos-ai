@@ -839,3 +839,135 @@ h1 {
   color: rgba(218, 230, 245, 0.72);
   line-height: 1.35;
 }
+
+/* G900 unsupported phase step note */
+.g900-boundary-note-card {
+  border: 1px solid rgba(218, 180, 92, 0.35);
+  background: linear-gradient(180deg, rgba(218, 180, 92, 0.08), rgba(255, 255, 255, 0.02));
+}
+
+.g900-boundary-note-kicker {
+  margin-bottom: 0.35rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.g900-boundary-note-title {
+  margin-bottom: 0.6rem;
+}
+
+.g900-boundary-note-summary {
+  margin: 0 0 0.75rem;
+  line-height: 1.45;
+}
+
+.g900-boundary-note-facts {
+  display: grid;
+  gap: 0.4rem;
+  margin: 0.75rem 0;
+}
+
+.g900-boundary-note-facts div {
+  display: grid;
+  grid-template-columns: minmax(7rem, 0.8fr) 1fr;
+  gap: 0.5rem;
+  align-items: baseline;
+}
+
+.g900-boundary-note-facts dt {
+  font-size: 0.78rem;
+  opacity: 0.68;
+}
+
+.g900-boundary-note-facts dd {
+  margin: 0;
+  font-size: 0.88rem;
+}
+
+.g900-boundary-note-details {
+  margin-top: 0.75rem;
+}
+
+.g900-boundary-note-details summary {
+  cursor: pointer;
+  opacity: 0.86;
+}
+
+.g900-boundary-note-details p,
+.g900-boundary-note-details li,
+.g900-boundary-note-small,
+.g900-boundary-note-receipt {
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.g900-boundary-note-muted {
+  opacity: 0.75;
+}
+
+.g900-boundary-note-receipt {
+  margin-top: 0.75rem;
+  opacity: 0.68;
+}
+
+.g900-boundary-note-receipt code {
+  white-space: normal;
+  word-break: break-word;
+}
+
+/* G900 header instructions dropdown */
+.g900-header-instructions {
+  margin-top: 0.85rem;
+  border: 1px solid rgba(218, 180, 92, 0.35);
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(218, 180, 92, 0.08), rgba(255, 255, 255, 0.02));
+  overflow: hidden;
+}
+
+.g900-header-instructions > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.75rem 0.9rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.g900-header-instructions > summary::-webkit-details-marker {
+  display: none;
+}
+
+.g900-header-instructions-label {
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.82;
+}
+
+.g900-header-instructions-chip {
+  border: 1px solid rgba(218, 180, 92, 0.32);
+  border-radius: 999px;
+  padding: 0.18rem 0.5rem;
+  font-size: 0.72rem;
+  opacity: 0.78;
+}
+
+.g900-header-instructions .g900-boundary-note-body {
+  padding: 0 0.9rem 0.9rem;
+}
+
+.g900-boundary-note-boundary {
+  margin-top: 0.8rem;
+}
+
+.g900-boundary-note-boundary h3 {
+  margin: 0 0 0.35rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.72;
+}
+

@@ -1,0 +1,315 @@
+{
+  "schema": "g900.channel_source_inventory",
+  "version": "1",
+  "status": "channel_source_inventory_recorded",
+  "audit_pass": true,
+  "body": "g900",
+  "boundary": {
+    "inventory_only": true,
+    "channels_admitted": false,
+    "channel_registry_modified": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "physics_claim": false,
+    "force_claim": false
+  },
+  "input_paths": {
+    "carriers": "public_html/labs/g900_observatory/data/g900_carriers.v0.1.json",
+    "channels": "public_html/labs/g900_observatory/data/g900_channels.v0.1.json"
+  },
+  "source_count_fields": {
+    "top_level_carrier_set_count": null,
+    "top_level_rail_count": null,
+    "counts_object": {
+      "carrier_sets": 3,
+      "rails": 46,
+      "vertices_counted_with_multiplicity": 4529,
+      "edges_counted_with_multiplicity": 3630
+    },
+    "count_method_used": "derived_from_carrier_sets"
+  },
+  "checks": {
+    "carrier_registry_exists": true,
+    "channel_registry_exists": true,
+    "carrier_sets_array_present": true,
+    "derived_carrier_set_count_is_3": true,
+    "derived_rail_count_is_46": true,
+    "derived_kind_counts_match_expected": true,
+    "channel_scaffold_status_ok": true,
+    "channel_count_zero": true,
+    "channel_set_count_zero": true,
+    "no_channel_admission_performed": true,
+    "body_not_mutated_by_channels": true,
+    "no_channel_physics_claim": true,
+    "all_candidates_marked_not_admitted": true
+  },
+  "carrier_summary": {
+    "carrier_set_count": 3,
+    "rail_count": 46,
+    "kind_counts": {
+      "source_provenance_rail": 1,
+      "slot_internal_carrier": 15,
+      "slot_pair_boundary_carrier": 30
+    },
+    "set_counts": {
+      "source_provenance_scaffold": 1,
+      "slot_internal_carriers": 15,
+      "slot_pair_boundary_carriers": 30
+    },
+    "slot_internal_count": 15,
+    "slot_pair_boundary_count": 30,
+    "smoke_rail_count": 1,
+    "support_rows_with_vertex_or_edge_ids": 46
+  },
+  "candidate_summary": {
+    "candidate_count": 278,
+    "candidate_kind_counts": {
+      "boundary_to_slot_internal_incidence": 60,
+      "source_scaffold_to_carrier_handle": 45,
+      "support_overlap_handle": 173
+    },
+    "support_overlap_candidate_count": 173
+  },
+  "candidate_samples": [
+    {
+      "candidate_kind": "boundary_to_slot_internal_incidence",
+      "source_rail_id": "slot_pair_00_01_boundary_carrier",
+      "target_rail_id": "slot_00_internal_carrier",
+      "reason": "boundary carrier names one endpoint slot carried by this internal carrier",
+      "evidence": "slot_pair=00_01 endpoint_slot=00",
+      "admitted_as_channel": false
+    },
+    {
+      "candidate_kind": "boundary_to_slot_internal_incidence",
+      "source_rail_id": "slot_pair_00_01_boundary_carrier",
+      "target_rail_id": "slot_01_internal_carrier",
+      "reason": "boundary carrier names one endpoint slot carried by this internal carrier",
+      "evidence": "slot_pair=00_01 endpoint_slot=01",
+      "admitted_as_channel": false
+    },
+    {
+      "candidate_kind": "boundary_to_slot_internal_incidence",
+      "source_rail_id": "slot_pair_00_04_boundary_carrier",
+      "target_rail_id": "slot_00_internal_carrier",
+      "reason": "boundary carrier names one endpoint slot carried by this internal carrier",
+      "evidence": "slot_pair=00_04 endpoint_slot=00",
+      "admitted_as_channel": false
+    },
+    {
+      "candidate_kind": "boundary_to_slot_internal_incidence",
+      "source_rail_id": "slot_pair_00_04_boundary_carrier",
+      "target_rail_id": "slot_04_internal_carrier",
+      "reason": "boundary carrier names one endpoint slot carried by this internal carrier",
+      "evidence": "slot_pair=00_04 endpoint_slot=04",
+      "admitted_as_channel": false
+    },
+    {
+      "candidate_kind": "boundary_to_slot_internal_incidence",
+      "source_rail_id": "slot_pair_00_05_boundary_carrier",
+      "target_rail_id": "slot_00_internal_carrier",
+      "reason": "boundary carrier names one endpoint slot carried by this internal carrier",
+      "evidence": "slot_pair=00_05 endpoint_slot=00",
+      "admitted_as_channel": false
+    },
+    {
+      "candidate_kind": "boundary_to_slot_internal_incidence",
+      "source_rail_id": "slot_pair_00_05_boundary_carrier",
+      "target_rail_id": "slot_05_internal_carrier",
+      "reason": "boundary carrier names one endpoint slot carried by this internal carrier",
+      "evidence": "slot_pair=00_05 endpoint_slot=05",
+      "admitted_as_channel": false
+    },
+    {
+      "candidate_kind": "boundary_to_slot_internal_incidence",
+      "source_rail_id": "slot_pair_00_06_boundary_carrier",
+      "target_rail_id": "slot_00_internal_carrier",
+      "reason": "boundary carrier names one endpoint slot carried by this internal carrier",
+      "evidence": "slot_pair=00_06 endpoint_slot=00",
+      "admitted_as_channel": false
+    },
+    {
+      "candidate_kind": "boundary_to_slot_internal_incidence",
+      "source_rail_id": "slot_pair_00_06_boundary_carrier",
+      "target_rail_id": "slot_06_internal_carrier",
+      "reason": "boundary carrier names one endpoint slot carried by this internal carrier",
+      "evidence": "slot_pair=00_06 endpoint_slot=06",
+      "admitted_as_channel": false
+    },
+    {
+      "candidate_kind": "boundary_to_slot_internal_incidence",
+      "source_rail_id": "slot_pair_01_02_boundary_carrier",
+      "target_rail_id": "slot_01_internal_carrier",
+      "reason": "boundary carrier names one endpoint slot carried by this internal carrier",
+      "evidence": "slot_pair=01_02 endpoint_slot=01",
+      "admitted_as_channel": false
+    },
+    {
+      "candidate_kind": "boundary_to_slot_internal_incidence",
+      "source_rail_id": "slot_pair_01_02_boundary_carrier",
+      "target_rail_id": "slot_02_internal_carrier",
+      "reason": "boundary carrier names one endpoint slot carried by this internal carrier",
+      "evidence": "slot_pair=01_02 endpoint_slot=02",
+      "admitted_as_channel": false
+    },
+    {
+      "candidate_kind": "boundary_to_slot_internal_incidence",
+      "source_rail_id": "slot_pair_01_06_boundary_carrier",
+      "target_rail_id": "slot_01_internal_carrier",
+      "reason": "boundary carrier names one endpoint slot carried by this internal carrier",
+      "evidence": "slot_pair=01_06 endpoint_slot=01",
+      "admitted_as_channel": false
+    },
+    {
+      "candidate_kind": "boundary_to_slot_internal_incidence",
+      "source_rail_id": "slot_pair_01_06_boundary_carrier",
+      "target_rail_id": "slot_06_internal_carrier",
+      "reason": "boundary carrier names one endpoint slot carried by this internal carrier",
+      "evidence": "slot_pair=01_06 endpoint_slot=06",
+      "admitted_as_channel": false
+    },
+    {
+      "candidate_kind": "boundary_to_slot_internal_incidence",
+      "source_rail_id": "slot_pair_01_07_boundary_carrier",
+      "target_rail_id": "slot_01_internal_carrier",
+      "reason": "boundary carrier names one endpoint slot carried by this internal carrier",
+      "evidence": "slot_pair=01_07 endpoint_slot=01",
+      "admitted_as_channel": false
+    },
+    {
+      "candidate_kind": "boundary_to_slot_internal_incidence",
+      "source_rail_id": "slot_pair_01_07_boundary_carrier",
+      "target_rail_id": "slot_07_internal_carrier",
+      "reason": "boundary carrier names one endpoint slot carried by this internal carrier",
+      "evidence": "slot_pair=01_07 endpoint_slot=07",
+      "admitted_as_channel": false
+    },
+    {
+      "candidate_kind": "boundary_to_slot_internal_incidence",
+      "source_rail_id": "slot_pair_02_03_boundary_carrier",
+      "target_rail_id": "slot_02_internal_carrier",
+      "reason": "boundary carrier names one endpoint slot carried by this internal carrier",
+      "evidence": "slot_pair=02_03 endpoint_slot=02",
+      "admitted_as_channel": false
+    },
+    {
+      "candidate_kind": "boundary_to_slot_internal_incidence",
+      "source_rail_id": "slot_pair_02_03_boundary_carrier",
+      "target_rail_id": "slot_03_internal_carrier",
+      "reason": "boundary carrier names one endpoint slot carried by this internal carrier",
+      "evidence": "slot_pair=02_03 endpoint_slot=03",
+      "admitted_as_channel": false
+    },
+    {
+      "candidate_kind": "boundary_to_slot_internal_incidence",
+      "source_rail_id": "slot_pair_02_07_boundary_carrier",
+      "target_rail_id": "slot_02_internal_carrier",
+      "reason": "boundary carrier names one endpoint slot carried by this internal carrier",
+      "evidence": "slot_pair=02_07 endpoint_slot=02",
+      "admitted_as_channel": false
+    },
+    {
+      "candidate_kind": "boundary_to_slot_internal_incidence",
+      "source_rail_id": "slot_pair_02_07_boundary_carrier",
+      "target_rail_id": "slot_07_internal_carrier",
+      "reason": "boundary carrier names one endpoint slot carried by this internal carrier",
+      "evidence": "slot_pair=02_07 endpoint_slot=07",
+      "admitted_as_channel": false
+    },
+    {
+      "candidate_kind": "boundary_to_slot_internal_incidence",
+      "source_rail_id": "slot_pair_02_08_boundary_carrier",
+      "target_rail_id": "slot_02_internal_carrier",
+      "reason": "boundary carrier names one endpoint slot carried by this internal carrier",
+      "evidence": "slot_pair=02_08 endpoint_slot=02",
+      "admitted_as_channel": false
+    },
+    {
+      "candidate_kind": "boundary_to_slot_internal_incidence",
+      "source_rail_id": "slot_pair_02_08_boundary_carrier",
+      "target_rail_id": "slot_08_internal_carrier",
+      "reason": "boundary carrier names one endpoint slot carried by this internal carrier",
+      "evidence": "slot_pair=02_08 endpoint_slot=08",
+      "admitted_as_channel": false
+    },
+    {
+      "candidate_kind": "boundary_to_slot_internal_incidence",
+      "source_rail_id": "slot_pair_03_04_boundary_carrier",
+      "target_rail_id": "slot_03_internal_carrier",
+      "reason": "boundary carrier names one endpoint slot carried by this internal carrier",
+      "evidence": "slot_pair=03_04 endpoint_slot=03",
+      "admitted_as_channel": false
+    },
+    {
+      "candidate_kind": "boundary_to_slot_internal_incidence",
+      "source_rail_id": "slot_pair_03_04_boundary_carrier",
+      "target_rail_id": "slot_04_internal_carrier",
+      "reason": "boundary carrier names one endpoint slot carried by this internal carrier",
+      "evidence": "slot_pair=03_04 endpoint_slot=04",
+      "admitted_as_channel": false
+    },
+    {
+      "candidate_kind": "boundary_to_slot_internal_incidence",
+      "source_rail_id": "slot_pair_03_08_boundary_carrier",
+      "target_rail_id": "slot_03_internal_carrier",
+      "reason": "boundary carrier names one endpoint slot carried by this internal carrier",
+      "evidence": "slot_pair=03_08 endpoint_slot=03",
+      "admitted_as_channel": false
+    },
+    {
+      "candidate_kind": "boundary_to_slot_internal_incidence",
+      "source_rail_id": "slot_pair_03_08_boundary_carrier",
+      "target_rail_id": "slot_08_internal_carrier",
+      "reason": "boundary carrier names one endpoint slot carried by this internal carrier",
+      "evidence": "slot_pair=03_08 endpoint_slot=08",
+      "admitted_as_channel": false
+    },
+    {
+      "candidate_kind": "boundary_to_slot_internal_incidence",
+      "source_rail_id": "slot_pair_03_09_boundary_carrier",
+      "target_rail_id": "slot_03_internal_carrier",
+      "reason": "boundary carrier names one endpoint slot carried by this internal carrier",
+      "evidence": "slot_pair=03_09 endpoint_slot=03",
+      "admitted_as_channel": false
+    },
+    {
+      "candidate_kind": "boundary_to_slot_internal_incidence",
+      "source_rail_id": "slot_pair_03_09_boundary_carrier",
+      "target_rail_id": "slot_09_internal_carrier",
+      "reason": "boundary carrier names one endpoint slot carried by this internal carrier",
+      "evidence": "slot_pair=03_09 endpoint_slot=09",
+      "admitted_as_channel": false
+    },
+    {
+      "candidate_kind": "boundary_to_slot_internal_incidence",
+      "source_rail_id": "slot_pair_04_05_boundary_carrier",
+      "target_rail_id": "slot_04_internal_carrier",
+      "reason": "boundary carrier names one endpoint slot carried by this internal carrier",
+      "evidence": "slot_pair=04_05 endpoint_slot=04",
+      "admitted_as_channel": false
+    },
+    {
+      "candidate_kind": "boundary_to_slot_internal_incidence",
+      "source_rail_id": "slot_pair_04_05_boundary_carrier",
+      "target_rail_id": "slot_05_internal_carrier",
+      "reason": "boundary carrier names one endpoint slot carried by this internal carrier",
+      "evidence": "slot_pair=04_05 endpoint_slot=05",
+      "admitted_as_channel": false
+    },
+    {
+      "candidate_kind": "boundary_to_slot_internal_incidence",
+      "source_rail_id": "slot_pair_04_09_boundary_carrier",
+      "target_rail_id": "slot_04_internal_carrier",
+      "reason": "boundary carrier names one endpoint slot carried by this internal carrier",
+      "evidence": "slot_pair=04_09 endpoint_slot=04",
+      "admitted_as_channel": false
+    },
+    {
+      "candidate_kind": "boundary_to_slot_internal_incidence",
+      "source_rail_id": "slot_pair_04_09_boundary_carrier",
+      "target_rail_id": "slot_09_internal_carrier",
+      "reason": "boundary carrier names one endpoint slot carried by this internal carrier",
+      "evidence": "slot_pair=04_09 endpoint_slot=09",
+      "admitted_as_channel": false
+    }
+  ]
+}

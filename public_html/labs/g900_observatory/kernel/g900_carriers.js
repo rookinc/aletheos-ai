@@ -145,6 +145,14 @@ export function validateG900CarrierRegistry(payload) {
   }
 
   if (payload.counts) {
+
+    if (Object.prototype.hasOwnProperty.call(payload.counts, "vertices")) {
+      throw new Error("legacy carrier count field forbidden: counts.vertices");
+    }
+
+    if (Object.prototype.hasOwnProperty.call(payload.counts, "edges")) {
+      throw new Error("legacy carrier count field forbidden: counts.edges");
+    }
     requireObject(payload.counts, "carrier registry counts");
 
     if (payload.counts.carrier_sets !== carrierSetIds.size) {
@@ -155,12 +163,12 @@ export function validateG900CarrierRegistry(payload) {
       throw new Error("carrier registry counts.rails mismatch");
     }
 
-    if (payload.counts.vertices !== vertexRefCount) {
-      throw new Error("carrier registry counts.vertices mismatch");
+    if (payload.counts.vertices_counted_with_multiplicity !== vertexRefCount) {
+      throw new Error("carrier registry counts.vertices_counted_with_multiplicity mismatch");
     }
 
-    if (payload.counts.edges !== edgeRefCount) {
-      throw new Error("carrier registry counts.edges mismatch");
+    if (payload.counts.edges_counted_with_multiplicity !== edgeRefCount) {
+      throw new Error("carrier registry counts.edges_counted_with_multiplicity mismatch");
     }
   }
 

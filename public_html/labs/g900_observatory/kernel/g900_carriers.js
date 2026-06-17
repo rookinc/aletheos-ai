@@ -185,6 +185,14 @@ export function getG900CarrierSummary(payload) {
       carrier_set: "id label status mutates_body:false rails[]",
       rail: "id label kind vertex_ids[] edge_ids[] mutates_body:false source{}"
     },
+    carrier_sets: carrierSets.map((carrierSet) => {
+      return {
+        id: carrierSet.id,
+        label: carrierSet.label,
+        status: carrierSet.status,
+        rail_count: carrierSet.rails.length
+      };
+    }),
     carrier_set_count: carrierSets.length,
     rail_count: railCount,
     mutates_body: false,

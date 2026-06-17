@@ -1,9 +1,11 @@
 import { readG900StaticBody, getStaticBodySummary } from "./kernel/g900_static_body.js";
+import { readG900OverlayRegistry, getG900OverlaySummary } from "./kernel/g900_overlays.js";
 const TAU = Math.PI * 2;
 const DEFAULT_SHEET_RATE = 333;
 const MIN_ZOOM = 0.28;
 const MAX_ZOOM = 64.0;
 let activeStaticBody = null;
+let activeOverlayRegistry = null;
 
 function clamp(value, min, max) {
   return Math.max(min, Math.min(max, value));
@@ -237,6 +239,7 @@ function buildG900ViewerStateObject(state) {
         edges_opacity: readRange01("graph-edges-slider", 1)
       }
     },
+    overlays: activeOverlayRegistry ? getG900OverlaySummary(activeOverlayRegistry) : null,
     body: activeStaticBody ? {
       version: activeStaticBody.version,
       name: activeStaticBody.name,
@@ -311,6 +314,12 @@ async function loadStaticBodyReadout() {
     }
 
     activeStaticBody = readG900StaticBody(await response.json());
+    try {
+      activeOverlayRegistry = await readG900OverlayRegistry();
+    } catch (error) {
+      console.warn("G900 overlay registry unavailable", error);
+      activeOverlayRegistry = null;
+    }
     document.documentElement.dataset.g900StaticBody = activeStaticBody.version;
 
     if (line) {

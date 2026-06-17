@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>G900 Witness Observatory v0.1</title>
+  <link rel="stylesheet" href="lab.css" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3MHQ9Y1GJX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3MHQ9Y1GJX');
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow"><a href="/labs.php">Aletheos&trade; Labs</a></p>
+      <h1>G900 Witness Observatory <span class="title-version">v1.0</span></h1>
+      <details class="lede g900-instructions">
+          <summary>Instructions</summary>
+                    <div class="instructions-copy">
+            <h3>What this lab is</h3>
+            <p>
+              The G900 Witness Observatory is a viewer for a fixed 900-state witness artifact.
+              It shows the structure as a moving surface so that its shape, transport, layers,
+              and viewpoints can be inspected more easily.
+            </p>
+            <p>
+              The motion is only visual inspection. The underlying 900-point data does not
+              change when the witness shell rotates, breathes, trails, zooms, or switches view. This
+              lab is not adding new states, selecting a final law, or proving the structure by
+              animation. It is a witness surface for looking carefully at a fixed candidate
+              from multiple angles.
+            </p>
+
+            <h3>Basic controls</h3>
+            <p>
+              Use the main control row to move through the structure. The play button starts
+              and pauses the visual motion. This is the primary action. When play is active,
+              the surface moves through its inspection cycle. When paused, the witness shell remains
+              fixed at the current view.
+            </p>
+            <p>
+              The step buttons move the view one sheet backward or forward. These are useful
+              when you want to inspect a particular phase slowly instead of watching the motion
+              continuously. The reset button returns the viewer to its default inspection position.
+            </p>
+            <p>
+              The A, R, and S buttons change the viewing perspective. A means Axis. R means Ring.
+              S means Shear. Axis returns to the default axis-oriented reading. Ring shifts toward
+              circular or toroidal organization. Shear shifts toward slanted alignment, crossing
+              structure, and directional compression.
+            </p>
+            <p>
+              The Sheets/sec control changes the speed of visual inspection. A low value is better
+              for careful viewing. A high value is better for seeing large-scale motion, periodicity,
+              and repeated structure. The number box lets you enter an exact sheet speed. Use the
+              enter button beside it to apply the value.
+            </p>
+            <p>
+              The lock button controls touch interaction with the stage. When the stage is unlocked,
+              you can drag, pinch, and zoom the witness shell directly. When it is locked, the page is easier
+              to scroll without accidentally moving the witness shell.
+            </p>
+
+            <h3>Lens settings</h3>
+            <p>
+              A lens is a saved way of looking at the same fixed witness shell. A lens does not change the
+              underlying G900 artifact. It only changes the viewer settings: camera position, sheet
+              speed, layer visibility, opacity, trail strength, edges, and vertices.
+            </p>
+            <p>
+              Surface controls how strongly the outer G900 surface is shown. Body controls how
+              strongly the internal body layer is shown. Trail controls how much motion memory remains
+              visible while the witness shell is playing. A stronger trail can reveal paths and repeated motion.
+              A weaker trail gives a cleaner immediate view.
+            </p>
+            <p>
+              Edges controls whether connection lines are shown and how strongly they appear. Vertices
+              controls whether points are shown and how strongly they appear. The Lens Name dropdown
+              contains the built-in lenses and any browser-saved lenses you create.
+            </p>
+
+            <h3>Saving lenses</h3>
+            <p>
+              Save stores the current lens in this browser only. A saved lens is local to the browser
+              and device you are using. It is not uploaded to the server, not attached to an account,
+              and not stored in a cookie.
+            </p>
+            <p>
+              Use Save when you find a view you want to return to later on the same device. Give the
+              lens a name that describes what it helps you see. Saved lenses appear in the Lens Name
+              dropdown. Selecting one restores its saved view settings.
+            </p>
+            <p>
+              When a saved browser lens is selected, a trash button appears beside the Lens Name dropdown.
+              Use that button to delete the saved local copy. Deleting a lens does not affect the witness shell
+              data, the built-in lenses, or shared links.
+            </p>
+
+            <h3>Sharing lenses</h3>
+            <p>
+              Share creates a portable URL for the current view. A shared URL records the current lens
+              settings in the address itself. This makes it useful for sending a particular view to
+              someone else, saving it in notes, or opening the same view on another device.
+            </p>
+            <p>
+              Share is different from Save. Save stores a local browser lens for your own use on this
+              device. Share creates a URL that can travel.
+            </p>
+
+            <h3>What to look for</h3>
+            <p>
+              This lab is meant to help you inspect structure, not merely watch an animation. Try changing
+              the viewpoint and asking what remains stable. Does a pattern survive Axis, Ring, and Shear
+              views? Does it disappear when the surface is reduced? Does the body layer reveal something
+              the surface hides? Does the trail clarify motion, or does it obscure the immediate structure?
+            </p>
+            <p>
+              The main question is not whether this looks interesting, although it does. The stronger
+              question is: what remains accountable when the viewpoint changes?
+            </p>
+            <p>
+              A useful view makes some relation easier to test. A good lens reveals structure without
+              pretending to prove more than it shows.
+            </p>
+
+            <h3>Boundary of the lab</h3>
+            <p>
+              The G900 Witness Observatory is a renderer inspection surface. It does not claim that motion
+              creates the witness shell. It does not claim that a visual pattern is proof. It does not claim that a
+              saved lens is part of the mathematical object.
+            </p>
+            <p>
+              The artifact is fixed. The lens is a way of seeing it. The viewer helps us compare appearances
+              across controlled changes of viewpoint, layer, opacity, speed, and motion memory.
+            </p>
+            <p>
+              The purpose is to make the structure easier to question.
+            </p>
+          </div>
+        </details>
+    </div>
+ 
+  </header>
+
+  <main class="single-layout">
+    <section class="stage-card">
+      <div class="stage-toolbar" aria-label="Playback toolbar">
+        <div class="transport-button-row" aria-label="Transport controls">
+          <button id="step-back-btn" class="mini-transport-btn" type="button" aria-label="Step back one sheet">⟪</button>
+          <button id="play-pause-btn" class="mini-transport-btn" type="button" aria-label="Play or pause">▶</button>
+          <button id="reset-btn" class="mini-transport-btn" type="button" aria-label="Reset view">↻</button>
+          <button id="step-forward-btn" class="mini-transport-btn" type="button" aria-label="Step forward one sheet">⟫</button>
+        
+          <div class="camera-preset-row" aria-label="View presets">
+<button id="camera-preset-1" class="camera-preset-btn" type="button" aria-label="View Axis">A</button>
+            <button id="camera-preset-2" class="camera-preset-btn" type="button" aria-label="View Ring">R</button>
+            <button id="camera-preset-3" class="camera-preset-btn" type="button" aria-label="View Shear">S</button>
+          </div>
+        </div>
+
+        <div class="rate-control sheet-rate-control">
+          <label for="sheet-rate-slider">Sheets/sec</label>
+          <input id="sheet-rate-slider" type="range" min="0.25" max="960" step="0.25" value="30" />
+          <input id="sheet-rate-number" class="sheet-rate-number" type="number" min="0.25" max="960" step="0.25" value="30.00" inputmode="decimal" aria-label="Sheets per second value" />
+          <button id="sheet-rate-apply" class="sheet-rate-apply" type="button" aria-label="Apply sheets per second">↵</button>
+        </div>
+      </div>
+
+      <section class="stage-wrap">
+        <div class="scroll-grab-bar" aria-label="Page scroll handle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <label class="stage-lock-toggle" title="Stage lock">
+          <span class="stage-lock-text" aria-hidden="true">Pinch and Zoom</span>
+          <input type="checkbox" id="touch-response-toggle" />
+          <span aria-hidden="true" class="stage-lock-icon"></span>
+          <span class="visually-hidden">Stage lock</span>
+        </label>
+
+        <canvas id="stage-canvas"></canvas>
+        <span id="status-text" class="visually-hidden">loading</span>
+        <span id="camera-text" class="camera-overlay">camera</span>
+      </section>
+    </section>
+
+
+    <section class="card settings-card">
+        <div class="settings-card-header">
+          <h2>Stage Settings</h2>
+        </div>
+
+
+
+        <div class="force-grammar-strip" aria-label="Finite force-like grammar">
+          <p class="force-grammar-title">Force grammar</p>
+          <div class="force-chip-row">
+            <button class="force-chip force-chip-gravity" type="button" data-force-mode="gravity" aria-pressed="false"><b>Gravity</b><em>compresses</em></button>
+            <button class="force-chip force-chip-em" type="button" data-force-mode="em" aria-pressed="false"><b>EM</b><em>polarizes</em></button>
+            <button class="force-chip force-chip-strong" type="button" data-force-mode="strong" aria-pressed="false"><b>Strong</b><em>confines</em></button>
+            <button class="force-chip force-chip-weak" type="button" data-force-mode="weak" aria-pressed="false"><b>Weak</b><em>transforms</em></button>
+          </div>
+          <p class="force-grammar-note">Primary stage simulator. Select one or more grammar functions. The canvas is generated by their composition.</p>
+        </div>
+
+        <div class="view-fader-stack" aria-label="Layer faders">
+        <div class="rate-control mixer-entry-row layer-fader-row">
+          <label for="surface-opacity-slider">Surface</label>
+          <input id="surface-opacity-slider" type="range" min="0" max="100" step="1" value="50" />
+          <span id="surface-opacity-readout">50%</span>
+        </div>
+
+        <div class="rate-control mixer-entry-row layer-fader-row">
+          <label for="body-opacity-slider">Body</label>
+          <input id="body-opacity-slider" type="range" min="0" max="100" step="1" value="50" />
+          <span id="body-opacity-readout">50%</span>
+        </div>
+      </div>
+
+      <div class="rate-control mixer-entry-row">
+        <label class="mixer-check-label">
+          <input type="checkbox" id="trail-toggle" checked />
+          <span>Trail</span>
+        </label>
+        <input id="trail-slider" type="range" min="0" max="100" step="1" value="67" />
+          <span id="trail-readout">67%</span>
+      </div>
+<div class="rate-control mixer-entry-row">
+          <label class="mixer-check-label">
+            <input type="checkbox" id="edge-toggle" checked />
+            <span>Edges</span>
+          </label>
+          <input id="edge-opacity-slider" type="range" min="0" max="1" step="0.01" value="1" />
+          <span id="edge-opacity-readout">1.00</span>
+        </div>
+
+        <div class="rate-control mixer-entry-row">
+          <label class="mixer-check-label">
+            <input type="checkbox" id="vertex-toggle" checked />
+            <span>Vertices</span>
+          </label>
+          <input id="vertex-opacity-slider" type="range" min="0" max="1" step="0.01" value="1" />
+          <span id="vertex-opacity-readout">1.00</span>
+        </div>
+
+        <div class="rate-control mixer-entry-row">
+          <label class="mixer-check-label">
+            <input type="checkbox" id="active-transition-toggle" checked />
+            <span>Active Trace</span>
+          </label>
+          <input id="active-transition-opacity-slider" type="range" min="0" max="1" step="0.01" value="1" disabled />
+          <span id="active-transition-readout">On</span>
+        </div>
+
+    </section>
+    <pre id="metrics-console" class="visually-hidden">loading...</pre>
+</main>
+
+  <footer class="lab-footer g900-lab-footer">
+    <p>&copy; 2026 Centre of Recursive Inquiry.</p>
+    <p>Aletheos.ai is the public research surface for CoRI and Thalean Action Theory.</p>
+    <p>Public claims should remain inspectable: relation, action, witness, and traceable constraint.</p>
+  </footer>
+
+  <script type="module" src="g900_grammar_stage_v0.js?v=primary-grammar-10"></script>
+
+</body>
+</html>

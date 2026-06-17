@@ -219,6 +219,7 @@ function buildG900ViewerStateObject(state) {
     camera: {
       yaw: Number(state.yaw.toFixed(6)),
       pitch: Number(state.pitch.toFixed(6)),
+      roll: Number((state.roll || 0).toFixed(6)),
       zoom: Number(state.zoom.toFixed(6))
     },
     layers: {
@@ -474,6 +475,7 @@ function boot() {
     playing: false,
     yaw: 0.15,
     pitch: -0.58,
+    roll: 0,
     zoom: Number(localStorage.getItem("g900.stageZoom") || "1") || 1,
     dragging: false,
     lastX: 0,

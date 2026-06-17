@@ -12,10 +12,87 @@ export async function readG900CarrierRegistry(url = "./data/g900_carriers.v0.1.j
   return payload;
 }
 
-export function validateG900CarrierRegistry(payload) {
-  if (!payload || typeof payload !== "object") {
-    throw new Error("carrier registry must be an object");
+function requireObject(value, label) {
+  if (!value || typeof value !== "object" || Array.isArray(value)) {
+    throw new Error(label + " must be an object");
   }
+}
+
+function requireString(value, label) {
+  if (typeof value !== "string" || value.length === 0) {
+    throw new Error(label + " must be a nonempty string");
+  }
+}
+
+function requireArray(value, label) {
+  if (!Array.isArray(value)) {
+    throw new Error(label + " must be an array");
+  }
+}
+
+function requireFalse(value, label) {
+  if (value !== false) {
+    throw new Error(label + " must be false");
+  }
+}
+
+function validateStringArray(values, label) {
+  requireArray(values, label);
+
+  for (const value of values) {
+    requireString(value, label + " item");
+  }
+}
+
+function validateRail(rail, carrierSetId) {
+  requireObject(rail, "carrier rail");
+
+  requireString(rail.id, "carrier rail id");
+  requireString(rail.label, "carrier rail label");
+  requireString(rail.kind, "carrier rail kind");
+
+  requireFalse(rail.mutates_body, "carrier rail mutates_body");
+
+  validateStringArray(rail.vertex_ids, "carrier rail vertex_ids");
+  validateStringArray(rail.edge_ids, "carrier rail edge_ids");
+
+  requireObject(rail.source, "carrier rail source");
+
+  if (rail.vertex_ids.length === 0 && rail.edge_ids.length === 0) {
+    throw new Error("carrier rail must reference at least one vertex or edge: " + carrierSetId + "/" + rail.id);
+  }
+
+  return true;
+}
+
+function validateCarrierSet(carrierSet) {
+  requireObject(carrierSet, "carrier set");
+
+  requireString(carrierSet.id, "carrier set id");
+  requireString(carrierSet.label, "carrier set label");
+  requireString(carrierSet.status, "carrier set status");
+
+  requireFalse(carrierSet.mutates_body, "carrier set mutates_body");
+
+  requireArray(carrierSet.rails, "carrier set rails");
+
+  const railIds = new Set();
+
+  for (const rail of carrierSet.rails) {
+    validateRail(rail, carrierSet.id);
+
+    if (railIds.has(rail.id)) {
+      throw new Error("duplicate rail id in carrier set " + carrierSet.id + ": " + rail.id);
+    }
+
+    railIds.add(rail.id);
+  }
+
+  return true;
+}
+
+export function validateG900CarrierRegistry(payload) {
+  requireObject(payload, "carrier registry");
 
   if (payload.schema !== "g900.viewer.carriers") {
     throw new Error("unexpected carrier registry schema");
@@ -33,49 +110,57 @@ export function validateG900CarrierRegistry(payload) {
     throw new Error("carrier registry body_version must be 0.1");
   }
 
-  if (!payload.overlay || payload.overlay.id !== "carriers" || payload.overlay.layer !== 6) {
+  requireObject(payload.overlay, "carrier registry overlay");
+
+  if (payload.overlay.id !== "carriers" || payload.overlay.layer !== 6) {
     throw new Error("carrier registry must bind to overlay layer 6 carriers");
   }
 
-  if (!payload.boundary || payload.boundary.mutates_body !== false) {
-    throw new Error("carrier registry must declare mutates_body false");
-  }
+  requireObject(payload.boundary, "carrier registry boundary");
+  requireFalse(payload.boundary.mutates_body, "carrier registry boundary mutates_body");
+  requireFalse(payload.boundary.runtime_motion_authority, "carrier registry boundary runtime_motion_authority");
+  requireFalse(payload.boundary.physics_claim, "carrier registry boundary physics_claim");
 
-  if (payload.boundary.runtime_motion_authority !== false) {
-    throw new Error("carrier registry must declare runtime_motion_authority false");
-  }
+  requireArray(payload.carrier_sets, "carrier_sets");
 
-  if (payload.boundary.physics_claim !== false) {
-    throw new Error("carrier registry must declare physics_claim false");
-  }
-
-  if (!Array.isArray(payload.carrier_sets)) {
-    throw new Error("carrier_sets must be an array");
-  }
-
-  const ids = new Set();
+  const carrierSetIds = new Set();
+  let railCount = 0;
+  let vertexRefCount = 0;
+  let edgeRefCount = 0;
 
   for (const carrierSet of payload.carrier_sets) {
-    if (!carrierSet || typeof carrierSet !== "object") {
-      throw new Error("carrier set must be an object");
-    }
+    validateCarrierSet(carrierSet);
 
-    if (typeof carrierSet.id !== "string" || !carrierSet.id) {
-      throw new Error("carrier set id must be a nonempty string");
-    }
-
-    if (ids.has(carrierSet.id)) {
+    if (carrierSetIds.has(carrierSet.id)) {
       throw new Error("duplicate carrier set id: " + carrierSet.id);
     }
 
-    ids.add(carrierSet.id);
+    carrierSetIds.add(carrierSet.id);
+    railCount += carrierSet.rails.length;
 
-    if (carrierSet.mutates_body !== false) {
-      throw new Error("carrier set must declare mutates_body false: " + carrierSet.id);
+    for (const rail of carrierSet.rails) {
+      vertexRefCount += rail.vertex_ids.length;
+      edgeRefCount += rail.edge_ids.length;
+    }
+  }
+
+  if (payload.counts) {
+    requireObject(payload.counts, "carrier registry counts");
+
+    if (payload.counts.carrier_sets !== carrierSetIds.size) {
+      throw new Error("carrier registry counts.carrier_sets mismatch");
     }
 
-    if (!Array.isArray(carrierSet.rails)) {
-      throw new Error("carrier set rails must be an array: " + carrierSet.id);
+    if (payload.counts.rails !== railCount) {
+      throw new Error("carrier registry counts.rails mismatch");
+    }
+
+    if (payload.counts.vertices !== vertexRefCount) {
+      throw new Error("carrier registry counts.vertices mismatch");
+    }
+
+    if (payload.counts.edges !== edgeRefCount) {
+      throw new Error("carrier registry counts.edges mismatch");
     }
   }
 
@@ -96,6 +181,10 @@ export function getG900CarrierSummary(payload) {
     body_version: payload.body_version,
     overlay: payload.overlay,
     status: payload.status,
+    contract: {
+      carrier_set: "id label status mutates_body:false rails[]",
+      rail: "id label kind vertex_ids[] edge_ids[] mutates_body:false source{}"
+    },
     carrier_set_count: carrierSets.length,
     rail_count: railCount,
     mutates_body: false,

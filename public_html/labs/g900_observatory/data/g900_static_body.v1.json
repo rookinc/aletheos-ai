@@ -1,0 +1,31 @@
+{
+  "schema": "g900.viewer.static_body",
+  "version": "body-placeholder-001",
+  "name": "G900 static body placeholder",
+  "description": "Layer 1 placeholder body anchored to the stage grid origin. This is viewer geometry, not the theorem object.",
+  "anchor": {
+    "kind": "grid_origin",
+    "xyz": [0, 0, 0]
+  },
+  "scale": 1,
+  "vertices": [
+    { "id": "a0", "xyz": [1.35, -0.55, 0] },
+    { "id": "a1", "xyz": [0.68, -0.55, 1.17] },
+    { "id": "a2", "xyz": [-0.68, -0.55, 1.17] },
+    { "id": "a3", "xyz": [-1.35, -0.55, 0] },
+    { "id": "a4", "xyz": [-0.68, -0.55, -1.17] },
+    { "id": "a5", "xyz": [0.68, -0.55, -1.17] },
+
+    { "id": "b0", "xyz": [1.17, 0.55, 0.68] },
+    { "id": "b1", "xyz": [0, 0.55, 1.35] },
+    { "id": "b2", "xyz": [-1.17, 0.55, 0.68] },
+    { "id": "b3", "xyz": [-1.17, 0.55, -0.68] },
+    { "id": "b4", "xyz": [0, 0.55, -1.35] },
+    { "id": "b5", "xyz": [1.17, 0.55, -0.68] }
+  ],
+  "edges": [
+    ["a0", "a1"], ["a1", "a2"], ["a2", "a3"], ["a3", "a4"], ["a4", "a5"], ["a5", "a0"],
+    ["b0", "b1"], ["b1", "b2"], ["b2", "b3"], ["b3", "b4"], ["b4", "b5"], ["b5", "b0"],
+    ["a0", "b0"], ["a1", "b1"], ["a2", "b2"], ["a3", "b3"], ["a4", "b4"], ["a5", "b5"]
+  ]
+}

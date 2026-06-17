@@ -1,9 +1,11 @@
 import { readG900Grammar, getGrammarLayerStackLabel } from "./kernel/g900_grammar.js";
 import { getKernelHello } from "./kernel/g900_kernel.js";
+import { readG900StaticBody, getStaticBodySummary } from "./kernel/g900_static_body.js";
 const TAU = Math.PI * 2;
 const DEFAULT_SHEET_RATE = 333;
 const MIN_ZOOM = 0.28;
 const MAX_ZOOM = 64.0;
+let activeStaticBody = null;
 
 function clamp(value, min, max) {
   return Math.max(min, Math.min(max, value));
@@ -177,10 +179,115 @@ function drawStageGrid(ctx, w, h, dpr, state) {
   ctx.restore();
 }
 
+
+
+function graphSliderValue(id, fallback) {
+  const el = document.getElementById(id);
+  if (!el) return fallback;
+
+  const value = Number(el.value);
+  if (!Number.isFinite(value)) return fallback;
+
+  return clamp(value / 100, 0, 1);
+}
+
+function graphLayerVisible() {
+  const el = document.getElementById("graph-layer-toggle");
+  return !el || el.checked;
+}
+
+function syncGraphPanelReadouts() {
+  const verticesSlider = document.getElementById("graph-vertices-slider");
+  const verticesReadout = document.getElementById("graph-vertices-readout");
+  const edgesSlider = document.getElementById("graph-edges-slider");
+  const edgesReadout = document.getElementById("graph-edges-readout");
+
+  if (verticesSlider && verticesReadout) {
+    verticesReadout.textContent = String(verticesSlider.value);
+  }
+
+  if (edgesSlider && edgesReadout) {
+    edgesReadout.textContent = String(edgesSlider.value);
+  }
+}
+
+async function loadStaticBodyReadout() {
+  const line = document.getElementById("static-body-line");
+
+  try {
+    const response = await fetch("./data/g900_static_body.v1.json", { cache: "no-store" });
+    if (!response.ok) {
+      throw new Error("HTTP " + response.status);
+    }
+
+    const payload = await response.json();
+    activeStaticBody = readG900StaticBody(payload);
+
+    document.documentElement.dataset.g900StaticBody = activeStaticBody.version;
+
+    if (line) {
+      line.textContent = "BODY " + activeStaticBody.version + " | " + getStaticBodySummary(activeStaticBody);
+    }
+
+    console.info("[G900 static body]", activeStaticBody);
+    return activeStaticBody;
+  } catch (error) {
+    activeStaticBody = null;
+
+    if (line) {
+      line.textContent = "BODY load failed";
+    }
+
+    console.error("[G900 static body]", error);
+    return null;
+  }
+}
+
+
+function drawStaticBody(ctx, w, h, dpr, state, body) {
+  if (!body || !graphLayerVisible()) return;
+
+  const vertexAlpha = graphSliderValue("graph-vertices-slider", 0.86);
+  const edgeAlpha = graphSliderValue("graph-edges-slider", 0.78);
+
+  const byId = new Map();
+
+  for (const vertex of body.vertices) {
+    const point = [
+      (body.anchor.xyz[0] + vertex.xyz[0]) * body.scale,
+      (body.anchor.xyz[1] + vertex.xyz[1]) * body.scale,
+      (body.anchor.xyz[2] + vertex.xyz[2]) * body.scale
+    ];
+
+    byId.set(vertex.id, projectPoint(point, state, w, h, dpr));
+  }
+
+  ctx.save();
+
+  for (const edge of body.edges) {
+    const a = byId.get(edge[0]);
+    const b = byId.get(edge[1]);
+    if (!a || !b) continue;
+
+    drawLine(ctx, a, b, [223, 195, 123], edgeAlpha, 1.65);
+  }
+
+  ctx.fillStyle = "rgba(237, 246, 255, " + vertexAlpha + ")";
+
+  for (const point of byId.values()) {
+    ctx.beginPath();
+    ctx.arc(point.x, point.y, Math.max(1.6, Math.min(w, h) * 0.0032), 0, TAU);
+    ctx.fill();
+  }
+
+  ctx.restore();
+}
+
 function drawBlankStage(ctx, canvas, state) {
   const { w, h, dpr } = resizeCanvas(canvas);
   drawBackground(ctx, w, h);
   drawStageGrid(ctx, w, h, dpr, state);
+  drawStaticBody(ctx, w, h, dpr, state, activeStaticBody);
 
   ctx.save();
   ctx.textBaseline = "bottom";
@@ -298,6 +405,7 @@ async function loadGrammarReadout() {
 }
 
 function boot() {
+  loadStaticBodyReadout();
   loadGrammarReadout();
   const kernelHello = getKernelHello();
   document.documentElement.dataset.g900Kernel = kernelHello.version;
@@ -313,6 +421,14 @@ function boot() {
   if (!canvas) return;
 
   ensureSheetControls();
+  syncGraphPanelReadouts();
+
+  for (const id of ["graph-vertices-slider", "graph-edges-slider"]) {
+    const el = document.getElementById(id);
+    if (el) {
+      el.addEventListener("input", syncGraphPanelReadouts);
+    }
+  }
 
   const ctx = canvas.getContext("2d");
 

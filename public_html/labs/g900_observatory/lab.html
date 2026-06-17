@@ -56,16 +56,48 @@
     </section>
 
     <section class="lab-note">
-      <p id="kernel-status-line" class="kernel-status-line">Kernel: pending</p>
-      <p id="kernel-layer-line" class="kernel-layer-line">Grammar pending</p>
-      <p>This stage is intentionally blank. Layers will be rebuilt one at a time: vertices, edges, carrier rails, channels, force colors, and trails.</p>
-    </section>
+<div class="layer-panel graph-layer-panel" aria-label="Graph layer controls">
+        <div class="layer-panel-head">
+          <div>
+            <p class="layer-panel-eyebrow">Layer 1</p>
+            <h2>Graph</h2>
+          </div>
+          <label class="layer-switch">
+            <input id="graph-layer-toggle" type="checkbox" checked />
+            <span>On</span>
+          </label>
+        </div>
+
+        <label class="layer-slider-row" for="graph-vertices-slider">
+          <span>Vertices</span>
+          <input id="graph-vertices-slider" type="range" min="0" max="100" step="1" value="86" />
+          <output id="graph-vertices-readout">86</output>
+        </label>
+
+        <label class="layer-slider-row" for="graph-edges-slider">
+          <span>Edges</span>
+          <input id="graph-edges-slider" type="range" min="0" max="100" step="1" value="78" />
+          <output id="graph-edges-readout">78</output>
+        </label>
+      </div>
+<div class="stage-console-panel" aria-label="Stage console">
+        <div class="stage-console-head">
+          <span>Console</span>
+          <span>readout</span>
+        </div>
+        <div class="stage-console-body">
+          <p id="kernel-status-line" class="kernel-status-line">Kernel: pending</p>
+          <p id="kernel-layer-line" class="kernel-layer-line">Grammar pending</p>
+          <p id="static-body-line" class="kernel-layer-line">BODY pending</p>
+        </div>
+      </div>
+</section>
   </main>
 
   <footer class="lab-footer">
     <p>2026 Centre of Recursive Inquiry. Aletheos.ai is the public research surface for CoRI and Thalean Action Theory.</p>
   </footer>
 
-  <script type="module" src="g900_grammar_stage_v0.js?v=primary-grammar-blank-19"></script>
+  <script type="module" src="g900_grammar_stage_v0.js?v=primary-grammar-blank-23"></script>
 </body>
 </html>

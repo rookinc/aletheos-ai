@@ -1,0 +1,320 @@
+{
+  "schema": "g900.full60_phase_support_classification",
+  "version": "1",
+  "status": "full60_phase_support_classification_recorded",
+  "audit_pass": true,
+  "body": "g900",
+  "selector_family": "bounded_root_tuple_shell_depth_2_edge_limit_N",
+  "boundary": {
+    "classification_only": true,
+    "channels_admitted": false,
+    "channel_registry_modified": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "physics_claim": false,
+    "force_claim": false
+  },
+  "input_paths": {
+    "support_audit_json": "public_html/labs/g900_observatory/artifacts/json/g900_full60_package_support_audit_001.v1.json",
+    "full60_anatomy_json": "public_html/labs/g900_observatory/artifacts/json/g900_full60_transition_package_anatomy_001.v1.json",
+    "slot12_triangle_json": "public_html/labs/g900_observatory/artifacts/json/g900_slot12_composite_triangle_anatomy_001.v1.json",
+    "channels": "public_html/labs/g900_observatory/data/g900_channels.v0.1.json"
+  },
+  "taxonomy": {
+    "full60_phase_transition": {
+      "definition": "A phase-label transition that appears with count 60 in the edge-limit phase grammar.",
+      "boundary": "This is a phase-grammar object, not a channel."
+    },
+    "full60_phase_package": {
+      "definition": "The package formed by grouping full-60 transitions by unordered slot-pair key.",
+      "boundary": "A package groups phase transitions. It does not itself admit transport authority."
+    },
+    "boundary_supported_package": {
+      "definition": "A full-60 phase package whose unordered pair key has an admitted Layer 2 slot-pair boundary carrier.",
+      "boundary": "Boundary support is structural support only, not channel admission."
+    },
+    "boundary_absent_package": {
+      "definition": "A full-60 phase package whose unordered pair key has no admitted Layer 2 slot-pair boundary carrier.",
+      "boundary": "Boundary absence does not erase the phase transition; it prevents boundary-carrier support."
+    },
+    "internally_supported_step": {
+      "definition": "A phase transition step whose newly added tuple edge hits one of the package internal slot carrier rails.",
+      "boundary": "Internal delta support is a carrier-rail support relation, not a force or physical mechanism."
+    },
+    "direct_boundary_delta_supported_step": {
+      "definition": "A phase transition step whose newly added tuple edge hits the package boundary carrier rail.",
+      "boundary": "This category is defined for audit completeness. The current support audit observes zero such steps."
+    },
+    "unsupported_internal_phase_step": {
+      "definition": "A real full-60 phase transition step with no direct boundary carrier and no tested internal delta-edge support.",
+      "boundary": "This is not a channel. It is a bounded unsupported phase step in the tested carrier-rail language."
+    }
+  },
+  "checks": {
+    "support_audit_pass_true": true,
+    "full60_anatomy_pass_true": true,
+    "slot12_triangle_pass_true": true,
+    "package_count_is_10": true,
+    "unsupported_pair_is_exactly_6_9": true,
+    "no_direct_boundary_delta_support_observed": true,
+    "all_supported_packages_have_internal_delta_support": true,
+    "all_rows_marked_no_channel_admission": true,
+    "channel_registry_still_zero_sets": true,
+    "channel_registry_still_zero_channels": true,
+    "channel_registry_admits_channels_false": true,
+    "channel_registry_renders_channels_false": true
+  },
+  "summary": {
+    "package_count": 10,
+    "class_counts": {
+      "boundary_absent_package": 1,
+      "boundary_supported_package": 9,
+      "full60_phase_package": 10,
+      "fully_unsupported_package": 1,
+      "internally_supported_package": 9,
+      "no_direct_boundary_delta_support_observed": 10,
+      "unsupported_internal_phase_step": 1
+    },
+    "unsupported_pairs": [
+      "6/9"
+    ],
+    "keeper_statement": "The 6/9 package is a full-60 phase transition package that is real in the phase grammar, absent from the Layer 2 boundary-carrier registry, and fully unsupported by tested internal delta-edge support. It is not a channel.",
+    "classified_packages": [
+      {
+        "pair_key": "2/3",
+        "package_kind": "clean_reciprocal_pair_package",
+        "full60_transitions": [
+          "2 -> 3",
+          "2/3 -> 3",
+          "3 -> 2"
+        ],
+        "step_count": 180,
+        "has_boundary_carrier": true,
+        "boundary_carrier_id": "slot_pair_02_03_boundary_carrier",
+        "supported_delta_edge_count": 180,
+        "unsupported_delta_edge_count": 0,
+        "direct_boundary_delta_edge_count": 0,
+        "internal_delta_edge_count": 180,
+        "unsupported_rate": 0.0,
+        "classification": [
+          "full60_phase_package",
+          "boundary_supported_package",
+          "no_direct_boundary_delta_support_observed",
+          "internally_supported_package"
+        ],
+        "channels_admitted": false
+      },
+      {
+        "pair_key": "2/8",
+        "package_kind": "clean_reciprocal_pair_package",
+        "full60_transitions": [
+          "2 -> 8",
+          "2/8 -> 8",
+          "8 -> 2"
+        ],
+        "step_count": 180,
+        "has_boundary_carrier": true,
+        "boundary_carrier_id": "slot_pair_02_08_boundary_carrier",
+        "supported_delta_edge_count": 180,
+        "unsupported_delta_edge_count": 0,
+        "direct_boundary_delta_edge_count": 0,
+        "internal_delta_edge_count": 180,
+        "unsupported_rate": 0.0,
+        "classification": [
+          "full60_phase_package",
+          "boundary_supported_package",
+          "no_direct_boundary_delta_support_observed",
+          "internally_supported_package"
+        ],
+        "channels_admitted": false
+      },
+      {
+        "pair_key": "3/9",
+        "package_kind": "clean_reciprocal_pair_package",
+        "full60_transitions": [
+          "3 -> 9",
+          "3/9 -> 9",
+          "9 -> 3"
+        ],
+        "step_count": 180,
+        "has_boundary_carrier": true,
+        "boundary_carrier_id": "slot_pair_03_09_boundary_carrier",
+        "supported_delta_edge_count": 180,
+        "unsupported_delta_edge_count": 0,
+        "direct_boundary_delta_edge_count": 0,
+        "internal_delta_edge_count": 180,
+        "unsupported_rate": 0.0,
+        "classification": [
+          "full60_phase_package",
+          "boundary_supported_package",
+          "no_direct_boundary_delta_support_observed",
+          "internally_supported_package"
+        ],
+        "channels_admitted": false
+      },
+      {
+        "pair_key": "5/10",
+        "package_kind": "clean_reciprocal_pair_package",
+        "full60_transitions": [
+          "10 -> 5",
+          "5 -> 10",
+          "5/10 -> 10"
+        ],
+        "step_count": 180,
+        "has_boundary_carrier": true,
+        "boundary_carrier_id": "slot_pair_05_10_boundary_carrier",
+        "supported_delta_edge_count": 180,
+        "unsupported_delta_edge_count": 0,
+        "direct_boundary_delta_edge_count": 0,
+        "internal_delta_edge_count": 180,
+        "unsupported_rate": 0.0,
+        "classification": [
+          "full60_phase_package",
+          "boundary_supported_package",
+          "no_direct_boundary_delta_support_observed",
+          "internally_supported_package"
+        ],
+        "channels_admitted": false
+      },
+      {
+        "pair_key": "5/14",
+        "package_kind": "clean_reciprocal_pair_package",
+        "full60_transitions": [
+          "14 -> 5",
+          "5 -> 14",
+          "5/14 -> 14"
+        ],
+        "step_count": 180,
+        "has_boundary_carrier": true,
+        "boundary_carrier_id": "slot_pair_05_14_boundary_carrier",
+        "supported_delta_edge_count": 180,
+        "unsupported_delta_edge_count": 0,
+        "direct_boundary_delta_edge_count": 0,
+        "internal_delta_edge_count": 180,
+        "unsupported_rate": 0.0,
+        "classification": [
+          "full60_phase_package",
+          "boundary_supported_package",
+          "no_direct_boundary_delta_support_observed",
+          "internally_supported_package"
+        ],
+        "channels_admitted": false
+      },
+      {
+        "pair_key": "6/13",
+        "package_kind": "clean_reciprocal_pair_package",
+        "full60_transitions": [
+          "13 -> 6",
+          "6 -> 13",
+          "6/13 -> 13"
+        ],
+        "step_count": 180,
+        "has_boundary_carrier": true,
+        "boundary_carrier_id": "slot_pair_06_13_boundary_carrier",
+        "supported_delta_edge_count": 180,
+        "unsupported_delta_edge_count": 0,
+        "direct_boundary_delta_edge_count": 0,
+        "internal_delta_edge_count": 180,
+        "unsupported_rate": 0.0,
+        "classification": [
+          "full60_phase_package",
+          "boundary_supported_package",
+          "no_direct_boundary_delta_support_observed",
+          "internally_supported_package"
+        ],
+        "channels_admitted": false
+      },
+      {
+        "pair_key": "6/12",
+        "package_kind": "two_transition_pair_package",
+        "full60_transitions": [
+          "12 -> 6",
+          "6/12 -> 12"
+        ],
+        "step_count": 120,
+        "has_boundary_carrier": true,
+        "boundary_carrier_id": "slot_pair_06_12_boundary_carrier",
+        "supported_delta_edge_count": 120,
+        "unsupported_delta_edge_count": 0,
+        "direct_boundary_delta_edge_count": 0,
+        "internal_delta_edge_count": 120,
+        "unsupported_rate": 0.0,
+        "classification": [
+          "full60_phase_package",
+          "boundary_supported_package",
+          "no_direct_boundary_delta_support_observed",
+          "internally_supported_package"
+        ],
+        "channels_admitted": false
+      },
+      {
+        "pair_key": "7/11",
+        "package_kind": "two_transition_pair_package",
+        "full60_transitions": [
+          "11 -> 7",
+          "7/11 -> 11"
+        ],
+        "step_count": 120,
+        "has_boundary_carrier": true,
+        "boundary_carrier_id": "slot_pair_07_11_boundary_carrier",
+        "supported_delta_edge_count": 120,
+        "unsupported_delta_edge_count": 0,
+        "direct_boundary_delta_edge_count": 0,
+        "internal_delta_edge_count": 120,
+        "unsupported_rate": 0.0,
+        "classification": [
+          "full60_phase_package",
+          "boundary_supported_package",
+          "no_direct_boundary_delta_support_observed",
+          "internally_supported_package"
+        ],
+        "channels_admitted": false
+      },
+      {
+        "pair_key": "6/9",
+        "package_kind": "one_way_single_transition",
+        "full60_transitions": [
+          "6 -> 9"
+        ],
+        "step_count": 60,
+        "has_boundary_carrier": false,
+        "boundary_carrier_id": null,
+        "supported_delta_edge_count": 0,
+        "unsupported_delta_edge_count": 60,
+        "direct_boundary_delta_edge_count": 0,
+        "internal_delta_edge_count": 0,
+        "unsupported_rate": 1.0,
+        "classification": [
+          "full60_phase_package",
+          "boundary_absent_package",
+          "no_direct_boundary_delta_support_observed",
+          "fully_unsupported_package",
+          "unsupported_internal_phase_step"
+        ],
+        "channels_admitted": false
+      },
+      {
+        "pair_key": "9/12",
+        "package_kind": "one_way_single_transition",
+        "full60_transitions": [
+          "9 -> 12"
+        ],
+        "step_count": 60,
+        "has_boundary_carrier": true,
+        "boundary_carrier_id": "slot_pair_09_12_boundary_carrier",
+        "supported_delta_edge_count": 60,
+        "unsupported_delta_edge_count": 0,
+        "direct_boundary_delta_edge_count": 0,
+        "internal_delta_edge_count": 60,
+        "unsupported_rate": 0.0,
+        "classification": [
+          "full60_phase_package",
+          "boundary_supported_package",
+          "no_direct_boundary_delta_support_observed",
+          "internally_supported_package"
+        ],
+        "channels_admitted": false
+      }
+    ]
+  }
+}

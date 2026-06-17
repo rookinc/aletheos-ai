@@ -196,13 +196,13 @@ function readRange01(id, fallback) {
 }
 
 function buildG900ViewerStateObject(state) {
-  const grammarVersion = document.documentElement.dataset.g900Grammar || "grammar-001";
-  const kernelVersion = document.documentElement.dataset.g900Kernel || "hello-001";
+  const grammarVersion = document.documentElement.dataset.g900Grammar || "0.1";
+  const kernelVersion = document.documentElement.dataset.g900Kernel || "0.1";
   const bodyVersion = activeStaticBody ? activeStaticBody.version : null;
 
   return {
     schema: "g900.viewer.state",
-    version: "state-001",
+    version: "0.1",
     export_ready: false,
     stage: "g900_full_body_observatory",
     kernel: {

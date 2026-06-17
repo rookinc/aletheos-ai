@@ -1,0 +1,50 @@
+{
+  "schema": "g900.viewer.grammar",
+  "version": "grammar-001",
+  "name": "G900 viewer grammar",
+  "description": "Pure declarative layer grammar for the G900 witness observatory.",
+  "layers": [
+    {
+      "index": 0,
+      "key": "grid",
+      "label": "Grid",
+      "role": "coordinate witness",
+      "depends_on": []
+    },
+    {
+      "index": 1,
+      "key": "graph",
+      "label": "Graph",
+      "role": "static G900 body",
+      "depends_on": ["grid"]
+    },
+    {
+      "index": 2,
+      "key": "gravity",
+      "label": "Gravity",
+      "role": "compresses",
+      "depends_on": ["graph"]
+    },
+    {
+      "index": 3,
+      "key": "em",
+      "label": "EM",
+      "role": "polarizes",
+      "depends_on": ["graph"]
+    },
+    {
+      "index": 4,
+      "key": "strong",
+      "label": "Strong",
+      "role": "confines",
+      "depends_on": ["graph", "gravity"]
+    },
+    {
+      "index": 5,
+      "key": "weak",
+      "label": "Weak",
+      "role": "transforms",
+      "depends_on": ["graph", "strong"]
+    }
+  ]
+}

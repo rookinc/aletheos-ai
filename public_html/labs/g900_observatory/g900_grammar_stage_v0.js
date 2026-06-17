@@ -1,3 +1,5 @@
+import { readG900Grammar, getGrammarLayerStackLabel } from "./kernel/g900_grammar.js";
+import { getKernelHello } from "./kernel/g900_kernel.js";
 const TAU = Math.PI * 2;
 const DEFAULT_SHEET_RATE = 333;
 const MIN_ZOOM = 0.28;
@@ -266,7 +268,47 @@ function ensureSheetControls() {
   });
 }
 
+
+async function loadGrammarReadout() {
+  const line = document.getElementById("kernel-layer-line");
+  try {
+    const response = await fetch("./kernel/g900_grammar.v1.json", { cache: "no-store" });
+    if (!response.ok) {
+      throw new Error("HTTP " + response.status);
+    }
+
+    const payload = await response.json();
+    const grammar = readG900Grammar(payload);
+
+    document.documentElement.dataset.g900Grammar = grammar.version;
+
+    if (line) {
+      line.textContent = "GRAMMAR " + grammar.version + " | " + getGrammarLayerStackLabel(grammar);
+    }
+
+    console.info("[G900 grammar]", grammar);
+    return grammar;
+  } catch (error) {
+    if (line) {
+      line.textContent = "Grammar load failed";
+    }
+    console.error("[G900 grammar]", error);
+    return null;
+  }
+}
+
 function boot() {
+  loadGrammarReadout();
+  const kernelHello = getKernelHello();
+  document.documentElement.dataset.g900Kernel = kernelHello.version;
+
+  const kernelLine = document.getElementById("kernel-status-line");
+  if (kernelLine) {
+    kernelLine.textContent = "KERNEL  " + kernelHello.version + "  online";
+  }
+
+  console.info("[G900 kernel]", kernelHello);
+
   const canvas = document.getElementById("stage-canvas");
   if (!canvas) return;
 

@@ -1,0 +1,86 @@
+{
+  "schema": "g900.viewer.overlays",
+  "version": "0.1",
+  "body": "g900",
+  "body_version": "0.1",
+  "status": "overlay_registry_scaffold",
+  "description": "Reserved overlay registry for the G900 Observatory. These layers are readings over the body. They do not mutate the G900 graph.",
+  "boundary": {
+    "mutates_body": false,
+    "runtime_motion_authority": false,
+    "physics_claim": false,
+    "overlay_claim_only": true
+  },
+  "layers": [
+    {
+      "layer": 2,
+      "id": "gravity",
+      "label": "Gravity",
+      "status": "reserved",
+      "enabled": false,
+      "kind": "reading",
+      "mutates_body": false,
+      "description": "Reserved compression reading. No active overlay payload yet."
+    },
+    {
+      "layer": 3,
+      "id": "em",
+      "label": "EM",
+      "status": "reserved",
+      "enabled": false,
+      "kind": "reading",
+      "mutates_body": false,
+      "description": "Reserved polarization reading. No active overlay payload yet."
+    },
+    {
+      "layer": 4,
+      "id": "strong",
+      "label": "Strong",
+      "status": "reserved",
+      "enabled": false,
+      "kind": "reading",
+      "mutates_body": false,
+      "description": "Reserved confinement reading. No active overlay payload yet."
+    },
+    {
+      "layer": 5,
+      "id": "weak",
+      "label": "Weak",
+      "status": "reserved",
+      "enabled": false,
+      "kind": "reading",
+      "mutates_body": false,
+      "description": "Reserved transformation reading. No active overlay payload yet."
+    },
+    {
+      "layer": 6,
+      "id": "carriers",
+      "label": "Carriers",
+      "status": "next",
+      "enabled": false,
+      "kind": "reading",
+      "mutates_body": false,
+      "description": "Next target layer. Carrier rails mark stable paths where trace can ride."
+    },
+    {
+      "layer": 7,
+      "id": "channels",
+      "label": "Channels",
+      "status": "reserved",
+      "enabled": false,
+      "kind": "reading",
+      "mutates_body": false,
+      "description": "Reserved channel reading. No active overlay payload yet."
+    },
+    {
+      "layer": 8,
+      "id": "trails",
+      "label": "Trails",
+      "status": "reserved",
+      "enabled": false,
+      "kind": "memory",
+      "mutates_body": false,
+      "description": "Reserved memory trail reading. No active overlay payload yet."
+    }
+  ]
+}

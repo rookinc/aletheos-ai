@@ -13,67 +13,75 @@
   },
   "layers": [
     {
-      "layer": 2,
+      "layer": 7,
       "id": "gravity",
       "label": "Gravity",
-      "status": "reserved",
+      "status": "force_shadow_reserved",
       "enabled": false,
       "kind": "reading",
       "mutates_body": false,
-      "description": "Reserved compression reading. No active overlay payload yet."
+      "description": "Reserved compression reading. No active overlay payload yet.",
+      "claim": "force_shadow_reserved",
+      "physics_claim": false
     },
     {
-      "layer": 3,
+      "layer": 8,
       "id": "em",
       "label": "EM",
-      "status": "reserved",
+      "status": "force_shadow_reserved",
       "enabled": false,
       "kind": "reading",
       "mutates_body": false,
-      "description": "Reserved polarization reading. No active overlay payload yet."
+      "description": "Reserved polarization reading. No active overlay payload yet.",
+      "claim": "force_shadow_reserved",
+      "physics_claim": false
     },
     {
-      "layer": 4,
+      "layer": 9,
       "id": "strong",
       "label": "Strong",
-      "status": "reserved",
+      "status": "force_shadow_reserved",
       "enabled": false,
       "kind": "reading",
       "mutates_body": false,
-      "description": "Reserved confinement reading. No active overlay payload yet."
+      "description": "Reserved confinement reading. No active overlay payload yet.",
+      "claim": "force_shadow_reserved",
+      "physics_claim": false
     },
     {
-      "layer": 5,
+      "layer": 10,
       "id": "weak",
       "label": "Weak",
-      "status": "reserved",
+      "status": "force_shadow_reserved",
       "enabled": false,
       "kind": "reading",
       "mutates_body": false,
-      "description": "Reserved transformation reading. No active overlay payload yet."
+      "description": "Reserved transformation reading. No active overlay payload yet.",
+      "claim": "force_shadow_reserved",
+      "physics_claim": false
     },
     {
-      "layer": 6,
+      "layer": 2,
       "id": "carriers",
       "label": "Carriers",
-      "status": "next",
+      "status": "active_reading",
       "enabled": false,
       "kind": "reading",
       "mutates_body": false,
       "description": "Next target layer. Carrier rails mark stable paths where trace can ride."
     },
     {
-      "layer": 7,
+      "layer": 3,
       "id": "channels",
       "label": "Channels",
-      "status": "reserved",
+      "status": "next",
       "enabled": false,
       "kind": "reading",
       "mutates_body": false,
       "description": "Reserved channel reading. No active overlay payload yet."
     },
     {
-      "layer": 8,
+      "layer": 4,
       "id": "trails",
       "label": "Trails",
       "status": "reserved",

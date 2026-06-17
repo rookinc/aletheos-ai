@@ -1,0 +1,89 @@
+{
+  "schema": "g900.carrier_layer_renumbering",
+  "version": "0.1",
+  "status": "carrier_layer_2_declared",
+  "body": "g900",
+  "body_version": "0.1",
+  "old_semantic_order": {
+    "problem": "carriers were displayed as layer 6 because force-like overlays had earlier reserved layers 2-5",
+    "verdict": "deprecated"
+  },
+  "new_layer_order": [
+    {
+      "layer": 0,
+      "id": "stage",
+      "meaning": "apparatus / grid"
+    },
+    {
+      "layer": 1,
+      "id": "graph",
+      "meaning": "G900 body"
+    },
+    {
+      "layer": 2,
+      "id": "carriers",
+      "meaning": "source-provenance readings"
+    },
+    {
+      "layer": 3,
+      "id": "channels",
+      "meaning": "admissible permission readings"
+    },
+    {
+      "layer": 4,
+      "id": "trails",
+      "meaning": "receipted trace readings"
+    },
+    {
+      "layer": 5,
+      "id": "receipts",
+      "meaning": "witness marks / accountability"
+    },
+    {
+      "layer": 7,
+      "id": "gravity",
+      "meaning": "force-shadow reserved"
+    },
+    {
+      "layer": 8,
+      "id": "em",
+      "meaning": "force-shadow reserved"
+    },
+    {
+      "layer": 9,
+      "id": "strong",
+      "meaning": "force-shadow reserved"
+    },
+    {
+      "layer": 10,
+      "id": "weak",
+      "meaning": "force-shadow reserved"
+    }
+  ],
+  "boundary": {
+    "mutates_body": false,
+    "changes_rail_selector": false,
+    "admits_new_carriers": false,
+    "physics_claim": false,
+    "force_claim": false
+  },
+  "messages": [
+    "overlays.layers[0].gravity: layer 2 -> 7",
+    "overlays.layers[0].gravity: status reserved -> force_shadow_reserved",
+    "overlays.layers[1].em: layer 3 -> 8",
+    "overlays.layers[1].em: status reserved -> force_shadow_reserved",
+    "overlays.layers[2].strong: layer 4 -> 9",
+    "overlays.layers[2].strong: status reserved -> force_shadow_reserved",
+    "overlays.layers[3].weak: layer 5 -> 10",
+    "overlays.layers[3].weak: status reserved -> force_shadow_reserved",
+    "overlays.layers[4].carriers: layer 6 -> 2",
+    "overlays.layers[4].carriers: status next -> active_reading",
+    "overlays.layers[5].channels: layer 7 -> 3",
+    "overlays.layers[5].channels: status reserved -> next",
+    "overlays.layers[6].trails: layer 8 -> 4",
+    "overlays.layers[6].trails: status reserved -> reserved",
+    "carriers.overlay.layer 6 -> 2",
+    "html Layer 6 -> Layer 2",
+    "updated script cache bust"
+  ]
+}

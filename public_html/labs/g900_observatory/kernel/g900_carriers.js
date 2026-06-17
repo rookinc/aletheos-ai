@@ -112,8 +112,8 @@ export function validateG900CarrierRegistry(payload) {
 
   requireObject(payload.overlay, "carrier registry overlay");
 
-  if (payload.overlay.id !== "carriers" || payload.overlay.layer !== 6) {
-    throw new Error("carrier registry must bind to overlay layer 6 carriers");
+  if (payload.overlay.id !== "carriers" || payload.overlay.layer !== 2) {
+    throw new Error("carrier registry must bind to overlay layer 2 carriers");
   }
 
   requireObject(payload.boundary, "carrier registry boundary");

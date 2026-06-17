@@ -1,0 +1,264 @@
+{
+  "schema": "g900.edge_overlap_candidate_inspection",
+  "version": "1",
+  "status": "edge_overlap_candidate_inspection_recorded",
+  "audit_pass": true,
+  "body": "g900",
+  "boundary": {
+    "inspection_only": true,
+    "channels_admitted": false,
+    "channel_registry_modified": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "physics_claim": false,
+    "force_claim": false
+  },
+  "input_paths": {
+    "classifier_json": "public_html/labs/g900_observatory/artifacts/json/g900_channel_candidate_classifier_001.v1.json",
+    "classifier_csv": "public_html/labs/g900_observatory/artifacts/csv/g900_channel_candidate_classifier_001_rows.v1.csv",
+    "channels": "public_html/labs/g900_observatory/data/g900_channels.v0.1.json"
+  },
+  "checks": {
+    "classifier_audit_pass_true": true,
+    "edge_overlap_count_is_7": true,
+    "all_edge_rows_are_support_overlap": true,
+    "all_edge_rows_not_admitted": true,
+    "channel_registry_still_zero_sets": true,
+    "channel_registry_still_zero_channels": true,
+    "channel_registry_admits_channels_false": true,
+    "channel_registry_renders_channels_false": true,
+    "channel_registry_mutates_body_false": true,
+    "channel_registry_physics_claim_false": true
+  },
+  "summary": {
+    "edge_overlap_candidate_count": 7,
+    "family_pair_counts": {
+      "source_provenance_scaffold -> slot_internal_carriers": 2,
+      "source_provenance_scaffold -> slot_pair_boundary_carriers": 5
+    },
+    "kind_pair_counts": {
+      "source_provenance_rail -> slot_internal_carrier": 2,
+      "source_provenance_rail -> slot_pair_boundary_carrier": 5
+    },
+    "edge_overlap_counts": {
+      "1": 2,
+      "4": 4,
+      "12": 1
+    },
+    "vertex_overlap_counts": {
+      "5": 1,
+      "6": 1,
+      "11": 1,
+      "15": 3,
+      "16": 1
+    },
+    "max_edge_overlap": 12,
+    "max_vertex_overlap": 16
+  },
+  "by_edge_overlap": {
+    "1": [
+      {
+        "source_rail_id": "root_0_0_tuple_shell_depth_2",
+        "target_rail_id": "slot_pair_03_04_boundary_carrier",
+        "family_pair": "source_provenance_scaffold -> slot_pair_boundary_carriers",
+        "kind_pair": "source_provenance_rail -> slot_pair_boundary_carrier",
+        "vertex_overlap": 6,
+        "edge_overlap": 1
+      },
+      {
+        "source_rail_id": "root_0_0_tuple_shell_depth_2",
+        "target_rail_id": "slot_04_internal_carrier",
+        "family_pair": "source_provenance_scaffold -> slot_internal_carriers",
+        "kind_pair": "source_provenance_rail -> slot_internal_carrier",
+        "vertex_overlap": 5,
+        "edge_overlap": 1
+      }
+    ],
+    "4": [
+      {
+        "source_rail_id": "root_0_0_tuple_shell_depth_2",
+        "target_rail_id": "slot_pair_00_04_boundary_carrier",
+        "family_pair": "source_provenance_scaffold -> slot_pair_boundary_carriers",
+        "kind_pair": "source_provenance_rail -> slot_pair_boundary_carrier",
+        "vertex_overlap": 16,
+        "edge_overlap": 4
+      },
+      {
+        "source_rail_id": "root_0_0_tuple_shell_depth_2",
+        "target_rail_id": "slot_pair_00_01_boundary_carrier",
+        "family_pair": "source_provenance_scaffold -> slot_pair_boundary_carriers",
+        "kind_pair": "source_provenance_rail -> slot_pair_boundary_carrier",
+        "vertex_overlap": 15,
+        "edge_overlap": 4
+      },
+      {
+        "source_rail_id": "root_0_0_tuple_shell_depth_2",
+        "target_rail_id": "slot_pair_00_05_boundary_carrier",
+        "family_pair": "source_provenance_scaffold -> slot_pair_boundary_carriers",
+        "kind_pair": "source_provenance_rail -> slot_pair_boundary_carrier",
+        "vertex_overlap": 15,
+        "edge_overlap": 4
+      },
+      {
+        "source_rail_id": "root_0_0_tuple_shell_depth_2",
+        "target_rail_id": "slot_pair_00_06_boundary_carrier",
+        "family_pair": "source_provenance_scaffold -> slot_pair_boundary_carriers",
+        "kind_pair": "source_provenance_rail -> slot_pair_boundary_carrier",
+        "vertex_overlap": 15,
+        "edge_overlap": 4
+      }
+    ],
+    "12": [
+      {
+        "source_rail_id": "root_0_0_tuple_shell_depth_2",
+        "target_rail_id": "slot_00_internal_carrier",
+        "family_pair": "source_provenance_scaffold -> slot_internal_carriers",
+        "kind_pair": "source_provenance_rail -> slot_internal_carrier",
+        "vertex_overlap": 11,
+        "edge_overlap": 12
+      }
+    ]
+  },
+  "rows": [
+    {
+      "row_index": 105,
+      "candidate_kind": "support_overlap_handle",
+      "candidate_class": "support_overlap_handle",
+      "visibility_tier": "edge_overlap",
+      "channel_readiness": "not_admitted_needs_selector",
+      "source_rail_id": "root_0_0_tuple_shell_depth_2",
+      "target_rail_id": "slot_00_internal_carrier",
+      "source_carrier_set_id": "source_provenance_scaffold",
+      "target_carrier_set_id": "slot_internal_carriers",
+      "source_kind": "source_provenance_rail",
+      "target_kind": "slot_internal_carrier",
+      "family_pair": "source_provenance_scaffold -> slot_internal_carriers",
+      "kind_pair": "source_provenance_rail -> slot_internal_carrier",
+      "vertex_overlap": 11,
+      "edge_overlap": 12,
+      "admitted_as_channel": false,
+      "classification_reason": "carrier supports overlap but no admissible passage law has been selected",
+      "source_evidence": "vertex_overlap=11 edge_overlap=12"
+    },
+    {
+      "row_index": 112,
+      "candidate_kind": "support_overlap_handle",
+      "candidate_class": "support_overlap_handle",
+      "visibility_tier": "edge_overlap",
+      "channel_readiness": "not_admitted_needs_selector",
+      "source_rail_id": "root_0_0_tuple_shell_depth_2",
+      "target_rail_id": "slot_pair_00_04_boundary_carrier",
+      "source_carrier_set_id": "source_provenance_scaffold",
+      "target_carrier_set_id": "slot_pair_boundary_carriers",
+      "source_kind": "source_provenance_rail",
+      "target_kind": "slot_pair_boundary_carrier",
+      "family_pair": "source_provenance_scaffold -> slot_pair_boundary_carriers",
+      "kind_pair": "source_provenance_rail -> slot_pair_boundary_carrier",
+      "vertex_overlap": 16,
+      "edge_overlap": 4,
+      "admitted_as_channel": false,
+      "classification_reason": "carrier supports overlap but no admissible passage law has been selected",
+      "source_evidence": "vertex_overlap=16 edge_overlap=4"
+    },
+    {
+      "row_index": 111,
+      "candidate_kind": "support_overlap_handle",
+      "candidate_class": "support_overlap_handle",
+      "visibility_tier": "edge_overlap",
+      "channel_readiness": "not_admitted_needs_selector",
+      "source_rail_id": "root_0_0_tuple_shell_depth_2",
+      "target_rail_id": "slot_pair_00_01_boundary_carrier",
+      "source_carrier_set_id": "source_provenance_scaffold",
+      "target_carrier_set_id": "slot_pair_boundary_carriers",
+      "source_kind": "source_provenance_rail",
+      "target_kind": "slot_pair_boundary_carrier",
+      "family_pair": "source_provenance_scaffold -> slot_pair_boundary_carriers",
+      "kind_pair": "source_provenance_rail -> slot_pair_boundary_carrier",
+      "vertex_overlap": 15,
+      "edge_overlap": 4,
+      "admitted_as_channel": false,
+      "classification_reason": "carrier supports overlap but no admissible passage law has been selected",
+      "source_evidence": "vertex_overlap=15 edge_overlap=4"
+    },
+    {
+      "row_index": 113,
+      "candidate_kind": "support_overlap_handle",
+      "candidate_class": "support_overlap_handle",
+      "visibility_tier": "edge_overlap",
+      "channel_readiness": "not_admitted_needs_selector",
+      "source_rail_id": "root_0_0_tuple_shell_depth_2",
+      "target_rail_id": "slot_pair_00_05_boundary_carrier",
+      "source_carrier_set_id": "source_provenance_scaffold",
+      "target_carrier_set_id": "slot_pair_boundary_carriers",
+      "source_kind": "source_provenance_rail",
+      "target_kind": "slot_pair_boundary_carrier",
+      "family_pair": "source_provenance_scaffold -> slot_pair_boundary_carriers",
+      "kind_pair": "source_provenance_rail -> slot_pair_boundary_carrier",
+      "vertex_overlap": 15,
+      "edge_overlap": 4,
+      "admitted_as_channel": false,
+      "classification_reason": "carrier supports overlap but no admissible passage law has been selected",
+      "source_evidence": "vertex_overlap=15 edge_overlap=4"
+    },
+    {
+      "row_index": 114,
+      "candidate_kind": "support_overlap_handle",
+      "candidate_class": "support_overlap_handle",
+      "visibility_tier": "edge_overlap",
+      "channel_readiness": "not_admitted_needs_selector",
+      "source_rail_id": "root_0_0_tuple_shell_depth_2",
+      "target_rail_id": "slot_pair_00_06_boundary_carrier",
+      "source_carrier_set_id": "source_provenance_scaffold",
+      "target_carrier_set_id": "slot_pair_boundary_carriers",
+      "source_kind": "source_provenance_rail",
+      "target_kind": "slot_pair_boundary_carrier",
+      "family_pair": "source_provenance_scaffold -> slot_pair_boundary_carriers",
+      "kind_pair": "source_provenance_rail -> slot_pair_boundary_carrier",
+      "vertex_overlap": 15,
+      "edge_overlap": 4,
+      "admitted_as_channel": false,
+      "classification_reason": "carrier supports overlap but no admissible passage law has been selected",
+      "source_evidence": "vertex_overlap=15 edge_overlap=4"
+    },
+    {
+      "row_index": 119,
+      "candidate_kind": "support_overlap_handle",
+      "candidate_class": "support_overlap_handle",
+      "visibility_tier": "edge_overlap",
+      "channel_readiness": "not_admitted_needs_selector",
+      "source_rail_id": "root_0_0_tuple_shell_depth_2",
+      "target_rail_id": "slot_pair_03_04_boundary_carrier",
+      "source_carrier_set_id": "source_provenance_scaffold",
+      "target_carrier_set_id": "slot_pair_boundary_carriers",
+      "source_kind": "source_provenance_rail",
+      "target_kind": "slot_pair_boundary_carrier",
+      "family_pair": "source_provenance_scaffold -> slot_pair_boundary_carriers",
+      "kind_pair": "source_provenance_rail -> slot_pair_boundary_carrier",
+      "vertex_overlap": 6,
+      "edge_overlap": 1,
+      "admitted_as_channel": false,
+      "classification_reason": "carrier supports overlap but no admissible passage law has been selected",
+      "source_evidence": "vertex_overlap=6 edge_overlap=1"
+    },
+    {
+      "row_index": 108,
+      "candidate_kind": "support_overlap_handle",
+      "candidate_class": "support_overlap_handle",
+      "visibility_tier": "edge_overlap",
+      "channel_readiness": "not_admitted_needs_selector",
+      "source_rail_id": "root_0_0_tuple_shell_depth_2",
+      "target_rail_id": "slot_04_internal_carrier",
+      "source_carrier_set_id": "source_provenance_scaffold",
+      "target_carrier_set_id": "slot_internal_carriers",
+      "source_kind": "source_provenance_rail",
+      "target_kind": "slot_internal_carrier",
+      "family_pair": "source_provenance_scaffold -> slot_internal_carriers",
+      "kind_pair": "source_provenance_rail -> slot_internal_carrier",
+      "vertex_overlap": 5,
+      "edge_overlap": 1,
+      "admitted_as_channel": false,
+      "classification_reason": "carrier supports overlap but no admissible passage law has been selected",
+      "source_evidence": "vertex_overlap=5 edge_overlap=1"
+    }
+  ]
+}

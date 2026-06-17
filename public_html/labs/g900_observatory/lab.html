@@ -48,17 +48,27 @@
       <div class="stage-frame">
         <canvas id="stage-canvas" aria-label="Blank G900 canvas"></canvas>
       </div>
+          <p id="static-body-line" class="kernel-layer-line">BODY pending</p>
     </section>
 
     <section class="lab-note">
       <p>This stage is intentionally blank. Layers will be rebuilt one at a time: vertices, edges, carrier rails, channels, force colors, and trails.</p>
     </section>
-  </main>
+      <section class="lab-note state-console-section" aria-label="G900 state console">
+      <div class="stage-console-panel">
+        <div class="stage-console-head">
+          <span>State Object</span>
+          <span>JSON</span>
+        </div>
+        <pre id="viewer-state-object" class="viewer-state-object">{}</pre>
+      </div>
+    </section>
+</main>
 
   <footer class="lab-footer">
     <p>2026 Centre of Recursive Inquiry. Aletheos.ai is the public research surface for CoRI and Thalean Action Theory.</p>
   </footer>
 
-  <script type="module" src="g900_grammar_stage_v0.js?v=primary-grammar-blank-14"></script>
+  <script type="module" src="g900_grammar_stage_v0.js?v=state-object-001"></script>
 </body>
 </html>

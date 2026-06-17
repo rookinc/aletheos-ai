@@ -1,7 +1,9 @@
+import { readG900StaticBody, getStaticBodySummary } from "./kernel/g900_static_body.js";
 const TAU = Math.PI * 2;
 const DEFAULT_SHEET_RATE = 333;
 const MIN_ZOOM = 0.28;
 const MAX_ZOOM = 64.0;
+let activeStaticBody = null;
 
 function clamp(value, min, max) {
   return Math.max(min, Math.min(max, value));
@@ -175,10 +177,156 @@ function drawStageGrid(ctx, w, h, dpr, state) {
   ctx.restore();
 }
 
+
+
+function readChecked(id, fallback) {
+  const el = document.getElementById(id);
+  if (!el) return fallback;
+  return Boolean(el.checked);
+}
+
+function readRange01(id, fallback) {
+  const el = document.getElementById(id);
+  if (!el) return fallback;
+
+  const n = Number(el.value);
+  if (!Number.isFinite(n)) return fallback;
+
+  return clamp(n / 100, 0, 1);
+}
+
+function buildG900ViewerStateObject(state) {
+  const grammarVersion = document.documentElement.dataset.g900Grammar || null;
+  const kernelVersion = document.documentElement.dataset.g900Kernel || null;
+  const bodyVersion = activeStaticBody ? activeStaticBody.version : null;
+
+  return {
+    schema: "g900.viewer.state",
+    version: "state-001",
+    export_ready: false,
+    stage: "g900_blank_rebuild",
+    kernel: {
+      version: kernelVersion
+    },
+    grammar: {
+      version: grammarVersion
+    },
+    timeline: {
+      sheet: Math.floor(state.sheet),
+      playing: Boolean(state.playing),
+      sheets_per_second: Number(getSheetRate().toFixed(2))
+    },
+    camera: {
+      yaw: Number(state.yaw.toFixed(6)),
+      pitch: Number(state.pitch.toFixed(6)),
+      zoom: Number(state.zoom.toFixed(6))
+    },
+    layers: {
+      grid: {
+        layer: 0,
+        id: "grid",
+        enabled: readChecked("stage-grid-toggle", true)
+      },
+      graph: {
+        layer: 1,
+        id: "graph",
+        enabled: Boolean(activeStaticBody),
+        body_version: bodyVersion,
+        vertices_opacity: readRange01("graph-vertices-slider", 1),
+        edges_opacity: readRange01("graph-edges-slider", 1)
+      }
+    },
+    body: activeStaticBody ? {
+      version: activeStaticBody.version,
+      name: activeStaticBody.name,
+      vertices: activeStaticBody.vertices.length,
+      edges: activeStaticBody.edges.length,
+      anchor: activeStaticBody.anchor,
+      scale: activeStaticBody.scale,
+      source: activeStaticBody.source || {}
+    } : {
+      status: "pending"
+    }
+  };
+}
+
+function syncG900ViewerStateConsole(state) {
+  const el = document.getElementById("viewer-state-object");
+  if (!el) return;
+
+  el.textContent = JSON.stringify(buildG900ViewerStateObject(state), null, 2);
+}
+
+
+async function loadStaticBodyReadout() {
+  const line = document.getElementById("static-body-line");
+
+  try {
+    const response = await fetch("./data/g900_static_body.v1.json", { cache: "no-store" });
+    if (!response.ok) {
+      throw new Error("HTTP " + response.status);
+    }
+
+    activeStaticBody = readG900StaticBody(await response.json());
+    document.documentElement.dataset.g900StaticBody = activeStaticBody.version;
+
+    if (line) {
+      line.textContent = "BODY " + activeStaticBody.version + " | " + getStaticBodySummary(activeStaticBody);
+    }
+
+    console.info("[G900 static body]", activeStaticBody);
+  } catch (error) {
+    activeStaticBody = null;
+
+    if (line) {
+      line.textContent = "BODY load failed";
+    }
+
+    console.error("[G900 static body]", error);
+  }
+}
+
+function drawStaticBody(ctx, w, h, dpr, state, body) {
+  if (!body) return;
+
+  const byId = new Map();
+
+  for (const vertex of body.vertices) {
+    const point = [
+      (body.anchor.xyz[0] + vertex.xyz[0]) * body.scale,
+      (body.anchor.xyz[1] + vertex.xyz[1]) * body.scale,
+      (body.anchor.xyz[2] + vertex.xyz[2]) * body.scale
+    ];
+
+    byId.set(vertex.id, projectPoint(point, state, w, h, dpr));
+  }
+
+  ctx.save();
+
+  for (const edge of body.edges) {
+    const a = byId.get(edge[0]);
+    const b = byId.get(edge[1]);
+    if (!a || !b) continue;
+
+    drawLine(ctx, a, b, [223, 195, 123], 0.18, 0.65);
+  }
+
+  ctx.fillStyle = "rgba(237, 246, 255, 0.72)";
+
+  for (const point of byId.values()) {
+    ctx.beginPath();
+    ctx.arc(point.x, point.y, Math.max(0.7, Math.min(w, h) * 0.0014), 0, TAU);
+    ctx.fill();
+  }
+
+  ctx.restore();
+}
+
 function drawBlankStage(ctx, canvas, state) {
   const { w, h, dpr } = resizeCanvas(canvas);
   drawBackground(ctx, w, h);
   drawStageGrid(ctx, w, h, dpr, state);
+  drawStaticBody(ctx, w, h, dpr, state, activeStaticBody);
 
   ctx.save();
   ctx.textBaseline = "bottom";
@@ -267,6 +415,7 @@ function ensureSheetControls() {
 }
 
 function boot() {
+  loadStaticBodyReadout();
   const canvas = document.getElementById("stage-canvas");
   if (!canvas) return;
 
@@ -406,6 +555,7 @@ function boot() {
 
     syncSheetCounter(state);
     drawBlankStage(ctx, canvas, state);
+    syncG900ViewerStateConsole(state);
     requestAnimationFrame(loop);
   }
 

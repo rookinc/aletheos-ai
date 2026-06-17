@@ -1,5 +1,7 @@
 const TAU = Math.PI * 2;
 const DEFAULT_SHEET_RATE = 333;
+const MIN_ZOOM = 0.28;
+const MAX_ZOOM = 64.0;
 
 function clamp(value, min, max) {
   return Math.max(min, Math.min(max, value));
@@ -71,6 +73,13 @@ function syncSheetRateReadout() {
   if (!readout) return;
 
   readout.textContent = getSheetRate().toFixed(2);
+}
+
+function syncSheetCounter(state) {
+  const readout = document.getElementById("sheet-counter-readout");
+  if (!readout) return;
+
+  readout.textContent = "Sheet " + Math.floor(state.sheet);
 }
 
 function syncPlayButton(state) {
@@ -294,6 +303,7 @@ function boot() {
       state.playing = false;
       state.sheet = Math.max(0, state.sheet - 1);
       syncPlayButton(state);
+      syncSheetCounter(state);
     });
   }
 
@@ -303,6 +313,7 @@ function boot() {
       state.playing = false;
       state.sheet += 1;
       syncPlayButton(state);
+      syncSheetCounter(state);
     });
   }
 
@@ -311,6 +322,7 @@ function boot() {
     resetBtn.addEventListener("click", () => {
       state.playing = false;
       state.sheet = 0;
+      syncSheetCounter(state);
       state.yaw = 0.15;
       state.pitch = -0.58;
       state.zoom = 1;
@@ -356,7 +368,7 @@ function boot() {
     event.preventDefault();
 
     const next = state.zoom * Math.exp(-event.deltaY * 0.001);
-    state.zoom = clamp(next, 0.28, 5.0);
+    state.zoom = clamp(next, MIN_ZOOM, MAX_ZOOM);
     localStorage.setItem("g900.stageZoom", String(state.zoom));
   }, { passive: false });
 
@@ -374,12 +386,13 @@ function boot() {
       const a = event.touches[0];
       const b = event.touches[1];
       const dist = Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
-      state.zoom = clamp(state.pinchZoom * dist / state.pinchDistance, 0.28, 5.0);
+      state.zoom = clamp(state.pinchZoom * dist / state.pinchDistance, MIN_ZOOM, MAX_ZOOM);
       localStorage.setItem("g900.stageZoom", String(state.zoom));
     }
   }, { passive: true });
 
   syncPlayButton(state);
+  syncSheetCounter(state);
 
   let last = performance.now();
 
@@ -391,6 +404,7 @@ function boot() {
       state.sheet += dt * getSheetRate();
     }
 
+    syncSheetCounter(state);
     drawBlankStage(ctx, canvas, state);
     requestAnimationFrame(loop);
   }

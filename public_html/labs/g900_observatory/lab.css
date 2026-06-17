@@ -553,3 +553,61 @@ h1 {
     font-size: 0.56rem !important;
   }
 }
+
+/* G900 blank rebuild sheet rate plus sheet counter row */
+.sheet-rate-head {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: baseline !important;
+  gap: 1rem !important;
+  width: 100% !important;
+}
+
+.sheet-rate-left {
+  display: inline-flex !important;
+  align-items: baseline !important;
+  gap: 0.65rem !important;
+  min-width: 0 !important;
+}
+
+.sheet-rate-left label,
+.sheet-rate-left span,
+#sheet-counter-readout {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace !important;
+  font-variant-numeric: tabular-nums !important;
+}
+
+.sheet-rate-left label {
+  color: rgba(237, 246, 255, 0.72) !important;
+  font-size: 0.74rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+}
+
+.sheet-rate-left #sheet-rate-readout {
+  color: var(--accent) !important;
+  font-size: 0.82rem !important;
+  text-align: left !important;
+}
+
+#sheet-counter-readout {
+  color: rgba(159, 182, 204, 0.84) !important;
+  font-size: 0.78rem !important;
+  text-align: right !important;
+  white-space: nowrap !important;
+}
+
+@media (max-width: 420px) {
+  .sheet-rate-left {
+    gap: 0.42rem !important;
+  }
+
+  .sheet-rate-left label {
+    font-size: 0.68rem !important;
+  }
+
+  .sheet-rate-left #sheet-rate-readout,
+  #sheet-counter-readout {
+    font-size: 0.72rem !important;
+  }
+}

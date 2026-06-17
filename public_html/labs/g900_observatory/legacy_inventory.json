@@ -1,0 +1,314 @@
+{
+  "status": "legacy_inventory_recorded",
+  "file_count": 6,
+  "files": [
+    {
+      "path": "legacy/lab_boot.js",
+      "line_count": 1150,
+      "imports": [
+        {
+          "what": "{ createLocalLens, deleteLocalLens, getLocalLens, loadLocalLenses }",
+          "from": "./kernel/local_storage_lenses.js"
+        },
+        {
+          "what": "{ createCamera, clamp }",
+          "from": "./kernel/camera.js"
+        },
+        {
+          "what": "{ loadG900Phase30 }",
+          "from": "./kernel/g900_data.js"
+        },
+        {
+          "what": "{ buildVertices, buildEdges }",
+          "from": "./kernel/g900_geometry.js"
+        },
+        {
+          "what": "{ renderScene }",
+          "from": "./kernel/renderer.js"
+        }
+      ],
+      "exports": [],
+      "functions": [
+        "applyLayerCamera",
+        "applySettingsFromUrl",
+        "applySettingsPreset",
+        "applySharedGraphLensOption",
+        "bindStageTouchControls",
+        "bodyOpacity",
+        "boolParam",
+        "buildSettingsUrl",
+        "cameraDeg",
+        "clampSheetRate",
+        "closeShareDialog",
+        "consoleText",
+        "currentPresetLabel",
+        "currentSettingsParams",
+        "deleteSelectedLocalLens",
+        "draw",
+        "edgeEnabled",
+        "edgeOpacity",
+        "faderViewLabel",
+        "frame",
+        "layer",
+        "loadLocalLensById",
+        "localLensIdFromValue",
+        "localLensValue",
+        "numericParam",
+        "openShareDialog",
+        "percentSliderValue",
+        "pointerDistance",
+        "renderLocalLensOptions",
+        "resetView",
+        "saveCurrentLensToLocalStorage",
+        "selectedLocalLensId",
+        "setCameraPreset",
+        "setCheckboxValue",
+        "setSharedGraphLensOption",
+        "setSheetRate",
+        "setSliderValue",
+        "sheetRate",
+        "sourceLabel",
+        "stepSheets",
+        "surfaceOpacity",
+        "syncSheetRateNumber",
+        "touchEnabled",
+        "trailAmount",
+        "trailEnabled",
+        "trailPercent",
+        "updateLocalLensControls",
+        "updateRateReadout",
+        "updateShareUrlText",
+        "vertexEnabled",
+        "vertexOpacity",
+        "wrapAngle"
+      ],
+      "classes": [],
+      "constants": [
+        "LAYERS",
+        "LOCAL_LENS_VALUE_PREFIX",
+        "PREFERRED_CANDIDATE_ID",
+        "SETTINGS_PRESETS",
+        "SHEET_COUNT",
+        "ZOOM_MAX",
+        "ZOOM_MIN"
+      ],
+      "dom_ids": [
+        "body-opacity-readout",
+        "body-opacity-slider",
+        "camera-preset-1",
+        "camera-preset-2",
+        "camera-preset-3",
+        "camera-text",
+        "edge-opacity-readout",
+        "edge-opacity-slider",
+        "edge-toggle",
+        "fps-readout",
+        "layer-select",
+        "metrics-console",
+        "play-pause-btn",
+        "reset-btn",
+        "settings-delete-lens-btn",
+        "settings-export-url-btn",
+        "settings-preset-select",
+        "settings-save-lens-btn",
+        "settings-saved-lenses-optgroup",
+        "settings-share-close",
+        "settings-share-copy",
+        "settings-share-dialog",
+        "settings-share-name-input",
+        "settings-share-url-text",
+        "sheet-rate-apply",
+        "sheet-rate-number",
+        "sheet-rate-readout",
+        "sheet-rate-slider",
+        "stage-canvas",
+        "status-text",
+        "step-back-btn",
+        "step-forward-btn",
+        "surface-opacity-readout",
+        "surface-opacity-slider",
+        "touch-response-toggle",
+        "trail-apply",
+        "trail-number",
+        "trail-readout",
+        "trail-slider",
+        "trail-toggle",
+        "vertex-opacity-readout",
+        "vertex-opacity-slider",
+        "vertex-toggle"
+      ],
+      "query_selectors": [],
+      "local_storage_keys": [],
+      "event_types": [
+        "blur",
+        "change",
+        "click",
+        "input",
+        "keydown",
+        "pointercancel",
+        "pointerdown",
+        "pointermove",
+        "pointerup",
+        "resize",
+        "wheel"
+      ],
+      "render_related_names": [
+        "buildEdges",
+        "buildSettingsUrl",
+        "buildVertices",
+        "createCamera",
+        "createElement",
+        "createLocalLens",
+        "draw",
+        "loadG900Phase30",
+        "loadLocalLensById",
+        "loadLocalLenses",
+        "loaded",
+        "renderLocalLensOptions",
+        "renderScene",
+        "rendered",
+        "renderedEdges",
+        "renderer"
+      ]
+    },
+    {
+      "path": "legacy/kernel/camera.js",
+      "line_count": 64,
+      "imports": [],
+      "exports": [
+        "clamp",
+        "createCamera",
+        "projectPoint"
+      ],
+      "functions": [
+        "rotateX",
+        "rotateY",
+        "rotateZ"
+      ],
+      "classes": [],
+      "constants": [],
+      "dom_ids": [],
+      "query_selectors": [],
+      "local_storage_keys": [],
+      "event_types": [],
+      "render_related_names": [
+        "createCamera"
+      ]
+    },
+    {
+      "path": "legacy/kernel/local_storage_lenses.js",
+      "line_count": 168,
+      "imports": [],
+      "exports": [
+        "clearLocalLenses",
+        "createLocalLens",
+        "deleteLocalLens",
+        "getLocalLens",
+        "loadLocalLenses",
+        "localLensStorageAvailable",
+        "saveLocalLenses",
+        "updateLocalLens"
+      ],
+      "functions": [
+        "normalizeLens",
+        "readRawStorage",
+        "safeId",
+        "safeNowIso",
+        "writeRawStorage"
+      ],
+      "classes": [],
+      "constants": [
+        "G900_LENS_SCHEMA_VERSION",
+        "G900_LENS_STORAGE_KEY"
+      ],
+      "dom_ids": [],
+      "query_selectors": [],
+      "local_storage_keys": [],
+      "event_types": [],
+      "render_related_names": [
+        "createLocalLens",
+        "createdAt",
+        "loadLocalLenses"
+      ]
+    },
+    {
+      "path": "legacy/kernel/p900_data.js",
+      "line_count": 163,
+      "imports": [],
+      "exports": [],
+      "functions": [
+        "candidatesFromPayload",
+        "countNumber",
+        "fallbackPayload",
+        "normalizeCandidate",
+        "normalizeEdge",
+        "shortId"
+      ],
+      "classes": [],
+      "constants": [
+        "PHASE30_URL"
+      ],
+      "dom_ids": [],
+      "query_selectors": [],
+      "local_storage_keys": [],
+      "event_types": [],
+      "render_related_names": [
+        "loadG900Phase30",
+        "renderer_defaults"
+      ]
+    },
+    {
+      "path": "legacy/kernel/p900_geometry.js",
+      "line_count": 85,
+      "imports": [],
+      "exports": [
+        "buildEdges",
+        "buildVertices"
+      ],
+      "functions": [
+        "idOf"
+      ],
+      "classes": [],
+      "constants": [],
+      "dom_ids": [],
+      "query_selectors": [],
+      "local_storage_keys": [],
+      "event_types": [],
+      "render_related_names": [
+        "buildEdges",
+        "buildVertices"
+      ]
+    },
+    {
+      "path": "legacy/kernel/renderer.js",
+      "line_count": 155,
+      "imports": [
+        {
+          "what": "{ projectPoint }",
+          "from": "./camera.js"
+        }
+      ],
+      "exports": [
+        "renderScene"
+      ],
+      "functions": [
+        "clamp01",
+        "domChecked",
+        "domSlider",
+        "edgeColor",
+        "resizeCanvas",
+        "setReadout",
+        "vertexColor"
+      ],
+      "classes": [],
+      "constants": [],
+      "dom_ids": [],
+      "query_selectors": [],
+      "local_storage_keys": [],
+      "event_types": [],
+      "render_related_names": [
+        "renderScene"
+      ]
+    }
+  ]
+}

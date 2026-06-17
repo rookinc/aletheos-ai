@@ -1,0 +1,3068 @@
+{
+  "schema": "g900.edge_limit_phase_scan",
+  "version": "1",
+  "status": "edge_limit_phase_scan_recorded",
+  "audit_pass": true,
+  "body": "g900",
+  "selector_family": "bounded_root_tuple_shell_depth_2_edge_limit_N",
+  "boundary": {
+    "phase_scan_only": true,
+    "channels_admitted": false,
+    "channel_registry_modified": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "physics_claim": false,
+    "force_claim": false
+  },
+  "input_paths": {
+    "body": "public_html/labs/g900_observatory/data/g900_static_body.v1.json",
+    "carriers": "public_html/labs/g900_observatory/data/g900_carriers.v0.1.json",
+    "channels": "public_html/labs/g900_observatory/data/g900_channels.v0.1.json",
+    "projection_json": "public_html/labs/g900_observatory/artifacts/json/g900_primary_slot_projection_census_001.v1.json",
+    "projection_csv": "public_html/labs/g900_observatory/artifacts/csv/g900_primary_slot_projection_census_001_rows.v1.csv",
+    "exception_json": "public_html/labs/g900_observatory/artifacts/json/g900_projection_exception_handles_001.v1.json",
+    "neighbor_json": "public_html/labs/g900_observatory/artifacts/json/g900_projection_exception_neighbor_contrast_001.v1.json"
+  },
+  "checks": {
+    "projection_audit_pass_true": true,
+    "exception_audit_pass_true": true,
+    "neighbor_contrast_audit_pass_true": true,
+    "root_count_is_900": true,
+    "limit_count_is_60": true,
+    "phase_row_count_is_54000": true,
+    "all_limit_summaries_have_900_roots": true,
+    "edge_limit_30_matches_projection_census": true,
+    "all_phase_rows_marked_no_channel_admission": true,
+    "all_root_summaries_marked_no_channel_admission": true,
+    "channel_registry_still_zero_sets": true,
+    "channel_registry_still_zero_channels": true,
+    "channel_registry_admits_channels_false": true,
+    "channel_registry_renders_channels_false": true
+  },
+  "summary": {
+    "root_count": 900,
+    "limit_count": 60,
+    "phase_row_count": 54000,
+    "limit_range": [
+      1,
+      60
+    ],
+    "global_primary_label_counts": {
+      "5": 5332,
+      "6": 5220,
+      "2": 4857,
+      "7": 4092,
+      "3": 4044,
+      "0": 3974,
+      "1": 3455,
+      "9": 3400,
+      "4": 3397,
+      "10": 2723,
+      "8": 2660,
+      "11": 2240,
+      "13": 2209,
+      "12": 2149,
+      "14": 1763,
+      "5/14": 300,
+      "6/12": 240,
+      "6/13": 240,
+      "7/11": 240,
+      "2/8": 180,
+      "3/9": 180,
+      "5/10": 180,
+      "0/1": 167,
+      "2/3": 120,
+      "0/4": 98,
+      "3/4": 89,
+      "2/7": 80,
+      "4/5": 79,
+      "1/2": 70,
+      "0/5": 64,
+      "1/7": 60,
+      "0/6": 58,
+      "1/6": 40
+    },
+    "distinct_label_count_distribution": {
+      "1": 93,
+      "2": 26,
+      "3": 620,
+      "4": 153,
+      "5": 8
+    },
+    "switch_count_distribution": {
+      "0": 93,
+      "1": 7,
+      "2": 19,
+      "3": 620,
+      "4": 114,
+      "5": 15,
+      "6": 32
+    },
+    "dominant_label_counts": {
+      "0": 60,
+      "1": 60,
+      "10": 60,
+      "11": 60,
+      "12": 60,
+      "13": 60,
+      "14": 60,
+      "2": 60,
+      "3": 60,
+      "4": 60,
+      "5": 60,
+      "6": 60,
+      "7": 60,
+      "8": 60,
+      "9": 60
+    },
+    "stable_root_count": 93,
+    "multi_label_root_count": 807,
+    "exception_root_count": 15,
+    "exception_distinct_label_count_distribution": {
+      "3": 11,
+      "4": 2,
+      "5": 2
+    },
+    "exception_switch_count_distribution": {
+      "3": 11,
+      "4": 1,
+      "5": 3
+    },
+    "non_exception_distinct_label_count_distribution": {
+      "1": 93,
+      "2": 26,
+      "3": 609,
+      "4": 151,
+      "5": 6
+    },
+    "top_transition_counts": [
+      {
+        "transition": "2 -> 3",
+        "count": 60
+      },
+      {
+        "transition": "2/3 -> 3",
+        "count": 60
+      },
+      {
+        "transition": "3 -> 2",
+        "count": 60
+      },
+      {
+        "transition": "2 -> 8",
+        "count": 60
+      },
+      {
+        "transition": "2/8 -> 8",
+        "count": 60
+      },
+      {
+        "transition": "8 -> 2",
+        "count": 60
+      },
+      {
+        "transition": "3 -> 9",
+        "count": 60
+      },
+      {
+        "transition": "3/9 -> 9",
+        "count": 60
+      },
+      {
+        "transition": "9 -> 3",
+        "count": 60
+      },
+      {
+        "transition": "10 -> 5",
+        "count": 60
+      },
+      {
+        "transition": "5 -> 10",
+        "count": 60
+      },
+      {
+        "transition": "5/10 -> 10",
+        "count": 60
+      },
+      {
+        "transition": "11 -> 7",
+        "count": 60
+      },
+      {
+        "transition": "7/11 -> 11",
+        "count": 60
+      },
+      {
+        "transition": "12 -> 6",
+        "count": 60
+      },
+      {
+        "transition": "6 -> 9",
+        "count": 60
+      },
+      {
+        "transition": "6/12 -> 12",
+        "count": 60
+      },
+      {
+        "transition": "9 -> 12",
+        "count": 60
+      },
+      {
+        "transition": "13 -> 6",
+        "count": 60
+      },
+      {
+        "transition": "6 -> 13",
+        "count": 60
+      },
+      {
+        "transition": "6/13 -> 13",
+        "count": 60
+      },
+      {
+        "transition": "14 -> 5",
+        "count": 60
+      },
+      {
+        "transition": "5 -> 14",
+        "count": 60
+      },
+      {
+        "transition": "5/14 -> 14",
+        "count": 60
+      },
+      {
+        "transition": "0 -> 4",
+        "count": 58
+      },
+      {
+        "transition": "4 -> 5",
+        "count": 57
+      },
+      {
+        "transition": "1 -> 2",
+        "count": 54
+      },
+      {
+        "transition": "2 -> 7",
+        "count": 52
+      },
+      {
+        "transition": "7 -> 9",
+        "count": 50
+      },
+      {
+        "transition": "9 -> 11",
+        "count": 50
+      }
+    ],
+    "slot_summary": [
+      {
+        "root_slot": 0,
+        "root_count": 60,
+        "stable_root_count": 31,
+        "multi_label_root_count": 29,
+        "average_switch_count": 0.9333333333333333,
+        "label_at_30_counts": {
+          "0": 59,
+          "4": 1
+        },
+        "dominant_label_counts": {
+          "0": 60
+        }
+      },
+      {
+        "root_slot": 1,
+        "root_count": 60,
+        "stable_root_count": 11,
+        "multi_label_root_count": 49,
+        "average_switch_count": 2.533333333333333,
+        "label_at_30_counts": {
+          "0": 2,
+          "1": 56,
+          "2": 2
+        },
+        "dominant_label_counts": {
+          "1": 60
+        }
+      },
+      {
+        "root_slot": 2,
+        "root_count": 60,
+        "stable_root_count": 40,
+        "multi_label_root_count": 20,
+        "average_switch_count": 1.0,
+        "label_at_30_counts": {
+          "2": 60
+        },
+        "dominant_label_counts": {
+          "2": 60
+        }
+      },
+      {
+        "root_slot": 3,
+        "root_count": 60,
+        "stable_root_count": 0,
+        "multi_label_root_count": 60,
+        "average_switch_count": 3.0,
+        "label_at_30_counts": {
+          "3": 60
+        },
+        "dominant_label_counts": {
+          "3": 60
+        }
+      },
+      {
+        "root_slot": 4,
+        "root_count": 60,
+        "stable_root_count": 0,
+        "multi_label_root_count": 60,
+        "average_switch_count": 3.0833333333333335,
+        "label_at_30_counts": {
+          "4": 60
+        },
+        "dominant_label_counts": {
+          "4": 60
+        }
+      },
+      {
+        "root_slot": 5,
+        "root_count": 60,
+        "stable_root_count": 0,
+        "multi_label_root_count": 60,
+        "average_switch_count": 4.1,
+        "label_at_30_counts": {
+          "5": 60
+        },
+        "dominant_label_counts": {
+          "5": 60
+        }
+      },
+      {
+        "root_slot": 6,
+        "root_count": 60,
+        "stable_root_count": 11,
+        "multi_label_root_count": 49,
+        "average_switch_count": 2.45,
+        "label_at_30_counts": {
+          "6": 60
+        },
+        "dominant_label_counts": {
+          "6": 60
+        }
+      },
+      {
+        "root_slot": 7,
+        "root_count": 60,
+        "stable_root_count": 0,
+        "multi_label_root_count": 60,
+        "average_switch_count": 3.8666666666666667,
+        "label_at_30_counts": {
+          "7": 60
+        },
+        "dominant_label_counts": {
+          "7": 60
+        }
+      },
+      {
+        "root_slot": 8,
+        "root_count": 60,
+        "stable_root_count": 0,
+        "multi_label_root_count": 60,
+        "average_switch_count": 3.0,
+        "label_at_30_counts": {
+          "8": 60
+        },
+        "dominant_label_counts": {
+          "8": 60
+        }
+      },
+      {
+        "root_slot": 9,
+        "root_count": 60,
+        "stable_root_count": 0,
+        "multi_label_root_count": 60,
+        "average_switch_count": 3.0,
+        "label_at_30_counts": {
+          "9": 60
+        },
+        "dominant_label_counts": {
+          "9": 60
+        }
+      },
+      {
+        "root_slot": 10,
+        "root_count": 60,
+        "stable_root_count": 0,
+        "multi_label_root_count": 60,
+        "average_switch_count": 3.0,
+        "label_at_30_counts": {
+          "10": 60
+        },
+        "dominant_label_counts": {
+          "10": 60
+        }
+      },
+      {
+        "root_slot": 11,
+        "root_count": 60,
+        "stable_root_count": 0,
+        "multi_label_root_count": 60,
+        "average_switch_count": 3.8333333333333335,
+        "label_at_30_counts": {
+          "7": 10,
+          "9": 50
+        },
+        "dominant_label_counts": {
+          "11": 60
+        }
+      },
+      {
+        "root_slot": 12,
+        "root_count": 60,
+        "stable_root_count": 0,
+        "multi_label_root_count": 60,
+        "average_switch_count": 4.0,
+        "label_at_30_counts": {
+          "9": 60
+        },
+        "dominant_label_counts": {
+          "12": 60
+        }
+      },
+      {
+        "root_slot": 13,
+        "root_count": 60,
+        "stable_root_count": 0,
+        "multi_label_root_count": 60,
+        "average_switch_count": 3.0,
+        "label_at_30_counts": {
+          "6": 60
+        },
+        "dominant_label_counts": {
+          "13": 60
+        }
+      },
+      {
+        "root_slot": 14,
+        "root_count": 60,
+        "stable_root_count": 0,
+        "multi_label_root_count": 60,
+        "average_switch_count": 3.0,
+        "label_at_30_counts": {
+          "5": 60
+        },
+        "dominant_label_counts": {
+          "14": 60
+        }
+      }
+    ],
+    "limit_summaries": [
+      {
+        "edge_limit": 1,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "2/3": 60,
+          "2/8": 60,
+          "3/9": 60,
+          "5/10": 60,
+          "5/14": 60,
+          "6/12": 60,
+          "6/13": 60,
+          "7/11": 60,
+          "0": 49,
+          "0/1": 45,
+          "3/4": 45,
+          "4/5": 42,
+          "2": 40,
+          "2/7": 40,
+          "0/6": 29,
+          "1/2": 22,
+          "1": 20,
+          "1/6": 20,
+          "1/7": 20,
+          "0/4": 19,
+          "0/5": 18,
+          "6": 11
+        },
+        "aligned_count": 900,
+        "misaligned_count": 0,
+        "alignment_rate": 1.0,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 2,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "2/3": 60,
+          "2/8": 60,
+          "3/9": 60,
+          "5/10": 60,
+          "5/14": 60,
+          "6/12": 60,
+          "6/13": 60,
+          "7/11": 60,
+          "0/1": 52,
+          "3/4": 44,
+          "2": 40,
+          "2/7": 40,
+          "4/5": 37,
+          "0/4": 32,
+          "0": 31,
+          "1/2": 30,
+          "0/6": 29,
+          "0/5": 23,
+          "1/6": 20,
+          "1/7": 20,
+          "1": 11,
+          "6": 11
+        },
+        "aligned_count": 900,
+        "misaligned_count": 0,
+        "alignment_rate": 1.0,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 3,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "2": 60,
+          "2/8": 60,
+          "3": 60,
+          "3/9": 60,
+          "5/10": 60,
+          "5/14": 60,
+          "6": 60,
+          "6/12": 60,
+          "6/13": 60,
+          "7/11": 60,
+          "4": 41,
+          "7": 40,
+          "0": 37,
+          "5": 37,
+          "1": 36,
+          "0/4": 34,
+          "0/5": 23,
+          "0/1": 22,
+          "1/7": 20,
+          "1/2": 10
+        },
+        "aligned_count": 900,
+        "misaligned_count": 0,
+        "alignment_rate": 1.0,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 4,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "10": 60,
+          "2": 60,
+          "3": 60,
+          "4": 60,
+          "5": 60,
+          "5/14": 60,
+          "6": 60,
+          "6/12": 60,
+          "6/13": 60,
+          "7": 60,
+          "7/11": 60,
+          "8": 60,
+          "9": 60,
+          "0": 43,
+          "1": 36,
+          "0/1": 20,
+          "0/4": 13,
+          "1/2": 8
+        },
+        "aligned_count": 900,
+        "misaligned_count": 0,
+        "alignment_rate": 1.0,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 5,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "10": 60,
+          "11": 60,
+          "12": 60,
+          "13": 60,
+          "2": 60,
+          "3": 60,
+          "4": 60,
+          "5": 60,
+          "5/14": 60,
+          "6": 60,
+          "7": 60,
+          "8": 60,
+          "9": 60,
+          "0": 56,
+          "1": 36,
+          "0/1": 28
+        },
+        "aligned_count": 900,
+        "misaligned_count": 0,
+        "alignment_rate": 1.0,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 6,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "0": 60,
+          "1": 60,
+          "10": 60,
+          "11": 60,
+          "12": 60,
+          "13": 60,
+          "14": 60,
+          "2": 60,
+          "3": 60,
+          "4": 60,
+          "5": 60,
+          "6": 60,
+          "7": 60,
+          "8": 60,
+          "9": 60
+        },
+        "aligned_count": 900,
+        "misaligned_count": 0,
+        "alignment_rate": 1.0,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 7,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "0": 60,
+          "1": 60,
+          "10": 60,
+          "11": 60,
+          "12": 60,
+          "13": 60,
+          "14": 60,
+          "2": 60,
+          "3": 60,
+          "4": 60,
+          "5": 60,
+          "6": 60,
+          "7": 60,
+          "8": 60,
+          "9": 60
+        },
+        "aligned_count": 900,
+        "misaligned_count": 0,
+        "alignment_rate": 1.0,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 8,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "0": 60,
+          "1": 60,
+          "10": 60,
+          "11": 60,
+          "12": 60,
+          "13": 60,
+          "14": 60,
+          "2": 60,
+          "3": 60,
+          "4": 60,
+          "5": 60,
+          "6": 60,
+          "7": 60,
+          "8": 60,
+          "9": 60
+        },
+        "aligned_count": 900,
+        "misaligned_count": 0,
+        "alignment_rate": 1.0,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 9,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "0": 60,
+          "1": 60,
+          "10": 60,
+          "11": 60,
+          "12": 60,
+          "13": 60,
+          "14": 60,
+          "2": 60,
+          "3": 60,
+          "4": 60,
+          "5": 60,
+          "6": 60,
+          "7": 60,
+          "8": 60,
+          "9": 60
+        },
+        "aligned_count": 900,
+        "misaligned_count": 0,
+        "alignment_rate": 1.0,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 10,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "0": 60,
+          "1": 60,
+          "10": 60,
+          "11": 60,
+          "12": 60,
+          "13": 60,
+          "14": 60,
+          "2": 60,
+          "3": 60,
+          "4": 60,
+          "5": 60,
+          "6": 60,
+          "7": 60,
+          "8": 60,
+          "9": 60
+        },
+        "aligned_count": 900,
+        "misaligned_count": 0,
+        "alignment_rate": 1.0,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 11,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "0": 60,
+          "1": 60,
+          "10": 60,
+          "11": 60,
+          "12": 60,
+          "13": 60,
+          "14": 60,
+          "2": 60,
+          "3": 60,
+          "4": 60,
+          "5": 60,
+          "6": 60,
+          "7": 60,
+          "8": 60,
+          "9": 60
+        },
+        "aligned_count": 900,
+        "misaligned_count": 0,
+        "alignment_rate": 1.0,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 12,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "2": 158,
+          "6": 79,
+          "0": 68,
+          "10": 60,
+          "11": 60,
+          "14": 60,
+          "4": 60,
+          "5": 60,
+          "9": 60,
+          "1": 59,
+          "12": 49,
+          "13": 49,
+          "7": 38,
+          "3": 20,
+          "8": 20
+        },
+        "aligned_count": 764,
+        "misaligned_count": 136,
+        "alignment_rate": 0.8488888888888889,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 13,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "2": 218,
+          "6": 174,
+          "5": 109,
+          "3": 105,
+          "0": 79,
+          "1": 59,
+          "7": 58,
+          "4": 32,
+          "10": 23,
+          "14": 23,
+          "11": 20
+        },
+        "aligned_count": 355,
+        "misaligned_count": 545,
+        "alignment_rate": 0.39444444444444443,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 14,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "2": 218,
+          "6": 167,
+          "5": 132,
+          "3": 105,
+          "0": 90,
+          "7": 78,
+          "1": 58,
+          "4": 52
+        },
+        "aligned_count": 257,
+        "misaligned_count": 643,
+        "alignment_rate": 0.28555555555555556,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 15,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "2": 200,
+          "0": 160,
+          "6": 131,
+          "5": 120,
+          "3": 105,
+          "1": 82,
+          "7": 60,
+          "4": 42
+        },
+        "aligned_count": 133,
+        "misaligned_count": 767,
+        "alignment_rate": 0.14777777777777779,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 16,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "2": 212,
+          "6": 144,
+          "0": 137,
+          "5": 120,
+          "3": 105,
+          "1": 77,
+          "7": 60,
+          "4": 45
+        },
+        "aligned_count": 165,
+        "misaligned_count": 735,
+        "alignment_rate": 0.18333333333333332,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 17,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "6": 180,
+          "5": 155,
+          "2": 134,
+          "3": 122,
+          "0": 100,
+          "7": 86,
+          "1": 70,
+          "4": 53
+        },
+        "aligned_count": 391,
+        "misaligned_count": 509,
+        "alignment_rate": 0.43444444444444447,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 18,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "6": 180,
+          "5": 157,
+          "3": 121,
+          "2": 120,
+          "0": 100,
+          "7": 100,
+          "1": 70,
+          "4": 52
+        },
+        "aligned_count": 408,
+        "misaligned_count": 492,
+        "alignment_rate": 0.4533333333333333,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 19,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "6": 180,
+          "5": 157,
+          "2": 140,
+          "3": 121,
+          "0": 101,
+          "7": 100,
+          "4": 51,
+          "1": 50
+        },
+        "aligned_count": 408,
+        "misaligned_count": 492,
+        "alignment_rate": 0.4533333333333333,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 20,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "6": 180,
+          "5": 157,
+          "2": 140,
+          "3": 120,
+          "7": 100,
+          "0": 76,
+          "4": 69,
+          "1": 58
+        },
+        "aligned_count": 416,
+        "misaligned_count": 484,
+        "alignment_rate": 0.4622222222222222,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 21,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "6": 180,
+          "5": 157,
+          "2": 140,
+          "3": 120,
+          "7": 100,
+          "0": 80,
+          "4": 65,
+          "1": 58
+        },
+        "aligned_count": 416,
+        "misaligned_count": 484,
+        "alignment_rate": 0.4622222222222222,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 22,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "6": 180,
+          "5": 157,
+          "2": 120,
+          "3": 120,
+          "7": 100,
+          "0": 98,
+          "1": 78,
+          "4": 47
+        },
+        "aligned_count": 416,
+        "misaligned_count": 484,
+        "alignment_rate": 0.4622222222222222,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 23,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "6": 180,
+          "5": 157,
+          "2": 134,
+          "3": 120,
+          "7": 100,
+          "0": 78,
+          "4": 67,
+          "1": 64
+        },
+        "aligned_count": 414,
+        "misaligned_count": 486,
+        "alignment_rate": 0.46,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 24,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "5": 177,
+          "2": 122,
+          "6": 120,
+          "9": 120,
+          "7": 112,
+          "0": 65,
+          "1": 64,
+          "3": 60,
+          "4": 60
+        },
+        "aligned_count": 519,
+        "misaligned_count": 381,
+        "alignment_rate": 0.5766666666666667,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 25,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "5": 120,
+          "6": 120,
+          "7": 120,
+          "9": 120,
+          "4": 63,
+          "2": 62,
+          "10": 60,
+          "3": 60,
+          "8": 60,
+          "0": 59,
+          "1": 56
+        },
+        "aligned_count": 653,
+        "misaligned_count": 247,
+        "alignment_rate": 0.7255555555555555,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 26,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "6": 121,
+          "5": 120,
+          "7": 120,
+          "9": 120,
+          "4": 63,
+          "2": 62,
+          "10": 60,
+          "3": 60,
+          "8": 60,
+          "0": 58,
+          "1": 56
+        },
+        "aligned_count": 653,
+        "misaligned_count": 247,
+        "alignment_rate": 0.7255555555555555,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 27,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "6": 121,
+          "5": 120,
+          "7": 120,
+          "9": 120,
+          "4": 63,
+          "2": 62,
+          "10": 60,
+          "3": 60,
+          "8": 60,
+          "0": 58,
+          "1": 56
+        },
+        "aligned_count": 653,
+        "misaligned_count": 247,
+        "alignment_rate": 0.7255555555555555,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 28,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "6": 121,
+          "5": 120,
+          "7": 120,
+          "9": 120,
+          "4": 63,
+          "2": 62,
+          "10": 60,
+          "3": 60,
+          "8": 60,
+          "0": 58,
+          "1": 56
+        },
+        "aligned_count": 653,
+        "misaligned_count": 247,
+        "alignment_rate": 0.7255555555555555,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 29,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "5": 120,
+          "6": 120,
+          "7": 120,
+          "9": 120,
+          "4": 63,
+          "2": 62,
+          "10": 60,
+          "3": 60,
+          "8": 60,
+          "0": 59,
+          "1": 56
+        },
+        "aligned_count": 653,
+        "misaligned_count": 247,
+        "alignment_rate": 0.7255555555555555,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 30,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "9": 170,
+          "5": 120,
+          "6": 120,
+          "7": 70,
+          "2": 62,
+          "0": 61,
+          "4": 61,
+          "10": 60,
+          "3": 60,
+          "8": 60,
+          "1": 56
+        },
+        "aligned_count": 655,
+        "misaligned_count": 245,
+        "alignment_rate": 0.7277777777777777,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 31,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "9": 170,
+          "5": 120,
+          "6": 120,
+          "7": 70,
+          "2": 62,
+          "0": 61,
+          "4": 61,
+          "10": 60,
+          "3": 60,
+          "8": 60,
+          "1": 56
+        },
+        "aligned_count": 655,
+        "misaligned_count": 245,
+        "alignment_rate": 0.7277777777777777,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 32,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "5": 120,
+          "9": 120,
+          "2": 62,
+          "0": 61,
+          "4": 61,
+          "10": 60,
+          "11": 60,
+          "13": 60,
+          "3": 60,
+          "6": 60,
+          "7": 60,
+          "8": 60,
+          "1": 56
+        },
+        "aligned_count": 775,
+        "misaligned_count": 125,
+        "alignment_rate": 0.8611111111111112,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 33,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "5": 120,
+          "2": 62,
+          "0": 61,
+          "4": 61,
+          "10": 60,
+          "11": 60,
+          "12": 60,
+          "13": 60,
+          "3": 60,
+          "6": 60,
+          "7": 60,
+          "8": 60,
+          "9": 60,
+          "1": 56
+        },
+        "aligned_count": 835,
+        "misaligned_count": 65,
+        "alignment_rate": 0.9277777777777778,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 34,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "5": 120,
+          "2": 62,
+          "0": 61,
+          "4": 61,
+          "10": 60,
+          "11": 60,
+          "12": 60,
+          "13": 60,
+          "3": 60,
+          "6": 60,
+          "7": 60,
+          "8": 60,
+          "9": 60,
+          "1": 56
+        },
+        "aligned_count": 835,
+        "misaligned_count": 65,
+        "alignment_rate": 0.9277777777777778,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 35,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "5": 120,
+          "0": 62,
+          "2": 61,
+          "4": 61,
+          "10": 60,
+          "11": 60,
+          "12": 60,
+          "13": 60,
+          "3": 60,
+          "6": 60,
+          "7": 60,
+          "8": 60,
+          "9": 60,
+          "1": 56
+        },
+        "aligned_count": 835,
+        "misaligned_count": 65,
+        "alignment_rate": 0.9277777777777778,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 36,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "5": 120,
+          "0": 63,
+          "10": 60,
+          "11": 60,
+          "12": 60,
+          "13": 60,
+          "2": 60,
+          "3": 60,
+          "4": 60,
+          "6": 60,
+          "7": 60,
+          "8": 60,
+          "9": 60,
+          "1": 57
+        },
+        "aligned_count": 835,
+        "misaligned_count": 65,
+        "alignment_rate": 0.9277777777777778,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 37,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "5": 120,
+          "0": 64,
+          "10": 60,
+          "11": 60,
+          "12": 60,
+          "13": 60,
+          "2": 60,
+          "3": 60,
+          "4": 60,
+          "6": 60,
+          "7": 60,
+          "8": 60,
+          "9": 60,
+          "1": 56
+        },
+        "aligned_count": 836,
+        "misaligned_count": 64,
+        "alignment_rate": 0.9288888888888889,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 38,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "5": 120,
+          "0": 60,
+          "1": 60,
+          "10": 60,
+          "11": 60,
+          "12": 60,
+          "13": 60,
+          "2": 60,
+          "3": 60,
+          "4": 60,
+          "6": 60,
+          "7": 60,
+          "8": 60,
+          "9": 60
+        },
+        "aligned_count": 840,
+        "misaligned_count": 60,
+        "alignment_rate": 0.9333333333333333,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 39,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "0": 60,
+          "1": 60,
+          "10": 60,
+          "11": 60,
+          "12": 60,
+          "13": 60,
+          "14": 60,
+          "2": 60,
+          "3": 60,
+          "4": 60,
+          "5": 60,
+          "6": 60,
+          "7": 60,
+          "8": 60,
+          "9": 60
+        },
+        "aligned_count": 900,
+        "misaligned_count": 0,
+        "alignment_rate": 1.0,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 40,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "0": 60,
+          "1": 60,
+          "10": 60,
+          "11": 60,
+          "12": 60,
+          "13": 60,
+          "14": 60,
+          "2": 60,
+          "3": 60,
+          "4": 60,
+          "5": 60,
+          "6": 60,
+          "7": 60,
+          "8": 60,
+          "9": 60
+        },
+        "aligned_count": 900,
+        "misaligned_count": 0,
+        "alignment_rate": 1.0,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 41,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "0": 60,
+          "1": 60,
+          "10": 60,
+          "11": 60,
+          "12": 60,
+          "13": 60,
+          "14": 60,
+          "2": 60,
+          "3": 60,
+          "4": 60,
+          "5": 60,
+          "6": 60,
+          "7": 60,
+          "8": 60,
+          "9": 60
+        },
+        "aligned_count": 900,
+        "misaligned_count": 0,
+        "alignment_rate": 1.0,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 42,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "0": 60,
+          "1": 60,
+          "10": 60,
+          "11": 60,
+          "12": 60,
+          "13": 60,
+          "14": 60,
+          "2": 60,
+          "3": 60,
+          "4": 60,
+          "5": 60,
+          "6": 60,
+          "7": 60,
+          "8": 60,
+          "9": 60
+        },
+        "aligned_count": 900,
+        "misaligned_count": 0,
+        "alignment_rate": 1.0,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 43,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "0": 60,
+          "1": 60,
+          "10": 60,
+          "11": 60,
+          "12": 60,
+          "13": 60,
+          "14": 60,
+          "2": 60,
+          "3": 60,
+          "4": 60,
+          "5": 60,
+          "6": 60,
+          "7": 60,
+          "8": 60,
+          "9": 60
+        },
+        "aligned_count": 900,
+        "misaligned_count": 0,
+        "alignment_rate": 1.0,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 44,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "0": 60,
+          "1": 60,
+          "10": 60,
+          "11": 60,
+          "12": 60,
+          "13": 60,
+          "14": 60,
+          "2": 60,
+          "3": 60,
+          "4": 60,
+          "5": 60,
+          "6": 60,
+          "7": 60,
+          "8": 60,
+          "9": 60
+        },
+        "aligned_count": 900,
+        "misaligned_count": 0,
+        "alignment_rate": 1.0,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 45,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "0": 60,
+          "1": 60,
+          "10": 60,
+          "11": 60,
+          "12": 60,
+          "13": 60,
+          "14": 60,
+          "2": 60,
+          "3": 60,
+          "4": 60,
+          "5": 60,
+          "6": 60,
+          "7": 60,
+          "8": 60,
+          "9": 60
+        },
+        "aligned_count": 900,
+        "misaligned_count": 0,
+        "alignment_rate": 1.0,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 46,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "0": 60,
+          "1": 60,
+          "10": 60,
+          "11": 60,
+          "12": 60,
+          "13": 60,
+          "14": 60,
+          "2": 60,
+          "3": 60,
+          "4": 60,
+          "5": 60,
+          "6": 60,
+          "7": 60,
+          "8": 60,
+          "9": 60
+        },
+        "aligned_count": 900,
+        "misaligned_count": 0,
+        "alignment_rate": 1.0,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 47,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "0": 60,
+          "1": 60,
+          "10": 60,
+          "11": 60,
+          "12": 60,
+          "13": 60,
+          "14": 60,
+          "2": 60,
+          "3": 60,
+          "4": 60,
+          "5": 60,
+          "6": 60,
+          "7": 60,
+          "8": 60,
+          "9": 60
+        },
+        "aligned_count": 900,
+        "misaligned_count": 0,
+        "alignment_rate": 1.0,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 48,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "0": 60,
+          "1": 60,
+          "10": 60,
+          "11": 60,
+          "12": 60,
+          "13": 60,
+          "14": 60,
+          "2": 60,
+          "3": 60,
+          "4": 60,
+          "5": 60,
+          "6": 60,
+          "7": 60,
+          "8": 60,
+          "9": 60
+        },
+        "aligned_count": 900,
+        "misaligned_count": 0,
+        "alignment_rate": 1.0,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 49,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "0": 60,
+          "1": 60,
+          "10": 60,
+          "11": 60,
+          "12": 60,
+          "13": 60,
+          "14": 60,
+          "2": 60,
+          "3": 60,
+          "4": 60,
+          "5": 60,
+          "6": 60,
+          "7": 60,
+          "8": 60,
+          "9": 60
+        },
+        "aligned_count": 900,
+        "misaligned_count": 0,
+        "alignment_rate": 1.0,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 50,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "0": 60,
+          "1": 60,
+          "10": 60,
+          "11": 60,
+          "12": 60,
+          "13": 60,
+          "14": 60,
+          "2": 60,
+          "3": 60,
+          "4": 60,
+          "5": 60,
+          "6": 60,
+          "7": 60,
+          "8": 60,
+          "9": 60
+        },
+        "aligned_count": 900,
+        "misaligned_count": 0,
+        "alignment_rate": 1.0,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 51,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "0": 60,
+          "1": 60,
+          "10": 60,
+          "11": 60,
+          "12": 60,
+          "13": 60,
+          "14": 60,
+          "2": 60,
+          "3": 60,
+          "4": 60,
+          "5": 60,
+          "6": 60,
+          "7": 60,
+          "8": 60,
+          "9": 60
+        },
+        "aligned_count": 900,
+        "misaligned_count": 0,
+        "alignment_rate": 1.0,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 52,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "0": 60,
+          "1": 60,
+          "10": 60,
+          "11": 60,
+          "12": 60,
+          "13": 60,
+          "14": 60,
+          "2": 60,
+          "3": 60,
+          "4": 60,
+          "5": 60,
+          "6": 60,
+          "7": 60,
+          "8": 60,
+          "9": 60
+        },
+        "aligned_count": 900,
+        "misaligned_count": 0,
+        "alignment_rate": 1.0,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 53,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "0": 60,
+          "1": 60,
+          "10": 60,
+          "11": 60,
+          "12": 60,
+          "13": 60,
+          "14": 60,
+          "2": 60,
+          "3": 60,
+          "4": 60,
+          "5": 60,
+          "6": 60,
+          "7": 60,
+          "8": 60,
+          "9": 60
+        },
+        "aligned_count": 900,
+        "misaligned_count": 0,
+        "alignment_rate": 1.0,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 54,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "0": 60,
+          "1": 60,
+          "10": 60,
+          "11": 60,
+          "12": 60,
+          "13": 60,
+          "14": 60,
+          "2": 60,
+          "3": 60,
+          "4": 60,
+          "5": 60,
+          "6": 60,
+          "7": 60,
+          "8": 60,
+          "9": 60
+        },
+        "aligned_count": 900,
+        "misaligned_count": 0,
+        "alignment_rate": 1.0,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 55,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "0": 60,
+          "1": 60,
+          "10": 60,
+          "11": 60,
+          "12": 60,
+          "13": 60,
+          "14": 60,
+          "2": 60,
+          "3": 60,
+          "4": 60,
+          "5": 60,
+          "6": 60,
+          "7": 60,
+          "8": 60,
+          "9": 60
+        },
+        "aligned_count": 900,
+        "misaligned_count": 0,
+        "alignment_rate": 1.0,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 56,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "0": 60,
+          "1": 60,
+          "10": 60,
+          "11": 60,
+          "12": 60,
+          "13": 60,
+          "14": 60,
+          "2": 60,
+          "3": 60,
+          "4": 60,
+          "5": 60,
+          "6": 60,
+          "7": 60,
+          "8": 60,
+          "9": 60
+        },
+        "aligned_count": 900,
+        "misaligned_count": 0,
+        "alignment_rate": 1.0,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 57,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "0": 60,
+          "1": 60,
+          "10": 60,
+          "11": 60,
+          "12": 60,
+          "13": 60,
+          "14": 60,
+          "2": 60,
+          "3": 60,
+          "4": 60,
+          "5": 60,
+          "6": 60,
+          "7": 60,
+          "8": 60,
+          "9": 60
+        },
+        "aligned_count": 900,
+        "misaligned_count": 0,
+        "alignment_rate": 1.0,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 58,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "0": 60,
+          "1": 60,
+          "10": 60,
+          "11": 60,
+          "12": 60,
+          "13": 60,
+          "14": 60,
+          "2": 60,
+          "3": 60,
+          "4": 60,
+          "5": 60,
+          "6": 60,
+          "7": 60,
+          "8": 60,
+          "9": 60
+        },
+        "aligned_count": 900,
+        "misaligned_count": 0,
+        "alignment_rate": 1.0,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 59,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "0": 60,
+          "1": 60,
+          "10": 60,
+          "11": 60,
+          "12": 60,
+          "13": 60,
+          "14": 60,
+          "2": 60,
+          "3": 60,
+          "4": 60,
+          "5": 60,
+          "6": 60,
+          "7": 60,
+          "8": 60,
+          "9": 60
+        },
+        "aligned_count": 900,
+        "misaligned_count": 0,
+        "alignment_rate": 1.0,
+        "none_count": 0
+      },
+      {
+        "edge_limit": 60,
+        "root_count": 900,
+        "primary_slot_counts": {
+          "0": 60,
+          "1": 60,
+          "10": 60,
+          "11": 60,
+          "12": 60,
+          "13": 60,
+          "14": 60,
+          "2": 60,
+          "3": 60,
+          "4": 60,
+          "5": 60,
+          "6": 60,
+          "7": 60,
+          "8": 60,
+          "9": 60
+        },
+        "aligned_count": 900,
+        "misaligned_count": 0,
+        "alignment_rate": 1.0,
+        "none_count": 0
+      }
+    ],
+    "high_switch_roots": [
+      {
+        "root": "5:30",
+        "root_slot": 5,
+        "root_local": 30,
+        "label_at_30": "5",
+        "prior_projection_label_at_30": "5",
+        "dominant_label": "5",
+        "dominant_label_count": 47,
+        "distinct_label_count": 4,
+        "switch_count": 6,
+        "label_counts": {
+          "0": 7,
+          "0/5": 3,
+          "4": 3,
+          "5": 47
+        },
+        "transition_counts": {
+          "0 -> 4": 2,
+          "0/5 -> 5": 1,
+          "4 -> 0": 1,
+          "4 -> 5": 1,
+          "5 -> 0": 1
+        },
+        "label_sequence": "0/5 0/5 0/5 5 5 5 5 5 5 5 5 5 5 0 0 0 0 0 0 4 4 0 4 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5",
+        "is_projection_exception_root": false,
+        "channels_admitted": false
+      },
+      {
+        "root": "5:31",
+        "root_slot": 5,
+        "root_local": 31,
+        "label_at_30": "5",
+        "prior_projection_label_at_30": "5",
+        "dominant_label": "5",
+        "dominant_label_count": 46,
+        "distinct_label_count": 4,
+        "switch_count": 6,
+        "label_counts": {
+          "0": 8,
+          "0/5": 3,
+          "4": 3,
+          "5": 46
+        },
+        "transition_counts": {
+          "0 -> 4": 2,
+          "0/5 -> 5": 1,
+          "4 -> 0": 1,
+          "4 -> 5": 1,
+          "5 -> 0": 1
+        },
+        "label_sequence": "0/5 0/5 0/5 5 5 5 5 5 5 5 5 5 0 0 0 0 0 0 0 4 4 0 4 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5",
+        "is_projection_exception_root": false,
+        "channels_admitted": false
+      },
+      {
+        "root": "5:32",
+        "root_slot": 5,
+        "root_local": 32,
+        "label_at_30": "5",
+        "prior_projection_label_at_30": "5",
+        "dominant_label": "5",
+        "dominant_label_count": 46,
+        "distinct_label_count": 5,
+        "switch_count": 6,
+        "label_counts": {
+          "0": 2,
+          "0/5": 2,
+          "4": 9,
+          "4/5": 1,
+          "5": 46
+        },
+        "transition_counts": {
+          "0 -> 4": 1,
+          "0/5 -> 5": 1,
+          "4 -> 0": 1,
+          "4 -> 5": 1,
+          "4/5 -> 0/5": 1,
+          "5 -> 4": 1
+        },
+        "label_sequence": "4/5 0/5 0/5 5 5 5 5 5 5 5 5 5 4 4 4 4 4 4 4 4 0 0 4 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5",
+        "is_projection_exception_root": false,
+        "channels_admitted": false
+      },
+      {
+        "root": "5:40",
+        "root_slot": 5,
+        "root_local": 40,
+        "label_at_30": "5",
+        "prior_projection_label_at_30": "5",
+        "dominant_label": "5",
+        "dominant_label_count": 48,
+        "distinct_label_count": 4,
+        "switch_count": 6,
+        "label_counts": {
+          "0": 6,
+          "0/5": 3,
+          "4": 3,
+          "5": 48
+        },
+        "transition_counts": {
+          "0 -> 4": 2,
+          "0/5 -> 5": 1,
+          "4 -> 0": 1,
+          "4 -> 5": 1,
+          "5 -> 0": 1
+        },
+        "label_sequence": "0/5 0/5 0/5 5 5 5 5 5 5 5 5 5 5 5 0 0 0 0 0 4 4 0 4 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5",
+        "is_projection_exception_root": false,
+        "channels_admitted": false
+      },
+      {
+        "root": "5:41",
+        "root_slot": 5,
+        "root_local": 41,
+        "label_at_30": "5",
+        "prior_projection_label_at_30": "5",
+        "dominant_label": "5",
+        "dominant_label_count": 48,
+        "distinct_label_count": 4,
+        "switch_count": 6,
+        "label_counts": {
+          "0": 6,
+          "0/5": 3,
+          "4": 3,
+          "5": 48
+        },
+        "transition_counts": {
+          "0 -> 4": 2,
+          "0/5 -> 5": 1,
+          "4 -> 0": 1,
+          "4 -> 5": 1,
+          "5 -> 0": 1
+        },
+        "label_sequence": "0/5 0/5 0/5 5 5 5 5 5 5 5 5 5 5 5 0 0 0 0 0 4 4 0 4 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5",
+        "is_projection_exception_root": false,
+        "channels_admitted": false
+      },
+      {
+        "root": "5:42",
+        "root_slot": 5,
+        "root_local": 42,
+        "label_at_30": "5",
+        "prior_projection_label_at_30": "5",
+        "dominant_label": "5",
+        "dominant_label_count": 48,
+        "distinct_label_count": 4,
+        "switch_count": 6,
+        "label_counts": {
+          "0": 6,
+          "0/5": 3,
+          "4": 3,
+          "5": 48
+        },
+        "transition_counts": {
+          "0 -> 4": 2,
+          "0/5 -> 5": 1,
+          "4 -> 0": 1,
+          "4 -> 5": 1,
+          "5 -> 0": 1
+        },
+        "label_sequence": "0/5 0/5 0/5 5 5 5 5 5 5 5 5 5 5 5 0 0 0 0 0 4 4 0 4 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5",
+        "is_projection_exception_root": false,
+        "channels_admitted": false
+      },
+      {
+        "root": "5:44",
+        "root_slot": 5,
+        "root_local": 44,
+        "label_at_30": "5",
+        "prior_projection_label_at_30": "5",
+        "dominant_label": "5",
+        "dominant_label_count": 48,
+        "distinct_label_count": 4,
+        "switch_count": 6,
+        "label_counts": {
+          "0": 6,
+          "0/5": 3,
+          "4": 3,
+          "5": 48
+        },
+        "transition_counts": {
+          "0 -> 4": 2,
+          "0/5 -> 5": 1,
+          "4 -> 0": 1,
+          "4 -> 5": 1,
+          "5 -> 0": 1
+        },
+        "label_sequence": "0/5 0/5 0/5 5 5 5 5 5 5 5 5 5 5 5 0 0 0 0 0 4 4 0 4 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5",
+        "is_projection_exception_root": false,
+        "channels_admitted": false
+      },
+      {
+        "root": "5:45",
+        "root_slot": 5,
+        "root_local": 45,
+        "label_at_30": "5",
+        "prior_projection_label_at_30": "5",
+        "dominant_label": "5",
+        "dominant_label_count": 48,
+        "distinct_label_count": 4,
+        "switch_count": 6,
+        "label_counts": {
+          "0": 6,
+          "0/5": 3,
+          "4": 3,
+          "5": 48
+        },
+        "transition_counts": {
+          "0 -> 4": 2,
+          "0/5 -> 5": 1,
+          "4 -> 0": 1,
+          "4 -> 5": 1,
+          "5 -> 0": 1
+        },
+        "label_sequence": "0/5 0/5 0/5 5 5 5 5 5 5 5 5 5 5 5 0 0 0 0 0 4 4 0 4 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5",
+        "is_projection_exception_root": false,
+        "channels_admitted": false
+      },
+      {
+        "root": "5:46",
+        "root_slot": 5,
+        "root_local": 46,
+        "label_at_30": "5",
+        "prior_projection_label_at_30": "5",
+        "dominant_label": "5",
+        "dominant_label_count": 48,
+        "distinct_label_count": 4,
+        "switch_count": 6,
+        "label_counts": {
+          "0": 6,
+          "0/5": 3,
+          "4": 3,
+          "5": 48
+        },
+        "transition_counts": {
+          "0 -> 4": 2,
+          "0/5 -> 5": 1,
+          "4 -> 0": 1,
+          "4 -> 5": 1,
+          "5 -> 0": 1
+        },
+        "label_sequence": "0/5 0/5 0/5 5 5 5 5 5 5 5 5 5 5 5 0 0 0 0 0 4 4 0 4 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5",
+        "is_projection_exception_root": false,
+        "channels_admitted": false
+      },
+      {
+        "root": "5:47",
+        "root_slot": 5,
+        "root_local": 47,
+        "label_at_30": "5",
+        "prior_projection_label_at_30": "5",
+        "dominant_label": "5",
+        "dominant_label_count": 48,
+        "distinct_label_count": 4,
+        "switch_count": 6,
+        "label_counts": {
+          "0": 6,
+          "0/5": 3,
+          "4": 3,
+          "5": 48
+        },
+        "transition_counts": {
+          "0 -> 4": 2,
+          "0/5 -> 5": 1,
+          "4 -> 0": 1,
+          "4 -> 5": 1,
+          "5 -> 0": 1
+        },
+        "label_sequence": "0/5 0/5 0/5 5 5 5 5 5 5 5 5 5 5 5 0 0 0 0 0 4 4 0 4 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5",
+        "is_projection_exception_root": false,
+        "channels_admitted": false
+      },
+      {
+        "root": "5:49",
+        "root_slot": 5,
+        "root_local": 49,
+        "label_at_30": "5",
+        "prior_projection_label_at_30": "5",
+        "dominant_label": "5",
+        "dominant_label_count": 46,
+        "distinct_label_count": 4,
+        "switch_count": 6,
+        "label_counts": {
+          "0": 8,
+          "0/5": 3,
+          "4": 3,
+          "5": 46
+        },
+        "transition_counts": {
+          "0 -> 4": 2,
+          "0/5 -> 5": 1,
+          "4 -> 0": 1,
+          "4 -> 5": 1,
+          "5 -> 0": 1
+        },
+        "label_sequence": "0/5 0/5 0/5 5 5 5 5 5 5 5 5 5 0 0 0 0 0 0 0 4 4 0 4 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5",
+        "is_projection_exception_root": false,
+        "channels_admitted": false
+      },
+      {
+        "root": "5:50",
+        "root_slot": 5,
+        "root_local": 50,
+        "label_at_30": "5",
+        "prior_projection_label_at_30": "5",
+        "dominant_label": "5",
+        "dominant_label_count": 48,
+        "distinct_label_count": 4,
+        "switch_count": 6,
+        "label_counts": {
+          "0": 6,
+          "0/5": 3,
+          "4": 3,
+          "5": 48
+        },
+        "transition_counts": {
+          "0 -> 4": 2,
+          "0/5 -> 5": 1,
+          "4 -> 0": 1,
+          "4 -> 5": 1,
+          "5 -> 0": 1
+        },
+        "label_sequence": "0/5 0/5 0/5 5 5 5 5 5 5 5 5 5 5 5 0 0 0 0 0 4 4 0 4 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5",
+        "is_projection_exception_root": false,
+        "channels_admitted": false
+      },
+      {
+        "root": "5:51",
+        "root_slot": 5,
+        "root_local": 51,
+        "label_at_30": "5",
+        "prior_projection_label_at_30": "5",
+        "dominant_label": "5",
+        "dominant_label_count": 48,
+        "distinct_label_count": 4,
+        "switch_count": 6,
+        "label_counts": {
+          "0": 6,
+          "0/5": 3,
+          "4": 3,
+          "5": 48
+        },
+        "transition_counts": {
+          "0 -> 4": 2,
+          "0/5 -> 5": 1,
+          "4 -> 0": 1,
+          "4 -> 5": 1,
+          "5 -> 0": 1
+        },
+        "label_sequence": "0/5 0/5 0/5 5 5 5 5 5 5 5 5 5 5 5 0 0 0 0 0 4 4 0 4 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5",
+        "is_projection_exception_root": false,
+        "channels_admitted": false
+      },
+      {
+        "root": "5:52",
+        "root_slot": 5,
+        "root_local": 52,
+        "label_at_30": "5",
+        "prior_projection_label_at_30": "5",
+        "dominant_label": "5",
+        "dominant_label_count": 47,
+        "distinct_label_count": 4,
+        "switch_count": 6,
+        "label_counts": {
+          "0": 7,
+          "0/5": 3,
+          "4": 3,
+          "5": 47
+        },
+        "transition_counts": {
+          "0 -> 4": 2,
+          "0/5 -> 5": 1,
+          "4 -> 0": 1,
+          "4 -> 5": 1,
+          "5 -> 0": 1
+        },
+        "label_sequence": "0/5 0/5 0/5 5 5 5 5 5 5 5 5 5 5 0 0 0 0 0 0 4 4 0 4 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5",
+        "is_projection_exception_root": false,
+        "channels_admitted": false
+      },
+      {
+        "root": "5:54",
+        "root_slot": 5,
+        "root_local": 54,
+        "label_at_30": "5",
+        "prior_projection_label_at_30": "5",
+        "dominant_label": "5",
+        "dominant_label_count": 48,
+        "distinct_label_count": 4,
+        "switch_count": 6,
+        "label_counts": {
+          "0": 6,
+          "0/5": 3,
+          "4": 3,
+          "5": 48
+        },
+        "transition_counts": {
+          "0 -> 4": 2,
+          "0/5 -> 5": 1,
+          "4 -> 0": 1,
+          "4 -> 5": 1,
+          "5 -> 0": 1
+        },
+        "label_sequence": "0/5 0/5 0/5 5 5 5 5 5 5 5 5 5 5 5 0 0 0 0 0 4 4 0 4 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5",
+        "is_projection_exception_root": false,
+        "channels_admitted": false
+      },
+      {
+        "root": "5:55",
+        "root_slot": 5,
+        "root_local": 55,
+        "label_at_30": "5",
+        "prior_projection_label_at_30": "5",
+        "dominant_label": "5",
+        "dominant_label_count": 48,
+        "distinct_label_count": 4,
+        "switch_count": 6,
+        "label_counts": {
+          "0": 6,
+          "0/5": 3,
+          "4": 3,
+          "5": 48
+        },
+        "transition_counts": {
+          "0 -> 4": 2,
+          "0/5 -> 5": 1,
+          "4 -> 0": 1,
+          "4 -> 5": 1,
+          "5 -> 0": 1
+        },
+        "label_sequence": "0/5 0/5 0/5 5 5 5 5 5 5 5 5 5 5 5 0 0 0 0 0 4 4 0 4 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5",
+        "is_projection_exception_root": false,
+        "channels_admitted": false
+      },
+      {
+        "root": "5:56",
+        "root_slot": 5,
+        "root_local": 56,
+        "label_at_30": "5",
+        "prior_projection_label_at_30": "5",
+        "dominant_label": "5",
+        "dominant_label_count": 46,
+        "distinct_label_count": 5,
+        "switch_count": 6,
+        "label_counts": {
+          "0": 4,
+          "0/5": 2,
+          "4": 7,
+          "4/5": 1,
+          "5": 46
+        },
+        "transition_counts": {
+          "0 -> 4": 1,
+          "0/5 -> 5": 1,
+          "4 -> 0": 1,
+          "4 -> 5": 1,
+          "4/5 -> 0/5": 1,
+          "5 -> 4": 1
+        },
+        "label_sequence": "4/5 0/5 0/5 5 5 5 5 5 5 5 5 5 4 4 4 4 4 4 0 0 0 0 4 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5",
+        "is_projection_exception_root": false,
+        "channels_admitted": false
+      },
+      {
+        "root": "5:57",
+        "root_slot": 5,
+        "root_local": 57,
+        "label_at_30": "5",
+        "prior_projection_label_at_30": "5",
+        "dominant_label": "5",
+        "dominant_label_count": 46,
+        "distinct_label_count": 5,
+        "switch_count": 6,
+        "label_counts": {
+          "0": 2,
+          "0/5": 2,
+          "4": 9,
+          "4/5": 1,
+          "5": 46
+        },
+        "transition_counts": {
+          "0 -> 4": 1,
+          "0/5 -> 5": 1,
+          "4 -> 0": 1,
+          "4 -> 5": 1,
+          "4/5 -> 0/5": 1,
+          "5 -> 4": 1
+        },
+        "label_sequence": "4/5 0/5 0/5 5 5 5 5 5 5 5 5 5 4 4 4 4 4 4 4 4 0 0 4 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5",
+        "is_projection_exception_root": false,
+        "channels_admitted": false
+      },
+      {
+        "root": "5:58",
+        "root_slot": 5,
+        "root_local": 58,
+        "label_at_30": "5",
+        "prior_projection_label_at_30": "5",
+        "dominant_label": "5",
+        "dominant_label_count": 46,
+        "distinct_label_count": 5,
+        "switch_count": 6,
+        "label_counts": {
+          "0": 2,
+          "0/5": 2,
+          "4": 9,
+          "4/5": 1,
+          "5": 46
+        },
+        "transition_counts": {
+          "0 -> 4": 1,
+          "0/5 -> 5": 1,
+          "4 -> 0": 1,
+          "4 -> 5": 1,
+          "4/5 -> 0/5": 1,
+          "5 -> 4": 1
+        },
+        "label_sequence": "4/5 0/5 0/5 5 5 5 5 5 5 5 5 5 4 4 4 4 4 4 4 4 0 0 4 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5",
+        "is_projection_exception_root": false,
+        "channels_admitted": false
+      },
+      {
+        "root": "5:59",
+        "root_slot": 5,
+        "root_local": 59,
+        "label_at_30": "5",
+        "prior_projection_label_at_30": "5",
+        "dominant_label": "5",
+        "dominant_label_count": 46,
+        "distinct_label_count": 5,
+        "switch_count": 6,
+        "label_counts": {
+          "0": 2,
+          "0/5": 2,
+          "4": 9,
+          "4/5": 1,
+          "5": 46
+        },
+        "transition_counts": {
+          "0 -> 4": 1,
+          "0/5 -> 5": 1,
+          "4 -> 0": 1,
+          "4 -> 5": 1,
+          "4/5 -> 0/5": 1,
+          "5 -> 4": 1
+        },
+        "label_sequence": "4/5 0/5 0/5 5 5 5 5 5 5 5 5 5 4 4 4 4 4 4 4 4 0 0 4 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5",
+        "is_projection_exception_root": false,
+        "channels_admitted": false
+      },
+      {
+        "root": "7:10",
+        "root_slot": 7,
+        "root_local": 10,
+        "label_at_30": "7",
+        "prior_projection_label_at_30": "7",
+        "dominant_label": "7",
+        "dominant_label_count": 48,
+        "distinct_label_count": 4,
+        "switch_count": 6,
+        "label_counts": {
+          "1": 5,
+          "1/7": 3,
+          "2": 4,
+          "7": 48
+        },
+        "transition_counts": {
+          "1 -> 2": 2,
+          "1/7 -> 7": 1,
+          "2 -> 1": 1,
+          "2 -> 7": 1,
+          "7 -> 1": 1
+        },
+        "label_sequence": "1/7 1/7 1/7 7 7 7 7 7 7 7 7 7 7 7 1 1 1 1 2 2 2 1 2 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7",
+        "is_projection_exception_root": false,
+        "channels_admitted": false
+      },
+      {
+        "root": "7:11",
+        "root_slot": 7,
+        "root_local": 11,
+        "label_at_30": "7",
+        "prior_projection_label_at_30": "7",
+        "dominant_label": "7",
+        "dominant_label_count": 48,
+        "distinct_label_count": 4,
+        "switch_count": 6,
+        "label_counts": {
+          "1": 5,
+          "1/7": 3,
+          "2": 4,
+          "7": 48
+        },
+        "transition_counts": {
+          "1 -> 2": 2,
+          "1/7 -> 7": 1,
+          "2 -> 1": 1,
+          "2 -> 7": 1,
+          "7 -> 1": 1
+        },
+        "label_sequence": "1/7 1/7 1/7 7 7 7 7 7 7 7 7 7 7 7 1 1 1 1 2 2 2 1 2 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7",
+        "is_projection_exception_root": false,
+        "channels_admitted": false
+      },
+      {
+        "root": "7:14",
+        "root_slot": 7,
+        "root_local": 14,
+        "label_at_30": "7",
+        "prior_projection_label_at_30": "7",
+        "dominant_label": "7",
+        "dominant_label_count": 48,
+        "distinct_label_count": 4,
+        "switch_count": 6,
+        "label_counts": {
+          "1": 5,
+          "1/7": 3,
+          "2": 4,
+          "7": 48
+        },
+        "transition_counts": {
+          "1 -> 2": 2,
+          "1/7 -> 7": 1,
+          "2 -> 1": 1,
+          "2 -> 7": 1,
+          "7 -> 1": 1
+        },
+        "label_sequence": "1/7 1/7 1/7 7 7 7 7 7 7 7 7 7 7 7 1 1 1 1 2 2 2 1 2 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7",
+        "is_projection_exception_root": false,
+        "channels_admitted": false
+      },
+      {
+        "root": "7:15",
+        "root_slot": 7,
+        "root_local": 15,
+        "label_at_30": "7",
+        "prior_projection_label_at_30": "7",
+        "dominant_label": "7",
+        "dominant_label_count": 48,
+        "distinct_label_count": 4,
+        "switch_count": 6,
+        "label_counts": {
+          "1": 5,
+          "1/7": 3,
+          "2": 4,
+          "7": 48
+        },
+        "transition_counts": {
+          "1 -> 2": 2,
+          "1/7 -> 7": 1,
+          "2 -> 1": 1,
+          "2 -> 7": 1,
+          "7 -> 1": 1
+        },
+        "label_sequence": "1/7 1/7 1/7 7 7 7 7 7 7 7 7 7 7 7 1 1 1 1 2 2 2 1 2 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7",
+        "is_projection_exception_root": false,
+        "channels_admitted": false
+      },
+      {
+        "root": "7:16",
+        "root_slot": 7,
+        "root_local": 16,
+        "label_at_30": "7",
+        "prior_projection_label_at_30": "7",
+        "dominant_label": "7",
+        "dominant_label_count": 48,
+        "distinct_label_count": 4,
+        "switch_count": 6,
+        "label_counts": {
+          "1": 5,
+          "1/7": 3,
+          "2": 4,
+          "7": 48
+        },
+        "transition_counts": {
+          "1 -> 2": 2,
+          "1/7 -> 7": 1,
+          "2 -> 1": 1,
+          "2 -> 7": 1,
+          "7 -> 1": 1
+        },
+        "label_sequence": "1/7 1/7 1/7 7 7 7 7 7 7 7 7 7 7 7 1 1 1 1 2 2 2 1 2 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7",
+        "is_projection_exception_root": false,
+        "channels_admitted": false
+      },
+      {
+        "root": "7:19",
+        "root_slot": 7,
+        "root_local": 19,
+        "label_at_30": "7",
+        "prior_projection_label_at_30": "7",
+        "dominant_label": "7",
+        "dominant_label_count": 48,
+        "distinct_label_count": 4,
+        "switch_count": 6,
+        "label_counts": {
+          "1": 5,
+          "1/7": 3,
+          "2": 4,
+          "7": 48
+        },
+        "transition_counts": {
+          "1 -> 2": 2,
+          "1/7 -> 7": 1,
+          "2 -> 1": 1,
+          "2 -> 7": 1,
+          "7 -> 1": 1
+        },
+        "label_sequence": "1/7 1/7 1/7 7 7 7 7 7 7 7 7 7 7 7 1 1 1 1 2 2 2 1 2 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7",
+        "is_projection_exception_root": false,
+        "channels_admitted": false
+      },
+      {
+        "root": "7:20",
+        "root_slot": 7,
+        "root_local": 20,
+        "label_at_30": "7",
+        "prior_projection_label_at_30": "7",
+        "dominant_label": "7",
+        "dominant_label_count": 48,
+        "distinct_label_count": 4,
+        "switch_count": 6,
+        "label_counts": {
+          "1": 5,
+          "1/7": 3,
+          "2": 4,
+          "7": 48
+        },
+        "transition_counts": {
+          "1 -> 2": 2,
+          "1/7 -> 7": 1,
+          "2 -> 1": 1,
+          "2 -> 7": 1,
+          "7 -> 1": 1
+        },
+        "label_sequence": "1/7 1/7 1/7 7 7 7 7 7 7 7 7 7 7 7 1 1 1 1 2 2 2 1 2 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7",
+        "is_projection_exception_root": false,
+        "channels_admitted": false
+      },
+      {
+        "root": "7:21",
+        "root_slot": 7,
+        "root_local": 21,
+        "label_at_30": "7",
+        "prior_projection_label_at_30": "7",
+        "dominant_label": "7",
+        "dominant_label_count": 48,
+        "distinct_label_count": 4,
+        "switch_count": 6,
+        "label_counts": {
+          "1": 5,
+          "1/7": 3,
+          "2": 4,
+          "7": 48
+        },
+        "transition_counts": {
+          "1 -> 2": 2,
+          "1/7 -> 7": 1,
+          "2 -> 1": 1,
+          "2 -> 7": 1,
+          "7 -> 1": 1
+        },
+        "label_sequence": "1/7 1/7 1/7 7 7 7 7 7 7 7 7 7 7 7 1 1 1 1 2 2 2 1 2 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7",
+        "is_projection_exception_root": false,
+        "channels_admitted": false
+      },
+      {
+        "root": "7:24",
+        "root_slot": 7,
+        "root_local": 24,
+        "label_at_30": "7",
+        "prior_projection_label_at_30": "7",
+        "dominant_label": "7",
+        "dominant_label_count": 48,
+        "distinct_label_count": 4,
+        "switch_count": 6,
+        "label_counts": {
+          "1": 5,
+          "1/7": 3,
+          "2": 4,
+          "7": 48
+        },
+        "transition_counts": {
+          "1 -> 2": 2,
+          "1/7 -> 7": 1,
+          "2 -> 1": 1,
+          "2 -> 7": 1,
+          "7 -> 1": 1
+        },
+        "label_sequence": "1/7 1/7 1/7 7 7 7 7 7 7 7 7 7 7 7 1 1 1 1 2 2 2 1 2 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7",
+        "is_projection_exception_root": false,
+        "channels_admitted": false
+      },
+      {
+        "root": "7:25",
+        "root_slot": 7,
+        "root_local": 25,
+        "label_at_30": "7",
+        "prior_projection_label_at_30": "7",
+        "dominant_label": "7",
+        "dominant_label_count": 48,
+        "distinct_label_count": 4,
+        "switch_count": 6,
+        "label_counts": {
+          "1": 5,
+          "1/7": 3,
+          "2": 4,
+          "7": 48
+        },
+        "transition_counts": {
+          "1 -> 2": 2,
+          "1/7 -> 7": 1,
+          "2 -> 1": 1,
+          "2 -> 7": 1,
+          "7 -> 1": 1
+        },
+        "label_sequence": "1/7 1/7 1/7 7 7 7 7 7 7 7 7 7 7 7 1 1 1 1 2 2 2 1 2 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7",
+        "is_projection_exception_root": false,
+        "channels_admitted": false
+      }
+    ],
+    "exception_root_summaries": [
+      {
+        "root": "0:14",
+        "root_slot": 0,
+        "root_local": 14,
+        "label_at_30": "4",
+        "prior_projection_label_at_30": "4",
+        "dominant_label": "0",
+        "dominant_label_count": 41,
+        "distinct_label_count": 4,
+        "switch_count": 4,
+        "label_counts": {
+          "0": 41,
+          "0/1": 5,
+          "1": 1,
+          "4": 13
+        },
+        "transition_counts": {
+          "0 -> 4": 1,
+          "0/1 -> 0": 1,
+          "1 -> 0": 1,
+          "4 -> 1": 1
+        },
+        "label_sequence": "0/1 0/1 0/1 0/1 0/1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 4 4 4 4 4 4 4 4 4 4 4 4 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+        "is_projection_exception_root": true,
+        "channels_admitted": false
+      },
+      {
+        "root": "1:1",
+        "root_slot": 1,
+        "root_local": 1,
+        "label_at_30": "0",
+        "prior_projection_label_at_30": "0",
+        "dominant_label": "1",
+        "dominant_label_count": 32,
+        "distinct_label_count": 3,
+        "switch_count": 3,
+        "label_counts": {
+          "0": 23,
+          "0/1": 5,
+          "1": 32
+        },
+        "transition_counts": {
+          "0 -> 1": 1,
+          "0/1 -> 1": 1,
+          "1 -> 0": 1
+        },
+        "label_sequence": "0/1 0/1 0/1 0/1 0/1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1",
+        "is_projection_exception_root": true,
+        "channels_admitted": false
+      },
+      {
+        "root": "1:6",
+        "root_slot": 1,
+        "root_local": 6,
+        "label_at_30": "0",
+        "prior_projection_label_at_30": "0",
+        "dominant_label": "1",
+        "dominant_label_count": 29,
+        "distinct_label_count": 4,
+        "switch_count": 5,
+        "label_counts": {
+          "0": 23,
+          "0/1": 5,
+          "1": 29,
+          "6": 3
+        },
+        "transition_counts": {
+          "0 -> 1": 1,
+          "0 -> 6": 1,
+          "0/1 -> 1": 1,
+          "1 -> 0": 1,
+          "6 -> 0": 1
+        },
+        "label_sequence": "0/1 0/1 0/1 0/1 0/1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 6 6 6 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1",
+        "is_projection_exception_root": true,
+        "channels_admitted": false
+      },
+      {
+        "root": "1:44",
+        "root_slot": 1,
+        "root_local": 44,
+        "label_at_30": "2",
+        "prior_projection_label_at_30": "2",
+        "dominant_label": "1",
+        "dominant_label_count": 40,
+        "distinct_label_count": 5,
+        "switch_count": 5,
+        "label_counts": {
+          "0": 2,
+          "0/1": 2,
+          "1": 40,
+          "1/2": 3,
+          "2": 13
+        },
+        "transition_counts": {
+          "0 -> 1": 1,
+          "0/1 -> 1": 1,
+          "1 -> 2": 1,
+          "1/2 -> 0/1": 1,
+          "2 -> 0": 1
+        },
+        "label_sequence": "1/2 1/2 1/2 0/1 0/1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1",
+        "is_projection_exception_root": true,
+        "channels_admitted": false
+      },
+      {
+        "root": "1:59",
+        "root_slot": 1,
+        "root_local": 59,
+        "label_at_30": "2",
+        "prior_projection_label_at_30": "2",
+        "dominant_label": "1",
+        "dominant_label_count": 40,
+        "distinct_label_count": 5,
+        "switch_count": 5,
+        "label_counts": {
+          "0": 3,
+          "0/1": 2,
+          "1": 40,
+          "1/2": 3,
+          "2": 12
+        },
+        "transition_counts": {
+          "0 -> 1": 1,
+          "0/1 -> 1": 1,
+          "1 -> 2": 1,
+          "1/2 -> 0/1": 1,
+          "2 -> 0": 1
+        },
+        "label_sequence": "1/2 1/2 1/2 0/1 0/1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2 2 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1",
+        "is_projection_exception_root": true,
+        "channels_admitted": false
+      },
+      {
+        "root": "11:12",
+        "root_slot": 11,
+        "root_local": 12,
+        "label_at_30": "7",
+        "prior_projection_label_at_30": "7",
+        "dominant_label": "11",
+        "dominant_label_count": 38,
+        "distinct_label_count": 3,
+        "switch_count": 3,
+        "label_counts": {
+          "11": 38,
+          "7": 18,
+          "7/11": 4
+        },
+        "transition_counts": {
+          "11 -> 7": 1,
+          "7 -> 11": 1,
+          "7/11 -> 11": 1
+        },
+        "label_sequence": "7/11 7/11 7/11 7/11 11 11 11 11 11 11 11 11 11 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11",
+        "is_projection_exception_root": true,
+        "channels_admitted": false
+      },
+      {
+        "root": "11:13",
+        "root_slot": 11,
+        "root_local": 13,
+        "label_at_30": "7",
+        "prior_projection_label_at_30": "7",
+        "dominant_label": "11",
+        "dominant_label_count": 38,
+        "distinct_label_count": 3,
+        "switch_count": 3,
+        "label_counts": {
+          "11": 38,
+          "7": 18,
+          "7/11": 4
+        },
+        "transition_counts": {
+          "11 -> 7": 1,
+          "7 -> 11": 1,
+          "7/11 -> 11": 1
+        },
+        "label_sequence": "7/11 7/11 7/11 7/11 11 11 11 11 11 11 11 11 11 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11",
+        "is_projection_exception_root": true,
+        "channels_admitted": false
+      },
+      {
+        "root": "11:17",
+        "root_slot": 11,
+        "root_local": 17,
+        "label_at_30": "7",
+        "prior_projection_label_at_30": "7",
+        "dominant_label": "11",
+        "dominant_label_count": 38,
+        "distinct_label_count": 3,
+        "switch_count": 3,
+        "label_counts": {
+          "11": 38,
+          "7": 18,
+          "7/11": 4
+        },
+        "transition_counts": {
+          "11 -> 7": 1,
+          "7 -> 11": 1,
+          "7/11 -> 11": 1
+        },
+        "label_sequence": "7/11 7/11 7/11 7/11 11 11 11 11 11 11 11 11 11 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11",
+        "is_projection_exception_root": true,
+        "channels_admitted": false
+      },
+      {
+        "root": "11:18",
+        "root_slot": 11,
+        "root_local": 18,
+        "label_at_30": "7",
+        "prior_projection_label_at_30": "7",
+        "dominant_label": "11",
+        "dominant_label_count": 38,
+        "distinct_label_count": 3,
+        "switch_count": 3,
+        "label_counts": {
+          "11": 38,
+          "7": 18,
+          "7/11": 4
+        },
+        "transition_counts": {
+          "11 -> 7": 1,
+          "7 -> 11": 1,
+          "7/11 -> 11": 1
+        },
+        "label_sequence": "7/11 7/11 7/11 7/11 11 11 11 11 11 11 11 11 11 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11",
+        "is_projection_exception_root": true,
+        "channels_admitted": false
+      },
+      {
+        "root": "11:22",
+        "root_slot": 11,
+        "root_local": 22,
+        "label_at_30": "7",
+        "prior_projection_label_at_30": "7",
+        "dominant_label": "11",
+        "dominant_label_count": 38,
+        "distinct_label_count": 3,
+        "switch_count": 3,
+        "label_counts": {
+          "11": 38,
+          "7": 18,
+          "7/11": 4
+        },
+        "transition_counts": {
+          "11 -> 7": 1,
+          "7 -> 11": 1,
+          "7/11 -> 11": 1
+        },
+        "label_sequence": "7/11 7/11 7/11 7/11 11 11 11 11 11 11 11 11 11 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11",
+        "is_projection_exception_root": true,
+        "channels_admitted": false
+      },
+      {
+        "root": "11:23",
+        "root_slot": 11,
+        "root_local": 23,
+        "label_at_30": "7",
+        "prior_projection_label_at_30": "7",
+        "dominant_label": "11",
+        "dominant_label_count": 38,
+        "distinct_label_count": 3,
+        "switch_count": 3,
+        "label_counts": {
+          "11": 38,
+          "7": 18,
+          "7/11": 4
+        },
+        "transition_counts": {
+          "11 -> 7": 1,
+          "7 -> 11": 1,
+          "7/11 -> 11": 1
+        },
+        "label_sequence": "7/11 7/11 7/11 7/11 11 11 11 11 11 11 11 11 11 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11",
+        "is_projection_exception_root": true,
+        "channels_admitted": false
+      },
+      {
+        "root": "11:27",
+        "root_slot": 11,
+        "root_local": 27,
+        "label_at_30": "7",
+        "prior_projection_label_at_30": "7",
+        "dominant_label": "11",
+        "dominant_label_count": 38,
+        "distinct_label_count": 3,
+        "switch_count": 3,
+        "label_counts": {
+          "11": 38,
+          "7": 18,
+          "7/11": 4
+        },
+        "transition_counts": {
+          "11 -> 7": 1,
+          "7 -> 11": 1,
+          "7/11 -> 11": 1
+        },
+        "label_sequence": "7/11 7/11 7/11 7/11 11 11 11 11 11 11 11 11 11 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11",
+        "is_projection_exception_root": true,
+        "channels_admitted": false
+      },
+      {
+        "root": "11:28",
+        "root_slot": 11,
+        "root_local": 28,
+        "label_at_30": "7",
+        "prior_projection_label_at_30": "7",
+        "dominant_label": "11",
+        "dominant_label_count": 38,
+        "distinct_label_count": 3,
+        "switch_count": 3,
+        "label_counts": {
+          "11": 38,
+          "7": 18,
+          "7/11": 4
+        },
+        "transition_counts": {
+          "11 -> 7": 1,
+          "7 -> 11": 1,
+          "7/11 -> 11": 1
+        },
+        "label_sequence": "7/11 7/11 7/11 7/11 11 11 11 11 11 11 11 11 11 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11",
+        "is_projection_exception_root": true,
+        "channels_admitted": false
+      },
+      {
+        "root": "11:48",
+        "root_slot": 11,
+        "root_local": 48,
+        "label_at_30": "7",
+        "prior_projection_label_at_30": "7",
+        "dominant_label": "11",
+        "dominant_label_count": 37,
+        "distinct_label_count": 3,
+        "switch_count": 3,
+        "label_counts": {
+          "11": 37,
+          "7": 19,
+          "7/11": 4
+        },
+        "transition_counts": {
+          "11 -> 7": 1,
+          "7 -> 11": 1,
+          "7/11 -> 11": 1
+        },
+        "label_sequence": "7/11 7/11 7/11 7/11 11 11 11 11 11 11 11 11 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11",
+        "is_projection_exception_root": true,
+        "channels_admitted": false
+      },
+      {
+        "root": "11:53",
+        "root_slot": 11,
+        "root_local": 53,
+        "label_at_30": "7",
+        "prior_projection_label_at_30": "7",
+        "dominant_label": "11",
+        "dominant_label_count": 37,
+        "distinct_label_count": 3,
+        "switch_count": 3,
+        "label_counts": {
+          "11": 37,
+          "7": 19,
+          "7/11": 4
+        },
+        "transition_counts": {
+          "11 -> 7": 1,
+          "7 -> 11": 1,
+          "7/11 -> 11": 1
+        },
+        "label_sequence": "7/11 7/11 7/11 7/11 11 11 11 11 11 11 11 11 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11",
+        "is_projection_exception_root": true,
+        "channels_admitted": false
+      }
+    ]
+  }
+}

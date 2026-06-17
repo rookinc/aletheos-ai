@@ -1,8 +1,8 @@
 :root {
   color-scheme: dark;
   --bg: #071019;
-  --panel: rgba(13, 24, 38, 0.9);
-  --panel2: rgba(17, 33, 52, 0.94);
+  --panel: rgba(13, 24, 38, 0.92);
+  --panel2: rgba(17, 33, 52, 0.96);
   --text: #edf6ff;
   --muted: #9fb6cc;
   --line: rgba(180, 220, 255, 0.16);
@@ -13,8 +13,13 @@
   box-sizing: border-box;
 }
 
+html,
 body {
   margin: 0;
+  min-height: 100%;
+}
+
+body {
   min-height: 100vh;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--text);
@@ -24,61 +29,44 @@ body {
     var(--bg);
 }
 
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 1.1rem 1.3rem 0.8rem;
-  border-bottom: 1px solid var(--line);
-}
-
-.eyebrow {
-  margin: 0 0 0.2rem;
-  color: var(--accent);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-size: 0.75rem;
-}
-
-h1 {
-  margin: 0;
-  font-size: clamp(1.5rem, 3vw, 2.25rem);
-}
-
-.lede {
-  max-width: 58rem;
-  margin: 0.35rem 0 0;
-  color: var(--muted);
-}
-
-.topbar__links {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.7rem;
-  flex-wrap: wrap;
-}
-
-.topbar__links a {
-  color: var(--text);
-  text-decoration: none;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 0.35rem 0.65rem;
-  background: rgba(255,255,255,0.04);
-}
-
-.single-layout {
-  max-width: 980px;
+.lab-shell {
+  width: min(980px, 100%);
   margin: 0 auto;
   padding: 1rem;
 }
 
+.lab-hero {
+  padding: 0.8rem 0 0.9rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.22rem;
+  color: var(--accent);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+
+.lede {
+  max-width: 44rem;
+  margin: 0.42rem 0 0;
+  color: var(--muted);
+  line-height: 1.35;
+}
+
 .stage-card,
-.card {
-  background: var(--panel);
+.lab-note {
   border: 1px solid var(--line);
-  border-radius: 22px;
-  box-shadow: 0 18px 60px rgba(0,0,0,0.22);
+  border-radius: 1.2rem;
+  background: var(--panel);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.22);
 }
 
 .stage-card {
@@ -86,41 +74,74 @@ h1 {
 }
 
 .stage-toolbar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.9rem;
-  flex-wrap: wrap;
-  padding: 0.8rem;
-  border-bottom: 1px solid var(--line);
-  background: rgba(0,0,0,0.16);
+  padding: 0.62rem;
+  border-bottom: 1px solid rgba(217, 184, 108, 0.16);
+  background: rgba(0, 0, 0, 0.18);
 }
 
-button {
-  min-width: 5.8rem;
-  border: 1px solid rgba(217, 184, 108, 0.55);
-  border-radius: 999px;
-  background: var(--panel2);
+.sheet-stepper-controls {
+  display: grid;
+  grid-template-columns: repeat(7, auto) minmax(8rem, 1fr) 4.4rem;
+  align-items: center;
+  gap: 0.44rem;
+  width: 100%;
+}
+
+.mini-transport-btn {
+  width: 2.35rem;
+  min-width: 2.35rem;
+  height: 1.95rem;
+  min-height: 1.95rem;
+  padding: 0;
+  border: 1px solid rgba(217, 184, 108, 0.42);
+  border-radius: 0.5rem;
+  background:
+    linear-gradient(180deg, rgba(32, 50, 72, 0.96), rgba(11, 20, 34, 0.98));
   color: var(--text);
-  padding: 0.65rem 1rem;
-  font-size: 1rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.82rem;
+  font-weight: 700;
   cursor: pointer;
 }
 
-button:hover {
-  border-color: rgba(217, 184, 108, 0.9);
+.mini-transport-btn:hover {
+  border-color: rgba(217, 184, 108, 0.82);
 }
 
-.stage-wrap {
-  position: relative;
-  height: 74vh;
-  min-height: 34rem;
-  overflow: hidden;
+.sheet-stepper-controls label,
+.sheet-stepper-controls span {
+  color: var(--muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.74rem;
+  white-space: nowrap;
+}
+
+.sheet-stepper-controls label {
+  color: rgba(237, 246, 255, 0.72);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+#sheet-rate-slider {
+  width: 100%;
+  min-width: 0;
+  accent-color: var(--accent);
+}
+
+#sheet-rate-readout {
+  color: var(--accent);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.stage-frame {
+  height: 72vh;
+  min-height: 32rem;
   background:
-    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px),
-    rgba(5, 9, 15, 0.94);
-  background-size: 34px 34px;
+    linear-gradient(rgba(255,255,255,0.026) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.026) 1px, transparent 1px),
+    rgba(4, 8, 14, 0.96);
+  background-size: 30px 30px;
 }
 
 #stage-canvas {
@@ -135,2998 +156,400 @@ button:hover {
   cursor: grabbing;
 }
 
-.readout {
-  display: none;
-  position: absolute;
-  left: 1rem;
-  right: 1rem;
-  bottom: 1rem;
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  pointer-events: none;
+.lab-note {
+  margin-top: 0.9rem;
+  padding: 0.9rem 1rem;
 }
 
-.readout span {
-  background: rgba(0,0,0,0.5);
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 0.4rem 0.7rem;
-  color: var(--muted);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 0.8rem;
-}
-
-.card {
-  margin-top: 1rem;
-  padding: 1rem;
-}
-
-.card h2 {
-  margin: 0 0 0.65rem;
-  color: var(--accent);
-  font-size: 1rem;
-}
-
-.card p {
+.lab-note p {
   margin: 0;
   color: var(--muted);
   line-height: 1.45;
 }
 
-.console-panel pre {
-  min-height: 14rem;
-  white-space: pre-wrap;
-  margin: 0;
-  color: #d9e8f6;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 0.76rem;
-  line-height: 1.25;
-}
-
-@media (max-width: 760px) {
-  .topbar {
-    flex-direction: column;
-  }
-
-  .single-layout {
-    padding: 0.8rem;
-  }
-
-  .stage-wrap {
-    height: 72vh;
-    min-height: 32rem;
-  }
-}
-
-
-.rate-control {
-  display: grid;
-  grid-template-columns: auto minmax(8rem, 16rem) 3.5rem;
-  align-items: center;
-  gap: 0.55rem;
-  color: var(--muted);
-  font-size: 0.82rem;
-}
-
-.rate-control input {
-  width: 100%;
-}
-
-.rate-control span {
-  color: var(--accent);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-}
-
-@media (max-width: 520px) {
-  .rate-control {
-    grid-template-columns: 1fr;
-    width: 100%;
-  }
-
-  .rate-control span {
-    text-align: center;
-  }
-}
-
-
-.touch-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  color: var(--muted);
-  font-size: 0.86rem;
-  user-select: none;
-}
-
-.touch-toggle input {
-  width: auto;
-}
-
-
-.scroll-grab-bar {
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 2.4rem;
-  z-index: 5;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 0.55rem;
-  background:
-    linear-gradient(90deg, rgba(0,0,0,0.52), rgba(0,0,0,0.16), transparent);
-  border-right: 1px solid rgba(180, 220, 255, 0.12);
-  touch-action: pan-y;
-  pointer-events: auto;
-}
-
-.scroll-grab-bar span {
-  width: 0.35rem;
-  height: 2.2rem;
-  border-radius: 999px;
-  background: rgba(217, 184, 108, 0.44);
-  box-shadow: 0 0 18px rgba(217, 184, 108, 0.12);
-}
-
-.scroll-grab-bar::after {
-  content: "";
-}
-
-@media (max-width: 760px) {
-  .readout {
-  display: none;
-    left: 3rem;
-  }
-}
-
-
-.fps-readout {
-  color: var(--muted);
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 0.45rem 0.7rem;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 0.78rem;
-  background: rgba(0,0,0,0.22);
-}
-
-
-.layer-control {
-  display: grid;
-  grid-template-columns: auto minmax(9rem, 18rem);
-  align-items: center;
-  gap: 0.55rem;
-  color: var(--muted);
-  font-size: 0.82rem;
-}
-
-.layer-control select {
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: var(--panel2);
-  color: var(--text);
-  padding: 0.55rem 0.7rem;
-}
-
-@media (max-width: 520px) {
-  .layer-control {
-    grid-template-columns: 1fr;
-    width: 100%;
-  }
-}
-
-
-.playback-toolbar {
-  gap: 0.7rem;
-}
-
-.settings-card {
-  display: grid;
-  gap: 0.9rem;
-}
-
-.settings-card h2 {
-  margin-bottom: 0.1rem;
-}
-
-.settings-card .touch-toggle {
-  justify-content: center;
-}
-
-.settings-card .fps-readout {
-  justify-self: center;
-}
-
-@media (max-width: 520px) {
-  .playback-toolbar {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .playback-toolbar button {
-    width: 100%;
-  }
-}
-
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-  border: 0;
-  padding: 0;
-  margin: -1px;
-}
-
-
-.playback-toolbar {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.7rem;
-  width: 100%;
-  max-width: 34rem;
+.lab-footer {
+  width: min(980px, 100%);
   margin: 0 auto;
+  padding: 0.75rem 1rem 1.2rem;
+  color: rgba(159, 182, 204, 0.72);
+  font-size: 0.82rem;
 }
 
-.playback-toolbar button {
-  width: 100%;
-}
-
-
-.eyebrow a {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-.eyebrow a:hover {
-  text-decoration: underline;
-}
-
-
-.sheet-rate-control {
-  grid-column: 1 / -1;
-  width: 100%;
-  max-width: 34rem;
-  justify-self: center;
-}
-
-
-/* G900 compact mixer pass 1 */
-.settings-card {
-  display: grid;
-  gap: 0.85rem;
-}
-
-.settings-card h2 {
-  margin-bottom: 0.1rem;
-}
-
-.settings-card .layer-control {
-  display: grid;
-  gap: 0.35rem;
-}
-
-.settings-card .touch-toggle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.45rem;
-  min-height: 2.1rem;
+.lab-footer p {
   margin: 0;
-}
-
-.settings-card .rate-control {
-  display: grid;
-  grid-template-columns: minmax(4.75rem, 5.5rem) 1fr minmax(3.25rem, auto);
-  align-items: center;
-  gap: 0.55rem;
-  margin: 0;
-}
-
-.settings-card .rate-control label {
-  margin: 0;
-}
-
-.settings-card .rate-control span {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-.settings-card input[type="range"] {
-  width: 100%;
-}
-
-.settings-card #fps-readout {
-  justify-self: center;
-  margin-top: 0.15rem;
-}
-
-/* Treat layer visibility controls as a compact transport mixer. */
-#edge-toggle,
-#vertex-toggle,
-#trail-toggle {
-  transform: scale(0.95);
 }
 
 @media (max-width: 720px) {
-  .settings-card {
-    gap: 0.75rem;
+  .lab-shell {
+    padding: 0.65rem;
   }
 
-  .settings-card .rate-control {
-    grid-template-columns: 1fr;
-    gap: 0.35rem;
-  }
-
-  .settings-card .rate-control span {
-    text-align: center;
-  }
-}
-
-
-/* G900 compact observer deck makeup pass 3 */
-.stage-card,
-.observer-deck,
-.boundary-card,
-.console-panel {
-  border-color: rgba(217, 184, 108, 0.20);
-}
-
-.stage-card {
-  border-radius: 18px;
-  background:
-    linear-gradient(180deg, rgba(19, 33, 49, 0.96), rgba(5, 9, 15, 0.98));
-}
-
-.stage-toolbar {
-  padding: 0.62rem;
-  background:
-    linear-gradient(180deg, rgba(31, 47, 66, 0.94), rgba(10, 18, 30, 0.96));
-  border-bottom-color: rgba(217, 184, 108, 0.18);
-}
-
-.playback-toolbar {
-  max-width: 42rem;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.45rem;
-}
-
-.playback-toolbar button {
-  min-width: 0;
-  min-height: 2.15rem;
-  padding: 0.42rem 0.55rem;
-  border-radius: 10px;
-  border-color: rgba(217, 184, 108, 0.36);
-  background:
-    linear-gradient(180deg, rgba(32, 50, 72, 0.96), rgba(11, 20, 34, 0.98));
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.07),
-    inset 0 -1px 0 rgba(0,0,0,0.45);
-  font-size: 0.82rem;
-  letter-spacing: 0.02em;
-}
-
-.playback-toolbar button:hover {
-  border-color: rgba(217, 184, 108, 0.82);
-  background:
-    linear-gradient(180deg, rgba(42, 62, 88, 0.98), rgba(14, 24, 39, 0.98));
-}
-
-.sheet-rate-control {
-  margin-top: 0.1rem;
-  max-width: 42rem;
-  padding: 0.42rem 0.55rem;
-  border: 1px solid rgba(180, 220, 255, 0.10);
-  border-radius: 10px;
-  background: rgba(0,0,0,0.18);
-}
-
-.stage-wrap {
-  height: 70vh;
-  min-height: 31rem;
-  background:
-    radial-gradient(circle at 50% 48%, rgba(120, 170, 255, 0.08), transparent 23rem),
-    linear-gradient(rgba(255,255,255,0.026) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.026) 1px, transparent 1px),
-    rgba(4, 8, 14, 0.96);
-  background-size:
-    auto,
-    30px 30px,
-    30px 30px,
-    auto;
-}
-
-.observer-deck {
-  margin-top: 0.65rem;
-  padding: 0.62rem;
-  border-radius: 14px;
-  background:
-    linear-gradient(180deg, rgba(24, 39, 58, 0.98), rgba(7, 13, 23, 0.98));
-}
-
-.observer-deck__head {
-  margin-bottom: 0.5rem;
-}
-
-.observer-deck__head h2 {
-  color: var(--accent);
-  text-shadow: 0 0 18px rgba(217, 184, 108, 0.16);
-}
-
-.observer-deck__layer {
-  grid-template-columns: 4.25rem 1fr;
-  margin-bottom: 0.52rem;
-}
-
-.observer-deck__layer label,
-.observer-mixer-row label {
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.layer-control select {
-  min-height: 2rem;
-  border-radius: 9px;
-  padding: 0.38rem 0.55rem;
-  background:
-    linear-gradient(180deg, rgba(27, 44, 65, 0.98), rgba(9, 17, 29, 0.98));
-}
-
-.observer-toggle-row {
-  gap: 0.38rem;
-  margin-bottom: 0.52rem;
-}
-
-.observer-pill {
-  min-height: 1.95rem;
-  border-radius: 9px;
-  border-color: rgba(217, 184, 108, 0.18);
-  background:
-    linear-gradient(180deg, rgba(27, 43, 61, 0.94), rgba(7, 13, 23, 0.96));
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.06),
-    inset 0 -1px 0 rgba(0,0,0,0.42);
-}
-
-.observer-pill span {
-  line-height: 1;
-}
-
-.observer-mixer {
-  gap: 0.36rem;
-}
-
-.observer-deck .observer-mixer-row {
-  min-height: 2.05rem;
-  grid-template-columns: 4.25rem 1fr 3.25rem;
-  padding: 0.32rem 0.46rem;
-  border-radius: 9px;
-  background:
-    linear-gradient(180deg, rgba(10, 18, 30, 0.82), rgba(3, 7, 12, 0.84));
-}
-
-.observer-deck input[type="range"],
-.sheet-rate-control input[type="range"] {
-  height: 1.15rem;
-}
-
-.observer-deck input[type="range"]::-webkit-slider-runnable-track,
-.sheet-rate-control input[type="range"]::-webkit-slider-runnable-track {
-  height: 0.34rem;
-  border-radius: 999px;
-  background: rgba(180, 220, 255, 0.16);
-  border: 1px solid rgba(217, 184, 108, 0.16);
-}
-
-.observer-deck input[type="range"]::-webkit-slider-thumb,
-.sheet-rate-control input[type="range"]::-webkit-slider-thumb {
-  margin-top: -0.34rem;
-}
-
-.fps-readout {
-  border-radius: 8px;
-  border-color: rgba(217, 184, 108, 0.18);
-  background: rgba(0,0,0,0.28);
-}
-
-.boundary-card,
-.console-panel {
-  border-radius: 14px;
-}
-
-@media (max-width: 620px) {
-  .playback-toolbar {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .stage-wrap {
-    height: 68vh;
-    min-height: 30rem;
-  }
-
-  .observer-deck {
-    padding: 0.58rem;
-  }
-}
-
-
-/* G900 mobile compaction makeup pass 4 */
-@media (max-width: 760px) {
-  .topbar {
-    padding: 0.78rem 1rem 0.68rem;
-    gap: 0.35rem;
-  }
-
-  .eyebrow {
-    margin-bottom: 0.12rem;
-    font-size: 0.66rem;
-    letter-spacing: 0.16em;
+  .lab-hero {
+    padding-top: 0.5rem;
   }
 
   h1 {
-    font-size: clamp(1.85rem, 8vw, 2.5rem);
-    line-height: 1.02;
+    font-size: clamp(1.35rem, 6vw, 2rem);
   }
 
   .lede {
-    margin-top: 0.28rem;
-    font-size: 0.98rem;
-    line-height: 1.25;
-  }
-
-  .single-layout {
-    padding: 0.55rem;
-  }
-
-  .stage-card {
-    border-radius: 15px;
+    font-size: 0.9rem;
   }
 
   .stage-toolbar {
-    padding: 0.48rem;
+    padding: 0.5rem;
   }
 
-  .playback-toolbar {
-    gap: 0.34rem;
-  }
-
-  .playback-toolbar button {
-    min-height: 1.95rem;
-    padding: 0.32rem 0.42rem;
-    font-size: 0.78rem;
-    border-radius: 9px;
-  }
-
-  .sheet-rate-control {
-    margin-top: 0;
-    padding: 0.36rem 0.46rem;
-    border-radius: 9px;
-  }
-
-  .sheet-rate-control label {
-    font-size: 0.76rem;
-  }
-
-  .sheet-rate-control span {
-    font-size: 0.78rem;
-  }
-
-  .stage-wrap {
-    height: 71vh;
-    min-height: 32rem;
-  }
-
-  .observer-deck {
-    margin-top: 0.5rem;
-  }
-}
-
-@media (max-width: 420px) {
-  .topbar {
-    padding-top: 0.62rem;
-    padding-bottom: 0.58rem;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  .lede {
-    font-size: 0.92rem;
-  }
-
-  .stage-wrap {
-    height: 72vh;
-    min-height: 31rem;
-  }
-}
-
-
-/* G900 mobile header tight pass 5 */
-@media (max-width: 760px) {
-  .topbar {
-    padding: 0.46rem 0.9rem 0.5rem;
-  }
-
-  .eyebrow {
-    font-size: 0.58rem;
-    letter-spacing: 0.18em;
-    margin-bottom: 0.06rem;
-  }
-
-  h1 {
-    font-size: clamp(1.42rem, 6.6vw, 1.9rem);
-    line-height: 0.98;
-    letter-spacing: -0.035em;
-    max-width: 11.5em;
-  }
-
-  .lede {
-    max-width: 100%;
-    margin-top: 0.22rem;
-    font-size: 0.8rem;
-    line-height: 1.18;
-  }
-
-  .single-layout {
-    padding-top: 0.42rem;
-  }
-
-  .stage-toolbar {
-    padding: 0.38rem;
-  }
-
-  .playback-toolbar button {
-    min-height: 1.78rem;
-    font-size: 0.72rem;
-  }
-
-  .sheet-rate-control {
-    padding: 0.3rem 0.42rem;
-  }
-
-  .sheet-rate-control label,
-  .sheet-rate-control span {
-    font-size: 0.72rem;
-  }
-}
-
-@media (max-width: 420px) {
-  h1 {
-    font-size: 1.55rem;
-    max-width: 11em;
-  }
-
-  .lede {
-    font-size: 0.78rem;
-  }
-}
-
-
-/* G900 Winamp transport minification pass 7 */
-.playback-toolbar {
-  grid-template-columns: repeat(4, 2.45rem);
-  justify-content: center;
-  align-items: center;
-  max-width: 30rem;
-  gap: 0.38rem;
-}
-
-.playback-toolbar .mini-transport-btn {
-  width: 2.45rem;
-  min-width: 2.45rem;
-  height: 2.05rem;
-  min-height: 2.05rem;
-  padding: 0;
-  border-radius: 7px;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0;
-}
-
-.sheet-rate-control {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: 4.7rem 1fr 3.7rem;
-  align-items: center;
-  max-width: 30rem;
-  min-height: 2.35rem;
-  margin-top: 0.05rem;
-  padding: 0.32rem 0.45rem;
-}
-
-.sheet-rate-control label {
-  font-size: 0.7rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.sheet-rate-control span {
-  font-size: 0.76rem;
-}
-
-.stage-toolbar {
-  padding: 0.36rem;
-}
-
-@media (max-width: 620px) {
-  .playback-toolbar {
-    grid-template-columns: repeat(4, 2.4rem);
-    max-width: 100%;
-  }
-
-  .playback-toolbar .mini-transport-btn {
-    width: 2.4rem;
-    min-width: 2.4rem;
-    height: 1.95rem;
-    min-height: 1.95rem;
-  }
-
-  .sheet-rate-control {
-    grid-template-columns: 4.55rem 1fr 3.45rem;
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .sheet-rate-control span {
-    text-align: right;
-  }
-}
-
-
-/* G900 Winamp transport number entry pass 8 */
-.playback-toolbar {
-  grid-template-columns: repeat(4, 2.35rem);
-  max-width: 100%;
-  justify-content: start;
-}
-
-.playback-toolbar .mini-transport-btn {
-  width: 2.35rem;
-  min-width: 2.35rem;
-  height: 1.9rem;
-  min-height: 1.9rem;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI Symbol", "Apple Color Emoji", sans-serif;
-  font-size: 0.9rem;
-  line-height: 1;
-}
-
-.sheet-rate-control {
-  grid-template-columns: 4.55rem minmax(0, 1fr) 4.4rem 2.05rem;
-  width: 100%;
-  max-width: 100%;
-}
-
-.sheet-rate-number {
-  width: 4.4rem;
-  min-width: 0;
-  height: 1.85rem;
-  border: 1px solid rgba(217, 184, 108, 0.28);
-  border-radius: 7px;
-  background: rgba(0,0,0,0.34);
-  color: var(--accent);
-  padding: 0.18rem 0.28rem;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 0.72rem;
-  text-align: center;
-}
-
-.sheet-rate-number:focus {
-  outline: none;
-  border-color: rgba(217, 184, 108, 0.82);
-  box-shadow: 0 0 0 2px rgba(217, 184, 108, 0.12);
-}
-
-.sheet-rate-apply {
-  width: 2.05rem;
-  min-width: 2.05rem;
-  height: 1.85rem;
-  min-height: 1.85rem;
-  padding: 0;
-  border-radius: 7px;
-  font-size: 0.78rem;
-  line-height: 1;
-}
-
-@media (max-width: 620px) {
-  .playback-toolbar {
-    grid-template-columns: repeat(4, 2.35rem);
+  .sheet-stepper-controls {
+    grid-template-columns: repeat(7, 2.15rem);
     justify-content: center;
   }
 
-  .sheet-rate-control {
-    grid-template-columns: 4.2rem minmax(0, 1fr) 4rem 1.9rem;
+  .sheet-stepper-controls label,
+  #sheet-rate-slider,
+  #sheet-rate-readout {
+    grid-column: 1 / -1;
   }
 
-  .sheet-rate-number {
-    width: 4rem;
-    font-size: 0.68rem;
+  #sheet-rate-readout {
+    text-align: center;
   }
 
-  .sheet-rate-apply {
-    width: 1.9rem;
-    min-width: 1.9rem;
-  }
-}
-
-
-/* G900 Winamp strip correction pass 9 */
-.stage-toolbar {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.42rem;
-  justify-items: center;
-}
-
-.transport-button-row {
-  display: grid;
-  grid-template-columns: repeat(4, 2.35rem);
-  justify-content: center;
-  align-items: center;
-  gap: 0.38rem;
-}
-
-.transport-button-row .mini-transport-btn {
-  width: 2.35rem;
-  min-width: 2.35rem;
-  height: 1.9rem;
-  min-height: 1.9rem;
-  padding: 0;
-  border-radius: 7px;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 0.92rem;
-  line-height: 1;
-  font-weight: 700;
-  color: var(--text);
-}
-
-.sheet-rate-control {
-  display: grid;
-  grid-template-columns: 4.55rem minmax(0, 1fr) 4.4rem 2.05rem;
-  width: 100%;
-  max-width: 42rem;
-  align-items: center;
-  gap: 0.45rem;
-}
-
-.sheet-rate-control input[type="range"] {
-  width: 100%;
-  min-width: 0;
-}
-
-.sheet-rate-number {
-  width: 4.4rem;
-}
-
-.sheet-rate-apply {
-  width: 2.05rem;
-  min-width: 2.05rem;
-}
-
-@media (max-width: 620px) {
-  .stage-toolbar {
-    gap: 0.38rem;
-  }
-
-  .transport-button-row {
-    grid-template-columns: repeat(4, 2.35rem);
-  }
-
-  .sheet-rate-control {
-    grid-template-columns: 4.15rem minmax(0, 1fr) 4rem 1.9rem;
-    max-width: 100%;
-  }
-
-  .sheet-rate-number {
-    width: 4rem;
-  }
-
-  .sheet-rate-apply {
-    width: 1.9rem;
-    min-width: 1.9rem;
-  }
-}
-
-
-/* G900 stage lock and trail label pass */
-.stage-lock-toggle {
-  position: absolute;
-  top: 0.72rem;
-  right: 0.72rem;
-  z-index: 8;
-  display: inline-grid;
-  place-items: center;
-  width: 2.15rem;
-  height: 2.15rem;
-  border: 1px solid rgba(217, 184, 108, 0.34);
-  border-radius: 10px;
-  background:
-    linear-gradient(180deg, rgba(27, 43, 61, 0.92), rgba(5, 10, 18, 0.94));
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.07),
-    0 10px 30px rgba(0,0,0,0.22);
-  color: var(--text);
-  cursor: pointer;
-  user-select: none;
-}
-
-.stage-lock-toggle input {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.stage-lock-toggle span[aria-hidden="true"] {
-  font-size: 0.95rem;
-  line-height: 1;
-  filter: grayscale(1);
-  opacity: 0.78;
-}
-
-.stage-lock-toggle:has(input:checked) {
-  border-color: rgba(120, 170, 255, 0.62);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.08),
-    0 0 0 2px rgba(120, 170, 255, 0.10),
-    0 12px 32px rgba(0,0,0,0.24);
-}
-
-.stage-lock-toggle:has(input:checked) span[aria-hidden="true"] {
-  opacity: 1;
-}
-
-.observer-toggle-row {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-@media (max-width: 620px) {
-  .observer-toggle-row {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .stage-lock-toggle {
-    top: 0.58rem;
-    right: 0.58rem;
-    width: 2rem;
-    height: 2rem;
-  }
-}
-
-
-/* G900 stage lock active/inactive status pass */
-.stage-lock-toggle::after {
-  content: "";
-  position: absolute;
-  right: 0.22rem;
-  bottom: 0.22rem;
-  width: 0.42rem;
-  height: 0.42rem;
-  border-radius: 999px;
-  background: rgba(217, 184, 108, 0.42);
-  box-shadow:
-    0 0 0 1px rgba(0,0,0,0.55),
-    0 0 8px rgba(217, 184, 108, 0.12);
-}
-
-.stage-lock-toggle:has(input:checked)::after {
-  background: rgba(120, 255, 190, 0.95);
-  box-shadow:
-    0 0 0 1px rgba(0,0,0,0.65),
-    0 0 9px rgba(120, 255, 190, 0.75),
-    0 0 18px rgba(120, 170, 255, 0.35);
-}
-
-.stage-lock-toggle:has(input:checked) {
-  border-color: rgba(120, 255, 190, 0.58);
-}
-
-.stage-lock-toggle:not(:has(input:checked)) {
-  border-color: rgba(217, 184, 108, 0.24);
-}
-
-
-/* G900 lower mixer number entry pass */
-.settings-card .touch-toggle:has(#touch-response-toggle),
-.observer-pill:has(#touch-response-toggle) {
-  display: none;
-}
-
-.mixer-entry-row,
-.settings-card .mixer-entry-row,
-.observer-deck .mixer-entry-row {
-  display: grid;
-  grid-template-columns: 4.75rem minmax(0, 1fr) 4.35rem 2rem;
-  align-items: center;
-  gap: 0.55rem;
-}
-
-.mixer-entry-row input[type="range"] {
-  width: 100%;
-  min-width: 0;
-}
-
-.mixer-number {
-  width: 100%;
-  min-width: 0;
-  height: 1.95rem;
-  border: 1px solid rgba(217, 184, 108, 0.28);
-  border-radius: 8px;
-  background: rgba(0,0,0,0.34);
-  color: var(--accent);
-  padding: 0.18rem 0.28rem;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 0.74rem;
-  text-align: center;
-}
-
-.mixer-number:focus {
-  outline: none;
-  border-color: rgba(120, 170, 255, 0.62);
-  box-shadow: 0 0 0 2px rgba(120, 170, 255, 0.12);
-}
-
-.mixer-apply {
-  width: 100%;
-  min-width: 0;
-  height: 1.95rem;
-  min-height: 1.95rem;
-  padding: 0;
-  border-radius: 8px;
-  font-size: 0.74rem;
-  line-height: 1;
-}
-
-@media (max-width: 620px) {
-  .mixer-entry-row,
-  .settings-card .mixer-entry-row,
-  .observer-deck .mixer-entry-row {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-/* G900 mixer force one-line rows pass */
-.settings-card .mixer-entry-row,
-.observer-deck .mixer-entry-row,
-.mixer-entry-row {
-  display: grid;
-  grid-template-columns: 4.4rem minmax(5.5rem, 1fr) 4.2rem 2rem;
-  align-items: center;
-  gap: 0.45rem;
-}
-
-.settings-card .mixer-entry-row label,
-.observer-deck .mixer-entry-row label,
-.mixer-entry-row label {
-  margin: 0;
-  white-space: nowrap;
-  font-size: 0.82rem;
-}
-
-.settings-card .mixer-entry-row input[type="range"],
-.observer-deck .mixer-entry-row input[type="range"],
-.mixer-entry-row input[type="range"] {
-  width: 100%;
-  min-width: 0;
-}
-
-.settings-card .mixer-number,
-.observer-deck .mixer-number,
-.mixer-number {
-  width: 100%;
-  height: 1.85rem;
-  min-height: 1.85rem;
-  font-size: 0.72rem;
-}
-
-.settings-card .mixer-apply,
-.observer-deck .mixer-apply,
-.mixer-apply {
-  width: 100%;
-  min-width: 0;
-  height: 1.85rem;
-  min-height: 1.85rem;
-  padding: 0;
-}
-
-@media (max-width: 620px) {
-  .settings-card .mixer-entry-row,
-  .observer-deck .mixer-entry-row,
-  .mixer-entry-row {
-    grid-template-columns: 4.1rem minmax(4.5rem, 1fr) 3.75rem 1.85rem;
-    gap: 0.36rem;
-  }
-
-  .settings-card .mixer-entry-row label,
-  .observer-deck .mixer-entry-row label,
-  .mixer-entry-row label {
+  .mini-transport-btn {
+    width: 2.15rem;
+    min-width: 2.15rem;
+    height: 1.85rem;
+    min-height: 1.85rem;
     font-size: 0.76rem;
   }
 
-  .settings-card .mixer-number,
-  .observer-deck .mixer-number,
-  .mixer-number {
-    font-size: 0.68rem;
-    padding-left: 0.18rem;
-    padding-right: 0.18rem;
+  .stage-frame {
+    height: 58svh;
+    min-height: 22rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .sheet-stepper-controls {
+    grid-template-columns: repeat(7, 1.9rem);
+    gap: 0.3rem;
   }
 
-  .settings-card .mixer-apply,
-  .observer-deck .mixer-apply,
-  .mixer-apply {
+  .mini-transport-btn {
+    width: 1.9rem;
+    min-width: 1.9rem;
+    height: 1.7rem;
+    min-height: 1.7rem;
     font-size: 0.7rem;
   }
-}
 
-
-/* G900 mixer checkbox-left pass */
-.settings-card .mixer-entry-row,
-.observer-deck .mixer-entry-row,
-.mixer-entry-row {
-  grid-template-columns: 7.3rem minmax(4.5rem, 1fr) 4.1rem 1.9rem;
-}
-
-.mixer-check-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.42rem;
-  min-width: 0;
-  margin: 0;
-  color: var(--muted);
-  white-space: nowrap;
-  user-select: none;
-}
-
-.mixer-check-label input {
-  flex: 0 0 auto;
-  width: 1rem;
-  height: 1rem;
-  accent-color: #9ecbff;
-}
-
-.mixer-check-label span {
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-@media (max-width: 620px) {
-  .settings-card .mixer-entry-row,
-  .observer-deck .mixer-entry-row,
-  .mixer-entry-row {
-    grid-template-columns: 6.55rem minmax(3.75rem, 1fr) 3.65rem 1.75rem;
-    gap: 0.34rem;
-  }
-
-  .mixer-check-label {
-    gap: 0.34rem;
-    font-size: 0.76rem;
-  }
-
-  .mixer-check-label input {
-    width: 0.92rem;
-    height: 0.92rem;
-  }
-}
-
-
-/* G900 enter button font-size pass */
-.sheet-rate-apply,
-.mixer-apply {
-  font-size: 1.05rem;
-  font-weight: 700;
-}
-
-@media (max-width: 620px) {
-  .sheet-rate-apply,
-  .mixer-apply {
-    font-size: 1rem;
-  }
-}
-
-
-/* G900 enter button bigger pass */
-.sheet-rate-apply,
-.mixer-apply {
-  font-size: 1.45rem;
-  font-weight: 800;
-  line-height: 1;
-}
-
-@media (max-width: 620px) {
-  .sheet-rate-apply,
-  .mixer-apply {
-    font-size: 1.36rem;
-  }
-}
-
-
-/* G900 lower mixer value-output pass */
-.settings-card .mixer-entry-row,
-.observer-deck .mixer-entry-row,
-.mixer-entry-row {
-  grid-template-columns: 7.3rem minmax(5rem, 1fr) 3.8rem;
-}
-
-.settings-card .mixer-entry-row > span,
-.observer-deck .mixer-entry-row > span,
-.mixer-entry-row > span {
-  color: var(--accent);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 0.88rem;
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-@media (max-width: 620px) {
-  .settings-card .mixer-entry-row,
-  .observer-deck .mixer-entry-row,
-  .mixer-entry-row {
-    grid-template-columns: 6.55rem minmax(4.5rem, 1fr) 3.45rem;
-    gap: 0.34rem;
-  }
-
-  .settings-card .mixer-entry-row > span,
-  .observer-deck .mixer-entry-row > span,
-  .mixer-entry-row > span {
-    font-size: 0.82rem;
-  }
-}
-
-
-/* G900 stage lock semantic state pass */
-.stage-lock-icon::before {
-  content: "🔓";
-}
-
-.stage-lock-toggle::after {
-  background: rgba(120, 255, 190, 0.95);
-  box-shadow:
-    0 0 0 1px rgba(0,0,0,0.65),
-    0 0 9px rgba(120, 255, 190, 0.70),
-    0 0 18px rgba(120, 170, 255, 0.28);
-}
-
-.stage-lock-toggle:has(input:checked) {
-  border-color: rgba(255, 95, 95, 0.70);
-}
-
-.stage-lock-toggle:has(input:checked) .stage-lock-icon::before {
-  content: "🔒";
-}
-
-.stage-lock-toggle:has(input:checked)::after {
-  background: rgba(255, 75, 75, 0.98);
-  box-shadow:
-    0 0 0 1px rgba(0,0,0,0.72),
-    0 0 10px rgba(255, 75, 75, 0.80),
-    0 0 22px rgba(255, 75, 75, 0.38);
-}
-
-
-/* G900 stage lock faint label pass */
-.stage-lock-text {
-  position: absolute;
-  right: calc(100% + 0.55rem);
-  top: 50%;
-  transform: translateY(-50%);
-  white-space: nowrap;
-  color: rgba(237, 246, 255, 0.46);
-  font-size: 0.68rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  pointer-events: none;
-  text-shadow: 0 0 12px rgba(0,0,0,0.8);
-}
-
-.stage-lock-toggle:has(input:checked) .stage-lock-text {
-  color: rgba(255, 150, 150, 0.56);
-}
-
-@media (max-width: 520px) {
-  .stage-lock-text {
-    font-size: 0.6rem;
-    right: calc(100% + 0.42rem);
-    letter-spacing: 0.06em;
-  }
-}
-
-
-/* G900 stage lock tertiary label pass */
-.stage-lock-text {
-  font-size: 0.52rem;
-  letter-spacing: 0.12em;
-  opacity: 0.72;
-}
-
-@media (max-width: 520px) {
-  .stage-lock-text {
-    font-size: 0.48rem;
-    letter-spacing: 0.10em;
-  }
-}
-
-
-/* G900 surface/body fader layer pass */
-.view-fader-stack {
-  display: grid;
-  gap: 0.42rem;
-  margin-bottom: 0.7rem;
-}
-
-.layer-fader-row {
-  grid-template-columns: 7.3rem minmax(5rem, 1fr) 3.8rem;
-}
-
-.layer-fader-row label {
-  color: var(--muted);
-  white-space: nowrap;
-}
-
-.layer-fader-row > span {
-  color: var(--accent);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 0.86rem;
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-@media (max-width: 620px) {
-  .layer-fader-row {
-    grid-template-columns: 6.55rem minmax(4.5rem, 1fr) 3.45rem;
-    gap: 0.34rem;
-  }
-
-  .layer-fader-row > span {
-    font-size: 0.8rem;
-  }
-}
-
-
-/* G900 tiny camera position overlay */
-.stage-card {
-  position: relative;
-}
-
-.camera-overlay {
-  position: absolute;
-  left: 0.72rem;
-  right: 0.72rem;
-  bottom: 0.48rem;
-  z-index: 6;
-  pointer-events: none;
-  color: rgba(218, 231, 246, 0.42);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 0.52rem;
-  line-height: 1;
-  letter-spacing: 0.08em;
-  text-align: center;
-  text-transform: uppercase;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.85);
-  user-select: none;
-}
-
-@media (max-width: 520px) {
-  .camera-overlay {
-    bottom: 0.42rem;
-    font-size: 0.48rem;
-    letter-spacing: 0.06em;
-  }
-}
-
-
-/* G900 above-the-fold stage compaction pass */
-@media (max-width: 720px) {
-  body {
-    --g900-mobile-stage-height: 58svh;
-  }
-
-  main,
-  .lab-shell,
-  .page-shell {
-    gap: 0.82rem;
-  }
-
-  .hero,
-  .intro-card {
-    margin-bottom: 0.55rem;
-  }
-
-  .stage-card {
-    min-height: 0;
-  }
-
-  #stage-canvas,
-  .stage-card canvas {
-    height: var(--g900-mobile-stage-height);
-    max-height: var(--g900-mobile-stage-height);
-    min-height: 27rem;
-  }
-
-  .settings-card {
-    margin-top: 0.05rem;
-  }
-}
-
-@media (max-width: 520px) {
-  body {
-    --g900-mobile-stage-height: 55svh;
-  }
-
-  .stage-card {
-    border-radius: 1.15rem;
-  }
-
-  #stage-canvas,
-  .stage-card canvas {
-    min-height: 24rem;
-  }
-
-  .camera-overlay {
-    bottom: 0.34rem;
-    font-size: 0.43rem;
-    opacity: 0.78;
-  }
-}
-
-@media (max-width: 390px) {
-  body {
-    --g900-mobile-stage-height: 53svh;
-  }
-
-  #stage-canvas,
-  .stage-card canvas {
-    min-height: 22.5rem;
-  }
-}
-
-
-/* G900 stage trim and tiny pinch label pass */
-@media (max-width: 720px) {
-  body {
-    --g900-mobile-stage-height: 51svh;
-  }
-
-  #stage-canvas,
-  .stage-card canvas {
-    min-height: 21.5rem;
-    height: var(--g900-mobile-stage-height);
-    max-height: var(--g900-mobile-stage-height);
-  }
-
-  .stage-lock-text {
-    font-size: 0.38rem;
-    letter-spacing: 0.16em;
-    opacity: 0.42;
-  }
-}
-
-@media (max-width: 520px) {
-  body {
-    --g900-mobile-stage-height: 49svh;
-  }
-
-  #stage-canvas,
-  .stage-card canvas {
+  .stage-frame {
+    height: 55svh;
     min-height: 20rem;
   }
-
-  .stage-lock-text {
-    font-size: 0.34rem;
-    letter-spacing: 0.14em;
-    opacity: 0.36;
-  }
-
-  .camera-overlay {
-    bottom: 0.28rem;
-    font-size: 0.39rem;
-    opacity: 0.62;
-  }
 }
 
-@media (max-width: 390px) {
-  body {
-    --g900-mobile-stage-height: 47svh;
-  }
-
-  #stage-canvas,
-  .stage-card canvas {
-    min-height: 19rem;
-  }
-}
-
-
-/* G900 actual stage-wrap trim pass */
-@media (max-width: 720px) {
-  .stage-wrap {
-    height: 51svh;
-    min-height: 21.5rem;
-  }
-
-  #stage-canvas {
-    height: 100%;
-    min-height: 0;
-    max-height: none;
-  }
-
-  .stage-lock-toggle .stage-lock-text,
-  .stage-lock-toggle:has(input:checked) .stage-lock-text {
-    font-size: 0.34rem;
-    letter-spacing: 0.14em;
-    opacity: 0.34;
-  }
-}
-
-@media (max-width: 520px) {
-  .stage-wrap {
-    height: 49svh;
-    min-height: 20rem;
-  }
-
-  .stage-lock-toggle .stage-lock-text,
-  .stage-lock-toggle:has(input:checked) .stage-lock-text {
-    font-size: 0.30rem;
-    letter-spacing: 0.12em;
-    opacity: 0.28;
-    right: calc(100% + 0.32rem);
-  }
-}
-
-@media (max-width: 390px) {
-  .stage-wrap {
-    height: 47svh;
-    min-height: 19rem;
-  }
-}
-
-
-/* G900 force hero one-line title and closed instructions */
-.topbar h1 {
-  white-space: nowrap !important;
-  font-size: clamp(1.34rem, 5.8vw, 2.8rem) !important;
-  line-height: 0.96 !important;
-  letter-spacing: -0.075em !important;
-}
-
-.g900-instructions {
-  margin-top: 0.42rem !important;
-}
-
-.g900-instructions summary {
-  cursor: pointer;
-  width: fit-content;
-  list-style: none;
-  color: var(--accent);
-  font-size: 0.72rem;
-  line-height: 1;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  user-select: none;
-}
-
-.g900-instructions summary::-webkit-details-marker {
-  display: none;
-}
-
-.g900-instructions summary::before {
-  content: "+";
-  display: inline-block;
-  width: 1.1em;
-  color: var(--muted);
-}
-
-.g900-instructions[open] summary::before {
-  content: "-";
-}
-
-.g900-instructions p {
-  margin: 0.5rem 0 0;
-  color: var(--muted);
-  font-size: 0.82rem;
-  line-height: 1.28;
-}
-
-@media (max-width: 520px) {
-  .topbar h1 {
-    font-size: clamp(1.22rem, 5.25vw, 1.75rem) !important;
-    letter-spacing: -0.08em !important;
-  }
-
-  .g900-instructions summary {
-    font-size: 0.64rem;
-    letter-spacing: 0.12em;
-  }
-}
-
-
-/* G900 full-width Instructions button pass */
-.g900-instructions {
-  display: block;
-  width: 100%;
-  margin-top: 0.55rem !important;
-}
-
-.g900-instructions summary {
-  box-sizing: border-box;
-  display: flex !important;
-  align-items: center;
-  justify-content: space-between;
-  width: 100% !important;
-  min-height: 2.25rem;
-  padding: 0.62rem 0.82rem;
-  border: 1px solid rgba(214, 184, 108, 0.46);
-  border-radius: 0.78rem;
-  background: rgba(9, 20, 33, 0.72);
-  color: var(--accent);
-  box-shadow: inset 0 0 0 1px rgba(120, 170, 255, 0.08);
-}
-
-.g900-instructions summary::before {
-  content: "Instructions";
-  width: auto;
-  color: var(--accent);
-}
-
-.g900-instructions summary {
-  font-size: 0;
-}
-
-.g900-instructions summary::after {
-  content: "+";
-  color: var(--muted);
-  font-size: 0.9rem;
-  line-height: 1;
-}
-
-.g900-instructions[open] summary::after {
-  content: "-";
-}
-
-.g900-instructions[open] summary {
-  border-color: rgba(214, 184, 108, 0.68);
-  background: rgba(12, 27, 43, 0.86);
-}
-
-.g900-instructions p {
-  padding: 0.72rem 0.82rem 0.1rem;
-}
-
-@media (max-width: 520px) {
-  .g900-instructions summary {
-    min-height: 2.05rem;
-    padding: 0.56rem 0.72rem;
-    border-radius: 0.68rem;
-  }
-
-  .g900-instructions summary::before {
-    font-size: 0.66rem;
-    letter-spacing: 0.12em;
-  }
-
-  .g900-instructions summary::after {
-    font-size: 0.82rem;
-  }
-}
-
-
-/* G900 instructions button stable label pass */
-.g900-instructions summary {
-  font-size: 0 !important;
-}
-
-.g900-instructions summary::before,
-.g900-instructions[open] summary::before {
-  content: "Instructions" !important;
-  display: inline-block;
-  width: auto;
-  color: var(--accent);
-  font-size: 0.72rem;
-  line-height: 1;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.g900-instructions summary::after {
-  content: "+" !important;
-  color: var(--muted);
-  font-size: 0.9rem;
-  line-height: 1;
-}
-
-.g900-instructions[open] summary::after {
-  content: "-" !important;
-}
-
-@media (max-width: 520px) {
-  .g900-instructions summary::before,
-  .g900-instructions[open] summary::before {
-    font-size: 0.66rem;
-    letter-spacing: 0.12em;
-  }
-
-  .g900-instructions summary::after {
-    font-size: 0.82rem;
-  }
-}
-
-
-/* G900 camera preset buttons line-aware pass */
-.camera-preset-row {
-  display: flex;
-  align-items: center;
+/* G900 blank rebuild sheet rate label/value row */
+.sheet-stepper-controls {
+  grid-template-columns: repeat(7, auto);
   justify-content: center;
-  gap: 0.42rem;
-  margin: -0.12rem 0 0.5rem;
-  color: var(--muted);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
 }
 
-.camera-preset-btn {
-  width: 2.15rem;
-  height: 1.62rem;
-  border: 1px solid rgba(214, 184, 108, 0.58);
-  border-radius: 0.55rem;
-  background: rgba(9, 20, 33, 0.72);
-  color: var(--text);
-  font: inherit;
-  line-height: 1;
-  cursor: pointer;
-}
-
-.camera-preset-btn:active {
-  transform: translateY(1px);
-}
-
-@media (max-width: 520px) {
-  .camera-preset-row {
-    margin: -0.18rem 0 0.42rem;
-    font-size: 0.64rem;
-    gap: 0.36rem;
-  }
-
-  .camera-preset-btn {
-    width: 1.92rem;
-    height: 1.45rem;
-    border-radius: 0.48rem;
-  }
-}
-
-
-/* G900 camera preset makeup pass */
-.camera-preset-row {
-  width: fit-content !important;
-  margin: -0.16rem auto 0.44rem !important;
-  padding: 0.28rem 0.42rem;
-  border: 1px solid rgba(214, 184, 108, 0.32);
-  border-radius: 999px;
-  background: rgba(5, 12, 20, 0.34);
-  box-shadow: inset 0 0 0 1px rgba(120, 170, 255, 0.045);
-}
-
-.camera-preset-row > span {
-  margin: 0 0.12rem 0 0.2rem;
-  color: rgba(218, 231, 246, 0.56);
-  font-size: 0.58rem;
-  letter-spacing: 0.18em;
-}
-
-.camera-preset-btn {
-  width: 1.46rem !important;
-  height: 1.28rem !important;
-  min-width: 0 !important;
-  border-radius: 999px !important;
-  border-color: rgba(214, 184, 108, 0.46) !important;
-  background: rgba(12, 27, 43, 0.5) !important;
-  color: rgba(237, 246, 255, 0.86) !important;
-  font-size: 0.62rem !important;
-  letter-spacing: 0 !important;
-  padding: 0 !important;
-}
-
-.camera-preset-btn:active {
-  background: rgba(120, 170, 255, 0.22) !important;
-}
-
-@media (max-width: 520px) {
-  .camera-preset-row {
-    margin: -0.18rem auto 0.36rem !important;
-    padding: 0.24rem 0.36rem;
-  }
-
-  .camera-preset-row > span {
-    font-size: 0.52rem;
-  }
-
-  .camera-preset-btn {
-    width: 1.32rem !important;
-    height: 1.18rem !important;
-    font-size: 0.58rem !important;
-  }
-}
-
-
-/* G900 graph reading preset labels pass */
-.camera-preset-row > span {
-  color: rgba(218, 231, 246, 0.58);
-  font-size: 0.56rem;
-  letter-spacing: 0.16em;
-}
-
-.camera-preset-btn {
-  width: 3.65rem !important;
-  height: 1.34rem !important;
-  padding: 0 0.54rem !important;
-  font-size: 0.56rem !important;
-  letter-spacing: 0.08em !important;
-  text-transform: uppercase;
-}
-
-@media (max-width: 520px) {
-  .camera-preset-row {
-    gap: 0.28rem;
-  }
-
-  .camera-preset-row > span {
-    font-size: 0.5rem;
-    letter-spacing: 0.14em;
-  }
-
-  .camera-preset-btn {
-    width: 3.15rem !important;
-    height: 1.24rem !important;
-    font-size: 0.5rem !important;
-    padding: 0 0.42rem !important;
-  }
-}
-
-
-/* G900 Axis Ring Shear reading row pass */
-.camera-preset-row {
-  max-width: calc(100% - 1rem);
-  gap: 0.28rem !important;
-}
-
-.camera-preset-row > span {
-  font-size: 0.5rem !important;
-  letter-spacing: 0.14em !important;
-}
-
-.camera-preset-btn {
-  width: auto !important;
-  min-width: 2.85rem !important;
-  height: 1.26rem !important;
-  padding: 0 0.46rem !important;
-  font-size: 0.48rem !important;
-  letter-spacing: 0.07em !important;
-}
-
-@media (max-width: 520px) {
-  .camera-preset-row {
-    gap: 0.2rem !important;
-    padding-left: 0.32rem !important;
-    padding-right: 0.32rem !important;
-  }
-
-  .camera-preset-row > span {
-    font-size: 0.46rem !important;
-    letter-spacing: 0.12em !important;
-  }
-
-  .camera-preset-btn {
-    min-width: 2.42rem !important;
-    height: 1.16rem !important;
-    padding: 0 0.32rem !important;
-    font-size: 0.43rem !important;
-  }
-}
-
-
-/* G900 settings preset dropdown line-aware pass */
-.settings-preset-row {
-  display: grid;
-  grid-template-columns: 5.2rem minmax(0, 1fr);
-  gap: 0.72rem;
-  align-items: center;
-  margin: 0.08rem 0 0.88rem;
-}
-
-.settings-preset-row label {
-  color: var(--muted);
-  font-size: 0.92rem;
-}
-
-.settings-preset-row select {
+.sheet-stepper-controls label {
+  grid-column: 1 / 5;
+  justify-self: start;
   width: 100%;
-  min-height: 2.28rem;
-  border: 1px solid rgba(214, 184, 108, 0.42);
-  border-radius: 0.72rem;
-  background: rgba(9, 20, 33, 0.78);
-  color: var(--text);
-  padding: 0 0.78rem;
-  font: inherit;
-  outline: none;
 }
 
-.settings-preset-row select:focus {
-  border-color: rgba(214, 184, 108, 0.74);
-  box-shadow: 0 0 0 2px rgba(214, 184, 108, 0.12);
-}
-
-@media (max-width: 520px) {
-  .settings-preset-row {
-    grid-template-columns: 4.6rem minmax(0, 1fr);
-    gap: 0.52rem;
-    margin-bottom: 0.72rem;
-  }
-
-  .settings-preset-row label {
-    font-size: 0.82rem;
-  }
-
-  .settings-preset-row select {
-    min-height: 2.05rem;
-    border-radius: 0.62rem;
-    padding: 0 0.64rem;
-  }
-}
-
-
-/* G900 export settings URL pass */
-.settings-preset-row {
-  grid-template-columns: 5.2rem minmax(0, 1fr) auto !important;
-}
-
-.settings-export-url-btn {
-  min-height: 2.28rem;
-  border: 1px solid rgba(214, 184, 108, 0.42);
-  border-radius: 0.72rem;
-  background: rgba(9, 20, 33, 0.78);
-  color: var(--accent);
-  padding: 0 0.82rem;
-  font: inherit;
-  font-size: 0.78rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.settings-export-url-btn:active {
-  transform: translateY(1px);
-}
-
-@media (max-width: 520px) {
-  .settings-preset-row {
-    grid-template-columns: 4.6rem minmax(0, 1fr) !important;
-  }
-
-  .settings-export-url-btn {
-    grid-column: 2;
-    min-height: 1.92rem;
-    border-radius: 0.62rem;
-    font-size: 0.66rem;
-    padding: 0 0.64rem;
-  }
-}
-
-
-/* G900 export URL popup pass */
-.settings-share-dialog[hidden] {
-  display: none !important;
-}
-
-.settings-share-dialog {
-  position: fixed;
-  inset: 0;
-  z-index: 50;
-  display: grid;
-  place-items: center;
-  padding: 1rem;
-  background: rgba(0, 0, 0, 0.62);
-  backdrop-filter: blur(10px);
-}
-
-.settings-share-panel {
-  width: min(42rem, 100%);
-  border: 1px solid rgba(214, 184, 108, 0.42);
-  border-radius: 1.1rem;
-  background: rgba(7, 18, 31, 0.96);
-  box-shadow: 0 1.2rem 4rem rgba(0, 0, 0, 0.42);
-  padding: 1rem;
-}
-
-.settings-share-header {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  align-items: center;
-  margin-bottom: 0.9rem;
-}
-
-.settings-share-header h2 {
-  margin: 0;
-  color: var(--accent);
-  font-size: 1.05rem;
-}
-
-.settings-share-close {
-  border: 1px solid rgba(214, 184, 108, 0.42);
-  border-radius: 0.6rem;
-  background: rgba(9, 20, 33, 0.78);
-  color: var(--muted);
-  width: 2rem;
-  height: 2rem;
-  font: inherit;
-}
-
-.settings-share-name,
-.settings-share-url {
-  display: grid;
-  gap: 0.42rem;
-  margin-top: 0.8rem;
-}
-
-.settings-share-name span,
-.settings-share-url span {
-  color: var(--muted);
-  font-size: 0.78rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.settings-share-name input,
-.settings-share-url textarea {
+#sheet-rate-readout {
+  grid-column: 5 / -1;
+  justify-self: end;
   width: 100%;
-  border: 1px solid rgba(214, 184, 108, 0.36);
-  border-radius: 0.72rem;
-  background: rgba(2, 9, 16, 0.82);
-  color: var(--text);
-  font: inherit;
-  padding: 0.75rem;
-  outline: none;
+  text-align: right;
 }
 
-.settings-share-url textarea {
-  min-height: 7rem;
-  resize: vertical;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 0.76rem;
-  line-height: 1.45;
+#sheet-rate-slider {
+  grid-column: 1 / -1;
+  width: min(34rem, 100%);
+  justify-self: center;
 }
 
-.settings-share-actions {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 0.9rem;
-}
-
-.settings-share-copy {
-  min-height: 2.28rem;
-  border: 1px solid rgba(214, 184, 108, 0.48);
-  border-radius: 0.72rem;
-  background: rgba(9, 20, 33, 0.86);
-  color: var(--accent);
-  padding: 0 0.95rem;
-  font: inherit;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-@media (max-width: 520px) {
-  .settings-share-dialog {
-    align-items: end;
-    padding: 0.75rem;
+@media (max-width: 720px) {
+  .sheet-stepper-controls label {
+    grid-column: 1 / 5;
+    justify-self: start;
   }
 
-  .settings-share-panel {
-    border-radius: 1rem;
-    padding: 0.9rem;
+  #sheet-rate-readout {
+    grid-column: 5 / -1;
+    justify-self: end;
+    text-align: right;
   }
 
-  .settings-share-url textarea {
-    min-height: 8rem;
-    font-size: 0.68rem;
-  }
-
-  .settings-share-copy {
-    width: 100%;
+  #sheet-rate-slider {
+    grid-column: 1 / -1;
   }
 }
 
-
-/* G900 share above graph lens fixed pass */
-.settings-share-primary {
-  width: 100%;
-  margin: 0.1rem 0 0.72rem;
-}
-
-.settings-preset-row {
-  grid-template-columns: 5.8rem minmax(0, 1fr) !important;
-}
-
-@media (max-width: 520px) {
-  .settings-share-primary {
-    margin-bottom: 0.72rem;
-  }
-
-  .settings-preset-row {
-    grid-template-columns: 6.2rem minmax(0, 1fr) !important;
-  }
-}
-
-
-/* G900 settings layout repair after Share/Graph Lens */
-.settings-card {
-  overflow: hidden !important;
-}
-
-.settings-share-primary {
-  display: block !important;
-  width: 100% !important;
-  min-height: 2.25rem !important;
-  margin: 0.1rem 0 0.85rem !important;
-  box-sizing: border-box !important;
-}
-
-.settings-preset-row {
+/* G900 blank rebuild sheet controls structural layout */
+.sheet-stepper-controls {
   display: grid !important;
-  grid-template-columns: 7.2rem minmax(0, 1fr) !important;
-  gap: 0.72rem !important;
-  align-items: center !important;
-  margin: 0 0 1rem !important;
-  width: 100% !important;
-  box-sizing: border-box !important;
+  grid-template-columns: 1fr !important;
+  gap: 0.56rem !important;
+  width: min(34rem, 100%) !important;
+  margin: 0 auto !important;
 }
 
-.settings-preset-row label {
-  min-width: 0 !important;
-  white-space: normal !important;
-}
-
-.settings-preset-row select {
-  min-width: 0 !important;
-  width: 100% !important;
-  box-sizing: border-box !important;
-}
-
-.view-fader-stack {
-  width: 100% !important;
-}
-
-@media (max-width: 520px) {
-  .settings-preset-row {
-    grid-template-columns: 7.1rem minmax(0, 1fr) !important;
-    gap: 0.52rem !important;
-  }
-
-  .settings-share-primary {
-    margin-bottom: 0.78rem !important;
-  }
-}
-
-
-/* G900 final Settings card layout override */
-.settings-card {
-  display: block !important;
-  overflow: hidden !important;
-}
-
-.settings-card > h2 {
-  display: block !important;
-  margin-bottom: 0.85rem !important;
-}
-
-.settings-card > .settings-share-primary {
-  position: static !important;
-  display: flex !important;
-  align-items: center !important;
+.sheet-button-row {
+  display: grid !important;
+  grid-template-columns: repeat(7, 2.35rem) !important;
   justify-content: center !important;
+  align-items: center !important;
+  gap: 0.44rem !important;
+}
+
+.sheet-rate-head {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: baseline !important;
+  gap: 1rem !important;
   width: 100% !important;
-  max-width: none !important;
-  min-height: 2.35rem !important;
-  margin: 0 0 0.9rem !important;
-  box-sizing: border-box !important;
+}
+
+.sheet-rate-head label {
+  color: rgba(237, 246, 255, 0.72) !important;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace !important;
+  font-size: 0.74rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+}
+
+.sheet-rate-head span {
+  color: var(--accent) !important;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace !important;
+  font-size: 0.82rem !important;
+  text-align: right !important;
+  font-variant-numeric: tabular-nums !important;
+}
+
+#sheet-rate-slider {
+  width: 100% !important;
   grid-column: auto !important;
 }
 
-.settings-card > .settings-preset-row {
-  position: static !important;
-  display: grid !important;
-  grid-template-columns: 7.4rem minmax(0, 1fr) !important;
-  gap: 0.75rem !important;
-  align-items: center !important;
-  width: 100% !important;
-  margin: 0 0 1.05rem !important;
-  box-sizing: border-box !important;
-}
-
-.settings-card > .settings-preset-row label {
-  white-space: normal !important;
-  min-width: 0 !important;
-}
-
-.settings-card > .settings-preset-row select {
-  width: 100% !important;
-  min-width: 0 !important;
-  max-width: 100% !important;
-  box-sizing: border-box !important;
-}
-
-.settings-card > .view-fader-stack {
-  display: block !important;
-  width: 100% !important;
-  margin: 0 !important;
-}
-
-.settings-card .layer-fader-row,
-.settings-card > .mixer-entry-row {
-  display: grid !important;
-  grid-template-columns: 7.4rem minmax(0, 1fr) 4.1rem !important;
-  gap: 0.75rem !important;
-  align-items: center !important;
-  width: 100% !important;
-  margin: 0.72rem 0 !important;
-  box-sizing: border-box !important;
-}
-
-.settings-card .mixer-check-label {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 0.55rem !important;
-  min-width: 0 !important;
-  white-space: nowrap !important;
-}
-
-.settings-card .layer-fader-row label,
-.settings-card .mixer-check-label span {
-  min-width: 0 !important;
-}
-
-.settings-card .layer-fader-row input[type="range"],
-.settings-card > .mixer-entry-row input[type="range"] {
-  width: 100% !important;
-  min-width: 0 !important;
-  box-sizing: border-box !important;
-}
-
-.settings-card .layer-fader-row > span,
-.settings-card > .mixer-entry-row > span {
-  text-align: right !important;
-  min-width: 3.6rem !important;
-}
-
-@media (max-width: 520px) {
-  .settings-card > .settings-preset-row,
-  .settings-card .layer-fader-row,
-  .settings-card > .mixer-entry-row {
-    grid-template-columns: 6.9rem minmax(0, 1fr) 3.65rem !important;
-    gap: 0.52rem !important;
-  }
-
-  .settings-card > .settings-preset-row {
-    grid-template-columns: 6.9rem minmax(0, 1fr) !important;
-  }
-
-  .settings-card .layer-fader-row > span,
-  .settings-card > .mixer-entry-row > span {
-    min-width: 3.25rem !important;
+@media (max-width: 720px) {
+  .sheet-button-row {
+    grid-template-columns: repeat(7, 2.15rem) !important;
+    gap: 0.34rem !important;
   }
 }
 
-/* G900 Share button header placement */
-.settings-card > .settings-card-header {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  gap: 0.85rem !important;
-  width: 100% !important;
-  margin: 0 0 0.95rem !important;
+@media (max-width: 420px) {
+  .sheet-button-row {
+    grid-template-columns: repeat(7, 1.9rem) !important;
+    gap: 0.3rem !important;
+  }
 }
 
-.settings-card > .settings-card-header h2 {
-  margin: 0 !important;
+/* G900 blank rebuild stage grid toggle */
+.stage-grid-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  grid-column: 1 / -1;
+  justify-self: center;
+  color: rgba(237, 246, 255, 0.74);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  user-select: none;
 }
 
-.settings-card > .settings-card-header .settings-share-header-btn {
-  position: static !important;
+.stage-grid-toggle input {
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--accent);
+}
+
+/* G900 blank rebuild layer pills */
+.stage-pill {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  width: auto !important;
-  min-width: 5.8rem !important;
-  max-width: none !important;
-  min-height: 2.15rem !important;
-  margin: 0 !important;
-  padding: 0.48rem 0.9rem !important;
+  gap: 0.42rem !important;
+  min-width: 3.2rem !important;
+  min-height: 1.85rem !important;
+  padding: 0.32rem 0.64rem !important;
+  border: 1px solid rgba(217, 184, 108, 0.34) !important;
   border-radius: 999px !important;
-  border: 1px solid rgba(214, 184, 108, 0.62) !important;
   background:
-    linear-gradient(180deg, rgba(214, 184, 108, 0.16), rgba(214, 184, 108, 0.055)),
-    rgba(9, 20, 33, 0.92) !important;
-  color: var(--accent) !important;
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.08),
-    0 0.55rem 1.2rem rgba(0,0,0,0.22) !important;
-  font-size: 0.72rem !important;
-  font-weight: 800 !important;
-  letter-spacing: 0.14em !important;
-  text-transform: uppercase !important;
-}
-
-@media (max-width: 520px) {
-  .settings-card > .settings-card-header .settings-share-header-btn {
-    min-width: 5.15rem !important;
-    min-height: 1.95rem !important;
-    padding: 0.42rem 0.72rem !important;
-    font-size: 0.66rem !important;
-  }
-}
-
-/* G900 local lens Save/Share header actions */
-.settings-header-actions {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: flex-end !important;
-  gap: 0.52rem !important;
-  flex-wrap: nowrap !important;
-}
-
-.settings-card > .settings-card-header .settings-header-action-btn {
-  position: static !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: auto !important;
-  min-width: 5.1rem !important;
-  max-width: none !important;
-  min-height: 2.15rem !important;
-  margin: 0 !important;
-  padding: 0.48rem 0.86rem !important;
-  border-radius: 999px !important;
-  border: 1px solid rgba(214, 184, 108, 0.62) !important;
-  background:
-    linear-gradient(180deg, rgba(214, 184, 108, 0.16), rgba(214, 184, 108, 0.055)),
-    rgba(9, 20, 33, 0.92) !important;
-  color: var(--accent) !important;
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.08),
-    0 0.55rem 1.2rem rgba(0,0,0,0.22) !important;
-  font-size: 0.68rem !important;
-  font-weight: 800 !important;
-  letter-spacing: 0.13em !important;
-  text-transform: uppercase !important;
-}
-
-#settings-saved-lenses-optgroup[hidden] {
-  display: none;
-}
-
-@media (max-width: 520px) {
-  .settings-header-actions {
-    gap: 0.38rem !important;
-  }
-
-  .settings-card > .settings-card-header .settings-header-action-btn {
-    min-width: 4.55rem !important;
-    min-height: 1.95rem !important;
-    padding: 0.42rem 0.62rem !important;
-    font-size: 0.6rem !important;
-    letter-spacing: 0.1em !important;
-  }
-}
-
-/* G900 local lens Delete action */
-.settings-delete-lens-btn {
-  border-color: rgba(255, 150, 120, 0.52) !important;
-  color: rgba(255, 190, 165, 0.96) !important;
-}
-
-.settings-delete-lens-btn[hidden] {
-  display: none !important;
-}
-
-.settings-delete-lens-btn:hover,
-.settings-delete-lens-btn:focus-visible {
-  border-color: rgba(255, 170, 135, 0.86) !important;
-  background:
-    linear-gradient(180deg, rgba(255, 150, 120, 0.16), rgba(255, 150, 120, 0.06)),
-    rgba(18, 15, 18, 0.96) !important;
-}
-
-/* G900 local lens Delete icon beside dropdown */
-.settings-preset-control {
-  display: grid !important;
-  grid-template-columns: minmax(0, 1fr) auto !important;
-  align-items: center !important;
-  gap: 0.52rem !important;
-  min-width: 0 !important;
-}
-
-.settings-preset-control select {
-  min-width: 0 !important;
-}
-
-.settings-delete-icon-btn {
-  width: 2.35rem !important;
-  min-width: 2.35rem !important;
-  height: 2.28rem !important;
-  min-height: 2.28rem !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  display: inline-grid !important;
-  place-items: center !important;
-  border-radius: 0.72rem !important;
-  border: 1px solid rgba(255, 150, 120, 0.52) !important;
-  background:
-    linear-gradient(180deg, rgba(255, 150, 120, 0.14), rgba(255, 150, 120, 0.045)),
-    rgba(9, 20, 33, 0.92) !important;
-  color: rgba(255, 190, 165, 0.96) !important;
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.08),
-    0 0.45rem 1rem rgba(0,0,0,0.20) !important;
-  font-size: 1.05rem !important;
-  line-height: 1 !important;
-}
-
-.settings-delete-icon-btn[hidden] {
-  display: none !important;
-}
-
-.settings-delete-icon-btn:hover,
-.settings-delete-icon-btn:focus-visible {
-  border-color: rgba(255, 170, 135, 0.86) !important;
-  background:
-    linear-gradient(180deg, rgba(255, 150, 120, 0.22), rgba(255, 150, 120, 0.075)),
-    rgba(18, 15, 18, 0.96) !important;
-  outline: none !important;
-}
-
-@media (max-width: 520px) {
-  .settings-preset-control {
-    gap: 0.42rem !important;
-  }
-
-  .settings-delete-icon-btn {
-    width: 2.05rem !important;
-    min-width: 2.05rem !important;
-    height: 2.05rem !important;
-    min-height: 2.05rem !important;
-    border-radius: 0.62rem !important;
-    font-size: 0.98rem !important;
-  }
-}
-
-/* G900 move View presets into primary control row */
-.transport-button-row {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 0.38rem !important;
-  flex-wrap: wrap !important;
-}
-
-.transport-button-row .camera-preset-row {
-  margin: 0 !important;
-  width: auto !important;
-  max-width: 100% !important;
-  flex: 0 1 auto !important;
-}
-
-.transport-button-row .camera-preset-row > span {
-  font-size: 0.5rem !important;
-  letter-spacing: 0.14em !important;
-}
-
-@media (max-width: 520px) {
-  .transport-button-row {
-    gap: 0.28rem !important;
-  }
-
-  .transport-button-row .camera-preset-row {
-    order: 2;
-    flex-basis: 100% !important;
-    justify-content: center !important;
-    margin-top: 0.12rem !important;
-  }
-}
-
-/* G900 View buttons in primary transport series */
-.transport-button-row {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 0.38rem !important;
-  flex-wrap: nowrap !important;
-}
-
-.transport-button-row .camera-preset-row {
-  display: contents !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  border: 0 !important;
-  background: transparent !important;
-  box-shadow: none !important;
-}
-
-.transport-button-row .camera-preset-btn {
-  width: 2.35rem !important;
-  min-width: 2.35rem !important;
-  height: 1.9rem !important;
-  min-height: 1.9rem !important;
-  padding: 0 !important;
-  border-radius: 7px !important;
-  border-color: rgba(217, 184, 108, 0.36) !important;
-  background:
-    linear-gradient(180deg, rgba(32, 50, 72, 0.96), rgba(11, 20, 34, 0.98)) !important;
-  color: var(--text) !important;
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.07),
-    inset 0 -1px 0 rgba(0,0,0,0.45) !important;
+    linear-gradient(180deg, rgba(24, 38, 56, 0.82), rgba(6, 13, 22, 0.88)) !important;
+  color: rgba(237, 246, 255, 0.76) !important;
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace !important;
   font-size: 0.82rem !important;
   font-weight: 800 !important;
-  letter-spacing: 0 !important;
   line-height: 1 !important;
-  text-transform: uppercase !important;
+  cursor: pointer !important;
+  user-select: none !important;
 }
 
-.transport-button-row .camera-preset-btn:hover,
-.transport-button-row .camera-preset-btn:focus-visible {
+.stage-pill input {
+  position: absolute !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.stage-pill-mark {
+  width: 0.48rem !important;
+  height: 0.48rem !important;
+  border-radius: 999px !important;
+  background: rgba(150, 165, 180, 0.34) !important;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.58),
+    0 0 0 rgba(217, 184, 108, 0) !important;
+}
+
+.stage-pill-label {
+  transform: translateY(-0.02rem) !important;
+}
+
+.stage-pill:has(input:checked) {
   border-color: rgba(217, 184, 108, 0.82) !important;
-  background:
-    linear-gradient(180deg, rgba(42, 62, 88, 0.98), rgba(14, 24, 39, 0.98)) !important;
-  outline: none !important;
-}
-
-@media (max-width: 520px) {
-  .transport-button-row {
-    gap: 0.24rem !important;
-    flex-wrap: nowrap !important;
-  }
-
-  .transport-button-row .mini-transport-btn,
-  .transport-button-row .camera-preset-btn {
-    width: 2.12rem !important;
-    min-width: 2.12rem !important;
-    height: 1.82rem !important;
-    min-height: 1.82rem !important;
-  }
-
-  .transport-button-row .camera-preset-btn {
-    font-size: 0.76rem !important;
-  }
-}
-
-/* G900 primary play hierarchy pass */
-.transport-button-row #camera-preset-1 {
-  margin-left: 0.5rem !important;
-}
-
-.transport-button-row #play-pause-btn {
-  width: 3.52rem !important;
-  min-width: 3.52rem !important;
-  border-color: rgba(214, 184, 108, 0.78) !important;
-  background:
-    linear-gradient(180deg, rgba(214, 184, 108, 0.26), rgba(214, 184, 108, 0.08)),
-    linear-gradient(180deg, rgba(42, 62, 88, 0.98), rgba(14, 24, 39, 0.98)) !important;
-  color: var(--text) !important;
+  color: rgba(237, 246, 255, 0.96) !important;
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.12),
-    inset 0 -1px 0 rgba(0,0,0,0.48),
-    0 0 0 1px rgba(214, 184, 108, 0.14),
-    0 0.65rem 1.35rem rgba(0,0,0,0.28) !important;
-}
-
-.transport-button-row #play-pause-btn:hover,
-.transport-button-row #play-pause-btn:focus-visible {
-  border-color: rgba(214, 184, 108, 0.98) !important;
-  background:
-    linear-gradient(180deg, rgba(214, 184, 108, 0.34), rgba(214, 184, 108, 0.12)),
-    linear-gradient(180deg, rgba(50, 72, 98, 0.98), rgba(16, 28, 44, 0.98)) !important;
-  outline: none !important;
-}
-
-@media (max-width: 520px) {
-  .transport-button-row #camera-preset-1 {
-    margin-left: 0.38rem !important;
-  }
-
-  .transport-button-row #play-pause-btn {
-    width: 3.18rem !important;
-    min-width: 3.18rem !important;
-  }
-}
-
-/* G900 tiny pinch and zoom label */
-.stage-lock-text,
-.stage-lock-toggle .stage-lock-text,
-.stage-lock-toggle:has(input:checked) .stage-lock-text {
-  font-size: 0.24rem !important;
-  letter-spacing: 0.16em !important;
-  opacity: 0.22 !important;
-  right: calc(100% + 0.26rem) !important;
-}
-
-@media (max-width: 520px) {
-  .stage-lock-text,
-  .stage-lock-toggle .stage-lock-text,
-  .stage-lock-toggle:has(input:checked) .stage-lock-text {
-    font-size: 0.20rem !important;
-    letter-spacing: 0.14em !important;
-    opacity: 0.18 !important;
-    right: calc(100% + 0.22rem) !important;
-  }
-}
-
-/* G900 readable tiny pinch and zoom label */
-.stage-lock-text,
-.stage-lock-toggle .stage-lock-text,
-.stage-lock-toggle:has(input:checked) .stage-lock-text {
-  font-size: 0.84rem !important;
-  letter-spacing: 0.13em !important;
-  opacity: 0.46 !important;
-  right: calc(100% + 0.34rem) !important;
-}
-
-@media (max-width: 520px) {
-  .stage-lock-text,
-  .stage-lock-toggle .stage-lock-text,
-  .stage-lock-toggle:has(input:checked) .stage-lock-text {
-    font-size: 0.72rem !important;
-    letter-spacing: 0.12em !important;
-    opacity: 0.38 !important;
-    right: calc(100% + 0.28rem) !important;
-  }
-}
-
-/* G900 CoRI public footer */
-.g900-lab-footer {
-  max-width: 980px;
-  margin: 1.25rem auto 1.6rem;
-  padding: 0 1rem;
-  color: rgba(159, 182, 204, 0.78);
-  font-size: 0.78rem;
-  line-height: 1.45;
-  text-align: center;
-}
-
-.g900-lab-footer p {
-  margin: 0.18rem 0;
-}
-
-.g900-lab-footer p:first-child {
-  color: rgba(217, 184, 108, 0.82);
-}
-
-@media (max-width: 520px) {
-  .g900-lab-footer {
-    margin-top: 1rem;
-    padding: 0 0.85rem 1.2rem;
-    font-size: 0.68rem;
-    line-height: 1.35;
-  }
-}
-
-/* G900 wide-screen side-loaded lens controls */
-@media (min-width: 1180px) {
-  .single-layout {
-    max-width: 1280px !important;
-    display: grid !important;
-    grid-template-columns: minmax(760px, 1fr) minmax(320px, 380px) !important;
-    align-items: start !important;
-    gap: 1rem !important;
-  }
-
-  .stage-card {
-    grid-column: 1 !important;
-    margin: 0 !important;
-  }
-
-  .settings-card {
-    grid-column: 2 !important;
-    margin-top: 0 !important;
-    position: sticky !important;
-    top: 1rem !important;
-  }
-
-  .g900-lab-footer {
-    max-width: 1280px !important;
-  }
-}
-
-@media (min-width: 1500px) {
-  .single-layout {
-    max-width: 1440px !important;
-    grid-template-columns: minmax(860px, 1fr) minmax(340px, 400px) !important;
-  }
-}
-
-/* G900 primary grammar simulator */
-#stage-canvas {
-  touch-action: none;
-}
-
-.force-grammar-strip {
-  margin: 0.78rem 0 0.92rem !important;
-  padding: 0.68rem 0.72rem 0.64rem !important;
-  border: 1px solid rgba(217, 184, 108, 0.18) !important;
-  border-radius: 0.92rem !important;
-  background:
-    linear-gradient(180deg, rgba(19, 34, 52, 0.78), rgba(7, 14, 25, 0.88)),
-    rgba(7, 14, 25, 0.82) !important;
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.055),
-    0 0.5rem 1.15rem rgba(0,0,0,0.18) !important;
-}
-
-.force-grammar-title {
-  margin: 0 0 0.46rem !important;
-  color: rgba(217, 184, 108, 0.86) !important;
-  font-size: 0.58rem !important;
-  font-weight: 800 !important;
-  letter-spacing: 0.18em !important;
-  text-transform: uppercase !important;
-}
-
-.force-chip-row {
-  display: grid !important;
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  gap: 0.42rem !important;
-}
-
-.force-chip {
-  --force-rgb: 217, 184, 108;
-  appearance: none !important;
-  display: grid !important;
-  gap: 0.08rem !important;
-  min-width: 0 !important;
-  padding: 0.48rem 0.52rem 0.46rem !important;
-  border-radius: 0.72rem !important;
-  border: 1px solid rgba(var(--force-rgb), 0.42) !important;
-  background:
-    radial-gradient(circle at 18% 0%, rgba(var(--force-rgb), 0.22), transparent 52%),
-    linear-gradient(180deg, rgba(var(--force-rgb), 0.115), rgba(var(--force-rgb), 0.035)),
-    rgba(8, 18, 31, 0.88) !important;
-  color: rgba(238, 245, 252, 0.92) !important;
-  text-align: left !important;
-  cursor: pointer !important;
-  touch-action: manipulation !important;
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.07),
-    0 0 0 1px rgba(var(--force-rgb), 0.055),
-    0 0.38rem 0.85rem rgba(0,0,0,0.16) !important;
-}
-
-.force-chip b {
-  color: rgba(var(--force-rgb), 0.98) !important;
-  font-size: 0.72rem !important;
-  line-height: 1 !important;
-}
-
-.force-chip em {
-  color: rgba(205, 221, 238, 0.68) !important;
-  font-size: 0.58rem !important;
-  font-style: normal !important;
-  line-height: 1.05 !important;
-}
-
-.force-chip-gravity {
-  --force-rgb: 217, 184, 108;
-}
-
-.force-chip-em {
-  --force-rgb: 84, 207, 232;
-}
-
-.force-chip-strong {
-  --force-rgb: 255, 126, 92;
-}
-
-.force-chip-weak {
-  --force-rgb: 178, 142, 255;
-}
-
-.force-chip:hover,
-.force-chip:focus-visible,
-.force-chip.is-active,
-.force-chip[aria-pressed="true"] {
-  border-color: rgba(var(--force-rgb), 0.94) !important;
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.10),
-    0 0 0 1px rgba(var(--force-rgb), 0.22),
-    0 0 1rem rgba(var(--force-rgb), 0.22),
-    0 0.45rem 1rem rgba(0,0,0,0.20) !important;
-  outline: none !important;
-}
-
-.force-chip.is-active b,
-.force-chip[aria-pressed="true"] b {
-  text-shadow: 0 0 0.7rem rgba(var(--force-rgb), 0.48) !important;
-}
-
-.force-grammar-note {
-  margin: 0.48rem 0 0 !important;
-  color: rgba(159, 182, 204, 0.62) !important;
-  font-size: 0.58rem !important;
-  line-height: 1.28 !important;
-}
-
-body[data-force-mode="gravity"] .stage-card {
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.06),
-    0 0 0 1px rgba(217, 184, 108, 0.12),
-    0 0 2.2rem rgba(217, 184, 108, 0.065) !important;
-}
-
-body[data-force-mode="em"] .stage-card {
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.06),
-    0 0 0 1px rgba(84, 207, 232, 0.13),
-    0 0 2.2rem rgba(84, 207, 232, 0.07) !important;
-}
-
-body[data-force-mode="strong"] .stage-card {
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.06),
-    0 0 0 1px rgba(255, 126, 92, 0.13),
-    0 0 2.2rem rgba(255, 126, 92, 0.07) !important;
-}
-
-body[data-force-mode="weak"] .stage-card {
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.06),
-    0 0 0 1px rgba(178, 142, 255, 0.13),
-    0 0 2.2rem rgba(178, 142, 255, 0.075) !important;
-}
-
-@media (max-width: 520px) {
-  .force-grammar-strip {
-    margin: 0.64rem 0 0.76rem !important;
-    padding: 0.58rem 0.58rem 0.54rem !important;
-    border-radius: 0.82rem !important;
-  }
-
-  .force-chip-row {
-    gap: 0.34rem !important;
-  }
-
-  .force-chip {
-    padding: 0.42rem 0.42rem 0.40rem !important;
-    border-radius: 0.62rem !important;
-  }
-
-  .force-chip b {
-    font-size: 0.66rem !important;
-  }
-
-  .force-chip em,
-  .force-grammar-note {
-    font-size: 0.52rem !important;
-  }
-}
-
-/* G900 stage lock semantics: green unlocked, red locked */
-.stage-lock-toggle {
-  cursor: pointer !important;
-}
-
-.stage-lock-toggle .stage-lock-icon {
-  border-color: rgba(132, 235, 184, 0.72) !important;
-  background:
-    radial-gradient(circle at 70% 70%, rgba(132, 235, 184, 0.95), rgba(132, 235, 184, 0.42) 38%, transparent 42%),
-    linear-gradient(180deg, rgba(32, 50, 72, 0.96), rgba(11, 20, 34, 0.98)) !important;
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.10),
-    0 0 0 1px rgba(132, 235, 184, 0.18),
-    0 0 0.85rem rgba(132, 235, 184, 0.22) !important;
-}
-
-body[data-stage-locked="true"] .stage-lock-toggle .stage-lock-icon {
-  border-color: rgba(255, 120, 96, 0.78) !important;
-  background:
-    radial-gradient(circle at 70% 70%, rgba(255, 120, 96, 0.98), rgba(255, 120, 96, 0.44) 38%, transparent 42%),
-    linear-gradient(180deg, rgba(52, 32, 34, 0.98), rgba(22, 11, 14, 0.98)) !important;
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.10),
-    0 0 0 1px rgba(255, 120, 96, 0.20),
-    0 0 0.85rem rgba(255, 120, 96, 0.24) !important;
-}
-
-body[data-stage-locked="false"] .stage-lock-text {
-  color: rgba(132, 235, 184, 0.54) !important;
-}
-
-body[data-stage-locked="true"] .stage-lock-text {
-  color: rgba(255, 150, 125, 0.62) !important;
-  opacity: 0.66 !important;
-}
-
-body[data-stage-locked="true"] #stage-canvas {
-  touch-action: auto !important;
-}
-
-body[data-stage-locked="false"] #stage-canvas {
-  touch-action: none !important;
-}
-
-/* G900 force functions compose instead of exclusive OR */
-.force-chip.is-active,
-.force-chip[aria-pressed="true"] {
-  position: relative !important;
-}
-
-.force-chip.is-active::after,
-.force-chip[aria-pressed="true"]::after {
-  content: "";
-  position: absolute;
-  right: 0.48rem;
-  top: 0.48rem;
-  width: 0.42rem;
-  height: 0.42rem;
-  border-radius: 999px;
-  background: rgba(var(--force-rgb), 0.96);
-  box-shadow: 0 0 0.65rem rgba(var(--force-rgb), 0.52);
-}
-
-body.force-on-gravity.force-on-em .stage-card,
-body.force-on-gravity.force-on-strong .stage-card,
-body.force-on-gravity.force-on-weak .stage-card,
-body.force-on-em.force-on-strong .stage-card,
-body.force-on-em.force-on-weak .stage-card,
-body.force-on-strong.force-on-weak .stage-card {
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.06),
+    inset 0 1px 0 rgba(255,255,255,0.08),
     0 0 0 1px rgba(217, 184, 108, 0.10),
-    0 0 0 2px rgba(84, 207, 232, 0.045),
-    0 0 2.4rem rgba(178, 142, 255, 0.075) !important;
+    0 0 1rem rgba(217, 184, 108, 0.11) !important;
 }
 
-@media (max-width: 520px) {
-  .force-chip.is-active::after,
-  .force-chip[aria-pressed="true"]::after {
-    right: 0.38rem;
-    top: 0.38rem;
-    width: 0.36rem;
-    height: 0.36rem;
-  }
+.stage-pill:has(input:checked) .stage-pill-mark {
+  background: rgba(120, 255, 190, 0.96) !important;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.64),
+    0 0 0.55rem rgba(120, 255, 190, 0.70),
+    0 0 1rem rgba(217, 184, 108, 0.18) !important;
 }
 
-/* G900 transition trace toggle */
-.transition-trace-row .transition-trace-help {
-  color: rgba(159, 182, 204, 0.66) !important;
-  font-size: 0.72rem !important;
-  line-height: 1.2 !important;
+.stage-grid-toggle {
+  grid-column: 1 / -1 !important;
+  justify-self: center !important;
+  margin-top: 0.05rem !important;
 }
 
-@media (max-width: 520px) {
-  .transition-trace-row .transition-trace-help {
-    font-size: 0.62rem !important;
-  }
+/* G900 blank rebuild: # grid pill in top control row */
+.sheet-button-row {
+  grid-template-columns: repeat(8, 2.35rem) !important;
 }
 
-/* G900 remove inactive inherited lens controls */
-.settings-card > .settings-card-header {
-  justify-content: flex-start !important;
+.stage-pill.stage-grid-toggle {
+  grid-column: auto !important;
+  justify-self: auto !important;
+  margin: 0 !important;
+  width: 2.35rem !important;
+  min-width: 2.35rem !important;
+  height: 1.95rem !important;
+  min-height: 1.95rem !important;
+  padding: 0 !important;
+  border-radius: 0.5rem !important;
+  border-color: rgba(217, 184, 108, 0.42) !important;
+  background:
+    linear-gradient(180deg, rgba(32, 50, 72, 0.96), rgba(11, 20, 34, 0.98)) !important;
+  color: rgba(237, 246, 255, 0.68) !important;
+  box-shadow: none !important;
 }
 
-.settings-card > .settings-card-header h2 {
-  margin-bottom: 0 !important;
+.stage-pill.stage-grid-toggle input {
+  position: absolute !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
 }
 
-.settings-header-actions,
-.settings-share-dialog,
-.settings-preset-row,
-.settings-preset-control,
-#settings-save-lens-btn,
-#settings-export-url-btn,
-#settings-preset-select,
-#settings-delete-lens-btn {
+.stage-pill.stage-grid-toggle .stage-pill-mark {
   display: none !important;
+}
+
+.stage-pill.stage-grid-toggle .stage-pill-label {
+  transform: none !important;
+}
+
+.stage-pill.stage-grid-toggle:has(input:checked) {
+  border-color: rgba(120, 255, 190, 0.72) !important;
+  background:
+    linear-gradient(180deg, rgba(42, 108, 88, 0.92), rgba(14, 48, 42, 0.96)) !important;
+  color: rgba(237, 246, 255, 0.96) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.10),
+    0 0 0 1px rgba(120, 255, 190, 0.10),
+    0 0 0.85rem rgba(120, 255, 190, 0.16) !important;
+}
+
+@media (max-width: 720px) {
+  .sheet-button-row {
+    grid-template-columns: repeat(8, 2.15rem) !important;
+  }
+
+  .stage-pill.stage-grid-toggle {
+    width: 2.15rem !important;
+    min-width: 2.15rem !important;
+    height: 1.85rem !important;
+    min-height: 1.85rem !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .sheet-button-row {
+    grid-template-columns: repeat(8, 1.9rem) !important;
+  }
+
+  .stage-pill.stage-grid-toggle {
+    width: 1.9rem !important;
+    min-width: 1.9rem !important;
+    height: 1.7rem !important;
+    min-height: 1.7rem !important;
+  }
+}
+
+/* G900 blank rebuild X/Y/Z/45 camera pills */
+.sheet-button-row {
+  grid-template-columns: repeat(9, 2.35rem) !important;
+}
+
+.angle-preset-btn {
+  font-size: 0.72rem !important;
+}
+
+@media (max-width: 720px) {
+  .sheet-button-row {
+    grid-template-columns: repeat(9, 2.05rem) !important;
+    gap: 0.28rem !important;
+  }
+
+  .mini-transport-btn,
+  .stage-pill.stage-grid-toggle {
+    width: 2.05rem !important;
+    min-width: 2.05rem !important;
+  }
+
+  .angle-preset-btn {
+    font-size: 0.64rem !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .sheet-button-row {
+    grid-template-columns: repeat(9, 1.78rem) !important;
+    gap: 0.24rem !important;
+  }
+
+  .mini-transport-btn,
+  .stage-pill.stage-grid-toggle {
+    width: 1.78rem !important;
+    min-width: 1.78rem !important;
+  }
+
+  .angle-preset-btn {
+    font-size: 0.56rem !important;
+  }
 }

@@ -1,0 +1,63 @@
+{
+  "schema": "g900.unsupported_phase_step_public_note",
+  "version": "1",
+  "status": "unsupported_phase_step_public_note_recorded",
+  "audit_pass": true,
+  "body": "g900",
+  "boundary": {
+    "public_note_only": true,
+    "channels_admitted": false,
+    "channel_registry_modified": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "physics_claim": false,
+    "force_claim": false
+  },
+  "input_paths": {
+    "classification_json": "public_html/labs/g900_observatory/artifacts/json/g900_full60_phase_support_classification_001.v1.json",
+    "support_json": "public_html/labs/g900_observatory/artifacts/json/g900_full60_package_support_audit_001.v1.json",
+    "slot12_json": "public_html/labs/g900_observatory/artifacts/json/g900_slot12_composite_triangle_anatomy_001.v1.json",
+    "channels": "public_html/labs/g900_observatory/data/g900_channels.v0.1.json"
+  },
+  "checks": {
+    "classification_audit_pass_true": true,
+    "support_audit_pass_true": true,
+    "slot12_triangle_audit_pass_true": true,
+    "unsupported_pairs_exactly_6_9": true,
+    "unsupported_internal_phase_step_count_is_1": true,
+    "boundary_supported_package_count_is_9": true,
+    "internally_supported_package_count_is_9": true,
+    "channel_registry_still_zero_sets": true,
+    "channel_registry_still_zero_channels": true,
+    "channel_registry_admits_channels_false": true,
+    "channel_registry_renders_channels_false": true
+  },
+  "public_note": {
+    "title": "What the G900 6/9 anomaly means",
+    "summary": "The G900 phase scan found one clean exception. The pair 6/9 appears as a full-60 phase transition, meaning it occurs across all 60 roots of the relevant slot-12 region. But it is not represented by an admitted Layer 2 boundary carrier, and in the tested carrier-rail language it has no internal delta-edge support. This makes 6/9 a real phase-grammar event, not a channel.",
+    "body": [
+      "The G900 Observatory now separates three things that are easy to confuse.",
+      "",
+      "First, there is phase grammar. A phase transition is real when it appears reproducibly in the edge-limit scan. On that test, 6/9 is real.",
+      "",
+      "Second, there is carrier support. A transition is supported when its step is witnessed by the tested internal or boundary carrier rails. On that test, nine of the ten full-60 packages are supported.",
+      "",
+      "Third, there is channel admission. A channel would require explicit registry admission. No channel has been admitted.",
+      "",
+      "The 6/9 package is the exception. It appears in the phase grammar with full 60-root support, but it is absent from the Layer 2 boundary-carrier registry and has no tested internal delta-edge support. It is therefore best read as an unsupported internal phase step inside the slot-12 composite triangle.",
+      "",
+      "In plain terms: the motion is visible, but the current carrier language does not explain it.",
+      "",
+      "That is not a failure. It is a useful boundary. The Observatory can now say exactly where the current carrier grammar works, and exactly where it stops."
+    ],
+    "boundary": [
+      "This note does not admit a channel.",
+      "This note does not mutate the G900 body.",
+      "This note does not claim a force.",
+      "This note does not make a physics claim.",
+      "This note records a bounded grammar exception with a reproducible audit trail."
+    ],
+    "short_copy": "The 6/9 anomaly is real in the G900 phase grammar, but unsupported by the tested carrier rails. It is not a channel. It marks the exact place where the current Layer 2 carrier language stops explaining the observed phase motion.",
+    "keeper_statement": "The 6/9 package is a full-60 phase transition package that is real in the phase grammar, absent from the Layer 2 boundary-carrier registry, and fully unsupported by tested internal delta-edge support. It is not a channel."
+  }
+}

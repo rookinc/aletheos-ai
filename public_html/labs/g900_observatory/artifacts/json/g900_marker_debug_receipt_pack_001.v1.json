@@ -1,0 +1,201 @@
+{
+  "schema": "g900.marker_debug_receipt_pack",
+  "version": 1,
+  "status": "g900_marker_debug_receipt_pack_passed",
+  "created_utc": "2026-06-17T23:49:49Z",
+  "audit_pass": true,
+  "marker_summary": {
+    "marker_id": "unsupported_phase_step_6_9",
+    "transition": "6 -> 9",
+    "edge_count": 60,
+    "vertex_count": 120,
+    "source_receipt": "artifacts/json/g900_unsupported_phase_marker_6_9_001.v1.json"
+  },
+  "body_summary": {
+    "vertex_count": 900,
+    "edge_count": 3600
+  },
+  "channel_summary": {
+    "channel_set_count": 0,
+    "channel_count": 0,
+    "admits_channels": false,
+    "renders_channels": false
+  },
+  "receipt_chain": [
+    {
+      "order": 1,
+      "id": "marker_receipt",
+      "path": "artifacts/json/g900_unsupported_phase_marker_6_9_001.v1.json",
+      "status": "unsupported_phase_marker_6_9_data_only_recorded",
+      "audit_pass": true
+    },
+    {
+      "order": 2,
+      "id": "marker_registry",
+      "path": "data/g900_markers.v0.1.json",
+      "status": "marker_registry_declared_data_only",
+      "audit_pass": null
+    },
+    {
+      "order": 3,
+      "id": "isolated_debug_page",
+      "path": "marker_debug.html",
+      "status": "present",
+      "audit_pass": null
+    },
+    {
+      "order": 4,
+      "id": "debug_http_smoke",
+      "path": "artifacts/json/g900_marker_debug_http_smoke_001.v1.json",
+      "status": "g900_marker_debug_http_smoke_passed",
+      "audit_pass": true
+    },
+    {
+      "order": 5,
+      "id": "edge_index_audit",
+      "path": "artifacts/json/g900_marker_edge_index_audit_001.v1.json",
+      "status": "g900_marker_edge_index_audit_passed",
+      "audit_pass": true
+    },
+    {
+      "order": 6,
+      "id": "audit_gated_debug_page",
+      "path": "marker_debug.html",
+      "status": "audit_gate_present",
+      "audit_pass": true
+    },
+    {
+      "order": 7,
+      "id": "audit_gate_http_smoke",
+      "path": "artifacts/json/g900_marker_debug_audit_gate_http_smoke_001.v1.json",
+      "status": "g900_marker_debug_audit_gate_http_smoke_passed",
+      "audit_pass": true
+    }
+  ],
+  "edge_index_summary": {
+    "min_index": 2180,
+    "max_index": 2434,
+    "delta_counts": {
+      "2": 12,
+      "3": 11,
+      "4": 4,
+      "5": 16,
+      "6": 12,
+      "7": 3,
+      "8": 1
+    },
+    "failure_count": 0
+  },
+  "file_hashes": {
+    "marker_receipt": {
+      "path": "public_html/labs/g900_observatory/artifacts/json/g900_unsupported_phase_marker_6_9_001.v1.json",
+      "sha256": "a92bfaf4758e8624be0ec31af7da3cbc4764586bdd9c1f75af459df8b5d07afa"
+    },
+    "marker_registry": {
+      "path": "public_html/labs/g900_observatory/data/g900_markers.v0.1.json",
+      "sha256": "9dc9a48226550ce6cfb90d008aea791a886f7393e7d5eb8c0b1243f1499f7ce9"
+    },
+    "marker_debug_page": {
+      "path": "public_html/labs/g900_observatory/marker_debug.html",
+      "sha256": "cea0af0af1b1fecd78cc56dff5a7e16c1e3bb4684a83e8801d243d21a1b122fe"
+    },
+    "marker_debug_js": {
+      "path": "public_html/labs/g900_observatory/kernel/g900_marker_debug.js",
+      "sha256": "d762d3f37db031f2c9f4eeb1acc1f17adb55c3080fa2a4122ce77769a7646f21"
+    },
+    "marker_http_smoke": {
+      "path": "public_html/labs/g900_observatory/artifacts/json/g900_marker_debug_http_smoke_001.v1.json",
+      "sha256": "500fcac5955d9c5574bb57cf086a4e49b51d259899ff77f9fe5f7fa47cbea300"
+    },
+    "edge_index_audit": {
+      "path": "public_html/labs/g900_observatory/artifacts/json/g900_marker_edge_index_audit_001.v1.json",
+      "sha256": "ccfce7fe007493754df62e665aad4ff7b73fb1d37e801ff685b3d9582b697705"
+    },
+    "audit_gate_http_smoke": {
+      "path": "public_html/labs/g900_observatory/artifacts/json/g900_marker_debug_audit_gate_http_smoke_001.v1.json",
+      "sha256": "e4b7ca1c73aadf58fbe6e939d16a84ce1e4d9a02d9991d66c2ab2292d8ddc937"
+    },
+    "channels": {
+      "path": "public_html/labs/g900_observatory/data/g900_channels.v0.1.json",
+      "sha256": "c49da60e9e9b372cab4079f06ece969a127f010ddce1d059fe18a0f816f05f32"
+    },
+    "body": {
+      "path": "public_html/labs/g900_observatory/data/g900_static_body.v1.json",
+      "sha256": "6a2cb6b9892a78d4559ec61cf946b0021962cc6819311234b8bf14102b3b7f63"
+    },
+    "live_lab": {
+      "path": "public_html/labs/g900_observatory/lab.html",
+      "sha256": "784aafce3078200a60c8404eefb0fcb347702cdab2d68c770ab25b290b406fa0"
+    },
+    "live_stage": {
+      "path": "public_html/labs/g900_observatory/g900_grammar_stage_v0.js",
+      "sha256": "cf8152ccf1db895a902651480e69da162806b10b6b7ba00bfeceeef82cfa845c"
+    }
+  },
+  "checks": {
+    "marker_receipt_audit_pass": true,
+    "marker_receipt_marker_id": true,
+    "marker_receipt_edge_count": true,
+    "marker_receipt_vertex_count": true,
+    "marker_registry_schema": true,
+    "marker_registry_status": true,
+    "marker_registry_marker_count": true,
+    "marker_registry_marker_id": true,
+    "marker_registry_edge_count": true,
+    "marker_registry_vertex_count": true,
+    "marker_registry_data_only": true,
+    "marker_registry_channels_admitted_false": true,
+    "debug_page_exists": true,
+    "debug_js_exists": true,
+    "debug_page_uses_debug_js": true,
+    "debug_page_has_audit_gate_fields": true,
+    "debug_js_loads_marker_registry": true,
+    "debug_js_loads_edge_index_audit": true,
+    "debug_js_validates_edge_index_audit": true,
+    "marker_http_smoke_pass": true,
+    "marker_http_smoke_debug_served": true,
+    "marker_http_smoke_live_lab_served": true,
+    "marker_http_smoke_live_stage_served": true,
+    "edge_index_audit_pass": true,
+    "edge_index_marker_id": true,
+    "edge_index_marker_edges": true,
+    "edge_index_marker_vertices": true,
+    "edge_index_derived_endpoint_set": true,
+    "edge_index_failure_count_zero": true,
+    "edge_index_touches_live_stage_false": true,
+    "edge_index_channel_admission_false": true,
+    "audit_gate_http_smoke_pass": true,
+    "audit_gate_smoke_debug_served": true,
+    "audit_gate_smoke_edge_audit_served": true,
+    "audit_gate_smoke_live_lab_served": true,
+    "audit_gate_smoke_live_stage_served": true,
+    "audit_gate_smoke_edge_index_pass": true,
+    "audit_gate_smoke_edge_failure_count_zero": true,
+    "body_vertex_count": true,
+    "body_edge_count": true,
+    "channel_count_zero": true,
+    "channel_set_count_zero": true,
+    "channels_admitted_false": true,
+    "channels_rendered_false": true,
+    "debug_page_does_not_import_live_stage": true,
+    "debug_page_has_no_old_marker_toggle": true,
+    "debug_page_has_no_marker_overlay_api": true,
+    "live_lab_has_no_debug_link": true,
+    "live_stage_has_no_marker_registry_import": true,
+    "live_stage_has_no_marker_draw_hook": true,
+    "live_stage_has_no_marker_overlay_api": true
+  },
+  "failed_checks": [],
+  "boundary": {
+    "receipt_pack_only": true,
+    "isolated_debug_chain": true,
+    "live_stage_integration": false,
+    "live_stage_import": false,
+    "live_stage_render_hook": false,
+    "live_observatory_ui_change": false,
+    "channel_admission": false,
+    "body_mutation": false,
+    "force_claim": false,
+    "physics_claim": false
+  }
+}

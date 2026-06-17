@@ -5,6 +5,7 @@ const TAU = Math.PI * 2;
 const DEFAULT_SHEET_RATE = 333;
 const MIN_ZOOM = 0.28;
 const MAX_ZOOM = 64.0;
+const FIRST_CARRIER_RAIL_ID = "root_0_0_tuple_shell_depth_2";
 let activeStaticBody = null;
 let activeOverlayRegistry = null;
 let activeCarrierRegistry = null;
@@ -192,6 +193,33 @@ function drawStageGrid(ctx, w, h, dpr, state) {
 
 
 
+
+
+// Generic layer panel rule:
+// panel-specific IDs may remain, but panel structure and styling must use
+// .layer-panel[data-layer-panel="name"] instead of per-panel CSS classes.
+
+function syncLayerRangeOutput(sliderId) {
+  const slider = document.getElementById(sliderId);
+  if (!slider) return;
+
+  const output = slider.closest(".layer-slider-row")?.querySelector("output");
+  if (!output) return;
+
+  output.value = slider.value;
+  output.textContent = slider.value;
+}
+
+function syncLayerSwitchLabel(inputId) {
+  const input = document.getElementById(inputId);
+  if (!input) return;
+
+  const label = input.closest(".layer-switch")?.querySelector("span");
+  if (!label) return;
+
+  label.textContent = input.checked ? "ON" : "OFF";
+}
+
 function readChecked(id, fallback) {
   const el = document.getElementById(id);
   if (!el) return fallback;
@@ -212,6 +240,7 @@ function buildG900ViewerStateObject(state) {
   const grammarVersion = document.documentElement.dataset.g900Grammar || "0.1";
   const kernelVersion = document.documentElement.dataset.g900Kernel || "0.1";
   const bodyVersion = activeStaticBody ? activeStaticBody.version : null;
+  syncCarrierRenderState();
 
   return {
     schema: "g900.viewer.state",
@@ -244,7 +273,7 @@ function buildG900ViewerStateObject(state) {
       graph: {
         layer: 1,
         id: "graph",
-        enabled: Boolean(activeStaticBody),
+        enabled: Boolean(activeStaticBody) && readChecked("graph-layer-toggle", true),
         body_version: bodyVersion,
         vertices_opacity: readRange01("graph-vertices-slider", 1),
         edges_opacity: readRange01("graph-edges-slider", 1)
@@ -301,29 +330,25 @@ function graphLayerPercent(id, fallback) {
 }
 
 function syncGraphLayerReadouts() {
-  const verticesSlider = document.getElementById("graph-vertices-slider");
-  const verticesReadout = document.getElementById("graph-vertices-readout");
-  const edgesSlider = document.getElementById("graph-edges-slider");
-  const edgesReadout = document.getElementById("graph-edges-readout");
+  syncLayerSwitchLabel("graph-layer-toggle");
+  syncLayerRangeOutput("graph-vertices-slider");
+  syncLayerRangeOutput("graph-edges-slider");
+}
 
-  if (verticesSlider && verticesReadout) {
-    verticesReadout.textContent = String(verticesSlider.value);
-  }
 
-  if (edgesSlider && edgesReadout) {
-    edgesReadout.textContent = String(edgesSlider.value);
-  }
+function bindLayerControl(inputId, handler) {
+  const el = document.getElementById(inputId);
+  if (!el || el.dataset.bound === "1") return;
+
+  el.dataset.bound = "1";
+  el.addEventListener("input", handler);
 }
 
 function bindGraphLayerPanel() {
   syncGraphLayerReadouts();
-
-  for (const id of ["graph-vertices-slider", "graph-edges-slider"]) {
-    const el = document.getElementById(id);
-    if (el) {
-      el.addEventListener("input", syncGraphLayerReadouts);
-    }
-  }
+  bindLayerControl("graph-layer-toggle", syncGraphLayerReadouts);
+  bindLayerControl("graph-vertices-slider", syncGraphLayerReadouts);
+  bindLayerControl("graph-edges-slider", syncGraphLayerReadouts);
 }
 
 async function loadStaticBodyReadout() {
@@ -365,6 +390,87 @@ async function loadStaticBodyReadout() {
     console.error("[G900 static body]", error);
   }
 }
+
+
+function findCarrierRailById(railId) {
+  if (!activeCarrierRegistry || !Array.isArray(activeCarrierRegistry.carrier_sets)) {
+    return null;
+  }
+
+  for (const carrierSet of activeCarrierRegistry.carrier_sets) {
+    if (!carrierSet || !Array.isArray(carrierSet.rails)) continue;
+
+    for (const rail of carrierSet.rails) {
+      if (rail && rail.id === railId) {
+        return rail;
+      }
+    }
+  }
+
+  return null;
+}
+
+function syncCarrierRenderState() {
+  syncLayerSwitchLabel("carrier-render-toggle");
+  const toggle = document.getElementById("carrier-render-toggle");
+  const rail = findCarrierRailById(FIRST_CARRIER_RAIL_ID);
+  const visible = Boolean(toggle && toggle.checked && activeStaticBody && rail);
+
+  carrierRenderState.visible = visible;
+  carrierRenderState.rail_ids = visible ? [FIRST_CARRIER_RAIL_ID] : [];
+  return rail;
+}
+
+function edgeIndexFromTupleEdgeId(edgeId) {
+  const match = String(edgeId || "").match(/^tuple_edge_(\d+)$/);
+  if (!match) return null;
+  return Number(match[1]);
+}
+
+function drawCarrierRailReadings(ctx, w, h, dpr, state, body) {
+  if (!carrierRenderState.visible || !body) return;
+
+  const rail = findCarrierRailById(FIRST_CARRIER_RAIL_ID);
+  if (!rail || !Array.isArray(rail.edge_ids)) return;
+
+  const byId = new Map();
+
+  for (const vertex of body.vertices) {
+    if (!vertex || !Array.isArray(vertex.xyz)) continue;
+
+    const point = [
+      (body.anchor.xyz[0] + vertex.xyz[0]) * body.scale,
+      (body.anchor.xyz[1] + vertex.xyz[1]) * body.scale,
+      (body.anchor.xyz[2] + vertex.xyz[2]) * body.scale
+    ];
+
+    byId.set(vertex.id, projectPoint(point, state, w, h, dpr));
+  }
+
+  ctx.save();
+
+  for (const edgeId of rail.edge_ids) {
+    const edgeIndex = edgeIndexFromTupleEdgeId(edgeId);
+    if (edgeIndex === null) continue;
+
+    const edge = body.edges[edgeIndex];
+    if (!Array.isArray(edge) || edge.length !== 2) continue;
+
+    const a = byId.get(edge[0]);
+    const b = byId.get(edge[1]);
+    if (!a || !b) continue;
+
+    drawLine(ctx, a, b, [186, 222, 230], 0.38, 1.05);
+  }
+
+  ctx.restore();
+}
+
+function bindCarrierRenderPanel() {
+  syncCarrierRenderState();
+  bindLayerControl("carrier-render-toggle", syncCarrierRenderState);
+}
+
 
 function drawStaticBody(ctx, w, h, dpr, state, body) {
   if (!body || !graphLayerEnabled()) return;
@@ -410,6 +516,8 @@ function drawBlankStage(ctx, canvas, state) {
   drawBackground(ctx, w, h);
   drawStageGrid(ctx, w, h, dpr, state);
   drawStaticBody(ctx, w, h, dpr, state, activeStaticBody);
+  syncCarrierRenderState();
+  drawCarrierRailReadings(ctx, w, h, dpr, state, activeStaticBody);
 
   ctx.save();
   ctx.textBaseline = "bottom";
@@ -522,6 +630,7 @@ function boot() {
 
   ensureSheetControls();
   bindGraphLayerPanel();
+  bindCarrierRenderPanel();
   bindVisibleStateJsonDownload();
 
   const ctx = canvas.getContext("2d");

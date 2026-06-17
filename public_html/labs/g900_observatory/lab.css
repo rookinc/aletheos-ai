@@ -664,7 +664,7 @@ h1 {
   }
 }
 
-/* Layer 1 graph panel */
+/* Generic observatory layer panels */
 .layer-panel {
   margin: 0 0 1rem;
   padding: 1rem;
@@ -820,4 +820,22 @@ h1 {
     padding: 0 0.62rem;
     font-size: 0.58rem;
   }
+}
+
+/* Generic observatory layer panel contract.
+   New panels should use:
+   .layer-panel[data-layer-panel="name"]
+   .layer-panel-head
+   .layer-switch
+   .layer-slider-row
+   .layer-panel-note
+*/
+.layer-panel[data-layer-panel] {
+  position: relative;
+}
+
+.layer-panel-note {
+  margin: 1rem 0 0;
+  color: rgba(218, 230, 245, 0.72);
+  line-height: 1.35;
 }

@@ -94,7 +94,19 @@
             <span>Off</span>
           </label>
         </div>
-        <p class="layer-panel-note">Quiet source-provenance smoke rail. Reading only.</p>
+
+        <label class="layer-slider-row" for="carrier-render-family-select">
+          <span>Family</span>
+          <select id="carrier-render-family-select" data-layer-select="carriers">
+            <option value="smoke">Smoke rail</option>
+            <option value="slot_internal">Slot internal carriers</option>
+            <option value="slot_pair_boundary">Slot-pair boundary carriers</option>
+            <option value="all">All admitted carriers</option>
+          </select>
+          <output id="carrier-render-family-readout">smoke</output>
+        </label>
+
+        <p class="layer-panel-note">Layer 2 carrier readings. Rendering only. Body unchanged.</p>
       </div>
 
       <div class="stage-console-panel">
@@ -111,6 +123,6 @@
     <p>2026 Centre of Recursive Inquiry. Aletheos.ai is the public research surface for CoRI and Thalean Action Theory.</p>
   </footer>
 
-  <script type="module" src="g900_grammar_stage_v0.js?v=carrier-layer-2-001"></script>
+  <script type="module" src="g900_grammar_stage_v0.js?v=carrier-family-render-001"></script>
 </body>
 </html>

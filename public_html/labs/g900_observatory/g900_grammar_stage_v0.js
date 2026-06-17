@@ -6,12 +6,63 @@ const DEFAULT_SHEET_RATE = 333;
 const MIN_ZOOM = 0.28;
 const MAX_ZOOM = 64.0;
 const FIRST_CARRIER_RAIL_ID = "root_0_0_tuple_shell_depth_2";
+
+const CARRIER_RENDER_FAMILIES = {
+  smoke: {
+    label: "Smoke rail",
+    setIds: ["source_provenance_scaffold"]
+  },
+  slot_internal: {
+    label: "Slot internal carriers",
+    setIds: ["slot_internal_carriers"]
+  },
+  slot_pair_boundary: {
+    label: "Slot-pair boundary carriers",
+    setIds: ["slot_pair_boundary_carriers"]
+  },
+  all: {
+    label: "All admitted carriers",
+    setIds: ["source_provenance_scaffold", "slot_internal_carriers", "slot_pair_boundary_carriers"]
+  }
+};
+
+function readCarrierRenderFamilyMode() {
+  const select = document.getElementById("carrier-render-family-select");
+  const value = select ? select.value : "smoke";
+  return Object.prototype.hasOwnProperty.call(CARRIER_RENDER_FAMILIES, value) ? value : "smoke";
+}
+
+function getCarrierRailIdsForFamily(familyMode) {
+  if (!activeCarrierRegistry || !Array.isArray(activeCarrierRegistry.carrier_sets)) {
+    return [];
+  }
+
+  const family = CARRIER_RENDER_FAMILIES[familyMode] || CARRIER_RENDER_FAMILIES.smoke;
+  const allowedSetIds = new Set(family.setIds);
+  const railIds = [];
+
+  for (const carrierSet of activeCarrierRegistry.carrier_sets) {
+    if (!carrierSet || !allowedSetIds.has(carrierSet.id) || !Array.isArray(carrierSet.rails)) {
+      continue;
+    }
+
+    for (const rail of carrierSet.rails) {
+      if (rail && typeof rail.id === "string") {
+        railIds.push(rail.id);
+      }
+    }
+  }
+
+  return railIds;
+}
 let activeStaticBody = null;
 let activeOverlayRegistry = null;
 let activeCarrierRegistry = null;
 let carrierRenderState = {
   version: "0.1",
   visible: false,
+  family_mode: "smoke",
+  family_label: "Smoke rail",
   rail_ids: [],
   mutates_body: false,
   physics_claim: false,
@@ -285,6 +336,8 @@ function buildG900ViewerStateObject(state) {
       carriers: {
         version: carrierRenderState.version,
         visible: carrierRenderState.visible,
+        family_mode: carrierRenderState.family_mode,
+        family_label: carrierRenderState.family_label,
         rail_ids: carrierRenderState.rail_ids,
         mutates_body: false,
         physics_claim: false,
@@ -412,13 +465,24 @@ function findCarrierRailById(railId) {
 
 function syncCarrierRenderState() {
   syncLayerSwitchLabel("carrier-render-toggle");
+
   const toggle = document.getElementById("carrier-render-toggle");
-  const rail = findCarrierRailById(FIRST_CARRIER_RAIL_ID);
-  const visible = Boolean(toggle && toggle.checked && activeStaticBody && rail);
+  const familyMode = readCarrierRenderFamilyMode();
+  const family = CARRIER_RENDER_FAMILIES[familyMode] || CARRIER_RENDER_FAMILIES.smoke;
+  const railIds = getCarrierRailIdsForFamily(familyMode);
+  const visible = Boolean(toggle && toggle.checked && activeStaticBody && railIds.length > 0);
 
   carrierRenderState.visible = visible;
-  carrierRenderState.rail_ids = visible ? [FIRST_CARRIER_RAIL_ID] : [];
-  return rail;
+  carrierRenderState.family_mode = familyMode;
+  carrierRenderState.family_label = family.label;
+  carrierRenderState.rail_ids = visible ? railIds : [];
+
+  const readout = document.getElementById("carrier-render-family-readout");
+  if (readout) {
+    readout.textContent = familyMode;
+  }
+
+  return carrierRenderState.rail_ids;
 }
 
 function edgeIndexFromTupleEdgeId(edgeId) {
@@ -429,9 +493,6 @@ function edgeIndexFromTupleEdgeId(edgeId) {
 
 function drawCarrierRailReadings(ctx, w, h, dpr, state, body) {
   if (!carrierRenderState.visible || !body) return;
-
-  const rail = findCarrierRailById(FIRST_CARRIER_RAIL_ID);
-  if (!rail || !Array.isArray(rail.edge_ids)) return;
 
   const byId = new Map();
 
@@ -449,18 +510,23 @@ function drawCarrierRailReadings(ctx, w, h, dpr, state, body) {
 
   ctx.save();
 
-  for (const edgeId of rail.edge_ids) {
-    const edgeIndex = edgeIndexFromTupleEdgeId(edgeId);
-    if (edgeIndex === null) continue;
+  for (const railId of carrierRenderState.rail_ids) {
+    const rail = findCarrierRailById(railId);
+    if (!rail || !Array.isArray(rail.edge_ids)) continue;
 
-    const edge = body.edges[edgeIndex];
-    if (!Array.isArray(edge) || edge.length !== 2) continue;
+    for (const edgeId of rail.edge_ids) {
+      const edgeIndex = edgeIndexFromTupleEdgeId(edgeId);
+      if (edgeIndex === null) continue;
 
-    const a = byId.get(edge[0]);
-    const b = byId.get(edge[1]);
-    if (!a || !b) continue;
+      const edge = body.edges[edgeIndex];
+      if (!Array.isArray(edge) || edge.length !== 2) continue;
 
-    drawLine(ctx, a, b, [186, 222, 230], 0.38, 1.05);
+      const a = byId.get(edge[0]);
+      const b = byId.get(edge[1]);
+      if (!a || !b) continue;
+
+      drawLine(ctx, a, b, [186, 222, 230], 0.38, 1.05);
+    }
   }
 
   ctx.restore();
@@ -469,6 +535,7 @@ function drawCarrierRailReadings(ctx, w, h, dpr, state, body) {
 function bindCarrierRenderPanel() {
   syncCarrierRenderState();
   bindLayerControl("carrier-render-toggle", syncCarrierRenderState);
+  bindLayerControl("carrier-render-family-select", syncCarrierRenderState);
 }
 
 

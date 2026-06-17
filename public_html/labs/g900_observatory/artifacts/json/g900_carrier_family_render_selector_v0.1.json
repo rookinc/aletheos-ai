@@ -1,0 +1,42 @@
+{
+  "schema": "g900.carrier_family_render_selector",
+  "version": "0.1",
+  "status": "render_selector_added",
+  "body": "g900",
+  "body_version": "0.1",
+  "carrier_overlay_layer": 2,
+  "render_modes": [
+    {
+      "id": "smoke",
+      "expected_rails": 1
+    },
+    {
+      "id": "slot_internal",
+      "expected_rails": 15
+    },
+    {
+      "id": "slot_pair_boundary",
+      "expected_rails": 30
+    },
+    {
+      "id": "all",
+      "expected_rails": 46
+    }
+  ],
+  "boundary": {
+    "admits_carriers": false,
+    "admits_channels": false,
+    "mutates_body": false,
+    "physics_claim": false,
+    "force_claim": false
+  },
+  "messages": [
+    "inserted carrier family selector",
+    "inserted carrier family helper block",
+    "added carrierRenderState family fields",
+    "added viewer state family export",
+    "replaced syncCarrierRenderState",
+    "replaced drawCarrierRailReadings",
+    "bound carrier family selector"
+  ]
+}

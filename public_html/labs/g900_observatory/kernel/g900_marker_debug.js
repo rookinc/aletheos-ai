@@ -3,6 +3,7 @@ import { readG900MarkerRegistry } from "./g900_markers.js";
 const BODY_URL = "./data/g900_static_body.v1.json";
 const CHANNELS_URL = "./data/g900_channels.v0.1.json";
 const RECEIPT_URL = "./artifacts/json/g900_unsupported_phase_marker_6_9_001.v1.json";
+const EDGE_INDEX_AUDIT_URL = "./artifacts/json/g900_marker_edge_index_audit_001.v1.json";
 
 const TAU = Math.PI * 2;
 
@@ -17,7 +18,8 @@ const state = {
   body: null,
   registry: null,
   channels: null,
-  receipt: null
+  receipt: null,
+  audit: null
 };
 
 const canvas = document.getElementById("marker-debug-canvas");
@@ -154,6 +156,30 @@ function draw() {
   ctx.restore();
 }
 
+function validateEdgeIndexAudit(audit, marker) {
+  if (!audit || audit.audit_pass !== true) {
+    throw new Error("marker edge index audit did not pass");
+  }
+  if (audit.marker_id !== marker.id) {
+    throw new Error("marker edge index audit marker id mismatch");
+  }
+  if (audit.counts?.marker_edges !== marker.edge_ids.length) {
+    throw new Error("marker edge index audit edge count mismatch");
+  }
+  if (audit.counts?.marker_vertices !== marker.vertex_ids.length) {
+    throw new Error("marker edge index audit vertex count mismatch");
+  }
+  if (Array.isArray(audit.failures) && audit.failures.length > 0) {
+    throw new Error("marker edge index audit contains failures");
+  }
+  if (audit.boundary?.touches_live_stage !== false) {
+    throw new Error("marker edge index audit boundary is not isolated from live stage");
+  }
+  if (audit.boundary?.channel_admission !== false) {
+    throw new Error("marker edge index audit boundary admits channels");
+  }
+}
+
 function updateStatus() {
   const marker = state.registry?.marker_sets?.[0]?.markers?.[0];
 
@@ -164,6 +190,12 @@ function updateStatus() {
   setText("debug-marker-vertices", marker?.vertex_ids?.length ?? "-");
   setText("debug-channel-count", state.channels?.channel_count ?? "-");
 
+  setText("debug-edge-index-audit", state.audit?.audit_pass === true ? "Passed" : "-");
+  const minIndex = state.audit?.index_summary?.min_index;
+  const maxIndex = state.audit?.index_summary?.max_index;
+  setText("debug-index-range", Number.isFinite(minIndex) && Number.isFinite(maxIndex) ? `${minIndex}-${maxIndex}` : "-");
+  setText("debug-audit-failures", Array.isArray(state.audit?.failures) ? state.audit.failures.length : "-");
+
   const toggle = document.getElementById("debug-toggle");
   if (toggle) toggle.textContent = state.markerVisible ? "Hide marker" : "Show marker";
 }
@@ -172,6 +204,7 @@ async function init() {
   state.body = await readJson(BODY_URL);
   state.channels = await readJson(CHANNELS_URL);
   state.receipt = await readJson(RECEIPT_URL);
+  state.audit = await readJson(EDGE_INDEX_AUDIT_URL);
   state.registry = await readG900MarkerRegistry("./data/g900_markers.v0.1.json");
 
   const marker = state.registry.marker_sets[0].markers[0];
@@ -191,6 +224,8 @@ async function init() {
   if (marker.vertex_ids.length !== 120) {
     throw new Error("expected 120 marker vertices");
   }
+
+  validateEdgeIndexAudit(state.audit, marker);
 
   updateStatus();
   draw();

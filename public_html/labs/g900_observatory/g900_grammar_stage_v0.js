@@ -8,6 +8,15 @@ const MAX_ZOOM = 64.0;
 let activeStaticBody = null;
 let activeOverlayRegistry = null;
 let activeCarrierRegistry = null;
+let carrierRenderState = {
+  version: "0.1",
+  visible: false,
+  rail_ids: [],
+  mutates_body: false,
+  physics_claim: false,
+  motion_authority: false
+};
+
 
 function clamp(value, min, max) {
   return Math.max(min, Math.min(max, value));
@@ -243,6 +252,16 @@ function buildG900ViewerStateObject(state) {
     },
     overlays: activeOverlayRegistry ? getG900OverlaySummary(activeOverlayRegistry) : null,
     carriers: activeCarrierRegistry ? getG900CarrierSummary(activeCarrierRegistry) : null,
+    render: {
+      carriers: {
+        version: carrierRenderState.version,
+        visible: carrierRenderState.visible,
+        rail_ids: carrierRenderState.rail_ids,
+        mutates_body: false,
+        physics_claim: false,
+        motion_authority: false
+      }
+    },
     body: activeStaticBody ? {
       version: activeStaticBody.version,
       name: activeStaticBody.name,

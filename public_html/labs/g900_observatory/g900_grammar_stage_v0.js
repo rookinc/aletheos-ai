@@ -258,6 +258,48 @@ function syncG900ViewerStateConsole(state) {
 }
 
 
+
+function graphLayerEnabled() {
+  const el = document.getElementById("graph-layer-toggle");
+  return !el || el.checked;
+}
+
+function graphLayerPercent(id, fallback) {
+  const el = document.getElementById(id);
+  if (!el) return fallback;
+
+  const value = Number(el.value);
+  if (!Number.isFinite(value)) return fallback;
+
+  return Math.max(0, Math.min(1, value / 100));
+}
+
+function syncGraphLayerReadouts() {
+  const verticesSlider = document.getElementById("graph-vertices-slider");
+  const verticesReadout = document.getElementById("graph-vertices-readout");
+  const edgesSlider = document.getElementById("graph-edges-slider");
+  const edgesReadout = document.getElementById("graph-edges-readout");
+
+  if (verticesSlider && verticesReadout) {
+    verticesReadout.textContent = String(verticesSlider.value);
+  }
+
+  if (edgesSlider && edgesReadout) {
+    edgesReadout.textContent = String(edgesSlider.value);
+  }
+}
+
+function bindGraphLayerPanel() {
+  syncGraphLayerReadouts();
+
+  for (const id of ["graph-vertices-slider", "graph-edges-slider"]) {
+    const el = document.getElementById(id);
+    if (el) {
+      el.addEventListener("input", syncGraphLayerReadouts);
+    }
+  }
+}
+
 async function loadStaticBodyReadout() {
   const line = document.getElementById("static-body-line");
 
@@ -287,7 +329,10 @@ async function loadStaticBodyReadout() {
 }
 
 function drawStaticBody(ctx, w, h, dpr, state, body) {
-  if (!body) return;
+  if (!body || !graphLayerEnabled()) return;
+
+  const vertexAlpha = graphLayerPercent("graph-vertices-slider", 0.72);
+  const edgeAlpha = graphLayerPercent("graph-edges-slider", 0.18);
 
   const byId = new Map();
 
@@ -308,10 +353,10 @@ function drawStaticBody(ctx, w, h, dpr, state, body) {
     const b = byId.get(edge[1]);
     if (!a || !b) continue;
 
-    drawLine(ctx, a, b, [223, 195, 123], 0.18, 0.65);
+    drawLine(ctx, a, b, [223, 195, 123], edgeAlpha, 0.65);
   }
 
-  ctx.fillStyle = "rgba(237, 246, 255, 0.72)";
+  ctx.fillStyle = "rgba(237, 246, 255, " + vertexAlpha + ")";
 
   for (const point of byId.values()) {
     ctx.beginPath();
@@ -420,6 +465,7 @@ function boot() {
   if (!canvas) return;
 
   ensureSheetControls();
+  bindGraphLayerPanel();
 
   const ctx = canvas.getContext("2d");
 

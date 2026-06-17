@@ -28,7 +28,7 @@
             <button class="mini-transport-btn" type="button" data-view-mode="z" aria-label="Z view">Z</button>
             <button class="mini-transport-btn angle-preset-btn" type="button" data-view-mode="iso" aria-label="Isometric view">ISO</button>
             <label class="mini-transport-btn stage-pill stage-grid-toggle" title="Stage Grid" aria-label="Toggle stage grid">
-              <input id="stage-grid-toggle" type="checkbox" checked />
+              <input id="stage-grid-toggle" type="checkbox" />
               <span class="stage-pill-label">#</span>
             </label>
           </div>
@@ -47,13 +47,41 @@
 
       <div class="stage-frame">
         <canvas id="stage-canvas" aria-label="Blank G900 canvas"></canvas>
-      </div>
-          <p id="static-body-line" class="kernel-layer-line">BODY pending</p>
-    </section>
+          <div class="stage-grab-bar" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+</div>
+</section>
 
     <section class="lab-note">
-      <p>This stage is intentionally blank. Layers will be rebuilt one at a time: vertices, edges, carrier rails, channels, force colors, and trails.</p>
-    </section>
+            <div class="layer-panel graph-layer-panel" aria-label="Graph layer controls">
+        <div class="layer-panel-head">
+          <div>
+            <p class="layer-panel-eyebrow">Layer 1</p>
+            <h2>Graph</h2>
+          </div>
+          <label class="layer-switch">
+            <input id="graph-layer-toggle" type="checkbox" checked />
+            <span>On</span>
+          </label>
+        </div>
+
+        <label class="layer-slider-row" for="graph-vertices-slider">
+          <span>Vertices</span>
+          <input id="graph-vertices-slider" type="range" min="0" max="100" step="1" value="72" />
+          <output id="graph-vertices-readout">72</output>
+        </label>
+
+        <label class="layer-slider-row" for="graph-edges-slider">
+          <span>Edges</span>
+          <input id="graph-edges-slider" type="range" min="0" max="100" step="1" value="18" />
+          <output id="graph-edges-readout">18</output>
+        </label>
+      </div>
+</section>
       <section class="lab-note state-console-section" aria-label="G900 state console">
       <div class="stage-console-panel">
         <div class="stage-console-head">
@@ -69,6 +97,6 @@
     <p>2026 Centre of Recursive Inquiry. Aletheos.ai is the public research surface for CoRI and Thalean Action Theory.</p>
   </footer>
 
-  <script type="module" src="g900_grammar_stage_v0.js?v=state-object-001"></script>
+  <script type="module" src="g900_grammar_stage_v0.js?v=full-graph-layer-panel-006"></script>
 </body>
 </html>

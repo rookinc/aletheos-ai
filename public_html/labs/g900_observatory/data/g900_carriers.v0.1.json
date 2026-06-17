@@ -1,0 +1,26 @@
+{
+  "schema": "g900.viewer.carriers",
+  "version": "0.1",
+  "body": "g900",
+  "body_version": "0.1",
+  "overlay": {
+    "id": "carriers",
+    "layer": 6,
+    "status": "scaffold"
+  },
+  "status": "carrier_scaffold",
+  "description": "Carrier scaffold for the G900 Observatory. Carriers are readings over the G900 body. They mark stable rails where trace may ride. This payload does not mutate the graph.",
+  "boundary": {
+    "mutates_body": false,
+    "runtime_motion_authority": false,
+    "physics_claim": false,
+    "carrier_claim_only": true
+  },
+  "counts": {
+    "carrier_sets": 0,
+    "rails": 0,
+    "vertices": 0,
+    "edges": 0
+  },
+  "carrier_sets": []
+}

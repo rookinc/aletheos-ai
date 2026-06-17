@@ -190,7 +190,19 @@ export function getG900CarrierSummary(payload) {
         id: carrierSet.id,
         label: carrierSet.label,
         status: carrierSet.status,
-        rail_count: carrierSet.rails.length
+        rail_count: carrierSet.rails.length,
+        rails: carrierSet.rails.map((rail) => {
+          return {
+            id: rail.id,
+            label: rail.label,
+            kind: rail.kind,
+            status: rail.status || null,
+            vertex_count: rail.vertex_ids.length,
+            edge_count: rail.edge_ids.length,
+            source_kind: rail.source ? rail.source.kind : null,
+            selector: rail.source ? rail.source.selector : null
+          };
+        })
       };
     }),
     carrier_set_count: carrierSets.length,

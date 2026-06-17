@@ -1,0 +1,131 @@
+{
+  "schema": "g900.expanded_layer_ladder",
+  "version": "0.1",
+  "status": "expanded_layer_ladder_declared",
+  "body": "g900",
+  "body_version": "0.1",
+  "layer_ladder": [
+    {
+      "layer": 0,
+      "id": "stage",
+      "label": "Stage",
+      "status": "apparatus",
+      "kind": "apparatus",
+      "meaning": "grid, camera, canvas, and clocked viewing apparatus",
+      "mutates_body": false
+    },
+    {
+      "layer": 1,
+      "id": "graph",
+      "label": "Graph Body",
+      "status": "body",
+      "kind": "body",
+      "meaning": "G900 body graph",
+      "mutates_body": false
+    },
+    {
+      "layer": 2,
+      "id": "carriers",
+      "label": "Carriers",
+      "status": "active_reading",
+      "kind": "reading",
+      "meaning": "source-provenance carrier readings",
+      "mutates_body": false
+    },
+    {
+      "layer": 3,
+      "id": "channels",
+      "label": "Channels",
+      "status": "next",
+      "kind": "permission_reading",
+      "meaning": "admissible permission readings",
+      "mutates_body": false
+    },
+    {
+      "layer": 4,
+      "id": "trails",
+      "label": "Trails",
+      "status": "reserved",
+      "kind": "memory",
+      "meaning": "receipted trace and memory readings",
+      "mutates_body": false
+    },
+    {
+      "layer": 5,
+      "id": "receipts",
+      "label": "Receipts",
+      "status": "reserved",
+      "kind": "receipt",
+      "meaning": "witness marks and accountability receipts",
+      "mutates_body": false
+    },
+    {
+      "layer": 6,
+      "id": "overlays",
+      "label": "Overlays",
+      "status": "reserved",
+      "kind": "reading_reserve",
+      "meaning": "general non-force overlay reserve",
+      "mutates_body": false
+    },
+    {
+      "layer": 7,
+      "id": "gravity",
+      "label": "Gravity Shadow",
+      "status": "force_shadow_reserved",
+      "kind": "force_shadow",
+      "meaning": "late-stage compression shadow, reserved",
+      "mutates_body": false,
+      "physics_claim": false,
+      "claim": "force_shadow_reserved"
+    },
+    {
+      "layer": 8,
+      "id": "em",
+      "label": "EM Shadow",
+      "status": "force_shadow_reserved",
+      "kind": "force_shadow",
+      "meaning": "late-stage polarization shadow, reserved",
+      "mutates_body": false,
+      "physics_claim": false,
+      "claim": "force_shadow_reserved"
+    },
+    {
+      "layer": 9,
+      "id": "strong",
+      "label": "Strong Shadow",
+      "status": "force_shadow_reserved",
+      "kind": "force_shadow",
+      "meaning": "late-stage confinement shadow, reserved",
+      "mutates_body": false,
+      "physics_claim": false,
+      "claim": "force_shadow_reserved"
+    },
+    {
+      "layer": 10,
+      "id": "weak",
+      "label": "Weak Shadow",
+      "status": "force_shadow_reserved",
+      "kind": "force_shadow",
+      "meaning": "late-stage transformation shadow, reserved",
+      "mutates_body": false,
+      "physics_claim": false,
+      "claim": "force_shadow_reserved"
+    }
+  ],
+  "boundary": {
+    "mutates_body": false,
+    "runtime_motion_authority": false,
+    "physics_claim": false,
+    "force_shadows_late": true,
+    "visual_panels_added": false,
+    "new_channels_admitted": false,
+    "new_carriers_admitted": false
+  },
+  "messages": [
+    "wrote canonical ladder layers 0 through 10",
+    "registry layers now expose layers 2 through 10",
+    "force-like layers moved to late force_shadow_reserved status",
+    "expanded overlay summary export"
+  ]
+}

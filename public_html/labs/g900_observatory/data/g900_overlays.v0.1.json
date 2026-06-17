@@ -3,92 +3,216 @@
   "version": "0.1",
   "body": "g900",
   "body_version": "0.1",
-  "status": "overlay_registry_scaffold",
-  "description": "Reserved overlay registry for the G900 Observatory. These layers are readings over the body. They do not mutate the G900 graph.",
+  "status": "expanded_layer_ladder_declared",
+  "description": "Expanded layer ladder for the G900 Observatory. Layers are readings over the body and do not mutate the G900 graph. Force-like layers are late reserved shadows, not first primitives.",
   "boundary": {
     "mutates_body": false,
     "runtime_motion_authority": false,
     "physics_claim": false,
-    "overlay_claim_only": true
+    "overlay_claim_only": true,
+    "force_shadows_late": true,
+    "body_layer": 1,
+    "carrier_layer": 2
   },
   "layers": [
-    {
-      "layer": 7,
-      "id": "gravity",
-      "label": "Gravity",
-      "status": "force_shadow_reserved",
-      "enabled": false,
-      "kind": "reading",
-      "mutates_body": false,
-      "description": "Reserved compression reading. No active overlay payload yet.",
-      "claim": "force_shadow_reserved",
-      "physics_claim": false
-    },
-    {
-      "layer": 8,
-      "id": "em",
-      "label": "EM",
-      "status": "force_shadow_reserved",
-      "enabled": false,
-      "kind": "reading",
-      "mutates_body": false,
-      "description": "Reserved polarization reading. No active overlay payload yet.",
-      "claim": "force_shadow_reserved",
-      "physics_claim": false
-    },
-    {
-      "layer": 9,
-      "id": "strong",
-      "label": "Strong",
-      "status": "force_shadow_reserved",
-      "enabled": false,
-      "kind": "reading",
-      "mutates_body": false,
-      "description": "Reserved confinement reading. No active overlay payload yet.",
-      "claim": "force_shadow_reserved",
-      "physics_claim": false
-    },
-    {
-      "layer": 10,
-      "id": "weak",
-      "label": "Weak",
-      "status": "force_shadow_reserved",
-      "enabled": false,
-      "kind": "reading",
-      "mutates_body": false,
-      "description": "Reserved transformation reading. No active overlay payload yet.",
-      "claim": "force_shadow_reserved",
-      "physics_claim": false
-    },
     {
       "layer": 2,
       "id": "carriers",
       "label": "Carriers",
       "status": "active_reading",
-      "enabled": false,
       "kind": "reading",
-      "mutates_body": false,
-      "description": "Next target layer. Carrier rails mark stable paths where trace can ride."
+      "meaning": "source-provenance carrier readings",
+      "mutates_body": false
     },
     {
       "layer": 3,
       "id": "channels",
       "label": "Channels",
       "status": "next",
-      "enabled": false,
-      "kind": "reading",
-      "mutates_body": false,
-      "description": "Reserved channel reading. No active overlay payload yet."
+      "kind": "permission_reading",
+      "meaning": "admissible permission readings",
+      "mutates_body": false
     },
     {
       "layer": 4,
       "id": "trails",
       "label": "Trails",
       "status": "reserved",
-      "enabled": false,
       "kind": "memory",
+      "meaning": "receipted trace and memory readings",
+      "mutates_body": false
+    },
+    {
+      "layer": 5,
+      "id": "receipts",
+      "label": "Receipts",
+      "status": "reserved",
+      "kind": "receipt",
+      "meaning": "witness marks and accountability receipts",
+      "mutates_body": false
+    },
+    {
+      "layer": 6,
+      "id": "overlays",
+      "label": "Overlays",
+      "status": "reserved",
+      "kind": "reading_reserve",
+      "meaning": "general non-force overlay reserve",
+      "mutates_body": false
+    },
+    {
+      "layer": 7,
+      "id": "gravity",
+      "label": "Gravity Shadow",
+      "status": "force_shadow_reserved",
+      "kind": "force_shadow",
+      "meaning": "late-stage compression shadow, reserved",
       "mutates_body": false,
-      "description": "Reserved memory trail reading. No active overlay payload yet."
+      "physics_claim": false,
+      "claim": "force_shadow_reserved"
+    },
+    {
+      "layer": 8,
+      "id": "em",
+      "label": "EM Shadow",
+      "status": "force_shadow_reserved",
+      "kind": "force_shadow",
+      "meaning": "late-stage polarization shadow, reserved",
+      "mutates_body": false,
+      "physics_claim": false,
+      "claim": "force_shadow_reserved"
+    },
+    {
+      "layer": 9,
+      "id": "strong",
+      "label": "Strong Shadow",
+      "status": "force_shadow_reserved",
+      "kind": "force_shadow",
+      "meaning": "late-stage confinement shadow, reserved",
+      "mutates_body": false,
+      "physics_claim": false,
+      "claim": "force_shadow_reserved"
+    },
+    {
+      "layer": 10,
+      "id": "weak",
+      "label": "Weak Shadow",
+      "status": "force_shadow_reserved",
+      "kind": "force_shadow",
+      "meaning": "late-stage transformation shadow, reserved",
+      "mutates_body": false,
+      "physics_claim": false,
+      "claim": "force_shadow_reserved"
+    }
+  ],
+  "layer_ladder_version": "0.1",
+  "layer_ladder": [
+    {
+      "layer": 0,
+      "id": "stage",
+      "label": "Stage",
+      "status": "apparatus",
+      "kind": "apparatus",
+      "meaning": "grid, camera, canvas, and clocked viewing apparatus",
+      "mutates_body": false
+    },
+    {
+      "layer": 1,
+      "id": "graph",
+      "label": "Graph Body",
+      "status": "body",
+      "kind": "body",
+      "meaning": "G900 body graph",
+      "mutates_body": false
+    },
+    {
+      "layer": 2,
+      "id": "carriers",
+      "label": "Carriers",
+      "status": "active_reading",
+      "kind": "reading",
+      "meaning": "source-provenance carrier readings",
+      "mutates_body": false
+    },
+    {
+      "layer": 3,
+      "id": "channels",
+      "label": "Channels",
+      "status": "next",
+      "kind": "permission_reading",
+      "meaning": "admissible permission readings",
+      "mutates_body": false
+    },
+    {
+      "layer": 4,
+      "id": "trails",
+      "label": "Trails",
+      "status": "reserved",
+      "kind": "memory",
+      "meaning": "receipted trace and memory readings",
+      "mutates_body": false
+    },
+    {
+      "layer": 5,
+      "id": "receipts",
+      "label": "Receipts",
+      "status": "reserved",
+      "kind": "receipt",
+      "meaning": "witness marks and accountability receipts",
+      "mutates_body": false
+    },
+    {
+      "layer": 6,
+      "id": "overlays",
+      "label": "Overlays",
+      "status": "reserved",
+      "kind": "reading_reserve",
+      "meaning": "general non-force overlay reserve",
+      "mutates_body": false
+    },
+    {
+      "layer": 7,
+      "id": "gravity",
+      "label": "Gravity Shadow",
+      "status": "force_shadow_reserved",
+      "kind": "force_shadow",
+      "meaning": "late-stage compression shadow, reserved",
+      "mutates_body": false,
+      "physics_claim": false,
+      "claim": "force_shadow_reserved"
+    },
+    {
+      "layer": 8,
+      "id": "em",
+      "label": "EM Shadow",
+      "status": "force_shadow_reserved",
+      "kind": "force_shadow",
+      "meaning": "late-stage polarization shadow, reserved",
+      "mutates_body": false,
+      "physics_claim": false,
+      "claim": "force_shadow_reserved"
+    },
+    {
+      "layer": 9,
+      "id": "strong",
+      "label": "Strong Shadow",
+      "status": "force_shadow_reserved",
+      "kind": "force_shadow",
+      "meaning": "late-stage confinement shadow, reserved",
+      "mutates_body": false,
+      "physics_claim": false,
+      "claim": "force_shadow_reserved"
+    },
+    {
+      "layer": 10,
+      "id": "weak",
+      "label": "Weak Shadow",
+      "status": "force_shadow_reserved",
+      "kind": "force_shadow",
+      "meaning": "late-stage transformation shadow, reserved",
+      "mutates_body": false,
+      "physics_claim": false,
+      "claim": "force_shadow_reserved"
     }
   ]
 }

@@ -80,17 +80,64 @@ export function validateG900OverlayRegistry(payload) {
 export function getG900OverlaySummary(payload) {
   validateG900OverlayRegistry(payload);
 
+  const layerRows = payload.layers
+    .slice()
+    .sort((a, b) => a.layer - b.layer)
+    .map((layer) => {
+      return {
+        layer: layer.layer,
+        id: layer.id,
+        label: layer.label,
+        status: layer.status,
+        kind: layer.kind,
+        mutates_body: layer.mutates_body,
+        physics_claim: layer.physics_claim === true,
+        claim: layer.claim || null
+      };
+    });
+
+  const ladderRows = Array.isArray(payload.layer_ladder)
+    ? payload.layer_ladder
+        .slice()
+        .sort((a, b) => a.layer - b.layer)
+        .map((layer) => {
+          return {
+            layer: layer.layer,
+            id: layer.id,
+            label: layer.label,
+            status: layer.status,
+            kind: layer.kind,
+            mutates_body: layer.mutates_body,
+            meaning: layer.meaning || null
+          };
+        })
+    : [];
+
   return {
     version: payload.version,
     body: payload.body,
     body_version: payload.body_version,
+    status: payload.status,
+    layer_ladder_version: payload.layer_ladder_version || null,
     layer_count: payload.layers.length,
+    ladder_count: ladderRows.length,
+    active: payload.layers
+      .filter((layer) => layer.status === "active_reading")
+      .map((layer) => layer.id),
     next: payload.layers
       .filter((layer) => layer.status === "next")
       .map((layer) => layer.id),
     reserved: payload.layers
       .filter((layer) => layer.status === "reserved")
       .map((layer) => layer.id),
-    mutates_body: false
+    force_shadows: payload.layers
+      .filter((layer) => layer.status === "force_shadow_reserved")
+      .map((layer) => layer.id),
+    layers: layerRows,
+    ladder: ladderRows,
+    mutates_body: payload.boundary.mutates_body,
+    runtime_motion_authority: payload.boundary.runtime_motion_authority,
+    physics_claim: payload.boundary.physics_claim,
+    force_shadows_late: payload.boundary.force_shadows_late === true
   };
 }

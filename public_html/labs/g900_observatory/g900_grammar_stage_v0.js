@@ -1,11 +1,13 @@
 import { readG900StaticBody, getStaticBodySummary } from "./kernel/g900_static_body.js";
 import { readG900OverlayRegistry, getG900OverlaySummary } from "./kernel/g900_overlays.js";
+import { readG900CarrierRegistry, getG900CarrierSummary } from "./kernel/g900_carriers.js";
 const TAU = Math.PI * 2;
 const DEFAULT_SHEET_RATE = 333;
 const MIN_ZOOM = 0.28;
 const MAX_ZOOM = 64.0;
 let activeStaticBody = null;
 let activeOverlayRegistry = null;
+let activeCarrierRegistry = null;
 
 function clamp(value, min, max) {
   return Math.max(min, Math.min(max, value));
@@ -240,6 +242,7 @@ function buildG900ViewerStateObject(state) {
       }
     },
     overlays: activeOverlayRegistry ? getG900OverlaySummary(activeOverlayRegistry) : null,
+    carriers: activeCarrierRegistry ? getG900CarrierSummary(activeCarrierRegistry) : null,
     body: activeStaticBody ? {
       version: activeStaticBody.version,
       name: activeStaticBody.name,
@@ -319,6 +322,12 @@ async function loadStaticBodyReadout() {
     } catch (error) {
       console.warn("G900 overlay registry unavailable", error);
       activeOverlayRegistry = null;
+    }
+    try {
+      activeCarrierRegistry = await readG900CarrierRegistry();
+    } catch (error) {
+      console.warn("G900 carrier registry unavailable", error);
+      activeCarrierRegistry = null;
     }
     document.documentElement.dataset.g900StaticBody = activeStaticBody.version;
 

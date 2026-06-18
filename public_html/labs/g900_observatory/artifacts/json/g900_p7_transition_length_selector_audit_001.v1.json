@@ -1,0 +1,159 @@
+{
+  "schema": "g900.p7_transition_length_selector_audit",
+  "version": 1,
+  "status": "p7_transition_length_selector_audit_passed",
+  "created_utc": "2026-06-18T00:54:50Z",
+  "audit_pass": true,
+  "question": "Does full60 transition-list length derive the P7 interior package taxonomy without using package labels as selector?",
+  "selector": {
+    "feature": "full60_transitions.__len__",
+    "package_kind_rule": {
+      "3": "clean_reciprocal_pair_package",
+      "1": "one_way_single_transition",
+      "2": "two_transition_pair_package"
+    },
+    "transition_count_rule": {
+      "3": 180,
+      "1": 60,
+      "2": 120
+    }
+  },
+  "rows": [
+    {
+      "pair": "02_03",
+      "path_index": 1,
+      "transition_len": 3,
+      "observed_package_kind": "clean_reciprocal_pair_package",
+      "observed_transition_count": 180,
+      "predicted_package_kind": "clean_reciprocal_pair_package",
+      "predicted_transition_count": 180,
+      "package_kind_match": true,
+      "transition_count_match": true
+    },
+    {
+      "pair": "03_09",
+      "path_index": 2,
+      "transition_len": 3,
+      "observed_package_kind": "clean_reciprocal_pair_package",
+      "observed_transition_count": 180,
+      "predicted_package_kind": "clean_reciprocal_pair_package",
+      "predicted_transition_count": 180,
+      "package_kind_match": true,
+      "transition_count_match": true
+    },
+    {
+      "pair": "09_12",
+      "path_index": 3,
+      "transition_len": 1,
+      "observed_package_kind": "one_way_single_transition",
+      "observed_transition_count": 60,
+      "predicted_package_kind": "one_way_single_transition",
+      "predicted_transition_count": 60,
+      "package_kind_match": true,
+      "transition_count_match": true
+    },
+    {
+      "pair": "06_12",
+      "path_index": 4,
+      "transition_len": 2,
+      "observed_package_kind": "two_transition_pair_package",
+      "observed_transition_count": 120,
+      "predicted_package_kind": "two_transition_pair_package",
+      "predicted_transition_count": 120,
+      "package_kind_match": true,
+      "transition_count_match": true
+    }
+  ],
+  "selector_groups": {
+    "1": {
+      "count": 1,
+      "pairs": [
+        "09_12"
+      ],
+      "observed_package_kinds": [
+        "one_way_single_transition"
+      ],
+      "observed_transition_counts": [
+        60
+      ],
+      "predicted_package_kind": "one_way_single_transition",
+      "predicted_transition_count": 60
+    },
+    "2": {
+      "count": 1,
+      "pairs": [
+        "06_12"
+      ],
+      "observed_package_kinds": [
+        "two_transition_pair_package"
+      ],
+      "observed_transition_counts": [
+        120
+      ],
+      "predicted_package_kind": "two_transition_pair_package",
+      "predicted_transition_count": 120
+    },
+    "3": {
+      "count": 2,
+      "pairs": [
+        "02_03",
+        "03_09"
+      ],
+      "observed_package_kinds": [
+        "clean_reciprocal_pair_package"
+      ],
+      "observed_transition_counts": [
+        180
+      ],
+      "predicted_package_kind": "clean_reciprocal_pair_package",
+      "predicted_transition_count": 180
+    }
+  },
+  "summary": {
+    "row_count": 4,
+    "transition_len_sequence": [
+      3,
+      3,
+      1,
+      2
+    ],
+    "pair_sequence": [
+      "02_03",
+      "03_09",
+      "09_12",
+      "06_12"
+    ],
+    "all_package_kinds_predicted": true,
+    "all_transition_counts_predicted": true,
+    "channel_count": 0
+  },
+  "interpretation": {
+    "transition_length_is_exact_for_p7_interior_taxonomy": true,
+    "transition_length_is_exact_for_p7_interior_transition_count": true,
+    "scope": "P7 interior only",
+    "not_global_package_law": true,
+    "not_channel": true,
+    "next_problem": "Test whether transition length is intrinsic source structure or merely a compressed restatement of the full60 package record."
+  },
+  "checks": {
+    "source_feature_audit_passed": true,
+    "channel_registry_zero_count": true,
+    "channels_not_admitted": true,
+    "row_count_4": true,
+    "transition_len_sequence_3_3_1_2": true,
+    "all_package_kinds_predicted": true,
+    "all_transition_counts_predicted": true,
+    "selector_domain_is_1_2_3": true
+  },
+  "failed_checks": [],
+  "boundary": {
+    "selector_audit_only": true,
+    "scope": "P7 interior only",
+    "admits_channels": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "marker_lighting": false,
+    "force_claim": false,
+    "physics_claim": false
+  }
+}

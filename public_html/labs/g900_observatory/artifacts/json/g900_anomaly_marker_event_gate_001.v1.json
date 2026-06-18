@@ -1,0 +1,148 @@
+{
+  "schema": "g900.anomaly_marker_event_gate",
+  "version": 1,
+  "status": "anomaly_marker_event_gate_recorded",
+  "created_utc": "2026-06-18T01:48:03Z",
+  "audit_pass": true,
+  "verdict": "anomaly_marker_event_gate_recorded_closed",
+  "question": "Can the tracked unsupported 6/9 anomaly marker respond to the return-cell event contract yet?",
+  "marker": {
+    "marker_id": "unsupported_phase_step_6_9",
+    "tracked": true,
+    "registry_hit_count": 2,
+    "receipt_hit_count": 1,
+    "edge_index_hit_count": 0,
+    "edge_count": 60,
+    "vertex_count": 120,
+    "meaning": "read-only diagnostic marker for the unsupported 6/9 phase step"
+  },
+  "event": {
+    "event_id": "g900_return_cell_event_562162c72753c818",
+    "event_type": "return_cell_signature_event",
+    "event_is_not_timer": true,
+    "event_definition": "An event is the admitted occurrence of the unique oriented local return-cell signature in the current full60 package graph."
+  },
+  "gate": {
+    "gate_open": false,
+    "gate_meaning": "Marker object and event contract both exist, but marker lighting is not permitted until a marker-event binding contract and render contract exist.",
+    "gate_conditions": [
+      {
+        "id": "marker_registry_or_receipt_entry_exists",
+        "description": "The unsupported 6/9 anomaly marker exists in the marker registry or receipted marker chain.",
+        "satisfied": true,
+        "registry_hit_count": 2,
+        "receipt_hit_count": 1
+      },
+      {
+        "id": "marker_receipt_passed",
+        "description": "The unsupported 6/9 anomaly marker receipt exists and passed.",
+        "satisfied": true
+      },
+      {
+        "id": "marker_edges_are_existing_body_edges",
+        "description": "The marker uses audited existing G900 body edges.",
+        "satisfied": true,
+        "marker_edge_count": 60,
+        "marker_vertex_count": 120
+      },
+      {
+        "id": "marker_edge_index_audit_passed",
+        "description": "The marker edge-index contract is audited.",
+        "satisfied": true,
+        "edge_index_failure_count": 0,
+        "edge_index_failure_count_source": "failed_checks_list"
+      },
+      {
+        "id": "return_cell_event_contract_exists",
+        "description": "The return-cell cycle/event contract exists and passed.",
+        "satisfied": true
+      },
+      {
+        "id": "event_is_not_timer",
+        "description": "The event source is not a sheet timer, frame counter, wall clock, manual toggle, or visual brightness.",
+        "satisfied": true
+      },
+      {
+        "id": "channel_registry_zero",
+        "description": "The channel registry remains zero-count.",
+        "satisfied": true
+      },
+      {
+        "id": "channel_admission_still_not_allowed",
+        "description": "The return cell is still not admitted as a channel.",
+        "satisfied": true
+      },
+      {
+        "id": "marker_lighting_pause_receipt_exists",
+        "description": "The prior marker pause receipt exists.",
+        "satisfied": true
+      }
+    ],
+    "blocking_gate_failures": [
+      {
+        "id": "marker_event_binding_contract_absent",
+        "description": "No contract yet binds the return-cell event id to the unsupported 6/9 marker id."
+      },
+      {
+        "id": "render_contract_absent",
+        "description": "No read-only marker render contract exists for live stage lighting."
+      },
+      {
+        "id": "live_stage_marker_renderer_absent",
+        "description": "The live stage still has no marker renderer or draw hook. This is currently intentional."
+      }
+    ]
+  },
+  "summary": {
+    "marker_tracked": true,
+    "marker_edge_count": 60,
+    "marker_vertex_count": 120,
+    "edge_index_failure_count": 0,
+    "edge_index_failure_count_source": "failed_checks_list",
+    "return_event_contract_present": true,
+    "gate_open": false,
+    "blocking_gate_failure_count": 3,
+    "blocking_gate_failure_ids": [
+      "marker_event_binding_contract_absent",
+      "render_contract_absent",
+      "live_stage_marker_renderer_absent"
+    ],
+    "lights_marker_now": false,
+    "admits_channel_now": false,
+    "channel_count": 0
+  },
+  "interpretation": {
+    "yes_marker_tracks_anomaly": true,
+    "no_marker_is_not_live_lit": true,
+    "event_contract_exists_but_does_not_bind_marker_yet": true,
+    "timer_still_not_a_cycle": true,
+    "counter_still_not_an_event": true,
+    "not_channel": true,
+    "next_problem": "Define a marker-event binding contract or a read-only marker render contract, but do not light the marker until both exist."
+  },
+  "checks": {
+    "cycle_event_contract_passed": true,
+    "marker_tracked_in_registry_or_receipt_chain": true,
+    "marker_receipt_passed": true,
+    "marker_edge_counts_confirmed": true,
+    "edge_index_audit_passed": true,
+    "edge_index_failure_count_zero": true,
+    "marker_pause_passed": true,
+    "admission_still_not_allowed": true,
+    "channel_registry_zero_count": true,
+    "channels_not_admitted": true,
+    "gate_closed": true,
+    "has_blocking_gate_failures": true
+  },
+  "failed_checks": [],
+  "boundary": {
+    "marker_event_gate_only": true,
+    "gate_open": false,
+    "admits_channels": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "marker_lighting": false,
+    "force_claim": false,
+    "physics_claim": false
+  }
+}

@@ -1,0 +1,740 @@
+{
+  "schema": "g900.transition_length_minimal_origin_audit",
+  "version": 1,
+  "status": "transition_length_minimal_origin_audit_passed",
+  "created_utc": "2026-06-18T01:31:35Z",
+  "audit_pass": true,
+  "verdict": "only_pair_identity_like_transition_length_derivations_found",
+  "question": "Is the transition-length derivation just pair lookup, or is there a compact endpoint law that survives without naming each pair?",
+  "selected_cell": {
+    "pairs": [
+      "03_09",
+      "09_12",
+      "06_12",
+      "06_13"
+    ],
+    "target_transition_lens": [
+      3,
+      1,
+      2,
+      3
+    ]
+  },
+  "package_pair_count": 10,
+  "classified_candidates": [
+    {
+      "feature": "low_endpoint",
+      "deterministic_globally": false,
+      "deterministic_on_selected": false,
+      "selected_feature_values": [
+        "03",
+        "09",
+        "06",
+        "06"
+      ],
+      "selected_target_lens": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "global_bucket_count": 6,
+      "ambiguous_global_bucket_count": 1,
+      "predicted_selected_lens_if_global_deterministic": null,
+      "exact_selected_lens_if_global_deterministic": false,
+      "uses_full60_transition_rows_for_evaluation": true,
+      "uses_package_kind": false,
+      "exact_global_hit": false,
+      "pair_identity_like": false,
+      "package_pair_count": 10,
+      "compression": 4
+    },
+    {
+      "feature": "high_endpoint",
+      "deterministic_globally": false,
+      "deterministic_on_selected": false,
+      "selected_feature_values": [
+        "09",
+        "12",
+        "12",
+        "13"
+      ],
+      "selected_target_lens": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "global_bucket_count": 8,
+      "ambiguous_global_bucket_count": 2,
+      "predicted_selected_lens_if_global_deterministic": null,
+      "exact_selected_lens_if_global_deterministic": false,
+      "uses_full60_transition_rows_for_evaluation": true,
+      "uses_package_kind": false,
+      "exact_global_hit": false,
+      "pair_identity_like": false,
+      "package_pair_count": 10,
+      "compression": 2
+    },
+    {
+      "feature": "endpoint_sum",
+      "deterministic_globally": false,
+      "deterministic_on_selected": true,
+      "selected_feature_values": [
+        "12",
+        "21",
+        "18",
+        "19"
+      ],
+      "selected_target_lens": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "global_bucket_count": 7,
+      "ambiguous_global_bucket_count": 1,
+      "predicted_selected_lens_if_global_deterministic": null,
+      "exact_selected_lens_if_global_deterministic": false,
+      "uses_full60_transition_rows_for_evaluation": true,
+      "uses_package_kind": false,
+      "exact_global_hit": false,
+      "pair_identity_like": false,
+      "package_pair_count": 10,
+      "compression": 3
+    },
+    {
+      "feature": "endpoint_gap",
+      "deterministic_globally": false,
+      "deterministic_on_selected": false,
+      "selected_feature_values": [
+        "6",
+        "3",
+        "6",
+        "7"
+      ],
+      "selected_target_lens": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "global_bucket_count": 7,
+      "ambiguous_global_bucket_count": 1,
+      "predicted_selected_lens_if_global_deterministic": null,
+      "exact_selected_lens_if_global_deterministic": false,
+      "uses_full60_transition_rows_for_evaluation": true,
+      "uses_package_kind": false,
+      "exact_global_hit": false,
+      "pair_identity_like": false,
+      "package_pair_count": 10,
+      "compression": 3
+    },
+    {
+      "feature": "endpoint_sum_mod15",
+      "deterministic_globally": false,
+      "deterministic_on_selected": true,
+      "selected_feature_values": [
+        "12",
+        "6",
+        "3",
+        "4"
+      ],
+      "selected_target_lens": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "global_bucket_count": 7,
+      "ambiguous_global_bucket_count": 1,
+      "predicted_selected_lens_if_global_deterministic": null,
+      "exact_selected_lens_if_global_deterministic": false,
+      "uses_full60_transition_rows_for_evaluation": true,
+      "uses_package_kind": false,
+      "exact_global_hit": false,
+      "pair_identity_like": false,
+      "package_pair_count": 10,
+      "compression": 3
+    },
+    {
+      "feature": "endpoint_gap_mod15",
+      "deterministic_globally": false,
+      "deterministic_on_selected": false,
+      "selected_feature_values": [
+        "6",
+        "3",
+        "6",
+        "7"
+      ],
+      "selected_target_lens": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "global_bucket_count": 7,
+      "ambiguous_global_bucket_count": 1,
+      "predicted_selected_lens_if_global_deterministic": null,
+      "exact_selected_lens_if_global_deterministic": false,
+      "uses_full60_transition_rows_for_evaluation": true,
+      "uses_package_kind": false,
+      "exact_global_hit": false,
+      "pair_identity_like": false,
+      "package_pair_count": 10,
+      "compression": 3
+    },
+    {
+      "feature": "boundary_carrier_present",
+      "deterministic_globally": false,
+      "deterministic_on_selected": false,
+      "selected_feature_values": [
+        "True",
+        "True",
+        "True",
+        "True"
+      ],
+      "selected_target_lens": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "global_bucket_count": 2,
+      "ambiguous_global_bucket_count": 1,
+      "predicted_selected_lens_if_global_deterministic": null,
+      "exact_selected_lens_if_global_deterministic": false,
+      "uses_full60_transition_rows_for_evaluation": true,
+      "uses_package_kind": false,
+      "exact_global_hit": false,
+      "pair_identity_like": false,
+      "package_pair_count": 10,
+      "compression": 8
+    },
+    {
+      "feature": "boundary_mention_count",
+      "deterministic_globally": false,
+      "deterministic_on_selected": false,
+      "selected_feature_values": [
+        "2",
+        "2",
+        "2",
+        "2"
+      ],
+      "selected_target_lens": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "global_bucket_count": 2,
+      "ambiguous_global_bucket_count": 1,
+      "predicted_selected_lens_if_global_deterministic": null,
+      "exact_selected_lens_if_global_deterministic": false,
+      "uses_full60_transition_rows_for_evaluation": true,
+      "uses_package_kind": false,
+      "exact_global_hit": false,
+      "pair_identity_like": false,
+      "package_pair_count": 10,
+      "compression": 8
+    },
+    {
+      "feature": "low_endpoint|high_endpoint",
+      "deterministic_globally": true,
+      "deterministic_on_selected": true,
+      "selected_feature_values": [
+        "('03', '09')",
+        "('09', '12')",
+        "('06', '12')",
+        "('06', '13')"
+      ],
+      "selected_target_lens": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "global_bucket_count": 10,
+      "ambiguous_global_bucket_count": 0,
+      "predicted_selected_lens_if_global_deterministic": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "exact_selected_lens_if_global_deterministic": true,
+      "uses_full60_transition_rows_for_evaluation": true,
+      "uses_package_kind": false,
+      "exact_global_hit": true,
+      "pair_identity_like": true,
+      "package_pair_count": 10,
+      "compression": 0
+    },
+    {
+      "feature": "high_endpoint|endpoint_gap",
+      "deterministic_globally": true,
+      "deterministic_on_selected": true,
+      "selected_feature_values": [
+        "('09', 6)",
+        "('12', 3)",
+        "('12', 6)",
+        "('13', 7)"
+      ],
+      "selected_target_lens": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "global_bucket_count": 10,
+      "ambiguous_global_bucket_count": 0,
+      "predicted_selected_lens_if_global_deterministic": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "exact_selected_lens_if_global_deterministic": true,
+      "uses_full60_transition_rows_for_evaluation": true,
+      "uses_package_kind": false,
+      "exact_global_hit": true,
+      "pair_identity_like": true,
+      "package_pair_count": 10,
+      "compression": 0
+    },
+    {
+      "feature": "high_endpoint|boundary_carrier_present",
+      "deterministic_globally": false,
+      "deterministic_on_selected": false,
+      "selected_feature_values": [
+        "('09', True)",
+        "('12', True)",
+        "('12', True)",
+        "('13', True)"
+      ],
+      "selected_target_lens": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "global_bucket_count": 9,
+      "ambiguous_global_bucket_count": 1,
+      "predicted_selected_lens_if_global_deterministic": null,
+      "exact_selected_lens_if_global_deterministic": false,
+      "uses_full60_transition_rows_for_evaluation": true,
+      "uses_package_kind": false,
+      "exact_global_hit": false,
+      "pair_identity_like": false,
+      "package_pair_count": 10,
+      "compression": 1
+    },
+    {
+      "feature": "endpoint_gap|boundary_carrier_present",
+      "deterministic_globally": false,
+      "deterministic_on_selected": false,
+      "selected_feature_values": [
+        "(6, True)",
+        "(3, True)",
+        "(6, True)",
+        "(7, True)"
+      ],
+      "selected_target_lens": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "global_bucket_count": 8,
+      "ambiguous_global_bucket_count": 1,
+      "predicted_selected_lens_if_global_deterministic": null,
+      "exact_selected_lens_if_global_deterministic": false,
+      "uses_full60_transition_rows_for_evaluation": true,
+      "uses_package_kind": false,
+      "exact_global_hit": false,
+      "pair_identity_like": false,
+      "package_pair_count": 10,
+      "compression": 2
+    },
+    {
+      "feature": "endpoint_sum_mod15|endpoint_gap_mod15",
+      "deterministic_globally": true,
+      "deterministic_on_selected": true,
+      "selected_feature_values": [
+        "(12, 6)",
+        "(6, 3)",
+        "(3, 6)",
+        "(4, 7)"
+      ],
+      "selected_target_lens": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "global_bucket_count": 10,
+      "ambiguous_global_bucket_count": 0,
+      "predicted_selected_lens_if_global_deterministic": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "exact_selected_lens_if_global_deterministic": true,
+      "uses_full60_transition_rows_for_evaluation": true,
+      "uses_package_kind": false,
+      "exact_global_hit": true,
+      "pair_identity_like": true,
+      "package_pair_count": 10,
+      "compression": 0
+    }
+  ],
+  "exact_hits": [
+    {
+      "feature": "low_endpoint|high_endpoint",
+      "deterministic_globally": true,
+      "deterministic_on_selected": true,
+      "selected_feature_values": [
+        "('03', '09')",
+        "('09', '12')",
+        "('06', '12')",
+        "('06', '13')"
+      ],
+      "selected_target_lens": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "global_bucket_count": 10,
+      "ambiguous_global_bucket_count": 0,
+      "predicted_selected_lens_if_global_deterministic": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "exact_selected_lens_if_global_deterministic": true,
+      "uses_full60_transition_rows_for_evaluation": true,
+      "uses_package_kind": false,
+      "exact_global_hit": true,
+      "pair_identity_like": true,
+      "package_pair_count": 10,
+      "compression": 0
+    },
+    {
+      "feature": "high_endpoint|endpoint_gap",
+      "deterministic_globally": true,
+      "deterministic_on_selected": true,
+      "selected_feature_values": [
+        "('09', 6)",
+        "('12', 3)",
+        "('12', 6)",
+        "('13', 7)"
+      ],
+      "selected_target_lens": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "global_bucket_count": 10,
+      "ambiguous_global_bucket_count": 0,
+      "predicted_selected_lens_if_global_deterministic": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "exact_selected_lens_if_global_deterministic": true,
+      "uses_full60_transition_rows_for_evaluation": true,
+      "uses_package_kind": false,
+      "exact_global_hit": true,
+      "pair_identity_like": true,
+      "package_pair_count": 10,
+      "compression": 0
+    },
+    {
+      "feature": "endpoint_sum_mod15|endpoint_gap_mod15",
+      "deterministic_globally": true,
+      "deterministic_on_selected": true,
+      "selected_feature_values": [
+        "(12, 6)",
+        "(6, 3)",
+        "(3, 6)",
+        "(4, 7)"
+      ],
+      "selected_target_lens": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "global_bucket_count": 10,
+      "ambiguous_global_bucket_count": 0,
+      "predicted_selected_lens_if_global_deterministic": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "exact_selected_lens_if_global_deterministic": true,
+      "uses_full60_transition_rows_for_evaluation": true,
+      "uses_package_kind": false,
+      "exact_global_hit": true,
+      "pair_identity_like": true,
+      "package_pair_count": 10,
+      "compression": 0
+    }
+  ],
+  "pair_identity_exact_hits": [
+    {
+      "feature": "low_endpoint|high_endpoint",
+      "deterministic_globally": true,
+      "deterministic_on_selected": true,
+      "selected_feature_values": [
+        "('03', '09')",
+        "('09', '12')",
+        "('06', '12')",
+        "('06', '13')"
+      ],
+      "selected_target_lens": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "global_bucket_count": 10,
+      "ambiguous_global_bucket_count": 0,
+      "predicted_selected_lens_if_global_deterministic": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "exact_selected_lens_if_global_deterministic": true,
+      "uses_full60_transition_rows_for_evaluation": true,
+      "uses_package_kind": false,
+      "exact_global_hit": true,
+      "pair_identity_like": true,
+      "package_pair_count": 10,
+      "compression": 0
+    },
+    {
+      "feature": "high_endpoint|endpoint_gap",
+      "deterministic_globally": true,
+      "deterministic_on_selected": true,
+      "selected_feature_values": [
+        "('09', 6)",
+        "('12', 3)",
+        "('12', 6)",
+        "('13', 7)"
+      ],
+      "selected_target_lens": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "global_bucket_count": 10,
+      "ambiguous_global_bucket_count": 0,
+      "predicted_selected_lens_if_global_deterministic": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "exact_selected_lens_if_global_deterministic": true,
+      "uses_full60_transition_rows_for_evaluation": true,
+      "uses_package_kind": false,
+      "exact_global_hit": true,
+      "pair_identity_like": true,
+      "package_pair_count": 10,
+      "compression": 0
+    },
+    {
+      "feature": "endpoint_sum_mod15|endpoint_gap_mod15",
+      "deterministic_globally": true,
+      "deterministic_on_selected": true,
+      "selected_feature_values": [
+        "(12, 6)",
+        "(6, 3)",
+        "(3, 6)",
+        "(4, 7)"
+      ],
+      "selected_target_lens": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "global_bucket_count": 10,
+      "ambiguous_global_bucket_count": 0,
+      "predicted_selected_lens_if_global_deterministic": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "exact_selected_lens_if_global_deterministic": true,
+      "uses_full60_transition_rows_for_evaluation": true,
+      "uses_package_kind": false,
+      "exact_global_hit": true,
+      "pair_identity_like": true,
+      "package_pair_count": 10,
+      "compression": 0
+    }
+  ],
+  "non_identity_exact_hits": [],
+  "compressed_exact_hits": [],
+  "ranked_exact_hits": [
+    {
+      "feature": "endpoint_sum_mod15|endpoint_gap_mod15",
+      "deterministic_globally": true,
+      "deterministic_on_selected": true,
+      "selected_feature_values": [
+        "(12, 6)",
+        "(6, 3)",
+        "(3, 6)",
+        "(4, 7)"
+      ],
+      "selected_target_lens": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "global_bucket_count": 10,
+      "ambiguous_global_bucket_count": 0,
+      "predicted_selected_lens_if_global_deterministic": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "exact_selected_lens_if_global_deterministic": true,
+      "uses_full60_transition_rows_for_evaluation": true,
+      "uses_package_kind": false,
+      "exact_global_hit": true,
+      "pair_identity_like": true,
+      "package_pair_count": 10,
+      "compression": 0
+    },
+    {
+      "feature": "high_endpoint|endpoint_gap",
+      "deterministic_globally": true,
+      "deterministic_on_selected": true,
+      "selected_feature_values": [
+        "('09', 6)",
+        "('12', 3)",
+        "('12', 6)",
+        "('13', 7)"
+      ],
+      "selected_target_lens": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "global_bucket_count": 10,
+      "ambiguous_global_bucket_count": 0,
+      "predicted_selected_lens_if_global_deterministic": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "exact_selected_lens_if_global_deterministic": true,
+      "uses_full60_transition_rows_for_evaluation": true,
+      "uses_package_kind": false,
+      "exact_global_hit": true,
+      "pair_identity_like": true,
+      "package_pair_count": 10,
+      "compression": 0
+    },
+    {
+      "feature": "low_endpoint|high_endpoint",
+      "deterministic_globally": true,
+      "deterministic_on_selected": true,
+      "selected_feature_values": [
+        "('03', '09')",
+        "('09', '12')",
+        "('06', '12')",
+        "('06', '13')"
+      ],
+      "selected_target_lens": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "global_bucket_count": 10,
+      "ambiguous_global_bucket_count": 0,
+      "predicted_selected_lens_if_global_deterministic": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "exact_selected_lens_if_global_deterministic": true,
+      "uses_full60_transition_rows_for_evaluation": true,
+      "uses_package_kind": false,
+      "exact_global_hit": true,
+      "pair_identity_like": true,
+      "package_pair_count": 10,
+      "compression": 0
+    }
+  ],
+  "summary": {
+    "exact_hit_count": 3,
+    "exact_hit_features": [
+      "low_endpoint|high_endpoint",
+      "high_endpoint|endpoint_gap",
+      "endpoint_sum_mod15|endpoint_gap_mod15"
+    ],
+    "pair_identity_exact_hit_count": 3,
+    "pair_identity_exact_hit_features": [
+      "low_endpoint|high_endpoint",
+      "high_endpoint|endpoint_gap",
+      "endpoint_sum_mod15|endpoint_gap_mod15"
+    ],
+    "non_identity_exact_hit_count": 0,
+    "non_identity_exact_hit_features": [],
+    "compressed_exact_hit_count": 0,
+    "compressed_exact_hit_features": [],
+    "transition_length_derivation_is_pair_identity_like_only": true,
+    "channel_count": 0
+  },
+  "interpretation": {
+    "pair_identity_lookup_control": "low_endpoint|high_endpoint",
+    "compact_endpoint_law_found": false,
+    "bounded_negative_result": true,
+    "meaning": "The tested endpoint feature family can recover transition lengths, but every exact recovery has one bucket per package pair in the 10-package universe. This is pair-identity-like, not a compact law.",
+    "not_channel": true,
+    "next_problem": "Either expand the feature family or record transition length as unresolved beyond pair-identity-like lookup."
+  },
+  "checks": {
+    "transition_length_origin_audit_passed": true,
+    "origin_verdict_derived": true,
+    "channel_registry_zero_count": true,
+    "channels_not_admitted": true,
+    "pair_record_count_10": true,
+    "selected_target_lens_match": true,
+    "exact_hit_count_3": true,
+    "all_exact_hits_are_pair_identity_like": true,
+    "no_non_identity_exact_hit": true,
+    "no_compressed_exact_hit": true
+  },
+  "failed_checks": [],
+  "boundary": {
+    "minimal_origin_audit_only": true,
+    "bounded_negative_result": true,
+    "tested_feature_family_only": true,
+    "admits_channels": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "marker_lighting": false,
+    "force_claim": false,
+    "physics_claim": false
+  }
+}

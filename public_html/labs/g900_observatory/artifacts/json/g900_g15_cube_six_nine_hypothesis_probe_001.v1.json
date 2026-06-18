@@ -1,0 +1,1032 @@
+{
+  "schema": "g900.g15_cube_six_nine_hypothesis_probe",
+  "version": 1,
+  "status": "g15_cube_six_nine_hypothesis_probe_recorded",
+  "created_utc": "2026-06-18T04:50:16Z",
+  "git_head": "eadc4ba Probe G900 six nine boundary orientation",
+  "audit_pass": true,
+  "verdict": "g15_cube_six_nine_hypothesis_prefers_face_seam_obstruction",
+  "question": "Can the 15-point G15 register be explored as a cube register, and where does 6/9 plug into that model?",
+  "answer": "As a hypothesis probe, the 15-point G15 register fits an 8 corner + 6 face centroid + 1 cube centroid frame. In that frame, 6/9 most naturally reads as a package-global face/seam support obstruction, not a point defect, not a center collapse, not transport, and not a physics claim.",
+  "g15_cube_hypothesis": {
+    "hypothesis_id": "g15_cube_register_8_6_1",
+    "station_count": 15,
+    "station_type_counts": {
+      "corner": 8,
+      "face_centroid": 6,
+      "cube_centroid": 1
+    },
+    "interpretation": "G15 can be explored as an 8 corner + 6 face centroid + 1 cube centroid boundary-body register.",
+    "status": "hypothesis_probe_only",
+    "not_proven_here": [
+      "unique G15 label to cube station assignment",
+      "6 and 9 literal cube station identities",
+      "transport relation",
+      "physical force",
+      "physics derivation"
+    ]
+  },
+  "cube_register": [
+    {
+      "station_id": "C000",
+      "station_type": "corner",
+      "cube_coordinate": [
+        0,
+        0,
+        0
+      ],
+      "boundary_rank": 3,
+      "description": "cube corner / extremal boundary state"
+    },
+    {
+      "station_id": "C001",
+      "station_type": "corner",
+      "cube_coordinate": [
+        0,
+        0,
+        1
+      ],
+      "boundary_rank": 3,
+      "description": "cube corner / extremal boundary state"
+    },
+    {
+      "station_id": "C010",
+      "station_type": "corner",
+      "cube_coordinate": [
+        0,
+        1,
+        0
+      ],
+      "boundary_rank": 3,
+      "description": "cube corner / extremal boundary state"
+    },
+    {
+      "station_id": "C011",
+      "station_type": "corner",
+      "cube_coordinate": [
+        0,
+        1,
+        1
+      ],
+      "boundary_rank": 3,
+      "description": "cube corner / extremal boundary state"
+    },
+    {
+      "station_id": "C100",
+      "station_type": "corner",
+      "cube_coordinate": [
+        1,
+        0,
+        0
+      ],
+      "boundary_rank": 3,
+      "description": "cube corner / extremal boundary state"
+    },
+    {
+      "station_id": "C101",
+      "station_type": "corner",
+      "cube_coordinate": [
+        1,
+        0,
+        1
+      ],
+      "boundary_rank": 3,
+      "description": "cube corner / extremal boundary state"
+    },
+    {
+      "station_id": "C110",
+      "station_type": "corner",
+      "cube_coordinate": [
+        1,
+        1,
+        0
+      ],
+      "boundary_rank": 3,
+      "description": "cube corner / extremal boundary state"
+    },
+    {
+      "station_id": "C111",
+      "station_type": "corner",
+      "cube_coordinate": [
+        1,
+        1,
+        1
+      ],
+      "boundary_rank": 3,
+      "description": "cube corner / extremal boundary state"
+    },
+    {
+      "station_id": "X0",
+      "station_type": "face_centroid",
+      "axis": "x",
+      "side": 0,
+      "cube_coordinate": [
+        0,
+        0.5,
+        0.5
+      ],
+      "boundary_rank": 2,
+      "description": "face centroid / oriented boundary face normal"
+    },
+    {
+      "station_id": "X1",
+      "station_type": "face_centroid",
+      "axis": "x",
+      "side": 1,
+      "cube_coordinate": [
+        1,
+        0.5,
+        0.5
+      ],
+      "boundary_rank": 2,
+      "description": "face centroid / oriented boundary face normal"
+    },
+    {
+      "station_id": "Y0",
+      "station_type": "face_centroid",
+      "axis": "y",
+      "side": 0,
+      "cube_coordinate": [
+        0.5,
+        0,
+        0.5
+      ],
+      "boundary_rank": 2,
+      "description": "face centroid / oriented boundary face normal"
+    },
+    {
+      "station_id": "Y1",
+      "station_type": "face_centroid",
+      "axis": "y",
+      "side": 1,
+      "cube_coordinate": [
+        0.5,
+        1,
+        0.5
+      ],
+      "boundary_rank": 2,
+      "description": "face centroid / oriented boundary face normal"
+    },
+    {
+      "station_id": "Z0",
+      "station_type": "face_centroid",
+      "axis": "z",
+      "side": 0,
+      "cube_coordinate": [
+        0.5,
+        0.5,
+        0
+      ],
+      "boundary_rank": 2,
+      "description": "face centroid / oriented boundary face normal"
+    },
+    {
+      "station_id": "Z1",
+      "station_type": "face_centroid",
+      "axis": "z",
+      "side": 1,
+      "cube_coordinate": [
+        0.5,
+        0.5,
+        1
+      ],
+      "boundary_rank": 2,
+      "description": "face centroid / oriented boundary face normal"
+    },
+    {
+      "station_id": "O",
+      "station_type": "cube_centroid",
+      "cube_coordinate": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "boundary_rank": 0,
+      "description": "cube centroid / interior balance"
+    }
+  ],
+  "cube_relations": {
+    "corner_face_incidence_count": 24,
+    "face_center_incidence_count": 6,
+    "opposite_face_count": 3,
+    "face_seam_adjacency_count": 12,
+    "corner_face_incidence": [
+      {
+        "from": "C000",
+        "to": "X0",
+        "relation": "corner_incident_to_face"
+      },
+      {
+        "from": "C000",
+        "to": "Y0",
+        "relation": "corner_incident_to_face"
+      },
+      {
+        "from": "C000",
+        "to": "Z0",
+        "relation": "corner_incident_to_face"
+      },
+      {
+        "from": "C001",
+        "to": "X0",
+        "relation": "corner_incident_to_face"
+      },
+      {
+        "from": "C001",
+        "to": "Y0",
+        "relation": "corner_incident_to_face"
+      },
+      {
+        "from": "C001",
+        "to": "Z1",
+        "relation": "corner_incident_to_face"
+      },
+      {
+        "from": "C010",
+        "to": "X0",
+        "relation": "corner_incident_to_face"
+      },
+      {
+        "from": "C010",
+        "to": "Y1",
+        "relation": "corner_incident_to_face"
+      },
+      {
+        "from": "C010",
+        "to": "Z0",
+        "relation": "corner_incident_to_face"
+      },
+      {
+        "from": "C011",
+        "to": "X0",
+        "relation": "corner_incident_to_face"
+      },
+      {
+        "from": "C011",
+        "to": "Y1",
+        "relation": "corner_incident_to_face"
+      },
+      {
+        "from": "C011",
+        "to": "Z1",
+        "relation": "corner_incident_to_face"
+      },
+      {
+        "from": "C100",
+        "to": "X1",
+        "relation": "corner_incident_to_face"
+      },
+      {
+        "from": "C100",
+        "to": "Y0",
+        "relation": "corner_incident_to_face"
+      },
+      {
+        "from": "C100",
+        "to": "Z0",
+        "relation": "corner_incident_to_face"
+      },
+      {
+        "from": "C101",
+        "to": "X1",
+        "relation": "corner_incident_to_face"
+      },
+      {
+        "from": "C101",
+        "to": "Y0",
+        "relation": "corner_incident_to_face"
+      },
+      {
+        "from": "C101",
+        "to": "Z1",
+        "relation": "corner_incident_to_face"
+      },
+      {
+        "from": "C110",
+        "to": "X1",
+        "relation": "corner_incident_to_face"
+      },
+      {
+        "from": "C110",
+        "to": "Y1",
+        "relation": "corner_incident_to_face"
+      },
+      {
+        "from": "C110",
+        "to": "Z0",
+        "relation": "corner_incident_to_face"
+      },
+      {
+        "from": "C111",
+        "to": "X1",
+        "relation": "corner_incident_to_face"
+      },
+      {
+        "from": "C111",
+        "to": "Y1",
+        "relation": "corner_incident_to_face"
+      },
+      {
+        "from": "C111",
+        "to": "Z1",
+        "relation": "corner_incident_to_face"
+      }
+    ],
+    "face_center_incidence": [
+      {
+        "from": "X0",
+        "to": "O",
+        "relation": "face_points_to_centroid"
+      },
+      {
+        "from": "X1",
+        "to": "O",
+        "relation": "face_points_to_centroid"
+      },
+      {
+        "from": "Y0",
+        "to": "O",
+        "relation": "face_points_to_centroid"
+      },
+      {
+        "from": "Y1",
+        "to": "O",
+        "relation": "face_points_to_centroid"
+      },
+      {
+        "from": "Z0",
+        "to": "O",
+        "relation": "face_points_to_centroid"
+      },
+      {
+        "from": "Z1",
+        "to": "O",
+        "relation": "face_points_to_centroid"
+      }
+    ],
+    "opposite_faces": [
+      {
+        "from": "X0",
+        "to": "X1",
+        "relation": "opposite_face_axis"
+      },
+      {
+        "from": "Y0",
+        "to": "Y1",
+        "relation": "opposite_face_axis"
+      },
+      {
+        "from": "Z0",
+        "to": "Z1",
+        "relation": "opposite_face_axis"
+      }
+    ],
+    "face_seam_adjacency": [
+      {
+        "from": "X0",
+        "to": "Y0",
+        "relation": "face_seam_adjacency"
+      },
+      {
+        "from": "X0",
+        "to": "Y1",
+        "relation": "face_seam_adjacency"
+      },
+      {
+        "from": "X0",
+        "to": "Z0",
+        "relation": "face_seam_adjacency"
+      },
+      {
+        "from": "X0",
+        "to": "Z1",
+        "relation": "face_seam_adjacency"
+      },
+      {
+        "from": "X1",
+        "to": "Y0",
+        "relation": "face_seam_adjacency"
+      },
+      {
+        "from": "X1",
+        "to": "Y1",
+        "relation": "face_seam_adjacency"
+      },
+      {
+        "from": "X1",
+        "to": "Z0",
+        "relation": "face_seam_adjacency"
+      },
+      {
+        "from": "X1",
+        "to": "Z1",
+        "relation": "face_seam_adjacency"
+      },
+      {
+        "from": "Y0",
+        "to": "Z0",
+        "relation": "face_seam_adjacency"
+      },
+      {
+        "from": "Y0",
+        "to": "Z1",
+        "relation": "face_seam_adjacency"
+      },
+      {
+        "from": "Y1",
+        "to": "Z0",
+        "relation": "face_seam_adjacency"
+      },
+      {
+        "from": "Y1",
+        "to": "Z1",
+        "relation": "face_seam_adjacency"
+      }
+    ]
+  },
+  "evidence_signature": {
+    "registered_trace": true,
+    "trace_class": "obstruction_trace",
+    "anatomy_class": "package_level_support_obstruction",
+    "preferred_scope": "package_global",
+    "preferred_scope_strength": "strong",
+    "failure_scope": "package_global",
+    "failure_uniformity": "uniform_by_receipt_signal",
+    "orientation_class": "boundary_phase_endpoint_oriented_obstruction",
+    "orientation_strength": "moderate",
+    "orientation_law_status": "structured_probe_signal",
+    "directed_record_count": 255,
+    "boundary_record_count": 14
+  },
+  "cube_role_hypotheses": [
+    {
+      "hypothesis_id": "corner_to_face_boundary_resolution",
+      "cube_path": "corner -> face_centroid",
+      "physics_reading": "boundary extremum attempts to resolve into an oriented face normal",
+      "fit_to_evidence": "moderate",
+      "why": "orientation and endpoint/edge terms fit a boundary-to-face incidence obstruction"
+    },
+    {
+      "hypothesis_id": "face_to_face_seam_transition",
+      "cube_path": "face_centroid -> adjacent_face_centroid",
+      "physics_reading": "one oriented boundary face attempts a seam transition into another face",
+      "fit_to_evidence": "strong_candidate",
+      "why": "package-global support failure plus boundary/phase/endpoint signal fits a face/seam obstruction"
+    },
+    {
+      "hypothesis_id": "face_to_center_inward_admission",
+      "cube_path": "face_centroid -> cube_centroid",
+      "physics_reading": "boundary face attempts inward admission into body center",
+      "fit_to_evidence": "possible_but_unproven",
+      "why": "inside/outside terms are present, but no center-touching law is proven"
+    },
+    {
+      "hypothesis_id": "corner_to_center_direct_collapse",
+      "cube_path": "corner -> cube_centroid",
+      "physics_reading": "extremal boundary state attempts direct collapse into the body center",
+      "fit_to_evidence": "weak",
+      "why": "current evidence is package-global boundary/face oriented, not direct center collapse"
+    },
+    {
+      "hypothesis_id": "center_to_boundary_return",
+      "cube_path": "cube_centroid -> face_centroid or corner",
+      "physics_reading": "interior state attempts return to boundary",
+      "fit_to_evidence": "weak",
+      "why": "orientation probe did not show repeat/return language"
+    }
+  ],
+  "six_nine_cube_reading": {
+    "best_current_reading": "face_to_face_seam_transition",
+    "plain_language": "6/9 most naturally plugs into the cube model as a face/seam support obstruction rather than a point defect or center collapse.",
+    "why": [
+      "6/9 is a package-global support obstruction.",
+      "The failure is uniform by receipt signal.",
+      "The orientation probe found boundary, phase, endpoint/edge, from/to, and inside/outside signals.",
+      "The orientation probe did not establish a return/center law."
+    ],
+    "careful_boundary": "This is a cube-coordinate hypothesis probe, not a theorem and not a physics claim."
+  },
+  "label_assignment_probe": {
+    "explicit_label_to_cube_assignment_found": true,
+    "explicit_cube_language_count": 1,
+    "inside_outside_count": 41,
+    "from_to_count": 1888,
+    "label_hits_first_30": [
+      {
+        "source": "trace",
+        "path": "$",
+        "excerpt": "{\"answer\": \"Yes. Under the registered trace criterion, 6/9 is a registered trace of obstruction type. It is not transport, not a channel, not a viewer object, and not a physics claim.\", \"atom_results\": {\"admissible_action_or_relation\": {\"reason\": \"6/9 is sourced from an unsupported phase/package support audit, a boundary/support relation check.\", \"satisfied\": true}, \"admitted_body_source\": {\"reason\": \"G900 static bod...",
+        "has_from_to": true,
+        "has_inside_outside": false,
+        "has_center": false,
+        "has_face": false,
+        "has_corner": false,
+        "numbers": [
+          1,
+          6,
+          9,
+          33,
+          2026
+        ]
+      },
+      {
+        "source": "trace",
+        "path": "$.schema",
+        "excerpt": "\"g900.six_nine_trace_classification\"",
+        "has_from_to": false,
+        "has_inside_outside": false,
+        "has_center": false,
+        "has_face": false,
+        "has_corner": false,
+        "numbers": []
+      },
+      {
+        "source": "trace",
+        "path": "$.status",
+        "excerpt": "\"six_nine_trace_classification_recorded\"",
+        "has_from_to": false,
+        "has_inside_outside": false,
+        "has_center": false,
+        "has_face": false,
+        "has_corner": false,
+        "numbers": []
+      },
+      {
+        "source": "trace",
+        "path": "$.verdict",
+        "excerpt": "\"six_nine_registered_as_obstruction_trace\"",
+        "has_from_to": false,
+        "has_inside_outside": false,
+        "has_center": false,
+        "has_face": false,
+        "has_corner": false,
+        "numbers": []
+      },
+      {
+        "source": "trace",
+        "path": "$.question",
+        "excerpt": "\"Does the 6/9 unsupported package satisfy registered_trace_criterion_001?\"",
+        "has_from_to": false,
+        "has_inside_outside": false,
+        "has_center": false,
+        "has_face": false,
+        "has_corner": false,
+        "numbers": [
+          6,
+          9
+        ]
+      },
+      {
+        "source": "trace",
+        "path": "$.answer",
+        "excerpt": "\"Yes. Under the registered trace criterion, 6/9 is a registered trace of obstruction type. It is not transport, not a channel, not a viewer object, and not a physics claim.\"",
+        "has_from_to": false,
+        "has_inside_outside": false,
+        "has_center": false,
+        "has_face": false,
+        "has_corner": false,
+        "numbers": [
+          6,
+          9
+        ]
+      },
+      {
+        "source": "trace",
+        "path": "$.candidate",
+        "excerpt": "{\"candidate_id\": \"six_nine_unsupported_package\", \"candidate_label\": \"6/9 unsupported package\", \"count_evidence_present\": true, \"full60_language_present\": true, \"marker_id_present\": true, \"six_nine_named\": true, \"source_artifacts\": [\"public_html/labs/g900_observatory/artifacts/json/g900_full60_package_support_audit_001.v1.json\", \"public_html/labs/g900_observatory/artifacts/json/g900_unsupported_phase_marker_6_9_001.v1...",
+        "has_from_to": true,
+        "has_inside_outside": false,
+        "has_center": false,
+        "has_face": false,
+        "has_corner": false,
+        "numbers": [
+          6,
+          9
+        ]
+      },
+      {
+        "source": "trace",
+        "path": "$.candidate.candidate_id",
+        "excerpt": "\"six_nine_unsupported_package\"",
+        "has_from_to": false,
+        "has_inside_outside": false,
+        "has_center": false,
+        "has_face": false,
+        "has_corner": false,
+        "numbers": []
+      },
+      {
+        "source": "trace",
+        "path": "$.candidate.candidate_label",
+        "excerpt": "\"6/9 unsupported package\"",
+        "has_from_to": false,
+        "has_inside_outside": false,
+        "has_center": false,
+        "has_face": false,
+        "has_corner": false,
+        "numbers": [
+          6,
+          9
+        ]
+      },
+      {
+        "source": "trace",
+        "path": "$.candidate.source_artifacts",
+        "excerpt": "[\"public_html/labs/g900_observatory/artifacts/json/g900_full60_package_support_audit_001.v1.json\", \"public_html/labs/g900_observatory/artifacts/json/g900_unsupported_phase_marker_6_9_001.v1.json\", \"public_html/labs/g900_observatory/artifacts/json/g900_marker_edge_index_audit_001.v1.json\"]",
+        "has_from_to": true,
+        "has_inside_outside": false,
+        "has_center": false,
+        "has_face": false,
+        "has_corner": false,
+        "numbers": []
+      },
+      {
+        "source": "trace",
+        "path": "$.candidate.source_artifacts[1]",
+        "excerpt": "\"public_html/labs/g900_observatory/artifacts/json/g900_unsupported_phase_marker_6_9_001.v1.json\"",
+        "has_from_to": true,
+        "has_inside_outside": false,
+        "has_center": false,
+        "has_face": false,
+        "has_corner": false,
+        "numbers": []
+      },
+      {
+        "source": "trace",
+        "path": "$.atom_results",
+        "excerpt": "{\"admissible_action_or_relation\": {\"reason\": \"6/9 is sourced from an unsupported phase/package support audit, a boundary/support relation check.\", \"satisfied\": true}, \"admitted_body_source\": {\"reason\": \"G900 static body artifact exists and is not mutated by this classification.\", \"satisfied\": true}, \"boundary_preserving\": {\"reason\": \"No body mutation, registry mutation, viewer change, renderer work, force claim, or p...",
+        "has_from_to": true,
+        "has_inside_outside": false,
+        "has_center": false,
+        "has_face": false,
+        "has_corner": false,
+        "numbers": [
+          6,
+          9
+        ]
+      },
+      {
+        "source": "trace",
+        "path": "$.atom_results.admissible_action_or_relation",
+        "excerpt": "{\"reason\": \"6/9 is sourced from an unsupported phase/package support audit, a boundary/support relation check.\", \"satisfied\": true}",
+        "has_from_to": true,
+        "has_inside_outside": false,
+        "has_center": false,
+        "has_face": false,
+        "has_corner": false,
+        "numbers": [
+          6,
+          9
+        ]
+      },
+      {
+        "source": "trace",
+        "path": "$.atom_results.admissible_action_or_relation.reason",
+        "excerpt": "\"6/9 is sourced from an unsupported phase/package support audit, a boundary/support relation check.\"",
+        "has_from_to": true,
+        "has_inside_outside": false,
+        "has_center": false,
+        "has_face": false,
+        "has_corner": false,
+        "numbers": [
+          6,
+          9
+        ]
+      },
+      {
+        "source": "trace",
+        "path": "$.atom_results.finite_residue_or_contrast",
+        "excerpt": "{\"reason\": \"Source artifacts contain finite 6/9 unsupportedness evidence with count-bearing support.\", \"satisfied\": true}",
+        "has_from_to": true,
+        "has_inside_outside": false,
+        "has_center": false,
+        "has_face": false,
+        "has_corner": false,
+        "numbers": [
+          6,
+          9
+        ]
+      },
+      {
+        "source": "trace",
+        "path": "$.atom_results.finite_residue_or_contrast.reason",
+        "excerpt": "\"Source artifacts contain finite 6/9 unsupportedness evidence with count-bearing support.\"",
+        "has_from_to": true,
+        "has_inside_outside": false,
+        "has_center": false,
+        "has_face": false,
+        "has_corner": false,
+        "numbers": [
+          6,
+          9
+        ]
+      },
+      {
+        "source": "trace",
+        "path": "$.trace_classification",
+        "excerpt": "{\"candidate_id\": \"six_nine_unsupported_package\", \"candidate_label\": \"6/9 unsupported package\", \"channel\": false, \"classification_strength\": \"registered_trace_only\", \"downstream_status\": {\"channel\": \"not_admitted_here\", \"obstruction_classification\": \"provisionally obstruction_trace by trace class, but transport relation remains unproven\", \"physics_bridge\": \"not_attempted_here\", \"transport_relation\": \"not_admitted_here...",
+        "has_from_to": false,
+        "has_inside_outside": false,
+        "has_center": false,
+        "has_face": false,
+        "has_corner": false,
+        "numbers": [
+          6,
+          9
+        ]
+      },
+      {
+        "source": "trace",
+        "path": "$.trace_classification.candidate_id",
+        "excerpt": "\"six_nine_unsupported_package\"",
+        "has_from_to": false,
+        "has_inside_outside": false,
+        "has_center": false,
+        "has_face": false,
+        "has_corner": false,
+        "numbers": []
+      },
+      {
+        "source": "trace",
+        "path": "$.trace_classification.candidate_label",
+        "excerpt": "\"6/9 unsupported package\"",
+        "has_from_to": false,
+        "has_inside_outside": false,
+        "has_center": false,
+        "has_face": false,
+        "has_corner": false,
+        "numbers": [
+          6,
+          9
+        ]
+      },
+      {
+        "source": "trace",
+        "path": "$.next_allowed_math_acts",
+        "excerpt": "[\"six_nine_obstruction_anatomy_001\", \"transport_relation_admission_criterion_001\", \"physics_bridge_forbidden_mapping_ledger_001\"]",
+        "has_from_to": true,
+        "has_inside_outside": false,
+        "has_center": false,
+        "has_face": false,
+        "has_corner": false,
+        "numbers": []
+      },
+      {
+        "source": "trace",
+        "path": "$.next_allowed_math_acts[0]",
+        "excerpt": "\"six_nine_obstruction_anatomy_001\"",
+        "has_from_to": true,
+        "has_inside_outside": false,
+        "has_center": false,
+        "has_face": false,
+        "has_corner": false,
+        "numbers": []
+      },
+      {
+        "source": "trace",
+        "path": "$.checks",
+        "excerpt": "{\"all_trace_atoms_satisfied\": true, \"channel_registry_preserved\": true, \"criterion_valid\": true, \"finite_count_evidence_present\": true, \"frontier_valid\": true, \"ledger_valid\": true, \"no_body_mutation\": true, \"no_channel_admission\": true, \"no_force_claim\": true, \"no_physics_claim\": true, \"no_viewer_change\": true, \"outputs_registered_trace_only\": true, \"renderer_absent\": true, \"six_nine_named_in_sources\": true, \"unsupp...",
+        "has_from_to": true,
+        "has_inside_outside": false,
+        "has_center": false,
+        "has_face": false,
+        "has_corner": false,
+        "numbers": []
+      },
+      {
+        "source": "anatomy",
+        "path": "$",
+        "excerpt": "{\"answer\": \"6/9 is anatomized as a package-level support obstruction when read through the available package support and unsupported marker receipts. This does not admit transport or channel.\", \"audit_pass\": true, \"boundary\": {\"admits_channels\": false, \"admits_transport\": false, \"anatomy_only\": true, \"changes_viewer\": false, \"force_claim\": false, \"mutates_body\": false, \"physics_claim\": false, \"renders_channels\": fals...",
+        "has_from_to": true,
+        "has_inside_outside": true,
+        "has_center": false,
+        "has_face": false,
+        "has_corner": false,
+        "numbers": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          70,
+          120,
+          139,
+          180,
+          1320,
+          1321,
+          1322,
+          1323,
+          1324,
+          1325,
+          1326,
+          1440,
+          2026,
+          3896,
+          4707,
+          18530,
+          894033
+        ]
+      },
+      {
+        "source": "anatomy",
+        "path": "$.schema",
+        "excerpt": "\"g900.six_nine_obstruction_anatomy\"",
+        "has_from_to": true,
+        "has_inside_outside": false,
+        "has_center": false,
+        "has_face": false,
+        "has_corner": false,
+        "numbers": []
+      },
+      {
+        "source": "anatomy",
+        "path": "$.status",
+        "excerpt": "\"six_nine_obstruction_anatomy_recorded\"",
+        "has_from_to": true,
+        "has_inside_outside": false,
+        "has_center": false,
+        "has_face": false,
+        "has_corner": false,
+        "numbers": []
+      },
+      {
+        "source": "anatomy",
+        "path": "$.verdict",
+        "excerpt": "\"six_nine_obstruction_anatomy_recorded\"",
+        "has_from_to": true,
+        "has_inside_outside": false,
+        "has_center": false,
+        "has_face": false,
+        "has_corner": false,
+        "numbers": []
+      },
+      {
+        "source": "anatomy",
+        "path": "$.question",
+        "excerpt": "\"What kind of registered obstruction trace is 6/9?\"",
+        "has_from_to": false,
+        "has_inside_outside": false,
+        "has_center": false,
+        "has_face": false,
+        "has_corner": false,
+        "numbers": [
+          6,
+          9
+        ]
+      },
+      {
+        "source": "anatomy",
+        "path": "$.answer",
+        "excerpt": "\"6/9 is anatomized as a package-level support obstruction when read through the available package support and unsupported marker receipts. This does not admit transport or channel.\"",
+        "has_from_to": true,
+        "has_inside_outside": false,
+        "has_center": false,
+        "has_face": false,
+        "has_corner": false,
+        "numbers": [
+          6,
+          9
+        ]
+      },
+      {
+        "source": "anatomy",
+        "path": "$.candidate",
+        "excerpt": "{\"anatomy_class\": \"package_level_support_obstruction\", \"anatomy_dimensions\": {\"channel_admitted_here\": false, \"event_contract_context_available\": true, \"full60_or_sixty_count_signal\": true, \"marker_bound_signal\": true, \"package_level_signal\": true, \"physics_claim_here\": false, \"support_failure\": true, \"transport_relation_admitted_here\": false}, \"candidate_id\": \"six_nine_unsupported_package\", \"prior_classification\": {...",
+        "has_from_to": true,
+        "has_inside_outside": false,
+        "has_center": false,
+        "has_face": false,
+        "has_corner": false,
+        "numbers": [
+          6,
+          9
+        ]
+      },
+      {
+        "source": "anatomy",
+        "path": "$.candidate.candidate_id",
+        "excerpt": "\"six_nine_unsupported_package\"",
+        "has_from_to": false,
+        "has_inside_outside": false,
+        "has_center": false,
+        "has_face": false,
+        "has_corner": false,
+        "numbers": []
+      }
+    ],
+    "next_needed_test": "Search for a G15 labeling or derive one from adjacency/incidence so labels 6 and 9 can be placed in the cube register."
+  },
+  "current_state": {
+    "channel_count": 1,
+    "renderer_absent": true,
+    "transport_relation": false,
+    "channel": false,
+    "force_claim": false,
+    "physics_claim": false
+  },
+  "next_allowed_math_acts": [
+    "g15_cube_label_assignment_probe_001",
+    "six_nine_orientation_law_candidate_001",
+    "transport_relation_admission_criterion_001",
+    "physics_bridge_forbidden_mapping_ledger_001"
+  ],
+  "checks": {
+    "ledger_valid": true,
+    "trace_valid": true,
+    "anatomy_valid": true,
+    "scope_valid": true,
+    "failure_uniformity_valid": true,
+    "cube_register_has_15_stations": true,
+    "cube_register_has_8_corners": true,
+    "cube_register_has_6_faces": true,
+    "cube_register_has_1_center": true,
+    "best_hypothesis_assigned": true,
+    "transport_not_admitted": true,
+    "channel_not_admitted": true,
+    "channel_registry_preserved": true,
+    "renderer_absent": true,
+    "no_body_mutation": true,
+    "no_viewer_change": true,
+    "no_force_claim": true,
+    "no_physics_claim": true
+  },
+  "failed_checks": [],
+  "hashes": {
+    "ledger_sha256": "6a1a4b81fc76477202edccad3c394100db0617ab738a5fe62aaef6b930e45e34",
+    "trace_sha256": "7809752aa7f4b0491d2ea662a168cc75c9ddeb70ac7c27d0ffc4d83245ca994f",
+    "anatomy_sha256": "e37f462a2886519ef2b961ec1a99be98d8e5420214b1f07bc16a5f1a99f7e94f",
+    "scope_sha256": "7d1b9db28ecdb6211a8144c353859493881093652894ad722c16495fbd006101",
+    "failure_sha256": "008cab37431bb465f08cd10c0a5e3e643ee4b1739da40862b384f77189f094b5",
+    "orientation_sha256": "8a2dca31a2574180b115a658609af1fdadac0fa1c6975bb4d52e26b5b5d5d986",
+    "channels_sha256": "fbe4c50e0adf3460f7190f3c7714754da8a620359a5bc26c70543cc401feca08",
+    "body_sha256": "6a2cb6b9892a78d4559ec61cf946b0021962cc6819311234b8bf14102b3b7f63",
+    "lab_sha256": "5a10a18bc6563446a0d364d5984b8a41db580e0a75831c82b9eeb5aebc2edeb7"
+  },
+  "boundary": {
+    "hypothesis_probe_only": true,
+    "assigns_unique_g15_cube_labels": false,
+    "admits_transport": false,
+    "admits_channels": false,
+    "changes_viewer": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "force_claim": false,
+    "physics_claim": false
+  }
+}

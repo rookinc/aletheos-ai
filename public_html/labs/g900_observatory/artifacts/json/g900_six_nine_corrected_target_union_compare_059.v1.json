@@ -1,0 +1,955 @@
+{
+  "audit_id": "g900_six_nine_corrected_target_union_compare_059",
+  "audit_pass": false,
+  "boundary": {
+    "channel_admitted": false,
+    "closure_witness_admitted": false,
+    "compares_058_corrected_target_to_053_unions": true,
+    "force_claim": false,
+    "marker_lighting": false,
+    "native_derivation_complete": false,
+    "physics_claim": false,
+    "row_level_union_complete": false,
+    "target_depends_on_one_row_correction_candidate": true,
+    "transport_relation_admitted": false,
+    "unification_claim": false,
+    "viewer_or_body_mutation": false
+  },
+  "candidate_122_count": 122,
+  "compare_status": "058_target_does_not_match_tested_053_unions",
+  "exact_110_single_feature_candidate_count": 12,
+  "exact_66_single_feature_candidate_count": 5,
+  "exact_match_found": false,
+  "exact_matches_first_20": [],
+  "exact_target_match_count": 0,
+  "matched_union_csv_path": null,
+  "nearest_diff_csv_path": "public_html/labs/g900_observatory/artifacts/csv/g900_six_nine_corrected_target_union_compare_059_nearest_diff_rows.v1.csv",
+  "nearest_unions_first_20": [
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "source_root_slot",
+        "value": "null"
+      },
+      "extra_in_union_count": 188,
+      "extra_in_union_first_10": [
+        "g900-six-nine-ladder-3-6-9-12-source-provenance-audit-002.v1.json|$.extracted_rows[3]|None|None|None|None|None|None|None|None",
+        "g900-six-nine-ladder-3-6-9-12-source-provenance-audit-002.v1.json|$.extracted_rows[4]|None|None|None|None|None|None|None|None",
+        "g900-six-nine-ladder-3-6-9-12-source-provenance-audit-002.v1.json|$.extracted_rows[5]|None|None|None|None|None|None|None|None",
+        "g900-six-nine-ladder-3-6-9-12-source-provenance-audit-002.v1.json|$.extracted_rows[6]|None|None|None|None|None|None|None|None",
+        "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json|$.contrast_rows_first_30[10].packet|None|None|None|None|[6, 9]|None|0|None",
+        "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json|$.contrast_rows_first_30[13].packet|None|None|None|None|None|None|None|None",
+        "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json|$.contrast_rows_first_30[16].packet|None|None|None|None|None|None|None|None",
+        "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json|$.contrast_rows_first_30[26].packet|None|None|None|None|[6, 9]|None|None|None",
+        "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json|$.contrast_rows_first_30[2].packet|None|None|None|None|None|None|None|None",
+        "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json|$.contrast_rows_first_30[3].packet|None|None|None|None|None|None|None|None"
+      ],
+      "missing_from_union_count": 188,
+      "missing_from_union_first_10": [
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[0]|g900-six-nine-ladder-3-6-9-12-source-derivation-audit-001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[10]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[11]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[12]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[13]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[14]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[15]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[16]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[17]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[18]|g900_ladder_nearest_anchor_condition_audit_001.v1.json|None|source_pair|None|None|None|None|None"
+      ],
+      "origin_110": {
+        "count": 110,
+        "feature": "context_summary.full_packet_row_count",
+        "value": "441"
+      },
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "symdiff_count": 376,
+      "target_count": 298,
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "source_side_gap_signature",
+        "value": "\"[9,11]\""
+      },
+      "extra_in_union_count": 188,
+      "extra_in_union_first_10": [
+        "g900-six-nine-ladder-3-6-9-12-source-derivation-audit-001.v1.json|$.branch_rows_for_audit[0]|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900-six-nine-ladder-3-6-9-12-source-derivation-audit-001.v1.json|$.branch_rows_for_audit[1]|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_targets_first_30[0].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_targets_first_30[1].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_targets_first_30[2].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_targets_first_30[3].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[0].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[1].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[2].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[3].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24"
+      ],
+      "missing_from_union_count": 188,
+      "missing_from_union_first_10": [
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[0]|g900-six-nine-ladder-3-6-9-12-source-derivation-audit-001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[10]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[11]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[12]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[13]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[14]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[15]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[16]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[17]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[18]|g900_ladder_nearest_anchor_condition_audit_001.v1.json|None|source_pair|None|None|None|None|None"
+      ],
+      "origin_110": {
+        "count": 110,
+        "feature": "context_summary.full_packet_row_count",
+        "value": "441"
+      },
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "symdiff_count": 376,
+      "target_count": 298,
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "source_root_slot",
+        "value": "null"
+      },
+      "extra_in_union_count": 188,
+      "extra_in_union_first_10": [
+        "g900-six-nine-ladder-3-6-9-12-source-provenance-audit-002.v1.json|$.extracted_rows[3]|None|None|None|None|None|None|None|None",
+        "g900-six-nine-ladder-3-6-9-12-source-provenance-audit-002.v1.json|$.extracted_rows[4]|None|None|None|None|None|None|None|None",
+        "g900-six-nine-ladder-3-6-9-12-source-provenance-audit-002.v1.json|$.extracted_rows[5]|None|None|None|None|None|None|None|None",
+        "g900-six-nine-ladder-3-6-9-12-source-provenance-audit-002.v1.json|$.extracted_rows[6]|None|None|None|None|None|None|None|None",
+        "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json|$.contrast_rows_first_30[10].packet|None|None|None|None|[6, 9]|None|0|None",
+        "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json|$.contrast_rows_first_30[13].packet|None|None|None|None|None|None|None|None",
+        "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json|$.contrast_rows_first_30[16].packet|None|None|None|None|None|None|None|None",
+        "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json|$.contrast_rows_first_30[26].packet|None|None|None|None|[6, 9]|None|None|None",
+        "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json|$.contrast_rows_first_30[2].packet|None|None|None|None|None|None|None|None",
+        "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json|$.contrast_rows_first_30[3].packet|None|None|None|None|None|None|None|None"
+      ],
+      "missing_from_union_count": 188,
+      "missing_from_union_first_10": [
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[0]|g900-six-nine-ladder-3-6-9-12-source-derivation-audit-001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[10]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[11]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[12]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[13]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[14]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[15]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[16]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[17]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[18]|g900_ladder_nearest_anchor_condition_audit_001.v1.json|None|source_pair|None|None|None|None|None"
+      ],
+      "origin_110": {
+        "count": 110,
+        "feature": "context_summary.nonleaky_full_packet_row_count",
+        "value": "84"
+      },
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "symdiff_count": 376,
+      "target_count": 298,
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "source_side_gap_signature",
+        "value": "\"[9,11]\""
+      },
+      "extra_in_union_count": 188,
+      "extra_in_union_first_10": [
+        "g900-six-nine-ladder-3-6-9-12-source-derivation-audit-001.v1.json|$.branch_rows_for_audit[0]|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900-six-nine-ladder-3-6-9-12-source-derivation-audit-001.v1.json|$.branch_rows_for_audit[1]|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_targets_first_30[0].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_targets_first_30[1].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_targets_first_30[2].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_targets_first_30[3].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[0].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[1].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[2].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[3].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24"
+      ],
+      "missing_from_union_count": 188,
+      "missing_from_union_first_10": [
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[0]|g900-six-nine-ladder-3-6-9-12-source-derivation-audit-001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[10]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[11]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[12]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[13]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[14]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[15]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[16]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[17]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[18]|g900_ladder_nearest_anchor_condition_audit_001.v1.json|None|source_pair|None|None|None|None|None"
+      ],
+      "origin_110": {
+        "count": 110,
+        "feature": "context_summary.nonleaky_full_packet_row_count",
+        "value": "84"
+      },
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "symdiff_count": 376,
+      "target_count": 298,
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "source_root_slot",
+        "value": "null"
+      },
+      "extra_in_union_count": 188,
+      "extra_in_union_first_10": [
+        "g900-six-nine-ladder-3-6-9-12-source-provenance-audit-002.v1.json|$.extracted_rows[3]|None|None|None|None|None|None|None|None",
+        "g900-six-nine-ladder-3-6-9-12-source-provenance-audit-002.v1.json|$.extracted_rows[4]|None|None|None|None|None|None|None|None",
+        "g900-six-nine-ladder-3-6-9-12-source-provenance-audit-002.v1.json|$.extracted_rows[5]|None|None|None|None|None|None|None|None",
+        "g900-six-nine-ladder-3-6-9-12-source-provenance-audit-002.v1.json|$.extracted_rows[6]|None|None|None|None|None|None|None|None",
+        "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json|$.contrast_rows_first_30[10].packet|None|None|None|None|[6, 9]|None|0|None",
+        "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json|$.contrast_rows_first_30[13].packet|None|None|None|None|None|None|None|None",
+        "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json|$.contrast_rows_first_30[16].packet|None|None|None|None|None|None|None|None",
+        "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json|$.contrast_rows_first_30[26].packet|None|None|None|None|[6, 9]|None|None|None",
+        "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json|$.contrast_rows_first_30[2].packet|None|None|None|None|None|None|None|None",
+        "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json|$.contrast_rows_first_30[3].packet|None|None|None|None|None|None|None|None"
+      ],
+      "missing_from_union_count": 188,
+      "missing_from_union_first_10": [
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[0]|g900-six-nine-ladder-3-6-9-12-source-derivation-audit-001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[10]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[11]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[12]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[13]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[14]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[15]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[16]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[17]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[18]|g900_ladder_nearest_anchor_condition_audit_001.v1.json|None|source_pair|None|None|None|None|None"
+      ],
+      "origin_110": {
+        "count": 110,
+        "feature": "context_summary.origin_status",
+        "value": "\"candidate_native_source_or_carrier_rows_available_for_next_derivation\""
+      },
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "symdiff_count": 376,
+      "target_count": 298,
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "source_side_gap_signature",
+        "value": "\"[9,11]\""
+      },
+      "extra_in_union_count": 188,
+      "extra_in_union_first_10": [
+        "g900-six-nine-ladder-3-6-9-12-source-derivation-audit-001.v1.json|$.branch_rows_for_audit[0]|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900-six-nine-ladder-3-6-9-12-source-derivation-audit-001.v1.json|$.branch_rows_for_audit[1]|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_targets_first_30[0].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_targets_first_30[1].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_targets_first_30[2].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_targets_first_30[3].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[0].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[1].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[2].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[3].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24"
+      ],
+      "missing_from_union_count": 188,
+      "missing_from_union_first_10": [
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[0]|g900-six-nine-ladder-3-6-9-12-source-derivation-audit-001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[10]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[11]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[12]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[13]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[14]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[15]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[16]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[17]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[18]|g900_ladder_nearest_anchor_condition_audit_001.v1.json|None|source_pair|None|None|None|None|None"
+      ],
+      "origin_110": {
+        "count": 110,
+        "feature": "context_summary.origin_status",
+        "value": "\"candidate_native_source_or_carrier_rows_available_for_next_derivation\""
+      },
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "symdiff_count": 376,
+      "target_count": 298,
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "source_root_slot",
+        "value": "null"
+      },
+      "extra_in_union_count": 188,
+      "extra_in_union_first_10": [
+        "g900-six-nine-ladder-3-6-9-12-source-provenance-audit-002.v1.json|$.extracted_rows[3]|None|None|None|None|None|None|None|None",
+        "g900-six-nine-ladder-3-6-9-12-source-provenance-audit-002.v1.json|$.extracted_rows[4]|None|None|None|None|None|None|None|None",
+        "g900-six-nine-ladder-3-6-9-12-source-provenance-audit-002.v1.json|$.extracted_rows[5]|None|None|None|None|None|None|None|None",
+        "g900-six-nine-ladder-3-6-9-12-source-provenance-audit-002.v1.json|$.extracted_rows[6]|None|None|None|None|None|None|None|None",
+        "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json|$.contrast_rows_first_30[10].packet|None|None|None|None|[6, 9]|None|0|None",
+        "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json|$.contrast_rows_first_30[13].packet|None|None|None|None|None|None|None|None",
+        "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json|$.contrast_rows_first_30[16].packet|None|None|None|None|None|None|None|None",
+        "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json|$.contrast_rows_first_30[26].packet|None|None|None|None|[6, 9]|None|None|None",
+        "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json|$.contrast_rows_first_30[2].packet|None|None|None|None|None|None|None|None",
+        "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json|$.contrast_rows_first_30[3].packet|None|None|None|None|None|None|None|None"
+      ],
+      "missing_from_union_count": 188,
+      "missing_from_union_first_10": [
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[0]|g900-six-nine-ladder-3-6-9-12-source-derivation-audit-001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[10]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[11]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[12]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[13]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[14]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[15]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[16]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[17]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[18]|g900_ladder_nearest_anchor_condition_audit_001.v1.json|None|source_pair|None|None|None|None|None"
+      ],
+      "origin_110": {
+        "count": 110,
+        "feature": "context_summary.source_geometry_origin_candidate_found",
+        "value": "true"
+      },
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "symdiff_count": 376,
+      "target_count": 298,
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "source_side_gap_signature",
+        "value": "\"[9,11]\""
+      },
+      "extra_in_union_count": 188,
+      "extra_in_union_first_10": [
+        "g900-six-nine-ladder-3-6-9-12-source-derivation-audit-001.v1.json|$.branch_rows_for_audit[0]|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900-six-nine-ladder-3-6-9-12-source-derivation-audit-001.v1.json|$.branch_rows_for_audit[1]|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_targets_first_30[0].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_targets_first_30[1].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_targets_first_30[2].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_targets_first_30[3].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[0].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[1].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[2].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[3].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24"
+      ],
+      "missing_from_union_count": 188,
+      "missing_from_union_first_10": [
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[0]|g900-six-nine-ladder-3-6-9-12-source-derivation-audit-001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[10]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[11]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[12]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[13]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[14]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[15]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[16]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[17]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[18]|g900_ladder_nearest_anchor_condition_audit_001.v1.json|None|source_pair|None|None|None|None|None"
+      ],
+      "origin_110": {
+        "count": 110,
+        "feature": "context_summary.source_geometry_origin_candidate_found",
+        "value": "true"
+      },
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "symdiff_count": 376,
+      "target_count": 298,
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "source_root_slot",
+        "value": "null"
+      },
+      "extra_in_union_count": 188,
+      "extra_in_union_first_10": [
+        "g900-six-nine-ladder-3-6-9-12-source-provenance-audit-002.v1.json|$.extracted_rows[3]|None|None|None|None|None|None|None|None",
+        "g900-six-nine-ladder-3-6-9-12-source-provenance-audit-002.v1.json|$.extracted_rows[4]|None|None|None|None|None|None|None|None",
+        "g900-six-nine-ladder-3-6-9-12-source-provenance-audit-002.v1.json|$.extracted_rows[5]|None|None|None|None|None|None|None|None",
+        "g900-six-nine-ladder-3-6-9-12-source-provenance-audit-002.v1.json|$.extracted_rows[6]|None|None|None|None|None|None|None|None",
+        "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json|$.contrast_rows_first_30[10].packet|None|None|None|None|[6, 9]|None|0|None",
+        "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json|$.contrast_rows_first_30[13].packet|None|None|None|None|None|None|None|None",
+        "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json|$.contrast_rows_first_30[16].packet|None|None|None|None|None|None|None|None",
+        "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json|$.contrast_rows_first_30[26].packet|None|None|None|None|[6, 9]|None|None|None",
+        "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json|$.contrast_rows_first_30[2].packet|None|None|None|None|None|None|None|None",
+        "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json|$.contrast_rows_first_30[3].packet|None|None|None|None|None|None|None|None"
+      ],
+      "missing_from_union_count": 188,
+      "missing_from_union_first_10": [
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[0]|g900-six-nine-ladder-3-6-9-12-source-derivation-audit-001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[10]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[11]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[12]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[13]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[14]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[15]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[16]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[17]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[18]|g900_ladder_nearest_anchor_condition_audit_001.v1.json|None|source_pair|None|None|None|None|None"
+      ],
+      "origin_110": {
+        "count": 110,
+        "feature": "context_summary.strong_source_packet_row_count",
+        "value": "122"
+      },
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "symdiff_count": 376,
+      "target_count": 298,
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "source_side_gap_signature",
+        "value": "\"[9,11]\""
+      },
+      "extra_in_union_count": 188,
+      "extra_in_union_first_10": [
+        "g900-six-nine-ladder-3-6-9-12-source-derivation-audit-001.v1.json|$.branch_rows_for_audit[0]|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900-six-nine-ladder-3-6-9-12-source-derivation-audit-001.v1.json|$.branch_rows_for_audit[1]|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_targets_first_30[0].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_targets_first_30[1].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_targets_first_30[2].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_targets_first_30[3].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[0].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[1].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[2].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[3].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24"
+      ],
+      "missing_from_union_count": 188,
+      "missing_from_union_first_10": [
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[0]|g900-six-nine-ladder-3-6-9-12-source-derivation-audit-001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[10]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[11]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[12]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[13]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[14]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[15]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[16]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[17]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[18]|g900_ladder_nearest_anchor_condition_audit_001.v1.json|None|source_pair|None|None|None|None|None"
+      ],
+      "origin_110": {
+        "count": 110,
+        "feature": "context_summary.strong_source_packet_row_count",
+        "value": "122"
+      },
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "symdiff_count": 376,
+      "target_count": 298,
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "context_summary.phase_ladder_values",
+        "value": "[3, 9, 6, 12]"
+      },
+      "extra_in_union_count": 232,
+      "extra_in_union_first_10": [
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_contrasts_first_50[0]|g900_all_phase_ladder_spectrum_audit_001.v1.json|ladder|source_pair|02_03|None|None|None|None",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_contrasts_first_50[10]|g900_all_phase_ladder_spectrum_audit_001.v1.json|ladder|source_pair|05_10|None|None|None|None",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_contrasts_first_50[11]|g900_all_phase_ladder_spectrum_audit_001.v1.json|ladder|source_endpoints|05_10|None|None|None|None",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_contrasts_first_50[12]|g900_all_phase_ladder_spectrum_audit_001.v1.json|ladder|source_pair|02_08|None|None|None|None",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_contrasts_first_50[13]|g900_all_phase_ladder_spectrum_audit_001.v1.json|ladder|source_endpoints|02_08|None|None|None|None",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_contrasts_first_50[14]|g900_all_phase_ladder_spectrum_audit_001.v1.json|ladder|source_pair|02_08|None|None|None|None",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_contrasts_first_50[15]|g900_all_phase_ladder_spectrum_audit_001.v1.json|ladder|source_endpoints|02_08|None|None|None|None",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_contrasts_first_50[16]|g900_all_phase_ladder_spectrum_audit_001.v1.json|ladder|source_pair|03_09|None|None|None|None",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_contrasts_first_50[17]|g900_all_phase_ladder_spectrum_audit_001.v1.json|ladder|source_endpoints|03_09|None|None|None|None",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_contrasts_first_50[18]|g900_all_phase_ladder_spectrum_audit_001.v1.json|ladder|source_pair|03_09|None|None|None|None"
+      ],
+      "missing_from_union_count": 232,
+      "missing_from_union_first_10": [
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[0]|g900-six-nine-ladder-3-6-9-12-source-derivation-audit-001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[10]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[11]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[12]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[13]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[14]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[15]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[16]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[17]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[18]|g900_ladder_nearest_anchor_condition_audit_001.v1.json|None|source_pair|None|None|None|None|None"
+      ],
+      "origin_110": {
+        "count": 110,
+        "feature": "context_summary.phase_ladder_distinct",
+        "value": "false"
+      },
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "symdiff_count": 464,
+      "target_count": 298,
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "context_summary.phase_ladder_values",
+        "value": "[3, 9, 6, 12]"
+      },
+      "extra_in_union_count": 232,
+      "extra_in_union_first_10": [
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[0].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[10].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[11].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[12].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[13].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[14].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[15].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[16].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[17].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[18].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24"
+      ],
+      "missing_from_union_count": 232,
+      "missing_from_union_first_10": [
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[0]|g900-six-nine-ladder-3-6-9-12-source-derivation-audit-001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[10]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[11]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[12]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[13]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[14]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[15]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[16]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[17]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[18]|g900_ladder_nearest_anchor_condition_audit_001.v1.json|None|source_pair|None|None|None|None|None"
+      ],
+      "origin_110": {
+        "count": 110,
+        "feature": "full_packet_row_count",
+        "value": "441"
+      },
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "symdiff_count": 464,
+      "target_count": 298,
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "context_summary.phase_ladder_values",
+        "value": "[3, 9, 6, 12]"
+      },
+      "extra_in_union_count": 232,
+      "extra_in_union_first_10": [
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_contrasts_first_50[0]|g900_all_phase_ladder_spectrum_audit_001.v1.json|ladder|source_pair|02_03|None|None|None|None",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_contrasts_first_50[10]|g900_all_phase_ladder_spectrum_audit_001.v1.json|ladder|source_pair|05_10|None|None|None|None",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_contrasts_first_50[11]|g900_all_phase_ladder_spectrum_audit_001.v1.json|ladder|source_endpoints|05_10|None|None|None|None",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_contrasts_first_50[12]|g900_all_phase_ladder_spectrum_audit_001.v1.json|ladder|source_pair|02_08|None|None|None|None",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_contrasts_first_50[13]|g900_all_phase_ladder_spectrum_audit_001.v1.json|ladder|source_endpoints|02_08|None|None|None|None",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_contrasts_first_50[14]|g900_all_phase_ladder_spectrum_audit_001.v1.json|ladder|source_pair|02_08|None|None|None|None",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_contrasts_first_50[15]|g900_all_phase_ladder_spectrum_audit_001.v1.json|ladder|source_endpoints|02_08|None|None|None|None",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_contrasts_first_50[16]|g900_all_phase_ladder_spectrum_audit_001.v1.json|ladder|source_pair|03_09|None|None|None|None",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_contrasts_first_50[17]|g900_all_phase_ladder_spectrum_audit_001.v1.json|ladder|source_endpoints|03_09|None|None|None|None",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_contrasts_first_50[18]|g900_all_phase_ladder_spectrum_audit_001.v1.json|ladder|source_pair|03_09|None|None|None|None"
+      ],
+      "missing_from_union_count": 232,
+      "missing_from_union_first_10": [
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[0]|g900-six-nine-ladder-3-6-9-12-source-derivation-audit-001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[10]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[11]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[12]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[13]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[14]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[15]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[16]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[17]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[18]|g900_ladder_nearest_anchor_condition_audit_001.v1.json|None|source_pair|None|None|None|None|None"
+      ],
+      "origin_110": {
+        "count": 110,
+        "feature": "is_target_pair",
+        "value": "false"
+      },
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "symdiff_count": 464,
+      "target_count": 298,
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "context_summary.phase_ladder_values",
+        "value": "[3, 9, 6, 12]"
+      },
+      "extra_in_union_count": 232,
+      "extra_in_union_first_10": [
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[0].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[10].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[11].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[12].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[13].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[14].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[15].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[16].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[17].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[18].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24"
+      ],
+      "missing_from_union_count": 232,
+      "missing_from_union_first_10": [
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[0]|g900-six-nine-ladder-3-6-9-12-source-derivation-audit-001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[10]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[11]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[12]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[13]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[14]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[15]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[16]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[17]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[18]|g900_ladder_nearest_anchor_condition_audit_001.v1.json|None|source_pair|None|None|None|None|None"
+      ],
+      "origin_110": {
+        "count": 110,
+        "feature": "nonleaky_full_packet_row_count",
+        "value": "84"
+      },
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "symdiff_count": 464,
+      "target_count": 298,
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "context_summary.phase_ladder_values",
+        "value": "[3, 9, 6, 12]"
+      },
+      "extra_in_union_count": 232,
+      "extra_in_union_first_10": [
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[0].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[10].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[11].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[12].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[13].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[14].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[15].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[16].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[17].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[18].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24"
+      ],
+      "missing_from_union_count": 232,
+      "missing_from_union_first_10": [
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[0]|g900-six-nine-ladder-3-6-9-12-source-derivation-audit-001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[10]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[11]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[12]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[13]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[14]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[15]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[16]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[17]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[18]|g900_ladder_nearest_anchor_condition_audit_001.v1.json|None|source_pair|None|None|None|None|None"
+      ],
+      "origin_110": {
+        "count": 110,
+        "feature": "origin_status",
+        "value": "\"candidate_native_source_or_carrier_rows_available_for_next_derivation\""
+      },
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "symdiff_count": 464,
+      "target_count": 298,
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "context_summary.phase_ladder_values",
+        "value": "[3, 9, 6, 12]"
+      },
+      "extra_in_union_count": 232,
+      "extra_in_union_first_10": [
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[0].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[10].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[11].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[12].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[13].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[14].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[15].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[16].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[17].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[18].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24"
+      ],
+      "missing_from_union_count": 232,
+      "missing_from_union_first_10": [
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[0]|g900-six-nine-ladder-3-6-9-12-source-derivation-audit-001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[10]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[11]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[12]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[13]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[14]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[15]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[16]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[17]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[18]|g900_ladder_nearest_anchor_condition_audit_001.v1.json|None|source_pair|None|None|None|None|None"
+      ],
+      "origin_110": {
+        "count": 110,
+        "feature": "source_geometry_origin_candidate_found",
+        "value": "true"
+      },
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "symdiff_count": 464,
+      "target_count": 298,
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "context_summary.phase_ladder_values",
+        "value": "[3, 9, 6, 12]"
+      },
+      "extra_in_union_count": 232,
+      "extra_in_union_first_10": [
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[0].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[10].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[11].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[12].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[13].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[14].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[15].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[16].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[17].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_geometry_address_handle_039.v1.json|$.address_rows_first_30[18].context_summary|None|None|None|None|[6, 9]|06_09|23|23->24"
+      ],
+      "missing_from_union_count": 232,
+      "missing_from_union_first_10": [
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[0]|g900-six-nine-ladder-3-6-9-12-source-derivation-audit-001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[10]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[11]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[12]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[13]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[14]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[15]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[16]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[17]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[18]|g900_ladder_nearest_anchor_condition_audit_001.v1.json|None|source_pair|None|None|None|None|None"
+      ],
+      "origin_110": {
+        "count": 110,
+        "feature": "strong_source_packet_row_count",
+        "value": "122"
+      },
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "symdiff_count": 464,
+      "target_count": 298,
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "source_root_slot",
+        "value": "null"
+      },
+      "extra_in_union_count": 298,
+      "extra_in_union_first_10": [
+        "g900-six-nine-ladder-3-6-9-12-source-provenance-audit-002.v1.json|$.extracted_rows[3]|None|None|None|None|None|None|None|None",
+        "g900-six-nine-ladder-3-6-9-12-source-provenance-audit-002.v1.json|$.extracted_rows[4]|None|None|None|None|None|None|None|None",
+        "g900-six-nine-ladder-3-6-9-12-source-provenance-audit-002.v1.json|$.extracted_rows[5]|None|None|None|None|None|None|None|None",
+        "g900-six-nine-ladder-3-6-9-12-source-provenance-audit-002.v1.json|$.extracted_rows[6]|None|None|None|None|None|None|None|None",
+        "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json|$.contrast_rows_first_30[10].packet|None|None|None|None|[6, 9]|None|0|None",
+        "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json|$.contrast_rows_first_30[13].packet|None|None|None|None|None|None|None|None",
+        "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json|$.contrast_rows_first_30[16].packet|None|None|None|None|None|None|None|None",
+        "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json|$.contrast_rows_first_30[26].packet|None|None|None|None|[6, 9]|None|None|None",
+        "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json|$.contrast_rows_first_30[2].packet|None|None|None|None|None|None|None|None",
+        "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json|$.contrast_rows_first_30[3].packet|None|None|None|None|None|None|None|None"
+      ],
+      "missing_from_union_count": 298,
+      "missing_from_union_first_10": [
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[0]|g900-six-nine-ladder-3-6-9-12-source-derivation-audit-001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[10]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[11]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[12]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[13]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[14]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[15]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[16]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[17]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[18]|g900_ladder_nearest_anchor_condition_audit_001.v1.json|None|source_pair|None|None|None|None|None"
+      ],
+      "origin_110": {
+        "count": 110,
+        "feature": "context_summary.phase_ladder_distinct",
+        "value": "false"
+      },
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "symdiff_count": 596,
+      "target_count": 298,
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "source_side_gap_signature",
+        "value": "\"[9,11]\""
+      },
+      "extra_in_union_count": 298,
+      "extra_in_union_first_10": [
+        "g900-six-nine-ladder-3-6-9-12-source-derivation-audit-001.v1.json|$.branch_rows_for_audit[0]|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900-six-nine-ladder-3-6-9-12-source-derivation-audit-001.v1.json|$.branch_rows_for_audit[1]|None|None|None|None|[6, 9]|06_09|23|23->24",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_contrasts_first_50[0]|g900_all_phase_ladder_spectrum_audit_001.v1.json|ladder|source_pair|02_03|None|None|None|None",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_contrasts_first_50[10]|g900_all_phase_ladder_spectrum_audit_001.v1.json|ladder|source_pair|05_10|None|None|None|None",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_contrasts_first_50[11]|g900_all_phase_ladder_spectrum_audit_001.v1.json|ladder|source_endpoints|05_10|None|None|None|None",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_contrasts_first_50[12]|g900_all_phase_ladder_spectrum_audit_001.v1.json|ladder|source_pair|02_08|None|None|None|None",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_contrasts_first_50[13]|g900_all_phase_ladder_spectrum_audit_001.v1.json|ladder|source_endpoints|02_08|None|None|None|None",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_contrasts_first_50[14]|g900_all_phase_ladder_spectrum_audit_001.v1.json|ladder|source_pair|02_08|None|None|None|None",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_contrasts_first_50[15]|g900_all_phase_ladder_spectrum_audit_001.v1.json|ladder|source_endpoints|02_08|None|None|None|None",
+        "g900_six_nine_source_construction_contrast_filter_034.v1.json|$.true_source_contrasts_first_50[16]|g900_all_phase_ladder_spectrum_audit_001.v1.json|ladder|source_pair|03_09|None|None|None|None"
+      ],
+      "missing_from_union_count": 298,
+      "missing_from_union_first_10": [
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[0]|g900-six-nine-ladder-3-6-9-12-source-derivation-audit-001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[10]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[11]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[12]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[13]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[14]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[15]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[16]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[17]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[18]|g900_ladder_nearest_anchor_condition_audit_001.v1.json|None|source_pair|None|None|None|None|None"
+      ],
+      "origin_110": {
+        "count": 110,
+        "feature": "context_summary.phase_ladder_distinct",
+        "value": "false"
+      },
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "symdiff_count": 596,
+      "target_count": 298,
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "source_root_slot",
+        "value": "null"
+      },
+      "extra_in_union_count": 298,
+      "extra_in_union_first_10": [
+        "g900-six-nine-ladder-3-6-9-12-source-provenance-audit-002.v1.json|$.extracted_rows[3]|None|None|None|None|None|None|None|None",
+        "g900-six-nine-ladder-3-6-9-12-source-provenance-audit-002.v1.json|$.extracted_rows[4]|None|None|None|None|None|None|None|None",
+        "g900-six-nine-ladder-3-6-9-12-source-provenance-audit-002.v1.json|$.extracted_rows[5]|None|None|None|None|None|None|None|None",
+        "g900-six-nine-ladder-3-6-9-12-source-provenance-audit-002.v1.json|$.extracted_rows[6]|None|None|None|None|None|None|None|None",
+        "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json|$.contrast_rows_first_30[10].packet|None|None|None|None|[6, 9]|None|0|None",
+        "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json|$.contrast_rows_first_30[13].packet|None|None|None|None|None|None|None|None",
+        "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json|$.contrast_rows_first_30[16].packet|None|None|None|None|None|None|None|None",
+        "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json|$.contrast_rows_first_30[26].packet|None|None|None|None|[6, 9]|None|None|None",
+        "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json|$.contrast_rows_first_30[2].packet|None|None|None|None|None|None|None|None",
+        "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json|$.contrast_rows_first_30[3].packet|None|None|None|None|None|None|None|None"
+      ],
+      "missing_from_union_count": 298,
+      "missing_from_union_first_10": [
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[0]|g900-six-nine-ladder-3-6-9-12-source-derivation-audit-001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[10]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[11]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[12]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[13]|g900_all_phase_ladder_spectrum_audit_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[14]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[15]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[16]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_pair|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[17]|g900_distinct_ladder_nonanswer_comparison_001.v1.json|None|source_endpoints|None|None|None|None|None",
+        "g900_six_nine_endpoint_chord_scope_audit_031.v1.json|$.target_rows_first_50[18]|g900_ladder_nearest_anchor_condition_audit_001.v1.json|None|source_pair|None|None|None|None|None"
+      ],
+      "origin_110": {
+        "count": 110,
+        "feature": "full_packet_row_count",
+        "value": "441"
+      },
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "symdiff_count": 596,
+      "target_count": 298,
+      "union_count": 298
+    }
+  ],
+  "next_ascent_target": "inspect nearest union differences and refine 110/66 rowset predicates or the 058 promoted row",
+  "prior_052_verdict": "strong_packet_candidate_rowset_exported",
+  "prior_053_verdict": "rowlevel_110_122_66_union_count_candidate_found",
+  "prior_058_verdict": "one_row_correction_candidate_exported",
+  "reading": "No tested 110+122+66 union exactly matched the 058 corrected 298 target candidate. The comparison is meaningful: it separates the corrected target candidate from the currently reconstructed union candidates. This does not refute 040 or the count law; it indicates the 110/66 rowset predicates or the one-row promotion need refinement.",
+  "shell_count": 332,
+  "target_058_corrected_surplus_count": 34,
+  "target_058_count": 298,
+  "target_058_promoted_count": 1,
+  "target_058_reconstruction": {
+    "corrected_surplus_count": 34,
+    "foundation_path": "context_summary.nonfoundation_packet_keys",
+    "ladder_path": "context_summary.context.has_ladder",
+    "promoted_count": 1,
+    "promotion_pair": {
+      "feature": "context_summary.nonfoundation_packet_keys",
+      "value": "[\"anchor\", \"source_endpoints\", \"source_limit_start\", \"source_side_gap\"]"
+    },
+    "selected_core_count": 297,
+    "target_count": 298
+  },
+  "target_058_selected_core_count": 297,
+  "theory_claim": false,
+  "union_candidate_count": 26,
+  "verdict": "corrected_target_union_match_not_found",
+  "visible_row_count": 29081
+}

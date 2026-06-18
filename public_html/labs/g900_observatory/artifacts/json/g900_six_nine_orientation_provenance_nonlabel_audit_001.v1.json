@@ -1,0 +1,2625 @@
+{
+  "schema": "g900.six_nine_orientation_provenance_nonlabel_audit",
+  "version": 1,
+  "status": "six_nine_orientation_provenance_nonlabel_audit_recorded",
+  "created_utc": "2026-06-18T05:32:08Z",
+  "git_head": "a9ff320 Extract G900 six nine orientation law candidate",
+  "audit_pass": true,
+  "verdict": "six_nine_orientation_provenance_nonlabel_audit_passed",
+  "question": "Can 06_09 be selected without naming 6, naming 9, using 6 -> 9, or using support-failure fields?",
+  "answer": "A non-label, non-support provenance candidate singles out 06_09.",
+  "nonlabel_status": "single_feature_nonlabel_provenance_selector_found",
+  "best_nonlabel_candidate": {
+    "features": [
+      "from_limit_profile"
+    ],
+    "value": "23:60",
+    "matching_keys": [
+      "06_09"
+    ]
+  },
+  "best_nonlabel_candidate_class": "allowed_nonlabel_provenance",
+  "candidate_feature_groups": {
+    "11:40|12:20|16:60|2:60": [
+      "02_03"
+    ],
+    "11:40|12:20|24:60|3:60": [
+      "02_08"
+    ],
+    "12:60|23:60|3:60": [
+      "03_09"
+    ],
+    "12:37|13:23|24:60|3:60": [
+      "05_10"
+    ],
+    "12:37|13:23|38:60|5:60": [
+      "05_14"
+    ],
+    "11:11|12:49|31:60|4:60": [
+      "06_13"
+    ],
+    "11:11|12:49|4:60": [
+      "06_12"
+    ],
+    "12:40|13:20|4:60": [
+      "07_11"
+    ],
+    "23:60": [
+      "06_09"
+    ],
+    "32:60": [
+      "09_12"
+    ]
+  },
+  "target_key": "06_09",
+  "target_feature_row": {
+    "pair_key": "06_09",
+    "is_target_06_09": true,
+    "label_a": 6,
+    "label_b": 9,
+    "contains_6": true,
+    "contains_9": true,
+    "directed_delta_mod15": 3,
+    "reverse_delta_mod15": 12,
+    "sum_mod15": 0,
+    "gap_abs": 3,
+    "label_a_parity": 0,
+    "label_b_parity": 1,
+    "transition_profile": "6 -> 9:60",
+    "package_kind": "one_way_single_transition",
+    "full60_transition_count": 1,
+    "full60_transitions_token_profile": "count=1;min=3;max=3;sum=3;distinct=3",
+    "step_count_package_field": 60,
+    "step_row_count": 60,
+    "root_profile": "12:0:1|12:1:1|12:10:1|12:11:1|12:12:1|12:13:1|12:14:1|12:15:1|12:16:1|12:17:1|12:18:1|12:19:1|12:2:1|12:20:1|12:21:1|12:22:1|12:23:1|12:24:1|12:25:1|12:26:1|12:27:1|12:28:1|12:29:1|12:3:1|12:30:1|12:31:1|12:32:1|12:33:1|12:34:1|12:35:1|12:36:1|12:37:1|12:38:1|12:39:1|12:4:1|12:40:1|12:41:1|12:42:1|12:43:1|12:44:1|12:45:1|12:46:1|12:47:1|12:48:1|12:49:1|12:5:1|12:50:1|12:51:1|12:52:1|12:53:1|12:54:1|12:55:1|12:56:1|12:57:1|12:58:1|12:59:1|12:6:1|12:7:1|12:8:1|12:9:1",
+    "root_slot_profile": "count=60;min=12;max=12;sum=720;distinct=12",
+    "root_local_profile": "count=60;min=0;max=59;sum=1770;distinct=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59",
+    "from_limit_profile": "23:60",
+    "to_limit_profile": "24:60",
+    "delta_edge_count_profile": "count=60;min=1;max=1;sum=60;distinct=1",
+    "delta_vertex_count_profile": "count=60;min=1;max=1;sum=60;distinct=1",
+    "delta_edge_hits_token_profile": "count=60;min=0;max=0;sum=0;distinct=0",
+    "internal_delta_hits_token_profile": "count=60;min=0;max=0;sum=0;distinct=0",
+    "has_boundary_carrier": "False",
+    "boundary_carrier_id": "",
+    "unsupported_delta_edge_count": 60,
+    "supported_delta_edge_count": 0,
+    "unsupported_rate": 1.0,
+    "step_has_delta_support_profile": "False:60",
+    "step_direct_boundary_delta_hit_profile": "False:60",
+    "step_has_boundary_carrier_profile": "False:60"
+  },
+  "feature_rows": [
+    {
+      "pair_key": "02_03",
+      "is_target_06_09": false,
+      "label_a": 2,
+      "label_b": 3,
+      "contains_6": false,
+      "contains_9": false,
+      "directed_delta_mod15": 1,
+      "reverse_delta_mod15": 14,
+      "sum_mod15": 5,
+      "gap_abs": 1,
+      "label_a_parity": 0,
+      "label_b_parity": 1,
+      "transition_profile": "2 -> 3:60|2/3 -> 3:60|3 -> 2:60",
+      "package_kind": "clean_reciprocal_pair_package",
+      "full60_transition_count": 3,
+      "full60_transitions_token_profile": "count=1;min=9;max=9;sum=9;distinct=9",
+      "step_count_package_field": 180,
+      "step_row_count": 180,
+      "root_profile": "3:0:3|3:1:3|3:10:3|3:11:3|3:12:3|3:13:3|3:14:3|3:15:3|3:16:3|3:17:3|3:18:3|3:19:3|3:2:3|3:20:3|3:21:3|3:22:3|3:23:3|3:24:3|3:25:3|3:26:3|3:27:3|3:28:3|3:29:3|3:3:3|3:30:3|3:31:3|3:32:3|3:33:3|3:34:3|3:35:3|3:36:3|3:37:3|3:38:3|3:39:3|3:4:3|3:40:3|3:41:3|3:42:3|3:43:3|3:44:3|3:45:3|3:46:3|3:47:3|3:48:3|3:49:3|3:5:3|3:50:3|3:51:3|3:52:3|3:53:3|3:54:3|3:55:3|3:56:3|3:57:3|3:58:3|3:59:3|3:6:3|3:7:3|3:8:3|3:9:3",
+      "root_slot_profile": "count=180;min=3;max=3;sum=540;distinct=3",
+      "root_local_profile": "count=180;min=0;max=59;sum=5310;distinct=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59",
+      "from_limit_profile": "11:40|12:20|16:60|2:60",
+      "to_limit_profile": "12:40|13:20|17:60|3:60",
+      "delta_edge_count_profile": "count=180;min=1;max=1;sum=180;distinct=1",
+      "delta_vertex_count_profile": "count=180;min=0;max=1;sum=168;distinct=0,1",
+      "delta_edge_hits_token_profile": "count=180;min=1;max=1;sum=180;distinct=1",
+      "internal_delta_hits_token_profile": "count=180;min=1;max=1;sum=180;distinct=1",
+      "has_boundary_carrier": "True",
+      "boundary_carrier_id": "slot_pair_02_03_boundary_carrier",
+      "unsupported_delta_edge_count": 0,
+      "supported_delta_edge_count": 180,
+      "unsupported_rate": 0.0,
+      "step_has_delta_support_profile": "True:180",
+      "step_direct_boundary_delta_hit_profile": "False:180",
+      "step_has_boundary_carrier_profile": "True:180"
+    },
+    {
+      "pair_key": "02_08",
+      "is_target_06_09": false,
+      "label_a": 2,
+      "label_b": 8,
+      "contains_6": false,
+      "contains_9": false,
+      "directed_delta_mod15": 6,
+      "reverse_delta_mod15": 9,
+      "sum_mod15": 10,
+      "gap_abs": 6,
+      "label_a_parity": 0,
+      "label_b_parity": 0,
+      "transition_profile": "2 -> 8:60|2/8 -> 8:60|8 -> 2:60",
+      "package_kind": "clean_reciprocal_pair_package",
+      "full60_transition_count": 3,
+      "full60_transitions_token_profile": "count=1;min=9;max=9;sum=9;distinct=9",
+      "step_count_package_field": 180,
+      "step_row_count": 180,
+      "root_profile": "8:0:3|8:1:3|8:10:3|8:11:3|8:12:3|8:13:3|8:14:3|8:15:3|8:16:3|8:17:3|8:18:3|8:19:3|8:2:3|8:20:3|8:21:3|8:22:3|8:23:3|8:24:3|8:25:3|8:26:3|8:27:3|8:28:3|8:29:3|8:3:3|8:30:3|8:31:3|8:32:3|8:33:3|8:34:3|8:35:3|8:36:3|8:37:3|8:38:3|8:39:3|8:4:3|8:40:3|8:41:3|8:42:3|8:43:3|8:44:3|8:45:3|8:46:3|8:47:3|8:48:3|8:49:3|8:5:3|8:50:3|8:51:3|8:52:3|8:53:3|8:54:3|8:55:3|8:56:3|8:57:3|8:58:3|8:59:3|8:6:3|8:7:3|8:8:3|8:9:3",
+      "root_slot_profile": "count=180;min=8;max=8;sum=1440;distinct=8",
+      "root_local_profile": "count=180;min=0;max=59;sum=5310;distinct=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59",
+      "from_limit_profile": "11:40|12:20|24:60|3:60",
+      "to_limit_profile": "12:40|13:20|25:60|4:60",
+      "delta_edge_count_profile": "count=180;min=1;max=1;sum=180;distinct=1",
+      "delta_vertex_count_profile": "count=180;min=0;max=1;sum=168;distinct=0,1",
+      "delta_edge_hits_token_profile": "count=180;min=1;max=1;sum=180;distinct=1",
+      "internal_delta_hits_token_profile": "count=180;min=1;max=1;sum=180;distinct=1",
+      "has_boundary_carrier": "True",
+      "boundary_carrier_id": "slot_pair_02_08_boundary_carrier",
+      "unsupported_delta_edge_count": 0,
+      "supported_delta_edge_count": 180,
+      "unsupported_rate": 0.0,
+      "step_has_delta_support_profile": "True:180",
+      "step_direct_boundary_delta_hit_profile": "False:180",
+      "step_has_boundary_carrier_profile": "True:180"
+    },
+    {
+      "pair_key": "03_09",
+      "is_target_06_09": false,
+      "label_a": 3,
+      "label_b": 9,
+      "contains_6": false,
+      "contains_9": true,
+      "directed_delta_mod15": 6,
+      "reverse_delta_mod15": 9,
+      "sum_mod15": 12,
+      "gap_abs": 6,
+      "label_a_parity": 1,
+      "label_b_parity": 1,
+      "transition_profile": "3 -> 9:60|3/9 -> 9:60|9 -> 3:60",
+      "package_kind": "clean_reciprocal_pair_package",
+      "full60_transition_count": 3,
+      "full60_transitions_token_profile": "count=1;min=9;max=9;sum=9;distinct=9",
+      "step_count_package_field": 180,
+      "step_row_count": 180,
+      "root_profile": "9:0:3|9:1:3|9:10:3|9:11:3|9:12:3|9:13:3|9:14:3|9:15:3|9:16:3|9:17:3|9:18:3|9:19:3|9:2:3|9:20:3|9:21:3|9:22:3|9:23:3|9:24:3|9:25:3|9:26:3|9:27:3|9:28:3|9:29:3|9:3:3|9:30:3|9:31:3|9:32:3|9:33:3|9:34:3|9:35:3|9:36:3|9:37:3|9:38:3|9:39:3|9:4:3|9:40:3|9:41:3|9:42:3|9:43:3|9:44:3|9:45:3|9:46:3|9:47:3|9:48:3|9:49:3|9:5:3|9:50:3|9:51:3|9:52:3|9:53:3|9:54:3|9:55:3|9:56:3|9:57:3|9:58:3|9:59:3|9:6:3|9:7:3|9:8:3|9:9:3",
+      "root_slot_profile": "count=180;min=9;max=9;sum=1620;distinct=9",
+      "root_local_profile": "count=180;min=0;max=59;sum=5310;distinct=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59",
+      "from_limit_profile": "12:60|23:60|3:60",
+      "to_limit_profile": "13:60|24:60|4:60",
+      "delta_edge_count_profile": "count=180;min=1;max=1;sum=180;distinct=1",
+      "delta_vertex_count_profile": "count=180;min=0;max=1;sum=168;distinct=0,1",
+      "delta_edge_hits_token_profile": "count=180;min=1;max=1;sum=180;distinct=1",
+      "internal_delta_hits_token_profile": "count=180;min=1;max=1;sum=180;distinct=1",
+      "has_boundary_carrier": "True",
+      "boundary_carrier_id": "slot_pair_03_09_boundary_carrier",
+      "unsupported_delta_edge_count": 0,
+      "supported_delta_edge_count": 180,
+      "unsupported_rate": 0.0,
+      "step_has_delta_support_profile": "True:180",
+      "step_direct_boundary_delta_hit_profile": "False:180",
+      "step_has_boundary_carrier_profile": "True:180"
+    },
+    {
+      "pair_key": "05_10",
+      "is_target_06_09": false,
+      "label_a": 5,
+      "label_b": 10,
+      "contains_6": false,
+      "contains_9": false,
+      "directed_delta_mod15": 5,
+      "reverse_delta_mod15": 10,
+      "sum_mod15": 0,
+      "gap_abs": 5,
+      "label_a_parity": 1,
+      "label_b_parity": 0,
+      "transition_profile": "10 -> 5:60|5 -> 10:60|5/10 -> 10:60",
+      "package_kind": "clean_reciprocal_pair_package",
+      "full60_transition_count": 3,
+      "full60_transitions_token_profile": "count=1;min=9;max=9;sum=9;distinct=9",
+      "step_count_package_field": 180,
+      "step_row_count": 180,
+      "root_profile": "10:0:3|10:1:3|10:10:3|10:11:3|10:12:3|10:13:3|10:14:3|10:15:3|10:16:3|10:17:3|10:18:3|10:19:3|10:2:3|10:20:3|10:21:3|10:22:3|10:23:3|10:24:3|10:25:3|10:26:3|10:27:3|10:28:3|10:29:3|10:3:3|10:30:3|10:31:3|10:32:3|10:33:3|10:34:3|10:35:3|10:36:3|10:37:3|10:38:3|10:39:3|10:4:3|10:40:3|10:41:3|10:42:3|10:43:3|10:44:3|10:45:3|10:46:3|10:47:3|10:48:3|10:49:3|10:5:3|10:50:3|10:51:3|10:52:3|10:53:3|10:54:3|10:55:3|10:56:3|10:57:3|10:58:3|10:59:3|10:6:3|10:7:3|10:8:3|10:9:3",
+      "root_slot_profile": "count=180;min=10;max=10;sum=1800;distinct=10",
+      "root_local_profile": "count=180;min=0;max=59;sum=5310;distinct=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59",
+      "from_limit_profile": "12:37|13:23|24:60|3:60",
+      "to_limit_profile": "13:37|14:23|25:60|4:60",
+      "delta_edge_count_profile": "count=180;min=1;max=1;sum=180;distinct=1",
+      "delta_vertex_count_profile": "count=180;min=0;max=1;sum=168;distinct=0,1",
+      "delta_edge_hits_token_profile": "count=180;min=1;max=1;sum=180;distinct=1",
+      "internal_delta_hits_token_profile": "count=180;min=1;max=1;sum=180;distinct=1",
+      "has_boundary_carrier": "True",
+      "boundary_carrier_id": "slot_pair_05_10_boundary_carrier",
+      "unsupported_delta_edge_count": 0,
+      "supported_delta_edge_count": 180,
+      "unsupported_rate": 0.0,
+      "step_has_delta_support_profile": "True:180",
+      "step_direct_boundary_delta_hit_profile": "False:180",
+      "step_has_boundary_carrier_profile": "True:180"
+    },
+    {
+      "pair_key": "05_14",
+      "is_target_06_09": false,
+      "label_a": 5,
+      "label_b": 14,
+      "contains_6": false,
+      "contains_9": false,
+      "directed_delta_mod15": 9,
+      "reverse_delta_mod15": 6,
+      "sum_mod15": 4,
+      "gap_abs": 9,
+      "label_a_parity": 1,
+      "label_b_parity": 0,
+      "transition_profile": "14 -> 5:60|5 -> 14:60|5/14 -> 14:60",
+      "package_kind": "clean_reciprocal_pair_package",
+      "full60_transition_count": 3,
+      "full60_transitions_token_profile": "count=1;min=9;max=9;sum=9;distinct=9",
+      "step_count_package_field": 180,
+      "step_row_count": 180,
+      "root_profile": "14:0:3|14:1:3|14:10:3|14:11:3|14:12:3|14:13:3|14:14:3|14:15:3|14:16:3|14:17:3|14:18:3|14:19:3|14:2:3|14:20:3|14:21:3|14:22:3|14:23:3|14:24:3|14:25:3|14:26:3|14:27:3|14:28:3|14:29:3|14:3:3|14:30:3|14:31:3|14:32:3|14:33:3|14:34:3|14:35:3|14:36:3|14:37:3|14:38:3|14:39:3|14:4:3|14:40:3|14:41:3|14:42:3|14:43:3|14:44:3|14:45:3|14:46:3|14:47:3|14:48:3|14:49:3|14:5:3|14:50:3|14:51:3|14:52:3|14:53:3|14:54:3|14:55:3|14:56:3|14:57:3|14:58:3|14:59:3|14:6:3|14:7:3|14:8:3|14:9:3",
+      "root_slot_profile": "count=180;min=14;max=14;sum=2520;distinct=14",
+      "root_local_profile": "count=180;min=0;max=59;sum=5310;distinct=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59",
+      "from_limit_profile": "12:37|13:23|38:60|5:60",
+      "to_limit_profile": "13:37|14:23|39:60|6:60",
+      "delta_edge_count_profile": "count=180;min=1;max=1;sum=180;distinct=1",
+      "delta_vertex_count_profile": "count=180;min=0;max=1;sum=168;distinct=0,1",
+      "delta_edge_hits_token_profile": "count=180;min=1;max=1;sum=180;distinct=1",
+      "internal_delta_hits_token_profile": "count=180;min=1;max=1;sum=180;distinct=1",
+      "has_boundary_carrier": "True",
+      "boundary_carrier_id": "slot_pair_05_14_boundary_carrier",
+      "unsupported_delta_edge_count": 0,
+      "supported_delta_edge_count": 180,
+      "unsupported_rate": 0.0,
+      "step_has_delta_support_profile": "True:180",
+      "step_direct_boundary_delta_hit_profile": "False:180",
+      "step_has_boundary_carrier_profile": "True:180"
+    },
+    {
+      "pair_key": "06_13",
+      "is_target_06_09": false,
+      "label_a": 6,
+      "label_b": 13,
+      "contains_6": true,
+      "contains_9": false,
+      "directed_delta_mod15": 7,
+      "reverse_delta_mod15": 8,
+      "sum_mod15": 4,
+      "gap_abs": 7,
+      "label_a_parity": 0,
+      "label_b_parity": 1,
+      "transition_profile": "13 -> 6:60|6 -> 13:60|6/13 -> 13:60",
+      "package_kind": "clean_reciprocal_pair_package",
+      "full60_transition_count": 3,
+      "full60_transitions_token_profile": "count=1;min=9;max=9;sum=9;distinct=9",
+      "step_count_package_field": 180,
+      "step_row_count": 180,
+      "root_profile": "13:0:3|13:1:3|13:10:3|13:11:3|13:12:3|13:13:3|13:14:3|13:15:3|13:16:3|13:17:3|13:18:3|13:19:3|13:2:3|13:20:3|13:21:3|13:22:3|13:23:3|13:24:3|13:25:3|13:26:3|13:27:3|13:28:3|13:29:3|13:3:3|13:30:3|13:31:3|13:32:3|13:33:3|13:34:3|13:35:3|13:36:3|13:37:3|13:38:3|13:39:3|13:4:3|13:40:3|13:41:3|13:42:3|13:43:3|13:44:3|13:45:3|13:46:3|13:47:3|13:48:3|13:49:3|13:5:3|13:50:3|13:51:3|13:52:3|13:53:3|13:54:3|13:55:3|13:56:3|13:57:3|13:58:3|13:59:3|13:6:3|13:7:3|13:8:3|13:9:3",
+      "root_slot_profile": "count=180;min=13;max=13;sum=2340;distinct=13",
+      "root_local_profile": "count=180;min=0;max=59;sum=5310;distinct=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59",
+      "from_limit_profile": "11:11|12:49|31:60|4:60",
+      "to_limit_profile": "12:11|13:49|32:60|5:60",
+      "delta_edge_count_profile": "count=180;min=1;max=1;sum=180;distinct=1",
+      "delta_vertex_count_profile": "count=180;min=0;max=1;sum=168;distinct=0,1",
+      "delta_edge_hits_token_profile": "count=180;min=1;max=1;sum=180;distinct=1",
+      "internal_delta_hits_token_profile": "count=180;min=1;max=1;sum=180;distinct=1",
+      "has_boundary_carrier": "True",
+      "boundary_carrier_id": "slot_pair_06_13_boundary_carrier",
+      "unsupported_delta_edge_count": 0,
+      "supported_delta_edge_count": 180,
+      "unsupported_rate": 0.0,
+      "step_has_delta_support_profile": "True:180",
+      "step_direct_boundary_delta_hit_profile": "False:180",
+      "step_has_boundary_carrier_profile": "True:180"
+    },
+    {
+      "pair_key": "06_12",
+      "is_target_06_09": false,
+      "label_a": 6,
+      "label_b": 12,
+      "contains_6": true,
+      "contains_9": false,
+      "directed_delta_mod15": 6,
+      "reverse_delta_mod15": 9,
+      "sum_mod15": 3,
+      "gap_abs": 6,
+      "label_a_parity": 0,
+      "label_b_parity": 0,
+      "transition_profile": "12 -> 6:60|6/12 -> 12:60",
+      "package_kind": "two_transition_pair_package",
+      "full60_transition_count": 2,
+      "full60_transitions_token_profile": "count=1;min=6;max=6;sum=6;distinct=6",
+      "step_count_package_field": 120,
+      "step_row_count": 120,
+      "root_profile": "12:0:2|12:1:2|12:10:2|12:11:2|12:12:2|12:13:2|12:14:2|12:15:2|12:16:2|12:17:2|12:18:2|12:19:2|12:2:2|12:20:2|12:21:2|12:22:2|12:23:2|12:24:2|12:25:2|12:26:2|12:27:2|12:28:2|12:29:2|12:3:2|12:30:2|12:31:2|12:32:2|12:33:2|12:34:2|12:35:2|12:36:2|12:37:2|12:38:2|12:39:2|12:4:2|12:40:2|12:41:2|12:42:2|12:43:2|12:44:2|12:45:2|12:46:2|12:47:2|12:48:2|12:49:2|12:5:2|12:50:2|12:51:2|12:52:2|12:53:2|12:54:2|12:55:2|12:56:2|12:57:2|12:58:2|12:59:2|12:6:2|12:7:2|12:8:2|12:9:2",
+      "root_slot_profile": "count=120;min=12;max=12;sum=1440;distinct=12",
+      "root_local_profile": "count=120;min=0;max=59;sum=3540;distinct=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59",
+      "from_limit_profile": "11:11|12:49|4:60",
+      "to_limit_profile": "12:11|13:49|5:60",
+      "delta_edge_count_profile": "count=120;min=1;max=1;sum=120;distinct=1",
+      "delta_vertex_count_profile": "count=120;min=1;max=1;sum=120;distinct=1",
+      "delta_edge_hits_token_profile": "count=120;min=1;max=1;sum=120;distinct=1",
+      "internal_delta_hits_token_profile": "count=120;min=1;max=1;sum=120;distinct=1",
+      "has_boundary_carrier": "True",
+      "boundary_carrier_id": "slot_pair_06_12_boundary_carrier",
+      "unsupported_delta_edge_count": 0,
+      "supported_delta_edge_count": 120,
+      "unsupported_rate": 0.0,
+      "step_has_delta_support_profile": "True:120",
+      "step_direct_boundary_delta_hit_profile": "False:120",
+      "step_has_boundary_carrier_profile": "True:120"
+    },
+    {
+      "pair_key": "07_11",
+      "is_target_06_09": false,
+      "label_a": 7,
+      "label_b": 11,
+      "contains_6": false,
+      "contains_9": false,
+      "directed_delta_mod15": 4,
+      "reverse_delta_mod15": 11,
+      "sum_mod15": 3,
+      "gap_abs": 4,
+      "label_a_parity": 1,
+      "label_b_parity": 1,
+      "transition_profile": "11 -> 7:60|7/11 -> 11:60",
+      "package_kind": "two_transition_pair_package",
+      "full60_transition_count": 2,
+      "full60_transitions_token_profile": "count=1;min=6;max=6;sum=6;distinct=6",
+      "step_count_package_field": 120,
+      "step_row_count": 120,
+      "root_profile": "11:0:2|11:1:2|11:10:2|11:11:2|11:12:2|11:13:2|11:14:2|11:15:2|11:16:2|11:17:2|11:18:2|11:19:2|11:2:2|11:20:2|11:21:2|11:22:2|11:23:2|11:24:2|11:25:2|11:26:2|11:27:2|11:28:2|11:29:2|11:3:2|11:30:2|11:31:2|11:32:2|11:33:2|11:34:2|11:35:2|11:36:2|11:37:2|11:38:2|11:39:2|11:4:2|11:40:2|11:41:2|11:42:2|11:43:2|11:44:2|11:45:2|11:46:2|11:47:2|11:48:2|11:49:2|11:5:2|11:50:2|11:51:2|11:52:2|11:53:2|11:54:2|11:55:2|11:56:2|11:57:2|11:58:2|11:59:2|11:6:2|11:7:2|11:8:2|11:9:2",
+      "root_slot_profile": "count=120;min=11;max=11;sum=1320;distinct=11",
+      "root_local_profile": "count=120;min=0;max=59;sum=3540;distinct=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59",
+      "from_limit_profile": "12:40|13:20|4:60",
+      "to_limit_profile": "13:40|14:20|5:60",
+      "delta_edge_count_profile": "count=120;min=1;max=1;sum=120;distinct=1",
+      "delta_vertex_count_profile": "count=120;min=1;max=1;sum=120;distinct=1",
+      "delta_edge_hits_token_profile": "count=120;min=1;max=1;sum=120;distinct=1",
+      "internal_delta_hits_token_profile": "count=120;min=1;max=1;sum=120;distinct=1",
+      "has_boundary_carrier": "True",
+      "boundary_carrier_id": "slot_pair_07_11_boundary_carrier",
+      "unsupported_delta_edge_count": 0,
+      "supported_delta_edge_count": 120,
+      "unsupported_rate": 0.0,
+      "step_has_delta_support_profile": "True:120",
+      "step_direct_boundary_delta_hit_profile": "False:120",
+      "step_has_boundary_carrier_profile": "True:120"
+    },
+    {
+      "pair_key": "06_09",
+      "is_target_06_09": true,
+      "label_a": 6,
+      "label_b": 9,
+      "contains_6": true,
+      "contains_9": true,
+      "directed_delta_mod15": 3,
+      "reverse_delta_mod15": 12,
+      "sum_mod15": 0,
+      "gap_abs": 3,
+      "label_a_parity": 0,
+      "label_b_parity": 1,
+      "transition_profile": "6 -> 9:60",
+      "package_kind": "one_way_single_transition",
+      "full60_transition_count": 1,
+      "full60_transitions_token_profile": "count=1;min=3;max=3;sum=3;distinct=3",
+      "step_count_package_field": 60,
+      "step_row_count": 60,
+      "root_profile": "12:0:1|12:1:1|12:10:1|12:11:1|12:12:1|12:13:1|12:14:1|12:15:1|12:16:1|12:17:1|12:18:1|12:19:1|12:2:1|12:20:1|12:21:1|12:22:1|12:23:1|12:24:1|12:25:1|12:26:1|12:27:1|12:28:1|12:29:1|12:3:1|12:30:1|12:31:1|12:32:1|12:33:1|12:34:1|12:35:1|12:36:1|12:37:1|12:38:1|12:39:1|12:4:1|12:40:1|12:41:1|12:42:1|12:43:1|12:44:1|12:45:1|12:46:1|12:47:1|12:48:1|12:49:1|12:5:1|12:50:1|12:51:1|12:52:1|12:53:1|12:54:1|12:55:1|12:56:1|12:57:1|12:58:1|12:59:1|12:6:1|12:7:1|12:8:1|12:9:1",
+      "root_slot_profile": "count=60;min=12;max=12;sum=720;distinct=12",
+      "root_local_profile": "count=60;min=0;max=59;sum=1770;distinct=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59",
+      "from_limit_profile": "23:60",
+      "to_limit_profile": "24:60",
+      "delta_edge_count_profile": "count=60;min=1;max=1;sum=60;distinct=1",
+      "delta_vertex_count_profile": "count=60;min=1;max=1;sum=60;distinct=1",
+      "delta_edge_hits_token_profile": "count=60;min=0;max=0;sum=0;distinct=0",
+      "internal_delta_hits_token_profile": "count=60;min=0;max=0;sum=0;distinct=0",
+      "has_boundary_carrier": "False",
+      "boundary_carrier_id": "",
+      "unsupported_delta_edge_count": 60,
+      "supported_delta_edge_count": 0,
+      "unsupported_rate": 1.0,
+      "step_has_delta_support_profile": "False:60",
+      "step_direct_boundary_delta_hit_profile": "False:60",
+      "step_has_boundary_carrier_profile": "False:60"
+    },
+    {
+      "pair_key": "09_12",
+      "is_target_06_09": false,
+      "label_a": 9,
+      "label_b": 12,
+      "contains_6": false,
+      "contains_9": true,
+      "directed_delta_mod15": 3,
+      "reverse_delta_mod15": 12,
+      "sum_mod15": 6,
+      "gap_abs": 3,
+      "label_a_parity": 1,
+      "label_b_parity": 0,
+      "transition_profile": "9 -> 12:60",
+      "package_kind": "one_way_single_transition",
+      "full60_transition_count": 1,
+      "full60_transitions_token_profile": "count=1;min=3;max=3;sum=3;distinct=3",
+      "step_count_package_field": 60,
+      "step_row_count": 60,
+      "root_profile": "12:0:1|12:1:1|12:10:1|12:11:1|12:12:1|12:13:1|12:14:1|12:15:1|12:16:1|12:17:1|12:18:1|12:19:1|12:2:1|12:20:1|12:21:1|12:22:1|12:23:1|12:24:1|12:25:1|12:26:1|12:27:1|12:28:1|12:29:1|12:3:1|12:30:1|12:31:1|12:32:1|12:33:1|12:34:1|12:35:1|12:36:1|12:37:1|12:38:1|12:39:1|12:4:1|12:40:1|12:41:1|12:42:1|12:43:1|12:44:1|12:45:1|12:46:1|12:47:1|12:48:1|12:49:1|12:5:1|12:50:1|12:51:1|12:52:1|12:53:1|12:54:1|12:55:1|12:56:1|12:57:1|12:58:1|12:59:1|12:6:1|12:7:1|12:8:1|12:9:1",
+      "root_slot_profile": "count=60;min=12;max=12;sum=720;distinct=12",
+      "root_local_profile": "count=60;min=0;max=59;sum=1770;distinct=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59",
+      "from_limit_profile": "32:60",
+      "to_limit_profile": "33:60",
+      "delta_edge_count_profile": "count=60;min=1;max=1;sum=60;distinct=1",
+      "delta_vertex_count_profile": "count=60;min=0;max=1;sum=48;distinct=0,1",
+      "delta_edge_hits_token_profile": "count=60;min=1;max=1;sum=60;distinct=1",
+      "internal_delta_hits_token_profile": "count=60;min=1;max=1;sum=60;distinct=1",
+      "has_boundary_carrier": "True",
+      "boundary_carrier_id": "slot_pair_09_12_boundary_carrier",
+      "unsupported_delta_edge_count": 0,
+      "supported_delta_edge_count": 60,
+      "unsupported_rate": 0.0,
+      "step_has_delta_support_profile": "True:60",
+      "step_direct_boundary_delta_hit_profile": "False:60",
+      "step_has_boundary_carrier_profile": "True:60"
+    }
+  ],
+  "blocked_label_single_selectors": [
+    {
+      "features": [
+        "pair_key"
+      ],
+      "value": "06_09",
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "is_target_06_09"
+      ],
+      "value": true,
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "transition_profile"
+      ],
+      "value": "6 -> 9:60",
+      "matching_keys": [
+        "06_09"
+      ]
+    }
+  ],
+  "blocked_support_single_selectors": [
+    {
+      "features": [
+        "has_boundary_carrier"
+      ],
+      "value": "False",
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "boundary_carrier_id"
+      ],
+      "value": "",
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "unsupported_delta_edge_count"
+      ],
+      "value": 60,
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "supported_delta_edge_count"
+      ],
+      "value": 0,
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "unsupported_rate"
+      ],
+      "value": 1.0,
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "step_has_delta_support_profile"
+      ],
+      "value": "False:60",
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "step_has_boundary_carrier_profile"
+      ],
+      "value": "False:60",
+      "matching_keys": [
+        "06_09"
+      ]
+    }
+  ],
+  "allowed_single_selectors": [
+    {
+      "features": [
+        "from_limit_profile"
+      ],
+      "value": "23:60",
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "to_limit_profile"
+      ],
+      "value": "24:60",
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "delta_vertex_count_profile"
+      ],
+      "value": "count=60;min=1;max=1;sum=60;distinct=1",
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "delta_edge_hits_token_profile"
+      ],
+      "value": "count=60;min=0;max=0;sum=0;distinct=0",
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "internal_delta_hits_token_profile"
+      ],
+      "value": "count=60;min=0;max=0;sum=0;distinct=0",
+      "matching_keys": [
+        "06_09"
+      ]
+    }
+  ],
+  "allowed_pair_selectors_first_80": [
+    {
+      "features": [
+        "package_kind",
+        "from_limit_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        "23:60"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "to_limit_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        "24:60"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "delta_vertex_count_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        "count=60;min=1;max=1;sum=60;distinct=1"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "delta_edge_hits_token_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "internal_delta_hits_token_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "full60_transition_count",
+        "from_limit_profile"
+      ],
+      "value": [
+        1,
+        "23:60"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "full60_transition_count",
+        "to_limit_profile"
+      ],
+      "value": [
+        1,
+        "24:60"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "full60_transition_count",
+        "delta_vertex_count_profile"
+      ],
+      "value": [
+        1,
+        "count=60;min=1;max=1;sum=60;distinct=1"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "full60_transition_count",
+        "delta_edge_hits_token_profile"
+      ],
+      "value": [
+        1,
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "full60_transition_count",
+        "internal_delta_hits_token_profile"
+      ],
+      "value": [
+        1,
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "full60_transitions_token_profile",
+        "from_limit_profile"
+      ],
+      "value": [
+        "count=1;min=3;max=3;sum=3;distinct=3",
+        "23:60"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "full60_transitions_token_profile",
+        "to_limit_profile"
+      ],
+      "value": [
+        "count=1;min=3;max=3;sum=3;distinct=3",
+        "24:60"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "full60_transitions_token_profile",
+        "delta_vertex_count_profile"
+      ],
+      "value": [
+        "count=1;min=3;max=3;sum=3;distinct=3",
+        "count=60;min=1;max=1;sum=60;distinct=1"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "full60_transitions_token_profile",
+        "delta_edge_hits_token_profile"
+      ],
+      "value": [
+        "count=1;min=3;max=3;sum=3;distinct=3",
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "full60_transitions_token_profile",
+        "internal_delta_hits_token_profile"
+      ],
+      "value": [
+        "count=1;min=3;max=3;sum=3;distinct=3",
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "step_count_package_field",
+        "from_limit_profile"
+      ],
+      "value": [
+        60,
+        "23:60"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "step_count_package_field",
+        "to_limit_profile"
+      ],
+      "value": [
+        60,
+        "24:60"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "step_count_package_field",
+        "delta_vertex_count_profile"
+      ],
+      "value": [
+        60,
+        "count=60;min=1;max=1;sum=60;distinct=1"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "step_count_package_field",
+        "delta_edge_hits_token_profile"
+      ],
+      "value": [
+        60,
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "step_count_package_field",
+        "internal_delta_hits_token_profile"
+      ],
+      "value": [
+        60,
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "step_row_count",
+        "from_limit_profile"
+      ],
+      "value": [
+        60,
+        "23:60"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "step_row_count",
+        "to_limit_profile"
+      ],
+      "value": [
+        60,
+        "24:60"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "step_row_count",
+        "delta_vertex_count_profile"
+      ],
+      "value": [
+        60,
+        "count=60;min=1;max=1;sum=60;distinct=1"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "step_row_count",
+        "delta_edge_hits_token_profile"
+      ],
+      "value": [
+        60,
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "step_row_count",
+        "internal_delta_hits_token_profile"
+      ],
+      "value": [
+        60,
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "root_profile",
+        "from_limit_profile"
+      ],
+      "value": [
+        "12:0:1|12:1:1|12:10:1|12:11:1|12:12:1|12:13:1|12:14:1|12:15:1|12:16:1|12:17:1|12:18:1|12:19:1|12:2:1|12:20:1|12:21:1|12:22:1|12:23:1|12:24:1|12:25:1|12:26:1|12:27:1|12:28:1|12:29:1|12:3:1|12:30:1|12:31:1|12:32:1|12:33:1|12:34:1|12:35:1|12:36:1|12:37:1|12:38:1|12:39:1|12:4:1|12:40:1|12:41:1|12:42:1|12:43:1|12:44:1|12:45:1|12:46:1|12:47:1|12:48:1|12:49:1|12:5:1|12:50:1|12:51:1|12:52:1|12:53:1|12:54:1|12:55:1|12:56:1|12:57:1|12:58:1|12:59:1|12:6:1|12:7:1|12:8:1|12:9:1",
+        "23:60"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "root_profile",
+        "to_limit_profile"
+      ],
+      "value": [
+        "12:0:1|12:1:1|12:10:1|12:11:1|12:12:1|12:13:1|12:14:1|12:15:1|12:16:1|12:17:1|12:18:1|12:19:1|12:2:1|12:20:1|12:21:1|12:22:1|12:23:1|12:24:1|12:25:1|12:26:1|12:27:1|12:28:1|12:29:1|12:3:1|12:30:1|12:31:1|12:32:1|12:33:1|12:34:1|12:35:1|12:36:1|12:37:1|12:38:1|12:39:1|12:4:1|12:40:1|12:41:1|12:42:1|12:43:1|12:44:1|12:45:1|12:46:1|12:47:1|12:48:1|12:49:1|12:5:1|12:50:1|12:51:1|12:52:1|12:53:1|12:54:1|12:55:1|12:56:1|12:57:1|12:58:1|12:59:1|12:6:1|12:7:1|12:8:1|12:9:1",
+        "24:60"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "root_profile",
+        "delta_vertex_count_profile"
+      ],
+      "value": [
+        "12:0:1|12:1:1|12:10:1|12:11:1|12:12:1|12:13:1|12:14:1|12:15:1|12:16:1|12:17:1|12:18:1|12:19:1|12:2:1|12:20:1|12:21:1|12:22:1|12:23:1|12:24:1|12:25:1|12:26:1|12:27:1|12:28:1|12:29:1|12:3:1|12:30:1|12:31:1|12:32:1|12:33:1|12:34:1|12:35:1|12:36:1|12:37:1|12:38:1|12:39:1|12:4:1|12:40:1|12:41:1|12:42:1|12:43:1|12:44:1|12:45:1|12:46:1|12:47:1|12:48:1|12:49:1|12:5:1|12:50:1|12:51:1|12:52:1|12:53:1|12:54:1|12:55:1|12:56:1|12:57:1|12:58:1|12:59:1|12:6:1|12:7:1|12:8:1|12:9:1",
+        "count=60;min=1;max=1;sum=60;distinct=1"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "root_profile",
+        "delta_edge_hits_token_profile"
+      ],
+      "value": [
+        "12:0:1|12:1:1|12:10:1|12:11:1|12:12:1|12:13:1|12:14:1|12:15:1|12:16:1|12:17:1|12:18:1|12:19:1|12:2:1|12:20:1|12:21:1|12:22:1|12:23:1|12:24:1|12:25:1|12:26:1|12:27:1|12:28:1|12:29:1|12:3:1|12:30:1|12:31:1|12:32:1|12:33:1|12:34:1|12:35:1|12:36:1|12:37:1|12:38:1|12:39:1|12:4:1|12:40:1|12:41:1|12:42:1|12:43:1|12:44:1|12:45:1|12:46:1|12:47:1|12:48:1|12:49:1|12:5:1|12:50:1|12:51:1|12:52:1|12:53:1|12:54:1|12:55:1|12:56:1|12:57:1|12:58:1|12:59:1|12:6:1|12:7:1|12:8:1|12:9:1",
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "root_profile",
+        "internal_delta_hits_token_profile"
+      ],
+      "value": [
+        "12:0:1|12:1:1|12:10:1|12:11:1|12:12:1|12:13:1|12:14:1|12:15:1|12:16:1|12:17:1|12:18:1|12:19:1|12:2:1|12:20:1|12:21:1|12:22:1|12:23:1|12:24:1|12:25:1|12:26:1|12:27:1|12:28:1|12:29:1|12:3:1|12:30:1|12:31:1|12:32:1|12:33:1|12:34:1|12:35:1|12:36:1|12:37:1|12:38:1|12:39:1|12:4:1|12:40:1|12:41:1|12:42:1|12:43:1|12:44:1|12:45:1|12:46:1|12:47:1|12:48:1|12:49:1|12:5:1|12:50:1|12:51:1|12:52:1|12:53:1|12:54:1|12:55:1|12:56:1|12:57:1|12:58:1|12:59:1|12:6:1|12:7:1|12:8:1|12:9:1",
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "root_slot_profile",
+        "from_limit_profile"
+      ],
+      "value": [
+        "count=60;min=12;max=12;sum=720;distinct=12",
+        "23:60"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "root_slot_profile",
+        "to_limit_profile"
+      ],
+      "value": [
+        "count=60;min=12;max=12;sum=720;distinct=12",
+        "24:60"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "root_slot_profile",
+        "delta_vertex_count_profile"
+      ],
+      "value": [
+        "count=60;min=12;max=12;sum=720;distinct=12",
+        "count=60;min=1;max=1;sum=60;distinct=1"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "root_slot_profile",
+        "delta_edge_hits_token_profile"
+      ],
+      "value": [
+        "count=60;min=12;max=12;sum=720;distinct=12",
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "root_slot_profile",
+        "internal_delta_hits_token_profile"
+      ],
+      "value": [
+        "count=60;min=12;max=12;sum=720;distinct=12",
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "root_local_profile",
+        "from_limit_profile"
+      ],
+      "value": [
+        "count=60;min=0;max=59;sum=1770;distinct=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59",
+        "23:60"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "root_local_profile",
+        "to_limit_profile"
+      ],
+      "value": [
+        "count=60;min=0;max=59;sum=1770;distinct=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59",
+        "24:60"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "root_local_profile",
+        "delta_vertex_count_profile"
+      ],
+      "value": [
+        "count=60;min=0;max=59;sum=1770;distinct=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59",
+        "count=60;min=1;max=1;sum=60;distinct=1"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "root_local_profile",
+        "delta_edge_hits_token_profile"
+      ],
+      "value": [
+        "count=60;min=0;max=59;sum=1770;distinct=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59",
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "root_local_profile",
+        "internal_delta_hits_token_profile"
+      ],
+      "value": [
+        "count=60;min=0;max=59;sum=1770;distinct=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59",
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "from_limit_profile",
+        "to_limit_profile"
+      ],
+      "value": [
+        "23:60",
+        "24:60"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "from_limit_profile",
+        "delta_edge_count_profile"
+      ],
+      "value": [
+        "23:60",
+        "count=60;min=1;max=1;sum=60;distinct=1"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "from_limit_profile",
+        "delta_vertex_count_profile"
+      ],
+      "value": [
+        "23:60",
+        "count=60;min=1;max=1;sum=60;distinct=1"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "from_limit_profile",
+        "delta_edge_hits_token_profile"
+      ],
+      "value": [
+        "23:60",
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "from_limit_profile",
+        "internal_delta_hits_token_profile"
+      ],
+      "value": [
+        "23:60",
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "to_limit_profile",
+        "delta_edge_count_profile"
+      ],
+      "value": [
+        "24:60",
+        "count=60;min=1;max=1;sum=60;distinct=1"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "to_limit_profile",
+        "delta_vertex_count_profile"
+      ],
+      "value": [
+        "24:60",
+        "count=60;min=1;max=1;sum=60;distinct=1"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "to_limit_profile",
+        "delta_edge_hits_token_profile"
+      ],
+      "value": [
+        "24:60",
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "to_limit_profile",
+        "internal_delta_hits_token_profile"
+      ],
+      "value": [
+        "24:60",
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "delta_edge_count_profile",
+        "delta_vertex_count_profile"
+      ],
+      "value": [
+        "count=60;min=1;max=1;sum=60;distinct=1",
+        "count=60;min=1;max=1;sum=60;distinct=1"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "delta_edge_count_profile",
+        "delta_edge_hits_token_profile"
+      ],
+      "value": [
+        "count=60;min=1;max=1;sum=60;distinct=1",
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "delta_edge_count_profile",
+        "internal_delta_hits_token_profile"
+      ],
+      "value": [
+        "count=60;min=1;max=1;sum=60;distinct=1",
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "delta_vertex_count_profile",
+        "delta_edge_hits_token_profile"
+      ],
+      "value": [
+        "count=60;min=1;max=1;sum=60;distinct=1",
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "delta_vertex_count_profile",
+        "internal_delta_hits_token_profile"
+      ],
+      "value": [
+        "count=60;min=1;max=1;sum=60;distinct=1",
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "delta_edge_hits_token_profile",
+        "internal_delta_hits_token_profile"
+      ],
+      "value": [
+        "count=60;min=0;max=0;sum=0;distinct=0",
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    }
+  ],
+  "allowed_triple_selectors_first_80": [
+    {
+      "features": [
+        "package_kind",
+        "full60_transition_count",
+        "from_limit_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        1,
+        "23:60"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "full60_transition_count",
+        "to_limit_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        1,
+        "24:60"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "full60_transition_count",
+        "delta_vertex_count_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        1,
+        "count=60;min=1;max=1;sum=60;distinct=1"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "full60_transition_count",
+        "delta_edge_hits_token_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        1,
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "full60_transition_count",
+        "internal_delta_hits_token_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        1,
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "full60_transitions_token_profile",
+        "from_limit_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        "count=1;min=3;max=3;sum=3;distinct=3",
+        "23:60"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "full60_transitions_token_profile",
+        "to_limit_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        "count=1;min=3;max=3;sum=3;distinct=3",
+        "24:60"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "full60_transitions_token_profile",
+        "delta_vertex_count_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        "count=1;min=3;max=3;sum=3;distinct=3",
+        "count=60;min=1;max=1;sum=60;distinct=1"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "full60_transitions_token_profile",
+        "delta_edge_hits_token_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        "count=1;min=3;max=3;sum=3;distinct=3",
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "full60_transitions_token_profile",
+        "internal_delta_hits_token_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        "count=1;min=3;max=3;sum=3;distinct=3",
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "step_count_package_field",
+        "from_limit_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        60,
+        "23:60"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "step_count_package_field",
+        "to_limit_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        60,
+        "24:60"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "step_count_package_field",
+        "delta_vertex_count_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        60,
+        "count=60;min=1;max=1;sum=60;distinct=1"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "step_count_package_field",
+        "delta_edge_hits_token_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        60,
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "step_count_package_field",
+        "internal_delta_hits_token_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        60,
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "step_row_count",
+        "from_limit_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        60,
+        "23:60"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "step_row_count",
+        "to_limit_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        60,
+        "24:60"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "step_row_count",
+        "delta_vertex_count_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        60,
+        "count=60;min=1;max=1;sum=60;distinct=1"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "step_row_count",
+        "delta_edge_hits_token_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        60,
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "step_row_count",
+        "internal_delta_hits_token_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        60,
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "root_profile",
+        "from_limit_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        "12:0:1|12:1:1|12:10:1|12:11:1|12:12:1|12:13:1|12:14:1|12:15:1|12:16:1|12:17:1|12:18:1|12:19:1|12:2:1|12:20:1|12:21:1|12:22:1|12:23:1|12:24:1|12:25:1|12:26:1|12:27:1|12:28:1|12:29:1|12:3:1|12:30:1|12:31:1|12:32:1|12:33:1|12:34:1|12:35:1|12:36:1|12:37:1|12:38:1|12:39:1|12:4:1|12:40:1|12:41:1|12:42:1|12:43:1|12:44:1|12:45:1|12:46:1|12:47:1|12:48:1|12:49:1|12:5:1|12:50:1|12:51:1|12:52:1|12:53:1|12:54:1|12:55:1|12:56:1|12:57:1|12:58:1|12:59:1|12:6:1|12:7:1|12:8:1|12:9:1",
+        "23:60"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "root_profile",
+        "to_limit_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        "12:0:1|12:1:1|12:10:1|12:11:1|12:12:1|12:13:1|12:14:1|12:15:1|12:16:1|12:17:1|12:18:1|12:19:1|12:2:1|12:20:1|12:21:1|12:22:1|12:23:1|12:24:1|12:25:1|12:26:1|12:27:1|12:28:1|12:29:1|12:3:1|12:30:1|12:31:1|12:32:1|12:33:1|12:34:1|12:35:1|12:36:1|12:37:1|12:38:1|12:39:1|12:4:1|12:40:1|12:41:1|12:42:1|12:43:1|12:44:1|12:45:1|12:46:1|12:47:1|12:48:1|12:49:1|12:5:1|12:50:1|12:51:1|12:52:1|12:53:1|12:54:1|12:55:1|12:56:1|12:57:1|12:58:1|12:59:1|12:6:1|12:7:1|12:8:1|12:9:1",
+        "24:60"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "root_profile",
+        "delta_vertex_count_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        "12:0:1|12:1:1|12:10:1|12:11:1|12:12:1|12:13:1|12:14:1|12:15:1|12:16:1|12:17:1|12:18:1|12:19:1|12:2:1|12:20:1|12:21:1|12:22:1|12:23:1|12:24:1|12:25:1|12:26:1|12:27:1|12:28:1|12:29:1|12:3:1|12:30:1|12:31:1|12:32:1|12:33:1|12:34:1|12:35:1|12:36:1|12:37:1|12:38:1|12:39:1|12:4:1|12:40:1|12:41:1|12:42:1|12:43:1|12:44:1|12:45:1|12:46:1|12:47:1|12:48:1|12:49:1|12:5:1|12:50:1|12:51:1|12:52:1|12:53:1|12:54:1|12:55:1|12:56:1|12:57:1|12:58:1|12:59:1|12:6:1|12:7:1|12:8:1|12:9:1",
+        "count=60;min=1;max=1;sum=60;distinct=1"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "root_profile",
+        "delta_edge_hits_token_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        "12:0:1|12:1:1|12:10:1|12:11:1|12:12:1|12:13:1|12:14:1|12:15:1|12:16:1|12:17:1|12:18:1|12:19:1|12:2:1|12:20:1|12:21:1|12:22:1|12:23:1|12:24:1|12:25:1|12:26:1|12:27:1|12:28:1|12:29:1|12:3:1|12:30:1|12:31:1|12:32:1|12:33:1|12:34:1|12:35:1|12:36:1|12:37:1|12:38:1|12:39:1|12:4:1|12:40:1|12:41:1|12:42:1|12:43:1|12:44:1|12:45:1|12:46:1|12:47:1|12:48:1|12:49:1|12:5:1|12:50:1|12:51:1|12:52:1|12:53:1|12:54:1|12:55:1|12:56:1|12:57:1|12:58:1|12:59:1|12:6:1|12:7:1|12:8:1|12:9:1",
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "root_profile",
+        "internal_delta_hits_token_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        "12:0:1|12:1:1|12:10:1|12:11:1|12:12:1|12:13:1|12:14:1|12:15:1|12:16:1|12:17:1|12:18:1|12:19:1|12:2:1|12:20:1|12:21:1|12:22:1|12:23:1|12:24:1|12:25:1|12:26:1|12:27:1|12:28:1|12:29:1|12:3:1|12:30:1|12:31:1|12:32:1|12:33:1|12:34:1|12:35:1|12:36:1|12:37:1|12:38:1|12:39:1|12:4:1|12:40:1|12:41:1|12:42:1|12:43:1|12:44:1|12:45:1|12:46:1|12:47:1|12:48:1|12:49:1|12:5:1|12:50:1|12:51:1|12:52:1|12:53:1|12:54:1|12:55:1|12:56:1|12:57:1|12:58:1|12:59:1|12:6:1|12:7:1|12:8:1|12:9:1",
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "root_slot_profile",
+        "from_limit_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        "count=60;min=12;max=12;sum=720;distinct=12",
+        "23:60"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "root_slot_profile",
+        "to_limit_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        "count=60;min=12;max=12;sum=720;distinct=12",
+        "24:60"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "root_slot_profile",
+        "delta_vertex_count_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        "count=60;min=12;max=12;sum=720;distinct=12",
+        "count=60;min=1;max=1;sum=60;distinct=1"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "root_slot_profile",
+        "delta_edge_hits_token_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        "count=60;min=12;max=12;sum=720;distinct=12",
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "root_slot_profile",
+        "internal_delta_hits_token_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        "count=60;min=12;max=12;sum=720;distinct=12",
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "root_local_profile",
+        "from_limit_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        "count=60;min=0;max=59;sum=1770;distinct=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59",
+        "23:60"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "root_local_profile",
+        "to_limit_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        "count=60;min=0;max=59;sum=1770;distinct=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59",
+        "24:60"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "root_local_profile",
+        "delta_vertex_count_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        "count=60;min=0;max=59;sum=1770;distinct=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59",
+        "count=60;min=1;max=1;sum=60;distinct=1"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "root_local_profile",
+        "delta_edge_hits_token_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        "count=60;min=0;max=59;sum=1770;distinct=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59",
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "root_local_profile",
+        "internal_delta_hits_token_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        "count=60;min=0;max=59;sum=1770;distinct=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59",
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "from_limit_profile",
+        "to_limit_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        "23:60",
+        "24:60"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "from_limit_profile",
+        "delta_edge_count_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        "23:60",
+        "count=60;min=1;max=1;sum=60;distinct=1"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "from_limit_profile",
+        "delta_vertex_count_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        "23:60",
+        "count=60;min=1;max=1;sum=60;distinct=1"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "from_limit_profile",
+        "delta_edge_hits_token_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        "23:60",
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "from_limit_profile",
+        "internal_delta_hits_token_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        "23:60",
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "to_limit_profile",
+        "delta_edge_count_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        "24:60",
+        "count=60;min=1;max=1;sum=60;distinct=1"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "to_limit_profile",
+        "delta_vertex_count_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        "24:60",
+        "count=60;min=1;max=1;sum=60;distinct=1"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "to_limit_profile",
+        "delta_edge_hits_token_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        "24:60",
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "to_limit_profile",
+        "internal_delta_hits_token_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        "24:60",
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "delta_edge_count_profile",
+        "delta_vertex_count_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        "count=60;min=1;max=1;sum=60;distinct=1",
+        "count=60;min=1;max=1;sum=60;distinct=1"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "delta_edge_count_profile",
+        "delta_edge_hits_token_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        "count=60;min=1;max=1;sum=60;distinct=1",
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "delta_edge_count_profile",
+        "internal_delta_hits_token_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        "count=60;min=1;max=1;sum=60;distinct=1",
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "delta_vertex_count_profile",
+        "delta_edge_hits_token_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        "count=60;min=1;max=1;sum=60;distinct=1",
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "delta_vertex_count_profile",
+        "internal_delta_hits_token_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        "count=60;min=1;max=1;sum=60;distinct=1",
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "package_kind",
+        "delta_edge_hits_token_profile",
+        "internal_delta_hits_token_profile"
+      ],
+      "value": [
+        "one_way_single_transition",
+        "count=60;min=0;max=0;sum=0;distinct=0",
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "full60_transition_count",
+        "full60_transitions_token_profile",
+        "from_limit_profile"
+      ],
+      "value": [
+        1,
+        "count=1;min=3;max=3;sum=3;distinct=3",
+        "23:60"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "full60_transition_count",
+        "full60_transitions_token_profile",
+        "to_limit_profile"
+      ],
+      "value": [
+        1,
+        "count=1;min=3;max=3;sum=3;distinct=3",
+        "24:60"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "full60_transition_count",
+        "full60_transitions_token_profile",
+        "delta_vertex_count_profile"
+      ],
+      "value": [
+        1,
+        "count=1;min=3;max=3;sum=3;distinct=3",
+        "count=60;min=1;max=1;sum=60;distinct=1"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "full60_transition_count",
+        "full60_transitions_token_profile",
+        "delta_edge_hits_token_profile"
+      ],
+      "value": [
+        1,
+        "count=1;min=3;max=3;sum=3;distinct=3",
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "full60_transition_count",
+        "full60_transitions_token_profile",
+        "internal_delta_hits_token_profile"
+      ],
+      "value": [
+        1,
+        "count=1;min=3;max=3;sum=3;distinct=3",
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "full60_transition_count",
+        "step_count_package_field",
+        "from_limit_profile"
+      ],
+      "value": [
+        1,
+        60,
+        "23:60"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "full60_transition_count",
+        "step_count_package_field",
+        "to_limit_profile"
+      ],
+      "value": [
+        1,
+        60,
+        "24:60"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "full60_transition_count",
+        "step_count_package_field",
+        "delta_vertex_count_profile"
+      ],
+      "value": [
+        1,
+        60,
+        "count=60;min=1;max=1;sum=60;distinct=1"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "full60_transition_count",
+        "step_count_package_field",
+        "delta_edge_hits_token_profile"
+      ],
+      "value": [
+        1,
+        60,
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "full60_transition_count",
+        "step_count_package_field",
+        "internal_delta_hits_token_profile"
+      ],
+      "value": [
+        1,
+        60,
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "full60_transition_count",
+        "step_row_count",
+        "from_limit_profile"
+      ],
+      "value": [
+        1,
+        60,
+        "23:60"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "full60_transition_count",
+        "step_row_count",
+        "to_limit_profile"
+      ],
+      "value": [
+        1,
+        60,
+        "24:60"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "full60_transition_count",
+        "step_row_count",
+        "delta_vertex_count_profile"
+      ],
+      "value": [
+        1,
+        60,
+        "count=60;min=1;max=1;sum=60;distinct=1"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "full60_transition_count",
+        "step_row_count",
+        "delta_edge_hits_token_profile"
+      ],
+      "value": [
+        1,
+        60,
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "full60_transition_count",
+        "step_row_count",
+        "internal_delta_hits_token_profile"
+      ],
+      "value": [
+        1,
+        60,
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "full60_transition_count",
+        "root_profile",
+        "from_limit_profile"
+      ],
+      "value": [
+        1,
+        "12:0:1|12:1:1|12:10:1|12:11:1|12:12:1|12:13:1|12:14:1|12:15:1|12:16:1|12:17:1|12:18:1|12:19:1|12:2:1|12:20:1|12:21:1|12:22:1|12:23:1|12:24:1|12:25:1|12:26:1|12:27:1|12:28:1|12:29:1|12:3:1|12:30:1|12:31:1|12:32:1|12:33:1|12:34:1|12:35:1|12:36:1|12:37:1|12:38:1|12:39:1|12:4:1|12:40:1|12:41:1|12:42:1|12:43:1|12:44:1|12:45:1|12:46:1|12:47:1|12:48:1|12:49:1|12:5:1|12:50:1|12:51:1|12:52:1|12:53:1|12:54:1|12:55:1|12:56:1|12:57:1|12:58:1|12:59:1|12:6:1|12:7:1|12:8:1|12:9:1",
+        "23:60"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "full60_transition_count",
+        "root_profile",
+        "to_limit_profile"
+      ],
+      "value": [
+        1,
+        "12:0:1|12:1:1|12:10:1|12:11:1|12:12:1|12:13:1|12:14:1|12:15:1|12:16:1|12:17:1|12:18:1|12:19:1|12:2:1|12:20:1|12:21:1|12:22:1|12:23:1|12:24:1|12:25:1|12:26:1|12:27:1|12:28:1|12:29:1|12:3:1|12:30:1|12:31:1|12:32:1|12:33:1|12:34:1|12:35:1|12:36:1|12:37:1|12:38:1|12:39:1|12:4:1|12:40:1|12:41:1|12:42:1|12:43:1|12:44:1|12:45:1|12:46:1|12:47:1|12:48:1|12:49:1|12:5:1|12:50:1|12:51:1|12:52:1|12:53:1|12:54:1|12:55:1|12:56:1|12:57:1|12:58:1|12:59:1|12:6:1|12:7:1|12:8:1|12:9:1",
+        "24:60"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "full60_transition_count",
+        "root_profile",
+        "delta_vertex_count_profile"
+      ],
+      "value": [
+        1,
+        "12:0:1|12:1:1|12:10:1|12:11:1|12:12:1|12:13:1|12:14:1|12:15:1|12:16:1|12:17:1|12:18:1|12:19:1|12:2:1|12:20:1|12:21:1|12:22:1|12:23:1|12:24:1|12:25:1|12:26:1|12:27:1|12:28:1|12:29:1|12:3:1|12:30:1|12:31:1|12:32:1|12:33:1|12:34:1|12:35:1|12:36:1|12:37:1|12:38:1|12:39:1|12:4:1|12:40:1|12:41:1|12:42:1|12:43:1|12:44:1|12:45:1|12:46:1|12:47:1|12:48:1|12:49:1|12:5:1|12:50:1|12:51:1|12:52:1|12:53:1|12:54:1|12:55:1|12:56:1|12:57:1|12:58:1|12:59:1|12:6:1|12:7:1|12:8:1|12:9:1",
+        "count=60;min=1;max=1;sum=60;distinct=1"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "full60_transition_count",
+        "root_profile",
+        "delta_edge_hits_token_profile"
+      ],
+      "value": [
+        1,
+        "12:0:1|12:1:1|12:10:1|12:11:1|12:12:1|12:13:1|12:14:1|12:15:1|12:16:1|12:17:1|12:18:1|12:19:1|12:2:1|12:20:1|12:21:1|12:22:1|12:23:1|12:24:1|12:25:1|12:26:1|12:27:1|12:28:1|12:29:1|12:3:1|12:30:1|12:31:1|12:32:1|12:33:1|12:34:1|12:35:1|12:36:1|12:37:1|12:38:1|12:39:1|12:4:1|12:40:1|12:41:1|12:42:1|12:43:1|12:44:1|12:45:1|12:46:1|12:47:1|12:48:1|12:49:1|12:5:1|12:50:1|12:51:1|12:52:1|12:53:1|12:54:1|12:55:1|12:56:1|12:57:1|12:58:1|12:59:1|12:6:1|12:7:1|12:8:1|12:9:1",
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "full60_transition_count",
+        "root_profile",
+        "internal_delta_hits_token_profile"
+      ],
+      "value": [
+        1,
+        "12:0:1|12:1:1|12:10:1|12:11:1|12:12:1|12:13:1|12:14:1|12:15:1|12:16:1|12:17:1|12:18:1|12:19:1|12:2:1|12:20:1|12:21:1|12:22:1|12:23:1|12:24:1|12:25:1|12:26:1|12:27:1|12:28:1|12:29:1|12:3:1|12:30:1|12:31:1|12:32:1|12:33:1|12:34:1|12:35:1|12:36:1|12:37:1|12:38:1|12:39:1|12:4:1|12:40:1|12:41:1|12:42:1|12:43:1|12:44:1|12:45:1|12:46:1|12:47:1|12:48:1|12:49:1|12:5:1|12:50:1|12:51:1|12:52:1|12:53:1|12:54:1|12:55:1|12:56:1|12:57:1|12:58:1|12:59:1|12:6:1|12:7:1|12:8:1|12:9:1",
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "full60_transition_count",
+        "root_slot_profile",
+        "from_limit_profile"
+      ],
+      "value": [
+        1,
+        "count=60;min=12;max=12;sum=720;distinct=12",
+        "23:60"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "full60_transition_count",
+        "root_slot_profile",
+        "to_limit_profile"
+      ],
+      "value": [
+        1,
+        "count=60;min=12;max=12;sum=720;distinct=12",
+        "24:60"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "full60_transition_count",
+        "root_slot_profile",
+        "delta_vertex_count_profile"
+      ],
+      "value": [
+        1,
+        "count=60;min=12;max=12;sum=720;distinct=12",
+        "count=60;min=1;max=1;sum=60;distinct=1"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "full60_transition_count",
+        "root_slot_profile",
+        "delta_edge_hits_token_profile"
+      ],
+      "value": [
+        1,
+        "count=60;min=12;max=12;sum=720;distinct=12",
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "full60_transition_count",
+        "root_slot_profile",
+        "internal_delta_hits_token_profile"
+      ],
+      "value": [
+        1,
+        "count=60;min=12;max=12;sum=720;distinct=12",
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "full60_transition_count",
+        "root_local_profile",
+        "from_limit_profile"
+      ],
+      "value": [
+        1,
+        "count=60;min=0;max=59;sum=1770;distinct=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59",
+        "23:60"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "full60_transition_count",
+        "root_local_profile",
+        "to_limit_profile"
+      ],
+      "value": [
+        1,
+        "count=60;min=0;max=59;sum=1770;distinct=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59",
+        "24:60"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "full60_transition_count",
+        "root_local_profile",
+        "delta_vertex_count_profile"
+      ],
+      "value": [
+        1,
+        "count=60;min=0;max=59;sum=1770;distinct=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59",
+        "count=60;min=1;max=1;sum=60;distinct=1"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "full60_transition_count",
+        "root_local_profile",
+        "delta_edge_hits_token_profile"
+      ],
+      "value": [
+        1,
+        "count=60;min=0;max=59;sum=1770;distinct=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59",
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    {
+      "features": [
+        "full60_transition_count",
+        "root_local_profile",
+        "internal_delta_hits_token_profile"
+      ],
+      "value": [
+        1,
+        "count=60;min=0;max=59;sum=1770;distinct=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59",
+        "count=60;min=0;max=0;sum=0;distinct=0"
+      ],
+      "matching_keys": [
+        "06_09"
+      ]
+    }
+  ],
+  "feature_classes": {
+    "blocked_label_features": [
+      "pair_key",
+      "is_target_06_09",
+      "label_a",
+      "label_b",
+      "contains_6",
+      "contains_9",
+      "directed_delta_mod15",
+      "reverse_delta_mod15",
+      "sum_mod15",
+      "gap_abs",
+      "label_a_parity",
+      "label_b_parity",
+      "transition_profile"
+    ],
+    "blocked_support_features": [
+      "has_boundary_carrier",
+      "boundary_carrier_id",
+      "unsupported_delta_edge_count",
+      "supported_delta_edge_count",
+      "unsupported_rate",
+      "step_has_delta_support_profile",
+      "step_direct_boundary_delta_hit_profile",
+      "step_has_boundary_carrier_profile"
+    ],
+    "allowed_nonlabel_provenance_features": [
+      "package_kind",
+      "full60_transition_count",
+      "full60_transitions_token_profile",
+      "step_count_package_field",
+      "step_row_count",
+      "root_profile",
+      "root_slot_profile",
+      "root_local_profile",
+      "from_limit_profile",
+      "to_limit_profile",
+      "delta_edge_count_profile",
+      "delta_vertex_count_profile",
+      "delta_edge_hits_token_profile",
+      "internal_delta_hits_token_profile"
+    ]
+  },
+  "prior_state": {
+    "orientation_candidate_verdict": "six_nine_orientation_law_candidate_audit_passed",
+    "orientation_candidate_best": {
+      "features": [
+        "transition_profile"
+      ],
+      "value": "6 -> 9:60",
+      "matching_keys": [
+        "06_09"
+      ]
+    },
+    "family_status": "six_nine_unique_total_support_failure",
+    "field_law_reading": "all 6/9 step rows have has_delta_support=false; all 6/9 step rows have direct_boundary_delta_hit=false; all 6/9 step rows have has_boundary_carrier=false; 6/9 package field unsupported_delta_edge_count=60; 6/9 package field supported_delta_edge_count=0; 6/9 package field unsupported_rate=1.0; 6/9 package field package_kind=one_way_single_transition; 6/9 package field has_boundary_carrier=False; 6/9 package field boundary_carrier_id="
+  },
+  "boundary": {
+    "nonlabel_audit_only": true,
+    "admits_transport": false,
+    "admits_channels": false,
+    "changes_viewer": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "force_claim": false,
+    "physics_claim": false
+  },
+  "next_allowed_math_acts": [
+    "transport_relation_admission_criterion_001",
+    "physics_bridge_forbidden_mapping_ledger_001"
+  ],
+  "checks": {
+    "orientation_candidate_valid": true,
+    "family_prior_valid": true,
+    "field_law_prior_valid": true,
+    "family_prior_six_nine_unique": true,
+    "target_present": true,
+    "feature_rows_match_package_rows": true,
+    "nonlabel_status_recorded": true,
+    "best_nonlabel_not_support": true,
+    "best_nonlabel_not_label": true,
+    "transport_not_admitted": true,
+    "channel_not_admitted": true,
+    "channel_registry_preserved": true,
+    "renderer_absent": true,
+    "no_body_mutation": true,
+    "no_viewer_change": true,
+    "no_force_claim": true,
+    "no_physics_claim": true
+  },
+  "failed_checks": [],
+  "hashes": {
+    "orientation_candidate_sha256": "777956159becf47ad7dc00f34203840b80b950f5c89f08c47b5daf0eecd1f20a",
+    "family_sha256": "e28aad9669e5b0888cdfe08b0adf24a0fd6fa34b0c397a89684bbd8c2535e391",
+    "field_law_sha256": "52ec7408929c48c0729f4ce14b7a50f0afe49be3ccfe94a00b2ade9d3e064d30",
+    "packages_csv_sha256": "f9dde5a5457809c5ae5efed6fb4518b8fa1276af87917ea4436209e322a9923f",
+    "steps_csv_sha256": "40466b974be84ee5ff7bae97a5077a98d15483e80367422c6d717edf59ee630d",
+    "channels_sha256": "fbe4c50e0adf3460f7190f3c7714754da8a620359a5bc26c70543cc401feca08",
+    "body_sha256": "6a2cb6b9892a78d4559ec61cf946b0021962cc6819311234b8bf14102b3b7f63",
+    "lab_sha256": "5a10a18bc6563446a0d364d5984b8a41db580e0a75831c82b9eeb5aebc2edeb7"
+  }
+}

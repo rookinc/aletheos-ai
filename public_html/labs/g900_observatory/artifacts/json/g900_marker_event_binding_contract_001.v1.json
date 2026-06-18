@@ -1,0 +1,134 @@
+{
+  "schema": "g900.marker_event_binding_contract",
+  "version": 1,
+  "status": "marker_event_binding_contract_recorded",
+  "created_utc": "2026-06-18T01:50:14Z",
+  "audit_pass": true,
+  "verdict": "marker_event_binding_contract_recorded_without_opening_gate",
+  "question": "Can the return-cell event be bound to the unsupported 6/9 anomaly marker without lighting the marker or admitting a channel?",
+  "binding_contract": {
+    "contract_id": "g900_marker_event_binding_contract_001",
+    "binding_id": "g900_marker_event_binding_1d645b31e5366deb",
+    "binding_type": "return_cell_event_to_marker",
+    "event_id": "g900_return_cell_event_562162c72753c818",
+    "marker_id": "unsupported_phase_step_6_9",
+    "event_source": "g900_return_cell_cycle_event_contract_001",
+    "marker_source": "g900_marker_registry_and_unsupported_6_9_marker_receipt",
+    "binding_definition": "The unsupported 6/9 diagnostic marker is bound to the return-cell signature event as a future gate input only.",
+    "allowed_future_uses": [
+      "marker-event gate recheck",
+      "read-only marker render contract input",
+      "future live-stage marker renderer gate input"
+    ],
+    "disallowed_current_uses": [
+      "live marker lighting",
+      "channel admission",
+      "channel rendering",
+      "body mutation",
+      "force claim",
+      "physics claim"
+    ],
+    "effect_now": {
+      "binding_recorded": true,
+      "gate_open_now": false,
+      "lights_marker_now": false,
+      "admits_channel_now": false,
+      "renders_channel_now": false,
+      "mutates_body": false
+    }
+  },
+  "criteria": [
+    {
+      "id": "cycle_event_contract_exists",
+      "description": "The return-cell cycle/event contract exists and passed.",
+      "satisfied": true
+    },
+    {
+      "id": "event_is_not_timer",
+      "description": "The event is not a sheet timer, frame counter, wall clock, manual toggle, or visual brightness.",
+      "satisfied": true
+    },
+    {
+      "id": "marker_event_gate_exists",
+      "description": "The anomaly marker event gate exists and passed closed.",
+      "satisfied": true
+    },
+    {
+      "id": "marker_is_tracked",
+      "description": "The unsupported 6/9 marker is present in the marker registry or receipt chain.",
+      "satisfied": true,
+      "registry_hit_count": 2,
+      "receipt_hit_count": 1
+    },
+    {
+      "id": "marker_counts_match_gate",
+      "description": "The marker edge and vertex counts match the previous gate receipt.",
+      "satisfied": true
+    },
+    {
+      "id": "binding_recorded_without_opening_gate",
+      "description": "The binding is recorded, but the marker gate remains closed.",
+      "satisfied": true
+    },
+    {
+      "id": "marker_lighting_still_false",
+      "description": "This contract does not light the marker.",
+      "satisfied": true
+    },
+    {
+      "id": "channel_registry_still_zero",
+      "description": "The channel registry remains zero-count.",
+      "satisfied": true
+    },
+    {
+      "id": "render_contract_still_absent",
+      "description": "No read-only render contract is created by this artifact.",
+      "satisfied": true
+    }
+  ],
+  "summary": {
+    "binding_id": "g900_marker_event_binding_1d645b31e5366deb",
+    "event_id": "g900_return_cell_event_562162c72753c818",
+    "marker_id": "unsupported_phase_step_6_9",
+    "marker_tracked": true,
+    "registry_hit_count": 2,
+    "receipt_hit_count": 1,
+    "binding_recorded": true,
+    "gate_open_now": false,
+    "lights_marker_now": false,
+    "admits_channel_now": false,
+    "renders_channel_now": false,
+    "channel_count": 0
+  },
+  "interpretation": {
+    "event_marker_binding_exists": true,
+    "marker_event_gate_can_be_rechecked": true,
+    "marker_still_not_live_lit": true,
+    "render_contract_still_absent": true,
+    "live_stage_marker_renderer_still_absent": true,
+    "not_channel": true,
+    "next_problem": "Define a read-only marker render contract before any live-stage renderer or marker lighting is allowed."
+  },
+  "checks": {
+    "cycle_event_contract_passed": true,
+    "marker_gate_passed_closed": true,
+    "marker_tracked": true,
+    "binding_recorded": true,
+    "gate_not_opened": true,
+    "marker_not_lit": true,
+    "channel_registry_zero_count": true,
+    "channels_not_admitted": true,
+    "contract_satisfied": true
+  },
+  "failed_checks": [],
+  "boundary": {
+    "binding_contract_only": true,
+    "gate_open": false,
+    "admits_channels": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "marker_lighting": false,
+    "force_claim": false,
+    "physics_claim": false
+  }
+}

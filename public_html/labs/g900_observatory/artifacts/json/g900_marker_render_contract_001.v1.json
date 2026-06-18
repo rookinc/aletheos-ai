@@ -1,0 +1,172 @@
+{
+  "schema": "g900.marker_render_contract",
+  "version": 1,
+  "status": "marker_render_contract_recorded",
+  "created_utc": "2026-06-18T01:52:49Z",
+  "audit_pass": true,
+  "verdict": "marker_render_contract_recorded_without_renderer",
+  "question": "What must a future read-only marker renderer obey before the unsupported 6/9 marker may be lit?",
+  "render_contract": {
+    "contract_id": "g900_marker_render_contract_001",
+    "render_contract_id": "g900_marker_render_contract_2f8f21a3465a71d3",
+    "contract_type": "read_only_marker_render_contract",
+    "event_id": "g900_return_cell_event_562162c72753c818",
+    "marker_id": "unsupported_phase_step_6_9",
+    "binding_id": "g900_marker_event_binding_1d645b31e5366deb",
+    "render_definition": "A future renderer may display the bound diagnostic marker only as a read-only view of existing audited body edges after a separate gate recheck opens the marker gate.",
+    "required_inputs_for_future_renderer": [
+      "marker registry",
+      "unsupported 6/9 marker receipt",
+      "marker edge-index audit",
+      "return-cell cycle/event contract",
+      "marker-event binding contract",
+      "marker-event gate recheck with gate_open true"
+    ],
+    "read_only_rules": [
+      "renderer may reference existing marker edges only",
+      "renderer may not create vertices",
+      "renderer may not create edges",
+      "renderer may not mutate the G900 body",
+      "renderer may not admit a channel",
+      "renderer may not render a channel",
+      "renderer may not treat timer or animation frame as event",
+      "renderer may not make force or physics claims"
+    ],
+    "effect_now": {
+      "render_contract_recorded": true,
+      "renderer_enabled_now": false,
+      "gate_open_now": false,
+      "lights_marker_now": false,
+      "admits_channel_now": false,
+      "renders_channel_now": false,
+      "mutates_body": false
+    },
+    "future_gate_required": {
+      "requires_marker_event_gate_recheck": true,
+      "requires_gate_open_true": true,
+      "requires_separate_renderer_artifact": true,
+      "requires_live_stage_static_check": true
+    }
+  },
+  "criteria": [
+    {
+      "id": "marker_event_binding_contract_exists",
+      "description": "The marker-event binding contract exists and passed.",
+      "satisfied": true
+    },
+    {
+      "id": "bound_event_matches_cycle_contract",
+      "description": "The bound event id matches the return-cell cycle/event contract.",
+      "satisfied": true
+    },
+    {
+      "id": "bound_marker_matches_gate",
+      "description": "The bound marker id matches the anomaly marker gate.",
+      "satisfied": true
+    },
+    {
+      "id": "marker_gate_still_closed",
+      "description": "The marker-event gate remains closed.",
+      "satisfied": true
+    },
+    {
+      "id": "marker_counts_still_bound",
+      "description": "The marker still refers to 60 audited edges and 120 endpoint vertices.",
+      "satisfied": true
+    },
+    {
+      "id": "channel_registry_zero",
+      "description": "The channel registry remains zero-count.",
+      "satisfied": true
+    },
+    {
+      "id": "renderer_not_enabled_now",
+      "description": "This artifact records a render contract but enables no renderer.",
+      "satisfied": true
+    },
+    {
+      "id": "marker_lighting_still_false",
+      "description": "This artifact does not light the marker.",
+      "satisfied": true
+    },
+    {
+      "id": "live_stage_renderer_absent",
+      "description": "The live stage does not contain known marker-renderer hooks.",
+      "satisfied": true,
+      "forbidden_tokens_checked": [
+        "drawGraphMarkerReadings",
+        "G900MarkerOverlay",
+        "activeMarkerRenderer",
+        "lightMarkerNow",
+        "markerLightingEnabled"
+      ],
+      "present_forbidden_tokens": []
+    },
+    {
+      "id": "marker_registry_is_data_available",
+      "description": "The marker registry exists as data for future renderer input.",
+      "satisfied": true
+    }
+  ],
+  "static_live_stage_check": {
+    "stage_path": "public_html/labs/g900_observatory/g900_grammar_stage_v0.js",
+    "lab_path": "public_html/labs/g900_observatory/lab.html",
+    "forbidden_stage_tokens_checked": [
+      "drawGraphMarkerReadings",
+      "G900MarkerOverlay",
+      "activeMarkerRenderer",
+      "lightMarkerNow",
+      "markerLightingEnabled"
+    ],
+    "present_forbidden_stage_tokens": [],
+    "live_stage_renderer_absent": true
+  },
+  "summary": {
+    "render_contract_id": "g900_marker_render_contract_2f8f21a3465a71d3",
+    "event_id": "g900_return_cell_event_562162c72753c818",
+    "marker_id": "unsupported_phase_step_6_9",
+    "binding_id": "g900_marker_event_binding_1d645b31e5366deb",
+    "render_contract_recorded": true,
+    "renderer_enabled_now": false,
+    "gate_open_now": false,
+    "lights_marker_now": false,
+    "admits_channel_now": false,
+    "renders_channel_now": false,
+    "mutates_body": false,
+    "live_stage_renderer_absent": true,
+    "channel_count": 0
+  },
+  "interpretation": {
+    "render_contract_exists": true,
+    "future_renderer_must_be_read_only": true,
+    "marker_still_not_live_lit": true,
+    "gate_still_closed": true,
+    "live_stage_renderer_still_absent": true,
+    "not_channel": true,
+    "next_problem": "Recheck marker-event gate after the render contract, then decide whether a live-stage renderer stub may be introduced under strict no-mutation checks."
+  },
+  "checks": {
+    "binding_contract_passed": true,
+    "marker_gate_passed_closed": true,
+    "cycle_contract_passed": true,
+    "channel_registry_zero_count": true,
+    "channels_not_admitted": true,
+    "render_contract_recorded": true,
+    "renderer_not_enabled_now": true,
+    "marker_not_lit": true,
+    "live_stage_renderer_absent": true,
+    "contract_satisfied": true
+  },
+  "failed_checks": [],
+  "boundary": {
+    "render_contract_only": true,
+    "renderer_enabled": false,
+    "gate_open": false,
+    "admits_channels": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "marker_lighting": false,
+    "force_claim": false,
+    "physics_claim": false
+  }
+}

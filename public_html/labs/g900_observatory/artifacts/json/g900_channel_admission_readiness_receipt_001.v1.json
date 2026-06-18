@@ -1,0 +1,163 @@
+{
+  "schema": "g900.channel_admission_readiness_receipt",
+  "version": 1,
+  "status": "channel_admission_readiness_receipt_recorded",
+  "created_utc": "2026-06-18T03:27:41Z",
+  "audit_pass": true,
+  "verdict": "channel_admission_readiness_receipt_passed",
+  "question": "Is the return-cell channel candidate ready for explicit admission review without yet mutating the channel registry?",
+  "answer": "Yes. All prior blockers are resolved for the candidate, but the channel is still not admitted. The next act must be an explicit channel admission artifact.",
+  "candidate": {
+    "candidate_id": "return_cell_03_09_09_12_06_12_06_13",
+    "candidate_pairs": [
+      "03_09",
+      "09_12",
+      "06_12",
+      "06_13"
+    ],
+    "semantics_contract_id": "g900_channel_semantics_contract_dabdd392c0015dbd",
+    "render_contract_id": "g900_channel_render_contract_c1ab6ec9041a2eba",
+    "law_id": "g900_local_transition_length_law_2a309ad6c63e5ba4"
+  },
+  "readiness_summary": {
+    "semantics_contract_ready": true,
+    "render_contract_ready": true,
+    "local_law_ready": true,
+    "post_law_recheck_ready": true,
+    "all_preconditions_ready": true,
+    "ready_to_admit_is_not_admitted": true,
+    "next_allowed_act": "explicit_channel_admission_artifact"
+  },
+  "source_receipts": {
+    "channels": "public_html/labs/g900_observatory/data/g900_channels.v0.1.json",
+    "carriers": "public_html/labs/g900_observatory/data/g900_carriers.v0.1.json",
+    "static_body": "public_html/labs/g900_observatory/data/g900_static_body.v1.json",
+    "semantics_contract": "public_html/labs/g900_observatory/artifacts/json/g900_channel_semantics_contract_001.v1.json",
+    "render_contract": "public_html/labs/g900_observatory/artifacts/json/g900_channel_render_contract_001.v1.json",
+    "local_law": "public_html/labs/g900_observatory/artifacts/json/g900_local_non_pair_identity_transition_length_law_001.v1.json",
+    "post_law_recheck": "public_html/labs/g900_observatory/artifacts/json/g900_channel_admission_recheck_after_local_law_001.v1.json",
+    "event_contract": "public_html/labs/g900_observatory/artifacts/json/g900_return_cell_cycle_event_contract_001.v1.json",
+    "gate_recheck": "public_html/labs/g900_observatory/artifacts/json/g900_post_stub_marker_event_gate_recheck_001.v1.json",
+    "quartz_boundary": "public_html/labs/g900_observatory/artifacts/json/g900_sheets_per_second_quartz_boundary_001.v1.json"
+  },
+  "hash_receipts": {
+    "static_body_sha256": "71944bd613ce8c6c036a2c4198f3df2e0064a75fec1f03ccf8bb60f9a2d412db",
+    "carrier_registry_sha256": "ecbf14773744ec44d9a73ed14f41525e40f378bf431e4174e194cb431ffcb735",
+    "channel_registry_sha256": "f5298a9d2418778c9e1bc545449b1a84d8b00125e18dc5b6ec6bb08f3434a309",
+    "stage_sha256": "732dad810dffdfbe97c275ee96914a95aeb7fa6976df04d8df0063157b19d5bf"
+  },
+  "summary": {
+    "admission_readiness_passed": true,
+    "candidate_id": "return_cell_03_09_09_12_06_12_06_13",
+    "candidate_pairs": [
+      "03_09",
+      "09_12",
+      "06_12",
+      "06_13"
+    ],
+    "all_preconditions_ready": true,
+    "ready_to_admit_is_not_admitted": true,
+    "explicit_admission_artifact_required": true,
+    "next_allowed_act": "explicit_channel_admission_artifact",
+    "channel_count": 0,
+    "channel_admission_allowed_now": false,
+    "renderer_enabled_now": false,
+    "renders_channel_now": false,
+    "mutates_body": false,
+    "marker_gate_open": false,
+    "marker_lighting": false
+  },
+  "interpretation": {
+    "ready_to_admit_is_not_admitted": true,
+    "admission_requires_explicit_act": true,
+    "channel_registry_not_mutated": true,
+    "channel_is_still_not_rendered": true,
+    "marker_is_still_attention_not_channel": true,
+    "not_marker_lighting": true,
+    "not_body_mutation": true,
+    "not_force_claim": true,
+    "not_physics_claim": true,
+    "next_problem": "Write the explicit channel admission artifact if and only if we are ready to mutate the channel registry from zero."
+  },
+  "criteria": [
+    {
+      "id": "semantics_contract_ready",
+      "description": "The channel semantics contract exists, passed, and did not admit a channel.",
+      "satisfied": true,
+      "semantics_contract_id": "g900_channel_semantics_contract_dabdd392c0015dbd"
+    },
+    {
+      "id": "render_contract_ready",
+      "description": "The channel render contract exists, passed, and did not enable rendering.",
+      "satisfied": true,
+      "render_contract_id": "g900_channel_render_contract_c1ab6ec9041a2eba"
+    },
+    {
+      "id": "local_law_ready",
+      "description": "The candidate-local non-pair transition-length law exists and passed.",
+      "satisfied": true,
+      "law_id": "g900_local_transition_length_law_2a309ad6c63e5ba4"
+    },
+    {
+      "id": "post_law_recheck_ready",
+      "description": "The post-law admission recheck says the candidate is ready but not admitted.",
+      "satisfied": true
+    },
+    {
+      "id": "channel_registry_still_zero",
+      "description": "The channel registry remains zero-count before explicit admission.",
+      "satisfied": true
+    },
+    {
+      "id": "renderer_still_disabled",
+      "description": "No channel renderer is enabled and no channel is rendered.",
+      "satisfied": true
+    },
+    {
+      "id": "body_not_mutated",
+      "description": "The static G900 body remains the read-only source.",
+      "satisfied": true,
+      "static_body_sha256": "71944bd613ce8c6c036a2c4198f3df2e0064a75fec1f03ccf8bb60f9a2d412db"
+    },
+    {
+      "id": "marker_still_unlit",
+      "description": "The marker gate remains closed and the marker remains unlit.",
+      "satisfied": true
+    },
+    {
+      "id": "quartz_still_non_authoritative",
+      "description": "Sheets/sec remains a readout only; quartz has no event or gate authority.",
+      "satisfied": true
+    },
+    {
+      "id": "next_act_is_explicit_admission",
+      "description": "The next allowed act is an explicit admission artifact, not implicit mutation.",
+      "satisfied": true
+    }
+  ],
+  "checks": {
+    "semantics_contract_ready": true,
+    "render_contract_ready": true,
+    "local_law_ready": true,
+    "post_law_recheck_ready": true,
+    "channel_registry_still_zero": true,
+    "renderer_still_disabled": true,
+    "body_not_mutated": true,
+    "marker_still_unlit": true,
+    "quartz_still_non_authoritative": true,
+    "next_act_is_explicit_admission": true,
+    "all_criteria_satisfied": true
+  },
+  "failed_checks": [],
+  "boundary": {
+    "readiness_receipt_only": true,
+    "admits_channels": false,
+    "renderer_enabled": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "marker_lighting": false,
+    "gate_open": false,
+    "force_claim": false,
+    "physics_claim": false
+  }
+}

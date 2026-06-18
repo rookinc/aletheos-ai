@@ -1,0 +1,244 @@
+{
+  "schema": "g900.channel_semantics_contract",
+  "version": 1,
+  "status": "channel_semantics_contract_recorded",
+  "created_utc": "2026-06-18T02:57:00Z",
+  "audit_pass": true,
+  "verdict": "channel_semantics_contract_recorded_without_admission",
+  "question": "What does a G900 Layer 3 channel mean before any channel is admitted?",
+  "channel_semantics": {
+    "contract_id": "g900_channel_semantics_contract_001",
+    "semantics_contract_id": "g900_channel_semantics_contract_dabdd392c0015dbd",
+    "layer": 3,
+    "definition": "A G900 channel is an admitted, receipted transport relation over existing G900 body structure and admitted Layer 2 carrier readings. It is not a marker, not a visual line, not a timer, not a frame, and not a force claim.",
+    "positive_requirements": [
+      {
+        "id": "source_preserving_relation",
+        "statement": "A channel must be source-preserving: it must be derived from existing G900 body edges and admitted carrier readings."
+      },
+      {
+        "id": "transport_semantics",
+        "statement": "A channel must describe an admitted relation of transport, not merely a highlighted location."
+      },
+      {
+        "id": "event_compatibility",
+        "statement": "A channel may carry or witness a structural event only when the event has a receipted contract."
+      },
+      {
+        "id": "non_mutation",
+        "statement": "A channel must not create vertices, create edges, or mutate the G900 body."
+      },
+      {
+        "id": "render_separation",
+        "statement": "Channel admission and channel rendering are separate. A channel may not be rendered until a separate render contract exists."
+      },
+      {
+        "id": "timing_boundary",
+        "statement": "Sheets/sec may read admissible action over quartz-scaled time, but quartz timing does not authorize a channel."
+      }
+    ],
+    "negative_requirements": [
+      {
+        "id": "not_marker",
+        "statement": "A marker says pay attention here. A channel says admitted transport relation. A marker is not a channel."
+      },
+      {
+        "id": "not_renderer",
+        "statement": "A renderer can display admitted information, but a renderer is not the authority that admits a channel."
+      },
+      {
+        "id": "not_timer",
+        "statement": "A timer can pace refresh, but elapsed time is not a channel."
+      },
+      {
+        "id": "not_force_claim",
+        "statement": "A channel in this contract is not a physical force or physics derivation."
+      }
+    ],
+    "candidate_under_contract": {
+      "candidate_id": "return_cell_03_09_09_12_06_12_06_13",
+      "pairs": [
+        "03_09",
+        "09_12",
+        "06_12",
+        "06_13"
+      ],
+      "dominant_roots": [
+        "09",
+        "12",
+        "12",
+        "13"
+      ],
+      "transition_lengths": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "transition_weights": [
+        180,
+        60,
+        120,
+        180
+      ],
+      "status": "semantic_candidate_only_not_admitted"
+    },
+    "effect_now": {
+      "channel_semantics_contract_recorded": true,
+      "channel_admission_allowed_now": false,
+      "channel_count_after": 0,
+      "renders_channel_now": false,
+      "mutates_body": false
+    }
+  },
+  "admission_context": {
+    "prior_admission_artifact_found": true,
+    "prior_admission_blockers_detected": [
+      "channel_semantics_contract",
+      "cycle_event_contract",
+      "non_pair_identity_transition_length_law",
+      "render_contract"
+    ],
+    "resolved_by_this_contract": [
+      "channel_semantics_contract_absent"
+    ],
+    "remaining_blockers": [
+      "channel_render_contract_absent",
+      "non_pair_identity_transition_length_law"
+    ],
+    "admission_allowed_now": false
+  },
+  "layer_context": {
+    "layer_0_stage": "display surface",
+    "layer_1_body": "read-only G900 static body",
+    "layer_2_carriers": "admitted carrier readings over the body",
+    "layer_3_channel_candidate": "not admitted; semantics contract only"
+  },
+  "source_receipts": {
+    "channels": "public_html/labs/g900_observatory/data/g900_channels.v0.1.json",
+    "carriers": "public_html/labs/g900_observatory/data/g900_carriers.v0.1.json",
+    "static_body": "public_html/labs/g900_observatory/data/g900_static_body.v1.json",
+    "admission": "public_html/labs/g900_observatory/artifacts/json/g900_return_cell_channel_admission_criteria_001.v1.json",
+    "event_contract": "public_html/labs/g900_observatory/artifacts/json/g900_return_cell_cycle_event_contract_001.v1.json",
+    "gate_recheck": "public_html/labs/g900_observatory/artifacts/json/g900_post_stub_marker_event_gate_recheck_001.v1.json",
+    "quartz_boundary": "public_html/labs/g900_observatory/artifacts/json/g900_sheets_per_second_quartz_boundary_001.v1.json"
+  },
+  "hash_receipts": {
+    "static_body_sha256": "71944bd613ce8c6c036a2c4198f3df2e0064a75fec1f03ccf8bb60f9a2d412db",
+    "carrier_registry_sha256": "ecbf14773744ec44d9a73ed14f41525e40f378bf431e4174e194cb431ffcb735",
+    "channel_registry_sha256": "f5298a9d2418778c9e1bc545449b1a84d8b00125e18dc5b6ec6bb08f3434a309"
+  },
+  "summary": {
+    "semantics_contract_id": "g900_channel_semantics_contract_dabdd392c0015dbd",
+    "channel_semantics_contract_recorded": true,
+    "candidate_id": "return_cell_03_09_09_12_06_12_06_13",
+    "candidate_pairs": [
+      "03_09",
+      "09_12",
+      "06_12",
+      "06_13"
+    ],
+    "channel_admission_allowed_now": false,
+    "channel_count": 0,
+    "renders_channel_now": false,
+    "mutates_body": false,
+    "resolved_by_this_contract": [
+      "channel_semantics_contract_absent"
+    ],
+    "remaining_blockers": [
+      "channel_render_contract_absent",
+      "non_pair_identity_transition_length_law"
+    ],
+    "marker_gate_open": false,
+    "marker_lighting": false
+  },
+  "interpretation": {
+    "marker_is_not_channel": true,
+    "renderer_is_not_channel": true,
+    "timer_is_not_channel": true,
+    "channel_requires_admitted_transport_semantics": true,
+    "semantics_recorded_but_channel_not_admitted": true,
+    "honest_path_returns_to_meaning_before_light": true,
+    "not_force_claim": true,
+    "not_physics_claim": true,
+    "next_problem": "Recheck channel admission criteria after this semantics contract, or attack the non-pair-identity transition-length law."
+  },
+  "criteria": [
+    {
+      "id": "channel_registry_zero",
+      "description": "The channel registry remains zero-count.",
+      "satisfied": true
+    },
+    {
+      "id": "carrier_registry_present",
+      "description": "The carrier registry exists as Layer 2 source material.",
+      "satisfied": true,
+      "carrier_count": 3
+    },
+    {
+      "id": "static_body_present",
+      "description": "The static G900 body exists as read-only body source.",
+      "satisfied": true,
+      "static_body_sha256": "71944bd613ce8c6c036a2c4198f3df2e0064a75fec1f03ccf8bb60f9a2d412db"
+    },
+    {
+      "id": "event_contract_available",
+      "description": "The return-cell event contract is available if the candidate is discussed as an event-bearing relation.",
+      "satisfied": true
+    },
+    {
+      "id": "marker_gate_still_closed_if_available",
+      "description": "Marker work remains separate and the marker remains unlit.",
+      "satisfied": true
+    },
+    {
+      "id": "quartz_boundary_available",
+      "description": "The sheets/sec quartz boundary is available and has no gate authority.",
+      "satisfied": true
+    },
+    {
+      "id": "semantics_recorded_without_admission",
+      "description": "This artifact records semantics without admitting a channel.",
+      "satisfied": true
+    },
+    {
+      "id": "candidate_remains_candidate",
+      "description": "The return-cell path remains a semantic candidate only.",
+      "satisfied": true
+    },
+    {
+      "id": "remaining_blockers_explicit",
+      "description": "Remaining blockers are explicit.",
+      "satisfied": true,
+      "remaining_blockers": [
+        "channel_render_contract_absent",
+        "non_pair_identity_transition_length_law"
+      ]
+    }
+  ],
+  "checks": {
+    "channel_registry_zero": true,
+    "carrier_registry_present": true,
+    "static_body_present": true,
+    "event_contract_passed": true,
+    "marker_gate_closed": true,
+    "marker_not_lit": true,
+    "quartz_boundary_no_authority": true,
+    "semantics_recorded": true,
+    "channel_not_admitted": true,
+    "channel_not_rendered": true,
+    "body_not_mutated": true,
+    "all_criteria_satisfied": true
+  },
+  "failed_checks": [],
+  "boundary": {
+    "semantics_contract_only": true,
+    "admits_channels": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "marker_lighting": false,
+    "gate_open": false,
+    "force_claim": false,
+    "physics_claim": false
+  }
+}

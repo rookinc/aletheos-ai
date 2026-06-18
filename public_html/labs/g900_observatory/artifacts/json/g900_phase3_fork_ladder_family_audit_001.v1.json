@@ -1,0 +1,759 @@
+{
+  "schema": "g900.phase3_fork_ladder_family_audit",
+  "version": 1,
+  "status": "phase3_fork_ladder_family_audit_recorded",
+  "created_utc": "2026-06-18T08:48:24Z",
+  "git_head": "e11ae8b Probe G900 six-nine native fork law",
+  "audit_pass": true,
+  "verdict": "phase3_fork_ladder_family_audit_passed",
+  "question": "Is the 3-6-9-12 six-nine ladder isolated, or part of a broader phase-3 fork-ladder family?",
+  "family_status": "target_unique_failure_to_receipt_inside_broader_phase3_family",
+  "reading": "The phase-3 anchor fork ladder is a broader family, but the 06_09 root_slot 12 ladder is the unique member that sends an inside failure to a receipt-carrying outside frame.",
+  "family_rule": {
+    "name": "phase3_anchor_fork_ladder_family_scan",
+    "phase_step_mod15": 3,
+    "anchor_rule": "anchor endpoint e satisfies source_root_slot - e = 3 mod 15",
+    "outside_root_slot_rule": "outside_root_slot = anchor",
+    "outside_endpoint_rule": "outside_moving_endpoint = inside_moving_endpoint - 3 mod 15",
+    "uses_receipt_fields": false,
+    "uses_support_fields": false
+  },
+  "counts": {
+    "support_row_count": 1440,
+    "full_frame_count": 17,
+    "phase3_anchor_record_count": 2,
+    "phase3_prediction_exists_count": 1,
+    "phase3_failure_to_receipt_count": 1,
+    "target_is_unique_failure_to_receipt": true
+  },
+  "target": {
+    "source_frame": [
+      "06_09",
+      "12",
+      "23->24"
+    ],
+    "predicted_frame": [
+      "03_09",
+      "9",
+      "23->24"
+    ],
+    "target_record_found": true,
+    "target_prediction_exists": true,
+    "target_prediction_matches": true,
+    "target_failure_to_receipt": true,
+    "target_record": {
+      "source_frame": [
+        "06_09",
+        "12",
+        "23->24"
+      ],
+      "source_pair": "06_09",
+      "source_endpoints": [
+        6,
+        9
+      ],
+      "source_root_slot": 12,
+      "source_limit_transition": "23->24",
+      "anchor_candidates": [
+        9
+      ],
+      "anchor": 9,
+      "inside_moving_endpoint": 6,
+      "outside_moving_endpoint": 3,
+      "outside_root_slot": 9,
+      "phase_ladder_values": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "phase_ladder_distinct": true,
+      "predicted_pair_key": "03_09",
+      "predicted_frame": [
+        "03_09",
+        "9",
+        "23->24"
+      ],
+      "prediction_exists": true,
+      "source_inside_failure_proxy": true,
+      "predicted_receipt_proxy": true,
+      "source_summary": {
+        "row_count": 60,
+        "pair_counts": {
+          "06_09": 60
+        },
+        "root_slot_counts": {
+          "12": 60
+        },
+        "limit_counts": {
+          "23->24": 60
+        },
+        "package_kind_counts": {
+          "one_way_single_transition": 60
+        },
+        "support_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "boundary_carrier_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "zero_hit_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "delta_edge_hits_profile": {
+          "count": 60,
+          "min": 0,
+          "max": 0,
+          "sum": 0,
+          "distinct": [
+            0
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 60,
+          "min": 0,
+          "max": 0,
+          "sum": 0,
+          "distinct": [
+            0
+          ]
+        }
+      },
+      "predicted_summary": {
+        "row_count": 60,
+        "pair_counts": {
+          "03_09": 60
+        },
+        "root_slot_counts": {
+          "9": 60
+        },
+        "limit_counts": {
+          "23->24": 60
+        },
+        "package_kind_counts": {
+          "clean_reciprocal_pair_package": 60
+        },
+        "support_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "boundary_carrier_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "delta_edge_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        }
+      }
+    }
+  },
+  "by_limit": {
+    "phase3_records_by_limit": {
+      "23->24": 1,
+      "32->33": 1
+    },
+    "phase3_predictions_by_limit": {
+      "23->24": 1
+    },
+    "phase3_failure_to_receipt_by_limit": {
+      "23->24": 1
+    }
+  },
+  "failure_to_receipt_records": [
+    {
+      "source_frame": [
+        "06_09",
+        "12",
+        "23->24"
+      ],
+      "source_pair": "06_09",
+      "source_endpoints": [
+        6,
+        9
+      ],
+      "source_root_slot": 12,
+      "source_limit_transition": "23->24",
+      "anchor_candidates": [
+        9
+      ],
+      "anchor": 9,
+      "inside_moving_endpoint": 6,
+      "outside_moving_endpoint": 3,
+      "outside_root_slot": 9,
+      "phase_ladder_values": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "phase_ladder_distinct": true,
+      "predicted_pair_key": "03_09",
+      "predicted_frame": [
+        "03_09",
+        "9",
+        "23->24"
+      ],
+      "prediction_exists": true,
+      "source_inside_failure_proxy": true,
+      "predicted_receipt_proxy": true,
+      "source_summary": {
+        "row_count": 60,
+        "pair_counts": {
+          "06_09": 60
+        },
+        "root_slot_counts": {
+          "12": 60
+        },
+        "limit_counts": {
+          "23->24": 60
+        },
+        "package_kind_counts": {
+          "one_way_single_transition": 60
+        },
+        "support_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "boundary_carrier_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "zero_hit_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "delta_edge_hits_profile": {
+          "count": 60,
+          "min": 0,
+          "max": 0,
+          "sum": 0,
+          "distinct": [
+            0
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 60,
+          "min": 0,
+          "max": 0,
+          "sum": 0,
+          "distinct": [
+            0
+          ]
+        }
+      },
+      "predicted_summary": {
+        "row_count": 60,
+        "pair_counts": {
+          "03_09": 60
+        },
+        "root_slot_counts": {
+          "9": 60
+        },
+        "limit_counts": {
+          "23->24": 60
+        },
+        "package_kind_counts": {
+          "clean_reciprocal_pair_package": 60
+        },
+        "support_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "boundary_carrier_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "delta_edge_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        }
+      }
+    }
+  ],
+  "records_with_prediction": [
+    {
+      "source_frame": [
+        "06_09",
+        "12",
+        "23->24"
+      ],
+      "source_pair": "06_09",
+      "source_endpoints": [
+        6,
+        9
+      ],
+      "source_root_slot": 12,
+      "source_limit_transition": "23->24",
+      "anchor_candidates": [
+        9
+      ],
+      "anchor": 9,
+      "inside_moving_endpoint": 6,
+      "outside_moving_endpoint": 3,
+      "outside_root_slot": 9,
+      "phase_ladder_values": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "phase_ladder_distinct": true,
+      "predicted_pair_key": "03_09",
+      "predicted_frame": [
+        "03_09",
+        "9",
+        "23->24"
+      ],
+      "prediction_exists": true,
+      "source_inside_failure_proxy": true,
+      "predicted_receipt_proxy": true,
+      "source_summary": {
+        "row_count": 60,
+        "pair_counts": {
+          "06_09": 60
+        },
+        "root_slot_counts": {
+          "12": 60
+        },
+        "limit_counts": {
+          "23->24": 60
+        },
+        "package_kind_counts": {
+          "one_way_single_transition": 60
+        },
+        "support_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "boundary_carrier_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "zero_hit_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "delta_edge_hits_profile": {
+          "count": 60,
+          "min": 0,
+          "max": 0,
+          "sum": 0,
+          "distinct": [
+            0
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 60,
+          "min": 0,
+          "max": 0,
+          "sum": 0,
+          "distinct": [
+            0
+          ]
+        }
+      },
+      "predicted_summary": {
+        "row_count": 60,
+        "pair_counts": {
+          "03_09": 60
+        },
+        "root_slot_counts": {
+          "9": 60
+        },
+        "limit_counts": {
+          "23->24": 60
+        },
+        "package_kind_counts": {
+          "clean_reciprocal_pair_package": 60
+        },
+        "support_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "boundary_carrier_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "delta_edge_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        }
+      }
+    }
+  ],
+  "all_phase3_anchor_records": [
+    {
+      "source_frame": [
+        "06_09",
+        "12",
+        "23->24"
+      ],
+      "source_pair": "06_09",
+      "source_endpoints": [
+        6,
+        9
+      ],
+      "source_root_slot": 12,
+      "source_limit_transition": "23->24",
+      "anchor_candidates": [
+        9
+      ],
+      "anchor": 9,
+      "inside_moving_endpoint": 6,
+      "outside_moving_endpoint": 3,
+      "outside_root_slot": 9,
+      "phase_ladder_values": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "phase_ladder_distinct": true,
+      "predicted_pair_key": "03_09",
+      "predicted_frame": [
+        "03_09",
+        "9",
+        "23->24"
+      ],
+      "prediction_exists": true,
+      "source_inside_failure_proxy": true,
+      "predicted_receipt_proxy": true,
+      "source_summary": {
+        "row_count": 60,
+        "pair_counts": {
+          "06_09": 60
+        },
+        "root_slot_counts": {
+          "12": 60
+        },
+        "limit_counts": {
+          "23->24": 60
+        },
+        "package_kind_counts": {
+          "one_way_single_transition": 60
+        },
+        "support_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "boundary_carrier_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "zero_hit_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "delta_edge_hits_profile": {
+          "count": 60,
+          "min": 0,
+          "max": 0,
+          "sum": 0,
+          "distinct": [
+            0
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 60,
+          "min": 0,
+          "max": 0,
+          "sum": 0,
+          "distinct": [
+            0
+          ]
+        }
+      },
+      "predicted_summary": {
+        "row_count": 60,
+        "pair_counts": {
+          "03_09": 60
+        },
+        "root_slot_counts": {
+          "9": 60
+        },
+        "limit_counts": {
+          "23->24": 60
+        },
+        "package_kind_counts": {
+          "clean_reciprocal_pair_package": 60
+        },
+        "support_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "boundary_carrier_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "delta_edge_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        }
+      }
+    },
+    {
+      "source_frame": [
+        "09_12",
+        "12",
+        "32->33"
+      ],
+      "source_pair": "09_12",
+      "source_endpoints": [
+        9,
+        12
+      ],
+      "source_root_slot": 12,
+      "source_limit_transition": "32->33",
+      "anchor_candidates": [
+        9
+      ],
+      "anchor": 9,
+      "inside_moving_endpoint": 12,
+      "outside_moving_endpoint": 9,
+      "outside_root_slot": 9,
+      "phase_ladder_values": [
+        9,
+        12,
+        9,
+        12
+      ],
+      "phase_ladder_distinct": false,
+      "predicted_pair_key": null,
+      "predicted_frame": null,
+      "prediction_exists": false,
+      "source_inside_failure_proxy": false,
+      "predicted_receipt_proxy": false,
+      "source_summary": {
+        "row_count": 60,
+        "pair_counts": {
+          "09_12": 60
+        },
+        "root_slot_counts": {
+          "12": 60
+        },
+        "limit_counts": {
+          "32->33": 60
+        },
+        "package_kind_counts": {
+          "one_way_single_transition": 60
+        },
+        "support_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "boundary_carrier_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "delta_edge_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        }
+      },
+      "predicted_summary": {
+        "row_count": 0,
+        "support_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "boundary_carrier_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "delta_edge_hits_profile": {
+          "count": 0
+        },
+        "internal_delta_hits_profile": {
+          "count": 0
+        }
+      }
+    }
+  ],
+  "interpretation_boundary": [
+    "This is a family scan over observed support-table frames.",
+    "It tests a visible mod15 pair/root_slot fork-ladder rule, not a full native construction derivation.",
+    "The prediction rule does not use receipt/support fields.",
+    "Receipt/failure labels are used only after prediction for evaluation.",
+    "No closure witness, transport relation, channel, force, physics, GR, Maxwell, QCD, electroweak, or unification claim is made."
+  ],
+  "boundary": {
+    "phase3_fork_ladder_family_audit_only": true,
+    "full_native_derivation": false,
+    "admits_closure_witness": false,
+    "admits_transport_relation": false,
+    "admits_channel": false,
+    "marker_lighting": false,
+    "viewer_change": false,
+    "body_mutation": false,
+    "force_claim": false,
+    "physics_claim": false,
+    "gr_claim": false,
+    "maxwell_claim": false,
+    "qcd_claim": false,
+    "electroweak_claim": false,
+    "unification_claim": false
+  },
+  "next_allowed_math_acts": [
+    "derive_phase3_anchor_fork_ladder_from_g60_construction",
+    "test_phase3_ladder_against_non_2324_limits",
+    "test_5_3_4_chamber_signature_near_answering_fork",
+    "transport_relation_admission_criterion_001"
+  ],
+  "checks": {
+    "native_fork_prior_valid": true,
+    "native_fork_prior_status": true,
+    "answering_prior_valid": true,
+    "inside_outside_prior_valid": true,
+    "true_antipode_prior_valid": true,
+    "support_rows_present": true,
+    "full_frame_count_positive": true,
+    "phase3_family_status_recorded": true,
+    "target_record_found": true,
+    "target_prediction_matches_previous": true,
+    "target_failure_to_receipt": true,
+    "prediction_does_not_use_receipt_fields": true,
+    "prediction_does_not_use_support_fields": true,
+    "channel_registry_preserved": true,
+    "renderer_absent": true,
+    "no_forbidden_claims": true
+  },
+  "failed_checks": [],
+  "hashes": {
+    "native_fork_prior_sha256": "133502289c09df1045f42eaf4f98c40c2837d50a8b173d8f22f6076053b97f49",
+    "answering_prior_sha256": "aa630f30d15af6bfa8d2caa464d736570e582a0cbda559224875ac158e4d233c",
+    "inside_outside_prior_sha256": "1a31a0614d3286a64ee9a348f354e6fe10198f925973cfa2917d3cf449962307",
+    "true_antipode_prior_sha256": "b6087c9a0f31e01ef1fa1557718584d3af817f04e64ee00b902e9ac900dd679c",
+    "steps_csv_sha256": "40466b974be84ee5ff7bae97a5077a98d15483e80367422c6d717edf59ee630d",
+    "channels_sha256": "fbe4c50e0adf3460f7190f3c7714754da8a620359a5bc26c70543cc401feca08",
+    "body_sha256": "6a2cb6b9892a78d4559ec61cf946b0021962cc6819311234b8bf14102b3b7f63",
+    "lab_sha256": "5a10a18bc6563446a0d364d5984b8a41db580e0a75831c82b9eeb5aebc2edeb7"
+  }
+}

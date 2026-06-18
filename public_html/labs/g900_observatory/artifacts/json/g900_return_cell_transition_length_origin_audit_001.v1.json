@@ -1,0 +1,601 @@
+{
+  "schema": "g900.return_cell_transition_length_origin_audit",
+  "version": 1,
+  "status": "return_cell_transition_length_origin_audit_passed",
+  "created_utc": "2026-06-18T01:28:40Z",
+  "audit_pass": true,
+  "verdict": "transition_lengths_derived_in_tested_carrier_incidence_family",
+  "question": "Can the residual 3,1,2,3 transition-length sequence be derived from carrier/source incidence in the tested feature family?",
+  "selected_cell": {
+    "pairs": [
+      "03_09",
+      "09_12",
+      "06_12",
+      "06_13"
+    ],
+    "target_transition_lens": [
+      3,
+      1,
+      2,
+      3
+    ]
+  },
+  "tested_feature_family": [
+    "low_endpoint",
+    "high_endpoint",
+    "endpoint_sum",
+    "endpoint_gap",
+    "endpoint_sum_mod15",
+    "endpoint_gap_mod15",
+    "boundary_carrier_present",
+    "boundary_mention_count",
+    "low_endpoint|high_endpoint",
+    "high_endpoint|endpoint_gap",
+    "high_endpoint|boundary_carrier_present",
+    "endpoint_gap|boundary_carrier_present",
+    "endpoint_sum_mod15|endpoint_gap_mod15"
+  ],
+  "carrier_boundary_summary": {
+    "carrier_boundary_pair_count_extracted": 30,
+    "carrier_boundary_pairs_extracted": [
+      "00_01",
+      "00_04",
+      "00_05",
+      "00_06",
+      "01_02",
+      "01_06",
+      "01_07",
+      "02_03",
+      "02_07",
+      "02_08",
+      "03_04",
+      "03_08",
+      "03_09",
+      "04_05",
+      "04_09",
+      "05_10",
+      "05_14",
+      "06_12",
+      "06_13",
+      "07_10",
+      "07_11",
+      "08_13",
+      "08_14",
+      "09_11",
+      "09_12",
+      "10_11",
+      "10_14",
+      "11_12",
+      "12_13",
+      "13_14"
+    ],
+    "selected_pairs_all_have_boundary_mentions": true
+  },
+  "pair_records": [
+    {
+      "pair": "02_03",
+      "low_endpoint": "02",
+      "high_endpoint": "03",
+      "low_endpoint_int": 2,
+      "high_endpoint_int": 3,
+      "endpoint_sum": 5,
+      "endpoint_gap": 1,
+      "endpoint_sum_mod15": 5,
+      "endpoint_gap_mod15": 1,
+      "boundary_carrier_present": true,
+      "boundary_mention_count": 2,
+      "is_selected_cell_pair": false,
+      "selected_cell_index": null,
+      "target_transition_len_for_evaluation": 3
+    },
+    {
+      "pair": "02_08",
+      "low_endpoint": "02",
+      "high_endpoint": "08",
+      "low_endpoint_int": 2,
+      "high_endpoint_int": 8,
+      "endpoint_sum": 10,
+      "endpoint_gap": 6,
+      "endpoint_sum_mod15": 10,
+      "endpoint_gap_mod15": 6,
+      "boundary_carrier_present": true,
+      "boundary_mention_count": 2,
+      "is_selected_cell_pair": false,
+      "selected_cell_index": null,
+      "target_transition_len_for_evaluation": 3
+    },
+    {
+      "pair": "03_09",
+      "low_endpoint": "03",
+      "high_endpoint": "09",
+      "low_endpoint_int": 3,
+      "high_endpoint_int": 9,
+      "endpoint_sum": 12,
+      "endpoint_gap": 6,
+      "endpoint_sum_mod15": 12,
+      "endpoint_gap_mod15": 6,
+      "boundary_carrier_present": true,
+      "boundary_mention_count": 2,
+      "is_selected_cell_pair": true,
+      "selected_cell_index": 0,
+      "target_transition_len_for_evaluation": 3
+    },
+    {
+      "pair": "05_10",
+      "low_endpoint": "05",
+      "high_endpoint": "10",
+      "low_endpoint_int": 5,
+      "high_endpoint_int": 10,
+      "endpoint_sum": 15,
+      "endpoint_gap": 5,
+      "endpoint_sum_mod15": 0,
+      "endpoint_gap_mod15": 5,
+      "boundary_carrier_present": true,
+      "boundary_mention_count": 2,
+      "is_selected_cell_pair": false,
+      "selected_cell_index": null,
+      "target_transition_len_for_evaluation": 3
+    },
+    {
+      "pair": "05_14",
+      "low_endpoint": "05",
+      "high_endpoint": "14",
+      "low_endpoint_int": 5,
+      "high_endpoint_int": 14,
+      "endpoint_sum": 19,
+      "endpoint_gap": 9,
+      "endpoint_sum_mod15": 4,
+      "endpoint_gap_mod15": 9,
+      "boundary_carrier_present": true,
+      "boundary_mention_count": 2,
+      "is_selected_cell_pair": false,
+      "selected_cell_index": null,
+      "target_transition_len_for_evaluation": 3
+    },
+    {
+      "pair": "06_09",
+      "low_endpoint": "06",
+      "high_endpoint": "09",
+      "low_endpoint_int": 6,
+      "high_endpoint_int": 9,
+      "endpoint_sum": 15,
+      "endpoint_gap": 3,
+      "endpoint_sum_mod15": 0,
+      "endpoint_gap_mod15": 3,
+      "boundary_carrier_present": false,
+      "boundary_mention_count": 0,
+      "is_selected_cell_pair": false,
+      "selected_cell_index": null,
+      "target_transition_len_for_evaluation": 1
+    },
+    {
+      "pair": "06_12",
+      "low_endpoint": "06",
+      "high_endpoint": "12",
+      "low_endpoint_int": 6,
+      "high_endpoint_int": 12,
+      "endpoint_sum": 18,
+      "endpoint_gap": 6,
+      "endpoint_sum_mod15": 3,
+      "endpoint_gap_mod15": 6,
+      "boundary_carrier_present": true,
+      "boundary_mention_count": 2,
+      "is_selected_cell_pair": true,
+      "selected_cell_index": 2,
+      "target_transition_len_for_evaluation": 2
+    },
+    {
+      "pair": "06_13",
+      "low_endpoint": "06",
+      "high_endpoint": "13",
+      "low_endpoint_int": 6,
+      "high_endpoint_int": 13,
+      "endpoint_sum": 19,
+      "endpoint_gap": 7,
+      "endpoint_sum_mod15": 4,
+      "endpoint_gap_mod15": 7,
+      "boundary_carrier_present": true,
+      "boundary_mention_count": 2,
+      "is_selected_cell_pair": true,
+      "selected_cell_index": 3,
+      "target_transition_len_for_evaluation": 3
+    },
+    {
+      "pair": "07_11",
+      "low_endpoint": "07",
+      "high_endpoint": "11",
+      "low_endpoint_int": 7,
+      "high_endpoint_int": 11,
+      "endpoint_sum": 18,
+      "endpoint_gap": 4,
+      "endpoint_sum_mod15": 3,
+      "endpoint_gap_mod15": 4,
+      "boundary_carrier_present": true,
+      "boundary_mention_count": 2,
+      "is_selected_cell_pair": false,
+      "selected_cell_index": null,
+      "target_transition_len_for_evaluation": 2
+    },
+    {
+      "pair": "09_12",
+      "low_endpoint": "09",
+      "high_endpoint": "12",
+      "low_endpoint_int": 9,
+      "high_endpoint_int": 12,
+      "endpoint_sum": 21,
+      "endpoint_gap": 3,
+      "endpoint_sum_mod15": 6,
+      "endpoint_gap_mod15": 3,
+      "boundary_carrier_present": true,
+      "boundary_mention_count": 2,
+      "is_selected_cell_pair": true,
+      "selected_cell_index": 1,
+      "target_transition_len_for_evaluation": 1
+    }
+  ],
+  "candidate_results": [
+    {
+      "feature": "low_endpoint",
+      "deterministic_globally": false,
+      "deterministic_on_selected": false,
+      "selected_feature_values": [
+        "03",
+        "09",
+        "06",
+        "06"
+      ],
+      "selected_target_lens": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "global_bucket_count": 6,
+      "ambiguous_global_bucket_count": 1,
+      "predicted_selected_lens_if_global_deterministic": null,
+      "exact_selected_lens_if_global_deterministic": false,
+      "uses_full60_transition_rows_for_evaluation": true,
+      "uses_package_kind": false
+    },
+    {
+      "feature": "high_endpoint",
+      "deterministic_globally": false,
+      "deterministic_on_selected": false,
+      "selected_feature_values": [
+        "09",
+        "12",
+        "12",
+        "13"
+      ],
+      "selected_target_lens": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "global_bucket_count": 8,
+      "ambiguous_global_bucket_count": 2,
+      "predicted_selected_lens_if_global_deterministic": null,
+      "exact_selected_lens_if_global_deterministic": false,
+      "uses_full60_transition_rows_for_evaluation": true,
+      "uses_package_kind": false
+    },
+    {
+      "feature": "endpoint_sum",
+      "deterministic_globally": false,
+      "deterministic_on_selected": true,
+      "selected_feature_values": [
+        "12",
+        "21",
+        "18",
+        "19"
+      ],
+      "selected_target_lens": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "global_bucket_count": 7,
+      "ambiguous_global_bucket_count": 1,
+      "predicted_selected_lens_if_global_deterministic": null,
+      "exact_selected_lens_if_global_deterministic": false,
+      "uses_full60_transition_rows_for_evaluation": true,
+      "uses_package_kind": false
+    },
+    {
+      "feature": "endpoint_gap",
+      "deterministic_globally": false,
+      "deterministic_on_selected": false,
+      "selected_feature_values": [
+        "6",
+        "3",
+        "6",
+        "7"
+      ],
+      "selected_target_lens": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "global_bucket_count": 7,
+      "ambiguous_global_bucket_count": 1,
+      "predicted_selected_lens_if_global_deterministic": null,
+      "exact_selected_lens_if_global_deterministic": false,
+      "uses_full60_transition_rows_for_evaluation": true,
+      "uses_package_kind": false
+    },
+    {
+      "feature": "endpoint_sum_mod15",
+      "deterministic_globally": false,
+      "deterministic_on_selected": true,
+      "selected_feature_values": [
+        "12",
+        "6",
+        "3",
+        "4"
+      ],
+      "selected_target_lens": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "global_bucket_count": 7,
+      "ambiguous_global_bucket_count": 1,
+      "predicted_selected_lens_if_global_deterministic": null,
+      "exact_selected_lens_if_global_deterministic": false,
+      "uses_full60_transition_rows_for_evaluation": true,
+      "uses_package_kind": false
+    },
+    {
+      "feature": "endpoint_gap_mod15",
+      "deterministic_globally": false,
+      "deterministic_on_selected": false,
+      "selected_feature_values": [
+        "6",
+        "3",
+        "6",
+        "7"
+      ],
+      "selected_target_lens": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "global_bucket_count": 7,
+      "ambiguous_global_bucket_count": 1,
+      "predicted_selected_lens_if_global_deterministic": null,
+      "exact_selected_lens_if_global_deterministic": false,
+      "uses_full60_transition_rows_for_evaluation": true,
+      "uses_package_kind": false
+    },
+    {
+      "feature": "boundary_carrier_present",
+      "deterministic_globally": false,
+      "deterministic_on_selected": false,
+      "selected_feature_values": [
+        "True",
+        "True",
+        "True",
+        "True"
+      ],
+      "selected_target_lens": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "global_bucket_count": 2,
+      "ambiguous_global_bucket_count": 1,
+      "predicted_selected_lens_if_global_deterministic": null,
+      "exact_selected_lens_if_global_deterministic": false,
+      "uses_full60_transition_rows_for_evaluation": true,
+      "uses_package_kind": false
+    },
+    {
+      "feature": "boundary_mention_count",
+      "deterministic_globally": false,
+      "deterministic_on_selected": false,
+      "selected_feature_values": [
+        "2",
+        "2",
+        "2",
+        "2"
+      ],
+      "selected_target_lens": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "global_bucket_count": 2,
+      "ambiguous_global_bucket_count": 1,
+      "predicted_selected_lens_if_global_deterministic": null,
+      "exact_selected_lens_if_global_deterministic": false,
+      "uses_full60_transition_rows_for_evaluation": true,
+      "uses_package_kind": false
+    },
+    {
+      "feature": "low_endpoint|high_endpoint",
+      "deterministic_globally": true,
+      "deterministic_on_selected": true,
+      "selected_feature_values": [
+        "('03', '09')",
+        "('09', '12')",
+        "('06', '12')",
+        "('06', '13')"
+      ],
+      "selected_target_lens": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "global_bucket_count": 10,
+      "ambiguous_global_bucket_count": 0,
+      "predicted_selected_lens_if_global_deterministic": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "exact_selected_lens_if_global_deterministic": true,
+      "uses_full60_transition_rows_for_evaluation": true,
+      "uses_package_kind": false
+    },
+    {
+      "feature": "high_endpoint|endpoint_gap",
+      "deterministic_globally": true,
+      "deterministic_on_selected": true,
+      "selected_feature_values": [
+        "('09', 6)",
+        "('12', 3)",
+        "('12', 6)",
+        "('13', 7)"
+      ],
+      "selected_target_lens": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "global_bucket_count": 10,
+      "ambiguous_global_bucket_count": 0,
+      "predicted_selected_lens_if_global_deterministic": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "exact_selected_lens_if_global_deterministic": true,
+      "uses_full60_transition_rows_for_evaluation": true,
+      "uses_package_kind": false
+    },
+    {
+      "feature": "high_endpoint|boundary_carrier_present",
+      "deterministic_globally": false,
+      "deterministic_on_selected": false,
+      "selected_feature_values": [
+        "('09', True)",
+        "('12', True)",
+        "('12', True)",
+        "('13', True)"
+      ],
+      "selected_target_lens": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "global_bucket_count": 9,
+      "ambiguous_global_bucket_count": 1,
+      "predicted_selected_lens_if_global_deterministic": null,
+      "exact_selected_lens_if_global_deterministic": false,
+      "uses_full60_transition_rows_for_evaluation": true,
+      "uses_package_kind": false
+    },
+    {
+      "feature": "endpoint_gap|boundary_carrier_present",
+      "deterministic_globally": false,
+      "deterministic_on_selected": false,
+      "selected_feature_values": [
+        "(6, True)",
+        "(3, True)",
+        "(6, True)",
+        "(7, True)"
+      ],
+      "selected_target_lens": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "global_bucket_count": 8,
+      "ambiguous_global_bucket_count": 1,
+      "predicted_selected_lens_if_global_deterministic": null,
+      "exact_selected_lens_if_global_deterministic": false,
+      "uses_full60_transition_rows_for_evaluation": true,
+      "uses_package_kind": false
+    },
+    {
+      "feature": "endpoint_sum_mod15|endpoint_gap_mod15",
+      "deterministic_globally": true,
+      "deterministic_on_selected": true,
+      "selected_feature_values": [
+        "(12, 6)",
+        "(6, 3)",
+        "(3, 6)",
+        "(4, 7)"
+      ],
+      "selected_target_lens": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "global_bucket_count": 10,
+      "ambiguous_global_bucket_count": 0,
+      "predicted_selected_lens_if_global_deterministic": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "exact_selected_lens_if_global_deterministic": true,
+      "uses_full60_transition_rows_for_evaluation": true,
+      "uses_package_kind": false
+    }
+  ],
+  "summary": {
+    "exact_global_hit_count": 3,
+    "exact_global_hit_features": [
+      "low_endpoint|high_endpoint",
+      "high_endpoint|endpoint_gap",
+      "endpoint_sum_mod15|endpoint_gap_mod15"
+    ],
+    "deterministic_on_selected_feature_count": 5,
+    "deterministic_on_selected_features": [
+      "endpoint_sum",
+      "endpoint_sum_mod15",
+      "low_endpoint|high_endpoint",
+      "high_endpoint|endpoint_gap",
+      "endpoint_sum_mod15|endpoint_gap_mod15"
+    ],
+    "transition_lengths_remain_residual": false,
+    "channel_count": 0
+  },
+  "interpretation": {
+    "transition_lengths_derived_in_tested_family": true,
+    "transition_lengths_remain_residual_in_tested_family": false,
+    "package_kind_used": false,
+    "full60_transition_rows_used_for_evaluation_only": true,
+    "not_channel": true,
+    "next_problem": "If residual remains, either expand the carrier/source incidence feature family or record transition length as a full60 transition-row invariant."
+  },
+  "checks": {
+    "field_origin_audit_passed": true,
+    "label_free_selector_audit_passed": true,
+    "oriented_census_passed": true,
+    "channel_registry_zero_count": true,
+    "channels_not_admitted": true,
+    "carrier_boundary_pairs_found": true,
+    "selected_pairs_all_have_boundary_mentions": true,
+    "target_lens_match_selected_cell": true,
+    "candidate_family_nonempty": true,
+    "verdict_is_determinate": true
+  },
+  "failed_checks": [],
+  "boundary": {
+    "transition_length_origin_audit_only": true,
+    "tested_feature_family_only": true,
+    "admits_channels": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "marker_lighting": false,
+    "force_claim": false,
+    "physics_claim": false
+  }
+}

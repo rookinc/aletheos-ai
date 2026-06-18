@@ -1,0 +1,189 @@
+{
+  "audit_id": "g900_six_nine_inside6_gap_phase_origin_law_028",
+  "audit_pass": true,
+  "boundary": {
+    "channel_admitted": false,
+    "closure_witness_admitted": false,
+    "does_not_derive_inside6": true,
+    "does_not_derive_two_slot_gap": true,
+    "exact_selector_found": false,
+    "force_claim": false,
+    "local_origin_law_candidate_only": true,
+    "marker_lighting": false,
+    "native_derivation_complete": false,
+    "physics_claim": false,
+    "transport_relation_admitted": false,
+    "unification_claim": false,
+    "viewer_or_body_mutation": false
+  },
+  "next_ascent_target": "derive why source construction supplies inside=6 and a two-slot gap",
+  "origin_law_formula": {
+    "inputs": [
+      "inside",
+      "gap_width"
+    ],
+    "name": "inside_plus_two_slot_gap_origin_formula",
+    "observed_inputs": {
+      "gap_width": 2,
+      "inside": 6
+    },
+    "observed_output": {
+      "gap": [
+        9,
+        11
+      ],
+      "phase": 1
+    },
+    "rule": "gap=[inside+3, inside+3+gap_width] mod 15; phase=gap_width-1"
+  },
+  "origin_law_pass": true,
+  "origin_status": "inside_plus_two_slot_gap_formula_recovers_gap_9_11_and_phase1",
+  "prediction_fail_count": 0,
+  "prediction_match_count": 3,
+  "prior_027_law_status": "inside_gap_phase_formula_recovers_broken_ladder_face",
+  "prior_027_source_law_pass": true,
+  "prior_027_verdict": "broken_ladder_face_source_law_candidate_recorded",
+  "reading": "The source inputs used by 027 reduce one level: once inside=6 and a two-slot source gap are present, the local offset rule gap=[inside+3, inside+5] and phase=gap_width-1 recovers gap=[9,11] and phase=1. This does not yet derive why source construction supplies inside=6 or a two-slot gap.",
+  "representative_prediction": {
+    "gap_high_offset_from_inside": 5,
+    "gap_low_offset_from_inside": 3,
+    "gap_width": 2,
+    "inside": 6,
+    "phase_rule": "phase = gap_width - 1",
+    "predicted_gap": [
+      9,
+      11
+    ],
+    "predicted_gap_high": 11,
+    "predicted_gap_low": 9,
+    "predicted_phase": 1
+  },
+  "tested_row_count": 3,
+  "tested_rows": [
+    {
+      "actual_gap": [
+        9,
+        11
+      ],
+      "actual_phase": 1,
+      "artifact": "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json",
+      "combined_match": true,
+      "gap_match": true,
+      "gap_width": 2,
+      "inside": 6,
+      "phase_match": true,
+      "pointer": "$.contrast_rows_first_30[20].packet",
+      "prediction": {
+        "gap_high_offset_from_inside": 5,
+        "gap_low_offset_from_inside": 3,
+        "gap_width": 2,
+        "inside": 6,
+        "phase_rule": "phase = gap_width - 1",
+        "predicted_gap": [
+          9,
+          11
+        ],
+        "predicted_gap_high": 11,
+        "predicted_gap_low": 9,
+        "predicted_phase": 1
+      },
+      "prior_actual_ladder": [
+        3,
+        9,
+        6,
+        12
+      ],
+      "prior_predicted_ladder": [
+        3,
+        9,
+        6,
+        12
+      ],
+      "prior_prediction_match": true
+    },
+    {
+      "actual_gap": [
+        9,
+        11
+      ],
+      "actual_phase": 1,
+      "artifact": "g900_six_nine_ladder_schema_microscope_003.v1.json",
+      "combined_match": true,
+      "gap_match": true,
+      "gap_width": 2,
+      "inside": 6,
+      "phase_match": true,
+      "pointer": "$.source_hits[1].object_scalar_context",
+      "prediction": {
+        "gap_high_offset_from_inside": 5,
+        "gap_low_offset_from_inside": 3,
+        "gap_width": 2,
+        "inside": 6,
+        "phase_rule": "phase = gap_width - 1",
+        "predicted_gap": [
+          9,
+          11
+        ],
+        "predicted_gap_high": 11,
+        "predicted_gap_low": 9,
+        "predicted_phase": 1
+      },
+      "prior_actual_ladder": [
+        3,
+        9,
+        6,
+        12
+      ],
+      "prior_predicted_ladder": [
+        3,
+        9,
+        6,
+        12
+      ],
+      "prior_prediction_match": true
+    },
+    {
+      "actual_gap": [
+        9,
+        11
+      ],
+      "actual_phase": 1,
+      "artifact": "g900_six_nine_return_span_carrier_variable_scout_014.v1.json",
+      "combined_match": true,
+      "gap_match": true,
+      "gap_width": 2,
+      "inside": 6,
+      "phase_match": true,
+      "pointer": "$.span360_rows_first_20[4].packet",
+      "prediction": {
+        "gap_high_offset_from_inside": 5,
+        "gap_low_offset_from_inside": 3,
+        "gap_width": 2,
+        "inside": 6,
+        "phase_rule": "phase = gap_width - 1",
+        "predicted_gap": [
+          9,
+          11
+        ],
+        "predicted_gap_high": 11,
+        "predicted_gap_low": 9,
+        "predicted_phase": 1
+      },
+      "prior_actual_ladder": [
+        3,
+        9,
+        6,
+        12
+      ],
+      "prior_predicted_ladder": [
+        3,
+        9,
+        6,
+        12
+      ],
+      "prior_prediction_match": true
+    }
+  ],
+  "theory_claim": false,
+  "verdict": "inside6_gap_phase_origin_law_candidate_recorded"
+}

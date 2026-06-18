@@ -1,0 +1,991 @@
+{
+  "schema": "g900.full60_hit_pair_g15_subgraph_audit",
+  "version": 1,
+  "status": "full60_hit_pair_g15_subgraph_audit_passed",
+  "created_utc": "2026-06-18T00:47:15Z",
+  "audit_pass": true,
+  "question": "Do the nine full60 endpoint pair hits form a lawful subgraph of the G15 endpoint skeleton?",
+  "pair_sets": {
+    "all_g15_pair_count": 30,
+    "hit_pair_count": 9,
+    "miss_pair_count": 21,
+    "hit_pairs": [
+      "02_03",
+      "02_08",
+      "03_09",
+      "05_10",
+      "05_14",
+      "06_12",
+      "06_13",
+      "07_11",
+      "09_12"
+    ],
+    "miss_pairs": [
+      "00_01",
+      "00_04",
+      "00_05",
+      "00_06",
+      "01_02",
+      "01_06",
+      "01_07",
+      "02_07",
+      "03_04",
+      "03_08",
+      "04_05",
+      "04_09",
+      "07_10",
+      "08_13",
+      "08_14",
+      "09_11",
+      "10_11",
+      "10_14",
+      "11_12",
+      "12_13",
+      "13_14"
+    ],
+    "package_pairs_with_boundary_carrier": [
+      "02_03",
+      "02_08",
+      "03_09",
+      "05_10",
+      "05_14",
+      "06_12",
+      "06_13",
+      "07_11",
+      "09_12"
+    ],
+    "package_pairs_without_boundary_carrier": [
+      "06_09"
+    ],
+    "hit_equals_boundary_package_pairs": true
+  },
+  "subgraph_invariants": {
+    "full_g15": {
+      "vertex_count": 15,
+      "edge_count": 30,
+      "degree_counts": {
+        "00": 4,
+        "01": 4,
+        "02": 4,
+        "03": 4,
+        "04": 4,
+        "05": 4,
+        "06": 4,
+        "07": 4,
+        "08": 4,
+        "09": 4,
+        "10": 4,
+        "11": 4,
+        "12": 4,
+        "13": 4,
+        "14": 4
+      },
+      "degree_set": [
+        4
+      ],
+      "degree_histogram": {
+        "4": 15
+      },
+      "component_sizes": [
+        15
+      ],
+      "components": [
+        [
+          "00",
+          "01",
+          "02",
+          "03",
+          "04",
+          "05",
+          "06",
+          "07",
+          "08",
+          "09",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14"
+        ]
+      ],
+      "triangle_count": 10,
+      "triangles": [
+        [
+          "00",
+          "01",
+          "06"
+        ],
+        [
+          "00",
+          "04",
+          "05"
+        ],
+        [
+          "01",
+          "02",
+          "07"
+        ],
+        [
+          "02",
+          "03",
+          "08"
+        ],
+        [
+          "03",
+          "04",
+          "09"
+        ],
+        [
+          "05",
+          "10",
+          "14"
+        ],
+        [
+          "06",
+          "12",
+          "13"
+        ],
+        [
+          "07",
+          "10",
+          "11"
+        ],
+        [
+          "08",
+          "13",
+          "14"
+        ],
+        [
+          "09",
+          "11",
+          "12"
+        ]
+      ]
+    },
+    "hit_subgraph_on_all_15_slots": {
+      "vertex_count": 15,
+      "edge_count": 9,
+      "degree_counts": {
+        "00": 0,
+        "01": 0,
+        "02": 2,
+        "03": 2,
+        "04": 0,
+        "05": 2,
+        "06": 2,
+        "07": 1,
+        "08": 1,
+        "09": 2,
+        "10": 1,
+        "11": 1,
+        "12": 2,
+        "13": 1,
+        "14": 1
+      },
+      "degree_set": [
+        0,
+        1,
+        2
+      ],
+      "degree_histogram": {
+        "0": 3,
+        "1": 6,
+        "2": 6
+      },
+      "component_sizes": [
+        7,
+        3,
+        2,
+        1,
+        1,
+        1
+      ],
+      "components": [
+        [
+          "02",
+          "03",
+          "06",
+          "08",
+          "09",
+          "12",
+          "13"
+        ],
+        [
+          "05",
+          "10",
+          "14"
+        ],
+        [
+          "07",
+          "11"
+        ],
+        [
+          "00"
+        ],
+        [
+          "01"
+        ],
+        [
+          "04"
+        ]
+      ],
+      "triangle_count": 0,
+      "triangles": []
+    },
+    "hit_subgraph_on_hit_slots_only": {
+      "vertex_count": 12,
+      "edge_count": 9,
+      "degree_counts": {
+        "02": 2,
+        "03": 2,
+        "05": 2,
+        "06": 2,
+        "07": 1,
+        "08": 1,
+        "09": 2,
+        "10": 1,
+        "11": 1,
+        "12": 2,
+        "13": 1,
+        "14": 1
+      },
+      "degree_set": [
+        1,
+        2
+      ],
+      "degree_histogram": {
+        "1": 6,
+        "2": 6
+      },
+      "component_sizes": [
+        7,
+        3,
+        2
+      ],
+      "components": [
+        [
+          "02",
+          "03",
+          "06",
+          "08",
+          "09",
+          "12",
+          "13"
+        ],
+        [
+          "05",
+          "10",
+          "14"
+        ],
+        [
+          "07",
+          "11"
+        ]
+      ],
+      "triangle_count": 0,
+      "triangles": []
+    },
+    "complement_subgraph_on_all_15_slots": {
+      "vertex_count": 15,
+      "edge_count": 21,
+      "degree_counts": {
+        "00": 4,
+        "01": 4,
+        "02": 2,
+        "03": 2,
+        "04": 4,
+        "05": 2,
+        "06": 2,
+        "07": 3,
+        "08": 3,
+        "09": 2,
+        "10": 3,
+        "11": 3,
+        "12": 2,
+        "13": 3,
+        "14": 3
+      },
+      "degree_set": [
+        2,
+        3,
+        4
+      ],
+      "degree_histogram": {
+        "2": 6,
+        "3": 6,
+        "4": 3
+      },
+      "component_sizes": [
+        15
+      ],
+      "components": [
+        [
+          "00",
+          "01",
+          "02",
+          "03",
+          "04",
+          "05",
+          "06",
+          "07",
+          "08",
+          "09",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14"
+        ]
+      ],
+      "triangle_count": 4,
+      "triangles": [
+        [
+          "00",
+          "01",
+          "06"
+        ],
+        [
+          "00",
+          "04",
+          "05"
+        ],
+        [
+          "01",
+          "02",
+          "07"
+        ],
+        [
+          "08",
+          "13",
+          "14"
+        ]
+      ]
+    }
+  },
+  "package_summary_for_hit_pairs": {
+    "package_row_count": 9,
+    "package_kind_counts": {
+      "clean_reciprocal_pair_package": 6,
+      "two_transition_pair_package": 2,
+      "one_way_single_transition": 1
+    },
+    "has_boundary_carrier_counts": {
+      "true": 9
+    },
+    "channels_admitted_counts": {
+      "false": 9
+    },
+    "boundary_edge_counts": {
+      "60": 9
+    },
+    "boundary_vertex_counts": {
+      "120": 9
+    },
+    "pair_total_transition_counts": {
+      "180": 6,
+      "120": 1,
+      "130": 1,
+      "60": 1
+    },
+    "pair_total_root_counts": {
+      "60": 9
+    },
+    "expected_package_kind_counts": {
+      "clean_reciprocal_pair_package": 6,
+      "two_transition_pair_package": 2,
+      "one_way_single_transition": 1
+    },
+    "expected_transition_count_profile": {
+      "60": 1,
+      "120": 1,
+      "130": 1,
+      "180": 6
+    },
+    "missing_hit_package_rows": []
+  },
+  "hit_package_rows": [
+    {
+      "pair_key": "2/3",
+      "package_kind": "clean_reciprocal_pair_package",
+      "full60_transition_count": 3,
+      "full60_transitions": [
+        "2 -> 3",
+        "2/3 -> 3",
+        "3 -> 2"
+      ],
+      "full60_transition_kinds": {
+        "pair_to_single": 1,
+        "single_to_single": 2
+      },
+      "full60_root_slot_counts": {
+        "3": 180
+      },
+      "has_boundary_carrier": true,
+      "boundary_carrier_id": "slot_pair_02_03_boundary_carrier",
+      "boundary_vertex_count": 120,
+      "boundary_edge_count": 60,
+      "pair_total_transition_count": 180,
+      "pair_total_root_count": 60,
+      "pair_total_direction_counts": {
+        "2 -> 3": 60,
+        "2/3 -> 3": 60,
+        "3 -> 2": 60
+      },
+      "pair_total_transition_kind_counts": {
+        "pair_to_single": 60,
+        "single_to_single": 120
+      },
+      "reciprocal_single_transition_count": 60,
+      "sample_roots": [
+        "3:0",
+        "3:1",
+        "3:10",
+        "3:11",
+        "3:12",
+        "3:13",
+        "3:14",
+        "3:15",
+        "3:16",
+        "3:17",
+        "3:18",
+        "3:19",
+        "3:2",
+        "3:20",
+        "3:21",
+        "3:22",
+        "3:23",
+        "3:3",
+        "3:4",
+        "3:5",
+        "3:6",
+        "3:7",
+        "3:8",
+        "3:9"
+      ],
+      "channels_admitted": false
+    },
+    {
+      "pair_key": "2/8",
+      "package_kind": "clean_reciprocal_pair_package",
+      "full60_transition_count": 3,
+      "full60_transitions": [
+        "2 -> 8",
+        "2/8 -> 8",
+        "8 -> 2"
+      ],
+      "full60_transition_kinds": {
+        "pair_to_single": 1,
+        "single_to_single": 2
+      },
+      "full60_root_slot_counts": {
+        "8": 180
+      },
+      "has_boundary_carrier": true,
+      "boundary_carrier_id": "slot_pair_02_08_boundary_carrier",
+      "boundary_vertex_count": 120,
+      "boundary_edge_count": 60,
+      "pair_total_transition_count": 180,
+      "pair_total_root_count": 60,
+      "pair_total_direction_counts": {
+        "2 -> 8": 60,
+        "2/8 -> 8": 60,
+        "8 -> 2": 60
+      },
+      "pair_total_transition_kind_counts": {
+        "pair_to_single": 60,
+        "single_to_single": 120
+      },
+      "reciprocal_single_transition_count": 60,
+      "sample_roots": [
+        "8:0",
+        "8:1",
+        "8:10",
+        "8:11",
+        "8:12",
+        "8:13",
+        "8:14",
+        "8:15",
+        "8:16",
+        "8:17",
+        "8:18",
+        "8:19",
+        "8:2",
+        "8:20",
+        "8:21",
+        "8:22",
+        "8:23",
+        "8:3",
+        "8:4",
+        "8:5",
+        "8:6",
+        "8:7",
+        "8:8",
+        "8:9"
+      ],
+      "channels_admitted": false
+    },
+    {
+      "pair_key": "3/9",
+      "package_kind": "clean_reciprocal_pair_package",
+      "full60_transition_count": 3,
+      "full60_transitions": [
+        "3 -> 9",
+        "3/9 -> 9",
+        "9 -> 3"
+      ],
+      "full60_transition_kinds": {
+        "pair_to_single": 1,
+        "single_to_single": 2
+      },
+      "full60_root_slot_counts": {
+        "9": 180
+      },
+      "has_boundary_carrier": true,
+      "boundary_carrier_id": "slot_pair_03_09_boundary_carrier",
+      "boundary_vertex_count": 120,
+      "boundary_edge_count": 60,
+      "pair_total_transition_count": 180,
+      "pair_total_root_count": 60,
+      "pair_total_direction_counts": {
+        "3 -> 9": 60,
+        "3/9 -> 9": 60,
+        "9 -> 3": 60
+      },
+      "pair_total_transition_kind_counts": {
+        "pair_to_single": 60,
+        "single_to_single": 120
+      },
+      "reciprocal_single_transition_count": 60,
+      "sample_roots": [
+        "9:0",
+        "9:1",
+        "9:10",
+        "9:11",
+        "9:12",
+        "9:13",
+        "9:14",
+        "9:15",
+        "9:16",
+        "9:17",
+        "9:18",
+        "9:19",
+        "9:2",
+        "9:20",
+        "9:21",
+        "9:22",
+        "9:23",
+        "9:3",
+        "9:4",
+        "9:5",
+        "9:6",
+        "9:7",
+        "9:8",
+        "9:9"
+      ],
+      "channels_admitted": false
+    },
+    {
+      "pair_key": "5/10",
+      "package_kind": "clean_reciprocal_pair_package",
+      "full60_transition_count": 3,
+      "full60_transitions": [
+        "10 -> 5",
+        "5 -> 10",
+        "5/10 -> 10"
+      ],
+      "full60_transition_kinds": {
+        "pair_to_single": 1,
+        "single_to_single": 2
+      },
+      "full60_root_slot_counts": {
+        "10": 180
+      },
+      "has_boundary_carrier": true,
+      "boundary_carrier_id": "slot_pair_05_10_boundary_carrier",
+      "boundary_vertex_count": 120,
+      "boundary_edge_count": 60,
+      "pair_total_transition_count": 180,
+      "pair_total_root_count": 60,
+      "pair_total_direction_counts": {
+        "10 -> 5": 60,
+        "5 -> 10": 60,
+        "5/10 -> 10": 60
+      },
+      "pair_total_transition_kind_counts": {
+        "pair_to_single": 60,
+        "single_to_single": 120
+      },
+      "reciprocal_single_transition_count": 60,
+      "sample_roots": [
+        "10:0",
+        "10:1",
+        "10:10",
+        "10:11",
+        "10:12",
+        "10:13",
+        "10:14",
+        "10:15",
+        "10:16",
+        "10:17",
+        "10:18",
+        "10:19",
+        "10:2",
+        "10:20",
+        "10:21",
+        "10:22",
+        "10:23",
+        "10:3",
+        "10:4",
+        "10:5",
+        "10:6",
+        "10:7",
+        "10:8",
+        "10:9"
+      ],
+      "channels_admitted": false
+    },
+    {
+      "pair_key": "5/14",
+      "package_kind": "clean_reciprocal_pair_package",
+      "full60_transition_count": 3,
+      "full60_transitions": [
+        "14 -> 5",
+        "5 -> 14",
+        "5/14 -> 14"
+      ],
+      "full60_transition_kinds": {
+        "pair_to_single": 1,
+        "single_to_single": 2
+      },
+      "full60_root_slot_counts": {
+        "14": 180
+      },
+      "has_boundary_carrier": true,
+      "boundary_carrier_id": "slot_pair_05_14_boundary_carrier",
+      "boundary_vertex_count": 120,
+      "boundary_edge_count": 60,
+      "pair_total_transition_count": 180,
+      "pair_total_root_count": 60,
+      "pair_total_direction_counts": {
+        "14 -> 5": 60,
+        "5 -> 14": 60,
+        "5/14 -> 14": 60
+      },
+      "pair_total_transition_kind_counts": {
+        "pair_to_single": 60,
+        "single_to_single": 120
+      },
+      "reciprocal_single_transition_count": 60,
+      "sample_roots": [
+        "14:0",
+        "14:1",
+        "14:10",
+        "14:11",
+        "14:12",
+        "14:13",
+        "14:14",
+        "14:15",
+        "14:16",
+        "14:17",
+        "14:18",
+        "14:19",
+        "14:2",
+        "14:20",
+        "14:21",
+        "14:22",
+        "14:23",
+        "14:3",
+        "14:4",
+        "14:5",
+        "14:6",
+        "14:7",
+        "14:8",
+        "14:9"
+      ],
+      "channels_admitted": false
+    },
+    {
+      "pair_key": "6/12",
+      "package_kind": "two_transition_pair_package",
+      "full60_transition_count": 2,
+      "full60_transitions": [
+        "12 -> 6",
+        "6/12 -> 12"
+      ],
+      "full60_transition_kinds": {
+        "pair_to_single": 1,
+        "single_to_single": 1
+      },
+      "full60_root_slot_counts": {
+        "12": 120
+      },
+      "has_boundary_carrier": true,
+      "boundary_carrier_id": "slot_pair_06_12_boundary_carrier",
+      "boundary_vertex_count": 120,
+      "boundary_edge_count": 60,
+      "pair_total_transition_count": 120,
+      "pair_total_root_count": 60,
+      "pair_total_direction_counts": {
+        "12 -> 6": 60,
+        "6/12 -> 12": 60
+      },
+      "pair_total_transition_kind_counts": {
+        "pair_to_single": 60,
+        "single_to_single": 60
+      },
+      "reciprocal_single_transition_count": 0,
+      "sample_roots": [
+        "12:0",
+        "12:1",
+        "12:10",
+        "12:11",
+        "12:12",
+        "12:13",
+        "12:14",
+        "12:15",
+        "12:16",
+        "12:17",
+        "12:18",
+        "12:19",
+        "12:2",
+        "12:20",
+        "12:21",
+        "12:22",
+        "12:23",
+        "12:3",
+        "12:4",
+        "12:5",
+        "12:6",
+        "12:7",
+        "12:8",
+        "12:9"
+      ],
+      "channels_admitted": false
+    },
+    {
+      "pair_key": "6/13",
+      "package_kind": "clean_reciprocal_pair_package",
+      "full60_transition_count": 3,
+      "full60_transitions": [
+        "13 -> 6",
+        "6 -> 13",
+        "6/13 -> 13"
+      ],
+      "full60_transition_kinds": {
+        "pair_to_single": 1,
+        "single_to_single": 2
+      },
+      "full60_root_slot_counts": {
+        "13": 180
+      },
+      "has_boundary_carrier": true,
+      "boundary_carrier_id": "slot_pair_06_13_boundary_carrier",
+      "boundary_vertex_count": 120,
+      "boundary_edge_count": 60,
+      "pair_total_transition_count": 180,
+      "pair_total_root_count": 60,
+      "pair_total_direction_counts": {
+        "13 -> 6": 60,
+        "6 -> 13": 60,
+        "6/13 -> 13": 60
+      },
+      "pair_total_transition_kind_counts": {
+        "pair_to_single": 60,
+        "single_to_single": 120
+      },
+      "reciprocal_single_transition_count": 60,
+      "sample_roots": [
+        "13:0",
+        "13:1",
+        "13:10",
+        "13:11",
+        "13:12",
+        "13:13",
+        "13:14",
+        "13:15",
+        "13:16",
+        "13:17",
+        "13:18",
+        "13:19",
+        "13:2",
+        "13:20",
+        "13:21",
+        "13:22",
+        "13:23",
+        "13:3",
+        "13:4",
+        "13:5",
+        "13:6",
+        "13:7",
+        "13:8",
+        "13:9"
+      ],
+      "channels_admitted": false
+    },
+    {
+      "pair_key": "7/11",
+      "package_kind": "two_transition_pair_package",
+      "full60_transition_count": 2,
+      "full60_transitions": [
+        "11 -> 7",
+        "7/11 -> 11"
+      ],
+      "full60_transition_kinds": {
+        "pair_to_single": 1,
+        "single_to_single": 1
+      },
+      "full60_root_slot_counts": {
+        "11": 120
+      },
+      "has_boundary_carrier": true,
+      "boundary_carrier_id": "slot_pair_07_11_boundary_carrier",
+      "boundary_vertex_count": 120,
+      "boundary_edge_count": 60,
+      "pair_total_transition_count": 130,
+      "pair_total_root_count": 60,
+      "pair_total_direction_counts": {
+        "11 -> 7": 60,
+        "7 -> 11": 10,
+        "7/11 -> 11": 60
+      },
+      "pair_total_transition_kind_counts": {
+        "pair_to_single": 60,
+        "single_to_single": 70
+      },
+      "reciprocal_single_transition_count": 10,
+      "sample_roots": [
+        "11:0",
+        "11:1",
+        "11:10",
+        "11:11",
+        "11:12",
+        "11:13",
+        "11:14",
+        "11:15",
+        "11:16",
+        "11:17",
+        "11:18",
+        "11:19",
+        "11:2",
+        "11:20",
+        "11:21",
+        "11:22",
+        "11:23",
+        "11:3",
+        "11:4",
+        "11:5",
+        "11:6",
+        "11:7",
+        "11:8",
+        "11:9"
+      ],
+      "channels_admitted": false
+    },
+    {
+      "pair_key": "9/12",
+      "package_kind": "one_way_single_transition",
+      "full60_transition_count": 1,
+      "full60_transitions": [
+        "9 -> 12"
+      ],
+      "full60_transition_kinds": {
+        "single_to_single": 1
+      },
+      "full60_root_slot_counts": {
+        "12": 60
+      },
+      "has_boundary_carrier": true,
+      "boundary_carrier_id": "slot_pair_09_12_boundary_carrier",
+      "boundary_vertex_count": 120,
+      "boundary_edge_count": 60,
+      "pair_total_transition_count": 60,
+      "pair_total_root_count": 60,
+      "pair_total_direction_counts": {
+        "9 -> 12": 60
+      },
+      "pair_total_transition_kind_counts": {
+        "single_to_single": 60
+      },
+      "reciprocal_single_transition_count": 0,
+      "sample_roots": [
+        "12:0",
+        "12:1",
+        "12:10",
+        "12:11",
+        "12:12",
+        "12:13",
+        "12:14",
+        "12:15",
+        "12:16",
+        "12:17",
+        "12:18",
+        "12:19",
+        "12:2",
+        "12:20",
+        "12:21",
+        "12:22",
+        "12:23",
+        "12:3",
+        "12:4",
+        "12:5",
+        "12:6",
+        "12:7",
+        "12:8",
+        "12:9"
+      ],
+      "channels_admitted": false
+    }
+  ],
+  "interpretation": {
+    "not_incidental_string_overlap": true,
+    "reason": "The nine hit pairs exactly match full60 packages with boundary carriers.",
+    "not_all_packages_are_clean_reciprocal": true,
+    "package_taxonomy_is_load_bearing": true,
+    "hit_subgraph_connected": false,
+    "hit_subgraph_component_sizes": [
+      7,
+      3,
+      2
+    ],
+    "hit_subgraph_degree_histogram": {
+      "1": 6,
+      "2": 6
+    },
+    "hit_subgraph_triangle_count": 0,
+    "channel_status": "not_admitted",
+    "next_problem": "Explain why the boundary-package subgraph splits into components [7,3,2] with package-kind profile 6/2/1."
+  },
+  "checks": {
+    "inspection_passed": true,
+    "source_reconstruction_passed": true,
+    "g15_skeleton_passed": true,
+    "g15_is_line_petersen": true,
+    "channel_registry_zero_count": true,
+    "channels_not_admitted": true,
+    "all_g15_edges_count_30": true,
+    "hit_pair_count_9": true,
+    "all_hit_edges_are_g15_edges": true,
+    "package_rows_for_all_hits": true,
+    "hit_pairs_equal_boundary_package_pairs": true,
+    "all_hit_packages_have_boundary_carrier": true,
+    "all_hit_packages_not_admitted_as_channels": true,
+    "all_hit_packages_boundary_edge_count_60": true,
+    "all_hit_packages_boundary_vertex_count_120": true,
+    "all_hit_packages_pair_total_root_count_60": true,
+    "package_kind_profile_matches_discovery": true,
+    "transition_count_profile_matches_discovery": true,
+    "hit_subgraph_component_sizes_match_discovery": true,
+    "hit_subgraph_degree_histogram_matches_discovery": true,
+    "hit_subgraph_has_no_triangles": true
+  },
+  "failed_checks": [],
+  "boundary": {
+    "subgraph_audit_only": true,
+    "admits_channels": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "marker_lighting": false,
+    "force_claim": false,
+    "physics_claim": false
+  }
+}

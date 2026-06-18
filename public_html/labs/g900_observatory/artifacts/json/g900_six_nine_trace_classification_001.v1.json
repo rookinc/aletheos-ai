@@ -1,0 +1,142 @@
+{
+  "schema": "g900.six_nine_trace_classification",
+  "version": 1,
+  "status": "six_nine_trace_classification_recorded",
+  "created_utc": "2026-06-18T04:33:15Z",
+  "git_head": "e7ddbd6 Record G900 registered trace criterion",
+  "audit_pass": true,
+  "verdict": "six_nine_registered_as_obstruction_trace",
+  "question": "Does the 6/9 unsupported package satisfy registered_trace_criterion_001?",
+  "answer": "Yes. Under the registered trace criterion, 6/9 is a registered trace of obstruction type. It is not transport, not a channel, not a viewer object, and not a physics claim.",
+  "candidate": {
+    "candidate_id": "six_nine_unsupported_package",
+    "candidate_label": "6/9 unsupported package",
+    "source_artifacts": [
+      "public_html/labs/g900_observatory/artifacts/json/g900_full60_package_support_audit_001.v1.json",
+      "public_html/labs/g900_observatory/artifacts/json/g900_unsupported_phase_marker_6_9_001.v1.json",
+      "public_html/labs/g900_observatory/artifacts/json/g900_marker_edge_index_audit_001.v1.json"
+    ],
+    "six_nine_named": true,
+    "unsupported_language_present": true,
+    "full60_language_present": true,
+    "count_evidence_present": true,
+    "marker_id_present": true
+  },
+  "criterion_used": {
+    "criterion_artifact": "public_html/labs/g900_observatory/artifacts/json/g900_registered_trace_criterion_001.v1.json",
+    "criterion_verdict": "registered_trace_criterion_passed",
+    "required_atom_ids": [
+      "admitted_body_source",
+      "admissible_action_or_relation",
+      "finite_residue_or_contrast",
+      "non_display_origin",
+      "reproducible_receipt",
+      "typed_as_trace_before_transport",
+      "boundary_preserving",
+      "classification_deferred"
+    ]
+  },
+  "atom_results": {
+    "admitted_body_source": {
+      "satisfied": true,
+      "reason": "G900 static body artifact exists and is not mutated by this classification."
+    },
+    "admissible_action_or_relation": {
+      "satisfied": true,
+      "reason": "6/9 is sourced from an unsupported phase/package support audit, a boundary/support relation check."
+    },
+    "finite_residue_or_contrast": {
+      "satisfied": true,
+      "reason": "Source artifacts contain finite 6/9 unsupportedness evidence with count-bearing support."
+    },
+    "non_display_origin": {
+      "satisfied": true,
+      "reason": "Classification uses JSON/audit artifacts, not viewer, renderer, marker lighting, screenshot, or overlay behavior."
+    },
+    "reproducible_receipt": {
+      "satisfied": true,
+      "reason": "Classification is grounded in named JSON receipts and the locked trace criterion."
+    },
+    "typed_as_trace_before_transport": {
+      "satisfied": true,
+      "reason": "This artifact outputs registered_trace classification only and does not admit transport or channel."
+    },
+    "boundary_preserving": {
+      "satisfied": true,
+      "reason": "No body mutation, registry mutation, viewer change, renderer work, force claim, or physics claim occurs."
+    },
+    "classification_deferred": {
+      "satisfied": true,
+      "reason": "Downstream obstruction/transport/bridge classification remains separate."
+    }
+  },
+  "trace_classification": {
+    "candidate_id": "six_nine_unsupported_package",
+    "candidate_label": "6/9 unsupported package",
+    "registered_trace": true,
+    "trace_class": "obstruction_trace",
+    "transport_relation": false,
+    "channel": false,
+    "force_like_constraint_grammar": false,
+    "physics_claim": false,
+    "classification_strength": "registered_trace_only",
+    "downstream_status": {
+      "obstruction_classification": "provisionally obstruction_trace by trace class, but transport relation remains unproven",
+      "transport_relation": "not_admitted_here",
+      "channel": "not_admitted_here",
+      "physics_bridge": "not_attempted_here"
+    }
+  },
+  "current_state": {
+    "frontier_verdict": "physics_frontier_reset_to_boundary_trace",
+    "ledger_verdict": "finite_boundary_type_ledger_passed",
+    "criterion_verdict": "registered_trace_criterion_passed",
+    "channel_count": 1,
+    "admitted_channel_count": 1,
+    "renderer_absent": true
+  },
+  "next_allowed_math_acts": [
+    "six_nine_obstruction_anatomy_001",
+    "transport_relation_admission_criterion_001",
+    "physics_bridge_forbidden_mapping_ledger_001"
+  ],
+  "checks": {
+    "frontier_valid": true,
+    "ledger_valid": true,
+    "criterion_valid": true,
+    "six_nine_named_in_sources": true,
+    "unsupported_language_present": true,
+    "finite_count_evidence_present": true,
+    "all_trace_atoms_satisfied": true,
+    "outputs_registered_trace_only": true,
+    "channel_registry_preserved": true,
+    "renderer_absent": true,
+    "no_body_mutation": true,
+    "no_channel_admission": true,
+    "no_viewer_change": true,
+    "no_force_claim": true,
+    "no_physics_claim": true
+  },
+  "failed_checks": [],
+  "hashes": {
+    "frontier_sha256": "256ad198bcd9c0dcba20d75412622cc148bad6a2ff4026aef389f533ebc8d873",
+    "ledger_sha256": "6a1a4b81fc76477202edccad3c394100db0617ab738a5fe62aaef6b930e45e34",
+    "criterion_sha256": "6bfed297f9904d73e7567623e52fb74f9d2b3bfb8fd1009e976e95202cacdcbb",
+    "package_support_sha256": "1934001b8457215697e68ff61fdfceb8a447b03d9e32e40ae774006c1fd781a9",
+    "unsupported_marker_sha256": "a92bfaf4758e8624be0ec31af7da3cbc4764586bdd9c1f75af459df8b5d07afa",
+    "marker_edge_index_sha256": "ccfce7fe007493754df62e665aad4ff7b73fb1d37e801ff685b3d9582b697705",
+    "channels_sha256": "fbe4c50e0adf3460f7190f3c7714754da8a620359a5bc26c70543cc401feca08",
+    "body_sha256": "6a2cb6b9892a78d4559ec61cf946b0021962cc6819311234b8bf14102b3b7f63",
+    "lab_sha256": "5a10a18bc6563446a0d364d5984b8a41db580e0a75831c82b9eeb5aebc2edeb7"
+  },
+  "boundary": {
+    "classifies_registered_trace_only": true,
+    "admits_transport": false,
+    "admits_channels": false,
+    "changes_viewer": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "force_claim": false,
+    "physics_claim": false
+  }
+}

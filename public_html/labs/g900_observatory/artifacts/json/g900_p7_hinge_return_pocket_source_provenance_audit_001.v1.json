@@ -1,0 +1,330 @@
+{
+  "schema": "g900.p7_hinge_return_pocket_source_provenance_audit",
+  "version": 1,
+  "status": "p7_hinge_return_pocket_source_provenance_audit_passed",
+  "created_utc": "2026-06-18T01:02:18Z",
+  "audit_pass": true,
+  "question": "Are the P7 winning hinge and right-wing nonclean pocket visible in source fields beyond transition weights?",
+  "p7_records": [
+    {
+      "path_index": 0,
+      "pair": "02_08",
+      "block": "left_wing",
+      "weight": 180,
+      "package_kind": "clean_reciprocal_pair_package",
+      "transition_len": 3,
+      "full60_transitions": [
+        "2 -> 8",
+        "2/8 -> 8",
+        "8 -> 2"
+      ],
+      "root_slot_keys": [
+        "08"
+      ],
+      "dominant_root_slot": "08",
+      "direction_keys": [
+        "2 -> 8",
+        "2/8 -> 8",
+        "8 -> 2"
+      ],
+      "has_boundary_carrier": true,
+      "channels_admitted": false
+    },
+    {
+      "path_index": 1,
+      "pair": "02_03",
+      "block": "left_wing",
+      "weight": 180,
+      "package_kind": "clean_reciprocal_pair_package",
+      "transition_len": 3,
+      "full60_transitions": [
+        "2 -> 3",
+        "2/3 -> 3",
+        "3 -> 2"
+      ],
+      "root_slot_keys": [
+        "03"
+      ],
+      "dominant_root_slot": "03",
+      "direction_keys": [
+        "2 -> 3",
+        "2/3 -> 3",
+        "3 -> 2"
+      ],
+      "has_boundary_carrier": true,
+      "channels_admitted": false
+    },
+    {
+      "path_index": 2,
+      "pair": "03_09",
+      "block": "hinge",
+      "weight": 180,
+      "package_kind": "clean_reciprocal_pair_package",
+      "transition_len": 3,
+      "full60_transitions": [
+        "3 -> 9",
+        "3/9 -> 9",
+        "9 -> 3"
+      ],
+      "root_slot_keys": [
+        "09"
+      ],
+      "dominant_root_slot": "09",
+      "direction_keys": [
+        "3 -> 9",
+        "3/9 -> 9",
+        "9 -> 3"
+      ],
+      "has_boundary_carrier": true,
+      "channels_admitted": false
+    },
+    {
+      "path_index": 3,
+      "pair": "09_12",
+      "block": "right_wing",
+      "weight": 60,
+      "package_kind": "one_way_single_transition",
+      "transition_len": 1,
+      "full60_transitions": [
+        "9 -> 12"
+      ],
+      "root_slot_keys": [
+        "12"
+      ],
+      "dominant_root_slot": "12",
+      "direction_keys": [
+        "9 -> 12"
+      ],
+      "has_boundary_carrier": true,
+      "channels_admitted": false
+    },
+    {
+      "path_index": 4,
+      "pair": "06_12",
+      "block": "right_wing",
+      "weight": 120,
+      "package_kind": "two_transition_pair_package",
+      "transition_len": 2,
+      "full60_transitions": [
+        "12 -> 6",
+        "6/12 -> 12"
+      ],
+      "root_slot_keys": [
+        "12"
+      ],
+      "dominant_root_slot": "12",
+      "direction_keys": [
+        "12 -> 6",
+        "6/12 -> 12"
+      ],
+      "has_boundary_carrier": true,
+      "channels_admitted": false
+    },
+    {
+      "path_index": 5,
+      "pair": "06_13",
+      "block": "right_wing",
+      "weight": 180,
+      "package_kind": "clean_reciprocal_pair_package",
+      "transition_len": 3,
+      "full60_transitions": [
+        "13 -> 6",
+        "6 -> 13",
+        "6/13 -> 13"
+      ],
+      "root_slot_keys": [
+        "13"
+      ],
+      "dominant_root_slot": "13",
+      "direction_keys": [
+        "13 -> 6",
+        "6 -> 13",
+        "6/13 -> 13"
+      ],
+      "has_boundary_carrier": true,
+      "channels_admitted": false
+    }
+  ],
+  "block_summary": {
+    "left_wing_pairs": [
+      "02_08",
+      "02_03"
+    ],
+    "hinge_pair": "03_09",
+    "right_wing_pairs": [
+      "09_12",
+      "06_12",
+      "06_13"
+    ],
+    "right_wing_nonclean_pairs": [
+      "09_12",
+      "06_12"
+    ],
+    "right_wing_clean_pairs": [
+      "06_13"
+    ]
+  },
+  "source_provenance_summary": {
+    "hinge": {
+      "path_index": 2,
+      "pair": "03_09",
+      "block": "hinge",
+      "weight": 180,
+      "package_kind": "clean_reciprocal_pair_package",
+      "transition_len": 3,
+      "full60_transitions": [
+        "3 -> 9",
+        "3/9 -> 9",
+        "9 -> 3"
+      ],
+      "root_slot_keys": [
+        "09"
+      ],
+      "dominant_root_slot": "09",
+      "direction_keys": [
+        "3 -> 9",
+        "3/9 -> 9",
+        "9 -> 3"
+      ],
+      "has_boundary_carrier": true,
+      "channels_admitted": false
+    },
+    "right_wing_nonclean_records": [
+      {
+        "path_index": 3,
+        "pair": "09_12",
+        "block": "right_wing",
+        "weight": 60,
+        "package_kind": "one_way_single_transition",
+        "transition_len": 1,
+        "full60_transitions": [
+          "9 -> 12"
+        ],
+        "root_slot_keys": [
+          "12"
+        ],
+        "dominant_root_slot": "12",
+        "direction_keys": [
+          "9 -> 12"
+        ],
+        "has_boundary_carrier": true,
+        "channels_admitted": false
+      },
+      {
+        "path_index": 4,
+        "pair": "06_12",
+        "block": "right_wing",
+        "weight": 120,
+        "package_kind": "two_transition_pair_package",
+        "transition_len": 2,
+        "full60_transitions": [
+          "12 -> 6",
+          "6/12 -> 12"
+        ],
+        "root_slot_keys": [
+          "12"
+        ],
+        "dominant_root_slot": "12",
+        "direction_keys": [
+          "12 -> 6",
+          "6/12 -> 12"
+        ],
+        "has_boundary_carrier": true,
+        "channels_admitted": false
+      }
+    ],
+    "right_wing_nonclean_root_sets": [
+      [
+        "12"
+      ],
+      [
+        "12"
+      ]
+    ],
+    "right_wing_nonclean_dominant_roots": [
+      "12",
+      "12"
+    ],
+    "right_wing_nonclean_transition_lens": [
+      1,
+      2
+    ],
+    "right_wing_clean_exit_records": [
+      {
+        "path_index": 5,
+        "pair": "06_13",
+        "block": "right_wing",
+        "weight": 180,
+        "package_kind": "clean_reciprocal_pair_package",
+        "transition_len": 3,
+        "full60_transitions": [
+          "13 -> 6",
+          "6 -> 13",
+          "6/13 -> 13"
+        ],
+        "root_slot_keys": [
+          "13"
+        ],
+        "dominant_root_slot": "13",
+        "direction_keys": [
+          "13 -> 6",
+          "6 -> 13",
+          "6/13 -> 13"
+        ],
+        "has_boundary_carrier": true,
+        "channels_admitted": false
+      }
+    ],
+    "dominant_root_sequence": [
+      "08",
+      "03",
+      "09",
+      "12",
+      "12",
+      "13"
+    ],
+    "transition_len_sequence": [
+      3,
+      3,
+      3,
+      1,
+      2,
+      3
+    ]
+  },
+  "interpretation": {
+    "hinge_is_source_visible": true,
+    "right_nonclean_pocket_is_source_visible": true,
+    "right_nonclean_pocket_summary": "09_12 and 06_12 share root slot 12 and have transition lengths 1 and 2.",
+    "right_wing_clean_exit": "06_13",
+    "not_channel": true,
+    "next_problem": "Test whether the root-slot-12 return pocket is forced by the path/rhythm structure or only visible from full60 package rows."
+  },
+  "checks": {
+    "uniqueness_audit_passed": true,
+    "rhythm_audit_passed": true,
+    "channel_registry_zero_count": true,
+    "channels_not_admitted": true,
+    "p7_pair_count_6": true,
+    "records_for_all_pairs": true,
+    "winning_hinge_is_03_09": true,
+    "hinge_record_is_clean": true,
+    "hinge_transition_len_is_3": true,
+    "right_wing_nonclean_pairs_match": true,
+    "right_wing_nonclean_share_root_slot_12": true,
+    "right_wing_nonclean_transition_lens_are_1_2": true,
+    "right_wing_has_clean_exit": true,
+    "all_records_not_channels": true,
+    "all_records_have_boundary_carrier": true
+  },
+  "failed_checks": [],
+  "boundary": {
+    "source_provenance_audit_only": true,
+    "admits_channels": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "marker_lighting": false,
+    "force_claim": false,
+    "physics_claim": false
+  }
+}

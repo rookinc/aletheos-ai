@@ -1,0 +1,719 @@
+{
+  "schema": "g900.source_side_gap_9_11_anchor_split_audit",
+  "version": 1,
+  "status": "source_side_gap_9_11_anchor_split_audit_recorded",
+  "created_utc": "2026-06-18T09:40:36Z",
+  "git_head": "5e172bd Audit G900 source-side gap law",
+  "audit_pass": true,
+  "verdict": "source_side_gap_9_11_anchor_split_audit_passed",
+  "question": "Does source-side [9,11] plus anchor/phase split separate receipt branch from absent branch?",
+  "split_status": "source_gap_9_11_anchor_phase_split_selects_receipt_branch",
+  "reading": "The source-side [9,11] gate opens exactly two branches. Anchor 9, equivalently phase 3 in this two-row branch set, selects the receipt branch 03_09 root_slot 9. Anchor 6, equivalently phase 6, selects the absent branch 03_06 root_slot 6. Thus [9,11] opens the fork, and the anchor/phase split determines admitted-home versus absent-home. This is still a branch-split audit, not a native derivation.",
+  "branch_profile": {
+    "gap_row_count": 2,
+    "receipt_row_count": 1,
+    "absent_row_count": 1,
+    "anchor_counts": {
+      "6": 1,
+      "9": 1
+    },
+    "phase_counts": {
+      "3": 1,
+      "6": 1
+    },
+    "predicted_pair_counts": {
+      "03_06": 1,
+      "03_09": 1
+    },
+    "predicted_root_counts": {
+      "6": 1,
+      "9": 1
+    },
+    "predicted_frame_counts": {
+      "03_06|6|23->24": 1,
+      "03_09|9|23->24": 1
+    }
+  },
+  "receipt_branch": {
+    "source_frame": [
+      "06_09",
+      "12",
+      "23->24"
+    ],
+    "source_pair": "06_09",
+    "source_endpoints": [
+      6,
+      9
+    ],
+    "source_root_slot": 12,
+    "source_limit_transition": "23->24",
+    "source_limit_start": 23,
+    "phase_step_mod15": 3,
+    "anchor": 9,
+    "outside_moving_endpoint": 3,
+    "inside_moving_endpoint": 6,
+    "phase_ladder_values": [
+      3,
+      6,
+      9,
+      12
+    ],
+    "phase_ladder_distinct": true,
+    "predicted_frame": [
+      "03_09",
+      "9",
+      "23->24"
+    ],
+    "predicted_pair_key": "03_09",
+    "outside_root_slot": 9,
+    "source_side_gaps": [
+      9,
+      11
+    ],
+    "source_side_gap_signature": "9,11",
+    "is_target_source_gap": true,
+    "prediction_exists": true,
+    "failure_to_receipt": true,
+    "outside_pair_degenerate": false
+  },
+  "absent_branch": {
+    "source_frame": [
+      "06_09",
+      "12",
+      "23->24"
+    ],
+    "source_pair": "06_09",
+    "source_endpoints": [
+      6,
+      9
+    ],
+    "source_root_slot": 12,
+    "source_limit_transition": "23->24",
+    "source_limit_start": 23,
+    "phase_step_mod15": 6,
+    "anchor": 6,
+    "outside_moving_endpoint": 3,
+    "inside_moving_endpoint": 9,
+    "phase_ladder_values": [
+      3,
+      9,
+      6,
+      12
+    ],
+    "phase_ladder_distinct": true,
+    "predicted_frame": [
+      "03_06",
+      "6",
+      "23->24"
+    ],
+    "predicted_pair_key": "03_06",
+    "outside_root_slot": 6,
+    "source_side_gaps": [
+      9,
+      11
+    ],
+    "source_side_gap_signature": "9,11",
+    "is_target_source_gap": true,
+    "prediction_exists": false,
+    "failure_to_receipt": false,
+    "outside_pair_degenerate": false
+  },
+  "selectors": [
+    {
+      "name": "anchor_is_9",
+      "selected_count": 1,
+      "selected_rows": [
+        {
+          "source_frame": [
+            "06_09",
+            "12",
+            "23->24"
+          ],
+          "source_pair": "06_09",
+          "source_endpoints": [
+            6,
+            9
+          ],
+          "source_root_slot": 12,
+          "source_limit_transition": "23->24",
+          "source_limit_start": 23,
+          "phase_step_mod15": 3,
+          "anchor": 9,
+          "outside_moving_endpoint": 3,
+          "inside_moving_endpoint": 6,
+          "phase_ladder_values": [
+            3,
+            6,
+            9,
+            12
+          ],
+          "phase_ladder_distinct": true,
+          "predicted_frame": [
+            "03_09",
+            "9",
+            "23->24"
+          ],
+          "predicted_pair_key": "03_09",
+          "outside_root_slot": 9,
+          "source_side_gaps": [
+            9,
+            11
+          ],
+          "source_side_gap_signature": "9,11",
+          "is_target_source_gap": true,
+          "prediction_exists": true,
+          "failure_to_receipt": true,
+          "outside_pair_degenerate": false
+        }
+      ],
+      "selects_prediction_exists": true,
+      "selects_failure_to_receipt": true,
+      "selects_absent_branch": false,
+      "selected_predicted_frames": [
+        [
+          "03_09",
+          "9",
+          "23->24"
+        ]
+      ],
+      "selected_anchors": [
+        9
+      ],
+      "selected_phases": [
+        3
+      ]
+    },
+    {
+      "name": "phase_is_3",
+      "selected_count": 1,
+      "selected_rows": [
+        {
+          "source_frame": [
+            "06_09",
+            "12",
+            "23->24"
+          ],
+          "source_pair": "06_09",
+          "source_endpoints": [
+            6,
+            9
+          ],
+          "source_root_slot": 12,
+          "source_limit_transition": "23->24",
+          "source_limit_start": 23,
+          "phase_step_mod15": 3,
+          "anchor": 9,
+          "outside_moving_endpoint": 3,
+          "inside_moving_endpoint": 6,
+          "phase_ladder_values": [
+            3,
+            6,
+            9,
+            12
+          ],
+          "phase_ladder_distinct": true,
+          "predicted_frame": [
+            "03_09",
+            "9",
+            "23->24"
+          ],
+          "predicted_pair_key": "03_09",
+          "outside_root_slot": 9,
+          "source_side_gaps": [
+            9,
+            11
+          ],
+          "source_side_gap_signature": "9,11",
+          "is_target_source_gap": true,
+          "prediction_exists": true,
+          "failure_to_receipt": true,
+          "outside_pair_degenerate": false
+        }
+      ],
+      "selects_prediction_exists": true,
+      "selects_failure_to_receipt": true,
+      "selects_absent_branch": false,
+      "selected_predicted_frames": [
+        [
+          "03_09",
+          "9",
+          "23->24"
+        ]
+      ],
+      "selected_anchors": [
+        9
+      ],
+      "selected_phases": [
+        3
+      ]
+    },
+    {
+      "name": "predicted_root_is_9",
+      "selected_count": 1,
+      "selected_rows": [
+        {
+          "source_frame": [
+            "06_09",
+            "12",
+            "23->24"
+          ],
+          "source_pair": "06_09",
+          "source_endpoints": [
+            6,
+            9
+          ],
+          "source_root_slot": 12,
+          "source_limit_transition": "23->24",
+          "source_limit_start": 23,
+          "phase_step_mod15": 3,
+          "anchor": 9,
+          "outside_moving_endpoint": 3,
+          "inside_moving_endpoint": 6,
+          "phase_ladder_values": [
+            3,
+            6,
+            9,
+            12
+          ],
+          "phase_ladder_distinct": true,
+          "predicted_frame": [
+            "03_09",
+            "9",
+            "23->24"
+          ],
+          "predicted_pair_key": "03_09",
+          "outside_root_slot": 9,
+          "source_side_gaps": [
+            9,
+            11
+          ],
+          "source_side_gap_signature": "9,11",
+          "is_target_source_gap": true,
+          "prediction_exists": true,
+          "failure_to_receipt": true,
+          "outside_pair_degenerate": false
+        }
+      ],
+      "selects_prediction_exists": true,
+      "selects_failure_to_receipt": true,
+      "selects_absent_branch": false,
+      "selected_predicted_frames": [
+        [
+          "03_09",
+          "9",
+          "23->24"
+        ]
+      ],
+      "selected_anchors": [
+        9
+      ],
+      "selected_phases": [
+        3
+      ]
+    },
+    {
+      "name": "predicted_pair_is_03_09",
+      "selected_count": 1,
+      "selected_rows": [
+        {
+          "source_frame": [
+            "06_09",
+            "12",
+            "23->24"
+          ],
+          "source_pair": "06_09",
+          "source_endpoints": [
+            6,
+            9
+          ],
+          "source_root_slot": 12,
+          "source_limit_transition": "23->24",
+          "source_limit_start": 23,
+          "phase_step_mod15": 3,
+          "anchor": 9,
+          "outside_moving_endpoint": 3,
+          "inside_moving_endpoint": 6,
+          "phase_ladder_values": [
+            3,
+            6,
+            9,
+            12
+          ],
+          "phase_ladder_distinct": true,
+          "predicted_frame": [
+            "03_09",
+            "9",
+            "23->24"
+          ],
+          "predicted_pair_key": "03_09",
+          "outside_root_slot": 9,
+          "source_side_gaps": [
+            9,
+            11
+          ],
+          "source_side_gap_signature": "9,11",
+          "is_target_source_gap": true,
+          "prediction_exists": true,
+          "failure_to_receipt": true,
+          "outside_pair_degenerate": false
+        }
+      ],
+      "selects_prediction_exists": true,
+      "selects_failure_to_receipt": true,
+      "selects_absent_branch": false,
+      "selected_predicted_frames": [
+        [
+          "03_09",
+          "9",
+          "23->24"
+        ]
+      ],
+      "selected_anchors": [
+        9
+      ],
+      "selected_phases": [
+        3
+      ]
+    },
+    {
+      "name": "anchor_is_6",
+      "selected_count": 1,
+      "selected_rows": [
+        {
+          "source_frame": [
+            "06_09",
+            "12",
+            "23->24"
+          ],
+          "source_pair": "06_09",
+          "source_endpoints": [
+            6,
+            9
+          ],
+          "source_root_slot": 12,
+          "source_limit_transition": "23->24",
+          "source_limit_start": 23,
+          "phase_step_mod15": 6,
+          "anchor": 6,
+          "outside_moving_endpoint": 3,
+          "inside_moving_endpoint": 9,
+          "phase_ladder_values": [
+            3,
+            9,
+            6,
+            12
+          ],
+          "phase_ladder_distinct": true,
+          "predicted_frame": [
+            "03_06",
+            "6",
+            "23->24"
+          ],
+          "predicted_pair_key": "03_06",
+          "outside_root_slot": 6,
+          "source_side_gaps": [
+            9,
+            11
+          ],
+          "source_side_gap_signature": "9,11",
+          "is_target_source_gap": true,
+          "prediction_exists": false,
+          "failure_to_receipt": false,
+          "outside_pair_degenerate": false
+        }
+      ],
+      "selects_prediction_exists": false,
+      "selects_failure_to_receipt": false,
+      "selects_absent_branch": true,
+      "selected_predicted_frames": [
+        [
+          "03_06",
+          "6",
+          "23->24"
+        ]
+      ],
+      "selected_anchors": [
+        6
+      ],
+      "selected_phases": [
+        6
+      ]
+    },
+    {
+      "name": "phase_is_6",
+      "selected_count": 1,
+      "selected_rows": [
+        {
+          "source_frame": [
+            "06_09",
+            "12",
+            "23->24"
+          ],
+          "source_pair": "06_09",
+          "source_endpoints": [
+            6,
+            9
+          ],
+          "source_root_slot": 12,
+          "source_limit_transition": "23->24",
+          "source_limit_start": 23,
+          "phase_step_mod15": 6,
+          "anchor": 6,
+          "outside_moving_endpoint": 3,
+          "inside_moving_endpoint": 9,
+          "phase_ladder_values": [
+            3,
+            9,
+            6,
+            12
+          ],
+          "phase_ladder_distinct": true,
+          "predicted_frame": [
+            "03_06",
+            "6",
+            "23->24"
+          ],
+          "predicted_pair_key": "03_06",
+          "outside_root_slot": 6,
+          "source_side_gaps": [
+            9,
+            11
+          ],
+          "source_side_gap_signature": "9,11",
+          "is_target_source_gap": true,
+          "prediction_exists": false,
+          "failure_to_receipt": false,
+          "outside_pair_degenerate": false
+        }
+      ],
+      "selects_prediction_exists": false,
+      "selects_failure_to_receipt": false,
+      "selects_absent_branch": true,
+      "selected_predicted_frames": [
+        [
+          "03_06",
+          "6",
+          "23->24"
+        ]
+      ],
+      "selected_anchors": [
+        6
+      ],
+      "selected_phases": [
+        6
+      ]
+    },
+    {
+      "name": "predicted_root_is_6",
+      "selected_count": 1,
+      "selected_rows": [
+        {
+          "source_frame": [
+            "06_09",
+            "12",
+            "23->24"
+          ],
+          "source_pair": "06_09",
+          "source_endpoints": [
+            6,
+            9
+          ],
+          "source_root_slot": 12,
+          "source_limit_transition": "23->24",
+          "source_limit_start": 23,
+          "phase_step_mod15": 6,
+          "anchor": 6,
+          "outside_moving_endpoint": 3,
+          "inside_moving_endpoint": 9,
+          "phase_ladder_values": [
+            3,
+            9,
+            6,
+            12
+          ],
+          "phase_ladder_distinct": true,
+          "predicted_frame": [
+            "03_06",
+            "6",
+            "23->24"
+          ],
+          "predicted_pair_key": "03_06",
+          "outside_root_slot": 6,
+          "source_side_gaps": [
+            9,
+            11
+          ],
+          "source_side_gap_signature": "9,11",
+          "is_target_source_gap": true,
+          "prediction_exists": false,
+          "failure_to_receipt": false,
+          "outside_pair_degenerate": false
+        }
+      ],
+      "selects_prediction_exists": false,
+      "selects_failure_to_receipt": false,
+      "selects_absent_branch": true,
+      "selected_predicted_frames": [
+        [
+          "03_06",
+          "6",
+          "23->24"
+        ]
+      ],
+      "selected_anchors": [
+        6
+      ],
+      "selected_phases": [
+        6
+      ]
+    },
+    {
+      "name": "predicted_pair_is_03_06",
+      "selected_count": 1,
+      "selected_rows": [
+        {
+          "source_frame": [
+            "06_09",
+            "12",
+            "23->24"
+          ],
+          "source_pair": "06_09",
+          "source_endpoints": [
+            6,
+            9
+          ],
+          "source_root_slot": 12,
+          "source_limit_transition": "23->24",
+          "source_limit_start": 23,
+          "phase_step_mod15": 6,
+          "anchor": 6,
+          "outside_moving_endpoint": 3,
+          "inside_moving_endpoint": 9,
+          "phase_ladder_values": [
+            3,
+            9,
+            6,
+            12
+          ],
+          "phase_ladder_distinct": true,
+          "predicted_frame": [
+            "03_06",
+            "6",
+            "23->24"
+          ],
+          "predicted_pair_key": "03_06",
+          "outside_root_slot": 6,
+          "source_side_gaps": [
+            9,
+            11
+          ],
+          "source_side_gap_signature": "9,11",
+          "is_target_source_gap": true,
+          "prediction_exists": false,
+          "failure_to_receipt": false,
+          "outside_pair_degenerate": false
+        }
+      ],
+      "selects_prediction_exists": false,
+      "selects_failure_to_receipt": false,
+      "selects_absent_branch": true,
+      "selected_predicted_frames": [
+        [
+          "03_06",
+          "6",
+          "23->24"
+        ]
+      ],
+      "selected_anchors": [
+        6
+      ],
+      "selected_phases": [
+        6
+      ]
+    }
+  ],
+  "receipt_selector_names": [
+    "anchor_is_9",
+    "phase_is_3",
+    "predicted_root_is_9",
+    "predicted_pair_is_03_09"
+  ],
+  "absent_selector_names": [
+    "anchor_is_6",
+    "phase_is_6",
+    "predicted_root_is_6",
+    "predicted_pair_is_03_06"
+  ],
+  "source_gate_definition": {
+    "source_gap": [
+      9,
+      11
+    ],
+    "source_gap_opens_two_branches": true,
+    "anchor_9_receipt_branch": true,
+    "phase_3_receipt_branch": true,
+    "anchor_6_absent_branch": true,
+    "phase_6_absent_branch": true,
+    "uses_registry_membership_for_gap_calculation": false,
+    "uses_receipt_fields_for_gap_calculation": false,
+    "uses_support_fields_for_gap_calculation": false
+  },
+  "interpretation_boundary": [
+    "This is a source-side branch-split audit over the [9,11] rows.",
+    "It shows anchor/phase split separates the receipt and absent branches after the source-side gap opens the fork.",
+    "It does not derive the anchor choice from the deeper native construction.",
+    "No closure witness, transport relation, channel, force, physics, GR, Maxwell, QCD, electroweak, or unification claim is made."
+  ],
+  "boundary": {
+    "source_side_branch_split_audit_only": true,
+    "full_native_derivation": false,
+    "admits_closure_witness": false,
+    "admits_transport_relation": false,
+    "admits_channel": false,
+    "marker_lighting": false,
+    "viewer_change": false,
+    "body_mutation": false,
+    "force_claim": false,
+    "physics_claim": false,
+    "gr_claim": false,
+    "maxwell_claim": false,
+    "qcd_claim": false,
+    "electroweak_claim": false,
+    "unification_claim": false
+  },
+  "next_allowed_math_acts": [
+    "derive_anchor_choice_9_vs_6_from_source_construction",
+    "test_nearest_anchor_as_branch_selector_in_source_side_gap_9_11",
+    "test_boundary_trace_class_for_03_09_root9_triplet",
+    "transport_relation_admission_criterion_001"
+  ],
+  "checks": {
+    "source_gap_prior_valid": true,
+    "source_gap_prior_status": true,
+    "gap_prior_valid": true,
+    "registry_admission_prior_valid": true,
+    "all_source_gap_rows_present": true,
+    "gap_row_count_two": true,
+    "receipt_row_count_one": true,
+    "absent_row_count_one": true,
+    "receipt_frame_selected": true,
+    "absent_frame_selected": true,
+    "anchor_9_selects_receipt": true,
+    "phase_3_selects_receipt": true,
+    "anchor_6_selects_absent": true,
+    "phase_6_selects_absent": true,
+    "split_status_recorded": true,
+    "channel_registry_preserved": true,
+    "renderer_absent": true,
+    "no_forbidden_claims": true
+  },
+  "failed_checks": [],
+  "hashes": {
+    "source_gap_prior_sha256": "007bc759919d34ce9d74199289a0924db95d4b6bef142f2e98e4b4d4b9e09f6c",
+    "gap_prior_sha256": "38bac7d45e6d7a1e48201f49f5a435195b1a09e880b0968af762223d158dd4ae",
+    "registry_admission_prior_sha256": "decd1ac0c7b4a3574552d4f8640584934815d74d087c72ffea53bab2eac7207a",
+    "channels_sha256": "fbe4c50e0adf3460f7190f3c7714754da8a620359a5bc26c70543cc401feca08",
+    "body_sha256": "6a2cb6b9892a78d4559ec61cf946b0021962cc6819311234b8bf14102b3b7f63",
+    "lab_sha256": "5a10a18bc6563446a0d364d5984b8a41db580e0a75831c82b9eeb5aebc2edeb7"
+  }
+}

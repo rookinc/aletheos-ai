@@ -1,0 +1,1001 @@
+{
+  "schema": "g900.ladder_nearest_anchor_condition_audit",
+  "version": 1,
+  "status": "ladder_nearest_anchor_condition_audit_recorded",
+  "created_utc": "2026-06-18T09:08:57Z",
+  "git_head": "342f036 Compare G900 distinct ladder nonanswer case",
+  "audit_pass": true,
+  "verdict": "ladder_nearest_anchor_condition_audit_passed",
+  "question": "Does distinct ladder plus nearest anchor explain why the phase-3 six-nine ladder answers but the phase-6 distinct ladder does not?",
+  "condition_status": "distinct_nearest_anchor_condition_selects_answering_capacity",
+  "reading": "Across the observed all-phase ladder spectrum, the condition distinct ladder plus nearest anchor exactly selects the only prediction-existing and failure-to-receipt record. The phase-3 six-nine ladder uses the nearest anchor 9 at distance 3 from root_slot 12; the phase-6 distinct nonanswer uses the farther anchor 6 at distance 6 and predicts the absent frame 03_06 root_slot 6.",
+  "condition": {
+    "name": "distinct_nearest_anchor_condition",
+    "definition": "The four ladder stations are distinct, and the selected anchor is the nearest source endpoint to the source root_slot under positive mod15 subtraction.",
+    "uses_receipt_fields": false,
+    "uses_support_fields": false
+  },
+  "counts": {
+    "spectrum_record_count": 18,
+    "distinct_record_count": 2,
+    "nearest_anchor_record_count": 17,
+    "distinct_nearest_anchor_record_count": 1,
+    "prediction_exists_count": 1,
+    "failure_to_receipt_count": 1,
+    "condition_selects_prediction_exists": true,
+    "condition_selects_failure_to_receipt": true
+  },
+  "phase_counts": {
+    "all_phase_counts": {
+      "1": 2,
+      "3": 2,
+      "4": 1,
+      "5": 2,
+      "6": 7,
+      "7": 2,
+      "9": 2
+    },
+    "distinct_phase_counts": {
+      "3": 1,
+      "6": 1
+    },
+    "nearest_anchor_phase_counts": {
+      "1": 2,
+      "3": 2,
+      "4": 1,
+      "5": 2,
+      "6": 6,
+      "7": 2,
+      "9": 2
+    },
+    "distinct_nearest_anchor_phase_counts": {
+      "3": 1
+    }
+  },
+  "target_answering_record": {
+    "phase_step_mod15": 3,
+    "source_frame": [
+      "06_09",
+      "12",
+      "23->24"
+    ],
+    "source_pair": "06_09",
+    "source_endpoints": [
+      6,
+      9
+    ],
+    "source_root_slot": 12,
+    "source_limit_transition": "23->24",
+    "endpoint_distances_from_root": [
+      {
+        "endpoint": 9,
+        "distance_from_root": 3
+      },
+      {
+        "endpoint": 6,
+        "distance_from_root": 6
+      }
+    ],
+    "nearest_anchor_endpoint": 9,
+    "nearest_anchor_distance": 3,
+    "anchor": 9,
+    "nearest_anchor_selected": true,
+    "inside_moving_endpoint": 6,
+    "outside_moving_endpoint": 3,
+    "outside_root_slot": 9,
+    "phase_ladder_values": [
+      3,
+      6,
+      9,
+      12
+    ],
+    "phase_ladder_distinct": true,
+    "distinct_and_nearest_anchor": true,
+    "outside_pair_degenerate": false,
+    "predicted_pair_key": "03_09",
+    "predicted_frame": [
+      "03_09",
+      "9",
+      "23->24"
+    ],
+    "prediction_exists": true,
+    "source_inside_failure_proxy": true,
+    "predicted_receipt_proxy": true,
+    "failure_to_receipt": true
+  },
+  "nonanswering_distinct_record": {
+    "phase_step_mod15": 6,
+    "source_frame": [
+      "06_09",
+      "12",
+      "23->24"
+    ],
+    "source_pair": "06_09",
+    "source_endpoints": [
+      6,
+      9
+    ],
+    "source_root_slot": 12,
+    "source_limit_transition": "23->24",
+    "endpoint_distances_from_root": [
+      {
+        "endpoint": 9,
+        "distance_from_root": 3
+      },
+      {
+        "endpoint": 6,
+        "distance_from_root": 6
+      }
+    ],
+    "nearest_anchor_endpoint": 9,
+    "nearest_anchor_distance": 3,
+    "anchor": 6,
+    "nearest_anchor_selected": false,
+    "inside_moving_endpoint": 9,
+    "outside_moving_endpoint": 3,
+    "outside_root_slot": 6,
+    "phase_ladder_values": [
+      3,
+      9,
+      6,
+      12
+    ],
+    "phase_ladder_distinct": true,
+    "distinct_and_nearest_anchor": false,
+    "outside_pair_degenerate": false,
+    "predicted_pair_key": "03_06",
+    "predicted_frame": [
+      "03_06",
+      "6",
+      "23->24"
+    ],
+    "prediction_exists": false,
+    "source_inside_failure_proxy": true,
+    "predicted_receipt_proxy": false,
+    "failure_to_receipt": false
+  },
+  "all_condition_rows": [
+    {
+      "phase_step_mod15": 1,
+      "source_frame": [
+        "02_03",
+        "3",
+        "16->17"
+      ],
+      "source_pair": "02_03",
+      "source_endpoints": [
+        2,
+        3
+      ],
+      "source_root_slot": 3,
+      "source_limit_transition": "16->17",
+      "endpoint_distances_from_root": [
+        {
+          "endpoint": 2,
+          "distance_from_root": 1
+        }
+      ],
+      "nearest_anchor_endpoint": 2,
+      "nearest_anchor_distance": 1,
+      "anchor": 2,
+      "nearest_anchor_selected": true,
+      "inside_moving_endpoint": 3,
+      "outside_moving_endpoint": 2,
+      "outside_root_slot": 2,
+      "phase_ladder_values": [
+        2,
+        3,
+        2,
+        3
+      ],
+      "phase_ladder_distinct": false,
+      "distinct_and_nearest_anchor": false,
+      "outside_pair_degenerate": true,
+      "predicted_pair_key": null,
+      "predicted_frame": null,
+      "prediction_exists": false,
+      "source_inside_failure_proxy": false,
+      "predicted_receipt_proxy": false,
+      "failure_to_receipt": false
+    },
+    {
+      "phase_step_mod15": 1,
+      "source_frame": [
+        "02_03",
+        "3",
+        "2->3"
+      ],
+      "source_pair": "02_03",
+      "source_endpoints": [
+        2,
+        3
+      ],
+      "source_root_slot": 3,
+      "source_limit_transition": "2->3",
+      "endpoint_distances_from_root": [
+        {
+          "endpoint": 2,
+          "distance_from_root": 1
+        }
+      ],
+      "nearest_anchor_endpoint": 2,
+      "nearest_anchor_distance": 1,
+      "anchor": 2,
+      "nearest_anchor_selected": true,
+      "inside_moving_endpoint": 3,
+      "outside_moving_endpoint": 2,
+      "outside_root_slot": 2,
+      "phase_ladder_values": [
+        2,
+        3,
+        2,
+        3
+      ],
+      "phase_ladder_distinct": false,
+      "distinct_and_nearest_anchor": false,
+      "outside_pair_degenerate": true,
+      "predicted_pair_key": null,
+      "predicted_frame": null,
+      "prediction_exists": false,
+      "source_inside_failure_proxy": false,
+      "predicted_receipt_proxy": false,
+      "failure_to_receipt": false
+    },
+    {
+      "phase_step_mod15": 3,
+      "source_frame": [
+        "06_09",
+        "12",
+        "23->24"
+      ],
+      "source_pair": "06_09",
+      "source_endpoints": [
+        6,
+        9
+      ],
+      "source_root_slot": 12,
+      "source_limit_transition": "23->24",
+      "endpoint_distances_from_root": [
+        {
+          "endpoint": 9,
+          "distance_from_root": 3
+        },
+        {
+          "endpoint": 6,
+          "distance_from_root": 6
+        }
+      ],
+      "nearest_anchor_endpoint": 9,
+      "nearest_anchor_distance": 3,
+      "anchor": 9,
+      "nearest_anchor_selected": true,
+      "inside_moving_endpoint": 6,
+      "outside_moving_endpoint": 3,
+      "outside_root_slot": 9,
+      "phase_ladder_values": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "phase_ladder_distinct": true,
+      "distinct_and_nearest_anchor": true,
+      "outside_pair_degenerate": false,
+      "predicted_pair_key": "03_09",
+      "predicted_frame": [
+        "03_09",
+        "9",
+        "23->24"
+      ],
+      "prediction_exists": true,
+      "source_inside_failure_proxy": true,
+      "predicted_receipt_proxy": true,
+      "failure_to_receipt": true
+    },
+    {
+      "phase_step_mod15": 3,
+      "source_frame": [
+        "09_12",
+        "12",
+        "32->33"
+      ],
+      "source_pair": "09_12",
+      "source_endpoints": [
+        9,
+        12
+      ],
+      "source_root_slot": 12,
+      "source_limit_transition": "32->33",
+      "endpoint_distances_from_root": [
+        {
+          "endpoint": 9,
+          "distance_from_root": 3
+        }
+      ],
+      "nearest_anchor_endpoint": 9,
+      "nearest_anchor_distance": 3,
+      "anchor": 9,
+      "nearest_anchor_selected": true,
+      "inside_moving_endpoint": 12,
+      "outside_moving_endpoint": 9,
+      "outside_root_slot": 9,
+      "phase_ladder_values": [
+        9,
+        12,
+        9,
+        12
+      ],
+      "phase_ladder_distinct": false,
+      "distinct_and_nearest_anchor": false,
+      "outside_pair_degenerate": true,
+      "predicted_pair_key": null,
+      "predicted_frame": null,
+      "prediction_exists": false,
+      "source_inside_failure_proxy": false,
+      "predicted_receipt_proxy": false,
+      "failure_to_receipt": false
+    },
+    {
+      "phase_step_mod15": 4,
+      "source_frame": [
+        "07_11",
+        "11",
+        "4->5"
+      ],
+      "source_pair": "07_11",
+      "source_endpoints": [
+        7,
+        11
+      ],
+      "source_root_slot": 11,
+      "source_limit_transition": "4->5",
+      "endpoint_distances_from_root": [
+        {
+          "endpoint": 7,
+          "distance_from_root": 4
+        }
+      ],
+      "nearest_anchor_endpoint": 7,
+      "nearest_anchor_distance": 4,
+      "anchor": 7,
+      "nearest_anchor_selected": true,
+      "inside_moving_endpoint": 11,
+      "outside_moving_endpoint": 7,
+      "outside_root_slot": 7,
+      "phase_ladder_values": [
+        7,
+        11,
+        7,
+        11
+      ],
+      "phase_ladder_distinct": false,
+      "distinct_and_nearest_anchor": false,
+      "outside_pair_degenerate": true,
+      "predicted_pair_key": null,
+      "predicted_frame": null,
+      "prediction_exists": false,
+      "source_inside_failure_proxy": false,
+      "predicted_receipt_proxy": false,
+      "failure_to_receipt": false
+    },
+    {
+      "phase_step_mod15": 5,
+      "source_frame": [
+        "05_10",
+        "10",
+        "24->25"
+      ],
+      "source_pair": "05_10",
+      "source_endpoints": [
+        5,
+        10
+      ],
+      "source_root_slot": 10,
+      "source_limit_transition": "24->25",
+      "endpoint_distances_from_root": [
+        {
+          "endpoint": 5,
+          "distance_from_root": 5
+        }
+      ],
+      "nearest_anchor_endpoint": 5,
+      "nearest_anchor_distance": 5,
+      "anchor": 5,
+      "nearest_anchor_selected": true,
+      "inside_moving_endpoint": 10,
+      "outside_moving_endpoint": 5,
+      "outside_root_slot": 5,
+      "phase_ladder_values": [
+        5,
+        10,
+        5,
+        10
+      ],
+      "phase_ladder_distinct": false,
+      "distinct_and_nearest_anchor": false,
+      "outside_pair_degenerate": true,
+      "predicted_pair_key": null,
+      "predicted_frame": null,
+      "prediction_exists": false,
+      "source_inside_failure_proxy": false,
+      "predicted_receipt_proxy": false,
+      "failure_to_receipt": false
+    },
+    {
+      "phase_step_mod15": 5,
+      "source_frame": [
+        "05_10",
+        "10",
+        "3->4"
+      ],
+      "source_pair": "05_10",
+      "source_endpoints": [
+        5,
+        10
+      ],
+      "source_root_slot": 10,
+      "source_limit_transition": "3->4",
+      "endpoint_distances_from_root": [
+        {
+          "endpoint": 5,
+          "distance_from_root": 5
+        }
+      ],
+      "nearest_anchor_endpoint": 5,
+      "nearest_anchor_distance": 5,
+      "anchor": 5,
+      "nearest_anchor_selected": true,
+      "inside_moving_endpoint": 10,
+      "outside_moving_endpoint": 5,
+      "outside_root_slot": 5,
+      "phase_ladder_values": [
+        5,
+        10,
+        5,
+        10
+      ],
+      "phase_ladder_distinct": false,
+      "distinct_and_nearest_anchor": false,
+      "outside_pair_degenerate": true,
+      "predicted_pair_key": null,
+      "predicted_frame": null,
+      "prediction_exists": false,
+      "source_inside_failure_proxy": false,
+      "predicted_receipt_proxy": false,
+      "failure_to_receipt": false
+    },
+    {
+      "phase_step_mod15": 6,
+      "source_frame": [
+        "02_08",
+        "8",
+        "24->25"
+      ],
+      "source_pair": "02_08",
+      "source_endpoints": [
+        2,
+        8
+      ],
+      "source_root_slot": 8,
+      "source_limit_transition": "24->25",
+      "endpoint_distances_from_root": [
+        {
+          "endpoint": 2,
+          "distance_from_root": 6
+        }
+      ],
+      "nearest_anchor_endpoint": 2,
+      "nearest_anchor_distance": 6,
+      "anchor": 2,
+      "nearest_anchor_selected": true,
+      "inside_moving_endpoint": 8,
+      "outside_moving_endpoint": 2,
+      "outside_root_slot": 2,
+      "phase_ladder_values": [
+        2,
+        8,
+        2,
+        8
+      ],
+      "phase_ladder_distinct": false,
+      "distinct_and_nearest_anchor": false,
+      "outside_pair_degenerate": true,
+      "predicted_pair_key": null,
+      "predicted_frame": null,
+      "prediction_exists": false,
+      "source_inside_failure_proxy": false,
+      "predicted_receipt_proxy": false,
+      "failure_to_receipt": false
+    },
+    {
+      "phase_step_mod15": 6,
+      "source_frame": [
+        "02_08",
+        "8",
+        "3->4"
+      ],
+      "source_pair": "02_08",
+      "source_endpoints": [
+        2,
+        8
+      ],
+      "source_root_slot": 8,
+      "source_limit_transition": "3->4",
+      "endpoint_distances_from_root": [
+        {
+          "endpoint": 2,
+          "distance_from_root": 6
+        }
+      ],
+      "nearest_anchor_endpoint": 2,
+      "nearest_anchor_distance": 6,
+      "anchor": 2,
+      "nearest_anchor_selected": true,
+      "inside_moving_endpoint": 8,
+      "outside_moving_endpoint": 2,
+      "outside_root_slot": 2,
+      "phase_ladder_values": [
+        2,
+        8,
+        2,
+        8
+      ],
+      "phase_ladder_distinct": false,
+      "distinct_and_nearest_anchor": false,
+      "outside_pair_degenerate": true,
+      "predicted_pair_key": null,
+      "predicted_frame": null,
+      "prediction_exists": false,
+      "source_inside_failure_proxy": false,
+      "predicted_receipt_proxy": false,
+      "failure_to_receipt": false
+    },
+    {
+      "phase_step_mod15": 6,
+      "source_frame": [
+        "03_09",
+        "9",
+        "12->13"
+      ],
+      "source_pair": "03_09",
+      "source_endpoints": [
+        3,
+        9
+      ],
+      "source_root_slot": 9,
+      "source_limit_transition": "12->13",
+      "endpoint_distances_from_root": [
+        {
+          "endpoint": 3,
+          "distance_from_root": 6
+        }
+      ],
+      "nearest_anchor_endpoint": 3,
+      "nearest_anchor_distance": 6,
+      "anchor": 3,
+      "nearest_anchor_selected": true,
+      "inside_moving_endpoint": 9,
+      "outside_moving_endpoint": 3,
+      "outside_root_slot": 3,
+      "phase_ladder_values": [
+        3,
+        9,
+        3,
+        9
+      ],
+      "phase_ladder_distinct": false,
+      "distinct_and_nearest_anchor": false,
+      "outside_pair_degenerate": true,
+      "predicted_pair_key": null,
+      "predicted_frame": null,
+      "prediction_exists": false,
+      "source_inside_failure_proxy": false,
+      "predicted_receipt_proxy": false,
+      "failure_to_receipt": false
+    },
+    {
+      "phase_step_mod15": 6,
+      "source_frame": [
+        "03_09",
+        "9",
+        "23->24"
+      ],
+      "source_pair": "03_09",
+      "source_endpoints": [
+        3,
+        9
+      ],
+      "source_root_slot": 9,
+      "source_limit_transition": "23->24",
+      "endpoint_distances_from_root": [
+        {
+          "endpoint": 3,
+          "distance_from_root": 6
+        }
+      ],
+      "nearest_anchor_endpoint": 3,
+      "nearest_anchor_distance": 6,
+      "anchor": 3,
+      "nearest_anchor_selected": true,
+      "inside_moving_endpoint": 9,
+      "outside_moving_endpoint": 3,
+      "outside_root_slot": 3,
+      "phase_ladder_values": [
+        3,
+        9,
+        3,
+        9
+      ],
+      "phase_ladder_distinct": false,
+      "distinct_and_nearest_anchor": false,
+      "outside_pair_degenerate": true,
+      "predicted_pair_key": null,
+      "predicted_frame": null,
+      "prediction_exists": false,
+      "source_inside_failure_proxy": false,
+      "predicted_receipt_proxy": false,
+      "failure_to_receipt": false
+    },
+    {
+      "phase_step_mod15": 6,
+      "source_frame": [
+        "03_09",
+        "9",
+        "3->4"
+      ],
+      "source_pair": "03_09",
+      "source_endpoints": [
+        3,
+        9
+      ],
+      "source_root_slot": 9,
+      "source_limit_transition": "3->4",
+      "endpoint_distances_from_root": [
+        {
+          "endpoint": 3,
+          "distance_from_root": 6
+        }
+      ],
+      "nearest_anchor_endpoint": 3,
+      "nearest_anchor_distance": 6,
+      "anchor": 3,
+      "nearest_anchor_selected": true,
+      "inside_moving_endpoint": 9,
+      "outside_moving_endpoint": 3,
+      "outside_root_slot": 3,
+      "phase_ladder_values": [
+        3,
+        9,
+        3,
+        9
+      ],
+      "phase_ladder_distinct": false,
+      "distinct_and_nearest_anchor": false,
+      "outside_pair_degenerate": true,
+      "predicted_pair_key": null,
+      "predicted_frame": null,
+      "prediction_exists": false,
+      "source_inside_failure_proxy": false,
+      "predicted_receipt_proxy": false,
+      "failure_to_receipt": false
+    },
+    {
+      "phase_step_mod15": 6,
+      "source_frame": [
+        "06_09",
+        "12",
+        "23->24"
+      ],
+      "source_pair": "06_09",
+      "source_endpoints": [
+        6,
+        9
+      ],
+      "source_root_slot": 12,
+      "source_limit_transition": "23->24",
+      "endpoint_distances_from_root": [
+        {
+          "endpoint": 9,
+          "distance_from_root": 3
+        },
+        {
+          "endpoint": 6,
+          "distance_from_root": 6
+        }
+      ],
+      "nearest_anchor_endpoint": 9,
+      "nearest_anchor_distance": 3,
+      "anchor": 6,
+      "nearest_anchor_selected": false,
+      "inside_moving_endpoint": 9,
+      "outside_moving_endpoint": 3,
+      "outside_root_slot": 6,
+      "phase_ladder_values": [
+        3,
+        9,
+        6,
+        12
+      ],
+      "phase_ladder_distinct": true,
+      "distinct_and_nearest_anchor": false,
+      "outside_pair_degenerate": false,
+      "predicted_pair_key": "03_06",
+      "predicted_frame": [
+        "03_06",
+        "6",
+        "23->24"
+      ],
+      "prediction_exists": false,
+      "source_inside_failure_proxy": true,
+      "predicted_receipt_proxy": false,
+      "failure_to_receipt": false
+    },
+    {
+      "phase_step_mod15": 6,
+      "source_frame": [
+        "06_12",
+        "12",
+        "4->5"
+      ],
+      "source_pair": "06_12",
+      "source_endpoints": [
+        6,
+        12
+      ],
+      "source_root_slot": 12,
+      "source_limit_transition": "4->5",
+      "endpoint_distances_from_root": [
+        {
+          "endpoint": 6,
+          "distance_from_root": 6
+        }
+      ],
+      "nearest_anchor_endpoint": 6,
+      "nearest_anchor_distance": 6,
+      "anchor": 6,
+      "nearest_anchor_selected": true,
+      "inside_moving_endpoint": 12,
+      "outside_moving_endpoint": 6,
+      "outside_root_slot": 6,
+      "phase_ladder_values": [
+        6,
+        12,
+        6,
+        12
+      ],
+      "phase_ladder_distinct": false,
+      "distinct_and_nearest_anchor": false,
+      "outside_pair_degenerate": true,
+      "predicted_pair_key": null,
+      "predicted_frame": null,
+      "prediction_exists": false,
+      "source_inside_failure_proxy": false,
+      "predicted_receipt_proxy": false,
+      "failure_to_receipt": false
+    },
+    {
+      "phase_step_mod15": 7,
+      "source_frame": [
+        "06_13",
+        "13",
+        "31->32"
+      ],
+      "source_pair": "06_13",
+      "source_endpoints": [
+        6,
+        13
+      ],
+      "source_root_slot": 13,
+      "source_limit_transition": "31->32",
+      "endpoint_distances_from_root": [
+        {
+          "endpoint": 6,
+          "distance_from_root": 7
+        }
+      ],
+      "nearest_anchor_endpoint": 6,
+      "nearest_anchor_distance": 7,
+      "anchor": 6,
+      "nearest_anchor_selected": true,
+      "inside_moving_endpoint": 13,
+      "outside_moving_endpoint": 6,
+      "outside_root_slot": 6,
+      "phase_ladder_values": [
+        6,
+        13,
+        6,
+        13
+      ],
+      "phase_ladder_distinct": false,
+      "distinct_and_nearest_anchor": false,
+      "outside_pair_degenerate": true,
+      "predicted_pair_key": null,
+      "predicted_frame": null,
+      "prediction_exists": false,
+      "source_inside_failure_proxy": false,
+      "predicted_receipt_proxy": false,
+      "failure_to_receipt": false
+    },
+    {
+      "phase_step_mod15": 7,
+      "source_frame": [
+        "06_13",
+        "13",
+        "4->5"
+      ],
+      "source_pair": "06_13",
+      "source_endpoints": [
+        6,
+        13
+      ],
+      "source_root_slot": 13,
+      "source_limit_transition": "4->5",
+      "endpoint_distances_from_root": [
+        {
+          "endpoint": 6,
+          "distance_from_root": 7
+        }
+      ],
+      "nearest_anchor_endpoint": 6,
+      "nearest_anchor_distance": 7,
+      "anchor": 6,
+      "nearest_anchor_selected": true,
+      "inside_moving_endpoint": 13,
+      "outside_moving_endpoint": 6,
+      "outside_root_slot": 6,
+      "phase_ladder_values": [
+        6,
+        13,
+        6,
+        13
+      ],
+      "phase_ladder_distinct": false,
+      "distinct_and_nearest_anchor": false,
+      "outside_pair_degenerate": true,
+      "predicted_pair_key": null,
+      "predicted_frame": null,
+      "prediction_exists": false,
+      "source_inside_failure_proxy": false,
+      "predicted_receipt_proxy": false,
+      "failure_to_receipt": false
+    },
+    {
+      "phase_step_mod15": 9,
+      "source_frame": [
+        "05_14",
+        "14",
+        "38->39"
+      ],
+      "source_pair": "05_14",
+      "source_endpoints": [
+        5,
+        14
+      ],
+      "source_root_slot": 14,
+      "source_limit_transition": "38->39",
+      "endpoint_distances_from_root": [
+        {
+          "endpoint": 5,
+          "distance_from_root": 9
+        }
+      ],
+      "nearest_anchor_endpoint": 5,
+      "nearest_anchor_distance": 9,
+      "anchor": 5,
+      "nearest_anchor_selected": true,
+      "inside_moving_endpoint": 14,
+      "outside_moving_endpoint": 5,
+      "outside_root_slot": 5,
+      "phase_ladder_values": [
+        5,
+        14,
+        5,
+        14
+      ],
+      "phase_ladder_distinct": false,
+      "distinct_and_nearest_anchor": false,
+      "outside_pair_degenerate": true,
+      "predicted_pair_key": null,
+      "predicted_frame": null,
+      "prediction_exists": false,
+      "source_inside_failure_proxy": false,
+      "predicted_receipt_proxy": false,
+      "failure_to_receipt": false
+    },
+    {
+      "phase_step_mod15": 9,
+      "source_frame": [
+        "05_14",
+        "14",
+        "5->6"
+      ],
+      "source_pair": "05_14",
+      "source_endpoints": [
+        5,
+        14
+      ],
+      "source_root_slot": 14,
+      "source_limit_transition": "5->6",
+      "endpoint_distances_from_root": [
+        {
+          "endpoint": 5,
+          "distance_from_root": 9
+        }
+      ],
+      "nearest_anchor_endpoint": 5,
+      "nearest_anchor_distance": 9,
+      "anchor": 5,
+      "nearest_anchor_selected": true,
+      "inside_moving_endpoint": 14,
+      "outside_moving_endpoint": 5,
+      "outside_root_slot": 5,
+      "phase_ladder_values": [
+        5,
+        14,
+        5,
+        14
+      ],
+      "phase_ladder_distinct": false,
+      "distinct_and_nearest_anchor": false,
+      "outside_pair_degenerate": true,
+      "predicted_pair_key": null,
+      "predicted_frame": null,
+      "prediction_exists": false,
+      "source_inside_failure_proxy": false,
+      "predicted_receipt_proxy": false,
+      "failure_to_receipt": false
+    }
+  ],
+  "interpretation_boundary": [
+    "This is an observed all-phase visible ladder spectrum condition audit.",
+    "It does not derive nearest-anchor selection from deeper G60 construction.",
+    "Receipt/failure labels are used only to evaluate the condition after prediction.",
+    "No closure witness, transport relation, channel, force, physics, GR, Maxwell, QCD, electroweak, or unification claim is made."
+  ],
+  "boundary": {
+    "ladder_nearest_anchor_condition_audit_only": true,
+    "full_native_derivation": false,
+    "admits_closure_witness": false,
+    "admits_transport_relation": false,
+    "admits_channel": false,
+    "marker_lighting": false,
+    "viewer_change": false,
+    "body_mutation": false,
+    "force_claim": false,
+    "physics_claim": false,
+    "gr_claim": false,
+    "maxwell_claim": false,
+    "qcd_claim": false,
+    "electroweak_claim": false,
+    "unification_claim": false
+  },
+  "next_allowed_math_acts": [
+    "derive_nearest_anchor_condition_from_g60_construction",
+    "inspect_predicted_frame_registry_for_03_09_vs_03_06",
+    "test_5_3_4_chamber_signature_near_answering_fork",
+    "transport_relation_admission_criterion_001"
+  ],
+  "checks": {
+    "nonanswer_prior_valid": true,
+    "nonanswer_prior_status": true,
+    "all_phase_prior_valid": true,
+    "all_phase_prior_status": true,
+    "distinct_prior_valid": true,
+    "record_count_loaded": true,
+    "target_good": true,
+    "nonanswer_good": true,
+    "condition_status_recorded": true,
+    "channel_registry_preserved": true,
+    "renderer_absent": true,
+    "no_forbidden_claims": true
+  },
+  "failed_checks": [],
+  "hashes": {
+    "nonanswer_prior_sha256": "a2d0d610d29f38a61b4b5b35af4bc479018dc8de8d48fe3025362255e4dea2f1",
+    "all_phase_prior_sha256": "4f8f5f4ce3968724c4f8433635ae19d2c3fa3173c1172adb0594ce0f64c9ad1b",
+    "distinct_prior_sha256": "050f6f0c53837a51f5d8949c0e19185963649f76b66708eb4bfc30e74625084b",
+    "channels_sha256": "fbe4c50e0adf3460f7190f3c7714754da8a620359a5bc26c70543cc401feca08",
+    "body_sha256": "6a2cb6b9892a78d4559ec61cf946b0021962cc6819311234b8bf14102b3b7f63",
+    "lab_sha256": "5a10a18bc6563446a0d364d5984b8a41db580e0a75831c82b9eeb5aebc2edeb7"
+  }
+}

@@ -1,0 +1,1273 @@
+{
+  "audit_id": "g900_six_nine_target_only_source_family_signature_036",
+  "audit_pass": true,
+  "boundary": {
+    "channel_admitted": false,
+    "closure_witness_admitted": false,
+    "does_not_use_endpoint_value_as_selector": true,
+    "exact_selector_found": false,
+    "force_claim": false,
+    "marker_lighting": false,
+    "native_derivation_complete": false,
+    "physics_claim": false,
+    "target_only_family_signature_audit_only": true,
+    "transport_relation_admitted": false,
+    "unification_claim": false,
+    "viewer_or_body_mutation": false
+  },
+  "mixed_families": [
+    "source_limit_surface"
+  ],
+  "next_ascent_target": "test whether the strongest target-only non-endpoint signature selects endpoint chord 6_9",
+  "non_endpoint_common_feature_counts": {
+    "ladder_surface": 2,
+    "residual_surface": 3,
+    "source_gap_surface": 4,
+    "source_geometry_surface": 10
+  },
+  "prior_035_family_status": "target_only_and_mixed_source_families_coexist",
+  "prior_035_verdict": "target_endpoint_has_clean_family_but_contrasts_remain_elsewhere",
+  "reading": "The target-only source construction family is isolated and exposes common non-endpoint signature fields in the stored sample. The next audit can test whether that signature selects endpoint chord 6_9 without using endpoint values.",
+  "signature_status": "target_only_family_has_common_non_endpoint_signature",
+  "strong_signature_found": true,
+  "strongest_target_only_family": "source_geometry_surface",
+  "target_only_families": [
+    "ladder_surface",
+    "residual_surface",
+    "source_gap_surface",
+    "source_geometry_surface"
+  ],
+  "target_only_family_count": 4,
+  "target_only_family_inspection": {
+    "ladder_surface": {
+      "artifact_counts_top_20": {
+        "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json": 1,
+        "g900_six_nine_native_fork_law_probe_001.v1.json": 1,
+        "g900_six_nine_return_span_carrier_variable_scout_014.v1.json": 1
+      },
+      "common_non_endpoint_feature_count": 2,
+      "common_non_endpoint_features": {
+        "artifact_family": "six_nine",
+        "construction_family": "ladder_surface"
+      },
+      "contrast_count": 0,
+      "keys_top_20": {
+        "context.packet.source_endpoints": 1,
+        "packet.source_endpoints": 1,
+        "source_endpoints": 1
+      },
+      "pair_counts": {
+        "06_09": 3
+      },
+      "row_count": 3,
+      "sample_target_count_available": 3,
+      "sample_targets_first_10": [
+        {
+          "artifact": "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json",
+          "artifact_family": "six_nine",
+          "construction_family": "ladder_surface",
+          "context_summary": {
+            "broad_packet_row_count": 65,
+            "evidence_key.inside_moving_endpoint": "inside_moving_endpoint",
+            "evidence_key.source_endpoints": "source_endpoints",
+            "has_ladder": false,
+            "has_limit_start": false,
+            "has_phase_step": false,
+            "is_target_foundation_packet": false,
+            "nonfoundation_packet_keys": [
+              "anchor",
+              "inside_moving_endpoint",
+              "outside_moving_endpoint",
+              "source_endpoints"
+            ],
+            "origin_status": "target_and_contrast_rows_available_but_no_exact_nonfoundation_selector_found",
+            "packet.inside_moving_endpoint": 6,
+            "packet.source_endpoints": [
+              6,
+              9
+            ],
+            "packet_field_count": 4
+          },
+          "is_target_pair": true,
+          "key": "packet.source_endpoints",
+          "pair": [
+            6,
+            9
+          ],
+          "pair_key": "06_09",
+          "pointer": "$.contrast_rows_first_30[26].origin_selector_features.packet.source_endpoints"
+        },
+        {
+          "artifact": "g900_six_nine_native_fork_law_probe_001.v1.json",
+          "artifact_family": "six_nine",
+          "construction_family": "ladder_surface",
+          "context_summary": {
+            "inside_moving_endpoint": 6,
+            "phase_ladder_distinct": true,
+            "source_endpoints": [
+              6,
+              9
+            ]
+          },
+          "is_target_pair": true,
+          "key": "source_endpoints",
+          "pair": [
+            6,
+            9
+          ],
+          "pair_key": "06_09",
+          "pointer": "$.derived_values.source_endpoints"
+        },
+        {
+          "artifact": "g900_six_nine_return_span_carrier_variable_scout_014.v1.json",
+          "artifact_family": "six_nine",
+          "construction_family": "ladder_surface",
+          "context_summary": {
+            "context.evidence_key.inside_moving_endpoint": "inside_moving_endpoint",
+            "context.evidence_key.source_endpoints": "source_endpoints",
+            "context.has_ladder": false,
+            "context.has_limit_start": false,
+            "context.has_phase_step": false,
+            "context.packet.inside_moving_endpoint": 6,
+            "context.packet.source_endpoints": [
+              6,
+              9
+            ],
+            "packet_field_count": 6
+          },
+          "is_target_pair": true,
+          "key": "context.packet.source_endpoints",
+          "pair": [
+            6,
+            9
+          ],
+          "pair_key": "06_09",
+          "pointer": "$.span120_rows_first_20[16].safe_context_features.context.packet.source_endpoints"
+        }
+      ],
+      "target_count": 3
+    },
+    "residual_surface": {
+      "artifact_counts_top_20": {
+        "g900_six_nine_residual_360_after_phase3_anatomy_021.v1.json": 5,
+        "g900_six_nine_residual_360_manual_row_microscope_022.v1.json": 2,
+        "g900_six_nine_residual_360_packet_shape_collapse_023.v1.json": 2,
+        "g900_six_nine_residual_shape_upstream_provenance_024.v1.json": 2,
+        "g900_six_nine_residual_two_shape_local_cell_provenance_025.v1.json": 2
+      },
+      "common_non_endpoint_feature_count": 3,
+      "common_non_endpoint_features": {
+        "artifact_family": "six_nine",
+        "construction_family": "residual_surface",
+        "context.source_limit_start": null
+      },
+      "contrast_count": 0,
+      "keys_top_20": {
+        "source_endpoints": 10,
+        "source_pair": 3
+      },
+      "pair_counts": {
+        "06_09": 13
+      },
+      "row_count": 13,
+      "sample_target_count_available": 10,
+      "sample_targets_first_10": [
+        {
+          "artifact": "g900_six_nine_residual_360_after_phase3_anatomy_021.v1.json",
+          "artifact_family": "six_nine",
+          "construction_family": "residual_surface",
+          "context_summary": {
+            "inside_moving_endpoint": 6,
+            "ladder": [
+              3,
+              9,
+              6,
+              12
+            ],
+            "phase_step_mod15": 1,
+            "source_endpoints": null,
+            "source_limit_start": null,
+            "source_limit_transition": "23->24",
+            "source_pair": "06_09",
+            "source_side_gap": [
+              9,
+              11
+            ]
+          },
+          "is_target_pair": true,
+          "key": "source_pair",
+          "pair": [
+            6,
+            9
+          ],
+          "pair_key": "06_09",
+          "pointer": "$.residual_rows_first_20[0].packet.source_pair"
+        },
+        {
+          "artifact": "g900_six_nine_residual_360_after_phase3_anatomy_021.v1.json",
+          "artifact_family": "six_nine",
+          "construction_family": "residual_surface",
+          "context_summary": {
+            "inside_moving_endpoint": 6,
+            "ladder": null,
+            "phase_step_mod15": null,
+            "source_endpoints": [
+              6,
+              9
+            ],
+            "source_limit_start": null,
+            "source_limit_transition": null,
+            "source_pair": null,
+            "source_side_gap": null
+          },
+          "is_target_pair": true,
+          "key": "source_endpoints",
+          "pair": [
+            6,
+            9
+          ],
+          "pair_key": "06_09",
+          "pointer": "$.residual_rows_first_20[1].packet.source_endpoints"
+        },
+        {
+          "artifact": "g900_six_nine_residual_360_after_phase3_anatomy_021.v1.json",
+          "artifact_family": "six_nine",
+          "construction_family": "residual_surface",
+          "context_summary": {
+            "inside_moving_endpoint": 6,
+            "ladder": [
+              3,
+              9,
+              6,
+              12
+            ],
+            "phase_step_mod15": 1,
+            "source_endpoints": null,
+            "source_limit_start": null,
+            "source_limit_transition": "23->24",
+            "source_pair": "06_09",
+            "source_side_gap": [
+              9,
+              11
+            ]
+          },
+          "is_target_pair": true,
+          "key": "source_pair",
+          "pair": [
+            6,
+            9
+          ],
+          "pair_key": "06_09",
+          "pointer": "$.residual_rows_first_20[2].packet.source_pair"
+        },
+        {
+          "artifact": "g900_six_nine_residual_360_after_phase3_anatomy_021.v1.json",
+          "artifact_family": "six_nine",
+          "construction_family": "residual_surface",
+          "context_summary": {
+            "inside_moving_endpoint": 6,
+            "ladder": [
+              3,
+              9,
+              6,
+              12
+            ],
+            "phase_step_mod15": 1,
+            "source_endpoints": null,
+            "source_limit_start": null,
+            "source_limit_transition": "23->24",
+            "source_pair": "06_09",
+            "source_side_gap": [
+              9,
+              11
+            ]
+          },
+          "is_target_pair": true,
+          "key": "source_pair",
+          "pair": [
+            6,
+            9
+          ],
+          "pair_key": "06_09",
+          "pointer": "$.residual_rows_first_20[3].packet.source_pair"
+        },
+        {
+          "artifact": "g900_six_nine_residual_360_after_phase3_anatomy_021.v1.json",
+          "artifact_family": "six_nine",
+          "construction_family": "residual_surface",
+          "context_summary": {
+            "inside_moving_endpoint": 6,
+            "ladder": null,
+            "phase_step_mod15": null,
+            "source_endpoints": [
+              6,
+              9
+            ],
+            "source_limit_start": null,
+            "source_limit_transition": null,
+            "source_pair": null,
+            "source_side_gap": null
+          },
+          "is_target_pair": true,
+          "key": "source_endpoints",
+          "pair": [
+            6,
+            9
+          ],
+          "pair_key": "06_09",
+          "pointer": "$.residual_rows_first_20[4].packet.source_endpoints"
+        },
+        {
+          "artifact": "g900_six_nine_residual_360_manual_row_microscope_022.v1.json",
+          "artifact_family": "six_nine",
+          "construction_family": "residual_surface",
+          "context_summary": {
+            "inside_moving_endpoint": 6,
+            "ladder": null,
+            "phase_step_mod15": null,
+            "source_endpoints": [
+              6,
+              9
+            ],
+            "source_limit_start": null,
+            "source_side_gap": null
+          },
+          "is_target_pair": true,
+          "key": "source_endpoints",
+          "pair": [
+            6,
+            9
+          ],
+          "pair_key": "06_09",
+          "pointer": "$.residual_rows[1].signature.source_endpoints"
+        },
+        {
+          "artifact": "g900_six_nine_residual_360_manual_row_microscope_022.v1.json",
+          "artifact_family": "six_nine",
+          "construction_family": "residual_surface",
+          "context_summary": {
+            "inside_moving_endpoint": 6,
+            "ladder": null,
+            "phase_step_mod15": null,
+            "source_endpoints": [
+              6,
+              9
+            ],
+            "source_limit_start": null,
+            "source_side_gap": null
+          },
+          "is_target_pair": true,
+          "key": "source_endpoints",
+          "pair": [
+            6,
+            9
+          ],
+          "pair_key": "06_09",
+          "pointer": "$.residual_rows[4].signature.source_endpoints"
+        },
+        {
+          "artifact": "g900_six_nine_residual_360_packet_shape_collapse_023.v1.json",
+          "artifact_family": "six_nine",
+          "construction_family": "residual_surface",
+          "context_summary": {
+            "inside_moving_endpoint": 6,
+            "ladder": null,
+            "phase_step_mod15": null,
+            "source_endpoints": [
+              6,
+              9
+            ],
+            "source_limit_start": null,
+            "source_side_gap": null
+          },
+          "is_target_pair": true,
+          "key": "source_endpoints",
+          "pair": [
+            6,
+            9
+          ],
+          "pair_key": "06_09",
+          "pointer": "$.shape_families.endpoint_only_family[0].signature.source_endpoints"
+        },
+        {
+          "artifact": "g900_six_nine_residual_360_packet_shape_collapse_023.v1.json",
+          "artifact_family": "six_nine",
+          "construction_family": "residual_surface",
+          "context_summary": {
+            "inside_moving_endpoint": 6,
+            "ladder": null,
+            "phase_step_mod15": null,
+            "source_endpoints": [
+              6,
+              9
+            ],
+            "source_limit_start": null,
+            "source_side_gap": null
+          },
+          "is_target_pair": true,
+          "key": "source_endpoints",
+          "pair": [
+            6,
+            9
+          ],
+          "pair_key": "06_09",
+          "pointer": "$.shape_families.endpoint_only_family[1].signature.source_endpoints"
+        },
+        {
+          "artifact": "g900_six_nine_residual_shape_upstream_provenance_024.v1.json",
+          "artifact_family": "six_nine",
+          "construction_family": "residual_surface",
+          "context_summary": {
+            "expected_upstream_two_family_provenance": true,
+            "inside_moving_endpoint": 6,
+            "ladder": null,
+            "phase_step_mod15": null,
+            "provenance_status": "two_packet_shapes_have_cross_artifact_repeated_provenance",
+            "source_endpoints": [
+              6,
+              9
+            ],
+            "source_limit_start": null,
+            "source_side_gap": null
+          },
+          "is_target_pair": true,
+          "key": "source_endpoints",
+          "pair": [
+            6,
+            9
+          ],
+          "pair_key": "06_09",
+          "pointer": "$.family_profiles.endpoint_only_family.rows[0].signature.source_endpoints"
+        }
+      ],
+      "target_count": 13
+    },
+    "source_gap_surface": {
+      "artifact_counts_top_20": {
+        "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json": 3,
+        "g900_six_nine_foundation_packet_context_contrast_010.v1.json": 3,
+        "g900_six_nine_foundation_packet_origin_selector_008.v1.json": 2
+      },
+      "common_non_endpoint_feature_count": 4,
+      "common_non_endpoint_features": {
+        "artifact_family": "six_nine",
+        "construction_family": "source_gap_surface",
+        "context.is_target_foundation_packet": true,
+        "context.packet_field_count": 5
+      },
+      "contrast_count": 0,
+      "keys_top_20": {
+        "context.source_endpoints": 2,
+        "packet.source_endpoints": 6
+      },
+      "pair_counts": {
+        "06_09": 8
+      },
+      "row_count": 8,
+      "sample_target_count_available": 8,
+      "sample_targets_first_10": [
+        {
+          "artifact": "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json",
+          "artifact_family": "six_nine",
+          "construction_family": "source_gap_surface",
+          "context_summary": {
+            "broad_packet_row_count": 65,
+            "evidence_key.source_endpoints": "source_endpoints",
+            "evidence_key.source_side_gap": "source_side_gaps",
+            "has_ladder": false,
+            "has_limit_start": false,
+            "has_phase_step": false,
+            "is_target_foundation_packet": true,
+            "nonfoundation_packet_keys": [
+              "source_endpoints",
+              "source_side_gap"
+            ],
+            "origin_status": "target_and_contrast_rows_available_but_no_exact_nonfoundation_selector_found",
+            "packet.source_endpoints": [
+              6,
+              9
+            ],
+            "packet.source_side_gap": [
+              9,
+              11
+            ],
+            "packet_field_count": 5
+          },
+          "is_target_pair": true,
+          "key": "packet.source_endpoints",
+          "pair": [
+            6,
+            9
+          ],
+          "pair_key": "06_09",
+          "pointer": "$.target_rows_first_30[2].origin_selector_features.packet.source_endpoints"
+        },
+        {
+          "artifact": "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json",
+          "artifact_family": "six_nine",
+          "construction_family": "source_gap_surface",
+          "context_summary": {
+            "broad_packet_row_count": 65,
+            "evidence_key.source_endpoints": "source_endpoints",
+            "evidence_key.source_side_gap": "source_side_gap",
+            "has_ladder": false,
+            "has_limit_start": false,
+            "has_phase_step": false,
+            "is_target_foundation_packet": true,
+            "nonfoundation_packet_keys": [
+              "source_endpoints",
+              "source_side_gap"
+            ],
+            "origin_status": "target_and_contrast_rows_available_but_no_exact_nonfoundation_selector_found",
+            "packet.source_endpoints": [
+              6,
+              9
+            ],
+            "packet.source_side_gap": [
+              9,
+              11
+            ],
+            "packet_field_count": 5
+          },
+          "is_target_pair": true,
+          "key": "packet.source_endpoints",
+          "pair": [
+            6,
+            9
+          ],
+          "pair_key": "06_09",
+          "pointer": "$.target_rows_first_30[12].origin_selector_features.packet.source_endpoints"
+        },
+        {
+          "artifact": "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json",
+          "artifact_family": "six_nine",
+          "construction_family": "source_gap_surface",
+          "context_summary": {
+            "broad_packet_row_count": 65,
+            "evidence_key.source_endpoints": "source_endpoints",
+            "evidence_key.source_side_gap": "source_side_gap_signature",
+            "has_ladder": false,
+            "has_limit_start": false,
+            "has_phase_step": false,
+            "is_target_foundation_packet": true,
+            "nonfoundation_packet_keys": [
+              "source_endpoints",
+              "source_side_gap"
+            ],
+            "origin_status": "target_and_contrast_rows_available_but_no_exact_nonfoundation_selector_found",
+            "packet.source_endpoints": [
+              6,
+              9
+            ],
+            "packet.source_side_gap": [
+              9,
+              11
+            ],
+            "packet_field_count": 5
+          },
+          "is_target_pair": true,
+          "key": "packet.source_endpoints",
+          "pair": [
+            6,
+            9
+          ],
+          "pair_key": "06_09",
+          "pointer": "$.target_rows_first_30[24].origin_selector_features.packet.source_endpoints"
+        },
+        {
+          "artifact": "g900_six_nine_foundation_packet_context_contrast_010.v1.json",
+          "artifact_family": "six_nine",
+          "construction_family": "source_gap_surface",
+          "context_summary": {
+            "context.source_endpoints": [
+              6,
+              9
+            ],
+            "context.source_side_gap_signature": "9,11",
+            "context.source_side_gaps": [
+              9,
+              11
+            ],
+            "context_packet_row_count": 151,
+            "evidence_key.source_endpoints": "source_endpoints",
+            "evidence_key.source_side_gap": "source_side_gaps",
+            "is_target_foundation_packet": true,
+            "nonfoundation_packet_keys": [
+              "source_endpoints",
+              "source_side_gap"
+            ],
+            "origin_status": "target_and_contrast_rows_available_but_context_features_do_not_select_foundation_packet",
+            "packet.source_endpoints": [
+              6,
+              9
+            ],
+            "packet.source_side_gap": [
+              9,
+              11
+            ],
+            "packet_field_count": 5
+          },
+          "is_target_pair": true,
+          "key": "context.source_endpoints",
+          "pair": [
+            6,
+            9
+          ],
+          "pair_key": "06_09",
+          "pointer": "$.target_rows_first_20[4].context_selector_features.context.source_endpoints"
+        },
+        {
+          "artifact": "g900_six_nine_foundation_packet_context_contrast_010.v1.json",
+          "artifact_family": "six_nine",
+          "construction_family": "source_gap_surface",
+          "context_summary": {
+            "context.source_endpoints": [
+              6,
+              9
+            ],
+            "context.source_side_gap_signature": "9,11",
+            "context.source_side_gaps": [
+              9,
+              11
+            ],
+            "context_packet_row_count": 151,
+            "evidence_key.source_endpoints": "source_endpoints",
+            "evidence_key.source_side_gap": "source_side_gaps",
+            "is_target_foundation_packet": true,
+            "nonfoundation_packet_keys": [
+              "source_endpoints",
+              "source_side_gap"
+            ],
+            "origin_status": "target_and_contrast_rows_available_but_context_features_do_not_select_foundation_packet",
+            "packet.source_endpoints": [
+              6,
+              9
+            ],
+            "packet.source_side_gap": [
+              9,
+              11
+            ],
+            "packet_field_count": 5
+          },
+          "is_target_pair": true,
+          "key": "packet.source_endpoints",
+          "pair": [
+            6,
+            9
+          ],
+          "pair_key": "06_09",
+          "pointer": "$.target_rows_first_20[4].context_selector_features.packet.source_endpoints"
+        },
+        {
+          "artifact": "g900_six_nine_foundation_packet_context_contrast_010.v1.json",
+          "artifact_family": "six_nine",
+          "construction_family": "source_gap_surface",
+          "context_summary": {
+            "context.source_endpoints": [
+              6,
+              9
+            ],
+            "context.source_side_gap_signature": "9,11",
+            "context.source_side_gaps": [
+              9,
+              11
+            ],
+            "context_packet_row_count": 151,
+            "is_target_foundation_packet": true,
+            "origin_status": "target_and_contrast_rows_available_but_context_features_do_not_select_foundation_packet",
+            "packet_field_count": 5
+          },
+          "is_target_pair": true,
+          "key": "context.source_endpoints",
+          "pair": [
+            6,
+            9
+          ],
+          "pair_key": "06_09",
+          "pointer": "$.target_rows_first_20[4].safe_context_features.context.source_endpoints"
+        },
+        {
+          "artifact": "g900_six_nine_foundation_packet_origin_selector_008.v1.json",
+          "artifact_family": "six_nine",
+          "construction_family": "source_gap_surface",
+          "context_summary": {
+            "evidence_key.source_endpoints": "source_endpoints",
+            "evidence_key.source_side_gap": "source_side_gaps",
+            "has_ladder": false,
+            "has_limit_start": false,
+            "is_target_foundation_packet": true,
+            "nonfoundation_packet_keys": [
+              "source_endpoints",
+              "source_side_gap"
+            ],
+            "origin_status": "007_stored_only_foundation_rows_selector_requires_broader_contrast_universe",
+            "packet.source_endpoints": [
+              6,
+              9
+            ],
+            "packet.source_side_gap": [
+              9,
+              11
+            ],
+            "packet_field_count": 5,
+            "prior_007_base_source_geometry_packet_hold_found": true
+          },
+          "is_target_pair": true,
+          "key": "packet.source_endpoints",
+          "pair": [
+            6,
+            9
+          ],
+          "pair_key": "06_09",
+          "pointer": "$.target_rows_first_20[9].origin_selector_features.packet.source_endpoints"
+        },
+        {
+          "artifact": "g900_six_nine_foundation_packet_origin_selector_008.v1.json",
+          "artifact_family": "six_nine",
+          "construction_family": "source_gap_surface",
+          "context_summary": {
+            "evidence_key.source_endpoints": "source_endpoints",
+            "evidence_key.source_side_gap": "source_side_gap_signature",
+            "has_ladder": false,
+            "has_limit_start": false,
+            "is_target_foundation_packet": true,
+            "nonfoundation_packet_keys": [
+              "source_endpoints",
+              "source_side_gap"
+            ],
+            "origin_status": "007_stored_only_foundation_rows_selector_requires_broader_contrast_universe",
+            "packet.source_endpoints": [
+              6,
+              9
+            ],
+            "packet.source_side_gap": [
+              9,
+              11
+            ],
+            "packet_field_count": 5,
+            "prior_007_base_source_geometry_packet_hold_found": true
+          },
+          "is_target_pair": true,
+          "key": "packet.source_endpoints",
+          "pair": [
+            6,
+            9
+          ],
+          "pair_key": "06_09",
+          "pointer": "$.target_rows_first_20[10].origin_selector_features.packet.source_endpoints"
+        }
+      ],
+      "target_count": 8
+    },
+    "source_geometry_surface": {
+      "artifact_counts_top_20": {
+        "g900_six_nine_source_geometry_field_origin_inventory_005.v1.json": 274,
+        "g900_six_nine_source_geometry_packet_parser_repair_007.v1.json": 24
+      },
+      "common_non_endpoint_feature_count": 10,
+      "common_non_endpoint_features": {
+        "artifact": "g900_six_nine_source_geometry_field_origin_inventory_005.v1.json",
+        "artifact_family": "six_nine",
+        "construction_family": "source_geometry_surface",
+        "context.full_packet_row_count": 441,
+        "context.nonleaky_full_packet_row_count": 84,
+        "context.origin_status": "candidate_native_source_or_carrier_rows_available_for_next_derivation",
+        "context.source_geometry_origin_candidate_found": true,
+        "context.source_limit_start": 23,
+        "context.source_limit_transition": "23->24",
+        "context.strong_source_packet_row_count": 122
+      },
+      "contrast_count": 0,
+      "keys_top_20": {
+        "source_endpoints": 144,
+        "source_pair": 154
+      },
+      "pair_counts": {
+        "06_09": 298
+      },
+      "row_count": 298,
+      "sample_target_count_available": 10,
+      "sample_targets_first_10": [
+        {
+          "artifact": "g900_six_nine_source_geometry_field_origin_inventory_005.v1.json",
+          "artifact_family": "six_nine",
+          "construction_family": "source_geometry_surface",
+          "context_summary": {
+            "broken_ladder": [
+              3,
+              9,
+              6,
+              12
+            ],
+            "full_packet_row_count": 441,
+            "inside_moving_endpoint": 9,
+            "nonleaky_full_packet_row_count": 84,
+            "origin_status": "candidate_native_source_or_carrier_rows_available_for_next_derivation",
+            "phase_ladder_values": [
+              3,
+              6,
+              9,
+              12
+            ],
+            "phase_step_mod15": 3,
+            "source_endpoints": [
+              6,
+              9
+            ],
+            "source_geometry_origin_candidate_found": true,
+            "source_limit_start": 23,
+            "source_limit_transition": "23->24",
+            "source_pair": "06_09",
+            "source_side_gap_signature": "[9,11]",
+            "strong_source_packet_row_count": 122,
+            "target_ladder": [
+              3,
+              6,
+              9,
+              12
+            ]
+          },
+          "is_target_pair": true,
+          "key": "source_endpoints",
+          "pair": [
+            6,
+            9
+          ],
+          "pair_key": "06_09",
+          "pointer": "$.inventory_rows_first_100[0].compact_context.source_endpoints"
+        },
+        {
+          "artifact": "g900_six_nine_source_geometry_field_origin_inventory_005.v1.json",
+          "artifact_family": "six_nine",
+          "construction_family": "source_geometry_surface",
+          "context_summary": {
+            "broken_ladder": [
+              3,
+              9,
+              6,
+              12
+            ],
+            "full_packet_row_count": 441,
+            "inside_moving_endpoint": 9,
+            "nonleaky_full_packet_row_count": 84,
+            "origin_status": "candidate_native_source_or_carrier_rows_available_for_next_derivation",
+            "phase_ladder_values": [
+              3,
+              6,
+              9,
+              12
+            ],
+            "phase_step_mod15": 3,
+            "source_endpoints": [
+              6,
+              9
+            ],
+            "source_geometry_origin_candidate_found": true,
+            "source_limit_start": 23,
+            "source_limit_transition": "23->24",
+            "source_pair": "06_09",
+            "source_side_gap_signature": "[9,11]",
+            "strong_source_packet_row_count": 122,
+            "target_ladder": [
+              3,
+              6,
+              9,
+              12
+            ]
+          },
+          "is_target_pair": true,
+          "key": "source_pair",
+          "pair": [
+            6,
+            9
+          ],
+          "pair_key": "06_09",
+          "pointer": "$.inventory_rows_first_100[0].compact_context.source_pair"
+        },
+        {
+          "artifact": "g900_six_nine_source_geometry_field_origin_inventory_005.v1.json",
+          "artifact_family": "six_nine",
+          "construction_family": "source_geometry_surface",
+          "context_summary": {
+            "broken_ladder": [
+              3,
+              9,
+              6,
+              12
+            ],
+            "full_packet_row_count": 441,
+            "inside_moving_endpoint": 9,
+            "ladder_approaches_root_by_step_3": true,
+            "nonleaky_full_packet_row_count": 84,
+            "origin_status": "candidate_native_source_or_carrier_rows_available_for_next_derivation",
+            "phase_ladder_values": [
+              3,
+              6,
+              9,
+              12
+            ],
+            "phase_step_mod15": 3,
+            "source_endpoints": [
+              6,
+              9
+            ],
+            "source_geometry_origin_candidate_found": true,
+            "source_limit_start": 23,
+            "source_limit_transition": "23->24",
+            "source_pair": "06_09",
+            "source_side_gap_signature": "[9,11]",
+            "strictly_increasing_ladder": true,
+            "strong_source_packet_row_count": 122,
+            "target_ladder": [
+              3,
+              6,
+              9,
+              12
+            ]
+          },
+          "is_target_pair": true,
+          "key": "source_endpoints",
+          "pair": [
+            6,
+            9
+          ],
+          "pair_key": "06_09",
+          "pointer": "$.inventory_rows_first_100[1].compact_context.source_endpoints"
+        },
+        {
+          "artifact": "g900_six_nine_source_geometry_field_origin_inventory_005.v1.json",
+          "artifact_family": "six_nine",
+          "construction_family": "source_geometry_surface",
+          "context_summary": {
+            "broken_ladder": [
+              3,
+              9,
+              6,
+              12
+            ],
+            "full_packet_row_count": 441,
+            "inside_moving_endpoint": 9,
+            "ladder_approaches_root_by_step_3": true,
+            "nonleaky_full_packet_row_count": 84,
+            "origin_status": "candidate_native_source_or_carrier_rows_available_for_next_derivation",
+            "phase_ladder_values": [
+              3,
+              6,
+              9,
+              12
+            ],
+            "phase_step_mod15": 3,
+            "source_endpoints": [
+              6,
+              9
+            ],
+            "source_geometry_origin_candidate_found": true,
+            "source_limit_start": 23,
+            "source_limit_transition": "23->24",
+            "source_pair": "06_09",
+            "source_side_gap_signature": "[9,11]",
+            "strictly_increasing_ladder": true,
+            "strong_source_packet_row_count": 122,
+            "target_ladder": [
+              3,
+              6,
+              9,
+              12
+            ]
+          },
+          "is_target_pair": true,
+          "key": "source_pair",
+          "pair": [
+            6,
+            9
+          ],
+          "pair_key": "06_09",
+          "pointer": "$.inventory_rows_first_100[1].compact_context.source_pair"
+        },
+        {
+          "artifact": "g900_six_nine_source_geometry_field_origin_inventory_005.v1.json",
+          "artifact_family": "six_nine",
+          "construction_family": "source_geometry_surface",
+          "context_summary": {
+            "broken_ladder": [
+              3,
+              9,
+              6,
+              12
+            ],
+            "full_packet_row_count": 441,
+            "inside_moving_endpoint": 6,
+            "nonleaky_full_packet_row_count": 84,
+            "origin_status": "candidate_native_source_or_carrier_rows_available_for_next_derivation",
+            "phase_ladder_values": [
+              3,
+              9,
+              6,
+              12
+            ],
+            "phase_step_mod15": 6,
+            "source_endpoints": [
+              6,
+              9
+            ],
+            "source_geometry_origin_candidate_found": true,
+            "source_limit_start": 23,
+            "source_limit_transition": "23->24",
+            "source_pair": "06_09",
+            "source_side_gap_signature": "[9,11]",
+            "strong_source_packet_row_count": 122,
+            "target_ladder": [
+              3,
+              6,
+              9,
+              12
+            ]
+          },
+          "is_target_pair": true,
+          "key": "source_endpoints",
+          "pair": [
+            6,
+            9
+          ],
+          "pair_key": "06_09",
+          "pointer": "$.inventory_rows_first_100[2].compact_context.source_endpoints"
+        },
+        {
+          "artifact": "g900_six_nine_source_geometry_field_origin_inventory_005.v1.json",
+          "artifact_family": "six_nine",
+          "construction_family": "source_geometry_surface",
+          "context_summary": {
+            "broken_ladder": [
+              3,
+              9,
+              6,
+              12
+            ],
+            "full_packet_row_count": 441,
+            "inside_moving_endpoint": 6,
+            "nonleaky_full_packet_row_count": 84,
+            "origin_status": "candidate_native_source_or_carrier_rows_available_for_next_derivation",
+            "phase_ladder_values": [
+              3,
+              9,
+              6,
+              12
+            ],
+            "phase_step_mod15": 6,
+            "source_endpoints": [
+              6,
+              9
+            ],
+            "source_geometry_origin_candidate_found": true,
+            "source_limit_start": 23,
+            "source_limit_transition": "23->24",
+            "source_pair": "06_09",
+            "source_side_gap_signature": "[9,11]",
+            "strong_source_packet_row_count": 122,
+            "target_ladder": [
+              3,
+              6,
+              9,
+              12
+            ]
+          },
+          "is_target_pair": true,
+          "key": "source_pair",
+          "pair": [
+            6,
+            9
+          ],
+          "pair_key": "06_09",
+          "pointer": "$.inventory_rows_first_100[2].compact_context.source_pair"
+        },
+        {
+          "artifact": "g900_six_nine_source_geometry_field_origin_inventory_005.v1.json",
+          "artifact_family": "six_nine",
+          "construction_family": "source_geometry_surface",
+          "context_summary": {
+            "broken_ladder": [
+              3,
+              9,
+              6,
+              12
+            ],
+            "full_packet_row_count": 441,
+            "inside_moving_endpoint": 6,
+            "ladder_approaches_root_by_step_3": false,
+            "nonleaky_full_packet_row_count": 84,
+            "origin_status": "candidate_native_source_or_carrier_rows_available_for_next_derivation",
+            "phase_ladder_values": [
+              3,
+              9,
+              6,
+              12
+            ],
+            "phase_step_mod15": 6,
+            "source_endpoints": [
+              6,
+              9
+            ],
+            "source_geometry_origin_candidate_found": true,
+            "source_limit_start": 23,
+            "source_limit_transition": "23->24",
+            "source_pair": "06_09",
+            "source_side_gap_signature": "[9,11]",
+            "strictly_increasing_ladder": false,
+            "strong_source_packet_row_count": 122,
+            "target_ladder": [
+              3,
+              6,
+              9,
+              12
+            ]
+          },
+          "is_target_pair": true,
+          "key": "source_endpoints",
+          "pair": [
+            6,
+            9
+          ],
+          "pair_key": "06_09",
+          "pointer": "$.inventory_rows_first_100[3].compact_context.source_endpoints"
+        },
+        {
+          "artifact": "g900_six_nine_source_geometry_field_origin_inventory_005.v1.json",
+          "artifact_family": "six_nine",
+          "construction_family": "source_geometry_surface",
+          "context_summary": {
+            "broken_ladder": [
+              3,
+              9,
+              6,
+              12
+            ],
+            "full_packet_row_count": 441,
+            "inside_moving_endpoint": 6,
+            "ladder_approaches_root_by_step_3": false,
+            "nonleaky_full_packet_row_count": 84,
+            "origin_status": "candidate_native_source_or_carrier_rows_available_for_next_derivation",
+            "phase_ladder_values": [
+              3,
+              9,
+              6,
+              12
+            ],
+            "phase_step_mod15": 6,
+            "source_endpoints": [
+              6,
+              9
+            ],
+            "source_geometry_origin_candidate_found": true,
+            "source_limit_start": 23,
+            "source_limit_transition": "23->24",
+            "source_pair": "06_09",
+            "source_side_gap_signature": "[9,11]",
+            "strictly_increasing_ladder": false,
+            "strong_source_packet_row_count": 122,
+            "target_ladder": [
+              3,
+              6,
+              9,
+              12
+            ]
+          },
+          "is_target_pair": true,
+          "key": "source_pair",
+          "pair": [
+            6,
+            9
+          ],
+          "pair_key": "06_09",
+          "pointer": "$.inventory_rows_first_100[3].compact_context.source_pair"
+        },
+        {
+          "artifact": "g900_six_nine_source_geometry_field_origin_inventory_005.v1.json",
+          "artifact_family": "six_nine",
+          "construction_family": "source_geometry_surface",
+          "context_summary": {
+            "full_packet_row_count": 441,
+            "inside_moving_endpoint": 6,
+            "is_target_source_gap": true,
+            "nonleaky_full_packet_row_count": 84,
+            "origin_status": "candidate_native_source_or_carrier_rows_available_for_next_derivation",
+            "phase_ladder_distinct": true,
+            "phase_ladder_values": [
+              3,
+              6,
+              9,
+              12
+            ],
+            "phase_step_mod15": 3,
+            "source_endpoints": [
+              6,
+              9
+            ],
+            "source_geometry_origin_candidate_found": true,
+            "source_limit_start": 23,
+            "source_limit_transition": "23->24",
+            "source_pair": "06_09",
+            "source_side_gap_signature": "9,11",
+            "source_side_gaps": [
+              9,
+              11
+            ],
+            "strong_source_packet_row_count": 122
+          },
+          "is_target_pair": true,
+          "key": "source_endpoints",
+          "pair": [
+            6,
+            9
+          ],
+          "pair_key": "06_09",
+          "pointer": "$.inventory_rows_first_100[4].compact_context.source_endpoints"
+        },
+        {
+          "artifact": "g900_six_nine_source_geometry_field_origin_inventory_005.v1.json",
+          "artifact_family": "six_nine",
+          "construction_family": "source_geometry_surface",
+          "context_summary": {
+            "full_packet_row_count": 441,
+            "inside_moving_endpoint": 6,
+            "is_target_source_gap": true,
+            "nonleaky_full_packet_row_count": 84,
+            "origin_status": "candidate_native_source_or_carrier_rows_available_for_next_derivation",
+            "phase_ladder_distinct": true,
+            "phase_ladder_values": [
+              3,
+              6,
+              9,
+              12
+            ],
+            "phase_step_mod15": 3,
+            "source_endpoints": [
+              6,
+              9
+            ],
+            "source_geometry_origin_candidate_found": true,
+            "source_limit_start": 23,
+            "source_limit_transition": "23->24",
+            "source_pair": "06_09",
+            "source_side_gap_signature": "9,11",
+            "source_side_gaps": [
+              9,
+              11
+            ],
+            "strong_source_packet_row_count": 122
+          },
+          "is_target_pair": true,
+          "key": "source_pair",
+          "pair": [
+            6,
+            9
+          ],
+          "pair_key": "06_09",
+          "pointer": "$.inventory_rows_first_100[4].compact_context.source_pair"
+        }
+      ],
+      "target_count": 298
+    }
+  },
+  "theory_claim": false,
+  "verdict": "target_only_source_family_signature_recorded"
+}

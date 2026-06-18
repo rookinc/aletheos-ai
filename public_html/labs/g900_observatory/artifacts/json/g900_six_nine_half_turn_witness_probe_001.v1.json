@@ -1,0 +1,977 @@
+{
+  "schema": "g900.six_nine_half_turn_witness_probe",
+  "version": 1,
+  "status": "six_nine_half_turn_witness_probe_recorded",
+  "created_utc": "2026-06-18T08:01:17Z",
+  "git_head": "c732be4 Probe G900 return seam source provenance",
+  "audit_pass": true,
+  "verdict": "six_nine_half_turn_witness_probe_passed",
+  "hypothesis": "06_09 does not need a straight path for closure; it needs a 180-style half-turn witness.",
+  "witness_status": "six_nine_uniquely_demands_half_turn_witness_in_proxy_family",
+  "reading": "06_09 is the zero-hit one-way seam with no half-turn witness proxy in the tested support table. This supports the bounded reading that the seam needs a 180-style witness before closure can be admitted.",
+  "half_turn_witness_proxy_definition": {
+    "proxy_only": true,
+    "not_admitted_witness": true,
+    "proxy_true_if_any": [
+      "reverse_pair_exists",
+      "reverse_limit_exists",
+      "reciprocal_kind_present",
+      "any_delta_support_present",
+      "any_boundary_carrier_present"
+    ]
+  },
+  "target": {
+    "pair_key": "06_09",
+    "target_row_count": 60,
+    "target_pair_counts": {
+      "06_09": 60
+    },
+    "zero_pair_counts": {
+      "06_09": 60
+    },
+    "target_has_half_turn_witness_proxy": false,
+    "target_all_zero_hit": true,
+    "target_all_one_way": true,
+    "target_reverse_pair_exists": false,
+    "target_reverse_limit_exists": false,
+    "target_any_support": false,
+    "target_any_boundary_carrier": false,
+    "target_summary": {
+      "pair_key": "06_09",
+      "row_count": 60,
+      "reverse_pair_key": "09_06",
+      "reverse_pair_exists": false,
+      "limit_transitions": [
+        "23->24"
+      ],
+      "reverse_limit_transitions": [
+        "24->23"
+      ],
+      "reverse_limit_exists": false,
+      "reciprocal_kind_present": false,
+      "any_support": false,
+      "any_boundary_carrier": false,
+      "all_zero_hit": true,
+      "all_one_way": true,
+      "half_turn_witness_proxy": false,
+      "summary": {
+        "row_count": 60,
+        "pair_counts": {
+          "06_09": 60
+        },
+        "limit_counts": {
+          "23->24": 60
+        },
+        "root_slot_counts": {
+          "12": 60
+        },
+        "package_kind_counts": {
+          "one_way_single_transition": 60
+        },
+        "zero_hit_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "support_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "boundary_carrier_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "one_way_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "delta_edge_hits_profile": {
+          "count": 60,
+          "min": 0,
+          "max": 0,
+          "sum": 0,
+          "distinct": [
+            0
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 60,
+          "min": 0,
+          "max": 0,
+          "sum": 0,
+          "distinct": [
+            0
+          ]
+        }
+      }
+    }
+  },
+  "family_results": {
+    "pair_count": 10,
+    "all_zero_hit_pair_keys": [
+      "06_09"
+    ],
+    "no_half_turn_witness_proxy_pair_keys": [
+      "06_09"
+    ],
+    "all_one_way_pair_keys": [
+      "06_09",
+      "09_12"
+    ],
+    "one_way_no_proxy_pair_keys": [
+      "06_09"
+    ],
+    "half_turn_witness_proxy_counts": {
+      "false": 1,
+      "true": 9
+    }
+  },
+  "package_summaries": {
+    "02_03": {
+      "pair_key": "02_03",
+      "row_count": 180,
+      "reverse_pair_key": "03_02",
+      "reverse_pair_exists": false,
+      "limit_transitions": [
+        "11->12",
+        "12->13",
+        "16->17",
+        "2->3"
+      ],
+      "reverse_limit_transitions": [
+        "12->11",
+        "13->12",
+        "17->16",
+        "3->2"
+      ],
+      "reverse_limit_exists": false,
+      "reciprocal_kind_present": true,
+      "any_support": true,
+      "any_boundary_carrier": true,
+      "all_zero_hit": false,
+      "all_one_way": false,
+      "half_turn_witness_proxy": true,
+      "summary": {
+        "row_count": 180,
+        "pair_counts": {
+          "02_03": 180
+        },
+        "limit_counts": {
+          "11->12": 40,
+          "12->13": 20,
+          "16->17": 60,
+          "2->3": 60
+        },
+        "root_slot_counts": {
+          "3": 180
+        },
+        "package_kind_counts": {
+          "clean_reciprocal_pair_package": 180
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 180,
+          "count": 180
+        },
+        "support_counts": {
+          "true": 180,
+          "false": 0,
+          "count": 180
+        },
+        "boundary_carrier_counts": {
+          "true": 180,
+          "false": 0,
+          "count": 180
+        },
+        "one_way_counts": {
+          "true": 0,
+          "false": 180,
+          "count": 180
+        },
+        "delta_edge_hits_profile": {
+          "count": 180,
+          "min": 1,
+          "max": 1,
+          "sum": 180,
+          "distinct": [
+            1
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 180,
+          "min": 1,
+          "max": 1,
+          "sum": 180,
+          "distinct": [
+            1
+          ]
+        }
+      }
+    },
+    "02_08": {
+      "pair_key": "02_08",
+      "row_count": 180,
+      "reverse_pair_key": "08_02",
+      "reverse_pair_exists": false,
+      "limit_transitions": [
+        "11->12",
+        "12->13",
+        "24->25",
+        "3->4"
+      ],
+      "reverse_limit_transitions": [
+        "12->11",
+        "13->12",
+        "25->24",
+        "4->3"
+      ],
+      "reverse_limit_exists": false,
+      "reciprocal_kind_present": true,
+      "any_support": true,
+      "any_boundary_carrier": true,
+      "all_zero_hit": false,
+      "all_one_way": false,
+      "half_turn_witness_proxy": true,
+      "summary": {
+        "row_count": 180,
+        "pair_counts": {
+          "02_08": 180
+        },
+        "limit_counts": {
+          "11->12": 40,
+          "12->13": 20,
+          "24->25": 60,
+          "3->4": 60
+        },
+        "root_slot_counts": {
+          "8": 180
+        },
+        "package_kind_counts": {
+          "clean_reciprocal_pair_package": 180
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 180,
+          "count": 180
+        },
+        "support_counts": {
+          "true": 180,
+          "false": 0,
+          "count": 180
+        },
+        "boundary_carrier_counts": {
+          "true": 180,
+          "false": 0,
+          "count": 180
+        },
+        "one_way_counts": {
+          "true": 0,
+          "false": 180,
+          "count": 180
+        },
+        "delta_edge_hits_profile": {
+          "count": 180,
+          "min": 1,
+          "max": 1,
+          "sum": 180,
+          "distinct": [
+            1
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 180,
+          "min": 1,
+          "max": 1,
+          "sum": 180,
+          "distinct": [
+            1
+          ]
+        }
+      }
+    },
+    "03_09": {
+      "pair_key": "03_09",
+      "row_count": 180,
+      "reverse_pair_key": "09_03",
+      "reverse_pair_exists": false,
+      "limit_transitions": [
+        "12->13",
+        "23->24",
+        "3->4"
+      ],
+      "reverse_limit_transitions": [
+        "13->12",
+        "24->23",
+        "4->3"
+      ],
+      "reverse_limit_exists": false,
+      "reciprocal_kind_present": true,
+      "any_support": true,
+      "any_boundary_carrier": true,
+      "all_zero_hit": false,
+      "all_one_way": false,
+      "half_turn_witness_proxy": true,
+      "summary": {
+        "row_count": 180,
+        "pair_counts": {
+          "03_09": 180
+        },
+        "limit_counts": {
+          "12->13": 60,
+          "23->24": 60,
+          "3->4": 60
+        },
+        "root_slot_counts": {
+          "9": 180
+        },
+        "package_kind_counts": {
+          "clean_reciprocal_pair_package": 180
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 180,
+          "count": 180
+        },
+        "support_counts": {
+          "true": 180,
+          "false": 0,
+          "count": 180
+        },
+        "boundary_carrier_counts": {
+          "true": 180,
+          "false": 0,
+          "count": 180
+        },
+        "one_way_counts": {
+          "true": 0,
+          "false": 180,
+          "count": 180
+        },
+        "delta_edge_hits_profile": {
+          "count": 180,
+          "min": 1,
+          "max": 1,
+          "sum": 180,
+          "distinct": [
+            1
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 180,
+          "min": 1,
+          "max": 1,
+          "sum": 180,
+          "distinct": [
+            1
+          ]
+        }
+      }
+    },
+    "05_10": {
+      "pair_key": "05_10",
+      "row_count": 180,
+      "reverse_pair_key": "10_05",
+      "reverse_pair_exists": false,
+      "limit_transitions": [
+        "12->13",
+        "13->14",
+        "24->25",
+        "3->4"
+      ],
+      "reverse_limit_transitions": [
+        "13->12",
+        "14->13",
+        "25->24",
+        "4->3"
+      ],
+      "reverse_limit_exists": false,
+      "reciprocal_kind_present": true,
+      "any_support": true,
+      "any_boundary_carrier": true,
+      "all_zero_hit": false,
+      "all_one_way": false,
+      "half_turn_witness_proxy": true,
+      "summary": {
+        "row_count": 180,
+        "pair_counts": {
+          "05_10": 180
+        },
+        "limit_counts": {
+          "12->13": 37,
+          "13->14": 23,
+          "24->25": 60,
+          "3->4": 60
+        },
+        "root_slot_counts": {
+          "10": 180
+        },
+        "package_kind_counts": {
+          "clean_reciprocal_pair_package": 180
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 180,
+          "count": 180
+        },
+        "support_counts": {
+          "true": 180,
+          "false": 0,
+          "count": 180
+        },
+        "boundary_carrier_counts": {
+          "true": 180,
+          "false": 0,
+          "count": 180
+        },
+        "one_way_counts": {
+          "true": 0,
+          "false": 180,
+          "count": 180
+        },
+        "delta_edge_hits_profile": {
+          "count": 180,
+          "min": 1,
+          "max": 1,
+          "sum": 180,
+          "distinct": [
+            1
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 180,
+          "min": 1,
+          "max": 1,
+          "sum": 180,
+          "distinct": [
+            1
+          ]
+        }
+      }
+    },
+    "05_14": {
+      "pair_key": "05_14",
+      "row_count": 180,
+      "reverse_pair_key": "14_05",
+      "reverse_pair_exists": false,
+      "limit_transitions": [
+        "12->13",
+        "13->14",
+        "38->39",
+        "5->6"
+      ],
+      "reverse_limit_transitions": [
+        "13->12",
+        "14->13",
+        "39->38",
+        "6->5"
+      ],
+      "reverse_limit_exists": false,
+      "reciprocal_kind_present": true,
+      "any_support": true,
+      "any_boundary_carrier": true,
+      "all_zero_hit": false,
+      "all_one_way": false,
+      "half_turn_witness_proxy": true,
+      "summary": {
+        "row_count": 180,
+        "pair_counts": {
+          "05_14": 180
+        },
+        "limit_counts": {
+          "12->13": 37,
+          "13->14": 23,
+          "38->39": 60,
+          "5->6": 60
+        },
+        "root_slot_counts": {
+          "14": 180
+        },
+        "package_kind_counts": {
+          "clean_reciprocal_pair_package": 180
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 180,
+          "count": 180
+        },
+        "support_counts": {
+          "true": 180,
+          "false": 0,
+          "count": 180
+        },
+        "boundary_carrier_counts": {
+          "true": 180,
+          "false": 0,
+          "count": 180
+        },
+        "one_way_counts": {
+          "true": 0,
+          "false": 180,
+          "count": 180
+        },
+        "delta_edge_hits_profile": {
+          "count": 180,
+          "min": 1,
+          "max": 1,
+          "sum": 180,
+          "distinct": [
+            1
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 180,
+          "min": 1,
+          "max": 1,
+          "sum": 180,
+          "distinct": [
+            1
+          ]
+        }
+      }
+    },
+    "06_09": {
+      "pair_key": "06_09",
+      "row_count": 60,
+      "reverse_pair_key": "09_06",
+      "reverse_pair_exists": false,
+      "limit_transitions": [
+        "23->24"
+      ],
+      "reverse_limit_transitions": [
+        "24->23"
+      ],
+      "reverse_limit_exists": false,
+      "reciprocal_kind_present": false,
+      "any_support": false,
+      "any_boundary_carrier": false,
+      "all_zero_hit": true,
+      "all_one_way": true,
+      "half_turn_witness_proxy": false,
+      "summary": {
+        "row_count": 60,
+        "pair_counts": {
+          "06_09": 60
+        },
+        "limit_counts": {
+          "23->24": 60
+        },
+        "root_slot_counts": {
+          "12": 60
+        },
+        "package_kind_counts": {
+          "one_way_single_transition": 60
+        },
+        "zero_hit_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "support_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "boundary_carrier_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "one_way_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "delta_edge_hits_profile": {
+          "count": 60,
+          "min": 0,
+          "max": 0,
+          "sum": 0,
+          "distinct": [
+            0
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 60,
+          "min": 0,
+          "max": 0,
+          "sum": 0,
+          "distinct": [
+            0
+          ]
+        }
+      }
+    },
+    "06_12": {
+      "pair_key": "06_12",
+      "row_count": 120,
+      "reverse_pair_key": "12_06",
+      "reverse_pair_exists": false,
+      "limit_transitions": [
+        "11->12",
+        "12->13",
+        "4->5"
+      ],
+      "reverse_limit_transitions": [
+        "12->11",
+        "13->12",
+        "5->4"
+      ],
+      "reverse_limit_exists": false,
+      "reciprocal_kind_present": true,
+      "any_support": true,
+      "any_boundary_carrier": true,
+      "all_zero_hit": false,
+      "all_one_way": false,
+      "half_turn_witness_proxy": true,
+      "summary": {
+        "row_count": 120,
+        "pair_counts": {
+          "06_12": 120
+        },
+        "limit_counts": {
+          "11->12": 11,
+          "12->13": 49,
+          "4->5": 60
+        },
+        "root_slot_counts": {
+          "12": 120
+        },
+        "package_kind_counts": {
+          "two_transition_pair_package": 120
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 120,
+          "count": 120
+        },
+        "support_counts": {
+          "true": 120,
+          "false": 0,
+          "count": 120
+        },
+        "boundary_carrier_counts": {
+          "true": 120,
+          "false": 0,
+          "count": 120
+        },
+        "one_way_counts": {
+          "true": 0,
+          "false": 120,
+          "count": 120
+        },
+        "delta_edge_hits_profile": {
+          "count": 120,
+          "min": 1,
+          "max": 1,
+          "sum": 120,
+          "distinct": [
+            1
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 120,
+          "min": 1,
+          "max": 1,
+          "sum": 120,
+          "distinct": [
+            1
+          ]
+        }
+      }
+    },
+    "06_13": {
+      "pair_key": "06_13",
+      "row_count": 180,
+      "reverse_pair_key": "13_06",
+      "reverse_pair_exists": false,
+      "limit_transitions": [
+        "11->12",
+        "12->13",
+        "31->32",
+        "4->5"
+      ],
+      "reverse_limit_transitions": [
+        "12->11",
+        "13->12",
+        "32->31",
+        "5->4"
+      ],
+      "reverse_limit_exists": false,
+      "reciprocal_kind_present": true,
+      "any_support": true,
+      "any_boundary_carrier": true,
+      "all_zero_hit": false,
+      "all_one_way": false,
+      "half_turn_witness_proxy": true,
+      "summary": {
+        "row_count": 180,
+        "pair_counts": {
+          "06_13": 180
+        },
+        "limit_counts": {
+          "11->12": 11,
+          "12->13": 49,
+          "31->32": 60,
+          "4->5": 60
+        },
+        "root_slot_counts": {
+          "13": 180
+        },
+        "package_kind_counts": {
+          "clean_reciprocal_pair_package": 180
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 180,
+          "count": 180
+        },
+        "support_counts": {
+          "true": 180,
+          "false": 0,
+          "count": 180
+        },
+        "boundary_carrier_counts": {
+          "true": 180,
+          "false": 0,
+          "count": 180
+        },
+        "one_way_counts": {
+          "true": 0,
+          "false": 180,
+          "count": 180
+        },
+        "delta_edge_hits_profile": {
+          "count": 180,
+          "min": 1,
+          "max": 1,
+          "sum": 180,
+          "distinct": [
+            1
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 180,
+          "min": 1,
+          "max": 1,
+          "sum": 180,
+          "distinct": [
+            1
+          ]
+        }
+      }
+    },
+    "07_11": {
+      "pair_key": "07_11",
+      "row_count": 120,
+      "reverse_pair_key": "11_07",
+      "reverse_pair_exists": false,
+      "limit_transitions": [
+        "12->13",
+        "13->14",
+        "4->5"
+      ],
+      "reverse_limit_transitions": [
+        "13->12",
+        "14->13",
+        "5->4"
+      ],
+      "reverse_limit_exists": false,
+      "reciprocal_kind_present": true,
+      "any_support": true,
+      "any_boundary_carrier": true,
+      "all_zero_hit": false,
+      "all_one_way": false,
+      "half_turn_witness_proxy": true,
+      "summary": {
+        "row_count": 120,
+        "pair_counts": {
+          "07_11": 120
+        },
+        "limit_counts": {
+          "12->13": 40,
+          "13->14": 20,
+          "4->5": 60
+        },
+        "root_slot_counts": {
+          "11": 120
+        },
+        "package_kind_counts": {
+          "two_transition_pair_package": 120
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 120,
+          "count": 120
+        },
+        "support_counts": {
+          "true": 120,
+          "false": 0,
+          "count": 120
+        },
+        "boundary_carrier_counts": {
+          "true": 120,
+          "false": 0,
+          "count": 120
+        },
+        "one_way_counts": {
+          "true": 0,
+          "false": 120,
+          "count": 120
+        },
+        "delta_edge_hits_profile": {
+          "count": 120,
+          "min": 1,
+          "max": 1,
+          "sum": 120,
+          "distinct": [
+            1
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 120,
+          "min": 1,
+          "max": 1,
+          "sum": 120,
+          "distinct": [
+            1
+          ]
+        }
+      }
+    },
+    "09_12": {
+      "pair_key": "09_12",
+      "row_count": 60,
+      "reverse_pair_key": "12_09",
+      "reverse_pair_exists": false,
+      "limit_transitions": [
+        "32->33"
+      ],
+      "reverse_limit_transitions": [
+        "33->32"
+      ],
+      "reverse_limit_exists": false,
+      "reciprocal_kind_present": false,
+      "any_support": true,
+      "any_boundary_carrier": true,
+      "all_zero_hit": false,
+      "all_one_way": true,
+      "half_turn_witness_proxy": true,
+      "summary": {
+        "row_count": 60,
+        "pair_counts": {
+          "09_12": 60
+        },
+        "limit_counts": {
+          "32->33": 60
+        },
+        "root_slot_counts": {
+          "12": 60
+        },
+        "package_kind_counts": {
+          "one_way_single_transition": 60
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "support_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "boundary_carrier_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "one_way_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "delta_edge_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        }
+      }
+    }
+  },
+  "interpretation_boundary": [
+    "Half-turn witness is a proxy family, not an admitted closure witness.",
+    "180 means orientation reversal / reciprocal support / return witness, not physical rotation.",
+    "Passing this audit does not admit transport, channel, force, or physics."
+  ],
+  "boundary": {
+    "half_turn_witness_probe_only": true,
+    "admits_closure_witness": false,
+    "admits_transport_relation": false,
+    "admits_channel": false,
+    "marker_lighting": false,
+    "viewer_change": false,
+    "body_mutation": false,
+    "force_claim": false,
+    "physics_claim": false,
+    "gr_claim": false,
+    "maxwell_claim": false,
+    "qcd_claim": false,
+    "electroweak_claim": false,
+    "unification_claim": false
+  },
+  "next_allowed_math_acts": [
+    "inspect_pair_package_summaries_for_proxy_false_cases",
+    "search_for_explicit_involution_or_antipodal_map",
+    "root_slot_12_2324_source_provenance_next_layer_001",
+    "transport_relation_admission_criterion_001"
+  ],
+  "checks": {
+    "af_prior_valid": true,
+    "af_prior_supported": true,
+    "source_prior_valid": true,
+    "source_prior_found": true,
+    "compound_prior_valid": true,
+    "compound_prior_exact": true,
+    "field_law_prior_valid": true,
+    "family_prior_valid": true,
+    "steps_present": true,
+    "target_rows_present": true,
+    "target_pair_is_0609": true,
+    "zero_pair_is_0609": true,
+    "target_summary_present": true,
+    "witness_status_recorded": true,
+    "channel_registry_preserved": true,
+    "renderer_absent": true,
+    "no_forbidden_claims": true
+  },
+  "failed_checks": [],
+  "hashes": {
+    "af_sha256": "5f8157c042734b4237ffcd61788f0dba3900d85c6c23efeb126d0035a33ce387",
+    "source_sha256": "384df4e35e281e4d4f89365d5c66201c878920712848c583dcf00a82b8f8d8c5",
+    "compound_sha256": "28eae25162bbc2a1397c2125b2e48c2d7754fd2b7bffca8498bd6db7d52cc41c",
+    "frontier_sha256": "a7467265510b59760f21fcc6061b5ae85f7555a1f12090fea5a1d0fd51d65771",
+    "field_law_sha256": "52ec7408929c48c0729f4ce14b7a50f0afe49be3ccfe94a00b2ade9d3e064d30",
+    "family_sha256": "e28aad9669e5b0888cdfe08b0adf24a0fd6fa34b0c397a89684bbd8c2535e391",
+    "steps_csv_sha256": "40466b974be84ee5ff7bae97a5077a98d15483e80367422c6d717edf59ee630d",
+    "packages_csv_sha256": "f9dde5a5457809c5ae5efed6fb4518b8fa1276af87917ea4436209e322a9923f",
+    "channels_sha256": "fbe4c50e0adf3460f7190f3c7714754da8a620359a5bc26c70543cc401feca08",
+    "body_sha256": "6a2cb6b9892a78d4559ec61cf946b0021962cc6819311234b8bf14102b3b7f63",
+    "lab_sha256": "5a10a18bc6563446a0d364d5984b8a41db580e0a75831c82b9eeb5aebc2edeb7"
+  }
+}

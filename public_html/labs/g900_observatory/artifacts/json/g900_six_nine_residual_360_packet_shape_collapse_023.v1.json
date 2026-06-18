@@ -1,0 +1,127 @@
+{
+  "audit_id": "g900_six_nine_residual_360_packet_shape_collapse_023",
+  "audit_pass": true,
+  "boundary": {
+    "channel_admitted": false,
+    "closure_witness_admitted": false,
+    "exact_selector_found": false,
+    "force_claim": false,
+    "marker_lighting": false,
+    "native_derivation_complete": false,
+    "packet_shape_collapse_only": true,
+    "physics_claim": false,
+    "transport_relation_admitted": false,
+    "unification_claim": false,
+    "viewer_or_body_mutation": false
+  },
+  "collapse_status": "residual5_collapses_to_two_packet_shape_families",
+  "expected_two_shape_collapse": true,
+  "next_ascent_target": "derive the two residual packet-shape families from upstream source provenance",
+  "prior_022_microscope_status": "residual_rows_listed_common_and_mixed_fields_recorded",
+  "prior_022_verdict": "residual_360_manual_row_microscope_recorded",
+  "reading": "The residual 5 rows are not five independent phenomena. They collapse into two exposed packet-shape families: a three-row broken-ladder/phase1/source-gap family and a two-row endpoint-only family. This suggests the remaining origin variable is upstream provenance distinguishing why these two packet shapes appear in the residual 360 class.",
+  "residual_row_count": 5,
+  "residual_shape_class_count": 2,
+  "shape_class_counts": {
+    "broken_ladder_phase1_gap_family": 3,
+    "endpoint_only_family": 2
+  },
+  "shape_families": {
+    "broken_ladder_phase1_gap_family": [
+      {
+        "artifact": "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json",
+        "pointer": "$.contrast_rows_first_30[20].packet",
+        "signature": {
+          "inside_moving_endpoint": 6,
+          "ladder": [
+            3,
+            9,
+            6,
+            12
+          ],
+          "phase_step_mod15": 1,
+          "source_endpoints": null,
+          "source_limit_start": null,
+          "source_side_gap": [
+            9,
+            11
+          ]
+        }
+      },
+      {
+        "artifact": "g900_six_nine_ladder_schema_microscope_003.v1.json",
+        "pointer": "$.source_hits[1].object_scalar_context",
+        "signature": {
+          "inside_moving_endpoint": 6,
+          "ladder": [
+            3,
+            9,
+            6,
+            12
+          ],
+          "phase_step_mod15": 1,
+          "source_endpoints": null,
+          "source_limit_start": null,
+          "source_side_gap": [
+            9,
+            11
+          ]
+        }
+      },
+      {
+        "artifact": "g900_six_nine_return_span_carrier_variable_scout_014.v1.json",
+        "pointer": "$.span360_rows_first_20[4].packet",
+        "signature": {
+          "inside_moving_endpoint": 6,
+          "ladder": [
+            3,
+            9,
+            6,
+            12
+          ],
+          "phase_step_mod15": 1,
+          "source_endpoints": null,
+          "source_limit_start": null,
+          "source_side_gap": [
+            9,
+            11
+          ]
+        }
+      }
+    ],
+    "endpoint_only_family": [
+      {
+        "artifact": "g900_six_nine_foundation_packet_broader_origin_selector_009.v1.json",
+        "pointer": "$.contrast_rows_first_30[26].packet",
+        "signature": {
+          "inside_moving_endpoint": 6,
+          "ladder": null,
+          "phase_step_mod15": null,
+          "source_endpoints": [
+            6,
+            9
+          ],
+          "source_limit_start": null,
+          "source_side_gap": null
+        }
+      },
+      {
+        "artifact": "g900_six_nine_return_span_carrier_variable_scout_014.v1.json",
+        "pointer": "$.span360_rows_first_20[5].packet",
+        "signature": {
+          "inside_moving_endpoint": 6,
+          "ladder": null,
+          "phase_step_mod15": null,
+          "source_endpoints": [
+            6,
+            9
+          ],
+          "source_limit_start": null,
+          "source_side_gap": null
+        }
+      }
+    ]
+  },
+  "theory_claim": false,
+  "verdict": "residual_360_packet_shape_collapse_recorded"
+}

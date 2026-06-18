@@ -1,0 +1,140 @@
+{
+  "schema": "g900.marker_debug_stepper_trail_http_smoke",
+  "version": 1,
+  "status": "g900_marker_debug_stepper_trail_http_smoke_failed",
+  "created_utc": "2026-06-18T00:12:34Z",
+  "base_url": "http://127.0.0.1:8000/labs/g900_observatory",
+  "audit_pass": false,
+  "resources": {
+    "stepper_html": {
+      "url": "http://127.0.0.1:8000/labs/g900_observatory/marker_debug_stepper.html",
+      "status": 200,
+      "byte_count": 4132,
+      "sha256": "39eb9217f0b30efc3061642fc4fe79990e35f4b9a2ea61b9363bd1cac327662d"
+    },
+    "stepper_js": {
+      "url": "http://127.0.0.1:8000/labs/g900_observatory/kernel/g900_marker_debug_stepper.js",
+      "status": 200,
+      "byte_count": 7924,
+      "sha256": "030f5ae1c2011742f691eb8c37c4f6c668471ec16f568eea0ec8135ad090eb91"
+    },
+    "marker_registry": {
+      "url": "http://127.0.0.1:8000/labs/g900_observatory/data/g900_markers.v0.1.json",
+      "status": 200,
+      "byte_count": 5765,
+      "sha256": "9dc9a48226550ce6cfb90d008aea791a886f7393e7d5eb8c0b1243f1499f7ce9"
+    },
+    "marker_receipt_pack": {
+      "url": "http://127.0.0.1:8000/labs/g900_observatory/artifacts/json/g900_marker_debug_receipt_pack_001.v1.json",
+      "status": 200,
+      "byte_count": 7060,
+      "sha256": "e5fc85cb51f6d6cd96c5e8d24850f22498faa718fc7c65f75acbfb7ef45e2305"
+    },
+    "edge_index_audit": {
+      "url": "http://127.0.0.1:8000/labs/g900_observatory/artifacts/json/g900_marker_edge_index_audit_001.v1.json",
+      "status": 200,
+      "byte_count": 5101,
+      "sha256": "ccfce7fe007493754df62e665aad4ff7b73fb1d37e801ff685b3d9582b697705"
+    },
+    "channels": {
+      "url": "http://127.0.0.1:8000/labs/g900_observatory/data/g900_channels.v0.1.json",
+      "status": 200,
+      "byte_count": 732,
+      "sha256": "c49da60e9e9b372cab4079f06ece969a127f010ddce1d059fe18a0f816f05f32"
+    },
+    "body": {
+      "url": "http://127.0.0.1:8000/labs/g900_observatory/data/g900_static_body.v1.json",
+      "status": 200,
+      "byte_count": 272265,
+      "sha256": "6a2cb6b9892a78d4559ec61cf946b0021962cc6819311234b8bf14102b3b7f63"
+    },
+    "live_lab": {
+      "url": "http://127.0.0.1:8000/labs/g900_observatory/lab.html",
+      "status": 200,
+      "byte_count": 7823,
+      "sha256": "f2a48629f2ab4ac2cf031dc18297699969fbee0ca48e8e2adc93b83d03663403"
+    },
+    "live_stage": {
+      "url": "http://127.0.0.1:8000/labs/g900_observatory/g900_grammar_stage_v0.js",
+      "status": 200,
+      "byte_count": 24979,
+      "sha256": "cf8152ccf1db895a902651480e69da162806b10b6b7ba00bfeceeef82cfa845c"
+    }
+  },
+  "prototype_summary": {
+    "page": "marker_debug_stepper.html",
+    "module": "kernel/g900_marker_debug_stepper.js",
+    "activation_rule": "step == 24",
+    "phase_event": "6 -> 9",
+    "edge_limit_event": "23 -> 24",
+    "trail_kind": "runtime_display_memory"
+  },
+  "marker_summary": {
+    "marker_id": "unsupported_phase_step_6_9",
+    "edge_count": 60,
+    "vertex_count": 120
+  },
+  "body_summary": {
+    "vertex_count": 900,
+    "edge_count": 3600
+  },
+  "channel_summary": {
+    "channel_set_count": 0,
+    "channel_count": 0,
+    "admits_channels": false,
+    "renders_channels": false
+  },
+  "checks": {
+    "all_resources_served_200": true,
+    "stepper_page_uses_stepper_js": true,
+    "stepper_page_has_step_slider": true,
+    "stepper_page_has_trail_slider": true,
+    "stepper_page_has_activation_copy": true,
+    "stepper_page_has_runtime_memory_copy": false,
+    "stepper_js_loads_static_body": true,
+    "stepper_js_loads_marker_registry": true,
+    "stepper_js_loads_edge_index_audit": true,
+    "stepper_js_has_marker_id_guard": true,
+    "stepper_js_has_activation_rule": true,
+    "stepper_js_pushes_trail_pulse": true,
+    "stepper_js_draws_trail": true,
+    "stepper_js_draws_marker": true,
+    "stepper_page_does_not_import_live_stage": true,
+    "stepper_page_has_no_old_graph_toggle": true,
+    "stepper_page_has_no_marker_overlay_api": true,
+    "live_lab_untouched_by_stepper": true,
+    "live_stage_untouched_by_stepper": true,
+    "live_stage_has_no_marker_registry_import": true,
+    "live_stage_has_no_marker_draw_hook": true,
+    "live_stage_has_no_marker_overlay_api": true,
+    "marker_registry_schema": true,
+    "marker_count_is_one": true,
+    "marker_id_is_6_9": true,
+    "marker_edge_count_is_60": true,
+    "marker_vertex_count_is_120": true,
+    "marker_receipt_pack_pass": true,
+    "edge_index_audit_pass": true,
+    "edge_index_failure_count_zero": true,
+    "body_vertex_count_is_900": true,
+    "body_edge_count_is_3600": true,
+    "channel_count_is_zero": true,
+    "channel_set_count_is_zero": true,
+    "channels_admitted_false": true,
+    "channels_rendered_false": true
+  },
+  "failed_checks": [
+    "stepper_page_has_runtime_memory_copy"
+  ],
+  "boundary": {
+    "http_smoke_only": true,
+    "isolated_prototype_only": true,
+    "trail_is_runtime_display_memory": true,
+    "live_stage_import": false,
+    "live_stage_render_hook": false,
+    "live_observatory_ui_change": false,
+    "channel_admission": false,
+    "body_mutation": false,
+    "force_claim": false,
+    "physics_claim": false
+  }
+}

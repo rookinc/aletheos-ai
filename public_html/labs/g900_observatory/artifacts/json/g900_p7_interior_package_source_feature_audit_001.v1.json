@@ -1,0 +1,1129 @@
+{
+  "schema": "g900.p7_interior_package_source_feature_audit",
+  "version": 1,
+  "status": "p7_interior_package_source_feature_audit_passed",
+  "created_utc": "2026-06-18T00:53:15Z",
+  "audit_pass": true,
+  "question": "Which source-side fields distinguish the P7 interior package kinds without treating package kind itself as the explanation?",
+  "target_pairs": [
+    "02_03",
+    "03_09",
+    "09_12",
+    "06_12"
+  ],
+  "p7_interior_summary": {
+    "pair_sequence": [
+      "02_03",
+      "03_09",
+      "09_12",
+      "06_12"
+    ],
+    "kind_sequence": [
+      "clean_reciprocal_pair_package",
+      "clean_reciprocal_pair_package",
+      "one_way_single_transition",
+      "two_transition_pair_package"
+    ],
+    "transition_sequence": [
+      180,
+      180,
+      60,
+      120
+    ],
+    "clean_pairs": [
+      "02_03",
+      "03_09"
+    ],
+    "nonclean_pairs": [
+      "09_12",
+      "06_12"
+    ],
+    "channel_count": 0
+  },
+  "path_index_profile": [
+    {
+      "pair": "02_03",
+      "path_index": 1,
+      "path_index_from_right": 4,
+      "package_kind": "clean_reciprocal_pair_package",
+      "pair_total_transition_count": 180
+    },
+    {
+      "pair": "03_09",
+      "path_index": 2,
+      "path_index_from_right": 3,
+      "package_kind": "clean_reciprocal_pair_package",
+      "pair_total_transition_count": 180
+    },
+    {
+      "pair": "09_12",
+      "path_index": 3,
+      "path_index_from_right": 2,
+      "package_kind": "one_way_single_transition",
+      "pair_total_transition_count": 60
+    },
+    {
+      "pair": "06_12",
+      "path_index": 4,
+      "path_index_from_right": 1,
+      "package_kind": "two_transition_pair_package",
+      "pair_total_transition_count": 120
+    }
+  ],
+  "top_source_field_profiles": [
+    {
+      "field": "full60_transitions",
+      "values_by_pair": {
+        "02_03": "2 -> 3|2/3 -> 3|3 -> 2",
+        "03_09": "3 -> 9|3/9 -> 9|9 -> 3",
+        "09_12": "9 -> 12",
+        "06_12": "12 -> 6|6/12 -> 12"
+      },
+      "distinct_count": 4,
+      "singleton_count": 4,
+      "max_bucket_size": 1,
+      "groups": {
+        "2 -> 3|2/3 -> 3|3 -> 2": [
+          {
+            "pair": "02_03",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 1
+          }
+        ],
+        "3 -> 9|3/9 -> 9|9 -> 3": [
+          {
+            "pair": "03_09",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 2
+          }
+        ],
+        "9 -> 12": [
+          {
+            "pair": "09_12",
+            "package_kind": "one_way_single_transition",
+            "transition_count": 60,
+            "path_index": 3
+          }
+        ],
+        "12 -> 6|6/12 -> 12": [
+          {
+            "pair": "06_12",
+            "package_kind": "two_transition_pair_package",
+            "transition_count": 120,
+            "path_index": 4
+          }
+        ]
+      }
+    },
+    {
+      "field": "full60_transitions.__set__",
+      "values_by_pair": {
+        "02_03": "2 -> 3|2/3 -> 3|3 -> 2",
+        "03_09": "3 -> 9|3/9 -> 9|9 -> 3",
+        "09_12": "9 -> 12",
+        "06_12": "12 -> 6|6/12 -> 12"
+      },
+      "distinct_count": 4,
+      "singleton_count": 4,
+      "max_bucket_size": 1,
+      "groups": {
+        "2 -> 3|2/3 -> 3|3 -> 2": [
+          {
+            "pair": "02_03",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 1
+          }
+        ],
+        "3 -> 9|3/9 -> 9|9 -> 3": [
+          {
+            "pair": "03_09",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 2
+          }
+        ],
+        "9 -> 12": [
+          {
+            "pair": "09_12",
+            "package_kind": "one_way_single_transition",
+            "transition_count": 60,
+            "path_index": 3
+          }
+        ],
+        "12 -> 6|6/12 -> 12": [
+          {
+            "pair": "06_12",
+            "package_kind": "two_transition_pair_package",
+            "transition_count": 120,
+            "path_index": 4
+          }
+        ]
+      }
+    },
+    {
+      "field": "full60_root_slot_counts.12",
+      "values_by_pair": {
+        "02_03": "<missing>",
+        "03_09": "<missing>",
+        "09_12": "60",
+        "06_12": "120"
+      },
+      "distinct_count": 3,
+      "singleton_count": 2,
+      "max_bucket_size": 2,
+      "groups": {
+        "<missing>": [
+          {
+            "pair": "02_03",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 1
+          },
+          {
+            "pair": "03_09",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 2
+          }
+        ],
+        "60": [
+          {
+            "pair": "09_12",
+            "package_kind": "one_way_single_transition",
+            "transition_count": 60,
+            "path_index": 3
+          }
+        ],
+        "120": [
+          {
+            "pair": "06_12",
+            "package_kind": "two_transition_pair_package",
+            "transition_count": 120,
+            "path_index": 4
+          }
+        ]
+      }
+    },
+    {
+      "field": "full60_transitions.__len__",
+      "values_by_pair": {
+        "02_03": "3",
+        "03_09": "3",
+        "09_12": "1",
+        "06_12": "2"
+      },
+      "distinct_count": 3,
+      "singleton_count": 2,
+      "max_bucket_size": 2,
+      "groups": {
+        "3": [
+          {
+            "pair": "02_03",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 1
+          },
+          {
+            "pair": "03_09",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 2
+          }
+        ],
+        "1": [
+          {
+            "pair": "09_12",
+            "package_kind": "one_way_single_transition",
+            "transition_count": 60,
+            "path_index": 3
+          }
+        ],
+        "2": [
+          {
+            "pair": "06_12",
+            "package_kind": "two_transition_pair_package",
+            "transition_count": 120,
+            "path_index": 4
+          }
+        ]
+      }
+    },
+    {
+      "field": "sample_roots",
+      "values_by_pair": {
+        "02_03": "3:0|3:1|3:10|3:11|3:12|3:13|3:14|3:15|3:16|3:17|3:18|3:19|3:2|3:20|3:21|3:22|3:23|3:3|3:4|3:5|3:6|3:7|3:8|3:9",
+        "03_09": "9:0|9:1|9:10|9:11|9:12|9:13|9:14|9:15|9:16|9:17|9:18|9:19|9:2|9:20|9:21|9:22|9:23|9:3|9:4|9:5|9:6|9:7|9:8|9:9",
+        "09_12": "12:0|12:1|12:10|12:11|12:12|12:13|12:14|12:15|12:16|12:17|12:18|12:19|12:2|12:20|12:21|12:22|12:23|12:3|12:4|12:5|12:6|12:7|12:8|12:9",
+        "06_12": "12:0|12:1|12:10|12:11|12:12|12:13|12:14|12:15|12:16|12:17|12:18|12:19|12:2|12:20|12:21|12:22|12:23|12:3|12:4|12:5|12:6|12:7|12:8|12:9"
+      },
+      "distinct_count": 3,
+      "singleton_count": 2,
+      "max_bucket_size": 2,
+      "groups": {
+        "3:0|3:1|3:10|3:11|3:12|3:13|3:14|3:15|3:16|3:17|3:18|3:19|3:2|3:20|3:21|3:22|3:23|3:3|3:4|3:5|3:6|3:7|3:8|3:9": [
+          {
+            "pair": "02_03",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 1
+          }
+        ],
+        "9:0|9:1|9:10|9:11|9:12|9:13|9:14|9:15|9:16|9:17|9:18|9:19|9:2|9:20|9:21|9:22|9:23|9:3|9:4|9:5|9:6|9:7|9:8|9:9": [
+          {
+            "pair": "03_09",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 2
+          }
+        ],
+        "12:0|12:1|12:10|12:11|12:12|12:13|12:14|12:15|12:16|12:17|12:18|12:19|12:2|12:20|12:21|12:22|12:23|12:3|12:4|12:5|12:6|12:7|12:8|12:9": [
+          {
+            "pair": "09_12",
+            "package_kind": "one_way_single_transition",
+            "transition_count": 60,
+            "path_index": 3
+          },
+          {
+            "pair": "06_12",
+            "package_kind": "two_transition_pair_package",
+            "transition_count": 120,
+            "path_index": 4
+          }
+        ]
+      }
+    },
+    {
+      "field": "sample_roots.__set__",
+      "values_by_pair": {
+        "02_03": "3:0|3:1|3:10|3:11|3:12|3:13|3:14|3:15|3:16|3:17|3:18|3:19|3:2|3:20|3:21|3:22|3:23|3:3|3:4|3:5|3:6|3:7|3:8|3:9",
+        "03_09": "9:0|9:1|9:10|9:11|9:12|9:13|9:14|9:15|9:16|9:17|9:18|9:19|9:2|9:20|9:21|9:22|9:23|9:3|9:4|9:5|9:6|9:7|9:8|9:9",
+        "09_12": "12:0|12:1|12:10|12:11|12:12|12:13|12:14|12:15|12:16|12:17|12:18|12:19|12:2|12:20|12:21|12:22|12:23|12:3|12:4|12:5|12:6|12:7|12:8|12:9",
+        "06_12": "12:0|12:1|12:10|12:11|12:12|12:13|12:14|12:15|12:16|12:17|12:18|12:19|12:2|12:20|12:21|12:22|12:23|12:3|12:4|12:5|12:6|12:7|12:8|12:9"
+      },
+      "distinct_count": 3,
+      "singleton_count": 2,
+      "max_bucket_size": 2,
+      "groups": {
+        "3:0|3:1|3:10|3:11|3:12|3:13|3:14|3:15|3:16|3:17|3:18|3:19|3:2|3:20|3:21|3:22|3:23|3:3|3:4|3:5|3:6|3:7|3:8|3:9": [
+          {
+            "pair": "02_03",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 1
+          }
+        ],
+        "9:0|9:1|9:10|9:11|9:12|9:13|9:14|9:15|9:16|9:17|9:18|9:19|9:2|9:20|9:21|9:22|9:23|9:3|9:4|9:5|9:6|9:7|9:8|9:9": [
+          {
+            "pair": "03_09",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 2
+          }
+        ],
+        "12:0|12:1|12:10|12:11|12:12|12:13|12:14|12:15|12:16|12:17|12:18|12:19|12:2|12:20|12:21|12:22|12:23|12:3|12:4|12:5|12:6|12:7|12:8|12:9": [
+          {
+            "pair": "09_12",
+            "package_kind": "one_way_single_transition",
+            "transition_count": 60,
+            "path_index": 3
+          },
+          {
+            "pair": "06_12",
+            "package_kind": "two_transition_pair_package",
+            "transition_count": 120,
+            "path_index": 4
+          }
+        ]
+      }
+    },
+    {
+      "field": "full60_root_slot_counts.3",
+      "values_by_pair": {
+        "02_03": "180",
+        "03_09": "<missing>",
+        "09_12": "<missing>",
+        "06_12": "<missing>"
+      },
+      "distinct_count": 2,
+      "singleton_count": 1,
+      "max_bucket_size": 3,
+      "groups": {
+        "180": [
+          {
+            "pair": "02_03",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 1
+          }
+        ],
+        "<missing>": [
+          {
+            "pair": "03_09",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 2
+          },
+          {
+            "pair": "09_12",
+            "package_kind": "one_way_single_transition",
+            "transition_count": 60,
+            "path_index": 3
+          },
+          {
+            "pair": "06_12",
+            "package_kind": "two_transition_pair_package",
+            "transition_count": 120,
+            "path_index": 4
+          }
+        ]
+      }
+    },
+    {
+      "field": "full60_root_slot_counts.9",
+      "values_by_pair": {
+        "02_03": "<missing>",
+        "03_09": "180",
+        "09_12": "<missing>",
+        "06_12": "<missing>"
+      },
+      "distinct_count": 2,
+      "singleton_count": 1,
+      "max_bucket_size": 3,
+      "groups": {
+        "<missing>": [
+          {
+            "pair": "02_03",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 1
+          },
+          {
+            "pair": "09_12",
+            "package_kind": "one_way_single_transition",
+            "transition_count": 60,
+            "path_index": 3
+          },
+          {
+            "pair": "06_12",
+            "package_kind": "two_transition_pair_package",
+            "transition_count": 120,
+            "path_index": 4
+          }
+        ],
+        "180": [
+          {
+            "pair": "03_09",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 2
+          }
+        ]
+      }
+    },
+    {
+      "field": "full60_transition_kinds.pair_to_single",
+      "values_by_pair": {
+        "02_03": "1",
+        "03_09": "1",
+        "09_12": "<missing>",
+        "06_12": "1"
+      },
+      "distinct_count": 2,
+      "singleton_count": 1,
+      "max_bucket_size": 3,
+      "groups": {
+        "1": [
+          {
+            "pair": "02_03",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 1
+          },
+          {
+            "pair": "03_09",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 2
+          },
+          {
+            "pair": "06_12",
+            "package_kind": "two_transition_pair_package",
+            "transition_count": 120,
+            "path_index": 4
+          }
+        ],
+        "<missing>": [
+          {
+            "pair": "09_12",
+            "package_kind": "one_way_single_transition",
+            "transition_count": 60,
+            "path_index": 3
+          }
+        ]
+      }
+    },
+    {
+      "field": "pair_total_direction_counts.12 -> 6",
+      "values_by_pair": {
+        "02_03": "<missing>",
+        "03_09": "<missing>",
+        "09_12": "<missing>",
+        "06_12": "60"
+      },
+      "distinct_count": 2,
+      "singleton_count": 1,
+      "max_bucket_size": 3,
+      "groups": {
+        "<missing>": [
+          {
+            "pair": "02_03",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 1
+          },
+          {
+            "pair": "03_09",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 2
+          },
+          {
+            "pair": "09_12",
+            "package_kind": "one_way_single_transition",
+            "transition_count": 60,
+            "path_index": 3
+          }
+        ],
+        "60": [
+          {
+            "pair": "06_12",
+            "package_kind": "two_transition_pair_package",
+            "transition_count": 120,
+            "path_index": 4
+          }
+        ]
+      }
+    },
+    {
+      "field": "pair_total_direction_counts.2 -> 3",
+      "values_by_pair": {
+        "02_03": "60",
+        "03_09": "<missing>",
+        "09_12": "<missing>",
+        "06_12": "<missing>"
+      },
+      "distinct_count": 2,
+      "singleton_count": 1,
+      "max_bucket_size": 3,
+      "groups": {
+        "60": [
+          {
+            "pair": "02_03",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 1
+          }
+        ],
+        "<missing>": [
+          {
+            "pair": "03_09",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 2
+          },
+          {
+            "pair": "09_12",
+            "package_kind": "one_way_single_transition",
+            "transition_count": 60,
+            "path_index": 3
+          },
+          {
+            "pair": "06_12",
+            "package_kind": "two_transition_pair_package",
+            "transition_count": 120,
+            "path_index": 4
+          }
+        ]
+      }
+    },
+    {
+      "field": "pair_total_direction_counts.2/3 -> 3",
+      "values_by_pair": {
+        "02_03": "60",
+        "03_09": "<missing>",
+        "09_12": "<missing>",
+        "06_12": "<missing>"
+      },
+      "distinct_count": 2,
+      "singleton_count": 1,
+      "max_bucket_size": 3,
+      "groups": {
+        "60": [
+          {
+            "pair": "02_03",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 1
+          }
+        ],
+        "<missing>": [
+          {
+            "pair": "03_09",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 2
+          },
+          {
+            "pair": "09_12",
+            "package_kind": "one_way_single_transition",
+            "transition_count": 60,
+            "path_index": 3
+          },
+          {
+            "pair": "06_12",
+            "package_kind": "two_transition_pair_package",
+            "transition_count": 120,
+            "path_index": 4
+          }
+        ]
+      }
+    },
+    {
+      "field": "pair_total_direction_counts.3 -> 2",
+      "values_by_pair": {
+        "02_03": "60",
+        "03_09": "<missing>",
+        "09_12": "<missing>",
+        "06_12": "<missing>"
+      },
+      "distinct_count": 2,
+      "singleton_count": 1,
+      "max_bucket_size": 3,
+      "groups": {
+        "60": [
+          {
+            "pair": "02_03",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 1
+          }
+        ],
+        "<missing>": [
+          {
+            "pair": "03_09",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 2
+          },
+          {
+            "pair": "09_12",
+            "package_kind": "one_way_single_transition",
+            "transition_count": 60,
+            "path_index": 3
+          },
+          {
+            "pair": "06_12",
+            "package_kind": "two_transition_pair_package",
+            "transition_count": 120,
+            "path_index": 4
+          }
+        ]
+      }
+    },
+    {
+      "field": "pair_total_direction_counts.3 -> 9",
+      "values_by_pair": {
+        "02_03": "<missing>",
+        "03_09": "60",
+        "09_12": "<missing>",
+        "06_12": "<missing>"
+      },
+      "distinct_count": 2,
+      "singleton_count": 1,
+      "max_bucket_size": 3,
+      "groups": {
+        "<missing>": [
+          {
+            "pair": "02_03",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 1
+          },
+          {
+            "pair": "09_12",
+            "package_kind": "one_way_single_transition",
+            "transition_count": 60,
+            "path_index": 3
+          },
+          {
+            "pair": "06_12",
+            "package_kind": "two_transition_pair_package",
+            "transition_count": 120,
+            "path_index": 4
+          }
+        ],
+        "60": [
+          {
+            "pair": "03_09",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 2
+          }
+        ]
+      }
+    },
+    {
+      "field": "pair_total_direction_counts.3/9 -> 9",
+      "values_by_pair": {
+        "02_03": "<missing>",
+        "03_09": "60",
+        "09_12": "<missing>",
+        "06_12": "<missing>"
+      },
+      "distinct_count": 2,
+      "singleton_count": 1,
+      "max_bucket_size": 3,
+      "groups": {
+        "<missing>": [
+          {
+            "pair": "02_03",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 1
+          },
+          {
+            "pair": "09_12",
+            "package_kind": "one_way_single_transition",
+            "transition_count": 60,
+            "path_index": 3
+          },
+          {
+            "pair": "06_12",
+            "package_kind": "two_transition_pair_package",
+            "transition_count": 120,
+            "path_index": 4
+          }
+        ],
+        "60": [
+          {
+            "pair": "03_09",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 2
+          }
+        ]
+      }
+    },
+    {
+      "field": "pair_total_direction_counts.6/12 -> 12",
+      "values_by_pair": {
+        "02_03": "<missing>",
+        "03_09": "<missing>",
+        "09_12": "<missing>",
+        "06_12": "60"
+      },
+      "distinct_count": 2,
+      "singleton_count": 1,
+      "max_bucket_size": 3,
+      "groups": {
+        "<missing>": [
+          {
+            "pair": "02_03",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 1
+          },
+          {
+            "pair": "03_09",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 2
+          },
+          {
+            "pair": "09_12",
+            "package_kind": "one_way_single_transition",
+            "transition_count": 60,
+            "path_index": 3
+          }
+        ],
+        "60": [
+          {
+            "pair": "06_12",
+            "package_kind": "two_transition_pair_package",
+            "transition_count": 120,
+            "path_index": 4
+          }
+        ]
+      }
+    },
+    {
+      "field": "pair_total_direction_counts.9 -> 12",
+      "values_by_pair": {
+        "02_03": "<missing>",
+        "03_09": "<missing>",
+        "09_12": "60",
+        "06_12": "<missing>"
+      },
+      "distinct_count": 2,
+      "singleton_count": 1,
+      "max_bucket_size": 3,
+      "groups": {
+        "<missing>": [
+          {
+            "pair": "02_03",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 1
+          },
+          {
+            "pair": "03_09",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 2
+          },
+          {
+            "pair": "06_12",
+            "package_kind": "two_transition_pair_package",
+            "transition_count": 120,
+            "path_index": 4
+          }
+        ],
+        "60": [
+          {
+            "pair": "09_12",
+            "package_kind": "one_way_single_transition",
+            "transition_count": 60,
+            "path_index": 3
+          }
+        ]
+      }
+    },
+    {
+      "field": "pair_total_direction_counts.9 -> 3",
+      "values_by_pair": {
+        "02_03": "<missing>",
+        "03_09": "60",
+        "09_12": "<missing>",
+        "06_12": "<missing>"
+      },
+      "distinct_count": 2,
+      "singleton_count": 1,
+      "max_bucket_size": 3,
+      "groups": {
+        "<missing>": [
+          {
+            "pair": "02_03",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 1
+          },
+          {
+            "pair": "09_12",
+            "package_kind": "one_way_single_transition",
+            "transition_count": 60,
+            "path_index": 3
+          },
+          {
+            "pair": "06_12",
+            "package_kind": "two_transition_pair_package",
+            "transition_count": 120,
+            "path_index": 4
+          }
+        ],
+        "60": [
+          {
+            "pair": "03_09",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 2
+          }
+        ]
+      }
+    },
+    {
+      "field": "full60_transition_kinds.single_to_single",
+      "values_by_pair": {
+        "02_03": "2",
+        "03_09": "2",
+        "09_12": "1",
+        "06_12": "1"
+      },
+      "distinct_count": 2,
+      "singleton_count": 0,
+      "max_bucket_size": 2,
+      "groups": {
+        "2": [
+          {
+            "pair": "02_03",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 1
+          },
+          {
+            "pair": "03_09",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 2
+          }
+        ],
+        "1": [
+          {
+            "pair": "09_12",
+            "package_kind": "one_way_single_transition",
+            "transition_count": 60,
+            "path_index": 3
+          },
+          {
+            "pair": "06_12",
+            "package_kind": "two_transition_pair_package",
+            "transition_count": 120,
+            "path_index": 4
+          }
+        ]
+      }
+    },
+    {
+      "field": "reciprocal_single_transition_count",
+      "values_by_pair": {
+        "02_03": "60",
+        "03_09": "60",
+        "09_12": "0",
+        "06_12": "0"
+      },
+      "distinct_count": 2,
+      "singleton_count": 0,
+      "max_bucket_size": 2,
+      "groups": {
+        "60": [
+          {
+            "pair": "02_03",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 1
+          },
+          {
+            "pair": "03_09",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 2
+          }
+        ],
+        "0": [
+          {
+            "pair": "09_12",
+            "package_kind": "one_way_single_transition",
+            "transition_count": 60,
+            "path_index": 3
+          },
+          {
+            "pair": "06_12",
+            "package_kind": "two_transition_pair_package",
+            "transition_count": 120,
+            "path_index": 4
+          }
+        ]
+      }
+    },
+    {
+      "field": "boundary_edge_count",
+      "values_by_pair": {
+        "02_03": "60",
+        "03_09": "60",
+        "09_12": "60",
+        "06_12": "60"
+      },
+      "distinct_count": 1,
+      "singleton_count": 0,
+      "max_bucket_size": 4,
+      "groups": {
+        "60": [
+          {
+            "pair": "02_03",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 1
+          },
+          {
+            "pair": "03_09",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 2
+          },
+          {
+            "pair": "09_12",
+            "package_kind": "one_way_single_transition",
+            "transition_count": 60,
+            "path_index": 3
+          },
+          {
+            "pair": "06_12",
+            "package_kind": "two_transition_pair_package",
+            "transition_count": 120,
+            "path_index": 4
+          }
+        ]
+      }
+    },
+    {
+      "field": "boundary_vertex_count",
+      "values_by_pair": {
+        "02_03": "120",
+        "03_09": "120",
+        "09_12": "120",
+        "06_12": "120"
+      },
+      "distinct_count": 1,
+      "singleton_count": 0,
+      "max_bucket_size": 4,
+      "groups": {
+        "120": [
+          {
+            "pair": "02_03",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 1
+          },
+          {
+            "pair": "03_09",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 2
+          },
+          {
+            "pair": "09_12",
+            "package_kind": "one_way_single_transition",
+            "transition_count": 60,
+            "path_index": 3
+          },
+          {
+            "pair": "06_12",
+            "package_kind": "two_transition_pair_package",
+            "transition_count": 120,
+            "path_index": 4
+          }
+        ]
+      }
+    },
+    {
+      "field": "pair_total_root_count",
+      "values_by_pair": {
+        "02_03": "60",
+        "03_09": "60",
+        "09_12": "60",
+        "06_12": "60"
+      },
+      "distinct_count": 1,
+      "singleton_count": 0,
+      "max_bucket_size": 4,
+      "groups": {
+        "60": [
+          {
+            "pair": "02_03",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 1
+          },
+          {
+            "pair": "03_09",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 2
+          },
+          {
+            "pair": "09_12",
+            "package_kind": "one_way_single_transition",
+            "transition_count": 60,
+            "path_index": 3
+          },
+          {
+            "pair": "06_12",
+            "package_kind": "two_transition_pair_package",
+            "transition_count": 120,
+            "path_index": 4
+          }
+        ]
+      }
+    },
+    {
+      "field": "sample_roots.__len__",
+      "values_by_pair": {
+        "02_03": "24",
+        "03_09": "24",
+        "09_12": "24",
+        "06_12": "24"
+      },
+      "distinct_count": 1,
+      "singleton_count": 0,
+      "max_bucket_size": 4,
+      "groups": {
+        "24": [
+          {
+            "pair": "02_03",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 1
+          },
+          {
+            "pair": "03_09",
+            "package_kind": "clean_reciprocal_pair_package",
+            "transition_count": 180,
+            "path_index": 2
+          },
+          {
+            "pair": "09_12",
+            "package_kind": "one_way_single_transition",
+            "transition_count": 60,
+            "path_index": 3
+          },
+          {
+            "pair": "06_12",
+            "package_kind": "two_transition_pair_package",
+            "transition_count": 120,
+            "path_index": 4
+          }
+        ]
+      }
+    }
+  ],
+  "field_profile_count": 24,
+  "denied_direct_label_fields": [
+    "package_kind",
+    "pair_total_transition_count",
+    "pair_total_transition_kind_counts",
+    "full60_transition_count",
+    "channels_admitted",
+    "has_boundary_carrier",
+    "boundary_carrier_id",
+    "pair_key"
+  ],
+  "interpretation": {
+    "p7_interior_is_the_remaining_ambiguous_pocket": true,
+    "path_position_alone_not_sufficient": true,
+    "candidate_source_features_reported": true,
+    "not_channel": true,
+    "next_problem": "Use the strongest non-label source field, if any, to test a bounded selector for the P7 interior package taxonomy."
+  },
+  "checks": {
+    "position_audit_passed": true,
+    "channel_registry_zero_count": true,
+    "channels_not_admitted": true,
+    "p7_interior_count_is_4": true,
+    "p7_interior_pairs_match_expected": true,
+    "p7_interior_kind_sequence_matches_observed": true,
+    "p7_interior_transition_sequence_matches_observed": true,
+    "candidate_field_profiles_exist": true
+  },
+  "failed_checks": [],
+  "boundary": {
+    "source_feature_audit_only": true,
+    "admits_channels": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "marker_lighting": false,
+    "force_claim": false,
+    "physics_claim": false
+  }
+}

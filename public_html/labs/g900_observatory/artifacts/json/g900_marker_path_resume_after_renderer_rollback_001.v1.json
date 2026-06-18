@@ -1,0 +1,77 @@
+{
+  "schema": "g900.marker_path_resume_after_renderer_rollback",
+  "version": 1,
+  "status": "marker_path_resume_after_renderer_rollback_recorded",
+  "created_utc": "2026-06-18T04:06:34Z",
+  "audit_pass": true,
+  "verdict": "marker_path_resumed_after_renderer_rollback",
+  "question": "After rolling back the channel renderer display branch, is the project back on the marker/event gate path?",
+  "answer": "Yes. The live channel renderer is absent, the admitted channel registry is preserved, and the marker/event artifacts remain available. The next blocker is marker gate authorization.",
+  "rollback_state": {
+    "renderer_hook_absent": true,
+    "renderer_file_absent": true,
+    "channel_registry_preserved": true,
+    "channel_count": 1,
+    "channel_set_count": 1,
+    "admitted_channel_count": 1
+  },
+  "marker_artifacts_present": {
+    "marker_event_gate_recheck": true,
+    "post_stub_marker_event_gate_recheck": true,
+    "marker_event_binding_contract": true,
+    "marker_render_contract": true,
+    "marker_renderer_stub": true,
+    "return_cell_cycle_event_contract": true,
+    "unsupported_phase_marker": true
+  },
+  "marker_state": {
+    "gate_open": false,
+    "lights_marker_now": false,
+    "known_blockers": [
+      "gate_open_authorization_absent"
+    ]
+  },
+  "hashes": {
+    "lab_sha256": "5a10a18bc6563446a0d364d5984b8a41db580e0a75831c82b9eeb5aebc2edeb7",
+    "body_sha256": "6a2cb6b9892a78d4559ec61cf946b0021962cc6819311234b8bf14102b3b7f63",
+    "stage_sha256": "732dad810dffdfbe97c275ee96914a95aeb7fa6976df04d8df0063157b19d5bf",
+    "channels_sha256": "fbe4c50e0adf3460f7190f3c7714754da8a620359a5bc26c70543cc401feca08"
+  },
+  "summary": {
+    "marker_path_resumed": true,
+    "renderer_absent": true,
+    "channel_registry_preserved": true,
+    "marker_artifacts_ready": true,
+    "gate_open": false,
+    "marker_lighting": false,
+    "next_allowed_act": "explicit_marker_gate_open_authorization",
+    "mutates_body": false,
+    "force_claim": false,
+    "physics_claim": false
+  },
+  "interpretation": {
+    "correction_accepted": true,
+    "channel_overlay_branch_rolled_back": true,
+    "marker_first_path_restored": true,
+    "next_problem": "Open the marker gate with an explicit authorization artifact, then light the marker using the existing event/binding/marker data."
+  },
+  "checks": {
+    "renderer_hook_absent": true,
+    "renderer_file_absent": true,
+    "channel_registry_preserved": true,
+    "marker_artifacts_present": true,
+    "marker_not_lit_yet": true,
+    "gate_not_open_yet": true
+  },
+  "failed_checks": [],
+  "boundary": {
+    "resume_receipt_only": true,
+    "admits_channels": false,
+    "renders_channels": false,
+    "opens_gate": false,
+    "lights_marker": false,
+    "mutates_body": false,
+    "force_claim": false,
+    "physics_claim": false
+  }
+}

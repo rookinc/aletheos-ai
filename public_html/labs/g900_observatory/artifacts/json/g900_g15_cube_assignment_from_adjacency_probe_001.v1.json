@@ -1,0 +1,1273 @@
+{
+  "schema": "g900.g15_cube_assignment_from_adjacency_probe",
+  "version": 1,
+  "status": "g15_cube_assignment_from_adjacency_probe_recorded",
+  "created_utc": "2026-06-18T04:59:37Z",
+  "git_head": "0277ff9 Probe G900 G15 cube label assignment",
+  "audit_pass": true,
+  "verdict": "g15_cube_assignment_not_derived_from_current_adjacency",
+  "question": "Can the full 8/6/1 G15 cube assignment be derived from current adjacency evidence?",
+  "answer": "Current adjacency evidence does not derive a full 8/6/1 G15 cube assignment. The earlier text-evidence result still places 6 and 9 as face-centroid roles, but adjacency alone has not yet proven it.",
+  "selected_edge_source": "g900_endpoint_incidence_source_reconstruction_001.v1.json",
+  "candidate_edge_sources": [
+    {
+      "source": "g900_endpoint_incidence_source_reconstruction_001.v1.json",
+      "edge_count": 30,
+      "node_count": 15,
+      "component_size_profile": [
+        15
+      ],
+      "degree_profile": {
+        "4": 15
+      },
+      "score": 120
+    },
+    {
+      "source": "g900_phase_transition_grammar_001.v1.json",
+      "edge_count": 32,
+      "node_count": 15,
+      "component_size_profile": [
+        15
+      ],
+      "degree_profile": {
+        "2": 2,
+        "3": 4,
+        "4": 2,
+        "5": 3,
+        "6": 3,
+        "7": 1
+      },
+      "score": 118
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "edge_count": 36,
+      "node_count": 15,
+      "component_size_profile": [
+        15
+      ],
+      "degree_profile": {
+        "4": 8,
+        "5": 2,
+        "6": 5
+      },
+      "score": 114
+    },
+    {
+      "source": "g900_g15_cube_label_assignment_probe_001.v1.json",
+      "edge_count": 15,
+      "node_count": 11,
+      "component_size_profile": [
+        11,
+        1,
+        1,
+        1,
+        1
+      ],
+      "degree_profile": {
+        "0": 4,
+        "1": 4,
+        "2": 3,
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "8": 1
+      },
+      "score": -15
+    },
+    {
+      "source": "g900_full60_endpoint_pair_hit_inspection_001.v1.json",
+      "edge_count": 14,
+      "node_count": 14,
+      "component_size_profile": [
+        12,
+        2,
+        1
+      ],
+      "degree_profile": {
+        "0": 1,
+        "1": 5,
+        "2": 5,
+        "3": 3,
+        "4": 1
+      },
+      "score": -16
+    },
+    {
+      "source": "g900_full60_package_support_audit_001.v1.json",
+      "edge_count": 10,
+      "node_count": 10,
+      "component_size_profile": [
+        10,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "degree_profile": {
+        "0": 5,
+        "1": 7,
+        "2": 1,
+        "3": 1,
+        "8": 1
+      },
+      "score": -20
+    },
+    {
+      "source": "g900_full60_hit_pair_g15_subgraph_audit_001.v1.json",
+      "edge_count": 6,
+      "node_count": 7,
+      "component_size_profile": [
+        5,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "degree_profile": {
+        "0": 8,
+        "1": 4,
+        "2": 1,
+        "3": 2
+      },
+      "score": -24
+    }
+  ],
+  "graph_stats": {
+    "node_count": 15,
+    "edge_count": 30,
+    "degree_by_label": {
+      "0": 4,
+      "1": 4,
+      "2": 4,
+      "3": 4,
+      "4": 4,
+      "5": 4,
+      "6": 4,
+      "7": 4,
+      "8": 4,
+      "9": 4,
+      "10": 4,
+      "11": 4,
+      "12": 4,
+      "13": 4,
+      "14": 4
+    },
+    "degree_profile": {
+      "4": 15
+    },
+    "components": [
+      [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ]
+    ],
+    "component_size_profile": [
+      15
+    ],
+    "triangle_count_by_label": {
+      "0": 2,
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 2,
+      "6": 2,
+      "7": 2,
+      "8": 2,
+      "9": 2,
+      "10": 2,
+      "11": 2,
+      "12": 2,
+      "13": 2,
+      "14": 2
+    },
+    "triangle_profile": {
+      "2": 15
+    }
+  },
+  "wl_refinement": {
+    "rounds": [
+      {
+        "round": 1,
+        "color_count": 1,
+        "group_size_profile": [
+          15
+        ],
+        "groups": [
+          [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14"
+          ]
+        ]
+      },
+      {
+        "round": 2,
+        "color_count": 1,
+        "group_size_profile": [
+          15
+        ],
+        "groups": [
+          [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14"
+          ]
+        ]
+      },
+      {
+        "round": 3,
+        "color_count": 1,
+        "group_size_profile": [
+          15
+        ],
+        "groups": [
+          [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14"
+          ]
+        ]
+      },
+      {
+        "round": 4,
+        "color_count": 1,
+        "group_size_profile": [
+          15
+        ],
+        "groups": [
+          [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14"
+          ]
+        ]
+      },
+      {
+        "round": 5,
+        "color_count": 1,
+        "group_size_profile": [
+          15
+        ],
+        "groups": [
+          [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14"
+          ]
+        ]
+      },
+      {
+        "round": 6,
+        "color_count": 1,
+        "group_size_profile": [
+          15
+        ],
+        "groups": [
+          [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14"
+          ]
+        ]
+      }
+    ],
+    "final_group_size_profile": [
+      15
+    ],
+    "final_groups": [
+      [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ]
+    ]
+  },
+  "degree_groups": [
+    [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14"
+    ]
+  ],
+  "adjacency_assignment_status": "not_derived_from_adjacency",
+  "adjacency_assignment": {},
+  "six_nine_focus": {
+    "label_6_adjacency_role": "not_derived",
+    "label_9_adjacency_role": "not_derived",
+    "six_nine_adjacency_status": "adjacency_does_not_derive_roles",
+    "prior_text_evidence": {
+      "label_6_role_text_probe": "face_centroid",
+      "label_9_role_text_probe": "face_centroid",
+      "six_nine_cube_status_text_probe": "supports_face_to_face_label_reading"
+    },
+    "transport_relation": false,
+    "channel": false,
+    "physics_claim": false
+  },
+  "edge_rows_first_80": [
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.observed_invariants.distance_profiles[0].profile[0]",
+      "edge": [
+        "0",
+        "1"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "[0, 1]"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.observed_invariants.distance_profiles[0].profile[1]",
+      "edge": [
+        "1",
+        "4"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "[1, 4]"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.observed_invariants.distance_profiles[0].profile[2]",
+      "edge": [
+        "2",
+        "8"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "[2, 8]"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.observed_invariants.distance_profiles[0].profile[3]",
+      "edge": [
+        "2",
+        "3"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "[3, 2]"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.line_petersen_invariants.distance_profiles[0].profile[0]",
+      "edge": [
+        "0",
+        "1"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "[0, 1]"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.line_petersen_invariants.distance_profiles[0].profile[1]",
+      "edge": [
+        "1",
+        "4"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "[1, 4]"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.line_petersen_invariants.distance_profiles[0].profile[2]",
+      "edge": [
+        "2",
+        "8"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "[2, 8]"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.line_petersen_invariants.distance_profiles[0].profile[3]",
+      "edge": [
+        "2",
+        "3"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "[3, 2]"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.observed_edges[0]",
+      "edge": [
+        "0",
+        "1"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['00', '01']"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.observed_edges[1]",
+      "edge": [
+        "0",
+        "4"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['00', '04']"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.observed_edges[2]",
+      "edge": [
+        "0",
+        "5"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['00', '05']"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.observed_edges[3]",
+      "edge": [
+        "0",
+        "6"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['00', '06']"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.observed_edges[4]",
+      "edge": [
+        "1",
+        "2"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['01', '02']"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.observed_edges[5]",
+      "edge": [
+        "1",
+        "6"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['01', '06']"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.observed_edges[6]",
+      "edge": [
+        "1",
+        "7"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['01', '07']"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.observed_edges[7]",
+      "edge": [
+        "2",
+        "3"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['02', '03']"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.observed_edges[8]",
+      "edge": [
+        "2",
+        "7"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['02', '07']"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.observed_edges[9]",
+      "edge": [
+        "2",
+        "8"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['02', '08']"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.observed_edges[10]",
+      "edge": [
+        "3",
+        "4"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['03', '04']"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.observed_edges[11]",
+      "edge": [
+        "3",
+        "8"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['03', '08']"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.observed_edges[12]",
+      "edge": [
+        "3",
+        "9"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['03', '09']"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.observed_edges[13]",
+      "edge": [
+        "4",
+        "5"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['04', '05']"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.observed_edges[14]",
+      "edge": [
+        "4",
+        "9"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['04', '09']"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.observed_edges[15]",
+      "edge": [
+        "5",
+        "10"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['05', '10']"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.observed_edges[16]",
+      "edge": [
+        "5",
+        "14"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['05', '14']"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.observed_edges[17]",
+      "edge": [
+        "6",
+        "12"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['06', '12']"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.observed_edges[18]",
+      "edge": [
+        "6",
+        "13"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['06', '13']"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.observed_edges[19]",
+      "edge": [
+        "7",
+        "10"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['07', '10']"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.observed_edges[20]",
+      "edge": [
+        "7",
+        "11"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['07', '11']"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.observed_edges[21]",
+      "edge": [
+        "8",
+        "13"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['08', '13']"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.observed_edges[22]",
+      "edge": [
+        "8",
+        "14"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['08', '14']"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.observed_edges[23]",
+      "edge": [
+        "9",
+        "11"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['09', '11']"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.observed_edges[24]",
+      "edge": [
+        "9",
+        "12"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['09', '12']"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.observed_edges[25]",
+      "edge": [
+        "10",
+        "11"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['10', '11']"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.observed_edges[26]",
+      "edge": [
+        "10",
+        "14"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['10', '14']"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.observed_edges[27]",
+      "edge": [
+        "11",
+        "12"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['11', '12']"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.observed_edges[28]",
+      "edge": [
+        "12",
+        "13"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['12', '13']"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.observed_edges[29]",
+      "edge": [
+        "13",
+        "14"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['13', '14']"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.reference_line_graph_node_endpoints.0-1",
+      "edge": [
+        "0",
+        "1"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['0', '1']"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.reference_line_graph_node_endpoints.0-4",
+      "edge": [
+        "0",
+        "4"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['0', '4']"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.reference_line_graph_node_endpoints.0-5",
+      "edge": [
+        "0",
+        "5"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['0', '5']"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.reference_line_graph_node_endpoints.1-2",
+      "edge": [
+        "1",
+        "2"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['1', '2']"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.reference_line_graph_node_endpoints.1-6",
+      "edge": [
+        "1",
+        "6"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['1', '6']"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.reference_line_graph_node_endpoints.2-3",
+      "edge": [
+        "2",
+        "3"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['2', '3']"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.reference_line_graph_node_endpoints.2-7",
+      "edge": [
+        "2",
+        "7"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['2', '7']"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.reference_line_graph_node_endpoints.3-4",
+      "edge": [
+        "3",
+        "4"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['3', '4']"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.reference_line_graph_node_endpoints.3-8",
+      "edge": [
+        "3",
+        "8"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['3', '8']"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.reference_line_graph_node_endpoints.4-9",
+      "edge": [
+        "4",
+        "9"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['4', '9']"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.reference_line_graph_node_endpoints.5-7",
+      "edge": [
+        "5",
+        "7"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['5', '7']"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.reference_line_graph_node_endpoints.5-8",
+      "edge": [
+        "5",
+        "8"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['5', '8']"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.reference_line_graph_node_endpoints.6-8",
+      "edge": [
+        "6",
+        "8"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['6', '8']"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.reference_line_graph_node_endpoints.6-9",
+      "edge": [
+        "6",
+        "9"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['6', '9']"
+    },
+    {
+      "source": "g900_endpoint_incidence_g15_skeleton_audit_001.v1.json",
+      "path": "$.reference_line_graph_node_endpoints.7-9",
+      "edge": [
+        "7",
+        "9"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['7', '9']"
+    },
+    {
+      "source": "g900_full60_hit_pair_g15_subgraph_audit_001.v1.json",
+      "path": "$.subgraph_invariants.hit_subgraph_on_all_15_slots",
+      "edge": [
+        "0",
+        "9"
+      ],
+      "reason": "two_labels_in_g15ish_record",
+      "excerpt": "{'vertex_count': 15, 'edge_count': 9, 'degree_counts': {'00': 0, '01': 0, '02': 2, '03': 2, '04': 0, '05': 2, '06': 2, '07': 1, '08': 1, '09': 2, '10': 1, '11': 1, '12': 2, '13': 1, '14': 1}, 'degree_set': [0, 1, 2], 'degree_histogram': {'0': 3, '1': 6, '2': 6}, 'component_sizes': [7, 3, 2, 1, 1, 1], 'components': [['02', '03', '06', '08', '09', '12', '13'],..."
+    },
+    {
+      "source": "g900_full60_hit_pair_g15_subgraph_audit_001.v1.json",
+      "path": "$.subgraph_invariants.hit_subgraph_on_all_15_slots.components[2]",
+      "edge": [
+        "7",
+        "11"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['07', '11']"
+    },
+    {
+      "source": "g900_full60_hit_pair_g15_subgraph_audit_001.v1.json",
+      "path": "$.subgraph_invariants.hit_subgraph_on_hit_slots_only.degree_set",
+      "edge": [
+        "1",
+        "2"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "[1, 2]"
+    },
+    {
+      "source": "g900_full60_hit_pair_g15_subgraph_audit_001.v1.json",
+      "path": "$.subgraph_invariants.hit_subgraph_on_hit_slots_only.components[2]",
+      "edge": [
+        "7",
+        "11"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['07', '11']"
+    },
+    {
+      "source": "g900_full60_hit_pair_g15_subgraph_audit_001.v1.json",
+      "path": "$.hit_package_rows[0].full60_transition_kinds",
+      "edge": [
+        "1",
+        "2"
+      ],
+      "reason": "two_labels_in_g15ish_record",
+      "excerpt": "{'pair_to_single': 1, 'single_to_single': 2}"
+    },
+    {
+      "source": "g900_full60_hit_pair_g15_subgraph_audit_001.v1.json",
+      "path": "$.hit_package_rows[1].full60_transition_kinds",
+      "edge": [
+        "1",
+        "2"
+      ],
+      "reason": "two_labels_in_g15ish_record",
+      "excerpt": "{'pair_to_single': 1, 'single_to_single': 2}"
+    },
+    {
+      "source": "g900_full60_hit_pair_g15_subgraph_audit_001.v1.json",
+      "path": "$.hit_package_rows[2].full60_transition_kinds",
+      "edge": [
+        "1",
+        "2"
+      ],
+      "reason": "two_labels_in_g15ish_record",
+      "excerpt": "{'pair_to_single': 1, 'single_to_single': 2}"
+    },
+    {
+      "source": "g900_full60_hit_pair_g15_subgraph_audit_001.v1.json",
+      "path": "$.hit_package_rows[3].full60_transition_kinds",
+      "edge": [
+        "1",
+        "2"
+      ],
+      "reason": "two_labels_in_g15ish_record",
+      "excerpt": "{'pair_to_single': 1, 'single_to_single': 2}"
+    },
+    {
+      "source": "g900_full60_hit_pair_g15_subgraph_audit_001.v1.json",
+      "path": "$.hit_package_rows[4].full60_transition_kinds",
+      "edge": [
+        "1",
+        "2"
+      ],
+      "reason": "two_labels_in_g15ish_record",
+      "excerpt": "{'pair_to_single': 1, 'single_to_single': 2}"
+    },
+    {
+      "source": "g900_full60_hit_pair_g15_subgraph_audit_001.v1.json",
+      "path": "$.hit_package_rows[5]",
+      "edge": [
+        "0",
+        "2"
+      ],
+      "reason": "two_labels_in_g15ish_record",
+      "excerpt": "{'pair_key': '6/12', 'package_kind': 'two_transition_pair_package', 'full60_transition_count': 2, 'full60_transitions': ['12 -> 6', '6/12 -> 12'], 'full60_transition_kinds': {'pair_to_single': 1, 'single_to_single': 1}, 'full60_root_slot_counts': {'12': 120}, 'has_boundary_carrier': True, 'boundary_carrier_id': 'slot_pair_06_12_boundary_carrier', 'boundary_v..."
+    },
+    {
+      "source": "g900_full60_hit_pair_g15_subgraph_audit_001.v1.json",
+      "path": "$.hit_package_rows[6].full60_transition_kinds",
+      "edge": [
+        "1",
+        "2"
+      ],
+      "reason": "two_labels_in_g15ish_record",
+      "excerpt": "{'pair_to_single': 1, 'single_to_single': 2}"
+    },
+    {
+      "source": "g900_full60_hit_pair_g15_subgraph_audit_001.v1.json",
+      "path": "$.hit_package_rows[7]",
+      "edge": [
+        "2",
+        "10"
+      ],
+      "reason": "two_labels_in_g15ish_record",
+      "excerpt": "{'pair_key': '7/11', 'package_kind': 'two_transition_pair_package', 'full60_transition_count': 2, 'full60_transitions': ['11 -> 7', '7/11 -> 11'], 'full60_transition_kinds': {'pair_to_single': 1, 'single_to_single': 1}, 'full60_root_slot_counts': {'11': 120}, 'has_boundary_carrier': True, 'boundary_carrier_id': 'slot_pair_07_11_boundary_carrier', 'boundary_v..."
+    },
+    {
+      "source": "g900_full60_hit_pair_g15_subgraph_audit_001.v1.json",
+      "path": "$.hit_package_rows[8]",
+      "edge": [
+        "0",
+        "1"
+      ],
+      "reason": "two_labels_in_g15ish_record",
+      "excerpt": "{'pair_key': '9/12', 'package_kind': 'one_way_single_transition', 'full60_transition_count': 1, 'full60_transitions': ['9 -> 12'], 'full60_transition_kinds': {'single_to_single': 1}, 'full60_root_slot_counts': {'12': 60}, 'has_boundary_carrier': True, 'boundary_carrier_id': 'slot_pair_09_12_boundary_carrier', 'boundary_vertex_count': 120, 'boundary_edge_coun..."
+    },
+    {
+      "source": "g900_full60_endpoint_pair_hit_inspection_001.v1.json",
+      "path": "$.hit_pair_records[0]",
+      "edge": [
+        "1",
+        "3"
+      ],
+      "reason": "two_labels_in_g15ish_record",
+      "excerpt": "{'pair': '02_03', 'slots': ['02', '03'], 'dict_hit_path_count': 3, 'field_hit_count': 1}"
+    },
+    {
+      "source": "g900_full60_endpoint_pair_hit_inspection_001.v1.json",
+      "path": "$.hit_pair_records[0].slots",
+      "edge": [
+        "2",
+        "3"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['02', '03']"
+    },
+    {
+      "source": "g900_full60_endpoint_pair_hit_inspection_001.v1.json",
+      "path": "$.hit_pair_records[1]",
+      "edge": [
+        "1",
+        "3"
+      ],
+      "reason": "two_labels_in_g15ish_record",
+      "excerpt": "{'pair': '02_08', 'slots': ['02', '08'], 'dict_hit_path_count': 3, 'field_hit_count': 1}"
+    },
+    {
+      "source": "g900_full60_endpoint_pair_hit_inspection_001.v1.json",
+      "path": "$.hit_pair_records[1].slots",
+      "edge": [
+        "2",
+        "8"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['02', '08']"
+    },
+    {
+      "source": "g900_full60_endpoint_pair_hit_inspection_001.v1.json",
+      "path": "$.hit_pair_records[2]",
+      "edge": [
+        "1",
+        "3"
+      ],
+      "reason": "two_labels_in_g15ish_record",
+      "excerpt": "{'pair': '03_09', 'slots': ['03', '09'], 'dict_hit_path_count': 3, 'field_hit_count': 1}"
+    },
+    {
+      "source": "g900_full60_endpoint_pair_hit_inspection_001.v1.json",
+      "path": "$.hit_pair_records[2].slots",
+      "edge": [
+        "3",
+        "9"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['03', '09']"
+    },
+    {
+      "source": "g900_full60_endpoint_pair_hit_inspection_001.v1.json",
+      "path": "$.hit_pair_records[3]",
+      "edge": [
+        "1",
+        "3"
+      ],
+      "reason": "two_labels_in_g15ish_record",
+      "excerpt": "{'pair': '05_10', 'slots': ['05', '10'], 'dict_hit_path_count': 3, 'field_hit_count': 1}"
+    },
+    {
+      "source": "g900_full60_endpoint_pair_hit_inspection_001.v1.json",
+      "path": "$.hit_pair_records[3].slots",
+      "edge": [
+        "5",
+        "10"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['05', '10']"
+    },
+    {
+      "source": "g900_full60_endpoint_pair_hit_inspection_001.v1.json",
+      "path": "$.hit_pair_records[4]",
+      "edge": [
+        "1",
+        "3"
+      ],
+      "reason": "two_labels_in_g15ish_record",
+      "excerpt": "{'pair': '05_14', 'slots': ['05', '14'], 'dict_hit_path_count': 3, 'field_hit_count': 1}"
+    },
+    {
+      "source": "g900_full60_endpoint_pair_hit_inspection_001.v1.json",
+      "path": "$.hit_pair_records[4].slots",
+      "edge": [
+        "5",
+        "14"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['05', '14']"
+    },
+    {
+      "source": "g900_full60_endpoint_pair_hit_inspection_001.v1.json",
+      "path": "$.hit_pair_records[5]",
+      "edge": [
+        "1",
+        "3"
+      ],
+      "reason": "two_labels_in_g15ish_record",
+      "excerpt": "{'pair': '06_12', 'slots': ['06', '12'], 'dict_hit_path_count': 3, 'field_hit_count': 1}"
+    },
+    {
+      "source": "g900_full60_endpoint_pair_hit_inspection_001.v1.json",
+      "path": "$.hit_pair_records[5].slots",
+      "edge": [
+        "6",
+        "12"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['06', '12']"
+    },
+    {
+      "source": "g900_full60_endpoint_pair_hit_inspection_001.v1.json",
+      "path": "$.hit_pair_records[6]",
+      "edge": [
+        "1",
+        "3"
+      ],
+      "reason": "two_labels_in_g15ish_record",
+      "excerpt": "{'pair': '06_13', 'slots': ['06', '13'], 'dict_hit_path_count': 3, 'field_hit_count': 1}"
+    },
+    {
+      "source": "g900_full60_endpoint_pair_hit_inspection_001.v1.json",
+      "path": "$.hit_pair_records[6].slots",
+      "edge": [
+        "6",
+        "13"
+      ],
+      "reason": "two_item_label_list",
+      "excerpt": "['06', '13']"
+    }
+  ],
+  "boundary": {
+    "probe_only": true,
+    "full_assignment_derived_from_adjacency": false,
+    "admits_transport": false,
+    "admits_channels": false,
+    "changes_viewer": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "force_claim": false,
+    "physics_claim": false
+  },
+  "next_allowed_math_acts": [
+    "g15_cube_label_source_search_001",
+    "six_nine_orientation_law_candidate_001",
+    "transport_relation_admission_criterion_001",
+    "physics_bridge_forbidden_mapping_ledger_001"
+  ],
+  "checks": {
+    "cube_probe_valid": true,
+    "label_probe_valid": true,
+    "support_failure_valid": true,
+    "scope_valid": true,
+    "edge_source_found": true,
+    "graph_stats_recorded": true,
+    "wl_recorded": true,
+    "bounded_negative_or_candidate_recorded": true,
+    "does_not_overclaim_if_not_derived": true,
+    "transport_not_admitted": true,
+    "channel_not_admitted": true,
+    "channel_registry_preserved": true,
+    "renderer_absent": true,
+    "no_body_mutation": true,
+    "no_viewer_change": true,
+    "no_force_claim": true,
+    "no_physics_claim": true
+  },
+  "failed_checks": [],
+  "hashes": {
+    "cube_probe_sha256": "5b0d24d9685e3b728318f85d16d3ea5db80eef8a94eb29ab1953fb8e0fe0fd7e",
+    "label_probe_sha256": "0682df336af3c62639289cc07e0aea60efcee751c3c916d2975787a8eec55342",
+    "orientation_sha256": "8a2dca31a2574180b115a658609af1fdadac0fa1c6975bb4d52e26b5b5d5d986",
+    "support_failure_sha256": "008cab37431bb465f08cd10c0a5e3e643ee4b1739da40862b384f77189f094b5",
+    "scope_sha256": "7d1b9db28ecdb6211a8144c353859493881093652894ad722c16495fbd006101",
+    "channels_sha256": "fbe4c50e0adf3460f7190f3c7714754da8a620359a5bc26c70543cc401feca08",
+    "body_sha256": "6a2cb6b9892a78d4559ec61cf946b0021962cc6819311234b8bf14102b3b7f63",
+    "lab_sha256": "5a10a18bc6563446a0d364d5984b8a41db580e0a75831c82b9eeb5aebc2edeb7"
+  }
+}

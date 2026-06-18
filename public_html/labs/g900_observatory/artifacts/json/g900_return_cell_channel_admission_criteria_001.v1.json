@@ -1,0 +1,169 @@
+{
+  "schema": "g900.return_cell_channel_admission_criteria",
+  "version": 1,
+  "status": "return_cell_channel_admission_criteria_recorded",
+  "created_utc": "2026-06-18T01:39:30Z",
+  "audit_pass": true,
+  "verdict": "return_cell_channel_admission_not_allowed",
+  "question": "What must be true before the unique local return cell is allowed to become a channel?",
+  "candidate_return_cell": {
+    "pairs": [
+      "03_09",
+      "09_12",
+      "06_12",
+      "06_13"
+    ],
+    "known_signature": {
+      "roots": [
+        "09",
+        "12",
+        "12",
+        "13"
+      ],
+      "transition_lens": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "weights": [
+        180,
+        60,
+        120,
+        180
+      ],
+      "shape": "clean hinge -> shared-root nonclean pocket -> clean exit"
+    }
+  },
+  "admission_allowed": false,
+  "blocking_failure_ids": [
+    "non_pair_identity_transition_length_law",
+    "cycle_event_contract",
+    "channel_semantics_contract",
+    "render_contract"
+  ],
+  "criteria": [
+    {
+      "id": "unique_oriented_return_cell",
+      "description": "The return cell is unique among oriented simple four-edge paths in the current full60 package graph.",
+      "required_for_admission": true,
+      "satisfied": true,
+      "source": "public_html/labs/g900_observatory/artifacts/json/g900_global_local_return_cell_oriented_census_001.v1.json"
+    },
+    {
+      "id": "label_free_selection",
+      "description": "The return cell can be selected without package_kind labels.",
+      "required_for_admission": true,
+      "satisfied": true,
+      "source": "public_html/labs/g900_observatory/artifacts/json/g900_global_return_cell_label_free_selector_audit_001.v1.json"
+    },
+    {
+      "id": "carrier_source_field_origin",
+      "description": "Boundary-carrier presence, dominant roots, and root pattern have carrier/source or endpoint-rule origins.",
+      "required_for_admission": true,
+      "satisfied": true,
+      "source": "public_html/labs/g900_observatory/artifacts/json/g900_return_cell_selector_field_origin_audit_001.v1.json"
+    },
+    {
+      "id": "transition_length_recoverable",
+      "description": "The transition-length sequence is recoverable in the tested carrier/source-incidence family.",
+      "required_for_admission": true,
+      "satisfied": true,
+      "source": "public_html/labs/g900_observatory/artifacts/json/g900_return_cell_transition_length_origin_audit_001.v1.json"
+    },
+    {
+      "id": "non_pair_identity_transition_length_law",
+      "description": "The transition-length sequence has a compact non-pair-identity law, not merely one bucket per package pair.",
+      "required_for_admission": true,
+      "satisfied": false,
+      "source": "public_html/labs/g900_observatory/artifacts/json/g900_transition_length_minimal_origin_audit_001.v1.json",
+      "blocking_if_false": true
+    },
+    {
+      "id": "cycle_event_contract",
+      "description": "A receipted cycle/event contract exists, independent of the sheet-per-second timer.",
+      "required_for_admission": true,
+      "satisfied": false,
+      "source": null,
+      "blocking_if_false": true
+    },
+    {
+      "id": "channel_semantics_contract",
+      "description": "Source, target, traversal rule, and event boundary are defined without invoking force or physics language.",
+      "required_for_admission": true,
+      "satisfied": false,
+      "source": null,
+      "blocking_if_false": true
+    },
+    {
+      "id": "render_contract",
+      "description": "Any eventual channel renderer is read-only, does not mutate the body, and is gated by a registry receipt.",
+      "required_for_admission": true,
+      "satisfied": false,
+      "source": null,
+      "blocking_if_false": true
+    },
+    {
+      "id": "channel_registry_zero_before_admission",
+      "description": "Before admission, the channel registry remains zero-count.",
+      "required_for_admission": true,
+      "satisfied": true,
+      "source": "public_html/labs/g900_observatory/data/g900_channels.v0.1.json"
+    },
+    {
+      "id": "marker_lighting_paused",
+      "description": "Marker lighting remains paused until a cycle/event contract exists.",
+      "required_for_admission": true,
+      "satisfied": true,
+      "source": "public_html/labs/g900_observatory/artifacts/json/g900_marker_development_pause_boundary_001.v1.json"
+    }
+  ],
+  "summary": {
+    "criteria_count": 10,
+    "satisfied_count": 6,
+    "blocking_failure_count": 4,
+    "blocking_failure_ids": [
+      "non_pair_identity_transition_length_law",
+      "cycle_event_contract",
+      "channel_semantics_contract",
+      "render_contract"
+    ],
+    "channel_count": 0,
+    "channel_set_count": 0
+  },
+  "interpretation": {
+    "return_cell_is_strong_candidate": true,
+    "channel_admission_is_premature": true,
+    "main_blockers": [
+      "non_pair_identity_transition_length_law",
+      "cycle_event_contract",
+      "channel_semantics_contract",
+      "render_contract"
+    ],
+    "meaning": "The unique return cell is a strong Layer 3 channel seed, but it cannot be admitted as a channel until a compact non-pair-identity transition-length law, a cycle/event contract, channel semantics, and a render contract are receipted.",
+    "not_channel": true,
+    "next_problem": "Attack the blockers one at a time, starting with the cycle/event contract or the non-pair-identity transition-length law."
+  },
+  "checks": {
+    "oriented_census_passed": true,
+    "label_free_selector_passed": true,
+    "field_origin_passed": true,
+    "transition_origin_passed": true,
+    "minimal_origin_passed": true,
+    "marker_pause_passed": true,
+    "channel_registry_zero_count": true,
+    "channels_not_admitted": true,
+    "admission_not_allowed_yet": true,
+    "has_blocking_failures": true
+  },
+  "failed_checks": [],
+  "boundary": {
+    "criteria_only": true,
+    "admits_channels": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "marker_lighting": false,
+    "force_claim": false,
+    "physics_claim": false
+  }
+}

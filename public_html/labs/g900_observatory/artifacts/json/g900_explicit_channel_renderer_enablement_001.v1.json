@@ -1,0 +1,167 @@
+{
+  "schema": "g900.explicit_channel_renderer_enablement",
+  "version": 1,
+  "status": "explicit_channel_renderer_enabled",
+  "created_utc": "2026-06-18T03:43:57Z",
+  "audit_pass": true,
+  "verdict": "explicit_channel_renderer_enablement_passed",
+  "operator_authorization": "user_explicit_gate_unlock_and_render_request",
+  "question": "Can the admitted return-cell channel be rendered in the live lab without mutating the body or registry?",
+  "answer": "Yes. The live lab now loads an explicit channel renderer for the admitted return-cell channel. Body, carriers, channel registry, and existing stage JS remain unchanged.",
+  "channel": {
+    "channel_id": "g900_return_cell_channel_1bed7a7cba65a7be",
+    "candidate_id": "return_cell_03_09_09_12_06_12_06_13",
+    "candidate_pairs": [
+      "03_09",
+      "09_12",
+      "06_12",
+      "06_13"
+    ]
+  },
+  "files_changed": {
+    "lab_html": "public_html/labs/g900_observatory/lab.html",
+    "renderer_js": "public_html/labs/g900_observatory/kernel/g900_channel_renderer_v0.js",
+    "lab_html_backup": "public_html/labs/g900_observatory/artifacts/json/g900_lab_html_pre_channel_renderer_enablement_001.v1.json"
+  },
+  "hashes_before": {
+    "lab_html_sha256": "5a10a18bc6563446a0d364d5984b8a41db580e0a75831c82b9eeb5aebc2edeb7",
+    "renderer_js_sha256": null,
+    "channel_registry_sha256": "dd2fda859030911835ac51d51eb74542f6981fe2d7420a2ee221bf874dc62327",
+    "static_body_sha256": "71944bd613ce8c6c036a2c4198f3df2e0064a75fec1f03ccf8bb60f9a2d412db",
+    "carrier_registry_sha256": "ecbf14773744ec44d9a73ed14f41525e40f378bf431e4174e194cb431ffcb735",
+    "stage_sha256": "732dad810dffdfbe97c275ee96914a95aeb7fa6976df04d8df0063157b19d5bf"
+  },
+  "hashes_after": {
+    "lab_html_sha256": "dee2d75f5138b048df87854a24e7585a6ca9834421d0655c29cb9acaadc65883",
+    "renderer_js_sha256": "e58034fc1046ed2d9336e192bc48ea0d45f0eff70031af8abfd9ba586e831b17",
+    "channel_registry_sha256": "dd2fda859030911835ac51d51eb74542f6981fe2d7420a2ee221bf874dc62327",
+    "static_body_sha256": "71944bd613ce8c6c036a2c4198f3df2e0064a75fec1f03ccf8bb60f9a2d412db",
+    "carrier_registry_sha256": "ecbf14773744ec44d9a73ed14f41525e40f378bf431e4174e194cb431ffcb735",
+    "stage_sha256": "732dad810dffdfbe97c275ee96914a95aeb7fa6976df04d8df0063157b19d5bf"
+  },
+  "node_check": {
+    "available": true,
+    "pass": true,
+    "stderr": ""
+  },
+  "summary": {
+    "renderer_enabled": true,
+    "renders_channel": true,
+    "render_gate_open": true,
+    "marker_gate_open": false,
+    "marker_lighting": false,
+    "channel_id": "g900_return_cell_channel_1bed7a7cba65a7be",
+    "channel_count": 1,
+    "channel_registry_unchanged": true,
+    "static_body_unchanged": true,
+    "carriers_unchanged": true,
+    "stage_unchanged": true,
+    "mutates_body": false,
+    "force_claim": false,
+    "physics_claim": false
+  },
+  "interpretation": {
+    "channel_admitted_and_now_rendered": true,
+    "renderer_enablement_crossed": true,
+    "rendering_is_display_only": true,
+    "body_remains_source": true,
+    "channel_registry_remains_source": true,
+    "marker_is_still_attention_not_channel": true,
+    "marker_not_lit": true,
+    "not_body_mutation": true,
+    "not_force_claim": true,
+    "not_physics_claim": true,
+    "next_problem": "HTTP smoke the live lab and confirm the renderer loads cleanly in browser."
+  },
+  "criteria": [
+    {
+      "id": "channel_admitted",
+      "description": "The return-cell channel is admitted before renderer enablement.",
+      "satisfied": true
+    },
+    {
+      "id": "integrity_passed",
+      "description": "The post-admission integrity audit passed.",
+      "satisfied": true
+    },
+    {
+      "id": "renderer_script_written",
+      "description": "The renderer script was written.",
+      "satisfied": true
+    },
+    {
+      "id": "lab_includes_renderer_once",
+      "description": "The live lab includes the renderer script exactly once.",
+      "satisfied": true
+    },
+    {
+      "id": "renderer_targets_admitted_channel",
+      "description": "The renderer targets the admitted channel id and channel registry.",
+      "satisfied": true
+    },
+    {
+      "id": "renderer_syntax_check_passed_or_skipped",
+      "description": "The renderer JS syntax check passed when node was available, otherwise was skipped.",
+      "satisfied": true
+    },
+    {
+      "id": "channel_registry_unchanged",
+      "description": "Renderer enablement does not mutate the channel registry.",
+      "satisfied": true
+    },
+    {
+      "id": "static_body_unchanged",
+      "description": "Renderer enablement does not mutate the static G900 body.",
+      "satisfied": true
+    },
+    {
+      "id": "carriers_unchanged",
+      "description": "Renderer enablement does not mutate the carrier registry.",
+      "satisfied": true
+    },
+    {
+      "id": "stage_unchanged",
+      "description": "Renderer enablement does not mutate the existing grammar stage JS.",
+      "satisfied": true
+    },
+    {
+      "id": "renders_channel_but_not_marker",
+      "description": "The renderer is enabled for the admitted channel while marker lighting remains false.",
+      "satisfied": true
+    },
+    {
+      "id": "no_body_force_or_physics_claim",
+      "description": "Renderer enablement makes no body mutation, force claim, or physics claim.",
+      "satisfied": true
+    }
+  ],
+  "checks": {
+    "channel_admitted": true,
+    "integrity_passed": true,
+    "renderer_script_written": true,
+    "lab_includes_renderer_once": true,
+    "renderer_targets_admitted_channel": true,
+    "renderer_syntax_check_passed_or_skipped": true,
+    "channel_registry_unchanged": true,
+    "static_body_unchanged": true,
+    "carriers_unchanged": true,
+    "stage_unchanged": true,
+    "renders_channel_but_not_marker": true,
+    "no_body_force_or_physics_claim": true,
+    "all_criteria_satisfied": true
+  },
+  "failed_checks": [],
+  "boundary": {
+    "explicit_renderer_enablement": true,
+    "admits_channels": false,
+    "channel_already_admitted": true,
+    "renderer_enabled": true,
+    "renders_channels": true,
+    "render_gate_open": true,
+    "mutates_body": false,
+    "marker_lighting": false,
+    "marker_gate_open": false,
+    "force_claim": false,
+    "physics_claim": false
+  }
+}

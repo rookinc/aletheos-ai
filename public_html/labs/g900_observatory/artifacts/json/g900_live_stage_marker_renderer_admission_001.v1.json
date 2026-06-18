@@ -1,0 +1,184 @@
+{
+  "schema": "g900.live_stage_marker_renderer_admission",
+  "version": 1,
+  "status": "live_stage_marker_renderer_admission_recorded",
+  "created_utc": "2026-06-18T02:00:02Z",
+  "audit_pass": true,
+  "verdict": "live_stage_marker_renderer_stub_admission_recorded",
+  "question": "May a future live-stage marker renderer stub be attempted without lighting the marker, admitting a channel, or mutating the body?",
+  "admission_contract": {
+    "contract_id": "g900_live_stage_marker_renderer_admission_001",
+    "admission_id": "g900_live_marker_renderer_admission_e4aee6d53d4b7fa4",
+    "admission_type": "future_live_stage_marker_renderer_stub",
+    "event_id": "g900_return_cell_event_562162c72753c818",
+    "marker_id": "unsupported_phase_step_6_9",
+    "binding_id": "g900_marker_event_binding_1d645b31e5366deb",
+    "render_contract_id": "g900_marker_render_contract_2f8f21a3465a71d3",
+    "admission_definition": "A future live-stage marker renderer stub may be attempted only as a read-only renderer of the bound unsupported 6/9 diagnostic marker.",
+    "allowed_next_artifact": "g900-live-stage-marker-renderer-stub-001",
+    "allowed_future_live_stage_tokens": [
+      "drawGraphMarkerReadings",
+      "activeMarkerRenderer"
+    ],
+    "forbidden_future_effects": [
+      "create vertices",
+      "create edges",
+      "mutate G900 body",
+      "admit channel",
+      "render channel",
+      "open marker gate without recheck",
+      "light marker without gate_open true",
+      "use timer as event",
+      "make force claim",
+      "make physics claim"
+    ],
+    "effect_now": {
+      "renderer_admission_recorded": true,
+      "renderer_enabled_now": false,
+      "gate_open_now": false,
+      "lights_marker_now": false,
+      "admits_channel_now": false,
+      "renders_channel_now": false,
+      "mutates_body": false
+    }
+  },
+  "source_contracts": {
+    "event_id": "g900_return_cell_event_562162c72753c818",
+    "marker_id": "unsupported_phase_step_6_9",
+    "binding_id": "g900_marker_event_binding_1d645b31e5366deb",
+    "render_contract_id": "g900_marker_render_contract_2f8f21a3465a71d3",
+    "gate_recheck_verdict": "marker_event_gate_recheck_recorded_closed_pending_renderer"
+  },
+  "static_live_stage_check": {
+    "stage_path": "public_html/labs/g900_observatory/g900_grammar_stage_v0.js",
+    "lab_path": "public_html/labs/g900_observatory/lab.html",
+    "renderer_tokens_checked": [
+      "drawGraphMarkerReadings",
+      "G900MarkerOverlay",
+      "activeMarkerRenderer",
+      "lightMarkerNow",
+      "markerLightingEnabled"
+    ],
+    "present_stage_renderer_tokens": [],
+    "present_lab_renderer_tokens": [],
+    "live_stage_renderer_exists": false
+  },
+  "body_source_check": {
+    "static_body_path": "public_html/labs/g900_observatory/data/g900_static_body.v1.json",
+    "schema": "g900.viewer.static_body",
+    "body_id": "g900",
+    "version": "0.1",
+    "body_file_present": true
+  },
+  "criteria": [
+    {
+      "id": "gate_recheck_exists_closed_pending_renderer",
+      "description": "The marker-event gate recheck exists and is closed only because the live-stage renderer is absent.",
+      "satisfied": true
+    },
+    {
+      "id": "marker_event_binding_exists",
+      "description": "The marker-event binding contract exists and passed.",
+      "satisfied": true
+    },
+    {
+      "id": "marker_render_contract_exists",
+      "description": "The marker render contract exists and passed without enabling a renderer.",
+      "satisfied": true
+    },
+    {
+      "id": "marker_gate_originally_closed",
+      "description": "The original anomaly marker event gate exists and passed closed.",
+      "satisfied": true
+    },
+    {
+      "id": "marker_edges_audited",
+      "description": "The marker edge-index audit has no failed checks.",
+      "satisfied": true,
+      "edge_index_failure_count": 0
+    },
+    {
+      "id": "marker_counts_bound",
+      "description": "The marker still binds 60 existing body edges and 120 endpoint vertices.",
+      "satisfied": true
+    },
+    {
+      "id": "channel_registry_zero",
+      "description": "The channel registry remains zero-count.",
+      "satisfied": true
+    },
+    {
+      "id": "live_stage_renderer_absent_now",
+      "description": "No live-stage marker renderer is present yet.",
+      "satisfied": true,
+      "present_stage_renderer_tokens": [],
+      "present_lab_renderer_tokens": []
+    },
+    {
+      "id": "admission_does_not_enable_renderer",
+      "description": "This artifact records admission only and enables no renderer.",
+      "satisfied": true
+    },
+    {
+      "id": "admission_does_not_light_marker",
+      "description": "This artifact does not light the marker.",
+      "satisfied": true
+    },
+    {
+      "id": "body_file_present",
+      "description": "The G900 static body file is present as the read-only body source.",
+      "satisfied": true
+    }
+  ],
+  "summary": {
+    "admission_id": "g900_live_marker_renderer_admission_e4aee6d53d4b7fa4",
+    "event_id": "g900_return_cell_event_562162c72753c818",
+    "marker_id": "unsupported_phase_step_6_9",
+    "binding_id": "g900_marker_event_binding_1d645b31e5366deb",
+    "render_contract_id": "g900_marker_render_contract_2f8f21a3465a71d3",
+    "admission_allowed_for_next_artifact": true,
+    "allowed_next_artifact": "g900-live-stage-marker-renderer-stub-001",
+    "renderer_enabled_now": false,
+    "gate_open_now": false,
+    "lights_marker_now": false,
+    "admits_channel_now": false,
+    "renders_channel_now": false,
+    "mutates_body": false,
+    "live_stage_renderer_exists": false,
+    "channel_count": 0
+  },
+  "interpretation": {
+    "renderer_stub_may_be_attempted_next": true,
+    "this_artifact_is_not_the_renderer": true,
+    "marker_still_not_live_lit": true,
+    "gate_still_closed": true,
+    "channel_still_not_admitted": true,
+    "not_channel": true,
+    "next_problem": "Implement a live-stage marker renderer stub as a separate artifact with static checks proving no body mutation, no channel admission, and no marker lighting unless a future gate opens."
+  },
+  "checks": {
+    "gate_recheck_passed": true,
+    "binding_passed": true,
+    "render_contract_passed": true,
+    "marker_gate_passed": true,
+    "edge_index_no_failures": true,
+    "channel_registry_zero": true,
+    "live_stage_renderer_absent_now": true,
+    "admission_allowed_for_next_artifact": true,
+    "renderer_not_enabled_now": true,
+    "marker_not_lit": true,
+    "body_not_mutated": true
+  },
+  "failed_checks": [],
+  "boundary": {
+    "renderer_admission_only": true,
+    "renderer_enabled": false,
+    "gate_open": false,
+    "admits_channels": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "marker_lighting": false,
+    "force_claim": false,
+    "physics_claim": false
+  }
+}

@@ -1,0 +1,2547 @@
+{
+  "schema": "g900.all_phase_ladder_spectrum_audit",
+  "version": 1,
+  "status": "all_phase_ladder_spectrum_audit_recorded",
+  "created_utc": "2026-06-18T09:00:04Z",
+  "git_head": "55dcc6d Audit G900 phase-3 distinct ladder condition",
+  "audit_pass": true,
+  "verdict": "all_phase_ladder_spectrum_audit_passed",
+  "question": "Does the six-nine distinct ladder remain unique when the fork-ladder scan is widened from phase 3 to all mod15 phases?",
+  "spectrum_status": "six_nine_unique_failure_to_receipt_in_all_phase_spectrum",
+  "reading": "Across the all-phase mod15 ladder spectrum, the six-nine phase-3 ladder remains the unique failure-to-receipt record. The distinct ladder condition survives the wider scan as necessary for failure-to-receipt, though not yet as a full native construction derivation.",
+  "scan_rule": {
+    "phase_steps_tested": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "anchor_rule": "anchor endpoint e satisfies source_root_slot - e = phase_step mod 15",
+    "outside_root_slot_rule": "outside_root_slot = anchor",
+    "outside_endpoint_rule": "outside_moving_endpoint = inside_moving_endpoint - phase_step mod 15",
+    "uses_receipt_fields": false,
+    "uses_support_fields": false
+  },
+  "counts": {
+    "support_row_count": 1440,
+    "full_frame_count": 17,
+    "spectrum_record_count": 18,
+    "distinct_record_count": 2,
+    "degenerate_record_count": 16,
+    "prediction_exists_count": 1,
+    "failure_to_receipt_count": 1,
+    "target_unique_failure_to_receipt_all_phase": true,
+    "all_failure_to_receipt_are_distinct": true,
+    "all_degenerate_have_no_prediction": true
+  },
+  "phase_summary": {
+    "1": {
+      "record_count": 2,
+      "distinct_count": 0,
+      "degenerate_count": 2,
+      "prediction_exists_count": 0,
+      "failure_to_receipt_count": 0
+    },
+    "2": {
+      "record_count": 0,
+      "distinct_count": 0,
+      "degenerate_count": 0,
+      "prediction_exists_count": 0,
+      "failure_to_receipt_count": 0
+    },
+    "3": {
+      "record_count": 2,
+      "distinct_count": 1,
+      "degenerate_count": 1,
+      "prediction_exists_count": 1,
+      "failure_to_receipt_count": 1
+    },
+    "4": {
+      "record_count": 1,
+      "distinct_count": 0,
+      "degenerate_count": 1,
+      "prediction_exists_count": 0,
+      "failure_to_receipt_count": 0
+    },
+    "5": {
+      "record_count": 2,
+      "distinct_count": 0,
+      "degenerate_count": 2,
+      "prediction_exists_count": 0,
+      "failure_to_receipt_count": 0
+    },
+    "6": {
+      "record_count": 7,
+      "distinct_count": 1,
+      "degenerate_count": 6,
+      "prediction_exists_count": 0,
+      "failure_to_receipt_count": 0
+    },
+    "7": {
+      "record_count": 2,
+      "distinct_count": 0,
+      "degenerate_count": 2,
+      "prediction_exists_count": 0,
+      "failure_to_receipt_count": 0
+    },
+    "8": {
+      "record_count": 0,
+      "distinct_count": 0,
+      "degenerate_count": 0,
+      "prediction_exists_count": 0,
+      "failure_to_receipt_count": 0
+    },
+    "9": {
+      "record_count": 2,
+      "distinct_count": 0,
+      "degenerate_count": 2,
+      "prediction_exists_count": 0,
+      "failure_to_receipt_count": 0
+    },
+    "10": {
+      "record_count": 0,
+      "distinct_count": 0,
+      "degenerate_count": 0,
+      "prediction_exists_count": 0,
+      "failure_to_receipt_count": 0
+    },
+    "11": {
+      "record_count": 0,
+      "distinct_count": 0,
+      "degenerate_count": 0,
+      "prediction_exists_count": 0,
+      "failure_to_receipt_count": 0
+    },
+    "12": {
+      "record_count": 0,
+      "distinct_count": 0,
+      "degenerate_count": 0,
+      "prediction_exists_count": 0,
+      "failure_to_receipt_count": 0
+    },
+    "13": {
+      "record_count": 0,
+      "distinct_count": 0,
+      "degenerate_count": 0,
+      "prediction_exists_count": 0,
+      "failure_to_receipt_count": 0
+    },
+    "14": {
+      "record_count": 0,
+      "distinct_count": 0,
+      "degenerate_count": 0,
+      "prediction_exists_count": 0,
+      "failure_to_receipt_count": 0
+    }
+  },
+  "target": {
+    "source_frame": [
+      "06_09",
+      "12",
+      "23->24"
+    ],
+    "phase_step_mod15": 3,
+    "predicted_frame": [
+      "03_09",
+      "9",
+      "23->24"
+    ],
+    "target_record_found": true,
+    "target_good": true,
+    "target_record": {
+      "phase_step_mod15": 3,
+      "source_frame": [
+        "06_09",
+        "12",
+        "23->24"
+      ],
+      "source_pair": "06_09",
+      "source_endpoints": [
+        6,
+        9
+      ],
+      "source_root_slot": 12,
+      "source_limit_transition": "23->24",
+      "anchor": 9,
+      "inside_moving_endpoint": 6,
+      "outside_moving_endpoint": 3,
+      "outside_root_slot": 9,
+      "phase_ladder_values": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "phase_ladder_distinct": true,
+      "outside_pair_degenerate": false,
+      "predicted_pair_key": "03_09",
+      "predicted_frame": [
+        "03_09",
+        "9",
+        "23->24"
+      ],
+      "prediction_exists": true,
+      "source_inside_failure_proxy": true,
+      "predicted_receipt_proxy": true,
+      "failure_to_receipt": true,
+      "source_summary": {
+        "row_count": 60,
+        "pair_counts": {
+          "06_09": 60
+        },
+        "root_slot_counts": {
+          "12": 60
+        },
+        "limit_counts": {
+          "23->24": 60
+        },
+        "package_kind_counts": {
+          "one_way_single_transition": 60
+        },
+        "support_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "boundary_carrier_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "zero_hit_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "delta_edge_hits_profile": {
+          "count": 60,
+          "min": 0,
+          "max": 0,
+          "sum": 0,
+          "distinct": [
+            0
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 60,
+          "min": 0,
+          "max": 0,
+          "sum": 0,
+          "distinct": [
+            0
+          ]
+        }
+      },
+      "predicted_summary": {
+        "row_count": 60,
+        "pair_counts": {
+          "03_09": 60
+        },
+        "root_slot_counts": {
+          "9": 60
+        },
+        "limit_counts": {
+          "23->24": 60
+        },
+        "package_kind_counts": {
+          "clean_reciprocal_pair_package": 60
+        },
+        "support_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "boundary_carrier_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "delta_edge_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        }
+      }
+    }
+  },
+  "failure_to_receipt_records": [
+    {
+      "phase_step_mod15": 3,
+      "source_frame": [
+        "06_09",
+        "12",
+        "23->24"
+      ],
+      "source_pair": "06_09",
+      "source_endpoints": [
+        6,
+        9
+      ],
+      "source_root_slot": 12,
+      "source_limit_transition": "23->24",
+      "anchor": 9,
+      "inside_moving_endpoint": 6,
+      "outside_moving_endpoint": 3,
+      "outside_root_slot": 9,
+      "phase_ladder_values": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "phase_ladder_distinct": true,
+      "outside_pair_degenerate": false,
+      "predicted_pair_key": "03_09",
+      "predicted_frame": [
+        "03_09",
+        "9",
+        "23->24"
+      ],
+      "prediction_exists": true,
+      "source_inside_failure_proxy": true,
+      "predicted_receipt_proxy": true,
+      "failure_to_receipt": true,
+      "source_summary": {
+        "row_count": 60,
+        "pair_counts": {
+          "06_09": 60
+        },
+        "root_slot_counts": {
+          "12": 60
+        },
+        "limit_counts": {
+          "23->24": 60
+        },
+        "package_kind_counts": {
+          "one_way_single_transition": 60
+        },
+        "support_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "boundary_carrier_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "zero_hit_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "delta_edge_hits_profile": {
+          "count": 60,
+          "min": 0,
+          "max": 0,
+          "sum": 0,
+          "distinct": [
+            0
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 60,
+          "min": 0,
+          "max": 0,
+          "sum": 0,
+          "distinct": [
+            0
+          ]
+        }
+      },
+      "predicted_summary": {
+        "row_count": 60,
+        "pair_counts": {
+          "03_09": 60
+        },
+        "root_slot_counts": {
+          "9": 60
+        },
+        "limit_counts": {
+          "23->24": 60
+        },
+        "package_kind_counts": {
+          "clean_reciprocal_pair_package": 60
+        },
+        "support_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "boundary_carrier_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "delta_edge_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        }
+      }
+    }
+  ],
+  "prediction_records_first_50": [
+    {
+      "phase_step_mod15": 3,
+      "source_frame": [
+        "06_09",
+        "12",
+        "23->24"
+      ],
+      "source_pair": "06_09",
+      "source_endpoints": [
+        6,
+        9
+      ],
+      "source_root_slot": 12,
+      "source_limit_transition": "23->24",
+      "anchor": 9,
+      "inside_moving_endpoint": 6,
+      "outside_moving_endpoint": 3,
+      "outside_root_slot": 9,
+      "phase_ladder_values": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "phase_ladder_distinct": true,
+      "outside_pair_degenerate": false,
+      "predicted_pair_key": "03_09",
+      "predicted_frame": [
+        "03_09",
+        "9",
+        "23->24"
+      ],
+      "prediction_exists": true,
+      "source_inside_failure_proxy": true,
+      "predicted_receipt_proxy": true,
+      "failure_to_receipt": true,
+      "source_summary": {
+        "row_count": 60,
+        "pair_counts": {
+          "06_09": 60
+        },
+        "root_slot_counts": {
+          "12": 60
+        },
+        "limit_counts": {
+          "23->24": 60
+        },
+        "package_kind_counts": {
+          "one_way_single_transition": 60
+        },
+        "support_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "boundary_carrier_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "zero_hit_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "delta_edge_hits_profile": {
+          "count": 60,
+          "min": 0,
+          "max": 0,
+          "sum": 0,
+          "distinct": [
+            0
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 60,
+          "min": 0,
+          "max": 0,
+          "sum": 0,
+          "distinct": [
+            0
+          ]
+        }
+      },
+      "predicted_summary": {
+        "row_count": 60,
+        "pair_counts": {
+          "03_09": 60
+        },
+        "root_slot_counts": {
+          "9": 60
+        },
+        "limit_counts": {
+          "23->24": 60
+        },
+        "package_kind_counts": {
+          "clean_reciprocal_pair_package": 60
+        },
+        "support_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "boundary_carrier_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "delta_edge_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        }
+      }
+    }
+  ],
+  "all_spectrum_records_first_80": [
+    {
+      "phase_step_mod15": 1,
+      "source_frame": [
+        "02_03",
+        "3",
+        "16->17"
+      ],
+      "source_pair": "02_03",
+      "source_endpoints": [
+        2,
+        3
+      ],
+      "source_root_slot": 3,
+      "source_limit_transition": "16->17",
+      "anchor": 2,
+      "inside_moving_endpoint": 3,
+      "outside_moving_endpoint": 2,
+      "outside_root_slot": 2,
+      "phase_ladder_values": [
+        2,
+        3,
+        2,
+        3
+      ],
+      "phase_ladder_distinct": false,
+      "outside_pair_degenerate": true,
+      "predicted_pair_key": null,
+      "predicted_frame": null,
+      "prediction_exists": false,
+      "source_inside_failure_proxy": false,
+      "predicted_receipt_proxy": false,
+      "failure_to_receipt": false,
+      "source_summary": {
+        "row_count": 60,
+        "pair_counts": {
+          "02_03": 60
+        },
+        "root_slot_counts": {
+          "3": 60
+        },
+        "limit_counts": {
+          "16->17": 60
+        },
+        "package_kind_counts": {
+          "clean_reciprocal_pair_package": 60
+        },
+        "support_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "boundary_carrier_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "delta_edge_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        }
+      },
+      "predicted_summary": {
+        "row_count": 0,
+        "support_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "boundary_carrier_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "delta_edge_hits_profile": {
+          "count": 0
+        },
+        "internal_delta_hits_profile": {
+          "count": 0
+        }
+      }
+    },
+    {
+      "phase_step_mod15": 1,
+      "source_frame": [
+        "02_03",
+        "3",
+        "2->3"
+      ],
+      "source_pair": "02_03",
+      "source_endpoints": [
+        2,
+        3
+      ],
+      "source_root_slot": 3,
+      "source_limit_transition": "2->3",
+      "anchor": 2,
+      "inside_moving_endpoint": 3,
+      "outside_moving_endpoint": 2,
+      "outside_root_slot": 2,
+      "phase_ladder_values": [
+        2,
+        3,
+        2,
+        3
+      ],
+      "phase_ladder_distinct": false,
+      "outside_pair_degenerate": true,
+      "predicted_pair_key": null,
+      "predicted_frame": null,
+      "prediction_exists": false,
+      "source_inside_failure_proxy": false,
+      "predicted_receipt_proxy": false,
+      "failure_to_receipt": false,
+      "source_summary": {
+        "row_count": 60,
+        "pair_counts": {
+          "02_03": 60
+        },
+        "root_slot_counts": {
+          "3": 60
+        },
+        "limit_counts": {
+          "2->3": 60
+        },
+        "package_kind_counts": {
+          "clean_reciprocal_pair_package": 60
+        },
+        "support_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "boundary_carrier_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "delta_edge_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        }
+      },
+      "predicted_summary": {
+        "row_count": 0,
+        "support_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "boundary_carrier_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "delta_edge_hits_profile": {
+          "count": 0
+        },
+        "internal_delta_hits_profile": {
+          "count": 0
+        }
+      }
+    },
+    {
+      "phase_step_mod15": 3,
+      "source_frame": [
+        "06_09",
+        "12",
+        "23->24"
+      ],
+      "source_pair": "06_09",
+      "source_endpoints": [
+        6,
+        9
+      ],
+      "source_root_slot": 12,
+      "source_limit_transition": "23->24",
+      "anchor": 9,
+      "inside_moving_endpoint": 6,
+      "outside_moving_endpoint": 3,
+      "outside_root_slot": 9,
+      "phase_ladder_values": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "phase_ladder_distinct": true,
+      "outside_pair_degenerate": false,
+      "predicted_pair_key": "03_09",
+      "predicted_frame": [
+        "03_09",
+        "9",
+        "23->24"
+      ],
+      "prediction_exists": true,
+      "source_inside_failure_proxy": true,
+      "predicted_receipt_proxy": true,
+      "failure_to_receipt": true,
+      "source_summary": {
+        "row_count": 60,
+        "pair_counts": {
+          "06_09": 60
+        },
+        "root_slot_counts": {
+          "12": 60
+        },
+        "limit_counts": {
+          "23->24": 60
+        },
+        "package_kind_counts": {
+          "one_way_single_transition": 60
+        },
+        "support_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "boundary_carrier_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "zero_hit_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "delta_edge_hits_profile": {
+          "count": 60,
+          "min": 0,
+          "max": 0,
+          "sum": 0,
+          "distinct": [
+            0
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 60,
+          "min": 0,
+          "max": 0,
+          "sum": 0,
+          "distinct": [
+            0
+          ]
+        }
+      },
+      "predicted_summary": {
+        "row_count": 60,
+        "pair_counts": {
+          "03_09": 60
+        },
+        "root_slot_counts": {
+          "9": 60
+        },
+        "limit_counts": {
+          "23->24": 60
+        },
+        "package_kind_counts": {
+          "clean_reciprocal_pair_package": 60
+        },
+        "support_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "boundary_carrier_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "delta_edge_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        }
+      }
+    },
+    {
+      "phase_step_mod15": 3,
+      "source_frame": [
+        "09_12",
+        "12",
+        "32->33"
+      ],
+      "source_pair": "09_12",
+      "source_endpoints": [
+        9,
+        12
+      ],
+      "source_root_slot": 12,
+      "source_limit_transition": "32->33",
+      "anchor": 9,
+      "inside_moving_endpoint": 12,
+      "outside_moving_endpoint": 9,
+      "outside_root_slot": 9,
+      "phase_ladder_values": [
+        9,
+        12,
+        9,
+        12
+      ],
+      "phase_ladder_distinct": false,
+      "outside_pair_degenerate": true,
+      "predicted_pair_key": null,
+      "predicted_frame": null,
+      "prediction_exists": false,
+      "source_inside_failure_proxy": false,
+      "predicted_receipt_proxy": false,
+      "failure_to_receipt": false,
+      "source_summary": {
+        "row_count": 60,
+        "pair_counts": {
+          "09_12": 60
+        },
+        "root_slot_counts": {
+          "12": 60
+        },
+        "limit_counts": {
+          "32->33": 60
+        },
+        "package_kind_counts": {
+          "one_way_single_transition": 60
+        },
+        "support_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "boundary_carrier_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "delta_edge_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        }
+      },
+      "predicted_summary": {
+        "row_count": 0,
+        "support_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "boundary_carrier_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "delta_edge_hits_profile": {
+          "count": 0
+        },
+        "internal_delta_hits_profile": {
+          "count": 0
+        }
+      }
+    },
+    {
+      "phase_step_mod15": 4,
+      "source_frame": [
+        "07_11",
+        "11",
+        "4->5"
+      ],
+      "source_pair": "07_11",
+      "source_endpoints": [
+        7,
+        11
+      ],
+      "source_root_slot": 11,
+      "source_limit_transition": "4->5",
+      "anchor": 7,
+      "inside_moving_endpoint": 11,
+      "outside_moving_endpoint": 7,
+      "outside_root_slot": 7,
+      "phase_ladder_values": [
+        7,
+        11,
+        7,
+        11
+      ],
+      "phase_ladder_distinct": false,
+      "outside_pair_degenerate": true,
+      "predicted_pair_key": null,
+      "predicted_frame": null,
+      "prediction_exists": false,
+      "source_inside_failure_proxy": false,
+      "predicted_receipt_proxy": false,
+      "failure_to_receipt": false,
+      "source_summary": {
+        "row_count": 60,
+        "pair_counts": {
+          "07_11": 60
+        },
+        "root_slot_counts": {
+          "11": 60
+        },
+        "limit_counts": {
+          "4->5": 60
+        },
+        "package_kind_counts": {
+          "two_transition_pair_package": 60
+        },
+        "support_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "boundary_carrier_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "delta_edge_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        }
+      },
+      "predicted_summary": {
+        "row_count": 0,
+        "support_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "boundary_carrier_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "delta_edge_hits_profile": {
+          "count": 0
+        },
+        "internal_delta_hits_profile": {
+          "count": 0
+        }
+      }
+    },
+    {
+      "phase_step_mod15": 5,
+      "source_frame": [
+        "05_10",
+        "10",
+        "24->25"
+      ],
+      "source_pair": "05_10",
+      "source_endpoints": [
+        5,
+        10
+      ],
+      "source_root_slot": 10,
+      "source_limit_transition": "24->25",
+      "anchor": 5,
+      "inside_moving_endpoint": 10,
+      "outside_moving_endpoint": 5,
+      "outside_root_slot": 5,
+      "phase_ladder_values": [
+        5,
+        10,
+        5,
+        10
+      ],
+      "phase_ladder_distinct": false,
+      "outside_pair_degenerate": true,
+      "predicted_pair_key": null,
+      "predicted_frame": null,
+      "prediction_exists": false,
+      "source_inside_failure_proxy": false,
+      "predicted_receipt_proxy": false,
+      "failure_to_receipt": false,
+      "source_summary": {
+        "row_count": 60,
+        "pair_counts": {
+          "05_10": 60
+        },
+        "root_slot_counts": {
+          "10": 60
+        },
+        "limit_counts": {
+          "24->25": 60
+        },
+        "package_kind_counts": {
+          "clean_reciprocal_pair_package": 60
+        },
+        "support_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "boundary_carrier_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "delta_edge_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        }
+      },
+      "predicted_summary": {
+        "row_count": 0,
+        "support_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "boundary_carrier_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "delta_edge_hits_profile": {
+          "count": 0
+        },
+        "internal_delta_hits_profile": {
+          "count": 0
+        }
+      }
+    },
+    {
+      "phase_step_mod15": 5,
+      "source_frame": [
+        "05_10",
+        "10",
+        "3->4"
+      ],
+      "source_pair": "05_10",
+      "source_endpoints": [
+        5,
+        10
+      ],
+      "source_root_slot": 10,
+      "source_limit_transition": "3->4",
+      "anchor": 5,
+      "inside_moving_endpoint": 10,
+      "outside_moving_endpoint": 5,
+      "outside_root_slot": 5,
+      "phase_ladder_values": [
+        5,
+        10,
+        5,
+        10
+      ],
+      "phase_ladder_distinct": false,
+      "outside_pair_degenerate": true,
+      "predicted_pair_key": null,
+      "predicted_frame": null,
+      "prediction_exists": false,
+      "source_inside_failure_proxy": false,
+      "predicted_receipt_proxy": false,
+      "failure_to_receipt": false,
+      "source_summary": {
+        "row_count": 60,
+        "pair_counts": {
+          "05_10": 60
+        },
+        "root_slot_counts": {
+          "10": 60
+        },
+        "limit_counts": {
+          "3->4": 60
+        },
+        "package_kind_counts": {
+          "clean_reciprocal_pair_package": 60
+        },
+        "support_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "boundary_carrier_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "delta_edge_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        }
+      },
+      "predicted_summary": {
+        "row_count": 0,
+        "support_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "boundary_carrier_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "delta_edge_hits_profile": {
+          "count": 0
+        },
+        "internal_delta_hits_profile": {
+          "count": 0
+        }
+      }
+    },
+    {
+      "phase_step_mod15": 6,
+      "source_frame": [
+        "02_08",
+        "8",
+        "24->25"
+      ],
+      "source_pair": "02_08",
+      "source_endpoints": [
+        2,
+        8
+      ],
+      "source_root_slot": 8,
+      "source_limit_transition": "24->25",
+      "anchor": 2,
+      "inside_moving_endpoint": 8,
+      "outside_moving_endpoint": 2,
+      "outside_root_slot": 2,
+      "phase_ladder_values": [
+        2,
+        8,
+        2,
+        8
+      ],
+      "phase_ladder_distinct": false,
+      "outside_pair_degenerate": true,
+      "predicted_pair_key": null,
+      "predicted_frame": null,
+      "prediction_exists": false,
+      "source_inside_failure_proxy": false,
+      "predicted_receipt_proxy": false,
+      "failure_to_receipt": false,
+      "source_summary": {
+        "row_count": 60,
+        "pair_counts": {
+          "02_08": 60
+        },
+        "root_slot_counts": {
+          "8": 60
+        },
+        "limit_counts": {
+          "24->25": 60
+        },
+        "package_kind_counts": {
+          "clean_reciprocal_pair_package": 60
+        },
+        "support_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "boundary_carrier_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "delta_edge_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        }
+      },
+      "predicted_summary": {
+        "row_count": 0,
+        "support_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "boundary_carrier_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "delta_edge_hits_profile": {
+          "count": 0
+        },
+        "internal_delta_hits_profile": {
+          "count": 0
+        }
+      }
+    },
+    {
+      "phase_step_mod15": 6,
+      "source_frame": [
+        "02_08",
+        "8",
+        "3->4"
+      ],
+      "source_pair": "02_08",
+      "source_endpoints": [
+        2,
+        8
+      ],
+      "source_root_slot": 8,
+      "source_limit_transition": "3->4",
+      "anchor": 2,
+      "inside_moving_endpoint": 8,
+      "outside_moving_endpoint": 2,
+      "outside_root_slot": 2,
+      "phase_ladder_values": [
+        2,
+        8,
+        2,
+        8
+      ],
+      "phase_ladder_distinct": false,
+      "outside_pair_degenerate": true,
+      "predicted_pair_key": null,
+      "predicted_frame": null,
+      "prediction_exists": false,
+      "source_inside_failure_proxy": false,
+      "predicted_receipt_proxy": false,
+      "failure_to_receipt": false,
+      "source_summary": {
+        "row_count": 60,
+        "pair_counts": {
+          "02_08": 60
+        },
+        "root_slot_counts": {
+          "8": 60
+        },
+        "limit_counts": {
+          "3->4": 60
+        },
+        "package_kind_counts": {
+          "clean_reciprocal_pair_package": 60
+        },
+        "support_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "boundary_carrier_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "delta_edge_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        }
+      },
+      "predicted_summary": {
+        "row_count": 0,
+        "support_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "boundary_carrier_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "delta_edge_hits_profile": {
+          "count": 0
+        },
+        "internal_delta_hits_profile": {
+          "count": 0
+        }
+      }
+    },
+    {
+      "phase_step_mod15": 6,
+      "source_frame": [
+        "03_09",
+        "9",
+        "12->13"
+      ],
+      "source_pair": "03_09",
+      "source_endpoints": [
+        3,
+        9
+      ],
+      "source_root_slot": 9,
+      "source_limit_transition": "12->13",
+      "anchor": 3,
+      "inside_moving_endpoint": 9,
+      "outside_moving_endpoint": 3,
+      "outside_root_slot": 3,
+      "phase_ladder_values": [
+        3,
+        9,
+        3,
+        9
+      ],
+      "phase_ladder_distinct": false,
+      "outside_pair_degenerate": true,
+      "predicted_pair_key": null,
+      "predicted_frame": null,
+      "prediction_exists": false,
+      "source_inside_failure_proxy": false,
+      "predicted_receipt_proxy": false,
+      "failure_to_receipt": false,
+      "source_summary": {
+        "row_count": 60,
+        "pair_counts": {
+          "03_09": 60
+        },
+        "root_slot_counts": {
+          "9": 60
+        },
+        "limit_counts": {
+          "12->13": 60
+        },
+        "package_kind_counts": {
+          "clean_reciprocal_pair_package": 60
+        },
+        "support_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "boundary_carrier_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "delta_edge_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        }
+      },
+      "predicted_summary": {
+        "row_count": 0,
+        "support_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "boundary_carrier_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "delta_edge_hits_profile": {
+          "count": 0
+        },
+        "internal_delta_hits_profile": {
+          "count": 0
+        }
+      }
+    },
+    {
+      "phase_step_mod15": 6,
+      "source_frame": [
+        "03_09",
+        "9",
+        "23->24"
+      ],
+      "source_pair": "03_09",
+      "source_endpoints": [
+        3,
+        9
+      ],
+      "source_root_slot": 9,
+      "source_limit_transition": "23->24",
+      "anchor": 3,
+      "inside_moving_endpoint": 9,
+      "outside_moving_endpoint": 3,
+      "outside_root_slot": 3,
+      "phase_ladder_values": [
+        3,
+        9,
+        3,
+        9
+      ],
+      "phase_ladder_distinct": false,
+      "outside_pair_degenerate": true,
+      "predicted_pair_key": null,
+      "predicted_frame": null,
+      "prediction_exists": false,
+      "source_inside_failure_proxy": false,
+      "predicted_receipt_proxy": false,
+      "failure_to_receipt": false,
+      "source_summary": {
+        "row_count": 60,
+        "pair_counts": {
+          "03_09": 60
+        },
+        "root_slot_counts": {
+          "9": 60
+        },
+        "limit_counts": {
+          "23->24": 60
+        },
+        "package_kind_counts": {
+          "clean_reciprocal_pair_package": 60
+        },
+        "support_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "boundary_carrier_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "delta_edge_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        }
+      },
+      "predicted_summary": {
+        "row_count": 0,
+        "support_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "boundary_carrier_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "delta_edge_hits_profile": {
+          "count": 0
+        },
+        "internal_delta_hits_profile": {
+          "count": 0
+        }
+      }
+    },
+    {
+      "phase_step_mod15": 6,
+      "source_frame": [
+        "03_09",
+        "9",
+        "3->4"
+      ],
+      "source_pair": "03_09",
+      "source_endpoints": [
+        3,
+        9
+      ],
+      "source_root_slot": 9,
+      "source_limit_transition": "3->4",
+      "anchor": 3,
+      "inside_moving_endpoint": 9,
+      "outside_moving_endpoint": 3,
+      "outside_root_slot": 3,
+      "phase_ladder_values": [
+        3,
+        9,
+        3,
+        9
+      ],
+      "phase_ladder_distinct": false,
+      "outside_pair_degenerate": true,
+      "predicted_pair_key": null,
+      "predicted_frame": null,
+      "prediction_exists": false,
+      "source_inside_failure_proxy": false,
+      "predicted_receipt_proxy": false,
+      "failure_to_receipt": false,
+      "source_summary": {
+        "row_count": 60,
+        "pair_counts": {
+          "03_09": 60
+        },
+        "root_slot_counts": {
+          "9": 60
+        },
+        "limit_counts": {
+          "3->4": 60
+        },
+        "package_kind_counts": {
+          "clean_reciprocal_pair_package": 60
+        },
+        "support_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "boundary_carrier_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "delta_edge_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        }
+      },
+      "predicted_summary": {
+        "row_count": 0,
+        "support_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "boundary_carrier_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "delta_edge_hits_profile": {
+          "count": 0
+        },
+        "internal_delta_hits_profile": {
+          "count": 0
+        }
+      }
+    },
+    {
+      "phase_step_mod15": 6,
+      "source_frame": [
+        "06_09",
+        "12",
+        "23->24"
+      ],
+      "source_pair": "06_09",
+      "source_endpoints": [
+        6,
+        9
+      ],
+      "source_root_slot": 12,
+      "source_limit_transition": "23->24",
+      "anchor": 6,
+      "inside_moving_endpoint": 9,
+      "outside_moving_endpoint": 3,
+      "outside_root_slot": 6,
+      "phase_ladder_values": [
+        3,
+        9,
+        6,
+        12
+      ],
+      "phase_ladder_distinct": true,
+      "outside_pair_degenerate": false,
+      "predicted_pair_key": "03_06",
+      "predicted_frame": [
+        "03_06",
+        "6",
+        "23->24"
+      ],
+      "prediction_exists": false,
+      "source_inside_failure_proxy": true,
+      "predicted_receipt_proxy": false,
+      "failure_to_receipt": false,
+      "source_summary": {
+        "row_count": 60,
+        "pair_counts": {
+          "06_09": 60
+        },
+        "root_slot_counts": {
+          "12": 60
+        },
+        "limit_counts": {
+          "23->24": 60
+        },
+        "package_kind_counts": {
+          "one_way_single_transition": 60
+        },
+        "support_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "boundary_carrier_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "zero_hit_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "delta_edge_hits_profile": {
+          "count": 60,
+          "min": 0,
+          "max": 0,
+          "sum": 0,
+          "distinct": [
+            0
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 60,
+          "min": 0,
+          "max": 0,
+          "sum": 0,
+          "distinct": [
+            0
+          ]
+        }
+      },
+      "predicted_summary": {
+        "row_count": 0,
+        "support_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "boundary_carrier_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "delta_edge_hits_profile": {
+          "count": 0
+        },
+        "internal_delta_hits_profile": {
+          "count": 0
+        }
+      }
+    },
+    {
+      "phase_step_mod15": 6,
+      "source_frame": [
+        "06_12",
+        "12",
+        "4->5"
+      ],
+      "source_pair": "06_12",
+      "source_endpoints": [
+        6,
+        12
+      ],
+      "source_root_slot": 12,
+      "source_limit_transition": "4->5",
+      "anchor": 6,
+      "inside_moving_endpoint": 12,
+      "outside_moving_endpoint": 6,
+      "outside_root_slot": 6,
+      "phase_ladder_values": [
+        6,
+        12,
+        6,
+        12
+      ],
+      "phase_ladder_distinct": false,
+      "outside_pair_degenerate": true,
+      "predicted_pair_key": null,
+      "predicted_frame": null,
+      "prediction_exists": false,
+      "source_inside_failure_proxy": false,
+      "predicted_receipt_proxy": false,
+      "failure_to_receipt": false,
+      "source_summary": {
+        "row_count": 60,
+        "pair_counts": {
+          "06_12": 60
+        },
+        "root_slot_counts": {
+          "12": 60
+        },
+        "limit_counts": {
+          "4->5": 60
+        },
+        "package_kind_counts": {
+          "two_transition_pair_package": 60
+        },
+        "support_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "boundary_carrier_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "delta_edge_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        }
+      },
+      "predicted_summary": {
+        "row_count": 0,
+        "support_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "boundary_carrier_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "delta_edge_hits_profile": {
+          "count": 0
+        },
+        "internal_delta_hits_profile": {
+          "count": 0
+        }
+      }
+    },
+    {
+      "phase_step_mod15": 7,
+      "source_frame": [
+        "06_13",
+        "13",
+        "31->32"
+      ],
+      "source_pair": "06_13",
+      "source_endpoints": [
+        6,
+        13
+      ],
+      "source_root_slot": 13,
+      "source_limit_transition": "31->32",
+      "anchor": 6,
+      "inside_moving_endpoint": 13,
+      "outside_moving_endpoint": 6,
+      "outside_root_slot": 6,
+      "phase_ladder_values": [
+        6,
+        13,
+        6,
+        13
+      ],
+      "phase_ladder_distinct": false,
+      "outside_pair_degenerate": true,
+      "predicted_pair_key": null,
+      "predicted_frame": null,
+      "prediction_exists": false,
+      "source_inside_failure_proxy": false,
+      "predicted_receipt_proxy": false,
+      "failure_to_receipt": false,
+      "source_summary": {
+        "row_count": 60,
+        "pair_counts": {
+          "06_13": 60
+        },
+        "root_slot_counts": {
+          "13": 60
+        },
+        "limit_counts": {
+          "31->32": 60
+        },
+        "package_kind_counts": {
+          "clean_reciprocal_pair_package": 60
+        },
+        "support_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "boundary_carrier_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "delta_edge_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        }
+      },
+      "predicted_summary": {
+        "row_count": 0,
+        "support_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "boundary_carrier_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "delta_edge_hits_profile": {
+          "count": 0
+        },
+        "internal_delta_hits_profile": {
+          "count": 0
+        }
+      }
+    },
+    {
+      "phase_step_mod15": 7,
+      "source_frame": [
+        "06_13",
+        "13",
+        "4->5"
+      ],
+      "source_pair": "06_13",
+      "source_endpoints": [
+        6,
+        13
+      ],
+      "source_root_slot": 13,
+      "source_limit_transition": "4->5",
+      "anchor": 6,
+      "inside_moving_endpoint": 13,
+      "outside_moving_endpoint": 6,
+      "outside_root_slot": 6,
+      "phase_ladder_values": [
+        6,
+        13,
+        6,
+        13
+      ],
+      "phase_ladder_distinct": false,
+      "outside_pair_degenerate": true,
+      "predicted_pair_key": null,
+      "predicted_frame": null,
+      "prediction_exists": false,
+      "source_inside_failure_proxy": false,
+      "predicted_receipt_proxy": false,
+      "failure_to_receipt": false,
+      "source_summary": {
+        "row_count": 60,
+        "pair_counts": {
+          "06_13": 60
+        },
+        "root_slot_counts": {
+          "13": 60
+        },
+        "limit_counts": {
+          "4->5": 60
+        },
+        "package_kind_counts": {
+          "clean_reciprocal_pair_package": 60
+        },
+        "support_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "boundary_carrier_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "delta_edge_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        }
+      },
+      "predicted_summary": {
+        "row_count": 0,
+        "support_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "boundary_carrier_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "delta_edge_hits_profile": {
+          "count": 0
+        },
+        "internal_delta_hits_profile": {
+          "count": 0
+        }
+      }
+    },
+    {
+      "phase_step_mod15": 9,
+      "source_frame": [
+        "05_14",
+        "14",
+        "38->39"
+      ],
+      "source_pair": "05_14",
+      "source_endpoints": [
+        5,
+        14
+      ],
+      "source_root_slot": 14,
+      "source_limit_transition": "38->39",
+      "anchor": 5,
+      "inside_moving_endpoint": 14,
+      "outside_moving_endpoint": 5,
+      "outside_root_slot": 5,
+      "phase_ladder_values": [
+        5,
+        14,
+        5,
+        14
+      ],
+      "phase_ladder_distinct": false,
+      "outside_pair_degenerate": true,
+      "predicted_pair_key": null,
+      "predicted_frame": null,
+      "prediction_exists": false,
+      "source_inside_failure_proxy": false,
+      "predicted_receipt_proxy": false,
+      "failure_to_receipt": false,
+      "source_summary": {
+        "row_count": 60,
+        "pair_counts": {
+          "05_14": 60
+        },
+        "root_slot_counts": {
+          "14": 60
+        },
+        "limit_counts": {
+          "38->39": 60
+        },
+        "package_kind_counts": {
+          "clean_reciprocal_pair_package": 60
+        },
+        "support_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "boundary_carrier_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "delta_edge_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        }
+      },
+      "predicted_summary": {
+        "row_count": 0,
+        "support_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "boundary_carrier_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "delta_edge_hits_profile": {
+          "count": 0
+        },
+        "internal_delta_hits_profile": {
+          "count": 0
+        }
+      }
+    },
+    {
+      "phase_step_mod15": 9,
+      "source_frame": [
+        "05_14",
+        "14",
+        "5->6"
+      ],
+      "source_pair": "05_14",
+      "source_endpoints": [
+        5,
+        14
+      ],
+      "source_root_slot": 14,
+      "source_limit_transition": "5->6",
+      "anchor": 5,
+      "inside_moving_endpoint": 14,
+      "outside_moving_endpoint": 5,
+      "outside_root_slot": 5,
+      "phase_ladder_values": [
+        5,
+        14,
+        5,
+        14
+      ],
+      "phase_ladder_distinct": false,
+      "outside_pair_degenerate": true,
+      "predicted_pair_key": null,
+      "predicted_frame": null,
+      "prediction_exists": false,
+      "source_inside_failure_proxy": false,
+      "predicted_receipt_proxy": false,
+      "failure_to_receipt": false,
+      "source_summary": {
+        "row_count": 60,
+        "pair_counts": {
+          "05_14": 60
+        },
+        "root_slot_counts": {
+          "14": 60
+        },
+        "limit_counts": {
+          "5->6": 60
+        },
+        "package_kind_counts": {
+          "clean_reciprocal_pair_package": 60
+        },
+        "support_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "boundary_carrier_counts": {
+          "true": 60,
+          "false": 0,
+          "count": 60
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 60,
+          "count": 60
+        },
+        "delta_edge_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        },
+        "internal_delta_hits_profile": {
+          "count": 60,
+          "min": 1,
+          "max": 1,
+          "sum": 60,
+          "distinct": [
+            1
+          ]
+        }
+      },
+      "predicted_summary": {
+        "row_count": 0,
+        "support_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "boundary_carrier_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "zero_hit_counts": {
+          "true": 0,
+          "false": 0,
+          "count": 0
+        },
+        "delta_edge_hits_profile": {
+          "count": 0
+        },
+        "internal_delta_hits_profile": {
+          "count": 0
+        }
+      }
+    }
+  ],
+  "interpretation_boundary": [
+    "This is an all-phase mod15 visible ladder spectrum scan over observed full support-table frames.",
+    "The prediction rule does not use receipt/support fields.",
+    "Receipt/failure labels are used only after prediction for evaluation.",
+    "This does not derive the ladder spectrum from the deeper G60 construction.",
+    "No closure witness, transport relation, channel, force, physics, GR, Maxwell, QCD, electroweak, or unification claim is made."
+  ],
+  "boundary": {
+    "all_phase_ladder_spectrum_audit_only": true,
+    "full_native_derivation": false,
+    "admits_closure_witness": false,
+    "admits_transport_relation": false,
+    "admits_channel": false,
+    "marker_lighting": false,
+    "viewer_change": false,
+    "body_mutation": false,
+    "force_claim": false,
+    "physics_claim": false,
+    "gr_claim": false,
+    "maxwell_claim": false,
+    "qcd_claim": false,
+    "electroweak_claim": false,
+    "unification_claim": false
+  },
+  "next_allowed_math_acts": [
+    "derive_all_phase_ladder_spectrum_from_g60_construction",
+    "test_distinct_ladder_sufficiency_vs_necessity_in_all_phase_spectrum",
+    "test_5_3_4_chamber_signature_near_answering_fork",
+    "transport_relation_admission_criterion_001"
+  ],
+  "checks": {
+    "distinct_prior_valid": true,
+    "distinct_prior_status": true,
+    "comparison_prior_valid": true,
+    "family_prior_valid": true,
+    "native_fork_prior_valid": true,
+    "answering_prior_valid": true,
+    "support_rows_present": true,
+    "full_frame_count_positive": true,
+    "spectrum_record_count_positive": true,
+    "target_record_good": true,
+    "spectrum_status_recorded": true,
+    "channel_registry_preserved": true,
+    "renderer_absent": true,
+    "no_forbidden_claims": true
+  },
+  "failed_checks": [],
+  "hashes": {
+    "distinct_prior_sha256": "050f6f0c53837a51f5d8949c0e19185963649f76b66708eb4bfc30e74625084b",
+    "comparison_prior_sha256": "8cfbab1d2ee9ac81a5d41627995f87d2e11fee7410cf825467c3958d53446c55",
+    "family_prior_sha256": "620c4c69bbe1f52f36be98476a3f173f893b04ea2e6cb2a4a638c4ee39cc5636",
+    "native_fork_prior_sha256": "133502289c09df1045f42eaf4f98c40c2837d50a8b173d8f22f6076053b97f49",
+    "answering_prior_sha256": "aa630f30d15af6bfa8d2caa464d736570e582a0cbda559224875ac158e4d233c",
+    "steps_csv_sha256": "40466b974be84ee5ff7bae97a5077a98d15483e80367422c6d717edf59ee630d",
+    "channels_sha256": "fbe4c50e0adf3460f7190f3c7714754da8a620359a5bc26c70543cc401feca08",
+    "body_sha256": "6a2cb6b9892a78d4559ec61cf946b0021962cc6819311234b8bf14102b3b7f63",
+    "lab_sha256": "5a10a18bc6563446a0d364d5984b8a41db580e0a75831c82b9eeb5aebc2edeb7"
+  }
+}

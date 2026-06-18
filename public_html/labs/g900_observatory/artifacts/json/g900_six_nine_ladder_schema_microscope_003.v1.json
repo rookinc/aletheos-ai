@@ -1,0 +1,3018 @@
+{
+  "audit_id": "g900_six_nine_ladder_schema_microscope_003",
+  "audit_pass": true,
+  "boundary": {
+    "channel_admitted": false,
+    "closure_witness_admitted": false,
+    "force_claim": false,
+    "marker_lighting": false,
+    "physics_claim": false,
+    "schema_microscope_only": true,
+    "transport_relation_admitted": false,
+    "unification_claim": false,
+    "uses_fallback": false,
+    "viewer_or_body_mutation": false
+  },
+  "broken_ladder": [
+    3,
+    9,
+    6,
+    12
+  ],
+  "broken_ladder_occurrence_count": 23,
+  "next_step": "repair provenance extractor labels using actual source schema",
+  "prior": "public_html/labs/g900_observatory/artifacts/json/g900-six-nine-ladder-3-6-9-12-source-provenance-audit-002.v1.json",
+  "prior_branch_row_count": 7,
+  "prior_exists": true,
+  "prior_label_counts": {
+    "absent_candidate": 7
+  },
+  "prior_ladder_counts": {
+    "[3, 6, 9, 12]": 4,
+    "[3, 9, 6, 12]": 3
+  },
+  "prior_row_summary": [
+    {
+      "anchor": 9,
+      "anchor_to_root_distance": 3,
+      "derived_source_features": {},
+      "index": 0,
+      "label_for_evaluation_only": "absent_candidate",
+      "ladder": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "ladder_key": "ladder_set_signature",
+      "pointer": "$.branches[0].features",
+      "source_limit_transition": "23->24",
+      "source_root_slot": 12,
+      "source_side_gap_signature": "9,11"
+    },
+    {
+      "anchor": 6,
+      "anchor_to_root_distance": 6,
+      "derived_source_features": {},
+      "index": 1,
+      "label_for_evaluation_only": "absent_candidate",
+      "ladder": [
+        3,
+        9,
+        6,
+        12
+      ],
+      "ladder_key": "ladder_signature",
+      "pointer": "$.branches[1].features",
+      "source_limit_transition": "23->24",
+      "source_root_slot": 12,
+      "source_side_gap_signature": "9,11"
+    },
+    {
+      "anchor": 6,
+      "anchor_to_root_distance": 6,
+      "derived_source_features": {},
+      "index": 2,
+      "label_for_evaluation_only": "absent_candidate",
+      "ladder": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "ladder_key": "ladder_set_signature",
+      "pointer": "$.branches[1].features",
+      "source_limit_transition": "23->24",
+      "source_root_slot": 12,
+      "source_side_gap_signature": "9,11"
+    },
+    {
+      "anchor": 9,
+      "anchor_to_root_distance": null,
+      "derived_source_features": {},
+      "index": 3,
+      "label_for_evaluation_only": "absent_candidate",
+      "ladder": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "ladder_key": "ladder_signature",
+      "pointer": "$.receipt_selectors[20].selected_branches[0]",
+      "source_limit_transition": null,
+      "source_root_slot": null,
+      "source_side_gap_signature": null
+    },
+    {
+      "anchor": null,
+      "anchor_to_root_distance": null,
+      "derived_source_features": {},
+      "index": 4,
+      "label_for_evaluation_only": "absent_candidate",
+      "ladder": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "ladder_key": "value",
+      "pointer": "$.receipt_selectors[17]",
+      "source_limit_transition": null,
+      "source_root_slot": null,
+      "source_side_gap_signature": null
+    },
+    {
+      "anchor": 6,
+      "anchor_to_root_distance": null,
+      "derived_source_features": {},
+      "index": 5,
+      "label_for_evaluation_only": "absent_candidate",
+      "ladder": [
+        3,
+        9,
+        6,
+        12
+      ],
+      "ladder_key": "ladder_signature",
+      "pointer": "$.absent_selectors[20].selected_branches[0]",
+      "source_limit_transition": null,
+      "source_root_slot": null,
+      "source_side_gap_signature": null
+    },
+    {
+      "anchor": null,
+      "anchor_to_root_distance": null,
+      "derived_source_features": {},
+      "index": 6,
+      "label_for_evaluation_only": "absent_candidate",
+      "ladder": [
+        3,
+        9,
+        6,
+        12
+      ],
+      "ladder_key": "value",
+      "pointer": "$.absent_selectors[17]",
+      "source_limit_transition": null,
+      "source_root_slot": null,
+      "source_side_gap_signature": null
+    }
+  ],
+  "source": "public_html/labs/g900_observatory/artifacts/json/g900_six_nine_native_anchor_asymmetry_audit_001.v1.json",
+  "source_exists": true,
+  "source_hits": [
+    {
+      "key": "ladder_signature",
+      "kind": "target_clean_ladder",
+      "ladder": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "object_keys": [
+        "source_pair_endpoint_set",
+        "source_root_slot",
+        "source_limit_transition",
+        "source_side_gap_signature",
+        "phase_step_mod15",
+        "anchor",
+        "outside_moving_endpoint",
+        "inside_moving_endpoint",
+        "ladder_signature",
+        "ladder_set_signature",
+        "ladder_is_sorted",
+        "ladder_is_strict_ascending",
+        "ladder_linear_delta_signature",
+        "ladder_mod_delta_signature",
+        "ladder_linear_deltas_all_equal",
+        "ladder_mod_deltas_all_equal",
+        "ladder_linear_step_if_equal",
+        "ladder_mod_step_if_equal",
+        "anchor_distance_to_source_root",
+        "inside_distance_to_source_root",
+        "nearest_distance_to_source_root",
+        "farthest_distance_to_source_root",
+        "nearest_anchor_endpoints_signature",
+        "farthest_anchor_endpoints_signature",
+        "anchor_is_nearest_endpoint",
+        "anchor_is_farthest_endpoint",
+        "phase_step_equals_anchor_distance",
+        "phase_step_equals_nearest_distance",
+        "phase_step_equals_farthest_distance",
+        "anchor_distance_less_than_inside_distance",
+        "inside_between_outside_and_anchor_linearly",
+        "anchor_between_inside_and_root_linearly",
+        "anchor_between_outside_and_root_linearly"
+      ],
+      "object_scalar_context": {
+        "anchor": 9,
+        "anchor_between_inside_and_root_linearly": true,
+        "anchor_between_outside_and_root_linearly": true,
+        "anchor_distance_less_than_inside_distance": true,
+        "anchor_distance_to_source_root": 3,
+        "anchor_is_farthest_endpoint": false,
+        "anchor_is_nearest_endpoint": true,
+        "farthest_anchor_endpoints_signature": "6",
+        "farthest_distance_to_source_root": 6,
+        "inside_between_outside_and_anchor_linearly": true,
+        "inside_distance_to_source_root": 6,
+        "inside_moving_endpoint": 6,
+        "ladder_is_sorted": true,
+        "ladder_is_strict_ascending": true,
+        "ladder_linear_delta_signature": "3,3,3",
+        "ladder_linear_deltas_all_equal": true,
+        "ladder_linear_step_if_equal": 3,
+        "ladder_mod_delta_signature": "3,3,3",
+        "ladder_mod_deltas_all_equal": true,
+        "ladder_mod_step_if_equal": 3,
+        "ladder_set_signature": "3,6,9,12",
+        "ladder_signature": "3,6,9,12",
+        "nearest_anchor_endpoints_signature": "9",
+        "nearest_distance_to_source_root": 3,
+        "outside_moving_endpoint": 3,
+        "phase_step_equals_anchor_distance": true,
+        "phase_step_equals_farthest_distance": false,
+        "phase_step_equals_nearest_distance": true,
+        "phase_step_mod15": 3,
+        "source_limit_transition": "23->24",
+        "source_pair_endpoint_set": "6,9",
+        "source_root_slot": 12,
+        "source_side_gap_signature": "9,11"
+      },
+      "parent_keys": [
+        "role",
+        "features",
+        "source_frame"
+      ],
+      "parent_scalar_context": {
+        "role": "receipt",
+        "source_frame": [
+          "06_09",
+          "12",
+          "23->24"
+        ]
+      },
+      "pointer": "$.branches[0].features"
+    },
+    {
+      "key": "ladder_set_signature",
+      "kind": "target_clean_ladder",
+      "ladder": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "object_keys": [
+        "source_pair_endpoint_set",
+        "source_root_slot",
+        "source_limit_transition",
+        "source_side_gap_signature",
+        "phase_step_mod15",
+        "anchor",
+        "outside_moving_endpoint",
+        "inside_moving_endpoint",
+        "ladder_signature",
+        "ladder_set_signature",
+        "ladder_is_sorted",
+        "ladder_is_strict_ascending",
+        "ladder_linear_delta_signature",
+        "ladder_mod_delta_signature",
+        "ladder_linear_deltas_all_equal",
+        "ladder_mod_deltas_all_equal",
+        "ladder_linear_step_if_equal",
+        "ladder_mod_step_if_equal",
+        "anchor_distance_to_source_root",
+        "inside_distance_to_source_root",
+        "nearest_distance_to_source_root",
+        "farthest_distance_to_source_root",
+        "nearest_anchor_endpoints_signature",
+        "farthest_anchor_endpoints_signature",
+        "anchor_is_nearest_endpoint",
+        "anchor_is_farthest_endpoint",
+        "phase_step_equals_anchor_distance",
+        "phase_step_equals_nearest_distance",
+        "phase_step_equals_farthest_distance",
+        "anchor_distance_less_than_inside_distance",
+        "inside_between_outside_and_anchor_linearly",
+        "anchor_between_inside_and_root_linearly",
+        "anchor_between_outside_and_root_linearly"
+      ],
+      "object_scalar_context": {
+        "anchor": 9,
+        "anchor_between_inside_and_root_linearly": true,
+        "anchor_between_outside_and_root_linearly": true,
+        "anchor_distance_less_than_inside_distance": true,
+        "anchor_distance_to_source_root": 3,
+        "anchor_is_farthest_endpoint": false,
+        "anchor_is_nearest_endpoint": true,
+        "farthest_anchor_endpoints_signature": "6",
+        "farthest_distance_to_source_root": 6,
+        "inside_between_outside_and_anchor_linearly": true,
+        "inside_distance_to_source_root": 6,
+        "inside_moving_endpoint": 6,
+        "ladder_is_sorted": true,
+        "ladder_is_strict_ascending": true,
+        "ladder_linear_delta_signature": "3,3,3",
+        "ladder_linear_deltas_all_equal": true,
+        "ladder_linear_step_if_equal": 3,
+        "ladder_mod_delta_signature": "3,3,3",
+        "ladder_mod_deltas_all_equal": true,
+        "ladder_mod_step_if_equal": 3,
+        "ladder_set_signature": "3,6,9,12",
+        "ladder_signature": "3,6,9,12",
+        "nearest_anchor_endpoints_signature": "9",
+        "nearest_distance_to_source_root": 3,
+        "outside_moving_endpoint": 3,
+        "phase_step_equals_anchor_distance": true,
+        "phase_step_equals_farthest_distance": false,
+        "phase_step_equals_nearest_distance": true,
+        "phase_step_mod15": 3,
+        "source_limit_transition": "23->24",
+        "source_pair_endpoint_set": "6,9",
+        "source_root_slot": 12,
+        "source_side_gap_signature": "9,11"
+      },
+      "parent_keys": [
+        "role",
+        "features",
+        "source_frame"
+      ],
+      "parent_scalar_context": {
+        "role": "receipt",
+        "source_frame": [
+          "06_09",
+          "12",
+          "23->24"
+        ]
+      },
+      "pointer": "$.branches[0].features"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "broken_ladder",
+      "ladder": [
+        3,
+        9,
+        6,
+        12
+      ],
+      "object_keys": [
+        "source_pair_endpoint_set",
+        "source_root_slot",
+        "source_limit_transition",
+        "source_side_gap_signature",
+        "phase_step_mod15",
+        "anchor",
+        "outside_moving_endpoint",
+        "inside_moving_endpoint",
+        "ladder_signature",
+        "ladder_set_signature",
+        "ladder_is_sorted",
+        "ladder_is_strict_ascending",
+        "ladder_linear_delta_signature",
+        "ladder_mod_delta_signature",
+        "ladder_linear_deltas_all_equal",
+        "ladder_mod_deltas_all_equal",
+        "ladder_linear_step_if_equal",
+        "ladder_mod_step_if_equal",
+        "anchor_distance_to_source_root",
+        "inside_distance_to_source_root",
+        "nearest_distance_to_source_root",
+        "farthest_distance_to_source_root",
+        "nearest_anchor_endpoints_signature",
+        "farthest_anchor_endpoints_signature",
+        "anchor_is_nearest_endpoint",
+        "anchor_is_farthest_endpoint",
+        "phase_step_equals_anchor_distance",
+        "phase_step_equals_nearest_distance",
+        "phase_step_equals_farthest_distance",
+        "anchor_distance_less_than_inside_distance",
+        "inside_between_outside_and_anchor_linearly",
+        "anchor_between_inside_and_root_linearly",
+        "anchor_between_outside_and_root_linearly"
+      ],
+      "object_scalar_context": {
+        "anchor": 6,
+        "anchor_between_inside_and_root_linearly": false,
+        "anchor_between_outside_and_root_linearly": true,
+        "anchor_distance_less_than_inside_distance": false,
+        "anchor_distance_to_source_root": 6,
+        "anchor_is_farthest_endpoint": true,
+        "anchor_is_nearest_endpoint": false,
+        "farthest_anchor_endpoints_signature": "6",
+        "farthest_distance_to_source_root": 6,
+        "inside_between_outside_and_anchor_linearly": false,
+        "inside_distance_to_source_root": 3,
+        "inside_moving_endpoint": 9,
+        "ladder_is_sorted": false,
+        "ladder_is_strict_ascending": false,
+        "ladder_linear_delta_signature": "6,-3,6",
+        "ladder_linear_deltas_all_equal": false,
+        "ladder_linear_step_if_equal": null,
+        "ladder_mod_delta_signature": "6,12,6",
+        "ladder_mod_deltas_all_equal": false,
+        "ladder_mod_step_if_equal": null,
+        "ladder_set_signature": "3,6,9,12",
+        "ladder_signature": "3,9,6,12",
+        "nearest_anchor_endpoints_signature": "9",
+        "nearest_distance_to_source_root": 3,
+        "outside_moving_endpoint": 3,
+        "phase_step_equals_anchor_distance": true,
+        "phase_step_equals_farthest_distance": true,
+        "phase_step_equals_nearest_distance": false,
+        "phase_step_mod15": 6,
+        "source_limit_transition": "23->24",
+        "source_pair_endpoint_set": "6,9",
+        "source_root_slot": 12,
+        "source_side_gap_signature": "9,11"
+      },
+      "parent_keys": [
+        "role",
+        "features",
+        "source_frame"
+      ],
+      "parent_scalar_context": {
+        "role": "absent",
+        "source_frame": [
+          "06_09",
+          "12",
+          "23->24"
+        ]
+      },
+      "pointer": "$.branches[1].features"
+    },
+    {
+      "key": "ladder_set_signature",
+      "kind": "target_clean_ladder",
+      "ladder": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "object_keys": [
+        "source_pair_endpoint_set",
+        "source_root_slot",
+        "source_limit_transition",
+        "source_side_gap_signature",
+        "phase_step_mod15",
+        "anchor",
+        "outside_moving_endpoint",
+        "inside_moving_endpoint",
+        "ladder_signature",
+        "ladder_set_signature",
+        "ladder_is_sorted",
+        "ladder_is_strict_ascending",
+        "ladder_linear_delta_signature",
+        "ladder_mod_delta_signature",
+        "ladder_linear_deltas_all_equal",
+        "ladder_mod_deltas_all_equal",
+        "ladder_linear_step_if_equal",
+        "ladder_mod_step_if_equal",
+        "anchor_distance_to_source_root",
+        "inside_distance_to_source_root",
+        "nearest_distance_to_source_root",
+        "farthest_distance_to_source_root",
+        "nearest_anchor_endpoints_signature",
+        "farthest_anchor_endpoints_signature",
+        "anchor_is_nearest_endpoint",
+        "anchor_is_farthest_endpoint",
+        "phase_step_equals_anchor_distance",
+        "phase_step_equals_nearest_distance",
+        "phase_step_equals_farthest_distance",
+        "anchor_distance_less_than_inside_distance",
+        "inside_between_outside_and_anchor_linearly",
+        "anchor_between_inside_and_root_linearly",
+        "anchor_between_outside_and_root_linearly"
+      ],
+      "object_scalar_context": {
+        "anchor": 6,
+        "anchor_between_inside_and_root_linearly": false,
+        "anchor_between_outside_and_root_linearly": true,
+        "anchor_distance_less_than_inside_distance": false,
+        "anchor_distance_to_source_root": 6,
+        "anchor_is_farthest_endpoint": true,
+        "anchor_is_nearest_endpoint": false,
+        "farthest_anchor_endpoints_signature": "6",
+        "farthest_distance_to_source_root": 6,
+        "inside_between_outside_and_anchor_linearly": false,
+        "inside_distance_to_source_root": 3,
+        "inside_moving_endpoint": 9,
+        "ladder_is_sorted": false,
+        "ladder_is_strict_ascending": false,
+        "ladder_linear_delta_signature": "6,-3,6",
+        "ladder_linear_deltas_all_equal": false,
+        "ladder_linear_step_if_equal": null,
+        "ladder_mod_delta_signature": "6,12,6",
+        "ladder_mod_deltas_all_equal": false,
+        "ladder_mod_step_if_equal": null,
+        "ladder_set_signature": "3,6,9,12",
+        "ladder_signature": "3,9,6,12",
+        "nearest_anchor_endpoints_signature": "9",
+        "nearest_distance_to_source_root": 3,
+        "outside_moving_endpoint": 3,
+        "phase_step_equals_anchor_distance": true,
+        "phase_step_equals_farthest_distance": true,
+        "phase_step_equals_nearest_distance": false,
+        "phase_step_mod15": 6,
+        "source_limit_transition": "23->24",
+        "source_pair_endpoint_set": "6,9",
+        "source_root_slot": 12,
+        "source_side_gap_signature": "9,11"
+      },
+      "parent_keys": [
+        "role",
+        "features",
+        "source_frame"
+      ],
+      "parent_scalar_context": {
+        "role": "absent",
+        "source_frame": [
+          "06_09",
+          "12",
+          "23->24"
+        ]
+      },
+      "pointer": "$.branches[1].features"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "target_clean_ladder",
+      "ladder": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 9,
+        "anchor_distance_to_source_root": 3,
+        "ladder_signature": "3,6,9,12",
+        "phase_step_mod15": 3,
+        "role": "receipt"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "anchor_distance_less_than_inside_distance",
+        "selected_count": 1,
+        "selected_roles": [
+          "receipt"
+        ],
+        "selects_absent": false,
+        "selects_receipt": true,
+        "value": true
+      },
+      "pointer": "$.preferred_receipt_holds[0].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "target_clean_ladder",
+      "ladder": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 9,
+        "anchor_distance_to_source_root": 3,
+        "ladder_signature": "3,6,9,12",
+        "phase_step_mod15": 3,
+        "role": "receipt"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "anchor_is_nearest_endpoint",
+        "selected_count": 1,
+        "selected_roles": [
+          "receipt"
+        ],
+        "selects_absent": false,
+        "selects_receipt": true,
+        "value": true
+      },
+      "pointer": "$.preferred_receipt_holds[1].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "target_clean_ladder",
+      "ladder": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 9,
+        "anchor_distance_to_source_root": 3,
+        "ladder_signature": "3,6,9,12",
+        "phase_step_mod15": 3,
+        "role": "receipt"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "inside_between_outside_and_anchor_linearly",
+        "selected_count": 1,
+        "selected_roles": [
+          "receipt"
+        ],
+        "selects_absent": false,
+        "selects_receipt": true,
+        "value": true
+      },
+      "pointer": "$.preferred_receipt_holds[2].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "target_clean_ladder",
+      "ladder": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 9,
+        "anchor_distance_to_source_root": 3,
+        "ladder_signature": "3,6,9,12",
+        "phase_step_mod15": 3,
+        "role": "receipt"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "ladder_is_sorted",
+        "selected_count": 1,
+        "selected_roles": [
+          "receipt"
+        ],
+        "selects_absent": false,
+        "selects_receipt": true,
+        "value": true
+      },
+      "pointer": "$.preferred_receipt_holds[3].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "target_clean_ladder",
+      "ladder": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 9,
+        "anchor_distance_to_source_root": 3,
+        "ladder_signature": "3,6,9,12",
+        "phase_step_mod15": 3,
+        "role": "receipt"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "ladder_is_strict_ascending",
+        "selected_count": 1,
+        "selected_roles": [
+          "receipt"
+        ],
+        "selects_absent": false,
+        "selects_receipt": true,
+        "value": true
+      },
+      "pointer": "$.preferred_receipt_holds[4].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "target_clean_ladder",
+      "ladder": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 9,
+        "anchor_distance_to_source_root": 3,
+        "ladder_signature": "3,6,9,12",
+        "phase_step_mod15": 3,
+        "role": "receipt"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "ladder_linear_deltas_all_equal",
+        "selected_count": 1,
+        "selected_roles": [
+          "receipt"
+        ],
+        "selects_absent": false,
+        "selects_receipt": true,
+        "value": true
+      },
+      "pointer": "$.preferred_receipt_holds[5].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "target_clean_ladder",
+      "ladder": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 9,
+        "anchor_distance_to_source_root": 3,
+        "ladder_signature": "3,6,9,12",
+        "phase_step_mod15": 3,
+        "role": "receipt"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "ladder_linear_step_if_equal",
+        "selected_count": 1,
+        "selected_roles": [
+          "receipt"
+        ],
+        "selects_absent": false,
+        "selects_receipt": true,
+        "value": 3
+      },
+      "pointer": "$.preferred_receipt_holds[6].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "target_clean_ladder",
+      "ladder": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 9,
+        "anchor_distance_to_source_root": 3,
+        "ladder_signature": "3,6,9,12",
+        "phase_step_mod15": 3,
+        "role": "receipt"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "ladder_mod_deltas_all_equal",
+        "selected_count": 1,
+        "selected_roles": [
+          "receipt"
+        ],
+        "selects_absent": false,
+        "selects_receipt": true,
+        "value": true
+      },
+      "pointer": "$.preferred_receipt_holds[7].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "target_clean_ladder",
+      "ladder": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 9,
+        "anchor_distance_to_source_root": 3,
+        "ladder_signature": "3,6,9,12",
+        "phase_step_mod15": 3,
+        "role": "receipt"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "ladder_mod_step_if_equal",
+        "selected_count": 1,
+        "selected_roles": [
+          "receipt"
+        ],
+        "selects_absent": false,
+        "selects_receipt": true,
+        "value": 3
+      },
+      "pointer": "$.preferred_receipt_holds[8].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "target_clean_ladder",
+      "ladder": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 9,
+        "anchor_distance_to_source_root": 3,
+        "ladder_signature": "3,6,9,12",
+        "phase_step_mod15": 3,
+        "role": "receipt"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "phase_step_equals_nearest_distance",
+        "selected_count": 1,
+        "selected_roles": [
+          "receipt"
+        ],
+        "selects_absent": false,
+        "selects_receipt": true,
+        "value": true
+      },
+      "pointer": "$.preferred_receipt_holds[9].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "target_clean_ladder",
+      "ladder": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 9,
+        "anchor_distance_to_source_root": 3,
+        "ladder_signature": "3,6,9,12",
+        "phase_step_mod15": 3,
+        "role": "receipt"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "anchor",
+        "selected_count": 1,
+        "selected_roles": [
+          "receipt"
+        ],
+        "selects_absent": false,
+        "selects_receipt": true,
+        "value": 9
+      },
+      "pointer": "$.receipt_selectors[0].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "target_clean_ladder",
+      "ladder": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 9,
+        "anchor_distance_to_source_root": 3,
+        "ladder_signature": "3,6,9,12",
+        "phase_step_mod15": 3,
+        "role": "receipt"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "anchor_between_inside_and_root_linearly",
+        "selected_count": 1,
+        "selected_roles": [
+          "receipt"
+        ],
+        "selects_absent": false,
+        "selects_receipt": true,
+        "value": true
+      },
+      "pointer": "$.receipt_selectors[1].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "target_clean_ladder",
+      "ladder": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 9,
+        "anchor_distance_to_source_root": 3,
+        "ladder_signature": "3,6,9,12",
+        "phase_step_mod15": 3,
+        "role": "receipt"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "anchor_distance_less_than_inside_distance",
+        "selected_count": 1,
+        "selected_roles": [
+          "receipt"
+        ],
+        "selects_absent": false,
+        "selects_receipt": true,
+        "value": true
+      },
+      "pointer": "$.receipt_selectors[2].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "target_clean_ladder",
+      "ladder": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 9,
+        "anchor_distance_to_source_root": 3,
+        "ladder_signature": "3,6,9,12",
+        "phase_step_mod15": 3,
+        "role": "receipt"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "anchor_distance_to_source_root",
+        "selected_count": 1,
+        "selected_roles": [
+          "receipt"
+        ],
+        "selects_absent": false,
+        "selects_receipt": true,
+        "value": 3
+      },
+      "pointer": "$.receipt_selectors[3].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "target_clean_ladder",
+      "ladder": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 9,
+        "anchor_distance_to_source_root": 3,
+        "ladder_signature": "3,6,9,12",
+        "phase_step_mod15": 3,
+        "role": "receipt"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "anchor_is_farthest_endpoint",
+        "selected_count": 1,
+        "selected_roles": [
+          "receipt"
+        ],
+        "selects_absent": false,
+        "selects_receipt": true,
+        "value": false
+      },
+      "pointer": "$.receipt_selectors[4].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "target_clean_ladder",
+      "ladder": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 9,
+        "anchor_distance_to_source_root": 3,
+        "ladder_signature": "3,6,9,12",
+        "phase_step_mod15": 3,
+        "role": "receipt"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "anchor_is_nearest_endpoint",
+        "selected_count": 1,
+        "selected_roles": [
+          "receipt"
+        ],
+        "selects_absent": false,
+        "selects_receipt": true,
+        "value": true
+      },
+      "pointer": "$.receipt_selectors[5].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "target_clean_ladder",
+      "ladder": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 9,
+        "anchor_distance_to_source_root": 3,
+        "ladder_signature": "3,6,9,12",
+        "phase_step_mod15": 3,
+        "role": "receipt"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "inside_between_outside_and_anchor_linearly",
+        "selected_count": 1,
+        "selected_roles": [
+          "receipt"
+        ],
+        "selects_absent": false,
+        "selects_receipt": true,
+        "value": true
+      },
+      "pointer": "$.receipt_selectors[6].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "target_clean_ladder",
+      "ladder": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 9,
+        "anchor_distance_to_source_root": 3,
+        "ladder_signature": "3,6,9,12",
+        "phase_step_mod15": 3,
+        "role": "receipt"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "inside_distance_to_source_root",
+        "selected_count": 1,
+        "selected_roles": [
+          "receipt"
+        ],
+        "selects_absent": false,
+        "selects_receipt": true,
+        "value": 6
+      },
+      "pointer": "$.receipt_selectors[7].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "target_clean_ladder",
+      "ladder": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 9,
+        "anchor_distance_to_source_root": 3,
+        "ladder_signature": "3,6,9,12",
+        "phase_step_mod15": 3,
+        "role": "receipt"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "inside_moving_endpoint",
+        "selected_count": 1,
+        "selected_roles": [
+          "receipt"
+        ],
+        "selects_absent": false,
+        "selects_receipt": true,
+        "value": 6
+      },
+      "pointer": "$.receipt_selectors[8].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "target_clean_ladder",
+      "ladder": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 9,
+        "anchor_distance_to_source_root": 3,
+        "ladder_signature": "3,6,9,12",
+        "phase_step_mod15": 3,
+        "role": "receipt"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "ladder_is_sorted",
+        "selected_count": 1,
+        "selected_roles": [
+          "receipt"
+        ],
+        "selects_absent": false,
+        "selects_receipt": true,
+        "value": true
+      },
+      "pointer": "$.receipt_selectors[9].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "target_clean_ladder",
+      "ladder": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 9,
+        "anchor_distance_to_source_root": 3,
+        "ladder_signature": "3,6,9,12",
+        "phase_step_mod15": 3,
+        "role": "receipt"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "ladder_is_strict_ascending",
+        "selected_count": 1,
+        "selected_roles": [
+          "receipt"
+        ],
+        "selects_absent": false,
+        "selects_receipt": true,
+        "value": true
+      },
+      "pointer": "$.receipt_selectors[10].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "target_clean_ladder",
+      "ladder": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 9,
+        "anchor_distance_to_source_root": 3,
+        "ladder_signature": "3,6,9,12",
+        "phase_step_mod15": 3,
+        "role": "receipt"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "ladder_linear_delta_signature",
+        "selected_count": 1,
+        "selected_roles": [
+          "receipt"
+        ],
+        "selects_absent": false,
+        "selects_receipt": true,
+        "value": "3,3,3"
+      },
+      "pointer": "$.receipt_selectors[11].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "target_clean_ladder",
+      "ladder": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 9,
+        "anchor_distance_to_source_root": 3,
+        "ladder_signature": "3,6,9,12",
+        "phase_step_mod15": 3,
+        "role": "receipt"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "ladder_linear_deltas_all_equal",
+        "selected_count": 1,
+        "selected_roles": [
+          "receipt"
+        ],
+        "selects_absent": false,
+        "selects_receipt": true,
+        "value": true
+      },
+      "pointer": "$.receipt_selectors[12].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "target_clean_ladder",
+      "ladder": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 9,
+        "anchor_distance_to_source_root": 3,
+        "ladder_signature": "3,6,9,12",
+        "phase_step_mod15": 3,
+        "role": "receipt"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "ladder_linear_step_if_equal",
+        "selected_count": 1,
+        "selected_roles": [
+          "receipt"
+        ],
+        "selects_absent": false,
+        "selects_receipt": true,
+        "value": 3
+      },
+      "pointer": "$.receipt_selectors[13].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "target_clean_ladder",
+      "ladder": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 9,
+        "anchor_distance_to_source_root": 3,
+        "ladder_signature": "3,6,9,12",
+        "phase_step_mod15": 3,
+        "role": "receipt"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "ladder_mod_delta_signature",
+        "selected_count": 1,
+        "selected_roles": [
+          "receipt"
+        ],
+        "selects_absent": false,
+        "selects_receipt": true,
+        "value": "3,3,3"
+      },
+      "pointer": "$.receipt_selectors[14].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "target_clean_ladder",
+      "ladder": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 9,
+        "anchor_distance_to_source_root": 3,
+        "ladder_signature": "3,6,9,12",
+        "phase_step_mod15": 3,
+        "role": "receipt"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "ladder_mod_deltas_all_equal",
+        "selected_count": 1,
+        "selected_roles": [
+          "receipt"
+        ],
+        "selects_absent": false,
+        "selects_receipt": true,
+        "value": true
+      },
+      "pointer": "$.receipt_selectors[15].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "target_clean_ladder",
+      "ladder": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 9,
+        "anchor_distance_to_source_root": 3,
+        "ladder_signature": "3,6,9,12",
+        "phase_step_mod15": 3,
+        "role": "receipt"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "ladder_mod_step_if_equal",
+        "selected_count": 1,
+        "selected_roles": [
+          "receipt"
+        ],
+        "selects_absent": false,
+        "selects_receipt": true,
+        "value": 3
+      },
+      "pointer": "$.receipt_selectors[16].selected_branches[0]"
+    },
+    {
+      "key": "value",
+      "kind": "target_clean_ladder",
+      "ladder": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "object_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "object_scalar_context": {
+        "feature": "ladder_signature",
+        "selected_count": 1,
+        "selected_roles": [
+          "receipt"
+        ],
+        "selects_absent": false,
+        "selects_receipt": true,
+        "value": "3,6,9,12"
+      },
+      "parent_keys": [
+        "schema",
+        "version",
+        "status",
+        "created_utc",
+        "git_head",
+        "audit_pass",
+        "verdict",
+        "question",
+        "asymmetry_status",
+        "reading",
+        "feature_boundary",
+        "branches",
+        "preferred_receipt_holds",
+        "receipt_selectors",
+        "absent_selectors",
+        "counts",
+        "solid_hold_summary",
+        "interpretation_boundary",
+        "boundary",
+        "next_allowed_math_acts",
+        "checks",
+        "failed_checks",
+        "hashes"
+      ],
+      "parent_scalar_context": {
+        "asymmetry_status": "pre_receipt_source_asymmetry_found",
+        "audit_pass": true,
+        "created_utc": "2026-06-18T15:09:19Z",
+        "failed_checks": [],
+        "git_head": "db616ea Record G900 six-nine fork plateau checkpoint",
+        "interpretation_boundary": [
+          "This audit finds a pre-receipt source-side asymmetry inside the observed [9,11] fork.",
+          "It does not derive why the source construction produces outside=3, inside=6/9, anchor=9/6, or root=12.",
+          "It does not prove a broad nearest-anchor law beyond the sole observed fork.",
+          "No closure witness, transport relation, channel, force, physics, GR, Maxwell, QCD, electroweak, or unification claim is made."
+        ],
+        "next_allowed_math_acts": [
+          "derive_ladder_3_6_9_12_from_source_construction",
+          "derive_source_gap_9_11_from_native_fields",
+          "test_if_clean_ladder_step3_appears_elsewhere",
+          "search_richer_source_artifacts_for_additional_forks"
+        ],
+        "question": "Before receipt or registry lookup, does the six-nine [9,11] fork contain a source-side asymmetry distinguishing the receipt branch?",
+        "reading": "A pre-receipt source-side asymmetry is present inside the six-nine [9,11] fork. The receipt branch has ordered ladder [3,6,9,12] with equal deltas [3,3,3], and its anchor is the nearest endpoint to source root 12. The absent branch uses the same value set but the order [3,9,6,12] breaks that clean ladder. This is a solid native-source hold, but it does not yet derive why the source construction produces these values.",
+        "schema": "g900.six_nine_native_anchor_asymmetry_audit",
+        "solid_hold_summary": [
+          "receipt branch ladder [3,6,9,12] is sorted and strictly ascending",
+          "receipt branch ladder linear deltas are [3,3,3]",
+          "receipt branch ladder mod15 deltas are [3,3,3]",
+          "receipt branch anchor 9 is nearest to source root 12",
+          "absent branch has same value set but order [3,9,6,12], breaking the clean ladder"
+        ],
+        "status": "six_nine_native_anchor_asymmetry_audit_recorded",
+        "verdict": "six_nine_native_anchor_asymmetry_audit_passed",
+        "version": 1
+      },
+      "pointer": "$.receipt_selectors[17]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "target_clean_ladder",
+      "ladder": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 9,
+        "anchor_distance_to_source_root": 3,
+        "ladder_signature": "3,6,9,12",
+        "phase_step_mod15": 3,
+        "role": "receipt"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "ladder_signature",
+        "selected_count": 1,
+        "selected_roles": [
+          "receipt"
+        ],
+        "selects_absent": false,
+        "selects_receipt": true,
+        "value": "3,6,9,12"
+      },
+      "pointer": "$.receipt_selectors[17].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "target_clean_ladder",
+      "ladder": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 9,
+        "anchor_distance_to_source_root": 3,
+        "ladder_signature": "3,6,9,12",
+        "phase_step_mod15": 3,
+        "role": "receipt"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "phase_step_equals_farthest_distance",
+        "selected_count": 1,
+        "selected_roles": [
+          "receipt"
+        ],
+        "selects_absent": false,
+        "selects_receipt": true,
+        "value": false
+      },
+      "pointer": "$.receipt_selectors[18].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "target_clean_ladder",
+      "ladder": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 9,
+        "anchor_distance_to_source_root": 3,
+        "ladder_signature": "3,6,9,12",
+        "phase_step_mod15": 3,
+        "role": "receipt"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "phase_step_equals_nearest_distance",
+        "selected_count": 1,
+        "selected_roles": [
+          "receipt"
+        ],
+        "selects_absent": false,
+        "selects_receipt": true,
+        "value": true
+      },
+      "pointer": "$.receipt_selectors[19].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "target_clean_ladder",
+      "ladder": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 9,
+        "anchor_distance_to_source_root": 3,
+        "ladder_signature": "3,6,9,12",
+        "phase_step_mod15": 3,
+        "role": "receipt"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "phase_step_mod15",
+        "selected_count": 1,
+        "selected_roles": [
+          "receipt"
+        ],
+        "selects_absent": false,
+        "selects_receipt": true,
+        "value": 3
+      },
+      "pointer": "$.receipt_selectors[20].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "broken_ladder",
+      "ladder": [
+        3,
+        9,
+        6,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 6,
+        "anchor_distance_to_source_root": 6,
+        "ladder_signature": "3,9,6,12",
+        "phase_step_mod15": 6,
+        "role": "absent"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "anchor",
+        "selected_count": 1,
+        "selected_roles": [
+          "absent"
+        ],
+        "selects_absent": true,
+        "selects_receipt": false,
+        "value": 6
+      },
+      "pointer": "$.absent_selectors[0].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "broken_ladder",
+      "ladder": [
+        3,
+        9,
+        6,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 6,
+        "anchor_distance_to_source_root": 6,
+        "ladder_signature": "3,9,6,12",
+        "phase_step_mod15": 6,
+        "role": "absent"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "anchor_between_inside_and_root_linearly",
+        "selected_count": 1,
+        "selected_roles": [
+          "absent"
+        ],
+        "selects_absent": true,
+        "selects_receipt": false,
+        "value": false
+      },
+      "pointer": "$.absent_selectors[1].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "broken_ladder",
+      "ladder": [
+        3,
+        9,
+        6,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 6,
+        "anchor_distance_to_source_root": 6,
+        "ladder_signature": "3,9,6,12",
+        "phase_step_mod15": 6,
+        "role": "absent"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "anchor_distance_less_than_inside_distance",
+        "selected_count": 1,
+        "selected_roles": [
+          "absent"
+        ],
+        "selects_absent": true,
+        "selects_receipt": false,
+        "value": false
+      },
+      "pointer": "$.absent_selectors[2].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "broken_ladder",
+      "ladder": [
+        3,
+        9,
+        6,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 6,
+        "anchor_distance_to_source_root": 6,
+        "ladder_signature": "3,9,6,12",
+        "phase_step_mod15": 6,
+        "role": "absent"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "anchor_distance_to_source_root",
+        "selected_count": 1,
+        "selected_roles": [
+          "absent"
+        ],
+        "selects_absent": true,
+        "selects_receipt": false,
+        "value": 6
+      },
+      "pointer": "$.absent_selectors[3].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "broken_ladder",
+      "ladder": [
+        3,
+        9,
+        6,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 6,
+        "anchor_distance_to_source_root": 6,
+        "ladder_signature": "3,9,6,12",
+        "phase_step_mod15": 6,
+        "role": "absent"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "anchor_is_farthest_endpoint",
+        "selected_count": 1,
+        "selected_roles": [
+          "absent"
+        ],
+        "selects_absent": true,
+        "selects_receipt": false,
+        "value": true
+      },
+      "pointer": "$.absent_selectors[4].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "broken_ladder",
+      "ladder": [
+        3,
+        9,
+        6,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 6,
+        "anchor_distance_to_source_root": 6,
+        "ladder_signature": "3,9,6,12",
+        "phase_step_mod15": 6,
+        "role": "absent"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "anchor_is_nearest_endpoint",
+        "selected_count": 1,
+        "selected_roles": [
+          "absent"
+        ],
+        "selects_absent": true,
+        "selects_receipt": false,
+        "value": false
+      },
+      "pointer": "$.absent_selectors[5].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "broken_ladder",
+      "ladder": [
+        3,
+        9,
+        6,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 6,
+        "anchor_distance_to_source_root": 6,
+        "ladder_signature": "3,9,6,12",
+        "phase_step_mod15": 6,
+        "role": "absent"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "inside_between_outside_and_anchor_linearly",
+        "selected_count": 1,
+        "selected_roles": [
+          "absent"
+        ],
+        "selects_absent": true,
+        "selects_receipt": false,
+        "value": false
+      },
+      "pointer": "$.absent_selectors[6].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "broken_ladder",
+      "ladder": [
+        3,
+        9,
+        6,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 6,
+        "anchor_distance_to_source_root": 6,
+        "ladder_signature": "3,9,6,12",
+        "phase_step_mod15": 6,
+        "role": "absent"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "inside_distance_to_source_root",
+        "selected_count": 1,
+        "selected_roles": [
+          "absent"
+        ],
+        "selects_absent": true,
+        "selects_receipt": false,
+        "value": 3
+      },
+      "pointer": "$.absent_selectors[7].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "broken_ladder",
+      "ladder": [
+        3,
+        9,
+        6,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 6,
+        "anchor_distance_to_source_root": 6,
+        "ladder_signature": "3,9,6,12",
+        "phase_step_mod15": 6,
+        "role": "absent"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "inside_moving_endpoint",
+        "selected_count": 1,
+        "selected_roles": [
+          "absent"
+        ],
+        "selects_absent": true,
+        "selects_receipt": false,
+        "value": 9
+      },
+      "pointer": "$.absent_selectors[8].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "broken_ladder",
+      "ladder": [
+        3,
+        9,
+        6,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 6,
+        "anchor_distance_to_source_root": 6,
+        "ladder_signature": "3,9,6,12",
+        "phase_step_mod15": 6,
+        "role": "absent"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "ladder_is_sorted",
+        "selected_count": 1,
+        "selected_roles": [
+          "absent"
+        ],
+        "selects_absent": true,
+        "selects_receipt": false,
+        "value": false
+      },
+      "pointer": "$.absent_selectors[9].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "broken_ladder",
+      "ladder": [
+        3,
+        9,
+        6,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 6,
+        "anchor_distance_to_source_root": 6,
+        "ladder_signature": "3,9,6,12",
+        "phase_step_mod15": 6,
+        "role": "absent"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "ladder_is_strict_ascending",
+        "selected_count": 1,
+        "selected_roles": [
+          "absent"
+        ],
+        "selects_absent": true,
+        "selects_receipt": false,
+        "value": false
+      },
+      "pointer": "$.absent_selectors[10].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "broken_ladder",
+      "ladder": [
+        3,
+        9,
+        6,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 6,
+        "anchor_distance_to_source_root": 6,
+        "ladder_signature": "3,9,6,12",
+        "phase_step_mod15": 6,
+        "role": "absent"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "ladder_linear_delta_signature",
+        "selected_count": 1,
+        "selected_roles": [
+          "absent"
+        ],
+        "selects_absent": true,
+        "selects_receipt": false,
+        "value": "6,-3,6"
+      },
+      "pointer": "$.absent_selectors[11].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "broken_ladder",
+      "ladder": [
+        3,
+        9,
+        6,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 6,
+        "anchor_distance_to_source_root": 6,
+        "ladder_signature": "3,9,6,12",
+        "phase_step_mod15": 6,
+        "role": "absent"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "ladder_linear_deltas_all_equal",
+        "selected_count": 1,
+        "selected_roles": [
+          "absent"
+        ],
+        "selects_absent": true,
+        "selects_receipt": false,
+        "value": false
+      },
+      "pointer": "$.absent_selectors[12].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "broken_ladder",
+      "ladder": [
+        3,
+        9,
+        6,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 6,
+        "anchor_distance_to_source_root": 6,
+        "ladder_signature": "3,9,6,12",
+        "phase_step_mod15": 6,
+        "role": "absent"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "ladder_linear_step_if_equal",
+        "selected_count": 1,
+        "selected_roles": [
+          "absent"
+        ],
+        "selects_absent": true,
+        "selects_receipt": false,
+        "value": null
+      },
+      "pointer": "$.absent_selectors[13].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "broken_ladder",
+      "ladder": [
+        3,
+        9,
+        6,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 6,
+        "anchor_distance_to_source_root": 6,
+        "ladder_signature": "3,9,6,12",
+        "phase_step_mod15": 6,
+        "role": "absent"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "ladder_mod_delta_signature",
+        "selected_count": 1,
+        "selected_roles": [
+          "absent"
+        ],
+        "selects_absent": true,
+        "selects_receipt": false,
+        "value": "6,12,6"
+      },
+      "pointer": "$.absent_selectors[14].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "broken_ladder",
+      "ladder": [
+        3,
+        9,
+        6,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 6,
+        "anchor_distance_to_source_root": 6,
+        "ladder_signature": "3,9,6,12",
+        "phase_step_mod15": 6,
+        "role": "absent"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "ladder_mod_deltas_all_equal",
+        "selected_count": 1,
+        "selected_roles": [
+          "absent"
+        ],
+        "selects_absent": true,
+        "selects_receipt": false,
+        "value": false
+      },
+      "pointer": "$.absent_selectors[15].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "broken_ladder",
+      "ladder": [
+        3,
+        9,
+        6,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 6,
+        "anchor_distance_to_source_root": 6,
+        "ladder_signature": "3,9,6,12",
+        "phase_step_mod15": 6,
+        "role": "absent"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "ladder_mod_step_if_equal",
+        "selected_count": 1,
+        "selected_roles": [
+          "absent"
+        ],
+        "selects_absent": true,
+        "selects_receipt": false,
+        "value": null
+      },
+      "pointer": "$.absent_selectors[16].selected_branches[0]"
+    },
+    {
+      "key": "value",
+      "kind": "broken_ladder",
+      "ladder": [
+        3,
+        9,
+        6,
+        12
+      ],
+      "object_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "object_scalar_context": {
+        "feature": "ladder_signature",
+        "selected_count": 1,
+        "selected_roles": [
+          "absent"
+        ],
+        "selects_absent": true,
+        "selects_receipt": false,
+        "value": "3,9,6,12"
+      },
+      "parent_keys": [
+        "schema",
+        "version",
+        "status",
+        "created_utc",
+        "git_head",
+        "audit_pass",
+        "verdict",
+        "question",
+        "asymmetry_status",
+        "reading",
+        "feature_boundary",
+        "branches",
+        "preferred_receipt_holds",
+        "receipt_selectors",
+        "absent_selectors",
+        "counts",
+        "solid_hold_summary",
+        "interpretation_boundary",
+        "boundary",
+        "next_allowed_math_acts",
+        "checks",
+        "failed_checks",
+        "hashes"
+      ],
+      "parent_scalar_context": {
+        "asymmetry_status": "pre_receipt_source_asymmetry_found",
+        "audit_pass": true,
+        "created_utc": "2026-06-18T15:09:19Z",
+        "failed_checks": [],
+        "git_head": "db616ea Record G900 six-nine fork plateau checkpoint",
+        "interpretation_boundary": [
+          "This audit finds a pre-receipt source-side asymmetry inside the observed [9,11] fork.",
+          "It does not derive why the source construction produces outside=3, inside=6/9, anchor=9/6, or root=12.",
+          "It does not prove a broad nearest-anchor law beyond the sole observed fork.",
+          "No closure witness, transport relation, channel, force, physics, GR, Maxwell, QCD, electroweak, or unification claim is made."
+        ],
+        "next_allowed_math_acts": [
+          "derive_ladder_3_6_9_12_from_source_construction",
+          "derive_source_gap_9_11_from_native_fields",
+          "test_if_clean_ladder_step3_appears_elsewhere",
+          "search_richer_source_artifacts_for_additional_forks"
+        ],
+        "question": "Before receipt or registry lookup, does the six-nine [9,11] fork contain a source-side asymmetry distinguishing the receipt branch?",
+        "reading": "A pre-receipt source-side asymmetry is present inside the six-nine [9,11] fork. The receipt branch has ordered ladder [3,6,9,12] with equal deltas [3,3,3], and its anchor is the nearest endpoint to source root 12. The absent branch uses the same value set but the order [3,9,6,12] breaks that clean ladder. This is a solid native-source hold, but it does not yet derive why the source construction produces these values.",
+        "schema": "g900.six_nine_native_anchor_asymmetry_audit",
+        "solid_hold_summary": [
+          "receipt branch ladder [3,6,9,12] is sorted and strictly ascending",
+          "receipt branch ladder linear deltas are [3,3,3]",
+          "receipt branch ladder mod15 deltas are [3,3,3]",
+          "receipt branch anchor 9 is nearest to source root 12",
+          "absent branch has same value set but order [3,9,6,12], breaking the clean ladder"
+        ],
+        "status": "six_nine_native_anchor_asymmetry_audit_recorded",
+        "verdict": "six_nine_native_anchor_asymmetry_audit_passed",
+        "version": 1
+      },
+      "pointer": "$.absent_selectors[17]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "broken_ladder",
+      "ladder": [
+        3,
+        9,
+        6,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 6,
+        "anchor_distance_to_source_root": 6,
+        "ladder_signature": "3,9,6,12",
+        "phase_step_mod15": 6,
+        "role": "absent"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "ladder_signature",
+        "selected_count": 1,
+        "selected_roles": [
+          "absent"
+        ],
+        "selects_absent": true,
+        "selects_receipt": false,
+        "value": "3,9,6,12"
+      },
+      "pointer": "$.absent_selectors[17].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "broken_ladder",
+      "ladder": [
+        3,
+        9,
+        6,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 6,
+        "anchor_distance_to_source_root": 6,
+        "ladder_signature": "3,9,6,12",
+        "phase_step_mod15": 6,
+        "role": "absent"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "phase_step_equals_farthest_distance",
+        "selected_count": 1,
+        "selected_roles": [
+          "absent"
+        ],
+        "selects_absent": true,
+        "selects_receipt": false,
+        "value": true
+      },
+      "pointer": "$.absent_selectors[18].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "broken_ladder",
+      "ladder": [
+        3,
+        9,
+        6,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 6,
+        "anchor_distance_to_source_root": 6,
+        "ladder_signature": "3,9,6,12",
+        "phase_step_mod15": 6,
+        "role": "absent"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "phase_step_equals_nearest_distance",
+        "selected_count": 1,
+        "selected_roles": [
+          "absent"
+        ],
+        "selects_absent": true,
+        "selects_receipt": false,
+        "value": false
+      },
+      "pointer": "$.absent_selectors[19].selected_branches[0]"
+    },
+    {
+      "key": "ladder_signature",
+      "kind": "broken_ladder",
+      "ladder": [
+        3,
+        9,
+        6,
+        12
+      ],
+      "object_keys": [
+        "role",
+        "anchor",
+        "phase_step_mod15",
+        "ladder_signature",
+        "anchor_distance_to_source_root"
+      ],
+      "object_scalar_context": {
+        "anchor": 6,
+        "anchor_distance_to_source_root": 6,
+        "ladder_signature": "3,9,6,12",
+        "phase_step_mod15": 6,
+        "role": "absent"
+      },
+      "parent_keys": [
+        "feature",
+        "value",
+        "selected_roles",
+        "selected_count",
+        "selected_branches",
+        "selects_receipt",
+        "selects_absent"
+      ],
+      "parent_scalar_context": {
+        "feature": "phase_step_mod15",
+        "selected_count": 1,
+        "selected_roles": [
+          "absent"
+        ],
+        "selects_absent": true,
+        "selects_receipt": false,
+        "value": 6
+      },
+      "pointer": "$.absent_selectors[20].selected_branches[0]"
+    }
+  ],
+  "source_kind_counts": {
+    "broken_ladder": 23,
+    "target_clean_ladder": 35
+  },
+  "source_ladder_occurrence_count": 58,
+  "target_clean_ladder": [
+    3,
+    6,
+    9,
+    12
+  ],
+  "target_clean_ladder_occurrence_count": 35,
+  "theory_claim": false,
+  "verdict": "schema_microscope_found_clean_and_broken_ladder_occurrences"
+}

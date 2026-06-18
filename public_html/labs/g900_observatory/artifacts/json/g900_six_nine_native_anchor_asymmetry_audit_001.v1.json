@@ -1,0 +1,1198 @@
+{
+  "schema": "g900.six_nine_native_anchor_asymmetry_audit",
+  "version": 1,
+  "status": "six_nine_native_anchor_asymmetry_audit_recorded",
+  "created_utc": "2026-06-18T15:09:19Z",
+  "git_head": "db616ea Record G900 six-nine fork plateau checkpoint",
+  "audit_pass": true,
+  "verdict": "six_nine_native_anchor_asymmetry_audit_passed",
+  "question": "Before receipt or registry lookup, does the six-nine [9,11] fork contain a source-side asymmetry distinguishing the receipt branch?",
+  "asymmetry_status": "pre_receipt_source_asymmetry_found",
+  "reading": "A pre-receipt source-side asymmetry is present inside the six-nine [9,11] fork. The receipt branch has ordered ladder [3,6,9,12] with equal deltas [3,3,3], and its anchor is the nearest endpoint to source root 12. The absent branch uses the same value set but the order [3,9,6,12] breaks that clean ladder. This is a solid native-source hold, but it does not yet derive why the source construction produces these values.",
+  "feature_boundary": {
+    "feature_family": "source_side_pre_receipt_features",
+    "used_fields": [
+      "anchor",
+      "inside_moving_endpoint",
+      "outside_moving_endpoint",
+      "phase_ladder_values",
+      "phase_step_mod15",
+      "source_endpoints",
+      "source_limit_transition",
+      "source_root_slot",
+      "source_side_gap_signature"
+    ],
+    "forbidden_feature_fields": [
+      "boundary_carrier_counts",
+      "channel",
+      "failure_to_receipt",
+      "outside_root_slot",
+      "physics",
+      "predicted_frame",
+      "predicted_pair_key",
+      "prediction_exists",
+      "registry_admission",
+      "support_counts",
+      "viewer",
+      "zero_hit_counts"
+    ],
+    "leaky_used_fields": [],
+    "uses_registry_membership_for_feature_generation": false,
+    "uses_receipt_fields_for_feature_generation": false,
+    "uses_support_fields_for_feature_generation": false
+  },
+  "branches": [
+    {
+      "role": "receipt",
+      "features": {
+        "source_pair_endpoint_set": "6,9",
+        "source_root_slot": 12,
+        "source_limit_transition": "23->24",
+        "source_side_gap_signature": "9,11",
+        "phase_step_mod15": 3,
+        "anchor": 9,
+        "outside_moving_endpoint": 3,
+        "inside_moving_endpoint": 6,
+        "ladder_signature": "3,6,9,12",
+        "ladder_set_signature": "3,6,9,12",
+        "ladder_is_sorted": true,
+        "ladder_is_strict_ascending": true,
+        "ladder_linear_delta_signature": "3,3,3",
+        "ladder_mod_delta_signature": "3,3,3",
+        "ladder_linear_deltas_all_equal": true,
+        "ladder_mod_deltas_all_equal": true,
+        "ladder_linear_step_if_equal": 3,
+        "ladder_mod_step_if_equal": 3,
+        "anchor_distance_to_source_root": 3,
+        "inside_distance_to_source_root": 6,
+        "nearest_distance_to_source_root": 3,
+        "farthest_distance_to_source_root": 6,
+        "nearest_anchor_endpoints_signature": "9",
+        "farthest_anchor_endpoints_signature": "6",
+        "anchor_is_nearest_endpoint": true,
+        "anchor_is_farthest_endpoint": false,
+        "phase_step_equals_anchor_distance": true,
+        "phase_step_equals_nearest_distance": true,
+        "phase_step_equals_farthest_distance": false,
+        "anchor_distance_less_than_inside_distance": true,
+        "inside_between_outside_and_anchor_linearly": true,
+        "anchor_between_inside_and_root_linearly": true,
+        "anchor_between_outside_and_root_linearly": true
+      },
+      "source_frame": [
+        "06_09",
+        "12",
+        "23->24"
+      ]
+    },
+    {
+      "role": "absent",
+      "features": {
+        "source_pair_endpoint_set": "6,9",
+        "source_root_slot": 12,
+        "source_limit_transition": "23->24",
+        "source_side_gap_signature": "9,11",
+        "phase_step_mod15": 6,
+        "anchor": 6,
+        "outside_moving_endpoint": 3,
+        "inside_moving_endpoint": 9,
+        "ladder_signature": "3,9,6,12",
+        "ladder_set_signature": "3,6,9,12",
+        "ladder_is_sorted": false,
+        "ladder_is_strict_ascending": false,
+        "ladder_linear_delta_signature": "6,-3,6",
+        "ladder_mod_delta_signature": "6,12,6",
+        "ladder_linear_deltas_all_equal": false,
+        "ladder_mod_deltas_all_equal": false,
+        "ladder_linear_step_if_equal": null,
+        "ladder_mod_step_if_equal": null,
+        "anchor_distance_to_source_root": 6,
+        "inside_distance_to_source_root": 3,
+        "nearest_distance_to_source_root": 3,
+        "farthest_distance_to_source_root": 6,
+        "nearest_anchor_endpoints_signature": "9",
+        "farthest_anchor_endpoints_signature": "6",
+        "anchor_is_nearest_endpoint": false,
+        "anchor_is_farthest_endpoint": true,
+        "phase_step_equals_anchor_distance": true,
+        "phase_step_equals_nearest_distance": false,
+        "phase_step_equals_farthest_distance": true,
+        "anchor_distance_less_than_inside_distance": false,
+        "inside_between_outside_and_anchor_linearly": false,
+        "anchor_between_inside_and_root_linearly": false,
+        "anchor_between_outside_and_root_linearly": true
+      },
+      "source_frame": [
+        "06_09",
+        "12",
+        "23->24"
+      ]
+    }
+  ],
+  "preferred_receipt_holds": [
+    {
+      "feature": "anchor_distance_less_than_inside_distance",
+      "value": true,
+      "selected_roles": [
+        "receipt"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "receipt",
+          "anchor": 9,
+          "phase_step_mod15": 3,
+          "ladder_signature": "3,6,9,12",
+          "anchor_distance_to_source_root": 3
+        }
+      ],
+      "selects_receipt": true,
+      "selects_absent": false
+    },
+    {
+      "feature": "anchor_is_nearest_endpoint",
+      "value": true,
+      "selected_roles": [
+        "receipt"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "receipt",
+          "anchor": 9,
+          "phase_step_mod15": 3,
+          "ladder_signature": "3,6,9,12",
+          "anchor_distance_to_source_root": 3
+        }
+      ],
+      "selects_receipt": true,
+      "selects_absent": false
+    },
+    {
+      "feature": "inside_between_outside_and_anchor_linearly",
+      "value": true,
+      "selected_roles": [
+        "receipt"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "receipt",
+          "anchor": 9,
+          "phase_step_mod15": 3,
+          "ladder_signature": "3,6,9,12",
+          "anchor_distance_to_source_root": 3
+        }
+      ],
+      "selects_receipt": true,
+      "selects_absent": false
+    },
+    {
+      "feature": "ladder_is_sorted",
+      "value": true,
+      "selected_roles": [
+        "receipt"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "receipt",
+          "anchor": 9,
+          "phase_step_mod15": 3,
+          "ladder_signature": "3,6,9,12",
+          "anchor_distance_to_source_root": 3
+        }
+      ],
+      "selects_receipt": true,
+      "selects_absent": false
+    },
+    {
+      "feature": "ladder_is_strict_ascending",
+      "value": true,
+      "selected_roles": [
+        "receipt"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "receipt",
+          "anchor": 9,
+          "phase_step_mod15": 3,
+          "ladder_signature": "3,6,9,12",
+          "anchor_distance_to_source_root": 3
+        }
+      ],
+      "selects_receipt": true,
+      "selects_absent": false
+    },
+    {
+      "feature": "ladder_linear_deltas_all_equal",
+      "value": true,
+      "selected_roles": [
+        "receipt"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "receipt",
+          "anchor": 9,
+          "phase_step_mod15": 3,
+          "ladder_signature": "3,6,9,12",
+          "anchor_distance_to_source_root": 3
+        }
+      ],
+      "selects_receipt": true,
+      "selects_absent": false
+    },
+    {
+      "feature": "ladder_linear_step_if_equal",
+      "value": 3,
+      "selected_roles": [
+        "receipt"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "receipt",
+          "anchor": 9,
+          "phase_step_mod15": 3,
+          "ladder_signature": "3,6,9,12",
+          "anchor_distance_to_source_root": 3
+        }
+      ],
+      "selects_receipt": true,
+      "selects_absent": false
+    },
+    {
+      "feature": "ladder_mod_deltas_all_equal",
+      "value": true,
+      "selected_roles": [
+        "receipt"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "receipt",
+          "anchor": 9,
+          "phase_step_mod15": 3,
+          "ladder_signature": "3,6,9,12",
+          "anchor_distance_to_source_root": 3
+        }
+      ],
+      "selects_receipt": true,
+      "selects_absent": false
+    },
+    {
+      "feature": "ladder_mod_step_if_equal",
+      "value": 3,
+      "selected_roles": [
+        "receipt"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "receipt",
+          "anchor": 9,
+          "phase_step_mod15": 3,
+          "ladder_signature": "3,6,9,12",
+          "anchor_distance_to_source_root": 3
+        }
+      ],
+      "selects_receipt": true,
+      "selects_absent": false
+    },
+    {
+      "feature": "phase_step_equals_nearest_distance",
+      "value": true,
+      "selected_roles": [
+        "receipt"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "receipt",
+          "anchor": 9,
+          "phase_step_mod15": 3,
+          "ladder_signature": "3,6,9,12",
+          "anchor_distance_to_source_root": 3
+        }
+      ],
+      "selects_receipt": true,
+      "selects_absent": false
+    }
+  ],
+  "receipt_selectors": [
+    {
+      "feature": "anchor",
+      "value": 9,
+      "selected_roles": [
+        "receipt"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "receipt",
+          "anchor": 9,
+          "phase_step_mod15": 3,
+          "ladder_signature": "3,6,9,12",
+          "anchor_distance_to_source_root": 3
+        }
+      ],
+      "selects_receipt": true,
+      "selects_absent": false
+    },
+    {
+      "feature": "anchor_between_inside_and_root_linearly",
+      "value": true,
+      "selected_roles": [
+        "receipt"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "receipt",
+          "anchor": 9,
+          "phase_step_mod15": 3,
+          "ladder_signature": "3,6,9,12",
+          "anchor_distance_to_source_root": 3
+        }
+      ],
+      "selects_receipt": true,
+      "selects_absent": false
+    },
+    {
+      "feature": "anchor_distance_less_than_inside_distance",
+      "value": true,
+      "selected_roles": [
+        "receipt"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "receipt",
+          "anchor": 9,
+          "phase_step_mod15": 3,
+          "ladder_signature": "3,6,9,12",
+          "anchor_distance_to_source_root": 3
+        }
+      ],
+      "selects_receipt": true,
+      "selects_absent": false
+    },
+    {
+      "feature": "anchor_distance_to_source_root",
+      "value": 3,
+      "selected_roles": [
+        "receipt"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "receipt",
+          "anchor": 9,
+          "phase_step_mod15": 3,
+          "ladder_signature": "3,6,9,12",
+          "anchor_distance_to_source_root": 3
+        }
+      ],
+      "selects_receipt": true,
+      "selects_absent": false
+    },
+    {
+      "feature": "anchor_is_farthest_endpoint",
+      "value": false,
+      "selected_roles": [
+        "receipt"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "receipt",
+          "anchor": 9,
+          "phase_step_mod15": 3,
+          "ladder_signature": "3,6,9,12",
+          "anchor_distance_to_source_root": 3
+        }
+      ],
+      "selects_receipt": true,
+      "selects_absent": false
+    },
+    {
+      "feature": "anchor_is_nearest_endpoint",
+      "value": true,
+      "selected_roles": [
+        "receipt"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "receipt",
+          "anchor": 9,
+          "phase_step_mod15": 3,
+          "ladder_signature": "3,6,9,12",
+          "anchor_distance_to_source_root": 3
+        }
+      ],
+      "selects_receipt": true,
+      "selects_absent": false
+    },
+    {
+      "feature": "inside_between_outside_and_anchor_linearly",
+      "value": true,
+      "selected_roles": [
+        "receipt"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "receipt",
+          "anchor": 9,
+          "phase_step_mod15": 3,
+          "ladder_signature": "3,6,9,12",
+          "anchor_distance_to_source_root": 3
+        }
+      ],
+      "selects_receipt": true,
+      "selects_absent": false
+    },
+    {
+      "feature": "inside_distance_to_source_root",
+      "value": 6,
+      "selected_roles": [
+        "receipt"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "receipt",
+          "anchor": 9,
+          "phase_step_mod15": 3,
+          "ladder_signature": "3,6,9,12",
+          "anchor_distance_to_source_root": 3
+        }
+      ],
+      "selects_receipt": true,
+      "selects_absent": false
+    },
+    {
+      "feature": "inside_moving_endpoint",
+      "value": 6,
+      "selected_roles": [
+        "receipt"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "receipt",
+          "anchor": 9,
+          "phase_step_mod15": 3,
+          "ladder_signature": "3,6,9,12",
+          "anchor_distance_to_source_root": 3
+        }
+      ],
+      "selects_receipt": true,
+      "selects_absent": false
+    },
+    {
+      "feature": "ladder_is_sorted",
+      "value": true,
+      "selected_roles": [
+        "receipt"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "receipt",
+          "anchor": 9,
+          "phase_step_mod15": 3,
+          "ladder_signature": "3,6,9,12",
+          "anchor_distance_to_source_root": 3
+        }
+      ],
+      "selects_receipt": true,
+      "selects_absent": false
+    },
+    {
+      "feature": "ladder_is_strict_ascending",
+      "value": true,
+      "selected_roles": [
+        "receipt"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "receipt",
+          "anchor": 9,
+          "phase_step_mod15": 3,
+          "ladder_signature": "3,6,9,12",
+          "anchor_distance_to_source_root": 3
+        }
+      ],
+      "selects_receipt": true,
+      "selects_absent": false
+    },
+    {
+      "feature": "ladder_linear_delta_signature",
+      "value": "3,3,3",
+      "selected_roles": [
+        "receipt"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "receipt",
+          "anchor": 9,
+          "phase_step_mod15": 3,
+          "ladder_signature": "3,6,9,12",
+          "anchor_distance_to_source_root": 3
+        }
+      ],
+      "selects_receipt": true,
+      "selects_absent": false
+    },
+    {
+      "feature": "ladder_linear_deltas_all_equal",
+      "value": true,
+      "selected_roles": [
+        "receipt"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "receipt",
+          "anchor": 9,
+          "phase_step_mod15": 3,
+          "ladder_signature": "3,6,9,12",
+          "anchor_distance_to_source_root": 3
+        }
+      ],
+      "selects_receipt": true,
+      "selects_absent": false
+    },
+    {
+      "feature": "ladder_linear_step_if_equal",
+      "value": 3,
+      "selected_roles": [
+        "receipt"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "receipt",
+          "anchor": 9,
+          "phase_step_mod15": 3,
+          "ladder_signature": "3,6,9,12",
+          "anchor_distance_to_source_root": 3
+        }
+      ],
+      "selects_receipt": true,
+      "selects_absent": false
+    },
+    {
+      "feature": "ladder_mod_delta_signature",
+      "value": "3,3,3",
+      "selected_roles": [
+        "receipt"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "receipt",
+          "anchor": 9,
+          "phase_step_mod15": 3,
+          "ladder_signature": "3,6,9,12",
+          "anchor_distance_to_source_root": 3
+        }
+      ],
+      "selects_receipt": true,
+      "selects_absent": false
+    },
+    {
+      "feature": "ladder_mod_deltas_all_equal",
+      "value": true,
+      "selected_roles": [
+        "receipt"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "receipt",
+          "anchor": 9,
+          "phase_step_mod15": 3,
+          "ladder_signature": "3,6,9,12",
+          "anchor_distance_to_source_root": 3
+        }
+      ],
+      "selects_receipt": true,
+      "selects_absent": false
+    },
+    {
+      "feature": "ladder_mod_step_if_equal",
+      "value": 3,
+      "selected_roles": [
+        "receipt"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "receipt",
+          "anchor": 9,
+          "phase_step_mod15": 3,
+          "ladder_signature": "3,6,9,12",
+          "anchor_distance_to_source_root": 3
+        }
+      ],
+      "selects_receipt": true,
+      "selects_absent": false
+    },
+    {
+      "feature": "ladder_signature",
+      "value": "3,6,9,12",
+      "selected_roles": [
+        "receipt"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "receipt",
+          "anchor": 9,
+          "phase_step_mod15": 3,
+          "ladder_signature": "3,6,9,12",
+          "anchor_distance_to_source_root": 3
+        }
+      ],
+      "selects_receipt": true,
+      "selects_absent": false
+    },
+    {
+      "feature": "phase_step_equals_farthest_distance",
+      "value": false,
+      "selected_roles": [
+        "receipt"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "receipt",
+          "anchor": 9,
+          "phase_step_mod15": 3,
+          "ladder_signature": "3,6,9,12",
+          "anchor_distance_to_source_root": 3
+        }
+      ],
+      "selects_receipt": true,
+      "selects_absent": false
+    },
+    {
+      "feature": "phase_step_equals_nearest_distance",
+      "value": true,
+      "selected_roles": [
+        "receipt"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "receipt",
+          "anchor": 9,
+          "phase_step_mod15": 3,
+          "ladder_signature": "3,6,9,12",
+          "anchor_distance_to_source_root": 3
+        }
+      ],
+      "selects_receipt": true,
+      "selects_absent": false
+    },
+    {
+      "feature": "phase_step_mod15",
+      "value": 3,
+      "selected_roles": [
+        "receipt"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "receipt",
+          "anchor": 9,
+          "phase_step_mod15": 3,
+          "ladder_signature": "3,6,9,12",
+          "anchor_distance_to_source_root": 3
+        }
+      ],
+      "selects_receipt": true,
+      "selects_absent": false
+    }
+  ],
+  "absent_selectors": [
+    {
+      "feature": "anchor",
+      "value": 6,
+      "selected_roles": [
+        "absent"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "absent",
+          "anchor": 6,
+          "phase_step_mod15": 6,
+          "ladder_signature": "3,9,6,12",
+          "anchor_distance_to_source_root": 6
+        }
+      ],
+      "selects_receipt": false,
+      "selects_absent": true
+    },
+    {
+      "feature": "anchor_between_inside_and_root_linearly",
+      "value": false,
+      "selected_roles": [
+        "absent"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "absent",
+          "anchor": 6,
+          "phase_step_mod15": 6,
+          "ladder_signature": "3,9,6,12",
+          "anchor_distance_to_source_root": 6
+        }
+      ],
+      "selects_receipt": false,
+      "selects_absent": true
+    },
+    {
+      "feature": "anchor_distance_less_than_inside_distance",
+      "value": false,
+      "selected_roles": [
+        "absent"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "absent",
+          "anchor": 6,
+          "phase_step_mod15": 6,
+          "ladder_signature": "3,9,6,12",
+          "anchor_distance_to_source_root": 6
+        }
+      ],
+      "selects_receipt": false,
+      "selects_absent": true
+    },
+    {
+      "feature": "anchor_distance_to_source_root",
+      "value": 6,
+      "selected_roles": [
+        "absent"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "absent",
+          "anchor": 6,
+          "phase_step_mod15": 6,
+          "ladder_signature": "3,9,6,12",
+          "anchor_distance_to_source_root": 6
+        }
+      ],
+      "selects_receipt": false,
+      "selects_absent": true
+    },
+    {
+      "feature": "anchor_is_farthest_endpoint",
+      "value": true,
+      "selected_roles": [
+        "absent"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "absent",
+          "anchor": 6,
+          "phase_step_mod15": 6,
+          "ladder_signature": "3,9,6,12",
+          "anchor_distance_to_source_root": 6
+        }
+      ],
+      "selects_receipt": false,
+      "selects_absent": true
+    },
+    {
+      "feature": "anchor_is_nearest_endpoint",
+      "value": false,
+      "selected_roles": [
+        "absent"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "absent",
+          "anchor": 6,
+          "phase_step_mod15": 6,
+          "ladder_signature": "3,9,6,12",
+          "anchor_distance_to_source_root": 6
+        }
+      ],
+      "selects_receipt": false,
+      "selects_absent": true
+    },
+    {
+      "feature": "inside_between_outside_and_anchor_linearly",
+      "value": false,
+      "selected_roles": [
+        "absent"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "absent",
+          "anchor": 6,
+          "phase_step_mod15": 6,
+          "ladder_signature": "3,9,6,12",
+          "anchor_distance_to_source_root": 6
+        }
+      ],
+      "selects_receipt": false,
+      "selects_absent": true
+    },
+    {
+      "feature": "inside_distance_to_source_root",
+      "value": 3,
+      "selected_roles": [
+        "absent"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "absent",
+          "anchor": 6,
+          "phase_step_mod15": 6,
+          "ladder_signature": "3,9,6,12",
+          "anchor_distance_to_source_root": 6
+        }
+      ],
+      "selects_receipt": false,
+      "selects_absent": true
+    },
+    {
+      "feature": "inside_moving_endpoint",
+      "value": 9,
+      "selected_roles": [
+        "absent"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "absent",
+          "anchor": 6,
+          "phase_step_mod15": 6,
+          "ladder_signature": "3,9,6,12",
+          "anchor_distance_to_source_root": 6
+        }
+      ],
+      "selects_receipt": false,
+      "selects_absent": true
+    },
+    {
+      "feature": "ladder_is_sorted",
+      "value": false,
+      "selected_roles": [
+        "absent"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "absent",
+          "anchor": 6,
+          "phase_step_mod15": 6,
+          "ladder_signature": "3,9,6,12",
+          "anchor_distance_to_source_root": 6
+        }
+      ],
+      "selects_receipt": false,
+      "selects_absent": true
+    },
+    {
+      "feature": "ladder_is_strict_ascending",
+      "value": false,
+      "selected_roles": [
+        "absent"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "absent",
+          "anchor": 6,
+          "phase_step_mod15": 6,
+          "ladder_signature": "3,9,6,12",
+          "anchor_distance_to_source_root": 6
+        }
+      ],
+      "selects_receipt": false,
+      "selects_absent": true
+    },
+    {
+      "feature": "ladder_linear_delta_signature",
+      "value": "6,-3,6",
+      "selected_roles": [
+        "absent"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "absent",
+          "anchor": 6,
+          "phase_step_mod15": 6,
+          "ladder_signature": "3,9,6,12",
+          "anchor_distance_to_source_root": 6
+        }
+      ],
+      "selects_receipt": false,
+      "selects_absent": true
+    },
+    {
+      "feature": "ladder_linear_deltas_all_equal",
+      "value": false,
+      "selected_roles": [
+        "absent"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "absent",
+          "anchor": 6,
+          "phase_step_mod15": 6,
+          "ladder_signature": "3,9,6,12",
+          "anchor_distance_to_source_root": 6
+        }
+      ],
+      "selects_receipt": false,
+      "selects_absent": true
+    },
+    {
+      "feature": "ladder_linear_step_if_equal",
+      "value": null,
+      "selected_roles": [
+        "absent"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "absent",
+          "anchor": 6,
+          "phase_step_mod15": 6,
+          "ladder_signature": "3,9,6,12",
+          "anchor_distance_to_source_root": 6
+        }
+      ],
+      "selects_receipt": false,
+      "selects_absent": true
+    },
+    {
+      "feature": "ladder_mod_delta_signature",
+      "value": "6,12,6",
+      "selected_roles": [
+        "absent"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "absent",
+          "anchor": 6,
+          "phase_step_mod15": 6,
+          "ladder_signature": "3,9,6,12",
+          "anchor_distance_to_source_root": 6
+        }
+      ],
+      "selects_receipt": false,
+      "selects_absent": true
+    },
+    {
+      "feature": "ladder_mod_deltas_all_equal",
+      "value": false,
+      "selected_roles": [
+        "absent"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "absent",
+          "anchor": 6,
+          "phase_step_mod15": 6,
+          "ladder_signature": "3,9,6,12",
+          "anchor_distance_to_source_root": 6
+        }
+      ],
+      "selects_receipt": false,
+      "selects_absent": true
+    },
+    {
+      "feature": "ladder_mod_step_if_equal",
+      "value": null,
+      "selected_roles": [
+        "absent"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "absent",
+          "anchor": 6,
+          "phase_step_mod15": 6,
+          "ladder_signature": "3,9,6,12",
+          "anchor_distance_to_source_root": 6
+        }
+      ],
+      "selects_receipt": false,
+      "selects_absent": true
+    },
+    {
+      "feature": "ladder_signature",
+      "value": "3,9,6,12",
+      "selected_roles": [
+        "absent"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "absent",
+          "anchor": 6,
+          "phase_step_mod15": 6,
+          "ladder_signature": "3,9,6,12",
+          "anchor_distance_to_source_root": 6
+        }
+      ],
+      "selects_receipt": false,
+      "selects_absent": true
+    },
+    {
+      "feature": "phase_step_equals_farthest_distance",
+      "value": true,
+      "selected_roles": [
+        "absent"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "absent",
+          "anchor": 6,
+          "phase_step_mod15": 6,
+          "ladder_signature": "3,9,6,12",
+          "anchor_distance_to_source_root": 6
+        }
+      ],
+      "selects_receipt": false,
+      "selects_absent": true
+    },
+    {
+      "feature": "phase_step_equals_nearest_distance",
+      "value": false,
+      "selected_roles": [
+        "absent"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "absent",
+          "anchor": 6,
+          "phase_step_mod15": 6,
+          "ladder_signature": "3,9,6,12",
+          "anchor_distance_to_source_root": 6
+        }
+      ],
+      "selects_receipt": false,
+      "selects_absent": true
+    },
+    {
+      "feature": "phase_step_mod15",
+      "value": 6,
+      "selected_roles": [
+        "absent"
+      ],
+      "selected_count": 1,
+      "selected_branches": [
+        {
+          "role": "absent",
+          "anchor": 6,
+          "phase_step_mod15": 6,
+          "ladder_signature": "3,9,6,12",
+          "anchor_distance_to_source_root": 6
+        }
+      ],
+      "selects_receipt": false,
+      "selects_absent": true
+    }
+  ],
+  "counts": {
+    "branch_count": 2,
+    "receipt_selector_count": 21,
+    "absent_selector_count": 21,
+    "preferred_receipt_hold_count": 10,
+    "solid_hold_found": true,
+    "specific_ladder_hold": true,
+    "specific_nearest_hold": true,
+    "no_leaky_features_used": true
+  },
+  "solid_hold_summary": [
+    "receipt branch ladder [3,6,9,12] is sorted and strictly ascending",
+    "receipt branch ladder linear deltas are [3,3,3]",
+    "receipt branch ladder mod15 deltas are [3,3,3]",
+    "receipt branch anchor 9 is nearest to source root 12",
+    "absent branch has same value set but order [3,9,6,12], breaking the clean ladder"
+  ],
+  "interpretation_boundary": [
+    "This audit finds a pre-receipt source-side asymmetry inside the observed [9,11] fork.",
+    "It does not derive why the source construction produces outside=3, inside=6/9, anchor=9/6, or root=12.",
+    "It does not prove a broad nearest-anchor law beyond the sole observed fork.",
+    "No closure witness, transport relation, channel, force, physics, GR, Maxwell, QCD, electroweak, or unification claim is made."
+  ],
+  "boundary": {
+    "native_anchor_asymmetry_audit_only": true,
+    "full_native_derivation": false,
+    "broad_general_law_proven": false,
+    "admits_closure_witness": false,
+    "admits_transport_relation": false,
+    "admits_channel": false,
+    "marker_lighting": false,
+    "viewer_change": false,
+    "body_mutation": false,
+    "force_claim": false,
+    "physics_claim": false,
+    "gr_claim": false,
+    "maxwell_claim": false,
+    "qcd_claim": false,
+    "electroweak_claim": false,
+    "unification_claim": false
+  },
+  "next_allowed_math_acts": [
+    "derive_ladder_3_6_9_12_from_source_construction",
+    "derive_source_gap_9_11_from_native_fields",
+    "test_if_clean_ladder_step3_appears_elsewhere",
+    "search_richer_source_artifacts_for_additional_forks"
+  ],
+  "checks": {
+    "nearest_prior_valid": true,
+    "nearest_prior_status": true,
+    "anchor_split_prior_valid": true,
+    "plateau_prior_valid": true,
+    "branch_count_two": true,
+    "roles_are_receipt_and_absent": true,
+    "no_leaky_features_used": true,
+    "solid_hold_found": true,
+    "specific_ladder_hold": true,
+    "specific_nearest_hold": true,
+    "asymmetry_status_recorded": true,
+    "channel_registry_preserved": true,
+    "renderer_absent": true,
+    "no_forbidden_claims": true
+  },
+  "failed_checks": [],
+  "hashes": {
+    "nearest_prior_sha256": "4e82f58864e3087cff1c79a58e2ad91c3d6dcee559d875b61a22b365913728fc",
+    "anchor_split_prior_sha256": "c7c12630fb28ffb0b692177707297898903979e4bd7408addd059eda94c5b138",
+    "plateau_prior_sha256": "2dd99a729a282e7e73929d9e3adb850e0a343883b96cf55fa4fafd3b3ecd4464",
+    "channels_sha256": "fbe4c50e0adf3460f7190f3c7714754da8a620359a5bc26c70543cc401feca08",
+    "body_sha256": "6a2cb6b9892a78d4559ec61cf946b0021962cc6819311234b8bf14102b3b7f63",
+    "lab_sha256": "5a10a18bc6563446a0d364d5984b8a41db580e0a75831c82b9eeb5aebc2edeb7"
+  }
+}

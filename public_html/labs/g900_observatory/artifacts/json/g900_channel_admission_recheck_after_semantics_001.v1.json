@@ -1,0 +1,216 @@
+{
+  "schema": "g900.channel_admission_recheck_after_semantics",
+  "version": 1,
+  "status": "channel_admission_recheck_after_semantics_recorded",
+  "created_utc": "2026-06-18T03:03:59Z",
+  "audit_pass": true,
+  "verdict": "channel_admission_recheck_after_semantics_still_not_allowed",
+  "question": "After the channel semantics contract is recorded, is the return-cell channel admissible?",
+  "answer": "No. Semantics is resolved, but channel rendering and the non-pair-identity transition-length law remain blockers.",
+  "candidate": {
+    "candidate_id": "return_cell_03_09_09_12_06_12_06_13",
+    "candidate_pairs": [
+      "03_09",
+      "09_12",
+      "06_12",
+      "06_13"
+    ],
+    "semantics_contract_id": "g900_channel_semantics_contract_dabdd392c0015dbd"
+  },
+  "resolved_since_initial": [
+    "channel_semantics_contract_absent"
+  ],
+  "remaining_blockers": [
+    "channel_render_contract_absent",
+    "non_pair_identity_transition_length_law"
+  ],
+  "blocker_details": {
+    "channel_render_contract_absent": {
+      "still_blocking": true,
+      "channel_render_contract_exists": false,
+      "channel_render_contract_paths": [],
+      "marker_render_contract_paths": [
+        "public_html/labs/g900_observatory/artifacts/json/g900_marker_render_contract_001.v1.json"
+      ],
+      "boundary": "Marker render contracts do not count as channel render contracts."
+    },
+    "non_pair_identity_transition_length_law": {
+      "still_blocking": true,
+      "transition_length_status": {
+        "artifact_found": true,
+        "non_pair_identity_law_found": false,
+        "pair_identity_only": true,
+        "evidence": {
+          "verdict": "only_pair_identity_like_transition_length_derivations_found",
+          "audit_pass": true,
+          "non_identity_exact_hit_count": 0,
+          "compressed_exact_hit_count": 0,
+          "checks": {
+            "transition_length_origin_audit_passed": true,
+            "origin_verdict_derived": true,
+            "channel_registry_zero_count": true,
+            "channels_not_admitted": true,
+            "pair_record_count_10": true,
+            "selected_target_lens_match": true,
+            "exact_hit_count_3": true,
+            "all_exact_hits_are_pair_identity_like": true,
+            "no_non_identity_exact_hit": true,
+            "no_compressed_exact_hit": true
+          }
+        }
+      }
+    }
+  },
+  "source_receipts": {
+    "channels": "public_html/labs/g900_observatory/data/g900_channels.v0.1.json",
+    "carriers": "public_html/labs/g900_observatory/data/g900_carriers.v0.1.json",
+    "static_body": "public_html/labs/g900_observatory/data/g900_static_body.v1.json",
+    "prior_admission": "public_html/labs/g900_observatory/artifacts/json/g900_return_cell_channel_admission_criteria_001.v1.json",
+    "semantics_contract": "public_html/labs/g900_observatory/artifacts/json/g900_channel_semantics_contract_001.v1.json",
+    "event_contract": "public_html/labs/g900_observatory/artifacts/json/g900_return_cell_cycle_event_contract_001.v1.json",
+    "gate_recheck": "public_html/labs/g900_observatory/artifacts/json/g900_post_stub_marker_event_gate_recheck_001.v1.json",
+    "transition_minimal": "public_html/labs/g900_observatory/artifacts/json/g900_transition_length_minimal_origin_audit_001.v1.json",
+    "quartz_boundary": "public_html/labs/g900_observatory/artifacts/json/g900_sheets_per_second_quartz_boundary_001.v1.json"
+  },
+  "hash_receipts": {
+    "static_body_sha256": "71944bd613ce8c6c036a2c4198f3df2e0064a75fec1f03ccf8bb60f9a2d412db",
+    "carrier_registry_sha256": "ecbf14773744ec44d9a73ed14f41525e40f378bf431e4174e194cb431ffcb735",
+    "channel_registry_sha256": "f5298a9d2418778c9e1bc545449b1a84d8b00125e18dc5b6ec6bb08f3434a309",
+    "stage_sha256": "732dad810dffdfbe97c275ee96914a95aeb7fa6976df04d8df0063157b19d5bf"
+  },
+  "summary": {
+    "semantics_contract_exists": true,
+    "semantics_blocker_resolved": true,
+    "channel_render_contract_exists": false,
+    "non_pair_identity_transition_length_law_found": false,
+    "channel_admission_allowed_now": false,
+    "remaining_blockers": [
+      "channel_render_contract_absent",
+      "non_pair_identity_transition_length_law"
+    ],
+    "channel_count": 0,
+    "renders_channel_now": false,
+    "mutates_body": false,
+    "marker_gate_open": false,
+    "marker_lighting": false
+  },
+  "interpretation": {
+    "honest_path_followed": true,
+    "semantics_is_no_longer_the_blocker": true,
+    "channel_is_still_not_admitted": true,
+    "render_contract_is_still_separate": true,
+    "math_blocker_remains": true,
+    "marker_is_still_attention_not_channel": true,
+    "not_channel_admission": true,
+    "not_channel_rendering": true,
+    "not_marker_lighting": true,
+    "not_body_mutation": true,
+    "not_force_claim": true,
+    "not_physics_claim": true,
+    "next_problem": "Either author a channel render contract as a non-admission display boundary, or attack the non-pair-identity transition-length law."
+  },
+  "criteria": [
+    {
+      "id": "semantics_contract_exists",
+      "description": "The channel semantics contract exists and passed.",
+      "satisfied": true,
+      "semantics_contract_id": "g900_channel_semantics_contract_dabdd392c0015dbd"
+    },
+    {
+      "id": "semantics_blocker_resolved",
+      "description": "The prior channel_semantics_contract_absent blocker is resolved by the semantics contract.",
+      "satisfied": true
+    },
+    {
+      "id": "channel_render_contract_absent",
+      "description": "No channel render contract exists yet. Marker render contracts do not count.",
+      "satisfied": true,
+      "channel_render_contract_paths": [],
+      "marker_render_contract_paths": [
+        "public_html/labs/g900_observatory/artifacts/json/g900_marker_render_contract_001.v1.json"
+      ]
+    },
+    {
+      "id": "non_pair_identity_transition_length_law_still_absent",
+      "description": "The non-pair-identity transition-length law remains absent or unproven.",
+      "satisfied": true,
+      "transition_length_status": {
+        "artifact_found": true,
+        "non_pair_identity_law_found": false,
+        "pair_identity_only": true,
+        "evidence": {
+          "verdict": "only_pair_identity_like_transition_length_derivations_found",
+          "audit_pass": true,
+          "non_identity_exact_hit_count": 0,
+          "compressed_exact_hit_count": 0,
+          "checks": {
+            "transition_length_origin_audit_passed": true,
+            "origin_verdict_derived": true,
+            "channel_registry_zero_count": true,
+            "channels_not_admitted": true,
+            "pair_record_count_10": true,
+            "selected_target_lens_match": true,
+            "exact_hit_count_3": true,
+            "all_exact_hits_are_pair_identity_like": true,
+            "no_non_identity_exact_hit": true,
+            "no_compressed_exact_hit": true
+          }
+        }
+      }
+    },
+    {
+      "id": "channel_registry_zero",
+      "description": "The channel registry remains zero-count.",
+      "satisfied": true
+    },
+    {
+      "id": "admission_not_allowed",
+      "description": "The recheck does not admit a channel.",
+      "satisfied": true
+    },
+    {
+      "id": "event_contract_available",
+      "description": "The return-cell event contract remains available.",
+      "satisfied": true
+    },
+    {
+      "id": "marker_gate_still_closed",
+      "description": "The marker gate remains closed and the marker remains unlit.",
+      "satisfied": true
+    },
+    {
+      "id": "quartz_boundary_still_non_authoritative",
+      "description": "The sheets/sec quartz boundary remains non-authoritative.",
+      "satisfied": true
+    },
+    {
+      "id": "static_body_present",
+      "description": "The static G900 body remains present.",
+      "satisfied": true
+    }
+  ],
+  "checks": {
+    "semantics_contract_exists": true,
+    "semantics_blocker_resolved": true,
+    "channel_render_contract_absent": true,
+    "non_pair_identity_transition_length_law_still_absent": true,
+    "channel_registry_zero": true,
+    "admission_not_allowed": true,
+    "event_contract_available": true,
+    "marker_gate_still_closed": true,
+    "marker_not_lit": true,
+    "quartz_boundary_non_authoritative": true,
+    "all_criteria_satisfied": true
+  },
+  "failed_checks": [],
+  "boundary": {
+    "recheck_only": true,
+    "admits_channels": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "marker_lighting": false,
+    "gate_open": false,
+    "force_claim": false,
+    "physics_claim": false
+  }
+}

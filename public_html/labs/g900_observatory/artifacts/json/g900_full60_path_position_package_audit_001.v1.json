@@ -1,0 +1,1873 @@
+{
+  "schema": "g900.full60_path_position_package_audit",
+  "version": 1,
+  "status": "full60_path_position_package_audit_passed",
+  "created_utc": "2026-06-18T00:51:32Z",
+  "audit_pass": true,
+  "question": "Do full60 package kinds occupy specific path positions or endpoint/internal roles in the P7 + P3 + P2 forest?",
+  "summary": {
+    "edge_count": 9,
+    "component_labels": [
+      "P7",
+      "P3",
+      "P2"
+    ],
+    "component_size_profile": [
+      7,
+      3,
+      2
+    ],
+    "component_edge_profile": [
+      6,
+      2,
+      1
+    ],
+    "package_kind_counts": {
+      "clean_reciprocal_pair_package": 6,
+      "one_way_single_transition": 1,
+      "two_transition_pair_package": 2
+    },
+    "transition_count_profile": {
+      "180": 6,
+      "60": 1,
+      "120": 1,
+      "130": 1
+    },
+    "position_class_to_package_kind": {
+      "interior": {
+        "clean_reciprocal_pair_package": 2,
+        "one_way_single_transition": 1,
+        "two_transition_pair_package": 1
+      },
+      "singleton": {
+        "two_transition_pair_package": 1
+      },
+      "terminal": {
+        "clean_reciprocal_pair_package": 4
+      }
+    },
+    "position_label_to_package_kind": {
+      "interior": {
+        "clean_reciprocal_pair_package": 2,
+        "one_way_single_transition": 1,
+        "two_transition_pair_package": 1
+      },
+      "left_terminal": {
+        "clean_reciprocal_pair_package": 2
+      },
+      "right_terminal": {
+        "clean_reciprocal_pair_package": 2
+      },
+      "singleton": {
+        "two_transition_pair_package": 1
+      }
+    },
+    "slot_role_pair_to_package_kind": {
+      "endpoint/endpoint": {
+        "two_transition_pair_package": 1
+      },
+      "endpoint/internal": {
+        "clean_reciprocal_pair_package": 4
+      },
+      "internal/internal": {
+        "clean_reciprocal_pair_package": 2,
+        "one_way_single_transition": 1,
+        "two_transition_pair_package": 1
+      }
+    },
+    "component_label_to_package_kind": {
+      "P2": {
+        "two_transition_pair_package": 1
+      },
+      "P3": {
+        "clean_reciprocal_pair_package": 2
+      },
+      "P7": {
+        "clean_reciprocal_pair_package": 4,
+        "one_way_single_transition": 1,
+        "two_transition_pair_package": 1
+      }
+    },
+    "nonclean_edge_count": 3,
+    "clean_edge_count": 6,
+    "channel_count": 0
+  },
+  "edge_records": [
+    {
+      "component_index": 0,
+      "component_label": "P7",
+      "component_size": 7,
+      "component_edge_count": 6,
+      "edge_index_from_left": 0,
+      "edge_index_from_right": 5,
+      "position_label": "left_terminal",
+      "position_class": "terminal",
+      "pair": "02_08",
+      "edge": [
+        "08",
+        "02"
+      ],
+      "left_slot_role": "endpoint",
+      "right_slot_role": "internal",
+      "slot_role_pair_ordered": "endpoint->internal",
+      "slot_role_pair_unordered": "endpoint/internal",
+      "package_kind": "clean_reciprocal_pair_package",
+      "pair_total_transition_count": 180,
+      "pair_total_root_count": 60,
+      "full60_transitions": [
+        "2 -> 8",
+        "2/8 -> 8",
+        "8 -> 2"
+      ],
+      "has_boundary_carrier": true,
+      "channels_admitted": false
+    },
+    {
+      "component_index": 0,
+      "component_label": "P7",
+      "component_size": 7,
+      "component_edge_count": 6,
+      "edge_index_from_left": 1,
+      "edge_index_from_right": 4,
+      "position_label": "interior",
+      "position_class": "interior",
+      "pair": "02_03",
+      "edge": [
+        "02",
+        "03"
+      ],
+      "left_slot_role": "internal",
+      "right_slot_role": "internal",
+      "slot_role_pair_ordered": "internal->internal",
+      "slot_role_pair_unordered": "internal/internal",
+      "package_kind": "clean_reciprocal_pair_package",
+      "pair_total_transition_count": 180,
+      "pair_total_root_count": 60,
+      "full60_transitions": [
+        "2 -> 3",
+        "2/3 -> 3",
+        "3 -> 2"
+      ],
+      "has_boundary_carrier": true,
+      "channels_admitted": false
+    },
+    {
+      "component_index": 0,
+      "component_label": "P7",
+      "component_size": 7,
+      "component_edge_count": 6,
+      "edge_index_from_left": 2,
+      "edge_index_from_right": 3,
+      "position_label": "interior",
+      "position_class": "interior",
+      "pair": "03_09",
+      "edge": [
+        "03",
+        "09"
+      ],
+      "left_slot_role": "internal",
+      "right_slot_role": "internal",
+      "slot_role_pair_ordered": "internal->internal",
+      "slot_role_pair_unordered": "internal/internal",
+      "package_kind": "clean_reciprocal_pair_package",
+      "pair_total_transition_count": 180,
+      "pair_total_root_count": 60,
+      "full60_transitions": [
+        "3 -> 9",
+        "3/9 -> 9",
+        "9 -> 3"
+      ],
+      "has_boundary_carrier": true,
+      "channels_admitted": false
+    },
+    {
+      "component_index": 0,
+      "component_label": "P7",
+      "component_size": 7,
+      "component_edge_count": 6,
+      "edge_index_from_left": 3,
+      "edge_index_from_right": 2,
+      "position_label": "interior",
+      "position_class": "interior",
+      "pair": "09_12",
+      "edge": [
+        "09",
+        "12"
+      ],
+      "left_slot_role": "internal",
+      "right_slot_role": "internal",
+      "slot_role_pair_ordered": "internal->internal",
+      "slot_role_pair_unordered": "internal/internal",
+      "package_kind": "one_way_single_transition",
+      "pair_total_transition_count": 60,
+      "pair_total_root_count": 60,
+      "full60_transitions": [
+        "9 -> 12"
+      ],
+      "has_boundary_carrier": true,
+      "channels_admitted": false
+    },
+    {
+      "component_index": 0,
+      "component_label": "P7",
+      "component_size": 7,
+      "component_edge_count": 6,
+      "edge_index_from_left": 4,
+      "edge_index_from_right": 1,
+      "position_label": "interior",
+      "position_class": "interior",
+      "pair": "06_12",
+      "edge": [
+        "12",
+        "06"
+      ],
+      "left_slot_role": "internal",
+      "right_slot_role": "internal",
+      "slot_role_pair_ordered": "internal->internal",
+      "slot_role_pair_unordered": "internal/internal",
+      "package_kind": "two_transition_pair_package",
+      "pair_total_transition_count": 120,
+      "pair_total_root_count": 60,
+      "full60_transitions": [
+        "12 -> 6",
+        "6/12 -> 12"
+      ],
+      "has_boundary_carrier": true,
+      "channels_admitted": false
+    },
+    {
+      "component_index": 0,
+      "component_label": "P7",
+      "component_size": 7,
+      "component_edge_count": 6,
+      "edge_index_from_left": 5,
+      "edge_index_from_right": 0,
+      "position_label": "right_terminal",
+      "position_class": "terminal",
+      "pair": "06_13",
+      "edge": [
+        "06",
+        "13"
+      ],
+      "left_slot_role": "internal",
+      "right_slot_role": "endpoint",
+      "slot_role_pair_ordered": "internal->endpoint",
+      "slot_role_pair_unordered": "endpoint/internal",
+      "package_kind": "clean_reciprocal_pair_package",
+      "pair_total_transition_count": 180,
+      "pair_total_root_count": 60,
+      "full60_transitions": [
+        "13 -> 6",
+        "6 -> 13",
+        "6/13 -> 13"
+      ],
+      "has_boundary_carrier": true,
+      "channels_admitted": false
+    },
+    {
+      "component_index": 1,
+      "component_label": "P3",
+      "component_size": 3,
+      "component_edge_count": 2,
+      "edge_index_from_left": 0,
+      "edge_index_from_right": 1,
+      "position_label": "left_terminal",
+      "position_class": "terminal",
+      "pair": "05_10",
+      "edge": [
+        "10",
+        "05"
+      ],
+      "left_slot_role": "endpoint",
+      "right_slot_role": "internal",
+      "slot_role_pair_ordered": "endpoint->internal",
+      "slot_role_pair_unordered": "endpoint/internal",
+      "package_kind": "clean_reciprocal_pair_package",
+      "pair_total_transition_count": 180,
+      "pair_total_root_count": 60,
+      "full60_transitions": [
+        "10 -> 5",
+        "5 -> 10",
+        "5/10 -> 10"
+      ],
+      "has_boundary_carrier": true,
+      "channels_admitted": false
+    },
+    {
+      "component_index": 1,
+      "component_label": "P3",
+      "component_size": 3,
+      "component_edge_count": 2,
+      "edge_index_from_left": 1,
+      "edge_index_from_right": 0,
+      "position_label": "right_terminal",
+      "position_class": "terminal",
+      "pair": "05_14",
+      "edge": [
+        "05",
+        "14"
+      ],
+      "left_slot_role": "internal",
+      "right_slot_role": "endpoint",
+      "slot_role_pair_ordered": "internal->endpoint",
+      "slot_role_pair_unordered": "endpoint/internal",
+      "package_kind": "clean_reciprocal_pair_package",
+      "pair_total_transition_count": 180,
+      "pair_total_root_count": 60,
+      "full60_transitions": [
+        "14 -> 5",
+        "5 -> 14",
+        "5/14 -> 14"
+      ],
+      "has_boundary_carrier": true,
+      "channels_admitted": false
+    },
+    {
+      "component_index": 2,
+      "component_label": "P2",
+      "component_size": 2,
+      "component_edge_count": 1,
+      "edge_index_from_left": 0,
+      "edge_index_from_right": 0,
+      "position_label": "singleton",
+      "position_class": "singleton",
+      "pair": "07_11",
+      "edge": [
+        "07",
+        "11"
+      ],
+      "left_slot_role": "endpoint",
+      "right_slot_role": "endpoint",
+      "slot_role_pair_ordered": "endpoint->endpoint",
+      "slot_role_pair_unordered": "endpoint/endpoint",
+      "package_kind": "two_transition_pair_package",
+      "pair_total_transition_count": 130,
+      "pair_total_root_count": 60,
+      "full60_transitions": [
+        "11 -> 7",
+        "7/11 -> 11"
+      ],
+      "has_boundary_carrier": true,
+      "channels_admitted": false
+    }
+  ],
+  "nonclean_edges": [
+    {
+      "component_index": 0,
+      "component_label": "P7",
+      "component_size": 7,
+      "component_edge_count": 6,
+      "edge_index_from_left": 3,
+      "edge_index_from_right": 2,
+      "position_label": "interior",
+      "position_class": "interior",
+      "pair": "09_12",
+      "edge": [
+        "09",
+        "12"
+      ],
+      "left_slot_role": "internal",
+      "right_slot_role": "internal",
+      "slot_role_pair_ordered": "internal->internal",
+      "slot_role_pair_unordered": "internal/internal",
+      "package_kind": "one_way_single_transition",
+      "pair_total_transition_count": 60,
+      "pair_total_root_count": 60,
+      "full60_transitions": [
+        "9 -> 12"
+      ],
+      "has_boundary_carrier": true,
+      "channels_admitted": false
+    },
+    {
+      "component_index": 0,
+      "component_label": "P7",
+      "component_size": 7,
+      "component_edge_count": 6,
+      "edge_index_from_left": 4,
+      "edge_index_from_right": 1,
+      "position_label": "interior",
+      "position_class": "interior",
+      "pair": "06_12",
+      "edge": [
+        "12",
+        "06"
+      ],
+      "left_slot_role": "internal",
+      "right_slot_role": "internal",
+      "slot_role_pair_ordered": "internal->internal",
+      "slot_role_pair_unordered": "internal/internal",
+      "package_kind": "two_transition_pair_package",
+      "pair_total_transition_count": 120,
+      "pair_total_root_count": 60,
+      "full60_transitions": [
+        "12 -> 6",
+        "6/12 -> 12"
+      ],
+      "has_boundary_carrier": true,
+      "channels_admitted": false
+    },
+    {
+      "component_index": 2,
+      "component_label": "P2",
+      "component_size": 2,
+      "component_edge_count": 1,
+      "edge_index_from_left": 0,
+      "edge_index_from_right": 0,
+      "position_label": "singleton",
+      "position_class": "singleton",
+      "pair": "07_11",
+      "edge": [
+        "07",
+        "11"
+      ],
+      "left_slot_role": "endpoint",
+      "right_slot_role": "endpoint",
+      "slot_role_pair_ordered": "endpoint->endpoint",
+      "slot_role_pair_unordered": "endpoint/endpoint",
+      "package_kind": "two_transition_pair_package",
+      "pair_total_transition_count": 130,
+      "pair_total_root_count": 60,
+      "full60_transitions": [
+        "11 -> 7",
+        "7/11 -> 11"
+      ],
+      "has_boundary_carrier": true,
+      "channels_admitted": false
+    }
+  ],
+  "clean_edges": [
+    {
+      "component_index": 0,
+      "component_label": "P7",
+      "component_size": 7,
+      "component_edge_count": 6,
+      "edge_index_from_left": 0,
+      "edge_index_from_right": 5,
+      "position_label": "left_terminal",
+      "position_class": "terminal",
+      "pair": "02_08",
+      "edge": [
+        "08",
+        "02"
+      ],
+      "left_slot_role": "endpoint",
+      "right_slot_role": "internal",
+      "slot_role_pair_ordered": "endpoint->internal",
+      "slot_role_pair_unordered": "endpoint/internal",
+      "package_kind": "clean_reciprocal_pair_package",
+      "pair_total_transition_count": 180,
+      "pair_total_root_count": 60,
+      "full60_transitions": [
+        "2 -> 8",
+        "2/8 -> 8",
+        "8 -> 2"
+      ],
+      "has_boundary_carrier": true,
+      "channels_admitted": false
+    },
+    {
+      "component_index": 0,
+      "component_label": "P7",
+      "component_size": 7,
+      "component_edge_count": 6,
+      "edge_index_from_left": 1,
+      "edge_index_from_right": 4,
+      "position_label": "interior",
+      "position_class": "interior",
+      "pair": "02_03",
+      "edge": [
+        "02",
+        "03"
+      ],
+      "left_slot_role": "internal",
+      "right_slot_role": "internal",
+      "slot_role_pair_ordered": "internal->internal",
+      "slot_role_pair_unordered": "internal/internal",
+      "package_kind": "clean_reciprocal_pair_package",
+      "pair_total_transition_count": 180,
+      "pair_total_root_count": 60,
+      "full60_transitions": [
+        "2 -> 3",
+        "2/3 -> 3",
+        "3 -> 2"
+      ],
+      "has_boundary_carrier": true,
+      "channels_admitted": false
+    },
+    {
+      "component_index": 0,
+      "component_label": "P7",
+      "component_size": 7,
+      "component_edge_count": 6,
+      "edge_index_from_left": 2,
+      "edge_index_from_right": 3,
+      "position_label": "interior",
+      "position_class": "interior",
+      "pair": "03_09",
+      "edge": [
+        "03",
+        "09"
+      ],
+      "left_slot_role": "internal",
+      "right_slot_role": "internal",
+      "slot_role_pair_ordered": "internal->internal",
+      "slot_role_pair_unordered": "internal/internal",
+      "package_kind": "clean_reciprocal_pair_package",
+      "pair_total_transition_count": 180,
+      "pair_total_root_count": 60,
+      "full60_transitions": [
+        "3 -> 9",
+        "3/9 -> 9",
+        "9 -> 3"
+      ],
+      "has_boundary_carrier": true,
+      "channels_admitted": false
+    },
+    {
+      "component_index": 0,
+      "component_label": "P7",
+      "component_size": 7,
+      "component_edge_count": 6,
+      "edge_index_from_left": 5,
+      "edge_index_from_right": 0,
+      "position_label": "right_terminal",
+      "position_class": "terminal",
+      "pair": "06_13",
+      "edge": [
+        "06",
+        "13"
+      ],
+      "left_slot_role": "internal",
+      "right_slot_role": "endpoint",
+      "slot_role_pair_ordered": "internal->endpoint",
+      "slot_role_pair_unordered": "endpoint/internal",
+      "package_kind": "clean_reciprocal_pair_package",
+      "pair_total_transition_count": 180,
+      "pair_total_root_count": 60,
+      "full60_transitions": [
+        "13 -> 6",
+        "6 -> 13",
+        "6/13 -> 13"
+      ],
+      "has_boundary_carrier": true,
+      "channels_admitted": false
+    },
+    {
+      "component_index": 1,
+      "component_label": "P3",
+      "component_size": 3,
+      "component_edge_count": 2,
+      "edge_index_from_left": 0,
+      "edge_index_from_right": 1,
+      "position_label": "left_terminal",
+      "position_class": "terminal",
+      "pair": "05_10",
+      "edge": [
+        "10",
+        "05"
+      ],
+      "left_slot_role": "endpoint",
+      "right_slot_role": "internal",
+      "slot_role_pair_ordered": "endpoint->internal",
+      "slot_role_pair_unordered": "endpoint/internal",
+      "package_kind": "clean_reciprocal_pair_package",
+      "pair_total_transition_count": 180,
+      "pair_total_root_count": 60,
+      "full60_transitions": [
+        "10 -> 5",
+        "5 -> 10",
+        "5/10 -> 10"
+      ],
+      "has_boundary_carrier": true,
+      "channels_admitted": false
+    },
+    {
+      "component_index": 1,
+      "component_label": "P3",
+      "component_size": 3,
+      "component_edge_count": 2,
+      "edge_index_from_left": 1,
+      "edge_index_from_right": 0,
+      "position_label": "right_terminal",
+      "position_class": "terminal",
+      "pair": "05_14",
+      "edge": [
+        "05",
+        "14"
+      ],
+      "left_slot_role": "internal",
+      "right_slot_role": "endpoint",
+      "slot_role_pair_ordered": "internal->endpoint",
+      "slot_role_pair_unordered": "endpoint/internal",
+      "package_kind": "clean_reciprocal_pair_package",
+      "pair_total_transition_count": 180,
+      "pair_total_root_count": 60,
+      "full60_transitions": [
+        "14 -> 5",
+        "5 -> 14",
+        "5/14 -> 14"
+      ],
+      "has_boundary_carrier": true,
+      "channels_admitted": false
+    }
+  ],
+  "package_kind_determinism_tests": [
+    {
+      "features": [
+        "component_label"
+      ],
+      "value_field": "package_kind",
+      "group_count": 3,
+      "exact_group_count": 2,
+      "ambiguous_group_count": 1,
+      "exact_groups": {
+        "P3": {
+          "value": "clean_reciprocal_pair_package",
+          "count": 2,
+          "pairs": [
+            "05_10",
+            "05_14"
+          ]
+        },
+        "P2": {
+          "value": "two_transition_pair_package",
+          "count": 1,
+          "pairs": [
+            "07_11"
+          ]
+        }
+      },
+      "ambiguous_groups": {
+        "P7": {
+          "counts": {
+            "clean_reciprocal_pair_package": 4,
+            "one_way_single_transition": 1,
+            "two_transition_pair_package": 1
+          },
+          "pairs": [
+            "02_08",
+            "02_03",
+            "03_09",
+            "09_12",
+            "06_12",
+            "06_13"
+          ]
+        }
+      }
+    },
+    {
+      "features": [
+        "position_class"
+      ],
+      "value_field": "package_kind",
+      "group_count": 3,
+      "exact_group_count": 2,
+      "ambiguous_group_count": 1,
+      "exact_groups": {
+        "terminal": {
+          "value": "clean_reciprocal_pair_package",
+          "count": 4,
+          "pairs": [
+            "02_08",
+            "06_13",
+            "05_10",
+            "05_14"
+          ]
+        },
+        "singleton": {
+          "value": "two_transition_pair_package",
+          "count": 1,
+          "pairs": [
+            "07_11"
+          ]
+        }
+      },
+      "ambiguous_groups": {
+        "interior": {
+          "counts": {
+            "clean_reciprocal_pair_package": 2,
+            "one_way_single_transition": 1,
+            "two_transition_pair_package": 1
+          },
+          "pairs": [
+            "02_03",
+            "03_09",
+            "09_12",
+            "06_12"
+          ]
+        }
+      }
+    },
+    {
+      "features": [
+        "position_label"
+      ],
+      "value_field": "package_kind",
+      "group_count": 4,
+      "exact_group_count": 3,
+      "ambiguous_group_count": 1,
+      "exact_groups": {
+        "left_terminal": {
+          "value": "clean_reciprocal_pair_package",
+          "count": 2,
+          "pairs": [
+            "02_08",
+            "05_10"
+          ]
+        },
+        "right_terminal": {
+          "value": "clean_reciprocal_pair_package",
+          "count": 2,
+          "pairs": [
+            "06_13",
+            "05_14"
+          ]
+        },
+        "singleton": {
+          "value": "two_transition_pair_package",
+          "count": 1,
+          "pairs": [
+            "07_11"
+          ]
+        }
+      },
+      "ambiguous_groups": {
+        "interior": {
+          "counts": {
+            "clean_reciprocal_pair_package": 2,
+            "one_way_single_transition": 1,
+            "two_transition_pair_package": 1
+          },
+          "pairs": [
+            "02_03",
+            "03_09",
+            "09_12",
+            "06_12"
+          ]
+        }
+      }
+    },
+    {
+      "features": [
+        "slot_role_pair_unordered"
+      ],
+      "value_field": "package_kind",
+      "group_count": 3,
+      "exact_group_count": 2,
+      "ambiguous_group_count": 1,
+      "exact_groups": {
+        "endpoint/internal": {
+          "value": "clean_reciprocal_pair_package",
+          "count": 4,
+          "pairs": [
+            "02_08",
+            "06_13",
+            "05_10",
+            "05_14"
+          ]
+        },
+        "endpoint/endpoint": {
+          "value": "two_transition_pair_package",
+          "count": 1,
+          "pairs": [
+            "07_11"
+          ]
+        }
+      },
+      "ambiguous_groups": {
+        "internal/internal": {
+          "counts": {
+            "clean_reciprocal_pair_package": 2,
+            "one_way_single_transition": 1,
+            "two_transition_pair_package": 1
+          },
+          "pairs": [
+            "02_03",
+            "03_09",
+            "09_12",
+            "06_12"
+          ]
+        }
+      }
+    },
+    {
+      "features": [
+        "component_label",
+        "position_class"
+      ],
+      "value_field": "package_kind",
+      "group_count": 4,
+      "exact_group_count": 3,
+      "ambiguous_group_count": 1,
+      "exact_groups": {
+        "P7 | terminal": {
+          "value": "clean_reciprocal_pair_package",
+          "count": 2,
+          "pairs": [
+            "02_08",
+            "06_13"
+          ]
+        },
+        "P3 | terminal": {
+          "value": "clean_reciprocal_pair_package",
+          "count": 2,
+          "pairs": [
+            "05_10",
+            "05_14"
+          ]
+        },
+        "P2 | singleton": {
+          "value": "two_transition_pair_package",
+          "count": 1,
+          "pairs": [
+            "07_11"
+          ]
+        }
+      },
+      "ambiguous_groups": {
+        "P7 | interior": {
+          "counts": {
+            "clean_reciprocal_pair_package": 2,
+            "one_way_single_transition": 1,
+            "two_transition_pair_package": 1
+          },
+          "pairs": [
+            "02_03",
+            "03_09",
+            "09_12",
+            "06_12"
+          ]
+        }
+      }
+    },
+    {
+      "features": [
+        "component_label",
+        "position_label"
+      ],
+      "value_field": "package_kind",
+      "group_count": 6,
+      "exact_group_count": 5,
+      "ambiguous_group_count": 1,
+      "exact_groups": {
+        "P7 | left_terminal": {
+          "value": "clean_reciprocal_pair_package",
+          "count": 1,
+          "pairs": [
+            "02_08"
+          ]
+        },
+        "P7 | right_terminal": {
+          "value": "clean_reciprocal_pair_package",
+          "count": 1,
+          "pairs": [
+            "06_13"
+          ]
+        },
+        "P3 | left_terminal": {
+          "value": "clean_reciprocal_pair_package",
+          "count": 1,
+          "pairs": [
+            "05_10"
+          ]
+        },
+        "P3 | right_terminal": {
+          "value": "clean_reciprocal_pair_package",
+          "count": 1,
+          "pairs": [
+            "05_14"
+          ]
+        },
+        "P2 | singleton": {
+          "value": "two_transition_pair_package",
+          "count": 1,
+          "pairs": [
+            "07_11"
+          ]
+        }
+      },
+      "ambiguous_groups": {
+        "P7 | interior": {
+          "counts": {
+            "clean_reciprocal_pair_package": 2,
+            "one_way_single_transition": 1,
+            "two_transition_pair_package": 1
+          },
+          "pairs": [
+            "02_03",
+            "03_09",
+            "09_12",
+            "06_12"
+          ]
+        }
+      }
+    },
+    {
+      "features": [
+        "component_label",
+        "slot_role_pair_unordered"
+      ],
+      "value_field": "package_kind",
+      "group_count": 4,
+      "exact_group_count": 3,
+      "ambiguous_group_count": 1,
+      "exact_groups": {
+        "P7 | endpoint/internal": {
+          "value": "clean_reciprocal_pair_package",
+          "count": 2,
+          "pairs": [
+            "02_08",
+            "06_13"
+          ]
+        },
+        "P3 | endpoint/internal": {
+          "value": "clean_reciprocal_pair_package",
+          "count": 2,
+          "pairs": [
+            "05_10",
+            "05_14"
+          ]
+        },
+        "P2 | endpoint/endpoint": {
+          "value": "two_transition_pair_package",
+          "count": 1,
+          "pairs": [
+            "07_11"
+          ]
+        }
+      },
+      "ambiguous_groups": {
+        "P7 | internal/internal": {
+          "counts": {
+            "clean_reciprocal_pair_package": 2,
+            "one_way_single_transition": 1,
+            "two_transition_pair_package": 1
+          },
+          "pairs": [
+            "02_03",
+            "03_09",
+            "09_12",
+            "06_12"
+          ]
+        }
+      }
+    },
+    {
+      "features": [
+        "position_class",
+        "slot_role_pair_unordered"
+      ],
+      "value_field": "package_kind",
+      "group_count": 3,
+      "exact_group_count": 2,
+      "ambiguous_group_count": 1,
+      "exact_groups": {
+        "terminal | endpoint/internal": {
+          "value": "clean_reciprocal_pair_package",
+          "count": 4,
+          "pairs": [
+            "02_08",
+            "06_13",
+            "05_10",
+            "05_14"
+          ]
+        },
+        "singleton | endpoint/endpoint": {
+          "value": "two_transition_pair_package",
+          "count": 1,
+          "pairs": [
+            "07_11"
+          ]
+        }
+      },
+      "ambiguous_groups": {
+        "interior | internal/internal": {
+          "counts": {
+            "clean_reciprocal_pair_package": 2,
+            "one_way_single_transition": 1,
+            "two_transition_pair_package": 1
+          },
+          "pairs": [
+            "02_03",
+            "03_09",
+            "09_12",
+            "06_12"
+          ]
+        }
+      }
+    },
+    {
+      "features": [
+        "component_label",
+        "position_class",
+        "slot_role_pair_unordered"
+      ],
+      "value_field": "package_kind",
+      "group_count": 4,
+      "exact_group_count": 3,
+      "ambiguous_group_count": 1,
+      "exact_groups": {
+        "P7 | terminal | endpoint/internal": {
+          "value": "clean_reciprocal_pair_package",
+          "count": 2,
+          "pairs": [
+            "02_08",
+            "06_13"
+          ]
+        },
+        "P3 | terminal | endpoint/internal": {
+          "value": "clean_reciprocal_pair_package",
+          "count": 2,
+          "pairs": [
+            "05_10",
+            "05_14"
+          ]
+        },
+        "P2 | singleton | endpoint/endpoint": {
+          "value": "two_transition_pair_package",
+          "count": 1,
+          "pairs": [
+            "07_11"
+          ]
+        }
+      },
+      "ambiguous_groups": {
+        "P7 | interior | internal/internal": {
+          "counts": {
+            "clean_reciprocal_pair_package": 2,
+            "one_way_single_transition": 1,
+            "two_transition_pair_package": 1
+          },
+          "pairs": [
+            "02_03",
+            "03_09",
+            "09_12",
+            "06_12"
+          ]
+        }
+      }
+    }
+  ],
+  "transition_count_determinism_tests": [
+    {
+      "features": [
+        "component_label"
+      ],
+      "value_field": "pair_total_transition_count",
+      "group_count": 3,
+      "exact_group_count": 2,
+      "ambiguous_group_count": 1,
+      "exact_groups": {
+        "P3": {
+          "value": "180",
+          "count": 2,
+          "pairs": [
+            "05_10",
+            "05_14"
+          ]
+        },
+        "P2": {
+          "value": "130",
+          "count": 1,
+          "pairs": [
+            "07_11"
+          ]
+        }
+      },
+      "ambiguous_groups": {
+        "P7": {
+          "counts": {
+            "180": 4,
+            "60": 1,
+            "120": 1
+          },
+          "pairs": [
+            "02_08",
+            "02_03",
+            "03_09",
+            "09_12",
+            "06_12",
+            "06_13"
+          ]
+        }
+      }
+    },
+    {
+      "features": [
+        "position_class"
+      ],
+      "value_field": "pair_total_transition_count",
+      "group_count": 3,
+      "exact_group_count": 2,
+      "ambiguous_group_count": 1,
+      "exact_groups": {
+        "terminal": {
+          "value": "180",
+          "count": 4,
+          "pairs": [
+            "02_08",
+            "06_13",
+            "05_10",
+            "05_14"
+          ]
+        },
+        "singleton": {
+          "value": "130",
+          "count": 1,
+          "pairs": [
+            "07_11"
+          ]
+        }
+      },
+      "ambiguous_groups": {
+        "interior": {
+          "counts": {
+            "180": 2,
+            "60": 1,
+            "120": 1
+          },
+          "pairs": [
+            "02_03",
+            "03_09",
+            "09_12",
+            "06_12"
+          ]
+        }
+      }
+    },
+    {
+      "features": [
+        "position_label"
+      ],
+      "value_field": "pair_total_transition_count",
+      "group_count": 4,
+      "exact_group_count": 3,
+      "ambiguous_group_count": 1,
+      "exact_groups": {
+        "left_terminal": {
+          "value": "180",
+          "count": 2,
+          "pairs": [
+            "02_08",
+            "05_10"
+          ]
+        },
+        "right_terminal": {
+          "value": "180",
+          "count": 2,
+          "pairs": [
+            "06_13",
+            "05_14"
+          ]
+        },
+        "singleton": {
+          "value": "130",
+          "count": 1,
+          "pairs": [
+            "07_11"
+          ]
+        }
+      },
+      "ambiguous_groups": {
+        "interior": {
+          "counts": {
+            "180": 2,
+            "60": 1,
+            "120": 1
+          },
+          "pairs": [
+            "02_03",
+            "03_09",
+            "09_12",
+            "06_12"
+          ]
+        }
+      }
+    },
+    {
+      "features": [
+        "slot_role_pair_unordered"
+      ],
+      "value_field": "pair_total_transition_count",
+      "group_count": 3,
+      "exact_group_count": 2,
+      "ambiguous_group_count": 1,
+      "exact_groups": {
+        "endpoint/internal": {
+          "value": "180",
+          "count": 4,
+          "pairs": [
+            "02_08",
+            "06_13",
+            "05_10",
+            "05_14"
+          ]
+        },
+        "endpoint/endpoint": {
+          "value": "130",
+          "count": 1,
+          "pairs": [
+            "07_11"
+          ]
+        }
+      },
+      "ambiguous_groups": {
+        "internal/internal": {
+          "counts": {
+            "180": 2,
+            "60": 1,
+            "120": 1
+          },
+          "pairs": [
+            "02_03",
+            "03_09",
+            "09_12",
+            "06_12"
+          ]
+        }
+      }
+    },
+    {
+      "features": [
+        "component_label",
+        "position_class"
+      ],
+      "value_field": "pair_total_transition_count",
+      "group_count": 4,
+      "exact_group_count": 3,
+      "ambiguous_group_count": 1,
+      "exact_groups": {
+        "P7 | terminal": {
+          "value": "180",
+          "count": 2,
+          "pairs": [
+            "02_08",
+            "06_13"
+          ]
+        },
+        "P3 | terminal": {
+          "value": "180",
+          "count": 2,
+          "pairs": [
+            "05_10",
+            "05_14"
+          ]
+        },
+        "P2 | singleton": {
+          "value": "130",
+          "count": 1,
+          "pairs": [
+            "07_11"
+          ]
+        }
+      },
+      "ambiguous_groups": {
+        "P7 | interior": {
+          "counts": {
+            "180": 2,
+            "60": 1,
+            "120": 1
+          },
+          "pairs": [
+            "02_03",
+            "03_09",
+            "09_12",
+            "06_12"
+          ]
+        }
+      }
+    },
+    {
+      "features": [
+        "component_label",
+        "position_label"
+      ],
+      "value_field": "pair_total_transition_count",
+      "group_count": 6,
+      "exact_group_count": 5,
+      "ambiguous_group_count": 1,
+      "exact_groups": {
+        "P7 | left_terminal": {
+          "value": "180",
+          "count": 1,
+          "pairs": [
+            "02_08"
+          ]
+        },
+        "P7 | right_terminal": {
+          "value": "180",
+          "count": 1,
+          "pairs": [
+            "06_13"
+          ]
+        },
+        "P3 | left_terminal": {
+          "value": "180",
+          "count": 1,
+          "pairs": [
+            "05_10"
+          ]
+        },
+        "P3 | right_terminal": {
+          "value": "180",
+          "count": 1,
+          "pairs": [
+            "05_14"
+          ]
+        },
+        "P2 | singleton": {
+          "value": "130",
+          "count": 1,
+          "pairs": [
+            "07_11"
+          ]
+        }
+      },
+      "ambiguous_groups": {
+        "P7 | interior": {
+          "counts": {
+            "180": 2,
+            "60": 1,
+            "120": 1
+          },
+          "pairs": [
+            "02_03",
+            "03_09",
+            "09_12",
+            "06_12"
+          ]
+        }
+      }
+    },
+    {
+      "features": [
+        "component_label",
+        "slot_role_pair_unordered"
+      ],
+      "value_field": "pair_total_transition_count",
+      "group_count": 4,
+      "exact_group_count": 3,
+      "ambiguous_group_count": 1,
+      "exact_groups": {
+        "P7 | endpoint/internal": {
+          "value": "180",
+          "count": 2,
+          "pairs": [
+            "02_08",
+            "06_13"
+          ]
+        },
+        "P3 | endpoint/internal": {
+          "value": "180",
+          "count": 2,
+          "pairs": [
+            "05_10",
+            "05_14"
+          ]
+        },
+        "P2 | endpoint/endpoint": {
+          "value": "130",
+          "count": 1,
+          "pairs": [
+            "07_11"
+          ]
+        }
+      },
+      "ambiguous_groups": {
+        "P7 | internal/internal": {
+          "counts": {
+            "180": 2,
+            "60": 1,
+            "120": 1
+          },
+          "pairs": [
+            "02_03",
+            "03_09",
+            "09_12",
+            "06_12"
+          ]
+        }
+      }
+    },
+    {
+      "features": [
+        "position_class",
+        "slot_role_pair_unordered"
+      ],
+      "value_field": "pair_total_transition_count",
+      "group_count": 3,
+      "exact_group_count": 2,
+      "ambiguous_group_count": 1,
+      "exact_groups": {
+        "terminal | endpoint/internal": {
+          "value": "180",
+          "count": 4,
+          "pairs": [
+            "02_08",
+            "06_13",
+            "05_10",
+            "05_14"
+          ]
+        },
+        "singleton | endpoint/endpoint": {
+          "value": "130",
+          "count": 1,
+          "pairs": [
+            "07_11"
+          ]
+        }
+      },
+      "ambiguous_groups": {
+        "interior | internal/internal": {
+          "counts": {
+            "180": 2,
+            "60": 1,
+            "120": 1
+          },
+          "pairs": [
+            "02_03",
+            "03_09",
+            "09_12",
+            "06_12"
+          ]
+        }
+      }
+    },
+    {
+      "features": [
+        "component_label",
+        "position_class",
+        "slot_role_pair_unordered"
+      ],
+      "value_field": "pair_total_transition_count",
+      "group_count": 4,
+      "exact_group_count": 3,
+      "ambiguous_group_count": 1,
+      "exact_groups": {
+        "P7 | terminal | endpoint/internal": {
+          "value": "180",
+          "count": 2,
+          "pairs": [
+            "02_08",
+            "06_13"
+          ]
+        },
+        "P3 | terminal | endpoint/internal": {
+          "value": "180",
+          "count": 2,
+          "pairs": [
+            "05_10",
+            "05_14"
+          ]
+        },
+        "P2 | singleton | endpoint/endpoint": {
+          "value": "130",
+          "count": 1,
+          "pairs": [
+            "07_11"
+          ]
+        }
+      },
+      "ambiguous_groups": {
+        "P7 | interior | internal/internal": {
+          "counts": {
+            "180": 2,
+            "60": 1,
+            "120": 1
+          },
+          "pairs": [
+            "02_03",
+            "03_09",
+            "09_12",
+            "06_12"
+          ]
+        }
+      }
+    }
+  ],
+  "best_package_kind_tests": [
+    {
+      "features": [
+        "component_label",
+        "position_label"
+      ],
+      "value_field": "package_kind",
+      "group_count": 6,
+      "exact_group_count": 5,
+      "ambiguous_group_count": 1,
+      "exact_groups": {
+        "P7 | left_terminal": {
+          "value": "clean_reciprocal_pair_package",
+          "count": 1,
+          "pairs": [
+            "02_08"
+          ]
+        },
+        "P7 | right_terminal": {
+          "value": "clean_reciprocal_pair_package",
+          "count": 1,
+          "pairs": [
+            "06_13"
+          ]
+        },
+        "P3 | left_terminal": {
+          "value": "clean_reciprocal_pair_package",
+          "count": 1,
+          "pairs": [
+            "05_10"
+          ]
+        },
+        "P3 | right_terminal": {
+          "value": "clean_reciprocal_pair_package",
+          "count": 1,
+          "pairs": [
+            "05_14"
+          ]
+        },
+        "P2 | singleton": {
+          "value": "two_transition_pair_package",
+          "count": 1,
+          "pairs": [
+            "07_11"
+          ]
+        }
+      },
+      "ambiguous_groups": {
+        "P7 | interior": {
+          "counts": {
+            "clean_reciprocal_pair_package": 2,
+            "one_way_single_transition": 1,
+            "two_transition_pair_package": 1
+          },
+          "pairs": [
+            "02_03",
+            "03_09",
+            "09_12",
+            "06_12"
+          ]
+        }
+      }
+    },
+    {
+      "features": [
+        "position_label"
+      ],
+      "value_field": "package_kind",
+      "group_count": 4,
+      "exact_group_count": 3,
+      "ambiguous_group_count": 1,
+      "exact_groups": {
+        "left_terminal": {
+          "value": "clean_reciprocal_pair_package",
+          "count": 2,
+          "pairs": [
+            "02_08",
+            "05_10"
+          ]
+        },
+        "right_terminal": {
+          "value": "clean_reciprocal_pair_package",
+          "count": 2,
+          "pairs": [
+            "06_13",
+            "05_14"
+          ]
+        },
+        "singleton": {
+          "value": "two_transition_pair_package",
+          "count": 1,
+          "pairs": [
+            "07_11"
+          ]
+        }
+      },
+      "ambiguous_groups": {
+        "interior": {
+          "counts": {
+            "clean_reciprocal_pair_package": 2,
+            "one_way_single_transition": 1,
+            "two_transition_pair_package": 1
+          },
+          "pairs": [
+            "02_03",
+            "03_09",
+            "09_12",
+            "06_12"
+          ]
+        }
+      }
+    },
+    {
+      "features": [
+        "component_label",
+        "position_class"
+      ],
+      "value_field": "package_kind",
+      "group_count": 4,
+      "exact_group_count": 3,
+      "ambiguous_group_count": 1,
+      "exact_groups": {
+        "P7 | terminal": {
+          "value": "clean_reciprocal_pair_package",
+          "count": 2,
+          "pairs": [
+            "02_08",
+            "06_13"
+          ]
+        },
+        "P3 | terminal": {
+          "value": "clean_reciprocal_pair_package",
+          "count": 2,
+          "pairs": [
+            "05_10",
+            "05_14"
+          ]
+        },
+        "P2 | singleton": {
+          "value": "two_transition_pair_package",
+          "count": 1,
+          "pairs": [
+            "07_11"
+          ]
+        }
+      },
+      "ambiguous_groups": {
+        "P7 | interior": {
+          "counts": {
+            "clean_reciprocal_pair_package": 2,
+            "one_way_single_transition": 1,
+            "two_transition_pair_package": 1
+          },
+          "pairs": [
+            "02_03",
+            "03_09",
+            "09_12",
+            "06_12"
+          ]
+        }
+      }
+    }
+  ],
+  "best_transition_count_tests": [
+    {
+      "features": [
+        "component_label",
+        "position_label"
+      ],
+      "value_field": "pair_total_transition_count",
+      "group_count": 6,
+      "exact_group_count": 5,
+      "ambiguous_group_count": 1,
+      "exact_groups": {
+        "P7 | left_terminal": {
+          "value": "180",
+          "count": 1,
+          "pairs": [
+            "02_08"
+          ]
+        },
+        "P7 | right_terminal": {
+          "value": "180",
+          "count": 1,
+          "pairs": [
+            "06_13"
+          ]
+        },
+        "P3 | left_terminal": {
+          "value": "180",
+          "count": 1,
+          "pairs": [
+            "05_10"
+          ]
+        },
+        "P3 | right_terminal": {
+          "value": "180",
+          "count": 1,
+          "pairs": [
+            "05_14"
+          ]
+        },
+        "P2 | singleton": {
+          "value": "130",
+          "count": 1,
+          "pairs": [
+            "07_11"
+          ]
+        }
+      },
+      "ambiguous_groups": {
+        "P7 | interior": {
+          "counts": {
+            "180": 2,
+            "60": 1,
+            "120": 1
+          },
+          "pairs": [
+            "02_03",
+            "03_09",
+            "09_12",
+            "06_12"
+          ]
+        }
+      }
+    },
+    {
+      "features": [
+        "position_label"
+      ],
+      "value_field": "pair_total_transition_count",
+      "group_count": 4,
+      "exact_group_count": 3,
+      "ambiguous_group_count": 1,
+      "exact_groups": {
+        "left_terminal": {
+          "value": "180",
+          "count": 2,
+          "pairs": [
+            "02_08",
+            "05_10"
+          ]
+        },
+        "right_terminal": {
+          "value": "180",
+          "count": 2,
+          "pairs": [
+            "06_13",
+            "05_14"
+          ]
+        },
+        "singleton": {
+          "value": "130",
+          "count": 1,
+          "pairs": [
+            "07_11"
+          ]
+        }
+      },
+      "ambiguous_groups": {
+        "interior": {
+          "counts": {
+            "180": 2,
+            "60": 1,
+            "120": 1
+          },
+          "pairs": [
+            "02_03",
+            "03_09",
+            "09_12",
+            "06_12"
+          ]
+        }
+      }
+    },
+    {
+      "features": [
+        "component_label",
+        "position_class"
+      ],
+      "value_field": "pair_total_transition_count",
+      "group_count": 4,
+      "exact_group_count": 3,
+      "ambiguous_group_count": 1,
+      "exact_groups": {
+        "P7 | terminal": {
+          "value": "180",
+          "count": 2,
+          "pairs": [
+            "02_08",
+            "06_13"
+          ]
+        },
+        "P3 | terminal": {
+          "value": "180",
+          "count": 2,
+          "pairs": [
+            "05_10",
+            "05_14"
+          ]
+        },
+        "P2 | singleton": {
+          "value": "130",
+          "count": 1,
+          "pairs": [
+            "07_11"
+          ]
+        }
+      },
+      "ambiguous_groups": {
+        "P7 | interior": {
+          "counts": {
+            "180": 2,
+            "60": 1,
+            "120": 1
+          },
+          "pairs": [
+            "02_03",
+            "03_09",
+            "09_12",
+            "06_12"
+          ]
+        }
+      }
+    }
+  ],
+  "interpretation": {
+    "path_position_audit_only": true,
+    "package_kind_is_not_assumed_channel_law": true,
+    "nonclean_edges_are_position_candidates": [
+      {
+        "pair": "09_12",
+        "component_label": "P7",
+        "position_class": "interior",
+        "position_label": "interior",
+        "slot_role_pair_unordered": "internal/internal",
+        "package_kind": "one_way_single_transition",
+        "pair_total_transition_count": 60
+      },
+      {
+        "pair": "06_12",
+        "component_label": "P7",
+        "position_class": "interior",
+        "position_label": "interior",
+        "slot_role_pair_unordered": "internal/internal",
+        "package_kind": "two_transition_pair_package",
+        "pair_total_transition_count": 120
+      },
+      {
+        "pair": "07_11",
+        "component_label": "P2",
+        "position_class": "singleton",
+        "position_label": "singleton",
+        "slot_role_pair_unordered": "endpoint/endpoint",
+        "package_kind": "two_transition_pair_package",
+        "pair_total_transition_count": 130
+      }
+    ],
+    "next_problem": "If package kind is position-coded, test whether the code is intrinsic to the G15 path forest or imported from full60 package labels."
+  },
+  "checks": {
+    "taxonomy_audit_passed": true,
+    "channel_registry_zero_count": true,
+    "channels_not_admitted": true,
+    "edge_count_9": true,
+    "component_size_profile_7_3_2": true,
+    "component_edge_profile_6_2_1": true,
+    "all_edges_have_package_kind": true,
+    "all_edges_have_transition_count": true,
+    "all_edges_have_boundary_carrier": true,
+    "no_edges_admitted_as_channels": true,
+    "package_kind_tests_completed": true,
+    "transition_count_tests_completed": true
+  },
+  "failed_checks": [],
+  "boundary": {
+    "position_audit_only": true,
+    "admits_channels": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "marker_lighting": false,
+    "force_claim": false,
+    "physics_claim": false
+  }
+}

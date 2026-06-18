@@ -1,0 +1,190 @@
+{
+  "schema": "g900.sheets_per_second_quartz_boundary",
+  "version": 1,
+  "status": "sheets_per_second_quartz_boundary_recorded",
+  "created_utc": "2026-06-18T02:13:15Z",
+  "audit_pass": true,
+  "verdict": "sheets_per_second_quartz_boundary_recorded",
+  "question": "How does the G900 Observatory tie admissible grammar steps back to quartz timing without giving quartz event authority?",
+  "unit_definition": {
+    "unit_name": "sheets_per_second",
+    "short_form": "sheets/sec",
+    "numerator": {
+      "name": "sheets",
+      "source": "Thalean/G900 grammar",
+      "definition": "Steps of admissible action in the grammar.",
+      "authority": "Only a receipted grammar rule, return-cell event contract, or later admitted structural rule may count a sheet."
+    },
+    "denominator": {
+      "name": "seconds",
+      "source": "scaled quartz oscillations",
+      "definition": "Clock time supplied by the timing substrate used by CPU, display, and stage refresh.",
+      "authority": "Quartz scales timing only. It supplies no event authority."
+    },
+    "rate_definition": "Sheets per second is a readout of admissible grammatical action throughput over scaled quartz time.",
+    "allowed_readout": true,
+    "event_authority": false
+  },
+  "boundary_laws": [
+    {
+      "id": "quartz_supplies_denominator_only",
+      "statement": "Quartz supplies the timing denominator, not the event authority."
+    },
+    {
+      "id": "grammar_supplies_numerator_only_when_admissible",
+      "statement": "The grammar supplies the numerator only when a step is admissible by a receipted rule."
+    },
+    {
+      "id": "frame_is_not_event",
+      "statement": "A display frame may refresh the witness surface, but a frame is not an event."
+    },
+    {
+      "id": "timer_is_not_cycle",
+      "statement": "A timer may pace an animation, but a timer is not a structural cycle."
+    },
+    {
+      "id": "counter_is_not_event",
+      "statement": "A counter may number updates, but a counter is not an event."
+    },
+    {
+      "id": "renderer_is_not_authority",
+      "statement": "A renderer may display admitted information, but a renderer does not authorize marker lighting."
+    },
+    {
+      "id": "gate_opens_by_admissible_return",
+      "statement": "A marker gate opens only by explicit admitted return or gate-open authorization, not by elapsed time."
+    }
+  ],
+  "forbidden_misreadings": [
+    "more ticks means an event occurred",
+    "more frames means a gate opens",
+    "more time means a marker lights",
+    "quartz oscillation is a sheet",
+    "screen refresh is an admissible action",
+    "renderer existence is marker permission",
+    "sheets per second is a force claim",
+    "sheets per second is a physics derivation"
+  ],
+  "keeper_lines": [
+    "Quartz keeps the seconds. The grammar earns the sheets.",
+    "The Observatory may read sheets per second, but gates open only by admissible return.",
+    "The quartz clock lets the witness surface move. It does not decide what has happened.",
+    "Lucky for me, CPUs run on quartz. But quartz only keeps the beat. It does not name the event."
+  ],
+  "marker_stack_state": {
+    "event_id": "g900_return_cell_event_562162c72753c818",
+    "marker_id": "unsupported_phase_step_6_9",
+    "binding_id": "g900_marker_event_binding_1d645b31e5366deb",
+    "render_contract_id": "g900_marker_render_contract_2f8f21a3465a71d3",
+    "renderer_stub_id": "g900_live_stage_marker_renderer_stub_1b73e0f41964b984",
+    "renderer_fixture_exists": true,
+    "gate_open": false,
+    "gate_open_authorization_exists": false,
+    "lights_marker_now": false,
+    "channel_count": 0
+  },
+  "source_receipts": {
+    "post_stub_recheck": "public_html/labs/g900_observatory/artifacts/json/g900_post_stub_marker_event_gate_recheck_001.v1.json",
+    "renderer_stub": "public_html/labs/g900_observatory/artifacts/json/g900_live_stage_marker_renderer_stub_001.v1.json",
+    "render_contract": "public_html/labs/g900_observatory/artifacts/json/g900_marker_render_contract_001.v1.json",
+    "binding_contract": "public_html/labs/g900_observatory/artifacts/json/g900_marker_event_binding_contract_001.v1.json",
+    "channel_registry": "public_html/labs/g900_observatory/data/g900_channels.v0.1.json",
+    "static_body": "public_html/labs/g900_observatory/data/g900_static_body.v1.json",
+    "quartz_related_files_found": [
+      "public_html/labs/g900_observatory/notes/g900_quartz_clock_guardrail_v0.1.md"
+    ]
+  },
+  "runtime_receipt": {
+    "stage_path": "public_html/labs/g900_observatory/g900_grammar_stage_v0.js",
+    "stage_sha256": "732dad810dffdfbe97c275ee96914a95aeb7fa6976df04d8df0063157b19d5bf",
+    "static_body_sha256": "71944bd613ce8c6c036a2c4198f3df2e0064a75fec1f03ccf8bb60f9a2d412db"
+  },
+  "summary": {
+    "unit_name": "sheets_per_second",
+    "sheets_source": "admissible grammar steps",
+    "seconds_source": "scaled quartz oscillations",
+    "readout_allowed": true,
+    "event_authority": false,
+    "quartz_gate_authority": false,
+    "timer_is_cycle": false,
+    "frame_is_event": false,
+    "counter_is_event": false,
+    "renderer_fixture_exists": true,
+    "gate_open": false,
+    "lights_marker_now": false,
+    "channel_count": 0
+  },
+  "interpretation": {
+    "quartz_keeps_seconds": true,
+    "grammar_earns_sheets": true,
+    "sheets_per_second_is_readout": true,
+    "sheets_per_second_is_not_event_authority": true,
+    "quartz_does_not_authorize_marker_lighting": true,
+    "renderer_frames_do_not_open_gate": true,
+    "not_channel": true,
+    "not_force_claim": true,
+    "not_physics_claim": true,
+    "next_problem": "Keep sheets/sec as a readout layer, or add a UI/status note that displays timing without granting gate authority."
+  },
+  "criteria": [
+    {
+      "id": "post_stub_gate_recheck_passed_closed",
+      "description": "The post-stub gate recheck exists, passed, and kept the gate closed.",
+      "satisfied": true
+    },
+    {
+      "id": "renderer_fixture_exists_but_not_enabled",
+      "description": "The renderer fixture exists, but renderer enablement and marker lighting remain false.",
+      "satisfied": true
+    },
+    {
+      "id": "channel_registry_zero",
+      "description": "The channel registry remains zero-count.",
+      "satisfied": true
+    },
+    {
+      "id": "static_body_receipted",
+      "description": "The static G900 body is loaded as read-only source material.",
+      "satisfied": true,
+      "static_body_sha256": "71944bd613ce8c6c036a2c4198f3df2e0064a75fec1f03ccf8bb60f9a2d412db"
+    },
+    {
+      "id": "unit_separates_numerator_and_denominator",
+      "description": "Sheets and seconds have separate sources and authorities.",
+      "satisfied": true
+    },
+    {
+      "id": "quartz_has_no_gate_authority",
+      "description": "Quartz timing is explicitly barred from opening gates or lighting markers.",
+      "satisfied": true
+    },
+    {
+      "id": "readout_not_physics_claim",
+      "description": "Sheets per second is a readout, not a force or physics claim.",
+      "satisfied": true
+    }
+  ],
+  "checks": {
+    "post_stub_gate_recheck_passed": true,
+    "gate_still_closed": true,
+    "marker_not_lit": true,
+    "renderer_fixture_exists": true,
+    "channel_registry_zero": true,
+    "static_body_loaded": true,
+    "unit_has_no_event_authority": true,
+    "all_criteria_satisfied": true
+  },
+  "failed_checks": [],
+  "boundary": {
+    "quartz_substrate_only": true,
+    "readout_layer_only": true,
+    "event_authority": false,
+    "gate_open": false,
+    "marker_lighting": false,
+    "admits_channels": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "force_claim": false,
+    "physics_claim": false
+  }
+}

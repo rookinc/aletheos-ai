@@ -1,0 +1,189 @@
+{
+  "schema": "g900.phase3_distinct_ladder_condition_audit",
+  "version": 1,
+  "status": "phase3_distinct_ladder_condition_audit_recorded",
+  "created_utc": "2026-06-18T08:55:47Z",
+  "git_head": "19921c5 Compare G900 phase-3 fork ladder degeneracy",
+  "audit_pass": true,
+  "verdict": "phase3_distinct_ladder_condition_audit_passed",
+  "question": "Does phase-3 ladder distinctness explain why the six-nine ladder can answer while the ordinary phase-3 ladder degenerates?",
+  "condition_status": "distinct_phase3_ladder_exactly_selects_answering_capacity",
+  "reading": "Inside the observed phase-3 family, ladder distinctness exactly separates the six-nine answering case from the ordinary degenerate member. The distinct ladder 3->6->9->12 produces an outside pair and a failure-to-receipt conversion; the degenerate ladder 9->12->9->12 collapses and produces no outside pair.",
+  "condition": {
+    "name": "distinct_phase3_ladder_condition",
+    "definition": "The four ladder stations [outside_moving, inside_moving, anchor, inside_root_slot] are all distinct.",
+    "distinct_case": "3 -> 6 -> 9 -> 12",
+    "degenerate_case": "9 -> 12 -> 9 -> 12",
+    "uses_receipt_fields": false,
+    "uses_support_fields": false
+  },
+  "counts": {
+    "phase3_record_count": 2,
+    "distinct_ladder_count": 1,
+    "degenerate_ladder_count": 1,
+    "prediction_exists_count": 1,
+    "failure_to_receipt_count": 1,
+    "outside_pair_degenerate_count": 1
+  },
+  "ladder_counts": {
+    "3 -> 6 -> 9 -> 12": 1,
+    "9 -> 12 -> 9 -> 12": 1
+  },
+  "equivalences_in_observed_phase3_family": {
+    "distinct_selects_outside_pair_not_degenerate": true,
+    "distinct_selects_prediction_exists": true,
+    "distinct_selects_failure_to_receipt": true
+  },
+  "target_six_nine": {
+    "source_frame": [
+      "06_09",
+      "12",
+      "23->24"
+    ],
+    "phase_ladder_values": [
+      3,
+      6,
+      9,
+      12
+    ],
+    "phase_ladder_distinct": true,
+    "outside_pair_degenerate": false,
+    "outside_pair_not_degenerate": true,
+    "prediction_exists": true,
+    "failure_to_receipt": true,
+    "predicted_pair_key": "03_09",
+    "predicted_frame": [
+      "03_09",
+      "9",
+      "23->24"
+    ],
+    "source_inside_failure_proxy": true,
+    "predicted_receipt_proxy": true
+  },
+  "ordinary_phase3_member": {
+    "source_frame": [
+      "09_12",
+      "12",
+      "32->33"
+    ],
+    "phase_ladder_values": [
+      9,
+      12,
+      9,
+      12
+    ],
+    "phase_ladder_distinct": false,
+    "outside_pair_degenerate": true,
+    "outside_pair_not_degenerate": false,
+    "prediction_exists": false,
+    "failure_to_receipt": false,
+    "predicted_pair_key": null,
+    "predicted_frame": null,
+    "source_inside_failure_proxy": false,
+    "predicted_receipt_proxy": false
+  },
+  "all_phase3_condition_rows": [
+    {
+      "source_frame": [
+        "06_09",
+        "12",
+        "23->24"
+      ],
+      "phase_ladder_values": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "phase_ladder_distinct": true,
+      "outside_pair_degenerate": false,
+      "outside_pair_not_degenerate": true,
+      "prediction_exists": true,
+      "failure_to_receipt": true,
+      "predicted_pair_key": "03_09",
+      "predicted_frame": [
+        "03_09",
+        "9",
+        "23->24"
+      ],
+      "source_inside_failure_proxy": true,
+      "predicted_receipt_proxy": true
+    },
+    {
+      "source_frame": [
+        "09_12",
+        "12",
+        "32->33"
+      ],
+      "phase_ladder_values": [
+        9,
+        12,
+        9,
+        12
+      ],
+      "phase_ladder_distinct": false,
+      "outside_pair_degenerate": true,
+      "outside_pair_not_degenerate": false,
+      "prediction_exists": false,
+      "failure_to_receipt": false,
+      "predicted_pair_key": null,
+      "predicted_frame": null,
+      "source_inside_failure_proxy": false,
+      "predicted_receipt_proxy": false
+    }
+  ],
+  "interpretation_boundary": [
+    "This is an observed phase-3 family condition audit.",
+    "It formalizes the distinct-ladder condition but does not derive that condition from deeper G60 construction.",
+    "Receipt/failure labels are used only to evaluate the condition after prediction.",
+    "No closure witness, transport relation, channel, force, physics, GR, Maxwell, QCD, electroweak, or unification claim is made."
+  ],
+  "boundary": {
+    "phase3_distinct_ladder_condition_audit_only": true,
+    "full_native_derivation": false,
+    "admits_closure_witness": false,
+    "admits_transport_relation": false,
+    "admits_channel": false,
+    "marker_lighting": false,
+    "viewer_change": false,
+    "body_mutation": false,
+    "force_claim": false,
+    "physics_claim": false,
+    "gr_claim": false,
+    "maxwell_claim": false,
+    "qcd_claim": false,
+    "electroweak_claim": false,
+    "unification_claim": false
+  },
+  "next_allowed_math_acts": [
+    "derive_distinct_ladder_condition_from_g60_construction",
+    "test_distinct_ladder_condition_outside_phase3_family",
+    "test_5_3_4_chamber_signature_near_answering_fork",
+    "transport_relation_admission_criterion_001"
+  ],
+  "checks": {
+    "comparison_prior_valid": true,
+    "comparison_prior_status": true,
+    "family_prior_valid": true,
+    "native_fork_prior_valid": true,
+    "phase3_record_count_two": true,
+    "target_good": true,
+    "ordinary_good": true,
+    "distinct_selects_not_degenerate": true,
+    "distinct_selects_prediction_exists": true,
+    "distinct_selects_failure_to_receipt": true,
+    "condition_status_recorded": true,
+    "channel_registry_preserved": true,
+    "renderer_absent": true,
+    "no_forbidden_claims": true
+  },
+  "failed_checks": [],
+  "hashes": {
+    "comparison_prior_sha256": "8cfbab1d2ee9ac81a5d41627995f87d2e11fee7410cf825467c3958d53446c55",
+    "family_prior_sha256": "620c4c69bbe1f52f36be98476a3f173f893b04ea2e6cb2a4a638c4ee39cc5636",
+    "native_fork_prior_sha256": "133502289c09df1045f42eaf4f98c40c2837d50a8b173d8f22f6076053b97f49",
+    "channels_sha256": "fbe4c50e0adf3460f7190f3c7714754da8a620359a5bc26c70543cc401feca08",
+    "body_sha256": "6a2cb6b9892a78d4559ec61cf946b0021962cc6819311234b8bf14102b3b7f63",
+    "lab_sha256": "5a10a18bc6563446a0d364d5984b8a41db580e0a75831c82b9eeb5aebc2edeb7"
+  }
+}

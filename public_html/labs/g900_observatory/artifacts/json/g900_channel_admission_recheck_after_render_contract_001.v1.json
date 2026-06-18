@@ -1,0 +1,178 @@
+{
+  "schema": "g900.channel_admission_recheck_after_render_contract",
+  "version": 1,
+  "status": "channel_admission_recheck_after_render_contract_recorded",
+  "created_utc": "2026-06-18T03:12:58Z",
+  "audit_pass": true,
+  "verdict": "channel_admission_recheck_after_render_contract_one_math_blocker_remaining",
+  "question": "After the channel semantics and render contracts are recorded, is the return-cell channel admissible?",
+  "answer": "No. Semantics and render-contract blockers are resolved, but the non-pair-identity transition-length law remains unresolved.",
+  "candidate": {
+    "candidate_id": "return_cell_03_09_09_12_06_12_06_13",
+    "candidate_pairs": [
+      "03_09",
+      "09_12",
+      "06_12",
+      "06_13"
+    ],
+    "semantics_contract_id": "g900_channel_semantics_contract_dabdd392c0015dbd",
+    "render_contract_id": "g900_channel_render_contract_c1ab6ec9041a2eba"
+  },
+  "resolved_by_prior_contracts": [
+    "channel_semantics_contract_absent",
+    "channel_render_contract_absent"
+  ],
+  "remaining_blockers": [
+    "non_pair_identity_transition_length_law"
+  ],
+  "source_receipts": {
+    "channels": "public_html/labs/g900_observatory/data/g900_channels.v0.1.json",
+    "carriers": "public_html/labs/g900_observatory/data/g900_carriers.v0.1.json",
+    "static_body": "public_html/labs/g900_observatory/data/g900_static_body.v1.json",
+    "semantics_contract": "public_html/labs/g900_observatory/artifacts/json/g900_channel_semantics_contract_001.v1.json",
+    "render_contract": "public_html/labs/g900_observatory/artifacts/json/g900_channel_render_contract_001.v1.json",
+    "prior_recheck": "public_html/labs/g900_observatory/artifacts/json/g900_channel_admission_recheck_after_semantics_001.v1.json",
+    "event_contract": "public_html/labs/g900_observatory/artifacts/json/g900_return_cell_cycle_event_contract_001.v1.json",
+    "gate_recheck": "public_html/labs/g900_observatory/artifacts/json/g900_post_stub_marker_event_gate_recheck_001.v1.json",
+    "transition_minimal": "public_html/labs/g900_observatory/artifacts/json/g900_transition_length_minimal_origin_audit_001.v1.json",
+    "quartz_boundary": "public_html/labs/g900_observatory/artifacts/json/g900_sheets_per_second_quartz_boundary_001.v1.json"
+  },
+  "hash_receipts": {
+    "static_body_sha256": "71944bd613ce8c6c036a2c4198f3df2e0064a75fec1f03ccf8bb60f9a2d412db",
+    "carrier_registry_sha256": "ecbf14773744ec44d9a73ed14f41525e40f378bf431e4174e194cb431ffcb735",
+    "channel_registry_sha256": "f5298a9d2418778c9e1bc545449b1a84d8b00125e18dc5b6ec6bb08f3434a309",
+    "stage_sha256": "732dad810dffdfbe97c275ee96914a95aeb7fa6976df04d8df0063157b19d5bf"
+  },
+  "summary": {
+    "semantics_contract_exists": true,
+    "semantics_blocker_resolved": true,
+    "render_contract_exists": true,
+    "render_blocker_resolved": true,
+    "non_pair_identity_transition_length_law_found": false,
+    "channel_admission_allowed_now": false,
+    "remaining_blockers": [
+      "non_pair_identity_transition_length_law"
+    ],
+    "channel_count": 0,
+    "renderer_enabled_now": false,
+    "renders_channel_now": false,
+    "mutates_body": false,
+    "marker_gate_open": false,
+    "marker_lighting": false
+  },
+  "interpretation": {
+    "honest_path_followed": true,
+    "semantics_is_no_longer_the_blocker": true,
+    "render_contract_is_no_longer_the_blocker": true,
+    "only_math_blocker_remains": true,
+    "channel_is_still_not_admitted": true,
+    "channel_is_still_not_rendered": true,
+    "marker_is_still_attention_not_channel": true,
+    "not_marker_lighting": true,
+    "not_body_mutation": true,
+    "not_force_claim": true,
+    "not_physics_claim": true,
+    "next_problem": "Attack the non-pair-identity transition-length law directly."
+  },
+  "criteria": [
+    {
+      "id": "semantics_contract_exists",
+      "description": "The channel semantics contract exists and passed.",
+      "satisfied": true,
+      "semantics_contract_id": "g900_channel_semantics_contract_dabdd392c0015dbd"
+    },
+    {
+      "id": "semantics_blocker_resolved",
+      "description": "The semantics blocker has been resolved.",
+      "satisfied": true
+    },
+    {
+      "id": "render_contract_exists",
+      "description": "The channel render contract exists and passed.",
+      "satisfied": true,
+      "render_contract_id": "g900_channel_render_contract_c1ab6ec9041a2eba"
+    },
+    {
+      "id": "render_blocker_resolved",
+      "description": "The render contract blocker has been resolved.",
+      "satisfied": true
+    },
+    {
+      "id": "math_blocker_remains",
+      "description": "The non-pair-identity transition-length law remains unresolved.",
+      "satisfied": true,
+      "remaining_blockers": [
+        "non_pair_identity_transition_length_law"
+      ],
+      "transition_length_status": {
+        "artifact_found": true,
+        "non_pair_identity_law_found": false,
+        "pair_identity_only": true,
+        "evidence": {
+          "verdict": "only_pair_identity_like_transition_length_derivations_found",
+          "audit_pass": true,
+          "non_identity_exact_hit_count": 0,
+          "compressed_exact_hit_count": 0
+        }
+      }
+    },
+    {
+      "id": "channel_registry_zero",
+      "description": "The channel registry remains zero-count.",
+      "satisfied": true
+    },
+    {
+      "id": "channel_not_admitted",
+      "description": "The channel remains unadmitted.",
+      "satisfied": true
+    },
+    {
+      "id": "channel_not_rendered",
+      "description": "The channel remains unrendered.",
+      "satisfied": true
+    },
+    {
+      "id": "body_not_mutated",
+      "description": "The G900 body is not mutated.",
+      "satisfied": true
+    },
+    {
+      "id": "marker_gate_still_closed",
+      "description": "The marker gate remains closed and the marker remains unlit.",
+      "satisfied": true
+    },
+    {
+      "id": "quartz_boundary_still_non_authoritative",
+      "description": "Quartz timing remains non-authoritative.",
+      "satisfied": true
+    }
+  ],
+  "checks": {
+    "semantics_contract_exists": true,
+    "semantics_blocker_resolved": true,
+    "render_contract_exists": true,
+    "render_blocker_resolved": true,
+    "math_blocker_remains": true,
+    "channel_registry_zero": true,
+    "channel_not_admitted": true,
+    "renderer_not_enabled": true,
+    "channel_not_rendered": true,
+    "body_not_mutated": true,
+    "marker_gate_still_closed": true,
+    "marker_not_lit": true,
+    "quartz_boundary_non_authoritative": true,
+    "all_criteria_satisfied": true
+  },
+  "failed_checks": [],
+  "boundary": {
+    "recheck_only": true,
+    "admits_channels": false,
+    "renderer_enabled": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "marker_lighting": false,
+    "gate_open": false,
+    "force_claim": false,
+    "physics_claim": false
+  }
+}

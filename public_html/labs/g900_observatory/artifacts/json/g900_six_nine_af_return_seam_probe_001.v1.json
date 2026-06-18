@@ -1,0 +1,144 @@
+{
+  "schema": "g900.six_nine_af_return_seam_probe",
+  "version": 1,
+  "status": "six_nine_af_return_seam_probe_recorded",
+  "created_utc": "2026-06-18T07:43:10Z",
+  "git_head": "02e3dda Record G900 zero hit condition frontier",
+  "audit_pass": true,
+  "verdict": "six_nine_af_return_seam_probe_passed",
+  "hypothesis": "The 06_09 zero-hit anomaly may be read as a bounded A/F-style return seam: a closure attempt from release apex to containment anchor.",
+  "af_status": "bounded_af_return_seam_analogy_supported",
+  "reading": "The A/F return-seam reading is compatible as a bounded structural analogy: the native selector root_slot=12 AND limit_transition=23->24 exactly matches the global zero-hit rows, without using visual A/F labels as proof.",
+  "native_selector": {
+    "meaning": "support-table return seam candidate",
+    "root_slot": "12",
+    "limit_transition": "23->24",
+    "selector_fields": [
+      "root_slot",
+      "from_limit",
+      "to_limit"
+    ],
+    "visual_labels_used_as_selector": []
+  },
+  "evaluation": {
+    "evaluation_fields": [
+      "delta_edge_hits",
+      "internal_delta_hits",
+      "has_delta_support",
+      "has_boundary_carrier"
+    ],
+    "zero_hit_definition": "delta_edge_hits token count is 0 AND internal_delta_hits token count is 0",
+    "global_row_count": 1440,
+    "zero_hit_row_count": 60,
+    "return_seam_candidate_row_count": 60,
+    "false_positive_count": 0,
+    "false_negative_count": 0,
+    "exact_match": true,
+    "zero_pair_counts": {
+      "06_09": 60
+    },
+    "seam_pair_counts": {
+      "06_09": 60
+    },
+    "zero_limit_counts": {
+      "23->24": 60
+    },
+    "seam_limit_counts": {
+      "23->24": 60
+    },
+    "seam_root_slot_counts": {
+      "12": 60
+    },
+    "seam_delta_edge_hits_profile": {
+      "count": 60,
+      "min": 0,
+      "max": 0,
+      "sum": 0,
+      "distinct": [
+        0
+      ]
+    },
+    "seam_internal_delta_hits_profile": {
+      "count": 60,
+      "min": 0,
+      "max": 0,
+      "sum": 0,
+      "distinct": [
+        0
+      ]
+    },
+    "seam_has_delta_support_profile": {
+      "true": 0,
+      "false": 60,
+      "count": 60
+    },
+    "seam_has_boundary_carrier_profile": {
+      "true": 0,
+      "false": 60,
+      "count": 60
+    }
+  },
+  "already_supported": [
+    "06_09 is the unique total package-support failure",
+    "the sharper handle is 23->24, not from_limit=23 alone",
+    "root_slot=12 is mixed globally",
+    "root_slot=12 AND 23->24 is exactly equivalent to the global zero-hit condition"
+  ],
+  "metaphor_only": [
+    "A as containment anchor",
+    "F as release apex",
+    "F -> A as visual return carry",
+    "gravity-like compression",
+    "strong-like containment",
+    "EM-like polarization",
+    "weak-like transformation"
+  ],
+  "boundary": {
+    "bounded_structural_analogy_only": true,
+    "admits_transport_relation": false,
+    "admits_channel": false,
+    "marker_lighting": false,
+    "viewer_change": false,
+    "body_mutation": false,
+    "force_claim": false,
+    "physics_claim": false,
+    "gr_claim": false,
+    "maxwell_claim": false,
+    "qcd_claim": false,
+    "electroweak_claim": false,
+    "unification_claim": false
+  },
+  "next_allowed_math_acts": [
+    "root_slot_12_2324_source_provenance_probe_001",
+    "transport_relation_admission_criterion_001",
+    "physics_bridge_forbidden_mapping_ledger_001"
+  ],
+  "checks": {
+    "compound_prior_valid": true,
+    "compound_prior_exact": true,
+    "scope_prior_valid": true,
+    "field_law_prior_valid": true,
+    "family_prior_valid": true,
+    "steps_present": true,
+    "zero_rows_present": true,
+    "seam_rows_present": true,
+    "native_selector_uses_no_visual_labels": true,
+    "native_selector_fields_recorded": true,
+    "af_status_recorded": true,
+    "channel_registry_preserved": true,
+    "renderer_absent": true,
+    "no_forbidden_claims": true
+  },
+  "failed_checks": [],
+  "hashes": {
+    "frontier_sha256": "a7467265510b59760f21fcc6061b5ae85f7555a1f12090fea5a1d0fd51d65771",
+    "compound_sha256": "28eae25162bbc2a1397c2125b2e48c2d7754fd2b7bffca8498bd6db7d52cc41c",
+    "scope_sha256": "ac08a0770acd87685399dcc73b8ab67f555ec752b82a01081a03be56ac6eff99",
+    "field_law_sha256": "52ec7408929c48c0729f4ce14b7a50f0afe49be3ccfe94a00b2ade9d3e064d30",
+    "family_sha256": "e28aad9669e5b0888cdfe08b0adf24a0fd6fa34b0c397a89684bbd8c2535e391",
+    "steps_csv_sha256": "40466b974be84ee5ff7bae97a5077a98d15483e80367422c6d717edf59ee630d",
+    "channels_sha256": "fbe4c50e0adf3460f7190f3c7714754da8a620359a5bc26c70543cc401feca08",
+    "body_sha256": "6a2cb6b9892a78d4559ec61cf946b0021962cc6819311234b8bf14102b3b7f63",
+    "lab_sha256": "5a10a18bc6563446a0d364d5984b8a41db580e0a75831c82b9eeb5aebc2edeb7"
+  }
+}

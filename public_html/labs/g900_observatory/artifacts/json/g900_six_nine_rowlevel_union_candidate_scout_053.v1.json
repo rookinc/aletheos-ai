@@ -1,0 +1,717 @@
+{
+  "audit_id": "g900_six_nine_rowlevel_union_candidate_scout_053",
+  "audit_pass": true,
+  "boundary": {
+    "channel_admitted": false,
+    "closure_witness_admitted": false,
+    "force_claim": false,
+    "marker_lighting": false,
+    "native_derivation_complete": false,
+    "physics_claim": false,
+    "row_level_union_complete": false,
+    "single_feature_union_scout_only": true,
+    "transport_relation_admitted": false,
+    "unification_claim": false,
+    "viewer_or_body_mutation": false
+  },
+  "candidate_122_count": 122,
+  "exact_110_candidates_first_30": [
+    {
+      "count": 110,
+      "feature": "context_summary.full_packet_row_count",
+      "value": "441"
+    },
+    {
+      "count": 110,
+      "feature": "context_summary.nonleaky_full_packet_row_count",
+      "value": "84"
+    },
+    {
+      "count": 110,
+      "feature": "context_summary.origin_status",
+      "value": "\"candidate_native_source_or_carrier_rows_available_for_next_derivation\""
+    },
+    {
+      "count": 110,
+      "feature": "context_summary.phase_ladder_distinct",
+      "value": "false"
+    },
+    {
+      "count": 110,
+      "feature": "context_summary.source_geometry_origin_candidate_found",
+      "value": "true"
+    },
+    {
+      "count": 110,
+      "feature": "context_summary.strong_source_packet_row_count",
+      "value": "122"
+    },
+    {
+      "count": 110,
+      "feature": "row.context_summary.full_packet_row_count",
+      "value": "441"
+    },
+    {
+      "count": 110,
+      "feature": "row.context_summary.nonleaky_full_packet_row_count",
+      "value": "84"
+    },
+    {
+      "count": 110,
+      "feature": "row.context_summary.origin_status",
+      "value": "\"candidate_native_source_or_carrier_rows_available_for_next_derivation\""
+    },
+    {
+      "count": 110,
+      "feature": "row.context_summary.phase_ladder_distinct",
+      "value": "false"
+    },
+    {
+      "count": 110,
+      "feature": "row.context_summary.source_geometry_origin_candidate_found",
+      "value": "true"
+    },
+    {
+      "count": 110,
+      "feature": "row.context_summary.strong_source_packet_row_count",
+      "value": "122"
+    },
+    {
+      "count": 110,
+      "feature": "row.full_packet_row_count",
+      "value": "441"
+    },
+    {
+      "count": 110,
+      "feature": "row.is_target_pair",
+      "value": "false"
+    },
+    {
+      "count": 110,
+      "feature": "row.nonleaky_full_packet_row_count",
+      "value": "84"
+    },
+    {
+      "count": 110,
+      "feature": "row.origin_status",
+      "value": "\"candidate_native_source_or_carrier_rows_available_for_next_derivation\""
+    },
+    {
+      "count": 110,
+      "feature": "row.source_geometry_origin_candidate_found",
+      "value": "true"
+    },
+    {
+      "count": 110,
+      "feature": "row.strong_source_packet_row_count",
+      "value": "122"
+    }
+  ],
+  "exact_110_single_feature_candidate_count": 18,
+  "exact_298_candidates_first_30": [],
+  "exact_298_single_feature_candidate_count": 0,
+  "exact_66_candidates_first_30": [
+    {
+      "count": 66,
+      "feature": "compact_context.farthest_anchor_endpoints",
+      "value": "[6]"
+    },
+    {
+      "count": 66,
+      "feature": "compact_context.nearest_anchor_endpoints",
+      "value": "[9]"
+    },
+    {
+      "count": 66,
+      "feature": "context_summary.phase_ladder_values",
+      "value": "[3, 9, 6, 12]"
+    },
+    {
+      "count": 66,
+      "feature": "row.compact_context.farthest_anchor_endpoints",
+      "value": "[6]"
+    },
+    {
+      "count": 66,
+      "feature": "row.compact_context.nearest_anchor_endpoints",
+      "value": "[9]"
+    },
+    {
+      "count": 66,
+      "feature": "row.context_summary.phase_ladder_values",
+      "value": "[3, 9, 6, 12]"
+    },
+    {
+      "count": 66,
+      "feature": "row.source_root_slot",
+      "value": "null"
+    },
+    {
+      "count": 66,
+      "feature": "row.source_side_gap_signature",
+      "value": "\"[9,11]\""
+    }
+  ],
+  "exact_66_single_feature_candidate_count": 8,
+  "next_ascent_target": "add richer predicates or reconstruct source-specific 110 seed and 66 contrast rowsets",
+  "prior_052_verdict": "strong_packet_candidate_rowset_exported",
+  "raw_surface_count": 158,
+  "reading": "A compatible row-level 110+122+66 union was found with 298 rows, but no visible 298-row target predicate matched exactly in the scanned single-feature family. This upgrades the count law to a row-level union candidate, but not yet to an address-core identity.",
+  "scaffold_count": 140,
+  "scan_scope": {
+    "pair_combo_search": false,
+    "predicate_family": "single visible feature-value rowsets only",
+    "uses_052_candidate_122": true
+  },
+  "theory_claim": false,
+  "union_110_122_66_hit_count": 30,
+  "union_count_pass": true,
+  "union_equals_target_pass": false,
+  "union_equals_visible_298_target_hit_count": 0,
+  "union_hits_first_30": [
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "row.source_root_slot",
+        "value": "null"
+      },
+      "origin_110": {
+        "count": 110,
+        "feature": "context_summary.full_packet_row_count",
+        "value": "441"
+      },
+      "pairwise_disjoint": true,
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "row.source_side_gap_signature",
+        "value": "\"[9,11]\""
+      },
+      "origin_110": {
+        "count": 110,
+        "feature": "context_summary.full_packet_row_count",
+        "value": "441"
+      },
+      "pairwise_disjoint": true,
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "row.source_root_slot",
+        "value": "null"
+      },
+      "origin_110": {
+        "count": 110,
+        "feature": "context_summary.nonleaky_full_packet_row_count",
+        "value": "84"
+      },
+      "pairwise_disjoint": true,
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "row.source_side_gap_signature",
+        "value": "\"[9,11]\""
+      },
+      "origin_110": {
+        "count": 110,
+        "feature": "context_summary.nonleaky_full_packet_row_count",
+        "value": "84"
+      },
+      "pairwise_disjoint": true,
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "row.source_root_slot",
+        "value": "null"
+      },
+      "origin_110": {
+        "count": 110,
+        "feature": "context_summary.origin_status",
+        "value": "\"candidate_native_source_or_carrier_rows_available_for_next_derivation\""
+      },
+      "pairwise_disjoint": true,
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "row.source_side_gap_signature",
+        "value": "\"[9,11]\""
+      },
+      "origin_110": {
+        "count": 110,
+        "feature": "context_summary.origin_status",
+        "value": "\"candidate_native_source_or_carrier_rows_available_for_next_derivation\""
+      },
+      "pairwise_disjoint": true,
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "context_summary.phase_ladder_values",
+        "value": "[3, 9, 6, 12]"
+      },
+      "origin_110": {
+        "count": 110,
+        "feature": "context_summary.phase_ladder_distinct",
+        "value": "false"
+      },
+      "pairwise_disjoint": true,
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "row.context_summary.phase_ladder_values",
+        "value": "[3, 9, 6, 12]"
+      },
+      "origin_110": {
+        "count": 110,
+        "feature": "context_summary.phase_ladder_distinct",
+        "value": "false"
+      },
+      "pairwise_disjoint": true,
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "row.source_root_slot",
+        "value": "null"
+      },
+      "origin_110": {
+        "count": 110,
+        "feature": "context_summary.phase_ladder_distinct",
+        "value": "false"
+      },
+      "pairwise_disjoint": true,
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "row.source_side_gap_signature",
+        "value": "\"[9,11]\""
+      },
+      "origin_110": {
+        "count": 110,
+        "feature": "context_summary.phase_ladder_distinct",
+        "value": "false"
+      },
+      "pairwise_disjoint": true,
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "row.source_root_slot",
+        "value": "null"
+      },
+      "origin_110": {
+        "count": 110,
+        "feature": "context_summary.source_geometry_origin_candidate_found",
+        "value": "true"
+      },
+      "pairwise_disjoint": true,
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "row.source_side_gap_signature",
+        "value": "\"[9,11]\""
+      },
+      "origin_110": {
+        "count": 110,
+        "feature": "context_summary.source_geometry_origin_candidate_found",
+        "value": "true"
+      },
+      "pairwise_disjoint": true,
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "row.source_root_slot",
+        "value": "null"
+      },
+      "origin_110": {
+        "count": 110,
+        "feature": "context_summary.strong_source_packet_row_count",
+        "value": "122"
+      },
+      "pairwise_disjoint": true,
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "row.source_side_gap_signature",
+        "value": "\"[9,11]\""
+      },
+      "origin_110": {
+        "count": 110,
+        "feature": "context_summary.strong_source_packet_row_count",
+        "value": "122"
+      },
+      "pairwise_disjoint": true,
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "row.source_root_slot",
+        "value": "null"
+      },
+      "origin_110": {
+        "count": 110,
+        "feature": "row.context_summary.full_packet_row_count",
+        "value": "441"
+      },
+      "pairwise_disjoint": true,
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "row.source_side_gap_signature",
+        "value": "\"[9,11]\""
+      },
+      "origin_110": {
+        "count": 110,
+        "feature": "row.context_summary.full_packet_row_count",
+        "value": "441"
+      },
+      "pairwise_disjoint": true,
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "row.source_root_slot",
+        "value": "null"
+      },
+      "origin_110": {
+        "count": 110,
+        "feature": "row.context_summary.nonleaky_full_packet_row_count",
+        "value": "84"
+      },
+      "pairwise_disjoint": true,
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "row.source_side_gap_signature",
+        "value": "\"[9,11]\""
+      },
+      "origin_110": {
+        "count": 110,
+        "feature": "row.context_summary.nonleaky_full_packet_row_count",
+        "value": "84"
+      },
+      "pairwise_disjoint": true,
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "row.source_root_slot",
+        "value": "null"
+      },
+      "origin_110": {
+        "count": 110,
+        "feature": "row.context_summary.origin_status",
+        "value": "\"candidate_native_source_or_carrier_rows_available_for_next_derivation\""
+      },
+      "pairwise_disjoint": true,
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "row.source_side_gap_signature",
+        "value": "\"[9,11]\""
+      },
+      "origin_110": {
+        "count": 110,
+        "feature": "row.context_summary.origin_status",
+        "value": "\"candidate_native_source_or_carrier_rows_available_for_next_derivation\""
+      },
+      "pairwise_disjoint": true,
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "context_summary.phase_ladder_values",
+        "value": "[3, 9, 6, 12]"
+      },
+      "origin_110": {
+        "count": 110,
+        "feature": "row.context_summary.phase_ladder_distinct",
+        "value": "false"
+      },
+      "pairwise_disjoint": true,
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "row.context_summary.phase_ladder_values",
+        "value": "[3, 9, 6, 12]"
+      },
+      "origin_110": {
+        "count": 110,
+        "feature": "row.context_summary.phase_ladder_distinct",
+        "value": "false"
+      },
+      "pairwise_disjoint": true,
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "row.source_root_slot",
+        "value": "null"
+      },
+      "origin_110": {
+        "count": 110,
+        "feature": "row.context_summary.phase_ladder_distinct",
+        "value": "false"
+      },
+      "pairwise_disjoint": true,
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "row.source_side_gap_signature",
+        "value": "\"[9,11]\""
+      },
+      "origin_110": {
+        "count": 110,
+        "feature": "row.context_summary.phase_ladder_distinct",
+        "value": "false"
+      },
+      "pairwise_disjoint": true,
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "row.source_root_slot",
+        "value": "null"
+      },
+      "origin_110": {
+        "count": 110,
+        "feature": "row.context_summary.source_geometry_origin_candidate_found",
+        "value": "true"
+      },
+      "pairwise_disjoint": true,
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "row.source_side_gap_signature",
+        "value": "\"[9,11]\""
+      },
+      "origin_110": {
+        "count": 110,
+        "feature": "row.context_summary.source_geometry_origin_candidate_found",
+        "value": "true"
+      },
+      "pairwise_disjoint": true,
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "row.source_root_slot",
+        "value": "null"
+      },
+      "origin_110": {
+        "count": 110,
+        "feature": "row.context_summary.strong_source_packet_row_count",
+        "value": "122"
+      },
+      "pairwise_disjoint": true,
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "row.source_side_gap_signature",
+        "value": "\"[9,11]\""
+      },
+      "origin_110": {
+        "count": 110,
+        "feature": "row.context_summary.strong_source_packet_row_count",
+        "value": "122"
+      },
+      "pairwise_disjoint": true,
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "context_summary.phase_ladder_values",
+        "value": "[3, 9, 6, 12]"
+      },
+      "origin_110": {
+        "count": 110,
+        "feature": "row.full_packet_row_count",
+        "value": "441"
+      },
+      "pairwise_disjoint": true,
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "union_count": 298
+    },
+    {
+      "contrast_66": {
+        "count": 66,
+        "feature": "row.context_summary.phase_ladder_values",
+        "value": "[3, 9, 6, 12]"
+      },
+      "origin_110": {
+        "count": 110,
+        "feature": "row.full_packet_row_count",
+        "value": "441"
+      },
+      "pairwise_disjoint": true,
+      "strong_122": {
+        "count": 122,
+        "source": "052 two-stage candidate"
+      },
+      "union_count": 298
+    }
+  ],
+  "union_status": "compatible_110_122_66_union_has_298_rows_but_no_visible_298_target_match",
+  "union_target_hits_first_30": [],
+  "verdict": "rowlevel_110_122_66_union_count_candidate_found",
+  "visible_row_count": 29081
+}

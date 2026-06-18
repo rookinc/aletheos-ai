@@ -1,0 +1,337 @@
+{
+  "schema": "g900.layer3_channel_frontier_ledger",
+  "version": 1,
+  "status": "layer3_channel_frontier_recorded",
+  "created_utc": "2026-06-18T00:27:48Z",
+  "audit_pass": true,
+  "layer": {
+    "id": 3,
+    "name": "channels",
+    "current_mode": "frontier_provenance_only",
+    "channel_admission": false,
+    "channel_rendering": false,
+    "body_mutation": false,
+    "force_claim": false,
+    "physics_claim": false
+  },
+  "channel_registry": {
+    "schema": "g900.viewer.channels",
+    "channel_set_count": 0,
+    "channel_count": 0,
+    "boundary": {
+      "admits_channels": false,
+      "renders_channels": false,
+      "mutates_body": false,
+      "physics_claim": false,
+      "force_claim": false
+    }
+  },
+  "carrier_registry": {
+    "schema": "g900.viewer.carriers",
+    "carrier_set_counts": {
+      "source_provenance_scaffold": 1,
+      "slot_internal_carriers": 15,
+      "slot_pair_boundary_carriers": 30
+    },
+    "rail_count_by_sets": 46
+  },
+  "candidate_classifier_summary": {
+    "candidate_count": 278,
+    "class_counts": {
+      "endpoint_incidence_handle": 60,
+      "source_scaffold_handle": 45,
+      "support_overlap_handle": 173
+    },
+    "visibility_tiers": {},
+    "duplicate_pair_count": 83,
+    "duplicate_directed_pair_count": 23
+  },
+  "full60_summary": {
+    "unsupported_pair_or_pairs": [
+      "6/9"
+    ],
+    "support_audit_status": "full60_package_support_audit_recorded",
+    "support_classification_status": "full60_phase_support_classification_recorded"
+  },
+  "marker_pause_summary": {
+    "marker_id": "unsupported_phase_step_6_9",
+    "marker_edge_count": 60,
+    "marker_vertex_count": 120,
+    "live_marker_lighting_paused": true,
+    "reason": "A timer is not a cycle and a counter is not an event."
+  },
+  "frontier_families": [
+    {
+      "id": "endpoint_incidence_handle",
+      "current_status": "structural_handle",
+      "why_it_matters": "Endpoint incidence is the sharpest currently visible structural relation between Layer 2 carriers.",
+      "current_count": 60,
+      "next_question": "Can endpoint incidence be promoted from handle to admitted channel law without importing a visual or timing rule?",
+      "admission_status": "not_admitted"
+    },
+    {
+      "id": "source_scaffold_handle",
+      "current_status": "provenance_handle",
+      "why_it_matters": "Source scaffold handles may connect carrier provenance to channel grammar rather than only overlap geometry.",
+      "current_count": 45,
+      "next_question": "Does the source scaffold select channel candidates by source-side grammar rather than by rendered overlap?",
+      "admission_status": "not_admitted"
+    },
+    {
+      "id": "support_overlap_handle",
+      "current_status": "broad_overlap_handle",
+      "why_it_matters": "Support overlap is abundant and therefore useful for census, but too broad for admission by itself.",
+      "current_count": 173,
+      "next_question": "Which support-overlap candidates survive stricter support, direction, and non-duplication tests?",
+      "admission_status": "not_admitted"
+    },
+    {
+      "id": "full60_phase_packages",
+      "current_status": "phase_grammar_handle",
+      "why_it_matters": "Full-60 phase packages may expose lawful event structure that a timer cannot provide.",
+      "current_count": null,
+      "next_question": "Can a phase package define an event cycle without treating sheet rate as the cause?",
+      "admission_status": "not_admitted"
+    },
+    {
+      "id": "unsupported_6_9_boundary",
+      "current_status": "non_channel_boundary_marker",
+      "why_it_matters": "The 6/9 step is real in phase grammar but unsupported as a Layer 2 carrier relation; it is a boundary witness, not a channel.",
+      "current_count": 1,
+      "next_question": "What lawful event exposes this boundary without forcing a live marker clock?",
+      "admission_status": "explicitly_not_admitted"
+    }
+  ],
+  "recommended_next_target": {
+    "id": "endpoint_incidence_handle",
+    "reason": "It is the smallest structural handle family and is less likely than support overlap to be merely broad overlap.",
+    "boundary": "Target is provenance sharpening only, not channel admission."
+  },
+  "inputs": {
+    "channel_source_inventory": {
+      "path": "public_html/labs/g900_observatory/artifacts/json/g900_channel_source_inventory_001.v1.json",
+      "exists": true,
+      "schema": "g900.channel_source_inventory",
+      "status": "channel_source_inventory_recorded",
+      "audit_pass": true,
+      "top_level_keys": [
+        "audit_pass",
+        "body",
+        "boundary",
+        "candidate_samples",
+        "candidate_summary",
+        "carrier_summary",
+        "checks",
+        "input_paths",
+        "schema",
+        "source_count_fields",
+        "status",
+        "version"
+      ]
+    },
+    "channel_candidate_classifier": {
+      "path": "public_html/labs/g900_observatory/artifacts/json/g900_channel_candidate_classifier_001.v1.json",
+      "exists": true,
+      "schema": "g900.channel_candidate_classifier",
+      "status": "channel_candidate_classifier_recorded",
+      "audit_pass": true,
+      "top_level_keys": [
+        "audit_pass",
+        "body",
+        "boundary",
+        "checks",
+        "family_pair_counts",
+        "input_paths",
+        "kind_pair_counts",
+        "recommended_next_selector_targets",
+        "row_samples",
+        "schema",
+        "status",
+        "summary",
+        "version"
+      ]
+    },
+    "channel_scaffold": {
+      "path": "public_html/labs/g900_observatory/artifacts/json/g900_channel_scaffold_v0.1.json",
+      "exists": true,
+      "schema": "g900.channel_scaffold_checkpoint",
+      "status": "channel_scaffold_declared",
+      "audit_pass": null,
+      "top_level_keys": [
+        "body",
+        "body_version",
+        "boundary",
+        "channel_count",
+        "channel_set_count",
+        "layer",
+        "messages",
+        "schema",
+        "status",
+        "version"
+      ]
+    },
+    "phase_transition_grammar": {
+      "path": "public_html/labs/g900_observatory/artifacts/json/g900_phase_transition_grammar_001.v1.json",
+      "exists": true,
+      "schema": "g900.phase_transition_grammar",
+      "status": "phase_transition_grammar_recorded",
+      "audit_pass": true,
+      "top_level_keys": [
+        "audit_pass",
+        "body",
+        "boundary",
+        "checks",
+        "input_paths",
+        "schema",
+        "selector_family",
+        "status",
+        "summary",
+        "version"
+      ]
+    },
+    "edge_limit_phase_scan": {
+      "path": "public_html/labs/g900_observatory/artifacts/json/g900_edge_limit_phase_scan_001.v1.json",
+      "exists": true,
+      "schema": "g900.edge_limit_phase_scan",
+      "status": "edge_limit_phase_scan_recorded",
+      "audit_pass": true,
+      "top_level_keys": [
+        "audit_pass",
+        "body",
+        "boundary",
+        "checks",
+        "input_paths",
+        "schema",
+        "selector_family",
+        "status",
+        "summary",
+        "version"
+      ]
+    },
+    "full60_transition_package_anatomy": {
+      "path": "public_html/labs/g900_observatory/artifacts/json/g900_full60_transition_package_anatomy_001.v1.json",
+      "exists": true,
+      "schema": "g900.full60_transition_package_anatomy",
+      "status": "full60_transition_package_anatomy_recorded",
+      "audit_pass": true,
+      "top_level_keys": [
+        "audit_pass",
+        "body",
+        "boundary",
+        "checks",
+        "input_paths",
+        "schema",
+        "selector_family",
+        "status",
+        "summary",
+        "version"
+      ]
+    },
+    "full60_package_support_audit": {
+      "path": "public_html/labs/g900_observatory/artifacts/json/g900_full60_package_support_audit_001.v1.json",
+      "exists": true,
+      "schema": "g900.full60_package_support_audit",
+      "status": "full60_package_support_audit_recorded",
+      "audit_pass": true,
+      "top_level_keys": [
+        "audit_pass",
+        "body",
+        "boundary",
+        "checks",
+        "input_paths",
+        "schema",
+        "selector_family",
+        "status",
+        "step_rows",
+        "summary",
+        "version"
+      ]
+    },
+    "full60_phase_support_classification": {
+      "path": "public_html/labs/g900_observatory/artifacts/json/g900_full60_phase_support_classification_001.v1.json",
+      "exists": true,
+      "schema": "g900.full60_phase_support_classification",
+      "status": "full60_phase_support_classification_recorded",
+      "audit_pass": true,
+      "top_level_keys": [
+        "audit_pass",
+        "body",
+        "boundary",
+        "checks",
+        "input_paths",
+        "schema",
+        "selector_family",
+        "status",
+        "summary",
+        "taxonomy",
+        "version"
+      ]
+    },
+    "unsupported_phase_marker": {
+      "path": "public_html/labs/g900_observatory/artifacts/json/g900_unsupported_phase_marker_6_9_001.v1.json",
+      "exists": true,
+      "schema": "g900.unsupported_phase_marker",
+      "status": "unsupported_phase_marker_6_9_data_only_recorded",
+      "audit_pass": true,
+      "top_level_keys": [
+        "audit_pass",
+        "body",
+        "body_version",
+        "boundary",
+        "checks",
+        "marker",
+        "marker_rows",
+        "schema",
+        "source_receipts",
+        "status",
+        "version"
+      ]
+    },
+    "marker_pause_boundary": {
+      "path": "public_html/labs/g900_observatory/artifacts/json/g900_marker_development_pause_boundary_001.v1.json",
+      "exists": true,
+      "schema": "g900.marker_development_pause_boundary",
+      "status": "marker_development_paused_pending_cycle_contract",
+      "audit_pass": true,
+      "top_level_keys": [
+        "audit_pass",
+        "boundary",
+        "checks",
+        "created_utc",
+        "current_locked_marker_assets",
+        "failed_checks",
+        "keeper_line",
+        "marker_summary",
+        "next_required_before_live_lighting",
+        "pause_reason",
+        "schema",
+        "status",
+        "version"
+      ]
+    }
+  },
+  "checks": {
+    "channel_registry_zero_count": true,
+    "channels_not_admitted": true,
+    "channels_not_rendered": true,
+    "carrier_registry_has_46_rails_by_sets": true,
+    "candidate_classifier_loaded": true,
+    "candidate_count_present": true,
+    "class_counts_present": true,
+    "marker_pause_boundary_passed": true,
+    "marker_lighting_paused": true,
+    "unsupported_marker_present": true,
+    "unsupported_marker_edge_count_60": true,
+    "unsupported_marker_vertex_count_120": true
+  },
+  "failed_checks": [],
+  "boundary": {
+    "ledger_only": true,
+    "admits_channels": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "marker_lighting": false,
+    "force_claim": false,
+    "physics_claim": false
+  }
+}

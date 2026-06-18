@@ -1,0 +1,158 @@
+{
+  "schema": "g900.sheets_per_second_ui_note_smoke",
+  "version": 3,
+  "status": "sheets_per_second_ui_note_smoke_recorded",
+  "created_utc": "2026-06-18T02:52:41Z",
+  "audit_pass": true,
+  "verdict": "sheets_per_second_ui_note_smoke_passed",
+  "question": "Does the public sheets/sec UI note remain visible, styled, and non-authoritative after being tucked into instructions?",
+  "ui_smoke": {
+    "html_path": "public_html/labs/g900_observatory/lab.html",
+    "css_path": "public_html/labs/g900_observatory/lab.css",
+    "note_count": 1,
+    "note_term_presence": {
+      "Sheets/sec:": true,
+      "quartz keeps the seconds": true,
+      "grammar earns the sheets": true,
+      "admissible grammar steps": true,
+      "scaled quartz oscillations": true,
+      "not an event authority": true,
+      "do not open gates or light markers": true
+    },
+    "css_term_presence": {
+      ".g900-sheets-sec-note": true,
+      ".g900-sheets-sec-kicker": true,
+      ".g900-sheets-sec-boundary": true
+    },
+    "present_forbidden_authority_phrases": []
+  },
+  "hash_receipts": {
+    "html_sha256": "5a10a18bc6563446a0d364d5984b8a41db580e0a75831c82b9eeb5aebc2edeb7",
+    "css_sha256": "e5513bee4ba3a480042df246b295d51a681208a4e7a5c61c14f135194e277787",
+    "stage_sha256": "732dad810dffdfbe97c275ee96914a95aeb7fa6976df04d8df0063157b19d5bf",
+    "static_body_sha256": "71944bd613ce8c6c036a2c4198f3df2e0064a75fec1f03ccf8bb60f9a2d412db"
+  },
+  "source_receipts": {
+    "tuck": "public_html/labs/g900_observatory/artifacts/json/g900_sheets_per_second_ui_note_tuck_002.v1.json",
+    "quartz_boundary": "public_html/labs/g900_observatory/artifacts/json/g900_sheets_per_second_quartz_boundary_001.v1.json",
+    "post_stub_recheck": "public_html/labs/g900_observatory/artifacts/json/g900_post_stub_marker_event_gate_recheck_001.v1.json",
+    "channels": "public_html/labs/g900_observatory/data/g900_channels.v0.1.json",
+    "static_body": "public_html/labs/g900_observatory/data/g900_static_body.v1.json"
+  },
+  "summary": {
+    "ui_note_smoke_passed": true,
+    "ui_note_present_once": true,
+    "required_note_terms_present": true,
+    "required_css_terms_present": true,
+    "readout_allowed": true,
+    "event_authority": false,
+    "quartz_gate_authority": false,
+    "gate_open": false,
+    "lights_marker_now": false,
+    "channel_count": 0
+  },
+  "interpretation": {
+    "public_note_visible": true,
+    "public_note_styled": true,
+    "quartz_keeps_seconds": true,
+    "grammar_earns_sheets": true,
+    "sheets_per_second_is_readout": true,
+    "ui_note_does_not_open_gate": true,
+    "ui_note_does_not_light_marker": true,
+    "ui_note_does_not_admit_channel": true,
+    "not_channel": true,
+    "not_force_claim": true,
+    "not_physics_claim": true,
+    "next_problem": "Commit the smoke receipt, then decide whether to keep the marker unlit or author a separate gate-open authorization."
+  },
+  "criteria": [
+    {
+      "id": "tuck_artifact_passed",
+      "description": "The sheets/sec tuck receipt exists and passed.",
+      "satisfied": true
+    },
+    {
+      "id": "quartz_boundary_passed",
+      "description": "The sheets/sec quartz boundary exists and passed.",
+      "satisfied": true
+    },
+    {
+      "id": "post_stub_gate_recheck_still_closed",
+      "description": "The marker gate remains closed and the marker remains unlit.",
+      "satisfied": true
+    },
+    {
+      "id": "html_note_present_once",
+      "description": "The sheets/sec note appears exactly once in the lab HTML.",
+      "satisfied": true,
+      "note_count": 1
+    },
+    {
+      "id": "html_note_terms_present",
+      "description": "The note contains all required boundary terms.",
+      "satisfied": true,
+      "note_term_presence": {
+        "Sheets/sec:": true,
+        "quartz keeps the seconds": true,
+        "grammar earns the sheets": true,
+        "admissible grammar steps": true,
+        "scaled quartz oscillations": true,
+        "not an event authority": true,
+        "do not open gates or light markers": true
+      }
+    },
+    {
+      "id": "css_terms_present",
+      "description": "The note CSS classes are present.",
+      "satisfied": true,
+      "css_term_presence": {
+        ".g900-sheets-sec-note": true,
+        ".g900-sheets-sec-kicker": true,
+        ".g900-sheets-sec-boundary": true
+      }
+    },
+    {
+      "id": "no_authority_leak",
+      "description": "The note contains no forbidden authority claims.",
+      "satisfied": true,
+      "present_forbidden_authority_phrases": []
+    },
+    {
+      "id": "channel_registry_zero",
+      "description": "The channel registry remains zero-count.",
+      "satisfied": true
+    },
+    {
+      "id": "body_static_receipt",
+      "description": "The static G900 body remains a read-only source receipt.",
+      "satisfied": true,
+      "static_body_sha256": "71944bd613ce8c6c036a2c4198f3df2e0064a75fec1f03ccf8bb60f9a2d412db"
+    }
+  ],
+  "checks": {
+    "tuck_artifact_passed": true,
+    "quartz_boundary_passed": true,
+    "post_stub_recheck_passed": true,
+    "html_note_present_once": true,
+    "html_note_terms_present": true,
+    "css_terms_present": true,
+    "no_authority_leak": true,
+    "gate_still_closed": true,
+    "marker_not_lit": true,
+    "channel_registry_zero": true,
+    "all_criteria_satisfied": true
+  },
+  "failed_checks": [],
+  "boundary": {
+    "ui_smoke_only": true,
+    "readout_layer_only": true,
+    "event_authority": false,
+    "gate_open": false,
+    "marker_lighting": false,
+    "admits_channels": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "force_claim": false,
+    "physics_claim": false
+  }
+}

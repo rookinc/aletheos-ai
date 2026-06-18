@@ -1,0 +1,168 @@
+{
+  "schema": "g900.p7_transition_weight_rhythm_audit",
+  "version": 1,
+  "status": "p7_transition_weight_rhythm_audit_passed",
+  "created_utc": "2026-06-18T00:57:47Z",
+  "audit_pass": true,
+  "question": "Does the P7 boundary-package path compress into a 360 / 180 / 360 transition-weight rhythm?",
+  "p7_path": {
+    "path_order": [
+      "08",
+      "02",
+      "03",
+      "09",
+      "12",
+      "06",
+      "13"
+    ],
+    "path_pairs": [
+      "02_08",
+      "02_03",
+      "03_09",
+      "09_12",
+      "06_12",
+      "06_13"
+    ],
+    "weight_sequence": [
+      180,
+      180,
+      180,
+      60,
+      120,
+      180
+    ],
+    "package_kind_sequence": [
+      "clean_reciprocal_pair_package",
+      "clean_reciprocal_pair_package",
+      "clean_reciprocal_pair_package",
+      "one_way_single_transition",
+      "two_transition_pair_package",
+      "clean_reciprocal_pair_package"
+    ],
+    "transition_length_sequence": [
+      null,
+      3,
+      3,
+      1,
+      2,
+      null
+    ],
+    "total_weight": 900
+  },
+  "rhythm_blocks": [
+    {
+      "id": "left_wing",
+      "pairs": [
+        "02_08",
+        "02_03"
+      ],
+      "expected_weight": 360,
+      "role": "entry wing",
+      "observed_weight": 360,
+      "weight_match": true,
+      "package_kinds": [
+        "clean_reciprocal_pair_package",
+        "clean_reciprocal_pair_package"
+      ],
+      "transition_lengths": [
+        null,
+        3
+      ],
+      "edge_weights": [
+        180,
+        180
+      ]
+    },
+    {
+      "id": "hinge",
+      "pairs": [
+        "03_09"
+      ],
+      "expected_weight": 180,
+      "role": "central clean hinge",
+      "observed_weight": 180,
+      "weight_match": true,
+      "package_kinds": [
+        "clean_reciprocal_pair_package"
+      ],
+      "transition_lengths": [
+        3
+      ],
+      "edge_weights": [
+        180
+      ]
+    },
+    {
+      "id": "right_wing",
+      "pairs": [
+        "09_12",
+        "06_12",
+        "06_13"
+      ],
+      "expected_weight": 360,
+      "role": "return wing with nonclean pocket",
+      "observed_weight": 360,
+      "weight_match": true,
+      "package_kinds": [
+        "one_way_single_transition",
+        "two_transition_pair_package",
+        "clean_reciprocal_pair_package"
+      ],
+      "transition_lengths": [
+        1,
+        2,
+        null
+      ],
+      "edge_weights": [
+        60,
+        120,
+        180
+      ]
+    }
+  ],
+  "summary": {
+    "rhythm": [
+      360,
+      180,
+      360
+    ],
+    "total_weight": 900,
+    "left_equals_right": true,
+    "hinge_is_half_wing": true,
+    "nonclean_edges_in_right_wing": [
+      "09_12",
+      "06_12"
+    ],
+    "channel_count": 0
+  },
+  "interpretation": {
+    "p7_has_360_180_360_weight_rhythm": true,
+    "central_hinge_pair": "03_09",
+    "right_wing_contains_nonclean_pocket": true,
+    "not_channel": true,
+    "next_problem": "Test whether the 360/180/360 rhythm is intrinsic to P7 source structure or a post-hoc grouping."
+  },
+  "checks": {
+    "taxonomy_audit_passed": true,
+    "position_audit_passed": true,
+    "selector_audit_passed": true,
+    "channel_registry_zero_count": true,
+    "channels_not_admitted": true,
+    "p7_path_pairs_match_expected": true,
+    "p7_weight_sequence_matches_expected": true,
+    "p7_kind_sequence_matches_expected": true,
+    "p7_total_weight_is_900": true,
+    "block_weight_rhythm_is_360_180_360": true,
+    "all_block_weights_match": true
+  },
+  "failed_checks": [],
+  "boundary": {
+    "rhythm_audit_only": true,
+    "admits_channels": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "marker_lighting": false,
+    "force_claim": false,
+    "physics_claim": false
+  }
+}

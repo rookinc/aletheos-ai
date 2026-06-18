@@ -1,0 +1,900 @@
+{
+  "schema": "g900.full60_endpoint_pair_hit_inspection",
+  "version": 1,
+  "status": "full60_endpoint_pair_hit_inspection_recorded",
+  "created_utc": "2026-06-18T00:43:42Z",
+  "audit_pass": true,
+  "question": "Where do endpoint-incidence G15 slot pairs appear inside the full60 phase package layer?",
+  "pair_summary": {
+    "slot_pair_string_count": 30,
+    "full60_pair_hit_count": 9,
+    "support_pair_hit_count": 9,
+    "classification_pair_hit_count": 9,
+    "orientation_frontier_expected_full60_pair_hit_count": 9,
+    "full60_pair_hits": [
+      "02_03",
+      "02_08",
+      "03_09",
+      "05_10",
+      "05_14",
+      "06_12",
+      "06_13",
+      "07_11",
+      "09_12"
+    ],
+    "support_pair_hits": [
+      "02_03",
+      "02_08",
+      "03_09",
+      "05_10",
+      "05_14",
+      "06_12",
+      "06_13",
+      "07_11",
+      "09_12"
+    ],
+    "classification_pair_hits": [
+      "02_03",
+      "02_08",
+      "03_09",
+      "05_10",
+      "05_14",
+      "06_12",
+      "06_13",
+      "07_11",
+      "09_12"
+    ]
+  },
+  "hit_pair_records": [
+    {
+      "pair": "02_03",
+      "slots": [
+        "02",
+        "03"
+      ],
+      "dict_hit_path_count": 3,
+      "field_hit_count": 1
+    },
+    {
+      "pair": "02_08",
+      "slots": [
+        "02",
+        "08"
+      ],
+      "dict_hit_path_count": 3,
+      "field_hit_count": 1
+    },
+    {
+      "pair": "03_09",
+      "slots": [
+        "03",
+        "09"
+      ],
+      "dict_hit_path_count": 3,
+      "field_hit_count": 1
+    },
+    {
+      "pair": "05_10",
+      "slots": [
+        "05",
+        "10"
+      ],
+      "dict_hit_path_count": 3,
+      "field_hit_count": 1
+    },
+    {
+      "pair": "05_14",
+      "slots": [
+        "05",
+        "14"
+      ],
+      "dict_hit_path_count": 3,
+      "field_hit_count": 1
+    },
+    {
+      "pair": "06_12",
+      "slots": [
+        "06",
+        "12"
+      ],
+      "dict_hit_path_count": 3,
+      "field_hit_count": 1
+    },
+    {
+      "pair": "06_13",
+      "slots": [
+        "06",
+        "13"
+      ],
+      "dict_hit_path_count": 3,
+      "field_hit_count": 1
+    },
+    {
+      "pair": "07_11",
+      "slots": [
+        "07",
+        "11"
+      ],
+      "dict_hit_path_count": 3,
+      "field_hit_count": 1
+    },
+    {
+      "pair": "09_12",
+      "slots": [
+        "09",
+        "12"
+      ],
+      "dict_hit_path_count": 3,
+      "field_hit_count": 1
+    }
+  ],
+  "hit_slot_counts": {
+    "02": 2,
+    "03": 2,
+    "05": 2,
+    "06": 2,
+    "07": 1,
+    "08": 1,
+    "09": 2,
+    "10": 1,
+    "11": 1,
+    "12": 2,
+    "13": 1,
+    "14": 1
+  },
+  "full60_list_hits": [
+    {
+      "path": "$.summary.packages",
+      "length": 10,
+      "hit_pairs": [
+        "02_03",
+        "02_08",
+        "03_09",
+        "05_10",
+        "05_14",
+        "06_12",
+        "06_13",
+        "07_11",
+        "09_12"
+      ],
+      "hit_count": 9,
+      "sample_keys": [
+        "boundary_carrier_id",
+        "boundary_edge_count",
+        "boundary_vertex_count",
+        "channels_admitted",
+        "full60_root_slot_counts",
+        "full60_transition_count",
+        "full60_transition_kinds",
+        "full60_transitions",
+        "has_boundary_carrier",
+        "package_kind",
+        "pair_key",
+        "pair_total_direction_counts",
+        "pair_total_root_count",
+        "pair_total_transition_count",
+        "pair_total_transition_kind_counts",
+        "reciprocal_single_transition_count",
+        "sample_roots"
+      ],
+      "sample": {
+        "pair_key": "2/3",
+        "package_kind": "clean_reciprocal_pair_package",
+        "full60_transition_count": 3,
+        "full60_transitions": [
+          "2 -> 3",
+          "2/3 -> 3",
+          "3 -> 2"
+        ],
+        "full60_transition_kinds.__keys__": [
+          "pair_to_single",
+          "single_to_single"
+        ],
+        "full60_root_slot_counts.__keys__": [
+          "3"
+        ],
+        "has_boundary_carrier": true,
+        "boundary_carrier_id": "slot_pair_02_03_boundary_carrier",
+        "boundary_vertex_count": 120,
+        "boundary_edge_count": 60,
+        "pair_total_transition_count": 180,
+        "pair_total_root_count": 60,
+        "pair_total_direction_counts.__keys__": [
+          "2 -> 3",
+          "2/3 -> 3",
+          "3 -> 2"
+        ],
+        "pair_total_transition_kind_counts.__keys__": [
+          "pair_to_single",
+          "single_to_single"
+        ],
+        "reciprocal_single_transition_count": 60,
+        "sample_roots": [
+          "3:0",
+          "3:1",
+          "3:10",
+          "3:11",
+          "3:12",
+          "3:13",
+          "3:14",
+          "3:15",
+          "3:16",
+          "3:17",
+          "3:18",
+          "3:19"
+        ],
+        "channels_admitted": false
+      }
+    }
+  ],
+  "full60_dict_hits": [
+    {
+      "path": "$",
+      "hit_pairs": [
+        "02_03",
+        "02_08",
+        "03_09",
+        "05_10",
+        "05_14",
+        "06_12",
+        "06_13",
+        "07_11",
+        "09_12"
+      ],
+      "hit_count": 9,
+      "sample": {
+        "schema": "g900.full60_transition_package_anatomy",
+        "version": "1",
+        "status": "full60_transition_package_anatomy_recorded",
+        "audit_pass": true,
+        "body": "g900",
+        "selector_family": "bounded_root_tuple_shell_depth_2_edge_limit_N",
+        "boundary.__keys__": [
+          "anatomy_only",
+          "channel_registry_modified",
+          "channels_admitted",
+          "force_claim",
+          "mutates_body",
+          "physics_claim",
+          "renders_channels"
+        ],
+        "input_paths.__keys__": [
+          "carriers",
+          "channels",
+          "grammar_json",
+          "pair_csv",
+          "transition_csv"
+        ],
+        "checks.__keys__": [
+          "all_packages_marked_no_channel_admission",
+          "boundary_carrier_count_is_30",
+          "channel_registry_admits_channels_false",
+          "channel_registry_renders_channels_false",
+          "channel_registry_still_zero_channels",
+          "channel_registry_still_zero_sets",
+          "full60_transition_count_is_24",
+          "grammar_audit_pass_true",
+          "package_count_is_10",
+          "pair_csv_row_count_matches_grammar",
+          "transition_csv_row_count_matches_grammar"
+        ],
+        "summary.__keys__": [
+          "boundary_carrier_count",
+          "clean_reciprocal_package_count",
+          "full60_package_count",
+          "full60_transition_count",
+          "package_boundary_hit_count",
+          "package_boundary_missing_count",
+          "package_kind_counts",
+          "packages",
+          "unused_boundary_pair_count",
+          "unused_boundary_pairs"
+        ]
+      }
+    },
+    {
+      "path": "$.summary",
+      "hit_pairs": [
+        "02_03",
+        "02_08",
+        "03_09",
+        "05_10",
+        "05_14",
+        "06_12",
+        "06_13",
+        "07_11",
+        "09_12"
+      ],
+      "hit_count": 9,
+      "sample": {
+        "full60_transition_count": 24,
+        "full60_package_count": 10,
+        "package_kind_counts.__keys__": [
+          "clean_reciprocal_pair_package",
+          "one_way_single_transition",
+          "two_transition_pair_package"
+        ],
+        "clean_reciprocal_package_count": 6,
+        "boundary_carrier_count": 30,
+        "package_boundary_hit_count": 9,
+        "package_boundary_missing_count": 1,
+        "unused_boundary_pair_count": 21,
+        "unused_boundary_pairs": [
+          "0/1",
+          "0/4",
+          "0/5",
+          "0/6",
+          "1/2",
+          "1/6",
+          "1/7",
+          "10/11",
+          "10/14",
+          "11/12",
+          "12/13",
+          "13/14"
+        ],
+        "packages.__len__": 10
+      }
+    },
+    {
+      "path": "$.summary.packages[0]",
+      "hit_pairs": [
+        "02_03"
+      ],
+      "hit_count": 1,
+      "sample": {
+        "pair_key": "2/3",
+        "package_kind": "clean_reciprocal_pair_package",
+        "full60_transition_count": 3,
+        "full60_transitions": [
+          "2 -> 3",
+          "2/3 -> 3",
+          "3 -> 2"
+        ],
+        "full60_transition_kinds.__keys__": [
+          "pair_to_single",
+          "single_to_single"
+        ],
+        "full60_root_slot_counts.__keys__": [
+          "3"
+        ],
+        "has_boundary_carrier": true,
+        "boundary_carrier_id": "slot_pair_02_03_boundary_carrier",
+        "boundary_vertex_count": 120,
+        "boundary_edge_count": 60,
+        "pair_total_transition_count": 180,
+        "pair_total_root_count": 60,
+        "pair_total_direction_counts.__keys__": [
+          "2 -> 3",
+          "2/3 -> 3",
+          "3 -> 2"
+        ],
+        "pair_total_transition_kind_counts.__keys__": [
+          "pair_to_single",
+          "single_to_single"
+        ],
+        "reciprocal_single_transition_count": 60,
+        "sample_roots": [
+          "3:0",
+          "3:1",
+          "3:10",
+          "3:11",
+          "3:12",
+          "3:13",
+          "3:14",
+          "3:15",
+          "3:16",
+          "3:17",
+          "3:18",
+          "3:19"
+        ],
+        "channels_admitted": false
+      }
+    },
+    {
+      "path": "$.summary.packages[1]",
+      "hit_pairs": [
+        "02_08"
+      ],
+      "hit_count": 1,
+      "sample": {
+        "pair_key": "2/8",
+        "package_kind": "clean_reciprocal_pair_package",
+        "full60_transition_count": 3,
+        "full60_transitions": [
+          "2 -> 8",
+          "2/8 -> 8",
+          "8 -> 2"
+        ],
+        "full60_transition_kinds.__keys__": [
+          "pair_to_single",
+          "single_to_single"
+        ],
+        "full60_root_slot_counts.__keys__": [
+          "8"
+        ],
+        "has_boundary_carrier": true,
+        "boundary_carrier_id": "slot_pair_02_08_boundary_carrier",
+        "boundary_vertex_count": 120,
+        "boundary_edge_count": 60,
+        "pair_total_transition_count": 180,
+        "pair_total_root_count": 60,
+        "pair_total_direction_counts.__keys__": [
+          "2 -> 8",
+          "2/8 -> 8",
+          "8 -> 2"
+        ],
+        "pair_total_transition_kind_counts.__keys__": [
+          "pair_to_single",
+          "single_to_single"
+        ],
+        "reciprocal_single_transition_count": 60,
+        "sample_roots": [
+          "8:0",
+          "8:1",
+          "8:10",
+          "8:11",
+          "8:12",
+          "8:13",
+          "8:14",
+          "8:15",
+          "8:16",
+          "8:17",
+          "8:18",
+          "8:19"
+        ],
+        "channels_admitted": false
+      }
+    },
+    {
+      "path": "$.summary.packages[2]",
+      "hit_pairs": [
+        "03_09"
+      ],
+      "hit_count": 1,
+      "sample": {
+        "pair_key": "3/9",
+        "package_kind": "clean_reciprocal_pair_package",
+        "full60_transition_count": 3,
+        "full60_transitions": [
+          "3 -> 9",
+          "3/9 -> 9",
+          "9 -> 3"
+        ],
+        "full60_transition_kinds.__keys__": [
+          "pair_to_single",
+          "single_to_single"
+        ],
+        "full60_root_slot_counts.__keys__": [
+          "9"
+        ],
+        "has_boundary_carrier": true,
+        "boundary_carrier_id": "slot_pair_03_09_boundary_carrier",
+        "boundary_vertex_count": 120,
+        "boundary_edge_count": 60,
+        "pair_total_transition_count": 180,
+        "pair_total_root_count": 60,
+        "pair_total_direction_counts.__keys__": [
+          "3 -> 9",
+          "3/9 -> 9",
+          "9 -> 3"
+        ],
+        "pair_total_transition_kind_counts.__keys__": [
+          "pair_to_single",
+          "single_to_single"
+        ],
+        "reciprocal_single_transition_count": 60,
+        "sample_roots": [
+          "9:0",
+          "9:1",
+          "9:10",
+          "9:11",
+          "9:12",
+          "9:13",
+          "9:14",
+          "9:15",
+          "9:16",
+          "9:17",
+          "9:18",
+          "9:19"
+        ],
+        "channels_admitted": false
+      }
+    },
+    {
+      "path": "$.summary.packages[3]",
+      "hit_pairs": [
+        "05_10"
+      ],
+      "hit_count": 1,
+      "sample": {
+        "pair_key": "5/10",
+        "package_kind": "clean_reciprocal_pair_package",
+        "full60_transition_count": 3,
+        "full60_transitions": [
+          "10 -> 5",
+          "5 -> 10",
+          "5/10 -> 10"
+        ],
+        "full60_transition_kinds.__keys__": [
+          "pair_to_single",
+          "single_to_single"
+        ],
+        "full60_root_slot_counts.__keys__": [
+          "10"
+        ],
+        "has_boundary_carrier": true,
+        "boundary_carrier_id": "slot_pair_05_10_boundary_carrier",
+        "boundary_vertex_count": 120,
+        "boundary_edge_count": 60,
+        "pair_total_transition_count": 180,
+        "pair_total_root_count": 60,
+        "pair_total_direction_counts.__keys__": [
+          "10 -> 5",
+          "5 -> 10",
+          "5/10 -> 10"
+        ],
+        "pair_total_transition_kind_counts.__keys__": [
+          "pair_to_single",
+          "single_to_single"
+        ],
+        "reciprocal_single_transition_count": 60,
+        "sample_roots": [
+          "10:0",
+          "10:1",
+          "10:10",
+          "10:11",
+          "10:12",
+          "10:13",
+          "10:14",
+          "10:15",
+          "10:16",
+          "10:17",
+          "10:18",
+          "10:19"
+        ],
+        "channels_admitted": false
+      }
+    },
+    {
+      "path": "$.summary.packages[4]",
+      "hit_pairs": [
+        "05_14"
+      ],
+      "hit_count": 1,
+      "sample": {
+        "pair_key": "5/14",
+        "package_kind": "clean_reciprocal_pair_package",
+        "full60_transition_count": 3,
+        "full60_transitions": [
+          "14 -> 5",
+          "5 -> 14",
+          "5/14 -> 14"
+        ],
+        "full60_transition_kinds.__keys__": [
+          "pair_to_single",
+          "single_to_single"
+        ],
+        "full60_root_slot_counts.__keys__": [
+          "14"
+        ],
+        "has_boundary_carrier": true,
+        "boundary_carrier_id": "slot_pair_05_14_boundary_carrier",
+        "boundary_vertex_count": 120,
+        "boundary_edge_count": 60,
+        "pair_total_transition_count": 180,
+        "pair_total_root_count": 60,
+        "pair_total_direction_counts.__keys__": [
+          "14 -> 5",
+          "5 -> 14",
+          "5/14 -> 14"
+        ],
+        "pair_total_transition_kind_counts.__keys__": [
+          "pair_to_single",
+          "single_to_single"
+        ],
+        "reciprocal_single_transition_count": 60,
+        "sample_roots": [
+          "14:0",
+          "14:1",
+          "14:10",
+          "14:11",
+          "14:12",
+          "14:13",
+          "14:14",
+          "14:15",
+          "14:16",
+          "14:17",
+          "14:18",
+          "14:19"
+        ],
+        "channels_admitted": false
+      }
+    },
+    {
+      "path": "$.summary.packages[5]",
+      "hit_pairs": [
+        "06_13"
+      ],
+      "hit_count": 1,
+      "sample": {
+        "pair_key": "6/13",
+        "package_kind": "clean_reciprocal_pair_package",
+        "full60_transition_count": 3,
+        "full60_transitions": [
+          "13 -> 6",
+          "6 -> 13",
+          "6/13 -> 13"
+        ],
+        "full60_transition_kinds.__keys__": [
+          "pair_to_single",
+          "single_to_single"
+        ],
+        "full60_root_slot_counts.__keys__": [
+          "13"
+        ],
+        "has_boundary_carrier": true,
+        "boundary_carrier_id": "slot_pair_06_13_boundary_carrier",
+        "boundary_vertex_count": 120,
+        "boundary_edge_count": 60,
+        "pair_total_transition_count": 180,
+        "pair_total_root_count": 60,
+        "pair_total_direction_counts.__keys__": [
+          "13 -> 6",
+          "6 -> 13",
+          "6/13 -> 13"
+        ],
+        "pair_total_transition_kind_counts.__keys__": [
+          "pair_to_single",
+          "single_to_single"
+        ],
+        "reciprocal_single_transition_count": 60,
+        "sample_roots": [
+          "13:0",
+          "13:1",
+          "13:10",
+          "13:11",
+          "13:12",
+          "13:13",
+          "13:14",
+          "13:15",
+          "13:16",
+          "13:17",
+          "13:18",
+          "13:19"
+        ],
+        "channels_admitted": false
+      }
+    },
+    {
+      "path": "$.summary.packages[6]",
+      "hit_pairs": [
+        "06_12"
+      ],
+      "hit_count": 1,
+      "sample": {
+        "pair_key": "6/12",
+        "package_kind": "two_transition_pair_package",
+        "full60_transition_count": 2,
+        "full60_transitions": [
+          "12 -> 6",
+          "6/12 -> 12"
+        ],
+        "full60_transition_kinds.__keys__": [
+          "pair_to_single",
+          "single_to_single"
+        ],
+        "full60_root_slot_counts.__keys__": [
+          "12"
+        ],
+        "has_boundary_carrier": true,
+        "boundary_carrier_id": "slot_pair_06_12_boundary_carrier",
+        "boundary_vertex_count": 120,
+        "boundary_edge_count": 60,
+        "pair_total_transition_count": 120,
+        "pair_total_root_count": 60,
+        "pair_total_direction_counts.__keys__": [
+          "12 -> 6",
+          "6/12 -> 12"
+        ],
+        "pair_total_transition_kind_counts.__keys__": [
+          "pair_to_single",
+          "single_to_single"
+        ],
+        "reciprocal_single_transition_count": 0,
+        "sample_roots": [
+          "12:0",
+          "12:1",
+          "12:10",
+          "12:11",
+          "12:12",
+          "12:13",
+          "12:14",
+          "12:15",
+          "12:16",
+          "12:17",
+          "12:18",
+          "12:19"
+        ],
+        "channels_admitted": false
+      }
+    },
+    {
+      "path": "$.summary.packages[7]",
+      "hit_pairs": [
+        "07_11"
+      ],
+      "hit_count": 1,
+      "sample": {
+        "pair_key": "7/11",
+        "package_kind": "two_transition_pair_package",
+        "full60_transition_count": 2,
+        "full60_transitions": [
+          "11 -> 7",
+          "7/11 -> 11"
+        ],
+        "full60_transition_kinds.__keys__": [
+          "pair_to_single",
+          "single_to_single"
+        ],
+        "full60_root_slot_counts.__keys__": [
+          "11"
+        ],
+        "has_boundary_carrier": true,
+        "boundary_carrier_id": "slot_pair_07_11_boundary_carrier",
+        "boundary_vertex_count": 120,
+        "boundary_edge_count": 60,
+        "pair_total_transition_count": 130,
+        "pair_total_root_count": 60,
+        "pair_total_direction_counts.__keys__": [
+          "11 -> 7",
+          "7 -> 11",
+          "7/11 -> 11"
+        ],
+        "pair_total_transition_kind_counts.__keys__": [
+          "pair_to_single",
+          "single_to_single"
+        ],
+        "reciprocal_single_transition_count": 10,
+        "sample_roots": [
+          "11:0",
+          "11:1",
+          "11:10",
+          "11:11",
+          "11:12",
+          "11:13",
+          "11:14",
+          "11:15",
+          "11:16",
+          "11:17",
+          "11:18",
+          "11:19"
+        ],
+        "channels_admitted": false
+      }
+    },
+    {
+      "path": "$.summary.packages[9]",
+      "hit_pairs": [
+        "09_12"
+      ],
+      "hit_count": 1,
+      "sample": {
+        "pair_key": "9/12",
+        "package_kind": "one_way_single_transition",
+        "full60_transition_count": 1,
+        "full60_transitions": [
+          "9 -> 12"
+        ],
+        "full60_transition_kinds.__keys__": [
+          "single_to_single"
+        ],
+        "full60_root_slot_counts.__keys__": [
+          "12"
+        ],
+        "has_boundary_carrier": true,
+        "boundary_carrier_id": "slot_pair_09_12_boundary_carrier",
+        "boundary_vertex_count": 120,
+        "boundary_edge_count": 60,
+        "pair_total_transition_count": 60,
+        "pair_total_root_count": 60,
+        "pair_total_direction_counts.__keys__": [
+          "9 -> 12"
+        ],
+        "pair_total_transition_kind_counts.__keys__": [
+          "single_to_single"
+        ],
+        "reciprocal_single_transition_count": 0,
+        "sample_roots": [
+          "12:0",
+          "12:1",
+          "12:10",
+          "12:11",
+          "12:12",
+          "12:13",
+          "12:14",
+          "12:15",
+          "12:16",
+          "12:17",
+          "12:18",
+          "12:19"
+        ],
+        "channels_admitted": false
+      }
+    }
+  ],
+  "full60_field_hits": [
+    {
+      "path": "$.summary.packages[0].boundary_carrier_id",
+      "pair": "02_03",
+      "value": "slot_pair_02_03_boundary_carrier"
+    },
+    {
+      "path": "$.summary.packages[1].boundary_carrier_id",
+      "pair": "02_08",
+      "value": "slot_pair_02_08_boundary_carrier"
+    },
+    {
+      "path": "$.summary.packages[2].boundary_carrier_id",
+      "pair": "03_09",
+      "value": "slot_pair_03_09_boundary_carrier"
+    },
+    {
+      "path": "$.summary.packages[3].boundary_carrier_id",
+      "pair": "05_10",
+      "value": "slot_pair_05_10_boundary_carrier"
+    },
+    {
+      "path": "$.summary.packages[4].boundary_carrier_id",
+      "pair": "05_14",
+      "value": "slot_pair_05_14_boundary_carrier"
+    },
+    {
+      "path": "$.summary.packages[5].boundary_carrier_id",
+      "pair": "06_13",
+      "value": "slot_pair_06_13_boundary_carrier"
+    },
+    {
+      "path": "$.summary.packages[6].boundary_carrier_id",
+      "pair": "06_12",
+      "value": "slot_pair_06_12_boundary_carrier"
+    },
+    {
+      "path": "$.summary.packages[7].boundary_carrier_id",
+      "pair": "07_11",
+      "value": "slot_pair_07_11_boundary_carrier"
+    },
+    {
+      "path": "$.summary.packages[9].boundary_carrier_id",
+      "pair": "09_12",
+      "value": "slot_pair_09_12_boundary_carrier"
+    }
+  ],
+  "interpretation": {
+    "phase_grammar_direct_pair_hits": 0,
+    "full60_direct_pair_hits": 9,
+    "meaning": "The endpoint-incidence skeleton is not directly named by the phase grammar artifact, but part of it is visible in the full60 transition package layer.",
+    "next_problem": "Determine whether the 9 full60 pair hits form a lawful subset of the G15 skeleton or are incidental string overlap."
+  },
+  "checks": {
+    "source_reconstruction_passed": true,
+    "orientation_frontier_passed": true,
+    "channel_registry_zero_count": true,
+    "channels_not_admitted": true,
+    "pair_string_count_is_30": true,
+    "full60_pair_hit_count_matches_orientation_frontier": true,
+    "full60_pair_hit_count_is_9": true,
+    "phase_pair_hit_count_was_zero": true,
+    "dict_hits_present": true
+  },
+  "failed_checks": [],
+  "boundary": {
+    "inspection_only": true,
+    "admits_channels": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "marker_lighting": false,
+    "force_claim": false,
+    "physics_claim": false
+  }
+}

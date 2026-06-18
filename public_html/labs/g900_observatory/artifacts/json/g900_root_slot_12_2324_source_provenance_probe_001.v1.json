@@ -1,0 +1,1649 @@
+{
+  "schema": "g900.root_slot_12_2324_source_provenance_probe",
+  "version": 1,
+  "status": "root_slot_12_2324_source_provenance_probe_recorded",
+  "created_utc": "2026-06-18T07:47:23Z",
+  "git_head": "dc373ac Probe G900 six-nine A-F return seam analogy",
+  "audit_pass": true,
+  "verdict": "root_slot_12_2324_source_provenance_probe_passed",
+  "question": "Can the native return-seam selector root_slot=12 AND limit_transition=23->24 be derived from deeper source/provenance fields in the existing support table?",
+  "target": {
+    "native_return_seam_selector": {
+      "root_slot": "12",
+      "limit_transition": "23->24"
+    },
+    "target_matches_global_zero_hit_rows": true,
+    "target_summary": {
+      "target_row_count": 60,
+      "target_pair_counts": {
+        "06_09": 60
+      },
+      "target_limit_counts": {
+        "23->24": 60
+      },
+      "target_root_slot_counts": {
+        "12": 60
+      },
+      "target_delta_vertex_count_counts": {
+        "1": 60
+      },
+      "target_delta_edge_hits_token_counts": {
+        "0": 60
+      },
+      "target_internal_delta_hits_token_counts": {
+        "0": 60
+      }
+    }
+  },
+  "source_search_status": "exact_single_signature_source_candidate_found",
+  "best_family": "structural_nonlabel_with_condition_fields_excluded_from_strict",
+  "best_candidate": {
+    "features": [
+      "from_limit",
+      "package_kind"
+    ],
+    "target_signature_count": 1,
+    "single_signature": true,
+    "selected_row_count": 60,
+    "target_row_count": 60,
+    "false_positive_count": 0,
+    "false_negative_count": 0,
+    "exact_union": true,
+    "exact_single_signature": true,
+    "target_signature": [
+      "23",
+      "one_way_single_transition"
+    ]
+  },
+  "field_families": {
+    "strict_nonlabel_noncondition_fields": [
+      "delta_vertex_count",
+      "package_kind",
+      "root",
+      "root_local"
+    ],
+    "structural_nonlabel_fields": [
+      "delta_vertex_count",
+      "from_limit",
+      "package_kind",
+      "root",
+      "root_local",
+      "root_slot",
+      "to_limit"
+    ],
+    "condition_echo_control_fields": [
+      "from_limit",
+      "limit_transition",
+      "root_slot",
+      "to_limit"
+    ]
+  },
+  "scans": {
+    "strict_nonlabel_noncondition": {
+      "family_name": "strict_nonlabel_noncondition",
+      "field_count": 4,
+      "max_width": 3,
+      "tested_combo_count": 14,
+      "exact_single_count": 0,
+      "exact_union_count": 0,
+      "exact_single_first_20": [],
+      "exact_union_first_20": []
+    },
+    "structural_nonlabel": {
+      "family_name": "structural_nonlabel_with_condition_fields_excluded_from_strict",
+      "field_count": 7,
+      "max_width": 3,
+      "tested_combo_count": 63,
+      "exact_single_count": 12,
+      "exact_union_count": 15,
+      "exact_single_first_20": [
+        {
+          "features": [
+            "from_limit",
+            "package_kind"
+          ],
+          "target_signature_count": 1,
+          "single_signature": true,
+          "selected_row_count": 60,
+          "target_row_count": 60,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "exact_union": true,
+          "exact_single_signature": true,
+          "target_signature": [
+            "23",
+            "one_way_single_transition"
+          ]
+        },
+        {
+          "features": [
+            "from_limit",
+            "root_slot"
+          ],
+          "target_signature_count": 1,
+          "single_signature": true,
+          "selected_row_count": 60,
+          "target_row_count": 60,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "exact_union": true,
+          "exact_single_signature": true,
+          "target_signature": [
+            "23",
+            "12"
+          ]
+        },
+        {
+          "features": [
+            "package_kind",
+            "to_limit"
+          ],
+          "target_signature_count": 1,
+          "single_signature": true,
+          "selected_row_count": 60,
+          "target_row_count": 60,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "exact_union": true,
+          "exact_single_signature": true,
+          "target_signature": [
+            "one_way_single_transition",
+            "24"
+          ]
+        },
+        {
+          "features": [
+            "root_slot",
+            "to_limit"
+          ],
+          "target_signature_count": 1,
+          "single_signature": true,
+          "selected_row_count": 60,
+          "target_row_count": 60,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "exact_union": true,
+          "exact_single_signature": true,
+          "target_signature": [
+            "12",
+            "24"
+          ]
+        },
+        {
+          "features": [
+            "delta_vertex_count",
+            "from_limit",
+            "package_kind"
+          ],
+          "target_signature_count": 1,
+          "single_signature": true,
+          "selected_row_count": 60,
+          "target_row_count": 60,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "exact_union": true,
+          "exact_single_signature": true,
+          "target_signature": [
+            "1",
+            "23",
+            "one_way_single_transition"
+          ]
+        },
+        {
+          "features": [
+            "delta_vertex_count",
+            "from_limit",
+            "root_slot"
+          ],
+          "target_signature_count": 1,
+          "single_signature": true,
+          "selected_row_count": 60,
+          "target_row_count": 60,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "exact_union": true,
+          "exact_single_signature": true,
+          "target_signature": [
+            "1",
+            "23",
+            "12"
+          ]
+        },
+        {
+          "features": [
+            "delta_vertex_count",
+            "package_kind",
+            "to_limit"
+          ],
+          "target_signature_count": 1,
+          "single_signature": true,
+          "selected_row_count": 60,
+          "target_row_count": 60,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "exact_union": true,
+          "exact_single_signature": true,
+          "target_signature": [
+            "1",
+            "one_way_single_transition",
+            "24"
+          ]
+        },
+        {
+          "features": [
+            "delta_vertex_count",
+            "root_slot",
+            "to_limit"
+          ],
+          "target_signature_count": 1,
+          "single_signature": true,
+          "selected_row_count": 60,
+          "target_row_count": 60,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "exact_union": true,
+          "exact_single_signature": true,
+          "target_signature": [
+            "1",
+            "12",
+            "24"
+          ]
+        },
+        {
+          "features": [
+            "from_limit",
+            "package_kind",
+            "root_slot"
+          ],
+          "target_signature_count": 1,
+          "single_signature": true,
+          "selected_row_count": 60,
+          "target_row_count": 60,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "exact_union": true,
+          "exact_single_signature": true,
+          "target_signature": [
+            "23",
+            "one_way_single_transition",
+            "12"
+          ]
+        },
+        {
+          "features": [
+            "from_limit",
+            "package_kind",
+            "to_limit"
+          ],
+          "target_signature_count": 1,
+          "single_signature": true,
+          "selected_row_count": 60,
+          "target_row_count": 60,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "exact_union": true,
+          "exact_single_signature": true,
+          "target_signature": [
+            "23",
+            "one_way_single_transition",
+            "24"
+          ]
+        },
+        {
+          "features": [
+            "from_limit",
+            "root_slot",
+            "to_limit"
+          ],
+          "target_signature_count": 1,
+          "single_signature": true,
+          "selected_row_count": 60,
+          "target_row_count": 60,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "exact_union": true,
+          "exact_single_signature": true,
+          "target_signature": [
+            "23",
+            "12",
+            "24"
+          ]
+        },
+        {
+          "features": [
+            "package_kind",
+            "root_slot",
+            "to_limit"
+          ],
+          "target_signature_count": 1,
+          "single_signature": true,
+          "selected_row_count": 60,
+          "target_row_count": 60,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "exact_union": true,
+          "exact_single_signature": true,
+          "target_signature": [
+            "one_way_single_transition",
+            "12",
+            "24"
+          ]
+        }
+      ],
+      "exact_union_first_20": [
+        {
+          "features": [
+            "from_limit",
+            "root"
+          ],
+          "target_signature_count": 60,
+          "single_signature": false,
+          "selected_row_count": 60,
+          "target_row_count": 60,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "exact_union": true,
+          "exact_single_signature": false,
+          "target_signatures_first_12": [
+            [
+              "23",
+              "12:0"
+            ],
+            [
+              "23",
+              "12:1"
+            ],
+            [
+              "23",
+              "12:10"
+            ],
+            [
+              "23",
+              "12:11"
+            ],
+            [
+              "23",
+              "12:12"
+            ],
+            [
+              "23",
+              "12:13"
+            ],
+            [
+              "23",
+              "12:14"
+            ],
+            [
+              "23",
+              "12:15"
+            ],
+            [
+              "23",
+              "12:16"
+            ],
+            [
+              "23",
+              "12:17"
+            ],
+            [
+              "23",
+              "12:18"
+            ],
+            [
+              "23",
+              "12:19"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "root",
+            "to_limit"
+          ],
+          "target_signature_count": 60,
+          "single_signature": false,
+          "selected_row_count": 60,
+          "target_row_count": 60,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "exact_union": true,
+          "exact_single_signature": false,
+          "target_signatures_first_12": [
+            [
+              "12:0",
+              "24"
+            ],
+            [
+              "12:1",
+              "24"
+            ],
+            [
+              "12:10",
+              "24"
+            ],
+            [
+              "12:11",
+              "24"
+            ],
+            [
+              "12:12",
+              "24"
+            ],
+            [
+              "12:13",
+              "24"
+            ],
+            [
+              "12:14",
+              "24"
+            ],
+            [
+              "12:15",
+              "24"
+            ],
+            [
+              "12:16",
+              "24"
+            ],
+            [
+              "12:17",
+              "24"
+            ],
+            [
+              "12:18",
+              "24"
+            ],
+            [
+              "12:19",
+              "24"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "delta_vertex_count",
+            "from_limit",
+            "root"
+          ],
+          "target_signature_count": 60,
+          "single_signature": false,
+          "selected_row_count": 60,
+          "target_row_count": 60,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "exact_union": true,
+          "exact_single_signature": false,
+          "target_signatures_first_12": [
+            [
+              "1",
+              "23",
+              "12:0"
+            ],
+            [
+              "1",
+              "23",
+              "12:1"
+            ],
+            [
+              "1",
+              "23",
+              "12:10"
+            ],
+            [
+              "1",
+              "23",
+              "12:11"
+            ],
+            [
+              "1",
+              "23",
+              "12:12"
+            ],
+            [
+              "1",
+              "23",
+              "12:13"
+            ],
+            [
+              "1",
+              "23",
+              "12:14"
+            ],
+            [
+              "1",
+              "23",
+              "12:15"
+            ],
+            [
+              "1",
+              "23",
+              "12:16"
+            ],
+            [
+              "1",
+              "23",
+              "12:17"
+            ],
+            [
+              "1",
+              "23",
+              "12:18"
+            ],
+            [
+              "1",
+              "23",
+              "12:19"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "delta_vertex_count",
+            "root",
+            "to_limit"
+          ],
+          "target_signature_count": 60,
+          "single_signature": false,
+          "selected_row_count": 60,
+          "target_row_count": 60,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "exact_union": true,
+          "exact_single_signature": false,
+          "target_signatures_first_12": [
+            [
+              "1",
+              "12:0",
+              "24"
+            ],
+            [
+              "1",
+              "12:1",
+              "24"
+            ],
+            [
+              "1",
+              "12:10",
+              "24"
+            ],
+            [
+              "1",
+              "12:11",
+              "24"
+            ],
+            [
+              "1",
+              "12:12",
+              "24"
+            ],
+            [
+              "1",
+              "12:13",
+              "24"
+            ],
+            [
+              "1",
+              "12:14",
+              "24"
+            ],
+            [
+              "1",
+              "12:15",
+              "24"
+            ],
+            [
+              "1",
+              "12:16",
+              "24"
+            ],
+            [
+              "1",
+              "12:17",
+              "24"
+            ],
+            [
+              "1",
+              "12:18",
+              "24"
+            ],
+            [
+              "1",
+              "12:19",
+              "24"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "from_limit",
+            "package_kind",
+            "root"
+          ],
+          "target_signature_count": 60,
+          "single_signature": false,
+          "selected_row_count": 60,
+          "target_row_count": 60,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "exact_union": true,
+          "exact_single_signature": false,
+          "target_signatures_first_12": [
+            [
+              "23",
+              "one_way_single_transition",
+              "12:0"
+            ],
+            [
+              "23",
+              "one_way_single_transition",
+              "12:1"
+            ],
+            [
+              "23",
+              "one_way_single_transition",
+              "12:10"
+            ],
+            [
+              "23",
+              "one_way_single_transition",
+              "12:11"
+            ],
+            [
+              "23",
+              "one_way_single_transition",
+              "12:12"
+            ],
+            [
+              "23",
+              "one_way_single_transition",
+              "12:13"
+            ],
+            [
+              "23",
+              "one_way_single_transition",
+              "12:14"
+            ],
+            [
+              "23",
+              "one_way_single_transition",
+              "12:15"
+            ],
+            [
+              "23",
+              "one_way_single_transition",
+              "12:16"
+            ],
+            [
+              "23",
+              "one_way_single_transition",
+              "12:17"
+            ],
+            [
+              "23",
+              "one_way_single_transition",
+              "12:18"
+            ],
+            [
+              "23",
+              "one_way_single_transition",
+              "12:19"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "from_limit",
+            "package_kind",
+            "root_local"
+          ],
+          "target_signature_count": 60,
+          "single_signature": false,
+          "selected_row_count": 60,
+          "target_row_count": 60,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "exact_union": true,
+          "exact_single_signature": false,
+          "target_signatures_first_12": [
+            [
+              "23",
+              "one_way_single_transition",
+              "0"
+            ],
+            [
+              "23",
+              "one_way_single_transition",
+              "1"
+            ],
+            [
+              "23",
+              "one_way_single_transition",
+              "10"
+            ],
+            [
+              "23",
+              "one_way_single_transition",
+              "11"
+            ],
+            [
+              "23",
+              "one_way_single_transition",
+              "12"
+            ],
+            [
+              "23",
+              "one_way_single_transition",
+              "13"
+            ],
+            [
+              "23",
+              "one_way_single_transition",
+              "14"
+            ],
+            [
+              "23",
+              "one_way_single_transition",
+              "15"
+            ],
+            [
+              "23",
+              "one_way_single_transition",
+              "16"
+            ],
+            [
+              "23",
+              "one_way_single_transition",
+              "17"
+            ],
+            [
+              "23",
+              "one_way_single_transition",
+              "18"
+            ],
+            [
+              "23",
+              "one_way_single_transition",
+              "19"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "from_limit",
+            "root",
+            "root_local"
+          ],
+          "target_signature_count": 60,
+          "single_signature": false,
+          "selected_row_count": 60,
+          "target_row_count": 60,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "exact_union": true,
+          "exact_single_signature": false,
+          "target_signatures_first_12": [
+            [
+              "23",
+              "12:0",
+              "0"
+            ],
+            [
+              "23",
+              "12:1",
+              "1"
+            ],
+            [
+              "23",
+              "12:10",
+              "10"
+            ],
+            [
+              "23",
+              "12:11",
+              "11"
+            ],
+            [
+              "23",
+              "12:12",
+              "12"
+            ],
+            [
+              "23",
+              "12:13",
+              "13"
+            ],
+            [
+              "23",
+              "12:14",
+              "14"
+            ],
+            [
+              "23",
+              "12:15",
+              "15"
+            ],
+            [
+              "23",
+              "12:16",
+              "16"
+            ],
+            [
+              "23",
+              "12:17",
+              "17"
+            ],
+            [
+              "23",
+              "12:18",
+              "18"
+            ],
+            [
+              "23",
+              "12:19",
+              "19"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "from_limit",
+            "root",
+            "root_slot"
+          ],
+          "target_signature_count": 60,
+          "single_signature": false,
+          "selected_row_count": 60,
+          "target_row_count": 60,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "exact_union": true,
+          "exact_single_signature": false,
+          "target_signatures_first_12": [
+            [
+              "23",
+              "12:0",
+              "12"
+            ],
+            [
+              "23",
+              "12:1",
+              "12"
+            ],
+            [
+              "23",
+              "12:10",
+              "12"
+            ],
+            [
+              "23",
+              "12:11",
+              "12"
+            ],
+            [
+              "23",
+              "12:12",
+              "12"
+            ],
+            [
+              "23",
+              "12:13",
+              "12"
+            ],
+            [
+              "23",
+              "12:14",
+              "12"
+            ],
+            [
+              "23",
+              "12:15",
+              "12"
+            ],
+            [
+              "23",
+              "12:16",
+              "12"
+            ],
+            [
+              "23",
+              "12:17",
+              "12"
+            ],
+            [
+              "23",
+              "12:18",
+              "12"
+            ],
+            [
+              "23",
+              "12:19",
+              "12"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "from_limit",
+            "root",
+            "to_limit"
+          ],
+          "target_signature_count": 60,
+          "single_signature": false,
+          "selected_row_count": 60,
+          "target_row_count": 60,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "exact_union": true,
+          "exact_single_signature": false,
+          "target_signatures_first_12": [
+            [
+              "23",
+              "12:0",
+              "24"
+            ],
+            [
+              "23",
+              "12:1",
+              "24"
+            ],
+            [
+              "23",
+              "12:10",
+              "24"
+            ],
+            [
+              "23",
+              "12:11",
+              "24"
+            ],
+            [
+              "23",
+              "12:12",
+              "24"
+            ],
+            [
+              "23",
+              "12:13",
+              "24"
+            ],
+            [
+              "23",
+              "12:14",
+              "24"
+            ],
+            [
+              "23",
+              "12:15",
+              "24"
+            ],
+            [
+              "23",
+              "12:16",
+              "24"
+            ],
+            [
+              "23",
+              "12:17",
+              "24"
+            ],
+            [
+              "23",
+              "12:18",
+              "24"
+            ],
+            [
+              "23",
+              "12:19",
+              "24"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "from_limit",
+            "root_local",
+            "root_slot"
+          ],
+          "target_signature_count": 60,
+          "single_signature": false,
+          "selected_row_count": 60,
+          "target_row_count": 60,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "exact_union": true,
+          "exact_single_signature": false,
+          "target_signatures_first_12": [
+            [
+              "23",
+              "0",
+              "12"
+            ],
+            [
+              "23",
+              "1",
+              "12"
+            ],
+            [
+              "23",
+              "10",
+              "12"
+            ],
+            [
+              "23",
+              "11",
+              "12"
+            ],
+            [
+              "23",
+              "12",
+              "12"
+            ],
+            [
+              "23",
+              "13",
+              "12"
+            ],
+            [
+              "23",
+              "14",
+              "12"
+            ],
+            [
+              "23",
+              "15",
+              "12"
+            ],
+            [
+              "23",
+              "16",
+              "12"
+            ],
+            [
+              "23",
+              "17",
+              "12"
+            ],
+            [
+              "23",
+              "18",
+              "12"
+            ],
+            [
+              "23",
+              "19",
+              "12"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "package_kind",
+            "root",
+            "to_limit"
+          ],
+          "target_signature_count": 60,
+          "single_signature": false,
+          "selected_row_count": 60,
+          "target_row_count": 60,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "exact_union": true,
+          "exact_single_signature": false,
+          "target_signatures_first_12": [
+            [
+              "one_way_single_transition",
+              "12:0",
+              "24"
+            ],
+            [
+              "one_way_single_transition",
+              "12:1",
+              "24"
+            ],
+            [
+              "one_way_single_transition",
+              "12:10",
+              "24"
+            ],
+            [
+              "one_way_single_transition",
+              "12:11",
+              "24"
+            ],
+            [
+              "one_way_single_transition",
+              "12:12",
+              "24"
+            ],
+            [
+              "one_way_single_transition",
+              "12:13",
+              "24"
+            ],
+            [
+              "one_way_single_transition",
+              "12:14",
+              "24"
+            ],
+            [
+              "one_way_single_transition",
+              "12:15",
+              "24"
+            ],
+            [
+              "one_way_single_transition",
+              "12:16",
+              "24"
+            ],
+            [
+              "one_way_single_transition",
+              "12:17",
+              "24"
+            ],
+            [
+              "one_way_single_transition",
+              "12:18",
+              "24"
+            ],
+            [
+              "one_way_single_transition",
+              "12:19",
+              "24"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "package_kind",
+            "root_local",
+            "to_limit"
+          ],
+          "target_signature_count": 60,
+          "single_signature": false,
+          "selected_row_count": 60,
+          "target_row_count": 60,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "exact_union": true,
+          "exact_single_signature": false,
+          "target_signatures_first_12": [
+            [
+              "one_way_single_transition",
+              "0",
+              "24"
+            ],
+            [
+              "one_way_single_transition",
+              "1",
+              "24"
+            ],
+            [
+              "one_way_single_transition",
+              "10",
+              "24"
+            ],
+            [
+              "one_way_single_transition",
+              "11",
+              "24"
+            ],
+            [
+              "one_way_single_transition",
+              "12",
+              "24"
+            ],
+            [
+              "one_way_single_transition",
+              "13",
+              "24"
+            ],
+            [
+              "one_way_single_transition",
+              "14",
+              "24"
+            ],
+            [
+              "one_way_single_transition",
+              "15",
+              "24"
+            ],
+            [
+              "one_way_single_transition",
+              "16",
+              "24"
+            ],
+            [
+              "one_way_single_transition",
+              "17",
+              "24"
+            ],
+            [
+              "one_way_single_transition",
+              "18",
+              "24"
+            ],
+            [
+              "one_way_single_transition",
+              "19",
+              "24"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "root",
+            "root_local",
+            "to_limit"
+          ],
+          "target_signature_count": 60,
+          "single_signature": false,
+          "selected_row_count": 60,
+          "target_row_count": 60,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "exact_union": true,
+          "exact_single_signature": false,
+          "target_signatures_first_12": [
+            [
+              "12:0",
+              "0",
+              "24"
+            ],
+            [
+              "12:1",
+              "1",
+              "24"
+            ],
+            [
+              "12:10",
+              "10",
+              "24"
+            ],
+            [
+              "12:11",
+              "11",
+              "24"
+            ],
+            [
+              "12:12",
+              "12",
+              "24"
+            ],
+            [
+              "12:13",
+              "13",
+              "24"
+            ],
+            [
+              "12:14",
+              "14",
+              "24"
+            ],
+            [
+              "12:15",
+              "15",
+              "24"
+            ],
+            [
+              "12:16",
+              "16",
+              "24"
+            ],
+            [
+              "12:17",
+              "17",
+              "24"
+            ],
+            [
+              "12:18",
+              "18",
+              "24"
+            ],
+            [
+              "12:19",
+              "19",
+              "24"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "root",
+            "root_slot",
+            "to_limit"
+          ],
+          "target_signature_count": 60,
+          "single_signature": false,
+          "selected_row_count": 60,
+          "target_row_count": 60,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "exact_union": true,
+          "exact_single_signature": false,
+          "target_signatures_first_12": [
+            [
+              "12:0",
+              "12",
+              "24"
+            ],
+            [
+              "12:1",
+              "12",
+              "24"
+            ],
+            [
+              "12:10",
+              "12",
+              "24"
+            ],
+            [
+              "12:11",
+              "12",
+              "24"
+            ],
+            [
+              "12:12",
+              "12",
+              "24"
+            ],
+            [
+              "12:13",
+              "12",
+              "24"
+            ],
+            [
+              "12:14",
+              "12",
+              "24"
+            ],
+            [
+              "12:15",
+              "12",
+              "24"
+            ],
+            [
+              "12:16",
+              "12",
+              "24"
+            ],
+            [
+              "12:17",
+              "12",
+              "24"
+            ],
+            [
+              "12:18",
+              "12",
+              "24"
+            ],
+            [
+              "12:19",
+              "12",
+              "24"
+            ]
+          ]
+        },
+        {
+          "features": [
+            "root_local",
+            "root_slot",
+            "to_limit"
+          ],
+          "target_signature_count": 60,
+          "single_signature": false,
+          "selected_row_count": 60,
+          "target_row_count": 60,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "exact_union": true,
+          "exact_single_signature": false,
+          "target_signatures_first_12": [
+            [
+              "0",
+              "12",
+              "24"
+            ],
+            [
+              "1",
+              "12",
+              "24"
+            ],
+            [
+              "10",
+              "12",
+              "24"
+            ],
+            [
+              "11",
+              "12",
+              "24"
+            ],
+            [
+              "12",
+              "12",
+              "24"
+            ],
+            [
+              "13",
+              "12",
+              "24"
+            ],
+            [
+              "14",
+              "12",
+              "24"
+            ],
+            [
+              "15",
+              "12",
+              "24"
+            ],
+            [
+              "16",
+              "12",
+              "24"
+            ],
+            [
+              "17",
+              "12",
+              "24"
+            ],
+            [
+              "18",
+              "12",
+              "24"
+            ],
+            [
+              "19",
+              "12",
+              "24"
+            ]
+          ]
+        }
+      ]
+    },
+    "condition_echo_control": {
+      "family_name": "condition_echo_control",
+      "field_count": 4,
+      "max_width": 3,
+      "tested_combo_count": 14,
+      "exact_single_count": 6,
+      "exact_union_count": 0,
+      "exact_single_first_20": [
+        {
+          "features": [
+            "from_limit",
+            "root_slot"
+          ],
+          "target_signature_count": 1,
+          "single_signature": true,
+          "selected_row_count": 60,
+          "target_row_count": 60,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "exact_union": true,
+          "exact_single_signature": true,
+          "target_signature": [
+            "23",
+            "12"
+          ]
+        },
+        {
+          "features": [
+            "limit_transition",
+            "root_slot"
+          ],
+          "target_signature_count": 1,
+          "single_signature": true,
+          "selected_row_count": 60,
+          "target_row_count": 60,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "exact_union": true,
+          "exact_single_signature": true,
+          "target_signature": [
+            "23->24",
+            "12"
+          ]
+        },
+        {
+          "features": [
+            "root_slot",
+            "to_limit"
+          ],
+          "target_signature_count": 1,
+          "single_signature": true,
+          "selected_row_count": 60,
+          "target_row_count": 60,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "exact_union": true,
+          "exact_single_signature": true,
+          "target_signature": [
+            "12",
+            "24"
+          ]
+        },
+        {
+          "features": [
+            "from_limit",
+            "limit_transition",
+            "root_slot"
+          ],
+          "target_signature_count": 1,
+          "single_signature": true,
+          "selected_row_count": 60,
+          "target_row_count": 60,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "exact_union": true,
+          "exact_single_signature": true,
+          "target_signature": [
+            "23",
+            "23->24",
+            "12"
+          ]
+        },
+        {
+          "features": [
+            "from_limit",
+            "root_slot",
+            "to_limit"
+          ],
+          "target_signature_count": 1,
+          "single_signature": true,
+          "selected_row_count": 60,
+          "target_row_count": 60,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "exact_union": true,
+          "exact_single_signature": true,
+          "target_signature": [
+            "23",
+            "12",
+            "24"
+          ]
+        },
+        {
+          "features": [
+            "limit_transition",
+            "root_slot",
+            "to_limit"
+          ],
+          "target_signature_count": 1,
+          "single_signature": true,
+          "selected_row_count": 60,
+          "target_row_count": 60,
+          "false_positive_count": 0,
+          "false_negative_count": 0,
+          "exact_union": true,
+          "exact_single_signature": true,
+          "target_signature": [
+            "23->24",
+            "12",
+            "24"
+          ]
+        }
+      ],
+      "exact_union_first_20": []
+    }
+  },
+  "interpretation": {
+    "if_strict_source_found": "A deeper nonlabel/noncondition provenance handle may exist in the current table.",
+    "if_only_condition_echo_found": "The current table re-expresses the exact seam through condition fields, but does not yet derive why it exists.",
+    "if_none_found": "The current table does not expose a deeper source provenance selector in the tested feature family.",
+    "current_reading": "exact_single_signature_source_candidate_found"
+  },
+  "boundary": {
+    "source_provenance_probe_only": true,
+    "admits_transport_relation": false,
+    "admits_channel": false,
+    "marker_lighting": false,
+    "viewer_change": false,
+    "body_mutation": false,
+    "force_claim": false,
+    "physics_claim": false,
+    "gr_claim": false,
+    "maxwell_claim": false,
+    "qcd_claim": false,
+    "electroweak_claim": false,
+    "unification_claim": false
+  },
+  "next_allowed_math_acts": [
+    "inspect_best_source_candidate_if_found",
+    "expand_to_construction_provenance_files_if_not_found",
+    "transport_relation_admission_criterion_001",
+    "physics_bridge_forbidden_mapping_ledger_001"
+  ],
+  "checks": {
+    "af_prior_valid": true,
+    "af_prior_supported": true,
+    "compound_prior_valid": true,
+    "compound_prior_exact": true,
+    "scope_prior_valid": true,
+    "field_law_prior_valid": true,
+    "family_prior_valid": true,
+    "rows_present": true,
+    "target_rows_present": true,
+    "target_matches_zero": true,
+    "field_families_recorded": true,
+    "scans_recorded": true,
+    "best_status_recorded": true,
+    "channel_registry_preserved": true,
+    "renderer_absent": true,
+    "no_forbidden_claims": true
+  },
+  "failed_checks": [],
+  "hashes": {
+    "af_sha256": "5f8157c042734b4237ffcd61788f0dba3900d85c6c23efeb126d0035a33ce387",
+    "compound_sha256": "28eae25162bbc2a1397c2125b2e48c2d7754fd2b7bffca8498bd6db7d52cc41c",
+    "scope_sha256": "ac08a0770acd87685399dcc73b8ab67f555ec752b82a01081a03be56ac6eff99",
+    "frontier_sha256": "a7467265510b59760f21fcc6061b5ae85f7555a1f12090fea5a1d0fd51d65771",
+    "field_law_sha256": "52ec7408929c48c0729f4ce14b7a50f0afe49be3ccfe94a00b2ade9d3e064d30",
+    "family_sha256": "e28aad9669e5b0888cdfe08b0adf24a0fd6fa34b0c397a89684bbd8c2535e391",
+    "steps_csv_sha256": "40466b974be84ee5ff7bae97a5077a98d15483e80367422c6d717edf59ee630d",
+    "channels_sha256": "fbe4c50e0adf3460f7190f3c7714754da8a620359a5bc26c70543cc401feca08",
+    "body_sha256": "6a2cb6b9892a78d4559ec61cf946b0021962cc6819311234b8bf14102b3b7f63",
+    "lab_sha256": "5a10a18bc6563446a0d364d5984b8a41db580e0a75831c82b9eeb5aebc2edeb7"
+  }
+}

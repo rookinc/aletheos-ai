@@ -1,0 +1,830 @@
+{
+  "audit_id": "g900_six_nine_return_span_source_variable_anatomy_016",
+  "audit_pass": true,
+  "boundary": {
+    "channel_admitted": false,
+    "closure_witness_admitted": false,
+    "exact_selector_found": false,
+    "force_claim": false,
+    "marker_lighting": false,
+    "native_derivation_complete": false,
+    "physics_claim": false,
+    "source_variable_anatomy_only": true,
+    "transport_relation_admitted": false,
+    "unification_claim": false,
+    "viewer_or_body_mutation": false
+  },
+  "next_ascent_target": "test source-limit variables against the outside-anchor 360 vs 120 return-span split",
+  "prior_014_exact_selector_count": 0,
+  "prior_014_outside_anchor_120_row_count": 60,
+  "prior_014_outside_anchor_360_row_count": 34,
+  "prior_014_return_span_row_count": 94,
+  "prior_014_verdict": "return_span_carrier_variable_not_found_in_tested_context",
+  "prior_015_strongest_family": "source",
+  "prior_015_verdict": "return_span_gap_family_anatomy_recorded",
+  "ranked_source_features": [
+    {
+      "count": 3,
+      "feature": "packet.source_limit_start",
+      "feature_tail": "source_limit_start",
+      "gap_strength_sum": 1.3745098039215686,
+      "rows": [
+        {
+          "family": "source",
+          "feature": "packet.source_limit_start",
+          "rate_gap": 0.5666666666666667,
+          "span120_count": 34,
+          "span120_only": true,
+          "span120_rate": 0.5666666666666667,
+          "span360_count": 0,
+          "span360_only": false,
+          "span360_rate": 0.0,
+          "value": "1"
+        },
+        {
+          "family": "source",
+          "feature": "packet.source_limit_start",
+          "rate_gap": 0.40784313725490196,
+          "span120_count": 2,
+          "span120_only": false,
+          "span120_rate": 0.03333333333333333,
+          "span360_count": 15,
+          "span360_only": false,
+          "span360_rate": 0.4411764705882353,
+          "value": "23"
+        },
+        {
+          "family": "source",
+          "feature": "packet.source_limit_start",
+          "rate_gap": 0.4,
+          "span120_count": 24,
+          "span120_only": true,
+          "span120_rate": 0.4,
+          "span360_count": 0,
+          "span360_only": false,
+          "span360_rate": 0.0,
+          "value": "0"
+        }
+      ],
+      "subfamily": "source_limit"
+    },
+    {
+      "count": 3,
+      "feature": "evidence_key.source_side_gap",
+      "feature_tail": "source_side_gap",
+      "gap_strength_sum": 0.9941176470588236,
+      "rows": [
+        {
+          "family": "source",
+          "feature": "evidence_key.source_side_gap",
+          "rate_gap": 0.43333333333333335,
+          "span120_count": 26,
+          "span120_only": true,
+          "span120_rate": 0.43333333333333335,
+          "span360_count": 0,
+          "span360_only": false,
+          "span360_rate": 0.0,
+          "value": "'packet.source_side_gap'"
+        },
+        {
+          "family": "source",
+          "feature": "evidence_key.source_side_gap",
+          "rate_gap": 0.29411764705882354,
+          "span120_count": 0,
+          "span120_only": false,
+          "span120_rate": 0.0,
+          "span360_count": 10,
+          "span360_only": true,
+          "span360_rate": 0.29411764705882354,
+          "value": "'source_side_gap_signature'"
+        },
+        {
+          "family": "source",
+          "feature": "evidence_key.source_side_gap",
+          "rate_gap": 0.26666666666666666,
+          "span120_count": 14,
+          "span120_only": false,
+          "span120_rate": 0.23333333333333334,
+          "span360_count": 17,
+          "span360_only": false,
+          "span360_rate": 0.5,
+          "value": "'source_side_gap'"
+        }
+      ],
+      "subfamily": "source_gap"
+    },
+    {
+      "count": 2,
+      "feature": "context.source_limit_start",
+      "feature_tail": "source_limit_start",
+      "gap_strength_sum": 0.9117647058823529,
+      "rows": [
+        {
+          "family": "source",
+          "feature": "context.source_limit_start",
+          "rate_gap": 0.47058823529411764,
+          "span120_count": 0,
+          "span120_only": false,
+          "span120_rate": 0.0,
+          "span360_count": 16,
+          "span360_only": true,
+          "span360_rate": 0.47058823529411764,
+          "value": "None"
+        },
+        {
+          "family": "source",
+          "feature": "context.source_limit_start",
+          "rate_gap": 0.4411764705882353,
+          "span120_count": 0,
+          "span120_only": false,
+          "span120_rate": 0.0,
+          "span360_count": 15,
+          "span360_only": true,
+          "span360_rate": 0.4411764705882353,
+          "value": "23"
+        }
+      ],
+      "subfamily": "source_limit"
+    },
+    {
+      "count": 2,
+      "feature": "context.source_endpoints",
+      "feature_tail": "source_endpoints",
+      "gap_strength_sum": 0.6911764705882353,
+      "rows": [
+        {
+          "family": "source",
+          "feature": "context.source_endpoints",
+          "rate_gap": 0.3833333333333333,
+          "span120_count": 7,
+          "span120_only": false,
+          "span120_rate": 0.11666666666666667,
+          "span360_count": 17,
+          "span360_only": false,
+          "span360_rate": 0.5,
+          "value": "(6, 9)"
+        },
+        {
+          "family": "source",
+          "feature": "context.source_endpoints",
+          "rate_gap": 0.307843137254902,
+          "span120_count": 8,
+          "span120_only": false,
+          "span120_rate": 0.13333333333333333,
+          "span360_count": 15,
+          "span360_only": false,
+          "span360_rate": 0.4411764705882353,
+          "value": "None"
+        }
+      ],
+      "subfamily": "source_endpoint"
+    },
+    {
+      "count": 2,
+      "feature": "evidence_key.source_endpoints",
+      "feature_tail": "source_endpoints",
+      "gap_strength_sum": 0.6333333333333333,
+      "rows": [
+        {
+          "family": "source",
+          "feature": "evidence_key.source_endpoints",
+          "rate_gap": 0.3833333333333333,
+          "span120_count": 7,
+          "span120_only": false,
+          "span120_rate": 0.11666666666666667,
+          "span360_count": 17,
+          "span360_only": false,
+          "span360_rate": 0.5,
+          "value": "'source_endpoints'"
+        },
+        {
+          "family": "source",
+          "feature": "evidence_key.source_endpoints",
+          "rate_gap": 0.25,
+          "span120_count": 15,
+          "span120_only": true,
+          "span120_rate": 0.25,
+          "span360_count": 0,
+          "span360_only": false,
+          "span360_rate": 0.0,
+          "value": "'packet.source_endpoints'"
+        }
+      ],
+      "subfamily": "source_endpoint"
+    },
+    {
+      "count": 1,
+      "feature": "context.packet.source_side_gap",
+      "feature_tail": "source_side_gap",
+      "gap_strength_sum": 0.55,
+      "rows": [
+        {
+          "family": "source",
+          "feature": "context.packet.source_side_gap",
+          "rate_gap": 0.55,
+          "span120_count": 33,
+          "span120_only": true,
+          "span120_rate": 0.55,
+          "span360_count": 0,
+          "span360_only": false,
+          "span360_rate": 0.0,
+          "value": "(9, 11)"
+        }
+      ],
+      "subfamily": "source_gap"
+    },
+    {
+      "count": 1,
+      "feature": "evidence_key.source_limit_start",
+      "feature_tail": "source_limit_start",
+      "gap_strength_sum": 0.5166666666666667,
+      "rows": [
+        {
+          "family": "source",
+          "feature": "evidence_key.source_limit_start",
+          "rate_gap": 0.5166666666666667,
+          "span120_count": 31,
+          "span120_only": true,
+          "span120_rate": 0.5166666666666667,
+          "span360_count": 0,
+          "span360_only": false,
+          "span360_rate": 0.0,
+          "value": "'has_limit_start'"
+        }
+      ],
+      "subfamily": "source_limit"
+    },
+    {
+      "count": 1,
+      "feature": "context.packet.source_endpoints",
+      "feature_tail": "source_endpoints",
+      "gap_strength_sum": 0.3,
+      "rows": [
+        {
+          "family": "source",
+          "feature": "context.packet.source_endpoints",
+          "rate_gap": 0.3,
+          "span120_count": 18,
+          "span120_only": true,
+          "span120_rate": 0.3,
+          "span360_count": 0,
+          "span360_only": false,
+          "span360_rate": 0.0,
+          "value": "(6, 9)"
+        }
+      ],
+      "subfamily": "source_endpoint"
+    },
+    {
+      "count": 1,
+      "feature": "context.source_side_gap_signature",
+      "feature_tail": "source_side_gap_signature",
+      "gap_strength_sum": 0.29411764705882354,
+      "rows": [
+        {
+          "family": "source",
+          "feature": "context.source_side_gap_signature",
+          "rate_gap": 0.29411764705882354,
+          "span120_count": 0,
+          "span120_only": false,
+          "span120_rate": 0.0,
+          "span360_count": 10,
+          "span360_only": true,
+          "span360_rate": 0.29411764705882354,
+          "value": "(9, 11)"
+        }
+      ],
+      "subfamily": "source_gap"
+    },
+    {
+      "count": 1,
+      "feature": "context.evidence_key.source_side_gap",
+      "feature_tail": "source_side_gap",
+      "gap_strength_sum": 0.2833333333333333,
+      "rows": [
+        {
+          "family": "source",
+          "feature": "context.evidence_key.source_side_gap",
+          "rate_gap": 0.2833333333333333,
+          "span120_count": 17,
+          "span120_only": true,
+          "span120_rate": 0.2833333333333333,
+          "span360_count": 0,
+          "span360_only": false,
+          "span360_rate": 0.0,
+          "value": "'source_side_gap_signature'"
+        }
+      ],
+      "subfamily": "source_gap"
+    },
+    {
+      "count": 1,
+      "feature": "context.source_side_gap",
+      "feature_tail": "source_side_gap",
+      "gap_strength_sum": 0.26666666666666666,
+      "rows": [
+        {
+          "family": "source",
+          "feature": "context.source_side_gap",
+          "rate_gap": 0.26666666666666666,
+          "span120_count": 14,
+          "span120_only": false,
+          "span120_rate": 0.23333333333333334,
+          "span360_count": 17,
+          "span360_only": false,
+          "span360_rate": 0.5,
+          "value": "(9, 11)"
+        }
+      ],
+      "subfamily": "source_gap"
+    }
+  ],
+  "ranked_source_subfamilies": [
+    {
+      "count": 6,
+      "gap_strength_sum": 2.8029411764705885,
+      "subfamily": "source_limit"
+    },
+    {
+      "count": 7,
+      "gap_strength_sum": 2.388235294117647,
+      "subfamily": "source_gap"
+    },
+    {
+      "count": 5,
+      "gap_strength_sum": 1.6245098039215686,
+      "subfamily": "source_endpoint"
+    }
+  ],
+  "reading": "015 localized the return-span pressure to source-family variables. 016 ranks which source variable names and subfamilies carry that pressure, without claiming an exact selector.",
+  "source_120_only_first_20": [
+    {
+      "family": "source",
+      "feature": "packet.source_limit_start",
+      "rate_gap": 0.5666666666666667,
+      "span120_count": 34,
+      "span120_only": true,
+      "span120_rate": 0.5666666666666667,
+      "span360_count": 0,
+      "span360_only": false,
+      "span360_rate": 0.0,
+      "value": "1"
+    },
+    {
+      "family": "source",
+      "feature": "context.packet.source_side_gap",
+      "rate_gap": 0.55,
+      "span120_count": 33,
+      "span120_only": true,
+      "span120_rate": 0.55,
+      "span360_count": 0,
+      "span360_only": false,
+      "span360_rate": 0.0,
+      "value": "(9, 11)"
+    },
+    {
+      "family": "source",
+      "feature": "evidence_key.source_limit_start",
+      "rate_gap": 0.5166666666666667,
+      "span120_count": 31,
+      "span120_only": true,
+      "span120_rate": 0.5166666666666667,
+      "span360_count": 0,
+      "span360_only": false,
+      "span360_rate": 0.0,
+      "value": "'has_limit_start'"
+    },
+    {
+      "family": "source",
+      "feature": "evidence_key.source_side_gap",
+      "rate_gap": 0.43333333333333335,
+      "span120_count": 26,
+      "span120_only": true,
+      "span120_rate": 0.43333333333333335,
+      "span360_count": 0,
+      "span360_only": false,
+      "span360_rate": 0.0,
+      "value": "'packet.source_side_gap'"
+    },
+    {
+      "family": "source",
+      "feature": "packet.source_limit_start",
+      "rate_gap": 0.4,
+      "span120_count": 24,
+      "span120_only": true,
+      "span120_rate": 0.4,
+      "span360_count": 0,
+      "span360_only": false,
+      "span360_rate": 0.0,
+      "value": "0"
+    },
+    {
+      "family": "source",
+      "feature": "context.packet.source_endpoints",
+      "rate_gap": 0.3,
+      "span120_count": 18,
+      "span120_only": true,
+      "span120_rate": 0.3,
+      "span360_count": 0,
+      "span360_only": false,
+      "span360_rate": 0.0,
+      "value": "(6, 9)"
+    },
+    {
+      "family": "source",
+      "feature": "context.evidence_key.source_side_gap",
+      "rate_gap": 0.2833333333333333,
+      "span120_count": 17,
+      "span120_only": true,
+      "span120_rate": 0.2833333333333333,
+      "span360_count": 0,
+      "span360_only": false,
+      "span360_rate": 0.0,
+      "value": "'source_side_gap_signature'"
+    },
+    {
+      "family": "source",
+      "feature": "evidence_key.source_endpoints",
+      "rate_gap": 0.25,
+      "span120_count": 15,
+      "span120_only": true,
+      "span120_rate": 0.25,
+      "span360_count": 0,
+      "span360_only": false,
+      "span360_rate": 0.0,
+      "value": "'packet.source_endpoints'"
+    },
+    {
+      "family": "source",
+      "feature": "context.evidence_key.source_endpoints",
+      "rate_gap": 0.21666666666666667,
+      "span120_count": 13,
+      "span120_only": true,
+      "span120_rate": 0.21666666666666667,
+      "span360_count": 0,
+      "span360_only": false,
+      "span360_rate": 0.0,
+      "value": "'source_endpoints'"
+    }
+  ],
+  "source_120_only_row_count": 9,
+  "source_360_only_first_20": [
+    {
+      "family": "source",
+      "feature": "context.source_limit_start",
+      "rate_gap": 0.47058823529411764,
+      "span120_count": 0,
+      "span120_only": false,
+      "span120_rate": 0.0,
+      "span360_count": 16,
+      "span360_only": true,
+      "span360_rate": 0.47058823529411764,
+      "value": "None"
+    },
+    {
+      "family": "source",
+      "feature": "context.source_limit_start",
+      "rate_gap": 0.4411764705882353,
+      "span120_count": 0,
+      "span120_only": false,
+      "span120_rate": 0.0,
+      "span360_count": 15,
+      "span360_only": true,
+      "span360_rate": 0.4411764705882353,
+      "value": "23"
+    },
+    {
+      "family": "source",
+      "feature": "context.source_side_gap_signature",
+      "rate_gap": 0.29411764705882354,
+      "span120_count": 0,
+      "span120_only": false,
+      "span120_rate": 0.0,
+      "span360_count": 10,
+      "span360_only": true,
+      "span360_rate": 0.29411764705882354,
+      "value": "(9, 11)"
+    },
+    {
+      "family": "source",
+      "feature": "evidence_key.source_side_gap",
+      "rate_gap": 0.29411764705882354,
+      "span120_count": 0,
+      "span120_only": false,
+      "span120_rate": 0.0,
+      "span360_count": 10,
+      "span360_only": true,
+      "span360_rate": 0.29411764705882354,
+      "value": "'source_side_gap_signature'"
+    },
+    {
+      "family": "source",
+      "feature": "context.base_source_geometry_packet_hold_found",
+      "rate_gap": 0.11764705882352941,
+      "span120_count": 0,
+      "span120_only": false,
+      "span120_rate": 0.0,
+      "span360_count": 4,
+      "span360_only": true,
+      "span360_rate": 0.11764705882352941,
+      "value": "True"
+    },
+    {
+      "family": "source",
+      "feature": "context.row_source",
+      "rate_gap": 0.11764705882352941,
+      "span120_count": 0,
+      "span120_only": false,
+      "span120_rate": 0.0,
+      "span360_count": 4,
+      "span360_only": true,
+      "span360_rate": 0.11764705882352941,
+      "value": "'extracted_from_g900_six_nine_native_anchor_asymmetry_audit_001_no_fallback'"
+    },
+    {
+      "family": "source",
+      "feature": "context.row_source",
+      "rate_gap": 0.11764705882352941,
+      "span120_count": 0,
+      "span120_only": false,
+      "span120_rate": 0.0,
+      "span360_count": 4,
+      "span360_only": true,
+      "span360_rate": 0.11764705882352941,
+      "value": "'fallback_from_locked_prior_hold'"
+    },
+    {
+      "family": "source",
+      "feature": "context.source_artifacts_loaded",
+      "rate_gap": 0.11764705882352941,
+      "span120_count": 0,
+      "span120_only": false,
+      "span120_rate": 0.0,
+      "span360_count": 4,
+      "span360_only": true,
+      "span360_rate": 0.11764705882352941,
+      "value": "()"
+    },
+    {
+      "family": "source",
+      "feature": "context.source_geometry_origin_candidate_found",
+      "rate_gap": 0.11764705882352941,
+      "span120_count": 0,
+      "span120_only": false,
+      "span120_rate": 0.0,
+      "span360_count": 4,
+      "span360_only": true,
+      "span360_rate": 0.11764705882352941,
+      "value": "True"
+    },
+    {
+      "family": "source",
+      "feature": "context.source_limit_start_values",
+      "rate_gap": 0.11764705882352941,
+      "span120_count": 0,
+      "span120_only": false,
+      "span120_rate": 0.0,
+      "span360_count": 4,
+      "span360_only": true,
+      "span360_rate": 0.11764705882352941,
+      "value": "(23,)"
+    },
+    {
+      "family": "source",
+      "feature": "context.strong_source_packet_row_count",
+      "rate_gap": 0.11764705882352941,
+      "span120_count": 0,
+      "span120_only": false,
+      "span120_rate": 0.0,
+      "span360_count": 4,
+      "span360_only": true,
+      "span360_rate": 0.11764705882352941,
+      "value": "122"
+    }
+  ],
+  "source_360_only_row_count": 11,
+  "source_gap_row_count": 18,
+  "source_gaps_first_50": [
+    {
+      "family": "source",
+      "feature": "packet.source_limit_start",
+      "rate_gap": 0.5666666666666667,
+      "span120_count": 34,
+      "span120_only": true,
+      "span120_rate": 0.5666666666666667,
+      "span360_count": 0,
+      "span360_only": false,
+      "span360_rate": 0.0,
+      "value": "1"
+    },
+    {
+      "family": "source",
+      "feature": "context.packet.source_side_gap",
+      "rate_gap": 0.55,
+      "span120_count": 33,
+      "span120_only": true,
+      "span120_rate": 0.55,
+      "span360_count": 0,
+      "span360_only": false,
+      "span360_rate": 0.0,
+      "value": "(9, 11)"
+    },
+    {
+      "family": "source",
+      "feature": "evidence_key.source_limit_start",
+      "rate_gap": 0.5166666666666667,
+      "span120_count": 31,
+      "span120_only": true,
+      "span120_rate": 0.5166666666666667,
+      "span360_count": 0,
+      "span360_only": false,
+      "span360_rate": 0.0,
+      "value": "'has_limit_start'"
+    },
+    {
+      "family": "source",
+      "feature": "context.source_limit_start",
+      "rate_gap": 0.47058823529411764,
+      "span120_count": 0,
+      "span120_only": false,
+      "span120_rate": 0.0,
+      "span360_count": 16,
+      "span360_only": true,
+      "span360_rate": 0.47058823529411764,
+      "value": "None"
+    },
+    {
+      "family": "source",
+      "feature": "context.source_limit_start",
+      "rate_gap": 0.4411764705882353,
+      "span120_count": 0,
+      "span120_only": false,
+      "span120_rate": 0.0,
+      "span360_count": 15,
+      "span360_only": true,
+      "span360_rate": 0.4411764705882353,
+      "value": "23"
+    },
+    {
+      "family": "source",
+      "feature": "evidence_key.source_side_gap",
+      "rate_gap": 0.43333333333333335,
+      "span120_count": 26,
+      "span120_only": true,
+      "span120_rate": 0.43333333333333335,
+      "span360_count": 0,
+      "span360_only": false,
+      "span360_rate": 0.0,
+      "value": "'packet.source_side_gap'"
+    },
+    {
+      "family": "source",
+      "feature": "packet.source_limit_start",
+      "rate_gap": 0.40784313725490196,
+      "span120_count": 2,
+      "span120_only": false,
+      "span120_rate": 0.03333333333333333,
+      "span360_count": 15,
+      "span360_only": false,
+      "span360_rate": 0.4411764705882353,
+      "value": "23"
+    },
+    {
+      "family": "source",
+      "feature": "packet.source_limit_start",
+      "rate_gap": 0.4,
+      "span120_count": 24,
+      "span120_only": true,
+      "span120_rate": 0.4,
+      "span360_count": 0,
+      "span360_only": false,
+      "span360_rate": 0.0,
+      "value": "0"
+    },
+    {
+      "family": "source",
+      "feature": "context.source_endpoints",
+      "rate_gap": 0.3833333333333333,
+      "span120_count": 7,
+      "span120_only": false,
+      "span120_rate": 0.11666666666666667,
+      "span360_count": 17,
+      "span360_only": false,
+      "span360_rate": 0.5,
+      "value": "(6, 9)"
+    },
+    {
+      "family": "source",
+      "feature": "evidence_key.source_endpoints",
+      "rate_gap": 0.3833333333333333,
+      "span120_count": 7,
+      "span120_only": false,
+      "span120_rate": 0.11666666666666667,
+      "span360_count": 17,
+      "span360_only": false,
+      "span360_rate": 0.5,
+      "value": "'source_endpoints'"
+    },
+    {
+      "family": "source",
+      "feature": "context.source_endpoints",
+      "rate_gap": 0.307843137254902,
+      "span120_count": 8,
+      "span120_only": false,
+      "span120_rate": 0.13333333333333333,
+      "span360_count": 15,
+      "span360_only": false,
+      "span360_rate": 0.4411764705882353,
+      "value": "None"
+    },
+    {
+      "family": "source",
+      "feature": "context.packet.source_endpoints",
+      "rate_gap": 0.3,
+      "span120_count": 18,
+      "span120_only": true,
+      "span120_rate": 0.3,
+      "span360_count": 0,
+      "span360_only": false,
+      "span360_rate": 0.0,
+      "value": "(6, 9)"
+    },
+    {
+      "family": "source",
+      "feature": "context.source_side_gap_signature",
+      "rate_gap": 0.29411764705882354,
+      "span120_count": 0,
+      "span120_only": false,
+      "span120_rate": 0.0,
+      "span360_count": 10,
+      "span360_only": true,
+      "span360_rate": 0.29411764705882354,
+      "value": "(9, 11)"
+    },
+    {
+      "family": "source",
+      "feature": "evidence_key.source_side_gap",
+      "rate_gap": 0.29411764705882354,
+      "span120_count": 0,
+      "span120_only": false,
+      "span120_rate": 0.0,
+      "span360_count": 10,
+      "span360_only": true,
+      "span360_rate": 0.29411764705882354,
+      "value": "'source_side_gap_signature'"
+    },
+    {
+      "family": "source",
+      "feature": "context.evidence_key.source_side_gap",
+      "rate_gap": 0.2833333333333333,
+      "span120_count": 17,
+      "span120_only": true,
+      "span120_rate": 0.2833333333333333,
+      "span360_count": 0,
+      "span360_only": false,
+      "span360_rate": 0.0,
+      "value": "'source_side_gap_signature'"
+    },
+    {
+      "family": "source",
+      "feature": "context.source_side_gap",
+      "rate_gap": 0.26666666666666666,
+      "span120_count": 14,
+      "span120_only": false,
+      "span120_rate": 0.23333333333333334,
+      "span360_count": 17,
+      "span360_only": false,
+      "span360_rate": 0.5,
+      "value": "(9, 11)"
+    },
+    {
+      "family": "source",
+      "feature": "evidence_key.source_side_gap",
+      "rate_gap": 0.26666666666666666,
+      "span120_count": 14,
+      "span120_only": false,
+      "span120_rate": 0.23333333333333334,
+      "span360_count": 17,
+      "span360_only": false,
+      "span360_rate": 0.5,
+      "value": "'source_side_gap'"
+    },
+    {
+      "family": "source",
+      "feature": "evidence_key.source_endpoints",
+      "rate_gap": 0.25,
+      "span120_count": 15,
+      "span120_only": true,
+      "span120_rate": 0.25,
+      "span360_count": 0,
+      "span360_only": false,
+      "span360_rate": 0.0,
+      "value": "'packet.source_endpoints'"
+    }
+  ],
+  "source_status": "source_pressure_variable_family_identified",
+  "strongest_source_feature": "packet.source_limit_start",
+  "strongest_source_subfamily": "source_limit",
+  "theory_claim": false,
+  "verdict": "return_span_source_variable_anatomy_recorded"
+}

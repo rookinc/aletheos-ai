@@ -1,0 +1,156 @@
+{
+  "audit_id": "g900_six_nine_endpoint_chord_hinge_origin_law_029",
+  "audit_pass": true,
+  "boundary": {
+    "channel_admitted": false,
+    "closure_witness_admitted": false,
+    "does_not_derive_endpoint_chord_6_9": true,
+    "exact_selector_found": false,
+    "force_claim": false,
+    "local_endpoint_chord_origin_law_candidate_only": true,
+    "marker_lighting": false,
+    "native_derivation_complete": false,
+    "physics_claim": false,
+    "transport_relation_admitted": false,
+    "unification_claim": false,
+    "viewer_or_body_mutation": false
+  },
+  "broken_face_common": {
+    "endpoints": null,
+    "gap": [
+      9,
+      11
+    ],
+    "has_endpoints": false,
+    "has_gap": true,
+    "has_ladder": true,
+    "has_phase": true,
+    "inside": 6,
+    "ladder": [
+      3,
+      9,
+      6,
+      12
+    ],
+    "limit_start": null,
+    "phase": 1
+  },
+  "endpoint_chord_origin_law_pass": true,
+  "endpoint_face_common": {
+    "endpoints": [
+      6,
+      9
+    ],
+    "gap": null,
+    "has_endpoints": true,
+    "has_gap": false,
+    "has_ladder": false,
+    "has_phase": false,
+    "inside": 6,
+    "ladder": null,
+    "limit_start": null,
+    "phase": null
+  },
+  "next_ascent_target": "derive why source construction supplies endpoint chord [6,9]",
+  "origin_formula": {
+    "inputs": [
+      "endpoint_chord=[a,b]"
+    ],
+    "name": "endpoint_chord_to_inside_gap_phase_broken_ladder",
+    "observed_input": {
+      "endpoint_chord": [
+        6,
+        9
+      ]
+    },
+    "observed_output": {
+      "broken_ladder": [
+        3,
+        9,
+        6,
+        12
+      ],
+      "broken_ladder_deltas": [
+        6,
+        12,
+        6
+      ],
+      "gap": [
+        9,
+        11
+      ],
+      "gap_width": 2,
+      "inside": 6,
+      "phase": 1
+    },
+    "rule": [
+      "inside=a",
+      "span=b-a mod 15",
+      "gap_width=span-1",
+      "gap=[b,b+gap_width] mod 15",
+      "phase=gap_width-1",
+      "broken_ladder=[a-span,b,a,a+2*span] mod 15"
+    ]
+  },
+  "origin_status": "endpoint_chord_6_9_recovers_inside6_two_slot_gap_phase1_and_broken_ladder",
+  "prediction": {
+    "broken_ladder": [
+      3,
+      9,
+      6,
+      12
+    ],
+    "broken_ladder_deltas": [
+      6,
+      12,
+      6
+    ],
+    "central_reverse_pair": [
+      9,
+      6
+    ],
+    "endpoint_chord": [
+      6,
+      9
+    ],
+    "endpoint_span": 3,
+    "exposed_chord": [
+      6,
+      9
+    ],
+    "gap": [
+      9,
+      11
+    ],
+    "gap_width": 2,
+    "inside": 6,
+    "lower_endpoint": 6,
+    "phase": 1,
+    "upper_endpoint": 9
+  },
+  "prior_025_verdict": "residual_two_shape_local_cell_candidate_recorded",
+  "prior_026_verdict": "inside6_two_faced_hinge_cell_law_candidate_recorded",
+  "prior_027_verdict": "broken_ladder_face_source_law_candidate_recorded",
+  "prior_028_verdict": "inside6_gap_phase_origin_law_candidate_recorded",
+  "reading": "The open inputs from 028 reduce one level: the endpoint chord [6,9] supplies inside=6 as its lower endpoint, span=3, gap_width=span-1=2, gap=[9,11], phase=1, and the broken ladder [3,9,6,12]. This records a local endpoint-chord origin law candidate. It does not yet derive why source construction supplies the endpoint chord [6,9].",
+  "tests": {
+    "central_pair_reverses_endpoint_chord": true,
+    "endpoint_chord_is_6_9": true,
+    "endpoint_span_is_3": true,
+    "exposed_chord_matches_endpoint_face": true,
+    "gap_starts_at_upper_endpoint": true,
+    "gap_width_is_2": true,
+    "gap_width_is_span_minus_one": true,
+    "inside_is_lower_endpoint": true,
+    "predicted_deltas_match_027": true,
+    "predicted_gap_matches": true,
+    "predicted_ladder_matches": true,
+    "predicted_phase_matches": true,
+    "prior_025_local_cell_candidate_found": true,
+    "prior_026_hinge_law_found": true,
+    "prior_027_source_law_pass": true,
+    "prior_028_origin_law_pass": true
+  },
+  "theory_claim": false,
+  "verdict": "endpoint_chord_hinge_origin_law_candidate_recorded"
+}

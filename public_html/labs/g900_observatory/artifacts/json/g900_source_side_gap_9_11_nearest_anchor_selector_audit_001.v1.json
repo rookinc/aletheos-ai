@@ -1,0 +1,1065 @@
+{
+  "schema": "g900.source_side_gap_9_11_nearest_anchor_selector_audit",
+  "version": 1,
+  "status": "source_side_gap_9_11_nearest_anchor_selector_audit_recorded",
+  "created_utc": "2026-06-18T09:44:16Z",
+  "git_head": "4857a5e Audit G900 source-side gap anchor split",
+  "audit_pass": true,
+  "verdict": "source_side_gap_9_11_nearest_anchor_selector_audit_passed",
+  "question": "Does nearest-anchor selection separate the receipt branch inside source-side [9,11]?",
+  "nearest_status": "nearest_anchor_selects_receipt_branch",
+  "reading": "Inside the source-side [9,11] fork, nearest-anchor selection exactly separates the receipt branch. Endpoint 9 is distance 3 from source root 12 and selects the admitted 03_09 root9 receipt branch. Endpoint 6 is distance 6 from source root 12 and selects the absent 03_06 root6 branch. Thus the sharper source-side rule is: [9,11] opens the fork, nearest anchor selects receipt. This is still a branch-selector audit, not a native derivation.",
+  "distance_definition": {
+    "distance_name": "directed_mod15_distance_from_endpoint_to_source_root",
+    "formula": "(source_root_slot - endpoint) mod 15",
+    "source_root_slot": 12,
+    "source_pair_endpoints": [
+      6,
+      9
+    ],
+    "endpoint_6_distance_to_source_root": 6,
+    "endpoint_9_distance_to_source_root": 3,
+    "nearest_endpoint": 9,
+    "farthest_endpoint": 6
+  },
+  "branch_profile": {
+    "branch_count": 2,
+    "receipt_branch_count": 1,
+    "absent_branch_count": 1,
+    "anchor_counts": {
+      "6": 1,
+      "9": 1
+    },
+    "anchor_distance_counts": {
+      "3": 1,
+      "6": 1
+    },
+    "nearest_counts": {
+      "False": 1,
+      "True": 1
+    },
+    "farthest_counts": {
+      "False": 1,
+      "True": 1
+    },
+    "phase_counts": {
+      "3": 1,
+      "6": 1
+    },
+    "predicted_frame_counts": {
+      "03_06|6|23->24": 1,
+      "03_09|9|23->24": 1
+    }
+  },
+  "branches": [
+    {
+      "source_frame": [
+        "06_09",
+        "12",
+        "23->24"
+      ],
+      "source_pair": "06_09",
+      "source_endpoints": [
+        6,
+        9
+      ],
+      "source_root_slot": 12,
+      "source_limit_transition": "23->24",
+      "source_limit_start": 23,
+      "phase_step_mod15": 3,
+      "anchor": 9,
+      "outside_moving_endpoint": 3,
+      "inside_moving_endpoint": 6,
+      "phase_ladder_values": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "phase_ladder_distinct": true,
+      "predicted_frame": [
+        "03_09",
+        "9",
+        "23->24"
+      ],
+      "predicted_pair_key": "03_09",
+      "outside_root_slot": 9,
+      "source_side_gaps": [
+        9,
+        11
+      ],
+      "source_side_gap_signature": "9,11",
+      "is_target_source_gap": true,
+      "prediction_exists": true,
+      "failure_to_receipt": true,
+      "outside_pair_degenerate": false,
+      "endpoint_distances_to_source_root": [
+        {
+          "endpoint": 6,
+          "distance_to_source_root": 6
+        },
+        {
+          "endpoint": 9,
+          "distance_to_source_root": 3
+        }
+      ],
+      "nearest_anchor_endpoints": [
+        9
+      ],
+      "farthest_anchor_endpoints": [
+        6
+      ],
+      "anchor_distance_to_source_root": 3,
+      "anchor_is_nearest": true,
+      "anchor_is_farthest": false
+    },
+    {
+      "source_frame": [
+        "06_09",
+        "12",
+        "23->24"
+      ],
+      "source_pair": "06_09",
+      "source_endpoints": [
+        6,
+        9
+      ],
+      "source_root_slot": 12,
+      "source_limit_transition": "23->24",
+      "source_limit_start": 23,
+      "phase_step_mod15": 6,
+      "anchor": 6,
+      "outside_moving_endpoint": 3,
+      "inside_moving_endpoint": 9,
+      "phase_ladder_values": [
+        3,
+        9,
+        6,
+        12
+      ],
+      "phase_ladder_distinct": true,
+      "predicted_frame": [
+        "03_06",
+        "6",
+        "23->24"
+      ],
+      "predicted_pair_key": "03_06",
+      "outside_root_slot": 6,
+      "source_side_gaps": [
+        9,
+        11
+      ],
+      "source_side_gap_signature": "9,11",
+      "is_target_source_gap": true,
+      "prediction_exists": false,
+      "failure_to_receipt": false,
+      "outside_pair_degenerate": false,
+      "endpoint_distances_to_source_root": [
+        {
+          "endpoint": 6,
+          "distance_to_source_root": 6
+        },
+        {
+          "endpoint": 9,
+          "distance_to_source_root": 3
+        }
+      ],
+      "nearest_anchor_endpoints": [
+        9
+      ],
+      "farthest_anchor_endpoints": [
+        6
+      ],
+      "anchor_distance_to_source_root": 6,
+      "anchor_is_nearest": false,
+      "anchor_is_farthest": true
+    }
+  ],
+  "receipt_branch": {
+    "source_frame": [
+      "06_09",
+      "12",
+      "23->24"
+    ],
+    "source_pair": "06_09",
+    "source_endpoints": [
+      6,
+      9
+    ],
+    "source_root_slot": 12,
+    "source_limit_transition": "23->24",
+    "source_limit_start": 23,
+    "phase_step_mod15": 3,
+    "anchor": 9,
+    "outside_moving_endpoint": 3,
+    "inside_moving_endpoint": 6,
+    "phase_ladder_values": [
+      3,
+      6,
+      9,
+      12
+    ],
+    "phase_ladder_distinct": true,
+    "predicted_frame": [
+      "03_09",
+      "9",
+      "23->24"
+    ],
+    "predicted_pair_key": "03_09",
+    "outside_root_slot": 9,
+    "source_side_gaps": [
+      9,
+      11
+    ],
+    "source_side_gap_signature": "9,11",
+    "is_target_source_gap": true,
+    "prediction_exists": true,
+    "failure_to_receipt": true,
+    "outside_pair_degenerate": false,
+    "endpoint_distances_to_source_root": [
+      {
+        "endpoint": 6,
+        "distance_to_source_root": 6
+      },
+      {
+        "endpoint": 9,
+        "distance_to_source_root": 3
+      }
+    ],
+    "nearest_anchor_endpoints": [
+      9
+    ],
+    "farthest_anchor_endpoints": [
+      6
+    ],
+    "anchor_distance_to_source_root": 3,
+    "anchor_is_nearest": true,
+    "anchor_is_farthest": false
+  },
+  "absent_branch": {
+    "source_frame": [
+      "06_09",
+      "12",
+      "23->24"
+    ],
+    "source_pair": "06_09",
+    "source_endpoints": [
+      6,
+      9
+    ],
+    "source_root_slot": 12,
+    "source_limit_transition": "23->24",
+    "source_limit_start": 23,
+    "phase_step_mod15": 6,
+    "anchor": 6,
+    "outside_moving_endpoint": 3,
+    "inside_moving_endpoint": 9,
+    "phase_ladder_values": [
+      3,
+      9,
+      6,
+      12
+    ],
+    "phase_ladder_distinct": true,
+    "predicted_frame": [
+      "03_06",
+      "6",
+      "23->24"
+    ],
+    "predicted_pair_key": "03_06",
+    "outside_root_slot": 6,
+    "source_side_gaps": [
+      9,
+      11
+    ],
+    "source_side_gap_signature": "9,11",
+    "is_target_source_gap": true,
+    "prediction_exists": false,
+    "failure_to_receipt": false,
+    "outside_pair_degenerate": false,
+    "endpoint_distances_to_source_root": [
+      {
+        "endpoint": 6,
+        "distance_to_source_root": 6
+      },
+      {
+        "endpoint": 9,
+        "distance_to_source_root": 3
+      }
+    ],
+    "nearest_anchor_endpoints": [
+      9
+    ],
+    "farthest_anchor_endpoints": [
+      6
+    ],
+    "anchor_distance_to_source_root": 6,
+    "anchor_is_nearest": false,
+    "anchor_is_farthest": true
+  },
+  "selectors": [
+    {
+      "name": "anchor_is_nearest",
+      "selected_count": 1,
+      "selected_rows": [
+        {
+          "source_frame": [
+            "06_09",
+            "12",
+            "23->24"
+          ],
+          "source_pair": "06_09",
+          "source_endpoints": [
+            6,
+            9
+          ],
+          "source_root_slot": 12,
+          "source_limit_transition": "23->24",
+          "source_limit_start": 23,
+          "phase_step_mod15": 3,
+          "anchor": 9,
+          "outside_moving_endpoint": 3,
+          "inside_moving_endpoint": 6,
+          "phase_ladder_values": [
+            3,
+            6,
+            9,
+            12
+          ],
+          "phase_ladder_distinct": true,
+          "predicted_frame": [
+            "03_09",
+            "9",
+            "23->24"
+          ],
+          "predicted_pair_key": "03_09",
+          "outside_root_slot": 9,
+          "source_side_gaps": [
+            9,
+            11
+          ],
+          "source_side_gap_signature": "9,11",
+          "is_target_source_gap": true,
+          "prediction_exists": true,
+          "failure_to_receipt": true,
+          "outside_pair_degenerate": false,
+          "endpoint_distances_to_source_root": [
+            {
+              "endpoint": 6,
+              "distance_to_source_root": 6
+            },
+            {
+              "endpoint": 9,
+              "distance_to_source_root": 3
+            }
+          ],
+          "nearest_anchor_endpoints": [
+            9
+          ],
+          "farthest_anchor_endpoints": [
+            6
+          ],
+          "anchor_distance_to_source_root": 3,
+          "anchor_is_nearest": true,
+          "anchor_is_farthest": false
+        }
+      ],
+      "selects_receipt_branch": true,
+      "selects_absent_branch": false,
+      "selected_predicted_frames": [
+        [
+          "03_09",
+          "9",
+          "23->24"
+        ]
+      ],
+      "selected_anchors": [
+        9
+      ],
+      "selected_anchor_distances": [
+        3
+      ],
+      "selected_phases": [
+        3
+      ]
+    },
+    {
+      "name": "anchor_is_farthest",
+      "selected_count": 1,
+      "selected_rows": [
+        {
+          "source_frame": [
+            "06_09",
+            "12",
+            "23->24"
+          ],
+          "source_pair": "06_09",
+          "source_endpoints": [
+            6,
+            9
+          ],
+          "source_root_slot": 12,
+          "source_limit_transition": "23->24",
+          "source_limit_start": 23,
+          "phase_step_mod15": 6,
+          "anchor": 6,
+          "outside_moving_endpoint": 3,
+          "inside_moving_endpoint": 9,
+          "phase_ladder_values": [
+            3,
+            9,
+            6,
+            12
+          ],
+          "phase_ladder_distinct": true,
+          "predicted_frame": [
+            "03_06",
+            "6",
+            "23->24"
+          ],
+          "predicted_pair_key": "03_06",
+          "outside_root_slot": 6,
+          "source_side_gaps": [
+            9,
+            11
+          ],
+          "source_side_gap_signature": "9,11",
+          "is_target_source_gap": true,
+          "prediction_exists": false,
+          "failure_to_receipt": false,
+          "outside_pair_degenerate": false,
+          "endpoint_distances_to_source_root": [
+            {
+              "endpoint": 6,
+              "distance_to_source_root": 6
+            },
+            {
+              "endpoint": 9,
+              "distance_to_source_root": 3
+            }
+          ],
+          "nearest_anchor_endpoints": [
+            9
+          ],
+          "farthest_anchor_endpoints": [
+            6
+          ],
+          "anchor_distance_to_source_root": 6,
+          "anchor_is_nearest": false,
+          "anchor_is_farthest": true
+        }
+      ],
+      "selects_receipt_branch": false,
+      "selects_absent_branch": true,
+      "selected_predicted_frames": [
+        [
+          "03_06",
+          "6",
+          "23->24"
+        ]
+      ],
+      "selected_anchors": [
+        6
+      ],
+      "selected_anchor_distances": [
+        6
+      ],
+      "selected_phases": [
+        6
+      ]
+    },
+    {
+      "name": "anchor_distance_is_min_3",
+      "selected_count": 1,
+      "selected_rows": [
+        {
+          "source_frame": [
+            "06_09",
+            "12",
+            "23->24"
+          ],
+          "source_pair": "06_09",
+          "source_endpoints": [
+            6,
+            9
+          ],
+          "source_root_slot": 12,
+          "source_limit_transition": "23->24",
+          "source_limit_start": 23,
+          "phase_step_mod15": 3,
+          "anchor": 9,
+          "outside_moving_endpoint": 3,
+          "inside_moving_endpoint": 6,
+          "phase_ladder_values": [
+            3,
+            6,
+            9,
+            12
+          ],
+          "phase_ladder_distinct": true,
+          "predicted_frame": [
+            "03_09",
+            "9",
+            "23->24"
+          ],
+          "predicted_pair_key": "03_09",
+          "outside_root_slot": 9,
+          "source_side_gaps": [
+            9,
+            11
+          ],
+          "source_side_gap_signature": "9,11",
+          "is_target_source_gap": true,
+          "prediction_exists": true,
+          "failure_to_receipt": true,
+          "outside_pair_degenerate": false,
+          "endpoint_distances_to_source_root": [
+            {
+              "endpoint": 6,
+              "distance_to_source_root": 6
+            },
+            {
+              "endpoint": 9,
+              "distance_to_source_root": 3
+            }
+          ],
+          "nearest_anchor_endpoints": [
+            9
+          ],
+          "farthest_anchor_endpoints": [
+            6
+          ],
+          "anchor_distance_to_source_root": 3,
+          "anchor_is_nearest": true,
+          "anchor_is_farthest": false
+        }
+      ],
+      "selects_receipt_branch": true,
+      "selects_absent_branch": false,
+      "selected_predicted_frames": [
+        [
+          "03_09",
+          "9",
+          "23->24"
+        ]
+      ],
+      "selected_anchors": [
+        9
+      ],
+      "selected_anchor_distances": [
+        3
+      ],
+      "selected_phases": [
+        3
+      ]
+    },
+    {
+      "name": "anchor_distance_is_max_6",
+      "selected_count": 1,
+      "selected_rows": [
+        {
+          "source_frame": [
+            "06_09",
+            "12",
+            "23->24"
+          ],
+          "source_pair": "06_09",
+          "source_endpoints": [
+            6,
+            9
+          ],
+          "source_root_slot": 12,
+          "source_limit_transition": "23->24",
+          "source_limit_start": 23,
+          "phase_step_mod15": 6,
+          "anchor": 6,
+          "outside_moving_endpoint": 3,
+          "inside_moving_endpoint": 9,
+          "phase_ladder_values": [
+            3,
+            9,
+            6,
+            12
+          ],
+          "phase_ladder_distinct": true,
+          "predicted_frame": [
+            "03_06",
+            "6",
+            "23->24"
+          ],
+          "predicted_pair_key": "03_06",
+          "outside_root_slot": 6,
+          "source_side_gaps": [
+            9,
+            11
+          ],
+          "source_side_gap_signature": "9,11",
+          "is_target_source_gap": true,
+          "prediction_exists": false,
+          "failure_to_receipt": false,
+          "outside_pair_degenerate": false,
+          "endpoint_distances_to_source_root": [
+            {
+              "endpoint": 6,
+              "distance_to_source_root": 6
+            },
+            {
+              "endpoint": 9,
+              "distance_to_source_root": 3
+            }
+          ],
+          "nearest_anchor_endpoints": [
+            9
+          ],
+          "farthest_anchor_endpoints": [
+            6
+          ],
+          "anchor_distance_to_source_root": 6,
+          "anchor_is_nearest": false,
+          "anchor_is_farthest": true
+        }
+      ],
+      "selects_receipt_branch": false,
+      "selects_absent_branch": true,
+      "selected_predicted_frames": [
+        [
+          "03_06",
+          "6",
+          "23->24"
+        ]
+      ],
+      "selected_anchors": [
+        6
+      ],
+      "selected_anchor_distances": [
+        6
+      ],
+      "selected_phases": [
+        6
+      ]
+    },
+    {
+      "name": "anchor_is_9",
+      "selected_count": 1,
+      "selected_rows": [
+        {
+          "source_frame": [
+            "06_09",
+            "12",
+            "23->24"
+          ],
+          "source_pair": "06_09",
+          "source_endpoints": [
+            6,
+            9
+          ],
+          "source_root_slot": 12,
+          "source_limit_transition": "23->24",
+          "source_limit_start": 23,
+          "phase_step_mod15": 3,
+          "anchor": 9,
+          "outside_moving_endpoint": 3,
+          "inside_moving_endpoint": 6,
+          "phase_ladder_values": [
+            3,
+            6,
+            9,
+            12
+          ],
+          "phase_ladder_distinct": true,
+          "predicted_frame": [
+            "03_09",
+            "9",
+            "23->24"
+          ],
+          "predicted_pair_key": "03_09",
+          "outside_root_slot": 9,
+          "source_side_gaps": [
+            9,
+            11
+          ],
+          "source_side_gap_signature": "9,11",
+          "is_target_source_gap": true,
+          "prediction_exists": true,
+          "failure_to_receipt": true,
+          "outside_pair_degenerate": false,
+          "endpoint_distances_to_source_root": [
+            {
+              "endpoint": 6,
+              "distance_to_source_root": 6
+            },
+            {
+              "endpoint": 9,
+              "distance_to_source_root": 3
+            }
+          ],
+          "nearest_anchor_endpoints": [
+            9
+          ],
+          "farthest_anchor_endpoints": [
+            6
+          ],
+          "anchor_distance_to_source_root": 3,
+          "anchor_is_nearest": true,
+          "anchor_is_farthest": false
+        }
+      ],
+      "selects_receipt_branch": true,
+      "selects_absent_branch": false,
+      "selected_predicted_frames": [
+        [
+          "03_09",
+          "9",
+          "23->24"
+        ]
+      ],
+      "selected_anchors": [
+        9
+      ],
+      "selected_anchor_distances": [
+        3
+      ],
+      "selected_phases": [
+        3
+      ]
+    },
+    {
+      "name": "anchor_is_6",
+      "selected_count": 1,
+      "selected_rows": [
+        {
+          "source_frame": [
+            "06_09",
+            "12",
+            "23->24"
+          ],
+          "source_pair": "06_09",
+          "source_endpoints": [
+            6,
+            9
+          ],
+          "source_root_slot": 12,
+          "source_limit_transition": "23->24",
+          "source_limit_start": 23,
+          "phase_step_mod15": 6,
+          "anchor": 6,
+          "outside_moving_endpoint": 3,
+          "inside_moving_endpoint": 9,
+          "phase_ladder_values": [
+            3,
+            9,
+            6,
+            12
+          ],
+          "phase_ladder_distinct": true,
+          "predicted_frame": [
+            "03_06",
+            "6",
+            "23->24"
+          ],
+          "predicted_pair_key": "03_06",
+          "outside_root_slot": 6,
+          "source_side_gaps": [
+            9,
+            11
+          ],
+          "source_side_gap_signature": "9,11",
+          "is_target_source_gap": true,
+          "prediction_exists": false,
+          "failure_to_receipt": false,
+          "outside_pair_degenerate": false,
+          "endpoint_distances_to_source_root": [
+            {
+              "endpoint": 6,
+              "distance_to_source_root": 6
+            },
+            {
+              "endpoint": 9,
+              "distance_to_source_root": 3
+            }
+          ],
+          "nearest_anchor_endpoints": [
+            9
+          ],
+          "farthest_anchor_endpoints": [
+            6
+          ],
+          "anchor_distance_to_source_root": 6,
+          "anchor_is_nearest": false,
+          "anchor_is_farthest": true
+        }
+      ],
+      "selects_receipt_branch": false,
+      "selects_absent_branch": true,
+      "selected_predicted_frames": [
+        [
+          "03_06",
+          "6",
+          "23->24"
+        ]
+      ],
+      "selected_anchors": [
+        6
+      ],
+      "selected_anchor_distances": [
+        6
+      ],
+      "selected_phases": [
+        6
+      ]
+    },
+    {
+      "name": "phase_is_3",
+      "selected_count": 1,
+      "selected_rows": [
+        {
+          "source_frame": [
+            "06_09",
+            "12",
+            "23->24"
+          ],
+          "source_pair": "06_09",
+          "source_endpoints": [
+            6,
+            9
+          ],
+          "source_root_slot": 12,
+          "source_limit_transition": "23->24",
+          "source_limit_start": 23,
+          "phase_step_mod15": 3,
+          "anchor": 9,
+          "outside_moving_endpoint": 3,
+          "inside_moving_endpoint": 6,
+          "phase_ladder_values": [
+            3,
+            6,
+            9,
+            12
+          ],
+          "phase_ladder_distinct": true,
+          "predicted_frame": [
+            "03_09",
+            "9",
+            "23->24"
+          ],
+          "predicted_pair_key": "03_09",
+          "outside_root_slot": 9,
+          "source_side_gaps": [
+            9,
+            11
+          ],
+          "source_side_gap_signature": "9,11",
+          "is_target_source_gap": true,
+          "prediction_exists": true,
+          "failure_to_receipt": true,
+          "outside_pair_degenerate": false,
+          "endpoint_distances_to_source_root": [
+            {
+              "endpoint": 6,
+              "distance_to_source_root": 6
+            },
+            {
+              "endpoint": 9,
+              "distance_to_source_root": 3
+            }
+          ],
+          "nearest_anchor_endpoints": [
+            9
+          ],
+          "farthest_anchor_endpoints": [
+            6
+          ],
+          "anchor_distance_to_source_root": 3,
+          "anchor_is_nearest": true,
+          "anchor_is_farthest": false
+        }
+      ],
+      "selects_receipt_branch": true,
+      "selects_absent_branch": false,
+      "selected_predicted_frames": [
+        [
+          "03_09",
+          "9",
+          "23->24"
+        ]
+      ],
+      "selected_anchors": [
+        9
+      ],
+      "selected_anchor_distances": [
+        3
+      ],
+      "selected_phases": [
+        3
+      ]
+    },
+    {
+      "name": "phase_is_6",
+      "selected_count": 1,
+      "selected_rows": [
+        {
+          "source_frame": [
+            "06_09",
+            "12",
+            "23->24"
+          ],
+          "source_pair": "06_09",
+          "source_endpoints": [
+            6,
+            9
+          ],
+          "source_root_slot": 12,
+          "source_limit_transition": "23->24",
+          "source_limit_start": 23,
+          "phase_step_mod15": 6,
+          "anchor": 6,
+          "outside_moving_endpoint": 3,
+          "inside_moving_endpoint": 9,
+          "phase_ladder_values": [
+            3,
+            9,
+            6,
+            12
+          ],
+          "phase_ladder_distinct": true,
+          "predicted_frame": [
+            "03_06",
+            "6",
+            "23->24"
+          ],
+          "predicted_pair_key": "03_06",
+          "outside_root_slot": 6,
+          "source_side_gaps": [
+            9,
+            11
+          ],
+          "source_side_gap_signature": "9,11",
+          "is_target_source_gap": true,
+          "prediction_exists": false,
+          "failure_to_receipt": false,
+          "outside_pair_degenerate": false,
+          "endpoint_distances_to_source_root": [
+            {
+              "endpoint": 6,
+              "distance_to_source_root": 6
+            },
+            {
+              "endpoint": 9,
+              "distance_to_source_root": 3
+            }
+          ],
+          "nearest_anchor_endpoints": [
+            9
+          ],
+          "farthest_anchor_endpoints": [
+            6
+          ],
+          "anchor_distance_to_source_root": 6,
+          "anchor_is_nearest": false,
+          "anchor_is_farthest": true
+        }
+      ],
+      "selects_receipt_branch": false,
+      "selects_absent_branch": true,
+      "selected_predicted_frames": [
+        [
+          "03_06",
+          "6",
+          "23->24"
+        ]
+      ],
+      "selected_anchors": [
+        6
+      ],
+      "selected_anchor_distances": [
+        6
+      ],
+      "selected_phases": [
+        6
+      ]
+    }
+  ],
+  "receipt_selector_names": [
+    "anchor_is_nearest",
+    "anchor_distance_is_min_3",
+    "anchor_is_9",
+    "phase_is_3"
+  ],
+  "absent_selector_names": [
+    "anchor_is_farthest",
+    "anchor_distance_is_max_6",
+    "anchor_is_6",
+    "phase_is_6"
+  ],
+  "source_gate_rule": {
+    "source_gap": [
+      9,
+      11
+    ],
+    "source_gap_opens_two_branches": true,
+    "nearest_anchor_selects_receipt": true,
+    "farthest_anchor_selects_absent": true,
+    "min_distance_selects_receipt": true,
+    "max_distance_selects_absent": true,
+    "uses_registry_membership_for_distance_calculation": false,
+    "uses_receipt_fields_for_distance_calculation": false,
+    "uses_support_fields_for_distance_calculation": false
+  },
+  "interpretation_boundary": [
+    "This is a source-side branch-selector audit over the [9,11] rows.",
+    "It shows nearest-anchor selection separates the receipt branch from the absent branch.",
+    "It does not derive why the nearest anchor rule should hold from the deeper native construction.",
+    "No closure witness, transport relation, channel, force, physics, GR, Maxwell, QCD, electroweak, or unification claim is made."
+  ],
+  "boundary": {
+    "source_side_nearest_anchor_selector_audit_only": true,
+    "full_native_derivation": false,
+    "admits_closure_witness": false,
+    "admits_transport_relation": false,
+    "admits_channel": false,
+    "marker_lighting": false,
+    "viewer_change": false,
+    "body_mutation": false,
+    "force_claim": false,
+    "physics_claim": false,
+    "gr_claim": false,
+    "maxwell_claim": false,
+    "qcd_claim": false,
+    "electroweak_claim": false,
+    "unification_claim": false
+  },
+  "next_allowed_math_acts": [
+    "derive_nearest_anchor_rule_from_source_construction",
+    "test_nearest_anchor_rule_across_all_source_gap_forks",
+    "test_boundary_trace_class_for_03_09_root9_triplet",
+    "transport_relation_admission_criterion_001"
+  ],
+  "checks": {
+    "anchor_split_prior_valid": true,
+    "anchor_split_prior_status": true,
+    "source_gap_prior_valid": true,
+    "nearest_prior_valid": true,
+    "branch_count_two": true,
+    "receipt_branch_count_one": true,
+    "absent_branch_count_one": true,
+    "nearest_selects_receipt": true,
+    "farthest_selects_absent": true,
+    "min_distance_selects_receipt": true,
+    "max_distance_selects_absent": true,
+    "receipt_frame_selected": true,
+    "absent_frame_selected": true,
+    "nearest_status_recorded": true,
+    "channel_registry_preserved": true,
+    "renderer_absent": true,
+    "no_forbidden_claims": true
+  },
+  "failed_checks": [],
+  "hashes": {
+    "anchor_split_prior_sha256": "c7c12630fb28ffb0b692177707297898903979e4bd7408addd059eda94c5b138",
+    "source_gap_prior_sha256": "007bc759919d34ce9d74199289a0924db95d4b6bef142f2e98e4b4d4b9e09f6c",
+    "nearest_prior_sha256": "32455e33001e1aba288dc5edaf30290e021b242ba98feb046d7d0904da2a1e2e",
+    "channels_sha256": "fbe4c50e0adf3460f7190f3c7714754da8a620359a5bc26c70543cc401feca08",
+    "body_sha256": "6a2cb6b9892a78d4559ec61cf946b0021962cc6819311234b8bf14102b3b7f63",
+    "lab_sha256": "5a10a18bc6563446a0d364d5984b8a41db580e0a75831c82b9eeb5aebc2edeb7"
+  }
+}

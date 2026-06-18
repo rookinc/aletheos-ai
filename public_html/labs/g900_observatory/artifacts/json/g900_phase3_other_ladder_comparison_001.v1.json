@@ -1,0 +1,178 @@
+{
+  "schema": "g900.phase3_other_ladder_comparison",
+  "version": 1,
+  "status": "phase3_other_ladder_comparison_recorded",
+  "created_utc": "2026-06-18T08:52:07Z",
+  "git_head": "a7e13d2 Audit G900 phase-3 fork ladder family",
+  "audit_pass": true,
+  "verdict": "phase3_other_ladder_comparison_passed",
+  "question": "What does the ordinary phase-3 ladder at 32->33 lack compared with the six-nine ladder?",
+  "comparison_status": "ordinary_phase3_ladder_degenerates_while_six_nine_closes_to_outside_pair",
+  "reading": "The comparison phase-3 member at 32->33 degenerates because the outside moving endpoint collapses onto the anchor: 9 -> 12 -> 9 -> 12. It cannot form a distinct outside pair. The six-nine member remains distinct as 3 -> 6 -> 9 -> 12 and therefore predicts 03_09 root_slot 9, the unique receipt-carrying outside fork.",
+  "family_source": {
+    "phase3_anchor_record_count": 2,
+    "phase3_prediction_exists_count": 1,
+    "phase3_failure_to_receipt_count": 1,
+    "target_is_unique_failure_to_receipt": true
+  },
+  "contrast": {
+    "target_six_nine": {
+      "source_frame": [
+        "06_09",
+        "12",
+        "23->24"
+      ],
+      "source_pair": "06_09",
+      "source_endpoints": [
+        6,
+        9
+      ],
+      "source_root_slot": 12,
+      "source_limit_transition": "23->24",
+      "anchor": 9,
+      "inside_moving_endpoint": 6,
+      "outside_moving_endpoint": 3,
+      "outside_root_slot": 9,
+      "phase_ladder_values": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "phase_ladder_distinct": true,
+      "endpoint_collision": false,
+      "outside_pair_degenerate": false,
+      "predicted_pair_key": "03_09",
+      "predicted_frame": [
+        "03_09",
+        "9",
+        "23->24"
+      ],
+      "prediction_exists": true,
+      "source_inside_failure_proxy": true,
+      "predicted_receipt_proxy": true,
+      "source_package_kinds": {
+        "one_way_single_transition": 60
+      },
+      "predicted_package_kinds": {
+        "clean_reciprocal_pair_package": 60
+      },
+      "source_support_true": 0,
+      "source_zero_hit_true": 60,
+      "predicted_support_true": 60,
+      "predicted_zero_hit_true": 0
+    },
+    "ordinary_phase3_member": {
+      "source_frame": [
+        "09_12",
+        "12",
+        "32->33"
+      ],
+      "source_pair": "09_12",
+      "source_endpoints": [
+        9,
+        12
+      ],
+      "source_root_slot": 12,
+      "source_limit_transition": "32->33",
+      "anchor": 9,
+      "inside_moving_endpoint": 12,
+      "outside_moving_endpoint": 9,
+      "outside_root_slot": 9,
+      "phase_ladder_values": [
+        9,
+        12,
+        9,
+        12
+      ],
+      "phase_ladder_distinct": false,
+      "endpoint_collision": true,
+      "outside_pair_degenerate": true,
+      "predicted_pair_key": null,
+      "predicted_frame": null,
+      "prediction_exists": false,
+      "source_inside_failure_proxy": false,
+      "predicted_receipt_proxy": false,
+      "source_package_kinds": {
+        "one_way_single_transition": 60
+      },
+      "predicted_package_kinds": {},
+      "source_support_true": 60,
+      "source_zero_hit_true": 0,
+      "predicted_support_true": 0,
+      "predicted_zero_hit_true": 0
+    },
+    "key_difference": {
+      "six_nine_ladder_distinct": true,
+      "ordinary_ladder_distinct": false,
+      "six_nine_predicted_pair_exists": true,
+      "ordinary_predicted_pair_exists": false,
+      "six_nine_outside_pair_degenerate": false,
+      "ordinary_outside_pair_degenerate": true,
+      "six_nine_failure_to_receipt": true,
+      "ordinary_failure_to_receipt": false
+    }
+  },
+  "interpretation": {
+    "six_nine_special_feature": "distinct phase-3 ladder produces a distinct outside pair and that predicted pair carries receipt",
+    "ordinary_phase3_lacks": "distinct outside pair; its outside moving endpoint equals the anchor",
+    "six_nine_ladder": "3 -> 6 -> 9 -> 12",
+    "ordinary_ladder": "9 -> 12 -> 9 -> 12"
+  },
+  "interpretation_boundary": [
+    "This compares phase-3 ladder records in the observed support-table family.",
+    "It does not derive the family from the deeper G60 construction.",
+    "It does not admit a closure witness, transport relation, channel, force, physics, GR, Maxwell, QCD, electroweak, or unification claim."
+  ],
+  "boundary": {
+    "phase3_other_ladder_comparison_only": true,
+    "full_native_derivation": false,
+    "admits_closure_witness": false,
+    "admits_transport_relation": false,
+    "admits_channel": false,
+    "marker_lighting": false,
+    "viewer_change": false,
+    "body_mutation": false,
+    "force_claim": false,
+    "physics_claim": false,
+    "gr_claim": false,
+    "maxwell_claim": false,
+    "qcd_claim": false,
+    "electroweak_claim": false,
+    "unification_claim": false
+  },
+  "next_allowed_math_acts": [
+    "derive_distinct_ladder_condition_from_g60_construction",
+    "test_phase3_ladder_degeneracy_across_other_visible_sources",
+    "test_5_3_4_chamber_signature_near_answering_fork",
+    "transport_relation_admission_criterion_001"
+  ],
+  "checks": {
+    "family_prior_valid": true,
+    "family_prior_status": true,
+    "native_fork_prior_valid": true,
+    "answering_prior_valid": true,
+    "inside_outside_prior_valid": true,
+    "true_antipode_prior_valid": true,
+    "phase3_record_count_two": true,
+    "target_record_found": true,
+    "other_record_found": true,
+    "target_good": true,
+    "other_is_degenerate": true,
+    "comparison_status_recorded": true,
+    "channel_registry_preserved": true,
+    "renderer_absent": true,
+    "no_forbidden_claims": true
+  },
+  "failed_checks": [],
+  "hashes": {
+    "family_prior_sha256": "620c4c69bbe1f52f36be98476a3f173f893b04ea2e6cb2a4a638c4ee39cc5636",
+    "native_fork_prior_sha256": "133502289c09df1045f42eaf4f98c40c2837d50a8b173d8f22f6076053b97f49",
+    "answering_prior_sha256": "aa630f30d15af6bfa8d2caa464d736570e582a0cbda559224875ac158e4d233c",
+    "inside_outside_prior_sha256": "1a31a0614d3286a64ee9a348f354e6fe10198f925973cfa2917d3cf449962307",
+    "true_antipode_prior_sha256": "b6087c9a0f31e01ef1fa1557718584d3af817f04e64ee00b902e9ac900dd679c",
+    "channels_sha256": "fbe4c50e0adf3460f7190f3c7714754da8a620359a5bc26c70543cc401feca08",
+    "body_sha256": "6a2cb6b9892a78d4559ec61cf946b0021962cc6819311234b8bf14102b3b7f63",
+    "lab_sha256": "5a10a18bc6563446a0d364d5984b8a41db580e0a75831c82b9eeb5aebc2edeb7"
+  }
+}

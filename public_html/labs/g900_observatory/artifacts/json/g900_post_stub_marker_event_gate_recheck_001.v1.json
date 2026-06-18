@@ -1,0 +1,188 @@
+{
+  "schema": "g900.post_stub_marker_event_gate_recheck",
+  "version": 1,
+  "status": "post_stub_marker_event_gate_recheck_recorded",
+  "created_utc": "2026-06-18T02:05:18Z",
+  "audit_pass": true,
+  "verdict": "post_stub_marker_event_gate_recheck_recorded_closed_pending_gate_open_authorization",
+  "question": "After the inert live-stage renderer stub exists, does the marker-event gate open?",
+  "event": {
+    "event_id": "g900_return_cell_event_562162c72753c818"
+  },
+  "marker": {
+    "marker_id": "unsupported_phase_step_6_9"
+  },
+  "contracts": {
+    "binding_id": "g900_marker_event_binding_1d645b31e5366deb",
+    "render_contract_id": "g900_marker_render_contract_2f8f21a3465a71d3",
+    "admission_id": "g900_live_marker_renderer_admission_e4aee6d53d4b7fa4",
+    "renderer_stub_id": "g900_live_stage_marker_renderer_stub_1b73e0f41964b984"
+  },
+  "gate_recheck": {
+    "live_stage_renderer_exists": true,
+    "gate_open_authorization_exists": false,
+    "resolved_since_prior_recheck": [
+      "live_stage_marker_renderer_absent"
+    ],
+    "still_blocking": [
+      "gate_open_authorization_absent"
+    ],
+    "gate_open": false,
+    "renderer_enabled_now": false,
+    "lights_marker_now": false,
+    "admits_channel_now": false,
+    "renders_channel_now": false,
+    "mutates_body": false,
+    "gate_conditions": [
+      {
+        "id": "prior_gate_recheck_closed_pending_renderer",
+        "description": "The prior marker-event gate recheck was closed pending renderer.",
+        "satisfied": true
+      },
+      {
+        "id": "renderer_stub_exists",
+        "description": "The inert live-stage marker renderer stub exists.",
+        "satisfied": true,
+        "required_stub_token_presence": {
+          "activeMarkerRenderer": true,
+          "drawGraphMarkerReadings": true,
+          "G900MarkerRendererStub001": true,
+          "enabled: false": true,
+          "gateOpen: false": true,
+          "lightsMarkerNow: false": true,
+          "admitsChannelNow: false": true,
+          "rendersChannelNow: false": true,
+          "mutatesBody: false": true
+        }
+      },
+      {
+        "id": "renderer_stub_receipt_passed",
+        "description": "The renderer stub receipt exists and passed.",
+        "satisfied": true
+      },
+      {
+        "id": "renderer_admission_exists",
+        "description": "The renderer admission artifact exists and passed.",
+        "satisfied": true
+      },
+      {
+        "id": "render_contract_exists",
+        "description": "The read-only marker render contract exists and passed.",
+        "satisfied": true
+      },
+      {
+        "id": "binding_exists",
+        "description": "The marker-event binding contract exists and passed.",
+        "satisfied": true
+      },
+      {
+        "id": "gate_open_authorization_absent",
+        "description": "No separate gate-open authorization artifact exists.",
+        "satisfied": true,
+        "expected_absent_path": "public_html/labs/g900_observatory/artifacts/json/g900_marker_gate_open_authorization_001.v1.json"
+      },
+      {
+        "id": "stub_contains_no_active_true_effects",
+        "description": "The stub block contains no active true effect flags or forbidden active tokens.",
+        "satisfied": true,
+        "present_active_true_patterns": []
+      },
+      {
+        "id": "channel_registry_zero",
+        "description": "The channel registry remains zero-count.",
+        "satisfied": true
+      },
+      {
+        "id": "marker_not_lit_by_recheck",
+        "description": "This recheck does not light the marker.",
+        "satisfied": true
+      },
+      {
+        "id": "body_not_mutated_by_recheck",
+        "description": "This recheck does not mutate the G900 body.",
+        "satisfied": true
+      }
+    ]
+  },
+  "static_live_stage_check": {
+    "stage_path": "public_html/labs/g900_observatory/g900_grammar_stage_v0.js",
+    "stage_sha256": "732dad810dffdfbe97c275ee96914a95aeb7fa6976df04d8df0063157b19d5bf",
+    "stub_start_present": true,
+    "stub_end_present": true,
+    "required_stub_token_presence": {
+      "activeMarkerRenderer": true,
+      "drawGraphMarkerReadings": true,
+      "G900MarkerRendererStub001": true,
+      "enabled: false": true,
+      "gateOpen: false": true,
+      "lightsMarkerNow: false": true,
+      "admitsChannelNow: false": true,
+      "rendersChannelNow: false": true,
+      "mutatesBody: false": true
+    },
+    "present_active_true_patterns": []
+  },
+  "body_receipt": {
+    "static_body_path": "public_html/labs/g900_observatory/data/g900_static_body.v1.json",
+    "static_body_sha256": "71944bd613ce8c6c036a2c4198f3df2e0064a75fec1f03ccf8bb60f9a2d412db"
+  },
+  "summary": {
+    "event_id": "g900_return_cell_event_562162c72753c818",
+    "marker_id": "unsupported_phase_step_6_9",
+    "renderer_stub_id": "g900_live_stage_marker_renderer_stub_1b73e0f41964b984",
+    "live_stage_renderer_exists": true,
+    "gate_open_authorization_exists": false,
+    "resolved_since_prior_recheck": [
+      "live_stage_marker_renderer_absent"
+    ],
+    "still_blocking": [
+      "gate_open_authorization_absent"
+    ],
+    "gate_open": false,
+    "renderer_enabled_now": false,
+    "lights_marker_now": false,
+    "admits_channel_now": false,
+    "renders_channel_now": false,
+    "mutates_body": false,
+    "channel_count": 0
+  },
+  "interpretation": {
+    "renderer_fixture_exists": true,
+    "renderer_fixture_is_not_permission_to_light": true,
+    "gate_still_closed_because_gate_open_authorization_absent": true,
+    "marker_still_not_live_lit": true,
+    "channel_still_not_admitted": true,
+    "not_channel": true,
+    "next_problem": "Decide whether to create a gate-open authorization artifact, or keep the marker as an installed but unlit diagnostic fixture."
+  },
+  "checks": {
+    "stub_receipt_passed": true,
+    "admission_passed": true,
+    "prior_recheck_passed": true,
+    "render_contract_passed": true,
+    "binding_passed": true,
+    "live_stage_renderer_exists": true,
+    "gate_open_authorization_absent": true,
+    "no_active_true_effects": true,
+    "channel_registry_zero": true,
+    "gate_remains_closed": true,
+    "renderer_not_enabled_now": true,
+    "marker_not_lit": true,
+    "channel_not_admitted": true,
+    "channel_not_rendered": true,
+    "body_not_mutated": true,
+    "all_conditions_satisfied": true
+  },
+  "failed_checks": [],
+  "boundary": {
+    "gate_recheck_only": true,
+    "renderer_enabled": false,
+    "gate_open": false,
+    "admits_channels": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "marker_lighting": false,
+    "force_claim": false,
+    "physics_claim": false
+  }
+}

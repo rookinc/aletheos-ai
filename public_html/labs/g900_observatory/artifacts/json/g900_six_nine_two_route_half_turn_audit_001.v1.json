@@ -1,0 +1,338 @@
+{
+  "schema": "g900.six_nine_two_route_half_turn_audit",
+  "version": 1,
+  "status": "six_nine_two_route_half_turn_audit_recorded",
+  "created_utc": "2026-06-18T08:10:30Z",
+  "git_head": "a73f0d0 Search G900 six-nine explicit half-turn witness candidates",
+  "audit_pass": true,
+  "verdict": "six_nine_two_route_half_turn_audit_passed",
+  "hypothesis": "The demanded 180 witness has two route types: reverse/backtrack and sheet-wrap/forward-return.",
+  "two_route_status": "reverse_absent_wrap_candidate_supported",
+  "reading": "The tested maps split the 180 idea into two routes. The reverse/backtrack route is absent, while a supported fork-side forward/wrap counterpart exists. This supports the bounded reading that 06_09 may need a sheet-wrap style 180 rather than a literal reverse edge.",
+  "route_definitions": {
+    "reverse_backtrack_route": {
+      "meaning": "go back the way you came",
+      "native_proxies": [
+        "literal reverse pair",
+        "reverse limit transition",
+        "reciprocal backward package",
+        "supported backward carrier"
+      ]
+    },
+    "sheet_wrap_forward_route": {
+      "meaning": "keep walking forward off the sheet and re-enter from the other side",
+      "native_proxies": [
+        "fork-side counterpart",
+        "carrier-local same or plus30 map",
+        "same limit transition",
+        "supported nonzero-hit counterpart",
+        "involution proxy"
+      ]
+    }
+  },
+  "reverse_route": {
+    "status": "reverse_route_absent",
+    "candidate_count": 4,
+    "full_candidate_count": 0,
+    "supported_candidate_count": 0,
+    "literal_reverse_candidate_count": 0,
+    "best_reverse_candidate": null,
+    "candidates_first_12": [
+      {
+        "name": "reverse_pair_same_local",
+        "description": "Map 06_09 to literal reverse pair 09_06 at same local and reversed limit.",
+        "from_pair": "06_09",
+        "to_pair": "09_06",
+        "from_root_slot": "12",
+        "to_root_slot": "12",
+        "local_mode": "same",
+        "limit_mode": "reverse",
+        "hit_count": 0,
+        "counterpart_row_count": 0,
+        "counterpart_supported_count": 0,
+        "counterpart_boundary_carrier_count": 0,
+        "counterpart_zero_hit_count": 0,
+        "involution_proxy_ok": false,
+        "counterpart_pair_counts": {},
+        "counterpart_root_slot_counts": {},
+        "counterpart_limit_counts": {},
+        "counterpart_package_kind_counts": {}
+      },
+      {
+        "name": "reverse_pair_plus30_local",
+        "description": "Map 06_09 to literal reverse pair 09_06 with local plus 30 and reversed limit.",
+        "from_pair": "06_09",
+        "to_pair": "09_06",
+        "from_root_slot": "12",
+        "to_root_slot": "12",
+        "local_mode": "plus30",
+        "limit_mode": "reverse",
+        "hit_count": 0,
+        "counterpart_row_count": 0,
+        "counterpart_supported_count": 0,
+        "counterpart_boundary_carrier_count": 0,
+        "counterpart_zero_hit_count": 0,
+        "involution_proxy_ok": false,
+        "counterpart_pair_counts": {},
+        "counterpart_root_slot_counts": {},
+        "counterpart_limit_counts": {},
+        "counterpart_package_kind_counts": {}
+      },
+      {
+        "name": "reverse_limit_same_pair_same_local",
+        "description": "Map 06_09 to same pair and same local but reversed limit 24->23.",
+        "from_pair": "06_09",
+        "to_pair": "06_09",
+        "from_root_slot": "12",
+        "to_root_slot": "12",
+        "local_mode": "same",
+        "limit_mode": "reverse",
+        "hit_count": 0,
+        "counterpart_row_count": 0,
+        "counterpart_supported_count": 0,
+        "counterpart_boundary_carrier_count": 0,
+        "counterpart_zero_hit_count": 0,
+        "involution_proxy_ok": false,
+        "counterpart_pair_counts": {},
+        "counterpart_root_slot_counts": {},
+        "counterpart_limit_counts": {},
+        "counterpart_package_kind_counts": {}
+      },
+      {
+        "name": "reverse_limit_same_pair_plus30_local",
+        "description": "Map 06_09 to same pair and local plus 30 with reversed limit 24->23.",
+        "from_pair": "06_09",
+        "to_pair": "06_09",
+        "from_root_slot": "12",
+        "to_root_slot": "12",
+        "local_mode": "plus30",
+        "limit_mode": "reverse",
+        "hit_count": 0,
+        "counterpart_row_count": 0,
+        "counterpart_supported_count": 0,
+        "counterpart_boundary_carrier_count": 0,
+        "counterpart_zero_hit_count": 0,
+        "involution_proxy_ok": false,
+        "counterpart_pair_counts": {},
+        "counterpart_root_slot_counts": {},
+        "counterpart_limit_counts": {},
+        "counterpart_package_kind_counts": {}
+      }
+    ]
+  },
+  "wrap_route": {
+    "status": "sheet_wrap_supported_candidate_present",
+    "supported_fork_candidate_count": 2,
+    "sheet_wrap_strong_candidate_count": 1,
+    "best_wrap_candidate": {
+      "name": "fork_swap_plus30_local",
+      "description": "Map 06_09 root_slot 12 to supported fork side 03_09 root_slot 9 with carrier local plus 30.",
+      "from_pair": "06_09",
+      "to_pair": "03_09",
+      "from_root_slot": "12",
+      "to_root_slot": "9",
+      "local_mode": "plus30",
+      "limit_mode": "same",
+      "hit_count": 60,
+      "counterpart_row_count": 60,
+      "counterpart_supported_count": 60,
+      "counterpart_boundary_carrier_count": 60,
+      "counterpart_zero_hit_count": 0,
+      "involution_proxy_ok": true,
+      "counterpart_pair_counts": {
+        "03_09": 60
+      },
+      "counterpart_root_slot_counts": {
+        "9": 60
+      },
+      "counterpart_limit_counts": {
+        "23->24": 60
+      },
+      "counterpart_package_kind_counts": {
+        "clean_reciprocal_pair_package": 60
+      }
+    },
+    "supported_fork_candidates": [
+      {
+        "name": "fork_swap_same_local",
+        "description": "Map 06_09 root_slot 12 to supported fork side 03_09 root_slot 9 at same carrier local.",
+        "from_pair": "06_09",
+        "to_pair": "03_09",
+        "from_root_slot": "12",
+        "to_root_slot": "9",
+        "local_mode": "same",
+        "limit_mode": "same",
+        "hit_count": 60,
+        "counterpart_row_count": 60,
+        "counterpart_supported_count": 60,
+        "counterpart_boundary_carrier_count": 60,
+        "counterpart_zero_hit_count": 0,
+        "involution_proxy_ok": true,
+        "counterpart_pair_counts": {
+          "03_09": 60
+        },
+        "counterpart_root_slot_counts": {
+          "9": 60
+        },
+        "counterpart_limit_counts": {
+          "23->24": 60
+        },
+        "counterpart_package_kind_counts": {
+          "clean_reciprocal_pair_package": 60
+        }
+      },
+      {
+        "name": "fork_swap_plus30_local",
+        "description": "Map 06_09 root_slot 12 to supported fork side 03_09 root_slot 9 with carrier local plus 30.",
+        "from_pair": "06_09",
+        "to_pair": "03_09",
+        "from_root_slot": "12",
+        "to_root_slot": "9",
+        "local_mode": "plus30",
+        "limit_mode": "same",
+        "hit_count": 60,
+        "counterpart_row_count": 60,
+        "counterpart_supported_count": 60,
+        "counterpart_boundary_carrier_count": 60,
+        "counterpart_zero_hit_count": 0,
+        "involution_proxy_ok": true,
+        "counterpart_pair_counts": {
+          "03_09": 60
+        },
+        "counterpart_root_slot_counts": {
+          "9": 60
+        },
+        "counterpart_limit_counts": {
+          "23->24": 60
+        },
+        "counterpart_package_kind_counts": {
+          "clean_reciprocal_pair_package": 60
+        }
+      }
+    ],
+    "sheet_wrap_strong_candidates": [
+      {
+        "name": "fork_swap_plus30_local",
+        "description": "Map 06_09 root_slot 12 to supported fork side 03_09 root_slot 9 with carrier local plus 30.",
+        "from_pair": "06_09",
+        "to_pair": "03_09",
+        "from_root_slot": "12",
+        "to_root_slot": "9",
+        "local_mode": "plus30",
+        "limit_mode": "same",
+        "hit_count": 60,
+        "counterpart_row_count": 60,
+        "counterpart_supported_count": 60,
+        "counterpart_boundary_carrier_count": 60,
+        "counterpart_zero_hit_count": 0,
+        "involution_proxy_ok": true,
+        "counterpart_pair_counts": {
+          "03_09": 60
+        },
+        "counterpart_root_slot_counts": {
+          "9": 60
+        },
+        "counterpart_limit_counts": {
+          "23->24": 60
+        },
+        "counterpart_package_kind_counts": {
+          "clean_reciprocal_pair_package": 60
+        }
+      }
+    ]
+  },
+  "internal_plus30_route": {
+    "status": "pure_plus30_exists_but_unsupported",
+    "candidate_count": 2,
+    "best_internal_plus30": {
+      "name": "same_pair_plus30_local",
+      "description": "Map 06_09 to itself with carrier local plus 30, testing pure G60 half-turn inside the unsupported seam.",
+      "from_pair": "06_09",
+      "to_pair": "06_09",
+      "from_root_slot": "12",
+      "to_root_slot": "12",
+      "local_mode": "plus30",
+      "limit_mode": "same",
+      "hit_count": 60,
+      "counterpart_row_count": 60,
+      "counterpart_supported_count": 0,
+      "counterpart_boundary_carrier_count": 0,
+      "counterpart_zero_hit_count": 60,
+      "involution_proxy_ok": true,
+      "counterpart_pair_counts": {
+        "06_09": 60
+      },
+      "counterpart_root_slot_counts": {
+        "12": 60
+      },
+      "counterpart_limit_counts": {
+        "23->24": 60
+      },
+      "counterpart_package_kind_counts": {
+        "one_way_single_transition": 60
+      }
+    },
+    "interpretation": "plus30 alone is not enough if it remains inside the unsupported 06_09 seam."
+  },
+  "prior_explicit_search": {
+    "search_status": "supported_fork_half_turn_counterpart_candidate_found",
+    "supported_fork_candidate_count": 2,
+    "pure_unsupported_half_turn_count": 1,
+    "literal_reverse_candidate_count": 0
+  },
+  "interpretation_boundary": [
+    "This audit classifies candidate 180 route types only.",
+    "A supported wrap-route candidate is not an admitted closure witness.",
+    "A sheet-wrap route means finite quotient/carrier re-entry, not physical motion.",
+    "No transport, channel, force, physics, GR, Maxwell, QCD, electroweak, or unification claim is made."
+  ],
+  "boundary": {
+    "two_route_half_turn_audit_only": true,
+    "admits_closure_witness": false,
+    "admits_transport_relation": false,
+    "admits_channel": false,
+    "marker_lighting": false,
+    "viewer_change": false,
+    "body_mutation": false,
+    "force_claim": false,
+    "physics_claim": false,
+    "gr_claim": false,
+    "maxwell_claim": false,
+    "qcd_claim": false,
+    "electroweak_claim": false,
+    "unification_claim": false
+  },
+  "next_allowed_math_acts": [
+    "inspect_sheet_wrap_strong_candidate",
+    "test_g60_plus30_antipodal_map_against_AT4val_60_6",
+    "test_5_3_4_chamber_signature_near_wrap_route",
+    "transport_relation_admission_criterion_001"
+  ],
+  "checks": {
+    "explicit_prior_valid": true,
+    "explicit_prior_supported_fork_found": true,
+    "half_turn_prior_valid": true,
+    "half_turn_prior_demanded": true,
+    "af_prior_valid": true,
+    "source_prior_valid": true,
+    "compound_prior_valid": true,
+    "candidate_results_present": true,
+    "reverse_route_status_recorded": true,
+    "wrap_route_status_recorded": true,
+    "two_route_status_recorded": true,
+    "channel_registry_preserved": true,
+    "renderer_absent": true,
+    "no_forbidden_claims": true
+  },
+  "failed_checks": [],
+  "hashes": {
+    "explicit_half_turn_search_sha256": "d0ad32c8d42dff5c19207f044c0868660adaa6f5d8ddd7e5819df6039d76d42c",
+    "half_turn_probe_sha256": "746c7321737745be6f4f88b8557d8d1e80b0649a96e1e0ab254e208e6ce95312",
+    "af_probe_sha256": "5f8157c042734b4237ffcd61788f0dba3900d85c6c23efeb126d0035a33ce387",
+    "source_probe_sha256": "384df4e35e281e4d4f89365d5c66201c878920712848c583dcf00a82b8f8d8c5",
+    "compound_sha256": "28eae25162bbc2a1397c2125b2e48c2d7754fd2b7bffca8498bd6db7d52cc41c",
+    "channels_sha256": "fbe4c50e0adf3460f7190f3c7714754da8a620359a5bc26c70543cc401feca08",
+    "body_sha256": "6a2cb6b9892a78d4559ec61cf946b0021962cc6819311234b8bf14102b3b7f63",
+    "lab_sha256": "5a10a18bc6563446a0d364d5984b8a41db580e0a75831c82b9eeb5aebc2edeb7"
+  }
+}

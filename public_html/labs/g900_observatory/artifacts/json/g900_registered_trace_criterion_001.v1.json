@@ -1,0 +1,179 @@
+{
+  "schema": "g900.registered_trace_criterion",
+  "version": 1,
+  "status": "registered_trace_criterion_recorded",
+  "created_utc": "2026-06-18T04:29:45Z",
+  "git_head": "da00e9b Record G900 finite boundary type ledger",
+  "audit_pass": true,
+  "verdict": "registered_trace_criterion_passed",
+  "thesis": "A registered trace is boundary-preserving finite aftermath, not measurement, display, transport, channel, or force.",
+  "purpose": "Define the criterion that lets the physics program move from admissible action to trace without collapsing into viewer or channel language.",
+  "criterion_atoms": [
+    {
+      "atom_id": "admitted_body_source",
+      "statement": "A registered trace must be sourced in an admitted body.",
+      "testable_requirement": "body artifact exists and is not mutated by the trace record.",
+      "required": true
+    },
+    {
+      "atom_id": "admissible_action_or_relation",
+      "statement": "A trace must arise from an admissible action, relation, support test, or boundary check.",
+      "testable_requirement": "the source audit names the action or relation family being tested.",
+      "required": true
+    },
+    {
+      "atom_id": "finite_residue_or_contrast",
+      "statement": "A trace must leave a finite residue, contrast, return, unsupportedness, or correlation profile.",
+      "testable_requirement": "the source audit contains a finite nonempty witness set, count profile, failure profile, or return profile.",
+      "required": true
+    },
+    {
+      "atom_id": "non_display_origin",
+      "statement": "A trace cannot originate from a viewer, renderer, marker, screenshot, or visual overlay.",
+      "testable_requirement": "the trace source is data/audit/math, not display code or visual inspection.",
+      "required": true
+    },
+    {
+      "atom_id": "reproducible_receipt",
+      "statement": "A trace must be reproducible from a named artifact or deterministic construction.",
+      "testable_requirement": "the source artifact has stable JSON, counts, hashes, or explicitly named input files.",
+      "required": true
+    },
+    {
+      "atom_id": "typed_as_trace_before_transport",
+      "statement": "A trace is not automatically transport, channel, measurement, or physical force.",
+      "testable_requirement": "the trace record must not admit a channel or force claim without a later criterion.",
+      "required": true
+    },
+    {
+      "atom_id": "boundary_preserving",
+      "statement": "Recording the trace must not mutate the body, registry, or boundary grammar.",
+      "testable_requirement": "the trace artifact declares no body mutation, no registry mutation, no renderer authority, no force claim, and no physics claim.",
+      "required": true
+    },
+    {
+      "atom_id": "classification_deferred",
+      "statement": "A registered trace may later be classified as obstruction, transport frontier, or bridge candidate, but that classification is a separate theorem.",
+      "testable_requirement": "the trace criterion only registers tracehood and does not force downstream classification.",
+      "required": true
+    }
+  ],
+  "trace_classes": [
+    {
+      "class_id": "residue_trace",
+      "description": "A finite leftover pattern after an admissible action or relation."
+    },
+    {
+      "class_id": "return_trace",
+      "description": "A finite return, cycle, recurrence, or closed relation profile."
+    },
+    {
+      "class_id": "obstruction_trace",
+      "description": "A finite failure, unsupportedness, or boundary-pressure profile."
+    },
+    {
+      "class_id": "correlation_trace",
+      "description": "A finite non-arbitrary correlation profile surviving audit."
+    },
+    {
+      "class_id": "transition_trace",
+      "description": "A finite change of admissible state, phase, or relation."
+    }
+  ],
+  "admission_rule": {
+    "rule_id": "registered_trace_core_rule",
+    "statement": "An object is a registered trace when all required criterion atoms hold.",
+    "required_atom_ids": [
+      "admitted_body_source",
+      "admissible_action_or_relation",
+      "finite_residue_or_contrast",
+      "non_display_origin",
+      "reproducible_receipt",
+      "typed_as_trace_before_transport",
+      "boundary_preserving",
+      "classification_deferred"
+    ],
+    "output_type": "registered_trace",
+    "does_not_output": [
+      "transport_relation",
+      "channel",
+      "viewer_display",
+      "physical_force",
+      "physics_claim"
+    ]
+  },
+  "candidate_evaluation_template": {
+    "candidate_id": null,
+    "source_artifact": null,
+    "candidate_class": null,
+    "atom_results": {
+      "admitted_body_source": null,
+      "admissible_action_or_relation": null,
+      "finite_residue_or_contrast": null,
+      "non_display_origin": null,
+      "reproducible_receipt": null,
+      "typed_as_trace_before_transport": null,
+      "boundary_preserving": null,
+      "classification_deferred": null
+    },
+    "registered_trace": null,
+    "classification": "deferred"
+  },
+  "six_nine_precheck": {
+    "candidate_id": "unsupported_phase_marker_6_9_or_package_6_9",
+    "source_available": true,
+    "precheck_only": true,
+    "registered_trace_claimed_here": false,
+    "next_artifact": "six_nine_trace_classification_001"
+  },
+  "current_state": {
+    "frontier_verdict": "physics_frontier_reset_to_boundary_trace",
+    "ledger_verdict": "finite_boundary_type_ledger_passed",
+    "channel_count": 1,
+    "admitted_channel_count": 1,
+    "renderer_absent": true,
+    "unsupported_6_9_recorded": true
+  },
+  "next_allowed_math_acts": [
+    "six_nine_trace_classification_001",
+    "transport_relation_admission_criterion_001",
+    "physics_bridge_forbidden_mapping_ledger_001"
+  ],
+  "checks": {
+    "frontier_valid": true,
+    "ledger_valid": true,
+    "registered_trace_type_present": true,
+    "trace_not_measurement_lemma_present": true,
+    "obstruction_not_transport_lemma_present": true,
+    "viewer_not_proof_lemma_present": true,
+    "criterion_atoms_complete": true,
+    "admission_rule_outputs_registered_trace_only": true,
+    "six_nine_source_prechecked": true,
+    "channel_registry_preserved": true,
+    "renderer_absent": true,
+    "no_body_mutation": true,
+    "no_channel_admission": true,
+    "no_viewer_change": true,
+    "no_force_claim": true,
+    "no_physics_claim": true
+  },
+  "failed_checks": [],
+  "hashes": {
+    "frontier_sha256": "256ad198bcd9c0dcba20d75412622cc148bad6a2ff4026aef389f533ebc8d873",
+    "ledger_sha256": "6a1a4b81fc76477202edccad3c394100db0617ab738a5fe62aaef6b930e45e34",
+    "channels_sha256": "fbe4c50e0adf3460f7190f3c7714754da8a620359a5bc26c70543cc401feca08",
+    "body_sha256": "6a2cb6b9892a78d4559ec61cf946b0021962cc6819311234b8bf14102b3b7f63",
+    "package_support_sha256": "1934001b8457215697e68ff61fdfceb8a447b03d9e32e40ae774006c1fd781a9",
+    "lab_sha256": "5a10a18bc6563446a0d364d5984b8a41db580e0a75831c82b9eeb5aebc2edeb7"
+  },
+  "boundary": {
+    "criterion_only": true,
+    "classifies_six_nine": false,
+    "changes_viewer": false,
+    "admits_channels": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "force_claim": false,
+    "physics_claim": false
+  }
+}

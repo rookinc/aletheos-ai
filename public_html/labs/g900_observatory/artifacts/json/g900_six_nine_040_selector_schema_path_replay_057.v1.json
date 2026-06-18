@@ -1,0 +1,94 @@
+{
+  "address_sample_count": 20,
+  "audit_id": "g900_six_nine_040_selector_schema_path_replay_057",
+  "audit_pass": false,
+  "boundary": {
+    "channel_admitted": false,
+    "closure_witness_admitted": false,
+    "force_claim": false,
+    "marker_lighting": false,
+    "native_derivation_complete": false,
+    "physics_claim": false,
+    "row_level_union_complete": false,
+    "schema_path_replay_only": true,
+    "target_298_rowset_exported": false,
+    "transport_relation_admitted": false,
+    "unification_claim": false,
+    "viewer_or_body_mutation": false
+  },
+  "chosen_replay": null,
+  "context_only_sample_count": 20,
+  "csv_path": null,
+  "exact_332_shell_candidate_count": 1,
+  "expected_040_features": [
+    "context.context.ladder",
+    "context.is_target_foundation_packet"
+  ],
+  "expected_040_positive_value": [
+    "\"__MISSING__\"",
+    "\"__MISSING__\""
+  ],
+  "exported_rows_first_30": [],
+  "exported_target_count": 0,
+  "next_ascent_target": "inspect source wrapper schema or rerun 040 with full target-row export at generation time",
+  "prior_040_verdict": "address_handle_material_selector_found",
+  "prior_056_verdict": "040_missing_selector_replay_not_found",
+  "reading": "No schema-path variant of the 040 missing-feature selector replayed a clean 332-to-298 target in the tested visible shell candidates. This keeps the target export open and points to a deeper source encoding mismatch.",
+  "replay_status": "schema_path_missing_missing_did_not_replay_target",
+  "schema_replay_hit_count": 0,
+  "schema_replay_hits_first_20": [],
+  "shell_reports_first_10": [
+    {
+      "foundation_path_candidate_count": 1,
+      "foundation_paths_first_20": [
+        {
+          "path": "context_summary.is_target_foundation_packet",
+          "value_counts": {
+            "false": 14,
+            "true": 76
+          }
+        }
+      ],
+      "ladder_path_candidate_count": 4,
+      "ladder_paths_first_20": [
+        {
+          "path": "context_summary.ladder",
+          "value_counts": {
+            "[3, 6, 9, 12]": 8,
+            "[3, 9, 6, 12]": 36,
+            "null": 36
+          }
+        },
+        {
+          "path": "context_summary.packet.ladder",
+          "value_counts": {
+            "[3, 6, 9, 12]": 4,
+            "[3, 9, 6, 12]": 12
+          }
+        },
+        {
+          "path": "context_summary.broken_ladder",
+          "value_counts": {
+            "[3, 9, 6, 12]": 52
+          }
+        },
+        {
+          "path": "context_summary.phase_ladder_values",
+          "value_counts": {
+            "[3, 6, 9, 12]": 90,
+            "[3, 9, 6, 12]": 66
+          }
+        }
+      ],
+      "shell_count": 332,
+      "shell_feature": {
+        "feature": "pair",
+        "value": "[6, 9]"
+      }
+    }
+  ],
+  "surplus_rows_first_20": [],
+  "theory_claim": false,
+  "verdict": "040_schema_path_selector_replay_not_found",
+  "visible_row_count": 29081
+}

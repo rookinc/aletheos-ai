@@ -1,0 +1,1045 @@
+{
+  "schema": "g900.global_local_return_cell_oriented_census",
+  "version": 1,
+  "status": "global_local_return_cell_oriented_census_passed",
+  "created_utc": "2026-06-18T01:22:07Z",
+  "audit_pass": true,
+  "question": "Is the P7 local return-cell signature unique across oriented simple four-edge paths in the current full60 phase-package graph?",
+  "verdict": "oriented_global_local_return_cell_unique_in_current_full60_package_graph",
+  "search_scope": {
+    "source": "public_html/labs/g900_observatory/artifacts/json/g900_full60_transition_package_anatomy_001.v1.json",
+    "package_count": 10,
+    "package_pairs": [
+      "02_03",
+      "02_08",
+      "03_09",
+      "05_10",
+      "05_14",
+      "06_09",
+      "06_12",
+      "06_13",
+      "07_11",
+      "09_12"
+    ],
+    "oriented_simple_4_edge_path_count": 12,
+    "window_definition": "oriented simple four-edge paths in the current full60 package graph",
+    "not_all_g900_body_paths": true
+  },
+  "target_signature": {
+    "known_cell_pairs": [
+      "03_09",
+      "09_12",
+      "06_12",
+      "06_13"
+    ],
+    "package_kind_sequence": [
+      "clean_reciprocal_pair_package",
+      "one_way_single_transition",
+      "two_transition_pair_package",
+      "clean_reciprocal_pair_package"
+    ],
+    "transition_len_sequence": [
+      3,
+      1,
+      2,
+      3
+    ],
+    "weight_sequence": [
+      180,
+      60,
+      120,
+      180
+    ],
+    "root_sequence": [
+      "09",
+      "12",
+      "12",
+      "13"
+    ],
+    "root_pattern": "a,b,b,c",
+    "requirements": [
+      "oriented four-edge simple path",
+      "clean bracket",
+      "two-edge nonclean pocket",
+      "middle two edges share dominant root",
+      "endpoint rule holds for every edge"
+    ]
+  },
+  "structural_candidates": [
+    {
+      "node_path": [
+        "03",
+        "09",
+        "12",
+        "06",
+        "13"
+      ],
+      "pairs": [
+        "03_09",
+        "09_12",
+        "06_12",
+        "06_13"
+      ],
+      "roots": [
+        "09",
+        "12",
+        "12",
+        "13"
+      ],
+      "transition_lens": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "package_kinds": [
+        "clean_reciprocal_pair_package",
+        "one_way_single_transition",
+        "two_transition_pair_package",
+        "clean_reciprocal_pair_package"
+      ],
+      "weights": [
+        180,
+        60,
+        120,
+        180
+      ],
+      "weight_total": 540,
+      "high_endpoint_matches": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "bracket_clean": true,
+      "pocket_nonclean": true,
+      "middle_shared_root": true,
+      "root_pattern_abbc": true,
+      "exact_kind_pattern": true,
+      "exact_transition_len_pattern": true,
+      "exact_weight_pattern": true,
+      "exact_root_sequence": true,
+      "endpoint_rule_matches_all": true,
+      "is_structural_candidate": true,
+      "is_exact_target_signature": true
+    }
+  ],
+  "exact_candidates": [
+    {
+      "node_path": [
+        "03",
+        "09",
+        "12",
+        "06",
+        "13"
+      ],
+      "pairs": [
+        "03_09",
+        "09_12",
+        "06_12",
+        "06_13"
+      ],
+      "roots": [
+        "09",
+        "12",
+        "12",
+        "13"
+      ],
+      "transition_lens": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "package_kinds": [
+        "clean_reciprocal_pair_package",
+        "one_way_single_transition",
+        "two_transition_pair_package",
+        "clean_reciprocal_pair_package"
+      ],
+      "weights": [
+        180,
+        60,
+        120,
+        180
+      ],
+      "weight_total": 540,
+      "high_endpoint_matches": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "bracket_clean": true,
+      "pocket_nonclean": true,
+      "middle_shared_root": true,
+      "root_pattern_abbc": true,
+      "exact_kind_pattern": true,
+      "exact_transition_len_pattern": true,
+      "exact_weight_pattern": true,
+      "exact_root_sequence": true,
+      "endpoint_rule_matches_all": true,
+      "is_structural_candidate": true,
+      "is_exact_target_signature": true
+    }
+  ],
+  "target_oriented_hits": [
+    {
+      "node_path": [
+        "03",
+        "09",
+        "12",
+        "06",
+        "13"
+      ],
+      "pairs": [
+        "03_09",
+        "09_12",
+        "06_12",
+        "06_13"
+      ],
+      "roots": [
+        "09",
+        "12",
+        "12",
+        "13"
+      ],
+      "transition_lens": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "package_kinds": [
+        "clean_reciprocal_pair_package",
+        "one_way_single_transition",
+        "two_transition_pair_package",
+        "clean_reciprocal_pair_package"
+      ],
+      "weights": [
+        180,
+        60,
+        120,
+        180
+      ],
+      "weight_total": 540,
+      "high_endpoint_matches": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "bracket_clean": true,
+      "pocket_nonclean": true,
+      "middle_shared_root": true,
+      "root_pattern_abbc": true,
+      "exact_kind_pattern": true,
+      "exact_transition_len_pattern": true,
+      "exact_weight_pattern": true,
+      "exact_root_sequence": true,
+      "endpoint_rule_matches_all": true,
+      "is_structural_candidate": true,
+      "is_exact_target_signature": true
+    }
+  ],
+  "target_reverse_hits": [
+    {
+      "node_path": [
+        "13",
+        "06",
+        "12",
+        "09",
+        "03"
+      ],
+      "pairs": [
+        "06_13",
+        "06_12",
+        "09_12",
+        "03_09"
+      ],
+      "roots": [
+        "13",
+        "12",
+        "12",
+        "09"
+      ],
+      "transition_lens": [
+        3,
+        2,
+        1,
+        3
+      ],
+      "package_kinds": [
+        "clean_reciprocal_pair_package",
+        "two_transition_pair_package",
+        "one_way_single_transition",
+        "clean_reciprocal_pair_package"
+      ],
+      "weights": [
+        180,
+        120,
+        60,
+        180
+      ],
+      "weight_total": 540,
+      "high_endpoint_matches": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "bracket_clean": true,
+      "pocket_nonclean": true,
+      "middle_shared_root": true,
+      "root_pattern_abbc": true,
+      "exact_kind_pattern": false,
+      "exact_transition_len_pattern": false,
+      "exact_weight_pattern": false,
+      "exact_root_sequence": false,
+      "endpoint_rule_matches_all": true,
+      "is_structural_candidate": false,
+      "is_exact_target_signature": false
+    }
+  ],
+  "summary": {
+    "package_count": 10,
+    "oriented_simple_4_edge_path_count": 12,
+    "structural_candidate_count": 1,
+    "exact_candidate_count": 1,
+    "structural_candidate_pairs": [
+      [
+        "03_09",
+        "09_12",
+        "06_12",
+        "06_13"
+      ]
+    ],
+    "exact_candidate_pairs": [
+      [
+        "03_09",
+        "09_12",
+        "06_12",
+        "06_13"
+      ]
+    ],
+    "target_oriented_hit_count": 1,
+    "target_reverse_hit_count": 1,
+    "channel_count": 0
+  },
+  "interpretation": {
+    "global_uniqueness_supported_in_current_full60_package_graph": true,
+    "orientation_matters": true,
+    "caution": "This is a census over oriented simple four-edge paths in the current full60 package graph, not over all possible G900 body paths.",
+    "not_channel": true,
+    "next_problem": "If unique, test whether the same cell can be derived from carrier/source incidence without using package labels."
+  },
+  "checks": {
+    "closure_law_audit_passed": true,
+    "channel_registry_zero_count": true,
+    "channels_not_admitted": true,
+    "package_count_positive": true,
+    "oriented_4_edge_path_count_positive": true,
+    "known_target_oriented_path_found": true,
+    "known_target_reverse_path_found": true,
+    "structural_candidate_count_1": true,
+    "exact_candidate_count_1": true,
+    "exact_candidate_is_known_cell": true,
+    "verdict_is_determinate": true
+  },
+  "failed_checks": [],
+  "boundary": {
+    "oriented_global_census_over_current_full60_package_graph_only": true,
+    "admits_channels": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "marker_lighting": false,
+    "force_claim": false,
+    "physics_claim": false
+  },
+  "all_windows": [
+    {
+      "node_path": [
+        "02",
+        "03",
+        "09",
+        "12",
+        "06"
+      ],
+      "pairs": [
+        "02_03",
+        "03_09",
+        "09_12",
+        "06_12"
+      ],
+      "roots": [
+        "03",
+        "09",
+        "12",
+        "12"
+      ],
+      "transition_lens": [
+        3,
+        3,
+        1,
+        2
+      ],
+      "package_kinds": [
+        "clean_reciprocal_pair_package",
+        "clean_reciprocal_pair_package",
+        "one_way_single_transition",
+        "two_transition_pair_package"
+      ],
+      "weights": [
+        180,
+        180,
+        60,
+        120
+      ],
+      "weight_total": 540,
+      "high_endpoint_matches": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "bracket_clean": false,
+      "pocket_nonclean": false,
+      "middle_shared_root": false,
+      "root_pattern_abbc": false,
+      "exact_kind_pattern": false,
+      "exact_transition_len_pattern": false,
+      "exact_weight_pattern": false,
+      "exact_root_sequence": false,
+      "endpoint_rule_matches_all": true,
+      "is_structural_candidate": false,
+      "is_exact_target_signature": false
+    },
+    {
+      "node_path": [
+        "02",
+        "03",
+        "09",
+        "06",
+        "13"
+      ],
+      "pairs": [
+        "02_03",
+        "03_09",
+        "06_09",
+        "06_13"
+      ],
+      "roots": [
+        "03",
+        "09",
+        "12",
+        "13"
+      ],
+      "transition_lens": [
+        3,
+        3,
+        1,
+        3
+      ],
+      "package_kinds": [
+        "clean_reciprocal_pair_package",
+        "clean_reciprocal_pair_package",
+        "one_way_single_transition",
+        "clean_reciprocal_pair_package"
+      ],
+      "weights": [
+        180,
+        180,
+        60,
+        180
+      ],
+      "weight_total": 600,
+      "high_endpoint_matches": [
+        true,
+        true,
+        false,
+        true
+      ],
+      "bracket_clean": true,
+      "pocket_nonclean": false,
+      "middle_shared_root": false,
+      "root_pattern_abbc": false,
+      "exact_kind_pattern": false,
+      "exact_transition_len_pattern": false,
+      "exact_weight_pattern": false,
+      "exact_root_sequence": false,
+      "endpoint_rule_matches_all": false,
+      "is_structural_candidate": false,
+      "is_exact_target_signature": false
+    },
+    {
+      "node_path": [
+        "02",
+        "03",
+        "09",
+        "06",
+        "12"
+      ],
+      "pairs": [
+        "02_03",
+        "03_09",
+        "06_09",
+        "06_12"
+      ],
+      "roots": [
+        "03",
+        "09",
+        "12",
+        "12"
+      ],
+      "transition_lens": [
+        3,
+        3,
+        1,
+        2
+      ],
+      "package_kinds": [
+        "clean_reciprocal_pair_package",
+        "clean_reciprocal_pair_package",
+        "one_way_single_transition",
+        "two_transition_pair_package"
+      ],
+      "weights": [
+        180,
+        180,
+        60,
+        120
+      ],
+      "weight_total": 540,
+      "high_endpoint_matches": [
+        true,
+        true,
+        false,
+        true
+      ],
+      "bracket_clean": false,
+      "pocket_nonclean": false,
+      "middle_shared_root": false,
+      "root_pattern_abbc": false,
+      "exact_kind_pattern": false,
+      "exact_transition_len_pattern": false,
+      "exact_weight_pattern": false,
+      "exact_root_sequence": false,
+      "endpoint_rule_matches_all": false,
+      "is_structural_candidate": false,
+      "is_exact_target_signature": false
+    },
+    {
+      "node_path": [
+        "03",
+        "09",
+        "12",
+        "06",
+        "13"
+      ],
+      "pairs": [
+        "03_09",
+        "09_12",
+        "06_12",
+        "06_13"
+      ],
+      "roots": [
+        "09",
+        "12",
+        "12",
+        "13"
+      ],
+      "transition_lens": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "package_kinds": [
+        "clean_reciprocal_pair_package",
+        "one_way_single_transition",
+        "two_transition_pair_package",
+        "clean_reciprocal_pair_package"
+      ],
+      "weights": [
+        180,
+        60,
+        120,
+        180
+      ],
+      "weight_total": 540,
+      "high_endpoint_matches": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "bracket_clean": true,
+      "pocket_nonclean": true,
+      "middle_shared_root": true,
+      "root_pattern_abbc": true,
+      "exact_kind_pattern": true,
+      "exact_transition_len_pattern": true,
+      "exact_weight_pattern": true,
+      "exact_root_sequence": true,
+      "endpoint_rule_matches_all": true,
+      "is_structural_candidate": true,
+      "is_exact_target_signature": true
+    },
+    {
+      "node_path": [
+        "06",
+        "12",
+        "09",
+        "03",
+        "02"
+      ],
+      "pairs": [
+        "06_12",
+        "09_12",
+        "03_09",
+        "02_03"
+      ],
+      "roots": [
+        "12",
+        "12",
+        "09",
+        "03"
+      ],
+      "transition_lens": [
+        2,
+        1,
+        3,
+        3
+      ],
+      "package_kinds": [
+        "two_transition_pair_package",
+        "one_way_single_transition",
+        "clean_reciprocal_pair_package",
+        "clean_reciprocal_pair_package"
+      ],
+      "weights": [
+        120,
+        60,
+        180,
+        180
+      ],
+      "weight_total": 540,
+      "high_endpoint_matches": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "bracket_clean": false,
+      "pocket_nonclean": false,
+      "middle_shared_root": false,
+      "root_pattern_abbc": false,
+      "exact_kind_pattern": false,
+      "exact_transition_len_pattern": false,
+      "exact_weight_pattern": false,
+      "exact_root_sequence": false,
+      "endpoint_rule_matches_all": true,
+      "is_structural_candidate": false,
+      "is_exact_target_signature": false
+    },
+    {
+      "node_path": [
+        "06",
+        "09",
+        "03",
+        "02",
+        "08"
+      ],
+      "pairs": [
+        "06_09",
+        "03_09",
+        "02_03",
+        "02_08"
+      ],
+      "roots": [
+        "12",
+        "09",
+        "03",
+        "08"
+      ],
+      "transition_lens": [
+        1,
+        3,
+        3,
+        3
+      ],
+      "package_kinds": [
+        "one_way_single_transition",
+        "clean_reciprocal_pair_package",
+        "clean_reciprocal_pair_package",
+        "clean_reciprocal_pair_package"
+      ],
+      "weights": [
+        60,
+        180,
+        180,
+        180
+      ],
+      "weight_total": 600,
+      "high_endpoint_matches": [
+        false,
+        true,
+        true,
+        true
+      ],
+      "bracket_clean": false,
+      "pocket_nonclean": false,
+      "middle_shared_root": false,
+      "root_pattern_abbc": false,
+      "exact_kind_pattern": false,
+      "exact_transition_len_pattern": false,
+      "exact_weight_pattern": false,
+      "exact_root_sequence": false,
+      "endpoint_rule_matches_all": false,
+      "is_structural_candidate": false,
+      "is_exact_target_signature": false
+    },
+    {
+      "node_path": [
+        "08",
+        "02",
+        "03",
+        "09",
+        "12"
+      ],
+      "pairs": [
+        "02_08",
+        "02_03",
+        "03_09",
+        "09_12"
+      ],
+      "roots": [
+        "08",
+        "03",
+        "09",
+        "12"
+      ],
+      "transition_lens": [
+        3,
+        3,
+        3,
+        1
+      ],
+      "package_kinds": [
+        "clean_reciprocal_pair_package",
+        "clean_reciprocal_pair_package",
+        "clean_reciprocal_pair_package",
+        "one_way_single_transition"
+      ],
+      "weights": [
+        180,
+        180,
+        180,
+        60
+      ],
+      "weight_total": 600,
+      "high_endpoint_matches": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "bracket_clean": false,
+      "pocket_nonclean": false,
+      "middle_shared_root": false,
+      "root_pattern_abbc": false,
+      "exact_kind_pattern": false,
+      "exact_transition_len_pattern": false,
+      "exact_weight_pattern": false,
+      "exact_root_sequence": false,
+      "endpoint_rule_matches_all": true,
+      "is_structural_candidate": false,
+      "is_exact_target_signature": false
+    },
+    {
+      "node_path": [
+        "08",
+        "02",
+        "03",
+        "09",
+        "06"
+      ],
+      "pairs": [
+        "02_08",
+        "02_03",
+        "03_09",
+        "06_09"
+      ],
+      "roots": [
+        "08",
+        "03",
+        "09",
+        "12"
+      ],
+      "transition_lens": [
+        3,
+        3,
+        3,
+        1
+      ],
+      "package_kinds": [
+        "clean_reciprocal_pair_package",
+        "clean_reciprocal_pair_package",
+        "clean_reciprocal_pair_package",
+        "one_way_single_transition"
+      ],
+      "weights": [
+        180,
+        180,
+        180,
+        60
+      ],
+      "weight_total": 600,
+      "high_endpoint_matches": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "bracket_clean": false,
+      "pocket_nonclean": false,
+      "middle_shared_root": false,
+      "root_pattern_abbc": false,
+      "exact_kind_pattern": false,
+      "exact_transition_len_pattern": false,
+      "exact_weight_pattern": false,
+      "exact_root_sequence": false,
+      "endpoint_rule_matches_all": false,
+      "is_structural_candidate": false,
+      "is_exact_target_signature": false
+    },
+    {
+      "node_path": [
+        "12",
+        "09",
+        "03",
+        "02",
+        "08"
+      ],
+      "pairs": [
+        "09_12",
+        "03_09",
+        "02_03",
+        "02_08"
+      ],
+      "roots": [
+        "12",
+        "09",
+        "03",
+        "08"
+      ],
+      "transition_lens": [
+        1,
+        3,
+        3,
+        3
+      ],
+      "package_kinds": [
+        "one_way_single_transition",
+        "clean_reciprocal_pair_package",
+        "clean_reciprocal_pair_package",
+        "clean_reciprocal_pair_package"
+      ],
+      "weights": [
+        60,
+        180,
+        180,
+        180
+      ],
+      "weight_total": 600,
+      "high_endpoint_matches": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "bracket_clean": false,
+      "pocket_nonclean": false,
+      "middle_shared_root": false,
+      "root_pattern_abbc": false,
+      "exact_kind_pattern": false,
+      "exact_transition_len_pattern": false,
+      "exact_weight_pattern": false,
+      "exact_root_sequence": false,
+      "endpoint_rule_matches_all": true,
+      "is_structural_candidate": false,
+      "is_exact_target_signature": false
+    },
+    {
+      "node_path": [
+        "12",
+        "06",
+        "09",
+        "03",
+        "02"
+      ],
+      "pairs": [
+        "06_12",
+        "06_09",
+        "03_09",
+        "02_03"
+      ],
+      "roots": [
+        "12",
+        "12",
+        "09",
+        "03"
+      ],
+      "transition_lens": [
+        2,
+        1,
+        3,
+        3
+      ],
+      "package_kinds": [
+        "two_transition_pair_package",
+        "one_way_single_transition",
+        "clean_reciprocal_pair_package",
+        "clean_reciprocal_pair_package"
+      ],
+      "weights": [
+        120,
+        60,
+        180,
+        180
+      ],
+      "weight_total": 540,
+      "high_endpoint_matches": [
+        true,
+        false,
+        true,
+        true
+      ],
+      "bracket_clean": false,
+      "pocket_nonclean": false,
+      "middle_shared_root": false,
+      "root_pattern_abbc": false,
+      "exact_kind_pattern": false,
+      "exact_transition_len_pattern": false,
+      "exact_weight_pattern": false,
+      "exact_root_sequence": false,
+      "endpoint_rule_matches_all": false,
+      "is_structural_candidate": false,
+      "is_exact_target_signature": false
+    },
+    {
+      "node_path": [
+        "13",
+        "06",
+        "12",
+        "09",
+        "03"
+      ],
+      "pairs": [
+        "06_13",
+        "06_12",
+        "09_12",
+        "03_09"
+      ],
+      "roots": [
+        "13",
+        "12",
+        "12",
+        "09"
+      ],
+      "transition_lens": [
+        3,
+        2,
+        1,
+        3
+      ],
+      "package_kinds": [
+        "clean_reciprocal_pair_package",
+        "two_transition_pair_package",
+        "one_way_single_transition",
+        "clean_reciprocal_pair_package"
+      ],
+      "weights": [
+        180,
+        120,
+        60,
+        180
+      ],
+      "weight_total": 540,
+      "high_endpoint_matches": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "bracket_clean": true,
+      "pocket_nonclean": true,
+      "middle_shared_root": true,
+      "root_pattern_abbc": true,
+      "exact_kind_pattern": false,
+      "exact_transition_len_pattern": false,
+      "exact_weight_pattern": false,
+      "exact_root_sequence": false,
+      "endpoint_rule_matches_all": true,
+      "is_structural_candidate": false,
+      "is_exact_target_signature": false
+    },
+    {
+      "node_path": [
+        "13",
+        "06",
+        "09",
+        "03",
+        "02"
+      ],
+      "pairs": [
+        "06_13",
+        "06_09",
+        "03_09",
+        "02_03"
+      ],
+      "roots": [
+        "13",
+        "12",
+        "09",
+        "03"
+      ],
+      "transition_lens": [
+        3,
+        1,
+        3,
+        3
+      ],
+      "package_kinds": [
+        "clean_reciprocal_pair_package",
+        "one_way_single_transition",
+        "clean_reciprocal_pair_package",
+        "clean_reciprocal_pair_package"
+      ],
+      "weights": [
+        180,
+        60,
+        180,
+        180
+      ],
+      "weight_total": 600,
+      "high_endpoint_matches": [
+        true,
+        false,
+        true,
+        true
+      ],
+      "bracket_clean": true,
+      "pocket_nonclean": false,
+      "middle_shared_root": false,
+      "root_pattern_abbc": false,
+      "exact_kind_pattern": false,
+      "exact_transition_len_pattern": false,
+      "exact_weight_pattern": false,
+      "exact_root_sequence": false,
+      "endpoint_rule_matches_all": false,
+      "is_structural_candidate": false,
+      "is_exact_target_signature": false
+    }
+  ]
+}

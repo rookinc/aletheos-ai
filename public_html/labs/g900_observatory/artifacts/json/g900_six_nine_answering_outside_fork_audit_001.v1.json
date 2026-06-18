@@ -1,0 +1,1653 @@
+{
+  "schema": "g900.six_nine_answering_outside_fork_audit",
+  "version": 1,
+  "status": "six_nine_answering_outside_fork_audit_recorded",
+  "created_utc": "2026-06-18T08:37:45Z",
+  "git_head": "e063ae7 Audit G900 six-nine inside outside return split",
+  "audit_pass": true,
+  "verdict": "six_nine_answering_outside_fork_audit_passed",
+  "question": "Why is 03_09 root_slot 9 the answering outside fork for 06_09 root_slot 12 after the true G60 antipode?",
+  "selector_status": "unique_inside_failure_and_unique_outside_answering_fork",
+  "reading": "In the true-antipode outside-return candidate universe, 06_09 root_slot 12 is the unique same-package failure, and 03_09 root_slot 9 is the unique outside fork that carries the receipt proxy.",
+  "target": {
+    "source_pair": "06_09",
+    "source_root_slot": "12",
+    "limit_transition": "23->24",
+    "target_row_count": 60
+  },
+  "candidate_universe": {
+    "definition": "All observed pair/root_slot frames at limit_transition 23->24, tested after mapping each 06_09 target local through the true G60 antipode.",
+    "candidate_frame_count": 2,
+    "candidate_frames": [
+      {
+        "pair": "03_09",
+        "root_slot": "9"
+      },
+      {
+        "pair": "06_09",
+        "root_slot": "12"
+      }
+    ]
+  },
+  "receipt_proxy_definition": {
+    "coverage_full": true,
+    "support_true_count": 60,
+    "boundary_carrier_true_count": 60,
+    "zero_hit_true_count": 0,
+    "delta_edge_hits_distinct": [
+      1
+    ],
+    "internal_delta_hits_distinct": [
+      1
+    ],
+    "not_a_closure_witness": true,
+    "not_transport_relation": true,
+    "not_channel": true
+  },
+  "inside_failure_proxy_definition": {
+    "coverage_full": true,
+    "support_true_count": 0,
+    "boundary_carrier_true_count": 0,
+    "zero_hit_true_count": 60,
+    "delta_edge_hits_distinct": [
+      0
+    ],
+    "internal_delta_hits_distinct": [
+      0
+    ]
+  },
+  "answering_fork_unique": true,
+  "inside_failure_unique": true,
+  "receipt_candidate_count": 1,
+  "answering_candidate_count": 1,
+  "inside_failure_candidate_count": 1,
+  "best_answering_fork": {
+    "candidate_pair": "03_09",
+    "candidate_root_slot": "9",
+    "target_count": 60,
+    "hit_count": 60,
+    "missing_count": 0,
+    "coverage_full": true,
+    "local_delta_profile": {
+      "7": 1,
+      "8": 1,
+      "11": 1,
+      "12": 1,
+      "15": 7,
+      "16": 1,
+      "17": 1,
+      "19": 3,
+      "20": 1,
+      "21": 4,
+      "25": 3,
+      "26": 1,
+      "29": 4,
+      "30": 2,
+      "31": 4,
+      "34": 1,
+      "35": 3,
+      "39": 4,
+      "40": 1,
+      "41": 3,
+      "43": 1,
+      "44": 1,
+      "45": 7,
+      "48": 1,
+      "49": 1,
+      "52": 1,
+      "53": 1
+    },
+    "pair_counts": {
+      "03_09": 60
+    },
+    "root_slot_counts": {
+      "9": 60
+    },
+    "limit_counts": {
+      "23->24": 60
+    },
+    "package_kind_counts": {
+      "clean_reciprocal_pair_package": 60
+    },
+    "support_counts": {
+      "true": 60,
+      "false": 0,
+      "count": 60
+    },
+    "boundary_carrier_counts": {
+      "true": 60,
+      "false": 0,
+      "count": 60
+    },
+    "zero_hit_counts": {
+      "true": 0,
+      "false": 60,
+      "count": 60
+    },
+    "delta_edge_hits_profile": {
+      "count": 60,
+      "min": 1,
+      "max": 1,
+      "sum": 60,
+      "distinct": [
+        1
+      ]
+    },
+    "internal_delta_hits_profile": {
+      "count": 60,
+      "min": 1,
+      "max": 1,
+      "sum": 60,
+      "distinct": [
+        1
+      ]
+    },
+    "missing_first_8": [],
+    "hits_first_8": [
+      {
+        "pair_key": "03_09",
+        "root_slot": "9",
+        "root_local": 40,
+        "root": "9:40",
+        "limit_transition": "23->24",
+        "package_kind": "clean_reciprocal_pair_package",
+        "zero_hit": false,
+        "has_delta_support": true,
+        "has_boundary_carrier": true,
+        "delta_edge_hits_tokens": 1,
+        "internal_delta_hits_tokens": 1
+      },
+      {
+        "pair_key": "03_09",
+        "root_slot": "9",
+        "root_local": 50,
+        "root": "9:50",
+        "limit_transition": "23->24",
+        "package_kind": "clean_reciprocal_pair_package",
+        "zero_hit": false,
+        "has_delta_support": true,
+        "has_boundary_carrier": true,
+        "delta_edge_hits_tokens": 1,
+        "internal_delta_hits_tokens": 1
+      },
+      {
+        "pair_key": "03_09",
+        "root_slot": "9",
+        "root_local": 10,
+        "root": "9:10",
+        "limit_transition": "23->24",
+        "package_kind": "clean_reciprocal_pair_package",
+        "zero_hit": false,
+        "has_delta_support": true,
+        "has_boundary_carrier": true,
+        "delta_edge_hits_tokens": 1,
+        "internal_delta_hits_tokens": 1
+      },
+      {
+        "pair_key": "03_09",
+        "root_slot": "9",
+        "root_local": 20,
+        "root": "9:20",
+        "limit_transition": "23->24",
+        "package_kind": "clean_reciprocal_pair_package",
+        "zero_hit": false,
+        "has_delta_support": true,
+        "has_boundary_carrier": true,
+        "delta_edge_hits_tokens": 1,
+        "internal_delta_hits_tokens": 1
+      },
+      {
+        "pair_key": "03_09",
+        "root_slot": "9",
+        "root_local": 30,
+        "root": "9:30",
+        "limit_transition": "23->24",
+        "package_kind": "clean_reciprocal_pair_package",
+        "zero_hit": false,
+        "has_delta_support": true,
+        "has_boundary_carrier": true,
+        "delta_edge_hits_tokens": 1,
+        "internal_delta_hits_tokens": 1
+      },
+      {
+        "pair_key": "03_09",
+        "root_slot": "9",
+        "root_local": 35,
+        "root": "9:35",
+        "limit_transition": "23->24",
+        "package_kind": "clean_reciprocal_pair_package",
+        "zero_hit": false,
+        "has_delta_support": true,
+        "has_boundary_carrier": true,
+        "delta_edge_hits_tokens": 1,
+        "internal_delta_hits_tokens": 1
+      },
+      {
+        "pair_key": "03_09",
+        "root_slot": "9",
+        "root_local": 45,
+        "root": "9:45",
+        "limit_transition": "23->24",
+        "package_kind": "clean_reciprocal_pair_package",
+        "zero_hit": false,
+        "has_delta_support": true,
+        "has_boundary_carrier": true,
+        "delta_edge_hits_tokens": 1,
+        "internal_delta_hits_tokens": 1
+      },
+      {
+        "pair_key": "03_09",
+        "root_slot": "9",
+        "root_local": 55,
+        "root": "9:55",
+        "limit_transition": "23->24",
+        "package_kind": "clean_reciprocal_pair_package",
+        "zero_hit": false,
+        "has_delta_support": true,
+        "has_boundary_carrier": true,
+        "delta_edge_hits_tokens": 1,
+        "internal_delta_hits_tokens": 1
+      }
+    ],
+    "receipt_proxy": true,
+    "inside_failure_proxy": false
+  },
+  "best_inside_failure": {
+    "candidate_pair": "06_09",
+    "candidate_root_slot": "12",
+    "target_count": 60,
+    "hit_count": 60,
+    "missing_count": 0,
+    "coverage_full": true,
+    "local_delta_profile": {
+      "7": 1,
+      "8": 1,
+      "11": 1,
+      "12": 1,
+      "15": 7,
+      "16": 1,
+      "17": 1,
+      "19": 3,
+      "20": 1,
+      "21": 4,
+      "25": 3,
+      "26": 1,
+      "29": 4,
+      "30": 2,
+      "31": 4,
+      "34": 1,
+      "35": 3,
+      "39": 4,
+      "40": 1,
+      "41": 3,
+      "43": 1,
+      "44": 1,
+      "45": 7,
+      "48": 1,
+      "49": 1,
+      "52": 1,
+      "53": 1
+    },
+    "pair_counts": {
+      "06_09": 60
+    },
+    "root_slot_counts": {
+      "12": 60
+    },
+    "limit_counts": {
+      "23->24": 60
+    },
+    "package_kind_counts": {
+      "one_way_single_transition": 60
+    },
+    "support_counts": {
+      "true": 0,
+      "false": 60,
+      "count": 60
+    },
+    "boundary_carrier_counts": {
+      "true": 0,
+      "false": 60,
+      "count": 60
+    },
+    "zero_hit_counts": {
+      "true": 60,
+      "false": 0,
+      "count": 60
+    },
+    "delta_edge_hits_profile": {
+      "count": 60,
+      "min": 0,
+      "max": 0,
+      "sum": 0,
+      "distinct": [
+        0
+      ]
+    },
+    "internal_delta_hits_profile": {
+      "count": 60,
+      "min": 0,
+      "max": 0,
+      "sum": 0,
+      "distinct": [
+        0
+      ]
+    },
+    "missing_first_8": [],
+    "hits_first_8": [
+      {
+        "pair_key": "06_09",
+        "root_slot": "12",
+        "root_local": 40,
+        "root": "12:40",
+        "limit_transition": "23->24",
+        "package_kind": "one_way_single_transition",
+        "zero_hit": true,
+        "has_delta_support": false,
+        "has_boundary_carrier": false,
+        "delta_edge_hits_tokens": 0,
+        "internal_delta_hits_tokens": 0
+      },
+      {
+        "pair_key": "06_09",
+        "root_slot": "12",
+        "root_local": 50,
+        "root": "12:50",
+        "limit_transition": "23->24",
+        "package_kind": "one_way_single_transition",
+        "zero_hit": true,
+        "has_delta_support": false,
+        "has_boundary_carrier": false,
+        "delta_edge_hits_tokens": 0,
+        "internal_delta_hits_tokens": 0
+      },
+      {
+        "pair_key": "06_09",
+        "root_slot": "12",
+        "root_local": 10,
+        "root": "12:10",
+        "limit_transition": "23->24",
+        "package_kind": "one_way_single_transition",
+        "zero_hit": true,
+        "has_delta_support": false,
+        "has_boundary_carrier": false,
+        "delta_edge_hits_tokens": 0,
+        "internal_delta_hits_tokens": 0
+      },
+      {
+        "pair_key": "06_09",
+        "root_slot": "12",
+        "root_local": 20,
+        "root": "12:20",
+        "limit_transition": "23->24",
+        "package_kind": "one_way_single_transition",
+        "zero_hit": true,
+        "has_delta_support": false,
+        "has_boundary_carrier": false,
+        "delta_edge_hits_tokens": 0,
+        "internal_delta_hits_tokens": 0
+      },
+      {
+        "pair_key": "06_09",
+        "root_slot": "12",
+        "root_local": 30,
+        "root": "12:30",
+        "limit_transition": "23->24",
+        "package_kind": "one_way_single_transition",
+        "zero_hit": true,
+        "has_delta_support": false,
+        "has_boundary_carrier": false,
+        "delta_edge_hits_tokens": 0,
+        "internal_delta_hits_tokens": 0
+      },
+      {
+        "pair_key": "06_09",
+        "root_slot": "12",
+        "root_local": 35,
+        "root": "12:35",
+        "limit_transition": "23->24",
+        "package_kind": "one_way_single_transition",
+        "zero_hit": true,
+        "has_delta_support": false,
+        "has_boundary_carrier": false,
+        "delta_edge_hits_tokens": 0,
+        "internal_delta_hits_tokens": 0
+      },
+      {
+        "pair_key": "06_09",
+        "root_slot": "12",
+        "root_local": 45,
+        "root": "12:45",
+        "limit_transition": "23->24",
+        "package_kind": "one_way_single_transition",
+        "zero_hit": true,
+        "has_delta_support": false,
+        "has_boundary_carrier": false,
+        "delta_edge_hits_tokens": 0,
+        "internal_delta_hits_tokens": 0
+      },
+      {
+        "pair_key": "06_09",
+        "root_slot": "12",
+        "root_local": 55,
+        "root": "12:55",
+        "limit_transition": "23->24",
+        "package_kind": "one_way_single_transition",
+        "zero_hit": true,
+        "has_delta_support": false,
+        "has_boundary_carrier": false,
+        "delta_edge_hits_tokens": 0,
+        "internal_delta_hits_tokens": 0
+      }
+    ],
+    "receipt_proxy": false,
+    "inside_failure_proxy": true
+  },
+  "receipt_candidates": [
+    {
+      "candidate_pair": "03_09",
+      "candidate_root_slot": "9",
+      "target_count": 60,
+      "hit_count": 60,
+      "missing_count": 0,
+      "coverage_full": true,
+      "local_delta_profile": {
+        "7": 1,
+        "8": 1,
+        "11": 1,
+        "12": 1,
+        "15": 7,
+        "16": 1,
+        "17": 1,
+        "19": 3,
+        "20": 1,
+        "21": 4,
+        "25": 3,
+        "26": 1,
+        "29": 4,
+        "30": 2,
+        "31": 4,
+        "34": 1,
+        "35": 3,
+        "39": 4,
+        "40": 1,
+        "41": 3,
+        "43": 1,
+        "44": 1,
+        "45": 7,
+        "48": 1,
+        "49": 1,
+        "52": 1,
+        "53": 1
+      },
+      "pair_counts": {
+        "03_09": 60
+      },
+      "root_slot_counts": {
+        "9": 60
+      },
+      "limit_counts": {
+        "23->24": 60
+      },
+      "package_kind_counts": {
+        "clean_reciprocal_pair_package": 60
+      },
+      "support_counts": {
+        "true": 60,
+        "false": 0,
+        "count": 60
+      },
+      "boundary_carrier_counts": {
+        "true": 60,
+        "false": 0,
+        "count": 60
+      },
+      "zero_hit_counts": {
+        "true": 0,
+        "false": 60,
+        "count": 60
+      },
+      "delta_edge_hits_profile": {
+        "count": 60,
+        "min": 1,
+        "max": 1,
+        "sum": 60,
+        "distinct": [
+          1
+        ]
+      },
+      "internal_delta_hits_profile": {
+        "count": 60,
+        "min": 1,
+        "max": 1,
+        "sum": 60,
+        "distinct": [
+          1
+        ]
+      },
+      "missing_first_8": [],
+      "hits_first_8": [
+        {
+          "pair_key": "03_09",
+          "root_slot": "9",
+          "root_local": 40,
+          "root": "9:40",
+          "limit_transition": "23->24",
+          "package_kind": "clean_reciprocal_pair_package",
+          "zero_hit": false,
+          "has_delta_support": true,
+          "has_boundary_carrier": true,
+          "delta_edge_hits_tokens": 1,
+          "internal_delta_hits_tokens": 1
+        },
+        {
+          "pair_key": "03_09",
+          "root_slot": "9",
+          "root_local": 50,
+          "root": "9:50",
+          "limit_transition": "23->24",
+          "package_kind": "clean_reciprocal_pair_package",
+          "zero_hit": false,
+          "has_delta_support": true,
+          "has_boundary_carrier": true,
+          "delta_edge_hits_tokens": 1,
+          "internal_delta_hits_tokens": 1
+        },
+        {
+          "pair_key": "03_09",
+          "root_slot": "9",
+          "root_local": 10,
+          "root": "9:10",
+          "limit_transition": "23->24",
+          "package_kind": "clean_reciprocal_pair_package",
+          "zero_hit": false,
+          "has_delta_support": true,
+          "has_boundary_carrier": true,
+          "delta_edge_hits_tokens": 1,
+          "internal_delta_hits_tokens": 1
+        },
+        {
+          "pair_key": "03_09",
+          "root_slot": "9",
+          "root_local": 20,
+          "root": "9:20",
+          "limit_transition": "23->24",
+          "package_kind": "clean_reciprocal_pair_package",
+          "zero_hit": false,
+          "has_delta_support": true,
+          "has_boundary_carrier": true,
+          "delta_edge_hits_tokens": 1,
+          "internal_delta_hits_tokens": 1
+        },
+        {
+          "pair_key": "03_09",
+          "root_slot": "9",
+          "root_local": 30,
+          "root": "9:30",
+          "limit_transition": "23->24",
+          "package_kind": "clean_reciprocal_pair_package",
+          "zero_hit": false,
+          "has_delta_support": true,
+          "has_boundary_carrier": true,
+          "delta_edge_hits_tokens": 1,
+          "internal_delta_hits_tokens": 1
+        },
+        {
+          "pair_key": "03_09",
+          "root_slot": "9",
+          "root_local": 35,
+          "root": "9:35",
+          "limit_transition": "23->24",
+          "package_kind": "clean_reciprocal_pair_package",
+          "zero_hit": false,
+          "has_delta_support": true,
+          "has_boundary_carrier": true,
+          "delta_edge_hits_tokens": 1,
+          "internal_delta_hits_tokens": 1
+        },
+        {
+          "pair_key": "03_09",
+          "root_slot": "9",
+          "root_local": 45,
+          "root": "9:45",
+          "limit_transition": "23->24",
+          "package_kind": "clean_reciprocal_pair_package",
+          "zero_hit": false,
+          "has_delta_support": true,
+          "has_boundary_carrier": true,
+          "delta_edge_hits_tokens": 1,
+          "internal_delta_hits_tokens": 1
+        },
+        {
+          "pair_key": "03_09",
+          "root_slot": "9",
+          "root_local": 55,
+          "root": "9:55",
+          "limit_transition": "23->24",
+          "package_kind": "clean_reciprocal_pair_package",
+          "zero_hit": false,
+          "has_delta_support": true,
+          "has_boundary_carrier": true,
+          "delta_edge_hits_tokens": 1,
+          "internal_delta_hits_tokens": 1
+        }
+      ],
+      "receipt_proxy": true,
+      "inside_failure_proxy": false
+    }
+  ],
+  "inside_failure_candidates": [
+    {
+      "candidate_pair": "06_09",
+      "candidate_root_slot": "12",
+      "target_count": 60,
+      "hit_count": 60,
+      "missing_count": 0,
+      "coverage_full": true,
+      "local_delta_profile": {
+        "7": 1,
+        "8": 1,
+        "11": 1,
+        "12": 1,
+        "15": 7,
+        "16": 1,
+        "17": 1,
+        "19": 3,
+        "20": 1,
+        "21": 4,
+        "25": 3,
+        "26": 1,
+        "29": 4,
+        "30": 2,
+        "31": 4,
+        "34": 1,
+        "35": 3,
+        "39": 4,
+        "40": 1,
+        "41": 3,
+        "43": 1,
+        "44": 1,
+        "45": 7,
+        "48": 1,
+        "49": 1,
+        "52": 1,
+        "53": 1
+      },
+      "pair_counts": {
+        "06_09": 60
+      },
+      "root_slot_counts": {
+        "12": 60
+      },
+      "limit_counts": {
+        "23->24": 60
+      },
+      "package_kind_counts": {
+        "one_way_single_transition": 60
+      },
+      "support_counts": {
+        "true": 0,
+        "false": 60,
+        "count": 60
+      },
+      "boundary_carrier_counts": {
+        "true": 0,
+        "false": 60,
+        "count": 60
+      },
+      "zero_hit_counts": {
+        "true": 60,
+        "false": 0,
+        "count": 60
+      },
+      "delta_edge_hits_profile": {
+        "count": 60,
+        "min": 0,
+        "max": 0,
+        "sum": 0,
+        "distinct": [
+          0
+        ]
+      },
+      "internal_delta_hits_profile": {
+        "count": 60,
+        "min": 0,
+        "max": 0,
+        "sum": 0,
+        "distinct": [
+          0
+        ]
+      },
+      "missing_first_8": [],
+      "hits_first_8": [
+        {
+          "pair_key": "06_09",
+          "root_slot": "12",
+          "root_local": 40,
+          "root": "12:40",
+          "limit_transition": "23->24",
+          "package_kind": "one_way_single_transition",
+          "zero_hit": true,
+          "has_delta_support": false,
+          "has_boundary_carrier": false,
+          "delta_edge_hits_tokens": 0,
+          "internal_delta_hits_tokens": 0
+        },
+        {
+          "pair_key": "06_09",
+          "root_slot": "12",
+          "root_local": 50,
+          "root": "12:50",
+          "limit_transition": "23->24",
+          "package_kind": "one_way_single_transition",
+          "zero_hit": true,
+          "has_delta_support": false,
+          "has_boundary_carrier": false,
+          "delta_edge_hits_tokens": 0,
+          "internal_delta_hits_tokens": 0
+        },
+        {
+          "pair_key": "06_09",
+          "root_slot": "12",
+          "root_local": 10,
+          "root": "12:10",
+          "limit_transition": "23->24",
+          "package_kind": "one_way_single_transition",
+          "zero_hit": true,
+          "has_delta_support": false,
+          "has_boundary_carrier": false,
+          "delta_edge_hits_tokens": 0,
+          "internal_delta_hits_tokens": 0
+        },
+        {
+          "pair_key": "06_09",
+          "root_slot": "12",
+          "root_local": 20,
+          "root": "12:20",
+          "limit_transition": "23->24",
+          "package_kind": "one_way_single_transition",
+          "zero_hit": true,
+          "has_delta_support": false,
+          "has_boundary_carrier": false,
+          "delta_edge_hits_tokens": 0,
+          "internal_delta_hits_tokens": 0
+        },
+        {
+          "pair_key": "06_09",
+          "root_slot": "12",
+          "root_local": 30,
+          "root": "12:30",
+          "limit_transition": "23->24",
+          "package_kind": "one_way_single_transition",
+          "zero_hit": true,
+          "has_delta_support": false,
+          "has_boundary_carrier": false,
+          "delta_edge_hits_tokens": 0,
+          "internal_delta_hits_tokens": 0
+        },
+        {
+          "pair_key": "06_09",
+          "root_slot": "12",
+          "root_local": 35,
+          "root": "12:35",
+          "limit_transition": "23->24",
+          "package_kind": "one_way_single_transition",
+          "zero_hit": true,
+          "has_delta_support": false,
+          "has_boundary_carrier": false,
+          "delta_edge_hits_tokens": 0,
+          "internal_delta_hits_tokens": 0
+        },
+        {
+          "pair_key": "06_09",
+          "root_slot": "12",
+          "root_local": 45,
+          "root": "12:45",
+          "limit_transition": "23->24",
+          "package_kind": "one_way_single_transition",
+          "zero_hit": true,
+          "has_delta_support": false,
+          "has_boundary_carrier": false,
+          "delta_edge_hits_tokens": 0,
+          "internal_delta_hits_tokens": 0
+        },
+        {
+          "pair_key": "06_09",
+          "root_slot": "12",
+          "root_local": 55,
+          "root": "12:55",
+          "limit_transition": "23->24",
+          "package_kind": "one_way_single_transition",
+          "zero_hit": true,
+          "has_delta_support": false,
+          "has_boundary_carrier": false,
+          "delta_edge_hits_tokens": 0,
+          "internal_delta_hits_tokens": 0
+        }
+      ],
+      "receipt_proxy": false,
+      "inside_failure_proxy": true
+    }
+  ],
+  "ranked_candidates_first_20": [
+    {
+      "candidate_pair": "03_09",
+      "candidate_root_slot": "9",
+      "target_count": 60,
+      "hit_count": 60,
+      "missing_count": 0,
+      "coverage_full": true,
+      "local_delta_profile": {
+        "7": 1,
+        "8": 1,
+        "11": 1,
+        "12": 1,
+        "15": 7,
+        "16": 1,
+        "17": 1,
+        "19": 3,
+        "20": 1,
+        "21": 4,
+        "25": 3,
+        "26": 1,
+        "29": 4,
+        "30": 2,
+        "31": 4,
+        "34": 1,
+        "35": 3,
+        "39": 4,
+        "40": 1,
+        "41": 3,
+        "43": 1,
+        "44": 1,
+        "45": 7,
+        "48": 1,
+        "49": 1,
+        "52": 1,
+        "53": 1
+      },
+      "pair_counts": {
+        "03_09": 60
+      },
+      "root_slot_counts": {
+        "9": 60
+      },
+      "limit_counts": {
+        "23->24": 60
+      },
+      "package_kind_counts": {
+        "clean_reciprocal_pair_package": 60
+      },
+      "support_counts": {
+        "true": 60,
+        "false": 0,
+        "count": 60
+      },
+      "boundary_carrier_counts": {
+        "true": 60,
+        "false": 0,
+        "count": 60
+      },
+      "zero_hit_counts": {
+        "true": 0,
+        "false": 60,
+        "count": 60
+      },
+      "delta_edge_hits_profile": {
+        "count": 60,
+        "min": 1,
+        "max": 1,
+        "sum": 60,
+        "distinct": [
+          1
+        ]
+      },
+      "internal_delta_hits_profile": {
+        "count": 60,
+        "min": 1,
+        "max": 1,
+        "sum": 60,
+        "distinct": [
+          1
+        ]
+      },
+      "missing_first_8": [],
+      "hits_first_8": [
+        {
+          "pair_key": "03_09",
+          "root_slot": "9",
+          "root_local": 40,
+          "root": "9:40",
+          "limit_transition": "23->24",
+          "package_kind": "clean_reciprocal_pair_package",
+          "zero_hit": false,
+          "has_delta_support": true,
+          "has_boundary_carrier": true,
+          "delta_edge_hits_tokens": 1,
+          "internal_delta_hits_tokens": 1
+        },
+        {
+          "pair_key": "03_09",
+          "root_slot": "9",
+          "root_local": 50,
+          "root": "9:50",
+          "limit_transition": "23->24",
+          "package_kind": "clean_reciprocal_pair_package",
+          "zero_hit": false,
+          "has_delta_support": true,
+          "has_boundary_carrier": true,
+          "delta_edge_hits_tokens": 1,
+          "internal_delta_hits_tokens": 1
+        },
+        {
+          "pair_key": "03_09",
+          "root_slot": "9",
+          "root_local": 10,
+          "root": "9:10",
+          "limit_transition": "23->24",
+          "package_kind": "clean_reciprocal_pair_package",
+          "zero_hit": false,
+          "has_delta_support": true,
+          "has_boundary_carrier": true,
+          "delta_edge_hits_tokens": 1,
+          "internal_delta_hits_tokens": 1
+        },
+        {
+          "pair_key": "03_09",
+          "root_slot": "9",
+          "root_local": 20,
+          "root": "9:20",
+          "limit_transition": "23->24",
+          "package_kind": "clean_reciprocal_pair_package",
+          "zero_hit": false,
+          "has_delta_support": true,
+          "has_boundary_carrier": true,
+          "delta_edge_hits_tokens": 1,
+          "internal_delta_hits_tokens": 1
+        },
+        {
+          "pair_key": "03_09",
+          "root_slot": "9",
+          "root_local": 30,
+          "root": "9:30",
+          "limit_transition": "23->24",
+          "package_kind": "clean_reciprocal_pair_package",
+          "zero_hit": false,
+          "has_delta_support": true,
+          "has_boundary_carrier": true,
+          "delta_edge_hits_tokens": 1,
+          "internal_delta_hits_tokens": 1
+        },
+        {
+          "pair_key": "03_09",
+          "root_slot": "9",
+          "root_local": 35,
+          "root": "9:35",
+          "limit_transition": "23->24",
+          "package_kind": "clean_reciprocal_pair_package",
+          "zero_hit": false,
+          "has_delta_support": true,
+          "has_boundary_carrier": true,
+          "delta_edge_hits_tokens": 1,
+          "internal_delta_hits_tokens": 1
+        },
+        {
+          "pair_key": "03_09",
+          "root_slot": "9",
+          "root_local": 45,
+          "root": "9:45",
+          "limit_transition": "23->24",
+          "package_kind": "clean_reciprocal_pair_package",
+          "zero_hit": false,
+          "has_delta_support": true,
+          "has_boundary_carrier": true,
+          "delta_edge_hits_tokens": 1,
+          "internal_delta_hits_tokens": 1
+        },
+        {
+          "pair_key": "03_09",
+          "root_slot": "9",
+          "root_local": 55,
+          "root": "9:55",
+          "limit_transition": "23->24",
+          "package_kind": "clean_reciprocal_pair_package",
+          "zero_hit": false,
+          "has_delta_support": true,
+          "has_boundary_carrier": true,
+          "delta_edge_hits_tokens": 1,
+          "internal_delta_hits_tokens": 1
+        }
+      ],
+      "receipt_proxy": true,
+      "inside_failure_proxy": false
+    },
+    {
+      "candidate_pair": "06_09",
+      "candidate_root_slot": "12",
+      "target_count": 60,
+      "hit_count": 60,
+      "missing_count": 0,
+      "coverage_full": true,
+      "local_delta_profile": {
+        "7": 1,
+        "8": 1,
+        "11": 1,
+        "12": 1,
+        "15": 7,
+        "16": 1,
+        "17": 1,
+        "19": 3,
+        "20": 1,
+        "21": 4,
+        "25": 3,
+        "26": 1,
+        "29": 4,
+        "30": 2,
+        "31": 4,
+        "34": 1,
+        "35": 3,
+        "39": 4,
+        "40": 1,
+        "41": 3,
+        "43": 1,
+        "44": 1,
+        "45": 7,
+        "48": 1,
+        "49": 1,
+        "52": 1,
+        "53": 1
+      },
+      "pair_counts": {
+        "06_09": 60
+      },
+      "root_slot_counts": {
+        "12": 60
+      },
+      "limit_counts": {
+        "23->24": 60
+      },
+      "package_kind_counts": {
+        "one_way_single_transition": 60
+      },
+      "support_counts": {
+        "true": 0,
+        "false": 60,
+        "count": 60
+      },
+      "boundary_carrier_counts": {
+        "true": 0,
+        "false": 60,
+        "count": 60
+      },
+      "zero_hit_counts": {
+        "true": 60,
+        "false": 0,
+        "count": 60
+      },
+      "delta_edge_hits_profile": {
+        "count": 60,
+        "min": 0,
+        "max": 0,
+        "sum": 0,
+        "distinct": [
+          0
+        ]
+      },
+      "internal_delta_hits_profile": {
+        "count": 60,
+        "min": 0,
+        "max": 0,
+        "sum": 0,
+        "distinct": [
+          0
+        ]
+      },
+      "missing_first_8": [],
+      "hits_first_8": [
+        {
+          "pair_key": "06_09",
+          "root_slot": "12",
+          "root_local": 40,
+          "root": "12:40",
+          "limit_transition": "23->24",
+          "package_kind": "one_way_single_transition",
+          "zero_hit": true,
+          "has_delta_support": false,
+          "has_boundary_carrier": false,
+          "delta_edge_hits_tokens": 0,
+          "internal_delta_hits_tokens": 0
+        },
+        {
+          "pair_key": "06_09",
+          "root_slot": "12",
+          "root_local": 50,
+          "root": "12:50",
+          "limit_transition": "23->24",
+          "package_kind": "one_way_single_transition",
+          "zero_hit": true,
+          "has_delta_support": false,
+          "has_boundary_carrier": false,
+          "delta_edge_hits_tokens": 0,
+          "internal_delta_hits_tokens": 0
+        },
+        {
+          "pair_key": "06_09",
+          "root_slot": "12",
+          "root_local": 10,
+          "root": "12:10",
+          "limit_transition": "23->24",
+          "package_kind": "one_way_single_transition",
+          "zero_hit": true,
+          "has_delta_support": false,
+          "has_boundary_carrier": false,
+          "delta_edge_hits_tokens": 0,
+          "internal_delta_hits_tokens": 0
+        },
+        {
+          "pair_key": "06_09",
+          "root_slot": "12",
+          "root_local": 20,
+          "root": "12:20",
+          "limit_transition": "23->24",
+          "package_kind": "one_way_single_transition",
+          "zero_hit": true,
+          "has_delta_support": false,
+          "has_boundary_carrier": false,
+          "delta_edge_hits_tokens": 0,
+          "internal_delta_hits_tokens": 0
+        },
+        {
+          "pair_key": "06_09",
+          "root_slot": "12",
+          "root_local": 30,
+          "root": "12:30",
+          "limit_transition": "23->24",
+          "package_kind": "one_way_single_transition",
+          "zero_hit": true,
+          "has_delta_support": false,
+          "has_boundary_carrier": false,
+          "delta_edge_hits_tokens": 0,
+          "internal_delta_hits_tokens": 0
+        },
+        {
+          "pair_key": "06_09",
+          "root_slot": "12",
+          "root_local": 35,
+          "root": "12:35",
+          "limit_transition": "23->24",
+          "package_kind": "one_way_single_transition",
+          "zero_hit": true,
+          "has_delta_support": false,
+          "has_boundary_carrier": false,
+          "delta_edge_hits_tokens": 0,
+          "internal_delta_hits_tokens": 0
+        },
+        {
+          "pair_key": "06_09",
+          "root_slot": "12",
+          "root_local": 45,
+          "root": "12:45",
+          "limit_transition": "23->24",
+          "package_kind": "one_way_single_transition",
+          "zero_hit": true,
+          "has_delta_support": false,
+          "has_boundary_carrier": false,
+          "delta_edge_hits_tokens": 0,
+          "internal_delta_hits_tokens": 0
+        },
+        {
+          "pair_key": "06_09",
+          "root_slot": "12",
+          "root_local": 55,
+          "root": "12:55",
+          "limit_transition": "23->24",
+          "package_kind": "one_way_single_transition",
+          "zero_hit": true,
+          "has_delta_support": false,
+          "has_boundary_carrier": false,
+          "delta_edge_hits_tokens": 0,
+          "internal_delta_hits_tokens": 0
+        }
+      ],
+      "receipt_proxy": false,
+      "inside_failure_proxy": true
+    }
+  ],
+  "all_candidate_summaries": [
+    {
+      "candidate_pair": "03_09",
+      "candidate_root_slot": "9",
+      "target_count": 60,
+      "hit_count": 60,
+      "missing_count": 0,
+      "coverage_full": true,
+      "local_delta_profile": {
+        "7": 1,
+        "8": 1,
+        "11": 1,
+        "12": 1,
+        "15": 7,
+        "16": 1,
+        "17": 1,
+        "19": 3,
+        "20": 1,
+        "21": 4,
+        "25": 3,
+        "26": 1,
+        "29": 4,
+        "30": 2,
+        "31": 4,
+        "34": 1,
+        "35": 3,
+        "39": 4,
+        "40": 1,
+        "41": 3,
+        "43": 1,
+        "44": 1,
+        "45": 7,
+        "48": 1,
+        "49": 1,
+        "52": 1,
+        "53": 1
+      },
+      "pair_counts": {
+        "03_09": 60
+      },
+      "root_slot_counts": {
+        "9": 60
+      },
+      "limit_counts": {
+        "23->24": 60
+      },
+      "package_kind_counts": {
+        "clean_reciprocal_pair_package": 60
+      },
+      "support_counts": {
+        "true": 60,
+        "false": 0,
+        "count": 60
+      },
+      "boundary_carrier_counts": {
+        "true": 60,
+        "false": 0,
+        "count": 60
+      },
+      "zero_hit_counts": {
+        "true": 0,
+        "false": 60,
+        "count": 60
+      },
+      "delta_edge_hits_profile": {
+        "count": 60,
+        "min": 1,
+        "max": 1,
+        "sum": 60,
+        "distinct": [
+          1
+        ]
+      },
+      "internal_delta_hits_profile": {
+        "count": 60,
+        "min": 1,
+        "max": 1,
+        "sum": 60,
+        "distinct": [
+          1
+        ]
+      },
+      "missing_first_8": [],
+      "hits_first_8": [
+        {
+          "pair_key": "03_09",
+          "root_slot": "9",
+          "root_local": 40,
+          "root": "9:40",
+          "limit_transition": "23->24",
+          "package_kind": "clean_reciprocal_pair_package",
+          "zero_hit": false,
+          "has_delta_support": true,
+          "has_boundary_carrier": true,
+          "delta_edge_hits_tokens": 1,
+          "internal_delta_hits_tokens": 1
+        },
+        {
+          "pair_key": "03_09",
+          "root_slot": "9",
+          "root_local": 50,
+          "root": "9:50",
+          "limit_transition": "23->24",
+          "package_kind": "clean_reciprocal_pair_package",
+          "zero_hit": false,
+          "has_delta_support": true,
+          "has_boundary_carrier": true,
+          "delta_edge_hits_tokens": 1,
+          "internal_delta_hits_tokens": 1
+        },
+        {
+          "pair_key": "03_09",
+          "root_slot": "9",
+          "root_local": 10,
+          "root": "9:10",
+          "limit_transition": "23->24",
+          "package_kind": "clean_reciprocal_pair_package",
+          "zero_hit": false,
+          "has_delta_support": true,
+          "has_boundary_carrier": true,
+          "delta_edge_hits_tokens": 1,
+          "internal_delta_hits_tokens": 1
+        },
+        {
+          "pair_key": "03_09",
+          "root_slot": "9",
+          "root_local": 20,
+          "root": "9:20",
+          "limit_transition": "23->24",
+          "package_kind": "clean_reciprocal_pair_package",
+          "zero_hit": false,
+          "has_delta_support": true,
+          "has_boundary_carrier": true,
+          "delta_edge_hits_tokens": 1,
+          "internal_delta_hits_tokens": 1
+        },
+        {
+          "pair_key": "03_09",
+          "root_slot": "9",
+          "root_local": 30,
+          "root": "9:30",
+          "limit_transition": "23->24",
+          "package_kind": "clean_reciprocal_pair_package",
+          "zero_hit": false,
+          "has_delta_support": true,
+          "has_boundary_carrier": true,
+          "delta_edge_hits_tokens": 1,
+          "internal_delta_hits_tokens": 1
+        },
+        {
+          "pair_key": "03_09",
+          "root_slot": "9",
+          "root_local": 35,
+          "root": "9:35",
+          "limit_transition": "23->24",
+          "package_kind": "clean_reciprocal_pair_package",
+          "zero_hit": false,
+          "has_delta_support": true,
+          "has_boundary_carrier": true,
+          "delta_edge_hits_tokens": 1,
+          "internal_delta_hits_tokens": 1
+        },
+        {
+          "pair_key": "03_09",
+          "root_slot": "9",
+          "root_local": 45,
+          "root": "9:45",
+          "limit_transition": "23->24",
+          "package_kind": "clean_reciprocal_pair_package",
+          "zero_hit": false,
+          "has_delta_support": true,
+          "has_boundary_carrier": true,
+          "delta_edge_hits_tokens": 1,
+          "internal_delta_hits_tokens": 1
+        },
+        {
+          "pair_key": "03_09",
+          "root_slot": "9",
+          "root_local": 55,
+          "root": "9:55",
+          "limit_transition": "23->24",
+          "package_kind": "clean_reciprocal_pair_package",
+          "zero_hit": false,
+          "has_delta_support": true,
+          "has_boundary_carrier": true,
+          "delta_edge_hits_tokens": 1,
+          "internal_delta_hits_tokens": 1
+        }
+      ],
+      "receipt_proxy": true,
+      "inside_failure_proxy": false
+    },
+    {
+      "candidate_pair": "06_09",
+      "candidate_root_slot": "12",
+      "target_count": 60,
+      "hit_count": 60,
+      "missing_count": 0,
+      "coverage_full": true,
+      "local_delta_profile": {
+        "7": 1,
+        "8": 1,
+        "11": 1,
+        "12": 1,
+        "15": 7,
+        "16": 1,
+        "17": 1,
+        "19": 3,
+        "20": 1,
+        "21": 4,
+        "25": 3,
+        "26": 1,
+        "29": 4,
+        "30": 2,
+        "31": 4,
+        "34": 1,
+        "35": 3,
+        "39": 4,
+        "40": 1,
+        "41": 3,
+        "43": 1,
+        "44": 1,
+        "45": 7,
+        "48": 1,
+        "49": 1,
+        "52": 1,
+        "53": 1
+      },
+      "pair_counts": {
+        "06_09": 60
+      },
+      "root_slot_counts": {
+        "12": 60
+      },
+      "limit_counts": {
+        "23->24": 60
+      },
+      "package_kind_counts": {
+        "one_way_single_transition": 60
+      },
+      "support_counts": {
+        "true": 0,
+        "false": 60,
+        "count": 60
+      },
+      "boundary_carrier_counts": {
+        "true": 0,
+        "false": 60,
+        "count": 60
+      },
+      "zero_hit_counts": {
+        "true": 60,
+        "false": 0,
+        "count": 60
+      },
+      "delta_edge_hits_profile": {
+        "count": 60,
+        "min": 0,
+        "max": 0,
+        "sum": 0,
+        "distinct": [
+          0
+        ]
+      },
+      "internal_delta_hits_profile": {
+        "count": 60,
+        "min": 0,
+        "max": 0,
+        "sum": 0,
+        "distinct": [
+          0
+        ]
+      },
+      "missing_first_8": [],
+      "hits_first_8": [
+        {
+          "pair_key": "06_09",
+          "root_slot": "12",
+          "root_local": 40,
+          "root": "12:40",
+          "limit_transition": "23->24",
+          "package_kind": "one_way_single_transition",
+          "zero_hit": true,
+          "has_delta_support": false,
+          "has_boundary_carrier": false,
+          "delta_edge_hits_tokens": 0,
+          "internal_delta_hits_tokens": 0
+        },
+        {
+          "pair_key": "06_09",
+          "root_slot": "12",
+          "root_local": 50,
+          "root": "12:50",
+          "limit_transition": "23->24",
+          "package_kind": "one_way_single_transition",
+          "zero_hit": true,
+          "has_delta_support": false,
+          "has_boundary_carrier": false,
+          "delta_edge_hits_tokens": 0,
+          "internal_delta_hits_tokens": 0
+        },
+        {
+          "pair_key": "06_09",
+          "root_slot": "12",
+          "root_local": 10,
+          "root": "12:10",
+          "limit_transition": "23->24",
+          "package_kind": "one_way_single_transition",
+          "zero_hit": true,
+          "has_delta_support": false,
+          "has_boundary_carrier": false,
+          "delta_edge_hits_tokens": 0,
+          "internal_delta_hits_tokens": 0
+        },
+        {
+          "pair_key": "06_09",
+          "root_slot": "12",
+          "root_local": 20,
+          "root": "12:20",
+          "limit_transition": "23->24",
+          "package_kind": "one_way_single_transition",
+          "zero_hit": true,
+          "has_delta_support": false,
+          "has_boundary_carrier": false,
+          "delta_edge_hits_tokens": 0,
+          "internal_delta_hits_tokens": 0
+        },
+        {
+          "pair_key": "06_09",
+          "root_slot": "12",
+          "root_local": 30,
+          "root": "12:30",
+          "limit_transition": "23->24",
+          "package_kind": "one_way_single_transition",
+          "zero_hit": true,
+          "has_delta_support": false,
+          "has_boundary_carrier": false,
+          "delta_edge_hits_tokens": 0,
+          "internal_delta_hits_tokens": 0
+        },
+        {
+          "pair_key": "06_09",
+          "root_slot": "12",
+          "root_local": 35,
+          "root": "12:35",
+          "limit_transition": "23->24",
+          "package_kind": "one_way_single_transition",
+          "zero_hit": true,
+          "has_delta_support": false,
+          "has_boundary_carrier": false,
+          "delta_edge_hits_tokens": 0,
+          "internal_delta_hits_tokens": 0
+        },
+        {
+          "pair_key": "06_09",
+          "root_slot": "12",
+          "root_local": 45,
+          "root": "12:45",
+          "limit_transition": "23->24",
+          "package_kind": "one_way_single_transition",
+          "zero_hit": true,
+          "has_delta_support": false,
+          "has_boundary_carrier": false,
+          "delta_edge_hits_tokens": 0,
+          "internal_delta_hits_tokens": 0
+        },
+        {
+          "pair_key": "06_09",
+          "root_slot": "12",
+          "root_local": 55,
+          "root": "12:55",
+          "limit_transition": "23->24",
+          "package_kind": "one_way_single_transition",
+          "zero_hit": true,
+          "has_delta_support": false,
+          "has_boundary_carrier": false,
+          "delta_edge_hits_tokens": 0,
+          "internal_delta_hits_tokens": 0
+        }
+      ],
+      "receipt_proxy": false,
+      "inside_failure_proxy": true
+    }
+  ],
+  "interpretation_boundary": [
+    "This audit shows uniqueness inside the tested true-antipode outside-return candidate universe.",
+    "It does not yet derive the answering fork from a deeper native law.",
+    "A receipt proxy is not an admitted closure witness, transport relation, or channel.",
+    "No force, physics, GR, Maxwell, QCD, electroweak, or unification claim is made."
+  ],
+  "boundary": {
+    "answering_outside_fork_audit_only": true,
+    "admits_closure_witness": false,
+    "admits_transport_relation": false,
+    "admits_channel": false,
+    "marker_lighting": false,
+    "viewer_change": false,
+    "body_mutation": false,
+    "force_claim": false,
+    "physics_claim": false,
+    "gr_claim": false,
+    "maxwell_claim": false,
+    "qcd_claim": false,
+    "electroweak_claim": false,
+    "unification_claim": false
+  },
+  "next_allowed_math_acts": [
+    "derive_03_09_root_slot_9_from_native_fork_law",
+    "test_5_3_4_chamber_signature_near_answering_fork",
+    "transport_relation_admission_criterion_001"
+  ],
+  "checks": {
+    "inside_outside_prior_valid": true,
+    "inside_outside_prior_status": true,
+    "true_antipode_prior_valid": true,
+    "true_antipode_prior_status": true,
+    "sheet_wrap_prior_valid": true,
+    "two_route_prior_valid": true,
+    "support_rows_present": true,
+    "target_rows_60": true,
+    "candidate_frames_present": true,
+    "selector_status_recorded": true,
+    "channel_registry_preserved": true,
+    "renderer_absent": true,
+    "no_forbidden_claims": true
+  },
+  "failed_checks": [],
+  "hashes": {
+    "inside_outside_prior_sha256": "1a31a0614d3286a64ee9a348f354e6fe10198f925973cfa2917d3cf449962307",
+    "true_antipode_prior_sha256": "b6087c9a0f31e01ef1fa1557718584d3af817f04e64ee00b902e9ac900dd679c",
+    "sheet_wrap_prior_sha256": "f27b04b1e6efc3346ca62fe33a9cba5e665d7135af4bc7e9068d46f5db6a4fe2",
+    "two_route_prior_sha256": "286f2da94122551cd79cc3bd1992ab0fde67dc76f13c65a2547cde181d5e43d5",
+    "steps_csv_sha256": "40466b974be84ee5ff7bae97a5077a98d15483e80367422c6d717edf59ee630d",
+    "channels_sha256": "fbe4c50e0adf3460f7190f3c7714754da8a620359a5bc26c70543cc401feca08",
+    "body_sha256": "6a2cb6b9892a78d4559ec61cf946b0021962cc6819311234b8bf14102b3b7f63",
+    "lab_sha256": "5a10a18bc6563446a0d364d5984b8a41db580e0a75831c82b9eeb5aebc2edeb7"
+  }
+}

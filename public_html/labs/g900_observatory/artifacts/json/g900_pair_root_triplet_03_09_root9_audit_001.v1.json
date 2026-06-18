@@ -1,0 +1,408 @@
+{
+  "schema": "g900.pair_root_triplet_03_09_root9_audit",
+  "version": 1,
+  "status": "pair_root_triplet_03_09_root9_audit_recorded",
+  "created_utc": "2026-06-18T09:21:07Z",
+  "git_head": "bf1d1a4 Audit G900 registry admission condition",
+  "audit_pass": true,
+  "verdict": "pair_root_triplet_03_09_root9_audit_passed",
+  "question": "Why is 03_09 root_slot 9 a registry-admitted home while 03_06 root_slot 6 is absent?",
+  "triplet_status": "03_09_root9_unique_clean_triplet_home",
+  "reading": "The registry admits 03_09 root_slot 9 as a unique three-limit pair-root home at 3->4, 12->13, and 23->24. All three full frames are clean receipt-like frames. Pair 03_09 appears only with root_slot 9, and root_slot 9 appears only with pair 03_09. By contrast, 03_06 root_slot 6 has no pair-root home, and neither pair 03_06 nor root_slot 6 appears in the full registry.",
+  "target_pair_root_home": {
+    "pair_root": [
+      "03_09",
+      "9"
+    ],
+    "frame_count": 3,
+    "limits": [
+      "3->4",
+      "12->13",
+      "23->24"
+    ],
+    "limit_gap_summary": {
+      "starts": [
+        3,
+        12,
+        23
+      ],
+      "gaps": [
+        9,
+        11
+      ]
+    },
+    "expected_limits": [
+      "3->4",
+      "12->13",
+      "23->24"
+    ],
+    "triplet_exists": true,
+    "unique_max_pair_root_group": true,
+    "pair_only_with_this_root": true,
+    "root_only_with_this_pair": true,
+    "all_frames_clean_receipt_like": true,
+    "frames": [
+      {
+        "frame": [
+          "03_09",
+          "9",
+          "3->4"
+        ],
+        "summary": {
+          "row_count": 60,
+          "full_frame_exists": true,
+          "package_kind_counts": {
+            "clean_reciprocal_pair_package": 60
+          },
+          "support_counts": {
+            "true": 60,
+            "false": 0,
+            "count": 60
+          },
+          "boundary_carrier_counts": {
+            "true": 60,
+            "false": 0,
+            "count": 60
+          },
+          "zero_hit_counts": {
+            "true": 0,
+            "false": 60,
+            "count": 60
+          },
+          "delta_edge_hits_profile": {
+            "count": 60,
+            "min": 1,
+            "max": 1,
+            "sum": 60,
+            "distinct": [
+              1
+            ]
+          },
+          "internal_delta_hits_profile": {
+            "count": 60,
+            "min": 1,
+            "max": 1,
+            "sum": 60,
+            "distinct": [
+              1
+            ]
+          }
+        },
+        "clean_receipt_like": true
+      },
+      {
+        "frame": [
+          "03_09",
+          "9",
+          "12->13"
+        ],
+        "summary": {
+          "row_count": 60,
+          "full_frame_exists": true,
+          "package_kind_counts": {
+            "clean_reciprocal_pair_package": 60
+          },
+          "support_counts": {
+            "true": 60,
+            "false": 0,
+            "count": 60
+          },
+          "boundary_carrier_counts": {
+            "true": 60,
+            "false": 0,
+            "count": 60
+          },
+          "zero_hit_counts": {
+            "true": 0,
+            "false": 60,
+            "count": 60
+          },
+          "delta_edge_hits_profile": {
+            "count": 60,
+            "min": 1,
+            "max": 1,
+            "sum": 60,
+            "distinct": [
+              1
+            ]
+          },
+          "internal_delta_hits_profile": {
+            "count": 60,
+            "min": 1,
+            "max": 1,
+            "sum": 60,
+            "distinct": [
+              1
+            ]
+          }
+        },
+        "clean_receipt_like": true
+      },
+      {
+        "frame": [
+          "03_09",
+          "9",
+          "23->24"
+        ],
+        "summary": {
+          "row_count": 60,
+          "full_frame_exists": true,
+          "package_kind_counts": {
+            "clean_reciprocal_pair_package": 60
+          },
+          "support_counts": {
+            "true": 60,
+            "false": 0,
+            "count": 60
+          },
+          "boundary_carrier_counts": {
+            "true": 60,
+            "false": 0,
+            "count": 60
+          },
+          "zero_hit_counts": {
+            "true": 0,
+            "false": 60,
+            "count": 60
+          },
+          "delta_edge_hits_profile": {
+            "count": 60,
+            "min": 1,
+            "max": 1,
+            "sum": 60,
+            "distinct": [
+              1
+            ]
+          },
+          "internal_delta_hits_profile": {
+            "count": 60,
+            "min": 1,
+            "max": 1,
+            "sum": 60,
+            "distinct": [
+              1
+            ]
+          }
+        },
+        "clean_receipt_like": true
+      }
+    ]
+  },
+  "nonanswer_pair_root_home": {
+    "pair_root": [
+      "03_06",
+      "6"
+    ],
+    "frame_count": 0,
+    "frames": [],
+    "pair_root_absent": true,
+    "pair_absent": true,
+    "root_absent": true
+  },
+  "registry_census": {
+    "total_row_count": 1440,
+    "frame_count": 31,
+    "full_frame_count": 17,
+    "pair_root_group_count": 10,
+    "pair_root_counts": {
+      "02_03|3": 2,
+      "02_08|8": 2,
+      "03_09|9": 3,
+      "05_10|10": 2,
+      "05_14|14": 2,
+      "06_09|12": 1,
+      "06_12|12": 1,
+      "06_13|13": 2,
+      "07_11|11": 1,
+      "09_12|12": 1
+    },
+    "max_pair_root_count": 3,
+    "max_pair_root_groups": [
+      [
+        "03_09",
+        "9"
+      ]
+    ],
+    "full_pairs": {
+      "02_03": 2,
+      "02_08": 2,
+      "03_09": 3,
+      "05_10": 2,
+      "05_14": 2,
+      "06_09": 1,
+      "06_12": 1,
+      "06_13": 2,
+      "07_11": 1,
+      "09_12": 1
+    },
+    "full_root_slots": {
+      "3": 2,
+      "8": 2,
+      "9": 3,
+      "10": 2,
+      "11": 1,
+      "12": 3,
+      "13": 2,
+      "14": 2
+    },
+    "full_limits": {
+      "12->13": 1,
+      "16->17": 1,
+      "2->3": 1,
+      "23->24": 2,
+      "24->25": 2,
+      "3->4": 3,
+      "31->32": 1,
+      "32->33": 1,
+      "38->39": 1,
+      "4->5": 3,
+      "5->6": 1
+    },
+    "full_frames": [
+      [
+        "02_03",
+        "3",
+        "2->3"
+      ],
+      [
+        "02_03",
+        "3",
+        "16->17"
+      ],
+      [
+        "02_08",
+        "8",
+        "3->4"
+      ],
+      [
+        "02_08",
+        "8",
+        "24->25"
+      ],
+      [
+        "03_09",
+        "9",
+        "3->4"
+      ],
+      [
+        "03_09",
+        "9",
+        "12->13"
+      ],
+      [
+        "03_09",
+        "9",
+        "23->24"
+      ],
+      [
+        "05_10",
+        "10",
+        "3->4"
+      ],
+      [
+        "05_10",
+        "10",
+        "24->25"
+      ],
+      [
+        "05_14",
+        "14",
+        "5->6"
+      ],
+      [
+        "05_14",
+        "14",
+        "38->39"
+      ],
+      [
+        "06_09",
+        "12",
+        "23->24"
+      ],
+      [
+        "06_12",
+        "12",
+        "4->5"
+      ],
+      [
+        "06_13",
+        "13",
+        "4->5"
+      ],
+      [
+        "06_13",
+        "13",
+        "31->32"
+      ],
+      [
+        "07_11",
+        "11",
+        "4->5"
+      ],
+      [
+        "09_12",
+        "12",
+        "32->33"
+      ]
+    ]
+  },
+  "interpretation_boundary": [
+    "This is a registry triplet inspection over observed full support-table frames.",
+    "It records that 03_09/root_slot 9 is a unique clean three-limit pair-root home.",
+    "It does not derive why the full registry admits that home.",
+    "No closure witness, transport relation, channel, force, physics, GR, Maxwell, QCD, electroweak, or unification claim is made."
+  ],
+  "boundary": {
+    "pair_root_triplet_inspection_only": true,
+    "full_native_derivation": false,
+    "admits_closure_witness": false,
+    "admits_transport_relation": false,
+    "admits_channel": false,
+    "marker_lighting": false,
+    "viewer_change": false,
+    "body_mutation": false,
+    "force_claim": false,
+    "physics_claim": false,
+    "gr_claim": false,
+    "maxwell_claim": false,
+    "qcd_claim": false,
+    "electroweak_claim": false,
+    "unification_claim": false
+  },
+  "next_allowed_math_acts": [
+    "derive_03_09_root9_triplet_from_source_construction",
+    "inspect_limit_triplet_3_4_12_13_23_24_spacing",
+    "test_5_3_4_chamber_signature_near_answering_fork",
+    "transport_relation_admission_criterion_001"
+  ],
+  "checks": {
+    "admission_prior_valid": true,
+    "admission_prior_status": true,
+    "registry_prior_valid": true,
+    "nearest_prior_valid": true,
+    "support_rows_present": true,
+    "target_triplet_exists": true,
+    "target_pair_root_count_three": true,
+    "target_pair_root_unique_max": true,
+    "target_all_clean_receipt": true,
+    "target_pair_only_root9": true,
+    "target_root9_only_pair03_09": true,
+    "nonanswer_pair_root_absent": true,
+    "nonanswer_pair_absent": true,
+    "nonanswer_root_absent": true,
+    "triplet_status_recorded": true,
+    "channel_registry_preserved": true,
+    "renderer_absent": true,
+    "no_forbidden_claims": true
+  },
+  "failed_checks": [],
+  "hashes": {
+    "admission_prior_sha256": "decd1ac0c7b4a3574552d4f8640584934815d74d087c72ffea53bab2eac7207a",
+    "registry_prior_sha256": "9d9bb93093a7396e4252e883f3ffef9cc39b68e2735f9f2f30ed6c2589e323b2",
+    "nearest_prior_sha256": "32455e33001e1aba288dc5edaf30290e021b242ba98feb046d7d0904da2a1e2e",
+    "steps_csv_sha256": "40466b974be84ee5ff7bae97a5077a98d15483e80367422c6d717edf59ee630d",
+    "channels_sha256": "fbe4c50e0adf3460f7190f3c7714754da8a620359a5bc26c70543cc401feca08",
+    "body_sha256": "6a2cb6b9892a78d4559ec61cf946b0021962cc6819311234b8bf14102b3b7f63",
+    "lab_sha256": "5a10a18bc6563446a0d364d5984b8a41db580e0a75831c82b9eeb5aebc2edeb7"
+  }
+}

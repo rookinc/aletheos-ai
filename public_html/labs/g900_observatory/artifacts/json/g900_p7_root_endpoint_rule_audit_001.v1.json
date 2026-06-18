@@ -1,0 +1,256 @@
+{
+  "schema": "g900.p7_root_endpoint_rule_audit",
+  "version": 1,
+  "status": "p7_root_endpoint_rule_audit_passed",
+  "created_utc": "2026-06-18T01:04:16Z",
+  "audit_pass": true,
+  "question": "Is the P7 root-12 return pocket forced by endpoint structure rather than only visible from full60 source rows?",
+  "p7_path": {
+    "path_order": [
+      "08",
+      "02",
+      "03",
+      "09",
+      "12",
+      "06",
+      "13"
+    ],
+    "path_pairs": [
+      "02_08",
+      "02_03",
+      "03_09",
+      "09_12",
+      "06_12",
+      "06_13"
+    ],
+    "weights": [
+      180,
+      180,
+      180,
+      60,
+      120,
+      180
+    ],
+    "package_kinds": [
+      "clean_reciprocal_pair_package",
+      "clean_reciprocal_pair_package",
+      "clean_reciprocal_pair_package",
+      "one_way_single_transition",
+      "two_transition_pair_package",
+      "clean_reciprocal_pair_package"
+    ],
+    "winning_blocks": [
+      [
+        "02_08",
+        "02_03"
+      ],
+      [
+        "03_09"
+      ],
+      [
+        "09_12",
+        "06_12",
+        "06_13"
+      ]
+    ]
+  },
+  "rows": [
+    {
+      "path_index": 0,
+      "pair": "02_08",
+      "path_left": "08",
+      "path_right": "02",
+      "low_endpoint": "02",
+      "high_endpoint": "08",
+      "observed_dominant_root": "08",
+      "high_endpoint_match": true,
+      "low_endpoint_match": false,
+      "path_left_match": true,
+      "path_right_match": false,
+      "weight": 180,
+      "package_kind": "clean_reciprocal_pair_package",
+      "transition_len": 3,
+      "block": "left_wing"
+    },
+    {
+      "path_index": 1,
+      "pair": "02_03",
+      "path_left": "02",
+      "path_right": "03",
+      "low_endpoint": "02",
+      "high_endpoint": "03",
+      "observed_dominant_root": "03",
+      "high_endpoint_match": true,
+      "low_endpoint_match": false,
+      "path_left_match": false,
+      "path_right_match": true,
+      "weight": 180,
+      "package_kind": "clean_reciprocal_pair_package",
+      "transition_len": 3,
+      "block": "left_wing"
+    },
+    {
+      "path_index": 2,
+      "pair": "03_09",
+      "path_left": "03",
+      "path_right": "09",
+      "low_endpoint": "03",
+      "high_endpoint": "09",
+      "observed_dominant_root": "09",
+      "high_endpoint_match": true,
+      "low_endpoint_match": false,
+      "path_left_match": false,
+      "path_right_match": true,
+      "weight": 180,
+      "package_kind": "clean_reciprocal_pair_package",
+      "transition_len": 3,
+      "block": "hinge"
+    },
+    {
+      "path_index": 3,
+      "pair": "09_12",
+      "path_left": "09",
+      "path_right": "12",
+      "low_endpoint": "09",
+      "high_endpoint": "12",
+      "observed_dominant_root": "12",
+      "high_endpoint_match": true,
+      "low_endpoint_match": false,
+      "path_left_match": false,
+      "path_right_match": true,
+      "weight": 60,
+      "package_kind": "one_way_single_transition",
+      "transition_len": 1,
+      "block": "right_wing"
+    },
+    {
+      "path_index": 4,
+      "pair": "06_12",
+      "path_left": "12",
+      "path_right": "06",
+      "low_endpoint": "06",
+      "high_endpoint": "12",
+      "observed_dominant_root": "12",
+      "high_endpoint_match": true,
+      "low_endpoint_match": false,
+      "path_left_match": true,
+      "path_right_match": false,
+      "weight": 120,
+      "package_kind": "two_transition_pair_package",
+      "transition_len": 2,
+      "block": "right_wing"
+    },
+    {
+      "path_index": 5,
+      "pair": "06_13",
+      "path_left": "06",
+      "path_right": "13",
+      "low_endpoint": "06",
+      "high_endpoint": "13",
+      "observed_dominant_root": "13",
+      "high_endpoint_match": true,
+      "low_endpoint_match": false,
+      "path_left_match": false,
+      "path_right_match": true,
+      "weight": 180,
+      "package_kind": "clean_reciprocal_pair_package",
+      "transition_len": 3,
+      "block": "right_wing"
+    }
+  ],
+  "rule_profiles": {
+    "high_endpoint": {
+      "match_count": 6,
+      "matches_all": true
+    },
+    "low_endpoint": {
+      "match_count": 0,
+      "matches_all": false
+    },
+    "path_left": {
+      "match_count": 2,
+      "matches_all": false
+    },
+    "path_right": {
+      "match_count": 4,
+      "matches_all": false
+    }
+  },
+  "summary": {
+    "observed_root_sequence": [
+      "08",
+      "03",
+      "09",
+      "12",
+      "12",
+      "13"
+    ],
+    "high_endpoint_sequence": [
+      "08",
+      "03",
+      "09",
+      "12",
+      "12",
+      "13"
+    ],
+    "high_endpoint_predicts_all": true,
+    "high_endpoint_repeats": [
+      {
+        "root": "12",
+        "indices": [
+          3,
+          4
+        ],
+        "pairs": [
+          "09_12",
+          "06_12"
+        ]
+      }
+    ],
+    "root12_pairs_by_high_endpoint": [
+      "09_12",
+      "06_12"
+    ],
+    "root12_pairs_by_observed": [
+      "09_12",
+      "06_12"
+    ],
+    "right_wing_nonclean_pairs": [
+      "09_12",
+      "06_12"
+    ],
+    "channel_count": 0
+  },
+  "interpretation": {
+    "dominant_root_is_high_endpoint_on_p7": true,
+    "root12_pocket_is_endpoint_forced_on_p7": true,
+    "unique_repeated_high_endpoint": "12",
+    "not_channel": true,
+    "next_problem": "Test whether the high-endpoint rule persists beyond P7 or is local to this path component."
+  },
+  "checks": {
+    "provenance_audit_passed": true,
+    "rhythm_audit_passed": true,
+    "uniqueness_audit_passed": true,
+    "channel_registry_zero_count": true,
+    "channels_not_admitted": true,
+    "p7_row_count_6": true,
+    "path_pairs_match": true,
+    "high_endpoint_predicts_all_dominant_roots": true,
+    "observed_root_sequence_matches_high_endpoint_sequence": true,
+    "unique_repeated_high_endpoint_is_12": true,
+    "root12_pairs_equal_right_nonclean_pairs": true,
+    "root12_pairs_are_nonclean": true
+  },
+  "failed_checks": [],
+  "boundary": {
+    "endpoint_rule_audit_only": true,
+    "scope": "P7 path only",
+    "admits_channels": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "marker_lighting": false,
+    "force_claim": false,
+    "physics_claim": false
+  }
+}

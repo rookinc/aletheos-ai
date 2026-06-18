@@ -1,0 +1,428 @@
+{
+  "schema": "g900.hit_forest_root_endpoint_rule_scope_audit",
+  "version": 1,
+  "status": "hit_forest_root_endpoint_rule_scope_audit_passed",
+  "created_utc": "2026-06-18T01:06:06Z",
+  "audit_pass": true,
+  "question": "Does the P7 high-endpoint dominant-root rule persist across P3 and P2, or is it local to P7?",
+  "verdict": "high_endpoint_rule_persists_across_hit_forest",
+  "components": [
+    {
+      "component": "P7",
+      "slot_count": 7,
+      "path_order": [
+        "08",
+        "02",
+        "03",
+        "09",
+        "12",
+        "06",
+        "13"
+      ],
+      "path_pairs": [
+        "02_08",
+        "02_03",
+        "03_09",
+        "09_12",
+        "06_12",
+        "06_13"
+      ],
+      "edge_count": 6,
+      "rows": [
+        {
+          "component": "P7",
+          "component_slot_count": 7,
+          "path_index": 0,
+          "pair": "02_08",
+          "path_left": "08",
+          "path_right": "02",
+          "low_endpoint": "02",
+          "high_endpoint": "08",
+          "observed_dominant_root": "08",
+          "root_slot_keys": [
+            "08"
+          ],
+          "high_endpoint_match": true,
+          "low_endpoint_match": false,
+          "path_left_match": true,
+          "path_right_match": false,
+          "package_kind": "clean_reciprocal_pair_package",
+          "weight": 180,
+          "transition_len": 3,
+          "has_package": true
+        },
+        {
+          "component": "P7",
+          "component_slot_count": 7,
+          "path_index": 1,
+          "pair": "02_03",
+          "path_left": "02",
+          "path_right": "03",
+          "low_endpoint": "02",
+          "high_endpoint": "03",
+          "observed_dominant_root": "03",
+          "root_slot_keys": [
+            "03"
+          ],
+          "high_endpoint_match": true,
+          "low_endpoint_match": false,
+          "path_left_match": false,
+          "path_right_match": true,
+          "package_kind": "clean_reciprocal_pair_package",
+          "weight": 180,
+          "transition_len": 3,
+          "has_package": true
+        },
+        {
+          "component": "P7",
+          "component_slot_count": 7,
+          "path_index": 2,
+          "pair": "03_09",
+          "path_left": "03",
+          "path_right": "09",
+          "low_endpoint": "03",
+          "high_endpoint": "09",
+          "observed_dominant_root": "09",
+          "root_slot_keys": [
+            "09"
+          ],
+          "high_endpoint_match": true,
+          "low_endpoint_match": false,
+          "path_left_match": false,
+          "path_right_match": true,
+          "package_kind": "clean_reciprocal_pair_package",
+          "weight": 180,
+          "transition_len": 3,
+          "has_package": true
+        },
+        {
+          "component": "P7",
+          "component_slot_count": 7,
+          "path_index": 3,
+          "pair": "09_12",
+          "path_left": "09",
+          "path_right": "12",
+          "low_endpoint": "09",
+          "high_endpoint": "12",
+          "observed_dominant_root": "12",
+          "root_slot_keys": [
+            "12"
+          ],
+          "high_endpoint_match": true,
+          "low_endpoint_match": false,
+          "path_left_match": false,
+          "path_right_match": true,
+          "package_kind": "one_way_single_transition",
+          "weight": 60,
+          "transition_len": 1,
+          "has_package": true
+        },
+        {
+          "component": "P7",
+          "component_slot_count": 7,
+          "path_index": 4,
+          "pair": "06_12",
+          "path_left": "12",
+          "path_right": "06",
+          "low_endpoint": "06",
+          "high_endpoint": "12",
+          "observed_dominant_root": "12",
+          "root_slot_keys": [
+            "12"
+          ],
+          "high_endpoint_match": true,
+          "low_endpoint_match": false,
+          "path_left_match": true,
+          "path_right_match": false,
+          "package_kind": "two_transition_pair_package",
+          "weight": 120,
+          "transition_len": 2,
+          "has_package": true
+        },
+        {
+          "component": "P7",
+          "component_slot_count": 7,
+          "path_index": 5,
+          "pair": "06_13",
+          "path_left": "06",
+          "path_right": "13",
+          "low_endpoint": "06",
+          "high_endpoint": "13",
+          "observed_dominant_root": "13",
+          "root_slot_keys": [
+            "13"
+          ],
+          "high_endpoint_match": true,
+          "low_endpoint_match": false,
+          "path_left_match": false,
+          "path_right_match": true,
+          "package_kind": "clean_reciprocal_pair_package",
+          "weight": 180,
+          "transition_len": 3,
+          "has_package": true
+        }
+      ],
+      "observed_root_sequence": [
+        "08",
+        "03",
+        "09",
+        "12",
+        "12",
+        "13"
+      ],
+      "high_endpoint_sequence": [
+        "08",
+        "03",
+        "09",
+        "12",
+        "12",
+        "13"
+      ],
+      "package_kind_sequence": [
+        "clean_reciprocal_pair_package",
+        "clean_reciprocal_pair_package",
+        "clean_reciprocal_pair_package",
+        "one_way_single_transition",
+        "two_transition_pair_package",
+        "clean_reciprocal_pair_package"
+      ],
+      "weight_sequence": [
+        180,
+        180,
+        180,
+        60,
+        120,
+        180
+      ],
+      "transition_len_sequence": [
+        3,
+        3,
+        3,
+        1,
+        2,
+        3
+      ],
+      "rule_profile": {
+        "high_endpoint_match_count": 6,
+        "high_endpoint_matches_all": true,
+        "low_endpoint_match_count": 0,
+        "low_endpoint_matches_all": false,
+        "path_left_match_count": 2,
+        "path_left_matches_all": false,
+        "path_right_match_count": 4,
+        "path_right_matches_all": false
+      },
+      "repeated_high_endpoints": [
+        {
+          "root": "12",
+          "indices": [
+            3,
+            4
+          ],
+          "pairs": [
+            "09_12",
+            "06_12"
+          ]
+        }
+      ]
+    },
+    {
+      "component": "P3",
+      "slot_count": 3,
+      "path_order": [
+        "10",
+        "05",
+        "14"
+      ],
+      "path_pairs": [
+        "05_10",
+        "05_14"
+      ],
+      "edge_count": 2,
+      "rows": [
+        {
+          "component": "P3",
+          "component_slot_count": 3,
+          "path_index": 0,
+          "pair": "05_10",
+          "path_left": "10",
+          "path_right": "05",
+          "low_endpoint": "05",
+          "high_endpoint": "10",
+          "observed_dominant_root": "10",
+          "root_slot_keys": [
+            "10"
+          ],
+          "high_endpoint_match": true,
+          "low_endpoint_match": false,
+          "path_left_match": true,
+          "path_right_match": false,
+          "package_kind": "clean_reciprocal_pair_package",
+          "weight": 180,
+          "transition_len": 3,
+          "has_package": true
+        },
+        {
+          "component": "P3",
+          "component_slot_count": 3,
+          "path_index": 1,
+          "pair": "05_14",
+          "path_left": "05",
+          "path_right": "14",
+          "low_endpoint": "05",
+          "high_endpoint": "14",
+          "observed_dominant_root": "14",
+          "root_slot_keys": [
+            "14"
+          ],
+          "high_endpoint_match": true,
+          "low_endpoint_match": false,
+          "path_left_match": false,
+          "path_right_match": true,
+          "package_kind": "clean_reciprocal_pair_package",
+          "weight": 180,
+          "transition_len": 3,
+          "has_package": true
+        }
+      ],
+      "observed_root_sequence": [
+        "10",
+        "14"
+      ],
+      "high_endpoint_sequence": [
+        "10",
+        "14"
+      ],
+      "package_kind_sequence": [
+        "clean_reciprocal_pair_package",
+        "clean_reciprocal_pair_package"
+      ],
+      "weight_sequence": [
+        180,
+        180
+      ],
+      "transition_len_sequence": [
+        3,
+        3
+      ],
+      "rule_profile": {
+        "high_endpoint_match_count": 2,
+        "high_endpoint_matches_all": true,
+        "low_endpoint_match_count": 0,
+        "low_endpoint_matches_all": false,
+        "path_left_match_count": 1,
+        "path_left_matches_all": false,
+        "path_right_match_count": 1,
+        "path_right_matches_all": false
+      },
+      "repeated_high_endpoints": []
+    },
+    {
+      "component": "P2",
+      "slot_count": 2,
+      "path_order": [
+        "07",
+        "11"
+      ],
+      "path_pairs": [
+        "07_11"
+      ],
+      "edge_count": 1,
+      "rows": [
+        {
+          "component": "P2",
+          "component_slot_count": 2,
+          "path_index": 0,
+          "pair": "07_11",
+          "path_left": "07",
+          "path_right": "11",
+          "low_endpoint": "07",
+          "high_endpoint": "11",
+          "observed_dominant_root": "11",
+          "root_slot_keys": [
+            "11"
+          ],
+          "high_endpoint_match": true,
+          "low_endpoint_match": false,
+          "path_left_match": false,
+          "path_right_match": true,
+          "package_kind": "two_transition_pair_package",
+          "weight": 130,
+          "transition_len": 2,
+          "has_package": true
+        }
+      ],
+      "observed_root_sequence": [
+        "11"
+      ],
+      "high_endpoint_sequence": [
+        "11"
+      ],
+      "package_kind_sequence": [
+        "two_transition_pair_package"
+      ],
+      "weight_sequence": [
+        130
+      ],
+      "transition_len_sequence": [
+        2
+      ],
+      "rule_profile": {
+        "high_endpoint_match_count": 1,
+        "high_endpoint_matches_all": true,
+        "low_endpoint_match_count": 0,
+        "low_endpoint_matches_all": false,
+        "path_left_match_count": 0,
+        "path_left_matches_all": false,
+        "path_right_match_count": 1,
+        "path_right_matches_all": true
+      },
+      "repeated_high_endpoints": []
+    }
+  ],
+  "summary": {
+    "component_count": 3,
+    "component_match_profile": {
+      "P7": true,
+      "P3": true,
+      "P2": true
+    },
+    "components_high_endpoint_all": [
+      "P7",
+      "P3",
+      "P2"
+    ],
+    "components_high_endpoint_failed": [],
+    "global_row_count": 9,
+    "global_high_endpoint_match_count": 9,
+    "global_high_endpoint_matches_all": true,
+    "channel_count": 0
+  },
+  "interpretation": {
+    "scope": "P7 + P3 + P2 full60 hit path forest",
+    "high_endpoint_rule_global_in_hit_forest": true,
+    "not_channel": true,
+    "next_problem": "If the rule persists, test whether it selects nonclean pockets globally. If it fails, isolate the component boundary."
+  },
+  "checks": {
+    "p7_endpoint_audit_passed": true,
+    "taxonomy_audit_passed": true,
+    "channel_registry_zero_count": true,
+    "channels_not_admitted": true,
+    "component_count_3": true,
+    "component_labels_are_p7_p3_p2": true,
+    "all_rows_have_packages": true,
+    "all_rows_have_observed_roots": true,
+    "audit_has_determinate_verdict": true
+  },
+  "failed_checks": [],
+  "boundary": {
+    "scope_audit_only": true,
+    "admits_channels": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "marker_lighting": false,
+    "force_claim": false,
+    "physics_claim": false
+  }
+}

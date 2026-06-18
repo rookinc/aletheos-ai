@@ -1,0 +1,285 @@
+{
+  "schema": "g900.predicted_frame_registry_03_09_vs_03_06_audit",
+  "version": 1,
+  "status": "predicted_frame_registry_03_09_vs_03_06_audit_recorded",
+  "created_utc": "2026-06-18T09:13:29Z",
+  "git_head": "22dc00e Audit G900 ladder nearest anchor condition",
+  "audit_pass": true,
+  "verdict": "predicted_frame_registry_03_09_vs_03_06_audit_passed",
+  "question": "Why does nearest anchor 9 land on existing 03_09 root_slot 9 while farther anchor 6 lands on absent 03_06 root_slot 6?",
+  "registry_status": "answer_frame_present_nonanswer_frame_absent",
+  "reading": "The support-table registry contains the nearest-anchor predicted frame 03_09 root_slot 9 at 23->24 as a full clean reciprocal receipt frame, while the farther-anchor predicted frame 03_06 root_slot 6 at 23->24 has zero rows. This explains the immediate registry-level difference: nearest anchor lands on an admitted outside frame; farther anchor points to a missing frame.",
+  "source_frame": {
+    "frame": [
+      "06_09",
+      "12",
+      "23->24"
+    ],
+    "summary": {
+      "row_count": 60,
+      "full_frame_exists": true,
+      "pair_counts": {
+        "06_09": 60
+      },
+      "root_slot_counts": {
+        "12": 60
+      },
+      "limit_counts": {
+        "23->24": 60
+      },
+      "package_kind_counts": {
+        "one_way_single_transition": 60
+      },
+      "support_counts": {
+        "true": 0,
+        "false": 60,
+        "count": 60
+      },
+      "boundary_carrier_counts": {
+        "true": 0,
+        "false": 60,
+        "count": 60
+      },
+      "zero_hit_counts": {
+        "true": 60,
+        "false": 0,
+        "count": 60
+      },
+      "delta_edge_hits_profile": {
+        "count": 60,
+        "min": 0,
+        "max": 0,
+        "sum": 0,
+        "distinct": [
+          0
+        ]
+      },
+      "internal_delta_hits_profile": {
+        "count": 60,
+        "min": 0,
+        "max": 0,
+        "sum": 0,
+        "distinct": [
+          0
+        ]
+      }
+    }
+  },
+  "answering_predicted_frame": {
+    "frame": [
+      "03_09",
+      "9",
+      "23->24"
+    ],
+    "exists_as_full_frame": true,
+    "is_clean_receipt_frame": true,
+    "summary": {
+      "row_count": 60,
+      "full_frame_exists": true,
+      "pair_counts": {
+        "03_09": 60
+      },
+      "root_slot_counts": {
+        "9": 60
+      },
+      "limit_counts": {
+        "23->24": 60
+      },
+      "package_kind_counts": {
+        "clean_reciprocal_pair_package": 60
+      },
+      "support_counts": {
+        "true": 60,
+        "false": 0,
+        "count": 60
+      },
+      "boundary_carrier_counts": {
+        "true": 60,
+        "false": 0,
+        "count": 60
+      },
+      "zero_hit_counts": {
+        "true": 0,
+        "false": 60,
+        "count": 60
+      },
+      "delta_edge_hits_profile": {
+        "count": 60,
+        "min": 1,
+        "max": 1,
+        "sum": 60,
+        "distinct": [
+          1
+        ]
+      },
+      "internal_delta_hits_profile": {
+        "count": 60,
+        "min": 1,
+        "max": 1,
+        "sum": 60,
+        "distinct": [
+          1
+        ]
+      }
+    }
+  },
+  "nonanswering_predicted_frame": {
+    "frame": [
+      "03_06",
+      "6",
+      "23->24"
+    ],
+    "exists_as_full_frame": false,
+    "row_count": 0,
+    "is_absent": true,
+    "summary": {
+      "row_count": 0,
+      "full_frame_exists": false,
+      "pair_counts": {},
+      "root_slot_counts": {},
+      "limit_counts": {},
+      "package_kind_counts": {},
+      "support_counts": {
+        "true": 0,
+        "false": 0,
+        "count": 0
+      },
+      "boundary_carrier_counts": {
+        "true": 0,
+        "false": 0,
+        "count": 0
+      },
+      "zero_hit_counts": {
+        "true": 0,
+        "false": 0,
+        "count": 0
+      },
+      "delta_edge_hits_profile": {
+        "count": 0,
+        "distinct": []
+      },
+      "internal_delta_hits_profile": {
+        "count": 0,
+        "distinct": []
+      }
+    }
+  },
+  "registry_census": {
+    "total_row_count": 1440,
+    "frame_count": 31,
+    "full_frame_count": 17,
+    "pair_03_09_frame_count": 3,
+    "pair_03_06_frame_count": 0,
+    "root_9_frame_count": 3,
+    "root_6_frame_count": 0,
+    "limit_23_24_frame_count": 2,
+    "full_pair_03_09_frame_count": 3,
+    "full_pair_03_06_frame_count": 0,
+    "full_root_9_frame_count": 3,
+    "full_root_6_frame_count": 0,
+    "full_limit_23_24_frame_count": 2,
+    "pair_03_09_frames": [
+      [
+        "03_09",
+        "9",
+        "12->13"
+      ],
+      [
+        "03_09",
+        "9",
+        "23->24"
+      ],
+      [
+        "03_09",
+        "9",
+        "3->4"
+      ]
+    ],
+    "pair_03_06_frames": [],
+    "full_pair_03_09_frames": [
+      [
+        "03_09",
+        "9",
+        "12->13"
+      ],
+      [
+        "03_09",
+        "9",
+        "23->24"
+      ],
+      [
+        "03_09",
+        "9",
+        "3->4"
+      ]
+    ],
+    "full_pair_03_06_frames": [],
+    "full_limit_23_24_frames": [
+      [
+        "03_09",
+        "9",
+        "23->24"
+      ],
+      [
+        "06_09",
+        "12",
+        "23->24"
+      ]
+    ]
+  },
+  "interpretation_boundary": [
+    "This is a registry inspection over observed support-table frames.",
+    "It records that 03_09 root_slot 9 exists and 03_06 root_slot 6 is absent.",
+    "It does not derive why the registry admits 03_09 and excludes 03_06.",
+    "No closure witness, transport relation, channel, force, physics, GR, Maxwell, QCD, electroweak, or unification claim is made."
+  ],
+  "boundary": {
+    "predicted_frame_registry_inspection_only": true,
+    "full_native_derivation": false,
+    "admits_closure_witness": false,
+    "admits_transport_relation": false,
+    "admits_channel": false,
+    "marker_lighting": false,
+    "viewer_change": false,
+    "body_mutation": false,
+    "force_claim": false,
+    "physics_claim": false,
+    "gr_claim": false,
+    "maxwell_claim": false,
+    "qcd_claim": false,
+    "electroweak_claim": false,
+    "unification_claim": false
+  },
+  "next_allowed_math_acts": [
+    "derive_registry_admission_condition_for_03_09_vs_03_06",
+    "inspect_pair_03_09_and_pair_03_06_support_neighborhoods",
+    "test_5_3_4_chamber_signature_near_answering_fork",
+    "transport_relation_admission_criterion_001"
+  ],
+  "checks": {
+    "nearest_prior_valid": true,
+    "nearest_prior_status": true,
+    "nonanswer_prior_valid": true,
+    "nonanswer_prior_status": true,
+    "all_phase_prior_valid": true,
+    "support_rows_present": true,
+    "answer_frame_exists": true,
+    "answer_is_clean_receipt": true,
+    "nonanswer_frame_absent": true,
+    "source_is_inside_failure": true,
+    "registry_status_recorded": true,
+    "channel_registry_preserved": true,
+    "renderer_absent": true,
+    "no_forbidden_claims": true
+  },
+  "failed_checks": [],
+  "hashes": {
+    "nearest_prior_sha256": "32455e33001e1aba288dc5edaf30290e021b242ba98feb046d7d0904da2a1e2e",
+    "nonanswer_prior_sha256": "a2d0d610d29f38a61b4b5b35af4bc479018dc8de8d48fe3025362255e4dea2f1",
+    "all_phase_prior_sha256": "4f8f5f4ce3968724c4f8433635ae19d2c3fa3173c1172adb0594ce0f64c9ad1b",
+    "steps_csv_sha256": "40466b974be84ee5ff7bae97a5077a98d15483e80367422c6d717edf59ee630d",
+    "channels_sha256": "fbe4c50e0adf3460f7190f3c7714754da8a620359a5bc26c70543cc401feca08",
+    "body_sha256": "6a2cb6b9892a78d4559ec61cf946b0021962cc6819311234b8bf14102b3b7f63",
+    "lab_sha256": "5a10a18bc6563446a0d364d5984b8a41db580e0a75831c82b9eeb5aebc2edeb7"
+  }
+}

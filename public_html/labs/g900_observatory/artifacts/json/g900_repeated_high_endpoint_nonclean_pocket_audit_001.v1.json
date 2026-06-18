@@ -1,0 +1,164 @@
+{
+  "schema": "g900.repeated_high_endpoint_nonclean_pocket_audit",
+  "version": 1,
+  "status": "repeated_high_endpoint_nonclean_pocket_audit_passed",
+  "created_utc": "2026-06-18T01:08:20Z",
+  "audit_pass": true,
+  "question": "Do repeated high endpoints select nonclean pockets across the hit forest?",
+  "verdict": "repeated_high_endpoints_select_multi_edge_nonclean_pocket_but_not_all_nonclean_edges",
+  "component_summaries": [
+    {
+      "component": "P7",
+      "path_pairs": [
+        "02_08",
+        "02_03",
+        "03_09",
+        "09_12",
+        "06_12",
+        "06_13"
+      ],
+      "observed_root_sequence": [
+        "08",
+        "03",
+        "09",
+        "12",
+        "12",
+        "13"
+      ],
+      "high_endpoint_sequence": [
+        "08",
+        "03",
+        "09",
+        "12",
+        "12",
+        "13"
+      ],
+      "repeated_high_endpoints": [
+        {
+          "root": "12",
+          "indices": [
+            3,
+            4
+          ],
+          "pairs": [
+            "09_12",
+            "06_12"
+          ]
+        }
+      ],
+      "repeated_high_endpoint_pairs": [
+        "09_12",
+        "06_12"
+      ],
+      "nonclean_pairs": [
+        "09_12",
+        "06_12"
+      ],
+      "nonclean_repeated_high_endpoint_pairs": [
+        "09_12",
+        "06_12"
+      ],
+      "nonclean_singleton_pairs": [],
+      "all_repeated_pairs_are_nonclean": true,
+      "all_multi_edge_nonclean_pockets_are_repeated_high_endpoint": true
+    },
+    {
+      "component": "P3",
+      "path_pairs": [
+        "05_10",
+        "05_14"
+      ],
+      "observed_root_sequence": [
+        "10",
+        "14"
+      ],
+      "high_endpoint_sequence": [
+        "10",
+        "14"
+      ],
+      "repeated_high_endpoints": [],
+      "repeated_high_endpoint_pairs": [],
+      "nonclean_pairs": [],
+      "nonclean_repeated_high_endpoint_pairs": [],
+      "nonclean_singleton_pairs": [],
+      "all_repeated_pairs_are_nonclean": true,
+      "all_multi_edge_nonclean_pockets_are_repeated_high_endpoint": true
+    },
+    {
+      "component": "P2",
+      "path_pairs": [
+        "07_11"
+      ],
+      "observed_root_sequence": [
+        "11"
+      ],
+      "high_endpoint_sequence": [
+        "11"
+      ],
+      "repeated_high_endpoints": [],
+      "repeated_high_endpoint_pairs": [],
+      "nonclean_pairs": [
+        "07_11"
+      ],
+      "nonclean_repeated_high_endpoint_pairs": [],
+      "nonclean_singleton_pairs": [
+        "07_11"
+      ],
+      "all_repeated_pairs_are_nonclean": true,
+      "all_multi_edge_nonclean_pockets_are_repeated_high_endpoint": true
+    }
+  ],
+  "summary": {
+    "global_row_count": 9,
+    "repeated_high_endpoint_pairs": [
+      "09_12",
+      "06_12"
+    ],
+    "nonclean_pairs": [
+      "09_12",
+      "06_12",
+      "07_11"
+    ],
+    "nonclean_repeated_high_endpoint_pairs": [
+      "09_12",
+      "06_12"
+    ],
+    "nonclean_singleton_pairs": [
+      "07_11"
+    ],
+    "all_repeated_pairs_are_nonclean": true,
+    "all_nonclean_edges_selected_by_repeats": false,
+    "channel_count": 0
+  },
+  "interpretation": {
+    "repeated_high_endpoints_select_p7_nonclean_pocket": true,
+    "repeated_high_endpoints_do_not_select_all_nonclean_edges": true,
+    "singleton_exception": "P2 pair 07_11 is nonclean but has no repeated high-endpoint pocket.",
+    "not_channel": true,
+    "next_problem": "Isolate the P2 singleton two-transition package and compare it to the P7 repeated-root pocket."
+  },
+  "checks": {
+    "scope_audit_passed": true,
+    "scope_verdict_high_endpoint_persists": true,
+    "channel_registry_zero_count": true,
+    "channels_not_admitted": true,
+    "global_row_count_9": true,
+    "nonclean_count_3": true,
+    "repeated_high_endpoint_pair_count_2": true,
+    "repeated_pairs_are_p7_root12": true,
+    "all_repeated_pairs_are_nonclean": true,
+    "nonclean_repeated_pairs_are_p7_pocket": true,
+    "nonclean_singleton_pairs_are_p2_only": true,
+    "verdict_is_determinate": true
+  },
+  "failed_checks": [],
+  "boundary": {
+    "nonclean_pocket_selector_audit_only": true,
+    "admits_channels": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "marker_lighting": false,
+    "force_claim": false,
+    "physics_claim": false
+  }
+}

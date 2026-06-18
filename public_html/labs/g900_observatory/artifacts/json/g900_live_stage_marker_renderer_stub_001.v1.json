@@ -1,0 +1,181 @@
+{
+  "schema": "g900.live_stage_marker_renderer_stub",
+  "version": 1,
+  "status": "live_stage_marker_renderer_stub_recorded",
+  "created_utc": "2026-06-18T02:02:55Z",
+  "audit_pass": true,
+  "verdict": "live_stage_marker_renderer_stub_installed_inert",
+  "question": "Can an inert live-stage marker renderer stub be installed without lighting the marker, admitting a channel, or mutating the G900 body?",
+  "renderer_stub": {
+    "renderer_stub_id": "g900_live_stage_marker_renderer_stub_1b73e0f41964b984",
+    "artifact_id": "g900-live-stage-marker-renderer-stub-001",
+    "event_id": "g900_return_cell_event_562162c72753c818",
+    "marker_id": "unsupported_phase_step_6_9",
+    "binding_id": "g900_marker_event_binding_1d645b31e5366deb",
+    "render_contract_id": "g900_marker_render_contract_2f8f21a3465a71d3",
+    "admission_id": "g900_live_marker_renderer_admission_e4aee6d53d4b7fa4",
+    "stub_present": true,
+    "modified_stage_file": true,
+    "enabled_now": false,
+    "gate_open_now": false,
+    "lights_marker_now": false,
+    "admits_channel_now": false,
+    "renders_channel_now": false,
+    "mutates_body": false
+  },
+  "live_stage_patch": {
+    "stage_path": "public_html/labs/g900_observatory/g900_grammar_stage_v0.js",
+    "before_sha256": "cf8152ccf1db895a902651480e69da162806b10b6b7ba00bfeceeef82cfa845c",
+    "after_sha256": "732dad810dffdfbe97c275ee96914a95aeb7fa6976df04d8df0063157b19d5bf",
+    "modified": true,
+    "stub_start": "// BEGIN G900 LIVE MARKER RENDERER STUB 001",
+    "stub_end": "// END G900 LIVE MARKER RENDERER STUB 001",
+    "added_token_presence": {
+      "drawGraphMarkerReadings": true,
+      "activeMarkerRenderer": true,
+      "G900MarkerRendererStub001": true,
+      "lightsMarkerNow: false": true,
+      "admitsChannelNow: false": true,
+      "rendersChannelNow: false": true,
+      "mutatesBody: false": true
+    },
+    "present_forbidden_active_patterns": []
+  },
+  "body_receipt": {
+    "static_body_path": "public_html/labs/g900_observatory/data/g900_static_body.v1.json",
+    "static_body_sha256": "71944bd613ce8c6c036a2c4198f3df2e0064a75fec1f03ccf8bb60f9a2d412db",
+    "body_loaded": true,
+    "body_key_vertex_count_mentions": 1,
+    "body_key_edge_count_mentions": 1
+  },
+  "criteria": [
+    {
+      "id": "renderer_stub_admission_exists",
+      "description": "The renderer-stub admission artifact exists and permits this next artifact.",
+      "satisfied": true
+    },
+    {
+      "id": "gate_recheck_closed_pending_renderer",
+      "description": "The previous gate recheck was closed pending renderer.",
+      "satisfied": true
+    },
+    {
+      "id": "render_contract_exists",
+      "description": "The read-only marker render contract exists and passed.",
+      "satisfied": true
+    },
+    {
+      "id": "binding_exists",
+      "description": "The marker-event binding exists and passed.",
+      "satisfied": true
+    },
+    {
+      "id": "stub_present_in_live_stage_file",
+      "description": "The inert marker renderer stub is present in the live-stage JS file.",
+      "satisfied": true
+    },
+    {
+      "id": "allowed_tokens_present",
+      "description": "The allowed renderer-stub tokens are present.",
+      "satisfied": true,
+      "token_presence": {
+        "drawGraphMarkerReadings": true,
+        "activeMarkerRenderer": true,
+        "G900MarkerRendererStub001": true,
+        "lightsMarkerNow: false": true,
+        "admitsChannelNow: false": true,
+        "rendersChannelNow: false": true,
+        "mutatesBody: false": true
+      }
+    },
+    {
+      "id": "no_active_marker_lighting_tokens",
+      "description": "The stub does not contain active marker-lighting or channel-rendering effects.",
+      "satisfied": true,
+      "forbidden_active_patterns": [
+        "lightsMarkerNow:\\s*true",
+        "admitsChannelNow:\\s*true",
+        "rendersChannelNow:\\s*true",
+        "mutatesBody:\\s*true",
+        "enabled:\\s*true",
+        "gateOpen:\\s*true",
+        "markerLightingEnabled",
+        "lightMarkerNow",
+        "admitChannel",
+        "renderChannel"
+      ],
+      "present_forbidden_active_patterns": []
+    },
+    {
+      "id": "channel_registry_zero",
+      "description": "The channel registry remains zero-count.",
+      "satisfied": true
+    },
+    {
+      "id": "static_body_file_unchanged_by_script",
+      "description": "The static body source was loaded for hash receipt only and not rewritten.",
+      "satisfied": true,
+      "body_hash": "71944bd613ce8c6c036a2c4198f3df2e0064a75fec1f03ccf8bb60f9a2d412db"
+    },
+    {
+      "id": "stub_effects_false",
+      "description": "The stub effect flags are all false.",
+      "satisfied": true
+    }
+  ],
+  "summary": {
+    "renderer_stub_id": "g900_live_stage_marker_renderer_stub_1b73e0f41964b984",
+    "event_id": "g900_return_cell_event_562162c72753c818",
+    "marker_id": "unsupported_phase_step_6_9",
+    "stub_present": true,
+    "modified_stage_file": true,
+    "renderer_enabled_now": false,
+    "gate_open_now": false,
+    "lights_marker_now": false,
+    "admits_channel_now": false,
+    "renders_channel_now": false,
+    "mutates_body": false,
+    "channel_count": 0,
+    "stage_before_sha256": "cf8152ccf1db895a902651480e69da162806b10b6b7ba00bfeceeef82cfa845c",
+    "stage_after_sha256": "732dad810dffdfbe97c275ee96914a95aeb7fa6976df04d8df0063157b19d5bf",
+    "static_body_sha256": "71944bd613ce8c6c036a2c4198f3df2e0064a75fec1f03ccf8bb60f9a2d412db"
+  },
+  "interpretation": {
+    "renderer_fixture_installed": true,
+    "switch_still_off": true,
+    "marker_still_not_live_lit": true,
+    "gate_still_closed": true,
+    "channel_still_not_admitted": true,
+    "not_channel": true,
+    "next_problem": "Run a post-stub marker-event gate recheck. The renderer now exists, but marker lighting should still require an explicit gate-open artifact."
+  },
+  "checks": {
+    "admission_passed": true,
+    "gate_recheck_passed": true,
+    "render_contract_passed": true,
+    "binding_passed": true,
+    "stage_stub_present": true,
+    "allowed_tokens_present": true,
+    "no_forbidden_active_patterns": true,
+    "channel_registry_zero": true,
+    "stub_enabled_now_false": true,
+    "gate_open_now_false": true,
+    "marker_not_lit": true,
+    "channel_not_admitted": true,
+    "channel_not_rendered": true,
+    "body_not_mutated": true,
+    "all_criteria_satisfied": true
+  },
+  "failed_checks": [],
+  "boundary": {
+    "live_stage_stub_only": true,
+    "renderer_enabled": false,
+    "gate_open": false,
+    "admits_channels": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "marker_lighting": false,
+    "force_claim": false,
+    "physics_claim": false
+  }
+}

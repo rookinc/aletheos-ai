@@ -856,3 +856,53 @@ if (document.readyState === "loading") {
 } else {
   boot();
 }
+
+// BEGIN G900 LIVE MARKER RENDERER STUB 001
+//
+// Read-only marker renderer stub.
+// This is intentionally inert. It does not attach to the draw loop,
+// does not light the marker, does not admit channels, and does not
+// mutate the G900 body.
+//
+// Receipts:
+// - event: g900_return_cell_event_562162c72753c818
+// - marker: unsupported_phase_step_6_9
+// - binding: g900_marker_event_binding_1d645b31e5366deb
+// - render contract: g900_marker_render_contract_2f8f21a3465a71d3
+// - admission: g900_live_marker_renderer_admission_e4aee6d53d4b7fa4
+
+const activeMarkerRenderer = Object.freeze({
+  id: "g900-live-stage-marker-renderer-stub-001",
+  markerId: "unsupported_phase_step_6_9",
+  eventId: "g900_return_cell_event_562162c72753c818",
+  enabled: false,
+  gateOpen: false,
+  lightsMarkerNow: false,
+  admitsChannelNow: false,
+  rendersChannelNow: false,
+  mutatesBody: false
+});
+
+function drawGraphMarkerReadings(_ctx, _state) {
+  // Stub only. The marker cannot light from this function.
+  // A future artifact must recheck the gate before any active draw path.
+  return {
+    rendererId: activeMarkerRenderer.id,
+    markerId: activeMarkerRenderer.markerId,
+    eventId: activeMarkerRenderer.eventId,
+    rendered: false,
+    gateOpen: false,
+    lightsMarkerNow: false,
+    admitsChannelNow: false,
+    rendersChannelNow: false,
+    mutatesBody: false
+  };
+}
+
+if (typeof window !== "undefined") {
+  window.G900MarkerRendererStub001 = Object.freeze({
+    activeMarkerRenderer,
+    drawGraphMarkerReadings
+  });
+}
+// END G900 LIVE MARKER RENDERER STUB 001

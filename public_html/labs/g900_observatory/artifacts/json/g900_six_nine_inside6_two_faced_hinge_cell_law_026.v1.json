@@ -1,0 +1,82 @@
+{
+  "audit_id": "g900_six_nine_inside6_two_faced_hinge_cell_law_026",
+  "audit_pass": true,
+  "boundary": {
+    "channel_admitted": false,
+    "closure_witness_admitted": false,
+    "exact_selector_found": false,
+    "force_claim": false,
+    "local_hinge_cell_law_candidate_only": true,
+    "marker_lighting": false,
+    "native_derivation_complete": false,
+    "physics_claim": false,
+    "transport_relation_admitted": false,
+    "unification_claim": false,
+    "viewer_or_body_mutation": false
+  },
+  "broken_face": {
+    "central_indices": {
+      "index_6": 2,
+      "index_9": 1
+    },
+    "family": "broken_ladder_phase1_gap_family",
+    "gap": [
+      9,
+      11
+    ],
+    "inside": 6,
+    "ladder": [
+      3,
+      9,
+      6,
+      12
+    ],
+    "ladder_deltas": [
+      6,
+      12,
+      6
+    ],
+    "limit_start": null,
+    "phase": 1
+  },
+  "endpoint_face": {
+    "endpoint_delta": 3,
+    "endpoint_distance": 3,
+    "endpoints": [
+      6,
+      9
+    ],
+    "family": "endpoint_only_family",
+    "inside": 6,
+    "limit_start": null
+  },
+  "keeper_line": "The residual is not a leftover. It is a two-faced hinge.",
+  "law_status": "endpoint_chord_and_broken_ladder_fit_one_inside6_hinge_cell",
+  "local_hinge_law_candidate_found": true,
+  "next_ascent_target": "derive why source construction produces the broken ladder face [3,9,6,12]",
+  "prior_025_cell_status": "two_residual_shapes_fit_one_inside6_hinge_cell_candidate",
+  "prior_025_verdict": "residual_two_shape_local_cell_candidate_recorded",
+  "reading": "The endpoint-only face [6,9] is the exposed chord of the broken-ladder face [3,9,6,12]. Inside the broken ladder, the same chord appears in reverse as the central pair 9->6, with outer deltas 6 and 6. The [9,11] source gap starts at the upper chord endpoint 9, and phase 1 is compatible with the one-step interior of that two-slot gap. This records a local hinge-cell law candidate, not full native derivation.",
+  "tests": {
+    "broken_ladder_central_pair_is_9_to_6": true,
+    "broken_ladder_deltas_are_6_12_6": true,
+    "central_pair_reverses_endpoint_chord": true,
+    "central_reverse_chord_delta_is_12": true,
+    "chord_nodes_adjacent_in_broken_ladder": true,
+    "endpoint_chord_contained_in_ladder": true,
+    "expected_broken_ladder": true,
+    "expected_endpoint_chord": true,
+    "expected_gap": true,
+    "expected_phase1": true,
+    "exposed_endpoint_chord_delta_is_3": true,
+    "gap_starts_at_upper_chord_endpoint": true,
+    "gap_width_is_2": true,
+    "outer_ladder_deltas_match": true,
+    "phase1_is_one_step_inside_gap_width": true,
+    "prior_local_cell_candidate_found": true,
+    "shared_inside6_gate": true,
+    "shared_null_limit_start": true
+  },
+  "theory_claim": false,
+  "verdict": "inside6_two_faced_hinge_cell_law_candidate_recorded"
+}

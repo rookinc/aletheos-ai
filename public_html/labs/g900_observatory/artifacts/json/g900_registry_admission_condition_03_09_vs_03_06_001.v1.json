@@ -1,0 +1,686 @@
+{
+  "schema": "g900.registry_admission_condition_03_09_vs_03_06",
+  "version": 1,
+  "status": "registry_admission_condition_03_09_vs_03_06_recorded",
+  "created_utc": "2026-06-18T09:17:24Z",
+  "git_head": "20f1dda Inspect G900 predicted frame registry",
+  "audit_pass": true,
+  "verdict": "registry_admission_condition_03_09_vs_03_06_audit_passed",
+  "question": "Which registry-level admission features separate 03_09 root_slot 9 from absent 03_06 root_slot 6?",
+  "admission_status": "registry_admission_features_separate_03_09_from_03_06",
+  "reading": "In the two nondegenerate predicted-frame candidates, 03_09 root_slot 9 is admitted because both its predicted pair and root slot already appear in the full support-frame registry. 03_06 root_slot 6 is absent because neither pair 03_06 nor root_slot 6 appears anywhere in the full registry. This gives a registry-level admission separator, but it is not yet a native derivation of why that registry exists.",
+  "candidate_universe": {
+    "definition": "Nondegenerate predicted-frame candidates from the all-phase nearest-anchor ladder audit.",
+    "candidate_count": 2,
+    "uses_receipt_fields": false,
+    "uses_support_fields": false
+  },
+  "answer_candidate": {
+    "source_frame": [
+      "06_09",
+      "12",
+      "23->24"
+    ],
+    "phase_step_mod15": 3,
+    "anchor": 9,
+    "nearest_anchor_selected": true,
+    "phase_ladder_values": [
+      3,
+      6,
+      9,
+      12
+    ],
+    "phase_ladder_distinct": true,
+    "predicted_frame": [
+      "03_09",
+      "9",
+      "23->24"
+    ],
+    "prediction_exists": true,
+    "predicted_pair": "03_09",
+    "predicted_root_slot": "9",
+    "predicted_limit": "23->24",
+    "predicted_pair_full_frame_count": 3,
+    "predicted_root_full_frame_count": 3,
+    "predicted_pair_root_full_frame_count": 3,
+    "predicted_pair_limit_full_frame_count": 1,
+    "predicted_root_limit_full_frame_count": 1,
+    "predicted_limit_full_frame_count": 2,
+    "predicted_pair_admitted": true,
+    "predicted_root_admitted": true,
+    "predicted_pair_root_admitted": true,
+    "predicted_pair_limit_admitted": true,
+    "predicted_root_limit_admitted": true,
+    "predicted_limit_admitted": true,
+    "predicted_pair_full_frames": [
+      [
+        "03_09",
+        "9",
+        "12->13"
+      ],
+      [
+        "03_09",
+        "9",
+        "23->24"
+      ],
+      [
+        "03_09",
+        "9",
+        "3->4"
+      ]
+    ],
+    "predicted_root_full_frames": [
+      [
+        "03_09",
+        "9",
+        "12->13"
+      ],
+      [
+        "03_09",
+        "9",
+        "23->24"
+      ],
+      [
+        "03_09",
+        "9",
+        "3->4"
+      ]
+    ],
+    "predicted_pair_root_full_frames": [
+      [
+        "03_09",
+        "9",
+        "12->13"
+      ],
+      [
+        "03_09",
+        "9",
+        "23->24"
+      ],
+      [
+        "03_09",
+        "9",
+        "3->4"
+      ]
+    ],
+    "predicted_pair_limit_full_frames": [
+      [
+        "03_09",
+        "9",
+        "23->24"
+      ]
+    ],
+    "predicted_root_limit_full_frames": [
+      [
+        "03_09",
+        "9",
+        "23->24"
+      ]
+    ]
+  },
+  "nonanswer_candidate": {
+    "source_frame": [
+      "06_09",
+      "12",
+      "23->24"
+    ],
+    "phase_step_mod15": 6,
+    "anchor": 6,
+    "nearest_anchor_selected": false,
+    "phase_ladder_values": [
+      3,
+      9,
+      6,
+      12
+    ],
+    "phase_ladder_distinct": true,
+    "predicted_frame": [
+      "03_06",
+      "6",
+      "23->24"
+    ],
+    "prediction_exists": false,
+    "predicted_pair": "03_06",
+    "predicted_root_slot": "6",
+    "predicted_limit": "23->24",
+    "predicted_pair_full_frame_count": 0,
+    "predicted_root_full_frame_count": 0,
+    "predicted_pair_root_full_frame_count": 0,
+    "predicted_pair_limit_full_frame_count": 0,
+    "predicted_root_limit_full_frame_count": 0,
+    "predicted_limit_full_frame_count": 2,
+    "predicted_pair_admitted": false,
+    "predicted_root_admitted": false,
+    "predicted_pair_root_admitted": false,
+    "predicted_pair_limit_admitted": false,
+    "predicted_root_limit_admitted": false,
+    "predicted_limit_admitted": true,
+    "predicted_pair_full_frames": [],
+    "predicted_root_full_frames": [],
+    "predicted_pair_root_full_frames": [],
+    "predicted_pair_limit_full_frames": [],
+    "predicted_root_limit_full_frames": []
+  },
+  "registry_membership_selectors": {
+    "boolean_features_tested": [
+      "predicted_pair_admitted",
+      "predicted_root_admitted",
+      "predicted_pair_root_admitted",
+      "predicted_pair_limit_admitted",
+      "predicted_root_limit_admitted",
+      "predicted_limit_admitted"
+    ],
+    "single_feature_exact_selectors": [
+      [
+        "predicted_pair_admitted"
+      ],
+      [
+        "predicted_root_admitted"
+      ],
+      [
+        "predicted_pair_root_admitted"
+      ],
+      [
+        "predicted_pair_limit_admitted"
+      ],
+      [
+        "predicted_root_limit_admitted"
+      ]
+    ],
+    "two_feature_exact_selectors": [
+      [
+        "predicted_pair_admitted",
+        "predicted_root_admitted"
+      ],
+      [
+        "predicted_pair_admitted",
+        "predicted_pair_root_admitted"
+      ],
+      [
+        "predicted_pair_admitted",
+        "predicted_pair_limit_admitted"
+      ],
+      [
+        "predicted_pair_admitted",
+        "predicted_root_limit_admitted"
+      ],
+      [
+        "predicted_pair_admitted",
+        "predicted_limit_admitted"
+      ],
+      [
+        "predicted_root_admitted",
+        "predicted_pair_root_admitted"
+      ],
+      [
+        "predicted_root_admitted",
+        "predicted_pair_limit_admitted"
+      ],
+      [
+        "predicted_root_admitted",
+        "predicted_root_limit_admitted"
+      ],
+      [
+        "predicted_root_admitted",
+        "predicted_limit_admitted"
+      ],
+      [
+        "predicted_pair_root_admitted",
+        "predicted_pair_limit_admitted"
+      ],
+      [
+        "predicted_pair_root_admitted",
+        "predicted_root_limit_admitted"
+      ],
+      [
+        "predicted_pair_root_admitted",
+        "predicted_limit_admitted"
+      ],
+      [
+        "predicted_pair_limit_admitted",
+        "predicted_root_limit_admitted"
+      ],
+      [
+        "predicted_pair_limit_admitted",
+        "predicted_limit_admitted"
+      ],
+      [
+        "predicted_root_limit_admitted",
+        "predicted_limit_admitted"
+      ]
+    ],
+    "three_feature_exact_selectors_first_20": [
+      [
+        "predicted_pair_admitted",
+        "predicted_root_admitted",
+        "predicted_pair_root_admitted"
+      ],
+      [
+        "predicted_pair_admitted",
+        "predicted_root_admitted",
+        "predicted_pair_limit_admitted"
+      ],
+      [
+        "predicted_pair_admitted",
+        "predicted_root_admitted",
+        "predicted_root_limit_admitted"
+      ],
+      [
+        "predicted_pair_admitted",
+        "predicted_root_admitted",
+        "predicted_limit_admitted"
+      ],
+      [
+        "predicted_pair_admitted",
+        "predicted_pair_root_admitted",
+        "predicted_pair_limit_admitted"
+      ],
+      [
+        "predicted_pair_admitted",
+        "predicted_pair_root_admitted",
+        "predicted_root_limit_admitted"
+      ],
+      [
+        "predicted_pair_admitted",
+        "predicted_pair_root_admitted",
+        "predicted_limit_admitted"
+      ],
+      [
+        "predicted_pair_admitted",
+        "predicted_pair_limit_admitted",
+        "predicted_root_limit_admitted"
+      ],
+      [
+        "predicted_pair_admitted",
+        "predicted_pair_limit_admitted",
+        "predicted_limit_admitted"
+      ],
+      [
+        "predicted_pair_admitted",
+        "predicted_root_limit_admitted",
+        "predicted_limit_admitted"
+      ],
+      [
+        "predicted_root_admitted",
+        "predicted_pair_root_admitted",
+        "predicted_pair_limit_admitted"
+      ],
+      [
+        "predicted_root_admitted",
+        "predicted_pair_root_admitted",
+        "predicted_root_limit_admitted"
+      ],
+      [
+        "predicted_root_admitted",
+        "predicted_pair_root_admitted",
+        "predicted_limit_admitted"
+      ],
+      [
+        "predicted_root_admitted",
+        "predicted_pair_limit_admitted",
+        "predicted_root_limit_admitted"
+      ],
+      [
+        "predicted_root_admitted",
+        "predicted_pair_limit_admitted",
+        "predicted_limit_admitted"
+      ],
+      [
+        "predicted_root_admitted",
+        "predicted_root_limit_admitted",
+        "predicted_limit_admitted"
+      ],
+      [
+        "predicted_pair_root_admitted",
+        "predicted_pair_limit_admitted",
+        "predicted_root_limit_admitted"
+      ],
+      [
+        "predicted_pair_root_admitted",
+        "predicted_pair_limit_admitted",
+        "predicted_limit_admitted"
+      ],
+      [
+        "predicted_pair_root_admitted",
+        "predicted_root_limit_admitted",
+        "predicted_limit_admitted"
+      ],
+      [
+        "predicted_pair_limit_admitted",
+        "predicted_root_limit_admitted",
+        "predicted_limit_admitted"
+      ]
+    ],
+    "interpretation": "These are registry-membership separators inside the two-candidate universe, not native derivations."
+  },
+  "all_candidates": [
+    {
+      "source_frame": [
+        "06_09",
+        "12",
+        "23->24"
+      ],
+      "phase_step_mod15": 3,
+      "anchor": 9,
+      "nearest_anchor_selected": true,
+      "phase_ladder_values": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "phase_ladder_distinct": true,
+      "predicted_frame": [
+        "03_09",
+        "9",
+        "23->24"
+      ],
+      "prediction_exists": true,
+      "predicted_pair": "03_09",
+      "predicted_root_slot": "9",
+      "predicted_limit": "23->24",
+      "predicted_pair_full_frame_count": 3,
+      "predicted_root_full_frame_count": 3,
+      "predicted_pair_root_full_frame_count": 3,
+      "predicted_pair_limit_full_frame_count": 1,
+      "predicted_root_limit_full_frame_count": 1,
+      "predicted_limit_full_frame_count": 2,
+      "predicted_pair_admitted": true,
+      "predicted_root_admitted": true,
+      "predicted_pair_root_admitted": true,
+      "predicted_pair_limit_admitted": true,
+      "predicted_root_limit_admitted": true,
+      "predicted_limit_admitted": true,
+      "predicted_pair_full_frames": [
+        [
+          "03_09",
+          "9",
+          "12->13"
+        ],
+        [
+          "03_09",
+          "9",
+          "23->24"
+        ],
+        [
+          "03_09",
+          "9",
+          "3->4"
+        ]
+      ],
+      "predicted_root_full_frames": [
+        [
+          "03_09",
+          "9",
+          "12->13"
+        ],
+        [
+          "03_09",
+          "9",
+          "23->24"
+        ],
+        [
+          "03_09",
+          "9",
+          "3->4"
+        ]
+      ],
+      "predicted_pair_root_full_frames": [
+        [
+          "03_09",
+          "9",
+          "12->13"
+        ],
+        [
+          "03_09",
+          "9",
+          "23->24"
+        ],
+        [
+          "03_09",
+          "9",
+          "3->4"
+        ]
+      ],
+      "predicted_pair_limit_full_frames": [
+        [
+          "03_09",
+          "9",
+          "23->24"
+        ]
+      ],
+      "predicted_root_limit_full_frames": [
+        [
+          "03_09",
+          "9",
+          "23->24"
+        ]
+      ]
+    },
+    {
+      "source_frame": [
+        "06_09",
+        "12",
+        "23->24"
+      ],
+      "phase_step_mod15": 6,
+      "anchor": 6,
+      "nearest_anchor_selected": false,
+      "phase_ladder_values": [
+        3,
+        9,
+        6,
+        12
+      ],
+      "phase_ladder_distinct": true,
+      "predicted_frame": [
+        "03_06",
+        "6",
+        "23->24"
+      ],
+      "prediction_exists": false,
+      "predicted_pair": "03_06",
+      "predicted_root_slot": "6",
+      "predicted_limit": "23->24",
+      "predicted_pair_full_frame_count": 0,
+      "predicted_root_full_frame_count": 0,
+      "predicted_pair_root_full_frame_count": 0,
+      "predicted_pair_limit_full_frame_count": 0,
+      "predicted_root_limit_full_frame_count": 0,
+      "predicted_limit_full_frame_count": 2,
+      "predicted_pair_admitted": false,
+      "predicted_root_admitted": false,
+      "predicted_pair_root_admitted": false,
+      "predicted_pair_limit_admitted": false,
+      "predicted_root_limit_admitted": false,
+      "predicted_limit_admitted": true,
+      "predicted_pair_full_frames": [],
+      "predicted_root_full_frames": [],
+      "predicted_pair_root_full_frames": [],
+      "predicted_pair_limit_full_frames": [],
+      "predicted_root_limit_full_frames": []
+    }
+  ],
+  "registry_census": {
+    "total_row_count": 1440,
+    "frame_count": 31,
+    "full_frame_count": 17,
+    "full_pairs": {
+      "02_03": 2,
+      "02_08": 2,
+      "03_09": 3,
+      "05_10": 2,
+      "05_14": 2,
+      "06_09": 1,
+      "06_12": 1,
+      "06_13": 2,
+      "07_11": 1,
+      "09_12": 1
+    },
+    "full_root_slots": {
+      "3": 2,
+      "8": 2,
+      "9": 3,
+      "10": 2,
+      "11": 1,
+      "12": 3,
+      "13": 2,
+      "14": 2
+    },
+    "full_limits": {
+      "12->13": 1,
+      "16->17": 1,
+      "2->3": 1,
+      "23->24": 2,
+      "24->25": 2,
+      "3->4": 3,
+      "31->32": 1,
+      "32->33": 1,
+      "38->39": 1,
+      "4->5": 3,
+      "5->6": 1
+    },
+    "full_frames": [
+      [
+        "02_03",
+        "3",
+        "16->17"
+      ],
+      [
+        "02_03",
+        "3",
+        "2->3"
+      ],
+      [
+        "02_08",
+        "8",
+        "24->25"
+      ],
+      [
+        "02_08",
+        "8",
+        "3->4"
+      ],
+      [
+        "03_09",
+        "9",
+        "12->13"
+      ],
+      [
+        "03_09",
+        "9",
+        "23->24"
+      ],
+      [
+        "03_09",
+        "9",
+        "3->4"
+      ],
+      [
+        "05_10",
+        "10",
+        "24->25"
+      ],
+      [
+        "05_10",
+        "10",
+        "3->4"
+      ],
+      [
+        "05_14",
+        "14",
+        "38->39"
+      ],
+      [
+        "05_14",
+        "14",
+        "5->6"
+      ],
+      [
+        "06_09",
+        "12",
+        "23->24"
+      ],
+      [
+        "06_12",
+        "12",
+        "4->5"
+      ],
+      [
+        "06_13",
+        "13",
+        "31->32"
+      ],
+      [
+        "06_13",
+        "13",
+        "4->5"
+      ],
+      [
+        "07_11",
+        "11",
+        "4->5"
+      ],
+      [
+        "09_12",
+        "12",
+        "32->33"
+      ]
+    ]
+  },
+  "interpretation_boundary": [
+    "This is a registry-level admission-condition audit over the two nondegenerate predicted-frame candidates.",
+    "It records simple membership separators such as predicted pair/root-slot admission.",
+    "It does not derive why pair 03_09/root_slot 9 are admitted or why pair 03_06/root_slot 6 are absent.",
+    "No closure witness, transport relation, channel, force, physics, GR, Maxwell, QCD, electroweak, or unification claim is made."
+  ],
+  "boundary": {
+    "registry_admission_condition_audit_only": true,
+    "full_native_derivation": false,
+    "admits_closure_witness": false,
+    "admits_transport_relation": false,
+    "admits_channel": false,
+    "marker_lighting": false,
+    "viewer_change": false,
+    "body_mutation": false,
+    "force_claim": false,
+    "physics_claim": false,
+    "gr_claim": false,
+    "maxwell_claim": false,
+    "qcd_claim": false,
+    "electroweak_claim": false,
+    "unification_claim": false
+  },
+  "next_allowed_math_acts": [
+    "derive_why_full_registry_contains_pair_03_09_root_9",
+    "inspect_03_09_root_9_limit_triplet_3_4_12_13_23_24",
+    "test_5_3_4_chamber_signature_near_answering_fork",
+    "transport_relation_admission_criterion_001"
+  ],
+  "checks": {
+    "registry_prior_valid": true,
+    "registry_prior_status": true,
+    "nearest_prior_valid": true,
+    "nearest_prior_status": true,
+    "all_phase_prior_valid": true,
+    "support_rows_present": true,
+    "candidate_count_two": true,
+    "answer_registry_good": true,
+    "nonanswer_registry_good": true,
+    "single_exact_selector_exists": true,
+    "admission_status_recorded": true,
+    "channel_registry_preserved": true,
+    "renderer_absent": true,
+    "no_forbidden_claims": true
+  },
+  "failed_checks": [],
+  "hashes": {
+    "registry_prior_sha256": "9d9bb93093a7396e4252e883f3ffef9cc39b68e2735f9f2f30ed6c2589e323b2",
+    "nearest_prior_sha256": "32455e33001e1aba288dc5edaf30290e021b242ba98feb046d7d0904da2a1e2e",
+    "all_phase_prior_sha256": "4f8f5f4ce3968724c4f8433635ae19d2c3fa3173c1172adb0594ce0f64c9ad1b",
+    "steps_csv_sha256": "40466b974be84ee5ff7bae97a5077a98d15483e80367422c6d717edf59ee630d",
+    "channels_sha256": "fbe4c50e0adf3460f7190f3c7714754da8a620359a5bc26c70543cc401feca08",
+    "body_sha256": "6a2cb6b9892a78d4559ec61cf946b0021962cc6819311234b8bf14102b3b7f63",
+    "lab_sha256": "5a10a18bc6563446a0d364d5984b8a41db580e0a75831c82b9eeb5aebc2edeb7"
+  }
+}

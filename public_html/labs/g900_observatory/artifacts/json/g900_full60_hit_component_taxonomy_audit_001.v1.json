@@ -1,0 +1,409 @@
+{
+  "schema": "g900.full60_hit_component_taxonomy_audit",
+  "version": 1,
+  "status": "full60_hit_component_taxonomy_audit_passed",
+  "created_utc": "2026-06-18T00:49:06Z",
+  "audit_pass": true,
+  "question": "Does the boundary-package subgraph split into structured path components with package-kind taxonomy?",
+  "summary": {
+    "hit_pair_count": 9,
+    "component_size_profile": [
+      7,
+      3,
+      2
+    ],
+    "component_edge_profile": [
+      6,
+      2,
+      1
+    ],
+    "all_components_are_paths": true,
+    "endpoint_slots": [
+      "07",
+      "08",
+      "10",
+      "11",
+      "13",
+      "14"
+    ],
+    "internal_slots": [
+      "02",
+      "03",
+      "05",
+      "06",
+      "09",
+      "12"
+    ],
+    "package_kind_counts": {
+      "clean_reciprocal_pair_package": 6,
+      "one_way_single_transition": 1,
+      "two_transition_pair_package": 2
+    },
+    "transition_count_profile": {
+      "180": 6,
+      "60": 1,
+      "120": 1,
+      "130": 1
+    },
+    "channel_count": 0
+  },
+  "components": [
+    {
+      "component_index": 0,
+      "slots": [
+        "02",
+        "03",
+        "06",
+        "08",
+        "09",
+        "12",
+        "13"
+      ],
+      "slot_count": 7,
+      "edge_count": 6,
+      "edges": [
+        [
+          "02",
+          "03"
+        ],
+        [
+          "02",
+          "08"
+        ],
+        [
+          "03",
+          "09"
+        ],
+        [
+          "06",
+          "12"
+        ],
+        [
+          "06",
+          "13"
+        ],
+        [
+          "09",
+          "12"
+        ]
+      ],
+      "is_path": true,
+      "path_order": [
+        "08",
+        "02",
+        "03",
+        "09",
+        "12",
+        "06",
+        "13"
+      ],
+      "path_pairs": [
+        "02_08",
+        "02_03",
+        "03_09",
+        "09_12",
+        "06_12",
+        "06_13"
+      ],
+      "path_edge_records": [
+        {
+          "pair": "02_08",
+          "edge": [
+            "08",
+            "02"
+          ],
+          "package_kind": "clean_reciprocal_pair_package",
+          "pair_total_transition_count": 180,
+          "pair_total_root_count": 60,
+          "has_boundary_carrier": true,
+          "channels_admitted": false,
+          "full60_transitions": [
+            "2 -> 8",
+            "2/8 -> 8",
+            "8 -> 2"
+          ]
+        },
+        {
+          "pair": "02_03",
+          "edge": [
+            "02",
+            "03"
+          ],
+          "package_kind": "clean_reciprocal_pair_package",
+          "pair_total_transition_count": 180,
+          "pair_total_root_count": 60,
+          "has_boundary_carrier": true,
+          "channels_admitted": false,
+          "full60_transitions": [
+            "2 -> 3",
+            "2/3 -> 3",
+            "3 -> 2"
+          ]
+        },
+        {
+          "pair": "03_09",
+          "edge": [
+            "03",
+            "09"
+          ],
+          "package_kind": "clean_reciprocal_pair_package",
+          "pair_total_transition_count": 180,
+          "pair_total_root_count": 60,
+          "has_boundary_carrier": true,
+          "channels_admitted": false,
+          "full60_transitions": [
+            "3 -> 9",
+            "3/9 -> 9",
+            "9 -> 3"
+          ]
+        },
+        {
+          "pair": "09_12",
+          "edge": [
+            "09",
+            "12"
+          ],
+          "package_kind": "one_way_single_transition",
+          "pair_total_transition_count": 60,
+          "pair_total_root_count": 60,
+          "has_boundary_carrier": true,
+          "channels_admitted": false,
+          "full60_transitions": [
+            "9 -> 12"
+          ]
+        },
+        {
+          "pair": "06_12",
+          "edge": [
+            "12",
+            "06"
+          ],
+          "package_kind": "two_transition_pair_package",
+          "pair_total_transition_count": 120,
+          "pair_total_root_count": 60,
+          "has_boundary_carrier": true,
+          "channels_admitted": false,
+          "full60_transitions": [
+            "12 -> 6",
+            "6/12 -> 12"
+          ]
+        },
+        {
+          "pair": "06_13",
+          "edge": [
+            "06",
+            "13"
+          ],
+          "package_kind": "clean_reciprocal_pair_package",
+          "pair_total_transition_count": 180,
+          "pair_total_root_count": 60,
+          "has_boundary_carrier": true,
+          "channels_admitted": false,
+          "full60_transitions": [
+            "13 -> 6",
+            "6 -> 13",
+            "6/13 -> 13"
+          ]
+        }
+      ],
+      "package_kind_counts": {
+        "clean_reciprocal_pair_package": 4,
+        "one_way_single_transition": 1,
+        "two_transition_pair_package": 1
+      },
+      "transition_count_profile": {
+        "180": 4,
+        "60": 1,
+        "120": 1
+      },
+      "endpoint_slots": [
+        "08",
+        "13"
+      ],
+      "internal_slots": [
+        "02",
+        "03",
+        "06",
+        "09",
+        "12"
+      ]
+    },
+    {
+      "component_index": 1,
+      "slots": [
+        "05",
+        "10",
+        "14"
+      ],
+      "slot_count": 3,
+      "edge_count": 2,
+      "edges": [
+        [
+          "05",
+          "10"
+        ],
+        [
+          "05",
+          "14"
+        ]
+      ],
+      "is_path": true,
+      "path_order": [
+        "10",
+        "05",
+        "14"
+      ],
+      "path_pairs": [
+        "05_10",
+        "05_14"
+      ],
+      "path_edge_records": [
+        {
+          "pair": "05_10",
+          "edge": [
+            "10",
+            "05"
+          ],
+          "package_kind": "clean_reciprocal_pair_package",
+          "pair_total_transition_count": 180,
+          "pair_total_root_count": 60,
+          "has_boundary_carrier": true,
+          "channels_admitted": false,
+          "full60_transitions": [
+            "10 -> 5",
+            "5 -> 10",
+            "5/10 -> 10"
+          ]
+        },
+        {
+          "pair": "05_14",
+          "edge": [
+            "05",
+            "14"
+          ],
+          "package_kind": "clean_reciprocal_pair_package",
+          "pair_total_transition_count": 180,
+          "pair_total_root_count": 60,
+          "has_boundary_carrier": true,
+          "channels_admitted": false,
+          "full60_transitions": [
+            "14 -> 5",
+            "5 -> 14",
+            "5/14 -> 14"
+          ]
+        }
+      ],
+      "package_kind_counts": {
+        "clean_reciprocal_pair_package": 2
+      },
+      "transition_count_profile": {
+        "180": 2
+      },
+      "endpoint_slots": [
+        "10",
+        "14"
+      ],
+      "internal_slots": [
+        "05"
+      ]
+    },
+    {
+      "component_index": 2,
+      "slots": [
+        "07",
+        "11"
+      ],
+      "slot_count": 2,
+      "edge_count": 1,
+      "edges": [
+        [
+          "07",
+          "11"
+        ]
+      ],
+      "is_path": true,
+      "path_order": [
+        "07",
+        "11"
+      ],
+      "path_pairs": [
+        "07_11"
+      ],
+      "path_edge_records": [
+        {
+          "pair": "07_11",
+          "edge": [
+            "07",
+            "11"
+          ],
+          "package_kind": "two_transition_pair_package",
+          "pair_total_transition_count": 130,
+          "pair_total_root_count": 60,
+          "has_boundary_carrier": true,
+          "channels_admitted": false,
+          "full60_transitions": [
+            "11 -> 7",
+            "7/11 -> 11"
+          ]
+        }
+      ],
+      "package_kind_counts": {
+        "two_transition_pair_package": 1
+      },
+      "transition_count_profile": {
+        "130": 1
+      },
+      "endpoint_slots": [
+        "07",
+        "11"
+      ],
+      "internal_slots": []
+    }
+  ],
+  "interpretation": {
+    "shape": "path forest",
+    "path_components": [
+      "P7",
+      "P3",
+      "P2"
+    ],
+    "component_sizes": [
+      7,
+      3,
+      2
+    ],
+    "edge_profile": [
+      6,
+      2,
+      1
+    ],
+    "package_taxonomy": "6 clean reciprocal, 2 two-transition, 1 one-way single",
+    "not_channel": true,
+    "next_problem": "Determine whether package kinds occupy specific path positions or endpoint/interior roles."
+  },
+  "checks": {
+    "subgraph_audit_passed": true,
+    "channel_registry_zero_count": true,
+    "channels_not_admitted": true,
+    "hit_pair_count_9": true,
+    "component_size_profile_is_7_3_2": true,
+    "component_edge_profile_is_6_2_1": true,
+    "all_components_are_paths": true,
+    "endpoint_count_is_6": true,
+    "internal_count_is_6": true,
+    "package_kind_profile_matches": true,
+    "transition_count_profile_matches": true,
+    "all_edges_have_boundary_carriers": true,
+    "no_edges_are_admitted_as_channels": true
+  },
+  "failed_checks": [],
+  "boundary": {
+    "taxonomy_audit_only": true,
+    "admits_channels": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "marker_lighting": false,
+    "force_claim": false,
+    "physics_claim": false
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "schema": "g900.channel_registry_backup_before_explicit_admission",
+  "version": 1,
+  "created_utc": "2026-06-18T03:31:55Z",
+  "source_path": "public_html/labs/g900_observatory/data/g900_channels.v0.1.json",
+  "channel_registry_sha256": "f5298a9d2418778c9e1bc545449b1a84d8b00125e18dc5b6ec6bb08f3434a309",
+  "channel_registry": {
+    "schema": "g900.viewer.channels",
+    "version": "0.1",
+    "body": "g900",
+    "body_version": "0.1",
+    "overlay": {
+      "id": "channels",
+      "layer": 3,
+      "status": "next"
+    },
+    "status": "channel_scaffold_declared",
+    "contract": {
+      "channel_set": "id label status mutates_body:false channels[]",
+      "channel": "id label kind source_carrier_ids[] target_carrier_ids[] mutates_body:false source{}"
+    },
+    "channel_sets": [],
+    "channel_set_count": 0,
+    "channel_count": 0,
+    "mutates_body": false,
+    "runtime_motion_authority": false,
+    "physics_claim": false,
+    "boundary": {
+      "admits_channels": false,
+      "renders_channels": false,
+      "mutates_body": false,
+      "physics_claim": false,
+      "force_claim": false
+    }
+  }
+}

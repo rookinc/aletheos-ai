@@ -1,0 +1,246 @@
+{
+  "schema": "g900.explicit_return_cell_channel_admission",
+  "version": 1,
+  "status": "explicit_return_cell_channel_admitted",
+  "created_utc": "2026-06-18T03:31:55Z",
+  "audit_pass": true,
+  "verdict": "explicit_return_cell_channel_admission_passed",
+  "question": "Can the return-cell channel be explicitly admitted by mutating the channel registry from zero to one?",
+  "answer": "Yes. This artifact admits exactly one return-cell channel into the channel registry while leaving rendering disabled, marker lighting off, and the G900 body unchanged.",
+  "admitted_channel": {
+    "id": "g900_return_cell_channel_1bed7a7cba65a7be",
+    "kind": "return_cell_channel",
+    "layer": 3,
+    "status": "admitted",
+    "admitted_by": "g900_explicit_return_cell_channel_admission_001",
+    "admitted_at_utc": "2026-06-18T03:31:55Z",
+    "candidate_id": "return_cell_03_09_09_12_06_12_06_13",
+    "candidate_pairs": [
+      "03_09",
+      "09_12",
+      "06_12",
+      "06_13"
+    ],
+    "oriented_pairs": [
+      "03_09",
+      "09_12",
+      "06_12",
+      "06_13"
+    ],
+    "dominant_roots": [
+      "09",
+      "12",
+      "12",
+      "13"
+    ],
+    "transition_lengths": [
+      3,
+      1,
+      2,
+      3
+    ],
+    "transition_weights": [
+      180,
+      60,
+      120,
+      180
+    ],
+    "semantics_contract_id": "g900_channel_semantics_contract_dabdd392c0015dbd",
+    "render_contract_id": "g900_channel_render_contract_c1ab6ec9041a2eba",
+    "transition_length_law_id": "g900_local_transition_length_law_2a309ad6c63e5ba4",
+    "event_id": "g900_return_cell_event_562162c72753c818",
+    "admission_basis": [
+      "g900_channel_semantics_contract_001",
+      "g900_channel_render_contract_001",
+      "g900_local_non_pair_identity_transition_length_law_001",
+      "g900_channel_admission_readiness_receipt_001"
+    ],
+    "display": {
+      "renderer_enabled_now": false,
+      "renders_channel_now": false,
+      "render_contract_only": true
+    },
+    "boundary": {
+      "mutates_body": false,
+      "marker_lighting": false,
+      "gate_open": false,
+      "force_claim": false,
+      "physics_claim": false
+    }
+  },
+  "registry_delta": {
+    "before_channel_count": 0,
+    "after_channel_count": 1,
+    "before_channel_set_count": 0,
+    "after_channel_set_count": 1,
+    "before_admitted_channel_count": null,
+    "after_admitted_channel_count": 1,
+    "before_channel_registry_sha256": "f5298a9d2418778c9e1bc545449b1a84d8b00125e18dc5b6ec6bb08f3434a309",
+    "after_channel_registry_sha256": "dd2fda859030911835ac51d51eb74542f6981fe2d7420a2ee221bf874dc62327"
+  },
+  "source_receipts": {
+    "channels_registry_mutated": "public_html/labs/g900_observatory/data/g900_channels.v0.1.json",
+    "backup_before_mutation": "public_html/labs/g900_observatory/artifacts/json/g900_channels_pre_explicit_admission_backup_001.v1.json",
+    "readiness": "public_html/labs/g900_observatory/artifacts/json/g900_channel_admission_readiness_receipt_001.v1.json",
+    "semantics": "public_html/labs/g900_observatory/artifacts/json/g900_channel_semantics_contract_001.v1.json",
+    "render_contract": "public_html/labs/g900_observatory/artifacts/json/g900_channel_render_contract_001.v1.json",
+    "local_law": "public_html/labs/g900_observatory/artifacts/json/g900_local_non_pair_identity_transition_length_law_001.v1.json",
+    "post_law_recheck": "public_html/labs/g900_observatory/artifacts/json/g900_channel_admission_recheck_after_local_law_001.v1.json",
+    "event_contract": "public_html/labs/g900_observatory/artifacts/json/g900_return_cell_cycle_event_contract_001.v1.json",
+    "gate_recheck": "public_html/labs/g900_observatory/artifacts/json/g900_post_stub_marker_event_gate_recheck_001.v1.json",
+    "quartz_boundary": "public_html/labs/g900_observatory/artifacts/json/g900_sheets_per_second_quartz_boundary_001.v1.json"
+  },
+  "hash_receipts": {
+    "static_body_sha256_before": "71944bd613ce8c6c036a2c4198f3df2e0064a75fec1f03ccf8bb60f9a2d412db",
+    "static_body_sha256_after": "71944bd613ce8c6c036a2c4198f3df2e0064a75fec1f03ccf8bb60f9a2d412db",
+    "carrier_registry_sha256_before": "ecbf14773744ec44d9a73ed14f41525e40f378bf431e4174e194cb431ffcb735",
+    "carrier_registry_sha256_after": "ecbf14773744ec44d9a73ed14f41525e40f378bf431e4174e194cb431ffcb735",
+    "stage_sha256_before": "732dad810dffdfbe97c275ee96914a95aeb7fa6976df04d8df0063157b19d5bf",
+    "stage_sha256_after": "732dad810dffdfbe97c275ee96914a95aeb7fa6976df04d8df0063157b19d5bf",
+    "channel_registry_sha256_before": "f5298a9d2418778c9e1bc545449b1a84d8b00125e18dc5b6ec6bb08f3434a309",
+    "channel_registry_sha256_after": "dd2fda859030911835ac51d51eb74542f6981fe2d7420a2ee221bf874dc62327"
+  },
+  "summary": {
+    "channel_admitted": true,
+    "channel_id": "g900_return_cell_channel_1bed7a7cba65a7be",
+    "channel_set_id": "g900_return_cell_channel_set_001",
+    "candidate_id": "return_cell_03_09_09_12_06_12_06_13",
+    "candidate_pairs": [
+      "03_09",
+      "09_12",
+      "06_12",
+      "06_13"
+    ],
+    "channel_count_before": 0,
+    "channel_count_after": 1,
+    "admitted_channel_count_after": 1,
+    "renderer_enabled_now": false,
+    "renders_channel_now": false,
+    "mutates_body": false,
+    "body_hash_unchanged": true,
+    "marker_gate_open": false,
+    "marker_lighting": false,
+    "force_claim": false,
+    "physics_claim": false
+  },
+  "interpretation": {
+    "explicit_admission_crossed": true,
+    "ready_to_admit_became_admitted": true,
+    "channel_registry_mutated_from_zero_to_one": true,
+    "channel_admitted_but_not_rendered": true,
+    "marker_is_still_attention_not_channel": true,
+    "body_remains_source": true,
+    "not_marker_lighting": true,
+    "not_body_mutation": true,
+    "not_force_claim": true,
+    "not_physics_claim": true,
+    "next_problem": "Run a post-admission integrity audit, then decide whether to enable any channel renderer."
+  },
+  "criteria": [
+    {
+      "id": "readiness_receipt_passed",
+      "description": "The admission readiness receipt passed.",
+      "satisfied": true
+    },
+    {
+      "id": "registry_was_zero_before",
+      "description": "The channel registry was zero-count before admission.",
+      "satisfied": true
+    },
+    {
+      "id": "explicit_admission_object_constructed",
+      "description": "The explicit return-cell channel object was constructed.",
+      "satisfied": true
+    },
+    {
+      "id": "registry_mutation_is_exactly_one_channel",
+      "description": "The registry mutation changes channel count from 0 to 1 and channel set count from 0 to 1.",
+      "satisfied": true
+    },
+    {
+      "id": "channel_id_present_after",
+      "description": "The admitted channel id is present in the updated registry.",
+      "satisfied": true
+    },
+    {
+      "id": "semantics_basis_present",
+      "description": "The admission references the semantics contract.",
+      "satisfied": true
+    },
+    {
+      "id": "render_basis_present_without_rendering",
+      "description": "The admission references the render contract without enabling rendering.",
+      "satisfied": true
+    },
+    {
+      "id": "law_basis_present",
+      "description": "The admission references the local non-pair transition-length law.",
+      "satisfied": true
+    },
+    {
+      "id": "body_hash_unchanged",
+      "description": "The static G900 body hash is unchanged.",
+      "satisfied": true,
+      "static_body_sha256": "71944bd613ce8c6c036a2c4198f3df2e0064a75fec1f03ccf8bb60f9a2d412db"
+    },
+    {
+      "id": "carrier_hash_unchanged",
+      "description": "The carrier registry hash is unchanged.",
+      "satisfied": true,
+      "carrier_registry_sha256": "ecbf14773744ec44d9a73ed14f41525e40f378bf431e4174e194cb431ffcb735"
+    },
+    {
+      "id": "stage_hash_unchanged",
+      "description": "The live stage JS hash is unchanged.",
+      "satisfied": true,
+      "stage_sha256": "732dad810dffdfbe97c275ee96914a95aeb7fa6976df04d8df0063157b19d5bf"
+    },
+    {
+      "id": "renderer_still_disabled",
+      "description": "No renderer is enabled and no channel is rendered.",
+      "satisfied": true
+    },
+    {
+      "id": "marker_still_unlit",
+      "description": "The marker gate remains closed and the marker remains unlit.",
+      "satisfied": true
+    },
+    {
+      "id": "no_force_or_physics_claim",
+      "description": "The admission makes no force or physics claim.",
+      "satisfied": true
+    }
+  ],
+  "checks": {
+    "readiness_receipt_passed": true,
+    "registry_was_zero_before": true,
+    "explicit_admission_object_constructed": true,
+    "registry_mutation_is_exactly_one_channel": true,
+    "channel_id_present_after": true,
+    "semantics_basis_present": true,
+    "render_basis_present_without_rendering": true,
+    "law_basis_present": true,
+    "body_hash_unchanged": true,
+    "carrier_hash_unchanged": true,
+    "stage_hash_unchanged": true,
+    "renderer_still_disabled": true,
+    "channel_not_rendered": true,
+    "body_not_mutated": true,
+    "marker_still_unlit": true,
+    "gate_still_closed": true,
+    "no_force_or_physics_claim": true,
+    "all_criteria_satisfied": true
+  },
+  "failed_checks": [],
+  "boundary": {
+    "explicit_channel_admission": true,
+    "admits_channels": true,
+    "renderer_enabled": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "marker_lighting": false,
+    "gate_open": false,
+    "force_claim": false,
+    "physics_claim": false
+  }
+}

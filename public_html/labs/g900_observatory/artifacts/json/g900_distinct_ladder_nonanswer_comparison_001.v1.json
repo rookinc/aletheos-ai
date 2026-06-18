@@ -1,0 +1,196 @@
+{
+  "schema": "g900.distinct_ladder_nonanswer_comparison",
+  "version": 1,
+  "status": "distinct_ladder_nonanswer_comparison_recorded",
+  "created_utc": "2026-06-18T09:04:44Z",
+  "git_head": "317fed0 Audit G900 all-phase ladder spectrum",
+  "audit_pass": true,
+  "verdict": "distinct_ladder_nonanswer_comparison_passed",
+  "question": "What does the non-answering distinct ladder lack that the six-nine answering ladder has?",
+  "comparison_status": "distinct_nonanswer_lacks_predicted_outside_frame",
+  "reading": "The all-phase spectrum has two distinct ladders. The six-nine distinct ladder answers because its predicted outside frame exists and converts inside failure to receipt. The other distinct ladder does not answer because its predicted outside frame is absent; there is no receipt candidate to evaluate.",
+  "source_context": {
+    "spectrum_status": "six_nine_unique_failure_to_receipt_in_all_phase_spectrum",
+    "spectrum_record_count": 18,
+    "distinct_record_count": 2,
+    "failure_to_receipt_count": 1
+  },
+  "counts": {
+    "loaded_spectrum_record_count": 18,
+    "distinct_record_count": 2,
+    "failure_to_receipt_record_count": 1,
+    "nonanswering_distinct_record_count": 1,
+    "distinct_phase_counts": {
+      "3": 1,
+      "6": 1
+    },
+    "failure_to_receipt_phase_counts": {
+      "3": 1
+    }
+  },
+  "contrast": {
+    "answering_distinct_ladder": {
+      "phase_step_mod15": 3,
+      "source_frame": [
+        "06_09",
+        "12",
+        "23->24"
+      ],
+      "source_pair": "06_09",
+      "source_endpoints": [
+        6,
+        9
+      ],
+      "source_root_slot": 12,
+      "source_limit_transition": "23->24",
+      "anchor": 9,
+      "inside_moving_endpoint": 6,
+      "outside_moving_endpoint": 3,
+      "outside_root_slot": 9,
+      "phase_ladder_values": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "phase_ladder_distinct": true,
+      "outside_pair_degenerate": false,
+      "predicted_pair_key": "03_09",
+      "predicted_frame": [
+        "03_09",
+        "9",
+        "23->24"
+      ],
+      "prediction_exists": true,
+      "source_inside_failure_proxy": true,
+      "predicted_receipt_proxy": true,
+      "failure_to_receipt": true,
+      "source_package_kind_counts": {
+        "one_way_single_transition": 60
+      },
+      "source_support_true": 0,
+      "source_zero_hit_true": 60,
+      "source_boundary_carrier_true": 0,
+      "predicted_row_count": 60,
+      "predicted_package_kind_counts": {
+        "clean_reciprocal_pair_package": 60
+      },
+      "predicted_support_true": 60,
+      "predicted_zero_hit_true": 0,
+      "predicted_boundary_carrier_true": 60
+    },
+    "nonanswering_distinct_ladder": {
+      "phase_step_mod15": 6,
+      "source_frame": [
+        "06_09",
+        "12",
+        "23->24"
+      ],
+      "source_pair": "06_09",
+      "source_endpoints": [
+        6,
+        9
+      ],
+      "source_root_slot": 12,
+      "source_limit_transition": "23->24",
+      "anchor": 6,
+      "inside_moving_endpoint": 9,
+      "outside_moving_endpoint": 3,
+      "outside_root_slot": 6,
+      "phase_ladder_values": [
+        3,
+        9,
+        6,
+        12
+      ],
+      "phase_ladder_distinct": true,
+      "outside_pair_degenerate": false,
+      "predicted_pair_key": "03_06",
+      "predicted_frame": [
+        "03_06",
+        "6",
+        "23->24"
+      ],
+      "prediction_exists": false,
+      "source_inside_failure_proxy": true,
+      "predicted_receipt_proxy": false,
+      "failure_to_receipt": false,
+      "source_package_kind_counts": {
+        "one_way_single_transition": 60
+      },
+      "source_support_true": 0,
+      "source_zero_hit_true": 60,
+      "source_boundary_carrier_true": 0,
+      "predicted_row_count": 0,
+      "predicted_package_kind_counts": {},
+      "predicted_support_true": 0,
+      "predicted_zero_hit_true": 0,
+      "predicted_boundary_carrier_true": 0
+    },
+    "key_differences": {
+      "answer_prediction_exists": true,
+      "nonanswer_prediction_exists": false,
+      "answer_source_inside_failure_proxy": true,
+      "nonanswer_source_inside_failure_proxy": true,
+      "answer_predicted_receipt_proxy": true,
+      "nonanswer_predicted_receipt_proxy": false,
+      "nonanswer_lacks_prediction": true,
+      "nonanswer_source_not_failure": false,
+      "nonanswer_predicted_not_receipt": true
+    }
+  },
+  "interpretation_boundary": [
+    "This compares the two distinct records found in the observed all-phase ladder spectrum.",
+    "It does not derive why the nonanswering distinct ladder has no predicted frame.",
+    "It does not derive the ladder spectrum from deeper G60 construction.",
+    "No closure witness, transport relation, channel, force, physics, GR, Maxwell, QCD, electroweak, or unification claim is made."
+  ],
+  "boundary": {
+    "distinct_ladder_nonanswer_comparison_only": true,
+    "full_native_derivation": false,
+    "admits_closure_witness": false,
+    "admits_transport_relation": false,
+    "admits_channel": false,
+    "marker_lighting": false,
+    "viewer_change": false,
+    "body_mutation": false,
+    "force_claim": false,
+    "physics_claim": false,
+    "gr_claim": false,
+    "maxwell_claim": false,
+    "qcd_claim": false,
+    "electroweak_claim": false,
+    "unification_claim": false
+  },
+  "next_allowed_math_acts": [
+    "derive_predicted_frame_existence_condition",
+    "inspect_nonanswering_distinct_ladder_source_context",
+    "test_5_3_4_chamber_signature_near_answering_fork",
+    "transport_relation_admission_criterion_001"
+  ],
+  "checks": {
+    "all_phase_prior_valid": true,
+    "all_phase_prior_status": true,
+    "distinct_prior_valid": true,
+    "comparison_prior_valid": true,
+    "record_count_loaded": true,
+    "distinct_count_two": true,
+    "failure_count_one": true,
+    "nonanswer_distinct_count_one": true,
+    "answer_good": true,
+    "nonanswer_good": true,
+    "comparison_status_recorded": true,
+    "channel_registry_preserved": true,
+    "renderer_absent": true,
+    "no_forbidden_claims": true
+  },
+  "failed_checks": [],
+  "hashes": {
+    "all_phase_prior_sha256": "4f8f5f4ce3968724c4f8433635ae19d2c3fa3173c1172adb0594ce0f64c9ad1b",
+    "distinct_prior_sha256": "050f6f0c53837a51f5d8949c0e19185963649f76b66708eb4bfc30e74625084b",
+    "comparison_prior_sha256": "8cfbab1d2ee9ac81a5d41627995f87d2e11fee7410cf825467c3958d53446c55",
+    "channels_sha256": "fbe4c50e0adf3460f7190f3c7714754da8a620359a5bc26c70543cc401feca08",
+    "body_sha256": "6a2cb6b9892a78d4559ec61cf946b0021962cc6819311234b8bf14102b3b7f63",
+    "lab_sha256": "5a10a18bc6563446a0d364d5984b8a41db580e0a75831c82b9eeb5aebc2edeb7"
+  }
+}

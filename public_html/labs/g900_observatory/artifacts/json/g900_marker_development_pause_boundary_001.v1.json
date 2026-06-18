@@ -1,0 +1,55 @@
+{
+  "schema": "g900.marker_development_pause_boundary",
+  "version": 1,
+  "status": "marker_development_paused_pending_cycle_contract",
+  "created_utc": "2026-06-18T00:23:32Z",
+  "audit_pass": true,
+  "marker_summary": {
+    "marker_id": "unsupported_phase_step_6_9",
+    "edge_count": 60,
+    "vertex_count": 120
+  },
+  "current_locked_marker_assets": [
+    "data-only marker receipt",
+    "data-only marker registry",
+    "isolated marker debug page",
+    "edge-index audit",
+    "audit-gated debug page",
+    "marker receipt pack",
+    "live static marker panel stub",
+    "isolated stepper/trail prototype"
+  ],
+  "pause_reason": {
+    "has_sheet_timer": true,
+    "has_sheet_counter": true,
+    "has_admitted_marker_cycle_contract": false,
+    "reason": "A sheet timer is not a cycle and a sheet counter is not an event."
+  },
+  "next_required_before_live_lighting": "receipted marker cycle contract",
+  "keeper_line": "A timer is not a cycle. A counter is not an event. A marker should light only when the Observatory has an admitted rule saying what passed through it.",
+  "checks": {
+    "marker_registry_schema": true,
+    "marker_id_is_6_9": true,
+    "marker_edge_count_is_60": true,
+    "marker_vertex_count_is_120": true,
+    "channel_count_is_zero": true,
+    "channel_set_count_is_zero": true,
+    "live_stage_has_no_marker_lighting": true,
+    "live_html_has_no_marker_toggle": true,
+    "live_css_has_no_live_marker_patch": true,
+    "isolated_stepper_exists": true,
+    "isolated_stepper_js_exists": true
+  },
+  "failed_checks": [],
+  "boundary": {
+    "marker_work_preserved": true,
+    "live_marker_lighting_paused": true,
+    "isolated_debug_allowed": true,
+    "live_stage_marker_import": false,
+    "live_stage_marker_renderer": false,
+    "channel_admission": false,
+    "body_mutation": false,
+    "force_claim": false,
+    "physics_claim": false
+  }
+}

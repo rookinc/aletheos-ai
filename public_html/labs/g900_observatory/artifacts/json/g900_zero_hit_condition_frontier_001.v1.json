@@ -1,0 +1,129 @@
+{
+  "schema": "g900.zero_hit_condition_frontier",
+  "version": 1,
+  "status": "zero_hit_condition_frontier_recorded",
+  "created_utc": "2026-06-18T05:57:08Z",
+  "git_head": "c3bbf44 Audit G900 root slot 12 23_24 zero hit condition",
+  "audit_pass": true,
+  "verdict": "zero_hit_condition_frontier_record_passed",
+  "closed_statement": "In the tested full60 package-support step table, the global zero-hit condition is exactly equivalent to root_slot=12 AND limit_transition=23->24.",
+  "frontier_statement": "This closes the local zero-hit condition only. It does not admit transport, does not admit a channel, does not mutate the body, does not change the viewer, does not claim force, and does not claim physics.",
+  "exact_condition": {
+    "zero_hit_condition": {
+      "root_slot": "12",
+      "limit_transition": "23->24"
+    },
+    "zero_hit_row_count": 60,
+    "compound_row_count": 60,
+    "false_positive_count": 0,
+    "false_negative_count": 0,
+    "exact_equivalence": true
+  },
+  "lineage": [
+    {
+      "id": "g900_six_nine_package_support_field_law_001",
+      "closed": "6/9 has package-support field law candidate: no support/carrier and unsupported_rate=1.0."
+    },
+    {
+      "id": "g900_total_support_failure_family_001",
+      "closed": "6/9 is the unique total package-support failure."
+    },
+    {
+      "id": "g900_six_nine_orientation_law_candidate_001",
+      "closed": "6/9 aligns with uniform transition_profile 6 -> 9:60."
+    },
+    {
+      "id": "g900_six_nine_orientation_provenance_nonlabel_audit_001",
+      "closed": "06_09 can be selected without label/support fields by from_limit_profile=23:60."
+    },
+    {
+      "id": "g900_six_nine_from_limit_23_source_audit_001",
+      "closed": "The sharper handle is to_limit_profile=24:60 inside from_limit=23."
+    },
+    {
+      "id": "g900_six_nine_limit_transition_23_24_boundary_probe_001",
+      "closed": "The 23->24 fork is split by delta_vertex_count_profile."
+    },
+    {
+      "id": "g900_0309_vs_0609_2324_fork_audit_001",
+      "closed": "03_09 and 06_09 share the 23->24 fork, but 06_09 has delta_vertex_count=1 on all rows."
+    },
+    {
+      "id": "g900_root_slot_12_zero_hit_fork_anatomy_001",
+      "closed": "Inside the fork, root_slot=12 exactly selects the zero-hit branch."
+    },
+    {
+      "id": "g900_root_slot_12_global_scope_audit_001",
+      "closed": "root_slot=12 is mixed globally and zero-hit only at 23->24."
+    },
+    {
+      "id": "g900_root_slot_12_2324_compound_zero_hit_audit_001",
+      "closed": "In the tested full60 package-support step table, the global zero-hit condition is exactly equivalent to root_slot=12 AND limit_transition=23->24."
+    }
+  ],
+  "open_frontiers": [
+    "why root_slot=12 and limit_transition=23->24 is the zero-hit condition",
+    "whether this condition can be derived from deeper G900 construction provenance",
+    "transport relation admission criterion",
+    "channel admission criterion",
+    "physical bridge forbidden mapping ledger",
+    "force or physics interpretation remains prohibited"
+  ],
+  "boundary": {
+    "frontier_record_only": true,
+    "admits_transport": false,
+    "admits_channels": false,
+    "changes_viewer": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "force_claim": false,
+    "physics_claim": false
+  },
+  "next_allowed_math_acts": [
+    "transport_relation_admission_criterion_001",
+    "physics_bridge_forbidden_mapping_ledger_001",
+    "root_slot_12_2324_source_provenance_probe_001"
+  ],
+  "checks": {
+    "compound_valid": true,
+    "compound_exact": true,
+    "compound_equivalence_true": true,
+    "compound_zero_hit_count_60": true,
+    "compound_false_positive_zero": true,
+    "compound_false_negative_zero": true,
+    "scope_valid": true,
+    "scope_mixed": true,
+    "anatomy_valid": true,
+    "fork_valid": true,
+    "limit_valid": true,
+    "from_limit_valid": true,
+    "nonlabel_valid": true,
+    "orientation_valid": true,
+    "family_valid": true,
+    "field_law_valid": true,
+    "channel_registry_preserved": true,
+    "renderer_absent": true,
+    "transport_not_admitted": true,
+    "channel_not_admitted": true,
+    "no_body_mutation": true,
+    "no_viewer_change": true,
+    "no_force_claim": true,
+    "no_physics_claim": true
+  },
+  "failed_checks": [],
+  "hashes": {
+    "compound_sha256": "28eae25162bbc2a1397c2125b2e48c2d7754fd2b7bffca8498bd6db7d52cc41c",
+    "scope_sha256": "ac08a0770acd87685399dcc73b8ab67f555ec752b82a01081a03be56ac6eff99",
+    "anatomy_sha256": "b761168c963e9ddfaad930bbc8c74b28bcb893e4acda20ffb0da8ab6459785a5",
+    "fork_sha256": "54aba27d7cbc6dacfeffd72dddec5ed6aaf36d647f30c589525ff8f7bc56a0d4",
+    "limit_sha256": "91de11cc147214ea9434c92adf268f8f0f948e1d7e7f9b386f484c7f609c6906",
+    "from_limit_sha256": "1f23a68153f174f2ec82b70f5b094a13a7790354d23e069c0ec93976a9170adf",
+    "nonlabel_sha256": "8f8536cf7df68b4b8475297b30814a9bbb3fd2f40587e202afcc9824eefa5b81",
+    "orientation_sha256": "777956159becf47ad7dc00f34203840b80b950f5c89f08c47b5daf0eecd1f20a",
+    "family_sha256": "e28aad9669e5b0888cdfe08b0adf24a0fd6fa34b0c397a89684bbd8c2535e391",
+    "field_law_sha256": "52ec7408929c48c0729f4ce14b7a50f0afe49be3ccfe94a00b2ade9d3e064d30",
+    "channels_sha256": "fbe4c50e0adf3460f7190f3c7714754da8a620359a5bc26c70543cc401feca08",
+    "body_sha256": "6a2cb6b9892a78d4559ec61cf946b0021962cc6819311234b8bf14102b3b7f63",
+    "lab_sha256": "5a10a18bc6563446a0d364d5984b8a41db580e0a75831c82b9eeb5aebc2edeb7"
+  }
+}

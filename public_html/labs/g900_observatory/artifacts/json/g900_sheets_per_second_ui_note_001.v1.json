@@ -1,0 +1,161 @@
+{
+  "schema": "g900.sheets_per_second_ui_note",
+  "version": 1,
+  "status": "sheets_per_second_ui_note_recorded",
+  "created_utc": "2026-06-18T02:17:03Z",
+  "audit_pass": true,
+  "verdict": "sheets_per_second_ui_note_recorded_without_authority_leak",
+  "question": "Can the Observatory surface display sheets/sec as a timing readout without giving quartz, frames, timers, counters, or renderers event authority?",
+  "ui_note": {
+    "html_path": "public_html/labs/g900_observatory/lab.html",
+    "css_path": "public_html/labs/g900_observatory/lab.css",
+    "html_marker_start": "<!-- BEGIN G900 SHEETS PER SECOND UI NOTE 001 -->",
+    "html_marker_end": "<!-- END G900 SHEETS PER SECOND UI NOTE 001 -->",
+    "css_marker_start": "/* BEGIN G900 SHEETS PER SECOND UI NOTE 001 */",
+    "css_marker_end": "/* END G900 SHEETS PER SECOND UI NOTE 001 */",
+    "html_modified": true,
+    "css_modified": true,
+    "ui_term_presence": {
+      "Sheets per second": true,
+      "Quartz keeps the seconds. The grammar earns the sheets.": true,
+      "admissible grammar steps": true,
+      "scaled quartz oscillations": true,
+      "not an event authority": true,
+      "do not open gates or light markers": true
+    },
+    "present_forbidden_authority_phrases": []
+  },
+  "source_receipts": {
+    "quartz_boundary": "public_html/labs/g900_observatory/artifacts/json/g900_sheets_per_second_quartz_boundary_001.v1.json",
+    "post_stub_recheck": "public_html/labs/g900_observatory/artifacts/json/g900_post_stub_marker_event_gate_recheck_001.v1.json",
+    "channels": "public_html/labs/g900_observatory/data/g900_channels.v0.1.json",
+    "static_body": "public_html/labs/g900_observatory/data/g900_static_body.v1.json"
+  },
+  "hash_receipts": {
+    "html_before_sha256": "f2a48629f2ab4ac2cf031dc18297699969fbee0ca48e8e2adc93b83d03663403",
+    "html_after_sha256": "8af4392fcafcbab8611326447ee523b687d74b7dc23ea995792f265cf64b36aa",
+    "css_before_sha256": "11ef57f799b124190d759d13ef63464b916c0dfbb297c73528e8c63c6f2c0ad9",
+    "css_after_sha256": "548a959a6ecdbf6597c9d008a67822ece54a4d967bfbe48aed91adcd540628d2",
+    "stage_sha256": "732dad810dffdfbe97c275ee96914a95aeb7fa6976df04d8df0063157b19d5bf",
+    "static_body_sha256": "71944bd613ce8c6c036a2c4198f3df2e0064a75fec1f03ccf8bb60f9a2d412db"
+  },
+  "summary": {
+    "ui_note_present": true,
+    "ui_css_present": true,
+    "html_modified": true,
+    "css_modified": true,
+    "readout_allowed": true,
+    "event_authority": false,
+    "quartz_gate_authority": false,
+    "timer_is_cycle": false,
+    "frame_is_event": false,
+    "counter_is_event": false,
+    "renderer_fixture_exists": true,
+    "gate_open": false,
+    "lights_marker_now": false,
+    "channel_count": 0
+  },
+  "interpretation": {
+    "public_note_added": true,
+    "quartz_keeps_seconds": true,
+    "grammar_earns_sheets": true,
+    "sheets_per_second_is_readout": true,
+    "ui_note_does_not_open_gate": true,
+    "ui_note_does_not_light_marker": true,
+    "ui_note_does_not_admit_channel": true,
+    "not_channel": true,
+    "not_force_claim": true,
+    "not_physics_claim": true,
+    "next_problem": "Review the visual placement in the browser, then decide whether the note should remain near the top of the Observatory or move into a status panel."
+  },
+  "criteria": [
+    {
+      "id": "quartz_boundary_artifact_passed",
+      "description": "The sheets/sec quartz boundary artifact exists and passed.",
+      "satisfied": true
+    },
+    {
+      "id": "post_stub_gate_recheck_still_closed",
+      "description": "The post-stub marker gate recheck exists and remains closed.",
+      "satisfied": true
+    },
+    {
+      "id": "ui_note_present",
+      "description": "The sheets/sec UI note is present in lab.html.",
+      "satisfied": true
+    },
+    {
+      "id": "ui_css_present",
+      "description": "The sheets/sec UI CSS is present in lab.css.",
+      "satisfied": true
+    },
+    {
+      "id": "ui_terms_present",
+      "description": "The public note includes the required boundary language.",
+      "satisfied": true,
+      "ui_term_presence": {
+        "Sheets per second": true,
+        "Quartz keeps the seconds. The grammar earns the sheets.": true,
+        "admissible grammar steps": true,
+        "scaled quartz oscillations": true,
+        "not an event authority": true,
+        "do not open gates or light markers": true
+      }
+    },
+    {
+      "id": "ui_does_not_grant_authority",
+      "description": "The UI note contains no forbidden authority claims.",
+      "satisfied": true,
+      "present_forbidden_authority_phrases": []
+    },
+    {
+      "id": "stage_js_unchanged",
+      "description": "This UI note artifact does not modify the live stage JS.",
+      "satisfied": true,
+      "stage_sha256": "732dad810dffdfbe97c275ee96914a95aeb7fa6976df04d8df0063157b19d5bf"
+    },
+    {
+      "id": "static_body_unchanged",
+      "description": "This UI note artifact does not modify the static G900 body.",
+      "satisfied": true,
+      "static_body_sha256": "71944bd613ce8c6c036a2c4198f3df2e0064a75fec1f03ccf8bb60f9a2d412db"
+    },
+    {
+      "id": "channel_registry_zero",
+      "description": "The channel registry remains zero-count.",
+      "satisfied": true
+    },
+    {
+      "id": "marker_still_not_lit",
+      "description": "The marker remains unlit after adding the UI note.",
+      "satisfied": true
+    }
+  ],
+  "checks": {
+    "quartz_boundary_passed": true,
+    "post_stub_recheck_passed": true,
+    "ui_note_present": true,
+    "ui_css_present": true,
+    "ui_terms_present": true,
+    "no_forbidden_authority_phrases": true,
+    "stage_js_unchanged": true,
+    "static_body_unchanged": true,
+    "channel_registry_zero": true,
+    "gate_still_closed": true,
+    "marker_not_lit": true,
+    "all_criteria_satisfied": true
+  },
+  "failed_checks": [],
+  "boundary": {
+    "ui_note_only": true,
+    "readout_layer_only": true,
+    "event_authority": false,
+    "gate_open": false,
+    "marker_lighting": false,
+    "admits_channels": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "force_claim": false,
+    "physics_claim": false
+  }
+}

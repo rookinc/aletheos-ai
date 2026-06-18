@@ -1,0 +1,3101 @@
+{
+  "schema": "g900.g15_cube_orientation_provenance_probe",
+  "version": 1,
+  "status": "g15_cube_orientation_provenance_probe_recorded",
+  "created_utc": "2026-06-18T05:10:47Z",
+  "git_head": "b2387d7 Probe G900 G15 cube assignment from adjacency",
+  "audit_pass": true,
+  "verdict": "g15_cube_orientation_provenance_frontier_recorded",
+  "question": "Does oriented L(Petersen) incidence or G900 provenance break the raw adjacency symmetry enough to derive the G15 cube role assignment?",
+  "answer": "Orientation/provenance confirms the right search layer but does not yet derive an exact full 8/6/1 cube assignment. This run records a frontier: many label/provenance hits are present, but explicit directed-row extraction did not recover the missing assignment. Text evidence still places 6 and 9 on face-centroid roles.",
+  "orientation_provenance_status": "orientation_provenance_frontier_no_exact_8_6_1_yet",
+  "leading_candidate_partition": null,
+  "candidate_partition_count": 0,
+  "candidate_partitions_first_20": [],
+  "profile_rows": [
+    {
+      "label": "0",
+      "hit_count": 12959,
+      "from_like": 20,
+      "to_like": 22,
+      "endpoint_like": 21,
+      "phase_step_like": 3,
+      "package_like": 0,
+      "support_like": 279,
+      "boundary_like": 281,
+      "slot_like": 7950,
+      "root_like": 5077,
+      "provenance_like": 0,
+      "orientation_like": 0,
+      "role_like": 7,
+      "corner_language": 199,
+      "face_centroid_language": 199,
+      "cube_centroid_language": 210,
+      "six_nine_context": 151,
+      "inside_outside_context": 0,
+      "boundary_context": 3174,
+      "support_failure_context": 2581,
+      "phase_step_context": 641,
+      "package_context": 2427,
+      "directed_language_context": 2497,
+      "cube_language_context": 200,
+      "source_count": 95,
+      "key_count": 76,
+      "top_sources": [
+        [
+          "g900_edge_limit_phase_scan_001_rows.v1.csv",
+          8474
+        ],
+        [
+          "g900_six_nine_boundary_orientation_probe_001.v1.json",
+          1422
+        ],
+        [
+          "g900_slot12_composite_triangle_anatomy_001.v1.json",
+          381
+        ],
+        [
+          "g900_channel_candidate_classifier_001_rows.v1.csv",
+          376
+        ],
+        [
+          "g900_edge_limit_phase_scan_001_root_summary.v1.csv",
+          350
+        ],
+        [
+          "g900_six_nine_support_failure_table_001.v1.json",
+          309
+        ],
+        [
+          "g900_g15_cube_label_assignment_probe_001.v1.json",
+          199
+        ],
+        [
+          "g900_projection_exception_neighbor_contrast_001.v1.json",
+          160
+        ]
+      ],
+      "top_keys": [
+        [
+          "primary_slot_label",
+          4073
+        ],
+        [
+          "root_slot",
+          3729
+        ],
+        [
+          "delta_vertex_count",
+          1368
+        ],
+        [
+          "root_local",
+          1337
+        ],
+        [
+          "edge_overlap",
+          661
+        ],
+        [
+          "direct_boundary_delta_edge_count",
+          279
+        ],
+        [
+          "unsupported_delta_edge_count",
+          243
+        ],
+        [
+          "vertex_overlap",
+          135
+        ],
+        [
+          "slot",
+          133
+        ],
+        [
+          "cube_centroid",
+          98
+        ],
+        [
+          "switch_count",
+          93
+        ],
+        [
+          "face_centroid",
+          80
+        ]
+      ]
+    },
+    {
+      "label": "1",
+      "hit_count": 66126,
+      "from_like": 19,
+      "to_like": 60,
+      "endpoint_like": 15,
+      "phase_step_like": 1,
+      "package_like": 74,
+      "support_like": 57,
+      "boundary_like": 3,
+      "slot_like": 7469,
+      "root_like": 5150,
+      "provenance_like": 10,
+      "orientation_like": 7,
+      "role_like": 15,
+      "corner_language": 79,
+      "face_centroid_language": 114,
+      "cube_centroid_language": 119,
+      "six_nine_context": 2210,
+      "inside_outside_context": 19,
+      "boundary_context": 55162,
+      "support_failure_context": 46551,
+      "phase_step_context": 212,
+      "package_context": 45637,
+      "directed_language_context": 46815,
+      "cube_language_context": 99,
+      "source_count": 105,
+      "key_count": 125,
+      "top_sources": [
+        [
+          "g900_six_nine_boundary_orientation_probe_001.v1.json",
+          28358
+        ],
+        [
+          "g900_edge_limit_phase_scan_001_rows.v1.csv",
+          16104
+        ],
+        [
+          "g900_six_nine_support_failure_table_001.v1.json",
+          5682
+        ],
+        [
+          "g900_six_nine_local_global_obstruction_probe_001.v1.json",
+          2847
+        ],
+        [
+          "g900_six_nine_obstruction_anatomy_001.v1.json",
+          2846
+        ],
+        [
+          "g900_full60_package_support_audit_001.v1.json",
+          2825
+        ],
+        [
+          "g900_full60_package_support_audit_001_steps.v1.csv",
+          2820
+        ],
+        [
+          "g900_slot12_composite_triangle_anatomy_001.v1.json",
+          1981
+        ]
+      ],
+      "top_keys": [
+        [
+          "delta_edge_count",
+          23622
+        ],
+        [
+          "delta_vertex_count",
+          22254
+        ],
+        [
+          "root_slot",
+          3744
+        ],
+        [
+          "primary_slot_label",
+          3524
+        ],
+        [
+          "max_edge_overlap",
+          2605
+        ],
+        [
+          "primary_edge_overlap",
+          2605
+        ],
+        [
+          "edge_overlap",
+          1820
+        ],
+        [
+          "root_local",
+          1342
+        ],
+        [
+          "edge_hit_count",
+          1139
+        ],
+        [
+          "edge_count",
+          902
+        ],
+        [
+          "edge_limit",
+          901
+        ],
+        [
+          "vertex_overlap",
+          364
+        ]
+      ]
+    },
+    {
+      "label": "2",
+      "hit_count": 20543,
+      "from_like": 976,
+      "to_like": 32,
+      "endpoint_like": 19,
+      "phase_step_like": 0,
+      "package_like": 23,
+      "support_like": 5,
+      "boundary_like": 15,
+      "slot_like": 8857,
+      "root_like": 5083,
+      "provenance_like": 16,
+      "orientation_like": 4,
+      "role_like": 16,
+      "corner_language": 33,
+      "face_centroid_language": 94,
+      "cube_centroid_language": 47,
+      "six_nine_context": 30,
+      "inside_outside_context": 1,
+      "boundary_context": 6911,
+      "support_failure_context": 1431,
+      "phase_step_context": 62,
+      "package_context": 1559,
+      "directed_language_context": 1609,
+      "cube_language_context": 40,
+      "source_count": 59,
+      "key_count": 88,
+      "top_sources": [
+        [
+          "g900_edge_limit_phase_scan_001_rows.v1.csv",
+          17339
+        ],
+        [
+          "g900_six_nine_boundary_orientation_probe_001.v1.json",
+          880
+        ],
+        [
+          "g900_slot12_composite_triangle_anatomy_001.v1.json",
+          367
+        ],
+        [
+          "g900_edge_limit_phase_scan_001_root_summary.v1.csv",
+          304
+        ],
+        [
+          "g900_projection_exception_neighbor_contrast_001.v1.json",
+          244
+        ],
+        [
+          "g900_six_nine_support_failure_table_001.v1.json",
+          179
+        ],
+        [
+          "g900_root_smoke_signature_census_001.v1.json",
+          160
+        ],
+        [
+          "g900_primary_slot_projection_census_001_rows.v1.csv",
+          137
+        ]
+      ],
+      "top_keys": [
+        [
+          "primary_slot_label",
+          4946
+        ],
+        [
+          "root_slot",
+          3723
+        ],
+        [
+          "edge_hit_count",
+          1715
+        ],
+        [
+          "primary_vertex_overlap",
+          1699
+        ],
+        [
+          "root_local",
+          1337
+        ],
+        [
+          "from_limit",
+          960
+        ],
+        [
+          "max_edge_overlap",
+          934
+        ],
+        [
+          "primary_edge_overlap",
+          934
+        ],
+        [
+          "edge_count",
+          902
+        ],
+        [
+          "edge_limit",
+          901
+        ],
+        [
+          "vertex_count",
+          900
+        ],
+        [
+          "edge_overlap",
+          639
+        ]
+      ]
+    },
+    {
+      "label": "3",
+      "hit_count": 26564,
+      "from_like": 2892,
+      "to_like": 980,
+      "endpoint_like": 21,
+      "phase_step_like": 0,
+      "package_like": 0,
+      "support_like": 0,
+      "boundary_like": 8,
+      "slot_like": 10820,
+      "root_like": 7959,
+      "provenance_like": 11,
+      "orientation_like": 1,
+      "role_like": 4,
+      "corner_language": 70,
+      "face_centroid_language": 40,
+      "cube_centroid_language": 59,
+      "six_nine_context": 27,
+      "inside_outside_context": 0,
+      "boundary_context": 11127,
+      "support_failure_context": 7296,
+      "phase_step_context": 171,
+      "package_context": 7403,
+      "directed_language_context": 7338,
+      "cube_language_context": 46,
+      "source_count": 58,
+      "key_count": 88,
+      "top_sources": [
+        [
+          "g900_edge_limit_phase_scan_001_rows.v1.csv",
+          16806
+        ],
+        [
+          "g900_six_nine_boundary_orientation_probe_001.v1.json",
+          4537
+        ],
+        [
+          "g900_edge_limit_phase_scan_001_root_summary.v1.csv",
+          1495
+        ],
+        [
+          "g900_six_nine_support_failure_table_001.v1.json",
+          914
+        ],
+        [
+          "g900_six_nine_local_global_obstruction_probe_001.v1.json",
+          457
+        ],
+        [
+          "g900_six_nine_obstruction_anatomy_001.v1.json",
+          457
+        ],
+        [
+          "g900_full60_package_support_audit_001.v1.json",
+          450
+        ],
+        [
+          "g900_full60_package_support_audit_001_steps.v1.csv",
+          444
+        ]
+      ],
+      "top_keys": [
+        [
+          "root_slot",
+          6603
+        ],
+        [
+          "primary_slot_label",
+          4104
+        ],
+        [
+          "from_limit",
+          2880
+        ],
+        [
+          "primary_vertex_overlap",
+          1840
+        ],
+        [
+          "edge_hit_count",
+          1642
+        ],
+        [
+          "root_local",
+          1337
+        ],
+        [
+          "max_edge_overlap",
+          1040
+        ],
+        [
+          "primary_edge_overlap",
+          1040
+        ],
+        [
+          "to_limit",
+          960
+        ],
+        [
+          "edge_limit",
+          901
+        ],
+        [
+          "vertex_count",
+          900
+        ],
+        [
+          "edge_count",
+          900
+        ]
+      ]
+    },
+    {
+      "label": "4",
+      "hit_count": 53796,
+      "from_like": 3075,
+      "to_like": 2893,
+      "endpoint_like": 8,
+      "phase_step_like": 0,
+      "package_like": 12,
+      "support_like": 7,
+      "boundary_like": 0,
+      "slot_like": 7317,
+      "root_like": 5073,
+      "provenance_like": 7,
+      "orientation_like": 0,
+      "role_like": 15,
+      "corner_language": 5,
+      "face_centroid_language": 5,
+      "cube_centroid_language": 24,
+      "six_nine_context": 266,
+      "inside_outside_context": 0,
+      "boundary_context": 8859,
+      "support_failure_context": 6447,
+      "phase_step_context": 122,
+      "package_context": 6233,
+      "directed_language_context": 6846,
+      "cube_language_context": 5,
+      "source_count": 50,
+      "key_count": 72,
+      "top_sources": [
+        [
+          "g900_edge_limit_phase_scan_001_rows.v1.csv",
+          43055
+        ],
+        [
+          "g900_six_nine_boundary_orientation_probe_001.v1.json",
+          3858
+        ],
+        [
+          "g900_slot12_composite_triangle_anatomy_001.v1.json",
+          1626
+        ],
+        [
+          "g900_six_nine_support_failure_table_001.v1.json",
+          775
+        ],
+        [
+          "g900_primary_slot_projection_census_001_rows.v1.csv",
+          626
+        ],
+        [
+          "g900_edge_limit_phase_scan_001_root_summary.v1.csv",
+          524
+        ],
+        [
+          "g900_six_nine_local_global_obstruction_probe_001.v1.json",
+          388
+        ],
+        [
+          "g900_six_nine_obstruction_anatomy_001.v1.json",
+          385
+        ]
+      ],
+      "top_keys": [
+        [
+          "max_edge_overlap",
+          15525
+        ],
+        [
+          "primary_edge_overlap",
+          15268
+        ],
+        [
+          "root_slot",
+          3723
+        ],
+        [
+          "primary_slot_label",
+          3472
+        ],
+        [
+          "from_limit",
+          3060
+        ],
+        [
+          "to_limit",
+          2880
+        ],
+        [
+          "edge_overlap",
+          2011
+        ],
+        [
+          "edge_hit_count",
+          1492
+        ],
+        [
+          "root_local",
+          1337
+        ],
+        [
+          "primary_vertex_overlap",
+          1040
+        ],
+        [
+          "edge_limit",
+          901
+        ],
+        [
+          "vertex_count",
+          900
+        ]
+      ]
+    },
+    {
+      "label": "5",
+      "hit_count": 38923,
+      "from_like": 973,
+      "to_like": 3072,
+      "endpoint_like": 14,
+      "phase_step_like": 0,
+      "package_like": 5,
+      "support_like": 13,
+      "boundary_like": 2,
+      "slot_like": 9317,
+      "root_like": 5085,
+      "provenance_like": 2,
+      "orientation_like": 0,
+      "role_like": 1,
+      "corner_language": 19,
+      "face_centroid_language": 19,
+      "cube_centroid_language": 24,
+      "six_nine_context": 25,
+      "inside_outside_context": 0,
+      "boundary_context": 5341,
+      "support_failure_context": 4389,
+      "phase_step_context": 3,
+      "package_context": 4267,
+      "directed_language_context": 4558,
+      "cube_language_context": 19,
+      "source_count": 44,
+      "key_count": 63,
+      "top_sources": [
+        [
+          "g900_edge_limit_phase_scan_001_rows.v1.csv",
+          31752
+        ],
+        [
+          "g900_six_nine_boundary_orientation_probe_001.v1.json",
+          2659
+        ],
+        [
+          "g900_slot12_composite_triangle_anatomy_001.v1.json",
+          1158
+        ],
+        [
+          "g900_six_nine_support_failure_table_001.v1.json",
+          534
+        ],
+        [
+          "g900_edge_limit_phase_scan_001_root_summary.v1.csv",
+          398
+        ],
+        [
+          "g900_primary_slot_projection_census_001_rows.v1.csv",
+          391
+        ],
+        [
+          "g900_six_nine_local_global_obstruction_probe_001.v1.json",
+          268
+        ],
+        [
+          "g900_six_nine_obstruction_anatomy_001.v1.json",
+          265
+        ]
+      ],
+      "top_keys": [
+        [
+          "primary_vertex_overlap",
+          13675
+        ],
+        [
+          "primary_slot_label",
+          5452
+        ],
+        [
+          "root_slot",
+          3743
+        ],
+        [
+          "edge_hit_count",
+          3735
+        ],
+        [
+          "to_limit",
+          3060
+        ],
+        [
+          "vertex_overlap",
+          1404
+        ],
+        [
+          "root_local",
+          1337
+        ],
+        [
+          "max_edge_overlap",
+          1076
+        ],
+        [
+          "primary_edge_overlap",
+          1072
+        ],
+        [
+          "from_limit",
+          960
+        ],
+        [
+          "edge_limit",
+          901
+        ],
+        [
+          "vertex_count",
+          900
+        ]
+      ]
+    },
+    {
+      "label": "6",
+      "hit_count": 21980,
+      "from_like": 6,
+      "to_like": 970,
+      "endpoint_like": 26,
+      "phase_step_like": 0,
+      "package_like": 7,
+      "support_like": 0,
+      "boundary_like": 0,
+      "slot_like": 9157,
+      "root_like": 5061,
+      "provenance_like": 5,
+      "orientation_like": 0,
+      "role_like": 4,
+      "corner_language": 12,
+      "face_centroid_language": 17,
+      "cube_centroid_language": 28,
+      "six_nine_context": 21,
+      "inside_outside_context": 3,
+      "boundary_context": 1964,
+      "support_failure_context": 1364,
+      "phase_step_context": 9,
+      "package_context": 1384,
+      "directed_language_context": 1470,
+      "cube_language_context": 13,
+      "source_count": 49,
+      "key_count": 57,
+      "top_sources": [
+        [
+          "g900_edge_limit_phase_scan_001_rows.v1.csv",
+          18962
+        ],
+        [
+          "g900_six_nine_boundary_orientation_probe_001.v1.json",
+          844
+        ],
+        [
+          "g900_edge_limit_phase_scan_001_root_summary.v1.csv",
+          407
+        ],
+        [
+          "g900_primary_slot_projection_census_001_rows.v1.csv",
+          323
+        ],
+        [
+          "g900_slot12_composite_triangle_anatomy_001.v1.json",
+          314
+        ],
+        [
+          "g900_six_nine_support_failure_table_001.v1.json",
+          169
+        ],
+        [
+          "g900_root_smoke_signature_census_001.v1.json",
+          121
+        ],
+        [
+          "g900_root_smoke_signature_census_001_rows.v1.csv",
+          86
+        ]
+      ],
+      "top_keys": [
+        [
+          "primary_slot_label",
+          5343
+        ],
+        [
+          "root_slot",
+          3723
+        ],
+        [
+          "primary_vertex_overlap",
+          2975
+        ],
+        [
+          "edge_hit_count",
+          1648
+        ],
+        [
+          "root_local",
+          1335
+        ],
+        [
+          "max_edge_overlap",
+          1041
+        ],
+        [
+          "primary_edge_overlap",
+          1041
+        ],
+        [
+          "to_limit",
+          960
+        ],
+        [
+          "edge_count",
+          903
+        ],
+        [
+          "edge_limit",
+          901
+        ],
+        [
+          "vertex_count",
+          900
+        ],
+        [
+          "vertex_overlap",
+          629
+        ]
+      ]
+    },
+    {
+      "label": "7",
+      "hit_count": 32606,
+      "from_like": 7,
+      "to_like": 9,
+      "endpoint_like": 10,
+      "phase_step_like": 0,
+      "package_like": 0,
+      "support_like": 5,
+      "boundary_like": 2,
+      "slot_like": 8163,
+      "root_like": 5071,
+      "provenance_like": 3,
+      "orientation_like": 0,
+      "role_like": 2,
+      "corner_language": 1,
+      "face_centroid_language": 1,
+      "cube_centroid_language": 5,
+      "six_nine_context": 18,
+      "inside_outside_context": 0,
+      "boundary_context": 1184,
+      "support_failure_context": 400,
+      "phase_step_context": 1,
+      "package_context": 409,
+      "directed_language_context": 524,
+      "cube_language_context": 1,
+      "source_count": 42,
+      "key_count": 52,
+      "top_sources": [
+        [
+          "g900_edge_limit_phase_scan_001_rows.v1.csv",
+          29831
+        ],
+        [
+          "g900_primary_slot_projection_census_001_rows.v1.csv",
+          990
+        ],
+        [
+          "g900_root_smoke_signature_census_001_rows.v1.csv",
+          364
+        ],
+        [
+          "g900_edge_limit_phase_scan_001_root_summary.v1.csv",
+          275
+        ],
+        [
+          "g900_six_nine_boundary_orientation_probe_001.v1.json",
+          249
+        ],
+        [
+          "g900_root_smoke_signature_census_001.v1.json",
+          216
+        ],
+        [
+          "g900_projection_exception_neighbor_contrast_001.v1.json",
+          176
+        ],
+        [
+          "g900_slot12_composite_triangle_anatomy_001.v1.json",
+          106
+        ]
+      ],
+      "top_keys": [
+        [
+          "primary_vertex_overlap",
+          6263
+        ],
+        [
+          "max_edge_overlap",
+          5720
+        ],
+        [
+          "primary_edge_overlap",
+          5420
+        ],
+        [
+          "primary_slot_label",
+          4262
+        ],
+        [
+          "root_slot",
+          3733
+        ],
+        [
+          "edge_hit_count",
+          2299
+        ],
+        [
+          "root_local",
+          1330
+        ],
+        [
+          "edge_limit",
+          901
+        ],
+        [
+          "vertex_count",
+          900
+        ],
+        [
+          "edge_count",
+          900
+        ],
+        [
+          "vertex_overlap",
+          307
+        ],
+        [
+          "slot",
+          126
+        ]
+      ]
+    },
+    {
+      "label": "8",
+      "hit_count": 18317,
+      "from_like": 2,
+      "to_like": 5,
+      "endpoint_like": 9,
+      "phase_step_like": 0,
+      "package_like": 0,
+      "support_like": 0,
+      "boundary_like": 2,
+      "slot_like": 9438,
+      "root_like": 7939,
+      "provenance_like": 8,
+      "orientation_like": 0,
+      "role_like": 2,
+      "corner_language": 3,
+      "face_centroid_language": 3,
+      "cube_centroid_language": 3,
+      "six_nine_context": 18,
+      "inside_outside_context": 0,
+      "boundary_context": 3714,
+      "support_failure_context": 3280,
+      "phase_step_context": 2,
+      "package_context": 3280,
+      "directed_language_context": 3332,
+      "cube_language_context": 3,
+      "source_count": 39,
+      "key_count": 43,
+      "top_sources": [
+        [
+          "g900_edge_limit_phase_scan_001_rows.v1.csv",
+          14300
+        ],
+        [
+          "g900_six_nine_boundary_orientation_probe_001.v1.json",
+          2044
+        ],
+        [
+          "g900_six_nine_support_failure_table_001.v1.json",
+          409
+        ],
+        [
+          "g900_edge_limit_phase_scan_001_root_summary.v1.csv",
+          255
+        ],
+        [
+          "g900_six_nine_obstruction_anatomy_001.v1.json",
+          205
+        ],
+        [
+          "g900_full60_package_support_audit_001.v1.json",
+          204
+        ],
+        [
+          "g900_six_nine_local_global_obstruction_probe_001.v1.json",
+          204
+        ],
+        [
+          "g900_full60_package_support_audit_001_steps.v1.csv",
+          204
+        ]
+      ],
+      "top_keys": [
+        [
+          "root_slot",
+          6603
+        ],
+        [
+          "primary_slot_label",
+          2720
+        ],
+        [
+          "root_local",
+          1330
+        ],
+        [
+          "edge_hit_count",
+          1224
+        ],
+        [
+          "primary_vertex_overlap",
+          1220
+        ],
+        [
+          "max_edge_overlap",
+          1014
+        ],
+        [
+          "primary_edge_overlap",
+          1004
+        ],
+        [
+          "edge_limit",
+          901
+        ],
+        [
+          "vertex_count",
+          900
+        ],
+        [
+          "edge_count",
+          900
+        ],
+        [
+          "slot",
+          101
+        ],
+        [
+          "vertex_overlap",
+          98
+        ]
+      ]
+    },
+    {
+      "label": "9",
+      "hit_count": 33982,
+      "from_like": 6,
+      "to_like": 11,
+      "endpoint_like": 21,
+      "phase_step_like": 0,
+      "package_like": 5,
+      "support_like": 3,
+      "boundary_like": 3,
+      "slot_like": 10368,
+      "root_like": 7942,
+      "provenance_like": 2,
+      "orientation_like": 1,
+      "role_like": 4,
+      "corner_language": 4,
+      "face_centroid_language": 7,
+      "cube_centroid_language": 5,
+      "six_nine_context": 141,
+      "inside_outside_context": 3,
+      "boundary_context": 4241,
+      "support_failure_context": 3344,
+      "phase_step_context": 70,
+      "package_context": 3293,
+      "directed_language_context": 3558,
+      "cube_language_context": 5,
+      "source_count": 46,
+      "key_count": 69,
+      "top_sources": [
+        [
+          "g900_edge_limit_phase_scan_001_rows.v1.csv",
+          28502
+        ],
+        [
+          "g900_six_nine_boundary_orientation_probe_001.v1.json",
+          2044
+        ],
+        [
+          "g900_primary_slot_projection_census_001_rows.v1.csv",
+          752
+        ],
+        [
+          "g900_edge_limit_phase_scan_001_root_summary.v1.csv",
+          475
+        ],
+        [
+          "g900_six_nine_support_failure_table_001.v1.json",
+          409
+        ],
+        [
+          "g900_root_smoke_signature_census_001_rows.v1.csv",
+          373
+        ],
+        [
+          "g900_full60_package_support_audit_001.v1.json",
+          204
+        ],
+        [
+          "g900_six_nine_local_global_obstruction_probe_001.v1.json",
+          204
+        ]
+      ],
+      "top_keys": [
+        [
+          "edge_hit_count",
+          9094
+        ],
+        [
+          "root_slot",
+          6603
+        ],
+        [
+          "primary_vertex_overlap",
+          5120
+        ],
+        [
+          "primary_slot_label",
+          3570
+        ],
+        [
+          "max_edge_overlap",
+          2272
+        ],
+        [
+          "primary_edge_overlap",
+          2246
+        ],
+        [
+          "root_local",
+          1330
+        ],
+        [
+          "vertex_count",
+          911
+        ],
+        [
+          "edge_count",
+          903
+        ],
+        [
+          "edge_limit",
+          901
+        ],
+        [
+          "label_at_30",
+          290
+        ],
+        [
+          "vertex_overlap",
+          175
+        ]
+      ]
+    },
+    {
+      "label": "10",
+      "hit_count": 25753,
+      "from_like": 2,
+      "to_like": 10,
+      "endpoint_like": 9,
+      "phase_step_like": 1,
+      "package_like": 55,
+      "support_like": 1,
+      "boundary_like": 4,
+      "slot_like": 9552,
+      "root_like": 7940,
+      "provenance_like": 6,
+      "orientation_like": 1,
+      "role_like": 4,
+      "corner_language": 2,
+      "face_centroid_language": 4,
+      "cube_centroid_language": 7,
+      "six_nine_context": 44,
+      "inside_outside_context": 1,
+      "boundary_context": 4512,
+      "support_failure_context": 3306,
+      "phase_step_context": 31,
+      "package_context": 3347,
+      "directed_language_context": 3399,
+      "cube_language_context": 4,
+      "source_count": 48,
+      "key_count": 62,
+      "top_sources": [
+        [
+          "g900_edge_limit_phase_scan_001_rows.v1.csv",
+          19752
+        ],
+        [
+          "g900_six_nine_boundary_orientation_probe_001.v1.json",
+          2059
+        ],
+        [
+          "g900_primary_slot_projection_census_001_rows.v1.csv",
+          730
+        ],
+        [
+          "g900_slot12_composite_triangle_anatomy_001.v1.json",
+          498
+        ],
+        [
+          "g900_root_smoke_signature_census_001_rows.v1.csv",
+          459
+        ],
+        [
+          "g900_six_nine_support_failure_table_001.v1.json",
+          413
+        ],
+        [
+          "g900_edge_limit_phase_scan_001_root_summary.v1.csv",
+          255
+        ],
+        [
+          "g900_projection_exception_neighbor_contrast_001.v1.json",
+          249
+        ]
+      ],
+      "top_keys": [
+        [
+          "root_slot",
+          6603
+        ],
+        [
+          "max_edge_overlap",
+          3867
+        ],
+        [
+          "primary_edge_overlap",
+          3601
+        ],
+        [
+          "primary_slot_label",
+          2783
+        ],
+        [
+          "edge_hit_count",
+          1882
+        ],
+        [
+          "root_local",
+          1331
+        ],
+        [
+          "primary_vertex_overlap",
+          1328
+        ],
+        [
+          "vertex_overlap",
+          934
+        ],
+        [
+          "vertex_count",
+          922
+        ],
+        [
+          "edge_limit",
+          901
+        ],
+        [
+          "edge_count",
+          901
+        ],
+        [
+          "slot",
+          154
+        ]
+      ]
+    },
+    {
+      "label": "11",
+      "hit_count": 23586,
+      "from_like": 1667,
+      "to_like": 7,
+      "endpoint_like": 8,
+      "phase_step_like": 0,
+      "package_like": 0,
+      "support_like": 0,
+      "boundary_like": 0,
+      "slot_like": 8148,
+      "root_like": 7030,
+      "provenance_like": 0,
+      "orientation_like": 0,
+      "role_like": 0,
+      "corner_language": 1,
+      "face_centroid_language": 1,
+      "cube_centroid_language": 1,
+      "six_nine_context": 18,
+      "inside_outside_context": 0,
+      "boundary_context": 4542,
+      "support_failure_context": 3972,
+      "phase_step_context": 2,
+      "package_context": 3943,
+      "directed_language_context": 4062,
+      "cube_language_context": 1,
+      "source_count": 37,
+      "key_count": 34,
+      "top_sources": [
+        [
+          "g900_edge_limit_phase_scan_001_rows.v1.csv",
+          18626
+        ],
+        [
+          "g900_six_nine_boundary_orientation_probe_001.v1.json",
+          2463
+        ],
+        [
+          "g900_six_nine_support_failure_table_001.v1.json",
+          493
+        ],
+        [
+          "g900_full60_package_support_audit_001.v1.json",
+          246
+        ],
+        [
+          "g900_six_nine_local_global_obstruction_probe_001.v1.json",
+          246
+        ],
+        [
+          "g900_six_nine_obstruction_anatomy_001.v1.json",
+          246
+        ],
+        [
+          "g900_full60_package_support_audit_001_steps.v1.csv",
+          246
+        ],
+        [
+          "g900_projection_exception_neighbor_contrast_001.v1.json",
+          211
+        ]
+      ],
+      "top_keys": [
+        [
+          "root_slot",
+          5694
+        ],
+        [
+          "primary_vertex_overlap",
+          5426
+        ],
+        [
+          "primary_slot_label",
+          2330
+        ],
+        [
+          "edge_hit_count",
+          1710
+        ],
+        [
+          "from_limit",
+          1665
+        ],
+        [
+          "root_local",
+          1331
+        ],
+        [
+          "max_edge_overlap",
+          1078
+        ],
+        [
+          "primary_edge_overlap",
+          1049
+        ],
+        [
+          "vertex_count",
+          927
+        ],
+        [
+          "edge_limit",
+          901
+        ],
+        [
+          "edge_count",
+          900
+        ],
+        [
+          "vertex_overlap",
+          274
+        ]
+      ]
+    },
+    {
+      "label": "12",
+      "hit_count": 39561,
+      "from_like": 5141,
+      "to_like": 1670,
+      "endpoint_like": 19,
+      "phase_step_like": 0,
+      "package_like": 0,
+      "support_like": 0,
+      "boundary_like": 0,
+      "slot_like": 9832,
+      "root_like": 8952,
+      "provenance_like": 2,
+      "orientation_like": 3,
+      "role_like": 6,
+      "corner_language": 3,
+      "face_centroid_language": 5,
+      "cube_centroid_language": 5,
+      "six_nine_context": 1141,
+      "inside_outside_context": 0,
+      "boundary_context": 12068,
+      "support_failure_context": 11090,
+      "phase_step_context": 62,
+      "package_context": 10916,
+      "directed_language_context": 11279,
+      "cube_language_context": 3,
+      "source_count": 44,
+      "key_count": 46,
+      "top_sources": [
+        [
+          "g900_edge_limit_phase_scan_001_rows.v1.csv",
+          27119
+        ],
+        [
+          "g900_six_nine_boundary_orientation_probe_001.v1.json",
+          6811
+        ],
+        [
+          "g900_six_nine_support_failure_table_001.v1.json",
+          1364
+        ],
+        [
+          "g900_six_nine_local_global_obstruction_probe_001.v1.json",
+          685
+        ],
+        [
+          "g900_six_nine_obstruction_anatomy_001.v1.json",
+          684
+        ],
+        [
+          "g900_full60_package_support_audit_001.v1.json",
+          678
+        ],
+        [
+          "g900_full60_package_support_audit_001_steps.v1.csv",
+          678
+        ],
+        [
+          "g900_root_smoke_signature_census_001_rows.v1.csv",
+          455
+        ]
+      ],
+      "top_keys": [
+        [
+          "root_slot",
+          7605
+        ],
+        [
+          "edge_hit_count",
+          6485
+        ],
+        [
+          "max_edge_overlap",
+          5347
+        ],
+        [
+          "primary_edge_overlap",
+          5306
+        ],
+        [
+          "from_limit",
+          5139
+        ],
+        [
+          "primary_slot_label",
+          2149
+        ],
+        [
+          "to_limit",
+          1665
+        ],
+        [
+          "root_local",
+          1335
+        ],
+        [
+          "primary_vertex_overlap",
+          1066
+        ],
+        [
+          "vertex_count",
+          919
+        ],
+        [
+          "edge_limit",
+          901
+        ],
+        [
+          "edge_count",
+          900
+        ]
+      ]
+    },
+    {
+      "label": "13",
+      "hit_count": 38418,
+      "from_like": 1058,
+      "to_like": 5147,
+      "endpoint_like": 10,
+      "phase_step_like": 0,
+      "package_like": 0,
+      "support_like": 2,
+      "boundary_like": 0,
+      "slot_like": 8884,
+      "root_like": 7944,
+      "provenance_like": 1,
+      "orientation_like": 0,
+      "role_like": 0,
+      "corner_language": 2,
+      "face_centroid_language": 2,
+      "cube_centroid_language": 2,
+      "six_nine_context": 18,
+      "inside_outside_context": 0,
+      "boundary_context": 10103,
+      "support_failure_context": 9424,
+      "phase_step_context": 2,
+      "package_context": 9324,
+      "directed_language_context": 9520,
+      "cube_language_context": 2,
+      "source_count": 35,
+      "key_count": 37,
+      "top_sources": [
+        [
+          "g900_edge_limit_phase_scan_001_rows.v1.csv",
+          28042
+        ],
+        [
+          "g900_six_nine_boundary_orientation_probe_001.v1.json",
+          5824
+        ],
+        [
+          "g900_six_nine_support_failure_table_001.v1.json",
+          1165
+        ],
+        [
+          "g900_six_nine_obstruction_anatomy_001.v1.json",
+          583
+        ],
+        [
+          "g900_full60_package_support_audit_001.v1.json",
+          582
+        ],
+        [
+          "g900_six_nine_local_global_obstruction_probe_001.v1.json",
+          582
+        ],
+        [
+          "g900_full60_package_support_audit_001_steps.v1.csv",
+          582
+        ],
+        [
+          "g900_primary_slot_projection_census_001_rows.v1.csv",
+          265
+        ]
+      ],
+      "top_keys": [
+        [
+          "primary_vertex_overlap",
+          13308
+        ],
+        [
+          "root_slot",
+          6603
+        ],
+        [
+          "to_limit",
+          5139
+        ],
+        [
+          "edge_hit_count",
+          3486
+        ],
+        [
+          "primary_slot_label",
+          2209
+        ],
+        [
+          "root_local",
+          1335
+        ],
+        [
+          "max_edge_overlap",
+          1085
+        ],
+        [
+          "primary_edge_overlap",
+          1066
+        ],
+        [
+          "from_limit",
+          1056
+        ],
+        [
+          "vertex_count",
+          926
+        ],
+        [
+          "edge_limit",
+          901
+        ],
+        [
+          "edge_count",
+          900
+        ]
+      ]
+    },
+    {
+      "label": "14",
+      "hit_count": 42822,
+      "from_like": 2,
+      "to_like": 1062,
+      "endpoint_like": 8,
+      "phase_step_like": 0,
+      "package_like": 0,
+      "support_like": 0,
+      "boundary_like": 6,
+      "slot_like": 8503,
+      "root_like": 7941,
+      "provenance_like": 8,
+      "orientation_like": 0,
+      "role_like": 0,
+      "corner_language": 5,
+      "face_centroid_language": 8,
+      "cube_centroid_language": 5,
+      "six_nine_context": 20,
+      "inside_outside_context": 3,
+      "boundary_context": 5056,
+      "support_failure_context": 4333,
+      "phase_step_context": 9,
+      "package_context": 4326,
+      "directed_language_context": 4373,
+      "cube_language_context": 6,
+      "source_count": 34,
+      "key_count": 36,
+      "top_sources": [
+        [
+          "g900_edge_limit_phase_scan_001_rows.v1.csv",
+          37720
+        ],
+        [
+          "g900_six_nine_boundary_orientation_probe_001.v1.json",
+          2705
+        ],
+        [
+          "g900_six_nine_support_failure_table_001.v1.json",
+          541
+        ],
+        [
+          "g900_full60_package_support_audit_001.v1.json",
+          270
+        ],
+        [
+          "g900_six_nine_local_global_obstruction_probe_001.v1.json",
+          270
+        ],
+        [
+          "g900_six_nine_obstruction_anatomy_001.v1.json",
+          270
+        ],
+        [
+          "g900_full60_package_support_audit_001_steps.v1.csv",
+          270
+        ],
+        [
+          "g900_root_smoke_signature_census_001_rows.v1.csv",
+          222
+        ]
+      ],
+      "top_keys": [
+        [
+          "max_edge_overlap",
+          13381
+        ],
+        [
+          "primary_edge_overlap",
+          13308
+        ],
+        [
+          "root_slot",
+          6603
+        ],
+        [
+          "edge_hit_count",
+          1939
+        ],
+        [
+          "primary_slot_label",
+          1763
+        ],
+        [
+          "root_local",
+          1336
+        ],
+        [
+          "vertex_count",
+          1190
+        ],
+        [
+          "to_limit",
+          1056
+        ],
+        [
+          "edge_limit",
+          901
+        ],
+        [
+          "edge_count",
+          901
+        ],
+        [
+          "slot",
+          125
+        ],
+        [
+          "max_vertex_overlap",
+          104
+        ]
+      ]
+    }
+  ],
+  "directed_counts": {
+    "directed_row_count": 0,
+    "boundary_directed_count": 0,
+    "phase_step_directed_count": 0,
+    "package_directed_count": 0,
+    "support_failure_directed_count": 0,
+    "inside_outside_directed_count": 0,
+    "cube_language_directed_count": 0
+  },
+  "from_count_by_label": {},
+  "to_count_by_label": {},
+  "top_directed_pairs": [],
+  "six_nine_focus": {
+    "prior_text_evidence": {
+      "label_6_role_text_probe": "face_centroid",
+      "label_9_role_text_probe": "face_centroid",
+      "six_nine_cube_status_text_probe": "supports_face_to_face_label_reading"
+    },
+    "six_nine_directed_row_count": 0,
+    "six_nine_directed_rows_first_30": [],
+    "label_6_orientation_provenance_role": "not_derived",
+    "label_9_orientation_provenance_role": "not_derived",
+    "six_nine_orientation_provenance_status": "orientation_provenance_does_not_yet_assign_6_9",
+    "transport_relation": false,
+    "channel": false,
+    "physics_claim": false
+  },
+  "oriented_petersen_control": {
+    "model": "canonical oriented Petersen edge model",
+    "description": "The 15 vertices of L(Petersen) can be read as the 15 edges of Petersen. A bare orientation of those edges gives a 5 outer + 5 spoke + 5 inner edge-type profile, not an 8/6/1 cube profile.",
+    "edge_type_profile": {
+      "outer_cycle_edges": 5,
+      "spokes": 5,
+      "inner_star_edges": 5
+    },
+    "lesson": "Orientation is relevant, but bare oriented L(Petersen) edge type is not by itself the cube role assignment. The missing discriminator must be enriched provenance or boundary/package incidence."
+  },
+  "label_hits_first_100": [
+    {
+      "label": "1",
+      "source": "g900_anomaly_marker_event_gate_001.v1.json",
+      "path": "$",
+      "key": "version",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"audit_pass\": true, \"boundary\": {\"admits_channels\": false, \"force_claim\": false, \"gate_open\": false, \"marker_event_gate_only\": true, \"marker_lighting\": false, \"mutates_body\": false, \"physics_claim\": false, \"renders_channels\": false}, \"checks\": {\"admission_still_not_allowed\": true, \"channel_registry_zero_count\": true, \"channels_not_admitted\": true, \"cycle_ev..."
+    },
+    {
+      "label": "2",
+      "source": "g900_anomaly_marker_event_gate_001.v1.json",
+      "path": "$.marker",
+      "key": "registry_hit_count",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"edge_count\": 60, \"edge_index_hit_count\": 0, \"marker_id\": \"unsupported_phase_step_6_9\", \"meaning\": \"read-only diagnostic marker for the unsupported 6/9 phase step\", \"receipt_hit_count\": 1, \"registry_hit_count\": 2, \"tracked\": true, \"vertex_count\": 120}"
+    },
+    {
+      "label": "1",
+      "source": "g900_anomaly_marker_event_gate_001.v1.json",
+      "path": "$.marker",
+      "key": "receipt_hit_count",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"edge_count\": 60, \"edge_index_hit_count\": 0, \"marker_id\": \"unsupported_phase_step_6_9\", \"meaning\": \"read-only diagnostic marker for the unsupported 6/9 phase step\", \"receipt_hit_count\": 1, \"registry_hit_count\": 2, \"tracked\": true, \"vertex_count\": 120}"
+    },
+    {
+      "label": "0",
+      "source": "g900_anomaly_marker_event_gate_001.v1.json",
+      "path": "$.marker",
+      "key": "edge_index_hit_count",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"edge_count\": 60, \"edge_index_hit_count\": 0, \"marker_id\": \"unsupported_phase_step_6_9\", \"meaning\": \"read-only diagnostic marker for the unsupported 6/9 phase step\", \"receipt_hit_count\": 1, \"registry_hit_count\": 2, \"tracked\": true, \"vertex_count\": 120}"
+    },
+    {
+      "label": "2",
+      "source": "g900_anomaly_marker_event_gate_001.v1.json",
+      "path": "$.gate.gate_conditions[0]",
+      "key": "registry_hit_count",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"description\": \"The unsupported 6/9 anomaly marker exists in the marker registry or receipted marker chain.\", \"id\": \"marker_registry_or_receipt_entry_exists\", \"receipt_hit_count\": 1, \"registry_hit_count\": 2, \"satisfied\": true}"
+    },
+    {
+      "label": "1",
+      "source": "g900_anomaly_marker_event_gate_001.v1.json",
+      "path": "$.gate.gate_conditions[0]",
+      "key": "receipt_hit_count",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"description\": \"The unsupported 6/9 anomaly marker exists in the marker registry or receipted marker chain.\", \"id\": \"marker_registry_or_receipt_entry_exists\", \"receipt_hit_count\": 1, \"registry_hit_count\": 2, \"satisfied\": true}"
+    },
+    {
+      "label": "0",
+      "source": "g900_anomaly_marker_event_gate_001.v1.json",
+      "path": "$.gate.gate_conditions[3]",
+      "key": "edge_index_failure_count",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"description\": \"The marker edge-index contract is audited.\", \"edge_index_failure_count\": 0, \"edge_index_failure_count_source\": \"failed_checks_list\", \"id\": \"marker_edge_index_audit_passed\", \"satisfied\": true}"
+    },
+    {
+      "label": "0",
+      "source": "g900_anomaly_marker_event_gate_001.v1.json",
+      "path": "$.summary",
+      "key": "edge_index_failure_count",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admits_channel_now\": false, \"blocking_gate_failure_count\": 3, \"blocking_gate_failure_ids\": [\"marker_event_binding_contract_absent\", \"render_contract_absent\", \"live_stage_marker_renderer_absent\"], \"channel_count\": 0, \"edge_index_failure_count\": 0, \"edge_index_failure_count_source\": \"failed_checks_list\", \"gate_open\": false, \"lights_marker_now\": false, \"marke..."
+    },
+    {
+      "label": "3",
+      "source": "g900_anomaly_marker_event_gate_001.v1.json",
+      "path": "$.summary",
+      "key": "blocking_gate_failure_count",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admits_channel_now\": false, \"blocking_gate_failure_count\": 3, \"blocking_gate_failure_ids\": [\"marker_event_binding_contract_absent\", \"render_contract_absent\", \"live_stage_marker_renderer_absent\"], \"channel_count\": 0, \"edge_index_failure_count\": 0, \"edge_index_failure_count_source\": \"failed_checks_list\", \"gate_open\": false, \"lights_marker_now\": false, \"marke..."
+    },
+    {
+      "label": "0",
+      "source": "g900_anomaly_marker_event_gate_001.v1.json",
+      "path": "$.summary",
+      "key": "channel_count",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admits_channel_now\": false, \"blocking_gate_failure_count\": 3, \"blocking_gate_failure_ids\": [\"marker_event_binding_contract_absent\", \"render_contract_absent\", \"live_stage_marker_renderer_absent\"], \"channel_count\": 0, \"edge_index_failure_count\": 0, \"edge_index_failure_count_source\": \"failed_checks_list\", \"gate_open\": false, \"lights_marker_now\": false, \"marke..."
+    },
+    {
+      "label": "0",
+      "source": "g900_body_id_census_v0.1.json",
+      "path": "$.counts",
+      "key": "edge_pairs",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"edge_ids\": 3600, \"edge_pairs\": 0, \"edges\": 3600, \"unique_edge_ids\": 3600, \"unique_vertex_ids\": 900, \"vertex_ids\": 900, \"vertices\": 900}"
+    },
+    {
+      "label": "1",
+      "source": "g900_boundary_trace_physics_frontier_001.v1.json",
+      "path": "$",
+      "key": "version",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"audit_pass\": true, \"boundary\": {\"admits_channels\": false, \"changes_viewer\": false, \"force_claim\": false, \"frontier_receipt_only\": true, \"lights_marker\": false, \"mutates_body\": false, \"opens_marker_gate\": false, \"physics_claim\": false, \"renders_channels\": false}, \"checks\": {\"channel_registry_preserved\": true, \"markers_declared_screen_objects_not_physics\": t..."
+    },
+    {
+      "label": "1",
+      "source": "g900_boundary_trace_physics_frontier_001.v1.json",
+      "path": "$.current_state",
+      "key": "channel_count",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_channel_count\": 1, \"channel_count\": 1, \"channel_registry_preserved\": true, \"marker_registry_present\": true, \"renderer_file_absent\": true, \"renderer_hook_absent\": true, \"unsupported_6_9_recorded\": true}"
+    },
+    {
+      "label": "1",
+      "source": "g900_boundary_trace_physics_frontier_001.v1.json",
+      "path": "$.current_state",
+      "key": "admitted_channel_count",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_channel_count\": 1, \"channel_count\": 1, \"channel_registry_preserved\": true, \"marker_registry_present\": true, \"renderer_file_absent\": true, \"renderer_hook_absent\": true, \"unsupported_6_9_recorded\": true}"
+    },
+    {
+      "label": "2",
+      "source": "g900_carrier_family_render_selector_v0.1.json",
+      "path": "$",
+      "key": "carrier_overlay_layer",
+      "key_kinds": [
+        "provenance_like"
+      ],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"body\": \"g900\", \"body_version\": \"0.1\", \"boundary\": {\"admits_carriers\": false, \"admits_channels\": false, \"force_claim\": false, \"mutates_body\": false, \"physics_claim\": false}, \"carrier_overlay_layer\": 2, \"messages\": [\"inserted carrier family selector\", \"inserted carrier family helper block\", \"added carrierRenderState family fields\", \"added viewer state family..."
+    },
+    {
+      "label": "1",
+      "source": "g900_carrier_family_render_selector_v0.1.json",
+      "path": "$.render_modes[0]",
+      "key": "expected_rails",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"expected_rails\": 1, \"id\": \"smoke\"}"
+    },
+    {
+      "label": "0",
+      "source": "g900_carrier_layer_renumbering_v0.1.json",
+      "path": "$.new_layer_order[0]",
+      "key": "layer",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"id\": \"stage\", \"layer\": 0, \"meaning\": \"apparatus / grid\"}"
+    },
+    {
+      "label": "1",
+      "source": "g900_carrier_layer_renumbering_v0.1.json",
+      "path": "$.new_layer_order[1]",
+      "key": "layer",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"id\": \"graph\", \"layer\": 1, \"meaning\": \"G900 body\"}"
+    },
+    {
+      "label": "2",
+      "source": "g900_carrier_layer_renumbering_v0.1.json",
+      "path": "$.new_layer_order[2]",
+      "key": "layer",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"id\": \"carriers\", \"layer\": 2, \"meaning\": \"source-provenance readings\"}"
+    },
+    {
+      "label": "3",
+      "source": "g900_carrier_layer_renumbering_v0.1.json",
+      "path": "$.new_layer_order[3]",
+      "key": "layer",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"id\": \"channels\", \"layer\": 3, \"meaning\": \"admissible permission readings\"}"
+    },
+    {
+      "label": "4",
+      "source": "g900_carrier_layer_renumbering_v0.1.json",
+      "path": "$.new_layer_order[4]",
+      "key": "layer",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"id\": \"trails\", \"layer\": 4, \"meaning\": \"receipted trace readings\"}"
+    },
+    {
+      "label": "5",
+      "source": "g900_carrier_layer_renumbering_v0.1.json",
+      "path": "$.new_layer_order[5]",
+      "key": "layer",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"id\": \"receipts\", \"layer\": 5, \"meaning\": \"witness marks / accountability\"}"
+    },
+    {
+      "label": "7",
+      "source": "g900_carrier_layer_renumbering_v0.1.json",
+      "path": "$.new_layer_order[6]",
+      "key": "layer",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"id\": \"gravity\", \"layer\": 7, \"meaning\": \"force-shadow reserved\"}"
+    },
+    {
+      "label": "8",
+      "source": "g900_carrier_layer_renumbering_v0.1.json",
+      "path": "$.new_layer_order[7]",
+      "key": "layer",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"id\": \"em\", \"layer\": 8, \"meaning\": \"force-shadow reserved\"}"
+    },
+    {
+      "label": "9",
+      "source": "g900_carrier_layer_renumbering_v0.1.json",
+      "path": "$.new_layer_order[8]",
+      "key": "layer",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"id\": \"strong\", \"layer\": 9, \"meaning\": \"force-shadow reserved\"}"
+    },
+    {
+      "label": "10",
+      "source": "g900_carrier_layer_renumbering_v0.1.json",
+      "path": "$.new_layer_order[9]",
+      "key": "layer",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"id\": \"weak\", \"layer\": 10, \"meaning\": \"force-shadow reserved\"}"
+    },
+    {
+      "label": "1",
+      "source": "g900_channel_admission_readiness_receipt_001.v1.json",
+      "path": "$",
+      "key": "version",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"answer\": \"Yes. All prior blockers are resolved for the candidate, but the channel is still not admitted. The next act must be an explicit channel admission artifact.\", \"audit_pass\": true, \"boundary\": {\"admits_channels\": false, \"force_claim\": false, \"gate_open\": false, \"marker_lighting\": false, \"mutates_body\": false, \"physics_claim\": false, \"readiness_recei..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_admission_readiness_receipt_001.v1.json",
+      "path": "$.summary",
+      "key": "channel_count",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admission_readiness_passed\": true, \"all_preconditions_ready\": true, \"candidate_id\": \"return_cell_03_09_09_12_06_12_06_13\", \"candidate_pairs\": [\"03_09\", \"09_12\", \"06_12\", \"06_13\"], \"channel_admission_allowed_now\": false, \"channel_count\": 0, \"explicit_admission_artifact_required\": true, \"marker_gate_open\": false, \"marker_lighting\": false, \"mutates_body\": fal..."
+    },
+    {
+      "label": "1",
+      "source": "g900_channel_admission_recheck_after_local_law_001.v1.json",
+      "path": "$",
+      "key": "version",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"answer\": \"No. The candidate is ready for explicit admission review, but this recheck does not mutate the channel registry or admit a channel.\", \"audit_pass\": true, \"boundary\": {\"admits_channels\": false, \"candidate_ready_for_admission_review\": true, \"force_claim\": false, \"gate_open\": false, \"marker_lighting\": false, \"mutates_body\": false, \"physics_claim\": f..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_admission_recheck_after_local_law_001.v1.json",
+      "path": "$.summary",
+      "key": "channel_count",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"channel_admission_allowed_now\": false, \"channel_admission_ready_candidate\": true, \"channel_count\": 0, \"explicit_admission_artifact_required\": true, \"marker_gate_open\": false, \"marker_lighting\": false, \"math_blocker_resolved_by_candidate_local_law\": true, \"mutates_body\": false, \"preconditions_complete\": true, \"remaining_admission_work\": [\"explicit_channel_a..."
+    },
+    {
+      "label": "1",
+      "source": "g900_channel_admission_recheck_after_render_contract_001.v1.json",
+      "path": "$",
+      "key": "version",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"answer\": \"No. Semantics and render-contract blockers are resolved, but the non-pair-identity transition-length law remains unresolved.\", \"audit_pass\": true, \"boundary\": {\"admits_channels\": false, \"force_claim\": false, \"gate_open\": false, \"marker_lighting\": false, \"mutates_body\": false, \"physics_claim\": false, \"recheck_only\": true, \"renderer_enabled\": false..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_admission_recheck_after_render_contract_001.v1.json",
+      "path": "$.summary",
+      "key": "channel_count",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"channel_admission_allowed_now\": false, \"channel_count\": 0, \"marker_gate_open\": false, \"marker_lighting\": false, \"mutates_body\": false, \"non_pair_identity_transition_length_law_found\": false, \"remaining_blockers\": [\"non_pair_identity_transition_length_law\"], \"render_blocker_resolved\": true, \"render_contract_exists\": true, \"renderer_enabled_now\": false, \"ren..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_admission_recheck_after_render_contract_001.v1.json",
+      "path": "$.criteria[4].transition_length_status.evidence",
+      "key": "non_identity_exact_hit_count",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"audit_pass\": true, \"compressed_exact_hit_count\": 0, \"non_identity_exact_hit_count\": 0, \"verdict\": \"only_pair_identity_like_transition_length_derivations_found\"}"
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_admission_recheck_after_render_contract_001.v1.json",
+      "path": "$.criteria[4].transition_length_status.evidence",
+      "key": "compressed_exact_hit_count",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"audit_pass\": true, \"compressed_exact_hit_count\": 0, \"non_identity_exact_hit_count\": 0, \"verdict\": \"only_pair_identity_like_transition_length_derivations_found\"}"
+    },
+    {
+      "label": "1",
+      "source": "g900_channel_admission_recheck_after_semantics_001.v1.json",
+      "path": "$",
+      "key": "version",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"answer\": \"No. Semantics is resolved, but channel rendering and the non-pair-identity transition-length law remain blockers.\", \"audit_pass\": true, \"blocker_details\": {\"channel_render_contract_absent\": {\"boundary\": \"Marker render contracts do not count as channel render contracts.\", \"channel_render_contract_exists\": false, \"channel_render_contract_paths\": []..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_admission_recheck_after_semantics_001.v1.json",
+      "path": "$.blocker_details.non_pair_identity_transition_length_law.transition_length_status.evidence",
+      "key": "non_identity_exact_hit_count",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"audit_pass\": true, \"checks\": {\"all_exact_hits_are_pair_identity_like\": true, \"channel_registry_zero_count\": true, \"channels_not_admitted\": true, \"exact_hit_count_3\": true, \"no_compressed_exact_hit\": true, \"no_non_identity_exact_hit\": true, \"origin_verdict_derived\": true, \"pair_record_count_10\": true, \"selected_target_lens_match\": true, \"transition_length_o..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_admission_recheck_after_semantics_001.v1.json",
+      "path": "$.blocker_details.non_pair_identity_transition_length_law.transition_length_status.evidence",
+      "key": "compressed_exact_hit_count",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"audit_pass\": true, \"checks\": {\"all_exact_hits_are_pair_identity_like\": true, \"channel_registry_zero_count\": true, \"channels_not_admitted\": true, \"exact_hit_count_3\": true, \"no_compressed_exact_hit\": true, \"no_non_identity_exact_hit\": true, \"origin_verdict_derived\": true, \"pair_record_count_10\": true, \"selected_target_lens_match\": true, \"transition_length_o..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_admission_recheck_after_semantics_001.v1.json",
+      "path": "$.summary",
+      "key": "channel_count",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"channel_admission_allowed_now\": false, \"channel_count\": 0, \"channel_render_contract_exists\": false, \"marker_gate_open\": false, \"marker_lighting\": false, \"mutates_body\": false, \"non_pair_identity_transition_length_law_found\": false, \"remaining_blockers\": [\"channel_render_contract_absent\", \"non_pair_identity_transition_length_law\"], \"renders_channel_now\": fa..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_admission_recheck_after_semantics_001.v1.json",
+      "path": "$.criteria[3].transition_length_status.evidence",
+      "key": "non_identity_exact_hit_count",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"audit_pass\": true, \"checks\": {\"all_exact_hits_are_pair_identity_like\": true, \"channel_registry_zero_count\": true, \"channels_not_admitted\": true, \"exact_hit_count_3\": true, \"no_compressed_exact_hit\": true, \"no_non_identity_exact_hit\": true, \"origin_verdict_derived\": true, \"pair_record_count_10\": true, \"selected_target_lens_match\": true, \"transition_length_o..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_admission_recheck_after_semantics_001.v1.json",
+      "path": "$.criteria[3].transition_length_status.evidence",
+      "key": "compressed_exact_hit_count",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"audit_pass\": true, \"checks\": {\"all_exact_hits_are_pair_identity_like\": true, \"channel_registry_zero_count\": true, \"channels_not_admitted\": true, \"exact_hit_count_3\": true, \"no_compressed_exact_hit\": true, \"no_non_identity_exact_hit\": true, \"origin_verdict_derived\": true, \"pair_record_count_10\": true, \"selected_target_lens_match\": true, \"transition_length_o..."
+    },
+    {
+      "label": "1",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$",
+      "key": "version",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"audit_pass\": true, \"body\": \"g900\", \"boundary\": {\"channel_registry_modified\": false, \"channels_admitted\": false, \"classifier_only\": true, \"force_claim\": false, \"mutates_body\": false, \"physics_claim\": false, \"renders_channels\": false}, \"checks\": {\"all_rows_not_admitted\": true, \"candidate_count_is_278\": true, \"candidate_count_matches_inventory\": true, \"channe..."
+    },
+    {
+      "label": "7",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.summary.visibility_tier_counts",
+      "key": "edge_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"edge_overlap\": 7, \"large_vertex_overlap\": 150, \"provenance_handle\": 45, \"structural_incidence\": 60, \"vertex_overlap\": 16}"
+    },
+    {
+      "label": "7",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.summary.support_overlap_profile",
+      "key": "edge_overlap_nonzero_count",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"edge_overlap_nonzero_count\": 7, \"max_edge_overlap\": 12, \"max_vertex_overlap\": 60, \"row_count\": 173, \"vertex_overlap_nonzero_count\": 173}"
+    },
+    {
+      "label": "12",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.summary.support_overlap_profile",
+      "key": "max_edge_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"edge_overlap_nonzero_count\": 7, \"max_edge_overlap\": 12, \"max_vertex_overlap\": 60, \"row_count\": 173, \"vertex_overlap_nonzero_count\": 173}"
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[0]",
+      "key": "vertex_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[0]",
+      "key": "edge_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[1]",
+      "key": "vertex_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[1]",
+      "key": "edge_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[2]",
+      "key": "vertex_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[2]",
+      "key": "edge_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[3]",
+      "key": "vertex_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[3]",
+      "key": "edge_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[4]",
+      "key": "vertex_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[4]",
+      "key": "edge_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[5]",
+      "key": "vertex_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[5]",
+      "key": "edge_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[6]",
+      "key": "vertex_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[6]",
+      "key": "edge_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[7]",
+      "key": "vertex_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[7]",
+      "key": "edge_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[8]",
+      "key": "vertex_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[8]",
+      "key": "edge_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[9]",
+      "key": "vertex_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[9]",
+      "key": "edge_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[10]",
+      "key": "vertex_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[10]",
+      "key": "edge_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[11]",
+      "key": "vertex_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[11]",
+      "key": "edge_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[12]",
+      "key": "vertex_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[12]",
+      "key": "edge_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[13]",
+      "key": "vertex_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[13]",
+      "key": "edge_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[14]",
+      "key": "vertex_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[14]",
+      "key": "edge_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[15]",
+      "key": "vertex_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[15]",
+      "key": "edge_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[16]",
+      "key": "vertex_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[16]",
+      "key": "edge_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[17]",
+      "key": "vertex_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[17]",
+      "key": "edge_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[18]",
+      "key": "vertex_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[18]",
+      "key": "edge_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[19]",
+      "key": "vertex_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[19]",
+      "key": "edge_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[20]",
+      "key": "vertex_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[20]",
+      "key": "edge_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[21]",
+      "key": "vertex_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[21]",
+      "key": "edge_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[22]",
+      "key": "vertex_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[22]",
+      "key": "edge_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[23]",
+      "key": "vertex_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[23]",
+      "key": "edge_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[24]",
+      "key": "vertex_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[24]",
+      "key": "edge_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[25]",
+      "key": "vertex_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[25]",
+      "key": "edge_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[26]",
+      "key": "vertex_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[26]",
+      "key": "edge_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[27]",
+      "key": "vertex_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    },
+    {
+      "label": "0",
+      "source": "g900_channel_candidate_classifier_001.v1.json",
+      "path": "$.row_samples[27]",
+      "key": "edge_overlap",
+      "key_kinds": [],
+      "role_language_scores": {
+        "corner": 0,
+        "face_centroid": 0,
+        "cube_centroid": 0
+      },
+      "excerpt": "{\"admitted_as_channel\": false, \"candidate_class\": \"endpoint_incidence_handle\", \"candidate_kind\": \"boundary_to_slot_internal_incidence\", \"channel_readiness\": \"not_admitted_obvious_handle\", \"classification_reason\": \"boundary carrier explicitly names an endpoint slot carrier\", \"edge_overlap\": 0, \"family_pair\": \"slot_pair_boundary_carriers -> slot_internal_carri..."
+    }
+  ],
+  "directed_rows_first_100": [],
+  "boundary": {
+    "probe_only": true,
+    "full_assignment_derived": false,
+    "admits_transport": false,
+    "admits_channels": false,
+    "changes_viewer": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "force_claim": false,
+    "physics_claim": false
+  },
+  "next_allowed_math_acts": [
+    "g15_cube_label_source_search_001",
+    "six_nine_orientation_law_candidate_001",
+    "transport_relation_admission_criterion_001",
+    "physics_bridge_forbidden_mapping_ledger_001"
+  ],
+  "checks": {
+    "cube_probe_valid": true,
+    "label_probe_valid": true,
+    "orientation_probe_valid": true,
+    "support_failure_valid": true,
+    "scope_valid": true,
+    "label_hits_present": true,
+    "directed_rows_scanned_or_absent_recorded": true,
+    "orientation_provenance_status_recorded": true,
+    "transport_not_admitted": true,
+    "channel_not_admitted": true,
+    "channel_registry_preserved": true,
+    "renderer_absent": true,
+    "no_body_mutation": true,
+    "no_viewer_change": true,
+    "no_force_claim": true,
+    "no_physics_claim": true
+  },
+  "failed_checks": [],
+  "hashes": {
+    "cube_probe_sha256": "5b0d24d9685e3b728318f85d16d3ea5db80eef8a94eb29ab1953fb8e0fe0fd7e",
+    "label_probe_sha256": "0682df336af3c62639289cc07e0aea60efcee751c3c916d2975787a8eec55342",
+    "adjacency_probe_sha256": "b38dbc502b4bacc21cc0b8fcf0bf2aaa12ea5b0dd438169481651da48cece3e8",
+    "orientation_sha256": "8a2dca31a2574180b115a658609af1fdadac0fa1c6975bb4d52e26b5b5d5d986",
+    "support_failure_sha256": "008cab37431bb465f08cd10c0a5e3e643ee4b1739da40862b384f77189f094b5",
+    "scope_sha256": "7d1b9db28ecdb6211a8144c353859493881093652894ad722c16495fbd006101",
+    "channels_sha256": "fbe4c50e0adf3460f7190f3c7714754da8a620359a5bc26c70543cc401feca08",
+    "body_sha256": "6a2cb6b9892a78d4559ec61cf946b0021962cc6819311234b8bf14102b3b7f63",
+    "lab_sha256": "5a10a18bc6563446a0d364d5984b8a41db580e0a75831c82b9eeb5aebc2edeb7"
+  }
+}

@@ -1,0 +1,224 @@
+{
+  "schema": "g900.p7_local_return_cell_grammar_audit",
+  "version": 1,
+  "status": "p7_local_return_cell_grammar_audit_passed",
+  "created_utc": "2026-06-18T01:15:20Z",
+  "audit_pass": true,
+  "question": "Does the hand-sketched inner pocket correspond to a local return-cell grammar rather than only a path-level endpoint/root phenomenon?",
+  "local_return_cell": {
+    "cell_pairs": [
+      "03_09",
+      "09_12",
+      "06_12",
+      "06_13"
+    ],
+    "cell_indices": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "cell_is_contiguous": true,
+    "root_sequence": [
+      "09",
+      "12",
+      "12",
+      "13"
+    ],
+    "transition_len_sequence": [
+      3,
+      1,
+      2,
+      3
+    ],
+    "package_kind_sequence": [
+      "clean_reciprocal_pair_package",
+      "one_way_single_transition",
+      "two_transition_pair_package",
+      "clean_reciprocal_pair_package"
+    ],
+    "weight_sequence": [
+      180,
+      60,
+      120,
+      180
+    ],
+    "weight_total": 540,
+    "endpoint_rule_matches": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "roles": [
+      {
+        "role": "hinge",
+        "pairs": [
+          "03_09"
+        ],
+        "root_sequence": [
+          "09"
+        ],
+        "transition_len_sequence": [
+          3
+        ],
+        "package_kind_sequence": [
+          "clean_reciprocal_pair_package"
+        ],
+        "weight_sequence": [
+          180
+        ]
+      },
+      {
+        "role": "return_pocket",
+        "pairs": [
+          "09_12",
+          "06_12"
+        ],
+        "root_sequence": [
+          "12",
+          "12"
+        ],
+        "transition_len_sequence": [
+          1,
+          2
+        ],
+        "package_kind_sequence": [
+          "one_way_single_transition",
+          "two_transition_pair_package"
+        ],
+        "weight_sequence": [
+          60,
+          120
+        ]
+      },
+      {
+        "role": "clean_exit",
+        "pairs": [
+          "06_13"
+        ],
+        "root_sequence": [
+          "13"
+        ],
+        "transition_len_sequence": [
+          3
+        ],
+        "package_kind_sequence": [
+          "clean_reciprocal_pair_package"
+        ],
+        "weight_sequence": [
+          180
+        ]
+      }
+    ]
+  },
+  "singleton_exception": {
+    "pairs": [
+      "07_11"
+    ],
+    "row": {
+      "component": "P2",
+      "component_slot_count": 2,
+      "path_index": 0,
+      "pair": "07_11",
+      "path_left": "07",
+      "path_right": "11",
+      "low_endpoint": "07",
+      "high_endpoint": "11",
+      "observed_dominant_root": "11",
+      "root_slot_keys": [
+        "11"
+      ],
+      "high_endpoint_match": true,
+      "low_endpoint_match": false,
+      "path_left_match": false,
+      "path_right_match": true,
+      "package_kind": "two_transition_pair_package",
+      "weight": 130,
+      "transition_len": 2,
+      "has_package": true
+    },
+    "interpretation": "P2 contains a nonclean singleton edge, not a repeated-root return pocket."
+  },
+  "summary": {
+    "cell_pairs": [
+      "03_09",
+      "09_12",
+      "06_12",
+      "06_13"
+    ],
+    "cell_root_sequence": [
+      "09",
+      "12",
+      "12",
+      "13"
+    ],
+    "cell_transition_len_sequence": [
+      3,
+      1,
+      2,
+      3
+    ],
+    "cell_kind_sequence": [
+      "clean_reciprocal_pair_package",
+      "one_way_single_transition",
+      "two_transition_pair_package",
+      "clean_reciprocal_pair_package"
+    ],
+    "cell_weight_sequence": [
+      180,
+      60,
+      120,
+      180
+    ],
+    "cell_weight_total": 540,
+    "p2_singleton_exception": [
+      "07_11"
+    ],
+    "channel_count": 0
+  },
+  "interpretation": {
+    "local_return_cell_identified": true,
+    "cell_reading": "clean hinge -> shared-root nonclean return pocket -> clean exit",
+    "hinge": "03_09",
+    "return_pocket": [
+      "09_12",
+      "06_12"
+    ],
+    "clean_exit": "06_13",
+    "p2_singleton_exception": "07_11",
+    "not_channel": true,
+    "next_problem": "Test whether the local return-cell grammar has a source-side closure law or remains a P7-specific witness cell."
+  },
+  "checks": {
+    "provenance_audit_passed": true,
+    "endpoint_audit_passed": true,
+    "repeat_audit_passed": true,
+    "scope_audit_passed": true,
+    "channel_registry_zero_count": true,
+    "channels_not_admitted": true,
+    "cell_pairs_match_expected": true,
+    "cell_is_contiguous": true,
+    "cell_root_sequence_matches": true,
+    "cell_transition_len_sequence_matches": true,
+    "cell_kind_sequence_matches": true,
+    "cell_weight_sequence_matches": true,
+    "cell_weight_total_540": true,
+    "cell_endpoint_rule_matches_all": true,
+    "hinge_is_clean_len3_root09": true,
+    "pocket_is_shared_root12_nonclean_len1_len2": true,
+    "exit_is_clean_len3_root13": true,
+    "p2_singleton_exception_is_07_11": true,
+    "p2_singleton_has_no_repeated_high_endpoint": true
+  },
+  "failed_checks": [],
+  "boundary": {
+    "local_return_cell_audit_only": true,
+    "admits_channels": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "marker_lighting": false,
+    "force_claim": false,
+    "physics_claim": false
+  }
+}

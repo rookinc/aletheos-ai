@@ -1,0 +1,295 @@
+{
+  "schema": "g900.six_nine_native_fork_law_probe",
+  "version": 1,
+  "status": "six_nine_native_fork_law_probe_recorded",
+  "created_utc": "2026-06-18T08:43:34Z",
+  "git_head": "dd1d7d6 Audit G900 six-nine answering outside fork",
+  "audit_pass": true,
+  "verdict": "six_nine_native_fork_law_probe_passed",
+  "question": "Can 03_09 root_slot 9 be derived from a non-receipt fork law around 06_09 root_slot 12?",
+  "fork_law_status": "phase3_anchor_fork_law_candidate_selects_answer",
+  "reading": "A phase-3 anchor fork law candidate derives 03_09 root_slot 9 from source 06_09 root_slot 12 without using receipt/support fields: anchor = source_root_slot - 3 = 9, outside moving endpoint = 6 - 3 = 3, outside root_slot = anchor = 9. The predicted frame exists and is the receipt-carrying outside fork.",
+  "candidate_law": {
+    "name": "phase3_anchor_fork_law_candidate",
+    "phase_step_mod15": 3,
+    "source_pair": "06_09",
+    "source_root_slot": 12,
+    "source_limit_transition": "23->24",
+    "anchor_rule": "anchor endpoint e satisfies source_root_slot - e = 3 mod 15",
+    "outside_root_slot_rule": "outside_root_slot = anchor",
+    "outside_endpoint_rule": "outside_moving_endpoint = inside_moving_endpoint - 3 mod 15",
+    "uses_receipt_fields": false,
+    "uses_support_fields": false
+  },
+  "derived_values": {
+    "source_endpoints": [
+      6,
+      9
+    ],
+    "anchor_candidates": [
+      9
+    ],
+    "anchor_unique": true,
+    "anchor": 9,
+    "inside_moving_endpoint": 6,
+    "outside_moving_endpoint_minus3": 3,
+    "outside_moving_endpoint_plus3": 9,
+    "predicted_minus_pair_key": "03_09",
+    "predicted_plus_pair_key": null,
+    "predicted_minus_frame": [
+      "03_09",
+      "9",
+      "23->24"
+    ],
+    "predicted_plus_frame": null,
+    "expected_frame": [
+      "03_09",
+      "9",
+      "23->24"
+    ],
+    "prediction_matches_expected": true,
+    "phase_ladder": {
+      "outside_moving_endpoint": 3,
+      "inside_moving_endpoint": 6,
+      "anchor_endpoint": 9,
+      "inside_root_slot": 12,
+      "outside_root_slot": 9,
+      "phase_step_mod15": 3,
+      "ladder_values": [
+        3,
+        6,
+        9,
+        12
+      ]
+    },
+    "phase_ladder_distinct": true
+  },
+  "frame_tests": {
+    "source_frame": [
+      "06_09",
+      "12",
+      "23->24"
+    ],
+    "source_summary": {
+      "row_count": 60,
+      "pair_counts": {
+        "06_09": 60
+      },
+      "root_slot_counts": {
+        "12": 60
+      },
+      "limit_counts": {
+        "23->24": 60
+      },
+      "package_kind_counts": {
+        "one_way_single_transition": 60
+      },
+      "support_counts": {
+        "true": 0,
+        "false": 60,
+        "count": 60
+      },
+      "boundary_carrier_counts": {
+        "true": 0,
+        "false": 60,
+        "count": 60
+      },
+      "zero_hit_counts": {
+        "true": 60,
+        "false": 0,
+        "count": 60
+      },
+      "delta_edge_hits_profile": {
+        "count": 60,
+        "min": 0,
+        "max": 0,
+        "sum": 0,
+        "distinct": [
+          0
+        ]
+      },
+      "internal_delta_hits_profile": {
+        "count": 60,
+        "min": 0,
+        "max": 0,
+        "sum": 0,
+        "distinct": [
+          0
+        ]
+      }
+    },
+    "source_inside_failure_proxy": true,
+    "predicted_minus_frame": [
+      "03_09",
+      "9",
+      "23->24"
+    ],
+    "predicted_minus_summary": {
+      "row_count": 60,
+      "pair_counts": {
+        "03_09": 60
+      },
+      "root_slot_counts": {
+        "9": 60
+      },
+      "limit_counts": {
+        "23->24": 60
+      },
+      "package_kind_counts": {
+        "clean_reciprocal_pair_package": 60
+      },
+      "support_counts": {
+        "true": 60,
+        "false": 0,
+        "count": 60
+      },
+      "boundary_carrier_counts": {
+        "true": 60,
+        "false": 0,
+        "count": 60
+      },
+      "zero_hit_counts": {
+        "true": 0,
+        "false": 60,
+        "count": 60
+      },
+      "delta_edge_hits_profile": {
+        "count": 60,
+        "min": 1,
+        "max": 1,
+        "sum": 60,
+        "distinct": [
+          1
+        ]
+      },
+      "internal_delta_hits_profile": {
+        "count": 60,
+        "min": 1,
+        "max": 1,
+        "sum": 60,
+        "distinct": [
+          1
+        ]
+      }
+    },
+    "predicted_minus_exists": true,
+    "predicted_minus_receipt_proxy": true,
+    "predicted_plus_frame": null,
+    "predicted_plus_summary": {
+      "row_count": 0,
+      "support_counts": {
+        "true": 0,
+        "false": 0,
+        "count": 0
+      },
+      "boundary_carrier_counts": {
+        "true": 0,
+        "false": 0,
+        "count": 0
+      },
+      "zero_hit_counts": {
+        "true": 0,
+        "false": 0,
+        "count": 0
+      }
+    },
+    "predicted_plus_exists": false
+  },
+  "same_limit_universe": {
+    "same_limit_frame_count": 2,
+    "same_limit_frames": [
+      [
+        "03_09",
+        "9",
+        "23->24"
+      ],
+      [
+        "06_09",
+        "12",
+        "23->24"
+      ]
+    ],
+    "matching_phase_law_frames": [
+      [
+        "03_09",
+        "9",
+        "23->24"
+      ]
+    ],
+    "phase_law_exact_in_same_limit_universe": true,
+    "prior_candidate_frames": [
+      {
+        "pair": "03_09",
+        "root_slot": "9"
+      },
+      {
+        "pair": "06_09",
+        "root_slot": "12"
+      }
+    ],
+    "prior_best_answering_frame": [
+      "03_09",
+      "9",
+      "23->24"
+    ]
+  },
+  "interpretation_boundary": [
+    "This is a phase-3 mod15 fork-law candidate, not full native closure.",
+    "It does not use receipt/support fields for the prediction.",
+    "It still uses visible pair labels and root_slot arithmetic, so deeper G60/construction provenance remains open.",
+    "No closure witness, transport relation, channel, force, physics, GR, Maxwell, QCD, electroweak, or unification claim is made."
+  ],
+  "boundary": {
+    "native_fork_law_probe_only": true,
+    "full_native_derivation": false,
+    "admits_closure_witness": false,
+    "admits_transport_relation": false,
+    "admits_channel": false,
+    "marker_lighting": false,
+    "viewer_change": false,
+    "body_mutation": false,
+    "force_claim": false,
+    "physics_claim": false,
+    "gr_claim": false,
+    "maxwell_claim": false,
+    "qcd_claim": false,
+    "electroweak_claim": false,
+    "unification_claim": false
+  },
+  "next_allowed_math_acts": [
+    "derive_phase3_anchor_fork_law_from_g60_construction",
+    "test_5_3_4_chamber_signature_near_answering_fork",
+    "transport_relation_admission_criterion_001"
+  ],
+  "checks": {
+    "answering_prior_valid": true,
+    "answering_prior_status": true,
+    "inside_outside_prior_valid": true,
+    "true_antipode_prior_valid": true,
+    "support_rows_present": true,
+    "source_frame_exists_60": true,
+    "anchor_unique": true,
+    "phase_ladder_distinct": true,
+    "predicted_minus_exists": true,
+    "prediction_matches_expected": true,
+    "prediction_matches_prior_best_answer": true,
+    "source_inside_failure_proxy": true,
+    "predicted_receipt_proxy": true,
+    "prediction_does_not_use_receipt_fields": true,
+    "prediction_does_not_use_support_fields": true,
+    "fork_law_status_recorded": true,
+    "channel_registry_preserved": true,
+    "renderer_absent": true,
+    "no_forbidden_claims": true
+  },
+  "failed_checks": [],
+  "hashes": {
+    "answering_prior_sha256": "aa630f30d15af6bfa8d2caa464d736570e582a0cbda559224875ac158e4d233c",
+    "inside_outside_prior_sha256": "1a31a0614d3286a64ee9a348f354e6fe10198f925973cfa2917d3cf449962307",
+    "true_antipode_prior_sha256": "b6087c9a0f31e01ef1fa1557718584d3af817f04e64ee00b902e9ac900dd679c",
+    "steps_csv_sha256": "40466b974be84ee5ff7bae97a5077a98d15483e80367422c6d717edf59ee630d",
+    "channels_sha256": "fbe4c50e0adf3460f7190f3c7714754da8a620359a5bc26c70543cc401feca08",
+    "body_sha256": "6a2cb6b9892a78d4559ec61cf946b0021962cc6819311234b8bf14102b3b7f63",
+    "lab_sha256": "5a10a18bc6563446a0d364d5984b8a41db580e0a75831c82b9eeb5aebc2edeb7"
+  }
+}

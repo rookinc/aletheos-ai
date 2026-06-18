@@ -1,0 +1,158 @@
+{
+  "schema": "g900.marker_event_gate_recheck",
+  "version": 1,
+  "status": "marker_event_gate_recheck_recorded",
+  "created_utc": "2026-06-18T01:55:13Z",
+  "audit_pass": true,
+  "verdict": "marker_event_gate_recheck_recorded_closed_pending_renderer",
+  "question": "Now that binding and render contracts exist, does the anomaly marker event gate open?",
+  "event": {
+    "event_id": "g900_return_cell_event_562162c72753c818",
+    "event_type": "return_cell_signature_event"
+  },
+  "marker": {
+    "marker_id": "unsupported_phase_step_6_9",
+    "marker_tracked": true,
+    "marker_edge_count": 60,
+    "marker_vertex_count": 120
+  },
+  "contracts": {
+    "binding_id": "g900_marker_event_binding_1d645b31e5366deb",
+    "binding_exists": true,
+    "render_contract_id": "g900_marker_render_contract_2f8f21a3465a71d3",
+    "render_contract_exists": true
+  },
+  "gate_recheck": {
+    "previous_blockers": [
+      "marker_event_binding_contract_absent",
+      "render_contract_absent",
+      "live_stage_marker_renderer_absent"
+    ],
+    "resolved_previous_blockers": [
+      "marker_event_binding_contract_absent",
+      "render_contract_absent"
+    ],
+    "still_blocking": [
+      "live_stage_marker_renderer_absent"
+    ],
+    "gate_open": false,
+    "lights_marker_now": false,
+    "admits_channel_now": false,
+    "renders_channel_now": false,
+    "mutates_body": false,
+    "gate_conditions": [
+      {
+        "id": "previous_marker_gate_passed_closed",
+        "description": "The previous marker event gate exists and passed closed.",
+        "satisfied": true
+      },
+      {
+        "id": "return_cell_event_contract_exists",
+        "description": "The return-cell cycle/event contract exists and passed.",
+        "satisfied": true
+      },
+      {
+        "id": "marker_event_binding_contract_exists",
+        "description": "The return-cell event is bound to the unsupported 6/9 marker.",
+        "satisfied": true
+      },
+      {
+        "id": "marker_render_contract_exists",
+        "description": "A read-only marker render contract exists.",
+        "satisfied": true
+      },
+      {
+        "id": "live_stage_marker_renderer_exists",
+        "description": "A separate live-stage marker renderer artifact exists.",
+        "satisfied": false,
+        "present_stage_renderer_tokens": [],
+        "present_lab_renderer_tokens": []
+      },
+      {
+        "id": "channel_registry_zero",
+        "description": "The channel registry remains zero-count.",
+        "satisfied": true
+      },
+      {
+        "id": "marker_not_lit_by_recheck",
+        "description": "This recheck does not light the marker.",
+        "satisfied": true
+      },
+      {
+        "id": "body_not_mutated_by_recheck",
+        "description": "This recheck does not mutate the G900 body.",
+        "satisfied": true
+      }
+    ]
+  },
+  "static_live_stage_check": {
+    "stage_path": "public_html/labs/g900_observatory/g900_grammar_stage_v0.js",
+    "lab_path": "public_html/labs/g900_observatory/lab.html",
+    "renderer_tokens_checked": [
+      "drawGraphMarkerReadings",
+      "G900MarkerOverlay",
+      "activeMarkerRenderer",
+      "lightMarkerNow",
+      "markerLightingEnabled"
+    ],
+    "present_stage_renderer_tokens": [],
+    "present_lab_renderer_tokens": [],
+    "live_stage_renderer_exists": false
+  },
+  "summary": {
+    "event_id": "g900_return_cell_event_562162c72753c818",
+    "marker_id": "unsupported_phase_step_6_9",
+    "binding_exists": true,
+    "render_contract_exists": true,
+    "live_stage_renderer_exists": false,
+    "resolved_previous_blocker_count": 2,
+    "resolved_previous_blockers": [
+      "marker_event_binding_contract_absent",
+      "render_contract_absent"
+    ],
+    "still_blocking_count": 1,
+    "still_blocking": [
+      "live_stage_marker_renderer_absent"
+    ],
+    "gate_open": false,
+    "lights_marker_now": false,
+    "admits_channel_now": false,
+    "renders_channel_now": false,
+    "mutates_body": false,
+    "channel_count": 0
+  },
+  "interpretation": {
+    "binding_and_render_contracts_resolve_two_prior_blockers": true,
+    "gate_still_closed_because_renderer_absent": true,
+    "marker_still_not_live_lit": true,
+    "not_channel": true,
+    "next_problem": "Introduce a live-stage marker renderer stub only after a separate no-mutation renderer-admission artifact."
+  },
+  "checks": {
+    "previous_gate_passed": true,
+    "binding_contract_passed": true,
+    "render_contract_passed": true,
+    "cycle_contract_passed": true,
+    "binding_exists": true,
+    "render_contract_exists": true,
+    "channel_registry_zero_count": true,
+    "channels_not_admitted": true,
+    "live_stage_renderer_absent": true,
+    "gate_remains_closed": true,
+    "marker_not_lit": true,
+    "channel_not_admitted": true,
+    "body_not_mutated": true
+  },
+  "failed_checks": [],
+  "boundary": {
+    "gate_recheck_only": true,
+    "gate_open": false,
+    "renderer_enabled": false,
+    "admits_channels": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "marker_lighting": false,
+    "force_claim": false,
+    "physics_claim": false
+  }
+}

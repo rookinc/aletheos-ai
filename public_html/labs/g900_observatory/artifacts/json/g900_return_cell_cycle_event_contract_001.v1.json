@@ -1,0 +1,177 @@
+{
+  "schema": "g900.return_cell_cycle_event_contract",
+  "version": 1,
+  "status": "return_cell_cycle_event_contract_recorded",
+  "created_utc": "2026-06-18T01:42:37Z",
+  "audit_pass": true,
+  "verdict": "cycle_event_contract_recorded_without_channel_admission",
+  "question": "What counts as an event for the return cell, if a timer is not a cycle and a counter is not an event?",
+  "cycle_event_contract": {
+    "contract_id": "g900_return_cell_cycle_event_contract_001",
+    "event_id": "g900_return_cell_event_562162c72753c818",
+    "event_type": "return_cell_signature_event",
+    "cycle_type": "ordered_signature_cycle",
+    "event_definition": "An event is the admitted occurrence of the unique oriented local return-cell signature in the current full60 package graph.",
+    "cycle_definition": "A cycle is the ordered recurrence class of the return-cell signature, not a clock period, timer tick, animation frame, or sheet counter.",
+    "required_signature": {
+      "pairs": [
+        "03_09",
+        "09_12",
+        "06_12",
+        "06_13"
+      ],
+      "roots": [
+        "09",
+        "12",
+        "12",
+        "13"
+      ],
+      "transition_lens": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "weights": [
+        180,
+        60,
+        120,
+        180
+      ],
+      "shape": "clean hinge -> shared-root nonclean pocket -> clean exit"
+    },
+    "event_gate": [
+      "unique_oriented_return_cell",
+      "label_free_selection",
+      "carrier_source_field_origin_for_boundary_and_roots",
+      "transition_length_recoverable",
+      "zero_channel_registry",
+      "marker_lighting_paused"
+    ],
+    "explicit_non_sources": {
+      "sheet_per_second_timer": false,
+      "animation_frame_counter": false,
+      "wall_clock_time": false,
+      "manual_toggle": false,
+      "visual_brightness": false
+    },
+    "allowed_future_uses": [
+      "admission-criteria recheck",
+      "future marker gate input",
+      "future read-only renderer gate"
+    ],
+    "disallowed_current_uses": [
+      "channel admission",
+      "channel rendering",
+      "body mutation",
+      "marker lighting",
+      "force claim",
+      "physics claim"
+    ]
+  },
+  "criteria": [
+    {
+      "id": "event_is_signature_based",
+      "satisfied": true,
+      "description": "The event is keyed to the return-cell signature, not a runtime clock."
+    },
+    {
+      "id": "cycle_is_not_timer",
+      "satisfied": true,
+      "description": "The contract excludes timer, frame, and wall-clock sources."
+    },
+    {
+      "id": "unique_oriented_cell_receipted",
+      "satisfied": true,
+      "description": "The unique oriented local return cell is receipted."
+    },
+    {
+      "id": "label_free_selection_receipted",
+      "satisfied": true,
+      "description": "The return cell is selectable without package_kind labels."
+    },
+    {
+      "id": "field_origin_receipted",
+      "satisfied": true,
+      "description": "Boundary/root/root-pattern field origins are receipted."
+    },
+    {
+      "id": "transition_length_boundary_receipted",
+      "satisfied": true,
+      "description": "The transition-length boundary is receipted as pair-identity-like only in the tested minimal family."
+    },
+    {
+      "id": "admission_still_not_allowed",
+      "satisfied": true,
+      "description": "This event contract does not retroactively admit a channel."
+    },
+    {
+      "id": "channel_registry_still_zero",
+      "satisfied": true,
+      "description": "The channel registry remains zero-count."
+    },
+    {
+      "id": "marker_lighting_still_paused",
+      "satisfied": true,
+      "description": "Marker lighting remains paused by prior boundary receipt."
+    },
+    {
+      "id": "rendering_not_enabled",
+      "satisfied": true,
+      "description": "This artifact writes no renderer, stage hook, overlay, or marker-lighting API."
+    }
+  ],
+  "contract_effects": {
+    "satisfies_cycle_event_contract_for_future_recheck": true,
+    "admits_channel_now": false,
+    "renders_channel_now": false,
+    "lights_marker_now": false,
+    "mutates_body": false
+  },
+  "summary": {
+    "event_id": "g900_return_cell_event_562162c72753c818",
+    "criteria_count": 10,
+    "satisfied_count": 10,
+    "satisfies_cycle_event_contract_for_future_recheck": true,
+    "admits_channel_now": false,
+    "lights_marker_now": false,
+    "channel_count": 0
+  },
+  "interpretation": {
+    "event_is_not_timer": true,
+    "event_is_signature_occurrence": true,
+    "cycle_is_ordered_signature_cycle_not_clock_period": true,
+    "cycle_event_contract_blocker_can_be_rechecked": true,
+    "admission_still_blocked_by_other_criteria": [
+      "non_pair_identity_transition_length_law",
+      "channel_semantics_contract",
+      "render_contract"
+    ],
+    "not_channel": true,
+    "next_problem": "Define channel semantics or attack the non-pair-identity transition-length blocker."
+  },
+  "checks": {
+    "admission_criteria_passed": true,
+    "prior_admission_not_allowed": true,
+    "oriented_census_passed": true,
+    "label_free_selector_passed": true,
+    "field_origin_passed": true,
+    "minimal_origin_passed": true,
+    "marker_pause_passed": true,
+    "channel_registry_zero_count": true,
+    "channels_not_admitted": true,
+    "contract_satisfied": true,
+    "contract_does_not_admit_channel": true,
+    "contract_does_not_light_marker": true
+  },
+  "failed_checks": [],
+  "boundary": {
+    "contract_only": true,
+    "admits_channels": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "marker_lighting": false,
+    "force_claim": false,
+    "physics_claim": false
+  }
+}

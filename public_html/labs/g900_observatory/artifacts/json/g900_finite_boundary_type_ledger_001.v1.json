@@ -1,0 +1,339 @@
+{
+  "schema": "g900.finite_boundary_type_ledger",
+  "version": 1,
+  "status": "finite_boundary_type_ledger_recorded",
+  "created_utc": "2026-06-18T04:27:27Z",
+  "git_head": "64142ba Reset G900 frontier to boundary trace physics",
+  "audit_pass": true,
+  "verdict": "finite_boundary_type_ledger_passed",
+  "thesis": "Boundary before body. Type separation before physics bridge.",
+  "purpose": "Prevent type collapse before proving registered trace and physical bridge criteria.",
+  "type_ledger": [
+    {
+      "type_id": "boundary_grammar",
+      "rank": 0,
+      "physics_role": "admissibility source",
+      "definition": "The finite rule layer that determines what bodies, actions, traces, transports, and bridges may count.",
+      "may_authorize": [
+        "admitted_body",
+        "admissible_action",
+        "registered_trace_criterion",
+        "transport_relation_criterion",
+        "physical_bridge_protocol"
+      ],
+      "may_not_authorize": [
+        "viewer_display_as_proof",
+        "force_claim",
+        "physics_claim"
+      ],
+      "viewer_status": "not_display_object"
+    },
+    {
+      "type_id": "admitted_body",
+      "rank": 1,
+      "physics_role": "finite carrier of admissible action",
+      "definition": "A body admitted under the boundary grammar. In the current stack this is the G900 finite body.",
+      "may_authorize": [
+        "action_domain",
+        "incidence_support",
+        "trace_support"
+      ],
+      "may_not_authorize": [
+        "boundary_grammar",
+        "physical_force",
+        "viewer_truth"
+      ],
+      "viewer_status": "may_be_displayed_but_not_defined_by_display"
+    },
+    {
+      "type_id": "admissible_action",
+      "rank": 2,
+      "physics_role": "lawful operation inside the boundary/body pair",
+      "definition": "A finite action allowed by the boundary grammar on the admitted body.",
+      "may_authorize": [
+        "registered_trace_candidate"
+      ],
+      "may_not_authorize": [
+        "physical_measurement",
+        "force_claim",
+        "display_effect"
+      ],
+      "viewer_status": "not_display_object"
+    },
+    {
+      "type_id": "registered_trace",
+      "rank": 3,
+      "physics_role": "internal aftermath of admissible action",
+      "definition": "A non-arbitrary finite residue, return, obstruction, or correlation left by admissible action.",
+      "may_authorize": [
+        "obstruction_classification",
+        "transport_candidate",
+        "observable_proxy_candidate"
+      ],
+      "may_not_authorize": [
+        "physical_law_claim",
+        "screen_marker_as_physics"
+      ],
+      "viewer_status": "may_be_later_indicated_but_not_created_by_viewer"
+    },
+    {
+      "type_id": "obstruction",
+      "rank": 4,
+      "physics_role": "trace that blocks or fails support",
+      "definition": "A registered trace whose primary content is failure, unsupportedness, boundary pressure, or non-closure.",
+      "may_authorize": [
+        "trace_classification",
+        "possible_transport_frontier"
+      ],
+      "may_not_authorize": [
+        "transport_relation_without_extra_criterion",
+        "channel_admission_without_audit"
+      ],
+      "viewer_status": "not_display_authority"
+    },
+    {
+      "type_id": "transport_relation",
+      "rank": 5,
+      "physics_role": "admissible relation of passage, return, or coupling",
+      "definition": "A relation that passes from trace/obstruction evidence to admitted transport under an explicit criterion.",
+      "may_authorize": [
+        "channel_candidate",
+        "force_like_constraint_grammar_candidate"
+      ],
+      "may_not_authorize": [
+        "rendered_channel_without_anchor",
+        "physical_force_derivation"
+      ],
+      "viewer_status": "display_optional_after_admission"
+    },
+    {
+      "type_id": "channel",
+      "rank": 6,
+      "physics_role": "registry-level admitted transport relation",
+      "definition": "A transport relation admitted to the channel registry after audit and dedupe.",
+      "may_authorize": [
+        "channel_registry_entry"
+      ],
+      "may_not_authorize": [
+        "viewer_overlay",
+        "body_mutation",
+        "physics_claim"
+      ],
+      "viewer_status": "not_required_for_physics_frontier"
+    },
+    {
+      "type_id": "measurement_or_query",
+      "rank": 7,
+      "physics_role": "act of interrogation",
+      "definition": "A downstream query against registered trace or body state. It is not the same thing as trace itself.",
+      "may_authorize": [
+        "observable_proxy_row",
+        "comparison_protocol"
+      ],
+      "may_not_authorize": [
+        "trace_origin",
+        "boundary_grammar"
+      ],
+      "viewer_status": "viewer_can_assist_but_not_authorize"
+    },
+    {
+      "type_id": "force_like_constraint_grammar",
+      "rank": 8,
+      "physics_role": "finite analogue class, not a physical force",
+      "definition": "A classified finite trace grammar resembling compression, polarization, confinement, transformation, or clean release.",
+      "may_authorize": [
+        "physical_bridge_hypothesis"
+      ],
+      "may_not_authorize": [
+        "physical_force_claim",
+        "replacement_of_known_physics"
+      ],
+      "viewer_status": "not_viewer_dependent"
+    },
+    {
+      "type_id": "physical_bridge_protocol",
+      "rank": 9,
+      "physics_role": "observable-facing comparison discipline",
+      "definition": "A protocol mapping finite trace grammar to proxy classes such as timing, spectra, thresholds, stability, and boundary flux.",
+      "may_authorize": [
+        "comparison_to_physical_constraints"
+      ],
+      "may_not_authorize": [
+        "direct_derivation_claim",
+        "unbounded_mapping"
+      ],
+      "viewer_status": "not_display_object"
+    },
+    {
+      "type_id": "viewer",
+      "rank": 10,
+      "physics_role": "servant surface only",
+      "definition": "A display surface for already-admitted states. It creates no mathematical or physical authority.",
+      "may_authorize": [
+        "human_inspection"
+      ],
+      "may_not_authorize": [
+        "boundary_grammar",
+        "body",
+        "trace",
+        "transport",
+        "channel",
+        "physics_claim"
+      ],
+      "viewer_status": "display_only"
+    }
+  ],
+  "separation_lemmas": [
+    {
+      "lemma_id": "boundary_not_body",
+      "statement": "The boundary grammar admits the body; the body does not authorize the boundary.",
+      "status": "ledger_assertion"
+    },
+    {
+      "lemma_id": "trace_not_measurement",
+      "statement": "A registered trace is internal aftermath; measurement/query is downstream interrogation.",
+      "status": "ledger_assertion"
+    },
+    {
+      "lemma_id": "obstruction_not_transport",
+      "statement": "An obstruction can indicate boundary pressure but does not become transport without an explicit transport criterion.",
+      "status": "ledger_assertion"
+    },
+    {
+      "lemma_id": "channel_not_viewer",
+      "statement": "A channel is an admitted registry relation; it is not a rendered line or visual overlay.",
+      "status": "ledger_assertion"
+    },
+    {
+      "lemma_id": "viewer_not_proof",
+      "statement": "The viewer may display an admitted state but cannot create proof, trace, body, transport, or physics.",
+      "status": "ledger_assertion"
+    },
+    {
+      "lemma_id": "bridge_not_claim",
+      "statement": "A physical bridge protocol permits disciplined comparison to observables, not a direct physical-law derivation.",
+      "status": "ledger_assertion"
+    }
+  ],
+  "allowed_transitions": [
+    [
+      "boundary_grammar",
+      "admitted_body"
+    ],
+    [
+      "boundary_grammar",
+      "admissible_action"
+    ],
+    [
+      "admissible_action",
+      "registered_trace"
+    ],
+    [
+      "registered_trace",
+      "obstruction"
+    ],
+    [
+      "registered_trace",
+      "transport_relation"
+    ],
+    [
+      "transport_relation",
+      "channel"
+    ],
+    [
+      "registered_trace",
+      "force_like_constraint_grammar"
+    ],
+    [
+      "force_like_constraint_grammar",
+      "physical_bridge_protocol"
+    ],
+    [
+      "physical_bridge_protocol",
+      "comparison_to_physical_constraints"
+    ]
+  ],
+  "forbidden_transitions": [
+    [
+      "viewer",
+      "boundary_grammar"
+    ],
+    [
+      "viewer",
+      "registered_trace"
+    ],
+    [
+      "viewer",
+      "transport_relation"
+    ],
+    [
+      "viewer",
+      "channel"
+    ],
+    [
+      "viewer",
+      "physical_claim"
+    ],
+    [
+      "channel",
+      "rendered_overlay_without_anchor"
+    ],
+    [
+      "obstruction",
+      "transport_relation_without_criterion"
+    ],
+    [
+      "force_like_constraint_grammar",
+      "physical_force_claim"
+    ],
+    [
+      "physical_bridge_protocol",
+      "direct_derivation_claim"
+    ]
+  ],
+  "current_state": {
+    "frontier_verdict": "physics_frontier_reset_to_boundary_trace",
+    "channel_count": 1,
+    "admitted_channel_count": 1,
+    "renderer_hook_absent": true,
+    "renderer_file_absent": true
+  },
+  "next_allowed_math_acts": [
+    "registered_trace_criterion_001",
+    "six_nine_trace_classification_001",
+    "transport_relation_admission_criterion_001",
+    "physics_bridge_forbidden_mapping_ledger_001"
+  ],
+  "checks": {
+    "frontier_receipt_valid": true,
+    "boundary_first_thesis_present": true,
+    "renderer_hook_absent": true,
+    "renderer_file_absent": true,
+    "channel_registry_preserved": true,
+    "type_ledger_nonempty": true,
+    "separation_lemmas_present": true,
+    "viewer_has_no_authority": true,
+    "bridge_not_claim_separated": true,
+    "no_body_mutation": true,
+    "no_channel_admission": true,
+    "no_viewer_change": true,
+    "no_force_claim": true,
+    "no_physics_claim": true
+  },
+  "failed_checks": [],
+  "hashes": {
+    "frontier_sha256": "256ad198bcd9c0dcba20d75412622cc148bad6a2ff4026aef389f533ebc8d873",
+    "channels_sha256": "fbe4c50e0adf3460f7190f3c7714754da8a620359a5bc26c70543cc401feca08",
+    "body_sha256": "6a2cb6b9892a78d4559ec61cf946b0021962cc6819311234b8bf14102b3b7f63",
+    "lab_sha256": "5a10a18bc6563446a0d364d5984b8a41db580e0a75831c82b9eeb5aebc2edeb7"
+  },
+  "boundary": {
+    "ledger_only": true,
+    "changes_viewer": false,
+    "admits_channels": false,
+    "renders_channels": false,
+    "mutates_body": false,
+    "force_claim": false,
+    "physics_claim": false
+  }
+}

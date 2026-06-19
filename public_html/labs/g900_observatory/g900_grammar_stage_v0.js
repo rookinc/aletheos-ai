@@ -447,8 +447,9 @@ function syncG900ViewerStateConsole(state) {
 
 
 function graphLayerEnabled() {
-  const el = document.getElementById("graph-layer-toggle");
-  return !el || el.checked;
+  const toggle = document.getElementById("graph-layer-toggle");
+  if (!toggle) return true;
+  return Boolean(toggle.checked);
 }
 
 function graphLayerPercent(id, fallback) {
@@ -1287,3 +1288,84 @@ if (document.readyState === "loading") {
 } else {
   boot();
 }
+
+
+function setG900PanelCollapsed(panelId, collapsed) {
+  const bodyClass = panelId === "graph"
+    ? "g900-graph-panel-collapsed"
+    : "g900-state-panel-collapsed";
+
+  document.body.classList.toggle(bodyClass, collapsed);
+
+  document.querySelectorAll('[data-panel-collapse-toggle="' + panelId + '"]').forEach((button) => {
+    button.textContent = collapsed ? "Expand" : "Collapse";
+    button.setAttribute("aria-expanded", collapsed ? "false" : "true");
+  });
+
+  if (panelId === "graph") {
+    const panel = document.querySelector('[data-layer-panel="graph"]');
+    if (panel) panel.classList.toggle("is-panel-collapsed", collapsed);
+  }
+
+  if (panelId === "state") {
+    const section = document.querySelector(".state-console-section");
+    if (section) section.classList.toggle("is-panel-collapsed", collapsed);
+  }
+}
+
+function bindG900PanelCollapseControls() {
+  document.querySelectorAll("[data-panel-collapse-toggle]").forEach((button) => {
+    if (button.dataset.bound === "1") return;
+    button.dataset.bound = "1";
+
+    const panelId = button.dataset.panelCollapseToggle;
+    const key = "g900.panelCollapsed." + panelId;
+    const initialCollapsed = localStorage.getItem(key) === "1";
+
+    setG900PanelCollapsed(panelId, initialCollapsed);
+
+    button.addEventListener("click", () => {
+      const nextCollapsed = localStorage.getItem(key) !== "1";
+      localStorage.setItem(key, nextCollapsed ? "1" : "0");
+      setG900PanelCollapsed(panelId, nextCollapsed);
+    });
+  });
+}
+
+bindG900PanelCollapseControls();
+
+function ensureStageGraphToolbar() {
+  const stageCard = document.querySelector(".stage-card");
+  const stageFrame = document.querySelector(".stage-frame");
+  if (!stageCard || !stageFrame) return;
+
+  let toolbar = document.getElementById("stage-bottom-toolbar");
+  if (!toolbar) {
+    toolbar = document.createElement("div");
+    toolbar.id = "stage-bottom-toolbar";
+    toolbar.className = "stage-bottom-toolbar";
+    toolbar.setAttribute("aria-label", "Graph body density controls");
+    toolbar.innerHTML = [
+      '<label class="stage-toolbar-slider" for="graph-vertices-slider">',
+      '  <span>Vertices</span>',
+      '  <input id="graph-vertices-slider" data-layer-range="vertices" type="range" min="0" max="100" step="1" value="72" />',
+      '  <output id="graph-vertices-readout">72</output>',
+      '</label>',
+      '<label class="stage-toolbar-slider" for="graph-edges-slider">',
+      '  <span>Edges</span>',
+      '  <input id="graph-edges-slider" data-layer-range="edges" type="range" min="0" max="100" step="1" value="18" />',
+      '  <output id="graph-edges-readout">18</output>',
+      '</label>'
+    ].join("");
+  }
+
+  if (toolbar.parentElement !== stageCard || toolbar.previousElementSibling !== stageFrame) {
+    stageFrame.insertAdjacentElement("afterend", toolbar);
+  }
+
+  bindLayerControl("graph-vertices-slider", syncGraphLayerReadouts);
+  bindLayerControl("graph-edges-slider", syncGraphLayerReadouts);
+  syncGraphLayerReadouts();
+}
+
+ensureStageGraphToolbar();

@@ -1773,3 +1773,90 @@ canvas.stage-perspective-locked {
     rgba(255, 145, 165, 0.86)
   );
 }
+
+
+/* Collapsible control panels */
+.panel-collapse-btn {
+  appearance: none;
+  border: 1px solid rgba(218, 194, 126, 0.34);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.035);
+  color: rgba(226, 238, 252, 0.78);
+  padding: 0.55rem 0.85rem;
+  font: inherit;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.panel-collapse-btn:active {
+  transform: translateY(1px);
+}
+
+body.g900-graph-panel-collapsed #graph-panel-body {
+  display: none;
+}
+
+body.g900-state-panel-collapsed .g900-runtime-oscillator-console,
+body.g900-state-panel-collapsed .g900-origin-time-console,
+body.g900-state-panel-collapsed .g900-apparatus-profile-console,
+body.g900-state-panel-collapsed [data-state-console-card],
+body.g900-state-panel-collapsed [data-state-console-body] {
+  display: none !important;
+}
+
+.layer-panel.is-panel-collapsed,
+.state-console-section.is-panel-collapsed {
+  opacity: 0.96;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Stage-attached graph density toolbar */
+.stage-bottom-toolbar {
+  display: grid;
+  gap: 0.48rem;
+  padding: 0.72rem 1rem 0.82rem;
+  border-top: 1px solid rgba(170, 198, 230, 0.18);
+  background:
+    linear-gradient(180deg, rgba(8, 20, 32, 0.9), rgba(5, 14, 24, 0.96));
+}
+
+.stage-toolbar-slider {
+  display: grid;
+  grid-template-columns: 5.2rem minmax(0, 1fr) 2.2rem;
+  align-items: center;
+  gap: 0.62rem;
+  color: rgba(226, 238, 252, 0.82);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.stage-toolbar-slider input[type="range"] {
+  width: 100%;
+}
+
+.stage-toolbar-slider output {
+  color: rgba(218, 194, 126, 0.92);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (min-width: 760px) {
+  .stage-bottom-toolbar {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.9rem;
+  }
+}

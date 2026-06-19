@@ -1,0 +1,9 @@
+selector_name,selected_count,target_count,true_positive_count,false_positive_count,false_negative_count,true_negative_count,exact,selector_status,promoted_to_source_law,promoted_to_admission
+hub source rule: non-anchor and two anchor neighbors,1,1,1,0,0,14,true,conditional_source_handle_not_law,false,false
+leaf source rule: non-anchor and one anchor neighbor or connected to hub,8,8,8,0,0,7,true,conditional_source_handle_not_law,false,false
+"omitted source rule: non-anchor, no anchor neighbor, not connected to hub",2,2,2,0,0,13,true,conditional_source_handle_not_law,false,false
+target node reconstruction: anchors plus hub plus leaves,13,13,13,0,0,2,true,conditional_node_reconstruction_not_law,false,false
+carrier reconstruction: inner plus spoke plus outer rules,14,14,14,0,0,16,true,conditional_carrier_reconstruction_not_law,false,false
+inner tie reconstruction: both endpoints anchors,4,4,4,0,0,26,true,conditional_inner_reconstruction_not_law,false,false
+anchor spoke reconstruction: one anchor to leaf or hub,8,8,8,0,0,22,true,conditional_spoke_reconstruction_not_law,false,false
+outer return reconstruction: hub to zero-anchor leaf,2,2,2,0,0,28,true,conditional_outer_reconstruction_not_law,false,false

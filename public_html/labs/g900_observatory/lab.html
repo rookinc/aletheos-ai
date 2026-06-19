@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>G900 Witness Observatory | Aletheos Labs</title>
-  <link rel="stylesheet" href="lab.css?v=state-data-only-001" />
+  <link rel="stylesheet" href="lab.css?v=no-smoke-exact-001" />
 </head>
 <body>
   <main class="lab-shell">
@@ -199,7 +199,6 @@
       Carrier modes are Layer 2 readings over the fixed G900 body. They render admitted carrier structure only. They do not mutate the body, add vertices, add edges, admit channels, light markers, or make force or physics claims.
     </p>
     <ul>
-      <li><strong>Smoke rail.</strong> A single source-provenance rail used as a minimal rendering smoke test.</li>
       <li><strong>Slot internal carriers.</strong> The fifteen admitted slot-internal carrier readings. These show within-slot carrier structure without crossing slot-pair boundaries.</li>
       <li><strong>Slot-pair boundary carriers.</strong> The thirty admitted boundary carrier readings between slot pairs. These show cross-slot carrier structure while preserving the fixed body.</li>
       <li><strong>Six-nine neighborhood.</strong> A focused carrier reading around the six-nine receipt neighborhood, including nearby slot and slot-pair carriers relevant to the Null Well route.</li>
@@ -293,19 +292,11 @@
           </label>
 
 <div class="carrier-render-flag-grid" role="group" aria-label="Carrier reading modes">
-            <button class="carrier-render-flag is-active" type="button" data-carrier-render-mode="smoke">Smoke rail</button>
             <button class="carrier-render-flag" type="button" data-carrier-render-mode="slot_internal">Slot internal</button>
             <button class="carrier-render-flag" type="button" data-carrier-render-mode="slot_pair_boundary">Slot-pair boundary</button>
             <button class="carrier-render-flag" type="button" data-carrier-render-mode="six_nine_neighborhood">Six-nine neighborhood</button>
             <button class="carrier-render-flag" type="button" data-carrier-render-mode="nearest_receipt_branch">Nearest receipt branch</button>
           </div>
-<div id="carrier-render-legend" class="carrier-render-legend" aria-label="Carrier render legend">
-            <span><i class="legend-swatch legend-swatch-white"></i>White = graph body</span>
-            <span><i class="legend-swatch legend-swatch-color"></i>Color = carrier tint</span>
-            <span><i class="legend-swatch legend-swatch-composite"></i>Composite = overlap</span>
-          </div>
-
-          <p id="carrier-render-note" class="layer-panel-note">Layer 2 carrier readings. Stack carrier flags to combine readings. Rendering only. Body unchanged.</p>
         </div>
       </div>
 
@@ -357,7 +348,7 @@
     <p>2026 Centre of Recursive Inquiry. Aletheos.ai is the public research surface for CoRI and Thalean Action Theory.</p>
   </footer>
 
-  <script type="module" src="g900_grammar_stage_v0.js?v=state-no-export-ready-001"></script>
+  <script type="module" src="g900_grammar_stage_v0.js?v=play-pitch-roll-001"></script>
   <script type="module" src="kernel/g900_scaled_oscillation_ui.js?v=scaled-oscillation-001"></script>
   <script src="kernel/g900_runtime_oscillator_console.js?v=runtime-data-001" defer></script>
   <script src="kernel/g900_apparatus_profile_console.js?v=apparatus-data-001" defer></script>

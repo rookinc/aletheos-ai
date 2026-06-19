@@ -5,6 +5,7 @@ import { readG900ChannelRegistry, getG900ChannelSummary } from "./kernel/g900_ch
 import { readG900ScaledOscillationKernel, getG900ScaledOscillationSummary } from "./kernel/g900_scaled_oscillation.js";
 const TAU = Math.PI * 2;
 const DEFAULT_SHEET_RATE = 333;
+const PITCH_ROLL_SHEETS_PER_TURN = 900;
 const MIN_ZOOM = 0.28;
 const MAX_ZOOM = 64.0;
 const FIRST_CARRIER_RAIL_ID = "root_0_0_tuple_shell_depth_2";
@@ -29,8 +30,8 @@ const CARRIER_RENDER_FAMILIES = {
 };
 
 function readCarrierRenderFamilyMode() {
-    const value = select ? select.value : "smoke";
-  return Object.prototype.hasOwnProperty.call(CARRIER_RENDER_FAMILIES, value) ? value : "smoke";
+    const value = select ? select.value : "slot_internal";
+  return Object.prototype.hasOwnProperty.call(CARRIER_RENDER_FAMILIES, value) ? value : "slot_internal";
 }
 
 function getCarrierRailIdsForFamily(familyMode) {
@@ -38,7 +39,7 @@ function getCarrierRailIdsForFamily(familyMode) {
     return [];
   }
 
-  const family = CARRIER_RENDER_FAMILIES[familyMode] || CARRIER_RENDER_FAMILIES.smoke;
+  const family = CARRIER_RENDER_FAMILIES[familyMode] || CARRIER_RENDER_FAMILIES.slot_internal;
   const allowedSetIds = new Set(family.setIds);
   const railIds = [];
 
@@ -61,7 +62,7 @@ let activeOverlayRegistry = null;
 let activeCarrierRegistry = null;
 let activeChannelRegistry = null;
 let activeScaledOscillationKernel = null;
-const CARRIER_RENDER_MODE_IDS = ["smoke", "slot_internal", "slot_pair_boundary", "six_nine_neighborhood", "nearest_receipt_branch"];
+const CARRIER_RENDER_MODE_IDS = ["slot_internal", "slot_pair_boundary", "six_nine_neighborhood", "nearest_receipt_branch"];
 
 function normalizeCarrierRenderModes(value) {
   let raw = value;
@@ -75,7 +76,7 @@ function normalizeCarrierRenderModes(value) {
     }
   }
 
-  if (!Array.isArray(raw)) raw = ["smoke"];
+  if (!Array.isArray(raw)) raw = ["slot_internal"];
 
   const seen = new Set();
   const cleaned = [];
@@ -87,19 +88,19 @@ function normalizeCarrierRenderModes(value) {
     }
   });
 
-  return cleaned.length ? cleaned : ["smoke"];
+  return cleaned.length ? cleaned : ["slot_internal"];
 }
 
 let activeCarrierRenderModes = normalizeCarrierRenderModes(
   localStorage.getItem("g900.carrierRenderModes") ||
   localStorage.getItem("g900.carrierRenderMode") ||
-  "smoke"
+  "slot_internal"
 );
 let carrierRenderState = {
   version: "0.1",
   visible: false,
-  family_mode: "smoke",
-  family_label: "Smoke rail",
+  family_mode: "slot_internal",
+  family_label: "Slot internal carriers",
   rail_ids: [],
   mutates_body: false,
   physics_claim: false,
@@ -109,6 +110,11 @@ let carrierRenderState = {
 
 function clamp(value, min, max) {
   return Math.max(min, Math.min(max, value));
+}
+
+function wrapAngleRadians(value) {
+  if (!Number.isFinite(value)) return 0;
+  return ((((value + Math.PI) % TAU) + TAU) % TAU) - Math.PI;
 }
 
 function resizeCanvas(canvas) {
@@ -381,7 +387,9 @@ function buildG900ViewerStateObject(state) {
       yaw: Number(state.yaw.toFixed(6)),
       pitch: Number(state.pitch.toFixed(6)),
       roll: Number((state.roll || 0).toFixed(6)),
-      zoom: Number(state.zoom.toFixed(6))
+      zoom: Number(state.zoom.toFixed(6)),
+      pitch_roll_enabled: Boolean(state.playing),
+      pitch_roll_sheets_per_turn: PITCH_ROLL_SHEETS_PER_TURN
     },
     layers: {
       grid: {
@@ -819,7 +827,7 @@ function buildCarrierEdgeProfiles() {
   const activeModes = normalizeCarrierRenderModes(
     Array.isArray(carrierRenderState.family_modes)
       ? carrierRenderState.family_modes
-      : carrierRenderState.family_mode || "smoke"
+      : carrierRenderState.family_mode || "slot_internal"
   );
 
   for (const mode of activeModes) {
@@ -932,7 +940,7 @@ function bindCarrierRenderPanel() {
     btn.dataset.bound = "1";
 
     btn.addEventListener("click", () => {
-      const mode = btn.dataset.carrierRenderMode || "smoke";
+      const mode = btn.dataset.carrierRenderMode || "slot_internal";
       const set = new Set(activeCarrierRenderModes);
 
       if (set.has(mode)) {
@@ -1049,7 +1057,7 @@ function drawBlankStage(ctx, canvas, state) {
       " | YAW " + state.yaw.toFixed(2) +
       " | PITCH " + state.pitch.toFixed(2) +
       " | Z " + state.zoom.toFixed(2) +
-      " | DRAG YAW/PITCH / PINCH ZOOM",
+      " | PLAY PITCH ROLL / DRAG YAW/PITCH / PINCH ZOOM",
     18 * dpr,
     h - 11 * dpr
   );
@@ -1240,7 +1248,7 @@ function boot() {
     const dy = event.clientY - state.lastY;
 
     state.yaw += dx * 0.010;
-    state.pitch = clamp(state.pitch + dy * 0.0065, -1.48, 1.48);
+    state.pitch = wrapAngleRadians(state.pitch + dy * 0.0065);
 
     state.lastX = event.clientX;
     state.lastY = event.clientY;
@@ -1290,7 +1298,9 @@ function boot() {
     last = now;
 
     if (state.playing) {
-      state.sheet += dt * getSheetRate();
+      const sheetDelta = dt * getSheetRate();
+      state.sheet += sheetDelta;
+      state.pitch = wrapAngleRadians(state.pitch + sheetDelta * (TAU / PITCH_ROLL_SHEETS_PER_TURN));
     }
 
     syncSheetCounter(state);

@@ -1,0 +1,39 @@
+{
+  "schema": "g900.return_cell_conserved_packet_scout_receipt",
+  "version": "0.1",
+  "receipt_id": "g900_return_cell_conserved_packet_scout_001",
+  "receipt_pass": false,
+  "verdict": "return_cell_packet_candidate_not_clean",
+  "commit": "317e6d3",
+  "artifact": "labs/g900_observatory/artifacts/json/g900_return_cell_conserved_packet_scout_001.v1.json",
+  "csv": "labs/g900_observatory/artifacts/csv/g900_return_cell_conserved_packet_scout_001_edges.v1.csv",
+  "note": "labs/g900_observatory/notes/g900_return_cell_conserved_packet_scout_001.md",
+  "checks": {
+    "contract_exists": true,
+    "contract_no_transport_admitted": true,
+    "contract_no_channels_admitted": true,
+    "body_vertex_count_900": true,
+    "body_edge_count_3600": true,
+    "all_candidate_vertices_exist": true,
+    "all_candidate_segments_are_body_edges": false,
+    "packet_has_four_segments": true,
+    "packet_has_eight_endpoints": true,
+    "packet_limits_balanced_23_24": true,
+    "packet_slot_profile_is_1_1_2_2_2": true
+  },
+  "failed_checks": [
+    "all_candidate_segments_are_body_edges"
+  ],
+  "boundary": {
+    "channel_admitted": false,
+    "transport_admitted": false,
+    "physical_transport_claim": false,
+    "mutates_body": false,
+    "adds_vertices": false,
+    "adds_edges": false,
+    "force_claim": false,
+    "physics_claim": false
+  },
+  "packet_id": "return_cell_existing_body_edge_packet_001",
+  "recorded_at_utc": "2026-06-19T13:20:05Z"
+}

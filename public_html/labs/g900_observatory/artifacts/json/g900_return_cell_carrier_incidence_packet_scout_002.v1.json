@@ -1,0 +1,191 @@
+{
+  "schema": "g900.return_cell_carrier_incidence_packet_scout",
+  "version": "0.1",
+  "artifact_id": "g900_return_cell_carrier_incidence_packet_scout_002",
+  "scout_pass": true,
+  "verdict": "return_cell_carrier_incidence_packet_candidate_named",
+  "status": "packet_candidate_only_no_channel_or_transport_admission",
+  "commit": "317e6d3",
+  "question": "What is the conserved packet after the literal body-edge packet failed?",
+  "prior_result": {
+    "artifact": "labs/g900_observatory/artifacts/json/g900_return_cell_conserved_packet_scout_001.v1.json",
+    "reading": "001 showed the four-role preview is not simply four same-limit body edges; 09_12 was not a literal 9:24 -> 12:24 body edge."
+  },
+  "candidate_channel": {
+    "candidate_id": "return_cell_03_09_09_12_06_12_06_13",
+    "candidate_receipt": "g900_return_cell_channel_1bed7a7cba65a7be",
+    "current_status": "preview_only"
+  },
+  "packet_candidate": {
+    "id": "return_cell_carrier_incidence_packet_002",
+    "kind": "carrier_incidence_edge_packet",
+    "meaning": "one deterministic existing body edge per return-cell role, selected by target endpoint anchoring inside the role slot-pair carrier",
+    "signature": {
+      "selection_rule": "prefer same anchor-limit edge, otherwise prefer target endpoint anchored at the role anchor limit",
+      "role_count": 4,
+      "selected_edge_count": 4,
+      "selected_edge_ids": [
+        "tuple_edge_611",
+        "tuple_edge_2425",
+        "tuple_edge_1472",
+        "tuple_edge_1475"
+      ],
+      "selected_roles": [
+        "03_09",
+        "09_12",
+        "06_12",
+        "06_13"
+      ],
+      "selected_edges_unique": true,
+      "all_selected_target_endpoints_anchored": true,
+      "same_anchor_limit_count": 3,
+      "carrier_incidence_repair_count": 1,
+      "target_endpoint_vertices": [
+        "9:23",
+        "12:24",
+        "12:23",
+        "13:24"
+      ],
+      "source_endpoint_limits": {
+        "23": 2,
+        "24": 1,
+        "54": 1
+      },
+      "target_endpoint_limits": {
+        "23": 2,
+        "24": 2
+      },
+      "all_endpoint_limits": {
+        "23": 4,
+        "24": 3,
+        "54": 1
+      },
+      "segment_rows": [
+        {
+          "edge_index": 611,
+          "edge_id": "tuple_edge_611",
+          "from_vertex": "3:23",
+          "to_vertex": "9:23",
+          "from_slot": 3,
+          "to_slot": 9,
+          "from_limit": 23,
+          "to_limit": 23,
+          "segment_role": "03_09",
+          "anchor_limit": 23,
+          "same_anchor_limit": true,
+          "target_endpoint_anchored": true,
+          "source_endpoint_anchored": true,
+          "source_limit_distance": 0,
+          "target_limit_distance": 0,
+          "total_limit_distance": 0,
+          "selection_score": "0|0|0|0|611",
+          "selected": true
+        },
+        {
+          "edge_index": 2425,
+          "edge_id": "tuple_edge_2425",
+          "from_vertex": "9:54",
+          "to_vertex": "12:24",
+          "from_slot": 9,
+          "to_slot": 12,
+          "from_limit": 54,
+          "to_limit": 24,
+          "segment_role": "09_12",
+          "anchor_limit": 24,
+          "same_anchor_limit": false,
+          "target_endpoint_anchored": true,
+          "source_endpoint_anchored": false,
+          "source_limit_distance": 30,
+          "target_limit_distance": 0,
+          "total_limit_distance": 30,
+          "selection_score": "1|0|30|30|2425",
+          "selected": true
+        },
+        {
+          "edge_index": 1472,
+          "edge_id": "tuple_edge_1472",
+          "from_vertex": "6:23",
+          "to_vertex": "12:23",
+          "from_slot": 6,
+          "to_slot": 12,
+          "from_limit": 23,
+          "to_limit": 23,
+          "segment_role": "06_12",
+          "anchor_limit": 23,
+          "same_anchor_limit": true,
+          "target_endpoint_anchored": true,
+          "source_endpoint_anchored": true,
+          "source_limit_distance": 0,
+          "target_limit_distance": 0,
+          "total_limit_distance": 0,
+          "selection_score": "0|0|0|0|1472",
+          "selected": true
+        },
+        {
+          "edge_index": 1475,
+          "edge_id": "tuple_edge_1475",
+          "from_vertex": "6:24",
+          "to_vertex": "13:24",
+          "from_slot": 6,
+          "to_slot": 13,
+          "from_limit": 24,
+          "to_limit": 24,
+          "segment_role": "06_13",
+          "anchor_limit": 24,
+          "same_anchor_limit": true,
+          "target_endpoint_anchored": true,
+          "source_endpoint_anchored": true,
+          "source_limit_distance": 0,
+          "target_limit_distance": 0,
+          "total_limit_distance": 0,
+          "selection_score": "0|0|0|0|1475",
+          "selected": true
+        }
+      ]
+    }
+  },
+  "interpretation": {
+    "what_is_conserved_candidate": "the role-indexed four-edge carrier-incidence packet with target endpoint limits balanced at 23 and 24",
+    "key_correction_from_001": "09_12 is treated as a carrier-incidence relation anchored at 12:24, not as literal same-limit edge 9:24 -> 12:24",
+    "not_yet_proved": [
+      "channel admission",
+      "successor rule R",
+      "source packet to target packet transport",
+      "information transport",
+      "physical transport"
+    ]
+  },
+  "boundary": {
+    "channel_admitted": false,
+    "transport_admitted": false,
+    "physical_transport_claim": false,
+    "mutates_body": false,
+    "adds_vertices": false,
+    "adds_edges": false,
+    "force_claim": false,
+    "physics_claim": false
+  },
+  "checks": {
+    "contract_exists": true,
+    "contract_no_transport_admitted": true,
+    "contract_no_channels_admitted": true,
+    "body_vertex_count_900": true,
+    "body_edge_count_3600": true,
+    "prior_scout_exists": true,
+    "prior_scout_failed_for_literal_body_edges": true,
+    "selected_one_edge_per_role": true,
+    "selected_edges_unique": true,
+    "all_selected_target_endpoints_anchored": true,
+    "three_same_anchor_plus_one_incidence_repair": true,
+    "target_endpoint_limit_balance_23_24": true
+  },
+  "failed_checks": [],
+  "inputs": {
+    "labs/g900_observatory/data/g900_static_body.v1.json": "6a2cb6b9892a78d4559ec61cf946b0021962cc6819311234b8bf14102b3b7f63",
+    "labs/g900_observatory/data/g900_discrete_information_transport_contract.v0.1.json": "7528492c4c58d6d756383d839343c055fc87a9dfeb2fbf5b2749015d9724bf13",
+    "labs/g900_observatory/artifacts/json/g900_return_cell_conserved_packet_scout_001.v1.json": "b8e616390411e32041563696ab55c9c6de044a138317ab81b8d5a1ef5949b777"
+  },
+  "git_status_short_before": "?? labs/g900_observatory/artifacts/csv/g900_return_cell_conserved_packet_scout_001_edges.v1.csv\n?? labs/g900_observatory/artifacts/json/g900_return_cell_conserved_packet_scout_001.v1.json\n?? labs/g900_observatory/notes/g900_return_cell_conserved_packet_scout_001.md\n?? labs/g900_observatory/receipts/g900_return_cell_conserved_packet_scout_001.v1.json",
+  "recorded_at_utc": "2026-06-19T13:29:27Z",
+  "keeper": "The packet is not a drawn flow. It is a role-indexed carrier-incidence object over existing body edges."
+}

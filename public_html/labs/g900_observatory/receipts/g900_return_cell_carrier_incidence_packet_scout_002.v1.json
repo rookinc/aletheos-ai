@@ -1,0 +1,39 @@
+{
+  "schema": "g900.return_cell_carrier_incidence_packet_scout_receipt",
+  "version": "0.1",
+  "receipt_id": "g900_return_cell_carrier_incidence_packet_scout_002",
+  "receipt_pass": true,
+  "verdict": "return_cell_carrier_incidence_packet_candidate_named",
+  "commit": "317e6d3",
+  "artifact": "labs/g900_observatory/artifacts/json/g900_return_cell_carrier_incidence_packet_scout_002.v1.json",
+  "csv": "labs/g900_observatory/artifacts/csv/g900_return_cell_carrier_incidence_packet_scout_002_edges.v1.csv",
+  "candidates_csv": "labs/g900_observatory/artifacts/csv/g900_return_cell_carrier_incidence_packet_scout_002_candidates.v1.csv",
+  "note": "labs/g900_observatory/notes/g900_return_cell_carrier_incidence_packet_scout_002.md",
+  "checks": {
+    "contract_exists": true,
+    "contract_no_transport_admitted": true,
+    "contract_no_channels_admitted": true,
+    "body_vertex_count_900": true,
+    "body_edge_count_3600": true,
+    "prior_scout_exists": true,
+    "prior_scout_failed_for_literal_body_edges": true,
+    "selected_one_edge_per_role": true,
+    "selected_edges_unique": true,
+    "all_selected_target_endpoints_anchored": true,
+    "three_same_anchor_plus_one_incidence_repair": true,
+    "target_endpoint_limit_balance_23_24": true
+  },
+  "failed_checks": [],
+  "boundary": {
+    "channel_admitted": false,
+    "transport_admitted": false,
+    "physical_transport_claim": false,
+    "mutates_body": false,
+    "adds_vertices": false,
+    "adds_edges": false,
+    "force_claim": false,
+    "physics_claim": false
+  },
+  "packet_id": "return_cell_carrier_incidence_packet_002",
+  "recorded_at_utc": "2026-06-19T13:29:27Z"
+}

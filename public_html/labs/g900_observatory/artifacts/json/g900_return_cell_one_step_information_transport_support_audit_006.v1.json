@@ -1,0 +1,424 @@
+{
+  "schema": "g900.return_cell_one_step_information_transport_support_audit",
+  "version": "0.1",
+  "artifact_id": "g900_return_cell_one_step_information_transport_support_audit_006",
+  "audit_pass": true,
+  "verdict": "one_step_information_transport_history_supported",
+  "status": "support_audit_only_no_information_transport_admission",
+  "commit": "b66a7cc",
+  "question": "Can the admitted permission channel support a one-step information-transport history without changing the body?",
+  "history_candidate": {
+    "history_id": "g900_return_cell_one_step_information_history_candidate_006",
+    "history_kind": "one_step_finite_information_history",
+    "domain": [
+      0,
+      1
+    ],
+    "h0": {
+      "index": 0,
+      "state_id": "return_cell_role_anchor_source_packet_003_P",
+      "state_kind": "role_anchor_source_packet",
+      "packet": [
+        {
+          "p_index": 0,
+          "segment_role": "03_09",
+          "from_slot": 3,
+          "to_slot": 9,
+          "anchor_limit": 23,
+          "source_kind": "role_anchor_demand"
+        },
+        {
+          "p_index": 1,
+          "segment_role": "09_12",
+          "from_slot": 9,
+          "to_slot": 12,
+          "anchor_limit": 24,
+          "source_kind": "role_anchor_demand"
+        },
+        {
+          "p_index": 2,
+          "segment_role": "06_12",
+          "from_slot": 6,
+          "to_slot": 12,
+          "anchor_limit": 23,
+          "source_kind": "role_anchor_demand"
+        },
+        {
+          "p_index": 3,
+          "segment_role": "06_13",
+          "from_slot": 6,
+          "to_slot": 13,
+          "anchor_limit": 24,
+          "source_kind": "role_anchor_demand"
+        }
+      ],
+      "role_anchor_signature": [
+        {
+          "segment_role": "03_09",
+          "from_slot": 3,
+          "to_slot": 9,
+          "anchor_limit": 23
+        },
+        {
+          "segment_role": "09_12",
+          "from_slot": 9,
+          "to_slot": 12,
+          "anchor_limit": 24
+        },
+        {
+          "segment_role": "06_12",
+          "from_slot": 6,
+          "to_slot": 12,
+          "anchor_limit": 23
+        },
+        {
+          "segment_role": "06_13",
+          "from_slot": 6,
+          "to_slot": 13,
+          "anchor_limit": 24
+        }
+      ]
+    },
+    "successor": {
+      "from": 0,
+      "to": 1,
+      "rule_id": "return_cell_carrier_incidence_successor_rule_003_R",
+      "permission_channel_id": "g900_return_cell_permission_channel_005",
+      "rule": "For each source row P_i, enumerate existing body edges in the role slot-pair. Score each edge by same-anchor first, target-anchor second, nearest source limit third, shortest total limit distance fourth, earliest body edge fifth. R(P_i) is the unique minimum.",
+      "all_rule_minima_unique": true,
+      "q_matches_packet002": true
+    },
+    "h1": {
+      "index": 1,
+      "state_id": "return_cell_body_edge_target_packet_003_Q",
+      "state_kind": "existing_body_edge_target_packet",
+      "packet": [
+        {
+          "q_index": 0,
+          "segment_role": "03_09",
+          "edge_id": "tuple_edge_611",
+          "edge_index": 611,
+          "from_vertex": "3:23",
+          "to_vertex": "9:23",
+          "from_slot": 3,
+          "to_slot": 9,
+          "from_limit": 23,
+          "to_limit": 23,
+          "anchor_limit": 23,
+          "same_anchor_limit": true,
+          "target_endpoint_anchored": true,
+          "source_endpoint_anchored": true,
+          "source_limit_distance": 0,
+          "target_limit_distance": 0,
+          "total_limit_distance": 0,
+          "selection_score": "0|0|0|0|611"
+        },
+        {
+          "q_index": 1,
+          "segment_role": "09_12",
+          "edge_id": "tuple_edge_2425",
+          "edge_index": 2425,
+          "from_vertex": "9:54",
+          "to_vertex": "12:24",
+          "from_slot": 9,
+          "to_slot": 12,
+          "from_limit": 54,
+          "to_limit": 24,
+          "anchor_limit": 24,
+          "same_anchor_limit": false,
+          "target_endpoint_anchored": true,
+          "source_endpoint_anchored": false,
+          "source_limit_distance": 30,
+          "target_limit_distance": 0,
+          "total_limit_distance": 30,
+          "selection_score": "1|0|30|30|2425"
+        },
+        {
+          "q_index": 2,
+          "segment_role": "06_12",
+          "edge_id": "tuple_edge_1472",
+          "edge_index": 1472,
+          "from_vertex": "6:23",
+          "to_vertex": "12:23",
+          "from_slot": 6,
+          "to_slot": 12,
+          "from_limit": 23,
+          "to_limit": 23,
+          "anchor_limit": 23,
+          "same_anchor_limit": true,
+          "target_endpoint_anchored": true,
+          "source_endpoint_anchored": true,
+          "source_limit_distance": 0,
+          "target_limit_distance": 0,
+          "total_limit_distance": 0,
+          "selection_score": "0|0|0|0|1472"
+        },
+        {
+          "q_index": 3,
+          "segment_role": "06_13",
+          "edge_id": "tuple_edge_1475",
+          "edge_index": 1475,
+          "from_vertex": "6:24",
+          "to_vertex": "13:24",
+          "from_slot": 6,
+          "to_slot": 13,
+          "from_limit": 24,
+          "to_limit": 24,
+          "anchor_limit": 24,
+          "same_anchor_limit": true,
+          "target_endpoint_anchored": true,
+          "source_endpoint_anchored": true,
+          "source_limit_distance": 0,
+          "target_limit_distance": 0,
+          "total_limit_distance": 0,
+          "selection_score": "0|0|0|0|1475"
+        }
+      ],
+      "role_anchor_signature": [
+        {
+          "segment_role": "03_09",
+          "from_slot": 3,
+          "to_slot": 9,
+          "anchor_limit": 23
+        },
+        {
+          "segment_role": "09_12",
+          "from_slot": 9,
+          "to_slot": 12,
+          "anchor_limit": 24
+        },
+        {
+          "segment_role": "06_12",
+          "from_slot": 6,
+          "to_slot": 12,
+          "anchor_limit": 23
+        },
+        {
+          "segment_role": "06_13",
+          "from_slot": 6,
+          "to_slot": 13,
+          "anchor_limit": 24
+        }
+      ]
+    },
+    "conservation": {
+      "conserved_observable": "role_anchor_signature",
+      "p_signature": [
+        {
+          "segment_role": "03_09",
+          "from_slot": 3,
+          "to_slot": 9,
+          "anchor_limit": 23
+        },
+        {
+          "segment_role": "09_12",
+          "from_slot": 9,
+          "to_slot": 12,
+          "anchor_limit": 24
+        },
+        {
+          "segment_role": "06_12",
+          "from_slot": 6,
+          "to_slot": 12,
+          "anchor_limit": 23
+        },
+        {
+          "segment_role": "06_13",
+          "from_slot": 6,
+          "to_slot": 13,
+          "anchor_limit": 24
+        }
+      ],
+      "q_signature": [
+        {
+          "segment_role": "03_09",
+          "from_slot": 3,
+          "to_slot": 9,
+          "anchor_limit": 23
+        },
+        {
+          "segment_role": "09_12",
+          "from_slot": 9,
+          "to_slot": 12,
+          "anchor_limit": 24
+        },
+        {
+          "segment_role": "06_12",
+          "from_slot": 6,
+          "to_slot": 12,
+          "anchor_limit": 23
+        },
+        {
+          "segment_role": "06_13",
+          "from_slot": 6,
+          "to_slot": 13,
+          "anchor_limit": 24
+        }
+      ],
+      "signature_preserved_exactly": true,
+      "role_sequence_preserved": true,
+      "anchor_count_preserved": true,
+      "receipted_transformation": "P has role-anchor demands; R realizes each demand as a unique existing body edge in Q."
+    }
+  },
+  "support_statement": {
+    "supported": true,
+    "reading": "The admitted permission channel supports a one-step finite information history h(0)=P, h(1)=Q by R, conserving the role-anchor signature.",
+    "conserved_information": "role_anchor_signature",
+    "admission_status": "not_admitted_information_transport"
+  },
+  "boundary": {
+    "permission_channel_admitted": true,
+    "one_step_history_supported": true,
+    "information_transport_admitted": false,
+    "physical_transport_claim": false,
+    "mutates_body": false,
+    "adds_vertices": false,
+    "adds_edges": false,
+    "marker_lighting": false,
+    "viewer_registry_wired": false,
+    "viewer_gate_open": false,
+    "force_claim": false,
+    "physics_claim": false,
+    "unification_claim": false
+  },
+  "obligations": [
+    {
+      "id": "SUPPORT-01",
+      "name": "permission registry exists",
+      "requirement": "Admitted permission-channel registry exists.",
+      "evidence": "labs/g900_observatory/data/g900_admitted_permission_channels.v0.1.json",
+      "pass": true
+    },
+    {
+      "id": "SUPPORT-02",
+      "name": "permission channel admitted",
+      "requirement": "Return-cell permission channel 005 is admitted.",
+      "evidence": "labs/g900_observatory/data/g900_admitted_permission_channels.v0.1.json",
+      "pass": true
+    },
+    {
+      "id": "SUPPORT-03",
+      "name": "permission admission passed",
+      "requirement": "Admission artifact 005 passed.",
+      "evidence": "labs/g900_observatory/artifacts/json/g900_return_cell_permission_channel_admission_005.v1.json",
+      "pass": true
+    },
+    {
+      "id": "SUPPORT-04",
+      "name": "successor scout passed",
+      "requirement": "Successor-rule scout 003 passed.",
+      "evidence": "labs/g900_observatory/artifacts/json/g900_return_cell_packet_successor_rule_scout_003.v1.json",
+      "pass": true
+    },
+    {
+      "id": "SUPPORT-05",
+      "name": "history has two states",
+      "requirement": "History domain is exactly [0,1].",
+      "evidence": "history.domain",
+      "pass": true
+    },
+    {
+      "id": "SUPPORT-06",
+      "name": "source packet named",
+      "requirement": "h(0) is source packet P.",
+      "evidence": "history.h0.state_id",
+      "pass": true
+    },
+    {
+      "id": "SUPPORT-07",
+      "name": "target packet named",
+      "requirement": "h(1) is target packet Q.",
+      "evidence": "history.h1.state_id",
+      "pass": true
+    },
+    {
+      "id": "SUPPORT-08",
+      "name": "successor rule named",
+      "requirement": "The successor is rule R.",
+      "evidence": "history.successor.rule_id",
+      "pass": true
+    },
+    {
+      "id": "SUPPORT-09",
+      "name": "permission channel binds successor",
+      "requirement": "The successor is behind admitted permission channel 005.",
+      "evidence": "history.successor.permission_channel_id",
+      "pass": true
+    },
+    {
+      "id": "SUPPORT-10",
+      "name": "unique successor",
+      "requirement": "R has unique target minima.",
+      "evidence": "successor003.successor_signature.all_rule_minima_unique",
+      "pass": true
+    },
+    {
+      "id": "SUPPORT-11",
+      "name": "signature preserved",
+      "requirement": "The role-anchor signature is preserved exactly from P to Q.",
+      "evidence": "history.conservation.signature_preserved_exactly",
+      "pass": true
+    },
+    {
+      "id": "SUPPORT-12",
+      "name": "role sequence preserved",
+      "requirement": "Segment-role sequence is preserved from P to Q.",
+      "evidence": "history.conservation.role_sequence_preserved",
+      "pass": true
+    },
+    {
+      "id": "SUPPORT-13",
+      "name": "anchor counts preserved",
+      "requirement": "Anchor-limit counts are preserved from P to Q.",
+      "evidence": "history.conservation.anchor_count_preserved",
+      "pass": true
+    },
+    {
+      "id": "SUPPORT-14",
+      "name": "target packet is existing body edges",
+      "requirement": "Q consists of four existing body edges.",
+      "evidence": "successor003.successor_signature.q_edge_ids",
+      "pass": true
+    },
+    {
+      "id": "SUPPORT-15",
+      "name": "body unchanged",
+      "requirement": "G900 body remains 900 vertices and 3600 edges.",
+      "evidence": "labs/g900_observatory/data/g900_static_body.v1.json",
+      "pass": true
+    },
+    {
+      "id": "SUPPORT-16",
+      "name": "no body mutation",
+      "requirement": "Support audit does not mutate body, add vertices, or add edges.",
+      "evidence": "audit boundary",
+      "pass": true
+    },
+    {
+      "id": "SUPPORT-17",
+      "name": "not admitted transport",
+      "requirement": "Support audit does not admit information transport.",
+      "evidence": "audit boundary",
+      "pass": true
+    },
+    {
+      "id": "SUPPORT-18",
+      "name": "no physical claim",
+      "requirement": "Support audit makes no physical, force, or unification claim.",
+      "evidence": "audit boundary",
+      "pass": true
+    }
+  ],
+  "failed_obligation_ids": [],
+  "inputs": {
+    "labs/g900_observatory/data/g900_static_body.v1.json": "6a2cb6b9892a78d4559ec61cf946b0021962cc6819311234b8bf14102b3b7f63",
+    "labs/g900_observatory/data/g900_discrete_information_transport_contract.v0.1.json": "7528492c4c58d6d756383d839343c055fc87a9dfeb2fbf5b2749015d9724bf13",
+    "labs/g900_observatory/data/g900_admitted_permission_channels.v0.1.json": "94afd7ca8ffd171860b31d2c1ac2b55b21437fc69b8efc44c4a4bf27c0475964",
+    "labs/g900_observatory/artifacts/json/g900_return_cell_permission_channel_admission_005.v1.json": "8baab342ce2c46a2d266436607818beaaf11130546d1bf6e387f63adf3398c28",
+    "labs/g900_observatory/artifacts/json/g900_return_cell_packet_successor_rule_scout_003.v1.json": "79657be34ec24d63e02aa949aa7f21250cfbec0109280e05dfcdca72b1d1334e"
+  },
+  "git_status_short_before": "",
+  "recorded_at_utc": "2026-06-19T13:42:11Z",
+  "keeper": "A supported history is not yet admitted transport. It proves the permission channel can carry an accountable one-step information update."
+}

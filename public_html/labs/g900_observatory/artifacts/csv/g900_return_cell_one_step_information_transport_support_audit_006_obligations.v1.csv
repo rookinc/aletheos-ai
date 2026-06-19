@@ -1,0 +1,19 @@
+id,name,requirement,evidence,pass
+SUPPORT-01,permission registry exists,Admitted permission-channel registry exists.,labs/g900_observatory/data/g900_admitted_permission_channels.v0.1.json,True
+SUPPORT-02,permission channel admitted,Return-cell permission channel 005 is admitted.,labs/g900_observatory/data/g900_admitted_permission_channels.v0.1.json,True
+SUPPORT-03,permission admission passed,Admission artifact 005 passed.,labs/g900_observatory/artifacts/json/g900_return_cell_permission_channel_admission_005.v1.json,True
+SUPPORT-04,successor scout passed,Successor-rule scout 003 passed.,labs/g900_observatory/artifacts/json/g900_return_cell_packet_successor_rule_scout_003.v1.json,True
+SUPPORT-05,history has two states,"History domain is exactly [0,1].",history.domain,True
+SUPPORT-06,source packet named,h(0) is source packet P.,history.h0.state_id,True
+SUPPORT-07,target packet named,h(1) is target packet Q.,history.h1.state_id,True
+SUPPORT-08,successor rule named,The successor is rule R.,history.successor.rule_id,True
+SUPPORT-09,permission channel binds successor,The successor is behind admitted permission channel 005.,history.successor.permission_channel_id,True
+SUPPORT-10,unique successor,R has unique target minima.,successor003.successor_signature.all_rule_minima_unique,True
+SUPPORT-11,signature preserved,The role-anchor signature is preserved exactly from P to Q.,history.conservation.signature_preserved_exactly,True
+SUPPORT-12,role sequence preserved,Segment-role sequence is preserved from P to Q.,history.conservation.role_sequence_preserved,True
+SUPPORT-13,anchor counts preserved,Anchor-limit counts are preserved from P to Q.,history.conservation.anchor_count_preserved,True
+SUPPORT-14,target packet is existing body edges,Q consists of four existing body edges.,successor003.successor_signature.q_edge_ids,True
+SUPPORT-15,body unchanged,G900 body remains 900 vertices and 3600 edges.,labs/g900_observatory/data/g900_static_body.v1.json,True
+SUPPORT-16,no body mutation,"Support audit does not mutate body, add vertices, or add edges.",audit boundary,True
+SUPPORT-17,not admitted transport,Support audit does not admit information transport.,audit boundary,True
+SUPPORT-18,no physical claim,"Support audit makes no physical, force, or unification claim.",audit boundary,True

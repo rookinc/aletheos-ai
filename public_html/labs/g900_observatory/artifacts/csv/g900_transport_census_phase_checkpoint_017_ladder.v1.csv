@@ -1,0 +1,7 @@
+stage,input_count,output_count,status,claim
+00_current_ledger,,1,only_one_transport_admitted_not_uniqueness_proof,"one admitted transport, no family or uniqueness proof"
+01_census_scaffold,,,scaffold_only_no_family_claim_no_uniqueness_claim,"search space and ladder defined, no search run"
+02_packet_census,360360,1320,bounded_packet_template_has_multiple_exact_closes_not_transport_family,"packet template repeats, not a transport family"
+03_successor_signature_filter,1320,72,multiple_successor_signature_matches_not_transport_family,"successor grammar repeats narrowly, not a transport family"
+04_current_permission_gate_filter,72,1,current_gate_receipt_backs_known_seed_only,current gate receipt backs known seed only
+05_current_admitted_transport,1,1,current_ledger_unchanged,one admitted bounded finite information transport remains

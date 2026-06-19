@@ -1,0 +1,153 @@
+{
+  "schema": "g900.transport_census_phase_checkpoint",
+  "version": "0.1",
+  "artifact_id": "g900_transport_census_phase_checkpoint_017",
+  "checkpoint_pass": true,
+  "verdict": "transport_census_phase_checkpoint_017_locked",
+  "status": "census_phase_locked_no_family_claim_no_uniqueness_claim",
+  "commit": "5be0645",
+  "commit_full": "5be0645e18aa6064a970850bc3dc373a1fa2ac67",
+  "question": "What did the first G900 transport family census phase honestly show?",
+  "honest_answer": "The seed repeats as packet shape, narrows as successor grammar, and stands alone under current permission-gate receipts. This is not a uniqueness proof and not a transport family proof.",
+  "ladder": [
+    {
+      "stage": "00_current_ledger",
+      "input_count": "",
+      "output_count": 1,
+      "status": "only_one_transport_admitted_not_uniqueness_proof",
+      "claim": "one admitted transport, no family or uniqueness proof"
+    },
+    {
+      "stage": "01_census_scaffold",
+      "input_count": "",
+      "output_count": "",
+      "status": "scaffold_only_no_family_claim_no_uniqueness_claim",
+      "claim": "search space and ladder defined, no search run"
+    },
+    {
+      "stage": "02_packet_census",
+      "input_count": 360360,
+      "output_count": 1320,
+      "status": "bounded_packet_template_has_multiple_exact_closes_not_transport_family",
+      "claim": "packet template repeats, not a transport family"
+    },
+    {
+      "stage": "03_successor_signature_filter",
+      "input_count": 1320,
+      "output_count": 72,
+      "status": "multiple_successor_signature_matches_not_transport_family",
+      "claim": "successor grammar repeats narrowly, not a transport family"
+    },
+    {
+      "stage": "04_current_permission_gate_filter",
+      "input_count": 72,
+      "output_count": 1,
+      "status": "current_gate_receipt_backs_known_seed_only",
+      "claim": "current gate receipt backs known seed only"
+    },
+    {
+      "stage": "05_current_admitted_transport",
+      "input_count": 1,
+      "output_count": 1,
+      "status": "current_ledger_unchanged",
+      "claim": "one admitted bounded finite information transport remains"
+    }
+  ],
+  "counts": {
+    "candidate_count": 360360,
+    "exact_packet_close_count": 1320,
+    "near_miss_count": 19920,
+    "fail_count": 339120,
+    "successor_profile_match_count": 72,
+    "current_gate_receipt_backed_count": 1,
+    "needs_new_gate_receipt_count": 71,
+    "current_admitted_permission_channel_count": 1,
+    "current_admitted_information_transport_count": 1
+  },
+  "known_seed": {
+    "transport_id": "g900_return_cell_one_step_information_transport_007",
+    "permission_channel_id": "g900_return_cell_permission_channel_005",
+    "packet_recovered_without_preselection": true,
+    "matches_successor_profile": true,
+    "gate_backed_by_current_receipt": true
+  },
+  "interpretation": {
+    "shape_layer": "The return-cell packet shape is not unique at the bounded packet stage.",
+    "grammar_layer": "The return-cell successor grammar repeats in 72 candidates.",
+    "permission_layer": "Only the known return-cell seed is backed by the current gate receipt.",
+    "what_this_proves": "Current ledger uniqueness only, meaning the current receipts back one transport.",
+    "what_this_does_not_prove": "It does not prove global uniqueness, because the other 71 candidates have not received their own gate audits.",
+    "next_question": "Should the 71 deferred candidates be gate-audited, clustered first, or left as deferred candidate frontier?"
+  },
+  "body": {
+    "vertex_count": 900,
+    "edge_count": 3600,
+    "body_sha256": "6a2cb6b9892a78d4559ec61cf946b0021962cc6819311234b8bf14102b3b7f63"
+  },
+  "boundary": {
+    "checkpoint_only": true,
+    "transport_family_claim": false,
+    "global_uniqueness_claim": false,
+    "current_receipt_uniqueness_reading": true,
+    "new_candidate_search_run": false,
+    "new_gate_audits_run": false,
+    "new_permission_channel_admitted": false,
+    "new_information_transport_admitted": false,
+    "new_flux_witness_declared": false,
+    "physical_transport_claim": false,
+    "physical_flux_claim": false,
+    "energy_flow_claim": false,
+    "force_claim": false,
+    "physics_claim": false,
+    "unification_claim": false,
+    "body_mutation": false,
+    "adds_vertices": false,
+    "adds_edges": false,
+    "viewer_gate_open": false,
+    "marker_lighting": false
+  },
+  "checks": {
+    "no_missing_inputs": true,
+    "body_vertices_900": true,
+    "body_edges_3600": true,
+    "checkpoint009_passed": true,
+    "flux010_passed": true,
+    "theorem011_ready": true,
+    "status012_passed": true,
+    "scaffold013_passed": true,
+    "census014_passed": true,
+    "filter015_passed": true,
+    "filter016_passed": true,
+    "candidate_count_expected": true,
+    "exact_packet_close_count_expected": true,
+    "successor_profile_match_count_expected": true,
+    "gate_backed_count_expected": true,
+    "needs_new_gate_receipt_count_expected": true,
+    "current_transport_count_still_1": true,
+    "current_permission_channel_count_still_1": true,
+    "known_return_cell_recovered_014": true,
+    "known_return_cell_profile_match_015": true,
+    "known_return_cell_gate_backed_016": true,
+    "no_new_admissions": true,
+    "no_family_claim": true,
+    "no_uniqueness_claim": true
+  },
+  "failed_checks": [],
+  "inputs": {
+    "labs/g900_observatory/artifacts/json/g900_transport_candidate_family_census_scaffold_013.v1.json": "2e54ae708353773598e0cf89ccb23bf317c32b7d4216d44a799a2997a17a4203",
+    "labs/g900_observatory/artifacts/json/g900_transport_candidate_family_census_014.v1.json": "ba42be050ad35962abc1b0cd3ffeab9cfc59612d49a6a7d97442f0b74e1eb037",
+    "labs/g900_observatory/artifacts/json/g900_transport_successor_rule_family_filter_015.v1.json": "635b563b64e02705c82fc29faa9d8f3f4726a20a49209bfc75a818023f4f42d6",
+    "labs/g900_observatory/artifacts/json/g900_transport_permission_gate_family_filter_016.v1.json": "c5aad04eef8109d449d2218aeb595596851fe21975e2f16fb22d86384523532d",
+    "labs/g900_observatory/artifacts/json/g900_transport_family_status_question_012.v1.json": "dba95f06f16daa748d3c0c19d83581009c7dc787034177e129b0c924a41293b5",
+    "labs/g900_observatory/artifacts/json/g900_return_cell_transport_theorem_note_011.v1.json": "012779fc8ecb955f6fcbc76f8da64d070df2fec604b1633af8f816ed69e57001",
+    "labs/g900_observatory/artifacts/json/g900_return_cell_information_flux_witness_010.v1.json": "944a82e95d5de5513af630ac96ea6507cdd79ef12527ab1a247237fd5664137b",
+    "labs/g900_observatory/artifacts/json/g900_return_cell_transport_checkpoint_009.v1.json": "652158223ab249ba88f7120e97c5ce51633d4ec29d83e1c98ec43deda9535cab",
+    "labs/g900_observatory/data/g900_admitted_information_transports.v0.1.json": "2e1b4bc6e3ec072af260eb50af15ac8e21ba089be4b13039e5d101ca5941447f",
+    "labs/g900_observatory/data/g900_admitted_permission_channels.v0.1.json": "94afd7ca8ffd171860b31d2c1ac2b55b21437fc69b8efc44c4a4bf27c0475964",
+    "labs/g900_observatory/data/g900_static_body.v1.json": "6a2cb6b9892a78d4559ec61cf946b0021962cc6819311234b8bf14102b3b7f63"
+  },
+  "missing_inputs": [],
+  "git_status_short_before": "",
+  "recorded_at_utc": "2026-06-19T16:11:35Z",
+  "keeper": "The seed repeats as shape. It narrows as grammar. It stands alone by current permission. It is not yet proved unique."
+}

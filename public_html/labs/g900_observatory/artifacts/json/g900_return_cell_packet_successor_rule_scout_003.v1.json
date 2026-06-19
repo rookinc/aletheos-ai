@@ -1,0 +1,218 @@
+{
+  "schema": "g900.return_cell_packet_successor_rule_scout",
+  "version": "0.1",
+  "artifact_id": "g900_return_cell_packet_successor_rule_scout_003",
+  "scout_pass": true,
+  "verdict": "return_cell_successor_rule_candidate_found",
+  "status": "successor_rule_candidate_only_no_channel_or_transport_admission",
+  "commit": "8022095",
+  "question": "Can the packet be split into source packet P, target packet Q, and successor rule R without hand-picking the target?",
+  "source_packet_P": [
+    {
+      "p_index": 0,
+      "segment_role": "03_09",
+      "from_slot": 3,
+      "to_slot": 9,
+      "anchor_limit": 23,
+      "source_kind": "role_anchor_demand"
+    },
+    {
+      "p_index": 1,
+      "segment_role": "09_12",
+      "from_slot": 9,
+      "to_slot": 12,
+      "anchor_limit": 24,
+      "source_kind": "role_anchor_demand"
+    },
+    {
+      "p_index": 2,
+      "segment_role": "06_12",
+      "from_slot": 6,
+      "to_slot": 12,
+      "anchor_limit": 23,
+      "source_kind": "role_anchor_demand"
+    },
+    {
+      "p_index": 3,
+      "segment_role": "06_13",
+      "from_slot": 6,
+      "to_slot": 13,
+      "anchor_limit": 24,
+      "source_kind": "role_anchor_demand"
+    }
+  ],
+  "successor_rule_R": {
+    "id": "return_cell_carrier_incidence_successor_rule_003_R",
+    "domain": "role-anchor demands from the return-cell preview language",
+    "codomain": "existing G900 body edges",
+    "rule": "For each source row P_i, enumerate existing body edges in the role slot-pair. Score each edge by same-anchor first, target-anchor second, nearest source limit third, shortest total limit distance fourth, earliest body edge fifth. R(P_i) is the unique minimum.",
+    "uses_selected_target_edges_as_input": false,
+    "uses_viewer_coordinates_as_input": false,
+    "uses_physics_as_input": false
+  },
+  "target_packet_Q": [
+    {
+      "q_index": 0,
+      "segment_role": "03_09",
+      "edge_id": "tuple_edge_611",
+      "edge_index": 611,
+      "from_vertex": "3:23",
+      "to_vertex": "9:23",
+      "from_slot": 3,
+      "to_slot": 9,
+      "from_limit": 23,
+      "to_limit": 23,
+      "anchor_limit": 23,
+      "same_anchor_limit": true,
+      "target_endpoint_anchored": true,
+      "source_endpoint_anchored": true,
+      "source_limit_distance": 0,
+      "target_limit_distance": 0,
+      "total_limit_distance": 0,
+      "selection_score": "0|0|0|0|611"
+    },
+    {
+      "q_index": 1,
+      "segment_role": "09_12",
+      "edge_id": "tuple_edge_2425",
+      "edge_index": 2425,
+      "from_vertex": "9:54",
+      "to_vertex": "12:24",
+      "from_slot": 9,
+      "to_slot": 12,
+      "from_limit": 54,
+      "to_limit": 24,
+      "anchor_limit": 24,
+      "same_anchor_limit": false,
+      "target_endpoint_anchored": true,
+      "source_endpoint_anchored": false,
+      "source_limit_distance": 30,
+      "target_limit_distance": 0,
+      "total_limit_distance": 30,
+      "selection_score": "1|0|30|30|2425"
+    },
+    {
+      "q_index": 2,
+      "segment_role": "06_12",
+      "edge_id": "tuple_edge_1472",
+      "edge_index": 1472,
+      "from_vertex": "6:23",
+      "to_vertex": "12:23",
+      "from_slot": 6,
+      "to_slot": 12,
+      "from_limit": 23,
+      "to_limit": 23,
+      "anchor_limit": 23,
+      "same_anchor_limit": true,
+      "target_endpoint_anchored": true,
+      "source_endpoint_anchored": true,
+      "source_limit_distance": 0,
+      "target_limit_distance": 0,
+      "total_limit_distance": 0,
+      "selection_score": "0|0|0|0|1472"
+    },
+    {
+      "q_index": 3,
+      "segment_role": "06_13",
+      "edge_id": "tuple_edge_1475",
+      "edge_index": 1475,
+      "from_vertex": "6:24",
+      "to_vertex": "13:24",
+      "from_slot": 6,
+      "to_slot": 13,
+      "from_limit": 24,
+      "to_limit": 24,
+      "anchor_limit": 24,
+      "same_anchor_limit": true,
+      "target_endpoint_anchored": true,
+      "source_endpoint_anchored": true,
+      "source_limit_distance": 0,
+      "target_limit_distance": 0,
+      "total_limit_distance": 0,
+      "selection_score": "0|0|0|0|1475"
+    }
+  ],
+  "successor_signature": {
+    "source_packet_id": "return_cell_role_anchor_source_packet_003_P",
+    "target_packet_id": "return_cell_body_edge_target_packet_003_Q",
+    "rule_id": "return_cell_carrier_incidence_successor_rule_003_R",
+    "p_count": 4,
+    "q_count": 4,
+    "all_rule_minima_unique": true,
+    "q_edge_ids": [
+      "tuple_edge_611",
+      "tuple_edge_2425",
+      "tuple_edge_1472",
+      "tuple_edge_1475"
+    ],
+    "q_edges_unique": true,
+    "q_target_limits": {
+      "23": 2,
+      "24": 2
+    },
+    "q_source_limits": {
+      "23": 2,
+      "24": 1,
+      "54": 1
+    },
+    "q_slot_counts": {
+      "3": 1,
+      "6": 2,
+      "9": 2,
+      "12": 2,
+      "13": 1
+    },
+    "same_anchor_count": 3,
+    "incidence_repair_count": 1,
+    "all_q_target_endpoints_anchored": true,
+    "q_matches_packet002": true
+  },
+  "interpretation": {
+    "reading": "The target packet Q is determined from the source role-anchor packet P by a finite carrier-incidence rule R.",
+    "why_this_matters": "The return-cell packet is now more than a visual packet candidate: it has a deterministic P -> Q realization candidate over existing body edges.",
+    "not_yet_proved": [
+      "channel admission",
+      "transport admission",
+      "multi-step transport history",
+      "physical transport",
+      "force",
+      "physics"
+    ]
+  },
+  "boundary": {
+    "channel_admitted": false,
+    "transport_admitted": false,
+    "physical_transport_claim": false,
+    "mutates_body": false,
+    "adds_vertices": false,
+    "adds_edges": false,
+    "force_claim": false,
+    "physics_claim": false
+  },
+  "checks": {
+    "contract_exists": true,
+    "contract_no_transport_admitted": true,
+    "contract_no_channels_admitted": true,
+    "body_vertex_count_900": true,
+    "body_edge_count_3600": true,
+    "packet002_exists": true,
+    "packet002_passed": true,
+    "source_packet_has_four_rows": true,
+    "target_packet_has_four_rows": true,
+    "all_rule_minima_unique": true,
+    "target_edges_unique": true,
+    "target_endpoint_limits_balanced_23_24": true,
+    "three_same_anchor_plus_one_incidence_repair": true,
+    "target_matches_packet002": true,
+    "all_target_endpoints_anchored": true
+  },
+  "failed_checks": [],
+  "inputs": {
+    "labs/g900_observatory/data/g900_static_body.v1.json": "6a2cb6b9892a78d4559ec61cf946b0021962cc6819311234b8bf14102b3b7f63",
+    "labs/g900_observatory/data/g900_discrete_information_transport_contract.v0.1.json": "7528492c4c58d6d756383d839343c055fc87a9dfeb2fbf5b2749015d9724bf13",
+    "labs/g900_observatory/artifacts/json/g900_return_cell_carrier_incidence_packet_scout_002.v1.json": "0d16b7883e46c2cf7fc9f210666b96cbc6d07f21449342f5e3df776b4e7a425f"
+  },
+  "git_status_short_before": "",
+  "recorded_at_utc": "2026-06-19T13:32:56Z",
+  "keeper": "P names the role-anchor demand. R selects the unique carrier-incidence realization. Q is the existing-body-edge packet."
+}

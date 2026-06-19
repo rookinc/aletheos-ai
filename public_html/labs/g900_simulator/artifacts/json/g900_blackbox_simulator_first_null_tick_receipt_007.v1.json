@@ -1,0 +1,371 @@
+{
+  "schema": "g900.blackbox_simulator_first_null_tick_receipt",
+  "version": "0.1",
+  "artifact_id": "g900_blackbox_simulator_first_null_tick_receipt_007",
+  "receipt_pass": true,
+  "verdict": "g900_blackbox_simulator_first_null_tick_receipt_007_recorded",
+  "status": "first_null_tick_observed_paused_boundary_preserved",
+  "branch": "g900-blackbox-sim-fork",
+  "commit": "73cbae8",
+  "commit_full": "73cbae8394a4b6be1652e70cee7c7b54e284f9cd",
+  "observed_state": {
+    "path": "/data/data/com.termux/files/home/storage/downloads/g900_viewer_state_2026-06-19T21-47-43-884Z.json",
+    "sha256": "5839aa9fccc1d1d7dab94be8b6408d45ac9011c783a819108c9edceab3e90d67",
+    "schema": "g900.viewer.state",
+    "stage": "g900_full_body_observatory",
+    "timeline": {
+      "sheet": 1,
+      "playing": false,
+      "sheets_per_second": 240
+    },
+    "camera": {
+      "yaw": 0.140332,
+      "pitch": -0.926582,
+      "roll": 0,
+      "zoom": 1,
+      "pitch_roll_enabled": false,
+      "pitch_roll_sheets_per_turn": 900
+    },
+    "body": {
+      "name": "g900",
+      "version": "0.1",
+      "vertices": 900,
+      "edges": 3600
+    },
+    "runtime_oscillator": {
+      "schema": "g900.viewer.runtime_oscillator",
+      "version": "0.1",
+      "oscillator_source": "device_timing_substrate",
+      "runtime_witness": "performance.now",
+      "render_witness": "requestAnimationFrame",
+      "mutates_body": false,
+      "runtime_motion_authority": false,
+      "opens_gates": false,
+      "admits_channels": false,
+      "lights_markers": false,
+      "physics_claim": false,
+      "force_claim": false,
+      "frame_interval_ms": 18.266,
+      "render_hz": 54.748,
+      "sheets_per_second": 240,
+      "status": "measured"
+    },
+    "origin_time": {
+      "schema": "g900.viewer.origin_time_witness",
+      "version": "0.1",
+      "endpoint": "./time.php",
+      "mutates_body": false,
+      "runtime_motion_authority": false,
+      "opens_gates": false,
+      "admits_channels": false,
+      "lights_markers": false,
+      "physics_claim": false,
+      "force_claim": false,
+      "status": "live_origin",
+      "source": "local_or_http_origin_time_endpoint",
+      "host": "127.0.0.1:8000",
+      "certificate_status": "not_applicable_local_or_http",
+      "iso_utc": "2026-06-19T21:47:23+00:00",
+      "unix_ms": 1781905643443,
+      "fallback_used": false,
+      "polled_at_device_iso": "2026-06-19T21:47:23.448Z"
+    },
+    "apparatus_profile": {
+      "schema": "g900.viewer.apparatus_profile",
+      "version": "0.1",
+      "identity": "bounded browser/runtime apparatus profile",
+      "hardware_identifier": "not exposed",
+      "literal_quartz_identifier": "not exposed",
+      "runtime_witness": "performance.now()",
+      "render_witness": "requestAnimationFrame",
+      "platform_hint": "Android",
+      "mobile_hint": "mobile",
+      "language": "en-US",
+      "timezone": "America/Vancouver",
+      "viewport_css_px": "360 x 699",
+      "screen_css_px": "360 x 780",
+      "pixel_ratio": "3",
+      "logical_processors": "8",
+      "approximate_memory_gb": "8",
+      "touch_points": "5",
+      "online_hint": "true",
+      "boundary": {
+        "private_hardware_id": false,
+        "serial_number": false,
+        "imei": false,
+        "mac_address": false,
+        "literal_quartz_id": false,
+        "mutates_body": false,
+        "runtime_motion_authority": false,
+        "physics_claim": false,
+        "force_claim": false
+      }
+    }
+  },
+  "check_rows": [
+    {
+      "check_id": "007-C001",
+      "check": "state_schema",
+      "expected": "g900.viewer.state",
+      "observed": "g900.viewer.state",
+      "passed": "true",
+      "meaning": "The witness is a G900 viewer-state export."
+    },
+    {
+      "check_id": "007-C002",
+      "check": "sheet_advanced_to_one",
+      "expected": "1",
+      "observed": "1",
+      "passed": "true",
+      "meaning": "First null tick advanced sheet 0 to sheet 1."
+    },
+    {
+      "check_id": "007-C003",
+      "check": "animation_paused",
+      "expected": "false",
+      "observed": "false",
+      "passed": "true",
+      "meaning": "Stepper left animation paused."
+    },
+    {
+      "check_id": "007-C004",
+      "check": "sample_rate_240",
+      "expected": "240",
+      "observed": "240",
+      "passed": "true",
+      "meaning": "Timeline records the selected 240 sheets/sec sample rate."
+    },
+    {
+      "check_id": "007-C005",
+      "check": "runtime_oscillator_rate_matches",
+      "expected": "240",
+      "observed": "240",
+      "passed": "true",
+      "meaning": "Runtime oscillator summary matches timeline sample rate."
+    },
+    {
+      "check_id": "007-C006",
+      "check": "pitch_roll_disabled",
+      "expected": "false",
+      "observed": "false",
+      "passed": "true",
+      "meaning": "Stepping did not engage live pitch/roll animation."
+    },
+    {
+      "check_id": "007-C007",
+      "check": "body_vertex_count_fixed",
+      "expected": "900",
+      "observed": "900",
+      "passed": "true",
+      "meaning": "G900 body vertex count is unchanged."
+    },
+    {
+      "check_id": "007-C008",
+      "check": "body_edge_count_fixed",
+      "expected": "3600",
+      "observed": "3600",
+      "passed": "true",
+      "meaning": "G900 body edge count is unchanged."
+    },
+    {
+      "check_id": "007-C009",
+      "check": "overlays_do_not_mutate_body",
+      "expected": "false",
+      "observed": "false",
+      "passed": "true",
+      "meaning": "Overlay layer remains non-mutating."
+    },
+    {
+      "check_id": "007-C010",
+      "check": "overlays_no_physics_claim",
+      "expected": "false",
+      "observed": "false",
+      "passed": "true",
+      "meaning": "Overlay layer makes no physics claim."
+    },
+    {
+      "check_id": "007-C011",
+      "check": "timing_boundary_no_runtime_motion_authority",
+      "expected": "false",
+      "observed": "false",
+      "passed": "true",
+      "meaning": "Runtime oscillator remains a timing witness, not motion authority."
+    },
+    {
+      "check_id": "007-C012",
+      "check": "scaled_oscillation_no_gate_authority",
+      "expected": "opens_gates=false admits_channels=false lights_markers=false",
+      "observed": "opens_gates=False admits_channels=False lights_markers=False",
+      "passed": "true",
+      "meaning": "Timing does not open gates, admit channels, or light markers."
+    },
+    {
+      "check_id": "007-C013",
+      "check": "channel_preview_not_admitted",
+      "expected": "admitted_now=false renders_admitted_channel=false",
+      "observed": "admitted_now=False renders_admitted_channel=False",
+      "passed": "true",
+      "meaning": "Existing channel preview remains non-admitted."
+    },
+    {
+      "check_id": "007-C014",
+      "check": "grounded_lens_no_body_mutation",
+      "expected": "mutates_body=false adds_vertices=false adds_edges=false",
+      "observed": "mutates_body=False adds_vertices=False adds_edges=False",
+      "passed": "true",
+      "meaning": "A/F lens remains non-mutating during timing step."
+    },
+    {
+      "check_id": "007-C015",
+      "check": "orientation_no_physics_claim",
+      "expected": "physics_claim=false force_claim=false",
+      "observed": "physics_claim=False force_claim=False",
+      "passed": "true",
+      "meaning": "Orientation layer remains bounded."
+    }
+  ],
+  "failed_observed_checks": [],
+  "summary_rows": [
+    {
+      "summary_id": "007-S001",
+      "summary_name": "observed_state_file",
+      "value": "/data/data/com.termux/files/home/storage/downloads/g900_viewer_state_2026-06-19T21-47-43-884Z.json",
+      "status": "loaded",
+      "interpretation": "Latest exported G900 viewer state was loaded as the first-null-tick witness."
+    },
+    {
+      "summary_id": "007-S002",
+      "summary_name": "sheet",
+      "value": "1",
+      "status": "advanced",
+      "interpretation": "Sheet advanced to 1."
+    },
+    {
+      "summary_id": "007-S003",
+      "summary_name": "playing",
+      "value": "false",
+      "status": "paused",
+      "interpretation": "Animation is paused after the step."
+    },
+    {
+      "summary_id": "007-S004",
+      "summary_name": "sheets_per_second",
+      "value": "240",
+      "status": "rate_preserved",
+      "interpretation": "The selected sample rate is preserved in timeline state."
+    },
+    {
+      "summary_id": "007-S005",
+      "summary_name": "runtime_oscillator_sheets_per_second",
+      "value": "240",
+      "status": "rate_matched",
+      "interpretation": "Runtime oscillator reports the same sample rate."
+    },
+    {
+      "summary_id": "007-S006",
+      "summary_name": "body_vertices",
+      "value": "900",
+      "status": "fixed",
+      "interpretation": "G900 body vertex count remains fixed."
+    },
+    {
+      "summary_id": "007-S007",
+      "summary_name": "body_edges",
+      "value": "3600",
+      "status": "fixed",
+      "interpretation": "G900 body edge count remains fixed."
+    },
+    {
+      "summary_id": "007-S008",
+      "summary_name": "physics_claim",
+      "value": "false",
+      "status": "locked_zero",
+      "interpretation": "No physics claim is made by the first null tick receipt."
+    },
+    {
+      "summary_id": "007-S009",
+      "summary_name": "body_mutation",
+      "value": "false",
+      "status": "locked_zero",
+      "interpretation": "No body mutation is made by the first null tick receipt."
+    }
+  ],
+  "boundary": {
+    "observed_viewer_state_receipt": true,
+    "simulator_dynamics_run_by_script": false,
+    "uses_existing_ui_export": true,
+    "first_null_tick_observed": true,
+    "animation_paused": true,
+    "sample_rate_preserved": true,
+    "quartz_runtime_boundary": true,
+    "source_law_promoted": false,
+    "family_promoted": false,
+    "new_permission_channel_admitted": false,
+    "new_information_transport_admitted": false,
+    "transport_family_claim": false,
+    "physical_force_claim": false,
+    "physical_flux_claim": false,
+    "physical_energy_flow_claim": false,
+    "physics_claim": false,
+    "geometry_claim": false,
+    "body_mutation": false,
+    "adds_vertices": false,
+    "adds_edges": false,
+    "gate_open": false,
+    "marker_lighting": false
+  },
+  "counts": {
+    "check_count": 15,
+    "failed_observed_check_count": 0,
+    "summary_row_count": 9,
+    "sheet": 1,
+    "playing_false": 1,
+    "sheets_per_second": 240,
+    "runtime_oscillator_sheets_per_second": 240,
+    "body_vertices": 900,
+    "body_edges": 3600,
+    "source_law_promoted": 0,
+    "new_permission_channel_admitted": 0,
+    "new_information_transport_admitted": 0,
+    "physics_claim": 0,
+    "body_mutation": 0
+  },
+  "checks": {
+    "no_missing_required_inputs": true,
+    "on_simulator_branch": true,
+    "kernel_seed_004_passed": true,
+    "quartz_boundary_005_passed": true,
+    "timing_panel_audit_006_passed": true,
+    "viewer_state_schema_ok": true,
+    "sheet_is_one": true,
+    "playing_false": true,
+    "sample_rate_is_240": true,
+    "runtime_rate_matches_timeline": true,
+    "pitch_roll_disabled": true,
+    "body_vertices_900": true,
+    "body_edges_3600": true,
+    "all_observed_checks_pass": true,
+    "source_law_promoted_false": true,
+    "new_permission_channel_admitted_false": true,
+    "new_information_transport_admitted_false": true,
+    "physical_force_claim_false": true,
+    "physical_flux_claim_false": true,
+    "physical_energy_flow_claim_false": true,
+    "physics_claim_false": true,
+    "geometry_claim_false": true,
+    "body_mutation_false": true,
+    "adds_vertices_false": true,
+    "adds_edges_false": true
+  },
+  "failed_checks": [],
+  "required_inputs": {
+    "labs/g900_simulator/artifacts/json/g900_blackbox_simulator_timing_panel_ui_boundary_audit_006.v1.json": "abc06a4694180924df246ae02a4b91c9a44844d1fa9439d0dae75c8db131d176",
+    "labs/g900_simulator/artifacts/json/g900_blackbox_simulator_quartz_timing_boundary_005.v1.json": "5c49382ae20517d14581b65ceee22c80cf9108c7fc54f632bff04226df2f0c5a",
+    "labs/g900_simulator/artifacts/json/g900_blackbox_simulator_kernel_seed_004.v1.json": "92bc0cd552834377ed38a27c9173d60b16a695e9c358a306dfac7b77b6f238c9",
+    "labs/g900_simulator/data/g900_blackbox_simulator_assumption_registry.v0.3.json": "6755f7656437ea15effbad1b582f395a5cb73e54b926f3df6f60f82119188324"
+  },
+  "missing_required_inputs": [],
+  "git_status_short_before": "",
+  "recorded_at_utc": "2026-06-19T21:56:00Z",
+  "keeper": "The first tick moved the sheet. It did not move the body."
+}

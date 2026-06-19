@@ -1,0 +1,239 @@
+{
+  "schema": "g900.transport_choice_f0001_source_rule_probe",
+  "version": "0.1",
+  "artifact_id": "g900_transport_choice_f0001_source_rule_probe_036",
+  "probe_pass": true,
+  "verdict": "transport_choice_f0001_source_rule_probe_036_recorded",
+  "status": "f0001_local_source_rule_candidate_found_no_promotion",
+  "commit": "29c2b8c",
+  "commit_full": "29c2b8c01a70e7e0bd835bd077af7551c4939b99",
+  "question": "Does F0001 contain an exact local source-side grammar, and can it be promoted?",
+  "answer": "F0001 contains an exact local path-subset grammar candidate, but it does not explain why the prefix terminal edge is omitted and is not promoted to source law or admission.",
+  "family": {
+    "family_id": "F0001",
+    "family_key": "roles=03_04 03_09 05_04 :: tuples=tuple_edge_609 tuple_edge_614 tuple_edge_921",
+    "source_handle_status_035": "razor_repeated_handle_no_law",
+    "role_tokens": [
+      "03_04",
+      "03_09",
+      "05_04"
+    ],
+    "tuple_tokens": [
+      "tuple_edge_609",
+      "tuple_edge_614",
+      "tuple_edge_921"
+    ],
+    "role_nodes": [
+      3,
+      4,
+      5,
+      9
+    ],
+    "role_edges": [
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        9
+      ],
+      [
+        4,
+        5
+      ]
+    ],
+    "role_endpoints": [
+      5,
+      9
+    ],
+    "role_inner_nodes": [
+      3,
+      4
+    ],
+    "path_values_by_variable_order": [
+      5,
+      4,
+      3,
+      9
+    ],
+    "path_variables": [
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "path_matches_forward": true,
+    "path_matches_reverse": true,
+    "observed_member_count": 9,
+    "observed_variable_subset_count": 9,
+    "all_size_2_3_subset_count": 10,
+    "missing_variable_subsets": [
+      "B C"
+    ],
+    "missing_value_subsets": [
+      "04 05"
+    ],
+    "extra_variable_subsets": [],
+    "first_var_pair": [
+      "B",
+      "C"
+    ],
+    "first_value_pair": [
+      4,
+      5
+    ],
+    "missing_var_pair": [
+      "B",
+      "C"
+    ],
+    "missing_value_pair": [
+      4,
+      5
+    ],
+    "missing_pair_is_role_edge": true,
+    "missing_pair_is_terminal_edge": true,
+    "missing_pair_is_first_var_pair": true,
+    "missing_pair_is_last_var_pair": false,
+    "local_source_candidate_exact": true
+  },
+  "counts": {
+    "f0001_member_count": 9,
+    "role_node_count": 4,
+    "role_edge_count": 3,
+    "observed_variable_subset_count": 9,
+    "all_size_2_3_subset_count": 10,
+    "missing_variable_subset_count": 1,
+    "extra_variable_subset_count": 0,
+    "candidate_source_rule_count": 1,
+    "promoted_source_law_count": 0,
+    "promoted_family_count": 0,
+    "promoted_admission_count": 0,
+    "current_admitted_permission_channel_count": 1,
+    "current_admitted_information_transport_count": 1
+  },
+  "candidate_rules": [
+    {
+      "rule_id": "036-R1",
+      "rule_name": "variable_order_follows_role_path",
+      "statement": "Stable selector variable values in B C D E order traverse the F0001 simple path.",
+      "observed": "B=05 C=04 D=03 E=09",
+      "expected": "simple path over role-pair endpoints",
+      "hit": "true",
+      "exact_for_f0001": "true",
+      "promotion_status": "handle_not_law"
+    },
+    {
+      "rule_id": "036-R2",
+      "rule_name": "observed_members_all_size_2_3_except_one",
+      "statement": "Observed F0001 members equal all 2- and 3-variable subsets except one missing pair.",
+      "observed": "observed=9 universe=10 missing=B C",
+      "expected": "one excluded pair and no extras",
+      "hit": "true",
+      "exact_for_f0001": "true",
+      "promotion_status": "local_grammar_candidate_not_law"
+    },
+    {
+      "rule_id": "036-R3",
+      "rule_name": "missing_pair_is_prefix_terminal_edge",
+      "statement": "The single missing pair is the first variable pair and a terminal role-path edge.",
+      "observed": "missing_vars=B C missing_values=04 05",
+      "expected": "first_pair=B C first_values=04 05",
+      "hit": "true",
+      "exact_for_f0001": "true",
+      "promotion_status": "local_grammar_candidate_not_law"
+    },
+    {
+      "rule_id": "036-R4",
+      "rule_name": "candidate_local_source_grammar",
+      "statement": "F0001 is exactly the path-ordered 4-node grammar with all size 2 and 3 subsets except the prefix terminal edge.",
+      "observed": "path=05 04 03 09 excluded=B C",
+      "expected": "exact local grammar",
+      "hit": "true",
+      "exact_for_f0001": "true",
+      "promotion_status": "candidate_source_rule_not_promoted"
+    },
+    {
+      "rule_id": "036-R5",
+      "rule_name": "no_admission_promotion",
+      "statement": "Even with an exact local grammar candidate, no source law, family, permission channel, or transport is promoted.",
+      "observed": "promoted_source_law_count=0 promoted_admission_count=0",
+      "expected": "admission remains locked",
+      "hit": "true",
+      "exact_for_f0001": "true",
+      "promotion_status": "no_promotion"
+    }
+  ],
+  "interpretation": {
+    "main": "F0001 is not just a repeated handle. It has an exact local grammar.",
+    "local_grammar": "The role tokens form the path 05-04-03-09 under variable order B-C-D-E. The observed family is all 2- and 3-subsets of B,C,D,E except the prefix pair B,C.",
+    "remaining_gap": "The probe does not derive why the prefix terminal edge B,C is omitted.",
+    "guardrail": "Exact local grammar is a source-rule candidate, not an admitted source law."
+  },
+  "boundary": {
+    "focused_f0001_probe_only": true,
+    "local_grammar_candidate_not_law": true,
+    "missing_prefix_edge_not_explained": true,
+    "source_rule_candidate_not_promoted": true,
+    "family_not_permission": true,
+    "family_not_transport": true,
+    "admission_layer_locked": true,
+    "body_fixed": true,
+    "admitted_ledger_fixed": true,
+    "new_permission_channel_admitted": false,
+    "new_information_transport_admitted": false,
+    "new_flux_witness_declared": false,
+    "transport_family_claim": false,
+    "global_uniqueness_claim": false,
+    "physical_transport_claim": false,
+    "physical_flux_claim": false,
+    "energy_flow_claim": false,
+    "force_claim": false,
+    "physics_claim": false,
+    "unification_claim": false,
+    "body_mutation": false,
+    "adds_vertices": false,
+    "adds_edges": false,
+    "viewer_gate_open": false,
+    "marker_lighting": false
+  },
+  "checks": {
+    "no_missing_inputs": true,
+    "probe035_passed": true,
+    "census034_passed": true,
+    "search033_passed": true,
+    "theorem032_passed": true,
+    "f0001_family_found": true,
+    "f0001_member_rows_found": true,
+    "f0001_expected_member_count_9": true,
+    "f0001_role_graph_simple_path": true,
+    "f0001_has_four_role_nodes": true,
+    "f0001_selector_values_stable": true,
+    "f0001_variable_order_matches_path": true,
+    "f0001_exact_local_source_candidate_found": true,
+    "candidate_not_promoted_to_source_law": true,
+    "candidate_not_promoted_to_admission": true,
+    "current_permission_channel_count_still_1": true,
+    "current_information_transport_count_still_1": true,
+    "no_new_permission_channel_admitted": true,
+    "no_new_information_transport_admitted": true,
+    "no_transport_family_claim": true,
+    "no_physics_claim": true,
+    "no_body_mutation": true
+  },
+  "failed_checks": [],
+  "inputs": {
+    "labs/g900_observatory/artifacts/json/g900_transport_choice_family_source_law_probe_035.v1.json": "00e136d414b7623418c157c4088c3410574610015a7452b8b14cc5893997a4a5",
+    "labs/g900_observatory/artifacts/csv/g900_transport_choice_family_source_law_probe_035_families.v1.csv": "e28f45dca45b806268b83b0ebaa8c7a83bfc81d86bde1092b9cefb70ede71776",
+    "labs/g900_observatory/artifacts/csv/g900_transport_choice_family_source_law_probe_035_members.v1.csv": "6347e20d5e811a0285f04a646cbb9d748645d9cee7829119a3eb8c61d674bb9c",
+    "labs/g900_observatory/artifacts/json/g900_transport_choice_construction_context_family_census_034.v1.json": "21bdeae210d260e1f05accdcf9751a321a5f5a440e7b980a3b172aa4dc1f75f1",
+    "labs/g900_observatory/artifacts/json/g900_transport_choice_constructive_provenance_search_033.v1.json": "799863716433971761b00106c30130462d9e13762277b19a751c8d5de87a147e",
+    "labs/g900_observatory/artifacts/json/g900_transport_choice_apparatus_theorem_note_032.v1.json": "5a50aa989ee6ac148fbb1997ece28bdd4582c6b48409bee808490d5ae7635db6",
+    "labs/g900_observatory/data/g900_admitted_permission_channels.v0.1.json": "94afd7ca8ffd171860b31d2c1ac2b55b21437fc69b8efc44c4a4bf27c0475964",
+    "labs/g900_observatory/data/g900_admitted_information_transports.v0.1.json": "2e1b4bc6e3ec072af260eb50af15ac8e21ba089be4b13039e5d101ca5941447f"
+  },
+  "missing_inputs": [],
+  "git_status_short_before": "",
+  "recorded_at_utc": "2026-06-19T18:22:19Z",
+  "keeper": "A handle can name the door. Only a rule can open it."
+}

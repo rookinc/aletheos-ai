@@ -1,0 +1,6 @@
+rule_id,rule_name,statement,observed,expected,hit,exact_for_f0001,promotion_status
+036-R1,variable_order_follows_role_path,Stable selector variable values in B C D E order traverse the F0001 simple path.,B=05 C=04 D=03 E=09,simple path over role-pair endpoints,true,true,handle_not_law
+036-R2,observed_members_all_size_2_3_except_one,Observed F0001 members equal all 2- and 3-variable subsets except one missing pair.,observed=9 universe=10 missing=B C,one excluded pair and no extras,true,true,local_grammar_candidate_not_law
+036-R3,missing_pair_is_prefix_terminal_edge,The single missing pair is the first variable pair and a terminal role-path edge.,missing_vars=B C missing_values=04 05,first_pair=B C first_values=04 05,true,true,local_grammar_candidate_not_law
+036-R4,candidate_local_source_grammar,F0001 is exactly the path-ordered 4-node grammar with all size 2 and 3 subsets except the prefix terminal edge.,path=05 04 03 09 excluded=B C,exact local grammar,true,true,candidate_source_rule_not_promoted
+036-R5,no_admission_promotion,"Even with an exact local grammar candidate, no source law, family, permission channel, or transport is promoted.",promoted_source_law_count=0 promoted_admission_count=0,admission remains locked,true,true,no_promotion

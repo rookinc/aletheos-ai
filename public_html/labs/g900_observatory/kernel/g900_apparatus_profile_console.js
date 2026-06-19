@@ -1,8 +1,6 @@
 (function () {
   "use strict";
 
-  const PANEL_ID = "g900-apparatus-profile-console";
-
   function ready(fn) {
     if (document.readyState === "loading") {
       document.addEventListener("DOMContentLoaded", fn);
@@ -38,17 +36,10 @@
     return "not exposed";
   }
 
-  function getViewport() {
-    return window.innerWidth + " x " + window.innerHeight;
-  }
-
-  function getScreen() {
-    if (!window.screen) return "not exposed";
-    return window.screen.width + " x " + window.screen.height;
-  }
-
   function collectProfile() {
     return {
+      schema: "g900.viewer.apparatus_profile",
+      version: "0.1",
       identity: "bounded browser/runtime apparatus profile",
       hardware_identifier: "not exposed",
       literal_quartz_identifier: "not exposed",
@@ -58,8 +49,8 @@
       mobile_hint: getMobileHint(),
       language: valueOrUnknown(navigator.language),
       timezone: getTimezone(),
-      viewport_css_px: getViewport(),
-      screen_css_px: getScreen(),
+      viewport_css_px: window.innerWidth + " x " + window.innerHeight,
+      screen_css_px: window.screen ? window.screen.width + " x " + window.screen.height : "not exposed",
       pixel_ratio: valueOrUnknown(window.devicePixelRatio),
       logical_processors: valueOrUnknown(navigator.hardwareConcurrency),
       approximate_memory_gb: valueOrUnknown(navigator.deviceMemory),
@@ -79,66 +70,11 @@
     };
   }
 
-  function row(label, value) {
-    return "<div><dt>" + label + "</dt><dd>" + value + "</dd></div>";
-  }
-
-  function renderProfile(profile) {
-    if (document.getElementById(PANEL_ID)) return;
-
-    const panel = document.createElement("section");
-    panel.id = PANEL_ID;
-    panel.className = "g900-apparatus-profile-console";
-    panel.innerHTML = [
-      "<h3>Apparatus profile</h3>",
-      '<p class="g900-apparatus-profile-note">',
-      "  Browser JS cannot expose the private hardware identity. This is a bounded runtime environment receipt for the Scope.",
-      "</p>",
-      '<dl class="g900-apparatus-profile-grid">',
-      row("Identity", profile.identity),
-      row("Hardware ID", profile.hardware_identifier),
-      row("Quartz ID", profile.literal_quartz_identifier),
-      row("Runtime witness", profile.runtime_witness),
-      row("Render witness", profile.render_witness),
-      row("Platform hint", profile.platform_hint),
-      row("Mobile hint", profile.mobile_hint),
-      row("Language", profile.language),
-      row("Timezone", profile.timezone),
-      row("Viewport", profile.viewport_css_px),
-      row("Screen", profile.screen_css_px),
-      row("Pixel ratio", profile.pixel_ratio),
-      row("Logical processors", profile.logical_processors),
-      row("Approx memory", profile.approximate_memory_gb),
-      row("Touch points", profile.touch_points),
-      row("Online hint", profile.online_hint),
-      "</dl>",
-      '<p class="g900-apparatus-profile-chain">',
-      "  Chain: device environment -&gt; runtime witness -&gt; apparatus profile -&gt; scaled oscillation -&gt; sheets/sec -&gt; grammar-earned sheets -&gt; visible trace -&gt; receipt.",
-      "</p>",
-      '<p class="g900-apparatus-profile-boundary">',
-      "  Full-metal builds may identify deeper hardware layers. This JS Scope records only what the browser honestly exposes.",
-      "</p>"
-    ].join("");
-
-    const oscillator = document.getElementById("g900-runtime-oscillator-console");
-    if (oscillator) {
-      oscillator.insertAdjacentElement("afterend", panel);
-      return;
-    }
-
-    const download = document.getElementById("download-state-json");
-    const rowAnchor = download ? download.closest("div") : null;
-    if (rowAnchor) {
-      rowAnchor.insertAdjacentElement("afterend", panel);
-      return;
-    }
-
-    console.warn("[G900 apparatus profile] no console anchor found; panel not mounted.");
-  }
-
   ready(function () {
-    const profile = collectProfile();
-    window.__g900ApparatusProfileSummary = profile;
-    renderProfile(profile);
+    window.__g900ApparatusProfileSummary = collectProfile();
+
+    window.addEventListener("resize", function () {
+      window.__g900ApparatusProfileSummary = collectProfile();
+    });
   });
 }());

@@ -1363,10 +1363,20 @@ function initialG900PanelCollapsed(panelId) {
   return panelId === "carriers" || panelId === "channels";
 }
 
+function applyG900PanelDefaultMigration() {
+  const key = "g900.panelDefaults.version";
+  const version = "state-closed-001";
+
+  if (localStorage.getItem(key) === version) return;
+
+  localStorage.setItem(key, version);
+}
+
 function bindG900ActivityPanelControls() {
   ensureStageGraphToolbar();
+  applyG900PanelDefaultMigration();
 
-  ["carriers", "channels", "state"].forEach((panelId) => {
+  ["carriers", "channels"].forEach((panelId) => {
     setG900PanelBodyCollapsed(panelId, initialG900PanelCollapsed(panelId));
   });
 
@@ -1405,3 +1415,4 @@ if (document.readyState === "loading") {
 } else {
   bindG900ActivityPanelControls();
 }
+

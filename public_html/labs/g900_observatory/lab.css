@@ -616,58 +616,6 @@ h1 {
   }
 }
 
-/* G900 state object console */
-.stage-console-panel {
-  margin: 1rem 0 0;
-  border: 1px solid rgba(120, 170, 220, 0.22);
-  border-radius: 1rem;
-  background:
-    linear-gradient(180deg, rgba(3, 10, 19, 0.78), rgba(5, 12, 22, 0.68));
-  box-shadow:
-    inset 0 0 0 1px rgba(237, 246, 255, 0.045),
-    0 0 28px rgba(0, 0, 0, 0.18);
-  overflow: hidden;
-}
-
-.stage-console-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.58rem 0.78rem;
-  border-bottom: 1px solid rgba(120, 170, 220, 0.14);
-  color: rgba(223, 195, 123, 0.82);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 0.68rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-
-.stage-console-head span:last-child {
-  color: rgba(159, 182, 204, 0.56);
-}
-
-.viewer-state-object {
-  margin: 0;
-  max-height: 20rem;
-  overflow: auto;
-  padding: 0.78rem;
-  color: rgba(190, 210, 230, 0.92);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 0.68rem;
-  line-height: 1.42;
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
-}
-
-@media (max-width: 440px) {
-  .viewer-state-object {
-    max-height: 16rem;
-    font-size: 0.62rem;
-    padding: 0.68rem;
-  }
-}
-
 /* Generic observatory layer panels */
 .layer-panel {
   margin: 0 0 1rem;
@@ -1184,9 +1132,7 @@ h1 {
 
 /* Compact console UX. Long receipts stay available, but closed by default. */
 .g900-console-compact-details,
-.g900-state-json-compact {
-  width: 100%;
-}
+.g900-state-json-compact { display: none !important; }
 
 .g900-console-compact-details > summary,
 .g900-state-json-compact > summary {
@@ -1221,13 +1167,7 @@ h1 {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.g900-state-json-compact {
-  margin-top: 0.9rem;
-  padding: 0.85rem;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 0.85rem;
-  background: rgba(255, 255, 255, 0.035);
-}
+.g900-state-json-compact { display: none !important; }
 
 .g900-state-json-compact pre {
   max-height: 55vh;
@@ -2011,4 +1951,48 @@ canvas.stage-perspective-locked {
     inset 0 0 0 1px rgba(255, 244, 184, 0.18),
     0 0 0.9rem rgba(218, 194, 126, 0.08) !important;
   pointer-events: none !important;
+}
+
+
+/* Carrier controls layout refinement */
+.carrier-render-panel-body .layer-slider-row[for="carrier-alpha-slider"] {
+  margin: 0 0 0.85rem;
+}
+
+.carrier-render-flag-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.62rem;
+}
+
+.carrier-render-flag {
+  min-height: 3.05rem;
+  padding-inline: 0.62rem;
+}
+
+@media (max-width: 360px) {
+  .carrier-render-flag-grid {
+    gap: 0.52rem;
+  }
+
+  .carrier-render-flag {
+    font-size: 0.78rem;
+    min-height: 2.85rem;
+  }
+}
+
+
+/* State object data output */
+.state-object-panel .state-object-head {
+  margin-bottom: 0;
+}
+
+.activity-panel-title-static {
+  cursor: default;
+  pointer-events: none;
+}
+
+.state-json-download-source[hidden],
+#viewer-state-object[hidden] {
+  display: none !important;
 }

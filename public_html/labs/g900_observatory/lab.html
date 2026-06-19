@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>G900 Witness Observatory | Aletheos Labs</title>
-  <link rel="stylesheet" href="lab.css" />
+  <link rel="stylesheet" href="lab.css?v=state-data-only-001" />
 </head>
 <body>
   <main class="lab-shell">
@@ -286,21 +286,20 @@
         </div>
 
         <div id="carrier-render-panel-body" class="activity-panel-body carrier-render-panel-body" data-panel-body="carriers" hidden>
-          <div class="carrier-render-flag-grid" role="group" aria-label="Carrier reading modes">
-            <button class="carrier-render-flag is-active" type="button" data-carrier-render-mode="smoke">Smoke rail</button>
-            <button class="carrier-render-flag" type="button" data-carrier-render-mode="slot_internal">Slot internal</button>
-            <button class="carrier-render-flag" type="button" data-carrier-render-mode="slot_pair_boundary">Slot-pair boundary</button>
-            <button class="carrier-render-flag" type="button" data-carrier-render-mode="six_nine_neighborhood">Six-nine neighborhood</button>
-            <button class="carrier-render-flag" type="button" data-carrier-render-mode="nearest_receipt_branch">Nearest receipt branch</button>
-          </div>
-
           <label class="layer-slider-row" for="carrier-alpha-slider">
             <span>Alpha</span>
             <input id="carrier-alpha-slider" type="range" min="0" max="100" step="1" value="58" />
             <output id="carrier-alpha-readout">58</output>
           </label>
 
-          <div id="carrier-render-legend" class="carrier-render-legend" aria-label="Carrier render legend">
+<div class="carrier-render-flag-grid" role="group" aria-label="Carrier reading modes">
+            <button class="carrier-render-flag is-active" type="button" data-carrier-render-mode="smoke">Smoke rail</button>
+            <button class="carrier-render-flag" type="button" data-carrier-render-mode="slot_internal">Slot internal</button>
+            <button class="carrier-render-flag" type="button" data-carrier-render-mode="slot_pair_boundary">Slot-pair boundary</button>
+            <button class="carrier-render-flag" type="button" data-carrier-render-mode="six_nine_neighborhood">Six-nine neighborhood</button>
+            <button class="carrier-render-flag" type="button" data-carrier-render-mode="nearest_receipt_branch">Nearest receipt branch</button>
+          </div>
+<div id="carrier-render-legend" class="carrier-render-legend" aria-label="Carrier render legend">
             <span><i class="legend-swatch legend-swatch-white"></i>White = graph body</span>
             <span><i class="legend-swatch legend-swatch-color"></i>Color = carrier tint</span>
             <span><i class="legend-swatch legend-swatch-composite"></i>Composite = overlap</span>
@@ -340,19 +339,16 @@
         </div>
       </div>
 
-      <div class="activity-panel stage-console-panel" data-activity-panel="state" aria-label="State object panel">
-        <div class="activity-panel-head stage-console-head">
-          <button class="activity-panel-title" type="button" data-panel-title-toggle="state" aria-expanded="true" aria-controls="state-console-panel-body">
-            <span class="activity-title-caret" aria-hidden="true"></span>
+                        <div class="activity-panel state-object-panel" data-activity-panel="state" aria-label="State object output">
+        <div class="activity-panel-head state-object-head">
+          <div class="activity-panel-title activity-panel-title-static">
             <span>State Object</span>
-          </button>
+          </div>
 
           <a id="download-state-json" class="stage-console-action" href="#" download="g900_viewer_state.json">Download JSON</a>
         </div>
 
-        <div id="state-console-panel-body" class="activity-panel-body state-console-panel-body" data-panel-body="state">
-          <pre id="viewer-state-object" class="viewer-state-object">{}</pre>
-        </div>
+        <pre id="viewer-state-object" class="viewer-state-object state-json-download-source" hidden>{}</pre>
       </div>
     </section>
 
@@ -361,12 +357,12 @@
     <p>2026 Centre of Recursive Inquiry. Aletheos.ai is the public research surface for CoRI and Thalean Action Theory.</p>
   </footer>
 
-  <script type="module" src="g900_grammar_stage_v0.js?v=stage-grab-scroll-004"></script>
+  <script type="module" src="g900_grammar_stage_v0.js?v=state-data-only-001"></script>
   <script type="module" src="kernel/g900_scaled_oscillation_ui.js?v=scaled-oscillation-001"></script>
-  <script src="kernel/g900_runtime_oscillator_console.js?v=runtime-oscillator-001" defer></script>
-  <script src="kernel/g900_apparatus_profile_console.js?v=apparatus-profile-001" defer></script>
-  <script src="kernel/g900_console_compact.js?v=console-compact-001" defer></script>
-  <script src="kernel/g900_origin_time_console.js?v=origin-time-002" defer></script>
+  <script src="kernel/g900_runtime_oscillator_console.js?v=runtime-data-001" defer></script>
+  <script src="kernel/g900_apparatus_profile_console.js?v=apparatus-data-001" defer></script>
+  <script src="kernel/g900_console_compact.js?v=console-data-noop-001" defer></script>
+  <script src="kernel/g900_origin_time_console.js?v=origin-data-001" defer></script>
   <script src="kernel/g900_null_well_view.js?v=null-well-001" defer></script>
   <script src="kernel/g900_channel_scope_ui.js?v=channel-activity-001" defer></script>
 </body>

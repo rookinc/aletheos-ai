@@ -850,7 +850,7 @@ function drawInformationFlowPulse(ctx, w, h, dpr, state, body) {
   ctx.textAlign = "center";
   ctx.textBaseline = "middle";
   ctx.fillStyle = "rgba(207, 255, 237, 0.86)";
-  ctx.fillText("INFORMATION PULSE", lx, ly);
+  // Information pulse label hidden by g900-hide-information-pulse-label-001.
 
   ctx.restore();
 

@@ -422,6 +422,174 @@ function syncInformationFlowAlphaReadouts() {
   syncLayerRangeOutput("information-flow-stylus-alpha-slider");
 }
 
+function readG900RenderContractsLedger() {
+  const sheetRate = typeof getSheetRate === "function" ? getSheetRate() : 240;
+  const cameraPitchEnabled = typeof isCameraPitchEnabled === "function"
+    ? isCameraPitchEnabled(window.__g900BlankStage || {})
+    : false;
+  const informationVisible = readChecked("information-flow-toggle", true);
+  const bodyVisible = readChecked("graph-layer-toggle", true);
+
+  const candidateOnly = "candidate_only_not_physical_claim";
+
+  const entries = [
+    {
+      id: "body_graph",
+      label: "G900 body graph",
+      render_surface: "canvas",
+      visible: Boolean(bodyVisible),
+      clock_relation: "fixed_body_reference_under_clocked_view",
+      quartz_tied: true,
+      quartz_driven: false,
+      sheet_dependent: false,
+      physical_claim_candidate: "finite_geometry_candidate",
+      claim_status: candidateOnly,
+      mutates_body: false,
+      physics_claim: false
+    },
+    {
+      id: "carrier_render",
+      label: "Carrier render",
+      render_surface: "canvas",
+      visible: readChecked("carrier-render-toggle", false),
+      clock_relation: "static_source_provenance_reading",
+      quartz_tied: true,
+      quartz_driven: false,
+      sheet_dependent: false,
+      physical_claim_candidate: "source_provenance_candidate",
+      claim_status: candidateOnly,
+      mutates_body: false,
+      physics_claim: false
+    },
+    {
+      id: "return_cell_preview",
+      label: "Return-cell preview",
+      render_surface: "canvas",
+      visible: Boolean(readReturnCellChannelPreviewState().visible),
+      clock_relation: "static_permission_candidate_reading",
+      quartz_tied: true,
+      quartz_driven: false,
+      sheet_dependent: false,
+      physical_claim_candidate: "permission_boundary_candidate",
+      claim_status: candidateOnly,
+      mutates_body: false,
+      physics_claim: false
+    },
+    {
+      id: "information_route_edges",
+      label: "Information route edges",
+      render_surface: "canvas",
+      visible: Boolean(informationVisible),
+      clock_relation: "route_support_for_sheet_indexed_information_motion",
+      quartz_tied: true,
+      quartz_driven: true,
+      sheet_dependent: false,
+      alpha: Number(readInformationFlowEdgesAlpha().toFixed(3)),
+      physical_claim_candidate: "finite_information_path_candidate",
+      claim_status: candidateOnly,
+      mutates_body: false,
+      physics_claim: false
+    },
+    {
+      id: "information_tracers",
+      label: "Information tracers",
+      render_surface: "canvas",
+      visible: Boolean(informationVisible),
+      clock_relation: "sheet_indexed_memory_trace",
+      quartz_tied: true,
+      quartz_driven: true,
+      sheet_dependent: true,
+      alpha: Number(readInformationFlowTracersAlpha().toFixed(3)),
+      physical_claim_candidate: "finite_memory_trace_candidate",
+      claim_status: candidateOnly,
+      mutates_body: false,
+      physics_claim: false
+    },
+    {
+      id: "information_stylus",
+      label: "Information stylus",
+      render_surface: "canvas",
+      visible: Boolean(informationVisible),
+      clock_relation: "sheet_indexed_present_tick",
+      quartz_tied: true,
+      quartz_driven: true,
+      sheet_dependent: true,
+      alpha: Number(readInformationFlowStylusAlpha().toFixed(3)),
+      physical_claim_candidate: "finite_present_tick_candidate",
+      claim_status: candidateOnly,
+      mutates_body: false,
+      physics_claim: false
+    },
+    {
+      id: "camera_pitch",
+      label: "Camera pitch",
+      render_surface: "camera",
+      visible: true,
+      enabled: Boolean(cameraPitchEnabled),
+      clock_relation: cameraPitchEnabled ? "sheet_indexed_camera_motion" : "disabled_static_view",
+      quartz_tied: true,
+      quartz_driven: Boolean(cameraPitchEnabled),
+      sheet_dependent: Boolean(cameraPitchEnabled),
+      physical_claim_candidate: "apparatus_motion_candidate",
+      claim_status: candidateOnly,
+      mutates_body: false,
+      physics_claim: false
+    },
+    {
+      id: "grounded_af_lens",
+      label: "A/F grounded lens",
+      render_surface: "canvas",
+      visible: readChecked("grounded-lens-toggle", false),
+      clock_relation: "static_reference_frame_reading",
+      quartz_tied: true,
+      quartz_driven: false,
+      sheet_dependent: false,
+      physical_claim_candidate: "reference_frame_candidate",
+      claim_status: candidateOnly,
+      mutates_body: false,
+      physics_claim: false
+    },
+    {
+      id: "timing_panel",
+      label: "Timing panel",
+      render_surface: "panel",
+      visible: true,
+      clock_relation: "quartz_runtime_boundary",
+      quartz_tied: true,
+      quartz_driven: true,
+      sheet_dependent: false,
+      physical_claim_candidate: "clock_boundary_candidate",
+      claim_status: candidateOnly,
+      mutates_body: false,
+      physics_claim: false
+    }
+  ];
+
+  return {
+    schema: "g900.viewer.render_contracts",
+    version: "0.1",
+    status: "render_contracts_candidate_projection_ledger",
+    clock_source: "scaled_quartz_timing_substrate",
+    clock_boundary: "runtime_clock_not_source_law",
+    all_rendered_surfaces_quartz_bound: true,
+    quartz_driven_subset_only: true,
+    state_variable: "sheet",
+    sheets_per_second: Number(sheetRate),
+    rule: "Every rendered surface is bound to the quartz runtime apparatus; moving surfaces are quartz-driven and sheet-indexed; every physical projection remains candidate-only.",
+    physical_claim_candidate_only: true,
+    physics_claim: false,
+    force_claim: false,
+    body_mutation: false,
+    new_transport_admission: false,
+    render_entry_count: entries.length,
+    entries
+  };
+}
+
+function syncG900RenderContractsLedger() {
+  window.__g900RenderContractsLedger = readG900RenderContractsLedger();
+}
+
 function syncInformationFlowPanelReadouts() {
   const transport = getAdmittedReturnCellTransport();
   const edgeIds = getInformationFlowEdgeIds();
@@ -463,6 +631,7 @@ function syncInformationFlowState() {
   informationFlowState.source_law_promoted = false;
 
   syncInformationFlowPanelReadouts();
+  syncG900RenderContractsLedger();
   window.__g900InformationFlowSummary = {
     version: informationFlowState.version,
     visible: Boolean(informationFlowState.visible),
@@ -1072,6 +1241,7 @@ function buildG900ViewerStateObject(state) {
     channel_scope: readWindowSummary("__g900ChannelScopeSummary"),
     channel_preview: readReturnCellChannelPreviewState(),
     information_flow: readWindowSummary("__g900InformationFlowSummary"),
+    render_contracts: readWindowSummary("__g900RenderContractsLedger"),
     timing_kernel: {
       scaled_oscillation: activeScaledOscillationKernel ? getG900ScaledOscillationSummary(activeScaledOscillationKernel) : null,
       runtime_oscillator: readWindowSummary("__g900RuntimeOscillatorSummary"),

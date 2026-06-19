@@ -192,6 +192,25 @@
     </p>
   </section>
 
+
+  <section id="g900-carrier-mode-meta-note" class="g900-meta-content-note">
+    <h3>Carrier reading modes</h3>
+    <p>
+      Carrier modes are Layer 2 readings over the fixed G900 body. They render admitted carrier structure only. They do not mutate the body, add vertices, add edges, admit channels, light markers, or make force or physics claims.
+    </p>
+    <ul>
+      <li><strong>Smoke rail.</strong> A single source-provenance rail used as a minimal rendering smoke test.</li>
+      <li><strong>Slot internal carriers.</strong> The fifteen admitted slot-internal carrier readings. These show within-slot carrier structure without crossing slot-pair boundaries.</li>
+      <li><strong>Slot-pair boundary carriers.</strong> The thirty admitted boundary carrier readings between slot pairs. These show cross-slot carrier structure while preserving the fixed body.</li>
+      <li><strong>Six-nine neighborhood.</strong> A focused carrier reading around the six-nine receipt neighborhood, including nearby slot and slot-pair carriers relevant to the Null Well route.</li>
+      <li><strong>Nearest receipt branch.</strong> A narrower branch-oriented reading around the receipt-side 03-09 branch and the source-side 09-11 fork.</li>
+      <li><strong>All admitted carriers.</strong> The full admitted Layer 2 carrier field. This is visually dense and useful for seeing the whole carrier state space at once.</li>
+    </ul>
+    <p>
+      Scope rule: carriers are lawful readings, not forces. They can make structure visible, but they do not become transport channels or physical field lines in the MVP Scope.
+    </p>
+  </section>
+
 </details>
 
 </header>
@@ -280,11 +299,13 @@
         <label class="layer-slider-row" for="carrier-render-family-select">
           <span>Family</span>
           <select id="carrier-render-family-select" data-layer-select="carriers">
-            <option value="smoke">Smoke rail</option>
-            <option value="slot_internal">Slot internal carriers</option>
-            <option value="slot_pair_boundary">Slot-pair boundary carriers</option>
-            <option value="all">All admitted carriers</option>
-          </select>
+              <option value="smoke">Smoke rail</option>
+              <option value="slot_internal">Slot internal carriers</option>
+              <option value="slot_pair_boundary">Slot-pair boundary carriers</option>
+              <option value="six_nine_neighborhood">Six-nine neighborhood</option>
+              <option value="nearest_receipt_branch">Nearest receipt branch</option>
+              <option value="all">All admitted carriers</option>
+            </select>
           <output id="carrier-render-family-readout">smoke</output>
         </label>
 
@@ -316,41 +337,12 @@
         <pre id="viewer-state-object" class="viewer-state-object">{}</pre>
       </div>
     </section>
-
-<section id="g900-marker-layer-panel-stub" class="g900-marker-layer-panel-stub" aria-label="Marker layer panel stub">
-  <div class="g900-marker-layer-panel-stub__eyebrow">Layer stub</div>
-  <div class="g900-marker-layer-panel-stub__head">
-    <h2>Markers</h2>
-    <span class="g900-marker-layer-panel-stub__pill">Reserved</span>
-  </div>
-  <p>
-    Marker readings are now receipted as isolated diagnostics, but the live Observatory stage does not load or render them yet.
-  </p>
-  <dl class="g900-marker-layer-panel-stub__facts">
-    <dt>Status</dt>
-    <dd>stub only</dd>
-    <dt>Marker</dt>
-    <dd>unsupported_phase_step_6_9</dd>
-    <dt>Edges</dt>
-    <dd>60 existing body edges</dd>
-    <dt>Vertices</dt>
-    <dd>120 existing body vertices</dd>
-    <dt>Live render</dt>
-    <dd>off</dd>
-    <dt>Channels</dt>
-    <dd>0 admitted</dd>
-  </dl>
-  <p class="g900-marker-layer-panel-stub__boundary">
-    Boundary: this panel is a UI placeholder only. It adds no graph edges, no graph vertices, no marker renderer, no channel, and no physics or force claim.
-  </p>
-</section>
-
 </main>
 <footer class="lab-footer">
     <p>2026 Centre of Recursive Inquiry. Aletheos.ai is the public research surface for CoRI and Thalean Action Theory.</p>
   </footer>
 
-  <script type="module" src="g900_grammar_stage_v0.js?v=channel-scaffold-001"></script>
+  <script type="module" src="g900_grammar_stage_v0.js?v=carrier-modes-001"></script>
   <script type="module" src="kernel/g900_scaled_oscillation_ui.js?v=scaled-oscillation-001"></script>
   <script src="kernel/g900_runtime_oscillator_console.js?v=runtime-oscillator-001" defer></script>
   <script src="kernel/g900_apparatus_profile_console.js?v=apparatus-profile-001" defer></script>

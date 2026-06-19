@@ -519,26 +519,130 @@ function findCarrierRailById(railId) {
   return null;
 }
 
+
+function getG900CarrierModeDefinitions() {
+  return {
+    smoke: {
+      label: "Smoke rail",
+      description: "Single source-provenance smoke rail.",
+      include: function (rail) {
+        return rail && rail.status === "smoke_rail";
+      }
+    },
+    slot_internal: {
+      label: "Slot internal carriers",
+      description: "All admitted slot-internal carrier readings.",
+      include: function (rail) {
+        return rail && rail.kind === "slot_internal_carrier";
+      }
+    },
+    slot_pair_boundary: {
+      label: "Slot-pair boundary carriers",
+      description: "All admitted slot-pair boundary carrier readings.",
+      include: function (rail) {
+        return rail && rail.kind === "slot_pair_boundary_carrier";
+      }
+    },
+    six_nine_neighborhood: {
+      label: "Six-nine neighborhood",
+      description: "Carrier readings around the six-nine receipt neighborhood. Rendering only.",
+      include: function (rail) {
+        if (!rail || !rail.id) return false;
+        return [
+          "slot_06_internal_carrier",
+          "slot_09_internal_carrier",
+          "slot_pair_03_09_boundary_carrier",
+          "slot_pair_06_12_boundary_carrier",
+          "slot_pair_06_13_boundary_carrier",
+          "slot_pair_09_11_boundary_carrier",
+          "slot_pair_09_12_boundary_carrier"
+        ].includes(rail.id);
+      }
+    },
+    nearest_receipt_branch: {
+      label: "Nearest receipt branch",
+      description: "Receipt-side branch around 03-09 and the source-side 09-11 fork.",
+      include: function (rail) {
+        if (!rail || !rail.id) return false;
+        return [
+          "slot_03_internal_carrier",
+          "slot_09_internal_carrier",
+          "slot_11_internal_carrier",
+          "slot_12_internal_carrier",
+          "slot_pair_03_09_boundary_carrier",
+          "slot_pair_09_11_boundary_carrier",
+          "slot_pair_09_12_boundary_carrier"
+        ].includes(rail.id);
+      }
+    },
+    all: {
+      label: "All admitted carriers",
+      description: "All admitted carrier readings.",
+      include: function (rail) {
+        return rail && rail.status === "admitted_reading";
+      }
+    }
+  };
+}
+
+function flattenG900CarrierRails(registry) {
+  const rails = [];
+  const sets = registry && Array.isArray(registry.carrier_sets) ? registry.carrier_sets : [];
+
+  for (const set of sets) {
+    const setRails = Array.isArray(set.rails) ? set.rails : [];
+    for (const rail of setRails) {
+      rails.push(rail);
+    }
+  }
+
+  return rails;
+}
+
+function selectG900CarrierRails(registry, mode) {
+  const modes = getG900CarrierModeDefinitions();
+  const selectedMode = modes[mode] ? mode : "smoke";
+  const definition = modes[selectedMode];
+  const rails = flattenG900CarrierRails(registry).filter(definition.include);
+
+  return {
+    mode: selectedMode,
+    label: definition.label,
+    description: definition.description,
+    rails: rails,
+    rail_ids: rails.map(function (rail) { return rail.id; })
+  };
+}
+
 function syncCarrierRenderState() {
   syncLayerSwitchLabel("carrier-render-toggle");
 
   const toggle = document.getElementById("carrier-render-toggle");
-  const familyMode = readCarrierRenderFamilyMode();
-  const family = CARRIER_RENDER_FAMILIES[familyMode] || CARRIER_RENDER_FAMILIES.smoke;
-  const railIds = getCarrierRailIdsForFamily(familyMode);
-  const visible = Boolean(toggle && toggle.checked && activeStaticBody && railIds.length > 0);
-
-  carrierRenderState.visible = visible;
-  carrierRenderState.family_mode = familyMode;
-  carrierRenderState.family_label = family.label;
-  carrierRenderState.rail_ids = visible ? railIds : [];
-
+  const select = document.getElementById("carrier-render-family-select");
   const readout = document.getElementById("carrier-render-family-readout");
+  const note = document.getElementById("carrier-render-note");
+
+  const mode = select ? select.value : "smoke";
+  const selection = selectG900CarrierRails(activeCarrierRegistry, mode);
+
+  carrierRenderState.visible = Boolean(toggle && toggle.checked);
+  carrierRenderState.family_mode = selection.mode;
+  carrierRenderState.family_label = selection.label;
+  carrierRenderState.family_description = selection.description;
+  carrierRenderState.rail_ids = selection.rail_ids;
+
   if (readout) {
-    readout.textContent = familyMode;
+    readout.textContent = selection.mode === "all" ? "ALL" :
+      selection.mode === "slot_internal" ? "SLOT" :
+      selection.mode === "slot_pair_boundary" ? "PAIR" :
+      selection.mode === "six_nine_neighborhood" ? "6/9" :
+      selection.mode === "nearest_receipt_branch" ? "BRANCH" :
+      "SMOKE";
   }
 
-  return carrierRenderState.rail_ids;
+  if (note) {
+    note.textContent = "Layer 2 carrier readings. " + selection.description + " Rendering only. Body unchanged.";
+  }
 }
 
 function edgeIndexFromTupleEdgeId(edgeId) {
@@ -917,53 +1021,3 @@ if (document.readyState === "loading") {
 } else {
   boot();
 }
-
-// BEGIN G900 LIVE MARKER RENDERER STUB 001
-//
-// Read-only marker renderer stub.
-// This is intentionally inert. It does not attach to the draw loop,
-// does not light the marker, does not admit channels, and does not
-// mutate the G900 body.
-//
-// Receipts:
-// - event: g900_return_cell_event_562162c72753c818
-// - marker: unsupported_phase_step_6_9
-// - binding: g900_marker_event_binding_1d645b31e5366deb
-// - render contract: g900_marker_render_contract_2f8f21a3465a71d3
-// - admission: g900_live_marker_renderer_admission_e4aee6d53d4b7fa4
-
-const activeMarkerRenderer = Object.freeze({
-  id: "g900-live-stage-marker-renderer-stub-001",
-  markerId: "unsupported_phase_step_6_9",
-  eventId: "g900_return_cell_event_562162c72753c818",
-  enabled: false,
-  gateOpen: false,
-  lightsMarkerNow: false,
-  admitsChannelNow: false,
-  rendersChannelNow: false,
-  mutatesBody: false
-});
-
-function drawGraphMarkerReadings(_ctx, _state) {
-  // Stub only. The marker cannot light from this function.
-  // A future artifact must recheck the gate before any active draw path.
-  return {
-    rendererId: activeMarkerRenderer.id,
-    markerId: activeMarkerRenderer.markerId,
-    eventId: activeMarkerRenderer.eventId,
-    rendered: false,
-    gateOpen: false,
-    lightsMarkerNow: false,
-    admitsChannelNow: false,
-    rendersChannelNow: false,
-    mutatesBody: false
-  };
-}
-
-if (typeof window !== "undefined") {
-  window.G900MarkerRendererStub001 = Object.freeze({
-    activeMarkerRenderer,
-    drawGraphMarkerReadings
-  });
-}
-// END G900 LIVE MARKER RENDERER STUB 001

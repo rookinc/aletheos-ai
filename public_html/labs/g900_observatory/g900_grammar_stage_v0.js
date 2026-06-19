@@ -435,6 +435,37 @@ function syncInformationFlowAlphaReadouts() {
 function readG900ForceCandidateStubState() {
   const visible = readChecked("force-candidates-toggle", false);
   const claimStatus = "candidate_only_not_physical_claim";
+  const receiptCriteria = {
+    gravity_information_candidate: {
+      receipt_id: "compression_receipt_candidate",
+      receipt_class: "compression",
+      question: "Does a finite selector show inward bias, convergence, or load concentration?",
+      selector_status: "selector_required_not_admitted",
+      renderer_status: "no_force_renderer"
+    },
+    em_information_candidate: {
+      receipt_id: "polarization_receipt_candidate",
+      receipt_class: "polarization",
+      question: "Does a finite selector show oriented contrast, signed separation, or paired direction?",
+      selector_status: "selector_required_not_admitted",
+      renderer_status: "no_force_renderer"
+    },
+    strong_information_candidate: {
+      receipt_id: "confinement_receipt_candidate",
+      receipt_class: "confinement",
+      question: "Does a finite selector show boundary retention, closed support, or escape resistance?",
+      selector_status: "selector_required_not_admitted",
+      renderer_status: "no_force_renderer"
+    },
+    weak_information_candidate: {
+      receipt_id: "transformation_receipt_candidate",
+      receipt_class: "transformation",
+      question: "Does a finite selector show handoff, identity change, or rule-boundary crossing?",
+      selector_status: "selector_required_not_admitted",
+      renderer_status: "no_force_renderer"
+    }
+  };
+
   const candidates = [
     {
       id: "gravity_information_candidate",
@@ -466,6 +497,14 @@ function readG900ForceCandidateStubState() {
     }
   ];
 
+  const enrichedCandidates = candidates.map(function (candidate) {
+    return Object.assign({}, candidate, {
+      receipt: receiptCriteria[candidate.id] || null,
+      selector_status: "selector_required_not_admitted",
+      renderer_status: "stub_only_no_force_renderer"
+    });
+  });
+
   return {
     schema: "g900.viewer.force_candidates",
     version: "0.1",
@@ -473,8 +512,11 @@ function readG900ForceCandidateStubState() {
     visible: Boolean(visible),
     render_stub_only: true,
     renders_force_information: false,
-    candidate_count: candidates.length,
-    candidates,
+    receipt_criteria_declared: true,
+    renderer_ready: false,
+    live_force_renderer: false,
+    candidate_count: enrichedCandidates.length,
+    candidates: enrichedCandidates,
     quartz_tied: true,
     quartz_driven: false,
     sheet_dependent: false,
@@ -568,6 +610,9 @@ function readG900RenderContractsLedger() {
       claim_status: candidateOnly,
       render_stub_only: true,
       renders_force_information: false,
+      receipt_criteria_declared: true,
+      selector_status: "selector_required_not_admitted",
+      renderer_ready: false,
       mutates_body: false,
       physics_claim: false
     },

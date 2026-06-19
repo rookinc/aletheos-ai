@@ -446,6 +446,125 @@ function readActiveGroundedLensId() {
   return toggle && toggle.checked ? "a_grounded_f_return_lens" : null;
 }
 
+function readReturnCellChannelPreviewState() {
+  const toggle = document.getElementById("channel-scope-panel-toggle");
+  const activeButton = document.querySelector("[data-channel-scope-mode].is-active");
+  const scopeMode = activeButton ? activeButton.dataset.channelScopeMode : "no_admitted_channels";
+  const visible = Boolean(toggle && toggle.checked && scopeMode === "return_cell_question");
+
+  return {
+    visible: visible,
+    scope_mode: scopeMode,
+    render_kind: visible ? "return_cell_candidate_channel_preview" : null,
+    candidate_id: visible ? "return_cell_03_09_09_12_06_12_06_13" : null,
+    candidate_receipt: visible ? "g900_return_cell_channel_1bed7a7cba65a7be" : null,
+    admitted_channel_count: 0,
+    channel_count: 0,
+    admitted_now: false,
+    renders_admitted_channel: false,
+    mutates_body: false,
+    adds_vertices: false,
+    adds_edges: false,
+    transport_relation_claim: false,
+    force_claim: false,
+    physics_claim: false
+  };
+}
+
+function findBodyVertex(body, id) {
+  if (!body || !Array.isArray(body.vertices)) return null;
+  return body.vertices.find(function (vertex) {
+    return vertex && vertex.id === id && Array.isArray(vertex.xyz);
+  }) || null;
+}
+
+function drawReturnCellChannelPreview(ctx, w, h, dpr, state, body) {
+  const preview = readReturnCellChannelPreviewState();
+  if (!preview.visible || !body || !Array.isArray(body.vertices)) return;
+
+  const pairs = [
+    ["3:23", "9:23"],
+    ["9:24", "12:24"],
+    ["6:23", "12:23"],
+    ["6:24", "13:24"]
+  ];
+
+  const projectedPairs = [];
+
+  pairs.forEach(function (pair) {
+    const a = findBodyVertex(body, pair[0]);
+    const b = findBodyVertex(body, pair[1]);
+    if (!a || !b) return;
+
+    projectedPairs.push({
+      ids: pair,
+      from: projectPoint(a.xyz, state, w, h, dpr),
+      to: projectPoint(b.xyz, state, w, h, dpr)
+    });
+  });
+
+  if (!projectedPairs.length) return;
+
+  ctx.save();
+  ctx.lineCap = "round";
+  ctx.lineJoin = "round";
+
+  projectedPairs.forEach(function (edge) {
+    const ax = edge.from.x;
+    const ay = edge.from.y;
+    const bx = edge.to.x;
+    const by = edge.to.y;
+    const mx = (ax + bx) * 0.5;
+    const my = (ay + by) * 0.5;
+    const dx = bx - ax;
+    const dy = by - ay;
+    const len = Math.max(1, Math.hypot(dx, dy));
+    const nx = -dy / len;
+    const ny = dx / len;
+    const lift = Math.max(18 * dpr, Math.min(w, h) * 0.032);
+
+    const c1x = mx + nx * lift;
+    const c1y = my + ny * lift;
+
+    ctx.strokeStyle = "rgba(115, 255, 190, 0.20)";
+    ctx.lineWidth = Math.max(8 * dpr, Math.min(w, h) * 0.014);
+    ctx.beginPath();
+    ctx.moveTo(ax, ay);
+    ctx.quadraticCurveTo(c1x, c1y, bx, by);
+    ctx.stroke();
+
+    ctx.strokeStyle = "rgba(118, 241, 176, 0.88)";
+    ctx.lineWidth = Math.max(1.6 * dpr, Math.min(w, h) * 0.0032);
+    ctx.beginPath();
+    ctx.moveTo(ax, ay);
+    ctx.quadraticCurveTo(c1x, c1y, bx, by);
+    ctx.stroke();
+
+    ctx.fillStyle = "rgba(118, 241, 176, 0.95)";
+    ctx.beginPath();
+    ctx.arc(ax, ay, Math.max(2.8 * dpr, Math.min(w, h) * 0.0055), 0, TAU);
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.arc(bx, by, Math.max(2.8 * dpr, Math.min(w, h) * 0.0055), 0, TAU);
+    ctx.fill();
+  });
+
+  ctx.font = Math.max(8 * dpr, Math.floor(Math.min(w, h) * 0.013)) + "px ui-monospace, Menlo, Consolas, monospace";
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+  ctx.fillStyle = "rgba(190, 255, 225, 0.82)";
+
+  const first = projectedPairs[0];
+  if (first) {
+    const lx = (first.from.x + first.to.x) * 0.5;
+    const ly = (first.from.y + first.to.y) * 0.5 - Math.max(18 * dpr, Math.min(w, h) * 0.035);
+    ctx.fillText("RETURN-CELL CHANNEL PREVIEW", lx, ly);
+  }
+
+  ctx.restore();
+}
+
 function readRange01(id, fallback) {
   const el = document.getElementById(id);
   if (!el) return fallback;
@@ -541,6 +660,7 @@ function buildG900ViewerStateObject(state) {
     grounded_lens: activeGroundedLensRegistry ? getG900GroundedLensSummary(activeGroundedLensRegistry, readActiveGroundedLensId()) : null,
     carrier_render: readWindowSummary("__g900CarrierRenderSummary"),
     channel_scope: readWindowSummary("__g900ChannelScopeSummary"),
+    channel_preview: readReturnCellChannelPreviewState(),
     timing_kernel: {
       scaled_oscillation: activeScaledOscillationKernel ? getG900ScaledOscillationSummary(activeScaledOscillationKernel) : null,
       runtime_oscillator: readWindowSummary("__g900RuntimeOscillatorSummary"),
@@ -1172,6 +1292,7 @@ function drawBlankStage(ctx, canvas, state) {
   drawStageGrid(ctx, w, h, dpr, state);
   syncCarrierRenderState();
   drawStaticBody(ctx, w, h, dpr, state, activeStaticBody);
+  drawReturnCellChannelPreview(ctx, w, h, dpr, state, activeStaticBody);
   drawAFGroundedLensOverlay(ctx, w, h, dpr, state, activeStaticBody);
 
   ctx.save();

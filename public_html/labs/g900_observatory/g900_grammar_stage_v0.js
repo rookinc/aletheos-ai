@@ -939,7 +939,7 @@ function drawReturnCellChannelPreview(ctx, w, h, dpr, state, body) {
   if (first) {
     const lx = (first.from.x + first.to.x) * 0.5;
     const ly = (first.from.y + first.to.y) * 0.5 - Math.max(18 * dpr, Math.min(w, h) * 0.035);
-    ctx.fillText("RETURN-CELL CHANNEL PREVIEW", lx, ly);
+    // Return-cell channel preview label hidden by g900-hide-return-cell-label-001.
   }
 
   ctx.restore();

@@ -1,0 +1,7 @@
+status,meaning,may_enter_discovery,may_enter_admission,requires,guardrail
+visible_candidate,A candidate is visible to the search apparatus.,true,false,enumeration or frontier listing,visibility is not readiness
+gate_ready_candidate,A candidate passes the current gate-readiness qualifier.,true,false,gate audit receipt,gate readiness is not permission
+choice_hypothesis,"A proposed rule, selector, or choice function nominates candidates for further study.",true,false,hypothesis audit and non-leakage boundary,choice hypothesis is not admission
+admission_candidate,A choice hypothesis has survived provenance and coupling tests enough to ask for admission review.,true,review_only,construction provenance plus coupling law plus receipt,admission candidate is not admitted
+admitted_permission_channel,A permission channel has been admitted by the existing admission ledger.,true,true,explicit admission receipt,only the admission ledger grants this status
+admitted_information_transport,An information transport has been admitted by the existing transport ledger.,true,true,explicit transport admission receipt,only the transport ledger grants this status

@@ -1,0 +1,169 @@
+{
+  "schema": "g900.blackbox_simulator_kernel_seed",
+  "version": "0.1",
+  "kernel_id": "g900_blackbox_simulator_kernel_seed",
+  "branch": "g900-blackbox-sim-fork",
+  "state": {
+    "state_id": "g900_blackbox_simulator_state_seed_0000",
+    "tick": 0,
+    "substrate": {
+      "body_ref": "fixed_g900_body",
+      "body_status": "read_only",
+      "body_mutation": false,
+      "adds_vertices": false,
+      "adds_edges": false
+    },
+    "assumption_stack": [
+      "SIM-BB-001",
+      "SIM-BB-002",
+      "SIM-BB-003",
+      "SIM-BB-004",
+      "SIM-BB-005",
+      "SIM-BB-006",
+      "SIM-BB-007"
+    ],
+    "ledger_inputs": {
+      "admitted_permission_channel_count": 1,
+      "admitted_information_transport_count": 1,
+      "new_permission_channel_admitted": false,
+      "new_information_transport_admitted": false
+    },
+    "readouts": {
+      "information_flux": {
+        "enabled": true,
+        "value": 0.0,
+        "unit": "dimensionless_simulator_readout",
+        "claim_status": "not_physical_flux"
+      },
+      "force_like": {
+        "enabled": true,
+        "value": 0.0,
+        "unit": "dimensionless_simulator_readout",
+        "claim_status": "not_force_claim"
+      },
+      "physical_flux_like": {
+        "enabled": true,
+        "value": 0.0,
+        "unit": "dimensionless_simulator_readout",
+        "claim_status": "not_physical_flux_claim"
+      },
+      "energy_flow_like": {
+        "enabled": true,
+        "value": 0.0,
+        "unit": "dimensionless_simulator_readout",
+        "claim_status": "not_energy_flow_claim"
+      }
+    },
+    "labels": [
+      "black_box_simulation",
+      "exploratory",
+      "not_physics_claim",
+      "not_channel_admission",
+      "not_body_mutation",
+      "assumption_version_required",
+      "information_flux_simulation",
+      "simulated_force_readout",
+      "simulated_physical_flux_readout",
+      "simulated_energy_flow_readout",
+      "not_force_claim",
+      "not_physical_flux_claim",
+      "not_energy_flow_claim"
+    ],
+    "physical_units_used": false,
+    "physical_constants_used": false,
+    "physics_claim": false,
+    "geometry_claim": false,
+    "force_claim": false,
+    "physical_flux_claim": false,
+    "physical_energy_flow_claim": false
+  },
+  "readout_vocabulary": [
+    {
+      "readout_id": "R-001",
+      "name": "information_flux",
+      "allowed": "true",
+      "meaning": "finite graph-information flux readout inside the simulator",
+      "not_meaning": "physical flux",
+      "initial_value": "0.0",
+      "unit": "dimensionless_simulator_readout",
+      "required_label": "information_flux_simulation not_physical_flux_claim",
+      "source_assumption": "SIM-BB-007"
+    },
+    {
+      "readout_id": "R-002",
+      "name": "force_like",
+      "allowed": "true",
+      "meaning": "information-driven force-like readout inside the simulator",
+      "not_meaning": "physical force",
+      "initial_value": "0.0",
+      "unit": "dimensionless_simulator_readout",
+      "required_label": "simulated_force_readout not_force_claim",
+      "source_assumption": "SIM-BB-007"
+    },
+    {
+      "readout_id": "R-003",
+      "name": "physical_flux_like",
+      "allowed": "true",
+      "meaning": "information-driven physical-flux-like readout inside the simulator",
+      "not_meaning": "physical flux",
+      "initial_value": "0.0",
+      "unit": "dimensionless_simulator_readout",
+      "required_label": "simulated_physical_flux_readout not_physical_flux_claim",
+      "source_assumption": "SIM-BB-007"
+    },
+    {
+      "readout_id": "R-004",
+      "name": "energy_flow_like",
+      "allowed": "true",
+      "meaning": "information-driven energy-flow-like readout inside the simulator",
+      "not_meaning": "physical energy flow",
+      "initial_value": "0.0",
+      "unit": "dimensionless_simulator_readout",
+      "required_label": "simulated_energy_flow_readout not_energy_flow_claim",
+      "source_assumption": "SIM-BB-007"
+    }
+  ],
+  "update_vocabulary": [
+    {
+      "update_id": "U-000",
+      "name": "hold",
+      "meaning": "advance no state; preserve seed values",
+      "runs_now": false,
+      "claim_status": "not_physics_claim"
+    },
+    {
+      "update_id": "U-001",
+      "name": "step_information_flux",
+      "meaning": "future update may compute dimensionless information flux from declared assumptions",
+      "runs_now": false,
+      "claim_status": "not_physical_flux_claim"
+    },
+    {
+      "update_id": "U-002",
+      "name": "project_force_like",
+      "meaning": "future projection may derive a force-like simulator readout from information flux",
+      "runs_now": false,
+      "claim_status": "not_force_claim"
+    },
+    {
+      "update_id": "U-003",
+      "name": "project_physical_flux_like",
+      "meaning": "future projection may derive a physical-flux-like simulator readout from information flux",
+      "runs_now": false,
+      "claim_status": "not_physical_flux_claim"
+    },
+    {
+      "update_id": "U-004",
+      "name": "project_energy_flow_like",
+      "meaning": "future projection may derive an energy-flow-like simulator readout from information flux",
+      "runs_now": false,
+      "claim_status": "not_energy_flow_claim"
+    }
+  ],
+  "execution_status": "not_executed_seed_only",
+  "true_path_lock": {
+    "status": "preserved",
+    "rule": "This simulator seed may define readouts, but physical claims remain locked.",
+    "current_unknown": "missing pre-role seam generator"
+  }
+}

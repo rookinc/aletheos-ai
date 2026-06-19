@@ -2,6 +2,7 @@ import { readG900StaticBody, getStaticBodySummary } from "./kernel/g900_static_b
 import { readG900OverlayRegistry, getG900OverlaySummary } from "./kernel/g900_overlays.js";
 import { readG900CarrierRegistry, getG900CarrierSummary } from "./kernel/g900_carriers.js";
 import { readG900ChannelRegistry, getG900ChannelSummary } from "./kernel/g900_channels.js";
+import { readG900ScaledOscillationKernel, getG900ScaledOscillationSummary } from "./kernel/g900_scaled_oscillation.js";
 const TAU = Math.PI * 2;
 const DEFAULT_SHEET_RATE = 333;
 const MIN_ZOOM = 0.28;
@@ -60,6 +61,7 @@ let activeStaticBody = null;
 let activeOverlayRegistry = null;
 let activeCarrierRegistry = null;
 let activeChannelRegistry = null;
+let activeScaledOscillationKernel = null;
 let carrierRenderState = {
   version: "0.1",
   visible: false,
@@ -289,6 +291,16 @@ function readRange01(id, fallback) {
   return clamp(n / 100, 0, 1);
 }
 
+function readWindowSummary(name) {
+  try {
+    const value = window[name];
+    if (!value || typeof value !== "object") return null;
+    return JSON.parse(JSON.stringify(value));
+  } catch (error) {
+    return null;
+  }
+}
+
 function buildG900ViewerStateObject(state) {
   const grammarVersion = document.documentElement.dataset.g900Grammar || "0.1";
   const kernelVersion = document.documentElement.dataset.g900Kernel || "0.1";
@@ -335,6 +347,13 @@ function buildG900ViewerStateObject(state) {
     overlays: activeOverlayRegistry ? getG900OverlaySummary(activeOverlayRegistry) : null,
     carriers: activeCarrierRegistry ? getG900CarrierSummary(activeCarrierRegistry) : null,
     channels: activeChannelRegistry ? getG900ChannelSummary(activeChannelRegistry) : null,
+    timing_kernel: {
+      scaled_oscillation: activeScaledOscillationKernel ? getG900ScaledOscillationSummary(activeScaledOscillationKernel) : null,
+      runtime_oscillator: readWindowSummary("__g900RuntimeOscillatorSummary"),
+      origin_time: readWindowSummary("__g900OriginTimeSummary")
+    },
+    apparatus_profile: readWindowSummary("__g900ApparatusProfileSummary"),
+    orientation: readWindowSummary("__g900NullWellOrientationSummary"),
     render: {
       carriers: {
         version: carrierRenderState.version,
@@ -434,6 +453,12 @@ async function loadStaticBodyReadout() {
     } catch (error) {
       console.warn("G900 channel registry unavailable", error);
       activeChannelRegistry = null;
+    }
+    try {
+      activeScaledOscillationKernel = await readG900ScaledOscillationKernel();
+    } catch (error) {
+      console.warn("G900 scaled oscillation kernel unavailable", error);
+      activeScaledOscillationKernel = null;
     }
     document.documentElement.dataset.g900StaticBody = activeStaticBody.version;
 

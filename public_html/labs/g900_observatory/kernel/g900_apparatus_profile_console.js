@@ -137,6 +137,8 @@
   }
 
   ready(function () {
-    renderProfile(collectProfile());
+    const profile = collectProfile();
+    window.__g900ApparatusProfileSummary = profile;
+    renderProfile(profile);
   });
 }());

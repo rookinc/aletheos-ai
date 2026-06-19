@@ -74,6 +74,23 @@
     if (el) el.textContent = value;
   }
 
+  function publishRuntimeOscillatorSummary(summary) {
+    window.__g900RuntimeOscillatorSummary = Object.assign({
+      schema: "g900.viewer.runtime_oscillator",
+      version: "0.1",
+      oscillator_source: "device_timing_substrate",
+      runtime_witness: "performance.now",
+      render_witness: "requestAnimationFrame",
+      mutates_body: false,
+      runtime_motion_authority: false,
+      opens_gates: false,
+      admits_channels: false,
+      lights_markers: false,
+      physics_claim: false,
+      force_claim: false
+    }, summary || {});
+  }
+
   function measureRenderCadence() {
     const samples = [];
     let previous = null;
@@ -91,6 +108,12 @@
         setText("g900-runtime-frame-interval", avg.toFixed(2) + " ms");
         setText("g900-runtime-render-hz", hz.toFixed(2) + " Hz");
         setText("g900-runtime-sheets-per-sec", sheets.toFixed(2));
+        publishRuntimeOscillatorSummary({
+          frame_interval_ms: Number(avg.toFixed(3)),
+          render_hz: Number(hz.toFixed(3)),
+          sheets_per_second: Number(sheets.toFixed(2)),
+          status: "measured"
+        });
       }
 
       previous = now;
@@ -129,5 +152,9 @@
     }
 
     setText("g900-runtime-sheets-per-sec", readSheetsPerSecond().toFixed(2));
+    publishRuntimeOscillatorSummary({
+      sheets_per_second: Number(readSheetsPerSecond().toFixed(2)),
+      status: "booted"
+    });
   });
 }());

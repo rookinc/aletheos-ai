@@ -1560,3 +1560,64 @@ h1 {
 .g900-null-well-label {
   padding-inline: 0.68rem;
 }
+
+.g900-origin-time-console {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 1rem;
+  padding: 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 0.85rem;
+  background: rgba(255, 255, 255, 0.045);
+  overflow: hidden;
+}
+
+.g900-origin-time-console h3 {
+  margin: 0 0 0.55rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.g900-origin-time-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin: 0;
+}
+
+.g900-origin-time-grid div {
+  padding: 0.45rem 0.5rem;
+  border-radius: 0.65rem;
+  background: rgba(0, 0, 0, 0.16);
+}
+
+.g900-origin-time-grid dt {
+  font-size: 0.68rem;
+  opacity: 0.62;
+}
+
+.g900-origin-time-grid dd {
+  margin: 0.15rem 0 0;
+  font-size: 0.78rem;
+  overflow-wrap: anywhere;
+}
+
+.g900-origin-time-chain,
+.g900-origin-time-boundary {
+  margin: 0.65rem 0 0;
+  font-size: 0.74rem;
+  line-height: 1.4;
+  opacity: 0.72;
+  overflow-wrap: anywhere;
+}
+
+.g900-origin-time-boundary {
+  opacity: 0.62;
+}
+
+@media (max-width: 720px) {
+  .g900-origin-time-grid {
+    grid-template-columns: 1fr;
+  }
+}

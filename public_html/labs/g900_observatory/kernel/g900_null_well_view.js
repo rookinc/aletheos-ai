@@ -60,6 +60,30 @@
     };
   }
 
+  function publishNullWellOrientationSummary(value) {
+    const control = findOrientationControl();
+    window.__g900NullWellOrientationSummary = {
+      schema: "g900.viewer.null_well_orientation",
+      version: "0.1",
+      mode: value ? "null_well_orientation" : "off",
+      button: "#",
+      xyz_indicator: value,
+      null_well_visible: value,
+      null_well_kind: "union_side_null_socket",
+      render_kind: "viewport_null_socket",
+      body_coordinate_claim: false,
+      control_checked: control ? control.input.checked === true : false,
+      mutates_body: false,
+      adds_vertices: false,
+      adds_edges: false,
+      admits_channels: false,
+      lights_markers: false,
+      runtime_motion_authority: false,
+      physics_claim: false,
+      force_claim: false
+    };
+  }
+
   function setActive(value) {
     document.body.classList.toggle(ACTIVE_CLASS, value);
 
@@ -69,6 +93,8 @@
       control.shell.classList.toggle("g900-orientation-toggle-active", value);
       control.shell.classList.toggle("g900-null-well-toggle-active", value);
     }
+
+    publishNullWellOrientationSummary(value);
   }
 
   function bindOrientationControl() {

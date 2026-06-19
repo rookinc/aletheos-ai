@@ -1,0 +1,226 @@
+{
+  "schema": "g900.transport_choice_f0001_visibility_source_anatomy",
+  "version": "0.1",
+  "artifact_id": "g900_transport_choice_f0001_visibility_source_anatomy_039",
+  "anatomy_pass": true,
+  "verdict": "transport_choice_f0001_visibility_source_anatomy_039_recorded",
+  "status": "f0001_visibility_fingerprint_recorded_no_rule_no_promotion",
+  "commit": "2dd21d9",
+  "commit_full": "2dd21d94c6d3e5c11d433c92af6c84658398e352",
+  "question": "Which construction-surface features make the denied prefix edge visible, and do they differ from allowed F0001 pairs?",
+  "answer": "039 records the source-visibility anatomy of the denied prefix edge against the five allowed F0001 pairs. The denied edge has diagnostic source and construction-surface fingerprints, but no fingerprint is promoted to source law or permission.",
+  "f0001": {
+    "path_variables": [
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "path_values": [
+      5,
+      4,
+      3,
+      9
+    ],
+    "denied_pair_variables": [
+      "B",
+      "C"
+    ],
+    "denied_pair_values": [
+      4,
+      5
+    ],
+    "position_rule_exact_for_f0001": true,
+    "visibility_profile_distinguishes_denial_038": true
+  },
+  "counts": {
+    "pair_summary_row_count": 6,
+    "source_hit_row_count": 387,
+    "denied_source_file_hit_count": 50,
+    "denied_construction_file_hit_count": 17,
+    "denied_csv_row_hit_count": 1602,
+    "denied_construction_csv_row_hit_count": 1107,
+    "allowed_source_file_hit_counts": [
+      3,
+      3,
+      54,
+      39,
+      238
+    ],
+    "allowed_construction_file_hit_counts": [
+      1,
+      1,
+      19,
+      16,
+      73
+    ],
+    "allowed_csv_row_hit_counts": [
+      77,
+      53,
+      1711,
+      1454,
+      2133
+    ],
+    "allowed_construction_csv_row_hit_counts": [
+      75,
+      51,
+      1298,
+      1050,
+      1457
+    ],
+    "distinguishing_feature_count": 8,
+    "construction_distinguishing_feature_count": 3,
+    "promoted_source_law_count": 0,
+    "promoted_family_count": 0,
+    "promoted_admission_count": 0,
+    "current_admitted_permission_channel_count": 1,
+    "current_admitted_information_transport_count": 1
+  },
+  "feature_tests": [
+    {
+      "feature_id": "039-F1",
+      "feature_name": "source_file_hit_count",
+      "statement": "Total source file hit count distinguishes the denied pair from allowed pairs.",
+      "denied_value": "50",
+      "allowed_values": "3 | 3 | 54 | 39 | 238",
+      "distinguishes_denial_in_f0001": "true",
+      "promotion_status": "diagnostic_fingerprint_not_source_law"
+    },
+    {
+      "feature_id": "039-F2",
+      "feature_name": "construction_file_hit_count",
+      "statement": "Construction-surface file hit count distinguishes the denied pair from allowed pairs.",
+      "denied_value": "17",
+      "allowed_values": "1 | 1 | 19 | 16 | 73",
+      "distinguishes_denial_in_f0001": "true",
+      "promotion_status": "diagnostic_fingerprint_not_source_law"
+    },
+    {
+      "feature_id": "039-F3",
+      "feature_name": "csv_row_hit_count",
+      "statement": "Total CSV row hit count distinguishes the denied pair from allowed pairs.",
+      "denied_value": "1602",
+      "allowed_values": "77 | 53 | 1711 | 1454 | 2133",
+      "distinguishes_denial_in_f0001": "true",
+      "promotion_status": "diagnostic_fingerprint_not_source_law"
+    },
+    {
+      "feature_id": "039-F4",
+      "feature_name": "construction_csv_row_hit_count",
+      "statement": "Construction CSV row hit count distinguishes the denied pair from allowed pairs.",
+      "denied_value": "1107",
+      "allowed_values": "75 | 51 | 1298 | 1050 | 1457",
+      "distinguishes_denial_in_f0001": "true",
+      "promotion_status": "diagnostic_fingerprint_not_source_law"
+    },
+    {
+      "feature_id": "039-F5",
+      "feature_name": "source_class_profile",
+      "statement": "Source-class profile distinguishes the denied pair from allowed pairs.",
+      "denied_value": "choice_surface_excluded:19 construction_surface:17 other_surface:5 prior_transport_surface:9",
+      "allowed_values": "choice_surface_excluded:2 construction_surface:1 | choice_surface_excluded:2 construction_surface:1 | choice_surface_excluded:19 construction_surface:19 other_surface:7 prior_transport_surface:9 | choice_surface_excluded:12 construction_surface:16 other_surface:4 prior_transport_surface:7 | choice_surface_excluded:26 construction_surface:73 other_surface:98 prior_transport_surface:41",
+      "distinguishes_denial_in_f0001": "true",
+      "promotion_status": "diagnostic_fingerprint_not_source_law"
+    },
+    {
+      "feature_id": "039-F6",
+      "feature_name": "construction_bucket_profile",
+      "statement": "Construction bucket profile distinguishes the denied pair from allowed pairs.",
+      "denied_value": "candidate_family_census_014:2 carrier:1 channel_candidate:2 channel_source:2 edge_limit_phase:1 endpoint_incidence:1 full60:1 permission:1 return_cell:2 root_smoke:2 slot_pair:1 successor_rule:1",
+      "allowed_values": "candidate_family_census_014:1 | candidate_family_census_014:1 | candidate_family_census_014:3 carrier:1 channel_candidate:2 channel_source:2 edge_limit_phase:1 endpoint_incidence:1 full60:1 permission:1 return_cell:2 root_smoke:3 slot_pair:1 successor_rule:1 | candidate_family_census_014:2 carrier:1 channel_candidate:2 channel_source:2 endpoint_incidence:1 full60:1 permission:1 return_cell:2 root_smoke:2 slot_pair:1 successor_rule:1 | candidate_family_census_014:4 carrier:1 channel_candidate:2 channel_source:2 edge_limit_phase:1 endpoint_incidence:2 full60:16 other:1 permission:2 return_cell:38 root_smoke:2 slot_pair:1 successor_rule:1",
+      "distinguishes_denial_in_f0001": "true",
+      "promotion_status": "diagnostic_fingerprint_not_source_law"
+    },
+    {
+      "feature_id": "039-F7",
+      "feature_name": "top_matched_fields",
+      "statement": "Top matched field profile distinguishes the denied pair from allowed pairs.",
+      "denied_value": "role_pairs:754 hit_signature:331 family_key:217 role_tokens:109 token:101 sample_role_tokens:99 sample_tokens:80 primary_rail_id:79",
+      "allowed_values": "role_pairs:75 direct_edge_token:1 reverse_edge_token:1 matched_tokens:1 | role_pairs:51 direct_edge_token:1 reverse_edge_token:1 matched_tokens:1 | role_pairs:962 hit_signature:344 family_key:168 primary_rail_id:89 role_tokens:86 sample_role_tokens:78 sample_hit_paths:63 sample_tokens:63 | role_pairs:816 hit_signature:341 family_key:164 sample_role_tokens:76 role_tokens:74 sample_hit_paths:61 sample_tokens:61 token:46 | role_pairs:755 hit_signature:370 token:284 boundary_carrier_id:183 support_rails:181 primary_rail_id:180 family_key:158 role_tokens:82",
+      "distinguishes_denial_in_f0001": "true",
+      "promotion_status": "diagnostic_fingerprint_not_source_law"
+    },
+    {
+      "feature_id": "039-F8",
+      "feature_name": "pair_position_class",
+      "statement": "Path-position class distinguishes the denied pair from allowed pairs.",
+      "denied_value": "prefix_terminal_edge",
+      "allowed_values": "skip_one_jump | long_jump | internal_adjacent_edge | skip_one_jump | suffix_terminal_edge",
+      "distinguishes_denial_in_f0001": "true",
+      "promotion_status": "diagnostic_fingerprint_not_source_law"
+    }
+  ],
+  "interpretation": {
+    "main": "039 turns 038's distinctive visibility profile into a source-anatomy ledger.",
+    "diagnostic": "The denied edge has construction-surface visibility and source-profile fingerprints distinct from the allowed F0001 pairs.",
+    "guardrail": "A fingerprint is not a source law, permission channel, information transport, or family admission.",
+    "next": "The next proof step should test whether the fingerprint is caused by a specific upstream construction field rather than by broad source visibility."
+  },
+  "boundary": {
+    "visibility_source_anatomy_only": true,
+    "fingerprint_not_source_law": true,
+    "fingerprint_not_permission": true,
+    "fingerprint_not_transport": true,
+    "source_rule_candidate_not_promoted": true,
+    "family_not_permission": true,
+    "family_not_transport": true,
+    "admission_layer_locked": true,
+    "body_fixed": true,
+    "admitted_ledger_fixed": true,
+    "new_permission_channel_admitted": false,
+    "new_information_transport_admitted": false,
+    "new_flux_witness_declared": false,
+    "transport_family_claim": false,
+    "global_uniqueness_claim": false,
+    "physical_transport_claim": false,
+    "physical_flux_claim": false,
+    "energy_flow_claim": false,
+    "force_claim": false,
+    "physics_claim": false,
+    "unification_claim": false,
+    "body_mutation": false,
+    "adds_vertices": false,
+    "adds_edges": false,
+    "viewer_gate_open": false,
+    "marker_lighting": false
+  },
+  "checks": {
+    "no_missing_inputs": true,
+    "probe038_passed": true,
+    "probe037_passed": true,
+    "probe036_passed": true,
+    "probe035_passed": true,
+    "pair_summary_rows_written": true,
+    "source_hit_rows_written": true,
+    "denied_pair_present": true,
+    "allowed_pairs_present": true,
+    "denied_pair_has_construction_hits": true,
+    "distinguishing_features_recorded": true,
+    "construction_distinguishing_features_recorded": true,
+    "promoted_source_law_count_zero": true,
+    "promoted_family_count_zero": true,
+    "promoted_admission_count_zero": true,
+    "current_permission_channel_count_still_1": true,
+    "current_information_transport_count_still_1": true,
+    "no_new_permission_channel_admitted": true,
+    "no_new_information_transport_admitted": true,
+    "no_transport_family_claim": true,
+    "no_physics_claim": true,
+    "no_body_mutation": true
+  },
+  "failed_checks": [],
+  "inputs": {
+    "labs/g900_observatory/artifacts/json/g900_transport_choice_f0001_permission_denial_probe_038.v1.json": "b0e887e5fdc4c340e2b294bcb88b1400a9ac2c37a8e84a608c5fbedd860b165f",
+    "labs/g900_observatory/artifacts/csv/g900_transport_choice_f0001_permission_denial_probe_038_pair_profile.v1.csv": "a49b87c05c696ce9b831f2d7e04f4ae8ac00ed9f25cacadf6eb1114d8a0105b7",
+    "labs/g900_observatory/artifacts/csv/g900_transport_choice_f0001_permission_denial_probe_038_source_visibility.v1.csv": "0130a66863fce3594048bf9378bbe841672b4d9645f50432b82cc30c59a72002",
+    "labs/g900_observatory/artifacts/json/g900_transport_choice_f0001_missing_prefix_edge_probe_037.v1.json": "fa21b8865c035987a3ef1cd2e90cdc3b969bc5083763d63070e121d83b4f4923",
+    "labs/g900_observatory/artifacts/json/g900_transport_choice_f0001_source_rule_probe_036.v1.json": "977511a706f7db239e0fe067cc1d7b9df41adc7d14c53a74c986917fb819337e",
+    "labs/g900_observatory/artifacts/json/g900_transport_choice_family_source_law_probe_035.v1.json": "00e136d414b7623418c157c4088c3410574610015a7452b8b14cc5893997a4a5",
+    "labs/g900_observatory/data/g900_admitted_permission_channels.v0.1.json": "94afd7ca8ffd171860b31d2c1ac2b55b21437fc69b8efc44c4a4bf27c0475964",
+    "labs/g900_observatory/data/g900_admitted_information_transports.v0.1.json": "2e1b4bc6e3ec072af260eb50af15ac8e21ba089be4b13039e5d101ca5941447f"
+  },
+  "missing_inputs": [],
+  "git_status_short_before": "",
+  "recorded_at_utc": "2026-06-19T18:35:49Z",
+  "keeper": "Visibility became a fingerprint. It still has to become a rule."
+}

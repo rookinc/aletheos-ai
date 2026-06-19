@@ -1316,3 +1316,196 @@ h1 {
     font-size: 0.66rem;
   }
 }
+
+.g900-summit-flag-view {
+  position: absolute;
+  top: 0.9rem;
+  right: 0.9rem;
+  z-index: 8;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  max-width: min(13rem, 55%);
+  padding: 0.5rem 0.6rem;
+  border: 1px solid rgba(216, 190, 113, 0.58);
+  border-radius: 0.85rem;
+  background: rgba(6, 10, 18, 0.72);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 22px rgba(216, 190, 113, 0.16);
+  pointer-events: none;
+}
+
+.g900-summit-flag-pennant {
+  display: grid;
+  place-items: center;
+  min-width: 2.15rem;
+  height: 2.15rem;
+  border-radius: 0.6rem;
+  background: rgba(216, 190, 113, 0.16);
+  color: rgba(239, 218, 147, 0.95);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+
+.g900-summit-flag-copy {
+  display: grid;
+  gap: 0.12rem;
+  min-width: 0;
+}
+
+.g900-summit-flag-copy strong {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(239, 218, 147, 0.92);
+}
+
+.g900-summit-flag-copy span {
+  font-size: 0.68rem;
+  line-height: 1.2;
+  color: rgba(226, 232, 244, 0.72);
+}
+
+@media (max-width: 720px) {
+  .g900-summit-flag-view {
+    top: 0.65rem;
+    right: 0.65rem;
+    max-width: 48%;
+    padding: 0.42rem 0.5rem;
+  }
+
+  .g900-summit-flag-pennant {
+    min-width: 1.85rem;
+    height: 1.85rem;
+    font-size: 0.68rem;
+  }
+
+  .g900-summit-flag-copy span {
+    display: none;
+  }
+}
+
+/* Summit flag mobile tuning. Receipt badge, not the main event. */
+@media (max-width: 720px) {
+  .g900-summit-flag-view {
+    top: 0.55rem;
+    right: 0.55rem;
+    max-width: 42%;
+    gap: 0.38rem;
+    padding: 0.36rem 0.42rem;
+    border-radius: 0.72rem;
+  }
+
+  .g900-summit-flag-pennant {
+    min-width: 1.65rem;
+    height: 1.65rem;
+    border-radius: 0.48rem;
+    font-size: 0.62rem;
+  }
+
+  .g900-summit-flag-copy strong {
+    font-size: 0.62rem;
+    letter-spacing: 0.07em;
+  }
+}
+
+/* Null Well readout. Structured absence, not body geometry. */
+.g900-null-well-view {
+  position: absolute;
+  left: 50%;
+  top: 52%;
+  z-index: 7;
+  display: grid;
+  justify-items: center;
+  gap: 0.45rem;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease;
+}
+
+.g900-null-well-visible .g900-null-well-view {
+  opacity: 1;
+}
+
+.g900-null-well-socket {
+  position: relative;
+  width: 5.4rem;
+  height: 5.4rem;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at center,
+      rgba(0, 0, 0, 0.48) 0%,
+      rgba(0, 0, 0, 0.42) 29%,
+      rgba(216, 190, 113, 0.06) 30%,
+      rgba(216, 190, 113, 0.02) 51%,
+      rgba(0, 0, 0, 0) 52%);
+  box-shadow:
+    inset 0 0 1.25rem rgba(0, 0, 0, 0.72),
+    0 0 1.6rem rgba(216, 190, 113, 0.08);
+}
+
+.g900-null-well-ring,
+.g900-null-well-core {
+  position: absolute;
+  border-radius: 999px;
+  inset: 0;
+}
+
+.g900-null-well-ring.ring-a {
+  border: 1px solid rgba(216, 190, 113, 0.42);
+}
+
+.g900-null-well-ring.ring-b {
+  inset: 1.18rem;
+  border: 1px solid rgba(226, 232, 244, 0.18);
+}
+
+.g900-null-well-core {
+  inset: 2.12rem;
+  border: 1px solid rgba(216, 190, 113, 0.22);
+  background: rgba(0, 0, 0, 0.36);
+}
+
+.g900-null-well-label {
+  display: flex;
+  align-items: center;
+  gap: 0.42rem;
+  padding: 0.28rem 0.5rem;
+  border: 1px solid rgba(216, 190, 113, 0.28);
+  border-radius: 999px;
+  background: rgba(6, 10, 18, 0.56);
+  backdrop-filter: blur(6px);
+  color: rgba(226, 232, 244, 0.78);
+  font-size: 0.68rem;
+}
+
+.g900-null-well-label strong {
+  color: rgba(239, 218, 147, 0.92);
+  letter-spacing: 0.08em;
+}
+
+.g900-null-well-toggle-active {
+  border-color: rgba(239, 218, 147, 0.92) !important;
+  box-shadow: 0 0 0 1px rgba(239, 218, 147, 0.22);
+}
+
+@media (max-width: 720px) {
+  .g900-null-well-socket {
+    width: 4.3rem;
+    height: 4.3rem;
+  }
+
+  .g900-null-well-ring.ring-b {
+    inset: 0.92rem;
+  }
+
+  .g900-null-well-core {
+    inset: 1.68rem;
+  }
+
+  .g900-null-well-label {
+    font-size: 0.62rem;
+  }
+}

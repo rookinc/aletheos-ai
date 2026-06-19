@@ -7,12 +7,16 @@ export async function readG900GroundedLensRegistry() {
   return response.json();
 }
 
-export function getG900GroundedLensSummary(registry) {
+export function getG900GroundedLensSummary(registry, activeLensId = null) {
   if (!registry || typeof registry !== "object") {
     return {
       status: "grounded_lens_registry_unavailable",
       lens_count: 0,
       active_lens_count: 0,
+      active_lens_id: null,
+      mode: "off",
+      return_read_visible: false,
+      render_allowed_now: false,
       mutates_body: false,
       admits_channels: false,
       physics_claim: false
@@ -28,7 +32,10 @@ export function getG900GroundedLensSummary(registry) {
     body: registry.body || "g900",
     body_version: registry.body_version || null,
     lens_count: lenses.length,
-    active_lens_count: 0,
+    active_lens_count: activeLensId ? 1 : 0,
+    active_lens_id: activeLensId || null,
+    mode: activeLensId || "off",
+    return_read_visible: false,
     render_allowed_now: false,
     available_lenses: lenses.map((lens) => ({
       id: lens.id,

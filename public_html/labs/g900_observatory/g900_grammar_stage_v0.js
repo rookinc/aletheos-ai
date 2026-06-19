@@ -322,6 +322,11 @@ function readChecked(id, fallback) {
   return Boolean(el.checked);
 }
 
+function readActiveGroundedLensId() {
+  const toggle = document.getElementById("grounded-lens-toggle");
+  return toggle && toggle.checked ? "a_grounded_f_return_lens" : null;
+}
+
 function readRange01(id, fallback) {
   const el = document.getElementById(id);
   if (!el) return fallback;
@@ -414,7 +419,7 @@ function buildG900ViewerStateObject(state) {
     overlays: activeOverlayRegistry ? getG900OverlaySummary(activeOverlayRegistry) : null,
     carriers: activeCarrierRegistry ? getG900CarrierSummary(activeCarrierRegistry) : null,
     channels: activeChannelRegistry ? getG900ChannelSummary(activeChannelRegistry) : null,
-    grounded_lens: activeGroundedLensRegistry ? getG900GroundedLensSummary(activeGroundedLensRegistry) : null,
+    grounded_lens: activeGroundedLensRegistry ? getG900GroundedLensSummary(activeGroundedLensRegistry, readActiveGroundedLensId()) : null,
     carrier_render: readWindowSummary("__g900CarrierRenderSummary"),
     channel_scope: readWindowSummary("__g900ChannelScopeSummary"),
     timing_kernel: {
@@ -1394,7 +1399,7 @@ function initialG900PanelCollapsed(panelId) {
   const saved = localStorage.getItem("g900.panelCollapsed." + panelId);
   if (saved === "1") return true;
   if (saved === "0") return false;
-  return panelId === "carriers" || panelId === "channels";
+  return panelId === "carriers" || panelId === "channels" || panelId === "grounded-lens";
 }
 
 function applyG900PanelDefaultMigration() {
@@ -1410,7 +1415,7 @@ function bindG900ActivityPanelControls() {
   ensureStageGraphToolbar();
   applyG900PanelDefaultMigration();
 
-  ["carriers", "channels"].forEach((panelId) => {
+  ["carriers", "channels", "grounded-lens"].forEach((panelId) => {
     setG900PanelBodyCollapsed(panelId, initialG900PanelCollapsed(panelId));
   });
 

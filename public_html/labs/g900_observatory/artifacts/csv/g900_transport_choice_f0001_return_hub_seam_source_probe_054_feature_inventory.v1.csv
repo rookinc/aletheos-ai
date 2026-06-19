@@ -1,0 +1,13 @@
+selector_name,selector_class,exact,selected_count,selector_status,source_law_status,reason_not_promoted
+global_row_count = 120,strength_fingerprint,true,1,exact_strength_fingerprint_not_source_law,not_promoted,numeric strength fingerprint
+slot_presence_count = 2,strength_fingerprint,true,1,exact_strength_fingerprint_not_source_law,not_promoted,numeric strength fingerprint
+not selected by global ge180,strength_fingerprint,true,1,exact_negative_strength_fingerprint_not_source_law,not_promoted,numeric strength fingerprint
+not selected by slot presence ge3,strength_fingerprint,true,1,exact_negative_presence_fingerprint_not_source_law,not_promoted,numeric strength fingerprint
+rank pair local endpoints = 4:4,rank_fingerprint,false,2,rank_pair_not_exact_double_weak_collision,not_promoted,local rank fingerprint with collision risk
+weak at both endpoints,rank_fingerprint,false,2,double_weak_not_exact_collision,not_promoted,local rank fingerprint with collision risk
+touches slot14 and return hub,role_cut_handle,true,1,exact_role_handle_quarantined_from_050,not_promoted,depends on role or cut grammar from 050/053
+endpoints are 180 cut slots,role_cut_handle,true,1,exact_cut_handle_quarantined_from_053,not_promoted,depends on role or cut grammar from 050/053
+common weak edge of 180 cut slots,role_cut_handle,true,1,exact_cut_handle_quarantined_from_053,not_promoted,depends on role or cut grammar from 050/053
+edge between 180 cut slots,role_cut_handle,true,1,exact_cut_handle_quarantined_from_053,not_promoted,depends on role or cut grammar from 050/053
+carrier identity is target seam,blocked_identity,true,1,exact_identity_label_blocked,not_promoted,identity or endpoint label
+endpoint pair is 13-14,blocked_identity,true,1,exact_endpoint_label_blocked,not_promoted,identity or endpoint label

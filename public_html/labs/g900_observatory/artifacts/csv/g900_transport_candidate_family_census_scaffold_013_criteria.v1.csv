@@ -1,0 +1,11 @@
+stage,criterion,pass_rule,admission_allowed
+0_current_ledger,current ledger state must be read before searching,record admitted counts and refuse uniqueness/family claims at scaffold stage,no
+1_candidate_universe,candidate family must be generated without preselecting return-cell,define P templates or packet templates before scoring Q,no
+2_packet,candidate Q packet uses existing G900 body edges only,all selected target edges must resolve to body.edges entries,no
+3_successor_rule,source packet P must determine target packet Q by rule R,rule minima or rule outputs must be deterministic and not hand-picked,no
+4_gate,candidate must satisfy permission-channel admission obligations,gate obligations pass before any channel admission,no
+5_permission_channel,permission channel may be admitted only after gate pass,"admit relation only, not transport",future
+6_supported_history,one-step history h(0)->h(1) must be supported,h(0)=P and h(1)=Q under R behind admitted permission channel,no
+7_transport,bounded finite information transport requires conserved observable,named signature preserved exactly across h(0)->h(1),future
+8_flux_witness,flux witness requires crossing of realization and conserved signature,"finite information flux only, no physical flux",future
+9_boundary,all physical overclaims remain false,"no physical transport, no energy flow, no force, no physics, no body mutation",always required

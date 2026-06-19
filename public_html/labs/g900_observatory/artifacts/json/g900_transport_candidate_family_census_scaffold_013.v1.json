@@ -1,0 +1,325 @@
+{
+  "schema": "g900.transport_candidate_family_census_scaffold",
+  "version": "0.1",
+  "artifact_id": "g900_transport_candidate_family_census_scaffold_013",
+  "scaffold_pass": true,
+  "verdict": "transport_candidate_family_census_scaffold_ready",
+  "status": "scaffold_only_no_family_claim_no_uniqueness_claim",
+  "commit": "a43063b",
+  "commit_full": "a43063be75dc603a3aa8215cd1f480207152116e",
+  "question": "How should G900 ask whether the admitted return-cell transport repeats?",
+  "answer": "Define the candidate universe and the admission ladder before running a family census. Do not admit new transports in the scaffold.",
+  "current_ledger_state": {
+    "admitted_permission_channel_count": 1,
+    "admitted_information_transport_count": 1,
+    "known_transport_id": "g900_return_cell_one_step_information_transport_007",
+    "known_permission_channel_id": "g900_return_cell_permission_channel_005",
+    "known_q_edge_ids": [
+      "tuple_edge_611",
+      "tuple_edge_2425",
+      "tuple_edge_1472",
+      "tuple_edge_1475"
+    ],
+    "status012_answer": "only_one_transport_admitted_not_uniqueness_proof"
+  },
+  "body_search_space": {
+    "vertex_count": 900,
+    "edge_count": 3600,
+    "directed_edge_reading_count": 7200,
+    "slot_count": 15,
+    "locals_per_slot_min": 60,
+    "locals_per_slot_max": 60,
+    "undirected_slot_pair_count": 45,
+    "directed_slot_pair_count": 45,
+    "top_undirected_slot_pairs": [
+      {
+        "slot_pair": "(0, 0)",
+        "edge_count": 120
+      },
+      {
+        "slot_pair": "(1, 1)",
+        "edge_count": 120
+      },
+      {
+        "slot_pair": "(2, 2)",
+        "edge_count": 120
+      },
+      {
+        "slot_pair": "(3, 3)",
+        "edge_count": 120
+      },
+      {
+        "slot_pair": "(4, 4)",
+        "edge_count": 120
+      },
+      {
+        "slot_pair": "(5, 5)",
+        "edge_count": 120
+      },
+      {
+        "slot_pair": "(6, 6)",
+        "edge_count": 120
+      },
+      {
+        "slot_pair": "(7, 7)",
+        "edge_count": 120
+      },
+      {
+        "slot_pair": "(8, 8)",
+        "edge_count": 120
+      },
+      {
+        "slot_pair": "(9, 9)",
+        "edge_count": 120
+      },
+      {
+        "slot_pair": "(10, 10)",
+        "edge_count": 120
+      },
+      {
+        "slot_pair": "(11, 11)",
+        "edge_count": 120
+      },
+      {
+        "slot_pair": "(12, 12)",
+        "edge_count": 120
+      },
+      {
+        "slot_pair": "(13, 13)",
+        "edge_count": 120
+      },
+      {
+        "slot_pair": "(14, 14)",
+        "edge_count": 120
+      },
+      {
+        "slot_pair": "(0, 4)",
+        "edge_count": 60
+      },
+      {
+        "slot_pair": "(0, 5)",
+        "edge_count": 60
+      },
+      {
+        "slot_pair": "(0, 6)",
+        "edge_count": 60
+      },
+      {
+        "slot_pair": "(0, 1)",
+        "edge_count": 60
+      },
+      {
+        "slot_pair": "(1, 2)",
+        "edge_count": 60
+      }
+    ],
+    "top_directed_slot_pairs": [
+      {
+        "directed_slot_pair": "(0, 0)",
+        "edge_count": 120
+      },
+      {
+        "directed_slot_pair": "(1, 1)",
+        "edge_count": 120
+      },
+      {
+        "directed_slot_pair": "(2, 2)",
+        "edge_count": 120
+      },
+      {
+        "directed_slot_pair": "(3, 3)",
+        "edge_count": 120
+      },
+      {
+        "directed_slot_pair": "(4, 4)",
+        "edge_count": 120
+      },
+      {
+        "directed_slot_pair": "(5, 5)",
+        "edge_count": 120
+      },
+      {
+        "directed_slot_pair": "(6, 6)",
+        "edge_count": 120
+      },
+      {
+        "directed_slot_pair": "(7, 7)",
+        "edge_count": 120
+      },
+      {
+        "directed_slot_pair": "(8, 8)",
+        "edge_count": 120
+      },
+      {
+        "directed_slot_pair": "(9, 9)",
+        "edge_count": 120
+      },
+      {
+        "directed_slot_pair": "(10, 10)",
+        "edge_count": 120
+      },
+      {
+        "directed_slot_pair": "(11, 11)",
+        "edge_count": 120
+      },
+      {
+        "directed_slot_pair": "(12, 12)",
+        "edge_count": 120
+      },
+      {
+        "directed_slot_pair": "(13, 13)",
+        "edge_count": 120
+      },
+      {
+        "directed_slot_pair": "(14, 14)",
+        "edge_count": 120
+      },
+      {
+        "directed_slot_pair": "(0, 4)",
+        "edge_count": 60
+      },
+      {
+        "directed_slot_pair": "(0, 5)",
+        "edge_count": 60
+      },
+      {
+        "directed_slot_pair": "(0, 6)",
+        "edge_count": 60
+      },
+      {
+        "directed_slot_pair": "(0, 1)",
+        "edge_count": 60
+      },
+      {
+        "directed_slot_pair": "(1, 2)",
+        "edge_count": 60
+      }
+    ],
+    "body_sha256": "6a2cb6b9892a78d4559ec61cf946b0021962cc6819311234b8bf14102b3b7f63"
+  },
+  "census_ladder": [
+    {
+      "stage": "0_current_ledger",
+      "criterion": "current ledger state must be read before searching",
+      "pass_rule": "record admitted counts and refuse uniqueness/family claims at scaffold stage",
+      "admission_allowed": "no"
+    },
+    {
+      "stage": "1_candidate_universe",
+      "criterion": "candidate family must be generated without preselecting return-cell",
+      "pass_rule": "define P templates or packet templates before scoring Q",
+      "admission_allowed": "no"
+    },
+    {
+      "stage": "2_packet",
+      "criterion": "candidate Q packet uses existing G900 body edges only",
+      "pass_rule": "all selected target edges must resolve to body.edges entries",
+      "admission_allowed": "no"
+    },
+    {
+      "stage": "3_successor_rule",
+      "criterion": "source packet P must determine target packet Q by rule R",
+      "pass_rule": "rule minima or rule outputs must be deterministic and not hand-picked",
+      "admission_allowed": "no"
+    },
+    {
+      "stage": "4_gate",
+      "criterion": "candidate must satisfy permission-channel admission obligations",
+      "pass_rule": "gate obligations pass before any channel admission",
+      "admission_allowed": "no"
+    },
+    {
+      "stage": "5_permission_channel",
+      "criterion": "permission channel may be admitted only after gate pass",
+      "pass_rule": "admit relation only, not transport",
+      "admission_allowed": "future"
+    },
+    {
+      "stage": "6_supported_history",
+      "criterion": "one-step history h(0)->h(1) must be supported",
+      "pass_rule": "h(0)=P and h(1)=Q under R behind admitted permission channel",
+      "admission_allowed": "no"
+    },
+    {
+      "stage": "7_transport",
+      "criterion": "bounded finite information transport requires conserved observable",
+      "pass_rule": "named signature preserved exactly across h(0)->h(1)",
+      "admission_allowed": "future"
+    },
+    {
+      "stage": "8_flux_witness",
+      "criterion": "flux witness requires crossing of realization and conserved signature",
+      "pass_rule": "finite information flux only, no physical flux",
+      "admission_allowed": "future"
+    },
+    {
+      "stage": "9_boundary",
+      "criterion": "all physical overclaims remain false",
+      "pass_rule": "no physical transport, no energy flow, no force, no physics, no body mutation",
+      "admission_allowed": "always required"
+    }
+  ],
+  "future_census_requirements": {
+    "must_not_preselect_return_cell": true,
+    "must_generate_P_before_Q": true,
+    "must_require_existing_body_edges": true,
+    "must_require_deterministic_successor_rule": true,
+    "must_require_permission_gate_before_channel_admission": true,
+    "must_require_admitted_permission_channel_before_transport_admission": true,
+    "must_require_conserved_observable": true,
+    "must_require_flux_witness_only_after_transport": true,
+    "must_report_near_misses": true,
+    "must_keep_physical_claims_false": true
+  },
+  "boundary": {
+    "scaffold_only": true,
+    "family_claim": false,
+    "uniqueness_claim": false,
+    "new_candidate_search_run": false,
+    "new_permission_channel_admitted": false,
+    "new_information_transport_admitted": false,
+    "new_flux_witness_declared": false,
+    "physical_transport_claim": false,
+    "physical_flux_claim": false,
+    "energy_flow_claim": false,
+    "force_claim": false,
+    "physics_claim": false,
+    "unification_claim": false,
+    "body_mutation": false,
+    "adds_vertices": false,
+    "adds_edges": false,
+    "viewer_gate_open": false,
+    "marker_lighting": false
+  },
+  "checks": {
+    "no_missing_inputs": true,
+    "body_vertices_900": true,
+    "body_edges_3600": true,
+    "slot_count_positive": true,
+    "locals_per_slot_nonzero": true,
+    "status012_passed": true,
+    "status012_no_uniqueness_claim": true,
+    "status012_no_family_claim": true,
+    "current_permission_channel_count_1": true,
+    "current_transport_count_1": true,
+    "theorem011_ready": true,
+    "flux010_passed": true,
+    "checkpoint009_passed": true,
+    "current_q_packet_known": true
+  },
+  "failed_checks": [],
+  "inputs": {
+    "labs/g900_observatory/data/g900_static_body.v1.json": "6a2cb6b9892a78d4559ec61cf946b0021962cc6819311234b8bf14102b3b7f63",
+    "labs/g900_observatory/data/g900_admitted_permission_channels.v0.1.json": "94afd7ca8ffd171860b31d2c1ac2b55b21437fc69b8efc44c4a4bf27c0475964",
+    "labs/g900_observatory/data/g900_admitted_information_transports.v0.1.json": "2e1b4bc6e3ec072af260eb50af15ac8e21ba089be4b13039e5d101ca5941447f",
+    "labs/g900_observatory/artifacts/json/g900_transport_family_status_question_012.v1.json": "dba95f06f16daa748d3c0c19d83581009c7dc787034177e129b0c924a41293b5",
+    "labs/g900_observatory/artifacts/json/g900_return_cell_transport_theorem_note_011.v1.json": "012779fc8ecb955f6fcbc76f8da64d070df2fec604b1633af8f816ed69e57001",
+    "labs/g900_observatory/artifacts/json/g900_return_cell_information_flux_witness_010.v1.json": "944a82e95d5de5513af630ac96ea6507cdd79ef12527ab1a247237fd5664137b",
+    "labs/g900_observatory/artifacts/json/g900_return_cell_transport_checkpoint_009.v1.json": "652158223ab249ba88f7120e97c5ce51633d4ec29d83e1c98ec43deda9535cab",
+    "labs/g900_observatory/artifacts/json/g900_return_cell_packet_successor_rule_scout_003.v1.json": "79657be34ec24d63e02aa949aa7f21250cfbec0109280e05dfcdca72b1d1334e"
+  },
+  "missing_inputs": [],
+  "git_status_short_before": "",
+  "recorded_at_utc": "2026-06-19T15:58:59Z",
+  "keeper": "Before asking whether the seed repeats, define what would count as another seed."
+}

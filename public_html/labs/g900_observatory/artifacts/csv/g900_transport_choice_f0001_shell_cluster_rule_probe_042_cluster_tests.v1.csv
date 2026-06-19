@@ -1,0 +1,8 @@
+test_id,test_name,result,evidence,promotion_status
+042-T1,denied_pair_has_full_shell_cluster_in_041_matrix,true,Denied pair has all seven shell cluster features in the 041 matrix.,fingerprint_not_rule
+042-T2,allowed_pairs_lack_full_shell_cluster_in_041_matrix,true,Allowed full-cluster count = 0.,fingerprint_not_rule
+042-T3,full_shell_cluster_selects_denied_pair_locally,true,Full cluster is local-denied-only if T1 and T2 both hold.,local_selector_not_source_law
+042-T4,upstream_full_cluster_row_exists,true,Upstream full-cluster row count = 60.,co_visibility_not_rule
+042-T5,upstream_lock_with_outer_shell_witness_exists,true,Rows with lock edge and outer 05_10/05_14 witness count = 216.,co_visibility_not_rule
+042-T6,source_law_promotion,false,No upstream construction law is proved by co-visibility rows.,locked_zero
+042-T7,admission_promotion,false,No permission channel or information transport is admitted.,locked_zero

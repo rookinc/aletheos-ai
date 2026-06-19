@@ -3,7 +3,7 @@
 
   const URL = "./data/g900_channels.v0.1.json";
   const STORAGE_MODE_KEY = "g900.channelScopeMode";
-  const STORAGE_OPEN_KEY = "g900.channelScopeOpen";
+  const STORAGE_VISIBLE_KEY = "g900.channelScopeVisible";
 
   const FALLBACK_MODES = {
     no_admitted_channels: {
@@ -45,9 +45,14 @@
     if (el) el.textContent = value;
   }
 
-  function panelOpen() {
+  function visible() {
     const toggle = document.getElementById("channel-scope-panel-toggle");
     return Boolean(toggle && toggle.checked);
+  }
+
+  function collapsed() {
+    const body = document.getElementById("channel-scope-panel-body");
+    return Boolean(body && body.hidden);
   }
 
   function modeRecord(mode) {
@@ -62,7 +67,8 @@
       schema: "g900.viewer.channel_scope",
       version: "0.1",
       layer: 3,
-      panel_open: panelOpen(),
+      panel_collapsed: collapsed(),
+      visible: visible(),
       mode: mode,
       label: record.label,
       status: record.status,
@@ -81,18 +87,17 @@
     };
   }
 
-  function syncPanelOpen() {
-    const open = panelOpen();
-    const body = document.getElementById("channel-scope-panel-body");
+  function syncVisibility() {
+    const isVisible = visible();
+    setText("channel-scope-panel-toggle-label", isVisible ? "ON" : "OFF");
 
-    if (body) body.hidden = !open;
+    const panel = document.querySelector('[data-activity-panel="channels"]') || document.querySelector('[data-layer-panel="channels"]');
+    if (panel) {
+      panel.classList.toggle("is-render-active", isVisible);
+      panel.classList.toggle("channel-scope-panel-open", isVisible);
+    }
 
-    setText("channel-scope-panel-toggle-label", open ? "ON" : "OFF");
-
-    const panel = document.querySelector('[data-layer-panel="channels"]');
-    if (panel) panel.classList.toggle("channel-scope-panel-open", open);
-
-    localStorage.setItem(STORAGE_OPEN_KEY, open ? "1" : "0");
+    localStorage.setItem(STORAGE_VISIBLE_KEY, isVisible ? "1" : "0");
   }
 
   function syncFlags() {
@@ -107,7 +112,7 @@
     const admitted = registry && Number.isFinite(Number(registry.admitted_channel_count)) ? Number(registry.admitted_channel_count) : 0;
     const record = modeRecord(activeMode);
 
-    syncPanelOpen();
+    syncVisibility();
     syncFlags();
 
     setText("channel-count-readout", String(admitted));
@@ -139,7 +144,7 @@
   function bind() {
     const toggle = document.getElementById("channel-scope-panel-toggle");
     if (toggle) {
-      toggle.checked = localStorage.getItem(STORAGE_OPEN_KEY) === "1";
+      toggle.checked = localStorage.getItem(STORAGE_VISIBLE_KEY) === "1";
       toggle.addEventListener("change", sync);
     }
 
@@ -150,6 +155,8 @@
         sync();
       });
     });
+
+    window.__g900SyncChannelScopePanel = sync;
   }
 
   ready(async function () {

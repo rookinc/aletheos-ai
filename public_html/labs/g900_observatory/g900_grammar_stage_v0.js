@@ -666,14 +666,14 @@ function syncCarrierRenderState() {
   syncLayerSwitchLabel("carrier-render-toggle");
 
   const toggle = document.getElementById("carrier-render-toggle");
-  const body = document.getElementById("carrier-render-panel-body");
   const note = document.getElementById("carrier-render-note");
   const visible = Boolean(toggle && toggle.checked);
 
-  if (body) body.hidden = !visible;
-
-  const panel = document.querySelector('[data-layer-panel="carriers"]');
-  if (panel) panel.classList.toggle("carrier-render-panel-open", visible);
+  const panel = document.querySelector('[data-activity-panel="carriers"]') || document.querySelector('[data-layer-panel="carriers"]');
+  if (panel) {
+    panel.classList.toggle("is-render-active", visible);
+    panel.classList.toggle("carrier-render-panel-open", visible);
+  }
 
   const selection = selectG900CarrierRailStack(activeCarrierRegistry, activeCarrierRenderModes);
 
@@ -689,6 +689,10 @@ function syncCarrierRenderState() {
   syncCarrierAlphaReadout();
   syncCarrierRenderLegend();
   publishCarrierRenderSummary();
+
+  if (typeof syncG900RenderSwitchLabel === "function") {
+    syncG900RenderSwitchLabel("carrier-render-toggle");
+  }
 
   document.querySelectorAll("[data-carrier-render-mode]").forEach((btn) => {
     const active = selection.modes.includes(btn.dataset.carrierRenderMode);
@@ -1290,50 +1294,6 @@ if (document.readyState === "loading") {
 }
 
 
-function setG900PanelCollapsed(panelId, collapsed) {
-  const bodyClass = panelId === "graph"
-    ? "g900-graph-panel-collapsed"
-    : "g900-state-panel-collapsed";
-
-  document.body.classList.toggle(bodyClass, collapsed);
-
-  document.querySelectorAll('[data-panel-collapse-toggle="' + panelId + '"]').forEach((button) => {
-    button.textContent = collapsed ? "Expand" : "Collapse";
-    button.setAttribute("aria-expanded", collapsed ? "false" : "true");
-  });
-
-  if (panelId === "graph") {
-    const panel = document.querySelector('[data-layer-panel="graph"]');
-    if (panel) panel.classList.toggle("is-panel-collapsed", collapsed);
-  }
-
-  if (panelId === "state") {
-    const section = document.querySelector(".state-console-section");
-    if (section) section.classList.toggle("is-panel-collapsed", collapsed);
-  }
-}
-
-function bindG900PanelCollapseControls() {
-  document.querySelectorAll("[data-panel-collapse-toggle]").forEach((button) => {
-    if (button.dataset.bound === "1") return;
-    button.dataset.bound = "1";
-
-    const panelId = button.dataset.panelCollapseToggle;
-    const key = "g900.panelCollapsed." + panelId;
-    const initialCollapsed = localStorage.getItem(key) === "1";
-
-    setG900PanelCollapsed(panelId, initialCollapsed);
-
-    button.addEventListener("click", () => {
-      const nextCollapsed = localStorage.getItem(key) !== "1";
-      localStorage.setItem(key, nextCollapsed ? "1" : "0");
-      setG900PanelCollapsed(panelId, nextCollapsed);
-    });
-  });
-}
-
-bindG900PanelCollapseControls();
-
 function ensureStageGraphToolbar() {
   const stageCard = document.querySelector(".stage-card");
   const stageFrame = document.querySelector(".stage-frame");
@@ -1368,4 +1328,80 @@ function ensureStageGraphToolbar() {
   syncGraphLayerReadouts();
 }
 
-ensureStageGraphToolbar();
+function syncG900RenderSwitchLabel(inputId) {
+  const input = document.getElementById(inputId);
+  if (!input) return;
+
+  const label = input.closest("label");
+  const span = label ? label.querySelector("span:last-child") : null;
+  if (span) span.textContent = input.checked ? "ON" : "OFF";
+
+  const panelId = input.dataset.renderToggle;
+  if (panelId) {
+    const panel = document.querySelector('[data-activity-panel="' + panelId + '"]');
+    if (panel) panel.classList.toggle("is-render-active", Boolean(input.checked));
+  }
+}
+
+function setG900PanelBodyCollapsed(panelId, collapsed) {
+  const body = document.querySelector('[data-panel-body="' + panelId + '"]');
+  if (body) body.hidden = Boolean(collapsed);
+
+  const title = document.querySelector('[data-panel-title-toggle="' + panelId + '"]');
+  if (title) title.setAttribute("aria-expanded", collapsed ? "false" : "true");
+
+  const panel = document.querySelector('[data-activity-panel="' + panelId + '"]');
+  if (panel) panel.classList.toggle("is-panel-collapsed", Boolean(collapsed));
+
+  localStorage.setItem("g900.panelCollapsed." + panelId, collapsed ? "1" : "0");
+}
+
+function initialG900PanelCollapsed(panelId) {
+  const saved = localStorage.getItem("g900.panelCollapsed." + panelId);
+  if (saved === "1") return true;
+  if (saved === "0") return false;
+  return panelId === "carriers" || panelId === "channels";
+}
+
+function bindG900ActivityPanelControls() {
+  ensureStageGraphToolbar();
+
+  ["carriers", "channels", "state"].forEach((panelId) => {
+    setG900PanelBodyCollapsed(panelId, initialG900PanelCollapsed(panelId));
+  });
+
+  document.querySelectorAll("[data-panel-title-toggle]").forEach((title) => {
+    if (title.dataset.activityBound === "1") return;
+    title.dataset.activityBound = "1";
+
+    const panelId = title.dataset.panelTitleToggle;
+
+    const activate = () => {
+      const body = document.querySelector('[data-panel-body="' + panelId + '"]');
+      const nextCollapsed = body ? !body.hidden : false;
+      setG900PanelBodyCollapsed(panelId, nextCollapsed);
+    };
+
+    title.addEventListener("click", activate);
+    title.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      event.preventDefault();
+      activate();
+    });
+  });
+
+  document.querySelectorAll("[data-render-toggle]").forEach((input) => {
+    if (input.dataset.activitySwitchBound === "1") return;
+    input.dataset.activitySwitchBound = "1";
+    syncG900RenderSwitchLabel(input.id);
+    input.addEventListener("change", () => {
+      syncG900RenderSwitchLabel(input.id);
+    });
+  });
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", bindG900ActivityPanelControls);
+} else {
+  bindG900ActivityPanelControls();
+}

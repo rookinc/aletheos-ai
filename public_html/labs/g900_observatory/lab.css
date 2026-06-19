@@ -1775,54 +1775,6 @@ canvas.stage-perspective-locked {
 }
 
 
-/* Collapsible control panels */
-.panel-collapse-btn {
-  appearance: none;
-  border: 1px solid rgba(218, 194, 126, 0.34);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.035);
-  color: rgba(226, 238, 252, 0.78);
-  padding: 0.55rem 0.85rem;
-  font: inherit;
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.panel-collapse-btn:active {
-  transform: translateY(1px);
-}
-
-body.g900-graph-panel-collapsed #graph-panel-body {
-  display: none;
-}
-
-body.g900-state-panel-collapsed .g900-runtime-oscillator-console,
-body.g900-state-panel-collapsed .g900-origin-time-console,
-body.g900-state-panel-collapsed .g900-apparatus-profile-console,
-body.g900-state-panel-collapsed [data-state-console-card],
-body.g900-state-panel-collapsed [data-state-console-body] {
-  display: none !important;
-}
-
-.layer-panel.is-panel-collapsed,
-.state-console-section.is-panel-collapsed {
-  opacity: 0.96;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Stage-attached graph density toolbar */
 .stage-bottom-toolbar {
   display: grid;
@@ -1859,4 +1811,145 @@ body.g900-state-panel-collapsed [data-state-console-body] {
     grid-template-columns: 1fr 1fr;
     gap: 0.9rem;
   }
+}
+
+/* Generalized panel activity controls */
+.activity-panel-stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.activity-panel,
+.layer-panel,
+.stage-console-panel {
+  margin: 0 0 1rem;
+  padding: 1rem;
+  border: 1px solid rgba(223, 195, 123, 0.28);
+  border-radius: 1.1rem;
+  background:
+    linear-gradient(180deg, rgba(16, 31, 49, 0.72), rgba(8, 16, 28, 0.62));
+  box-shadow: inset 0 0 0 1px rgba(160, 185, 210, 0.08);
+}
+
+.activity-panel-head,
+.layer-panel-head,
+.stage-console-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 0.85rem;
+}
+
+.activity-panel-title {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  color: rgba(237, 246, 255, 0.94);
+  font: inherit;
+  font-size: 1.18rem;
+  line-height: 1;
+  font-weight: 650;
+  text-align: left;
+  cursor: pointer;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+}
+
+.activity-panel-title .activity-title-caret::before {
+  content: "▸";
+  display: inline-block;
+  color: rgba(218, 194, 126, 0.86);
+  font-size: 0.78em;
+  transform: translateY(-0.02em);
+}
+
+.activity-panel-title[aria-expanded="true"] .activity-title-caret::before {
+  content: "▾";
+}
+
+.activity-panel-title:focus-visible {
+  outline: 2px solid rgba(218, 194, 126, 0.72);
+  outline-offset: 0.24rem;
+  border-radius: 0.35rem;
+}
+
+.activity-render-switch,
+.layer-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 2.2rem;
+  min-width: 6.3rem;
+  justify-content: center;
+  padding: 0 0.78rem;
+  border: 1px solid rgba(223, 195, 123, 0.34);
+  border-radius: 999px;
+  color: rgba(237, 246, 255, 0.86);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.activity-render-switch input,
+.layer-switch input {
+  accent-color: var(--accent);
+}
+
+.activity-panel.is-render-active .activity-render-switch,
+.layer-panel.is-render-active .activity-render-switch {
+  border-color: rgba(118, 241, 176, 0.62);
+  box-shadow: 0 0 0 1px rgba(118, 241, 176, 0.12);
+}
+
+.activity-panel-body[hidden],
+.carrier-render-panel-body[hidden],
+.channel-scope-panel-body[hidden],
+.state-console-panel-body[hidden] {
+  display: none !important;
+}
+
+.activity-panel.is-panel-collapsed {
+  opacity: 0.98;
+}
+
+.activity-panel.is-panel-collapsed .activity-panel-head,
+.layer-panel.is-panel-collapsed .activity-panel-head {
+  margin-bottom: 0;
+}
+
+.stage-console-panel .stage-console-action {
+  white-space: nowrap;
+}
+
+@media (max-width: 520px) {
+  .activity-panel-head,
+  .layer-panel-head,
+  .stage-console-head {
+    gap: 0.7rem;
+  }
+
+  .activity-panel-title {
+    font-size: 1.02rem;
+  }
+
+  .activity-render-switch,
+  .layer-switch {
+    min-width: 5.3rem;
+    padding: 0 0.62rem;
+  }
+}
+
+
+.activity-panel-title span:last-child {
+  pointer-events: none;
+}
+
+.activity-title-caret {
+  pointer-events: none;
 }

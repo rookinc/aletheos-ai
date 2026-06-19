@@ -325,6 +325,40 @@
         </div>
       </div>
 
+
+      <div class="activity-panel layer-panel g900-information-flow-panel is-render-active" data-activity-panel="information-flow" data-layer-panel="information-flow" aria-label="Information flow controls">
+        <div class="activity-panel-head layer-panel-head">
+          <button class="activity-panel-title" type="button" data-panel-title-toggle="information-flow" aria-expanded="true" aria-controls="information-flow-panel-body">
+            <span class="activity-title-caret" aria-hidden="true"></span>
+            <span>Information Flow</span>
+          </button>
+
+          <label class="activity-render-switch layer-switch information-flow-toggle" for="information-flow-toggle" aria-label="Toggle simulated information flow">
+            <input id="information-flow-toggle" type="checkbox" data-render-toggle="information-flow" checked />
+            <span>ON</span>
+          </label>
+        </div>
+
+        <div id="information-flow-panel-body" class="activity-panel-body information-flow-panel-body" data-panel-body="information-flow">
+          <div class="g900-information-flow-readout">
+            <span>Mode</span>
+            <strong id="information-flow-mode-readout">Return-cell pulse</strong>
+          </div>
+
+          <div class="g900-information-flow-readout">
+            <span>Transport</span>
+            <strong id="information-flow-transport-readout">g900_return_cell_one_step_information_transport_007</strong>
+          </div>
+
+          <div class="g900-information-flow-readout">
+            <span>Pulse</span>
+            <strong id="information-flow-pulse-readout">waiting for body</strong>
+          </div>
+
+          <p id="information-flow-note" class="layer-panel-note">Simulated information pulse over the admitted finite transport. Body unchanged. Not physical transport.</p>
+        </div>
+      </div>
+
       <div class="activity-panel layer-panel" data-activity-panel="grounded-lens" data-layer-panel="grounded-lens" aria-label="A/F grounded lens controls">
         <div class="activity-panel-head layer-panel-head">
           <button class="activity-panel-title" type="button" data-panel-title-toggle="grounded-lens" aria-expanded="false" aria-controls="grounded-lens-panel-body">
@@ -421,7 +455,7 @@
     <p>2026 Centre of Recursive Inquiry. Aletheos.ai is the public research surface for CoRI and Thalean Action Theory.</p>
   </footer>
 
-  <script type="module" src="g900_grammar_stage_v0.js?v=return-cell-channel-preview-001"></script>
+  <script type="module" src="g900_grammar_stage_v0.js?v=information-motion-pulse-001"></script>
   <script type="module" src="kernel/g900_scaled_oscillation_ui.js?v=scaled-oscillation-001"></script>
   <script src="kernel/g900_runtime_oscillator_console.js?v=runtime-data-001" defer></script>
   <script src="kernel/g900_apparatus_profile_console.js?v=apparatus-data-001" defer></script>

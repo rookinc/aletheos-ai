@@ -2604,3 +2604,65 @@ canvas.stage-perspective-locked {
     letter-spacing: 0.045em;
   }
 }
+
+
+/* g900-information-motion-pulse-ui-001 */
+.g900-information-flow-panel {
+  border-color: rgba(104, 255, 205, 0.32) !important;
+  background:
+    linear-gradient(180deg, rgba(12, 45, 42, 0.58), rgba(8, 17, 30, 0.78)) !important;
+}
+
+.g900-information-flow-panel.is-render-active {
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.07),
+    0 0 1.6rem rgba(104, 255, 205, 0.10);
+}
+
+.information-flow-toggle span {
+  color: rgba(130, 255, 214, 0.96);
+}
+
+.information-flow-panel-body {
+  display: grid;
+  gap: 0.58rem;
+}
+
+.g900-information-flow-readout {
+  display: grid;
+  grid-template-columns: minmax(5.5rem, 0.42fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.52rem 0.62rem;
+  border: 1px solid rgba(104, 255, 205, 0.13);
+  border-radius: 0.76rem;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.g900-information-flow-readout span {
+  color: rgba(214, 232, 242, 0.62);
+  font-size: 0.64rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.g900-information-flow-readout strong {
+  color: rgba(183, 255, 231, 0.94);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.68rem;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.g900-information-flow-panel .layer-panel-note {
+  color: rgba(199, 236, 226, 0.78);
+  font-size: 0.7rem;
+  line-height: 1.34;
+}
+
+@media (max-width: 420px) {
+  .g900-information-flow-readout {
+    grid-template-columns: 1fr;
+    gap: 0.28rem;
+  }
+}

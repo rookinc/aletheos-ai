@@ -1,0 +1,112 @@
+{
+  "schema": "g900.transport_candidate_family_census_receipt",
+  "version": "0.1",
+  "receipt_id": "g900_transport_candidate_family_census_014",
+  "receipt_pass": true,
+  "verdict": "transport_candidate_family_census_014_recorded",
+  "status": "bounded_packet_template_has_multiple_exact_closes_not_transport_family",
+  "commit": "89a618d",
+  "artifact": "labs/g900_observatory/artifacts/json/g900_transport_candidate_family_census_014.v1.json",
+  "exact_csv": "labs/g900_observatory/artifacts/csv/g900_transport_candidate_family_census_014_exact_packet_closes.v1.csv",
+  "near_csv": "labs/g900_observatory/artifacts/csv/g900_transport_candidate_family_census_014_near_misses.v1.csv",
+  "note": "labs/g900_observatory/notes/g900_transport_candidate_family_census_014.md",
+  "counts": {
+    "candidate_count": 360360,
+    "exact_packet_close_count": 1320,
+    "near_miss_count": 19920,
+    "fail_count": 339120,
+    "ambiguous_count": 0,
+    "missing_edge_count": 1009680,
+    "exact_rows_written": 1320,
+    "near_rows_written": 5000,
+    "max_rows_written_per_csv": 5000
+  },
+  "known_return_cell": {
+    "recovered_without_preselection": true,
+    "candidate": {
+      "slots": [
+        3,
+        9,
+        12,
+        6,
+        13
+      ],
+      "role_pairs": [
+        "03_09",
+        "09_12",
+        "06_12",
+        "06_13"
+      ],
+      "q_edge_ids": [
+        "tuple_edge_611",
+        "tuple_edge_2425",
+        "tuple_edge_1472",
+        "tuple_edge_1475"
+      ],
+      "q_sources": [
+        "3:23",
+        "9:54",
+        "6:23",
+        "6:24"
+      ],
+      "q_targets": [
+        "9:23",
+        "12:24",
+        "12:23",
+        "13:24"
+      ]
+    },
+    "known_slots": [
+      3,
+      9,
+      12,
+      6,
+      13
+    ],
+    "known_q_edge_ids": [
+      "tuple_edge_611",
+      "tuple_edge_2425",
+      "tuple_edge_1472",
+      "tuple_edge_1475"
+    ]
+  },
+  "checks": {
+    "no_missing_inputs": true,
+    "body_vertices_900": true,
+    "body_edges_3600": true,
+    "slot_count_15": true,
+    "directed_reading_count_7200": true,
+    "scaffold013_passed": true,
+    "status012_passed": true,
+    "theorem011_ready": true,
+    "flux010_passed": true,
+    "checkpoint009_passed": true,
+    "candidate_count_positive": true,
+    "current_transport_count_still_1": true,
+    "current_permission_channel_count_still_1": true,
+    "no_admission_in_this_artifact": true,
+    "no_family_claim": true,
+    "no_uniqueness_claim": true
+  },
+  "failed_checks": [],
+  "boundary": {
+    "bounded_packet_stage_census_only": true,
+    "transport_family_claim": false,
+    "uniqueness_claim": false,
+    "new_permission_channel_admitted": false,
+    "new_information_transport_admitted": false,
+    "new_flux_witness_declared": false,
+    "physical_transport_claim": false,
+    "physical_flux_claim": false,
+    "energy_flow_claim": false,
+    "force_claim": false,
+    "physics_claim": false,
+    "unification_claim": false,
+    "body_mutation": false,
+    "adds_vertices": false,
+    "adds_edges": false,
+    "viewer_gate_open": false,
+    "marker_lighting": false
+  },
+  "recorded_at_utc": "2026-06-19T16:02:24Z"
+}

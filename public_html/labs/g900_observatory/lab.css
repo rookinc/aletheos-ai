@@ -1509,3 +1509,54 @@ h1 {
     font-size: 0.62rem;
   }
 }
+
+
+/* # orientation button. XYZ indicator plus Null Well readout. */
+.g900-orientation-toggle-active,
+.g900-null-well-toggle-active {
+  border-color: rgba(93, 238, 184, 0.92) !important;
+  box-shadow:
+    0 0 0 1px rgba(93, 238, 184, 0.22),
+    0 0 1rem rgba(93, 238, 184, 0.18);
+}
+
+.g900-null-well-orientation-active .g900-null-well-label {
+  border-color: rgba(93, 238, 184, 0.22);
+}
+
+#g900-null-well-orientation-instructions p {
+  margin-top: 0.5rem;
+}
+
+/* Null Well orientation repair. # controls XYZ orientation plus 066 socket. */
+.g900-null-well-view {
+  z-index: 15;
+  visibility: hidden;
+}
+
+.g900-null-well-orientation-active .g900-null-well-view {
+  visibility: visible;
+  opacity: 1;
+}
+
+.g900-orientation-toggle-active,
+.g900-null-well-toggle-active {
+  border-color: rgba(93, 238, 184, 0.92) !important;
+  box-shadow:
+    0 0 0 1px rgba(93, 238, 184, 0.22),
+    0 0 1rem rgba(93, 238, 184, 0.18);
+}
+
+/* Bind # orientation label to the Null Well readout state. */
+.stage-grid-toggle.g900-orientation-toggle-active,
+.stage-grid-toggle.g900-null-well-toggle-active {
+  border-color: rgba(93, 238, 184, 0.92) !important;
+  box-shadow:
+    0 0 0 1px rgba(93, 238, 184, 0.22),
+    0 0 1rem rgba(93, 238, 184, 0.18);
+}
+
+/* Null Well label without receipt number. */
+.g900-null-well-label {
+  padding-inline: 0.68rem;
+}

@@ -3,7 +3,7 @@
 
   const URL = "./data/g900_null_well.v0.1.json";
   const ID = "g900-null-well-view";
-  const VISIBLE_CLASS = "g900-null-well-visible";
+  const ACTIVE_CLASS = "g900-null-well-orientation-active";
 
   function ready(fn) {
     if (document.readyState === "loading") {
@@ -50,22 +50,47 @@
     return host;
   }
 
-  function findHashButton() {
-    const buttons = Array.from(document.querySelectorAll("button"));
-    return buttons.find((button) => button.textContent.trim() === "#") || null;
+  function findOrientationControl() {
+    const input = document.getElementById("stage-grid-toggle");
+    if (!input) return null;
+
+    return {
+      input,
+      shell: input.closest(".stage-grid-toggle") || input.closest("label") || input
+    };
   }
 
-  function setVisible(value) {
-    document.body.classList.toggle(VISIBLE_CLASS, value);
-    const button = findHashButton();
-    if (button) {
-      button.setAttribute("aria-pressed", value ? "true" : "false");
-      button.classList.toggle("g900-null-well-toggle-active", value);
+  function setActive(value) {
+    document.body.classList.toggle(ACTIVE_CLASS, value);
+
+    const control = findOrientationControl();
+    if (control) {
+      control.input.setAttribute("aria-pressed", value ? "true" : "false");
+      control.shell.classList.toggle("g900-orientation-toggle-active", value);
+      control.shell.classList.toggle("g900-null-well-toggle-active", value);
     }
   }
 
+  function bindOrientationControl() {
+    const control = findOrientationControl();
+    if (!control || control.input.dataset.g900NullWellBound === "true") return;
+
+    control.input.dataset.g900NullWellBound = "true";
+    control.shell.title = "Toggle # orientation: XYZ indicator plus Null Well readout";
+    control.shell.setAttribute("aria-label", "Toggle # orientation with Null Well readout");
+
+    control.input.addEventListener("change", function () {
+      setActive(control.input.checked === true);
+    });
+
+    setActive(control.input.checked === true);
+  }
+
   function renderWell(data) {
-    if (document.getElementById(ID)) return;
+    if (document.getElementById(ID)) {
+      setActive(true);
+      return;
+    }
 
     const host = findScopeHost();
     if (!host) {
@@ -76,7 +101,7 @@
     const well = document.createElement("aside");
     well.id = ID;
     well.className = "g900-null-well-view";
-    well.title = data.identity.keeper;
+    well.title = data.identity.keeper || "Null Well orientation readout";
     well.innerHTML = [
       '<div class="g900-null-well-socket" aria-hidden="true">',
       '  <span class="g900-null-well-ring ring-a"></span>',
@@ -84,24 +109,13 @@
       '  <span class="g900-null-well-core"></span>',
       '</div>',
       '<div class="g900-null-well-label">',
-      '  <strong>066</strong>',
       '  <span>union-side null</span>',
       '</div>'
     ].join("");
 
     host.appendChild(well);
 
-    const button = findHashButton();
-    if (button) {
-      button.title = "Toggle Null Well readout";
-      button.setAttribute("aria-label", "Toggle Null Well readout");
-      button.setAttribute("aria-pressed", "false");
-      button.addEventListener("click", function () {
-        setVisible(!document.body.classList.contains(VISIBLE_CLASS));
-      });
-    }
-
-    setVisible(data.render.default_visible === true);
+    bindOrientationControl();
   }
 
   async function boot() {

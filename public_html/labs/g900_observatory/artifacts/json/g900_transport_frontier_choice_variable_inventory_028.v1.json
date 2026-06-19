@@ -1,0 +1,177 @@
+{
+  "schema": "g900.transport_frontier_choice_variable_inventory",
+  "version": "0.3",
+  "artifact_id": "g900_transport_frontier_choice_variable_inventory_028",
+  "inventory_pass": true,
+  "verdict": "frontier_choice_variable_inventory_028_recorded",
+  "status": "frontier_choice_variables_inventoried_from_rich_018b_source_conservative_quarantine_admission_locked",
+  "commit": "c074f90",
+  "commit_full": "c074f90318436ad2c9cc5fe67d82748a63280d02",
+  "question": "What can the quarantined frontier choice apparatus see before any choice-function search?",
+  "answer": "This artifact inventories the richer 018b frontier rows and construction source field families without choosing or admitting.",
+  "candidate_source": {
+    "path": "labs/g900_observatory/artifacts/csv/g900_transport_deferred_gate_frontier_full_audit_018b_rows.v1.csv",
+    "type": "csv",
+    "candidate_count": 71,
+    "field_count": 31,
+    "source_reason": "018b contains the richer full-audit frontier rows, including replay and signature fields."
+  },
+  "counts": {
+    "frontier_gate_ready_candidate_count_expected": 71,
+    "candidate_rows_found": 71,
+    "candidate_field_count": 31,
+    "candidate_field_category_counts": {
+      "identity_index": 2,
+      "candidate_tuple": 5,
+      "role": 1,
+      "carrier_incidence": 2,
+      "result_or_label_guarded": 17,
+      "phase_transition": 1,
+      "support_package": 1,
+      "source_transport": 2
+    },
+    "candidate_field_usability_counts": {
+      "guarded_identity_index": 2,
+      "candidate_choice_variable": 12,
+      "guarded_result_or_label_like": 17
+    },
+    "structural_candidate_field_count": 12,
+    "guarded_field_count": 19,
+    "unknown_field_count": 0,
+    "fields_with_value_03_09_count": 2,
+    "fields_with_value_13_count": 7,
+    "source_file_inventory_count": 59,
+    "current_admitted_permission_channel_count": 1,
+    "current_admitted_information_transport_count": 1,
+    "source_header_category_counts": {
+      "candidate_tuple": 45,
+      "role": 29,
+      "source_transport": 94,
+      "carrier_incidence": 81,
+      "endpoint_limit": 17,
+      "root_anchor_boundary": 21,
+      "phase_transition": 29,
+      "support_package": 39,
+      "computed_signature": 51,
+      "result_or_label_guarded": 88,
+      "identity_index": 16,
+      "unknown": 144
+    }
+  },
+  "selector_value_fields": {
+    "fields_containing_03_09": [
+      "role_pairs",
+      "expected_role_pairs"
+    ],
+    "fields_containing_13": [
+      "frontier_index",
+      "A",
+      "D",
+      "E",
+      "relative_to_C_signature",
+      "relative_to_B_signature",
+      "slot_delta_signature"
+    ],
+    "caution": "Value visibility is not permission. These fields are inventory only."
+  },
+  "next_tests": [
+    {
+      "test_id": "028a",
+      "name": "field_quarantine_review",
+      "purpose": "Separate structural choice variables from identity/result/label-like fields before search.",
+      "ready": "true",
+      "admission_effect": "none"
+    },
+    {
+      "test_id": "028b",
+      "name": "selector_component_visibility_review",
+      "purpose": "Review fields containing 03_09 and 13 without treating those values as permission.",
+      "ready": "true",
+      "admission_effect": "none"
+    },
+    {
+      "test_id": "029",
+      "name": "frontier_choice_function_search",
+      "purpose": "Search structural and non-label-leaking variables for stable choice functions over the quarantined frontier.",
+      "ready": "true",
+      "admission_effect": "none"
+    },
+    {
+      "test_id": "030",
+      "name": "choice_function_stress_test",
+      "purpose": "Stress-test any proposed choice function against leakage, shuffling, and construction provenance.",
+      "ready": "after_029",
+      "admission_effect": "none"
+    }
+  ],
+  "interpretation": {
+    "main": "028 maps what the quarantined frontier can see. It does not choose from the frontier.",
+    "patch_reason": "The first 028 run used the thin 018a worklist. This patched 028 uses the richer 018b full-audit rows.",
+    "search_rule": "029 may search candidate_choice_variable fields only after excluding guarded result/permission/admission/gate/replay fields.",
+    "guardrail": "Before choice can become law, the apparatus must know what choice can see.",
+    "quarantine_patch": "expected, replay, ok, unique, gate, receipt, status, pass/fail, deferred, current, selector, and admission-like fields are quarantined before choice-function search."
+  },
+  "boundary": {
+    "inventory_only": true,
+    "choice_function_search_not_run": true,
+    "choice_hypothesis_not_created": true,
+    "admission_layer_locked": true,
+    "body_fixed": true,
+    "admitted_ledger_fixed": true,
+    "new_permission_channel_admitted": false,
+    "new_information_transport_admitted": false,
+    "new_flux_witness_declared": false,
+    "transport_family_claim": false,
+    "global_uniqueness_claim": false,
+    "physical_transport_claim": false,
+    "physical_flux_claim": false,
+    "energy_flow_claim": false,
+    "force_claim": false,
+    "physics_claim": false,
+    "unification_claim": false,
+    "body_mutation": false,
+    "adds_vertices": false,
+    "adds_edges": false,
+    "viewer_gate_open": false,
+    "marker_lighting": false
+  },
+  "checks": {
+    "no_missing_inputs": true,
+    "gate020_passed": true,
+    "gate020_frontier_count_71": true,
+    "checkpoint025_passed": true,
+    "theorem026_passed": true,
+    "protocol027_passed": true,
+    "rich_candidate_source_exists": true,
+    "candidate_frontier_row_count_71": true,
+    "candidate_field_count_31": true,
+    "structural_candidate_fields_present": true,
+    "source_file_inventory_nonempty": true,
+    "current_permission_channel_count_still_1": true,
+    "current_information_transport_count_still_1": true,
+    "body_fixed": true,
+    "admitted_ledger_fixed": true,
+    "discovery_inventory_only": true,
+    "choice_function_search_not_run": true,
+    "no_new_permission_channel_admitted": true,
+    "no_new_information_transport_admitted": true,
+    "no_transport_family_claim": true,
+    "no_global_uniqueness_claim": true,
+    "no_physics_claim": true,
+    "no_body_mutation": true
+  },
+  "failed_checks": [],
+  "inputs": {
+    "labs/g900_observatory/artifacts/json/g900_transport_deferred_candidate_gate_audit_020.v1.json": "9288ffbba7910420bbc15f39d6a0408c821243de6e016877a8477969908b2e1d",
+    "labs/g900_observatory/artifacts/json/g900_transport_permission_frontier_checkpoint_025.v1.json": "d1612db3104e714c0b9d009771ef6381ad9ffb7c0ee8439f69066ad5e8e5b2c3",
+    "labs/g900_observatory/artifacts/json/g900_transport_permission_frontier_theorem_note_026.v1.json": "2449b3f30df7164344f2336465480b4c6aa2ae099054cb3d145039904d5007b5",
+    "labs/g900_observatory/artifacts/json/g900_transport_frontier_choice_apparatus_protocol_027.v1.json": "db39b143df2acf2be2020aee8743edfcf206c27ccb8d3263bf7e6c23fd5aa92a",
+    "labs/g900_observatory/data/g900_admitted_permission_channels.v0.1.json": "94afd7ca8ffd171860b31d2c1ac2b55b21437fc69b8efc44c4a4bf27c0475964",
+    "labs/g900_observatory/data/g900_admitted_information_transports.v0.1.json": "2e1b4bc6e3ec072af260eb50af15ac8e21ba089be4b13039e5d101ca5941447f",
+    "labs/g900_observatory/artifacts/csv/g900_transport_deferred_gate_frontier_full_audit_018b_rows.v1.csv": "80a09ed33f1d239e8f10dc053a07339dde784c00a90f105cf2c1a867ccd8a4e9"
+  },
+  "missing_inputs": [],
+  "git_status_short_before": "?? labs/g900_observatory/artifacts/csv/g900_transport_frontier_choice_variable_inventory_028_candidate_fields.v1.csv\n?? labs/g900_observatory/artifacts/csv/g900_transport_frontier_choice_variable_inventory_028_next_tests.v1.csv\n?? labs/g900_observatory/artifacts/csv/g900_transport_frontier_choice_variable_inventory_028_source_files.v1.csv\n?? labs/g900_observatory/artifacts/json/g900_transport_frontier_choice_variable_inventory_028.v1.json\n?? labs/g900_observatory/notes/g900_transport_frontier_choice_variable_inventory_028.md\n?? labs/g900_observatory/receipts/g900_transport_frontier_choice_variable_inventory_028.v1.json",
+  "recorded_at_utc": "2026-06-19T17:31:27Z",
+  "keeper": "Before choice can become law, the apparatus must know what choice can see."
+}

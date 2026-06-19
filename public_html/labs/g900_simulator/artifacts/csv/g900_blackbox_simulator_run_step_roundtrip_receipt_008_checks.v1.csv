@@ -1,0 +1,18 @@
+check_id,check,expected,observed,passed,meaning
+008-C001,state_count,3,3,true,"Three viewer-state exports were loaded: running, step forward, step back."
+008-C002,schemas_ok,all g900.viewer.state,"['g900.viewer.state', 'g900.viewer.state', 'g900.viewer.state']",true,All witnesses are G900 viewer-state exports.
+008-C003,running_state_is_live,playing=true pitch_roll_enabled=true,playing=True pitch_roll_enabled=True,true,The first state records live running.
+008-C004,step_forward_paused,playing=false pitch_roll_enabled=false,playing=False pitch_roll_enabled=False,true,The step-forward state recovered manual control and paused animation.
+008-C005,step_back_paused,playing=false pitch_roll_enabled=false,playing=False pitch_roll_enabled=False,true,The step-back state stayed paused.
+008-C006,run_to_forward_delta_positive,> 0,1196,true,Running advanced the sheet before manual control was recovered.
+008-C007,step_back_decrements_one,-1,-1,true,Back-step decremented exactly one sheet from the paused forward state.
+008-C008,sample_rate_preserved,all 240,"[240, 240, 240]",true,All states preserve the 240 sheets/sec selected sample rate.
+008-C009,runtime_rate_matches,runtime oscillator rate equals timeline rate,"[(240, 240), (240, 240), (240, 240)]",true,Runtime oscillator rate matches timeline rate in all states.
+008-C010,body_fixed,900 vertices 3600 edges,"[(900, 3600), (900, 3600), (900, 3600)]",true,"G900 body counts remain fixed across run, forward, and back."
+008-C011,overlays_bounded,mutates_body=false physics_claim=false,"[(False, False), (False, False), (False, False)]",true,Overlay layer remains non-mutating and non-physical.
+008-C012,runtime_no_motion_authority,runtime_motion_authority=false,"[False, False, False]",true,"Runtime oscillator remains a timing witness, not motion authority."
+008-C013,timing_does_not_open_gate,opens_gates=false admits_channels=false lights_markers=false,"[(False, False, False), (False, False, False), (False, False, False)]",true,"Timing does not open gates, admit channels, or light markers."
+008-C014,channel_preview_not_admitted,admitted_now=false renders_admitted_channel=false,"[(False, False), (False, False), (False, False)]",true,Existing channel preview remains non-admitted.
+008-C015,lens_nonmutating,mutates_body=false adds_vertices=false adds_edges=false,"[(False, False, False), (False, False, False), (False, False, False)]",true,A/F lens remains non-mutating across the sequence.
+008-C016,orientation_bounded,physics_claim=false force_claim=false,"[(False, False), (False, False), (False, False)]",true,Orientation layer remains bounded.
+008-C017,prior_receipts_passed,"005 true, 006 true, 007 true",005=True 006=True 007=True,true,"Run-step receipt builds on the passed timing boundary, UI audit, and first null tick receipt."

@@ -416,9 +416,19 @@ function readInformationFlowStylusAlpha() {
   return readRange01("information-flow-stylus-alpha-slider", 0.96);
 }
 
+function readInformationFlowTracerSmear() {
+  return Math.round(readRange01("information-flow-tracer-smear-slider", 0.50) * 100);
+}
+
+function readInformationFlowTracerSpacing() {
+  const smear = readInformationFlowTracerSmear();
+  return 0.30 - 0.0024 * smear;
+}
+
 function syncInformationFlowAlphaReadouts() {
   syncLayerRangeOutput("information-flow-edges-alpha-slider");
   syncLayerRangeOutput("information-flow-tracers-alpha-slider");
+  syncLayerRangeOutput("information-flow-tracer-smear-slider");
   syncLayerRangeOutput("information-flow-stylus-alpha-slider");
 }
 
@@ -500,6 +510,8 @@ function readG900RenderContractsLedger() {
       quartz_driven: true,
       sheet_dependent: true,
       alpha: Number(readInformationFlowTracersAlpha().toFixed(3)),
+      tracer_smear: readInformationFlowTracerSmear(),
+      tracer_spacing: Number(readInformationFlowTracerSpacing().toFixed(4)),
       physical_claim_candidate: "finite_memory_trace_candidate",
       claim_status: candidateOnly,
       mutates_body: false,
@@ -624,6 +636,8 @@ function syncInformationFlowState() {
   informationFlowState.edge_ids = edgeIds;
   informationFlowState.edges_alpha = Number(readInformationFlowEdgesAlpha().toFixed(3));
   informationFlowState.tracers_alpha = Number(readInformationFlowTracersAlpha().toFixed(3));
+  informationFlowState.tracer_smear = readInformationFlowTracerSmear();
+  informationFlowState.tracer_spacing = Number(readInformationFlowTracerSpacing().toFixed(4));
   informationFlowState.stylus_alpha = Number(readInformationFlowStylusAlpha().toFixed(3));
   informationFlowState.mutates_body = false;
   informationFlowState.physics_claim = false;
@@ -644,6 +658,8 @@ function syncInformationFlowState() {
     trail_count: informationFlowState.trail_count,
     edges_alpha: informationFlowState.edges_alpha,
     tracers_alpha: informationFlowState.tracers_alpha,
+    tracer_smear: informationFlowState.tracer_smear,
+    tracer_spacing: informationFlowState.tracer_spacing,
     stylus_alpha: informationFlowState.stylus_alpha,
     simulated_information_motion: true,
     uses_admitted_information_transport: Boolean(transport),
@@ -1010,6 +1026,7 @@ function drawInformationFlowPulse(ctx, w, h, dpr, state, body) {
   const tracerAlpha = readInformationFlowTracersAlpha();
   const stylusAlpha = readInformationFlowStylusAlpha();
   const tracerScale = tracerAlpha / 0.58;
+  const tracerSpacing = readInformationFlowTracerSpacing();
 
   segments.forEach((segment) => {
     drawLine(ctx, segment.a, segment.b, [102, 255, 202], edgeAlpha, Math.max(2.2 * dpr, Math.min(w, h) * 0.0042));
@@ -1017,15 +1034,17 @@ function drawInformationFlowPulse(ctx, w, h, dpr, state, body) {
   });
 
   for (let i = INFORMATION_FLOW_TRAIL_COUNT - 1; i >= 0; i -= 1) {
-    const trailPhase = phase - i * 0.18;
+    const trailPhase = phase - i * tracerSpacing;
     const wrapped = ((trailPhase % segments.length) + segments.length) % segments.length;
     const segmentIndex = Math.floor(wrapped);
     const t = wrapped - segmentIndex;
     const segment = segments[segmentIndex];
     if (!segment) continue;
 
-    const alpha = Math.min(0.98, (0.10 + (i / INFORMATION_FLOW_TRAIL_COUNT) * 0.48) * tracerScale);
-    const radius = Math.max(1.8 * dpr, Math.min(w, h) * (0.0034 + 0.00038 * i));
+    const memoryAge = i / INFORMATION_FLOW_TRAIL_COUNT;
+    const memoryNearness = 1 - memoryAge;
+    const alpha = Math.min(0.98, (0.10 + memoryNearness * 0.48) * tracerScale);
+    const radius = Math.max(1.8 * dpr, Math.min(w, h) * (0.0034 + 0.00038 * memoryNearness * INFORMATION_FLOW_TRAIL_COUNT));
     drawInformationPulseOnSegment(ctx, segment.a, segment.b, t, alpha, radius, dpr);
   }
 
@@ -2013,6 +2032,7 @@ function boot() {
   bindLayerControl("information-flow-toggle", syncInformationFlowState);
   bindLayerControl("information-flow-edges-alpha-slider", syncInformationFlowState);
   bindLayerControl("information-flow-tracers-alpha-slider", syncInformationFlowState);
+  bindLayerControl("information-flow-tracer-smear-slider", syncInformationFlowState);
   bindLayerControl("information-flow-stylus-alpha-slider", syncInformationFlowState);
   syncInformationFlowState();
   bindVisibleStateJsonDownload();

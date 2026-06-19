@@ -343,6 +343,51 @@
         </div>
       </div>
 
+      <div class="activity-panel layer-panel g900-timing-panel" data-activity-panel="timing" data-layer-panel="timing" aria-label="Timing controls">
+        <div class="activity-panel-head layer-panel-head g900-timing-panel-head">
+          <button class="activity-panel-title" type="button" data-panel-title-toggle="timing" aria-expanded="true" aria-controls="g900-timing-panel-body">
+            <span class="activity-title-caret" aria-hidden="true"></span>
+            <span>Timing</span>
+          </button>
+
+          <div id="g900-timing-sample-rate-pill" class="g900-timing-sample-rate-pill" aria-label="Current sample rate">333.00 sheets/sec</div>
+        </div>
+
+        <div id="g900-timing-panel-body" class="activity-panel-body g900-timing-panel-body" data-panel-body="timing">
+          <div class="g900-timing-row g900-timing-path-row">
+            <span class="g900-timing-label">Quartz path</span>
+            <span class="g900-timing-path" id="g900-timing-quartz-path">Runtime &gt; Quartz &gt; Sheets/sec</span>
+          </div>
+
+          <div class="g900-timing-row g900-timing-status-row">
+            <span class="g900-timing-label">Animation</span>
+            <span id="g900-timing-animation-status" class="g900-timing-status">Paused</span>
+          </div>
+
+          <div class="g900-timing-rate-box" aria-label="Timing sample rate controls">
+            <div class="g900-timing-rate-head">
+              <span>Sample rate</span>
+              <strong id="g900-timing-sample-rate-readout">333.00</strong>
+            </div>
+            <input id="g900-timing-sheet-rate-slider" class="g900-timing-rate-slider" type="range" min="0.25" max="960" step="0.25" value="333" aria-label="Timing sample rate" />
+            <div class="g900-timing-preset-row" role="group" aria-label="Sample rate presets">
+              <button class="g900-timing-preset" type="button" data-g900-rate-preset="120">120</button>
+              <button class="g900-timing-preset" type="button" data-g900-rate-preset="240">240</button>
+              <button class="g900-timing-preset" type="button" data-g900-rate-preset="480">480</button>
+              <button class="g900-timing-preset" type="button" data-g900-rate-preset="960">960</button>
+            </div>
+          </div>
+
+          <div class="g900-timing-stepper" aria-label="Timing stepper controls">
+            <button id="timing-pause-btn" class="g900-timing-step-btn" type="button">Pause</button>
+            <button id="step-back-btn" class="g900-timing-step-btn" type="button" aria-label="Step back one sheet">&lt; Step</button>
+            <button id="step-forward-btn" class="g900-timing-step-btn" type="button" aria-label="Step forward one sheet">Step &gt;</button>
+          </div>
+
+          <p class="g900-timing-boundary-note">Stepping pauses animation first. Quartz keeps seconds; grammar earns sheets.</p>
+        </div>
+      </div>
+
                         <div class="activity-panel state-object-panel" data-activity-panel="state" aria-label="State object output">
         <div class="activity-panel-head state-object-head">
           <div class="activity-panel-title activity-panel-title-static">

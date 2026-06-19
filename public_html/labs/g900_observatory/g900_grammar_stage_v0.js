@@ -6,6 +6,7 @@ import { readG900ScaledOscillationKernel, getG900ScaledOscillationSummary } from
 import { readG900GroundedLensRegistry, getG900GroundedLensSummary } from "./kernel/g900_grounded_lenses.js";
 const TAU = Math.PI * 2;
 const DEFAULT_SHEET_RATE = 333;
+const TIMING_SAMPLE_RATE_PRESETS = [120, 240, 480, 960];
 const PITCH_ROLL_SHEETS_PER_TURN = 900;
 const MIN_ZOOM = 0.28;
 const MAX_ZOOM = 64.0;
@@ -173,7 +174,7 @@ function drawBackground(ctx, w, h) {
 }
 
 function getSheetRate() {
-  const slider = document.getElementById("sheet-rate-slider");
+  const slider = document.getElementById("sheet-rate-slider") || document.getElementById("g900-timing-sheet-rate-slider");
   if (!slider) return DEFAULT_SHEET_RATE;
 
   const value = Number(slider.value);
@@ -181,17 +182,56 @@ function getSheetRate() {
 }
 
 function syncSheetRateReadout() {
-  const readout = document.getElementById("sheet-rate-readout");
-  if (!readout) return;
+  const rate = getSheetRate();
+  const formatted = rate.toFixed(2);
 
-  readout.textContent = getSheetRate().toFixed(2);
+  const readout = document.getElementById("sheet-rate-readout");
+  if (readout) readout.textContent = formatted;
+
+  const timingReadout = document.getElementById("g900-timing-sample-rate-readout");
+  if (timingReadout) timingReadout.textContent = formatted;
+
+  const timingPill = document.getElementById("g900-timing-sample-rate-pill");
+  if (timingPill) timingPill.textContent = formatted + " sheets/sec";
+
+  syncTimingPresetButtons(rate);
+}
+
+function syncTimingPresetButtons(rate) {
+  document.querySelectorAll("[data-g900-rate-preset]").forEach((button) => {
+    const preset = Number(button.dataset.g900RatePreset);
+    button.classList.toggle("is-active", Number.isFinite(preset) && Math.abs(preset - rate) < 0.01);
+  });
+}
+
+function syncTimingPanelState(state) {
+  const status = document.getElementById("g900-timing-animation-status");
+  if (status && state) {
+    status.textContent = state.playing ? "Running" : "Paused";
+    status.classList.toggle("is-running", Boolean(state.playing));
+  }
+}
+
+function setG900SheetRate(value) {
+  const next = clamp(Number(value), 0.25, 960);
+  const normalized = Number.isFinite(next) ? next : DEFAULT_SHEET_RATE;
+  const valueText = String(normalized);
+  const mainSlider = document.getElementById("sheet-rate-slider");
+  const timingSlider = document.getElementById("g900-timing-sheet-rate-slider");
+
+  if (mainSlider) mainSlider.value = valueText;
+  if (timingSlider) timingSlider.value = valueText;
+
+  localStorage.setItem("g900.blankSheetRate", valueText);
+  syncSheetRateReadout();
 }
 
 function syncSheetCounter(state) {
   const readout = document.getElementById("sheet-counter-readout");
-  if (!readout) return;
+  if (readout) readout.textContent = "Sheet " + Math.floor(state.sheet);
 
-  readout.textContent = "Sheet " + Math.floor(state.sheet);
+  const timingSheet = document.getElementById("g900-timing-sheet-readout");
+  if (timingSheet) timingSheet.textContent = "Sheet " + Math.floor(state.sheet);
 }
 
 function syncPlayButton(state) {
@@ -199,6 +239,7 @@ function syncPlayButton(state) {
   if (playBtn) {
     playBtn.textContent = state.playing ? "PAUSE" : "PLAY";
   }
+  syncTimingPanelState(state);
 }
 
 function rotatePoint(point, state) {
@@ -1370,14 +1411,33 @@ function ensureSheetControls() {
   slider.max = "960";
   slider.step = "0.25";
 
-  const savedRate = localStorage.getItem("g900.blankSheetRate");
-  slider.value = savedRate !== null ? savedRate : String(DEFAULT_SHEET_RATE);
+  const timingSlider = document.getElementById("g900-timing-sheet-rate-slider");
+  if (timingSlider) {
+    timingSlider.min = "0.25";
+    timingSlider.max = "960";
+    timingSlider.step = "0.25";
+  }
 
-  syncSheetRateReadout();
+  const savedRate = localStorage.getItem("g900.blankSheetRate");
+  setG900SheetRate(savedRate !== null ? savedRate : DEFAULT_SHEET_RATE);
 
   slider.addEventListener("input", () => {
-    localStorage.setItem("g900.blankSheetRate", String(getSheetRate()));
-    syncSheetRateReadout();
+    setG900SheetRate(slider.value);
+  });
+
+  if (timingSlider && timingSlider.dataset.bound !== "1") {
+    timingSlider.dataset.bound = "1";
+    timingSlider.addEventListener("input", () => {
+      setG900SheetRate(timingSlider.value);
+    });
+  }
+
+  document.querySelectorAll("[data-g900-rate-preset]").forEach((button) => {
+    if (button.dataset.bound === "1") return;
+    button.dataset.bound = "1";
+    button.addEventListener("click", () => {
+      setG900SheetRate(button.dataset.g900RatePreset);
+    });
   });
 }
 
@@ -1426,11 +1486,21 @@ function boot() {
   };
 
   window.__g900BlankStage = state;
+  syncTimingPanelState(state);
 
   const playBtn = document.getElementById("play-toggle");
   if (playBtn) {
     playBtn.addEventListener("click", () => {
       state.playing = !state.playing;
+      syncPlayButton(state);
+      syncG900ViewerStateConsole(state);
+    });
+  }
+
+  const timingPauseBtn = document.getElementById("timing-pause-btn");
+  if (timingPauseBtn) {
+    timingPauseBtn.addEventListener("click", () => {
+      state.playing = false;
       syncPlayButton(state);
       syncG900ViewerStateConsole(state);
     });
@@ -1443,6 +1513,7 @@ function boot() {
       state.sheet = Math.max(0, state.sheet - 1);
       syncPlayButton(state);
       syncSheetCounter(state);
+      syncG900ViewerStateConsole(state);
     });
   }
 
@@ -1453,6 +1524,7 @@ function boot() {
       state.sheet += 1;
       syncPlayButton(state);
       syncSheetCounter(state);
+      syncG900ViewerStateConsole(state);
     });
   }
 
@@ -1657,7 +1729,7 @@ function bindG900ActivityPanelControls() {
   ensureStageGraphToolbar();
   applyG900PanelDefaultMigration();
 
-  ["carriers", "channels", "grounded-lens"].forEach((panelId) => {
+  ["carriers", "channels", "grounded-lens", "timing"].forEach((panelId) => {
     setG900PanelBodyCollapsed(panelId, initialG900PanelCollapsed(panelId));
   });
 

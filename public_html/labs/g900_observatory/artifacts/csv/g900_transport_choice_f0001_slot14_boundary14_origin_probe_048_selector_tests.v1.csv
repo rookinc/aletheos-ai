@@ -1,0 +1,11 @@
+selector_name,selected_count,true_positive_count,false_positive_count,false_negative_count,true_negative_count,exact_for_047_surface,selector_status,promoted_to_source_law,promoted_to_admission
+slot=14,60,60,0,0,840,true,exact_chamber_handle_not_law,false,false
+boundary_entry_count=14,60,60,0,0,840,true,exact_boundary_count_handle_not_law,false,false
+inner_tie_count=4,254,60,194,0,646,false,superset_inner_tie_not_generator,false,false
+anchor_spoke_count=8,349,60,289,0,551,false,boundary_spoke_handle_not_law,false,false
+outer_return_count=2,60,60,0,0,840,true,boundary_return_handle_not_law,false,false
+inner_tie=4 AND anchor_spoke=8 AND outer_return=2,60,60,0,0,840,true,incidence_split_handle_not_law,false,false
+boundary values 10:1x4 6:1x8 2:1x2,60,60,0,0,840,true,value_split_handle_not_law,false,false
+class/value profile inner=10:1x4 spoke=6:1x8 outer=2:1x2,60,60,0,0,840,true,class_value_split_exact_not_law,false,false
+slot=14 AND boundary_entry_count=14,60,60,0,0,840,true,chamber_boundary_count_exact_not_law,false,false
+slot=14 AND incidence split 4+8+2,60,60,0,0,840,true,chamber_incidence_split_exact_not_law,false,false

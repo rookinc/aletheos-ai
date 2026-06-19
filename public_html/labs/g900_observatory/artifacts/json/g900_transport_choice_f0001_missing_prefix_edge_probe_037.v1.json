@@ -1,0 +1,207 @@
+{
+  "schema": "g900.transport_choice_f0001_missing_prefix_edge_probe",
+  "version": "0.1",
+  "artifact_id": "g900_transport_choice_f0001_missing_prefix_edge_probe_037",
+  "probe_pass": true,
+  "verdict": "transport_choice_f0001_missing_prefix_edge_probe_037_recorded",
+  "status": "f0001_missing_prefix_edge_classified_no_derivation_no_promotion",
+  "commit": "84582e8",
+  "commit_full": "84582e83505a349f01373d024449e1a25b305853",
+  "question": "Why is the terminal prefix pair B C / 04 05 excluded from F0001?",
+  "answer": "037 classifies the omission: in F0001 the missing pair is the prefix terminal role edge and that edge is source-visible. The probe still does not derive why the edge is excluded, so no source law or admission is promoted.",
+  "f0001": {
+    "path_variables": [
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "path_values": [
+      5,
+      4,
+      3,
+      9
+    ],
+    "role_tokens": [
+      "03_04",
+      "03_09",
+      "05_04"
+    ],
+    "tuple_tokens": [
+      "tuple_edge_609",
+      "tuple_edge_614",
+      "tuple_edge_921"
+    ],
+    "missing_variable_pair": [
+      "B",
+      "C"
+    ],
+    "missing_value_pair": [
+      4,
+      5
+    ],
+    "missing_role_token": "05_04",
+    "omission_class": "missing_prefix_terminal_edge",
+    "missing_pair_is_role_edge": true,
+    "missing_pair_is_terminal_edge": true,
+    "missing_pair_is_prefix_pair": true,
+    "source_hit_counts": {
+      "construction_surface": 16,
+      "other_surface": 5,
+      "choice_surface_excluded": 12,
+      "prior_transport_surface": 10
+    }
+  },
+  "counts": {
+    "repeated_family_count_035": 87,
+    "path_match_count": 65,
+    "exact_one_missing_count": 18,
+    "prefix_terminal_missing_count": 10,
+    "omission_class_counts": {
+      "missing_prefix_terminal_edge": 10,
+      "not_exact_one_missing": 69,
+      "missing_suffix_terminal_edge": 7,
+      "missing_non_role_edge": 1
+    },
+    "source_hit_count": 43,
+    "source_hit_class_counts": {
+      "construction_surface": 16,
+      "other_surface": 5,
+      "choice_surface_excluded": 12,
+      "prior_transport_surface": 10
+    },
+    "candidate_local_omission_rule_count": 1,
+    "candidate_global_prefix_rule_exact": false,
+    "promoted_source_law_count": 0,
+    "promoted_family_count": 0,
+    "promoted_admission_count": 0,
+    "current_admitted_permission_channel_count": 1,
+    "current_admitted_information_transport_count": 1
+  },
+  "pattern_summary": [
+    {
+      "pattern_id": "037-P1",
+      "pattern_name": "f0001_missing_prefix_terminal_edge",
+      "hit_count": 1,
+      "tested_count": 1,
+      "exact": "true",
+      "promotion_status": "local_omission_handle_not_source_law"
+    },
+    {
+      "pattern_id": "037-P2",
+      "pattern_name": "repeated_family_path_match",
+      "hit_count": 65,
+      "tested_count": 87,
+      "exact": "false",
+      "promotion_status": "descriptive_pattern_not_source_law"
+    },
+    {
+      "pattern_id": "037-P3",
+      "pattern_name": "exact_one_missing_subset",
+      "hit_count": 18,
+      "tested_count": 87,
+      "exact": "false",
+      "promotion_status": "descriptive_pattern_not_source_law"
+    },
+    {
+      "pattern_id": "037-P4",
+      "pattern_name": "missing_prefix_terminal_edge_across_repeated_families",
+      "hit_count": 10,
+      "tested_count": 87,
+      "exact": "false",
+      "promotion_status": "not_global_source_law"
+    },
+    {
+      "pattern_id": "037-P5",
+      "pattern_name": "forbidden_prefix_edge_is_source_visible",
+      "hit_count": 43,
+      "tested_count": 652,
+      "exact": "false",
+      "promotion_status": "visibility_not_derivation"
+    },
+    {
+      "pattern_id": "037-P6",
+      "pattern_name": "no_admission_promotion",
+      "hit_count": 1,
+      "tested_count": 1,
+      "exact": "true",
+      "promotion_status": "no_promotion"
+    }
+  ],
+  "interpretation": {
+    "main": "The F0001 omission is not absence of the edge. The forbidden prefix pair is a visible terminal role edge.",
+    "local_result": "F0001 omits the first terminal edge of the path-ordered grammar.",
+    "global_result": "The prefix-terminal omission does not hold as a global exact rule across all repeated families in this probe.",
+    "remaining_gap": "No upstream construction rule explains why the prefix terminal edge is forbidden.",
+    "guardrail": "Classification is not derivation. Source visibility is not permission."
+  },
+  "boundary": {
+    "focused_missing_prefix_edge_probe_only": true,
+    "classification_not_derivation": true,
+    "source_visibility_not_law": true,
+    "missing_prefix_edge_not_explained": true,
+    "source_rule_candidate_not_promoted": true,
+    "family_not_permission": true,
+    "family_not_transport": true,
+    "admission_layer_locked": true,
+    "body_fixed": true,
+    "admitted_ledger_fixed": true,
+    "new_permission_channel_admitted": false,
+    "new_information_transport_admitted": false,
+    "new_flux_witness_declared": false,
+    "transport_family_claim": false,
+    "global_uniqueness_claim": false,
+    "physical_transport_claim": false,
+    "physical_flux_claim": false,
+    "energy_flow_claim": false,
+    "force_claim": false,
+    "physics_claim": false,
+    "unification_claim": false,
+    "body_mutation": false,
+    "adds_vertices": false,
+    "adds_edges": false,
+    "viewer_gate_open": false,
+    "marker_lighting": false
+  },
+  "checks": {
+    "no_missing_inputs": true,
+    "probe036_passed": true,
+    "probe035_passed": true,
+    "census034_passed": true,
+    "search033_passed": true,
+    "theorem032_passed": true,
+    "f0001_analysis_present": true,
+    "f0001_missing_prefix_terminal_edge": true,
+    "f0001_forbidden_edge_visible_somewhere": true,
+    "family_omission_rows_written": true,
+    "pattern_summary_rows_written": true,
+    "candidate_global_prefix_rule_not_claimed": true,
+    "promoted_source_law_count_zero": true,
+    "promoted_admission_count_zero": true,
+    "current_permission_channel_count_still_1": true,
+    "current_information_transport_count_still_1": true,
+    "no_new_permission_channel_admitted": true,
+    "no_new_information_transport_admitted": true,
+    "no_transport_family_claim": true,
+    "no_physics_claim": true,
+    "no_body_mutation": true
+  },
+  "failed_checks": [],
+  "inputs": {
+    "labs/g900_observatory/artifacts/json/g900_transport_choice_f0001_source_rule_probe_036.v1.json": "977511a706f7db239e0fe067cc1d7b9df41adc7d14c53a74c986917fb819337e",
+    "labs/g900_observatory/artifacts/csv/g900_transport_choice_f0001_source_rule_probe_036_members.v1.csv": "55028c88c54bc40fb402c199ae11317a5451bb22ef735ca333bf0611a1573628",
+    "labs/g900_observatory/artifacts/csv/g900_transport_choice_f0001_source_rule_probe_036_candidate_rules.v1.csv": "6fb22d779d742e3abfd8f32e9af17dc397badb733788ef0384a6929b8acfe90b",
+    "labs/g900_observatory/artifacts/json/g900_transport_choice_family_source_law_probe_035.v1.json": "00e136d414b7623418c157c4088c3410574610015a7452b8b14cc5893997a4a5",
+    "labs/g900_observatory/artifacts/csv/g900_transport_choice_family_source_law_probe_035_families.v1.csv": "e28f45dca45b806268b83b0ebaa8c7a83bfc81d86bde1092b9cefb70ede71776",
+    "labs/g900_observatory/artifacts/csv/g900_transport_choice_family_source_law_probe_035_members.v1.csv": "6347e20d5e811a0285f04a646cbb9d748645d9cee7829119a3eb8c61d674bb9c",
+    "labs/g900_observatory/artifacts/json/g900_transport_choice_construction_context_family_census_034.v1.json": "21bdeae210d260e1f05accdcf9751a321a5f5a440e7b980a3b172aa4dc1f75f1",
+    "labs/g900_observatory/artifacts/json/g900_transport_choice_constructive_provenance_search_033.v1.json": "799863716433971761b00106c30130462d9e13762277b19a751c8d5de87a147e",
+    "labs/g900_observatory/artifacts/json/g900_transport_choice_apparatus_theorem_note_032.v1.json": "5a50aa989ee6ac148fbb1997ece28bdd4582c6b48409bee808490d5ae7635db6",
+    "labs/g900_observatory/data/g900_admitted_permission_channels.v0.1.json": "94afd7ca8ffd171860b31d2c1ac2b55b21437fc69b8efc44c4a4bf27c0475964",
+    "labs/g900_observatory/data/g900_admitted_information_transports.v0.1.json": "2e1b4bc6e3ec072af260eb50af15ac8e21ba089be4b13039e5d101ca5941447f"
+  },
+  "missing_inputs": [],
+  "git_status_short_before": "",
+  "recorded_at_utc": "2026-06-19T18:26:56Z",
+  "keeper": "The rule is not the path. The rule is the path plus the forbidden first step."
+}

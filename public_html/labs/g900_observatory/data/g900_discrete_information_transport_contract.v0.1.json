@@ -1,0 +1,167 @@
+{
+  "schema": "g900.discrete_information_transport_contract",
+  "version": "0.1",
+  "contract_id": "g900_discrete_information_transport_contract_001",
+  "status": "contract_declared_no_transport_admitted",
+  "framing": {
+    "model": "DAT-style finite information transport",
+    "scope": "G900 Scope finite witness body",
+    "not_physical_transport": true,
+    "not_energy_flow": true,
+    "not_force": true,
+    "not_physics_claim": true,
+    "keeper": "G900 transport is DAT-style action accounting inside a finite witness body: one admissible step, one information update, one receipt."
+  },
+  "dat_import": {
+    "import_kind": "formal_accounting_grammar_only",
+    "imported_terms": [
+      "history",
+      "successor step",
+      "one-way accumulation",
+      "global calibration",
+      "information conservation",
+      "receipt"
+    ],
+    "excluded_imports": [
+      "Planck-scale physical tick identification",
+      "physical channel capacity claim",
+      "energy transport claim",
+      "force claim",
+      "spacetime or Lorentz derivation claim"
+    ],
+    "finite_translation": {
+      "DAT_tick": "one lawful successor step in a history",
+      "G900_channel_step": "one admitted finite information transition across an admitted permission relation",
+      "DAT_history": "h : D subset N -> Q",
+      "G900_transport_history": "h : D subset N -> Q_G900"
+    }
+  },
+  "definitions": {
+    "g900_information_state": {
+      "symbol": "q in Q_G900",
+      "meaning": "a finite, receiptable state made from body vertices, carrier readings, channel metadata, packet fields, and receipt fields"
+    },
+    "packet": {
+      "symbol": "P",
+      "meaning": "the finite information object proposed to survive or lawfully transform across a channel"
+    },
+    "admitted_channel": {
+      "symbol": "C",
+      "meaning": "a permission relation that has passed the channel admission contract; not a body edge"
+    },
+    "successor_rule": {
+      "symbol": "R",
+      "meaning": "a finite rule that maps source packet P to target packet Q on the admitted domain"
+    },
+    "transport_history": {
+      "symbol": "h : D subset N -> Q_G900",
+      "meaning": "a one-way sequence of receipted finite information states"
+    }
+  },
+  "axioms": [
+    {
+      "id": "GDIT-A0",
+      "name": "Ledger calibration",
+      "statement": "All transport histories are compared inside one G900 receipt ledger."
+    },
+    {
+      "id": "GDIT-A1",
+      "name": "Uniform successor discreteness",
+      "statement": "A transport history advances by one admitted finite information step at a time."
+    },
+    {
+      "id": "GDIT-A2",
+      "name": "Receipt irreversibility",
+      "statement": "Receipts accumulate monotonically; a later state cannot erase that an earlier successor step occurred."
+    },
+    {
+      "id": "GDIT-A3",
+      "name": "Reading covariance",
+      "statement": "The same transport history may be re-described through carrier, lens, or viewer readings without changing the underlying receipt ledger."
+    },
+    {
+      "id": "GDIT-A4",
+      "name": "Lawful transformation",
+      "statement": "Every successor step must preserve a named invariant or record an exact transformation rule."
+    },
+    {
+      "id": "GDIT-A5",
+      "name": "No body mutation",
+      "statement": "Transport metadata does not add, remove, or move any G900 vertex or edge."
+    }
+  ],
+  "admission_requirements": [
+    "source packet P is explicitly named before target evaluation",
+    "target packet Q is unique on the admitted domain",
+    "successor rule R is finite and deterministic on the admitted domain",
+    "at least one information invariant is preserved or one exact transformation is receipted",
+    "source carriers and target carriers are admitted readings",
+    "channel C is admitted as a permission relation before any transport claim",
+    "receipt ledger records the transition",
+    "G900 body remains unchanged"
+  ],
+  "claim_ladder": [
+    {
+      "level": 0,
+      "name": "body edge",
+      "transport_claim": false
+    },
+    {
+      "level": 1,
+      "name": "carrier reading",
+      "transport_claim": false
+    },
+    {
+      "level": 2,
+      "name": "channel preview",
+      "transport_claim": false
+    },
+    {
+      "level": 3,
+      "name": "admitted permission channel",
+      "transport_claim": false
+    },
+    {
+      "level": 4,
+      "name": "finite information transport",
+      "transport_claim": "bounded_information_only"
+    },
+    {
+      "level": 5,
+      "name": "physical transport",
+      "transport_claim": "out_of_scope"
+    }
+  ],
+  "current_return_cell_candidate": {
+    "candidate_id": "return_cell_03_09_09_12_06_12_06_13",
+    "candidate_receipt": "g900_return_cell_channel_1bed7a7cba65a7be",
+    "current_status": "preview_only",
+    "admitted_channel": false,
+    "transport_claim": false,
+    "next_question": "What is the conserved packet?"
+  },
+  "boundary": {
+    "channel_count": 0,
+    "admitted_channel_count": 0,
+    "admits_channels_now": false,
+    "renders_admitted_channel": false,
+    "information_transport_admitted": false,
+    "physical_transport_claim": false,
+    "mutates_body": false,
+    "adds_vertices": false,
+    "adds_edges": false,
+    "marker_lighting": false,
+    "gate_open": false,
+    "force_claim": false,
+    "physics_claim": false
+  },
+  "body": {
+    "name": "g900",
+    "vertex_count": 900,
+    "edge_count": 3600,
+    "body_sha256": "6a2cb6b9892a78d4559ec61cf946b0021962cc6819311234b8bf14102b3b7f63"
+  },
+  "created_from_commit": "f067ecf",
+  "created_from_commit_full": "f067ecf138d7f97ac43ca3f8ff9ea05546d86c5b",
+  "recorded_at_utc": "2026-06-19T13:13:41Z"
+}

@@ -1,0 +1,213 @@
+{
+  "schema": "g900.return_cell_bounded_information_transport_admission",
+  "version": "0.1",
+  "artifact_id": "g900_return_cell_bounded_information_transport_admission_007",
+  "admission_pass": true,
+  "verdict": "return_cell_bounded_information_transport_admitted",
+  "status": "bounded_finite_information_transport_admission_only",
+  "commit": "ade6ee8",
+  "question": "Can this supported one-step history be admitted as bounded finite information transport?",
+  "answer": "The supported one-step history is admitted as bounded finite information transport.",
+  "admitted_transport": {
+    "id": "g900_return_cell_one_step_information_transport_007",
+    "label": "Return-cell one-step finite information transport",
+    "kind": "bounded_one_step_information_transport",
+    "status": "admitted_bounded_finite_information_transport",
+    "claim_ladder_level": 4,
+    "permission_channel_id": "g900_return_cell_permission_channel_005",
+    "history_id": "g900_return_cell_one_step_information_history_candidate_006",
+    "history_domain": [
+      0,
+      1
+    ],
+    "h0": "return_cell_role_anchor_source_packet_003_P",
+    "successor_rule_R": "return_cell_carrier_incidence_successor_rule_003_R",
+    "h1": "return_cell_body_edge_target_packet_003_Q",
+    "conserved_observable": "role_anchor_signature",
+    "signature_preserved_exactly": true,
+    "role_sequence_preserved": true,
+    "anchor_count_preserved": true,
+    "transport_statement": "The admitted permission channel carries a bounded one-step finite information update from P to Q by R while conserving role_anchor_signature.",
+    "boundary_statement": "This is not physical transport, not energy flow, not force, and not a physics or unification claim.",
+    "body_statement": "The G900 body is unchanged; transport is admitted as receipt metadata over the fixed body.",
+    "boundary": {
+      "information_transport_admitted": true,
+      "bounded_one_step_only": true,
+      "physical_transport_claim": false,
+      "energy_flow_claim": false,
+      "force_claim": false,
+      "physics_claim": false,
+      "unification_claim": false,
+      "mutates_body": false,
+      "adds_vertices": false,
+      "adds_edges": false,
+      "marker_lighting": false,
+      "viewer_registry_wired": false,
+      "viewer_gate_open": false
+    }
+  },
+  "registry": "labs/g900_observatory/data/g900_admitted_information_transports.v0.1.json",
+  "obligations": [
+    {
+      "id": "TRANSPORT-01",
+      "name": "support audit passed",
+      "requirement": "Support audit 006 passed.",
+      "evidence": "labs/g900_observatory/artifacts/json/g900_return_cell_one_step_information_transport_support_audit_006.v1.json",
+      "pass": true
+    },
+    {
+      "id": "TRANSPORT-02",
+      "name": "permission channel admitted",
+      "requirement": "Permission channel 005 is admitted.",
+      "evidence": "labs/g900_observatory/data/g900_admitted_permission_channels.v0.1.json",
+      "pass": true
+    },
+    {
+      "id": "TRANSPORT-03",
+      "name": "permission admission passed",
+      "requirement": "Admission artifact 005 passed.",
+      "evidence": "labs/g900_observatory/artifacts/json/g900_return_cell_permission_channel_admission_005.v1.json",
+      "pass": true
+    },
+    {
+      "id": "TRANSPORT-04",
+      "name": "history candidate named",
+      "requirement": "History candidate 006 has expected identity.",
+      "evidence": "support006.history_candidate.history_id",
+      "pass": true
+    },
+    {
+      "id": "TRANSPORT-05",
+      "name": "history is one step",
+      "requirement": "History domain is exactly [0,1].",
+      "evidence": "support006.history_candidate.domain",
+      "pass": true
+    },
+    {
+      "id": "TRANSPORT-06",
+      "name": "h0 is P",
+      "requirement": "h(0) is source packet P.",
+      "evidence": "history.h0.state_id",
+      "pass": true
+    },
+    {
+      "id": "TRANSPORT-07",
+      "name": "h1 is Q",
+      "requirement": "h(1) is target packet Q.",
+      "evidence": "history.h1.state_id",
+      "pass": true
+    },
+    {
+      "id": "TRANSPORT-08",
+      "name": "successor is R",
+      "requirement": "The successor step uses rule R.",
+      "evidence": "history.successor.rule_id",
+      "pass": true
+    },
+    {
+      "id": "TRANSPORT-09",
+      "name": "successor bound to permission channel",
+      "requirement": "The successor is behind admitted permission channel 005.",
+      "evidence": "history.successor.permission_channel_id",
+      "pass": true
+    },
+    {
+      "id": "TRANSPORT-10",
+      "name": "conserved observable named",
+      "requirement": "Conserved observable is role_anchor_signature.",
+      "evidence": "history.conservation.conserved_observable",
+      "pass": true
+    },
+    {
+      "id": "TRANSPORT-11",
+      "name": "signature preserved",
+      "requirement": "Role-anchor signature is preserved exactly.",
+      "evidence": "history.conservation.signature_preserved_exactly",
+      "pass": true
+    },
+    {
+      "id": "TRANSPORT-12",
+      "name": "role sequence preserved",
+      "requirement": "Role sequence is preserved.",
+      "evidence": "history.conservation.role_sequence_preserved",
+      "pass": true
+    },
+    {
+      "id": "TRANSPORT-13",
+      "name": "anchor count preserved",
+      "requirement": "Anchor counts are preserved.",
+      "evidence": "history.conservation.anchor_count_preserved",
+      "pass": true
+    },
+    {
+      "id": "TRANSPORT-14",
+      "name": "support had not admitted transport",
+      "requirement": "Support audit 006 was only support, not admission.",
+      "evidence": "support006.boundary.information_transport_admitted",
+      "pass": true
+    },
+    {
+      "id": "TRANSPORT-15",
+      "name": "body unchanged",
+      "requirement": "G900 body remains 900 vertices and 3600 edges.",
+      "evidence": "labs/g900_observatory/data/g900_static_body.v1.json",
+      "pass": true
+    },
+    {
+      "id": "TRANSPORT-16",
+      "name": "no body mutation",
+      "requirement": "This admission does not mutate body, add vertices, or add edges.",
+      "evidence": "admission boundary",
+      "pass": true
+    },
+    {
+      "id": "TRANSPORT-17",
+      "name": "bounded finite only",
+      "requirement": "This admits only one-step bounded finite information transport.",
+      "evidence": "admission scope",
+      "pass": true
+    },
+    {
+      "id": "TRANSPORT-18",
+      "name": "no physical claim",
+      "requirement": "This makes no physical transport, energy flow, force, physics, or unification claim.",
+      "evidence": "admission boundary",
+      "pass": true
+    }
+  ],
+  "failed_obligation_ids": [],
+  "evidence_stack": [
+    "labs/g900_observatory/data/g900_discrete_information_transport_contract.v0.1.json",
+    "labs/g900_observatory/data/g900_admitted_permission_channels.v0.1.json",
+    "labs/g900_observatory/artifacts/json/g900_return_cell_permission_channel_admission_005.v1.json",
+    "labs/g900_observatory/artifacts/json/g900_return_cell_packet_successor_rule_scout_003.v1.json",
+    "labs/g900_observatory/artifacts/json/g900_return_cell_one_step_information_transport_support_audit_006.v1.json"
+  ],
+  "boundary": {
+    "information_transport_admitted": true,
+    "admitted_information_transport_count": 1,
+    "bounded_one_step_only": true,
+    "physical_transport_claim": false,
+    "energy_flow_claim": false,
+    "force_claim": false,
+    "physics_claim": false,
+    "unification_claim": false,
+    "mutates_body": false,
+    "adds_vertices": false,
+    "adds_edges": false,
+    "marker_lighting": false,
+    "viewer_registry_wired": false,
+    "viewer_gate_open": false
+  },
+  "inputs": {
+    "labs/g900_observatory/data/g900_static_body.v1.json": "6a2cb6b9892a78d4559ec61cf946b0021962cc6819311234b8bf14102b3b7f63",
+    "labs/g900_observatory/data/g900_discrete_information_transport_contract.v0.1.json": "7528492c4c58d6d756383d839343c055fc87a9dfeb2fbf5b2749015d9724bf13",
+    "labs/g900_observatory/data/g900_admitted_permission_channels.v0.1.json": "94afd7ca8ffd171860b31d2c1ac2b55b21437fc69b8efc44c4a4bf27c0475964",
+    "labs/g900_observatory/artifacts/json/g900_return_cell_permission_channel_admission_005.v1.json": "8baab342ce2c46a2d266436607818beaaf11130546d1bf6e387f63adf3398c28",
+    "labs/g900_observatory/artifacts/json/g900_return_cell_packet_successor_rule_scout_003.v1.json": "79657be34ec24d63e02aa949aa7f21250cfbec0109280e05dfcdca72b1d1334e",
+    "labs/g900_observatory/artifacts/json/g900_return_cell_one_step_information_transport_support_audit_006.v1.json": "7e85bdbab9bfffb25e0aa80c405086eedf00b4216ec58b41aeae45ec781047ef"
+  },
+  "git_status_short_before": "",
+  "recorded_at_utc": "2026-06-19T13:44:41Z",
+  "keeper": "This is transport only in the DAT-style finite information sense: one bounded successor step, one conserved observable, one receipt."
+}

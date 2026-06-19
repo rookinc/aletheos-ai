@@ -1,0 +1,64 @@
+{
+  "schema": "g900.admitted_information_transports",
+  "version": "0.1",
+  "status": "information_transport_registry_declared_data_only",
+  "admitted_information_transport_count": 1,
+  "physical_transport_claim_count": 0,
+  "viewer_wired": false,
+  "transports": [
+    {
+      "id": "g900_return_cell_one_step_information_transport_007",
+      "label": "Return-cell one-step finite information transport",
+      "kind": "bounded_one_step_information_transport",
+      "status": "admitted_bounded_finite_information_transport",
+      "claim_ladder_level": 4,
+      "permission_channel_id": "g900_return_cell_permission_channel_005",
+      "history_id": "g900_return_cell_one_step_information_history_candidate_006",
+      "history_domain": [
+        0,
+        1
+      ],
+      "h0": "return_cell_role_anchor_source_packet_003_P",
+      "successor_rule_R": "return_cell_carrier_incidence_successor_rule_003_R",
+      "h1": "return_cell_body_edge_target_packet_003_Q",
+      "conserved_observable": "role_anchor_signature",
+      "signature_preserved_exactly": true,
+      "role_sequence_preserved": true,
+      "anchor_count_preserved": true,
+      "transport_statement": "The admitted permission channel carries a bounded one-step finite information update from P to Q by R while conserving role_anchor_signature.",
+      "boundary_statement": "This is not physical transport, not energy flow, not force, and not a physics or unification claim.",
+      "body_statement": "The G900 body is unchanged; transport is admitted as receipt metadata over the fixed body.",
+      "boundary": {
+        "information_transport_admitted": true,
+        "bounded_one_step_only": true,
+        "physical_transport_claim": false,
+        "energy_flow_claim": false,
+        "force_claim": false,
+        "physics_claim": false,
+        "unification_claim": false,
+        "mutates_body": false,
+        "adds_vertices": false,
+        "adds_edges": false,
+        "marker_lighting": false,
+        "viewer_registry_wired": false,
+        "viewer_gate_open": false
+      }
+    }
+  ],
+  "boundary": {
+    "data_only": true,
+    "bounded_finite_information_only": true,
+    "one_step_only": true,
+    "physical_transport_claim": false,
+    "energy_flow_claim": false,
+    "force_claim": false,
+    "physics_claim": false,
+    "unification_claim": false,
+    "mutates_body": false,
+    "adds_vertices": false,
+    "adds_edges": false,
+    "viewer_wired": false
+  },
+  "created_from_commit": "ade6ee8",
+  "recorded_at_utc": "2026-06-19T13:44:41Z"
+}

@@ -1,0 +1,19 @@
+id,name,requirement,evidence,pass
+TRANSPORT-01,support audit passed,Support audit 006 passed.,labs/g900_observatory/artifacts/json/g900_return_cell_one_step_information_transport_support_audit_006.v1.json,True
+TRANSPORT-02,permission channel admitted,Permission channel 005 is admitted.,labs/g900_observatory/data/g900_admitted_permission_channels.v0.1.json,True
+TRANSPORT-03,permission admission passed,Admission artifact 005 passed.,labs/g900_observatory/artifacts/json/g900_return_cell_permission_channel_admission_005.v1.json,True
+TRANSPORT-04,history candidate named,History candidate 006 has expected identity.,support006.history_candidate.history_id,True
+TRANSPORT-05,history is one step,"History domain is exactly [0,1].",support006.history_candidate.domain,True
+TRANSPORT-06,h0 is P,h(0) is source packet P.,history.h0.state_id,True
+TRANSPORT-07,h1 is Q,h(1) is target packet Q.,history.h1.state_id,True
+TRANSPORT-08,successor is R,The successor step uses rule R.,history.successor.rule_id,True
+TRANSPORT-09,successor bound to permission channel,The successor is behind admitted permission channel 005.,history.successor.permission_channel_id,True
+TRANSPORT-10,conserved observable named,Conserved observable is role_anchor_signature.,history.conservation.conserved_observable,True
+TRANSPORT-11,signature preserved,Role-anchor signature is preserved exactly.,history.conservation.signature_preserved_exactly,True
+TRANSPORT-12,role sequence preserved,Role sequence is preserved.,history.conservation.role_sequence_preserved,True
+TRANSPORT-13,anchor count preserved,Anchor counts are preserved.,history.conservation.anchor_count_preserved,True
+TRANSPORT-14,support had not admitted transport,"Support audit 006 was only support, not admission.",support006.boundary.information_transport_admitted,True
+TRANSPORT-15,body unchanged,G900 body remains 900 vertices and 3600 edges.,labs/g900_observatory/data/g900_static_body.v1.json,True
+TRANSPORT-16,no body mutation,"This admission does not mutate body, add vertices, or add edges.",admission boundary,True
+TRANSPORT-17,bounded finite only,This admits only one-step bounded finite information transport.,admission scope,True
+TRANSPORT-18,no physical claim,"This makes no physical transport, energy flow, force, physics, or unification claim.",admission boundary,True

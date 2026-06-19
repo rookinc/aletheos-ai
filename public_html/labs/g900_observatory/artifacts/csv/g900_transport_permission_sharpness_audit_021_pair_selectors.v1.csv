@@ -1,0 +1,40 @@
+feature_a,feature_b,seed_value_a,seed_value_b,bucket_count,negative_bucket_count,exact_selects_seed,frontier_candidate_indices_in_bucket
+role.A,role.D,3,6,1,0,true,87185
+role.A,role.DC,3,06_12,1,0,true,87185
+role.A,role.DE,3,06_13,1,0,true,87185
+role.AB,role.D,03_09,6,1,0,true,87185
+role.AB,role.DC,03_09,06_12,1,0,true,87185
+role.AB,role.DE,03_09,06_13,1,0,true,87185
+role.AB,role.E,03_09,13,1,0,true,87185
+role.D,support.slot_set,6,3 6 9 12 13,1,0,true,87185
+role.DC,support.slot_set,06_12,3 6 9 12 13,1,0,true,87185
+role.DE,support.slot_set,06_13,3 6 9 12 13,1,0,true,87185
+role.E,support.slot_set,13,3 6 9 12 13,1,0,true,87185
+role.A,role.E,3,13,2,1,false,77748 87185
+role.A,support.slot_set,3,3 6 9 12 13,2,1,false,87185 87236
+role.AB,support.slot_set,03_09,3 6 9 12 13,2,1,false,87185 87236
+role.B,role.D,9,6,2,1,false,87185 111209
+role.B,role.DC,9,06_12,2,1,false,87185 111209
+role.B,role.DE,9,06_13,2,1,false,87185 111209
+role.B,role.E,9,13,2,1,false,87185 111209
+role.B,support.slot_set,9,3 6 9 12 13,2,1,false,87185 87236
+role.BC_repair_pair,role.D,09_12,6,2,1,false,87185 111209
+role.BC_repair_pair,role.DC,09_12,06_12,2,1,false,87185 111209
+role.BC_repair_pair,role.DE,09_12,06_13,2,1,false,87185 111209
+role.BC_repair_pair,role.E,09_12,13,2,1,false,87185 111209
+role.BC_repair_pair,support.slot_set,09_12,3 6 9 12 13,2,1,false,87185 87236
+role.C,support.slot_set,12,3 6 9 12 13,2,1,false,87185 87236
+role.A,role.BC_repair_pair,3,09_12,4,3,false,87185 87236 87238 87241
+role.A,role.C,3,12,4,3,false,87185 87236 87238 87241
+role.AB,role.BC_repair_pair,03_09,09_12,4,3,false,87185 87236 87238 87241
+role.AB,role.C,03_09,12,4,3,false,87185 87236 87238 87241
+role.C,role.D,12,6,4,3,false,87185 111209 186724 258796
+role.C,role.DC,12,06_12,4,3,false,87185 111209 186724 258796
+role.C,role.DE,12,06_13,4,3,false,87185 111209 186724 258796
+role.C,role.E,12,13,4,3,false,87185 111209 186724 258796
+role.D,role.DC,6,06_12,4,3,false,87185 111209 186724 258796
+role.D,role.DE,6,06_13,4,3,false,87185 111209 186724 258796
+role.D,role.E,6,13,4,3,false,87185 111209 186724 258796
+role.DC,role.DE,06_12,06_13,4,3,false,87185 111209 186724 258796
+role.DC,role.E,06_12,13,4,3,false,87185 111209 186724 258796
+role.DE,role.E,06_13,13,4,3,false,87185 111209 186724 258796

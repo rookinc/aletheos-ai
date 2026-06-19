@@ -1,0 +1,8 @@
+selector_name,selected_count,target_count,true_positive_count,false_positive_count,false_negative_count,true_negative_count,exact,selector_status,promoted_to_source_law,promoted_to_admission
+slot14 self plus slot14 incident global_row_count >= 180,4,4,4,0,0,11,true,exact_slot14_frequency_handle_not_law,false,false
+slot14 self plus slot14 incident slot_presence_count >= 3,4,4,4,0,0,11,true,exact_slot14_presence_handle_not_law,false,false
+slot14 self plus top3 incident carriers by global_row_count,4,4,4,0,0,11,true,exact_slot14_rank_handle_not_law,false,false
+slot14 adjacency only,4,4,3,1,1,10,false,includes_return_hub_not_exact,false,false
+slot14 closed neighborhood,5,4,4,1,0,10,false,includes_return_hub_not_exact,false,false
+nodes with source_role_050=anchor quarantined,4,4,4,0,0,11,true,exact_quarantined_from_050_not_source,false,false
+nodes with neighbor_count_to_target_anchors >= 2 quarantined,4,4,3,1,1,10,false,uses_target_anchor_set_not_source,false,false

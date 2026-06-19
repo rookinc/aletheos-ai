@@ -1000,6 +1000,146 @@ function drawAFGroundedLensOverlay(ctx, w, h, dpr, state, body) {
 // panel-specific IDs may remain, but panel structure and styling must use
 // .layer-panel[data-layer-panel="name"] instead of per-panel CSS classes.
 
+const G900_CAMERA_VIEW_CACHE_KEY = "g900.cameraView";
+let g900CameraViewCacheBound = false;
+let g900CameraViewCacheRestored = false;
+
+function readG900CachedCameraViewKey() {
+  return G900_CAMERA_VIEW_CACHE_KEY;
+}
+
+function readG900StageCameraState() {
+  const state = window.__g900BlankStage;
+  return state && typeof state === "object" ? state : null;
+}
+
+function restoreG900CachedCameraViewState() {
+  const state = readG900StageCameraState();
+  if (!state || g900CameraViewCacheRestored || !window.localStorage) return false;
+
+  const raw = window.localStorage.getItem(readG900CachedCameraViewKey());
+  g900CameraViewCacheRestored = true;
+  if (!raw) return false;
+
+  let saved = null;
+  try {
+    saved = JSON.parse(raw);
+  } catch (error) {
+    return false;
+  }
+
+  ["yaw", "pitch", "roll", "zoom"].forEach(function (key) {
+    const value = Number(saved[key]);
+    if (Number.isFinite(value)) {
+      state[key] = value;
+    }
+  });
+
+  return true;
+}
+
+function writeG900CachedCameraViewState() {
+  const state = readG900StageCameraState();
+  if (!state || !window.localStorage) return;
+
+  const payload = {
+    yaw: Number(Number(state.yaw || 0).toFixed(6)),
+    pitch: Number(Number(state.pitch || 0).toFixed(6)),
+    roll: Number(Number(state.roll || 0).toFixed(6)),
+    zoom: Number(Number(state.zoom || 1).toFixed(6)),
+    cached_at: new Date().toISOString()
+  };
+
+  window.localStorage.setItem(readG900CachedCameraViewKey(), JSON.stringify(payload));
+}
+
+function bindG900CachedCameraViewState() {
+  if (g900CameraViewCacheBound) return;
+  g900CameraViewCacheBound = true;
+
+  restoreG900CachedCameraViewState();
+
+  window.addEventListener("beforeunload", writeG900CachedCameraViewState);
+  document.addEventListener("visibilitychange", function () {
+    if (document.visibilityState === "hidden") {
+      writeG900CachedCameraViewState();
+    }
+  });
+
+  window.setInterval(function () {
+    restoreG900CachedCameraViewState();
+    writeG900CachedCameraViewState();
+  }, 750);
+}
+
+function readG900CachedUiSettingKey(id) {
+  return "g900.ui." + String(id || "").trim();
+}
+
+function readG900CacheableUiControls() {
+  return Array.from(document.querySelectorAll("input[id], select[id], textarea[id]"))
+    .filter(function (el) {
+      if (!el || !el.id) return false;
+      if (el.type === "file") return false;
+      return true;
+    });
+}
+
+function restoreG900CachedUiSettings() {
+  readG900CacheableUiControls().forEach(function (el) {
+    const key = readG900CachedUiSettingKey(el.id);
+    const saved = window.localStorage ? window.localStorage.getItem(key) : null;
+    if (saved === null) return;
+
+    if (el.type === "checkbox" || el.type === "radio") {
+      el.checked = saved === "1";
+      return;
+    }
+
+    if (el.tagName === "SELECT") {
+      const hasOption = Array.from(el.options || []).some(function (option) {
+        return option.value === saved;
+      });
+      if (hasOption) el.value = saved;
+      return;
+    }
+
+    el.value = saved;
+  });
+}
+
+function writeG900CachedUiSetting(el) {
+  if (!el || !el.id || !window.localStorage) return;
+
+  const key = readG900CachedUiSettingKey(el.id);
+  if (el.type === "checkbox" || el.type === "radio") {
+    window.localStorage.setItem(key, el.checked ? "1" : "0");
+    return;
+  }
+
+  window.localStorage.setItem(key, String(el.value));
+}
+
+function bindG900CachedUiSettings() {
+  readG900CacheableUiControls().forEach(function (el) {
+    if (el.dataset.g900UiCached === "1") return;
+
+    el.dataset.g900UiCached = "1";
+    el.addEventListener("input", function () {
+      writeG900CachedUiSetting(el);
+    });
+    el.addEventListener("change", function () {
+      writeG900CachedUiSetting(el);
+    });
+  });
+}
+
+function syncG900CachedUiSettings() {
+  restoreG900CachedUiSettings();
+  bindG900CachedUiSettings();
+  bindG900CachedCameraViewState();
+}
+
 function syncLayerRangeOutput(sliderId) {
   const slider = document.getElementById(sliderId);
   if (!slider) return;
@@ -2159,6 +2299,7 @@ function boot() {
   if (!canvas) return;
 
   ensureSheetControls();
+  syncG900CachedUiSettings();
   bindGraphLayerPanel();
   bindCarrierRenderPanel();
   bindForceCandidateStubPanel();

@@ -365,7 +365,6 @@ function buildG900ViewerStateObject(state) {
   return {
     schema: "g900.viewer.state",
     version: "0.1",
-    export_ready: false,
     stage: "g900_full_body_observatory",
     kernel: {
       version: kernelVersion
@@ -396,6 +395,9 @@ function buildG900ViewerStateObject(state) {
         enabled: Boolean(activeStaticBody) && readChecked("graph-layer-toggle", true),
         body_version: bodyVersion,
         vertices_opacity: readRange01("graph-vertices-slider", 1),
+        vertices_size_multiplier: Number((graphVertexSizeMultiplier(readRange01("graph-vertices-slider", 1)) * graphVertexZoomMultiplier(window.__g900BlankStage)).toFixed(3)),
+        vertices_slider_size_multiplier: Number(graphVertexSizeMultiplier(readRange01("graph-vertices-slider", 1)).toFixed(3)),
+        vertices_zoom_multiplier: Number(graphVertexZoomMultiplier(window.__g900BlankStage).toFixed(3)),
         edges_opacity: readRange01("graph-edges-slider", 1)
       }
     },
@@ -460,6 +462,16 @@ function graphLayerPercent(id, fallback) {
   if (!Number.isFinite(value)) return fallback;
 
   return Math.max(0, Math.min(1, value / 100));
+}
+
+function graphVertexSizeMultiplier(vertexAlpha) {
+  const growth = clamp((vertexAlpha - 0.5) / 0.5, 0, 1);
+  return 1 + growth;
+}
+
+function graphVertexZoomMultiplier(state) {
+  const zoom = state && Number.isFinite(Number(state.zoom)) ? Number(state.zoom) : 1;
+  return Math.max(0.25, zoom);
 }
 
 function syncGraphLayerReadouts() {
@@ -998,11 +1010,14 @@ function drawStaticBody(ctx, w, h, dpr, state, body) {
 
   // Base vertex pass. Vertices stay white and are controlled by the graph layer.
   if (graphVisible) {
+    const baseVertexRadius = Math.max(0.7, Math.min(w, h) * 0.0014);
+    const vertexRadius = baseVertexRadius * graphVertexSizeMultiplier(vertexAlpha) * graphVertexZoomMultiplier(state);
+
     ctx.fillStyle = "rgba(237, 246, 255, " + vertexAlpha + ")";
 
     for (const point of byId.values()) {
       ctx.beginPath();
-      ctx.arc(point.x, point.y, Math.max(0.7, Math.min(w, h) * 0.0014), 0, TAU);
+      ctx.arc(point.x, point.y, vertexRadius, 0, TAU);
       ctx.fill();
     }
   }

@@ -3,6 +3,7 @@ import { readG900OverlayRegistry, getG900OverlaySummary } from "./kernel/g900_ov
 import { readG900CarrierRegistry, getG900CarrierSummary } from "./kernel/g900_carriers.js";
 import { readG900ChannelRegistry, getG900ChannelSummary } from "./kernel/g900_channels.js";
 import { readG900ScaledOscillationKernel, getG900ScaledOscillationSummary } from "./kernel/g900_scaled_oscillation.js";
+import { readG900GroundedLensRegistry, getG900GroundedLensSummary } from "./kernel/g900_grounded_lenses.js";
 const TAU = Math.PI * 2;
 const DEFAULT_SHEET_RATE = 333;
 const PITCH_ROLL_SHEETS_PER_TURN = 900;
@@ -62,6 +63,7 @@ let activeOverlayRegistry = null;
 let activeCarrierRegistry = null;
 let activeChannelRegistry = null;
 let activeScaledOscillationKernel = null;
+let activeGroundedLensRegistry = null;
 const CARRIER_RENDER_MODE_IDS = ["slot_internal", "slot_pair_boundary", "six_nine_neighborhood", "nearest_receipt_branch"];
 
 function normalizeCarrierRenderModes(value) {
@@ -412,6 +414,7 @@ function buildG900ViewerStateObject(state) {
     overlays: activeOverlayRegistry ? getG900OverlaySummary(activeOverlayRegistry) : null,
     carriers: activeCarrierRegistry ? getG900CarrierSummary(activeCarrierRegistry) : null,
     channels: activeChannelRegistry ? getG900ChannelSummary(activeChannelRegistry) : null,
+    grounded_lens: activeGroundedLensRegistry ? getG900GroundedLensSummary(activeGroundedLensRegistry) : null,
     carrier_render: readWindowSummary("__g900CarrierRenderSummary"),
     channel_scope: readWindowSummary("__g900ChannelScopeSummary"),
     timing_kernel: {
@@ -537,6 +540,12 @@ async function loadStaticBodyReadout() {
     } catch (error) {
       console.warn("G900 scaled oscillation kernel unavailable", error);
       activeScaledOscillationKernel = null;
+    }
+    try {
+      activeGroundedLensRegistry = await readG900GroundedLensRegistry();
+    } catch (error) {
+      console.warn("G900 grounded lens registry unavailable", error);
+      activeGroundedLensRegistry = null;
     }
     document.documentElement.dataset.g900StaticBody = activeStaticBody.version;
 

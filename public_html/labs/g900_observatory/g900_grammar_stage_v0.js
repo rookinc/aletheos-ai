@@ -197,7 +197,7 @@ function syncSheetCounter(state) {
 function syncPlayButton(state) {
   const playBtn = document.getElementById("play-toggle");
   if (playBtn) {
-    playBtn.textContent = state.playing ? "II" : "▶";
+    playBtn.textContent = state.playing ? "PAUSE" : "PLAY";
   }
 }
 
@@ -287,74 +287,121 @@ function drawStageGrid(ctx, w, h, dpr, state) {
   ctx.restore();
 }
 
-function drawAFGroundedLensOverlay(ctx, w, h, dpr) {
+function drawAFGroundedLensOverlay(ctx, w, h, dpr, state, body) {
   if (readActiveGroundedLensId() !== "a_grounded_f_return_lens") return;
+  if (!body || !Array.isArray(body.vertices)) return;
 
-  const ax = w * 0.22;
-  const ay = h * 0.48;
-  const fx = w * 0.79;
-  const fy = h * 0.42;
+  const anchorIds = ["12:23", "12:24"];
+  const anchorVertices = anchorIds.map((id) => body.vertices.find((vertex) => vertex && vertex.id === id));
+  if (!anchorVertices[0] || !anchorVertices[1]) return;
 
-  const c1x = w * 0.72;
-  const c1y = h * 0.20;
-  const c2x = w * 0.30;
-  const c2y = h * 0.73;
+  const a = projectPoint(anchorVertices[0].xyz, state, w, h, dpr);
+  const f = projectPoint(anchorVertices[1].xyz, state, w, h, dpr);
+  const center = projectPoint([0, 0, 0], state, w, h, dpr);
 
-  const rA = Math.max(5 * dpr, Math.min(w, h) * 0.018);
-  const rF = Math.max(4 * dpr, Math.min(w, h) * 0.014);
+  const dx = f.x - a.x;
+  const dy = f.y - a.y;
+  const dist = Math.max(1, Math.hypot(dx, dy));
+  const tx = dx / dist;
+  const ty = dy / dist;
+
+  const mid = {
+    x: (a.x + f.x) * 0.5,
+    y: (a.y + f.y) * 0.5,
+  };
+
+  let ox = mid.x - center.x;
+  let oy = mid.y - center.y;
+  let od = Math.hypot(ox, oy);
+
+  if (od < 1) {
+    ox = -ty;
+    oy = tx;
+    od = 1;
+  }
+
+  ox /= od;
+  oy /= od;
+
+  const longLift = Math.max(125 * dpr, Math.min(w, h) * 0.34);
+  const tangentSpread = Math.max(55 * dpr, Math.min(w, h) * 0.16);
+
+  const c1 = {
+    x: f.x + tx * tangentSpread + ox * longLift,
+    y: f.y + ty * tangentSpread + oy * longLift,
+  };
+
+  const c2 = {
+    x: a.x - tx * tangentSpread + ox * longLift,
+    y: a.y - ty * tangentSpread + oy * longLift,
+  };
+
+  const labelLift = Math.max(34 * dpr, Math.min(w, h) * 0.075);
+
+  const aLabel = {
+    x: a.x + ox * labelLift - tx * 24 * dpr,
+    y: a.y + oy * labelLift - ty * 24 * dpr,
+  };
+
+  const fLabel = {
+    x: f.x + ox * labelLift + tx * 24 * dpr,
+    y: f.y + oy * labelLift + ty * 24 * dpr,
+  };
+
+  const rA = Math.max(4.2 * dpr, Math.min(w, h) * 0.010);
+  const rF = Math.max(3.6 * dpr, Math.min(w, h) * 0.008);
 
   ctx.save();
-
   ctx.lineCap = "round";
   ctx.lineJoin = "round";
 
-  ctx.strokeStyle = "rgba(223, 195, 123, 0.22)";
-  ctx.lineWidth = Math.max(1.2 * dpr, Math.min(w, h) * 0.002);
-  ctx.setLineDash([8 * dpr, 8 * dpr]);
+  ctx.strokeStyle = "rgba(255, 230, 175, 0.22)";
+  ctx.lineWidth = Math.max(7 * dpr, Math.min(w, h) * 0.015);
   ctx.beginPath();
-  ctx.moveTo(ax, ay);
-  ctx.bezierCurveTo(w * 0.36, h * 0.29, w * 0.64, h * 0.29, fx, fy);
+  ctx.moveTo(f.x, f.y);
+  ctx.bezierCurveTo(c1.x, c1.y, c2.x, c2.y, a.x, a.y);
   ctx.stroke();
 
+  ctx.strokeStyle = "rgba(255, 188, 118, 0.82)";
+  ctx.lineWidth = Math.max(1.5 * dpr, Math.min(w, h) * 0.003);
+  ctx.beginPath();
+  ctx.moveTo(f.x, f.y);
+  ctx.bezierCurveTo(c1.x, c1.y, c2.x, c2.y, a.x, a.y);
+  ctx.stroke();
+
+  ctx.strokeStyle = "rgba(223, 195, 123, 0.60)";
+  ctx.lineWidth = Math.max(1.1 * dpr, Math.min(w, h) * 0.002);
+  ctx.setLineDash([5 * dpr, 5 * dpr]);
+  ctx.beginPath();
+  ctx.moveTo(a.x, a.y);
+  ctx.lineTo(f.x, f.y);
+  ctx.stroke();
   ctx.setLineDash([]);
-  ctx.strokeStyle = "rgba(255, 190, 120, 0.70)";
-  ctx.lineWidth = Math.max(1.6 * dpr, Math.min(w, h) * 0.0032);
-  ctx.beginPath();
-  ctx.moveTo(fx, fy);
-  ctx.bezierCurveTo(c1x, c1y, c2x, c2y, ax, ay);
-  ctx.stroke();
 
-  ctx.strokeStyle = "rgba(255, 230, 175, 0.26)";
-  ctx.lineWidth = Math.max(5 * dpr, Math.min(w, h) * 0.012);
+  ctx.fillStyle = "rgba(255, 230, 175, 0.96)";
   ctx.beginPath();
-  ctx.moveTo(fx, fy);
-  ctx.bezierCurveTo(c1x, c1y, c2x, c2y, ax, ay);
-  ctx.stroke();
-
-  ctx.fillStyle = "rgba(255, 230, 175, 0.94)";
-  ctx.beginPath();
-  ctx.arc(ax, ay, rA, 0, TAU);
+  ctx.arc(a.x, a.y, rA, 0, TAU);
   ctx.fill();
 
-  ctx.fillStyle = "rgba(255, 150, 115, 0.90)";
+  ctx.fillStyle = "rgba(255, 148, 112, 0.94)";
   ctx.beginPath();
-  ctx.arc(fx, fy, rF, 0, TAU);
+  ctx.arc(f.x, f.y, rF, 0, TAU);
   ctx.fill();
 
-  ctx.font = Math.max(10 * dpr, Math.floor(Math.min(w, h) * 0.024)) + "px ui-monospace, Menlo, Consolas, monospace";
+  ctx.font = Math.max(10 * dpr, Math.floor(Math.min(w, h) * 0.022)) + "px ui-monospace, Menlo, Consolas, monospace";
   ctx.textAlign = "center";
   ctx.textBaseline = "middle";
 
-  ctx.fillStyle = "rgba(6, 14, 22, 0.88)";
-  ctx.fillText("A", ax, ay);
-  ctx.fillText("F", fx, fy);
+  ctx.fillStyle = "rgba(6, 14, 22, 0.92)";
+  ctx.fillText("A", a.x, a.y);
+  ctx.fillText("F", f.x, f.y);
 
-  ctx.font = Math.max(8 * dpr, Math.floor(Math.min(w, h) * 0.016)) + "px ui-monospace, Menlo, Consolas, monospace";
-  ctx.fillStyle = "rgba(255, 230, 175, 0.78)";
-  ctx.fillText("A GROUND", ax, ay + rA + 13 * dpr);
+  ctx.font = Math.max(8 * dpr, Math.floor(Math.min(w, h) * 0.014)) + "px ui-monospace, Menlo, Consolas, monospace";
+  ctx.fillStyle = "rgba(255, 230, 175, 0.82)";
+  ctx.fillText("A GROUND 12:23", aLabel.x, aLabel.y);
 
-  ctx.fillStyle = "rgba(255, 170, 135, 0.72)";
-  ctx.fillText("F RETURN READ", fx, fy - rF - 12 * dpr);
+  ctx.fillStyle = "rgba(255, 170, 135, 0.76)";
+  ctx.fillText("F RETURN 12:24", fLabel.x, fLabel.y);
 
   ctx.restore();
 }
@@ -1125,7 +1172,7 @@ function drawBlankStage(ctx, canvas, state) {
   drawStageGrid(ctx, w, h, dpr, state);
   syncCarrierRenderState();
   drawStaticBody(ctx, w, h, dpr, state, activeStaticBody);
-  drawAFGroundedLensOverlay(ctx, w, h, dpr);
+  drawAFGroundedLensOverlay(ctx, w, h, dpr, state, activeStaticBody);
 
   ctx.save();
   ctx.textBaseline = "bottom";
@@ -1180,7 +1227,7 @@ function ensureSheetControls() {
     controls.innerHTML = [
       '<div class="sheet-button-row">',
       '  <button id="step-back-btn" class="mini-transport-btn" type="button" aria-label="Step back one sheet"><<</button>',
-      '  <button id="play-toggle" class="mini-transport-btn" type="button" aria-label="Play sheet clock">▶</button>',
+      '  <button id="play-toggle" class="mini-transport-btn" type="button" aria-label="Play sheet clock" data-control-wide="play">PLAY</button>',
       '  <button id="reset-stage-btn" class="mini-transport-btn" type="button" aria-label="Reset stage">↻</button>',
       '  <button id="step-forward-btn" class="mini-transport-btn" type="button" aria-label="Step forward one sheet">>></button>',
       '  <button class="mini-transport-btn" type="button" data-view-mode="axis" aria-label="Axis view">A</button>',
@@ -1264,6 +1311,7 @@ function boot() {
     playBtn.addEventListener("click", () => {
       state.playing = !state.playing;
       syncPlayButton(state);
+      syncG900ViewerStateConsole(state);
     });
   }
 

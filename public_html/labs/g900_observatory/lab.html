@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>G900 Witness Observatory | Aletheos Labs</title>
-  <link rel="stylesheet" href="lab.css?v=no-smoke-exact-001" />
+  <link rel="stylesheet" href="lab.css?v=toolbar-hitbox-repair-001" />
 </head>
 <body>
   <main class="lab-shell">
@@ -214,34 +214,29 @@
 </header>
 
         <section class="stage-card" aria-label="G900 blank stage">
-      <div class="stage-toolbar">
-        <div class="sheet-stepper-controls">
-          <div class="sheet-button-row">
-            <button id="step-back-btn" class="mini-transport-btn" type="button" aria-label="Step back one sheet">&lt;&lt;</button>
-            <button id="play-toggle" class="mini-transport-btn" type="button" aria-label="Play sheet clock">&#9654;</button>
-            <button id="reset-stage-btn" class="mini-transport-btn" type="button" aria-label="Reset stage">&#8635;</button>
-            <button id="step-forward-btn" class="mini-transport-btn" type="button" aria-label="Step forward one sheet">&gt;&gt;</button>
-
-            <button class="mini-transport-btn" type="button" data-view-mode="x" aria-label="X view">X</button>
-            <button class="mini-transport-btn" type="button" data-view-mode="y" aria-label="Y view">Y</button>
-            <button class="mini-transport-btn" type="button" data-view-mode="z" aria-label="Z view">Z</button>
-            <button class="mini-transport-btn angle-preset-btn" type="button" data-view-mode="iso" aria-label="Isometric view">ISO</button>
-            <label class="mini-transport-btn stage-pill stage-grid-toggle" title="Stage Grid" aria-label="Toggle stage grid">
-              <input id="stage-grid-toggle" type="checkbox" />
-              <span class="stage-pill-label">#</span>
-            </label>
-          </div>
-
-          <div class="sheet-rate-head">
-            <div class="sheet-rate-left">
-              <label for="sheet-rate-slider">Sheets/sec</label>
-              <span id="sheet-rate-readout">333.00</span>
-            </div>
-            <span id="sheet-counter-readout">Sheet 0</span>
-          </div>
-
-          <input id="sheet-rate-slider" type="range" min="0.25" max="960" step="0.25" value="333" />
+      <div class="stage-toolbar g900-toolbar" aria-label="G900 stage controls">
+        <div class="g900-toolbar-row" role="group" aria-label="Transport and view controls">
+          <button id="play-toggle" class="g900-toolbar-btn g900-toolbar-play" type="button" aria-label="Play sheet clock">PLAY</button>
+          <button id="reset-stage-btn" class="g900-toolbar-btn" type="button" aria-label="Reset stage">&#8635;</button>
+          <button class="g900-toolbar-btn" type="button" data-view-mode="x" aria-label="X view">X</button>
+          <button class="g900-toolbar-btn" type="button" data-view-mode="y" aria-label="Y view">Y</button>
+          <button class="g900-toolbar-btn" type="button" data-view-mode="z" aria-label="Z view">Z</button>
+          <button class="g900-toolbar-btn g900-toolbar-iso" type="button" data-view-mode="iso" aria-label="Isometric view">ISO</button>
+          <label class="g900-toolbar-btn g900-toolbar-grid" title="Stage Grid" aria-label="Toggle stage grid">
+            <input id="stage-grid-toggle" type="checkbox" />
+            <span>#</span>
+          </label>
         </div>
+
+        <div class="g900-sheet-rate-head">
+          <div class="g900-sheet-rate-left">
+            <label for="sheet-rate-slider">Sheets/sec</label>
+            <span id="sheet-rate-readout">333.00</span>
+          </div>
+          <span id="sheet-counter-readout">Sheet 0</span>
+        </div>
+
+        <input id="sheet-rate-slider" class="g900-sheet-rate-slider" type="range" min="0.25" max="960" step="0.25" value="333" />
       </div>
 
       <div class="stage-frame">
@@ -344,7 +339,7 @@
         </div>
 
         <div id="grounded-lens-panel-body" class="activity-panel-body grounded-lens-panel-body" data-panel-body="grounded-lens" hidden>
-          <p id="grounded-lens-note" class="layer-panel-note">A-grounded F-return lens. Viewport witness overlay only. Body unchanged.</p>
+          <p id="grounded-lens-note" class="layer-panel-note">A-grounded F-return lens. Body-anchored long-arc witness overlay only. Body unchanged.</p>
         </div>
       </div>
 
@@ -366,7 +361,7 @@
     <p>2026 Centre of Recursive Inquiry. Aletheos.ai is the public research surface for CoRI and Thalean Action Theory.</p>
   </footer>
 
-  <script type="module" src="g900_grammar_stage_v0.js?v=af-grounded-lens-render-001"></script>
+  <script type="module" src="g900_grammar_stage_v0.js?v=toolbar-css-single-line-001"></script>
   <script type="module" src="kernel/g900_scaled_oscillation_ui.js?v=scaled-oscillation-001"></script>
   <script src="kernel/g900_runtime_oscillator_console.js?v=runtime-data-001" defer></script>
   <script src="kernel/g900_apparatus_profile_console.js?v=apparatus-data-001" defer></script>

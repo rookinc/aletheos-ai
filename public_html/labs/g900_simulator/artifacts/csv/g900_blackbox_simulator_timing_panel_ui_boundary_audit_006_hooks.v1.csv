@@ -1,0 +1,16 @@
+hook_id,surface,hook,expected,observed,boundary_meaning
+006-H001,html,timing_panel_inserted,"data-activity-panel=""timing""",true,Dedicated Timing panel exists in G900 Observatory UI.
+006-H002,html,sample_rate_header_pill,g900-timing-sample-rate-pill,true,Timing header displays sample rate instead of an on/off switch.
+006-H003,html,no_timing_onoff_button,no timing data-render-toggle,true,Timing panel is hardwired on; it is not a toggled render/admission channel.
+006-H004,html,quartz_path_visible,Runtime > Quartz > Sheets/sec,true,Path to quartz is visible as apparatus timing path.
+006-H005,html,sample_rate_slider_present,g900-timing-sheet-rate-slider,true,Timing panel manages sample rate.
+006-H006,html,sample_rate_presets_present,120 240 480 960 presets,true,Timing panel exposes bounded sample-rate presets.
+006-H007,html,pause_and_step_buttons_present,timing-pause-btn step-back-btn step-forward-btn,true,Stepper controls live in the Timing panel.
+006-H008,js,rate_sync_function_present,function setG900SheetRate,true,Timing slider and main sheet-rate slider use one rate setter.
+006-H009,js,timing_status_sync_present,function syncTimingPanelState,true,Timing panel reports animation status from live state.
+006-H010,js,timing_pause_pauses_animation,timingPauseBtn handler sets state.playing false,true,Pause button pauses animation without stepping.
+006-H011,js,step_back_pauses_animation,stepBackBtn handler sets state.playing false,true,Step back pauses animation first.
+006-H012,js,step_forward_pauses_animation,stepForwardBtn handler sets state.playing false,true,Step forward pauses animation first.
+006-H013,css,timing_panel_css_present,g900-timing-panel-ui-001,true,Timing panel has dedicated styling.
+006-H014,css,timing_panel_tidy_css_present,g900-timing-panel-tidy-001,true,Timing panel tidy pass is present.
+006-H015,git,active_files_only_in_ui_commit,last commit edits active html css js only,true,Timing UI commit did not alter G900 data body or simulator ledger artifacts.

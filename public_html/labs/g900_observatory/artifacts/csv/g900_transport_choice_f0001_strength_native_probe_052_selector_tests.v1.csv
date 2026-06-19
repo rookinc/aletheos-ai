@@ -1,0 +1,7 @@
+selector_name,selected_count,target_count,true_positive_count,false_positive_count,false_negative_count,true_negative_count,exact,selector_status,promoted_to_source_law,promoted_to_admission
+global carrier strength global_row_count >= 180,29,3,3,26,0,1,false,not_native_global_threshold_selects_too_much,false,false
+global carrier strength slot_presence_count >= 3,29,3,3,26,0,1,false,not_native_global_presence_selects_too_much,false,false
+slot14-local global_row_count >= 180,3,3,3,0,0,27,true,exact_slot14_local_strength_handle_not_law,false,false
+slot14-local slot_presence_count >= 3,3,3,3,0,0,27,true,exact_slot14_local_presence_handle_not_law,false,false
+slot14-local top3 incident carriers,3,3,3,0,0,27,true,exact_slot14_local_rank_handle_not_law,false,false
+slots whose self plus top3 handle equals target anchors,1,1,1,0,0,14,true,diagnostic_target_handle_slot14_unique_not_source_law,false,false

@@ -1,0 +1,206 @@
+{
+  "schema": "g900.transport_permission_frontier_theorem_note",
+  "version": "0.1",
+  "artifact_id": "g900_transport_permission_frontier_theorem_note_026",
+  "note_pass": true,
+  "verdict": "transport_permission_frontier_theorem_note_026_recorded",
+  "status": "theorem_note_records_one_transport_plus_permission_frontier",
+  "commit": "f45a5a6",
+  "commit_full": "f45a5a6817114c16da1ff34e5ce761f54852e7bd",
+  "theorem_statement": "Given the current G900 transport ledger, exactly one return-cell information transport is admitted, the 71 deferred candidates form a gate-ready permission frontier, and no tested selector, provenance, or coupling-law audit grants additional admission. Therefore the current ledger supports one admitted transport plus a permission frontier, not a transport family.",
+  "claims": [
+    {
+      "claim_id": "T1",
+      "claim": "One G900 return-cell information transport is currently admitted in the ledger.",
+      "support": "permission registry and transport registry",
+      "status": "ledger_supported",
+      "boundary": "one admitted transport, not a family"
+    },
+    {
+      "claim_id": "T2",
+      "claim": "The deferred frontier contains 71 gate-ready candidates.",
+      "support": "020 candidate gate audit",
+      "status": "audit_supported",
+      "boundary": "gate-ready is not admitted"
+    },
+    {
+      "claim_id": "T3",
+      "claim": "No usable single structural selector currently narrows permission to the admitted seed.",
+      "support": "021 permission sharpness audit",
+      "status": "audit_supported",
+      "boundary": "selector search only"
+    },
+    {
+      "claim_id": "T4",
+      "claim": "The best current pair selector is role.AB=03_09 AND role.E=13.",
+      "support": "022 pair-selector hypothesis audit",
+      "status": "audit_supported",
+      "boundary": "selector nominates permission but cannot grant it"
+    },
+    {
+      "claim_id": "T5",
+      "claim": "The selector components are construction-visible and co-visible, but the coupling is not constructively derived.",
+      "support": "023 provenance audit",
+      "status": "audit_supported",
+      "boundary": "ingredients visible, coupling not derived"
+    },
+    {
+      "claim_id": "T6",
+      "claim": "No tested coupling law explains why 03_09 should select endpoint 13.",
+      "support": "024 coupling law audit",
+      "status": "audit_supported",
+      "boundary": "context patterns are not permission"
+    },
+    {
+      "claim_id": "T7",
+      "claim": "The current ledger supports a permission frontier, not a transport family.",
+      "support": "025 checkpoint",
+      "status": "checkpoint_supported",
+      "boundary": "no family claim and no global uniqueness claim"
+    }
+  ],
+  "dependencies": [
+    {
+      "artifact": "006",
+      "artifact_id": "g900_return_cell_one_step_information_transport_support_audit_006",
+      "role": "prior support audit for admitted transport chain",
+      "required": "true"
+    },
+    {
+      "artifact": "007",
+      "artifact_id": "g900_return_cell_bounded_information_transport_admission_007",
+      "role": "prior bounded information transport admission",
+      "required": "true"
+    },
+    {
+      "artifact": "011",
+      "artifact_id": "g900_return_cell_transport_theorem_note_011",
+      "role": "prior theorem note for one admitted transport",
+      "required": "true"
+    },
+    {
+      "artifact": "020",
+      "artifact_id": "g900_transport_deferred_candidate_gate_audit_020",
+      "role": "gate candidate qualifier",
+      "required": "true"
+    },
+    {
+      "artifact": "021",
+      "artifact_id": "g900_transport_permission_sharpness_audit_021",
+      "role": "selector sharpness audit",
+      "required": "true"
+    },
+    {
+      "artifact": "022",
+      "artifact_id": "g900_transport_pair_selector_admission_hypothesis_audit_022",
+      "role": "pair selector hypothesis ranking",
+      "required": "true"
+    },
+    {
+      "artifact": "023",
+      "artifact_id": "g900_transport_admission_hypothesis_provenance_audit_023",
+      "role": "construction provenance audit",
+      "required": "true"
+    },
+    {
+      "artifact": "024",
+      "artifact_id": "g900_transport_selector_coupling_law_audit_024",
+      "role": "coupling law audit",
+      "required": "true"
+    },
+    {
+      "artifact": "025",
+      "artifact_id": "g900_transport_permission_frontier_checkpoint_025",
+      "role": "permission frontier checkpoint",
+      "required": "true"
+    }
+  ],
+  "counts": {
+    "current_admitted_permission_channel_count": 1,
+    "current_admitted_information_transport_count": 1,
+    "deferred_gate_ready_candidate_count": 71,
+    "usable_single_structural_selector_count": 0,
+    "pair_structural_exact_selector_count": 11,
+    "best_selector": "role.AB=03_09 AND role.E=13",
+    "construction_exact_selector_found": false,
+    "construction_components_visible": true,
+    "construction_components_covisible": true,
+    "coupling_exact_selector_count": 0,
+    "coupling_exact_context_law_count": 0
+  },
+  "interpretation": {
+    "main": "This note turns the 020-025 plateau into a bounded theorem-style statement.",
+    "what_is_earned": "one admitted transport and a gate-ready permission frontier",
+    "what_is_not_earned": "a transport family, global uniqueness, or additional permission channels",
+    "next": "Either stop at the theorem note or expand construction language in a new phase."
+  },
+  "boundary": {
+    "theorem_note_only": true,
+    "not_new_search": true,
+    "not_paper": true,
+    "new_permission_channel_admitted": false,
+    "new_information_transport_admitted": false,
+    "new_flux_witness_declared": false,
+    "transport_family_claim": false,
+    "global_uniqueness_claim": false,
+    "physical_transport_claim": false,
+    "physical_flux_claim": false,
+    "energy_flow_claim": false,
+    "force_claim": false,
+    "physics_claim": false,
+    "unification_claim": false,
+    "body_mutation": false,
+    "adds_vertices": false,
+    "adds_edges": false,
+    "viewer_gate_open": false,
+    "marker_lighting": false
+  },
+  "checks": {
+    "no_missing_required_inputs": true,
+    "transport006_present_or_nonrequired": true,
+    "transport007_present_or_nonrequired": true,
+    "gate020_passed": true,
+    "gate020_all_71_ready": true,
+    "sharpness021_passed": true,
+    "sharpness021_no_single_structural_selector": true,
+    "sharpness021_pair_selectors_found": true,
+    "hypothesis022_passed": true,
+    "hypothesis022_best_selector_expected": true,
+    "provenance023_passed": true,
+    "provenance023_components_visible": true,
+    "provenance023_components_covisible": true,
+    "provenance023_no_exact_construction_selector": true,
+    "coupling024_passed": true,
+    "coupling024_no_exact_selector": true,
+    "coupling024_no_exact_context_law": true,
+    "checkpoint025_passed": true,
+    "checkpoint025_status": true,
+    "current_permission_channel_count_still_1": true,
+    "current_information_transport_count_still_1": true,
+    "no_new_permission_channel_admitted": true,
+    "no_new_information_transport_admitted": true,
+    "no_new_flux_witness_declared": true,
+    "no_transport_family_claim": true,
+    "no_global_uniqueness_claim": true,
+    "no_physics_claim": true,
+    "no_body_mutation": true
+  },
+  "failed_checks": [],
+  "inputs": {
+    "labs/g900_observatory/artifacts/json/g900_return_cell_one_step_information_transport_support_audit_006.v1.json": "7e85bdbab9bfffb25e0aa80c405086eedf00b4216ec58b41aeae45ec781047ef",
+    "labs/g900_observatory/artifacts/json/g900_return_cell_bounded_information_transport_admission_007.v1.json": "9e6de05823b285c5174cd1b09784bbd876d028339a1e9a5d7288d92082214535",
+    "labs/g900_observatory/notes/g900_return_cell_transport_theorem_note_011.md": "77c3e39978e2e000e2bcc00a3521f25649d460d4bb6dce7e9e7ca3b746f459b2",
+    "labs/g900_observatory/artifacts/json/g900_transport_deferred_candidate_gate_audit_020.v1.json": "9288ffbba7910420bbc15f39d6a0408c821243de6e016877a8477969908b2e1d",
+    "labs/g900_observatory/artifacts/json/g900_transport_permission_sharpness_audit_021.v1.json": "48a2d8af67209461dfa5b763520829136d950995a60bf7376229cc80e5a93dd2",
+    "labs/g900_observatory/artifacts/json/g900_transport_pair_selector_admission_hypothesis_audit_022.v1.json": "27907adf0715d35df16e5e63dea4c12c95eeac8e791296e652910fc732e0fdc2",
+    "labs/g900_observatory/artifacts/json/g900_transport_admission_hypothesis_provenance_audit_023.v1.json": "5b80e44fc7b28cb8c34dac5b3a0741b2f67cda4408b4fe5ea2f678b875c20cbc",
+    "labs/g900_observatory/artifacts/json/g900_transport_selector_coupling_law_audit_024.v1.json": "472081f2e09716599fcf6975fc690de9472edc94e4f05cf43a96257c0cb826cd",
+    "labs/g900_observatory/artifacts/json/g900_transport_permission_frontier_checkpoint_025.v1.json": "d1612db3104e714c0b9d009771ef6381ad9ffb7c0ee8439f69066ad5e8e5b2c3",
+    "labs/g900_observatory/data/g900_admitted_permission_channels.v0.1.json": "94afd7ca8ffd171860b31d2c1ac2b55b21437fc69b8efc44c4a4bf27c0475964",
+    "labs/g900_observatory/data/g900_admitted_information_transports.v0.1.json": "2e1b4bc6e3ec072af260eb50af15ac8e21ba089be4b13039e5d101ca5941447f"
+  },
+  "missing_inputs": [],
+  "git_status_short_before": "",
+  "recorded_at_utc": "2026-06-19T17:18:46Z",
+  "keeper": "One transport is admitted. The frontier is real. The family is not yet earned."
+}

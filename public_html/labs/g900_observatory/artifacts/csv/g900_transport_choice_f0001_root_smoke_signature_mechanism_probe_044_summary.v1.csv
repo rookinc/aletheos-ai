@@ -1,0 +1,9 @@
+summary_id,summary_name,count,interpretation,promotion_status
+044-S1,full_cluster_signature_row_count,60,Root-smoke rows inherited from 043 full-cluster surface.,input
+044-S2,unique_full_hit_signature_count,1,Number of distinct full hit-signature strings across full-cluster rows.,diagnostic
+044-S3,all_target_internal_5_4_count,60,"Rows where internal carriers 05,08,10,14 all carry value 5:4.",not_promoted
+044-S4,all_target_boundary_present_count,60,"Rows where 04_05,05_10,05_14 boundary carriers are present.",not_promoted
+044-S5,all_cluster_carriers_present_count,60,Rows containing the seven-term shell cluster inside hit_signature.,not_promoted
+044-S6,exact_selector_count,5,Selector tests exact for the 043 full-cluster rowset within root-smoke universe.,not_promoted
+044-S7,source_law_promotions,0,No source law is promoted.,locked
+044-S8,admission_promotions,0,No permission channel or information transport is admitted.,locked

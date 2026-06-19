@@ -1,0 +1,178 @@
+{
+  "schema": "g900.return_cell_transport_checkpoint",
+  "version": "0.1",
+  "artifact_id": "g900_return_cell_transport_checkpoint_009",
+  "checkpoint_pass": true,
+  "verdict": "return_cell_transport_plateau_locked",
+  "status": "bounded_information_transport_plateau_checkpoint",
+  "commit": "20b2b59",
+  "commit_full": "20b2b5932227de1351bf150588396c4af2f1e1e3",
+  "question": "What does the first admitted information transport teach us about the G900 Scope architecture?",
+  "answer": "The G900 Scope now supports a receipt-first architecture in which readable relations can be promoted through preview, packet, successor rule, gate, permission channel, supported history, and bounded finite information transport without mutating the body.",
+  "chain": [
+    {
+      "step": "preview",
+      "artifact": "g900_return_cell_channel_preview_boundary_audit_001",
+      "status": "preview_only"
+    },
+    {
+      "step": "contract",
+      "artifact": "g900_discrete_information_transport_contract_001",
+      "status": "contract_declared_no_transport_admitted"
+    },
+    {
+      "step": "packet_literal_refutation",
+      "artifact": "g900_return_cell_conserved_packet_scout_001",
+      "status": "failed_usefully"
+    },
+    {
+      "step": "packet",
+      "artifact": "g900_return_cell_carrier_incidence_packet_scout_002",
+      "status": "packet_candidate_named"
+    },
+    {
+      "step": "successor_rule",
+      "artifact": "g900_return_cell_packet_successor_rule_scout_003",
+      "status": "P_to_Q_by_R_found"
+    },
+    {
+      "step": "gate_ready",
+      "artifact": "g900_return_cell_channel_admission_gate_audit_004",
+      "status": "gate_ready"
+    },
+    {
+      "step": "permission_channel",
+      "artifact": "g900_return_cell_permission_channel_admission_005",
+      "status": "admitted_permission_channel"
+    },
+    {
+      "step": "history_support",
+      "artifact": "g900_return_cell_one_step_information_transport_support_audit_006",
+      "status": "one_step_history_supported"
+    },
+    {
+      "step": "information_transport",
+      "artifact": "g900_return_cell_bounded_information_transport_admission_007",
+      "status": "admitted_bounded_finite_information_transport"
+    },
+    {
+      "step": "ui_receipt_snapshot",
+      "artifact": "g900_transport_ledger_static_snapshot_008e",
+      "status": "static_receipt_snapshot_wired"
+    }
+  ],
+  "admitted_objects": {
+    "permission_channel_count": 1,
+    "permission_channel_id": "g900_return_cell_permission_channel_005",
+    "information_transport_count": 1,
+    "information_transport_id": "g900_return_cell_one_step_information_transport_007",
+    "history_id": "g900_return_cell_one_step_information_history_candidate_006",
+    "h0": "return_cell_role_anchor_source_packet_003_P",
+    "successor_rule_R": "return_cell_carrier_incidence_successor_rule_003_R",
+    "h1": "return_cell_body_edge_target_packet_003_Q",
+    "conserved_observable": "role_anchor_signature",
+    "signature_preserved_exactly": true,
+    "role_sequence_preserved": true,
+    "anchor_count_preserved": true
+  },
+  "load_bearing_signature": {
+    "packet_q_edge_ids": [
+      "tuple_edge_611",
+      "tuple_edge_2425",
+      "tuple_edge_1472",
+      "tuple_edge_1475"
+    ],
+    "q_target_limits": {
+      "23": 2,
+      "24": 2
+    },
+    "same_anchor_count": 3,
+    "incidence_repair_count": 1,
+    "all_rule_minima_unique": true,
+    "q_matches_packet002": true
+  },
+  "body": {
+    "vertex_count": 900,
+    "edge_count": 3600,
+    "body_sha256": "6a2cb6b9892a78d4559ec61cf946b0021962cc6819311234b8bf14102b3b7f63"
+  },
+  "ui": {
+    "represented": true,
+    "representation_kind": "static_receipt_ledger_snapshot",
+    "transport_renderer": false,
+    "viewer_gate_open": false,
+    "marker_lighting": false
+  },
+  "boundary": {
+    "bounded_one_step_finite_information_transport": true,
+    "physical_transport_claim": false,
+    "energy_flow_claim": false,
+    "force_claim": false,
+    "physics_claim": false,
+    "unification_claim": false,
+    "mutates_body": false,
+    "adds_vertices": false,
+    "adds_edges": false,
+    "viewer_gate_open": false,
+    "marker_lighting": false
+  },
+  "next_questions": [
+    "Can the return-cell theorem statement be written cleanly as a public-facing note?",
+    "Is return-cell transport unique or one member of a broader family?",
+    "Can the ledger UI expose P, R, and Q details without drawing transport into the body?"
+  ],
+  "checks": {
+    "no_missing_inputs": true,
+    "body_vertex_count_900": true,
+    "body_edge_count_3600": true,
+    "packet_001_failed_usefully": true,
+    "packet_002_passed": true,
+    "successor_003_passed": true,
+    "gate_004_passed": true,
+    "permission_005_passed": true,
+    "support_006_passed": true,
+    "transport_007_passed": true,
+    "ui_008e_passed": true,
+    "permission_channel_count_1": true,
+    "information_transport_count_1": true,
+    "transport_id_expected": true,
+    "permission_channel_id_expected": true,
+    "source_packet_expected": true,
+    "target_packet_expected": true,
+    "successor_rule_expected": true,
+    "conserved_observable_expected": true,
+    "signature_preserved": true,
+    "physical_transport_false": true,
+    "energy_flow_false": true,
+    "force_false": true,
+    "physics_false": true,
+    "unification_false": true,
+    "body_mutation_false": true,
+    "viewer_gate_false": true,
+    "marker_lighting_false": true,
+    "ui_static_snapshot": true,
+    "ui_no_transport_renderer": true
+  },
+  "failed_checks": [],
+  "inputs": {
+    "labs/g900_observatory/data/g900_static_body.v1.json": "6a2cb6b9892a78d4559ec61cf946b0021962cc6819311234b8bf14102b3b7f63",
+    "labs/g900_observatory/data/g900_discrete_information_transport_contract.v0.1.json": "7528492c4c58d6d756383d839343c055fc87a9dfeb2fbf5b2749015d9724bf13",
+    "labs/g900_observatory/data/g900_admitted_permission_channels.v0.1.json": "94afd7ca8ffd171860b31d2c1ac2b55b21437fc69b8efc44c4a4bf27c0475964",
+    "labs/g900_observatory/data/g900_admitted_information_transports.v0.1.json": "2e1b4bc6e3ec072af260eb50af15ac8e21ba089be4b13039e5d101ca5941447f",
+    "labs/g900_observatory/receipts/g900_return_cell_channel_preview_boundary_audit_001.v1.json": "d944eb35682fcd90de8837cfc8a6de5f31317cd6929d9f7e3e9403344b091781",
+    "labs/g900_observatory/artifacts/json/g900_return_cell_conserved_packet_scout_001.v1.json": "b8e616390411e32041563696ab55c9c6de044a138317ab81b8d5a1ef5949b777",
+    "labs/g900_observatory/artifacts/json/g900_return_cell_carrier_incidence_packet_scout_002.v1.json": "0d16b7883e46c2cf7fc9f210666b96cbc6d07f21449342f5e3df776b4e7a425f",
+    "labs/g900_observatory/artifacts/json/g900_return_cell_packet_successor_rule_scout_003.v1.json": "79657be34ec24d63e02aa949aa7f21250cfbec0109280e05dfcdca72b1d1334e",
+    "labs/g900_observatory/artifacts/json/g900_return_cell_channel_admission_gate_audit_004.v1.json": "7782cc773efa8dbb8eb476a5a07e752b20f038c91e890ab8230fde5b1bac68ce",
+    "labs/g900_observatory/artifacts/json/g900_return_cell_permission_channel_admission_005.v1.json": "8baab342ce2c46a2d266436607818beaaf11130546d1bf6e387f63adf3398c28",
+    "labs/g900_observatory/artifacts/json/g900_return_cell_one_step_information_transport_support_audit_006.v1.json": "7e85bdbab9bfffb25e0aa80c405086eedf00b4216ec58b41aeae45ec781047ef",
+    "labs/g900_observatory/artifacts/json/g900_return_cell_bounded_information_transport_admission_007.v1.json": "9e6de05823b285c5174cd1b09784bbd876d028339a1e9a5d7288d92082214535",
+    "labs/g900_observatory/artifacts/json/g900_transport_ledger_static_snapshot_008e.v1.json": "b3f0878d34c5c6f7dd3c5f832918bf7e915c826213832fc65f3168ae542f4236",
+    "labs/g900_observatory/lab.html": "a90ac6109ca3eac392914a7caf51f9602bd3bfdfc35bfa35578e4a91a49033ed",
+    "labs/g900_observatory/lab.css": "8379e59995e2fe6991554a2bc4adb6a7f63e35fd9129dbf8afc87b9f8c279351"
+  },
+  "missing_inputs": [],
+  "git_status_short_before": "",
+  "recorded_at_utc": "2026-06-19T15:31:26Z",
+  "keeper": "The first G900 transport is not motion. It is a receipted one-step conservation of information over a fixed body."
+}

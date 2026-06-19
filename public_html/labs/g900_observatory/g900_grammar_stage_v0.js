@@ -2008,35 +2008,14 @@ if (document.readyState === "loading") {
 }
 
 
+
 function ensureStageGraphToolbar() {
-  const stageCard = document.querySelector(".stage-card");
-  const stageFrame = document.querySelector(".stage-frame");
-  if (!stageCard || !stageFrame) return;
-
-  let toolbar = document.getElementById("stage-bottom-toolbar");
-  if (!toolbar) {
-    toolbar = document.createElement("div");
-    toolbar.id = "stage-bottom-toolbar";
-    toolbar.className = "stage-bottom-toolbar";
-    toolbar.setAttribute("aria-label", "Graph body density controls");
-    toolbar.innerHTML = [
-      '<label class="stage-toolbar-slider" for="graph-vertices-slider">',
-      '  <span>Vertices</span>',
-      '  <input id="graph-vertices-slider" data-layer-range="vertices" type="range" min="0" max="100" step="1" value="72" />',
-      '  <output id="graph-vertices-readout">72</output>',
-      '</label>',
-      '<label class="stage-toolbar-slider" for="graph-edges-slider">',
-      '  <span>Edges</span>',
-      '  <input id="graph-edges-slider" data-layer-range="edges" type="range" min="0" max="100" step="1" value="18" />',
-      '  <output id="graph-edges-readout">18</output>',
-      '</label>'
-    ].join("");
+  const legacyToolbar = document.getElementById("stage-bottom-toolbar");
+  if (legacyToolbar) {
+    legacyToolbar.remove();
   }
 
-  if (toolbar.parentElement !== stageCard || toolbar.previousElementSibling !== stageFrame) {
-    stageFrame.insertAdjacentElement("afterend", toolbar);
-  }
-
+  bindLayerControl("graph-layer-toggle", syncGraphLayerReadouts);
   bindLayerControl("graph-vertices-slider", syncGraphLayerReadouts);
   bindLayerControl("graph-edges-slider", syncGraphLayerReadouts);
   syncGraphLayerReadouts();
@@ -2074,7 +2053,7 @@ function initialG900PanelCollapsed(panelId) {
   const saved = localStorage.getItem("g900.panelCollapsed." + panelId);
   if (saved === "1") return true;
   if (saved === "0") return false;
-  return panelId === "carriers" || panelId === "channels" || panelId === "grounded-lens";
+  return true;
 }
 
 function applyG900PanelDefaultMigration() {
@@ -2090,7 +2069,7 @@ function bindG900ActivityPanelControls() {
   ensureStageGraphToolbar();
   applyG900PanelDefaultMigration();
 
-  ["carriers", "channels", "information-flow", "grounded-lens", "timing"].forEach((panelId) => {
+  ["body", "carriers", "channels", "information-flow", "grounded-lens", "timing"].forEach((panelId) => {
     setG900PanelBodyCollapsed(panelId, initialG900PanelCollapsed(panelId));
   });
 

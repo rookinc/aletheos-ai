@@ -249,24 +249,41 @@
         </div>
       </div>
 
-      <div id="stage-bottom-toolbar" class="stage-bottom-toolbar" aria-label="Graph body density controls">
-        <label class="stage-toolbar-slider" for="graph-vertices-slider">
-          <span>Vertices</span>
-          <input id="graph-vertices-slider" data-layer-range="vertices" type="range" min="0" max="100" step="1" value="72" />
-          <output id="graph-vertices-readout">72</output>
-        </label>
-
-        <label class="stage-toolbar-slider" for="graph-edges-slider">
-          <span>Edges</span>
-          <input id="graph-edges-slider" data-layer-range="edges" type="range" min="0" max="100" step="1" value="18" />
-          <output id="graph-edges-readout">18</output>
-        </label>
-      </div>
-    </section>
+      </section>
 
 
     
     <section class="lab-note activity-panel-stack state-console-section" aria-label="G900 control panels">
+      <div class="activity-panel layer-panel g900-body-panel" data-activity-panel="body" data-layer-panel="body" aria-label="Body graph controls">
+        <div class="activity-panel-head layer-panel-head">
+          <button class="activity-panel-title" type="button" data-panel-title-toggle="body" aria-expanded="false" aria-controls="g900-body-panel-body">
+            <span class="activity-title-caret" aria-hidden="true"></span>
+            <span>Body</span>
+          </button>
+
+          <label class="activity-render-switch layer-switch g900-body-toggle" for="graph-layer-toggle" aria-label="Toggle graph body visibility">
+            <input id="graph-layer-toggle" type="checkbox" data-render-toggle="body" checked />
+            <span>ON</span>
+          </label>
+        </div>
+
+        <div id="g900-body-panel-body" class="activity-panel-body g900-body-panel-body" data-panel-body="body" hidden>
+          <label class="layer-slider-row" for="graph-vertices-slider">
+            <span>Vertices</span>
+            <input id="graph-vertices-slider" data-layer-range="vertices" type="range" min="0" max="100" step="1" value="72" />
+            <output id="graph-vertices-readout">72</output>
+          </label>
+
+          <label class="layer-slider-row" for="graph-edges-slider">
+            <span>Edges</span>
+            <input id="graph-edges-slider" data-layer-range="edges" type="range" min="0" max="100" step="1" value="18" />
+            <output id="graph-edges-readout">18</output>
+          </label>
+
+          <p class="layer-panel-note">Fixed G900 body visibility controls. Rendering only. Body unchanged.</p>
+        </div>
+      </div>
+
       <div class="activity-panel layer-panel" data-activity-panel="carriers" data-layer-panel="carriers" aria-label="Carrier controls">
         <div class="activity-panel-head layer-panel-head">
           <button class="activity-panel-title" type="button" data-panel-title-toggle="carriers" aria-expanded="false" aria-controls="carrier-render-panel-body">
@@ -456,7 +473,7 @@
     <p>2026 Centre of Recursive Inquiry. Aletheos.ai is the public research surface for CoRI and Thalean Action Theory.</p>
   </footer>
 
-  <script type="module" src="g900_grammar_stage_v0.js?v=hide-information-pulse-label-001"></script>
+  <script type="module" src="g900_grammar_stage_v0.js?v=body-panel-controls-001"></script>
   <script type="module" src="kernel/g900_scaled_oscillation_ui.js?v=scaled-oscillation-001"></script>
   <script src="kernel/g900_runtime_oscillator_console.js?v=runtime-data-001" defer></script>
   <script src="kernel/g900_apparatus_profile_console.js?v=apparatus-data-001" defer></script>

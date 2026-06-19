@@ -1,0 +1,101 @@
+{
+  "schema": "g900.transport_pair_selector_admission_hypothesis_audit",
+  "version": "0.1",
+  "artifact_id": "g900_transport_pair_selector_admission_hypothesis_audit_022",
+  "audit_pass": true,
+  "verdict": "pair_selector_admission_hypothesis_audit_022_recorded",
+  "status": "least_sharp_pair_admission_hypothesis_candidates_found",
+  "commit": "2be3939",
+  "commit_full": "2be39398701bc9512b4aba2a639ba63593b6aee7",
+  "question": "Which of the 11 exact structural pair selectors from 021 are least-sharp enough to become admission hypotheses, without becoming admissions?",
+  "honest_answer": "This audit ranks exact structural pair selectors by how broad their individual features are before coupling. A least-sharp pair selector is only an admission hypothesis candidate, not permission.",
+  "counts": {
+    "exact_pair_selector_count": 11,
+    "candidate_hypothesis_count": 11,
+    "least_sharp_best_hypothesis_count": 1,
+    "best_individual_bucket_product": 64,
+    "current_admitted_permission_channel_count": 1,
+    "current_admitted_information_transport_count": 1
+  },
+  "best_hypotheses": [
+    {
+      "hypothesis_id": "pair_selector_hypothesis_e470e0c88411",
+      "selector_expression": "role.AB=03_09 AND role.E=13",
+      "individual_bucket_product": 64,
+      "individual_bucket_sum": 16,
+      "feature_a_seed_bucket_count": 8,
+      "feature_b_seed_bucket_count": 8,
+      "crosses_sides": "true",
+      "uses_support_set": "false",
+      "uses_role_pair": "true",
+      "uses_role_vertex": "true"
+    }
+  ],
+  "ranking_rule": {
+    "primary": "maximize individual_bucket_product",
+    "secondary": "maximize individual_bucket_sum",
+    "interpretation": "The best hypothesis is the exact pair selector whose individual features are least sharp before they are coupled."
+  },
+  "interpretation": {
+    "what_was_learned": "The previous sharpness audit found pair selectors but no single structural selector. This audit identifies the least-sharp pair selector candidates for a future admission hypothesis.",
+    "guardrail": "A pair selector can nominate an admission hypothesis. It cannot admit a permission channel by itself.",
+    "next_step": "Test the best hypothesis against construction provenance or a larger candidate universe before any admission act."
+  },
+  "boundary": {
+    "admission_hypothesis_audit_only": true,
+    "selector_not_permission": true,
+    "hypothesis_not_admission": true,
+    "new_permission_channel_admitted": false,
+    "new_information_transport_admitted": false,
+    "new_flux_witness_declared": false,
+    "transport_family_claim": false,
+    "global_uniqueness_claim": false,
+    "physical_transport_claim": false,
+    "physical_flux_claim": false,
+    "energy_flow_claim": false,
+    "force_claim": false,
+    "physics_claim": false,
+    "unification_claim": false,
+    "body_mutation": false,
+    "adds_vertices": false,
+    "adds_edges": false,
+    "viewer_gate_open": false,
+    "marker_lighting": false
+  },
+  "checks": {
+    "no_missing_inputs": true,
+    "sharpness021_passed": true,
+    "sharpness021_pair_selector_status": true,
+    "gate020_passed": true,
+    "gate020_all_ready": true,
+    "symmetry019_passed": true,
+    "frontier018b_passed": true,
+    "worklist018a_passed": true,
+    "checkpoint017_passed": true,
+    "exact_pair_selector_count_11": true,
+    "current_permission_channel_count_still_1": true,
+    "current_information_transport_count_still_1": true,
+    "no_new_permission_channel_admitted": true,
+    "no_new_information_transport_admitted": true,
+    "no_new_flux_witness_declared": true,
+    "no_family_claim": true,
+    "no_global_uniqueness_claim": true
+  },
+  "failed_checks": [],
+  "inputs": {
+    "labs/g900_observatory/artifacts/json/g900_transport_permission_sharpness_audit_021.v1.json": "48a2d8af67209461dfa5b763520829136d950995a60bf7376229cc80e5a93dd2",
+    "labs/g900_observatory/artifacts/csv/g900_transport_permission_sharpness_audit_021_pair_selectors.v1.csv": "e337dfcc795294fd4e6a4c685f2d63f52de5a6b80b1f67ad3a96c7d56fadf6dd",
+    "labs/g900_observatory/artifacts/csv/g900_transport_permission_sharpness_audit_021_seed_feature_hits.v1.csv": "000ed2123cd9dd76e792cc99a0c7249bf25942f7aa4bb1089dc5123013d95a0e",
+    "labs/g900_observatory/artifacts/json/g900_transport_deferred_candidate_gate_audit_020.v1.json": "9288ffbba7910420bbc15f39d6a0408c821243de6e016877a8477969908b2e1d",
+    "labs/g900_observatory/artifacts/json/g900_transport_deferred_frontier_symmetry_census_019.v1.json": "21785de98947561fc400afb2c3a4d8502b3bfc08185c23e84801977edc169fb0",
+    "labs/g900_observatory/artifacts/json/g900_transport_deferred_gate_frontier_full_audit_018b.v1.json": "46d0d80c8fe83d30f3fc2d405c8d102ea7310665e2aa8f1280bca6006e5ecece",
+    "labs/g900_observatory/artifacts/json/g900_transport_deferred_gate_frontier_worklist_018a.v1.json": "036a39786ec8b6fde72d993a906c546cc328efc6af0cb436c759d671b7e175b9",
+    "labs/g900_observatory/artifacts/json/g900_transport_census_phase_checkpoint_017.v1.json": "98b6c627b07562bb3e19b3303320e1bc6ab9fc0f2b9d2ccb5946a8fb9982d85d",
+    "labs/g900_observatory/data/g900_admitted_permission_channels.v0.1.json": "94afd7ca8ffd171860b31d2c1ac2b55b21437fc69b8efc44c4a4bf27c0475964",
+    "labs/g900_observatory/data/g900_admitted_information_transports.v0.1.json": "2e1b4bc6e3ec072af260eb50af15ac8e21ba089be4b13039e5d101ca5941447f"
+  },
+  "missing_inputs": [],
+  "git_status_short_before": "",
+  "recorded_at_utc": "2026-06-19T16:49:58Z",
+  "keeper": "A selector can nominate permission. It cannot grant it."
+}

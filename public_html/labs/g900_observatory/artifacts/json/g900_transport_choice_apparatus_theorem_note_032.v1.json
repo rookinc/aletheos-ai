@@ -1,0 +1,244 @@
+{
+  "schema": "g900.transport_choice_apparatus_theorem_note",
+  "version": "0.1",
+  "artifact_id": "g900_transport_choice_apparatus_theorem_note_032",
+  "note_pass": true,
+  "verdict": "transport_choice_apparatus_theorem_note_032_recorded",
+  "status": "one_transport_plus_unpromoted_choice_frontier_theorem_note",
+  "commit": "eafc61b",
+  "commit_full": "eafc61b8de28b545516766c322b1eb685fbcd739",
+  "title": "The G900 Transport Choice Apparatus: One Admitted Transport, a Gate-Ready Frontier, and Failed Choice Promotion",
+  "theorem_statement": "Given the current G900 transport ledger and artifacts 025-031, the ledger supports exactly one admitted permission channel and one admitted information transport; it also supports a real 71-candidate gate-ready permission frontier. The quarantined choice apparatus exposes many choice hypotheses over that frontier, but the tested ABCDE choice-function family promotes zero hypotheses to admission candidates. Therefore the current ledger proves one admitted transport plus a visible, gate-ready, unpromoted choice frontier, not a transport family.",
+  "counts": {
+    "current_admitted_permission_channel_count": 1,
+    "current_admitted_information_transport_count": 1,
+    "frontier_candidate_count": 71,
+    "candidate_field_count_028": 31,
+    "structural_choice_variable_count_028": 12,
+    "guarded_field_count_028": 19,
+    "unknown_field_count_028": 0,
+    "hypothesis_count_total_029": 545,
+    "non_singleton_candidate_count_029": 317,
+    "reconstructed_hypothesis_count_total_030": 545,
+    "candidate_non_singleton_count_excluding_broad_030": 317,
+    "promoted_to_admission_candidate_count_030": 0,
+    "blocked_as_razor_small_until_proven_030": 177,
+    "blocked_by_null_or_marginal_stress_030": 146
+  },
+  "claims": [
+    {
+      "claim_id": "032-C1",
+      "claim": "The current admitted ledger contains exactly one permission channel and one information transport.",
+      "support": "permission and transport registries plus 031",
+      "status": "supported",
+      "boundary": "not a family claim"
+    },
+    {
+      "claim_id": "032-C2",
+      "claim": "The 71 deferred candidates form a gate-ready permission frontier.",
+      "support": "016 through 031",
+      "status": "supported",
+      "boundary": "gate-ready is not admitted"
+    },
+    {
+      "claim_id": "032-C3",
+      "claim": "The frontier choice apparatus may expand discovery while the admission layer remains locked.",
+      "support": "027",
+      "status": "supported",
+      "boundary": "lens change is not body change"
+    },
+    {
+      "claim_id": "032-C4",
+      "claim": "The richer 018b frontier rows provide 31 fields, with 12 usable structural choice variables after conservative quarantine.",
+      "support": "028",
+      "status": "supported",
+      "boundary": "field visibility is not choice"
+    },
+    {
+      "claim_id": "032-C5",
+      "claim": "The ABCDE search found 545 choice hypotheses and 317 non-singleton candidate hypotheses.",
+      "support": "029",
+      "status": "supported",
+      "boundary": "choice hypotheses nominate only"
+    },
+    {
+      "claim_id": "032-C6",
+      "claim": "The stress test promoted zero hypotheses to admission candidates.",
+      "support": "030",
+      "status": "supported",
+      "boundary": "no new permission or transport admitted"
+    },
+    {
+      "claim_id": "032-C7",
+      "claim": "The choice apparatus plateau is: choice became visible, then failed promotion, and the ledger held.",
+      "support": "031",
+      "status": "theorem-note conclusion",
+      "boundary": "finite apparatus result only"
+    }
+  ],
+  "dependencies": [
+    {
+      "artifact": "025",
+      "artifact_id": "g900_transport_permission_frontier_checkpoint_025",
+      "role": "permission frontier checkpoint",
+      "required": "true",
+      "status": "permission_frontier_reached_no_admission_law_found"
+    },
+    {
+      "artifact": "026",
+      "artifact_id": "g900_transport_permission_frontier_theorem_note_026",
+      "role": "one transport plus frontier theorem note",
+      "required": "true",
+      "status": "theorem_note_records_one_transport_plus_permission_frontier"
+    },
+    {
+      "artifact": "027",
+      "artifact_id": "g900_transport_frontier_choice_apparatus_protocol_027",
+      "role": "quarantined choice apparatus protocol",
+      "required": "true",
+      "status": "discovery_layer_expanded_admission_layer_locked"
+    },
+    {
+      "artifact": "028",
+      "artifact_id": "g900_transport_frontier_choice_variable_inventory_028",
+      "role": "choice variable inventory and conservative quarantine",
+      "required": "true",
+      "status": "frontier_choice_variables_inventoried_from_rich_018b_source_conservative_quarantine_admission_locked"
+    },
+    {
+      "artifact": "029",
+      "artifact_id": "g900_transport_frontier_choice_function_search_029",
+      "role": "choice hypothesis search",
+      "required": "true",
+      "status": "choice_hypotheses_found_no_admission"
+    },
+    {
+      "artifact": "030",
+      "artifact_id": "g900_transport_frontier_choice_function_stress_test_030",
+      "role": "choice hypothesis stress test",
+      "required": "true",
+      "status": "choice_hypotheses_stress_tested_no_promotion"
+    },
+    {
+      "artifact": "031",
+      "artifact_id": "g900_transport_choice_apparatus_checkpoint_031",
+      "role": "choice apparatus checkpoint",
+      "required": "true",
+      "status": "choice_visible_no_promotion_admission_locked"
+    }
+  ],
+  "proof_steps": [
+    {
+      "step": "1",
+      "name": "Ledger fixation",
+      "statement": "The current registries contain one admitted permission channel and one admitted information transport.",
+      "support": "registries, 026, 031",
+      "result": "one admitted transport remains the ledger state"
+    },
+    {
+      "step": "2",
+      "name": "Frontier reality",
+      "statement": "The 71 deferred candidates are gate-ready and structurally real.",
+      "support": "016, 018b, 020, 027, 031",
+      "result": "frontier is real but quarantined"
+    },
+    {
+      "step": "3",
+      "name": "Visibility quarantine",
+      "statement": "The choice apparatus inventories visible fields while excluding identity, result, gate, replay, receipt, and admission-like fields.",
+      "support": "028",
+      "result": "12 usable structural choice variables remain"
+    },
+    {
+      "step": "4",
+      "name": "Choice nomination",
+      "statement": "A structural ABCDE search exposes 545 choice hypotheses and 317 non-singleton candidate hypotheses.",
+      "support": "029",
+      "result": "choice is visible"
+    },
+    {
+      "step": "5",
+      "name": "Doubt",
+      "statement": "The nominated hypotheses are attacked by sharpness and null/marginal stress tests.",
+      "support": "030",
+      "result": "no hypothesis is promoted"
+    },
+    {
+      "step": "6",
+      "name": "Conclusion",
+      "statement": "The ledger supports one admitted transport plus an unpromoted frontier, not a transport family.",
+      "support": "031 and this theorem note",
+      "result": "admission remains locked"
+    }
+  ],
+  "interpretation": {
+    "main": "The current ledger admits one information transport and exposes a larger choice frontier without admitting it.",
+    "choice_result": "Choice became visible, then failed promotion. The ledger held.",
+    "boundary": "This is a finite apparatus theorem note, not a physical transport or force claim.",
+    "next": "Safe next steps are publication polishing, constructive provenance search, or expanded non-label-leaking choice language."
+  },
+  "boundary": {
+    "theorem_note_only": true,
+    "one_transport_plus_frontier_not_family": true,
+    "choice_hypothesis_not_admission": true,
+    "no_choice_promoted": true,
+    "admission_layer_locked": true,
+    "body_fixed": true,
+    "admitted_ledger_fixed": true,
+    "new_permission_channel_admitted": false,
+    "new_information_transport_admitted": false,
+    "new_flux_witness_declared": false,
+    "transport_family_claim": false,
+    "global_uniqueness_claim": false,
+    "physical_transport_claim": false,
+    "physical_flux_claim": false,
+    "energy_flow_claim": false,
+    "force_claim": false,
+    "physics_claim": false,
+    "unification_claim": false,
+    "body_mutation": false,
+    "adds_vertices": false,
+    "adds_edges": false,
+    "viewer_gate_open": false,
+    "marker_lighting": false
+  },
+  "checks": {
+    "no_missing_inputs": true,
+    "checkpoint025_passed": true,
+    "theorem026_passed": true,
+    "protocol027_passed": true,
+    "inventory028_passed": true,
+    "search029_passed": true,
+    "stress030_passed": true,
+    "checkpoint031_passed": true,
+    "ledger_one_permission_channel": true,
+    "ledger_one_information_transport": true,
+    "frontier_count_71": true,
+    "choice_variables_12": true,
+    "hypotheses_545": true,
+    "non_singleton_candidates_317": true,
+    "promotions_zero": true,
+    "no_new_permission_channel_admitted": true,
+    "no_new_information_transport_admitted": true,
+    "no_transport_family_claim": true,
+    "no_global_uniqueness_claim": true,
+    "no_physics_claim": true,
+    "no_body_mutation": true
+  },
+  "failed_checks": [],
+  "inputs": {
+    "labs/g900_observatory/artifacts/json/g900_transport_permission_frontier_checkpoint_025.v1.json": "d1612db3104e714c0b9d009771ef6381ad9ffb7c0ee8439f69066ad5e8e5b2c3",
+    "labs/g900_observatory/artifacts/json/g900_transport_permission_frontier_theorem_note_026.v1.json": "2449b3f30df7164344f2336465480b4c6aa2ae099054cb3d145039904d5007b5",
+    "labs/g900_observatory/artifacts/json/g900_transport_frontier_choice_apparatus_protocol_027.v1.json": "db39b143df2acf2be2020aee8743edfcf206c27ccb8d3263bf7e6c23fd5aa92a",
+    "labs/g900_observatory/artifacts/json/g900_transport_frontier_choice_variable_inventory_028.v1.json": "fb5630c7ae5009cdfbd4ed6f5da34cca5ad3d99f2056635b6bb0866e100d1c6f",
+    "labs/g900_observatory/artifacts/json/g900_transport_frontier_choice_function_search_029.v1.json": "6389228a4edd315c09443fb03b0c32c43a87954e15466238f349072b36ff79b7",
+    "labs/g900_observatory/artifacts/json/g900_transport_frontier_choice_function_stress_test_030.v1.json": "a6eb2b020ea3b868337db28cc290effbfa67207bd035776e546ea1b1805996ae",
+    "labs/g900_observatory/artifacts/json/g900_transport_choice_apparatus_checkpoint_031.v1.json": "df573bbba87d8ebefaed0945cff0d5600abd4147361606a28ebbb196e5ee1adb",
+    "labs/g900_observatory/data/g900_admitted_permission_channels.v0.1.json": "94afd7ca8ffd171860b31d2c1ac2b55b21437fc69b8efc44c4a4bf27c0475964",
+    "labs/g900_observatory/data/g900_admitted_information_transports.v0.1.json": "2e1b4bc6e3ec072af260eb50af15ac8e21ba089be4b13039e5d101ca5941447f"
+  },
+  "missing_inputs": [],
+  "git_status_short_before": "",
+  "recorded_at_utc": "2026-06-19T17:50:43Z",
+  "keeper": "Choice became visible, then failed promotion. The ledger held."
+}

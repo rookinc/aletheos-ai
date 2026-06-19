@@ -402,6 +402,7 @@ function buildG900ViewerStateObject(state) {
     overlays: activeOverlayRegistry ? getG900OverlaySummary(activeOverlayRegistry) : null,
     carriers: activeCarrierRegistry ? getG900CarrierSummary(activeCarrierRegistry) : null,
     channels: activeChannelRegistry ? getG900ChannelSummary(activeChannelRegistry) : null,
+    carrier_render: readWindowSummary("__g900CarrierRenderSummary"),
     channel_scope: readWindowSummary("__g900ChannelScopeSummary"),
     timing_kernel: {
       scaled_oscillation: activeScaledOscillationKernel ? getG900ScaledOscillationSummary(activeScaledOscillationKernel) : null,
@@ -685,6 +686,8 @@ function syncCarrierRenderState() {
   carrierRenderState.color_map = getG900CarrierModeColorMap(selection.modes);
 
   syncCarrierAlphaReadout();
+  syncCarrierRenderLegend();
+  publishCarrierRenderSummary();
 
   document.querySelectorAll("[data-carrier-render-mode]").forEach((btn) => {
     const active = selection.modes.includes(btn.dataset.carrierRenderMode);
@@ -851,6 +854,51 @@ function summarizeCarrierEdgeProfiles(profiles) {
   };
 }
 
+function buildCarrierRenderSummary() {
+  return {
+    visible: Boolean(carrierRenderState.visible),
+    family_modes: Array.isArray(carrierRenderState.family_modes)
+      ? carrierRenderState.family_modes.slice()
+      : [],
+    family_mode: carrierRenderState.family_mode || "",
+    family_label: carrierRenderState.family_label || "",
+    rail_ids: Array.isArray(carrierRenderState.rail_ids)
+      ? carrierRenderState.rail_ids.slice()
+      : [],
+    alpha: Number(readCarrierAlpha().toFixed(3)),
+    color_map: carrierRenderState.color_map || {},
+    edge_profiles: carrierRenderState.edge_profiles || {
+      edge_profile_count: 0,
+      overlap_edge_count: 0,
+      mode_edge_counts: {},
+      alpha: Number(readCarrierAlpha().toFixed(3)),
+      mutates_body: false,
+      render_assignment_only: true
+    },
+    render_model: "white_base_body_plus_carrier_tint",
+    mutates_body: false,
+    channel_ready_profile_surface: true
+  };
+}
+
+function publishCarrierRenderSummary() {
+  if (typeof window === "undefined") return;
+  window.__g900CarrierRenderSummary = buildCarrierRenderSummary();
+}
+
+function syncCarrierRenderLegend() {
+  const legend = document.getElementById("carrier-render-legend");
+  if (!legend) return;
+
+  const summary = carrierRenderState.edge_profiles || {};
+  const edgeCount = summary.edge_profile_count || 0;
+  const overlapCount = summary.overlap_edge_count || 0;
+
+  legend.dataset.edgeProfileCount = String(edgeCount);
+  legend.dataset.overlapEdgeCount = String(overlapCount);
+  legend.title = "Carrier edge profiles: " + edgeCount + "; overlap edges: " + overlapCount;
+}
+
 function drawCarrierRailReadings(_ctx, _w, _h, _dpr, _state, _body) {
   // Carrier readings are now assigned to existing body-edge render profiles
   // inside drawStaticBody. This compatibility stub intentionally draws no overlay.
@@ -897,6 +945,8 @@ function drawStaticBody(ctx, w, h, dpr, state, body) {
   const carrierProfiles = buildCarrierEdgeProfiles();
 
   carrierRenderState.edge_profiles = summarizeCarrierEdgeProfiles(carrierProfiles);
+  syncCarrierRenderLegend();
+  publishCarrierRenderSummary();
 
   const byId = new Map();
 

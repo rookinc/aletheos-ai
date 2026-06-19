@@ -681,7 +681,10 @@ function syncCarrierRenderState() {
   carrierRenderState.family_label = selection.label;
   carrierRenderState.family_description = selection.description;
   carrierRenderState.rail_ids = selection.rail_ids;
+  carrierRenderState.alpha = Number(readCarrierAlpha().toFixed(3));
   carrierRenderState.color_map = getG900CarrierModeColorMap(selection.modes);
+
+  syncCarrierAlphaReadout();
 
   document.querySelectorAll("[data-carrier-render-mode]").forEach((btn) => {
     const active = selection.modes.includes(btn.dataset.carrierRenderMode);
@@ -749,8 +752,49 @@ function getG900CarrierModeColorMap(modeList) {
   return out;
 }
 
-function drawCarrierRailReadings(ctx, w, h, dpr, state, body) {
-  if (!carrierRenderState.visible || !body) return;
+function readCarrierAlpha() {
+  return readRange01("carrier-alpha-slider", 0.58);
+}
+
+function syncCarrierAlphaReadout() {
+  const slider = document.getElementById("carrier-alpha-slider");
+  const out = document.getElementById("carrier-alpha-readout");
+  if (!slider || !out) return;
+  out.textContent = slider.value;
+}
+
+function brightenRgb(rgb, amount) {
+  return rgb.map((value) => Math.min(255, Math.round(value + (255 - value) * amount)));
+}
+
+function compositeCarrierStrokes(modes) {
+  const activeModes = normalizeCarrierRenderModes(modes);
+  const strokes = activeModes.map(getG900CarrierModeStroke);
+  const n = Math.max(1, strokes.length);
+
+  const rgb = [0, 0, 0];
+  for (const stroke of strokes) {
+    rgb[0] += stroke.rgb[0];
+    rgb[1] += stroke.rgb[1];
+    rgb[2] += stroke.rgb[2];
+  }
+
+  const averaged = rgb.map((value) => Math.round(value / n));
+  const brightened = n > 1 ? brightenRgb(averaged, Math.min(0.34, 0.10 * (n - 1))) : averaged;
+
+  return {
+    rgb: brightened,
+    mode_count: n,
+    width: Math.min(2.15, 0.82 + 0.22 * n)
+  };
+}
+
+function buildCarrierEdgeProfiles() {
+  const profiles = new Map();
+
+  if (!carrierRenderState.visible || !activeCarrierRegistry) {
+    return profiles;
+  }
 
   const activeModes = normalizeCarrierRenderModes(
     Array.isArray(carrierRenderState.family_modes)
@@ -758,57 +802,65 @@ function drawCarrierRailReadings(ctx, w, h, dpr, state, body) {
       : carrierRenderState.family_mode || "smoke"
   );
 
-  const byId = new Map();
-
-  for (const vertex of body.vertices) {
-    if (!vertex || !Array.isArray(vertex.xyz)) continue;
-
-    const point = [
-      (body.anchor.xyz[0] + vertex.xyz[0]) * body.scale,
-      (body.anchor.xyz[1] + vertex.xyz[1]) * body.scale,
-      (body.anchor.xyz[2] + vertex.xyz[2]) * body.scale
-    ];
-
-    byId.set(vertex.id, projectPoint(point, state, w, h, dpr));
-  }
-
-  ctx.save();
-
   for (const mode of activeModes) {
-    const stroke = getG900CarrierModeStroke(mode);
     const selection = selectG900CarrierRailStack(activeCarrierRegistry, [mode]);
-    const drawnEdges = new Set();
 
     for (const railId of selection.rail_ids) {
       const rail = findCarrierRailById(railId);
       if (!rail || !Array.isArray(rail.edge_ids)) continue;
 
       for (const edgeId of rail.edge_ids) {
-        if (drawnEdges.has(edgeId)) continue;
-        drawnEdges.add(edgeId);
+        let profile = profiles.get(edgeId);
+        if (!profile) {
+          profile = {
+            edge_id: edgeId,
+            modes: [],
+            rails: []
+          };
+          profiles.set(edgeId, profile);
+        }
 
-        const edgeIndex = edgeIndexFromTupleEdgeId(edgeId);
-        if (edgeIndex === null) continue;
-
-        const edge = body.edges[edgeIndex];
-        if (!Array.isArray(edge) || edge.length !== 2) continue;
-
-        const a = byId.get(edge[0]);
-        const b = byId.get(edge[1]);
-        if (!a || !b) continue;
-
-        drawLine(ctx, a, b, stroke.rgb, stroke.alpha, stroke.width);
+        if (!profile.modes.includes(mode)) profile.modes.push(mode);
+        if (!profile.rails.includes(railId)) profile.rails.push(railId);
       }
     }
   }
 
-  ctx.restore();
+  return profiles;
+}
+
+function summarizeCarrierEdgeProfiles(profiles) {
+  const modeCounts = {};
+  let overlapEdgeCount = 0;
+
+  for (const profile of profiles.values()) {
+    if (profile.modes.length > 1) overlapEdgeCount += 1;
+
+    for (const mode of profile.modes) {
+      modeCounts[mode] = (modeCounts[mode] || 0) + 1;
+    }
+  }
+
+  return {
+    edge_profile_count: profiles.size,
+    overlap_edge_count: overlapEdgeCount,
+    mode_edge_counts: modeCounts,
+    alpha: Number(readCarrierAlpha().toFixed(3)),
+    mutates_body: false,
+    render_assignment_only: true
+  };
+}
+
+function drawCarrierRailReadings(_ctx, _w, _h, _dpr, _state, _body) {
+  // Carrier readings are now assigned to existing body-edge render profiles
+  // inside drawStaticBody. This compatibility stub intentionally draws no overlay.
 }
 
 function bindCarrierRenderPanel() {
   syncCarrierRenderState();
 
   bindLayerControl("carrier-render-toggle", syncCarrierRenderState);
+  bindLayerControl("carrier-alpha-slider", syncCarrierRenderState);
 
   document.querySelectorAll("[data-carrier-render-mode]").forEach((btn) => {
     if (btn.dataset.bound === "1") return;
@@ -833,10 +885,18 @@ function bindCarrierRenderPanel() {
 
 
 function drawStaticBody(ctx, w, h, dpr, state, body) {
-  if (!body || !graphLayerEnabled()) return;
+  if (!body) return;
+
+  const graphVisible = graphLayerEnabled();
+  const carrierVisible = Boolean(carrierRenderState.visible);
+  if (!graphVisible && !carrierVisible) return;
 
   const vertexAlpha = graphLayerPercent("graph-vertices-slider", 0.72);
   const edgeAlpha = graphLayerPercent("graph-edges-slider", 0.18);
+  const carrierAlpha = readCarrierAlpha();
+  const carrierProfiles = buildCarrierEdgeProfiles();
+
+  carrierRenderState.edge_profiles = summarizeCarrierEdgeProfiles(carrierProfiles);
 
   const byId = new Map();
 
@@ -852,20 +912,44 @@ function drawStaticBody(ctx, w, h, dpr, state, body) {
 
   ctx.save();
 
-  for (const edge of body.edges) {
-    const a = byId.get(edge[0]);
-    const b = byId.get(edge[1]);
-    if (!a || !b) continue;
+  // Base body pass. Graph edges are ordinary body visibility, not carrier tint.
+  if (graphVisible) {
+    for (const edge of body.edges) {
+      const a = byId.get(edge[0]);
+      const b = byId.get(edge[1]);
+      if (!a || !b) continue;
 
-    drawLine(ctx, a, b, [223, 195, 123], edgeAlpha, 0.65);
+      drawLine(ctx, a, b, [237, 246, 255], edgeAlpha, 0.65);
+    }
   }
 
-  ctx.fillStyle = "rgba(237, 246, 255, " + vertexAlpha + ")";
+  // Carrier tint pass. Carrier alpha controls only this contribution.
+  if (carrierVisible && carrierAlpha > 0) {
+    body.edges.forEach((edge, index) => {
+      const a = byId.get(edge[0]);
+      const b = byId.get(edge[1]);
+      if (!a || !b) return;
 
-  for (const point of byId.values()) {
-    ctx.beginPath();
-    ctx.arc(point.x, point.y, Math.max(0.7, Math.min(w, h) * 0.0014), 0, TAU);
-    ctx.fill();
+      const edgeId = "tuple_edge_" + String(index).padStart(4, "0");
+      const profile = carrierProfiles.get(edgeId);
+      if (!profile) return;
+
+      const composite = compositeCarrierStrokes(profile.modes);
+      const alpha = Math.min(0.95, carrierAlpha * (0.82 + 0.10 * (composite.mode_count - 1)));
+
+      drawLine(ctx, a, b, composite.rgb, alpha, composite.width);
+    });
+  }
+
+  // Base vertex pass. Vertices stay white and are controlled by the graph layer.
+  if (graphVisible) {
+    ctx.fillStyle = "rgba(237, 246, 255, " + vertexAlpha + ")";
+
+    for (const point of byId.values()) {
+      ctx.beginPath();
+      ctx.arc(point.x, point.y, Math.max(0.7, Math.min(w, h) * 0.0014), 0, TAU);
+      ctx.fill();
+    }
   }
 
   ctx.restore();
@@ -875,9 +959,8 @@ function drawBlankStage(ctx, canvas, state) {
   const { w, h, dpr } = resizeCanvas(canvas);
   drawBackground(ctx, w, h);
   drawStageGrid(ctx, w, h, dpr, state);
-  drawStaticBody(ctx, w, h, dpr, state, activeStaticBody);
   syncCarrierRenderState();
-  drawCarrierRailReadings(ctx, w, h, dpr, state, activeStaticBody);
+  drawStaticBody(ctx, w, h, dpr, state, activeStaticBody);
 
   ctx.save();
   ctx.textBaseline = "bottom";

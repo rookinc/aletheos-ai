@@ -287,6 +287,78 @@ function drawStageGrid(ctx, w, h, dpr, state) {
   ctx.restore();
 }
 
+function drawAFGroundedLensOverlay(ctx, w, h, dpr) {
+  if (readActiveGroundedLensId() !== "a_grounded_f_return_lens") return;
+
+  const ax = w * 0.22;
+  const ay = h * 0.48;
+  const fx = w * 0.79;
+  const fy = h * 0.42;
+
+  const c1x = w * 0.72;
+  const c1y = h * 0.20;
+  const c2x = w * 0.30;
+  const c2y = h * 0.73;
+
+  const rA = Math.max(5 * dpr, Math.min(w, h) * 0.018);
+  const rF = Math.max(4 * dpr, Math.min(w, h) * 0.014);
+
+  ctx.save();
+
+  ctx.lineCap = "round";
+  ctx.lineJoin = "round";
+
+  ctx.strokeStyle = "rgba(223, 195, 123, 0.22)";
+  ctx.lineWidth = Math.max(1.2 * dpr, Math.min(w, h) * 0.002);
+  ctx.setLineDash([8 * dpr, 8 * dpr]);
+  ctx.beginPath();
+  ctx.moveTo(ax, ay);
+  ctx.bezierCurveTo(w * 0.36, h * 0.29, w * 0.64, h * 0.29, fx, fy);
+  ctx.stroke();
+
+  ctx.setLineDash([]);
+  ctx.strokeStyle = "rgba(255, 190, 120, 0.70)";
+  ctx.lineWidth = Math.max(1.6 * dpr, Math.min(w, h) * 0.0032);
+  ctx.beginPath();
+  ctx.moveTo(fx, fy);
+  ctx.bezierCurveTo(c1x, c1y, c2x, c2y, ax, ay);
+  ctx.stroke();
+
+  ctx.strokeStyle = "rgba(255, 230, 175, 0.26)";
+  ctx.lineWidth = Math.max(5 * dpr, Math.min(w, h) * 0.012);
+  ctx.beginPath();
+  ctx.moveTo(fx, fy);
+  ctx.bezierCurveTo(c1x, c1y, c2x, c2y, ax, ay);
+  ctx.stroke();
+
+  ctx.fillStyle = "rgba(255, 230, 175, 0.94)";
+  ctx.beginPath();
+  ctx.arc(ax, ay, rA, 0, TAU);
+  ctx.fill();
+
+  ctx.fillStyle = "rgba(255, 150, 115, 0.90)";
+  ctx.beginPath();
+  ctx.arc(fx, fy, rF, 0, TAU);
+  ctx.fill();
+
+  ctx.font = Math.max(10 * dpr, Math.floor(Math.min(w, h) * 0.024)) + "px ui-monospace, Menlo, Consolas, monospace";
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+
+  ctx.fillStyle = "rgba(6, 14, 22, 0.88)";
+  ctx.fillText("A", ax, ay);
+  ctx.fillText("F", fx, fy);
+
+  ctx.font = Math.max(8 * dpr, Math.floor(Math.min(w, h) * 0.016)) + "px ui-monospace, Menlo, Consolas, monospace";
+  ctx.fillStyle = "rgba(255, 230, 175, 0.78)";
+  ctx.fillText("A GROUND", ax, ay + rA + 13 * dpr);
+
+  ctx.fillStyle = "rgba(255, 170, 135, 0.72)";
+  ctx.fillText("F RETURN READ", fx, fy - rF - 12 * dpr);
+
+  ctx.restore();
+}
+
 
 
 
@@ -1053,6 +1125,7 @@ function drawBlankStage(ctx, canvas, state) {
   drawStageGrid(ctx, w, h, dpr, state);
   syncCarrierRenderState();
   drawStaticBody(ctx, w, h, dpr, state, activeStaticBody);
+  drawAFGroundedLensOverlay(ctx, w, h, dpr);
 
   ctx.save();
   ctx.textBaseline = "bottom";

@@ -17,6 +17,11 @@ export function getG900GroundedLensSummary(registry, activeLensId = null) {
       mode: "off",
       return_read_visible: false,
       render_allowed_now: false,
+      render_kind: null,
+      body_coordinate_claim: false,
+      moves_terminal_f: false,
+      adds_vertices: false,
+      adds_edges: false,
       mutates_body: false,
       admits_channels: false,
       physics_claim: false
@@ -24,6 +29,7 @@ export function getG900GroundedLensSummary(registry, activeLensId = null) {
   }
 
   const lenses = Array.isArray(registry.lenses) ? registry.lenses : [];
+  const renderActive = activeLensId === "a_grounded_f_return_lens";
 
   return {
     schema: registry.schema || "g900.viewer.grounded_lenses",
@@ -35,8 +41,13 @@ export function getG900GroundedLensSummary(registry, activeLensId = null) {
     active_lens_count: activeLensId ? 1 : 0,
     active_lens_id: activeLensId || null,
     mode: activeLensId || "off",
-    return_read_visible: false,
-    render_allowed_now: false,
+    return_read_visible: renderActive,
+    render_allowed_now: renderActive,
+    render_kind: renderActive ? "viewport_witness_overlay" : null,
+    body_coordinate_claim: false,
+    moves_terminal_f: false,
+    adds_vertices: false,
+    adds_edges: false,
     available_lenses: lenses.map((lens) => ({
       id: lens.id,
       label: lens.label,

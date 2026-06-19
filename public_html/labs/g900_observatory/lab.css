@@ -1064,3 +1064,255 @@ h1 {
   opacity: 0.74;
 }
 /* END G900 SHEETS PER SECOND UI NOTE 001 */
+
+.g900-scaled-oscillation-kernel-note {
+  margin-top: 0.55rem;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.045);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.g900-scaled-oscillation-chain {
+  display: inline-block;
+  margin-top: 0.25rem;
+  font-size: 0.72rem;
+  opacity: 0.72;
+}
+
+.g900-scaled-oscillation-boundary {
+  display: inline-block;
+  margin-top: 0.25rem;
+  font-size: 0.72rem;
+  opacity: 0.68;
+}
+
+.g900-runtime-oscillator-console {
+  margin-top: 1rem;
+  padding: 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 0.85rem;
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.g900-runtime-oscillator-console h3 {
+  margin: 0 0 0.55rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.g900-runtime-oscillator-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin: 0;
+}
+
+.g900-runtime-oscillator-grid div {
+  padding: 0.45rem 0.5rem;
+  border-radius: 0.65rem;
+  background: rgba(0, 0, 0, 0.16);
+}
+
+.g900-runtime-oscillator-grid dt {
+  font-size: 0.68rem;
+  opacity: 0.62;
+}
+
+.g900-runtime-oscillator-grid dd {
+  margin: 0.15rem 0 0;
+  font-size: 0.78rem;
+}
+
+.g900-runtime-oscillator-chain,
+.g900-runtime-oscillator-boundary {
+  margin: 0.65rem 0 0;
+  font-size: 0.74rem;
+  line-height: 1.4;
+  opacity: 0.72;
+}
+
+.g900-runtime-oscillator-boundary {
+  opacity: 0.62;
+}
+
+@media (max-width: 720px) {
+  .g900-runtime-oscillator-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Runtime oscillator console placement repair. */
+#g900-runtime-oscillator-console {
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+#g900-runtime-oscillator-console * {
+  box-sizing: border-box;
+}
+
+.g900-runtime-oscillator-chain,
+.g900-runtime-oscillator-boundary {
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+@media (max-width: 720px) {
+  #g900-runtime-oscillator-console {
+    margin-top: 0.85rem;
+  }
+
+  .g900-runtime-oscillator-chain,
+  .g900-runtime-oscillator-boundary {
+    font-size: 0.7rem;
+  }
+}
+
+.g900-apparatus-profile-console {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 1rem;
+  padding: 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 0.85rem;
+  background: rgba(255, 255, 255, 0.045);
+  overflow: hidden;
+}
+
+.g900-apparatus-profile-console * {
+  box-sizing: border-box;
+}
+
+.g900-apparatus-profile-console h3 {
+  margin: 0 0 0.55rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.g900-apparatus-profile-note,
+.g900-apparatus-profile-chain,
+.g900-apparatus-profile-boundary {
+  margin: 0.65rem 0 0;
+  font-size: 0.74rem;
+  line-height: 1.4;
+  opacity: 0.72;
+  overflow-wrap: anywhere;
+}
+
+.g900-apparatus-profile-note {
+  margin-top: 0;
+}
+
+.g900-apparatus-profile-boundary {
+  opacity: 0.62;
+}
+
+.g900-apparatus-profile-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin: 0.75rem 0 0;
+}
+
+.g900-apparatus-profile-grid div {
+  padding: 0.45rem 0.5rem;
+  border-radius: 0.65rem;
+  background: rgba(0, 0, 0, 0.16);
+}
+
+.g900-apparatus-profile-grid dt {
+  font-size: 0.68rem;
+  opacity: 0.62;
+}
+
+.g900-apparatus-profile-grid dd {
+  margin: 0.15rem 0 0;
+  font-size: 0.78rem;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 720px) {
+  .g900-apparatus-profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .g900-apparatus-profile-note,
+  .g900-apparatus-profile-chain,
+  .g900-apparatus-profile-boundary {
+    font-size: 0.7rem;
+  }
+}
+
+/* Compact console UX. Long receipts stay available, but closed by default. */
+.g900-console-compact-details,
+.g900-state-json-compact {
+  width: 100%;
+}
+
+.g900-console-compact-details > summary,
+.g900-state-json-compact > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.g900-console-compact-details > summary::-webkit-details-marker,
+.g900-state-json-compact > summary::-webkit-details-marker {
+  display: none;
+}
+
+.g900-console-compact-title {
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.g900-console-compact-readout {
+  max-width: 62%;
+  text-align: right;
+  font-size: 0.72rem;
+  line-height: 1.25;
+  opacity: 0.68;
+  overflow-wrap: anywhere;
+}
+
+.g900-console-compact-details[open] > summary,
+.g900-state-json-compact[open] > summary {
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.g900-state-json-compact {
+  margin-top: 0.9rem;
+  padding: 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 0.85rem;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.g900-state-json-compact pre {
+  max-height: 55vh;
+  overflow: auto;
+}
+
+@media (max-width: 720px) {
+  .g900-console-compact-details > summary,
+  .g900-state-json-compact > summary {
+    align-items: flex-start;
+  }
+
+  .g900-console-compact-readout {
+    max-width: 58%;
+    font-size: 0.66rem;
+  }
+}

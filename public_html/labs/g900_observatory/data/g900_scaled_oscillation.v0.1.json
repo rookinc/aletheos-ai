@@ -1,0 +1,47 @@
+{
+  "schema": "g900.viewer.scaled_oscillation",
+  "version": "0.1",
+  "body": "g900",
+  "body_version": "0.1",
+  "status": "scaled_oscillation_kernel_declared",
+  "label": "Scaled oscillation timing kernel",
+  "dependency_chain": [
+    "universe_energy",
+    "battery_power_system",
+    "oscillator_timing_substrate",
+    "scaled_oscillation",
+    "runtime_clock",
+    "sheets_per_second_readout",
+    "admissible_grammar_sheet_steps",
+    "visible_trace",
+    "observer_choice",
+    "receipt"
+  ],
+  "readout": {
+    "id": "sheets_per_second",
+    "label": "Sheets/sec",
+    "meaning": "scope readout derived from scaled oscillation",
+    "default_value": 790,
+    "unit": "sheets_per_second",
+    "authored_by": "admissible_grammar",
+    "timed_by": "scaled_oscillation"
+  },
+  "claims": {
+    "quartz_or_oscillator_supplies": "timing_substrate",
+    "appliance_depends_on": "scaled_oscillation",
+    "grammar_earns": "sheets",
+    "scope_reads": "sheets_per_second"
+  },
+  "boundary": {
+    "mutates_body": false,
+    "runtime_motion_authority": false,
+    "opens_gates": false,
+    "admits_channels": false,
+    "lights_markers": false,
+    "physics_claim": false,
+    "force_claim": false,
+    "renderer_authority": false,
+    "counter_authority": false
+  },
+  "keeper": "Quartz supplies scaled oscillation. The grammar earns the sheets. The scope reads sheets per second."
+}

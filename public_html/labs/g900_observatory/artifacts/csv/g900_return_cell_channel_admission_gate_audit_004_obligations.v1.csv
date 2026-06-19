@@ -1,0 +1,19 @@
+id,name,requirement,evidence,pass
+GATE-01,preview object exists,The return-cell object exists only as a preview candidate before admission.,labs/g900_observatory/receipts/g900_return_cell_channel_preview_boundary_audit_001.v1.json,True
+GATE-02,preview boundary passed,The preview boundary receipt passed with no channel admission.,labs/g900_observatory/receipts/g900_return_cell_channel_preview_boundary_audit_001.v1.json,True
+GATE-03,transport contract exists,DAT-style finite information transport contract exists.,labs/g900_observatory/data/g900_discrete_information_transport_contract.v0.1.json,True
+GATE-04,contract refuses transport,The contract currently admits no information transport.,labs/g900_observatory/data/g900_discrete_information_transport_contract.v0.1.json,True
+GATE-05,contract refuses channels,The contract currently admits no channels.,labs/g900_observatory/data/g900_discrete_information_transport_contract.v0.1.json,True
+GATE-06,packet candidate exists,The carrier-incidence packet scout passed.,labs/g900_observatory/artifacts/json/g900_return_cell_carrier_incidence_packet_scout_002.v1.json,True
+GATE-07,successor rule exists,The P -> Q by R successor-rule scout passed.,labs/g900_observatory/artifacts/json/g900_return_cell_packet_successor_rule_scout_003.v1.json,True
+GATE-08,source packet named,Source packet P is named.,successor003.source_packet_P,True
+GATE-09,target packet named,Target packet Q is named.,successor003.successor_signature.target_packet_id,True
+GATE-10,successor rule named,Successor rule R is named.,successor003.successor_signature.rule_id,True
+GATE-11,rule minima unique,Every P row has a unique R-selected target.,successor003.successor_signature.all_rule_minima_unique,True
+GATE-12,packet 002 agreement,Q matches the previously named packet 002.,successor003.successor_signature.q_matches_packet002,True
+GATE-13,target endpoint balance,Q target endpoints balance across limits 23 and 24.,successor003.successor_signature.q_target_limits,True
+GATE-14,same-anchor plus repair signature,Q has three same-anchor rows and one carrier-incidence repair.,successor003.successor_signature,True
+GATE-15,body unchanged,G900 body remains 900 vertices and 3600 edges.,labs/g900_observatory/data/g900_static_body.v1.json,True
+GATE-16,no body mutation claim,"The successor scout claims no body mutation, no added vertices, and no added edges.",successor003.boundary,True
+GATE-17,no transport admission,This gate audit does not admit information transport.,audit boundary,True
+GATE-18,no physics claim,"This gate audit makes no force, physics, or unification claim.",audit boundary,True

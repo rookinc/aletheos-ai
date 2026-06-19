@@ -1,0 +1,126 @@
+{
+  "schema": "g900.blackbox_simulator_fork_manifest",
+  "version": "0.1",
+  "artifact_id": "g900_blackbox_simulator_fork_manifest_001",
+  "manifest_pass": true,
+  "verdict": "g900_blackbox_simulator_fork_manifest_001_recorded",
+  "status": "blackbox_simulator_fork_created_true_path_lock_preserved",
+  "commit": "d9c62eb",
+  "commit_full": "d9c62ebda4f52ab4d92af33752f784404df7c4c9",
+  "branch": "g900-blackbox-sim-fork",
+  "fork_definition": {
+    "fork_name": "G900 black-box simulator fork",
+    "fork_branch": "g900-blackbox-sim-fork",
+    "purpose": "Allow exploratory physics-like simulation using the currently mapped G900 black boxes as declared simulator assumptions, while preserving the true path lock that no physics claim may be made until the black boxes are generated or otherwise discharged.",
+    "true_path_lock": "The G900 F0001 seam remains identifiable but not generated. Physics claims require black-box completion or an explicitly separate empirical bridge. The simulator fork may use the black box as an assumption, not as a theorem.",
+    "simulation_status": "allowed_as_black_box_sandbox",
+    "claim_status": "no_physics_claim"
+  },
+  "track_split": [
+    {
+      "track": "true_path",
+      "status": "hard_locked",
+      "rule": "Finish or discharge black boxes before claiming physics."
+    },
+    {
+      "track": "simulator_fork",
+      "status": "allowed",
+      "rule": "Use black boxes as explicit assumptions for exploratory simulation only."
+    }
+  ],
+  "allowed_uses": [
+    "simulate internal graph-state evolution using declared black-box mappings",
+    "use F0001 seam behavior as a simulator assumption",
+    "render physics-like fields, flows, or potentials as exploratory visuals",
+    "define toy observables on the graph",
+    "compare simulated behavior across parameter settings",
+    "generate hypotheses for later theorem or empirical work",
+    "label every output with black_box_assumption_version"
+  ],
+  "forbidden_claims": [
+    "physical transport claim",
+    "physical flux claim",
+    "energy flow claim",
+    "force claim",
+    "gravity claim",
+    "electromagnetism claim",
+    "strong or weak interaction claim",
+    "unification claim",
+    "geometry claim",
+    "spacetime claim",
+    "body mutation of the G900 theorem object",
+    "new permission channel admission",
+    "new information transport admission",
+    "viewer gate opening",
+    "marker lighting as physical event",
+    "black-box simulator result presented as proof"
+  ],
+  "required_labels": [
+    "black_box_simulation",
+    "exploratory",
+    "not_physics_claim",
+    "not_channel_admission",
+    "not_body_mutation",
+    "assumption_version_required"
+  ],
+  "true_path_dependency": {
+    "seam_plateau_checkpoint": "g900_transport_choice_f0001_seam_plateau_checkpoint_057",
+    "generator_definition": "g900_transport_choice_f0001_generator_definition_flag_056",
+    "current_unknown": "missing pre-role seam generator",
+    "hard_lock": "No physics claim until black-box completion or separate empirical bridge."
+  },
+  "boundary": {
+    "simulator_fork_only": true,
+    "uses_black_box_as_assumption": true,
+    "black_box_not_discharged": true,
+    "source_law_not_promoted": true,
+    "family_not_promoted": true,
+    "new_permission_channel_admitted": false,
+    "new_information_transport_admitted": false,
+    "new_flux_witness_declared": false,
+    "transport_family_claim": false,
+    "global_uniqueness_claim": false,
+    "physical_transport_claim": false,
+    "physical_flux_claim": false,
+    "energy_flow_claim": false,
+    "force_claim": false,
+    "physics_claim": false,
+    "geometry_claim": false,
+    "body_mutation": false,
+    "adds_vertices": false,
+    "adds_edges": false,
+    "viewer_gate_open": false,
+    "marker_lighting": false
+  },
+  "counts": {
+    "allowed_use_count": 7,
+    "forbidden_claim_count": 16,
+    "required_label_count": 6,
+    "current_admitted_permission_channel_count": 1,
+    "current_admitted_information_transport_count": 1
+  },
+  "checks": {
+    "no_missing_inputs": true,
+    "on_simulator_branch": true,
+    "seam_plateau_057_passed": true,
+    "seam_plateau_status_locked": true,
+    "generator_definition_056_passed": true,
+    "current_permission_channel_count_still_1": true,
+    "current_information_transport_count_still_1": true,
+    "manifest_makes_no_physics_claim": true,
+    "manifest_admits_no_new_channel": true,
+    "manifest_admits_no_new_transport": true,
+    "manifest_preserves_body": true
+  },
+  "failed_checks": [],
+  "inputs": {
+    "labs/g900_observatory/artifacts/json/g900_transport_choice_f0001_seam_plateau_checkpoint_057.v1.json": "71969f3c38f291fc47a7367661373aa8a0bb5e3ee0662c30541c3cafdf007aec",
+    "labs/g900_observatory/artifacts/json/g900_transport_choice_f0001_generator_definition_flag_056.v1.json": "31d143192e4c2e8e145e134634f5d509309ebc440a356bb9d0cb03e398cf5140",
+    "labs/g900_observatory/data/g900_admitted_permission_channels.v0.1.json": "94afd7ca8ffd171860b31d2c1ac2b55b21437fc69b8efc44c4a4bf27c0475964",
+    "labs/g900_observatory/data/g900_admitted_information_transports.v0.1.json": "2e1b4bc6e3ec072af260eb50af15ac8e21ba089be4b13039e5d101ca5941447f"
+  },
+  "missing_inputs": [],
+  "git_status_short_before": "",
+  "recorded_at_utc": "2026-06-19T20:55:21Z",
+  "keeper": "The true path finishes the black box. The fork lets the black box move."
+}

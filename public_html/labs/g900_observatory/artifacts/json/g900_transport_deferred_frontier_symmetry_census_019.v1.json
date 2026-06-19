@@ -1,0 +1,119 @@
+{
+  "schema": "g900.transport_deferred_frontier_symmetry_census",
+  "version": "0.1",
+  "artifact_id": "g900_transport_deferred_frontier_symmetry_census_019",
+  "census_pass": true,
+  "verdict": "deferred_frontier_symmetry_census_019_recorded",
+  "status": "nontrivial_symmetry_clusters_found",
+  "commit": "721f950",
+  "commit_full": "721f9504c7e32d943641f0eb07fdb396d03020b6",
+  "question": "Do the 71 structurally valid deferred frontier candidates collapse under simple symmetry/canonical signatures?",
+  "honest_answer": "This census tests simple slot rotation, reflection, endpoint reversal, support-graph, relative, slot-delta, and edge-delta signatures. It does not run gate audits and admits nothing.",
+  "counts": {
+    "frontier_row_count": 71,
+    "current_admitted_permission_channel_count": 1,
+    "current_admitted_information_transport_count": 1,
+    "best_nontrivial_cluster_kind": "canonical_role_reverse",
+    "best_nontrivial_cluster_count": 70,
+    "best_nontrivial_max_cluster_size": 2
+  },
+  "cluster_counts": {
+    "canonical_cyclic_reflection": {
+      "cluster_count": 71,
+      "singleton_count": 71,
+      "nontrivial_cluster_count": 0,
+      "max_cluster_size": 1
+    },
+    "canonical_role_reverse": {
+      "cluster_count": 70,
+      "singleton_count": 69,
+      "nontrivial_cluster_count": 1,
+      "max_cluster_size": 2
+    },
+    "canonical_support_graph": {
+      "cluster_count": 70,
+      "singleton_count": 69,
+      "nontrivial_cluster_count": 1,
+      "max_cluster_size": 2
+    },
+    "relative_to_C": {
+      "cluster_count": 71,
+      "singleton_count": 71,
+      "nontrivial_cluster_count": 0,
+      "max_cluster_size": 1
+    },
+    "relative_to_B": {
+      "cluster_count": 71,
+      "singleton_count": 71,
+      "nontrivial_cluster_count": 0,
+      "max_cluster_size": 1
+    },
+    "slot_delta_signature": {
+      "cluster_count": 71,
+      "singleton_count": 71,
+      "nontrivial_cluster_count": 0,
+      "max_cluster_size": 1
+    },
+    "edge_delta_signature": {
+      "cluster_count": 71,
+      "singleton_count": 71,
+      "nontrivial_cluster_count": 0,
+      "max_cluster_size": 1
+    }
+  },
+  "interpretation": {
+    "if_nontrivial_clusters_found": "Audit representatives first, then decide whether each cluster needs complete gate audit.",
+    "if_singleton_frontier": "The tested simple signatures do not compress the frontier; full candidate-specific gate audits are justified.",
+    "boundary_reading": "A symmetry cluster is not a permission receipt."
+  },
+  "boundary": {
+    "symmetry_census_only": true,
+    "runs_gate_audits": false,
+    "new_permission_channel_admitted": false,
+    "new_information_transport_admitted": false,
+    "new_flux_witness_declared": false,
+    "transport_family_claim": false,
+    "global_uniqueness_claim": false,
+    "physical_transport_claim": false,
+    "physical_flux_claim": false,
+    "energy_flow_claim": false,
+    "force_claim": false,
+    "physics_claim": false,
+    "unification_claim": false,
+    "body_mutation": false,
+    "adds_vertices": false,
+    "adds_edges": false
+  },
+  "checks": {
+    "no_missing_inputs": true,
+    "audit018b_passed": true,
+    "worklist018a_passed": true,
+    "checkpoint017_passed": true,
+    "filter016_passed": true,
+    "filter015_passed": true,
+    "frontier_row_count_71": true,
+    "all_rows_structural_replay_pass": true,
+    "all_rows_require_gate_receipt": true,
+    "current_transport_count_still_1": true,
+    "current_permission_channel_count_still_1": true,
+    "no_gate_audits_run": true,
+    "no_new_admissions": true,
+    "no_family_claim": true,
+    "no_uniqueness_claim": true
+  },
+  "failed_checks": [],
+  "inputs": {
+    "labs/g900_observatory/artifacts/json/g900_transport_deferred_gate_frontier_full_audit_018b.v1.json": "46d0d80c8fe83d30f3fc2d405c8d102ea7310665e2aa8f1280bca6006e5ecece",
+    "labs/g900_observatory/artifacts/csv/g900_transport_deferred_gate_frontier_full_audit_018b_rows.v1.csv": "80a09ed33f1d239e8f10dc053a07339dde784c00a90f105cf2c1a867ccd8a4e9",
+    "labs/g900_observatory/artifacts/json/g900_transport_deferred_gate_frontier_worklist_018a.v1.json": "036a39786ec8b6fde72d993a906c546cc328efc6af0cb436c759d671b7e175b9",
+    "labs/g900_observatory/artifacts/json/g900_transport_census_phase_checkpoint_017.v1.json": "98b6c627b07562bb3e19b3303320e1bc6ab9fc0f2b9d2ccb5946a8fb9982d85d",
+    "labs/g900_observatory/artifacts/json/g900_transport_permission_gate_family_filter_016.v1.json": "c5aad04eef8109d449d2218aeb595596851fe21975e2f16fb22d86384523532d",
+    "labs/g900_observatory/artifacts/json/g900_transport_successor_rule_family_filter_015.v1.json": "635b563b64e02705c82fc29faa9d8f3f4726a20a49209bfc75a818023f4f42d6",
+    "labs/g900_observatory/data/g900_admitted_information_transports.v0.1.json": "2e1b4bc6e3ec072af260eb50af15ac8e21ba089be4b13039e5d101ca5941447f",
+    "labs/g900_observatory/data/g900_admitted_permission_channels.v0.1.json": "94afd7ca8ffd171860b31d2c1ac2b55b21437fc69b8efc44c4a4bf27c0475964"
+  },
+  "missing_inputs": [],
+  "git_status_short_before": "",
+  "recorded_at_utc": "2026-06-19T16:34:22Z",
+  "keeper": "Symmetry can reduce a frontier. It cannot grant permission."
+}

@@ -1,5 +1,23 @@
 const CHANNEL_REGISTRY_URL = "./data/g900_channels.v0.1.json";
 
+function requireObject(value, label) {
+  if (!value || typeof value !== "object" || Array.isArray(value)) {
+    throw new Error(label + " must be an object");
+  }
+}
+
+function requireString(value, label) {
+  if (typeof value !== "string" || value.length === 0) {
+    throw new Error(label + " must be a nonempty string");
+  }
+}
+
+function requireFalse(value, label) {
+  if (value !== false) {
+    throw new Error(label + " must be false");
+  }
+}
+
 export async function readG900ChannelRegistry() {
   const response = await fetch(CHANNEL_REGISTRY_URL, { cache: "no-store" });
 
@@ -13,9 +31,7 @@ export async function readG900ChannelRegistry() {
 }
 
 export function validateG900ChannelRegistry(payload) {
-  if (!payload || typeof payload !== "object") {
-    throw new Error("channel registry must be an object");
-  }
+  requireObject(payload, "channel registry");
 
   if (payload.schema !== "g900.viewer.channels") {
     throw new Error("unexpected channel registry schema: " + payload.schema);
@@ -29,7 +45,9 @@ export function validateG900ChannelRegistry(payload) {
     throw new Error("channel registry body must be g900");
   }
 
-  if (!payload.overlay || payload.overlay.id !== "channels" || payload.overlay.layer !== 3) {
+  requireObject(payload.overlay, "channel overlay");
+
+  if (payload.overlay.id !== "channels" || payload.overlay.layer !== 3) {
     throw new Error("channel registry overlay must be channels layer 3");
   }
 
@@ -37,17 +55,9 @@ export function validateG900ChannelRegistry(payload) {
     throw new Error("channel registry overlay status must be next");
   }
 
-  if (payload.mutates_body !== false) {
-    throw new Error("channel registry must not mutate body");
-  }
-
-  if (payload.runtime_motion_authority !== false) {
-    throw new Error("channel registry must not have runtime motion authority");
-  }
-
-  if (payload.physics_claim !== false) {
-    throw new Error("channel registry must not make physics claim");
-  }
+  requireFalse(payload.mutates_body, "channel registry mutates_body");
+  requireFalse(payload.runtime_motion_authority, "channel registry runtime_motion_authority");
+  requireFalse(payload.physics_claim, "channel registry physics_claim");
 
   if (!Array.isArray(payload.channel_sets)) {
     throw new Error("channel registry channel_sets must be an array");
@@ -56,17 +66,9 @@ export function validateG900ChannelRegistry(payload) {
   let channelCount = 0;
 
   for (const channelSet of payload.channel_sets) {
-    if (!channelSet || typeof channelSet !== "object") {
-      throw new Error("channel set must be an object");
-    }
-
-    if (typeof channelSet.id !== "string" || !channelSet.id) {
-      throw new Error("channel set id must be a nonempty string");
-    }
-
-    if (channelSet.mutates_body !== false) {
-      throw new Error("channel set must not mutate body: " + channelSet.id);
-    }
+    requireObject(channelSet, "channel set");
+    requireString(channelSet.id, "channel set id");
+    requireFalse(channelSet.mutates_body, "channel set mutates_body");
 
     if (!Array.isArray(channelSet.channels)) {
       throw new Error("channel set channels must be an array: " + channelSet.id);
@@ -75,17 +77,9 @@ export function validateG900ChannelRegistry(payload) {
     channelCount += channelSet.channels.length;
 
     for (const channel of channelSet.channels) {
-      if (!channel || typeof channel !== "object") {
-        throw new Error("channel must be an object");
-      }
-
-      if (typeof channel.id !== "string" || !channel.id) {
-        throw new Error("channel id must be a nonempty string");
-      }
-
-      if (channel.mutates_body !== false) {
-        throw new Error("channel must not mutate body: " + channel.id);
-      }
+      requireObject(channel, "channel");
+      requireString(channel.id, "channel id");
+      requireFalse(channel.mutates_body, "channel mutates_body");
     }
   }
 
@@ -97,12 +91,30 @@ export function validateG900ChannelRegistry(payload) {
     throw new Error("channel_count mismatch");
   }
 
-  if (!payload.boundary || payload.boundary.admits_channels !== false) {
-    throw new Error("channel scaffold must not admit channels");
+  if (payload.admitted_channel_count !== 0) {
+    throw new Error("MVP channel registry must admit zero channels");
   }
 
-  if (payload.boundary.renders_channels !== false) {
-    throw new Error("channel scaffold must not render channels");
+  requireObject(payload.boundary, "channel boundary");
+  requireFalse(payload.boundary.admits_channels, "channel boundary admits_channels");
+  requireFalse(payload.boundary.renders_channels, "channel boundary renders_channels");
+  requireFalse(payload.boundary.mutates_body, "channel boundary mutates_body");
+  requireFalse(payload.boundary.physics_claim, "channel boundary physics_claim");
+  requireFalse(payload.boundary.force_claim, "channel boundary force_claim");
+  requireFalse(payload.boundary.runtime_motion_authority, "channel boundary runtime_motion_authority");
+  requireFalse(payload.boundary.marker_lighting, "channel boundary marker_lighting");
+  requireFalse(payload.boundary.gate_open, "channel boundary gate_open");
+
+  if (!Array.isArray(payload.scope_modes) || payload.scope_modes.length === 0) {
+    throw new Error("channel registry scope_modes must be a nonempty array");
+  }
+
+  for (const mode of payload.scope_modes) {
+    requireObject(mode, "channel scope mode");
+    requireString(mode.id, "channel scope mode id");
+    requireString(mode.label, "channel scope mode label");
+    requireString(mode.status, "channel scope mode status");
+    requireString(mode.meaning, "channel scope mode meaning");
   }
 
   return true;
@@ -124,16 +136,25 @@ export function getG900ChannelSummary(payload) {
     contract: payload.contract,
     channel_set_count: payload.channel_set_count,
     channel_count: payload.channel_count,
-    admitted_channel_count: payload.channel_count,
-    channel_sets: payload.channel_sets.map((channelSet) => ({
-      id: channelSet.id,
-      label: channelSet.label,
-      status: channelSet.status,
-      channel_count: Array.isArray(channelSet.channels) ? channelSet.channels.length : 0
+    admitted_channel_count: payload.admitted_channel_count,
+    scope_modes: payload.scope_modes.map((mode) => ({
+      id: mode.id,
+      label: mode.label,
+      status: mode.status,
+      meaning: mode.meaning
     })),
+    candidate_receipts: Array.isArray(payload.candidate_receipts) ? payload.candidate_receipts.map((receipt) => ({
+      id: receipt.id,
+      candidate_id: receipt.candidate_id,
+      receipt: receipt.receipt,
+      mvp_status: receipt.mvp_status,
+      renders_now: receipt.renders_now,
+      admitted_in_mvp: receipt.admitted_in_mvp
+    })) : [],
     mutates_body: false,
     runtime_motion_authority: false,
     physics_claim: false,
-    boundary: payload.boundary
+    boundary: payload.boundary,
+    keeper: payload.keeper
   };
 }

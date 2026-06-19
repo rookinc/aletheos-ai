@@ -290,26 +290,24 @@
             <p class="layer-panel-eyebrow">Layer 2</p>
             <h2>Carriers</h2>
           </div>
-          <label class="layer-switch">
-            <input id="carrier-render-toggle" data-layer-toggle="carriers" type="checkbox" />
-            <span>Off</span>
+
+          <label class="layer-switch carrier-render-panel-toggle" for="carrier-render-toggle">
+            <input id="carrier-render-toggle" type="checkbox" />
+            <span>OFF</span>
           </label>
         </div>
 
-        <label class="layer-slider-row" for="carrier-render-family-select">
-          <span>Family</span>
-          <select id="carrier-render-family-select" data-layer-select="carriers">
-              <option value="smoke">Smoke rail</option>
-              <option value="slot_internal">Slot internal carriers</option>
-              <option value="slot_pair_boundary">Slot-pair boundary carriers</option>
-              <option value="six_nine_neighborhood">Six-nine neighborhood</option>
-              <option value="nearest_receipt_branch">Nearest receipt branch</option>
-              <option value="all">All admitted carriers</option>
-            </select>
-          <output id="carrier-render-family-readout">smoke</output>
-        </label>
+        <div id="carrier-render-panel-body" class="carrier-render-panel-body" hidden>
+          <div class="carrier-render-flag-grid" role="group" aria-label="Carrier reading modes">
+            <button class="carrier-render-flag is-active" type="button" data-carrier-render-mode="smoke">Smoke rail</button>
+            <button class="carrier-render-flag" type="button" data-carrier-render-mode="slot_internal">Slot internal</button>
+            <button class="carrier-render-flag" type="button" data-carrier-render-mode="slot_pair_boundary">Slot-pair boundary</button>
+            <button class="carrier-render-flag" type="button" data-carrier-render-mode="six_nine_neighborhood">Six-nine neighborhood</button>
+            <button class="carrier-render-flag" type="button" data-carrier-render-mode="nearest_receipt_branch">Nearest receipt branch</button>
+          </div>
 
-        <p class="layer-panel-note">Layer 2 carrier readings. Rendering only. Body unchanged.</p>
+          <p id="carrier-render-note" class="layer-panel-note">Layer 2 carrier readings. Stack carrier flags to combine readings. Rendering only. Body unchanged.</p>
+        </div>
       </div>
 
       <div class="layer-panel" data-layer-panel="channels" aria-label="Channel layer controls">
@@ -318,15 +316,28 @@
             <p class="layer-panel-eyebrow">Layer 3</p>
             <h2>Channels</h2>
           </div>
-          <span class="layer-status-pill">Scaffold</span>
+
+          <label class="layer-switch channel-scope-panel-toggle" for="channel-scope-panel-toggle">
+            <input id="channel-scope-panel-toggle" type="checkbox" />
+            <span id="channel-scope-panel-toggle-label">OFF</span>
+          </label>
         </div>
 
-        <label class="layer-slider-row" for="channel-count-readout">
-          <span>Admitted</span>
-          <output id="channel-count-readout">0</output>
-        </label>
+        <div id="channel-scope-panel-body" class="channel-scope-panel-body" hidden>
+          <label class="layer-slider-row" for="channel-count-readout">
+            <span>Admitted</span>
+            <output id="channel-count-readout">0</output>
+          </label>
 
-        <p class="layer-panel-note">Layer 3 channel scaffold. Zero admitted channel readings. No rendering authority.</p>
+          <div class="channel-scope-flag-grid" role="group" aria-label="Channel scope flags">
+            <button class="channel-scope-flag is-active" type="button" data-channel-scope-mode="no_admitted_channels">No channels</button>
+            <button class="channel-scope-flag" type="button" data-channel-scope-mode="carrier_eligibility">Carrier eligible</button>
+            <button class="channel-scope-flag" type="button" data-channel-scope-mode="six_nine_boundary_question">Six-nine boundary</button>
+            <button class="channel-scope-flag" type="button" data-channel-scope-mode="return_cell_question">Return-cell question</button>
+          </div>
+
+          <p id="channel-scope-note" class="layer-panel-note">Layer 3 channel scope map. Zero admitted live channels. Permission question only.</p>
+        </div>
       </div>
 
       <div class="stage-console-panel">
@@ -342,13 +353,14 @@
     <p>2026 Centre of Recursive Inquiry. Aletheos.ai is the public research surface for CoRI and Thalean Action Theory.</p>
   </footer>
 
-  <script type="module" src="g900_grammar_stage_v0.js?v=carrier-modes-001"></script>
+  <script type="module" src="g900_grammar_stage_v0.js?v=carrier-edge-colors-001"></script>
   <script type="module" src="kernel/g900_scaled_oscillation_ui.js?v=scaled-oscillation-001"></script>
   <script src="kernel/g900_runtime_oscillator_console.js?v=runtime-oscillator-001" defer></script>
   <script src="kernel/g900_apparatus_profile_console.js?v=apparatus-profile-001" defer></script>
   <script src="kernel/g900_console_compact.js?v=console-compact-001" defer></script>
   <script src="kernel/g900_origin_time_console.js?v=origin-time-002" defer></script>
   <script src="kernel/g900_null_well_view.js?v=null-well-001" defer></script>
+  <script src="kernel/g900_channel_scope_ui.js?v=channel-flags-001" defer></script>
 </body>
 </html>
 

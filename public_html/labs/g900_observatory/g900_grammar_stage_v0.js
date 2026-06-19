@@ -29,8 +29,7 @@ const CARRIER_RENDER_FAMILIES = {
 };
 
 function readCarrierRenderFamilyMode() {
-  const select = document.getElementById("carrier-render-family-select");
-  const value = select ? select.value : "smoke";
+    const value = select ? select.value : "smoke";
   return Object.prototype.hasOwnProperty.call(CARRIER_RENDER_FAMILIES, value) ? value : "smoke";
 }
 
@@ -62,6 +61,40 @@ let activeOverlayRegistry = null;
 let activeCarrierRegistry = null;
 let activeChannelRegistry = null;
 let activeScaledOscillationKernel = null;
+const CARRIER_RENDER_MODE_IDS = ["smoke", "slot_internal", "slot_pair_boundary", "six_nine_neighborhood", "nearest_receipt_branch"];
+
+function normalizeCarrierRenderModes(value) {
+  let raw = value;
+
+  if (typeof raw === "string") {
+    try {
+      const parsed = JSON.parse(raw);
+      raw = parsed;
+    } catch (_) {
+      raw = raw.split(/[,+ ]+/).filter(Boolean);
+    }
+  }
+
+  if (!Array.isArray(raw)) raw = ["smoke"];
+
+  const seen = new Set();
+  const cleaned = [];
+
+  raw.forEach((mode) => {
+    if (CARRIER_RENDER_MODE_IDS.includes(mode) && !seen.has(mode)) {
+      seen.add(mode);
+      cleaned.push(mode);
+    }
+  });
+
+  return cleaned.length ? cleaned : ["smoke"];
+}
+
+let activeCarrierRenderModes = normalizeCarrierRenderModes(
+  localStorage.getItem("g900.carrierRenderModes") ||
+  localStorage.getItem("g900.carrierRenderMode") ||
+  "smoke"
+);
 let carrierRenderState = {
   version: "0.1",
   visible: false,
@@ -369,6 +402,7 @@ function buildG900ViewerStateObject(state) {
     overlays: activeOverlayRegistry ? getG900OverlaySummary(activeOverlayRegistry) : null,
     carriers: activeCarrierRegistry ? getG900CarrierSummary(activeCarrierRegistry) : null,
     channels: activeChannelRegistry ? getG900ChannelSummary(activeChannelRegistry) : null,
+    channel_scope: readWindowSummary("__g900ChannelScopeSummary"),
     timing_kernel: {
       scaled_oscillation: activeScaledOscillationKernel ? getG900ScaledOscillationSummary(activeScaledOscillationKernel) : null,
       runtime_oscillator: readWindowSummary("__g900RuntimeOscillatorSummary"),
@@ -524,28 +558,28 @@ function getG900CarrierModeDefinitions() {
   return {
     smoke: {
       label: "Smoke rail",
-      description: "Single source-provenance smoke rail.",
+      description: "single source-provenance smoke rail",
       include: function (rail) {
         return rail && rail.status === "smoke_rail";
       }
     },
     slot_internal: {
       label: "Slot internal carriers",
-      description: "All admitted slot-internal carrier readings.",
+      description: "fifteen admitted slot-internal carrier readings",
       include: function (rail) {
         return rail && rail.kind === "slot_internal_carrier";
       }
     },
     slot_pair_boundary: {
       label: "Slot-pair boundary carriers",
-      description: "All admitted slot-pair boundary carrier readings.",
+      description: "thirty admitted slot-pair boundary carrier readings",
       include: function (rail) {
         return rail && rail.kind === "slot_pair_boundary_carrier";
       }
     },
     six_nine_neighborhood: {
       label: "Six-nine neighborhood",
-      description: "Carrier readings around the six-nine receipt neighborhood. Rendering only.",
+      description: "focused carrier reading around the six-nine receipt neighborhood",
       include: function (rail) {
         if (!rail || !rail.id) return false;
         return [
@@ -561,7 +595,7 @@ function getG900CarrierModeDefinitions() {
     },
     nearest_receipt_branch: {
       label: "Nearest receipt branch",
-      description: "Receipt-side branch around 03-09 and the source-side 09-11 fork.",
+      description: "receipt-side branch around 03-09 and source-side 09-11 fork",
       include: function (rail) {
         if (!rail || !rail.id) return false;
         return [
@@ -573,13 +607,6 @@ function getG900CarrierModeDefinitions() {
           "slot_pair_09_11_boundary_carrier",
           "slot_pair_09_12_boundary_carrier"
         ].includes(rail.id);
-      }
-    },
-    all: {
-      label: "All admitted carriers",
-      description: "All admitted carrier readings.",
-      include: function (rail) {
-        return rail && rail.status === "admitted_reading";
       }
     }
   };
@@ -599,16 +626,35 @@ function flattenG900CarrierRails(registry) {
   return rails;
 }
 
-function selectG900CarrierRails(registry, mode) {
-  const modes = getG900CarrierModeDefinitions();
-  const selectedMode = modes[mode] ? mode : "smoke";
-  const definition = modes[selectedMode];
-  const rails = flattenG900CarrierRails(registry).filter(definition.include);
+function selectG900CarrierRailStack(registry, modeList) {
+  const definitions = getG900CarrierModeDefinitions();
+  const activeModes = normalizeCarrierRenderModes(modeList);
+  const allRails = flattenG900CarrierRails(registry);
+  const byId = new Map();
+  const labels = [];
+  const descriptions = [];
+
+  activeModes.forEach((mode) => {
+    const definition = definitions[mode];
+    if (!definition) return;
+
+    labels.push(definition.label);
+    descriptions.push(definition.description);
+
+    allRails.filter(definition.include).forEach((rail) => {
+      if (rail && rail.id && !byId.has(rail.id)) {
+        byId.set(rail.id, rail);
+      }
+    });
+  });
+
+  const rails = Array.from(byId.values());
 
   return {
-    mode: selectedMode,
-    label: definition.label,
-    description: definition.description,
+    modes: activeModes,
+    mode: activeModes.join("+"),
+    label: labels.join(" + "),
+    description: descriptions.join("; "),
     rails: rails,
     rail_ids: rails.map(function (rail) { return rail.id; })
   };
@@ -618,30 +664,33 @@ function syncCarrierRenderState() {
   syncLayerSwitchLabel("carrier-render-toggle");
 
   const toggle = document.getElementById("carrier-render-toggle");
-  const select = document.getElementById("carrier-render-family-select");
-  const readout = document.getElementById("carrier-render-family-readout");
+  const body = document.getElementById("carrier-render-panel-body");
   const note = document.getElementById("carrier-render-note");
+  const visible = Boolean(toggle && toggle.checked);
 
-  const mode = select ? select.value : "smoke";
-  const selection = selectG900CarrierRails(activeCarrierRegistry, mode);
+  if (body) body.hidden = !visible;
 
-  carrierRenderState.visible = Boolean(toggle && toggle.checked);
+  const panel = document.querySelector('[data-layer-panel="carriers"]');
+  if (panel) panel.classList.toggle("carrier-render-panel-open", visible);
+
+  const selection = selectG900CarrierRailStack(activeCarrierRegistry, activeCarrierRenderModes);
+
+  carrierRenderState.visible = visible;
   carrierRenderState.family_mode = selection.mode;
+  carrierRenderState.family_modes = selection.modes.slice();
   carrierRenderState.family_label = selection.label;
   carrierRenderState.family_description = selection.description;
   carrierRenderState.rail_ids = selection.rail_ids;
+  carrierRenderState.color_map = getG900CarrierModeColorMap(selection.modes);
 
-  if (readout) {
-    readout.textContent = selection.mode === "all" ? "ALL" :
-      selection.mode === "slot_internal" ? "SLOT" :
-      selection.mode === "slot_pair_boundary" ? "PAIR" :
-      selection.mode === "six_nine_neighborhood" ? "6/9" :
-      selection.mode === "nearest_receipt_branch" ? "BRANCH" :
-      "SMOKE";
-  }
+  document.querySelectorAll("[data-carrier-render-mode]").forEach((btn) => {
+    const active = selection.modes.includes(btn.dataset.carrierRenderMode);
+    btn.classList.toggle("is-active", active);
+    btn.setAttribute("aria-pressed", active ? "true" : "false");
+  });
 
   if (note) {
-    note.textContent = "Layer 2 carrier readings. " + selection.description + " Rendering only. Body unchanged.";
+    note.textContent = "Layer 2 carrier readings. Active stack: " + selection.label + ". Rendering only. Body unchanged.";
   }
 }
 
@@ -651,8 +700,63 @@ function edgeIndexFromTupleEdgeId(edgeId) {
   return Number(match[1]);
 }
 
+function getG900CarrierModeStroke(mode) {
+  const strokes = {
+    smoke: {
+      rgb: [240, 200, 120],
+      alpha: 0.52,
+      width: 1.15
+    },
+    slot_internal: {
+      rgb: [120, 185, 255],
+      alpha: 0.46,
+      width: 1.05
+    },
+    slot_pair_boundary: {
+      rgb: [190, 150, 255],
+      alpha: 0.42,
+      width: 1.0
+    },
+    six_nine_neighborhood: {
+      rgb: [120, 245, 170],
+      alpha: 0.58,
+      width: 1.35
+    },
+    nearest_receipt_branch: {
+      rgb: [255, 145, 165],
+      alpha: 0.6,
+      width: 1.4
+    }
+  };
+
+  return strokes[mode] || {
+    rgb: [186, 222, 230],
+    alpha: 0.38,
+    width: 1.05
+  };
+}
+
+function getG900CarrierModeColorMap(modeList) {
+  const out = {};
+  normalizeCarrierRenderModes(modeList).forEach((mode) => {
+    const stroke = getG900CarrierModeStroke(mode);
+    out[mode] = {
+      rgb: stroke.rgb.slice(),
+      alpha: stroke.alpha,
+      width: stroke.width
+    };
+  });
+  return out;
+}
+
 function drawCarrierRailReadings(ctx, w, h, dpr, state, body) {
   if (!carrierRenderState.visible || !body) return;
+
+  const activeModes = normalizeCarrierRenderModes(
+    Array.isArray(carrierRenderState.family_modes)
+      ? carrierRenderState.family_modes
+      : carrierRenderState.family_mode || "smoke"
+  );
 
   const byId = new Map();
 
@@ -670,22 +774,31 @@ function drawCarrierRailReadings(ctx, w, h, dpr, state, body) {
 
   ctx.save();
 
-  for (const railId of carrierRenderState.rail_ids) {
-    const rail = findCarrierRailById(railId);
-    if (!rail || !Array.isArray(rail.edge_ids)) continue;
+  for (const mode of activeModes) {
+    const stroke = getG900CarrierModeStroke(mode);
+    const selection = selectG900CarrierRailStack(activeCarrierRegistry, [mode]);
+    const drawnEdges = new Set();
 
-    for (const edgeId of rail.edge_ids) {
-      const edgeIndex = edgeIndexFromTupleEdgeId(edgeId);
-      if (edgeIndex === null) continue;
+    for (const railId of selection.rail_ids) {
+      const rail = findCarrierRailById(railId);
+      if (!rail || !Array.isArray(rail.edge_ids)) continue;
 
-      const edge = body.edges[edgeIndex];
-      if (!Array.isArray(edge) || edge.length !== 2) continue;
+      for (const edgeId of rail.edge_ids) {
+        if (drawnEdges.has(edgeId)) continue;
+        drawnEdges.add(edgeId);
 
-      const a = byId.get(edge[0]);
-      const b = byId.get(edge[1]);
-      if (!a || !b) continue;
+        const edgeIndex = edgeIndexFromTupleEdgeId(edgeId);
+        if (edgeIndex === null) continue;
 
-      drawLine(ctx, a, b, [186, 222, 230], 0.38, 1.05);
+        const edge = body.edges[edgeIndex];
+        if (!Array.isArray(edge) || edge.length !== 2) continue;
+
+        const a = byId.get(edge[0]);
+        const b = byId.get(edge[1]);
+        if (!a || !b) continue;
+
+        drawLine(ctx, a, b, stroke.rgb, stroke.alpha, stroke.width);
+      }
     }
   }
 
@@ -694,8 +807,28 @@ function drawCarrierRailReadings(ctx, w, h, dpr, state, body) {
 
 function bindCarrierRenderPanel() {
   syncCarrierRenderState();
+
   bindLayerControl("carrier-render-toggle", syncCarrierRenderState);
-  bindLayerControl("carrier-render-family-select", syncCarrierRenderState);
+
+  document.querySelectorAll("[data-carrier-render-mode]").forEach((btn) => {
+    if (btn.dataset.bound === "1") return;
+    btn.dataset.bound = "1";
+
+    btn.addEventListener("click", () => {
+      const mode = btn.dataset.carrierRenderMode || "smoke";
+      const set = new Set(activeCarrierRenderModes);
+
+      if (set.has(mode)) {
+        set.delete(mode);
+      } else {
+        set.add(mode);
+      }
+
+      activeCarrierRenderModes = normalizeCarrierRenderModes(Array.from(set));
+      localStorage.setItem("g900.carrierRenderModes", JSON.stringify(activeCarrierRenderModes));
+      syncCarrierRenderState();
+    });
+  });
 }
 
 

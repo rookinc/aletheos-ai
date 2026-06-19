@@ -1,0 +1,58 @@
+{
+  "schema": "g900.viewer.grounded_lenses",
+  "version": "0.1",
+  "status": "grounded_lens_registry_declared_data_only",
+  "body": "g900",
+  "body_version": "0.1",
+  "lens_count": 1,
+  "lenses": [
+    {
+      "id": "a_grounded_f_return_lens",
+      "label": "A-grounded F-return lens",
+      "status": "declared_data_only",
+      "kind": "reference_frame_lens",
+      "ground": "A",
+      "scoped_terminal": "F",
+      "native_selector": {
+        "root_slot": 12,
+        "from_limit": 23,
+        "to_limit": 24,
+        "selector_phrase": "root_slot=12 AND limit_transition=23->24"
+      },
+      "support_artifact": {
+        "json": "artifacts/json/g900_six_nine_af_return_seam_probe_001.v1.json",
+        "note": "notes/g900_six_nine_af_return_seam_probe_001.md",
+        "verdict": "six_nine_af_return_seam_probe_passed",
+        "af_status": "bounded_af_return_seam_analogy_supported",
+        "exact_match": true,
+        "global_rows": 1440,
+        "zero_hit_rows": 60,
+        "return_seam_candidate_rows": 60,
+        "false_positives": 0,
+        "false_negatives": 0
+      },
+      "reading": "When A is treated as ground, F may be rendered as a return-readable terminal relative to A. The body does not bend; the witness frame changes.",
+      "render_contract": {
+        "render_allowed_now": false,
+        "render_kind": "viewport_witness_overlay",
+        "body_coordinate_claim": false,
+        "moves_terminal_f": false,
+        "adds_vertices": false,
+        "adds_edges": false,
+        "mutates_body": false
+      },
+      "boundary": {
+        "transport_relation": false,
+        "channel_admission": false,
+        "marker_lighting": false,
+        "gate_open": false,
+        "body_mutation": false,
+        "force_claim": false,
+        "physics_claim": false,
+        "gr_claim": false,
+        "maxwell_qcd_electroweak_unification_claim": false
+      },
+      "keeper": "The Scope does not move F. It shows how F reads when A is chosen as ground."
+    }
+  ]
+}

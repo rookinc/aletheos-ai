@@ -404,9 +404,28 @@ function getInformationFlowEdgeIds() {
   return FALLBACK_INFORMATION_FLOW_EDGE_IDS.slice();
 }
 
+function readInformationFlowEdgesAlpha() {
+  return readRange01("information-flow-edges-alpha-slider", 0.22);
+}
+
+function readInformationFlowTracersAlpha() {
+  return readRange01("information-flow-tracers-alpha-slider", 0.58);
+}
+
+function readInformationFlowStylusAlpha() {
+  return readRange01("information-flow-stylus-alpha-slider", 0.96);
+}
+
+function syncInformationFlowAlphaReadouts() {
+  syncLayerRangeOutput("information-flow-edges-alpha-slider");
+  syncLayerRangeOutput("information-flow-tracers-alpha-slider");
+  syncLayerRangeOutput("information-flow-stylus-alpha-slider");
+}
+
 function syncInformationFlowPanelReadouts() {
   const transport = getAdmittedReturnCellTransport();
   const edgeIds = getInformationFlowEdgeIds();
+  syncInformationFlowAlphaReadouts();
 
   const transportReadout = document.getElementById("information-flow-transport-readout");
   if (transportReadout) {
@@ -435,6 +454,9 @@ function syncInformationFlowState() {
   informationFlowState.transport_id = transport ? transport.id : "g900_return_cell_one_step_information_transport_007";
   informationFlowState.permission_channel_id = channel ? channel.id : "g900_return_cell_permission_channel_005";
   informationFlowState.edge_ids = edgeIds;
+  informationFlowState.edges_alpha = Number(readInformationFlowEdgesAlpha().toFixed(3));
+  informationFlowState.tracers_alpha = Number(readInformationFlowTracersAlpha().toFixed(3));
+  informationFlowState.stylus_alpha = Number(readInformationFlowStylusAlpha().toFixed(3));
   informationFlowState.mutates_body = false;
   informationFlowState.physics_claim = false;
   informationFlowState.physical_transport_claim = false;
@@ -451,6 +473,9 @@ function syncInformationFlowState() {
     active_edge_id: informationFlowState.active_edge_id,
     phase: Number((informationFlowState.phase || 0).toFixed(4)),
     trail_count: informationFlowState.trail_count,
+    edges_alpha: informationFlowState.edges_alpha,
+    tracers_alpha: informationFlowState.tracers_alpha,
+    stylus_alpha: informationFlowState.stylus_alpha,
     simulated_information_motion: true,
     uses_admitted_information_transport: Boolean(transport),
     uses_admitted_permission_channel: Boolean(channel),
@@ -812,9 +837,14 @@ function drawInformationFlowPulse(ctx, w, h, dpr, state, body) {
   ctx.lineCap = "round";
   ctx.lineJoin = "round";
 
+  const edgeAlpha = readInformationFlowEdgesAlpha();
+  const tracerAlpha = readInformationFlowTracersAlpha();
+  const stylusAlpha = readInformationFlowStylusAlpha();
+  const tracerScale = tracerAlpha / 0.58;
+
   segments.forEach((segment) => {
-    drawLine(ctx, segment.a, segment.b, [102, 255, 202], 0.22, Math.max(2.2 * dpr, Math.min(w, h) * 0.0042));
-    drawLine(ctx, segment.a, segment.b, [235, 255, 248], 0.35, Math.max(0.8 * dpr, Math.min(w, h) * 0.0014));
+    drawLine(ctx, segment.a, segment.b, [102, 255, 202], edgeAlpha, Math.max(2.2 * dpr, Math.min(w, h) * 0.0042));
+    drawLine(ctx, segment.a, segment.b, [235, 255, 248], Math.min(0.95, edgeAlpha + 0.13), Math.max(0.8 * dpr, Math.min(w, h) * 0.0014));
   });
 
   for (let i = INFORMATION_FLOW_TRAIL_COUNT - 1; i >= 0; i -= 1) {
@@ -825,7 +855,7 @@ function drawInformationFlowPulse(ctx, w, h, dpr, state, body) {
     const segment = segments[segmentIndex];
     if (!segment) continue;
 
-    const alpha = 0.10 + (i / INFORMATION_FLOW_TRAIL_COUNT) * 0.48;
+    const alpha = Math.min(0.98, (0.10 + (i / INFORMATION_FLOW_TRAIL_COUNT) * 0.48) * tracerScale);
     const radius = Math.max(1.8 * dpr, Math.min(w, h) * (0.0034 + 0.00038 * i));
     drawInformationPulseOnSegment(ctx, segment.a, segment.b, t, alpha, radius, dpr);
   }
@@ -836,7 +866,7 @@ function drawInformationFlowPulse(ctx, w, h, dpr, state, body) {
       activeSegment.a,
       activeSegment.b,
       activeT,
-      0.96,
+      stylusAlpha,
       Math.max(4.4 * dpr, Math.min(w, h) * 0.0092),
       dpr
     );
@@ -1811,6 +1841,9 @@ function boot() {
   bindGraphLayerPanel();
   bindCarrierRenderPanel();
   bindLayerControl("information-flow-toggle", syncInformationFlowState);
+  bindLayerControl("information-flow-edges-alpha-slider", syncInformationFlowState);
+  bindLayerControl("information-flow-tracers-alpha-slider", syncInformationFlowState);
+  bindLayerControl("information-flow-stylus-alpha-slider", syncInformationFlowState);
   syncInformationFlowState();
   bindVisibleStateJsonDownload();
 

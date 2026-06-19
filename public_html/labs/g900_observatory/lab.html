@@ -368,9 +368,24 @@
             <strong id="information-flow-transport-readout">g900_return_cell_one_step_information_transport_007</strong>
           </div>
 
-          <div class="g900-information-flow-readout">
-            <span>Pulse</span>
-            <strong id="information-flow-pulse-readout">waiting for body</strong>
+          <div class="g900-information-alpha-controls" aria-label="Information flow alpha controls">
+            <label class="layer-slider-row" for="information-flow-edges-alpha-slider">
+              <span>Edges alpha</span>
+              <input id="information-flow-edges-alpha-slider" type="range" min="0" max="100" step="1" value="22" />
+              <output id="information-flow-edges-alpha-readout">22</output>
+            </label>
+
+            <label class="layer-slider-row" for="information-flow-tracers-alpha-slider">
+              <span>Tracers alpha</span>
+              <input id="information-flow-tracers-alpha-slider" type="range" min="0" max="100" step="1" value="58" />
+              <output id="information-flow-tracers-alpha-readout">58</output>
+            </label>
+
+            <label class="layer-slider-row" for="information-flow-stylus-alpha-slider">
+              <span>Stylus alpha</span>
+              <input id="information-flow-stylus-alpha-slider" type="range" min="0" max="100" step="1" value="96" />
+              <output id="information-flow-stylus-alpha-readout">96</output>
+            </label>
           </div>
 
           <p id="information-flow-note" class="layer-panel-note">Simulated information pulse over the admitted finite transport. Body unchanged. Not physical transport.</p>
@@ -473,7 +488,7 @@
     <p>2026 Centre of Recursive Inquiry. Aletheos.ai is the public research surface for CoRI and Thalean Action Theory.</p>
   </footer>
 
-  <script type="module" src="g900_grammar_stage_v0.js?v=body-panel-controls-001"></script>
+  <script type="module" src="g900_grammar_stage_v0.js?v=information-alpha-sliders-001"></script>
   <script type="module" src="kernel/g900_scaled_oscillation_ui.js?v=scaled-oscillation-001"></script>
   <script src="kernel/g900_runtime_oscillator_console.js?v=runtime-data-001" defer></script>
   <script src="kernel/g900_apparatus_profile_console.js?v=apparatus-data-001" defer></script>

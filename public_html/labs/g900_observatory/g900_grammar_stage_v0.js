@@ -432,6 +432,76 @@ function syncInformationFlowAlphaReadouts() {
   syncLayerRangeOutput("information-flow-stylus-alpha-slider");
 }
 
+function readG900ForceCandidateStubState() {
+  const visible = readChecked("force-candidates-toggle", false);
+  const claimStatus = "candidate_only_not_physical_claim";
+  const candidates = [
+    {
+      id: "gravity_information_candidate",
+      label: "Gravity",
+      grammar: "compression_information",
+      physical_claim_candidate: "gravity_force_information_candidate",
+      claim_status: claimStatus
+    },
+    {
+      id: "em_information_candidate",
+      label: "EM",
+      grammar: "polarization_information",
+      physical_claim_candidate: "electromagnetic_force_information_candidate",
+      claim_status: claimStatus
+    },
+    {
+      id: "strong_information_candidate",
+      label: "Strong",
+      grammar: "confinement_information",
+      physical_claim_candidate: "strong_force_information_candidate",
+      claim_status: claimStatus
+    },
+    {
+      id: "weak_information_candidate",
+      label: "Weak",
+      grammar: "transformation_information",
+      physical_claim_candidate: "weak_force_information_candidate",
+      claim_status: claimStatus
+    }
+  ];
+
+  return {
+    schema: "g900.viewer.force_candidates",
+    version: "0.1",
+    status: "force_candidate_stub_declared",
+    visible: Boolean(visible),
+    render_stub_only: true,
+    renders_force_information: false,
+    candidate_count: candidates.length,
+    candidates,
+    quartz_tied: true,
+    quartz_driven: false,
+    sheet_dependent: false,
+    physical_claim_candidate_only: true,
+    force_claim: false,
+    physics_claim: false,
+    physical_transport_claim: false,
+    energy_flow_claim: false,
+    body_mutation: false,
+    new_transport_admission: false,
+    keeper: "Force becomes a candidate information grammar first, not a physical force simulation yet."
+  };
+}
+
+function syncForceCandidateStubState() {
+  syncLayerSwitchLabel("force-candidates-toggle");
+  window.__g900ForceCandidateSummary = readG900ForceCandidateStubState();
+  if (typeof syncG900RenderContractsLedger === "function") {
+    syncG900RenderContractsLedger();
+  }
+}
+
+function bindForceCandidateStubPanel() {
+  bindLayerControl("force-candidates-toggle", syncForceCandidateStubState);
+  syncForceCandidateStubState();
+}
+
 function readG900RenderContractsLedger() {
   const sheetRate = typeof getSheetRate === "function" ? getSheetRate() : 240;
   const cameraPitchEnabled = typeof isCameraPitchEnabled === "function"
@@ -482,6 +552,22 @@ function readG900RenderContractsLedger() {
       sheet_dependent: false,
       physical_claim_candidate: "permission_boundary_candidate",
       claim_status: candidateOnly,
+      mutates_body: false,
+      physics_claim: false
+    },
+    {
+      id: "force_candidate_stub",
+      label: "Force candidate stub",
+      render_surface: "panel",
+      visible: readChecked("force-candidates-toggle", false),
+      clock_relation: "static_force_information_candidate_registry",
+      quartz_tied: true,
+      quartz_driven: false,
+      sheet_dependent: false,
+      physical_claim_candidate: "finite_force_information_candidate_family",
+      claim_status: candidateOnly,
+      render_stub_only: true,
+      renders_force_information: false,
       mutates_body: false,
       physics_claim: false
     },
@@ -1260,6 +1346,7 @@ function buildG900ViewerStateObject(state) {
     channel_scope: readWindowSummary("__g900ChannelScopeSummary"),
     channel_preview: readReturnCellChannelPreviewState(),
     information_flow: readWindowSummary("__g900InformationFlowSummary"),
+    force_candidates: readG900ForceCandidateStubState(),
     render_contracts: readWindowSummary("__g900RenderContractsLedger"),
     timing_kernel: {
       scaled_oscillation: activeScaledOscillationKernel ? getG900ScaledOscillationSummary(activeScaledOscillationKernel) : null,
@@ -2029,6 +2116,8 @@ function boot() {
   ensureSheetControls();
   bindGraphLayerPanel();
   bindCarrierRenderPanel();
+  bindForceCandidateStubPanel();
+
   bindLayerControl("information-flow-toggle", syncInformationFlowState);
   bindLayerControl("information-flow-edges-alpha-slider", syncInformationFlowState);
   bindLayerControl("information-flow-tracers-alpha-slider", syncInformationFlowState);
@@ -2292,7 +2381,7 @@ function bindG900ActivityPanelControls() {
   ensureStageGraphToolbar();
   applyG900PanelDefaultMigration();
 
-  ["body", "carriers", "channels", "information-flow", "grounded-lens", "timing"].forEach((panelId) => {
+  ["body", "carriers", "channels", "force-candidates", "information-flow", "grounded-lens", "timing"].forEach((panelId) => {
     setG900PanelBodyCollapsed(panelId, initialG900PanelCollapsed(panelId));
   });
 

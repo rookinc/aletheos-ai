@@ -1,0 +1,6 @@
+rule_id,rule_name,statement,hit,tested_scope,promotion_status
+038-R1,f0001_denial_is_prefix_terminal_position,"Within F0001, the only denied size-2 member is the prefix terminal path edge.",true,F0001,local_permission_denial_candidate_not_law
+038-R2,visibility_profile_distinguishes_denial_in_scan,The denied edge has a distinctive source-visibility profile in the tested scan.,true,F0001 source scan,visibility_profile_not_source_law
+038-R3,visibility_profile_does_not_grant_permission,"A distinctive visibility profile is recorded, but it is not a permission law and is not promoted.",true,ledger,visibility_profile_not_permission
+038-R4,prefix_terminal_denial_not_global,Prefix-terminal omission does not hold as an exact global rule across repeated families.,true,87 repeated families,not_global_source_law
+038-R5,permission_denial_not_promoted,"No source law, family, permission channel, or transport is promoted.",true,ledger,no_promotion

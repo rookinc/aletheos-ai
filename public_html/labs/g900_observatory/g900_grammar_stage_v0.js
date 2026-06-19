@@ -256,6 +256,50 @@ function syncSheetCounter(state) {
   if (timingSheet) timingSheet.textContent = "Sheet " + Math.floor(state.sheet);
 }
 
+function readCameraPitchEnabledPreference() {
+  const saved = localStorage.getItem("g900.cameraPitchEnabled");
+  if (saved === null) return null;
+  return saved === "true";
+}
+
+function writeCameraPitchEnabledPreference(enabled) {
+  localStorage.setItem("g900.cameraPitchEnabled", enabled ? "true" : "false");
+}
+
+function isCameraPitchEnabled(state) {
+  return Boolean(state && state.pitchRollEnabled !== false);
+}
+
+function syncCameraPitchButton(state) {
+  const button = document.getElementById("camera-pitch-toggle");
+  if (!button) return;
+
+  const enabled = isCameraPitchEnabled(state);
+  button.classList.toggle("is-active", enabled);
+  button.setAttribute("aria-pressed", enabled ? "true" : "false");
+  button.title = enabled ? "Camera pitch motion on" : "Camera pitch motion off";
+  button.textContent = "CAM";
+}
+
+function setCameraPitchEnabled(state, enabled) {
+  if (!state) return;
+
+  state.pitchRollEnabled = Boolean(enabled);
+  writeCameraPitchEnabledPreference(state.pitchRollEnabled);
+  syncCameraPitchButton(state);
+  syncG900ViewerStateConsole(state);
+}
+
+function syncStageControlDeckLayout() {
+  const cameraButton = document.getElementById("camera-pitch-toggle");
+  if (!cameraButton || !cameraButton.parentElement) return;
+
+  cameraButton.parentElement.classList.add(
+    "g900-stage-control-deck",
+    "g900-camera-layout-compact"
+  );
+}
+
 function syncPlayButton(state) {
   const playBtn = document.getElementById("play-toggle");
   if (playBtn) {
@@ -969,7 +1013,7 @@ function buildG900ViewerStateObject(state) {
       pitch: Number(state.pitch.toFixed(6)),
       roll: Number((state.roll || 0).toFixed(6)),
       zoom: Number(state.zoom.toFixed(6)),
-      pitch_roll_enabled: Boolean(state.playing),
+      pitch_roll_enabled: isCameraPitchEnabled(state),
       pitch_roll_sheets_per_turn: PITCH_ROLL_SHEETS_PER_TURN
     },
     layers: {
@@ -1779,6 +1823,7 @@ function boot() {
     pitch: -0.58,
     roll: 0,
     zoom: Number(localStorage.getItem("g900.stageZoom") || "1") || 1,
+    pitchRollEnabled: true,
     dragging: false,
     lastX: 0,
     lastY: 0,
@@ -1787,7 +1832,20 @@ function boot() {
   };
 
   window.__g900BlankStage = state;
+  const savedCameraPitchEnabled = readCameraPitchEnabledPreference();
+  if (savedCameraPitchEnabled !== null) {
+    state.pitchRollEnabled = savedCameraPitchEnabled;
+  }
   syncTimingPanelState(state);
+  syncCameraPitchButton(state);
+  syncStageControlDeckLayout();
+
+  const cameraPitchBtn = document.getElementById("camera-pitch-toggle");
+  if (cameraPitchBtn) {
+    cameraPitchBtn.addEventListener("click", () => {
+      setCameraPitchEnabled(state, !isCameraPitchEnabled(state));
+    });
+  }
 
   const playBtn = document.getElementById("play-toggle");
   if (playBtn) {
@@ -1929,7 +1987,9 @@ function boot() {
     if (state.playing) {
       const sheetDelta = dt * getSheetRate();
       state.sheet += sheetDelta;
-      state.pitch = wrapAngleRadians(state.pitch + sheetDelta * (TAU / PITCH_ROLL_SHEETS_PER_TURN));
+      if (isCameraPitchEnabled(state)) {
+        state.pitch = wrapAngleRadians(state.pitch + sheetDelta * (TAU / PITCH_ROLL_SHEETS_PER_TURN));
+      }
     }
 
     syncSheetCounter(state);

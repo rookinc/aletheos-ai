@@ -1,0 +1,340 @@
+{
+  "schema": "g900.transport_deferred_gate_frontier_full_audit",
+  "version": "0.1",
+  "artifact_id": "g900_transport_deferred_gate_frontier_full_audit_018b",
+  "audit_pass": true,
+  "verdict": "deferred_gate_frontier_full_audit_018b_recorded",
+  "status": "deferred_frontier_structurally_replays_but_requires_gate_receipts",
+  "commit": "fa9559b",
+  "commit_full": "fa9559b90cccd2b00c7de004fc893045089ac767",
+  "question": "Do the 71 deferred successor-signature matches structurally replay as candidate packets, and are any already permission-gate-backed?",
+  "honest_answer": "The deferred frontier structurally replays as candidate packet grammar, but none is permission-gate-backed by a current receipt. Each candidate still requires its own future gate audit before any permission, transport, or flux claim.",
+  "counts": {
+    "frontier_row_count": 71,
+    "body_edge_replay_pass_count": 71,
+    "successor_signature_replay_pass_count": 71,
+    "structural_replay_pass_count": 71,
+    "current_gate_backed_count_for_deferred_frontier": 0,
+    "requires_own_future_gate_receipt_count": 71,
+    "relative_to_C_cluster_count": 71,
+    "relative_to_B_cluster_count": 71,
+    "slot_delta_cluster_count": 71,
+    "current_admitted_permission_channel_count": 1,
+    "current_admitted_information_transport_count": 1
+  },
+  "cluster_summary_top": [
+    {
+      "cluster_kind": "relative_to_C_signature",
+      "signature": "13 14 0 5 2",
+      "count": 1,
+      "example_frontier_indices": "1"
+    },
+    {
+      "cluster_kind": "relative_to_C_signature",
+      "signature": "13 14 0 5 6",
+      "count": 1,
+      "example_frontier_indices": "2"
+    },
+    {
+      "cluster_kind": "relative_to_C_signature",
+      "signature": "13 14 0 5 9",
+      "count": 1,
+      "example_frontier_indices": "3"
+    },
+    {
+      "cluster_kind": "relative_to_C_signature",
+      "signature": "13 14 0 9 3",
+      "count": 1,
+      "example_frontier_indices": "4"
+    },
+    {
+      "cluster_kind": "relative_to_C_signature",
+      "signature": "13 14 0 9 5",
+      "count": 1,
+      "example_frontier_indices": "5"
+    },
+    {
+      "cluster_kind": "relative_to_C_signature",
+      "signature": "13 14 0 9 8",
+      "count": 1,
+      "example_frontier_indices": "6"
+    },
+    {
+      "cluster_kind": "relative_to_C_signature",
+      "signature": "7 13 0 11 14",
+      "count": 1,
+      "example_frontier_indices": "7"
+    },
+    {
+      "cluster_kind": "relative_to_C_signature",
+      "signature": "7 13 0 14 9",
+      "count": 1,
+      "example_frontier_indices": "8"
+    },
+    {
+      "cluster_kind": "relative_to_C_signature",
+      "signature": "7 13 0 14 11",
+      "count": 1,
+      "example_frontier_indices": "9"
+    },
+    {
+      "cluster_kind": "relative_to_C_signature",
+      "signature": "7 13 0 14 3",
+      "count": 1,
+      "example_frontier_indices": "10"
+    },
+    {
+      "cluster_kind": "relative_to_C_signature",
+      "signature": "6 12 0 1 9",
+      "count": 1,
+      "example_frontier_indices": "11"
+    },
+    {
+      "cluster_kind": "relative_to_C_signature",
+      "signature": "6 12 0 1 11",
+      "count": 1,
+      "example_frontier_indices": "12"
+    },
+    {
+      "cluster_kind": "relative_to_C_signature",
+      "signature": "6 12 0 1 2",
+      "count": 1,
+      "example_frontier_indices": "13"
+    },
+    {
+      "cluster_kind": "relative_to_C_signature",
+      "signature": "11 10 0 5 13",
+      "count": 1,
+      "example_frontier_indices": "14"
+    },
+    {
+      "cluster_kind": "relative_to_C_signature",
+      "signature": "11 10 0 5 4",
+      "count": 1,
+      "example_frontier_indices": "15"
+    },
+    {
+      "cluster_kind": "relative_to_C_signature",
+      "signature": "11 10 0 5 6",
+      "count": 1,
+      "example_frontier_indices": "16"
+    },
+    {
+      "cluster_kind": "relative_to_C_signature",
+      "signature": "11 10 0 6 12",
+      "count": 1,
+      "example_frontier_indices": "17"
+    },
+    {
+      "cluster_kind": "relative_to_C_signature",
+      "signature": "11 10 0 6 2",
+      "count": 1,
+      "example_frontier_indices": "18"
+    },
+    {
+      "cluster_kind": "relative_to_C_signature",
+      "signature": "11 10 0 6 5",
+      "count": 1,
+      "example_frontier_indices": "19"
+    },
+    {
+      "cluster_kind": "relative_to_C_signature",
+      "signature": "8 13 0 11 14",
+      "count": 1,
+      "example_frontier_indices": "20"
+    },
+    {
+      "cluster_kind": "relative_to_C_signature",
+      "signature": "8 13 0 14 9",
+      "count": 1,
+      "example_frontier_indices": "21"
+    },
+    {
+      "cluster_kind": "relative_to_C_signature",
+      "signature": "8 13 0 14 11",
+      "count": 1,
+      "example_frontier_indices": "22"
+    },
+    {
+      "cluster_kind": "relative_to_C_signature",
+      "signature": "8 13 0 14 3",
+      "count": 1,
+      "example_frontier_indices": "23"
+    },
+    {
+      "cluster_kind": "relative_to_C_signature",
+      "signature": "7 12 0 9 1",
+      "count": 1,
+      "example_frontier_indices": "24"
+    },
+    {
+      "cluster_kind": "relative_to_C_signature",
+      "signature": "7 12 0 1 9",
+      "count": 1,
+      "example_frontier_indices": "25"
+    },
+    {
+      "cluster_kind": "relative_to_C_signature",
+      "signature": "7 12 0 1 11",
+      "count": 1,
+      "example_frontier_indices": "26"
+    },
+    {
+      "cluster_kind": "relative_to_C_signature",
+      "signature": "7 12 0 1 2",
+      "count": 1,
+      "example_frontier_indices": "27"
+    },
+    {
+      "cluster_kind": "relative_to_C_signature",
+      "signature": "12 3 0 9 10",
+      "count": 1,
+      "example_frontier_indices": "28"
+    },
+    {
+      "cluster_kind": "relative_to_C_signature",
+      "signature": "12 3 0 10 9",
+      "count": 1,
+      "example_frontier_indices": "29"
+    },
+    {
+      "cluster_kind": "relative_to_C_signature",
+      "signature": "10 1 0 11 14",
+      "count": 1,
+      "example_frontier_indices": "30"
+    },
+    {
+      "cluster_kind": "relative_to_C_signature",
+      "signature": "10 1 0 14 9",
+      "count": 1,
+      "example_frontier_indices": "31"
+    },
+    {
+      "cluster_kind": "relative_to_C_signature",
+      "signature": "10 1 0 14 11",
+      "count": 1,
+      "example_frontier_indices": "32"
+    },
+    {
+      "cluster_kind": "relative_to_C_signature",
+      "signature": "10 1 0 14 3",
+      "count": 1,
+      "example_frontier_indices": "33"
+    },
+    {
+      "cluster_kind": "relative_to_C_signature",
+      "signature": "13 2 0 9 10",
+      "count": 1,
+      "example_frontier_indices": "34"
+    },
+    {
+      "cluster_kind": "relative_to_C_signature",
+      "signature": "13 2 0 10 9",
+      "count": 1,
+      "example_frontier_indices": "35"
+    },
+    {
+      "cluster_kind": "relative_to_C_signature",
+      "signature": "10 14 0 9 1",
+      "count": 1,
+      "example_frontier_indices": "36"
+    },
+    {
+      "cluster_kind": "relative_to_C_signature",
+      "signature": "10 14 0 1 9",
+      "count": 1,
+      "example_frontier_indices": "37"
+    },
+    {
+      "cluster_kind": "relative_to_C_signature",
+      "signature": "10 14 0 1 11",
+      "count": 1,
+      "example_frontier_indices": "38"
+    },
+    {
+      "cluster_kind": "relative_to_C_signature",
+      "signature": "10 14 0 1 2",
+      "count": 1,
+      "example_frontier_indices": "39"
+    },
+    {
+      "cluster_kind": "relative_to_C_signature",
+      "signature": "1 10 0 5 13",
+      "count": 1,
+      "example_frontier_indices": "40"
+    }
+  ],
+  "edge_index_basis_counts": {
+    "zero_based": 284
+  },
+  "failure_reason_counts": {
+    "none": 71
+  },
+  "interpretation": {
+    "what_stands": "The 71 deferred rows structurally replay the expected same-repair-same-same packet grammar against the G900 body.",
+    "what_does_not_stand_yet": "None has a current permission-gate receipt.",
+    "why_this_matters": "The frontier is structurally real enough to audit, but not permission-earned.",
+    "next_question": "Run candidate-specific gate audits or cluster first and audit representatives."
+  },
+  "boundary": {
+    "full_frontier_structural_audit_only": true,
+    "runs_candidate_specific_gate_audits": false,
+    "new_permission_channel_admitted": false,
+    "new_information_transport_admitted": false,
+    "new_flux_witness_declared": false,
+    "transport_family_claim": false,
+    "global_uniqueness_claim": false,
+    "physical_transport_claim": false,
+    "physical_flux_claim": false,
+    "energy_flow_claim": false,
+    "force_claim": false,
+    "physics_claim": false,
+    "unification_claim": false,
+    "body_mutation": false,
+    "adds_vertices": false,
+    "adds_edges": false,
+    "viewer_gate_open": false,
+    "marker_lighting": false
+  },
+  "checks": {
+    "no_missing_inputs": true,
+    "worklist018a_passed": true,
+    "checkpoint017_passed": true,
+    "filter016_passed": true,
+    "filter015_passed": true,
+    "census014_passed": true,
+    "scaffold013_passed": true,
+    "body_vertices_900": true,
+    "body_edges_3600": true,
+    "frontier_row_count_71": true,
+    "body_edge_replay_all": true,
+    "successor_replay_all": true,
+    "structural_replay_all": true,
+    "current_gate_backed_count_zero_for_deferred": true,
+    "all_require_own_gate_receipt": true,
+    "current_transport_count_still_1": true,
+    "current_permission_channel_count_still_1": true,
+    "no_new_permission_channel_admitted": true,
+    "no_new_information_transport_admitted": true,
+    "no_new_flux_witness_declared": true,
+    "no_family_claim": true,
+    "no_uniqueness_claim": true
+  },
+  "failed_checks": [],
+  "inputs": {
+    "labs/g900_observatory/artifacts/json/g900_transport_deferred_gate_frontier_worklist_018a.v1.json": "036a39786ec8b6fde72d993a906c546cc328efc6af0cb436c759d671b7e175b9",
+    "labs/g900_observatory/artifacts/csv/g900_transport_deferred_gate_frontier_worklist_018a.v1.csv": "3712a92f668bea86dfee672d78a3be6373f198ba7302d8380732218c7394f122",
+    "labs/g900_observatory/artifacts/json/g900_transport_census_phase_checkpoint_017.v1.json": "98b6c627b07562bb3e19b3303320e1bc6ab9fc0f2b9d2ccb5946a8fb9982d85d",
+    "labs/g900_observatory/artifacts/json/g900_transport_permission_gate_family_filter_016.v1.json": "c5aad04eef8109d449d2218aeb595596851fe21975e2f16fb22d86384523532d",
+    "labs/g900_observatory/artifacts/json/g900_transport_successor_rule_family_filter_015.v1.json": "635b563b64e02705c82fc29faa9d8f3f4726a20a49209bfc75a818023f4f42d6",
+    "labs/g900_observatory/artifacts/json/g900_transport_candidate_family_census_014.v1.json": "ba42be050ad35962abc1b0cd3ffeab9cfc59612d49a6a7d97442f0b74e1eb037",
+    "labs/g900_observatory/artifacts/json/g900_transport_candidate_family_census_scaffold_013.v1.json": "2e54ae708353773598e0cf89ccb23bf317c32b7d4216d44a799a2997a17a4203",
+    "labs/g900_observatory/data/g900_admitted_information_transports.v0.1.json": "2e1b4bc6e3ec072af260eb50af15ac8e21ba089be4b13039e5d101ca5941447f",
+    "labs/g900_observatory/data/g900_admitted_permission_channels.v0.1.json": "94afd7ca8ffd171860b31d2c1ac2b55b21437fc69b8efc44c4a4bf27c0475964",
+    "labs/g900_observatory/data/g900_static_body.v1.json": "6a2cb6b9892a78d4559ec61cf946b0021962cc6819311234b8bf14102b3b7f63"
+  },
+  "missing_inputs": [],
+  "git_status_short_before": "",
+  "recorded_at_utc": "2026-06-19T16:21:37Z",
+  "keeper": "The frontier stands as structure. It does not yet stand as permission."
+}

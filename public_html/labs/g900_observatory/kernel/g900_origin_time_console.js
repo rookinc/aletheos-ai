@@ -42,23 +42,28 @@
     let panel = document.getElementById(PANEL_ID);
     if (panel) return panel;
 
-    panel = document.createElement("section");
+    panel = document.createElement("details");
     panel.id = PANEL_ID;
-    panel.className = "g900-origin-time-console";
+    panel.className = "g900-origin-time-console g900-origin-time-collapsible";
     panel.innerHTML = [
-      "<h3>Origin time</h3>",
-      '<dl class="g900-origin-time-grid">',
-      '  <div><dt>Status</dt><dd id="g900-origin-time-status">checking...</dd></div>',
-      '  <div><dt>Source</dt><dd id="g900-origin-time-source">checking...</dd></div>',
-      '  <div><dt>ISO UTC</dt><dd id="g900-origin-time-iso">checking...</dd></div>',
-      '  <div><dt>Fallback</dt><dd id="g900-origin-time-fallback">device time if origin unavailable</dd></div>',
-      "</dl>",
-      '<p class="g900-origin-time-chain">',
-      "  Chain: HTTPS origin -> ISO timestamp -> live connection receipt -> device fallback if unavailable.",
-      "</p>",
-      '<p class="g900-origin-time-boundary">',
-      "  Timestamp witness only. No gate authority. No channel admission. No marker lighting. No force or physics claim.",
-      "</p>"
+      '<summary class="g900-origin-time-summary-row">',
+      '  <span class="g900-origin-time-title">Origin time</span>',
+      '  <span id="g900-origin-time-summary">checking...</span>',
+      '</summary>',
+      '<div class="g900-origin-time-body">',
+      '  <dl class="g900-origin-time-grid">',
+      '    <div><dt>Status</dt><dd id="g900-origin-time-status">checking...</dd></div>',
+      '    <div><dt>Source</dt><dd id="g900-origin-time-source">checking...</dd></div>',
+      '    <div><dt>ISO UTC</dt><dd id="g900-origin-time-iso">checking...</dd></div>',
+      '    <div><dt>Fallback</dt><dd id="g900-origin-time-fallback">device time if origin unavailable</dd></div>',
+      "  </dl>",
+      '  <p class="g900-origin-time-chain">',
+      "    Chain: HTTPS origin -> ISO timestamp -> live connection receipt -> device fallback if unavailable.",
+      "  </p>",
+      '  <p class="g900-origin-time-boundary">',
+      "    Timestamp witness only. No gate authority. No channel admission. No marker lighting. No force or physics claim.",
+      "  </p>",
+      "</div>"
     ].join("");
 
     const anchor = findAnchor();
@@ -74,6 +79,10 @@
   function setText(id, value) {
     const el = document.getElementById(id);
     if (el) el.textContent = value;
+  }
+
+  function setSummary(value) {
+    setText("g900-origin-time-summary", value);
   }
 
   function publishOriginTimeSummary(summary) {
@@ -105,13 +114,18 @@
       const data = await response.json();
       if (!boundaryOk(data)) throw new Error("origin time boundary check failed");
 
+      const source = data.source || "origin_time_endpoint";
+      const iso = data.iso_utc || "missing";
+
       setText("g900-origin-time-status", "live origin");
-      setText("g900-origin-time-source", data.source || "origin time endpoint");
-      setText("g900-origin-time-iso", data.iso_utc || "missing");
+      setText("g900-origin-time-source", source);
+      setText("g900-origin-time-iso", iso);
       setText("g900-origin-time-fallback", "not used");
+      setSummary("live origin | " + source);
+
       publishOriginTimeSummary({
         status: "live_origin",
-        source: data.source || "origin_time_endpoint",
+        source: source,
         host: data.host || window.location.host || "unknown",
         certificate_status: data.certificate_status || "unknown",
         iso_utc: data.iso_utc || null,
@@ -121,10 +135,13 @@
       });
     } catch (error) {
       const fallbackIso = isoDeviceNow();
+
       setText("g900-origin-time-status", "device fallback");
       setText("g900-origin-time-source", "local device clock");
       setText("g900-origin-time-iso", fallbackIso);
       setText("g900-origin-time-fallback", "origin unavailable");
+      setSummary("device fallback | origin unavailable");
+
       publishOriginTimeSummary({
         status: "device_fallback",
         source: "local_device_clock",
@@ -135,6 +152,7 @@
         fallback_used: true,
         error: error && error.message ? error.message : String(error)
       });
+
       console.warn("[G900 origin time]", error && error.message ? error.message : error);
     }
   }

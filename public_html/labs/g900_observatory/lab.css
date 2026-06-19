@@ -1621,3 +1621,50 @@ h1 {
     grid-template-columns: 1fr;
   }
 }
+
+.g900-origin-time-collapsible {
+  display: block;
+}
+
+.g900-origin-time-summary-row {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 3.2rem;
+}
+
+.g900-origin-time-summary-row::-webkit-details-marker {
+  display: none;
+}
+
+.g900-origin-time-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+#g900-origin-time-summary {
+  text-align: right;
+  font-size: 0.78rem;
+  opacity: 0.72;
+  overflow-wrap: anywhere;
+}
+
+.g900-origin-time-body {
+  margin-top: 0.8rem;
+}
+
+.g900-perspective-locked [data-view-mode],
+[data-view-mode].stage-perspective-locked {
+  opacity: 0.42;
+  cursor: not-allowed;
+  filter: saturate(0.45);
+}
+
+canvas.stage-perspective-locked {
+  cursor: default;
+}

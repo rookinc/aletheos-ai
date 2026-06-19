@@ -291,6 +291,28 @@ function readRange01(id, fallback) {
   return clamp(n / 100, 0, 1);
 }
 
+function isG900OrientationLocked() {
+  const el = document.getElementById("stage-grid-toggle");
+  return Boolean(el && el.checked);
+}
+
+function syncG900PerspectiveControls() {
+  const locked = isG900OrientationLocked();
+
+  document.querySelectorAll("[data-view-mode]").forEach((btn) => {
+    btn.disabled = locked;
+    btn.setAttribute("aria-disabled", locked ? "true" : "false");
+    btn.classList.toggle("stage-perspective-locked", locked);
+  });
+
+  const canvas = document.querySelector("canvas");
+  if (canvas) {
+    canvas.classList.toggle("stage-perspective-locked", locked);
+  }
+
+  document.body.classList.toggle("g900-perspective-locked", locked);
+}
+
 function readWindowSummary(name) {
   try {
     const value = window[name];
@@ -786,8 +808,10 @@ function boot() {
       state.playing = false;
       state.sheet = 0;
       syncSheetCounter(state);
-      state.yaw = 0.15;
-      state.pitch = -0.58;
+      if (!isG900OrientationLocked()) {
+        state.yaw = 0.15;
+        state.pitch = -0.58;
+      }
       state.zoom = 1;
       localStorage.setItem("g900.stageZoom", "1");
       syncPlayButton(state);
@@ -796,11 +820,19 @@ function boot() {
 
   document.querySelectorAll("[data-view-mode]").forEach((btn) => {
     btn.addEventListener("click", () => {
+      if (isG900OrientationLocked()) return;
       applyViewPreset(state, btn.dataset.viewMode);
     });
   });
 
+  const orientationLockToggle = document.getElementById("stage-grid-toggle");
+  if (orientationLockToggle) {
+    orientationLockToggle.addEventListener("change", syncG900PerspectiveControls);
+  }
+  syncG900PerspectiveControls();
+
   canvas.addEventListener("pointerdown", (event) => {
+    if (isG900OrientationLocked()) return;
     state.dragging = true;
     state.lastX = event.clientX;
     state.lastY = event.clientY;
@@ -808,6 +840,10 @@ function boot() {
   });
 
   canvas.addEventListener("pointermove", (event) => {
+    if (isG900OrientationLocked()) {
+      state.dragging = false;
+      return;
+    }
     if (!state.dragging) return;
 
     const dx = event.clientX - state.lastX;

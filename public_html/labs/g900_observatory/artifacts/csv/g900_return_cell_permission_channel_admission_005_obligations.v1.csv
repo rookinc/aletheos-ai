@@ -1,0 +1,17 @@
+id,name,requirement,evidence,pass
+ADMIT-01,gate passed,Gate audit 004 passed.,labs/g900_observatory/artifacts/json/g900_return_cell_channel_admission_gate_audit_004.v1.json,True
+ADMIT-02,gate candidate ready,Gate candidate is ready.,gate004.gate_candidate.gate_ready,True
+ADMIT-03,source packet identity,Source packet P has the expected identity.,successor003.successor_signature.source_packet_id,True
+ADMIT-04,successor rule identity,Successor rule R has the expected identity.,successor003.successor_signature.rule_id,True
+ADMIT-05,target packet identity,Target packet Q has the expected identity.,successor003.successor_signature.target_packet_id,True
+ADMIT-06,unique successor minima,Every source row has a unique target selected by R.,successor003.successor_signature.all_rule_minima_unique,True
+ADMIT-07,packet agreement,Q matches packet scout 002.,successor003.successor_signature.q_matches_packet002,True
+ADMIT-08,target balance,Q target limits are balanced across 23 and 24.,successor003.successor_signature.q_target_limits,True
+ADMIT-09,repair signature,Q has three same-anchor rows and one carrier-incidence repair.,successor003.successor_signature,True
+ADMIT-10,packet scout passed,Packet scout 002 passed.,labs/g900_observatory/artifacts/json/g900_return_cell_carrier_incidence_packet_scout_002.v1.json,True
+ADMIT-11,preview boundary passed,Preview boundary receipt passed before admission.,labs/g900_observatory/receipts/g900_return_cell_channel_preview_boundary_audit_001.v1.json,True
+ADMIT-12,contract present,DAT-style finite information transport contract is present.,labs/g900_observatory/data/g900_discrete_information_transport_contract.v0.1.json,True
+ADMIT-13,body unchanged,G900 body remains 900 vertices and 3600 edges.,labs/g900_observatory/data/g900_static_body.v1.json,True
+ADMIT-14,no body mutation,"Admission does not mutate body, add vertices, or add edges.",admission boundary,True
+ADMIT-15,permission only,"Admission is permission-channel only, not information transport.",admission boundary,True
+ADMIT-16,no physical claim,"Admission makes no physical transport, force, physics, or unification claim.",admission boundary,True

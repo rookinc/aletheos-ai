@@ -1,0 +1,201 @@
+{
+  "schema": "g900.return_cell_permission_channel_admission",
+  "version": "0.1",
+  "artifact_id": "g900_return_cell_permission_channel_admission_005",
+  "admission_pass": true,
+  "verdict": "return_cell_permission_channel_admitted",
+  "status": "permission_channel_admission_only_no_information_transport",
+  "commit": "3631826",
+  "question": "What exact additional proof converts gate-ready into an admitted permission channel?",
+  "answer": "The gate-ready P -> Q by R object is admitted as a permission channel because all admission obligations pass.",
+  "admitted_channel": {
+    "id": "g900_return_cell_permission_channel_005",
+    "label": "Return-cell permission channel",
+    "kind": "return_cell_permission_channel",
+    "status": "admitted_permission_channel_no_transport",
+    "claim_ladder_level": 3,
+    "candidate_id": "return_cell_03_09_09_12_06_12_06_13",
+    "gate_candidate_id": "return_cell_channel_admission_gate_candidate_004",
+    "source_packet_P": "return_cell_role_anchor_source_packet_003_P",
+    "successor_rule_R": "return_cell_carrier_incidence_successor_rule_003_R",
+    "target_packet_Q": "return_cell_body_edge_target_packet_003_Q",
+    "q_edge_ids": [
+      "tuple_edge_611",
+      "tuple_edge_2425",
+      "tuple_edge_1472",
+      "tuple_edge_1475"
+    ],
+    "q_target_limits": {
+      "23": 2,
+      "24": 2
+    },
+    "same_anchor_count": 3,
+    "incidence_repair_count": 1,
+    "permission_statement": "The P -> Q by R object is admitted as a finite G900 permission channel over existing body edges.",
+    "transport_statement": "No information transport is admitted by this channel admission.",
+    "body_statement": "The G900 body is not changed; this is metadata over the fixed body.",
+    "boundary": {
+      "permission_channel_admitted": true,
+      "information_transport_admitted": false,
+      "physical_transport_claim": false,
+      "mutates_body": false,
+      "adds_vertices": false,
+      "adds_edges": false,
+      "marker_lighting": false,
+      "viewer_registry_wired": false,
+      "viewer_gate_open": false,
+      "force_claim": false,
+      "physics_claim": false,
+      "unification_claim": false
+    }
+  },
+  "registry": "labs/g900_observatory/data/g900_admitted_permission_channels.v0.1.json",
+  "obligations": [
+    {
+      "id": "ADMIT-01",
+      "name": "gate passed",
+      "requirement": "Gate audit 004 passed.",
+      "evidence": "labs/g900_observatory/artifacts/json/g900_return_cell_channel_admission_gate_audit_004.v1.json",
+      "pass": true
+    },
+    {
+      "id": "ADMIT-02",
+      "name": "gate candidate ready",
+      "requirement": "Gate candidate is ready.",
+      "evidence": "gate004.gate_candidate.gate_ready",
+      "pass": true
+    },
+    {
+      "id": "ADMIT-03",
+      "name": "source packet identity",
+      "requirement": "Source packet P has the expected identity.",
+      "evidence": "successor003.successor_signature.source_packet_id",
+      "pass": true
+    },
+    {
+      "id": "ADMIT-04",
+      "name": "successor rule identity",
+      "requirement": "Successor rule R has the expected identity.",
+      "evidence": "successor003.successor_signature.rule_id",
+      "pass": true
+    },
+    {
+      "id": "ADMIT-05",
+      "name": "target packet identity",
+      "requirement": "Target packet Q has the expected identity.",
+      "evidence": "successor003.successor_signature.target_packet_id",
+      "pass": true
+    },
+    {
+      "id": "ADMIT-06",
+      "name": "unique successor minima",
+      "requirement": "Every source row has a unique target selected by R.",
+      "evidence": "successor003.successor_signature.all_rule_minima_unique",
+      "pass": true
+    },
+    {
+      "id": "ADMIT-07",
+      "name": "packet agreement",
+      "requirement": "Q matches packet scout 002.",
+      "evidence": "successor003.successor_signature.q_matches_packet002",
+      "pass": true
+    },
+    {
+      "id": "ADMIT-08",
+      "name": "target balance",
+      "requirement": "Q target limits are balanced across 23 and 24.",
+      "evidence": "successor003.successor_signature.q_target_limits",
+      "pass": true
+    },
+    {
+      "id": "ADMIT-09",
+      "name": "repair signature",
+      "requirement": "Q has three same-anchor rows and one carrier-incidence repair.",
+      "evidence": "successor003.successor_signature",
+      "pass": true
+    },
+    {
+      "id": "ADMIT-10",
+      "name": "packet scout passed",
+      "requirement": "Packet scout 002 passed.",
+      "evidence": "labs/g900_observatory/artifacts/json/g900_return_cell_carrier_incidence_packet_scout_002.v1.json",
+      "pass": true
+    },
+    {
+      "id": "ADMIT-11",
+      "name": "preview boundary passed",
+      "requirement": "Preview boundary receipt passed before admission.",
+      "evidence": "labs/g900_observatory/receipts/g900_return_cell_channel_preview_boundary_audit_001.v1.json",
+      "pass": true
+    },
+    {
+      "id": "ADMIT-12",
+      "name": "contract present",
+      "requirement": "DAT-style finite information transport contract is present.",
+      "evidence": "labs/g900_observatory/data/g900_discrete_information_transport_contract.v0.1.json",
+      "pass": true
+    },
+    {
+      "id": "ADMIT-13",
+      "name": "body unchanged",
+      "requirement": "G900 body remains 900 vertices and 3600 edges.",
+      "evidence": "labs/g900_observatory/data/g900_static_body.v1.json",
+      "pass": true
+    },
+    {
+      "id": "ADMIT-14",
+      "name": "no body mutation",
+      "requirement": "Admission does not mutate body, add vertices, or add edges.",
+      "evidence": "admission boundary",
+      "pass": true
+    },
+    {
+      "id": "ADMIT-15",
+      "name": "permission only",
+      "requirement": "Admission is permission-channel only, not information transport.",
+      "evidence": "admission boundary",
+      "pass": true
+    },
+    {
+      "id": "ADMIT-16",
+      "name": "no physical claim",
+      "requirement": "Admission makes no physical transport, force, physics, or unification claim.",
+      "evidence": "admission boundary",
+      "pass": true
+    }
+  ],
+  "failed_obligation_ids": [],
+  "evidence_stack": [
+    "labs/g900_observatory/data/g900_discrete_information_transport_contract.v0.1.json",
+    "labs/g900_observatory/receipts/g900_return_cell_channel_preview_boundary_audit_001.v1.json",
+    "labs/g900_observatory/artifacts/json/g900_return_cell_carrier_incidence_packet_scout_002.v1.json",
+    "labs/g900_observatory/artifacts/json/g900_return_cell_packet_successor_rule_scout_003.v1.json",
+    "labs/g900_observatory/artifacts/json/g900_return_cell_channel_admission_gate_audit_004.v1.json"
+  ],
+  "boundary": {
+    "permission_channel_admitted": true,
+    "admitted_permission_channel_count": 1,
+    "information_transport_admitted": false,
+    "physical_transport_claim": false,
+    "mutates_body": false,
+    "adds_vertices": false,
+    "adds_edges": false,
+    "marker_lighting": false,
+    "viewer_registry_wired": false,
+    "viewer_gate_open": false,
+    "force_claim": false,
+    "physics_claim": false,
+    "unification_claim": false
+  },
+  "inputs": {
+    "labs/g900_observatory/data/g900_static_body.v1.json": "6a2cb6b9892a78d4559ec61cf946b0021962cc6819311234b8bf14102b3b7f63",
+    "labs/g900_observatory/data/g900_discrete_information_transport_contract.v0.1.json": "7528492c4c58d6d756383d839343c055fc87a9dfeb2fbf5b2749015d9724bf13",
+    "labs/g900_observatory/receipts/g900_return_cell_channel_preview_boundary_audit_001.v1.json": "d944eb35682fcd90de8837cfc8a6de5f31317cd6929d9f7e3e9403344b091781",
+    "labs/g900_observatory/artifacts/json/g900_return_cell_carrier_incidence_packet_scout_002.v1.json": "0d16b7883e46c2cf7fc9f210666b96cbc6d07f21449342f5e3df776b4e7a425f",
+    "labs/g900_observatory/artifacts/json/g900_return_cell_packet_successor_rule_scout_003.v1.json": "79657be34ec24d63e02aa949aa7f21250cfbec0109280e05dfcdca72b1d1334e",
+    "labs/g900_observatory/artifacts/json/g900_return_cell_channel_admission_gate_audit_004.v1.json": "7782cc773efa8dbb8eb476a5a07e752b20f038c91e890ab8230fde5b1bac68ce"
+  },
+  "git_status_short_before": "",
+  "recorded_at_utc": "2026-06-19T13:38:53Z",
+  "keeper": "Admission permits the relation. It does not yet prove transport."
+}

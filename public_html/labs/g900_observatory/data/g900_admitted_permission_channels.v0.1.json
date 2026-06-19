@@ -1,0 +1,65 @@
+{
+  "schema": "g900.admitted_permission_channels",
+  "version": "0.1",
+  "status": "permission_channel_registry_declared_data_only",
+  "admitted_permission_channel_count": 1,
+  "information_transport_admitted_count": 0,
+  "physical_transport_claim_count": 0,
+  "viewer_wired": false,
+  "channels": [
+    {
+      "id": "g900_return_cell_permission_channel_005",
+      "label": "Return-cell permission channel",
+      "kind": "return_cell_permission_channel",
+      "status": "admitted_permission_channel_no_transport",
+      "claim_ladder_level": 3,
+      "candidate_id": "return_cell_03_09_09_12_06_12_06_13",
+      "gate_candidate_id": "return_cell_channel_admission_gate_candidate_004",
+      "source_packet_P": "return_cell_role_anchor_source_packet_003_P",
+      "successor_rule_R": "return_cell_carrier_incidence_successor_rule_003_R",
+      "target_packet_Q": "return_cell_body_edge_target_packet_003_Q",
+      "q_edge_ids": [
+        "tuple_edge_611",
+        "tuple_edge_2425",
+        "tuple_edge_1472",
+        "tuple_edge_1475"
+      ],
+      "q_target_limits": {
+        "23": 2,
+        "24": 2
+      },
+      "same_anchor_count": 3,
+      "incidence_repair_count": 1,
+      "permission_statement": "The P -> Q by R object is admitted as a finite G900 permission channel over existing body edges.",
+      "transport_statement": "No information transport is admitted by this channel admission.",
+      "body_statement": "The G900 body is not changed; this is metadata over the fixed body.",
+      "boundary": {
+        "permission_channel_admitted": true,
+        "information_transport_admitted": false,
+        "physical_transport_claim": false,
+        "mutates_body": false,
+        "adds_vertices": false,
+        "adds_edges": false,
+        "marker_lighting": false,
+        "viewer_registry_wired": false,
+        "viewer_gate_open": false,
+        "force_claim": false,
+        "physics_claim": false,
+        "unification_claim": false
+      }
+    }
+  ],
+  "boundary": {
+    "data_only": true,
+    "mutates_body": false,
+    "adds_vertices": false,
+    "adds_edges": false,
+    "admits_information_transport": false,
+    "admits_physical_transport": false,
+    "force_claim": false,
+    "physics_claim": false,
+    "unification_claim": false
+  },
+  "created_from_commit": "3631826",
+  "recorded_at_utc": "2026-06-19T13:38:53Z"
+}

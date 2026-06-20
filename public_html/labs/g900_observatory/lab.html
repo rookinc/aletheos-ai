@@ -376,6 +376,30 @@
         </div>
       </div>
 
+      <div class="activity-panel layer-panel g900-admission-event-panel is-render-active" data-activity-panel="admission-event" data-layer-panel="admission-event" aria-label="Admission event controls">
+        <div class="activity-panel-head layer-panel-head">
+          <button class="activity-panel-title" type="button" data-panel-title-toggle="admission-event" aria-expanded="false" aria-controls="admission-event-panel-body">
+            <span class="activity-title-caret" aria-hidden="true"></span>
+            <span>Admission Event</span>
+          </button>
+
+          <label class="activity-render-switch layer-switch admission-event-toggle" for="admission-event-toggle" aria-label="Toggle admission event overlay">
+            <input id="admission-event-toggle" type="checkbox" data-render-toggle="admission-event" checked />
+            <span>ON</span>
+          </label>
+        </div>
+
+        <div id="admission-event-panel-body" class="activity-panel-body g900-admission-event-panel-body" data-panel-body="admission-event" hidden>
+          <div class="g900-force-receipt-grid" aria-label="Admission event receipt">
+            <div><strong>Preserved</strong><span>[3,6,9,12]</span></div>
+            <div><strong>Admitted</strong><span>11</span></div>
+            <div><strong>Lost</strong><span>none</span></div>
+            <div><strong>Claim</strong><span>overlay only, no body mutation</span></div>
+          </div>
+          <p class="layer-panel-note">Static overlay scaffold only. The B scaffold remains; witness 11 is admitted into it.</p>
+        </div>
+      </div>
+
       <div class="activity-panel layer-panel g900-information-flow-panel is-render-active" data-activity-panel="information-flow" data-layer-panel="information-flow" aria-label="Information flow controls">
         <div class="activity-panel-head layer-panel-head">
           <button class="activity-panel-title" type="button" data-panel-title-toggle="information-flow" aria-expanded="true" aria-controls="information-flow-panel-body">

@@ -2160,6 +2160,57 @@ function drawStaticBody(ctx, w, h, dpr, state, body) {
   ctx.restore();
 }
 
+function drawAdmissionEventOverlay(ctx, w, h, dpr, state, body) {
+  const toggle = document.getElementById("admission-event-toggle");
+  if (toggle && !toggle.checked) return;
+  if (!body || !Array.isArray(body.vertices)) return;
+
+  const bySlot = new Map();
+  for (const vertex of body.vertices) {
+    if (vertex && Number.isFinite(vertex.slot) && !bySlot.has(vertex.slot)) {
+      bySlot.set(vertex.slot, projectPoint(vertex, w, h, state));
+    }
+  }
+
+  const preserved = [3, 6, 9, 12];
+  const admitted = [11];
+
+  ctx.save();
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+  ctx.font = Math.max(10, Math.floor(Math.min(w, h) * 0.018)) + "px ui-monospace, Menlo, Consolas, monospace";
+
+  for (const slot of preserved) {
+    const p = bySlot.get(slot);
+    if (!p) continue;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, 8 * dpr, 0, TAU);
+    ctx.strokeStyle = "rgba(217, 184, 108, 0.82)";
+    ctx.lineWidth = 1.6 * dpr;
+    ctx.stroke();
+    ctx.fillStyle = "rgba(217, 184, 108, 0.92)";
+    ctx.fillText(String(slot), p.x, p.y - 15 * dpr);
+  }
+
+  for (const slot of admitted) {
+    const p = bySlot.get(slot);
+    if (!p) continue;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, 11 * dpr, 0, TAU);
+    ctx.strokeStyle = "rgba(144, 220, 255, 0.92)";
+    ctx.lineWidth = 2.2 * dpr;
+    ctx.stroke();
+    ctx.fillStyle = "rgba(144, 220, 255, 0.98)";
+    ctx.fillText(String(slot), p.x, p.y - 18 * dpr);
+  }
+
+  ctx.textAlign = "left";
+  ctx.textBaseline = "top";
+  ctx.fillStyle = "rgba(217, 184, 108, 0.78)";
+  ctx.fillText("ADMISSION EVENT: B preserves [3,6,9,12], admits 11", 18 * dpr, 18 * dpr);
+  ctx.restore();
+}
+
 function drawBlankStage(ctx, canvas, state) {
   const { w, h, dpr } = resizeCanvas(canvas);
   drawBackground(ctx, w, h);
@@ -2168,6 +2219,7 @@ function drawBlankStage(ctx, canvas, state) {
   drawStaticBody(ctx, w, h, dpr, state, activeStaticBody);
   drawReturnCellChannelPreview(ctx, w, h, dpr, state, activeStaticBody);
   drawInformationFlowPulse(ctx, w, h, dpr, state, activeStaticBody);
+  drawAdmissionEventOverlay(ctx, w, h, dpr, state, activeStaticBody);
   drawAFGroundedLensOverlay(ctx, w, h, dpr, state, activeStaticBody);
 
   ctx.save();
@@ -2304,6 +2356,7 @@ function boot() {
   bindCarrierRenderPanel();
   bindForceCandidateStubPanel();
 
+  bindLayerControl("admission-event-toggle", () => {});
   bindLayerControl("information-flow-toggle", syncInformationFlowState);
   bindLayerControl("information-flow-edges-alpha-slider", syncInformationFlowState);
   bindLayerControl("information-flow-tracers-alpha-slider", syncInformationFlowState);

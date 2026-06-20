@@ -1,0 +1,5 @@
+timing_id,layer,term,allowed,meaning,not_meaning,required_label,source_assumption,promotion_status
+005-T1,runtime_clock,scaled_quartz_timing_substrate,true,external oscillator-denominator for simulator ticks and cadence,"source law, physical synchronization proof, or G900 theorem time",runtime_clock_boundary scaled_quartz_timing not_source_law,SIM-BB-008,assumption_only
+005-T2,simulator_rate,sheets_per_second,true,admissible simulator sheets per scaled oscillator second,physical field unit or proof of physical flux,scaled_quartz_timing not_physics_claim,SIM-BB-008,assumption_only
+005-T3,simulator_tick,tick,true,"ordered simulator update index, optionally displayed against runtime cadence",physical time in the theorem object,not_physical_time not_source_law,SIM-BB-008,assumption_only
+005-T4,source_law,quartz_as_source_law,false,not admitted,do not infer G900 admissibility from the runtime clock,not_source_law,SIM-BB-008,forbidden_without_new_proof

@@ -2384,3 +2384,461 @@ canvas.stage-perspective-locked {
 }
 /* /g900-transport-ledger-static-snapshot-008e */
 
+
+
+/* g900-timing-panel-ui-001 */
+.g900-timing-panel {
+  border-color: rgba(218, 194, 126, 0.36) !important;
+  background:
+    linear-gradient(180deg, rgba(18, 35, 54, 0.78), rgba(8, 16, 28, 0.66)) !important;
+}
+
+.g900-timing-panel-head {
+  align-items: center;
+}
+
+.g900-timing-sample-rate-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-inline-size: 8.8rem;
+  min-block-size: 2.25rem;
+  padding: 0 0.82rem;
+  border: 1px solid rgba(218, 194, 126, 0.48);
+  border-radius: 999px;
+  background:
+    linear-gradient(180deg, rgba(46, 55, 71, 0.94), rgba(16, 23, 36, 0.98));
+  color: rgba(255, 230, 158, 0.98);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.08),
+    0 0 1rem rgba(218,194,126,0.10);
+}
+
+.g900-timing-panel-body {
+  display: grid;
+  gap: 0.72rem;
+}
+
+.g900-timing-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.72rem;
+  padding: 0.56rem 0.62rem;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 0.78rem;
+  background: rgba(255,255,255,0.035);
+}
+
+.g900-timing-label {
+  color: rgba(237, 246, 255, 0.64);
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+}
+
+.g900-timing-path,
+.g900-timing-status {
+  color: rgba(237, 246, 255, 0.88);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.72rem;
+  text-align: right;
+}
+
+.g900-timing-path {
+  color: rgba(255, 230, 158, 0.94);
+}
+
+.g900-timing-status.is-running {
+  color: rgba(118, 241, 176, 0.98);
+}
+
+.g900-timing-rate-box {
+  display: grid;
+  gap: 0.55rem;
+  padding: 0.72rem;
+  border: 1px solid rgba(218, 194, 126, 0.18);
+  border-radius: 0.9rem;
+  background: rgba(0,0,0,0.16);
+}
+
+.g900-timing-rate-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.7rem;
+  color: rgba(237, 246, 255, 0.68);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.g900-timing-rate-head strong {
+  color: rgba(255, 230, 158, 0.96);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.82rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.g900-timing-rate-slider {
+  inline-size: 100%;
+  accent-color: var(--accent);
+}
+
+.g900-timing-preset-row,
+.g900-timing-stepper {
+  display: grid;
+  gap: 0.48rem;
+}
+
+.g900-timing-preset-row {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.g900-timing-stepper {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.g900-timing-preset,
+.g900-timing-step-btn {
+  min-block-size: 2.25rem;
+  border: 1px solid rgba(223, 195, 123, 0.32);
+  border-radius: 0.72rem;
+  background:
+    linear-gradient(180deg, rgba(22, 34, 52, 0.94), rgba(8, 15, 27, 0.98));
+  color: rgba(237, 246, 255, 0.84);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.g900-timing-preset.is-active {
+  border-color: rgba(255, 230, 158, 0.82);
+  color: rgba(255, 246, 210, 1);
+  background:
+    linear-gradient(180deg, rgba(110, 88, 38, 0.92), rgba(48, 35, 13, 0.98));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.14),
+    0 0 0 1px rgba(255,230,158,0.16),
+    0 0 1rem rgba(218,194,126,0.18);
+}
+
+.g900-timing-step-btn:active,
+.g900-timing-preset:active {
+  transform: translateY(1px);
+}
+
+.g900-timing-boundary-note {
+  margin: 0;
+  color: rgba(200, 214, 228, 0.72);
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
+@media (max-width: 420px) {
+  .g900-timing-sample-rate-pill {
+    min-inline-size: 7.4rem;
+    padding-inline: 0.62rem;
+    font-size: 0.66rem;
+  }
+
+  .g900-timing-stepper {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* g900-timing-panel-tidy-001 */
+.g900-timing-panel-body {
+  gap: 0.58rem;
+}
+
+.g900-timing-row {
+  padding: 0.48rem 0.58rem;
+}
+
+.g900-timing-rate-box {
+  gap: 0.46rem;
+  padding: 0.62rem;
+}
+
+.g900-timing-preset-row {
+  gap: 0.38rem;
+}
+
+.g900-timing-stepper {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 0.38rem;
+}
+
+.g900-timing-step-btn {
+  min-block-size: 2.1rem;
+  padding-inline: 0.35rem;
+  font-size: 0.66rem;
+}
+
+.g900-timing-boundary-note {
+  font-size: 0.68rem;
+  line-height: 1.28;
+  color: rgba(200, 214, 228, 0.76);
+}
+
+@media (max-width: 420px) {
+  .g900-timing-stepper {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+
+  .g900-timing-step-btn {
+    min-block-size: 2.05rem;
+    font-size: 0.62rem;
+    letter-spacing: 0.045em;
+  }
+}
+
+
+/* g900-information-motion-pulse-ui-001 */
+.g900-information-flow-panel {
+  border-color: rgba(104, 255, 205, 0.32) !important;
+  background:
+    linear-gradient(180deg, rgba(12, 45, 42, 0.58), rgba(8, 17, 30, 0.78)) !important;
+}
+
+.g900-information-flow-panel.is-render-active {
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.07),
+    0 0 1.6rem rgba(104, 255, 205, 0.10);
+}
+
+.information-flow-toggle span {
+  color: rgba(130, 255, 214, 0.96);
+}
+
+.information-flow-panel-body {
+  display: grid;
+  gap: 0.58rem;
+}
+
+.g900-information-flow-readout {
+  display: grid;
+  grid-template-columns: minmax(5.5rem, 0.42fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.52rem 0.62rem;
+  border: 1px solid rgba(104, 255, 205, 0.13);
+  border-radius: 0.76rem;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.g900-information-flow-readout span {
+  color: rgba(214, 232, 242, 0.62);
+  font-size: 0.64rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.g900-information-flow-readout strong {
+  color: rgba(183, 255, 231, 0.94);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.68rem;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.g900-information-flow-panel .layer-panel-note {
+  color: rgba(199, 236, 226, 0.78);
+  font-size: 0.7rem;
+  line-height: 1.34;
+}
+
+@media (max-width: 420px) {
+  .g900-information-flow-readout {
+    grid-template-columns: 1fr;
+    gap: 0.28rem;
+  }
+}
+
+
+/* g900-camera-pitch-toggle-ui-001 */
+.camera-pitch-toggle {
+  min-inline-size: 3.4rem;
+  padding-inline: 0.6rem;
+  color: rgba(214, 226, 238, 0.74);
+}
+
+.camera-pitch-toggle.is-active {
+  border-color: rgba(104, 255, 205, 0.78) !important;
+  color: rgba(184, 255, 232, 0.96) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.12),
+    0 0 0 1px rgba(104,255,205,0.14),
+    0 0 1rem rgba(104,255,205,0.24);
+}
+
+.camera-pitch-toggle:not(.is-active) {
+  opacity: 0.72;
+}
+
+
+/* g900-camera-button-layout-fix-003 */
+.g900-stage-control-deck.g900-camera-layout-compact {
+  display: grid !important;
+  grid-template-columns: minmax(6.8rem, 1.62fr) repeat(7, minmax(2rem, 0.48fr)) !important;
+  gap: 0.34rem !important;
+  align-items: stretch !important;
+}
+
+.g900-stage-control-deck.g900-camera-layout-compact .mini-transport-btn,
+.g900-stage-control-deck.g900-camera-layout-compact button {
+  min-inline-size: 0 !important;
+  padding-inline: 0.38rem !important;
+  letter-spacing: 0.055em;
+}
+
+.g900-stage-control-deck.g900-camera-layout-compact #play-toggle {
+  padding-inline: 0.7rem !important;
+}
+
+.g900-stage-control-deck.g900-camera-layout-compact #camera-pitch-toggle {
+  min-inline-size: 0 !important;
+  padding-inline: 0.28rem !important;
+}
+
+@media (max-width: 430px) {
+  .g900-stage-control-deck.g900-camera-layout-compact {
+    grid-template-columns: minmax(6.2rem, 1.55fr) repeat(7, minmax(1.82rem, 0.46fr)) !important;
+    gap: 0.26rem !important;
+  }
+
+  .g900-stage-control-deck.g900-camera-layout-compact .mini-transport-btn,
+  .g900-stage-control-deck.g900-camera-layout-compact button {
+    font-size: 0.68rem !important;
+    padding-inline: 0.22rem !important;
+  }
+
+  .g900-stage-control-deck.g900-camera-layout-compact #play-toggle {
+    font-size: 0.72rem !important;
+    padding-inline: 0.5rem !important;
+  }
+
+  .g900-stage-control-deck.g900-camera-layout-compact #camera-pitch-toggle {
+    font-size: 0.62rem !important;
+  }
+}
+
+
+/* g900-body-panel-controls-001 */
+.g900-body-panel .g900-body-toggle {
+  min-width: 5.35rem;
+}
+
+.g900-body-panel-body {
+  display: grid;
+  gap: 0.42rem;
+}
+
+.g900-body-panel-body .layer-panel-note {
+  margin: 0.55rem 0 0;
+  color: rgba(180, 205, 230, 0.72);
+  font-size: 0.74rem;
+  line-height: 1.45;
+}
+
+.stage-bottom-toolbar {
+  display: none !important;
+}
+
+
+/* g900-information-alpha-sliders-001 */
+.g900-information-alpha-controls {
+  display: grid;
+  gap: 0.42rem;
+  margin-top: 0.55rem;
+  padding-top: 0.55rem;
+  border-top: 1px solid rgba(128, 210, 190, 0.12);
+}
+
+.g900-information-alpha-controls .layer-slider-row span {
+  min-width: 6.4rem;
+}
+
+
+/* g900-information-tracer-smear-001 */
+.g900-information-alpha-controls .layer-slider-row[for="information-flow-tracer-smear-slider"] {
+  margin-top: 0.08rem;
+}
+
+
+/* g900-force-candidates-stub-001 */
+.g900-force-candidates-panel-body {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.g900-force-candidate-grid {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.g900-force-candidate-grid div {
+  border: 1px solid rgba(210, 190, 120, 0.18);
+  border-radius: 1rem;
+  padding: 0.68rem 0.78rem;
+  background: rgba(4, 15, 26, 0.42);
+}
+
+.g900-force-candidate-grid strong {
+  display: block;
+  color: rgba(238, 245, 255, 0.95);
+  font-size: 0.86rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.18rem;
+}
+
+.g900-force-candidate-grid span {
+  display: block;
+  color: rgba(180, 205, 230, 0.72);
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
+
+/* g900-force-candidate-receipts-001 */
+.g900-force-receipt-grid {
+  display: grid;
+  gap: 0.46rem;
+  margin-top: 0.65rem;
+  padding-top: 0.65rem;
+  border-top: 1px solid rgba(210, 190, 120, 0.14);
+}
+
+.g900-force-receipt-grid div {
+  border: 1px solid rgba(128, 210, 190, 0.14);
+  border-radius: 0.9rem;
+  padding: 0.58rem 0.7rem;
+  background: rgba(4, 15, 26, 0.36);
+}
+
+.g900-force-receipt-grid strong {
+  display: block;
+  color: rgba(210, 240, 232, 0.92);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.16rem;
+}
+
+.g900-force-receipt-grid span {
+  display: block;
+  color: rgba(180, 205, 230, 0.68);
+  font-size: 0.68rem;
+  line-height: 1.35;
+}

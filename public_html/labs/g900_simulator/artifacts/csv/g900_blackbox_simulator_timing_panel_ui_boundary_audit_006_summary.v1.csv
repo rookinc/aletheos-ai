@@ -1,0 +1,11 @@
+summary_id,summary_name,value,status,interpretation
+006-S001,hardwired_timing_panel,1,present,Timing panel exists and is not controlled by an on/off render switch.
+006-S002,sample_rate_header,1,present,Timing header displays sample rate.
+006-S003,quartz_path,1,present,Runtime > Quartz > Sheets/sec path is visible.
+006-S004,sample_rate_presets,4,present,"Sample-rate presets are 120, 240, 480, and 960."
+006-S005,stepper_controls,3,present,"Pause, step back, and step forward controls are present."
+006-S006,stepper_pause_first,1,verified_static,Static JS hooks show stepper controls set playing=false before/with stepping.
+006-S007,active_files_changed,3,verified_git,"The timing UI commit modified only lab.html, lab.css, and g900_grammar_stage_v0.js."
+006-S008,source_law_promoted,0,locked_zero,Timing UI does not promote quartz to source law.
+006-S009,physics_claim,0,locked_zero,Timing UI makes no physics claim.
+006-S010,body_mutation,0,locked_zero,Timing UI does not mutate the G900 body.

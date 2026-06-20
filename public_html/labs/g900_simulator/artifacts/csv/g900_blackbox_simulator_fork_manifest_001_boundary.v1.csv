@@ -1,0 +1,30 @@
+boundary_type,item,status
+allowed_use,simulate internal graph-state evolution using declared black-box mappings,allowed_in_sandbox
+allowed_use,use F0001 seam behavior as a simulator assumption,allowed_in_sandbox
+allowed_use,"render physics-like fields, flows, or potentials as exploratory visuals",allowed_in_sandbox
+allowed_use,define toy observables on the graph,allowed_in_sandbox
+allowed_use,compare simulated behavior across parameter settings,allowed_in_sandbox
+allowed_use,generate hypotheses for later theorem or empirical work,allowed_in_sandbox
+allowed_use,label every output with black_box_assumption_version,allowed_in_sandbox
+forbidden_claim,physical transport claim,forbidden_without_new_proof
+forbidden_claim,physical flux claim,forbidden_without_new_proof
+forbidden_claim,energy flow claim,forbidden_without_new_proof
+forbidden_claim,force claim,forbidden_without_new_proof
+forbidden_claim,gravity claim,forbidden_without_new_proof
+forbidden_claim,electromagnetism claim,forbidden_without_new_proof
+forbidden_claim,strong or weak interaction claim,forbidden_without_new_proof
+forbidden_claim,unification claim,forbidden_without_new_proof
+forbidden_claim,geometry claim,forbidden_without_new_proof
+forbidden_claim,spacetime claim,forbidden_without_new_proof
+forbidden_claim,body mutation of the G900 theorem object,forbidden_without_new_proof
+forbidden_claim,new permission channel admission,forbidden_without_new_proof
+forbidden_claim,new information transport admission,forbidden_without_new_proof
+forbidden_claim,viewer gate opening,forbidden_without_new_proof
+forbidden_claim,marker lighting as physical event,forbidden_without_new_proof
+forbidden_claim,black-box simulator result presented as proof,forbidden_without_new_proof
+required_label,black_box_simulation,required_on_outputs
+required_label,exploratory,required_on_outputs
+required_label,not_physics_claim,required_on_outputs
+required_label,not_channel_admission,required_on_outputs
+required_label,not_body_mutation,required_on_outputs
+required_label,assumption_version_required,required_on_outputs

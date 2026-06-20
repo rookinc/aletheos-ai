@@ -1,0 +1,6 @@
+allowance_id,term,allowed,meaning,not_meaning,required_label,source_assumption,promotion_status
+003-A1,information_flux,true,finite graph-information readout inside the simulator fork,"physical flux, energy flow, force, geometry, or physics claim",information_flux_simulation not_physics_claim,SIM-BB-007,assumption_only
+003-A2,force_like_simulation,true,information-driven force-like readout inside the simulator fork,physical force claim,simulated_force_readout not_force_claim,SIM-BB-007,assumption_only
+003-A3,physical_flux_like_simulation,true,information-driven physical-flux-like readout inside the simulator fork,physical flux claim,simulated_physical_flux_readout not_physical_flux_claim,SIM-BB-007,assumption_only
+003-A4,energy_flow_like_simulation,true,information-driven energy-flow-like readout inside the simulator fork,physical energy flow claim,simulated_energy_flow_readout not_energy_flow_claim,SIM-BB-007,assumption_only
+003-A5,physical_force_flux_energy_claims,false,not admitted by simulator fork,do not infer from simulation readouts,not_force_claim not_physical_flux_claim not_energy_flow_claim not_physics_claim,SIM-BB-007,forbidden_without_new_proof

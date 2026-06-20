@@ -218,6 +218,7 @@
         <div class="g900-toolbar-row" role="group" aria-label="Transport and view controls">
           <button id="play-toggle" class="g900-toolbar-btn g900-toolbar-play" type="button" aria-label="Play sheet clock">PLAY</button>
           <button id="reset-stage-btn" class="g900-toolbar-btn" type="button" aria-label="Reset stage">&#8635;</button>
+            <button id="camera-pitch-toggle" class="mini-transport-btn camera-pitch-toggle is-active" type="button" aria-label="Toggle camera pitch motion" aria-pressed="true" title="Camera pitch motion on">CAM</button>
           <button class="g900-toolbar-btn" type="button" data-view-mode="x" aria-label="X view">X</button>
           <button class="g900-toolbar-btn" type="button" data-view-mode="y" aria-label="Y view">Y</button>
           <button class="g900-toolbar-btn" type="button" data-view-mode="z" aria-label="Z view">Z</button>
@@ -248,24 +249,41 @@
         </div>
       </div>
 
-      <div id="stage-bottom-toolbar" class="stage-bottom-toolbar" aria-label="Graph body density controls">
-        <label class="stage-toolbar-slider" for="graph-vertices-slider">
-          <span>Vertices</span>
-          <input id="graph-vertices-slider" data-layer-range="vertices" type="range" min="0" max="100" step="1" value="72" />
-          <output id="graph-vertices-readout">72</output>
-        </label>
-
-        <label class="stage-toolbar-slider" for="graph-edges-slider">
-          <span>Edges</span>
-          <input id="graph-edges-slider" data-layer-range="edges" type="range" min="0" max="100" step="1" value="18" />
-          <output id="graph-edges-readout">18</output>
-        </label>
-      </div>
-    </section>
+      </section>
 
 
     
     <section class="lab-note activity-panel-stack state-console-section" aria-label="G900 control panels">
+      <div class="activity-panel layer-panel g900-body-panel" data-activity-panel="body" data-layer-panel="body" aria-label="Body graph controls">
+        <div class="activity-panel-head layer-panel-head">
+          <button class="activity-panel-title" type="button" data-panel-title-toggle="body" aria-expanded="false" aria-controls="g900-body-panel-body">
+            <span class="activity-title-caret" aria-hidden="true"></span>
+            <span>Body</span>
+          </button>
+
+          <label class="activity-render-switch layer-switch g900-body-toggle" for="graph-layer-toggle" aria-label="Toggle graph body visibility">
+            <input id="graph-layer-toggle" type="checkbox" data-render-toggle="body" checked />
+            <span>ON</span>
+          </label>
+        </div>
+
+        <div id="g900-body-panel-body" class="activity-panel-body g900-body-panel-body" data-panel-body="body" hidden>
+          <label class="layer-slider-row" for="graph-vertices-slider">
+            <span>Vertices</span>
+            <input id="graph-vertices-slider" data-layer-range="vertices" type="range" min="0" max="100" step="1" value="72" />
+            <output id="graph-vertices-readout">72</output>
+          </label>
+
+          <label class="layer-slider-row" for="graph-edges-slider">
+            <span>Edges</span>
+            <input id="graph-edges-slider" data-layer-range="edges" type="range" min="0" max="100" step="1" value="18" />
+            <output id="graph-edges-readout">18</output>
+          </label>
+
+          <p class="layer-panel-note">Fixed G900 body visibility controls. Rendering only. Body unchanged.</p>
+        </div>
+      </div>
+
       <div class="activity-panel layer-panel" data-activity-panel="carriers" data-layer-panel="carriers" aria-label="Carrier controls">
         <div class="activity-panel-head layer-panel-head">
           <button class="activity-panel-title" type="button" data-panel-title-toggle="carriers" aria-expanded="false" aria-controls="carrier-render-panel-body">
@@ -325,6 +343,117 @@
         </div>
       </div>
 
+
+      <div class="activity-panel layer-panel g900-force-candidates-panel" data-activity-panel="force-candidates" data-layer-panel="force-candidates" aria-label="Force candidate controls">
+        <div class="activity-panel-head layer-panel-head">
+          <button class="activity-panel-title" type="button" data-panel-title-toggle="force-candidates" aria-expanded="false" aria-controls="force-candidates-panel-body">
+            <span class="activity-title-caret" aria-hidden="true"></span>
+            <span>Force Candidates</span>
+          </button>
+
+          <label class="activity-render-switch layer-switch g900-force-candidates-toggle" for="force-candidates-toggle" aria-label="Toggle force candidate stub">
+            <input id="force-candidates-toggle" type="checkbox" data-render-toggle="force-candidates" />
+            <span>OFF</span>
+          </label>
+        </div>
+
+        <div id="force-candidates-panel-body" class="activity-panel-body g900-force-candidates-panel-body" data-panel-body="force-candidates" hidden>
+          <div class="g900-force-candidate-grid" aria-label="Force information candidate classes">
+            <div data-force-candidate="gravity"><strong>Gravity</strong><span>compression information candidate</span></div>
+            <div data-force-candidate="em"><strong>EM</strong><span>polarization information candidate</span></div>
+            <div data-force-candidate="strong"><strong>Strong</strong><span>confinement information candidate</span></div>
+            <div data-force-candidate="weak"><strong>Weak</strong><span>transformation information candidate</span></div>
+          </div>
+
+          <div class="g900-force-receipt-grid" aria-label="Force candidate receipt criteria">
+            <div data-force-receipt="compression"><strong>Compression receipt</strong><span>inward bias, convergence, or load concentration selector required</span></div>
+            <div data-force-receipt="polarization"><strong>Polarization receipt</strong><span>oriented contrast, signed separation, or paired direction selector required</span></div>
+            <div data-force-receipt="confinement"><strong>Confinement receipt</strong><span>boundary retention, closed support, or escape-resistance selector required</span></div>
+            <div data-force-receipt="transformation"><strong>Transformation receipt</strong><span>handoff, identity change, or rule-boundary selector required</span></div>
+          </div>
+
+          <p id="force-candidates-note" class="layer-panel-note">Stub only. Candidate receipt criteria declared. No force renderer, no physical force claim, no body mutation.</p>
+        </div>
+      </div>
+
+      <div class="activity-panel layer-panel g900-admission-event-panel is-render-active" data-activity-panel="admission-event" data-layer-panel="admission-event" aria-label="Admission event controls">
+        <div class="activity-panel-head layer-panel-head">
+          <button class="activity-panel-title" type="button" data-panel-title-toggle="admission-event" aria-expanded="false" aria-controls="admission-event-panel-body">
+            <span class="activity-title-caret" aria-hidden="true"></span>
+            <span>Admission Event</span>
+          </button>
+
+          <label class="activity-render-switch layer-switch admission-event-toggle" for="admission-event-toggle" aria-label="Toggle admission event overlay">
+            <input id="admission-event-toggle" type="checkbox" data-render-toggle="admission-event" checked />
+            <span>ON</span>
+          </label>
+        </div>
+
+        <div id="admission-event-panel-body" class="activity-panel-body g900-admission-event-panel-body" data-panel-body="admission-event" hidden>
+          <div class="g900-force-receipt-grid" aria-label="Admission event receipt">
+            <div><strong>Preserved</strong><span>[3,6,9,12]</span></div>
+            <div><strong>Admitted</strong><span>11</span></div>
+            <div><strong>Lost</strong><span>none</span></div>
+            <div><strong>Claim</strong><span>overlay only, no body mutation</span></div>
+          </div>
+          <p class="layer-panel-note">Static overlay scaffold only. The B scaffold remains; witness 11 is admitted into it.</p>
+        </div>
+      </div>
+
+      <div class="activity-panel layer-panel g900-information-flow-panel is-render-active" data-activity-panel="information-flow" data-layer-panel="information-flow" aria-label="Information flow controls">
+        <div class="activity-panel-head layer-panel-head">
+          <button class="activity-panel-title" type="button" data-panel-title-toggle="information-flow" aria-expanded="true" aria-controls="information-flow-panel-body">
+            <span class="activity-title-caret" aria-hidden="true"></span>
+            <span>Information Flow</span>
+          </button>
+
+          <label class="activity-render-switch layer-switch information-flow-toggle" for="information-flow-toggle" aria-label="Toggle simulated information flow">
+            <input id="information-flow-toggle" type="checkbox" data-render-toggle="information-flow" checked />
+            <span>ON</span>
+          </label>
+        </div>
+
+        <div id="information-flow-panel-body" class="activity-panel-body information-flow-panel-body" data-panel-body="information-flow">
+          <div class="g900-information-flow-readout">
+            <span>Mode</span>
+            <strong id="information-flow-mode-readout">Return-cell pulse</strong>
+          </div>
+
+          <div class="g900-information-flow-readout">
+            <span>Transport</span>
+            <strong id="information-flow-transport-readout">g900_return_cell_one_step_information_transport_007</strong>
+          </div>
+
+          <div class="g900-information-alpha-controls" aria-label="Information flow alpha controls">
+            <label class="layer-slider-row" for="information-flow-edges-alpha-slider">
+              <span>Edges alpha</span>
+              <input id="information-flow-edges-alpha-slider" type="range" min="0" max="100" step="1" value="22" />
+              <output id="information-flow-edges-alpha-readout">22</output>
+            </label>
+
+            <label class="layer-slider-row" for="information-flow-tracers-alpha-slider">
+              <span>Tracers alpha</span>
+              <input id="information-flow-tracers-alpha-slider" type="range" min="0" max="100" step="1" value="58" />
+              <output id="information-flow-tracers-alpha-readout">58</output>
+            </label>
+
+            <label class="layer-slider-row" for="information-flow-tracer-smear-slider">
+              <span>Tracer smear</span>
+              <input id="information-flow-tracer-smear-slider" type="range" min="0" max="100" step="1" value="50" />
+              <output id="information-flow-tracer-smear-readout">50</output>
+            </label>
+
+            <label class="layer-slider-row" for="information-flow-stylus-alpha-slider">
+              <span>Stylus alpha</span>
+              <input id="information-flow-stylus-alpha-slider" type="range" min="0" max="100" step="1" value="96" />
+              <output id="information-flow-stylus-alpha-readout">96</output>
+            </label>
+          </div>
+
+          <p id="information-flow-note" class="layer-panel-note">Simulated information pulse over the admitted finite transport. Body unchanged. Not physical transport.</p>
+        </div>
+      </div>
+
       <div class="activity-panel layer-panel" data-activity-panel="grounded-lens" data-layer-panel="grounded-lens" aria-label="A/F grounded lens controls">
         <div class="activity-panel-head layer-panel-head">
           <button class="activity-panel-title" type="button" data-panel-title-toggle="grounded-lens" aria-expanded="false" aria-controls="grounded-lens-panel-body">
@@ -340,6 +469,51 @@
 
         <div id="grounded-lens-panel-body" class="activity-panel-body grounded-lens-panel-body" data-panel-body="grounded-lens" hidden>
           <p id="grounded-lens-note" class="layer-panel-note">A-grounded F-return lens. Body-anchored long-arc witness overlay only. Body unchanged.</p>
+        </div>
+      </div>
+
+      <div class="activity-panel layer-panel g900-timing-panel" data-activity-panel="timing" data-layer-panel="timing" aria-label="Timing controls">
+        <div class="activity-panel-head layer-panel-head g900-timing-panel-head">
+          <button class="activity-panel-title" type="button" data-panel-title-toggle="timing" aria-expanded="true" aria-controls="g900-timing-panel-body">
+            <span class="activity-title-caret" aria-hidden="true"></span>
+            <span>Timing</span>
+          </button>
+
+          <div id="g900-timing-sample-rate-pill" class="g900-timing-sample-rate-pill" aria-label="Current sample rate">333.00 sheets/sec</div>
+        </div>
+
+        <div id="g900-timing-panel-body" class="activity-panel-body g900-timing-panel-body" data-panel-body="timing">
+          <div class="g900-timing-row g900-timing-path-row">
+            <span class="g900-timing-label">Quartz path</span>
+            <span class="g900-timing-path" id="g900-timing-quartz-path">Runtime &gt; Quartz &gt; Sheets/sec</span>
+          </div>
+
+          <div class="g900-timing-row g900-timing-status-row">
+            <span class="g900-timing-label">Animation</span>
+            <span id="g900-timing-animation-status" class="g900-timing-status">Paused</span>
+          </div>
+
+          <div class="g900-timing-rate-box" aria-label="Timing sample rate controls">
+            <div class="g900-timing-rate-head">
+              <span>Sample rate</span>
+              <strong id="g900-timing-sample-rate-readout">333.00</strong>
+            </div>
+            <input id="g900-timing-sheet-rate-slider" class="g900-timing-rate-slider" type="range" min="0.25" max="960" step="0.25" value="333" aria-label="Timing sample rate" />
+            <div class="g900-timing-preset-row" role="group" aria-label="Sample rate presets">
+              <button class="g900-timing-preset" type="button" data-g900-rate-preset="120">120</button>
+              <button class="g900-timing-preset" type="button" data-g900-rate-preset="240">240</button>
+              <button class="g900-timing-preset" type="button" data-g900-rate-preset="480">480</button>
+              <button class="g900-timing-preset" type="button" data-g900-rate-preset="960">960</button>
+            </div>
+          </div>
+
+          <div class="g900-timing-stepper" aria-label="Timing stepper controls">
+            <button id="timing-pause-btn" class="g900-timing-step-btn" type="button">Pause</button>
+            <button id="step-back-btn" class="g900-timing-step-btn" type="button" aria-label="Step back one sheet">&lt; Step</button>
+            <button id="step-forward-btn" class="g900-timing-step-btn" type="button" aria-label="Step forward one sheet">Step &gt;</button>
+          </div>
+
+          <p class="g900-timing-boundary-note">Stepping pauses animation first. Quartz keeps seconds; grammar earns sheets.</p>
         </div>
       </div>
 
@@ -370,13 +544,69 @@
 </section>
 <!-- /g900-transport-ledger-static-snapshot-008e -->
 
+<!-- g900-force-status-ledger-static-001 -->
+<section class="g900-transport-ledger-card" id="g900-force-status-ledger" aria-label="G900 force status ledger">
+  <div class="g900-transport-ledger-kicker">Force simulator</div>
+  <h2 class="g900-transport-ledger-title">Force evidence ladder</h2>
+
+  <div class="g900-transport-ledger-grid">
+    <div><span>Compression</span><strong>RECEIPT</strong></div>
+    <div><span>Transformation</span><strong>RECEIPT</strong></div>
+    <div><span>Confinement</span><strong>PRESSURE CANDIDATE</strong></div>
+    <div><span>Polarization</span><strong>PRESSURE CANDIDATE</strong></div>
+  </div>
+
+  <p class="g900-transport-ledger-line">
+    Force-like grammars are displayed at the strongest evidence level currently earned.
+  </p>
+
+  <p class="g900-transport-ledger-id">
+    Project 32 + Project 35 force taxonomy status
+  </p>
+</section>
+<!-- /g900-force-status-ledger-static-001 -->
+
+<!-- g900-force-admission-ledger-static-001 -->
+<section class="g900-transport-ledger-card g900-force-admission-ledger" id="g900-force-admission-ledger" aria-label="G900 force admission ledger">
+  <div class="g900-transport-ledger-kicker">Force simulator</div>
+  <h2 class="g900-transport-ledger-title">Admission operator</h2>
+  <div class="g900-transport-ledger-grid">
+    <div><span>Mode</span><strong>weak-like admission</strong></div>
+    <div><span>Before</span><strong>[3,6,9,12]</strong></div>
+    <div><span>Admitted</span><strong>11</strong></div>
+    <div><span>After</span><strong>[3,6,9,11,12]</strong></div>
+    <div><span>Physical force</span><strong>not claimed</strong></div>
+    <div><span>Body mutation</span><strong>none</strong></div>
+  </div>
+  <p class="g900-transport-ledger-line">The operator does not move the scaffold. It admits a witness into a scaffold that already closes.</p>
+  <p class="g900-transport-ledger-id">Project 35 admission_operator_pivot_025</p>
+</section>
+<!-- /g900-force-admission-ledger-static-001 -->
+
+<!-- g900-force-compression-ledger-static-001 -->
+<section class="g900-transport-ledger-card g900-force-compression-ledger" id="g900-force-compression-ledger" aria-label="G900 compression receipt ledger">
+  <div class="g900-transport-ledger-kicker">Force simulator</div>
+  <h2 class="g900-transport-ledger-title">Compression operator</h2>
+  <div class="g900-transport-ledger-grid">
+    <div><span>Mode</span><strong>compression-like</strong></div>
+    <div><span>Operator</span><strong>homeward_alignment_compression</strong></div>
+    <div><span>Mean distance</span><strong>2.75 -> 0.0</strong></div>
+    <div><span>Radius</span><strong>5 -> 0</strong></div>
+    <div><span>Physical gravity</span><strong>not claimed</strong></div>
+    <div><span>Body mutation</span><strong>none</strong></div>
+  </div>
+  <p class="g900-transport-ledger-line">The admitted return-cell transport maps source support exactly into the receipt-home slot set.</p>
+  <p class="g900-transport-ledger-id">Project 32 g900_force_compression_receipt_export_011</p>
+</section>
+<!-- /g900-force-compression-ledger-static-001 -->
+
 
 </main>
 <footer class="lab-footer">
     <p>2026 Centre of Recursive Inquiry. Aletheos.ai is the public research surface for CoRI and Thalean Action Theory.</p>
   </footer>
 
-  <script type="module" src="g900_grammar_stage_v0.js?v=return-cell-channel-preview-001"></script>
+  <script type="module" src="g900_grammar_stage_v0.js?v=cache-camera-view-settings-003"></script>
   <script type="module" src="kernel/g900_scaled_oscillation_ui.js?v=scaled-oscillation-001"></script>
   <script src="kernel/g900_runtime_oscillator_console.js?v=runtime-data-001" defer></script>
   <script src="kernel/g900_apparatus_profile_console.js?v=apparatus-data-001" defer></script>

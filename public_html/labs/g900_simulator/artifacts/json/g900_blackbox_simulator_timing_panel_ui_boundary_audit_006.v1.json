@@ -1,0 +1,211 @@
+{
+  "schema": "g900.blackbox_simulator_timing_panel_ui_boundary_audit",
+  "version": "0.1",
+  "artifact_id": "g900_blackbox_simulator_timing_panel_ui_boundary_audit_006",
+  "audit_pass": true,
+  "verdict": "g900_blackbox_simulator_timing_panel_ui_boundary_audit_006_recorded",
+  "status": "timing_panel_hardwired_runtime_boundary_verified",
+  "branch": "g900-blackbox-sim-fork",
+  "commit": "9b02331",
+  "commit_full": "9b0233146753bf68c5f4fd20160a041ef211159e",
+  "changed_in_head": [
+    "public_html/labs/g900_observatory/g900_grammar_stage_v0.js",
+    "public_html/labs/g900_observatory/lab.css",
+    "public_html/labs/g900_observatory/lab.html"
+  ],
+  "hook_rows": [
+    {
+      "hook_id": "006-H001",
+      "surface": "html",
+      "hook": "timing_panel_inserted",
+      "expected": "data-activity-panel=\"timing\"",
+      "observed": "true",
+      "boundary_meaning": "Dedicated Timing panel exists in G900 Observatory UI."
+    },
+    {
+      "hook_id": "006-H002",
+      "surface": "html",
+      "hook": "sample_rate_header_pill",
+      "expected": "g900-timing-sample-rate-pill",
+      "observed": "true",
+      "boundary_meaning": "Timing header displays sample rate instead of an on/off switch."
+    },
+    {
+      "hook_id": "006-H003",
+      "surface": "html",
+      "hook": "no_timing_onoff_button",
+      "expected": "no timing data-render-toggle",
+      "observed": "true",
+      "boundary_meaning": "Timing panel is hardwired on; it is not a toggled render/admission channel."
+    },
+    {
+      "hook_id": "006-H004",
+      "surface": "html",
+      "hook": "quartz_path_visible",
+      "expected": "Runtime > Quartz > Sheets/sec",
+      "observed": "true",
+      "boundary_meaning": "Path to quartz is visible as apparatus timing path."
+    },
+    {
+      "hook_id": "006-H005",
+      "surface": "html",
+      "hook": "sample_rate_slider_present",
+      "expected": "g900-timing-sheet-rate-slider",
+      "observed": "true",
+      "boundary_meaning": "Timing panel manages sample rate."
+    },
+    {
+      "hook_id": "006-H006",
+      "surface": "html",
+      "hook": "sample_rate_presets_present",
+      "expected": "120 240 480 960 presets",
+      "observed": "true",
+      "boundary_meaning": "Timing panel exposes bounded sample-rate presets."
+    },
+    {
+      "hook_id": "006-H007",
+      "surface": "html",
+      "hook": "pause_and_step_buttons_present",
+      "expected": "timing-pause-btn step-back-btn step-forward-btn",
+      "observed": "true",
+      "boundary_meaning": "Stepper controls live in the Timing panel."
+    },
+    {
+      "hook_id": "006-H008",
+      "surface": "js",
+      "hook": "rate_sync_function_present",
+      "expected": "function setG900SheetRate",
+      "observed": "true",
+      "boundary_meaning": "Timing slider and main sheet-rate slider use one rate setter."
+    },
+    {
+      "hook_id": "006-H009",
+      "surface": "js",
+      "hook": "timing_status_sync_present",
+      "expected": "function syncTimingPanelState",
+      "observed": "true",
+      "boundary_meaning": "Timing panel reports animation status from live state."
+    },
+    {
+      "hook_id": "006-H010",
+      "surface": "js",
+      "hook": "timing_pause_pauses_animation",
+      "expected": "timingPauseBtn handler sets state.playing false",
+      "observed": "true",
+      "boundary_meaning": "Pause button pauses animation without stepping."
+    },
+    {
+      "hook_id": "006-H011",
+      "surface": "js",
+      "hook": "step_back_pauses_animation",
+      "expected": "stepBackBtn handler sets state.playing false",
+      "observed": "true",
+      "boundary_meaning": "Step back pauses animation first."
+    },
+    {
+      "hook_id": "006-H012",
+      "surface": "js",
+      "hook": "step_forward_pauses_animation",
+      "expected": "stepForwardBtn handler sets state.playing false",
+      "observed": "true",
+      "boundary_meaning": "Step forward pauses animation first."
+    },
+    {
+      "hook_id": "006-H013",
+      "surface": "css",
+      "hook": "timing_panel_css_present",
+      "expected": "g900-timing-panel-ui-001",
+      "observed": "true",
+      "boundary_meaning": "Timing panel has dedicated styling."
+    },
+    {
+      "hook_id": "006-H014",
+      "surface": "css",
+      "hook": "timing_panel_tidy_css_present",
+      "expected": "g900-timing-panel-tidy-001",
+      "observed": "true",
+      "boundary_meaning": "Timing panel tidy pass is present."
+    },
+    {
+      "hook_id": "006-H015",
+      "surface": "git",
+      "hook": "active_files_only_in_ui_commit",
+      "expected": "last commit edits active html css js only",
+      "observed": "true",
+      "boundary_meaning": "Timing UI commit did not alter G900 data body or simulator ledger artifacts."
+    }
+  ],
+  "false_hooks": [],
+  "boundary": {
+    "hardwired_timing_panel": true,
+    "runtime_clock_boundary": true,
+    "sample_rate_control_surface": true,
+    "stepper_controls_pause_first": true,
+    "quartz_path_displayed": true,
+    "sim_bb_008_present": true,
+    "simulator_dynamics_run": false,
+    "source_law_promoted": false,
+    "family_promoted": false,
+    "new_permission_channel_admitted": false,
+    "new_information_transport_admitted": false,
+    "transport_family_claim": false,
+    "physical_force_claim": false,
+    "physical_flux_claim": false,
+    "physical_energy_flow_claim": false,
+    "physics_claim": false,
+    "geometry_claim": false,
+    "body_mutation": false,
+    "adds_vertices": false,
+    "adds_edges": false,
+    "gate_open": false,
+    "marker_lighting": false
+  },
+  "counts": {
+    "hook_count": 15,
+    "false_hook_count": 0,
+    "summary_row_count": 10,
+    "sample_rate_preset_count": 4,
+    "stepper_control_count": 3,
+    "active_files_changed_in_head": 3,
+    "simulator_dynamics_run": 0,
+    "source_law_promoted": 0,
+    "new_permission_channel_admitted": 0,
+    "new_information_transport_admitted": 0,
+    "physics_claim": 0,
+    "body_mutation": 0
+  },
+  "checks": {
+    "no_missing_inputs": true,
+    "on_simulator_branch": true,
+    "kernel_seed_004_passed": true,
+    "quartz_boundary_005_passed": true,
+    "sim_bb_008_present": true,
+    "sim_bb_008_runtime_boundary": true,
+    "all_hooks_true": true,
+    "commit_touches_active_ui_only": true,
+    "source_law_promoted_false": true,
+    "new_permission_channel_admitted_false": true,
+    "new_information_transport_admitted_false": true,
+    "physical_force_claim_false": true,
+    "physical_flux_claim_false": true,
+    "physical_energy_flow_claim_false": true,
+    "physics_claim_false": true,
+    "geometry_claim_false": true,
+    "body_mutation_false": true,
+    "adds_vertices_false": true,
+    "adds_edges_false": true
+  },
+  "failed_checks": [],
+  "inputs": {
+    "labs/g900_observatory/lab.html": "3623cdca43b63268c7634b83228a31f35e82f6b93619e0492e81fa25d5e3a8ec",
+    "labs/g900_observatory/lab.css": "2d0d4d9b38324879b01754730a88ce5c2eb55b9fa56e1628434a149346b8af99",
+    "labs/g900_observatory/g900_grammar_stage_v0.js": "9493ca0f60b376cd19def0682968880cb2788a6a34324d47f0267f514d2d7968",
+    "labs/g900_simulator/data/g900_blackbox_simulator_assumption_registry.v0.3.json": "6755f7656437ea15effbad1b582f395a5cb73e54b926f3df6f60f82119188324",
+    "labs/g900_simulator/artifacts/json/g900_blackbox_simulator_kernel_seed_004.v1.json": "92bc0cd552834377ed38a27c9173d60b16a695e9c358a306dfac7b77b6f238c9",
+    "labs/g900_simulator/artifacts/json/g900_blackbox_simulator_quartz_timing_boundary_005.v1.json": "5c49382ae20517d14581b65ceee22c80cf9108c7fc54f632bff04226df2f0c5a"
+  },
+  "missing_inputs": [],
+  "git_status_short_before": "?? g900-blackbox-sim-fork",
+  "recorded_at_utc": "2026-06-19T21:52:16Z",
+  "keeper": "The Timing panel shows the clock path. It does not become the clock law."
+}

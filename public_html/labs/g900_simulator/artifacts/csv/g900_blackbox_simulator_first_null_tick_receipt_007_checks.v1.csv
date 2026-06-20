@@ -1,0 +1,16 @@
+check_id,check,expected,observed,passed,meaning
+007-C001,state_schema,g900.viewer.state,g900.viewer.state,true,The witness is a G900 viewer-state export.
+007-C002,sheet_advanced_to_one,1,1,true,First null tick advanced sheet 0 to sheet 1.
+007-C003,animation_paused,false,false,true,Stepper left animation paused.
+007-C004,sample_rate_240,240,240,true,Timeline records the selected 240 sheets/sec sample rate.
+007-C005,runtime_oscillator_rate_matches,240,240,true,Runtime oscillator summary matches timeline sample rate.
+007-C006,pitch_roll_disabled,false,false,true,Stepping did not engage live pitch/roll animation.
+007-C007,body_vertex_count_fixed,900,900,true,G900 body vertex count is unchanged.
+007-C008,body_edge_count_fixed,3600,3600,true,G900 body edge count is unchanged.
+007-C009,overlays_do_not_mutate_body,false,false,true,Overlay layer remains non-mutating.
+007-C010,overlays_no_physics_claim,false,false,true,Overlay layer makes no physics claim.
+007-C011,timing_boundary_no_runtime_motion_authority,false,false,true,"Runtime oscillator remains a timing witness, not motion authority."
+007-C012,scaled_oscillation_no_gate_authority,opens_gates=false admits_channels=false lights_markers=false,opens_gates=False admits_channels=False lights_markers=False,true,"Timing does not open gates, admit channels, or light markers."
+007-C013,channel_preview_not_admitted,admitted_now=false renders_admitted_channel=false,admitted_now=False renders_admitted_channel=False,true,Existing channel preview remains non-admitted.
+007-C014,grounded_lens_no_body_mutation,mutates_body=false adds_vertices=false adds_edges=false,mutates_body=False adds_vertices=False adds_edges=False,true,A/F lens remains non-mutating during timing step.
+007-C015,orientation_no_physics_claim,physics_claim=false force_claim=false,physics_claim=False force_claim=False,true,Orientation layer remains bounded.

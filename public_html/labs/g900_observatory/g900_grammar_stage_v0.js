@@ -6,10 +6,16 @@ import { readG900ScaledOscillationKernel, getG900ScaledOscillationSummary } from
 import { readG900GroundedLensRegistry, getG900GroundedLensSummary } from "./kernel/g900_grounded_lenses.js";
 const TAU = Math.PI * 2;
 const DEFAULT_SHEET_RATE = 333;
+const TIMING_SAMPLE_RATE_PRESETS = [120, 240, 480, 960];
 const PITCH_ROLL_SHEETS_PER_TURN = 900;
 const MIN_ZOOM = 0.28;
 const MAX_ZOOM = 64.0;
 const FIRST_CARRIER_RAIL_ID = "root_0_0_tuple_shell_depth_2";
+const ADMITTED_INFORMATION_TRANSPORT_URL = "./data/g900_admitted_information_transports.v0.1.json";
+const ADMITTED_PERMISSION_CHANNEL_URL = "./data/g900_admitted_permission_channels.v0.1.json";
+const FALLBACK_INFORMATION_FLOW_EDGE_IDS = ["tuple_edge_611", "tuple_edge_2425", "tuple_edge_1472", "tuple_edge_1475"];
+const INFORMATION_FLOW_SHEETS_PER_SEGMENT = 72;
+const INFORMATION_FLOW_TRAIL_COUNT = 9;
 
 const CARRIER_RENDER_FAMILIES = {
   smoke: {
@@ -64,6 +70,23 @@ let activeCarrierRegistry = null;
 let activeChannelRegistry = null;
 let activeScaledOscillationKernel = null;
 let activeGroundedLensRegistry = null;
+let activeAdmittedInformationTransportRegistry = null;
+let activeAdmittedPermissionChannelRegistry = null;
+let informationFlowState = {
+  version: "0.1",
+  visible: true,
+  mode: "return_cell_pulse",
+  transport_id: "g900_return_cell_one_step_information_transport_007",
+  permission_channel_id: "g900_return_cell_permission_channel_005",
+  edge_ids: FALLBACK_INFORMATION_FLOW_EDGE_IDS.slice(),
+  active_edge_id: null,
+  phase: 0,
+  trail_count: INFORMATION_FLOW_TRAIL_COUNT,
+  mutates_body: false,
+  physics_claim: false,
+  physical_transport_claim: false,
+  source_law_promoted: false
+};
 const CARRIER_RENDER_MODE_IDS = ["slot_internal", "slot_pair_boundary", "six_nine_neighborhood", "nearest_receipt_branch"];
 
 function normalizeCarrierRenderModes(value) {
@@ -173,7 +196,7 @@ function drawBackground(ctx, w, h) {
 }
 
 function getSheetRate() {
-  const slider = document.getElementById("sheet-rate-slider");
+  const slider = document.getElementById("sheet-rate-slider") || document.getElementById("g900-timing-sheet-rate-slider");
   if (!slider) return DEFAULT_SHEET_RATE;
 
   const value = Number(slider.value);
@@ -181,17 +204,100 @@ function getSheetRate() {
 }
 
 function syncSheetRateReadout() {
-  const readout = document.getElementById("sheet-rate-readout");
-  if (!readout) return;
+  const rate = getSheetRate();
+  const formatted = rate.toFixed(2);
 
-  readout.textContent = getSheetRate().toFixed(2);
+  const readout = document.getElementById("sheet-rate-readout");
+  if (readout) readout.textContent = formatted;
+
+  const timingReadout = document.getElementById("g900-timing-sample-rate-readout");
+  if (timingReadout) timingReadout.textContent = formatted;
+
+  const timingPill = document.getElementById("g900-timing-sample-rate-pill");
+  if (timingPill) timingPill.textContent = formatted + " sheets/sec";
+
+  syncTimingPresetButtons(rate);
+}
+
+function syncTimingPresetButtons(rate) {
+  document.querySelectorAll("[data-g900-rate-preset]").forEach((button) => {
+    const preset = Number(button.dataset.g900RatePreset);
+    button.classList.toggle("is-active", Number.isFinite(preset) && Math.abs(preset - rate) < 0.01);
+  });
+}
+
+function syncTimingPanelState(state) {
+  const status = document.getElementById("g900-timing-animation-status");
+  if (status && state) {
+    status.textContent = state.playing ? "Running" : "Paused";
+    status.classList.toggle("is-running", Boolean(state.playing));
+  }
+}
+
+function setG900SheetRate(value) {
+  const next = clamp(Number(value), 0.25, 960);
+  const normalized = Number.isFinite(next) ? next : DEFAULT_SHEET_RATE;
+  const valueText = String(normalized);
+  const mainSlider = document.getElementById("sheet-rate-slider");
+  const timingSlider = document.getElementById("g900-timing-sheet-rate-slider");
+
+  if (mainSlider) mainSlider.value = valueText;
+  if (timingSlider) timingSlider.value = valueText;
+
+  localStorage.setItem("g900.blankSheetRate", valueText);
+  syncSheetRateReadout();
 }
 
 function syncSheetCounter(state) {
   const readout = document.getElementById("sheet-counter-readout");
-  if (!readout) return;
+  if (readout) readout.textContent = "Sheet " + Math.floor(state.sheet);
 
-  readout.textContent = "Sheet " + Math.floor(state.sheet);
+  const timingSheet = document.getElementById("g900-timing-sheet-readout");
+  if (timingSheet) timingSheet.textContent = "Sheet " + Math.floor(state.sheet);
+}
+
+function readCameraPitchEnabledPreference() {
+  const saved = localStorage.getItem("g900.cameraPitchEnabled");
+  if (saved === null) return null;
+  return saved === "true";
+}
+
+function writeCameraPitchEnabledPreference(enabled) {
+  localStorage.setItem("g900.cameraPitchEnabled", enabled ? "true" : "false");
+}
+
+function isCameraPitchEnabled(state) {
+  return Boolean(state && state.pitchRollEnabled !== false);
+}
+
+function syncCameraPitchButton(state) {
+  const button = document.getElementById("camera-pitch-toggle");
+  if (!button) return;
+
+  const enabled = isCameraPitchEnabled(state);
+  button.classList.toggle("is-active", enabled);
+  button.setAttribute("aria-pressed", enabled ? "true" : "false");
+  button.title = enabled ? "Camera pitch motion on" : "Camera pitch motion off";
+  button.textContent = "CAM";
+}
+
+function setCameraPitchEnabled(state, enabled) {
+  if (!state) return;
+
+  state.pitchRollEnabled = Boolean(enabled);
+  writeCameraPitchEnabledPreference(state.pitchRollEnabled);
+  syncCameraPitchButton(state);
+  syncG900ViewerStateConsole(state);
+}
+
+function syncStageControlDeckLayout() {
+  const cameraButton = document.getElementById("camera-pitch-toggle");
+  if (!cameraButton || !cameraButton.parentElement) return;
+
+  cameraButton.parentElement.classList.add(
+    "g900-stage-control-deck",
+    "g900-camera-layout-compact"
+  );
 }
 
 function syncPlayButton(state) {
@@ -199,6 +305,7 @@ function syncPlayButton(state) {
   if (playBtn) {
     playBtn.textContent = state.playing ? "PAUSE" : "PLAY";
   }
+  syncTimingPanelState(state);
 }
 
 function rotatePoint(point, state) {
@@ -241,6 +348,485 @@ function drawLine(ctx, a, b, color, alpha, width) {
   ctx.moveTo(a.x, a.y);
   ctx.lineTo(b.x, b.y);
   ctx.stroke();
+}
+
+async function fetchG900Json(url) {
+  const response = await fetch(url, { cache: "no-store" });
+  if (!response.ok) {
+    throw new Error("HTTP " + response.status + " for " + url);
+  }
+  return response.json();
+}
+
+function validateG900AdmittedInformationTransportRegistry(payload) {
+  if (!payload || payload.schema !== "g900.admitted_information_transports") {
+    throw new Error("unexpected admitted information transport registry schema");
+  }
+  if (payload.admitted_information_transport_count !== 1) {
+    throw new Error("expected exactly one admitted information transport");
+  }
+  if (!payload.boundary || payload.boundary.physical_transport_claim !== false || payload.boundary.mutates_body !== false) {
+    throw new Error("information transport registry boundary mismatch");
+  }
+  return payload;
+}
+
+function validateG900AdmittedPermissionChannelRegistry(payload) {
+  if (!payload || payload.schema !== "g900.admitted_permission_channels") {
+    throw new Error("unexpected admitted permission channel registry schema");
+  }
+  if (payload.admitted_permission_channel_count !== 1) {
+    throw new Error("expected exactly one admitted permission channel");
+  }
+  if (!payload.boundary || payload.boundary.mutates_body !== false || payload.boundary.force_claim !== false || payload.boundary.physics_claim !== false) {
+    throw new Error("permission channel registry boundary mismatch");
+  }
+  return payload;
+}
+
+function getAdmittedReturnCellTransport() {
+  const registry = activeAdmittedInformationTransportRegistry;
+  const rows = registry && Array.isArray(registry.transports) ? registry.transports : [];
+  return rows.find((row) => row && row.id === "g900_return_cell_one_step_information_transport_007") || rows[0] || null;
+}
+
+function getAdmittedReturnCellPermissionChannel() {
+  const registry = activeAdmittedPermissionChannelRegistry;
+  const rows = registry && Array.isArray(registry.channels) ? registry.channels : [];
+  return rows.find((row) => row && row.id === "g900_return_cell_permission_channel_005") || rows[0] || null;
+}
+
+function getInformationFlowEdgeIds() {
+  const channel = getAdmittedReturnCellPermissionChannel();
+  if (channel && Array.isArray(channel.q_edge_ids) && channel.q_edge_ids.length) {
+    return channel.q_edge_ids.slice();
+  }
+  return FALLBACK_INFORMATION_FLOW_EDGE_IDS.slice();
+}
+
+function readInformationFlowEdgesAlpha() {
+  return readRange01("information-flow-edges-alpha-slider", 0.22);
+}
+
+function readInformationFlowTracersAlpha() {
+  return readRange01("information-flow-tracers-alpha-slider", 0.58);
+}
+
+function readInformationFlowStylusAlpha() {
+  return readRange01("information-flow-stylus-alpha-slider", 0.96);
+}
+
+function readInformationFlowTracerSmear() {
+  return Math.round(readRange01("information-flow-tracer-smear-slider", 0.50) * 100);
+}
+
+function readInformationFlowTracerSpacing() {
+  const smear = readInformationFlowTracerSmear();
+  return 0.30 - 0.0024 * smear;
+}
+
+function syncInformationFlowAlphaReadouts() {
+  syncLayerRangeOutput("information-flow-edges-alpha-slider");
+  syncLayerRangeOutput("information-flow-tracers-alpha-slider");
+  syncLayerRangeOutput("information-flow-tracer-smear-slider");
+  syncLayerRangeOutput("information-flow-stylus-alpha-slider");
+}
+
+function readG900ForceCandidateStubState() {
+  const visible = readChecked("force-candidates-toggle", false);
+  const claimStatus = "candidate_only_not_physical_claim";
+  const receiptCriteria = {
+    gravity_information_candidate: {
+      receipt_id: "compression_receipt_candidate",
+      receipt_class: "compression",
+      question: "Does a finite selector show inward bias, convergence, or load concentration?",
+      selector_status: "selector_required_not_admitted",
+      renderer_status: "no_force_renderer"
+    },
+    em_information_candidate: {
+      receipt_id: "polarization_receipt_candidate",
+      receipt_class: "polarization",
+      question: "Does a finite selector show oriented contrast, signed separation, or paired direction?",
+      selector_status: "selector_required_not_admitted",
+      renderer_status: "no_force_renderer"
+    },
+    strong_information_candidate: {
+      receipt_id: "confinement_receipt_candidate",
+      receipt_class: "confinement",
+      question: "Does a finite selector show boundary retention, closed support, or escape resistance?",
+      selector_status: "selector_required_not_admitted",
+      renderer_status: "no_force_renderer"
+    },
+    weak_information_candidate: {
+      receipt_id: "transformation_receipt_candidate",
+      receipt_class: "transformation",
+      question: "Does a finite selector show handoff, identity change, or rule-boundary crossing?",
+      selector_status: "selector_required_not_admitted",
+      renderer_status: "no_force_renderer"
+    }
+  };
+
+  const candidates = [
+    {
+      id: "gravity_information_candidate",
+      label: "Gravity",
+      grammar: "compression_information",
+      physical_claim_candidate: "gravity_force_information_candidate",
+      claim_status: claimStatus
+    },
+    {
+      id: "em_information_candidate",
+      label: "EM",
+      grammar: "polarization_information",
+      physical_claim_candidate: "electromagnetic_force_information_candidate",
+      claim_status: claimStatus
+    },
+    {
+      id: "strong_information_candidate",
+      label: "Strong",
+      grammar: "confinement_information",
+      physical_claim_candidate: "strong_force_information_candidate",
+      claim_status: claimStatus
+    },
+    {
+      id: "weak_information_candidate",
+      label: "Weak",
+      grammar: "transformation_information",
+      physical_claim_candidate: "weak_force_information_candidate",
+      claim_status: claimStatus
+    }
+  ];
+
+  const enrichedCandidates = candidates.map(function (candidate) {
+    return Object.assign({}, candidate, {
+      receipt: receiptCriteria[candidate.id] || null,
+      selector_status: "selector_required_not_admitted",
+      renderer_status: "stub_only_no_force_renderer"
+    });
+  });
+
+  return {
+    schema: "g900.viewer.force_candidates",
+    version: "0.1",
+    status: "force_candidate_stub_declared",
+    visible: Boolean(visible),
+    render_stub_only: true,
+    renders_force_information: false,
+    receipt_criteria_declared: true,
+    renderer_ready: false,
+    live_force_renderer: false,
+    candidate_count: enrichedCandidates.length,
+    candidates: enrichedCandidates,
+    quartz_tied: true,
+    quartz_driven: false,
+    sheet_dependent: false,
+    physical_claim_candidate_only: true,
+    force_claim: false,
+    physics_claim: false,
+    physical_transport_claim: false,
+    energy_flow_claim: false,
+    body_mutation: false,
+    new_transport_admission: false,
+    keeper: "Force becomes a candidate information grammar first, not a physical force simulation yet."
+  };
+}
+
+function syncForceCandidateStubState() {
+  syncLayerSwitchLabel("force-candidates-toggle");
+  window.__g900ForceCandidateSummary = readG900ForceCandidateStubState();
+  if (typeof syncG900RenderContractsLedger === "function") {
+    syncG900RenderContractsLedger();
+  }
+}
+
+function bindForceCandidateStubPanel() {
+  bindLayerControl("force-candidates-toggle", syncForceCandidateStubState);
+  syncForceCandidateStubState();
+}
+
+function readG900RenderContractsLedger() {
+  const sheetRate = typeof getSheetRate === "function" ? getSheetRate() : 240;
+  const cameraPitchEnabled = typeof isCameraPitchEnabled === "function"
+    ? isCameraPitchEnabled(window.__g900BlankStage || {})
+    : false;
+  const informationVisible = readChecked("information-flow-toggle", true);
+  const bodyVisible = readChecked("graph-layer-toggle", true);
+
+  const candidateOnly = "candidate_only_not_physical_claim";
+
+  const entries = [
+    {
+      id: "body_graph",
+      label: "G900 body graph",
+      render_surface: "canvas",
+      visible: Boolean(bodyVisible),
+      clock_relation: "fixed_body_reference_under_clocked_view",
+      quartz_tied: true,
+      quartz_driven: false,
+      sheet_dependent: false,
+      physical_claim_candidate: "finite_geometry_candidate",
+      claim_status: candidateOnly,
+      mutates_body: false,
+      physics_claim: false
+    },
+    {
+      id: "carrier_render",
+      label: "Carrier render",
+      render_surface: "canvas",
+      visible: readChecked("carrier-render-toggle", false),
+      clock_relation: "static_source_provenance_reading",
+      quartz_tied: true,
+      quartz_driven: false,
+      sheet_dependent: false,
+      physical_claim_candidate: "source_provenance_candidate",
+      claim_status: candidateOnly,
+      mutates_body: false,
+      physics_claim: false
+    },
+    {
+      id: "return_cell_preview",
+      label: "Return-cell preview",
+      render_surface: "canvas",
+      visible: Boolean(readReturnCellChannelPreviewState().visible),
+      clock_relation: "static_permission_candidate_reading",
+      quartz_tied: true,
+      quartz_driven: false,
+      sheet_dependent: false,
+      physical_claim_candidate: "permission_boundary_candidate",
+      claim_status: candidateOnly,
+      mutates_body: false,
+      physics_claim: false
+    },
+    {
+      id: "force_candidate_stub",
+      label: "Force candidate stub",
+      render_surface: "panel",
+      visible: readChecked("force-candidates-toggle", false),
+      clock_relation: "static_force_information_candidate_registry",
+      quartz_tied: true,
+      quartz_driven: false,
+      sheet_dependent: false,
+      physical_claim_candidate: "finite_force_information_candidate_family",
+      claim_status: candidateOnly,
+      render_stub_only: true,
+      renders_force_information: false,
+      receipt_criteria_declared: true,
+      selector_status: "selector_required_not_admitted",
+      renderer_ready: false,
+      mutates_body: false,
+      physics_claim: false
+    },
+    {
+      id: "information_route_edges",
+      label: "Information route edges",
+      render_surface: "canvas",
+      visible: Boolean(informationVisible),
+      clock_relation: "route_support_for_sheet_indexed_information_motion",
+      quartz_tied: true,
+      quartz_driven: true,
+      sheet_dependent: false,
+      alpha: Number(readInformationFlowEdgesAlpha().toFixed(3)),
+      physical_claim_candidate: "finite_information_path_candidate",
+      claim_status: candidateOnly,
+      mutates_body: false,
+      physics_claim: false
+    },
+    {
+      id: "information_tracers",
+      label: "Information tracers",
+      render_surface: "canvas",
+      visible: Boolean(informationVisible),
+      clock_relation: "sheet_indexed_memory_trace",
+      quartz_tied: true,
+      quartz_driven: true,
+      sheet_dependent: true,
+      alpha: Number(readInformationFlowTracersAlpha().toFixed(3)),
+      tracer_smear: readInformationFlowTracerSmear(),
+      tracer_spacing: Number(readInformationFlowTracerSpacing().toFixed(4)),
+      physical_claim_candidate: "finite_memory_trace_candidate",
+      claim_status: candidateOnly,
+      mutates_body: false,
+      physics_claim: false
+    },
+    {
+      id: "information_stylus",
+      label: "Information stylus",
+      render_surface: "canvas",
+      visible: Boolean(informationVisible),
+      clock_relation: "sheet_indexed_present_tick",
+      quartz_tied: true,
+      quartz_driven: true,
+      sheet_dependent: true,
+      alpha: Number(readInformationFlowStylusAlpha().toFixed(3)),
+      physical_claim_candidate: "finite_present_tick_candidate",
+      claim_status: candidateOnly,
+      mutates_body: false,
+      physics_claim: false
+    },
+    {
+      id: "camera_pitch",
+      label: "Camera pitch",
+      render_surface: "camera",
+      visible: true,
+      enabled: Boolean(cameraPitchEnabled),
+      clock_relation: cameraPitchEnabled ? "sheet_indexed_camera_motion" : "disabled_static_view",
+      quartz_tied: true,
+      quartz_driven: Boolean(cameraPitchEnabled),
+      sheet_dependent: Boolean(cameraPitchEnabled),
+      physical_claim_candidate: "apparatus_motion_candidate",
+      claim_status: candidateOnly,
+      mutates_body: false,
+      physics_claim: false
+    },
+    {
+      id: "grounded_af_lens",
+      label: "A/F grounded lens",
+      render_surface: "canvas",
+      visible: readChecked("grounded-lens-toggle", false),
+      clock_relation: "static_reference_frame_reading",
+      quartz_tied: true,
+      quartz_driven: false,
+      sheet_dependent: false,
+      physical_claim_candidate: "reference_frame_candidate",
+      claim_status: candidateOnly,
+      mutates_body: false,
+      physics_claim: false
+    },
+    {
+      id: "timing_panel",
+      label: "Timing panel",
+      render_surface: "panel",
+      visible: true,
+      clock_relation: "quartz_runtime_boundary",
+      quartz_tied: true,
+      quartz_driven: true,
+      sheet_dependent: false,
+      physical_claim_candidate: "clock_boundary_candidate",
+      claim_status: candidateOnly,
+      mutates_body: false,
+      physics_claim: false
+    }
+  ];
+
+  return {
+    schema: "g900.viewer.render_contracts",
+    version: "0.1",
+    status: "render_contracts_candidate_projection_ledger",
+    clock_source: "scaled_quartz_timing_substrate",
+    clock_boundary: "runtime_clock_not_source_law",
+    all_rendered_surfaces_quartz_bound: true,
+    quartz_driven_subset_only: true,
+    state_variable: "sheet",
+    sheets_per_second: Number(sheetRate),
+    rule: "Every rendered surface is bound to the quartz runtime apparatus; moving surfaces are quartz-driven and sheet-indexed; every physical projection remains candidate-only.",
+    physical_claim_candidate_only: true,
+    physics_claim: false,
+    force_claim: false,
+    body_mutation: false,
+    new_transport_admission: false,
+    render_entry_count: entries.length,
+    entries
+  };
+}
+
+function syncG900RenderContractsLedger() {
+  window.__g900RenderContractsLedger = readG900RenderContractsLedger();
+}
+
+function syncInformationFlowPanelReadouts() {
+  const transport = getAdmittedReturnCellTransport();
+  const edgeIds = getInformationFlowEdgeIds();
+  syncInformationFlowAlphaReadouts();
+
+  const transportReadout = document.getElementById("information-flow-transport-readout");
+  if (transportReadout) {
+    transportReadout.textContent = transport ? transport.id : informationFlowState.transport_id;
+  }
+
+  const pulseReadout = document.getElementById("information-flow-pulse-readout");
+  if (pulseReadout) {
+    const edgeText = informationFlowState.active_edge_id || (edgeIds.length ? edgeIds[0] : "waiting");
+    pulseReadout.textContent = edgeText + " / " + edgeIds.length + " edges";
+  }
+
+  const note = document.getElementById("information-flow-note");
+  if (note) {
+    note.textContent = "Simulated information pulse over the admitted finite transport. Body unchanged. Not physical transport.";
+  }
+}
+
+function syncInformationFlowState() {
+  const toggle = document.getElementById("information-flow-toggle");
+  const transport = getAdmittedReturnCellTransport();
+  const channel = getAdmittedReturnCellPermissionChannel();
+  const edgeIds = getInformationFlowEdgeIds();
+
+  informationFlowState.visible = toggle ? Boolean(toggle.checked) : true;
+  informationFlowState.transport_id = transport ? transport.id : "g900_return_cell_one_step_information_transport_007";
+  informationFlowState.permission_channel_id = channel ? channel.id : "g900_return_cell_permission_channel_005";
+  informationFlowState.edge_ids = edgeIds;
+  informationFlowState.edges_alpha = Number(readInformationFlowEdgesAlpha().toFixed(3));
+  informationFlowState.tracers_alpha = Number(readInformationFlowTracersAlpha().toFixed(3));
+  informationFlowState.tracer_smear = readInformationFlowTracerSmear();
+  informationFlowState.tracer_spacing = Number(readInformationFlowTracerSpacing().toFixed(4));
+  informationFlowState.stylus_alpha = Number(readInformationFlowStylusAlpha().toFixed(3));
+  informationFlowState.mutates_body = false;
+  informationFlowState.physics_claim = false;
+  informationFlowState.physical_transport_claim = false;
+  informationFlowState.source_law_promoted = false;
+
+  syncInformationFlowPanelReadouts();
+  syncG900RenderContractsLedger();
+  window.__g900InformationFlowSummary = {
+    version: informationFlowState.version,
+    visible: Boolean(informationFlowState.visible),
+    mode: informationFlowState.mode,
+    transport_id: informationFlowState.transport_id,
+    permission_channel_id: informationFlowState.permission_channel_id,
+    edge_ids: informationFlowState.edge_ids.slice(),
+    active_edge_id: informationFlowState.active_edge_id,
+    phase: Number((informationFlowState.phase || 0).toFixed(4)),
+    trail_count: informationFlowState.trail_count,
+    edges_alpha: informationFlowState.edges_alpha,
+    tracers_alpha: informationFlowState.tracers_alpha,
+    tracer_smear: informationFlowState.tracer_smear,
+    tracer_spacing: informationFlowState.tracer_spacing,
+    stylus_alpha: informationFlowState.stylus_alpha,
+    simulated_information_motion: true,
+    uses_admitted_information_transport: Boolean(transport),
+    uses_admitted_permission_channel: Boolean(channel),
+    mutates_body: false,
+    adds_vertices: false,
+    adds_edges: false,
+    source_law_promoted: false,
+    physical_transport_claim: false,
+    physical_flux_claim: false,
+    energy_flow_claim: false,
+    force_claim: false,
+    physics_claim: false
+  };
+}
+
+async function loadG900InformationMotionRegistries() {
+  try {
+    activeAdmittedInformationTransportRegistry = validateG900AdmittedInformationTransportRegistry(
+      await fetchG900Json(ADMITTED_INFORMATION_TRANSPORT_URL)
+    );
+  } catch (error) {
+    console.warn("G900 admitted information transport registry unavailable", error);
+    activeAdmittedInformationTransportRegistry = null;
+  }
+
+  try {
+    activeAdmittedPermissionChannelRegistry = validateG900AdmittedPermissionChannelRegistry(
+      await fetchG900Json(ADMITTED_PERMISSION_CHANNEL_URL)
+    );
+  } catch (error) {
+    console.warn("G900 admitted permission channel registry unavailable", error);
+    activeAdmittedPermissionChannelRegistry = null;
+  }
+
+  syncInformationFlowState();
 }
 
 function drawStageGrid(ctx, w, h, dpr, state) {
@@ -414,6 +1000,146 @@ function drawAFGroundedLensOverlay(ctx, w, h, dpr, state, body) {
 // panel-specific IDs may remain, but panel structure and styling must use
 // .layer-panel[data-layer-panel="name"] instead of per-panel CSS classes.
 
+const G900_CAMERA_VIEW_CACHE_KEY = "g900.cameraView";
+let g900CameraViewCacheBound = false;
+let g900CameraViewCacheRestored = false;
+
+function readG900CachedCameraViewKey() {
+  return G900_CAMERA_VIEW_CACHE_KEY;
+}
+
+function readG900StageCameraState() {
+  const state = window.__g900BlankStage;
+  return state && typeof state === "object" ? state : null;
+}
+
+function restoreG900CachedCameraViewState() {
+  const state = readG900StageCameraState();
+  if (!state || g900CameraViewCacheRestored || !window.localStorage) return false;
+
+  const raw = window.localStorage.getItem(readG900CachedCameraViewKey());
+  g900CameraViewCacheRestored = true;
+  if (!raw) return false;
+
+  let saved = null;
+  try {
+    saved = JSON.parse(raw);
+  } catch (error) {
+    return false;
+  }
+
+  ["yaw", "pitch", "roll", "zoom"].forEach(function (key) {
+    const value = Number(saved[key]);
+    if (Number.isFinite(value)) {
+      state[key] = value;
+    }
+  });
+
+  return true;
+}
+
+function writeG900CachedCameraViewState() {
+  const state = readG900StageCameraState();
+  if (!state || !window.localStorage) return;
+
+  const payload = {
+    yaw: Number(Number(state.yaw || 0).toFixed(6)),
+    pitch: Number(Number(state.pitch || 0).toFixed(6)),
+    roll: Number(Number(state.roll || 0).toFixed(6)),
+    zoom: Number(Number(state.zoom || 1).toFixed(6)),
+    cached_at: new Date().toISOString()
+  };
+
+  window.localStorage.setItem(readG900CachedCameraViewKey(), JSON.stringify(payload));
+}
+
+function bindG900CachedCameraViewState() {
+  if (g900CameraViewCacheBound) return;
+  g900CameraViewCacheBound = true;
+
+  restoreG900CachedCameraViewState();
+
+  window.addEventListener("beforeunload", writeG900CachedCameraViewState);
+  document.addEventListener("visibilitychange", function () {
+    if (document.visibilityState === "hidden") {
+      writeG900CachedCameraViewState();
+    }
+  });
+
+  window.setInterval(function () {
+    restoreG900CachedCameraViewState();
+    writeG900CachedCameraViewState();
+  }, 750);
+}
+
+function readG900CachedUiSettingKey(id) {
+  return "g900.ui." + String(id || "").trim();
+}
+
+function readG900CacheableUiControls() {
+  return Array.from(document.querySelectorAll("input[id], select[id], textarea[id]"))
+    .filter(function (el) {
+      if (!el || !el.id) return false;
+      if (el.type === "file") return false;
+      return true;
+    });
+}
+
+function restoreG900CachedUiSettings() {
+  readG900CacheableUiControls().forEach(function (el) {
+    const key = readG900CachedUiSettingKey(el.id);
+    const saved = window.localStorage ? window.localStorage.getItem(key) : null;
+    if (saved === null) return;
+
+    if (el.type === "checkbox" || el.type === "radio") {
+      el.checked = saved === "1";
+      return;
+    }
+
+    if (el.tagName === "SELECT") {
+      const hasOption = Array.from(el.options || []).some(function (option) {
+        return option.value === saved;
+      });
+      if (hasOption) el.value = saved;
+      return;
+    }
+
+    el.value = saved;
+  });
+}
+
+function writeG900CachedUiSetting(el) {
+  if (!el || !el.id || !window.localStorage) return;
+
+  const key = readG900CachedUiSettingKey(el.id);
+  if (el.type === "checkbox" || el.type === "radio") {
+    window.localStorage.setItem(key, el.checked ? "1" : "0");
+    return;
+  }
+
+  window.localStorage.setItem(key, String(el.value));
+}
+
+function bindG900CachedUiSettings() {
+  readG900CacheableUiControls().forEach(function (el) {
+    if (el.dataset.g900UiCached === "1") return;
+
+    el.dataset.g900UiCached = "1";
+    el.addEventListener("input", function () {
+      writeG900CachedUiSetting(el);
+    });
+    el.addEventListener("change", function () {
+      writeG900CachedUiSetting(el);
+    });
+  });
+}
+
+function syncG900CachedUiSettings() {
+  restoreG900CachedUiSettings();
+  bindG900CachedUiSettings();
+  bindG900CachedCameraViewState();
+}
+
 function syncLayerRangeOutput(sliderId) {
   const slider = document.getElementById(sliderId);
   if (!slider) return;
@@ -476,6 +1202,149 @@ function findBodyVertex(body, id) {
   return body.vertices.find(function (vertex) {
     return vertex && vertex.id === id && Array.isArray(vertex.xyz);
   }) || null;
+}
+
+function drawInformationPulseOnSegment(ctx, a, b, t, alpha, radius, dpr) {
+  const x = a.x + (b.x - a.x) * t;
+  const y = a.y + (b.y - a.y) * t;
+
+  ctx.save();
+  ctx.shadowColor = "rgba(100, 255, 205, " + Math.min(0.9, alpha) + ")";
+  ctx.shadowBlur = Math.max(8 * dpr, radius * 3.4);
+  ctx.fillStyle = "rgba(102, 255, 202, " + alpha + ")";
+  ctx.beginPath();
+  ctx.arc(x, y, radius, 0, TAU);
+  ctx.fill();
+
+  ctx.shadowBlur = 0;
+  ctx.strokeStyle = "rgba(235, 255, 248, " + Math.min(0.92, alpha + 0.18) + ")";
+  ctx.lineWidth = Math.max(0.8 * dpr, radius * 0.22);
+  ctx.beginPath();
+  ctx.arc(x, y, radius * 1.45, 0, TAU);
+  ctx.stroke();
+  ctx.restore();
+}
+
+function getProjectedInformationFlowSegments(body, state, w, h, dpr) {
+  const edgeIds = getInformationFlowEdgeIds();
+  const segments = [];
+
+  if (!body || !Array.isArray(body.edges) || !Array.isArray(body.vertices)) return segments;
+
+  const byId = new Map();
+  for (const vertex of body.vertices) {
+    if (!vertex || !Array.isArray(vertex.xyz)) continue;
+    byId.set(vertex.id, vertex);
+  }
+
+  edgeIds.forEach((edgeId) => {
+    const index = edgeIndexFromTupleEdgeId(edgeId);
+    if (index === null || index < 0 || index >= body.edges.length) return;
+
+    const edge = body.edges[index];
+    if (!Array.isArray(edge) || edge.length < 2) return;
+
+    const av = byId.get(edge[0]);
+    const bv = byId.get(edge[1]);
+    if (!av || !bv) return;
+
+    const a = projectPoint([
+      (body.anchor.xyz[0] + av.xyz[0]) * body.scale,
+      (body.anchor.xyz[1] + av.xyz[1]) * body.scale,
+      (body.anchor.xyz[2] + av.xyz[2]) * body.scale
+    ], state, w, h, dpr);
+
+    const b = projectPoint([
+      (body.anchor.xyz[0] + bv.xyz[0]) * body.scale,
+      (body.anchor.xyz[1] + bv.xyz[1]) * body.scale,
+      (body.anchor.xyz[2] + bv.xyz[2]) * body.scale
+    ], state, w, h, dpr);
+
+    segments.push({
+      edge_id: edgeId,
+      edge_index: index,
+      from_vertex: edge[0],
+      to_vertex: edge[1],
+      a,
+      b
+    });
+  });
+
+  return segments;
+}
+
+function drawInformationFlowPulse(ctx, w, h, dpr, state, body) {
+  syncInformationFlowState();
+
+  if (!informationFlowState.visible) return;
+  const segments = getProjectedInformationFlowSegments(body, state, w, h, dpr);
+  if (!segments.length) return;
+
+  const rawPhase = (state.sheet / INFORMATION_FLOW_SHEETS_PER_SEGMENT) % segments.length;
+  const phase = ((rawPhase % segments.length) + segments.length) % segments.length;
+  const activeIndex = Math.floor(phase);
+  const activeT = phase - activeIndex;
+  const activeSegment = segments[activeIndex];
+
+  informationFlowState.phase = phase;
+  informationFlowState.active_edge_id = activeSegment ? activeSegment.edge_id : null;
+
+  ctx.save();
+  ctx.lineCap = "round";
+  ctx.lineJoin = "round";
+
+  const edgeAlpha = readInformationFlowEdgesAlpha();
+  const tracerAlpha = readInformationFlowTracersAlpha();
+  const stylusAlpha = readInformationFlowStylusAlpha();
+  const tracerScale = tracerAlpha / 0.58;
+  const tracerSpacing = readInformationFlowTracerSpacing();
+
+  segments.forEach((segment) => {
+    drawLine(ctx, segment.a, segment.b, [102, 255, 202], edgeAlpha, Math.max(2.2 * dpr, Math.min(w, h) * 0.0042));
+    drawLine(ctx, segment.a, segment.b, [235, 255, 248], Math.min(0.95, edgeAlpha + 0.13), Math.max(0.8 * dpr, Math.min(w, h) * 0.0014));
+  });
+
+  for (let i = INFORMATION_FLOW_TRAIL_COUNT - 1; i >= 0; i -= 1) {
+    const trailPhase = phase - i * tracerSpacing;
+    const wrapped = ((trailPhase % segments.length) + segments.length) % segments.length;
+    const segmentIndex = Math.floor(wrapped);
+    const t = wrapped - segmentIndex;
+    const segment = segments[segmentIndex];
+    if (!segment) continue;
+
+    const memoryAge = i / INFORMATION_FLOW_TRAIL_COUNT;
+    const memoryNearness = 1 - memoryAge;
+    const alpha = Math.min(0.98, (0.10 + memoryNearness * 0.48) * tracerScale);
+    const radius = Math.max(1.8 * dpr, Math.min(w, h) * (0.0034 + 0.00038 * memoryNearness * INFORMATION_FLOW_TRAIL_COUNT));
+    drawInformationPulseOnSegment(ctx, segment.a, segment.b, t, alpha, radius, dpr);
+  }
+
+  if (activeSegment) {
+    drawInformationPulseOnSegment(
+      ctx,
+      activeSegment.a,
+      activeSegment.b,
+      activeT,
+      stylusAlpha,
+      Math.max(4.4 * dpr, Math.min(w, h) * 0.0092),
+      dpr
+    );
+  }
+
+  const labelSegment = activeSegment || segments[0];
+  const lx = (labelSegment.a.x + labelSegment.b.x) * 0.5;
+  const ly = (labelSegment.a.y + labelSegment.b.y) * 0.5 - Math.max(18 * dpr, Math.min(w, h) * 0.032);
+
+  ctx.font = Math.max(8 * dpr, Math.floor(Math.min(w, h) * 0.013)) + "px ui-monospace, Menlo, Consolas, monospace";
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+  ctx.fillStyle = "rgba(207, 255, 237, 0.86)";
+  // Information pulse label hidden by g900-hide-information-pulse-label-001.
+
+  ctx.restore();
+
+  syncInformationFlowPanelReadouts();
+  syncInformationFlowState();
 }
 
 function drawReturnCellChannelPreview(ctx, w, h, dpr, state, body) {
@@ -559,7 +1428,7 @@ function drawReturnCellChannelPreview(ctx, w, h, dpr, state, body) {
   if (first) {
     const lx = (first.from.x + first.to.x) * 0.5;
     const ly = (first.from.y + first.to.y) * 0.5 - Math.max(18 * dpr, Math.min(w, h) * 0.035);
-    ctx.fillText("RETURN-CELL CHANNEL PREVIEW", lx, ly);
+    // Return-cell channel preview label hidden by g900-hide-return-cell-label-001.
   }
 
   ctx.restore();
@@ -633,7 +1502,7 @@ function buildG900ViewerStateObject(state) {
       pitch: Number(state.pitch.toFixed(6)),
       roll: Number((state.roll || 0).toFixed(6)),
       zoom: Number(state.zoom.toFixed(6)),
-      pitch_roll_enabled: Boolean(state.playing),
+      pitch_roll_enabled: isCameraPitchEnabled(state),
       pitch_roll_sheets_per_turn: PITCH_ROLL_SHEETS_PER_TURN
     },
     layers: {
@@ -661,6 +1530,9 @@ function buildG900ViewerStateObject(state) {
     carrier_render: readWindowSummary("__g900CarrierRenderSummary"),
     channel_scope: readWindowSummary("__g900ChannelScopeSummary"),
     channel_preview: readReturnCellChannelPreviewState(),
+    information_flow: readWindowSummary("__g900InformationFlowSummary"),
+    force_candidates: readG900ForceCandidateStubState(),
+    render_contracts: readWindowSummary("__g900RenderContractsLedger"),
     timing_kernel: {
       scaled_oscillation: activeScaledOscillationKernel ? getG900ScaledOscillationSummary(activeScaledOscillationKernel) : null,
       runtime_oscillator: readWindowSummary("__g900RuntimeOscillatorSummary"),
@@ -678,7 +1550,8 @@ function buildG900ViewerStateObject(state) {
         mutates_body: false,
         physics_claim: false,
         motion_authority: false
-      }
+      },
+      information_flow: readWindowSummary("__g900InformationFlowSummary")
     },
     body: activeStaticBody ? {
       version: activeStaticBody.version,
@@ -791,6 +1664,7 @@ async function loadStaticBodyReadout() {
       console.warn("G900 grounded lens registry unavailable", error);
       activeGroundedLensRegistry = null;
     }
+    await loadG900InformationMotionRegistries();
     document.documentElement.dataset.g900StaticBody = activeStaticBody.version;
 
     if (line) {
@@ -1286,6 +2160,57 @@ function drawStaticBody(ctx, w, h, dpr, state, body) {
   ctx.restore();
 }
 
+function drawAdmissionEventOverlay(ctx, w, h, dpr, state, body) {
+  const toggle = document.getElementById("admission-event-toggle");
+  if (toggle && !toggle.checked) return;
+  if (!body || !Array.isArray(body.vertices)) return;
+
+  const bySlot = new Map();
+  for (const vertex of body.vertices) {
+    if (vertex && Number.isFinite(vertex.slot) && !bySlot.has(vertex.slot)) {
+      bySlot.set(vertex.slot, projectPoint(vertex, w, h, state));
+    }
+  }
+
+  const preserved = [3, 6, 9, 12];
+  const admitted = [11];
+
+  ctx.save();
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+  ctx.font = Math.max(10, Math.floor(Math.min(w, h) * 0.018)) + "px ui-monospace, Menlo, Consolas, monospace";
+
+  for (const slot of preserved) {
+    const p = bySlot.get(slot);
+    if (!p) continue;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, 8 * dpr, 0, TAU);
+    ctx.strokeStyle = "rgba(217, 184, 108, 0.82)";
+    ctx.lineWidth = 1.6 * dpr;
+    ctx.stroke();
+    ctx.fillStyle = "rgba(217, 184, 108, 0.92)";
+    ctx.fillText(String(slot), p.x, p.y - 15 * dpr);
+  }
+
+  for (const slot of admitted) {
+    const p = bySlot.get(slot);
+    if (!p) continue;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, 11 * dpr, 0, TAU);
+    ctx.strokeStyle = "rgba(144, 220, 255, 0.92)";
+    ctx.lineWidth = 2.2 * dpr;
+    ctx.stroke();
+    ctx.fillStyle = "rgba(144, 220, 255, 0.98)";
+    ctx.fillText(String(slot), p.x, p.y - 18 * dpr);
+  }
+
+  ctx.textAlign = "left";
+  ctx.textBaseline = "top";
+  ctx.fillStyle = "rgba(217, 184, 108, 0.78)";
+  ctx.fillText("ADMISSION EVENT: B preserves [3,6,9,12], admits 11", 18 * dpr, 18 * dpr);
+  ctx.restore();
+}
+
 function drawBlankStage(ctx, canvas, state) {
   const { w, h, dpr } = resizeCanvas(canvas);
   drawBackground(ctx, w, h);
@@ -1293,6 +2218,8 @@ function drawBlankStage(ctx, canvas, state) {
   syncCarrierRenderState();
   drawStaticBody(ctx, w, h, dpr, state, activeStaticBody);
   drawReturnCellChannelPreview(ctx, w, h, dpr, state, activeStaticBody);
+  drawInformationFlowPulse(ctx, w, h, dpr, state, activeStaticBody);
+  drawAdmissionEventOverlay(ctx, w, h, dpr, state, activeStaticBody);
   drawAFGroundedLensOverlay(ctx, w, h, dpr, state, activeStaticBody);
 
   ctx.save();
@@ -1370,14 +2297,33 @@ function ensureSheetControls() {
   slider.max = "960";
   slider.step = "0.25";
 
-  const savedRate = localStorage.getItem("g900.blankSheetRate");
-  slider.value = savedRate !== null ? savedRate : String(DEFAULT_SHEET_RATE);
+  const timingSlider = document.getElementById("g900-timing-sheet-rate-slider");
+  if (timingSlider) {
+    timingSlider.min = "0.25";
+    timingSlider.max = "960";
+    timingSlider.step = "0.25";
+  }
 
-  syncSheetRateReadout();
+  const savedRate = localStorage.getItem("g900.blankSheetRate");
+  setG900SheetRate(savedRate !== null ? savedRate : DEFAULT_SHEET_RATE);
 
   slider.addEventListener("input", () => {
-    localStorage.setItem("g900.blankSheetRate", String(getSheetRate()));
-    syncSheetRateReadout();
+    setG900SheetRate(slider.value);
+  });
+
+  if (timingSlider && timingSlider.dataset.bound !== "1") {
+    timingSlider.dataset.bound = "1";
+    timingSlider.addEventListener("input", () => {
+      setG900SheetRate(timingSlider.value);
+    });
+  }
+
+  document.querySelectorAll("[data-g900-rate-preset]").forEach((button) => {
+    if (button.dataset.bound === "1") return;
+    button.dataset.bound = "1";
+    button.addEventListener("click", () => {
+      setG900SheetRate(button.dataset.g900RatePreset);
+    });
   });
 }
 
@@ -1405,8 +2351,18 @@ function boot() {
   if (!canvas) return;
 
   ensureSheetControls();
+  syncG900CachedUiSettings();
   bindGraphLayerPanel();
   bindCarrierRenderPanel();
+  bindForceCandidateStubPanel();
+
+  bindLayerControl("admission-event-toggle", () => {});
+  bindLayerControl("information-flow-toggle", syncInformationFlowState);
+  bindLayerControl("information-flow-edges-alpha-slider", syncInformationFlowState);
+  bindLayerControl("information-flow-tracers-alpha-slider", syncInformationFlowState);
+  bindLayerControl("information-flow-tracer-smear-slider", syncInformationFlowState);
+  bindLayerControl("information-flow-stylus-alpha-slider", syncInformationFlowState);
+  syncInformationFlowState();
   bindVisibleStateJsonDownload();
 
   const ctx = canvas.getContext("2d");
@@ -1418,6 +2374,7 @@ function boot() {
     pitch: -0.58,
     roll: 0,
     zoom: Number(localStorage.getItem("g900.stageZoom") || "1") || 1,
+    pitchRollEnabled: true,
     dragging: false,
     lastX: 0,
     lastY: 0,
@@ -1426,11 +2383,34 @@ function boot() {
   };
 
   window.__g900BlankStage = state;
+  const savedCameraPitchEnabled = readCameraPitchEnabledPreference();
+  if (savedCameraPitchEnabled !== null) {
+    state.pitchRollEnabled = savedCameraPitchEnabled;
+  }
+  syncTimingPanelState(state);
+  syncCameraPitchButton(state);
+  syncStageControlDeckLayout();
+
+  const cameraPitchBtn = document.getElementById("camera-pitch-toggle");
+  if (cameraPitchBtn) {
+    cameraPitchBtn.addEventListener("click", () => {
+      setCameraPitchEnabled(state, !isCameraPitchEnabled(state));
+    });
+  }
 
   const playBtn = document.getElementById("play-toggle");
   if (playBtn) {
     playBtn.addEventListener("click", () => {
       state.playing = !state.playing;
+      syncPlayButton(state);
+      syncG900ViewerStateConsole(state);
+    });
+  }
+
+  const timingPauseBtn = document.getElementById("timing-pause-btn");
+  if (timingPauseBtn) {
+    timingPauseBtn.addEventListener("click", () => {
+      state.playing = false;
       syncPlayButton(state);
       syncG900ViewerStateConsole(state);
     });
@@ -1443,6 +2423,7 @@ function boot() {
       state.sheet = Math.max(0, state.sheet - 1);
       syncPlayButton(state);
       syncSheetCounter(state);
+      syncG900ViewerStateConsole(state);
     });
   }
 
@@ -1453,6 +2434,7 @@ function boot() {
       state.sheet += 1;
       syncPlayButton(state);
       syncSheetCounter(state);
+      syncG900ViewerStateConsole(state);
     });
   }
 
@@ -1556,7 +2538,9 @@ function boot() {
     if (state.playing) {
       const sheetDelta = dt * getSheetRate();
       state.sheet += sheetDelta;
-      state.pitch = wrapAngleRadians(state.pitch + sheetDelta * (TAU / PITCH_ROLL_SHEETS_PER_TURN));
+      if (isCameraPitchEnabled(state)) {
+        state.pitch = wrapAngleRadians(state.pitch + sheetDelta * (TAU / PITCH_ROLL_SHEETS_PER_TURN));
+      }
     }
 
     syncSheetCounter(state);
@@ -1575,35 +2559,14 @@ if (document.readyState === "loading") {
 }
 
 
+
 function ensureStageGraphToolbar() {
-  const stageCard = document.querySelector(".stage-card");
-  const stageFrame = document.querySelector(".stage-frame");
-  if (!stageCard || !stageFrame) return;
-
-  let toolbar = document.getElementById("stage-bottom-toolbar");
-  if (!toolbar) {
-    toolbar = document.createElement("div");
-    toolbar.id = "stage-bottom-toolbar";
-    toolbar.className = "stage-bottom-toolbar";
-    toolbar.setAttribute("aria-label", "Graph body density controls");
-    toolbar.innerHTML = [
-      '<label class="stage-toolbar-slider" for="graph-vertices-slider">',
-      '  <span>Vertices</span>',
-      '  <input id="graph-vertices-slider" data-layer-range="vertices" type="range" min="0" max="100" step="1" value="72" />',
-      '  <output id="graph-vertices-readout">72</output>',
-      '</label>',
-      '<label class="stage-toolbar-slider" for="graph-edges-slider">',
-      '  <span>Edges</span>',
-      '  <input id="graph-edges-slider" data-layer-range="edges" type="range" min="0" max="100" step="1" value="18" />',
-      '  <output id="graph-edges-readout">18</output>',
-      '</label>'
-    ].join("");
+  const legacyToolbar = document.getElementById("stage-bottom-toolbar");
+  if (legacyToolbar) {
+    legacyToolbar.remove();
   }
 
-  if (toolbar.parentElement !== stageCard || toolbar.previousElementSibling !== stageFrame) {
-    stageFrame.insertAdjacentElement("afterend", toolbar);
-  }
-
+  bindLayerControl("graph-layer-toggle", syncGraphLayerReadouts);
   bindLayerControl("graph-vertices-slider", syncGraphLayerReadouts);
   bindLayerControl("graph-edges-slider", syncGraphLayerReadouts);
   syncGraphLayerReadouts();
@@ -1641,7 +2604,7 @@ function initialG900PanelCollapsed(panelId) {
   const saved = localStorage.getItem("g900.panelCollapsed." + panelId);
   if (saved === "1") return true;
   if (saved === "0") return false;
-  return panelId === "carriers" || panelId === "channels" || panelId === "grounded-lens";
+  return true;
 }
 
 function applyG900PanelDefaultMigration() {
@@ -1657,7 +2620,7 @@ function bindG900ActivityPanelControls() {
   ensureStageGraphToolbar();
   applyG900PanelDefaultMigration();
 
-  ["carriers", "channels", "grounded-lens"].forEach((panelId) => {
+  ["body", "carriers", "channels", "force-candidates", "information-flow", "grounded-lens", "timing"].forEach((panelId) => {
     setG900PanelBodyCollapsed(panelId, initialG900PanelCollapsed(panelId));
   });
 

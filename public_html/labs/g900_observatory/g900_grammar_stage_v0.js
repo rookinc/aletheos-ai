@@ -1531,6 +1531,7 @@ function buildG900ViewerStateObject(state) {
     channel_scope: readWindowSummary("__g900ChannelScopeSummary"),
     channel_preview: readReturnCellChannelPreviewState(),
     information_flow: readWindowSummary("__g900InformationFlowSummary"),
+    g15_working_trace: readG15WorkingTraceState(),
     force_candidates: readG900ForceCandidateStubState(),
     render_contracts: readWindowSummary("__g900RenderContractsLedger"),
     timing_kernel: {
@@ -1551,7 +1552,8 @@ function buildG900ViewerStateObject(state) {
         physics_claim: false,
         motion_authority: false
       },
-      information_flow: readWindowSummary("__g900InformationFlowSummary")
+      information_flow: readWindowSummary("__g900InformationFlowSummary"),
+      g15_working_trace: readG15WorkingTraceState()
     },
     body: activeStaticBody ? {
       version: activeStaticBody.version,
@@ -2347,6 +2349,8 @@ function bindVisibleStateJsonDownload() {
 
 
 // g15-working-trace-panel-001
+let activeG15WorkingTraceKey = "M_W";
+
 const G15_WORKING_TRACE_ROWS = {
   "M_W": { target: "M_W", role: "W", surface: "scalar_surface_actual_result", rule: "position-only face lookup" },
   "M_X": { target: "M_X", role: "X", surface: "scalar_surface_expected_result", rule: "position-only face lookup" },
@@ -2356,11 +2360,46 @@ const G15_WORKING_TRACE_ROWS = {
   "P_TI:I": { target: "P_TI", role: "I", surface: "scalar_surface_output_ciphertext_handle", rule: "TI requires role disambiguation" }
 };
 
+function readG15WorkingTraceState() {
+  const key = Object.prototype.hasOwnProperty.call(G15_WORKING_TRACE_ROWS, activeG15WorkingTraceKey) ? activeG15WorkingTraceKey : "M_W";
+  const row = G15_WORKING_TRACE_ROWS[key];
+
+  return {
+    schema: "g900.viewer.g15_working_trace",
+    version: "0.1",
+    status: "working_convention_only",
+    active_key: key,
+    active_row: row ? {
+      packet_target: row.target,
+      wxyzti_role: row.role,
+      carrier_surface_id: row.surface,
+      lookup_rule: row.rule
+    } : null,
+    key_rule: "packet target is enough for WXYZ; P_TI requires packet target plus role",
+    trace_boundary: {
+      viewer_state_metadata_only: true,
+      bounded_working_placement_convention_only: true,
+      theorem_claim: false,
+      wxyzti_alignment_admitted: false,
+      scalar_admitted: false,
+      eval_surface_is_wxyzti_claim: false,
+      openfhe_realizes_wxyzti_claim: false,
+      private_body_admission: false,
+      gap_a_closure_claim: false,
+      g60_native_generator_derived: false,
+      physics_claim: false,
+      force_claim: false
+    }
+  };
+}
+
 function syncG15WorkingTracePanel(activeKey) {
   const readout = document.getElementById("g900-g15-trace-readout");
   const buttons = document.querySelectorAll("[data-g15-trace-key]");
   const key = Object.prototype.hasOwnProperty.call(G15_WORKING_TRACE_ROWS, activeKey) ? activeKey : "M_W";
   const row = G15_WORKING_TRACE_ROWS[key];
+
+  activeG15WorkingTraceKey = key;
 
   buttons.forEach(function (button) {
     button.classList.toggle("is-active", button.dataset.g15TraceKey === key);
@@ -2368,6 +2407,10 @@ function syncG15WorkingTracePanel(activeKey) {
 
   if (readout && row) {
     readout.textContent = row.target + " -> " + row.role + " -> " + row.surface + " | " + row.rule;
+  }
+
+  if (typeof window !== "undefined") {
+    window.__g900G15WorkingTraceSummary = readG15WorkingTraceState();
   }
 }
 

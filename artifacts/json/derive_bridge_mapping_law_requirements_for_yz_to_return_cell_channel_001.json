@@ -1,0 +1,186 @@
+{
+  "artifact_kind": "yz_to_return_cell_channel_bridge_mapping_law_requirements",
+  "boundary": {
+    "ac36_admitted": false,
+    "boundary_application_admitted": false,
+    "boundary_application_performed": false,
+    "branch_selection": false,
+    "bridge_receipt": false,
+    "channel_rendering": false,
+    "chirality_admitted": false,
+    "force_claim": false,
+    "g900_channel_admitted": false,
+    "mapping_law_admitted": false,
+    "native_path_selection": false,
+    "native_theorem": false,
+    "physics_claim": false,
+    "registry_mutation": false,
+    "requirements_derivation_only": true,
+    "selected_path": null,
+    "subjective_objective_theorem": false,
+    "yz_bridge_admitted": false
+  },
+  "checks": {
+    "bridge_receipt_unsatisfied_in_input": true,
+    "comparison_plateau_pass": true,
+    "mapping_law_unsatisfied_in_input": true,
+    "ml5_unsatisfied": true,
+    "ml6_unsatisfied": true,
+    "ml7_unsatisfied": true,
+    "ml8_unsatisfied": true,
+    "no_ac36_admission": true,
+    "no_boundary_application_admitted": true,
+    "no_branch_selection": true,
+    "no_bridge_receipt": true,
+    "no_channel_rendering": true,
+    "no_chirality_admission": true,
+    "no_force": true,
+    "no_g900_channel_admission": true,
+    "no_mapping_law_admitted": true,
+    "no_native_path_selection": true,
+    "no_native_theorem": true,
+    "no_physics": true,
+    "no_registry_mutation": true,
+    "no_subjective_objective_theorem": true,
+    "no_yz_bridge_admission": true,
+    "requirement_count_10": true,
+    "source_channels_data_channel_count_0": true,
+    "source_post_channel_admitted_true": true,
+    "source_semantics_channel_count_0": true,
+    "source_shape_plateau_pass": true,
+    "unsatisfied_requirement_count_4": true,
+    "yz_path_a_subjective": true,
+    "yz_path_b_objective": true
+  },
+  "created_utc": "2026-07-10T13:08:47+00:00",
+  "id": "derive_bridge_mapping_law_requirements_for_yz_to_return_cell_channel_001",
+  "input_artifacts": {
+    "comparison_plateau": "artifacts/json/record_yz_subjective_objective_candidate_to_return_cell_channel_shape_001_plateau.json",
+    "source_shape_plateau": "artifacts/json/record_located_g900_channel_registry_source_shape_001_plateau.json"
+  },
+  "input_sha256": {
+    "artifacts/json/record_located_g900_channel_registry_source_shape_001_plateau.json": "9966d48c9598ba7e0251f461f17dec85048c67ea576cb136ca733b9acaef2e8d",
+    "artifacts/json/record_yz_subjective_objective_candidate_to_return_cell_channel_shape_001_plateau.json": "d63065a12ded0aea98e768e9d254d2576852fc23d075a0e97590d195d183855e"
+  },
+  "keeper_line": "A bridge law must say what crosses, what stays blocked, and what must not be smuggled.",
+  "minimum_bridge_law_form": {
+    "must_bind": [
+      "return_cell_source_shape",
+      "yz_nearest_neighbor_candidate_shape",
+      "count_boundary",
+      "renderer_body_boundary",
+      "chirality_mirror_guard"
+    ],
+    "must_define": [
+      "role_correspondence",
+      "transition_correspondence",
+      "obstruction_correspondence",
+      "bridge_receipt_form"
+    ],
+    "must_not_claim": [
+      "new_g900_channel_admission",
+      "registry_mutation",
+      "channel_rendering",
+      "subjective_objective_theorem",
+      "yz_branch_selection",
+      "native_path_selection",
+      "physics_claim",
+      "force_claim"
+    ]
+  },
+  "next_gate": "check_bridge_mapping_law_requirements_for_yz_to_return_cell_channel_001",
+  "purpose": "Derive requirements for any future mapping law from the YZ subjective/objective candidate to the return-cell channel source shape.",
+  "requirement_ladder": [
+    {
+      "current_evidence": "source_post_channel_admitted=True, post_admitted_channel_count=1, explicit_channel_count_after=1",
+      "id": "ML1_source_shape_binding",
+      "requirement": "Bind to the actual return-cell source shape, not a generic channel idea.",
+      "satisfied_now": true
+    },
+    {
+      "current_evidence": "Path A subjective_pressure_channel_candidate, Path B objective_preservation_channel_candidate",
+      "id": "ML2_candidate_shape_binding",
+      "requirement": "Bind to the YZ nearest-neighbor candidate shape, not a generic subjective/objective metaphor.",
+      "satisfied_now": true
+    },
+    {
+      "current_evidence": "source_channels_data_channel_count=0 and source_semantics_channel_count=0",
+      "id": "ML3_count_boundary",
+      "requirement": "Preserve the count distinction: return-cell source admission count 1 versus channels_data and semantics channel count 0.",
+      "satisfied_now": true
+    },
+    {
+      "current_evidence": "renderer_enabled_now=False, renders_channel_now=False, mutates_body=False",
+      "id": "ML4_renderer_boundary",
+      "requirement": "Preserve renderer and body boundaries: no render, no mutation, no physics, no force.",
+      "satisfied_now": true
+    },
+    {
+      "current_evidence": "No role correspondence artifact exists yet.",
+      "id": "ML5_role_correspondence",
+      "requirement": "Define a role correspondence from return-cell permission/post-channel shape to YZ subjective/objective nearest-neighbor roles.",
+      "satisfied_now": false
+    },
+    {
+      "current_evidence": "No transition correspondence artifact exists yet.",
+      "id": "ML6_transition_correspondence",
+      "requirement": "Define how return-cell channel transition/provenance corresponds to the YZ fork paths or their nearest-neighbor signatures.",
+      "satisfied_now": false
+    },
+    {
+      "current_evidence": "Prior searches found receipt_found=False and bridge_found=False.",
+      "id": "ML7_obstruction_correspondence",
+      "requirement": "Define what obstruction or gate prevents YZ candidate admission even when return-cell source admission exists.",
+      "satisfied_now": false
+    },
+    {
+      "current_evidence": "No bridge receipt form exists yet.",
+      "id": "ML8_bridge_receipt_form",
+      "requirement": "Define the exact bridge receipt shape that could admit a bridge without admitting a rendered channel or new G900 channel.",
+      "satisfied_now": false
+    },
+    {
+      "current_evidence": "Earlier plateau recorded mirror obstruction and no chirality admission.",
+      "id": "ML9_mirror_chirality_guard",
+      "requirement": "Preserve the chirality/mirror guard: the YZ hand remains candidate-only until mirror/hand law is supplied.",
+      "satisfied_now": true
+    },
+    {
+      "current_evidence": "Current comparison and source-shape plateaus preserve boundary language.",
+      "id": "ML10_public_boundary_language",
+      "requirement": "Use boundary language that says comparison/possible bridge only, not theorem, channel admission, physics, force, or path selection.",
+      "satisfied_now": true
+    }
+  ],
+  "status": "BRIDGE_MAPPING_LAW_REQUIREMENTS_FOR_YZ_TO_RETURN_CELL_CHANNEL_001_DERIVED",
+  "summary": {
+    "ac36_admitted": false,
+    "boundary_application_admitted": false,
+    "boundary_application_performed": false,
+    "branch_selection": false,
+    "bridge_receipt": false,
+    "channel_rendering": false,
+    "chirality_admitted": false,
+    "derive_pass": true,
+    "force_claim": false,
+    "g900_channel_admitted": false,
+    "mapping_law_admitted": false,
+    "native_path_selection": false,
+    "physics_claim": false,
+    "recommended_next": "check_bridge_mapping_law_requirements_for_yz_to_return_cell_channel_001",
+    "registry_mutation": false,
+    "requirement_count": 10,
+    "satisfied_requirement_count": 6,
+    "selected_path": null,
+    "subjective_objective_theorem": false,
+    "theorem": false,
+    "unsatisfied_requirement_count": 4,
+    "unsatisfied_requirement_ids": [
+      "ML5_role_correspondence",
+      "ML6_transition_correspondence",
+      "ML7_obstruction_correspondence",
+      "ML8_bridge_receipt_form"
+    ],
+    "yz_bridge_admitted": false
+  }
+}

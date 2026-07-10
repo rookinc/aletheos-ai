@@ -2842,3 +2842,130 @@ canvas.stage-perspective-locked {
   font-size: 0.68rem;
   line-height: 1.35;
 }
+
+/* g15-working-trace-panel-001 */
+.g900-g15-trace-card {
+  margin: 1rem 0 1.15rem;
+  padding: 1rem;
+  border: 1px solid rgba(218, 194, 126, 0.24);
+  border-radius: 1.2rem;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(117, 210, 255, 0.10), transparent 28%),
+    radial-gradient(circle at 94% 22%, rgba(104, 255, 205, 0.09), transparent 32%),
+    rgba(4, 8, 14, 0.72);
+  box-shadow: 0 0 0 1px rgba(118, 165, 220, 0.08), 0 1.2rem 3rem rgba(0, 0, 0, 0.22);
+}
+
+.g900-g15-trace-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.9rem;
+  align-items: flex-start;
+  margin-bottom: 0.65rem;
+}
+
+.g900-g15-trace-kicker {
+  color: rgba(218, 194, 126, 0.92);
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.g900-g15-trace-head h2 {
+  margin: 0.14rem 0 0;
+  font-size: 1.05rem;
+  color: rgba(237, 246, 255, 0.95);
+}
+
+#g900-g15-trace-status {
+  color: rgba(104, 255, 205, 0.94);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.g900-g15-trace-line,
+.g900-g15-trace-boundary {
+  margin: 0.58rem 0;
+  color: rgba(237, 246, 255, 0.72);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.g900-g15-trace-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.52rem;
+  margin: 0.82rem 0;
+}
+
+.g900-g15-trace-row {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-areas: "target role" "surface surface";
+  gap: 0.18rem 0.48rem;
+  align-items: baseline;
+  padding: 0.58rem 0.65rem;
+  border: 1px solid rgba(144, 220, 255, 0.22);
+  border-radius: 0.86rem;
+  background: rgba(255, 255, 255, 0.035);
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.g900-g15-trace-row span {
+  grid-area: target;
+  color: rgba(144, 220, 255, 0.96);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.75rem;
+}
+
+.g900-g15-trace-row strong {
+  grid-area: role;
+  justify-self: end;
+  color: rgba(218, 194, 126, 0.98);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.g900-g15-trace-row em {
+  grid-area: surface;
+  color: rgba(237, 246, 255, 0.64);
+  font-style: normal;
+  font-size: 0.70rem;
+  overflow-wrap: anywhere;
+}
+
+.g900-g15-trace-row.is-active {
+  border-color: rgba(104, 255, 205, 0.62);
+  background: rgba(104, 255, 205, 0.10);
+  box-shadow: 0 0 0 1px rgba(104, 255, 205, 0.16), 0 0 1rem rgba(104, 255, 205, 0.10);
+}
+
+.g900-g15-trace-readout {
+  padding: 0.64rem 0.72rem;
+  border-radius: 0.82rem;
+  border: 1px solid rgba(218, 194, 126, 0.22);
+  background: rgba(0, 0, 0, 0.20);
+  color: rgba(255, 230, 158, 0.94);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.72rem;
+  overflow-wrap: anywhere;
+}
+
+.g900-g15-trace-boundary {
+  color: rgba(237, 246, 255, 0.58);
+  font-size: 0.70rem;
+}
+
+@media (max-width: 520px) {
+  .g900-g15-trace-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .g900-g15-trace-head {
+    flex-direction: column;
+  }
+}

@@ -2345,6 +2345,46 @@ function bindVisibleStateJsonDownload() {
 }
 
 
+
+// g15-working-trace-panel-001
+const G15_WORKING_TRACE_ROWS = {
+  "M_W": { target: "M_W", role: "W", surface: "scalar_surface_actual_result", rule: "position-only face lookup" },
+  "M_X": { target: "M_X", role: "X", surface: "scalar_surface_expected_result", rule: "position-only face lookup" },
+  "M_Y": { target: "M_Y", role: "Y", surface: "scalar_surface_verify_pass", rule: "position-only face lookup" },
+  "M_Z": { target: "M_Z", role: "Z", surface: "scalar_surface_verified_result_shape", rule: "position-only face lookup" },
+  "P_TI:T": { target: "P_TI", role: "T", surface: "scalar_surface_operation_digest", rule: "TI requires role disambiguation" },
+  "P_TI:I": { target: "P_TI", role: "I", surface: "scalar_surface_output_ciphertext_handle", rule: "TI requires role disambiguation" }
+};
+
+function syncG15WorkingTracePanel(activeKey) {
+  const readout = document.getElementById("g900-g15-trace-readout");
+  const buttons = document.querySelectorAll("[data-g15-trace-key]");
+  const key = Object.prototype.hasOwnProperty.call(G15_WORKING_TRACE_ROWS, activeKey) ? activeKey : "M_W";
+  const row = G15_WORKING_TRACE_ROWS[key];
+
+  buttons.forEach(function (button) {
+    button.classList.toggle("is-active", button.dataset.g15TraceKey === key);
+  });
+
+  if (readout && row) {
+    readout.textContent = row.target + ":" + row.role + " -> " + row.role + " -> " + row.surface + " | " + row.rule;
+  }
+}
+
+function bindG15WorkingTracePanel() {
+  const host = document.getElementById("g900-g15-working-trace");
+  if (!host || host.dataset.bound === "true") return;
+
+  host.dataset.bound = "true";
+  host.querySelectorAll("[data-g15-trace-key]").forEach(function (button) {
+    button.addEventListener("click", function () {
+      syncG15WorkingTracePanel(button.dataset.g15TraceKey);
+    });
+  });
+
+  syncG15WorkingTracePanel("M_W");
+}
+
 function boot() {
   loadStaticBodyReadout();
   const canvas = document.getElementById("stage-canvas");
@@ -2355,6 +2395,7 @@ function boot() {
   bindGraphLayerPanel();
   bindCarrierRenderPanel();
   bindForceCandidateStubPanel();
+  bindG15WorkingTracePanel();
 
   bindLayerControl("admission-event-toggle", () => {});
   bindLayerControl("information-flow-toggle", syncInformationFlowState);

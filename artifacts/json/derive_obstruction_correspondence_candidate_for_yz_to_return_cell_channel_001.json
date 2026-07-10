@@ -1,0 +1,214 @@
+{
+  "artifact_kind": "yz_to_return_cell_channel_obstruction_correspondence_candidate",
+  "boundary": {
+    "ac36_admitted": false,
+    "addresses_ml7_only": true,
+    "boundary_application_admitted": false,
+    "boundary_application_performed": false,
+    "branch_selection": false,
+    "bridge_receipt": false,
+    "bridge_receipt_form": false,
+    "candidate_correspondence_only": true,
+    "channel_rendering": false,
+    "chirality_admitted": false,
+    "force_claim": false,
+    "g900_channel_admitted": false,
+    "mapping_law_admitted": false,
+    "native_path_selection": false,
+    "native_theorem": false,
+    "obstruction_correspondence_admitted": false,
+    "physics_claim": false,
+    "registry_mutation": false,
+    "role_and_transition_context_only": true,
+    "selected_path": null,
+    "subjective_objective_theorem": false,
+    "yz_bridge_admitted": false
+  },
+  "checks": {
+    "all_obstruction_candidates_unadmitted": true,
+    "branch_selection_false": true,
+    "bridge_found_false": true,
+    "bridge_receipt_unsatisfied": true,
+    "channels_data_channel_count_0": true,
+    "comparison_plateau_pass": true,
+    "mapping_law_unsatisfied": true,
+    "ml7_candidate_derived": true,
+    "ml7_not_admitted": true,
+    "ml7_was_open": true,
+    "no_ac36_admission": true,
+    "no_boundary_application_admitted": true,
+    "no_branch_selection": true,
+    "no_bridge_receipt": true,
+    "no_bridge_receipt_form": true,
+    "no_channel_rendering": true,
+    "no_chirality_admission": true,
+    "no_force": true,
+    "no_g900_channel_admission": true,
+    "no_mapping_law_admitted": true,
+    "no_native_path_selection": true,
+    "no_native_theorem": true,
+    "no_physics": true,
+    "no_registry_mutation": true,
+    "no_subjective_objective_theorem": true,
+    "no_yz_bridge_admission": true,
+    "obstruction_candidate_count_5": true,
+    "obstruction_correspondence_candidate_unadmitted": true,
+    "receipt_found_false": true,
+    "renderer_disabled": true,
+    "requirements_plateau_pass": true,
+    "role_candidate_context_unadmitted": true,
+    "role_plateau_pass": true,
+    "semantics_channel_count_0": true,
+    "source_shape_plateau_pass": true,
+    "transition_candidate_context_unadmitted": true,
+    "transition_plateau_pass": true,
+    "yz_g900_channel_not_admitted": true,
+    "yz_selected_path_none": true
+  },
+  "created_utc": "2026-07-10T13:20:10+00:00",
+  "id": "derive_obstruction_correspondence_candidate_for_yz_to_return_cell_channel_001",
+  "input_artifacts": {
+    "comparison_plateau": "artifacts/json/record_yz_subjective_objective_candidate_to_return_cell_channel_shape_001_plateau.json",
+    "requirements_plateau": "artifacts/json/record_bridge_mapping_law_requirements_for_yz_to_return_cell_channel_001_plateau.json",
+    "role_correspondence_plateau": "artifacts/json/record_role_correspondence_candidate_for_yz_to_return_cell_channel_001_plateau.json",
+    "source_shape_plateau": "artifacts/json/record_located_g900_channel_registry_source_shape_001_plateau.json",
+    "transition_correspondence_plateau": "artifacts/json/record_transition_correspondence_candidate_for_yz_to_return_cell_channel_001_plateau.json"
+  },
+  "input_sha256": {
+    "artifacts/json/record_bridge_mapping_law_requirements_for_yz_to_return_cell_channel_001_plateau.json": "7ef758bec2b010d37d4ff1e101799205044d0ddfc90ec178a27c791c68dd5f59",
+    "artifacts/json/record_located_g900_channel_registry_source_shape_001_plateau.json": "9966d48c9598ba7e0251f461f17dec85048c67ea576cb136ca733b9acaef2e8d",
+    "artifacts/json/record_role_correspondence_candidate_for_yz_to_return_cell_channel_001_plateau.json": "a74103c9b820403b9c18f4eaaea5785132512aed9c7eeeed03887c9d7a5927b2",
+    "artifacts/json/record_transition_correspondence_candidate_for_yz_to_return_cell_channel_001_plateau.json": "408cc2f96ae91dd88a00c222e56c407cdab88f33842b64beb22beecc72d19d95",
+    "artifacts/json/record_yz_subjective_objective_candidate_to_return_cell_channel_shape_001_plateau.json": "d63065a12ded0aea98e768e9d254d2576852fc23d075a0e97590d195d183855e"
+  },
+  "keeper_line": "The source is admitted, but the bridge is still blocked.",
+  "ml7_status": {
+    "ml7_obstruction_correspondence_admitted": false,
+    "ml7_obstruction_correspondence_candidate_derived": true,
+    "reason_not_admitted": "Candidate obstruction correspondence is derived, but bridge receipt form remains unsatisfied; no path is selected and no YZ bridge is admitted."
+  },
+  "next_gate": "check_obstruction_correspondence_candidate_for_yz_to_return_cell_channel_001",
+  "obstruction_candidates": [
+    {
+      "admitted": false,
+      "candidate_mapping": "YZ candidate remains unadmitted because no bridge receipt connects the return-cell source shape to the YZ subjective/objective fork.",
+      "evidence": [
+        "receipt_found=False",
+        "bridge_found=False",
+        "bridge_receipt=False",
+        "mapping_law_admitted=False"
+      ],
+      "id": "OC1_missing_bridge_receipt_obstruction",
+      "obstruction_role": "bridge_receipt_absent"
+    },
+    {
+      "admitted": false,
+      "candidate_mapping": "Return-cell admission is source-level only; zero semantics/channel data and no rendering block any YZ channel admission.",
+      "evidence": [
+        "channels_data_channel_count=0",
+        "source_semantics_channel_count=0",
+        "renderer_enabled_now=False",
+        "renders_channel_now=False"
+      ],
+      "id": "OC2_zero_semantics_render_obstruction",
+      "obstruction_role": "zero_semantics_and_no_rendering"
+    },
+    {
+      "admitted": false,
+      "candidate_mapping": "YZ Path B may be the objective preservation hand, but chirality remains blocked by missing mirror/hand admission.",
+      "evidence": [
+        "selected_path=None",
+        "chirality_admitted=False",
+        "prior mirror sanity obstruction recorded in research repo",
+        "candidate hand is not a chirality receipt"
+      ],
+      "id": "OC3_chirality_mirror_obstruction",
+      "obstruction_role": "missing_mirror_chirality_receipt"
+    },
+    {
+      "admitted": false,
+      "candidate_mapping": "One return-cell admitted source faces a two-path YZ fork; no law yet explains how count-one source admission corresponds to a two-path candidate without selection.",
+      "evidence": [
+        "post_admitted_channel_count=1",
+        "YZ Path A and Path B remain candidates",
+        "branch_selection=False",
+        "selected_path=None"
+      ],
+      "id": "OC4_count_mismatch_obstruction",
+      "obstruction_role": "source_count_one_vs_two_path_fork"
+    },
+    {
+      "admitted": false,
+      "candidate_mapping": "ML5 and ML6 candidates are necessary context but do not themselves admit a bridge.",
+      "evidence": [
+        "role_correspondence_admitted=False",
+        "transition_correspondence_admitted=False",
+        "bridge_receipt_form=False",
+        "mapping_law_admitted=False"
+      ],
+      "id": "OC5_role_transition_not_enough_obstruction",
+      "obstruction_role": "role_and_transition_candidates_are_not_bridge_law"
+    }
+  ],
+  "obstruction_correspondence_candidate": {
+    "admitted": false,
+    "candidate_name": "missing_bridge_receipt_with_zero_semantics_render_and_chirality_guard",
+    "obstruction_edges": [
+      [
+        "bridge_receipt_absent",
+        "yz_candidate_unadmitted"
+      ],
+      [
+        "zero_semantics_and_no_rendering",
+        "no_yz_channel_admission"
+      ],
+      [
+        "missing_mirror_chirality_receipt",
+        "no_path_selection"
+      ],
+      [
+        "source_count_one_vs_two_path_fork",
+        "no_fork_collapse"
+      ],
+      [
+        "role_and_transition_candidates_are_not_bridge_law",
+        "mapping_law_not_admitted"
+      ]
+    ],
+    "plain_language": "The obstruction is not that the return-cell source is absent. The obstruction is that the YZ candidate lacks a bridge receipt, has zero rendered/semantic channel support, and still carries the chirality/mirror guard."
+  },
+  "purpose": "Derive an ML7 obstruction-correspondence candidate explaining why YZ remains unadmitted despite return-cell source admission.",
+  "status": "OBSTRUCTION_CORRESPONDENCE_CANDIDATE_FOR_YZ_TO_RETURN_CELL_CHANNEL_001_DERIVED",
+  "summary": {
+    "ac36_admitted": false,
+    "addresses_ml7_only": true,
+    "boundary_application_admitted": false,
+    "boundary_application_performed": false,
+    "branch_selection": false,
+    "bridge_receipt": false,
+    "bridge_receipt_form": false,
+    "candidate_name": "missing_bridge_receipt_with_zero_semantics_render_and_chirality_guard",
+    "channel_rendering": false,
+    "chirality_admitted": false,
+    "chirality_mirror_obstruction_candidate": true,
+    "count_mismatch_obstruction_candidate": true,
+    "derive_pass": true,
+    "force_claim": false,
+    "g900_channel_admitted": false,
+    "mapping_law_admitted": false,
+    "missing_bridge_receipt_obstruction_candidate": true,
+    "native_path_selection": false,
+    "obstruction_candidate_count": 5,
+    "obstruction_correspondence_admitted": false,
+    "obstruction_correspondence_candidate_derived": true,
+    "physics_claim": false,
+    "recommended_next": "check_obstruction_correspondence_candidate_for_yz_to_return_cell_channel_001",
+    "registry_mutation": false,
+    "role_transition_not_enough_obstruction_candidate": true,
+    "selected_path": null,
+    "subjective_objective_theorem": false,
+    "theorem": false,
+    "yz_bridge_admitted": false,
+    "zero_semantics_render_obstruction_candidate": true
+  }
+}

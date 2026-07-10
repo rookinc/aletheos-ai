@@ -1,0 +1,428 @@
+{
+  "artifact_kind": "located_g900_channel_registry_source_shape_inspection",
+  "boundary": {
+    "ac36_admitted": false,
+    "boundary_application_admitted": false,
+    "boundary_application_performed": false,
+    "branch_selection": false,
+    "channel_rendering": false,
+    "chirality_admitted": false,
+    "force_claim": false,
+    "g900_channel_admitted": false,
+    "inspection_only": true,
+    "located_source_shape_read_only": true,
+    "native_path_selection": false,
+    "native_theorem": false,
+    "physics_claim": false,
+    "registry_mutation": false,
+    "selected_path": null,
+    "subjective_objective_theorem": false,
+    "yz_bridge_admitted": false
+  },
+  "checks": {
+    "channels_data_exists": true,
+    "channels_data_shape_read": true,
+    "explicit_admission_exists": true,
+    "located_source_exists": true,
+    "no_ac36_admission": true,
+    "no_boundary_application_admitted": true,
+    "no_branch_selection": true,
+    "no_channel_rendering": true,
+    "no_chirality_admission": true,
+    "no_force": true,
+    "no_g900_channel_admission": true,
+    "no_native_path_selection": true,
+    "no_native_theorem": true,
+    "no_physics": true,
+    "no_registry_mutation": true,
+    "no_subjective_objective_theorem": true,
+    "no_yz_bridge_admission": true,
+    "permission_admission_exists": true,
+    "semantics_recheck_exists": true,
+    "source_shape_read": true
+  },
+  "created_utc": "2026-07-10T12:56:22+00:00",
+  "id": "inspect_located_g900_channel_registry_source_shape_001",
+  "keeper_line": "The source can be read before it is asked to carry a new bridge.",
+  "next_gate": "check_located_g900_channel_registry_source_shape_001",
+  "purpose": "Inspect the located G900 admitted channel registry source shape before any YZ subjective/objective bridge attempt.",
+  "source_artifacts": {
+    "channels_data": "public_html/labs/g900_observatory/data/g900_channels.v0.1.json",
+    "explicit_return_cell_admission": "public_html/labs/g900_observatory/artifacts/json/g900_explicit_return_cell_channel_admission_001.v1.json",
+    "located_source": "public_html/labs/g900_observatory/artifacts/json/g900_post_channel_admission_integrity_audit_001.v1.json",
+    "permission_channel_admission": "public_html/labs/g900_observatory/artifacts/json/g900_return_cell_permission_channel_admission_005.v1.json",
+    "semantics_recheck": "public_html/labs/g900_observatory/artifacts/json/g900_channel_admission_recheck_after_semantics_001.v1.json"
+  },
+  "source_sha256": {
+    "public_html/labs/g900_observatory/artifacts/json/g900_channel_admission_recheck_after_semantics_001.v1.json": "fa7c72434152376e1267b79cdd4a244ebfc4aeb2d85e11c18f4a424f3044d05f",
+    "public_html/labs/g900_observatory/artifacts/json/g900_explicit_return_cell_channel_admission_001.v1.json": "b3492df7a1d58b05c15fb7eba1cd54405e1ddc2c152c5a14b239914c6d2d008c",
+    "public_html/labs/g900_observatory/artifacts/json/g900_post_channel_admission_integrity_audit_001.v1.json": "5ebba72a3c98c91630d6b2e534e679f0a02fb26ebc34e50dfc7a6fada36dcb2a",
+    "public_html/labs/g900_observatory/artifacts/json/g900_return_cell_permission_channel_admission_005.v1.json": "8baab342ce2c46a2d266436607818beaaf11130546d1bf6e387f63adf3398c28",
+    "public_html/labs/g900_observatory/data/g900_channels.v0.1.json": "03e694adb108ef2cc06734830f3290a9357c8dcb548ea12dd8cb8a09abd007e7"
+  },
+  "source_shape": {
+    "channels_data": {
+      "key_count_deep": 36,
+      "path": "public_html/labs/g900_observatory/data/g900_channels.v0.1.json",
+      "selected_values": {
+        "admitted_channel_count": [
+          0
+        ],
+        "channel_count": [
+          0
+        ],
+        "force_claim": [
+          false
+        ],
+        "mutates_body": [
+          false,
+          false
+        ],
+        "physics_claim": [
+          false,
+          false
+        ],
+        "status": [
+          "next",
+          "channel_scope_map_declared",
+          "mvp_null_state",
+          "permission_question",
+          "permission_question",
+          "withheld_from_mvp"
+        ],
+        "transport_relation_claim": [
+          false
+        ]
+      },
+      "top_level_keys": [
+        "admitted_channel_count",
+        "body",
+        "body_version",
+        "boundary",
+        "candidate_receipts",
+        "channel_count",
+        "channel_set_count",
+        "channel_sets",
+        "contract",
+        "keeper",
+        "mutates_body",
+        "overlay",
+        "physics_claim",
+        "runtime_motion_authority",
+        "schema",
+        "scope_modes",
+        "status",
+        "version"
+      ]
+    },
+    "explicit_return_cell_admission": {
+      "key_count_deep": 114,
+      "path": "public_html/labs/g900_observatory/artifacts/json/g900_explicit_return_cell_channel_admission_001.v1.json",
+      "selected_values": {
+        "audit_pass": [
+          true
+        ],
+        "channel_admitted": [
+          true
+        ],
+        "channel_count_after": [
+          1
+        ],
+        "channel_count_before": [
+          0
+        ],
+        "channel_id": [
+          "g900_return_cell_channel_1bed7a7cba65a7be"
+        ],
+        "channel_set_id": [
+          "g900_return_cell_channel_set_001"
+        ],
+        "force_claim": [
+          false,
+          false,
+          false
+        ],
+        "mutates_body": [
+          false,
+          false,
+          false
+        ],
+        "physics_claim": [
+          false,
+          false,
+          false
+        ],
+        "renderer_enabled_now": [
+          false,
+          false
+        ],
+        "renders_channel_now": [
+          false,
+          false
+        ],
+        "status": [
+          "explicit_return_cell_channel_admitted",
+          "admitted"
+        ],
+        "verdict": [
+          "explicit_return_cell_channel_admission_passed"
+        ]
+      },
+      "top_level_keys": [
+        "admitted_channel",
+        "answer",
+        "audit_pass",
+        "boundary",
+        "checks",
+        "created_utc",
+        "criteria",
+        "failed_checks",
+        "hash_receipts",
+        "interpretation",
+        "question",
+        "registry_delta",
+        "schema",
+        "source_receipts",
+        "status",
+        "summary",
+        "verdict",
+        "version"
+      ]
+    },
+    "permission_channel_admission": {
+      "key_count_deep": 60,
+      "path": "public_html/labs/g900_observatory/artifacts/json/g900_return_cell_permission_channel_admission_005.v1.json",
+      "selected_values": {
+        "admission_pass": [
+          true
+        ],
+        "force_claim": [
+          false,
+          false
+        ],
+        "mutates_body": [
+          false,
+          false
+        ],
+        "permission_channel_admitted": [
+          true,
+          true
+        ],
+        "physics_claim": [
+          false,
+          false
+        ],
+        "status": [
+          "permission_channel_admission_only_no_information_transport",
+          "admitted_permission_channel_no_transport"
+        ],
+        "verdict": [
+          "return_cell_permission_channel_admitted"
+        ]
+      },
+      "top_level_keys": [
+        "admission_pass",
+        "admitted_channel",
+        "answer",
+        "artifact_id",
+        "boundary",
+        "commit",
+        "evidence_stack",
+        "failed_obligation_ids",
+        "git_status_short_before",
+        "inputs",
+        "keeper",
+        "obligations",
+        "question",
+        "recorded_at_utc",
+        "registry",
+        "schema",
+        "status",
+        "verdict",
+        "version"
+      ]
+    },
+    "post_channel_integrity": {
+      "key_count_deep": 85,
+      "path": "public_html/labs/g900_observatory/artifacts/json/g900_post_channel_admission_integrity_audit_001.v1.json",
+      "selected_values": {
+        "admitted_channel_count": [
+          1
+        ],
+        "audit_pass": [
+          true
+        ],
+        "channel_admitted": [
+          true
+        ],
+        "channel_count": [
+          1
+        ],
+        "channel_id": [
+          "g900_return_cell_channel_1bed7a7cba65a7be",
+          "g900_return_cell_channel_1bed7a7cba65a7be"
+        ],
+        "channel_set_id": [
+          "g900_return_cell_channel_set_001"
+        ],
+        "channels": [
+          "public_html/labs/g900_observatory/data/g900_channels.v0.1.json"
+        ],
+        "force_claim": [
+          false,
+          false
+        ],
+        "mutates_body": [
+          false,
+          false
+        ],
+        "physics_claim": [
+          false,
+          false
+        ],
+        "renderer_enabled_now": [
+          false
+        ],
+        "renders_channel_now": [
+          false
+        ],
+        "status": [
+          "post_channel_admission_integrity_audit_recorded"
+        ],
+        "verdict": [
+          "post_channel_admission_integrity_audit_passed"
+        ]
+      },
+      "top_level_keys": [
+        "answer",
+        "audit_pass",
+        "boundary",
+        "channel",
+        "checks",
+        "created_utc",
+        "criteria",
+        "failed_checks",
+        "hash_receipts",
+        "interpretation",
+        "question",
+        "registry_counts",
+        "schema",
+        "source_receipts",
+        "status",
+        "summary",
+        "verdict",
+        "version"
+      ]
+    },
+    "semantics_recheck": {
+      "key_count_deep": 98,
+      "path": "public_html/labs/g900_observatory/artifacts/json/g900_channel_admission_recheck_after_semantics_001.v1.json",
+      "selected_values": {
+        "audit_pass": [
+          true,
+          true,
+          true
+        ],
+        "channel_count": [
+          0
+        ],
+        "channels": [
+          "public_html/labs/g900_observatory/data/g900_channels.v0.1.json"
+        ],
+        "force_claim": [
+          false
+        ],
+        "mutates_body": [
+          false,
+          false
+        ],
+        "physics_claim": [
+          false
+        ],
+        "renders_channel_now": [
+          false
+        ],
+        "status": [
+          "channel_admission_recheck_after_semantics_recorded"
+        ],
+        "verdict": [
+          "channel_admission_recheck_after_semantics_still_not_allowed",
+          "only_pair_identity_like_transition_length_derivations_found",
+          "only_pair_identity_like_transition_length_derivations_found"
+        ]
+      },
+      "top_level_keys": [
+        "answer",
+        "audit_pass",
+        "blocker_details",
+        "boundary",
+        "candidate",
+        "checks",
+        "created_utc",
+        "criteria",
+        "failed_checks",
+        "hash_receipts",
+        "interpretation",
+        "question",
+        "remaining_blockers",
+        "resolved_since_initial",
+        "schema",
+        "source_receipts",
+        "status",
+        "summary",
+        "verdict",
+        "version"
+      ]
+    }
+  },
+  "source_shape_summary": {
+    "channel_count_read_from_channels_data": null,
+    "channels_data_path": "public_html/labs/g900_observatory/data/g900_channels.v0.1.json",
+    "explicit_admission_status": [
+      "explicit_return_cell_channel_admitted",
+      "admitted"
+    ],
+    "explicit_admission_verdict": [
+      "explicit_return_cell_channel_admission_passed"
+    ],
+    "located_source_path": "public_html/labs/g900_observatory/artifacts/json/g900_post_channel_admission_integrity_audit_001.v1.json",
+    "permission_status": [
+      "permission_channel_admission_only_no_information_transport",
+      "admitted_permission_channel_no_transport"
+    ],
+    "post_channel_integrity_status": [
+      "post_channel_admission_integrity_audit_recorded"
+    ],
+    "post_channel_integrity_verdict": [
+      "post_channel_admission_integrity_audit_passed"
+    ],
+    "semantics_recheck_status": [
+      "channel_admission_recheck_after_semantics_recorded"
+    ],
+    "supporting_source_count": 4
+  },
+  "status": "LOCATED_G900_CHANNEL_REGISTRY_SOURCE_SHAPE_001_INSPECTED",
+  "summary": {
+    "ac36_admitted": false,
+    "boundary_application_admitted": false,
+    "boundary_application_performed": false,
+    "branch_selection": false,
+    "channel_count_read_from_channels_data": null,
+    "channel_rendering": false,
+    "channels_data_path": "public_html/labs/g900_observatory/data/g900_channels.v0.1.json",
+    "chirality_admitted": false,
+    "force_claim": false,
+    "g900_channel_admitted": false,
+    "inspect_pass": true,
+    "located_source_path": "public_html/labs/g900_observatory/artifacts/json/g900_post_channel_admission_integrity_audit_001.v1.json",
+    "native_path_selection": false,
+    "physics_claim": false,
+    "recommended_next": "check_located_g900_channel_registry_source_shape_001",
+    "registry_mutation": false,
+    "selected_path": null,
+    "subjective_objective_theorem": false,
+    "supporting_source_count": 4,
+    "theorem": false,
+    "yz_bridge_admitted": false
+  }
+}

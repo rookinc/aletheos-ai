@@ -2367,7 +2367,7 @@ function syncG15WorkingTracePanel(activeKey) {
   });
 
   if (readout && row) {
-    readout.textContent = row.target + ":" + row.role + " -> " + row.role + " -> " + row.surface + " | " + row.rule;
+    readout.textContent = row.target + " -> " + row.role + " -> " + row.surface + " | " + row.rule;
   }
 }
 

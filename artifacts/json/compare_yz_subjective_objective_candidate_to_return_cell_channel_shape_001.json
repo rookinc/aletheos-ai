@@ -1,0 +1,219 @@
+{
+  "artifact_kind": "yz_candidate_to_return_cell_channel_shape_comparison",
+  "boundary": {
+    "ac36_admitted": false,
+    "boundary_application_admitted": false,
+    "boundary_application_performed": false,
+    "branch_selection": false,
+    "channel_rendering": false,
+    "chirality_admitted": false,
+    "comparison_only": true,
+    "cross_repo_read_only": true,
+    "force_claim": false,
+    "g900_channel_admitted": false,
+    "native_path_selection": false,
+    "native_theorem": false,
+    "physics_claim": false,
+    "registry_mutation": false,
+    "selected_path": null,
+    "subjective_objective_theorem": false,
+    "yz_bridge_admitted": false
+  },
+  "bridge_requirements": [
+    {
+      "id": "BR1_source_reference",
+      "requirement": "Explicitly cite the admitted return-cell source artifact.",
+      "satisfied_now": true
+    },
+    {
+      "id": "BR2_candidate_reference",
+      "requirement": "Explicitly cite the YZ nearest-neighbor subjective/objective candidate artifact.",
+      "satisfied_now": true
+    },
+    {
+      "id": "BR3_mapping_law",
+      "requirement": "Provide a rule mapping return-cell permission/post-channel shape to YZ subjective/objective nearest-neighbor shape.",
+      "satisfied_now": false
+    },
+    {
+      "id": "BR4_no_count_confusion",
+      "requirement": "Do not confuse return-cell admitted source count with channels_data/semantics count zero or YZ channel admission.",
+      "satisfied_now": true
+    },
+    {
+      "id": "BR5_no_renderer_leakage",
+      "requirement": "Bridge must not imply channel rendering, body mutation, physics, or force.",
+      "satisfied_now": true
+    },
+    {
+      "id": "BR6_bridge_receipt",
+      "requirement": "Produce a new explicit bridge receipt if and only if BR3 is supplied and checked.",
+      "satisfied_now": false
+    }
+  ],
+  "checks": {
+    "bridge_found_false": true,
+    "bridge_receipt_not_satisfied": true,
+    "mapping_law_not_satisfied": true,
+    "no_ac36_admission": true,
+    "no_boundary_application_admitted": true,
+    "no_branch_selection": true,
+    "no_channel_rendering": true,
+    "no_chirality_admission": true,
+    "no_force": true,
+    "no_g900_channel_admission": true,
+    "no_native_path_selection": true,
+    "no_native_theorem": true,
+    "no_physics": true,
+    "no_registry_mutation": true,
+    "no_subjective_objective_theorem": true,
+    "no_yz_bridge_admission": true,
+    "receipt_found_false": true,
+    "self_contamination_excluded": true,
+    "source_channels_data_channel_count_0": true,
+    "source_explicit_channel_count_after_1": true,
+    "source_mutates_body_false": true,
+    "source_post_admitted_channel_count_1": true,
+    "source_post_channel_admitted_true": true,
+    "source_renderer_disabled": true,
+    "source_semantics_channel_count_0": true,
+    "source_shape_plateau_pass": true,
+    "yz_candidate_reading_supported": true,
+    "yz_g900_channel_not_admitted": true,
+    "yz_path_a_subjective": true,
+    "yz_path_b_objective": true,
+    "yz_plateau_pass": true,
+    "yz_selected_path_none": true
+  },
+  "comparison_axes": {
+    "admission_axis": {
+      "reading": "Return-cell has an admitted permission/post-channel source shape; YZ has only a nearest-neighbor candidate reading.",
+      "return_cell": {
+        "mutates_body": false,
+        "permission_channel_admitted": true,
+        "post_admitted_channel_count": 1,
+        "post_channel_admitted": true,
+        "renderer_enabled_now": false,
+        "renders_channel_now": false
+      },
+      "yz_candidate": {
+        "branch_selection": false,
+        "candidate_reading_supported": true,
+        "g900_channel_admitted": false,
+        "selected_path": null
+      }
+    },
+    "count_axis": {
+      "reading": "Return-cell source is count/admission shaped; YZ source is nearest-neighbor/asymmetry shaped.",
+      "return_cell": {
+        "channels_data_channel_count": 0,
+        "explicit_channel_count_after": 1,
+        "explicit_channel_count_before": 0,
+        "semantics_channel_count": 0
+      },
+      "yz_candidate": {
+        "path_a_signature": [
+          [
+            2,
+            5
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        "path_a_total_asymmetry": 4,
+        "path_b_signature": [
+          [
+            4,
+            4
+          ],
+          [
+            5,
+            4
+          ]
+        ],
+        "path_b_total_asymmetry": 1
+      }
+    },
+    "negative_receipt_axis": {
+      "reading": "Prior searches found no explicit candidate receipt and no clean bridge after self-contamination exclusion.",
+      "yz_bridge_search": {
+        "bridge_found": false,
+        "explicit_registry_to_yz_bridge_count": 0,
+        "self_contamination_excluded": true
+      },
+      "yz_receipt_search": {
+        "explicit_candidate_receipt_count": 0,
+        "g900_channel_admitted": false,
+        "receipt_found": false
+      }
+    },
+    "role_axis": {
+      "reading": "The two shapes are compatible as a possible future bridge vocabulary, but not currently bound.",
+      "return_cell": {
+        "role": "permission_channel_or_return_cell_channel_source",
+        "status": "admitted_source_shape_but_not_rendered_or_mutating"
+      },
+      "yz_candidate": {
+        "path_a_channel_candidate": "subjective_pressure_channel_candidate",
+        "path_b_channel_candidate": "objective_preservation_channel_candidate",
+        "status": "subjective_objective_candidate_reading_only"
+      }
+    }
+  },
+  "created_utc": "2026-07-10T13:01:22+00:00",
+  "id": "compare_yz_subjective_objective_candidate_to_return_cell_channel_shape_001",
+  "input_artifacts": {
+    "research_yz_bridge_search_plateau": "artifacts/json/record_bridge_between_existing_g900_channel_registry_and_yz_subjective_objective_candidate_001_plateau.json",
+    "research_yz_candidate_plateau": "artifacts/json/record_b32k_fre_eval_wxyzti_nearest_neighbor_subjective_objective_channel_candidate_for_yz_fork_001_plateau.json",
+    "research_yz_receipt_search_plateau": "artifacts/json/record_g900_channel_receipt_search_for_nearest_neighbor_subjective_objective_candidate_001_plateau.json",
+    "site_source_shape_plateau": "artifacts/json/record_located_g900_channel_registry_source_shape_001_plateau.json"
+  },
+  "input_sha256": {
+    "research:artifacts/json/record_b32k_fre_eval_wxyzti_nearest_neighbor_subjective_objective_channel_candidate_for_yz_fork_001_plateau.json": "53159448f2ef6fde8d62fbe8353a3b5ad28bb33f4b473afdbadfa88185688046",
+    "research:artifacts/json/record_bridge_between_existing_g900_channel_registry_and_yz_subjective_objective_candidate_001_plateau.json": "bdee21b2eada1cc52eed94c16b065a09975aaf6c905e343896683163f553bf72",
+    "research:artifacts/json/record_g900_channel_receipt_search_for_nearest_neighbor_subjective_objective_candidate_001_plateau.json": "29bea38fc73a8819f5f9552e4088b4146ae93abc674cbf5450110e6fd9642c55",
+    "site:artifacts/json/record_located_g900_channel_registry_source_shape_001_plateau.json": "9966d48c9598ba7e0251f461f17dec85048c67ea576cb136ca733b9acaef2e8d"
+  },
+  "keeper_line": "The shapes can face each other before a bridge is allowed to carry them.",
+  "next_gate": "check_yz_subjective_objective_candidate_to_return_cell_channel_shape_001",
+  "purpose": "Compare YZ subjective/objective candidate shape to the located return-cell channel source shape without admitting a bridge.",
+  "status": "YZ_SUBJECTIVE_OBJECTIVE_CANDIDATE_TO_RETURN_CELL_CHANNEL_SHAPE_001_COMPARED",
+  "summary": {
+    "ac36_admitted": false,
+    "boundary_application_admitted": false,
+    "boundary_application_performed": false,
+    "branch_selection": false,
+    "bridge_found": false,
+    "bridge_receipt_satisfied": false,
+    "channel_rendering": false,
+    "chirality_admitted": false,
+    "compare_pass": true,
+    "force_claim": false,
+    "g900_channel_admitted": false,
+    "mapping_law_satisfied": false,
+    "native_path_selection": false,
+    "physics_claim": false,
+    "receipt_found": false,
+    "recommended_next": "check_yz_subjective_objective_candidate_to_return_cell_channel_shape_001",
+    "registry_mutation": false,
+    "selected_path": null,
+    "source_channels_data_channel_count": 0,
+    "source_explicit_channel_count_after": 1,
+    "source_mutates_body": false,
+    "source_post_admitted_channel_count": 1,
+    "source_post_channel_admitted": true,
+    "source_renderer_enabled_now": false,
+    "source_renders_channel_now": false,
+    "source_semantics_channel_count": 0,
+    "subjective_objective_theorem": false,
+    "theorem": false,
+    "yz_bridge_admitted": false,
+    "yz_candidate_reading_supported": true,
+    "yz_g900_channel_admitted": false,
+    "yz_path_a_channel_candidate": "subjective_pressure_channel_candidate",
+    "yz_path_b_channel_candidate": "objective_preservation_channel_candidate",
+    "yz_selected_path": null
+  }
+}

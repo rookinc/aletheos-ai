@@ -1,0 +1,148 @@
+{
+  "admission_criteria": [
+    {
+      "criterion": "ML5 role-correspondence candidate is recorded.",
+      "id": "A1_candidate_exists",
+      "pass": true
+    },
+    {
+      "criterion": "Source/YZ role bindings are already recorded and checked in the ML5 candidate plateau.",
+      "id": "A2_source_and_yz_roles_bound",
+      "pass": true
+    },
+    {
+      "criterion": "Candidate still denies bridge, channel admission, path selection, rendering, physics, and force.",
+      "id": "A3_denial_guard_preserved",
+      "pass": true
+    },
+    {
+      "criterion": "Independent ML5 role law candidate is present.",
+      "id": "A4_independent_role_law_candidate_present",
+      "pass": true
+    },
+    {
+      "criterion": "Independent ML5 role law candidate passed independence tests.",
+      "id": "A5_independence_tests_pass",
+      "pass": true
+    },
+    {
+      "criterion": "ML5 can be admitted without relying on ML6, ML7, ML8, mapping law, or bridge receipt.",
+      "id": "A6_no_downstream_smuggling_reaudit",
+      "pass": true
+    }
+  ],
+  "artifact_kind": "ml5_role_correspondence_reaudit_with_independent_law",
+  "boundary": {
+    "ac36_admitted": false,
+    "boundary_application_admitted": false,
+    "boundary_application_performed": false,
+    "branch_selection": false,
+    "bridge_receipt": false,
+    "channel_rendering": false,
+    "chirality_admitted": false,
+    "first_rung_reaudit_only": true,
+    "force_claim": false,
+    "g900_channel_admitted": false,
+    "mapping_law_admitted": false,
+    "ml5_role_correspondence_admitted": true,
+    "ml6_transition_correspondence_admitted": false,
+    "ml7_obstruction_correspondence_admitted": false,
+    "ml8_bridge_receipt_form_admitted": false,
+    "native_path_selection": false,
+    "native_theorem": false,
+    "physics_claim": false,
+    "registry_mutation": false,
+    "selected_path": null,
+    "subjective_objective_theorem": false,
+    "yz_bridge_admitted": false
+  },
+  "checks": {
+    "all_criteria_pass": true,
+    "criteria_count_6": true,
+    "decision_admit_ml5": true,
+    "ladder_status_pass": true,
+    "law_plateau_pass": true,
+    "ml5_admitted_true": true,
+    "no_ac36_admission": true,
+    "no_boundary_application_admitted": true,
+    "no_branch_selection": true,
+    "no_bridge_receipt": true,
+    "no_channel_rendering": true,
+    "no_chirality_admission": true,
+    "no_force": true,
+    "no_g900_channel_admission": true,
+    "no_mapping_law_admission": true,
+    "no_ml6_admission": true,
+    "no_ml7_admission": true,
+    "no_ml8_admission": true,
+    "no_native_path_selection": true,
+    "no_native_theorem": true,
+    "no_physics": true,
+    "no_registry_mutation": true,
+    "no_subjective_objective_theorem": true,
+    "no_yz_bridge_admission": true,
+    "prior_ml5_audit_pass": true,
+    "prior_ml5_paused": true,
+    "role_plateau_pass": true,
+    "selected_path_none": true
+  },
+  "created_utc": "2026-07-10T13:43:31+00:00",
+  "decision": {
+    "decision": "admit_ml5_role_correspondence",
+    "ml5_role_correspondence_admitted": true,
+    "reason": "All six ML5 admission criteria passed after independent role law candidate derivation; ML6-ML8 and bridge remain closed."
+  },
+  "id": "reaudit_ml5_role_correspondence_with_independent_law_001",
+  "input_artifacts": {
+    "independent_ml5_role_law_candidate": "artifacts/json/record_independent_ml5_role_law_candidate_001_plateau.json",
+    "ladder_status": "artifacts/json/record_yz_to_return_cell_bridge_mapping_ladder_status_001.json",
+    "ml5_role_candidate_plateau": "artifacts/json/record_role_correspondence_candidate_for_yz_to_return_cell_channel_001_plateau.json",
+    "prior_ml5_pause_audit": "artifacts/json/pause_or_admit_ml5_role_correspondence_audit_001.json"
+  },
+  "input_sha256": {
+    "artifacts/json/pause_or_admit_ml5_role_correspondence_audit_001.json": "c8d1376117254d3e55037eae1186440c31303102b4f46d65a218214f6a39bb97",
+    "artifacts/json/record_independent_ml5_role_law_candidate_001_plateau.json": "348e32fa77b79ef35fe19d3392aac9621df60d1491e584886b7dfc3fc153d6d1",
+    "artifacts/json/record_role_correspondence_candidate_for_yz_to_return_cell_channel_001_plateau.json": "a74103c9b820403b9c18f4eaaea5785132512aed9c7eeeed03887c9d7a5927b2",
+    "artifacts/json/record_yz_to_return_cell_bridge_mapping_ladder_status_001.json": "4dce81c8a6e6b31cfdd1e9c2e75cab3e493532c0aa8fe09ba0c8a6dcde841f2b"
+  },
+  "keeper_line": "The first rung admits only what can stand without the bridge above it.",
+  "next_gate": "record_ml5_role_correspondence_admission_status_001",
+  "purpose": "Reaudit ML5 role correspondence after deriving an independent ML5 role law candidate.",
+  "status": "ML5_ROLE_CORRESPONDENCE_WITH_INDEPENDENT_LAW_001_ADMITTED",
+  "summary": {
+    "ac36_admitted": false,
+    "boundary_application_admitted": false,
+    "boundary_application_performed": false,
+    "branch_selection": false,
+    "bridge_receipt": false,
+    "channel_rendering": false,
+    "check_count": 28,
+    "chirality_admitted": false,
+    "criteria_count": 6,
+    "decision": "admit_ml5_role_correspondence",
+    "downstream_smuggling_excluded": true,
+    "failed_count": 0,
+    "failed_criteria_count": 0,
+    "failed_criteria_ids": [],
+    "force_claim": false,
+    "g900_channel_admitted": false,
+    "independence_tests_pass": true,
+    "independent_role_law_candidate_present": true,
+    "mapping_law_admitted": false,
+    "ml5_role_correspondence_admitted": true,
+    "ml6_transition_correspondence_admitted": false,
+    "ml7_obstruction_correspondence_admitted": false,
+    "ml8_bridge_receipt_form_admitted": false,
+    "native_path_selection": false,
+    "passed_count": 28,
+    "passed_criteria_count": 6,
+    "physics_claim": false,
+    "reaudit_pass": true,
+    "recommended_next": "record_ml5_role_correspondence_admission_status_001",
+    "registry_mutation": false,
+    "selected_path": null,
+    "subjective_objective_theorem": false,
+    "theorem": false,
+    "yz_bridge_admitted": false
+  }
+}

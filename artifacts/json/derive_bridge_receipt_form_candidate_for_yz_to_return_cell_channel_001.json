@@ -1,0 +1,229 @@
+{
+  "artifact_kind": "yz_to_return_cell_channel_bridge_receipt_form_candidate",
+  "boundary": {
+    "ac36_admitted": false,
+    "addresses_ml8_only": true,
+    "boundary_application_admitted": false,
+    "boundary_application_performed": false,
+    "branch_selection": false,
+    "bridge_receipt": false,
+    "bridge_receipt_form_admitted": false,
+    "candidate_receipt_form_only": true,
+    "channel_rendering": false,
+    "chirality_admitted": false,
+    "force_claim": false,
+    "g900_channel_admitted": false,
+    "mapping_law_admitted": false,
+    "ml5_ml6_ml7_context_only": true,
+    "native_path_selection": false,
+    "native_theorem": false,
+    "physics_claim": false,
+    "registry_mutation": false,
+    "selected_path": null,
+    "subjective_objective_theorem": false,
+    "yz_bridge_admitted": false
+  },
+  "bridge_receipt_form_candidate": {
+    "admitted": false,
+    "candidate_name": "yz_to_return_cell_nonadmitting_bridge_receipt_form",
+    "candidate_only": true,
+    "plain_language": "A future bridge receipt must bind source, YZ candidate, role candidate, transition candidate, and obstruction candidate while explicitly denying channel admission, rendering, body mutation, path selection, physics, and force.",
+    "required_sections": [
+      "source_binding",
+      "yz_candidate_binding",
+      "role_correspondence_candidate",
+      "transition_correspondence_candidate",
+      "obstruction_correspondence_candidate",
+      "required_denials",
+      "future_admission_gate"
+    ]
+  },
+  "checks": {
+    "comparison_plateau_pass": true,
+    "future_admission_gate_not_satisfied": true,
+    "ml5_context_candidate_only": true,
+    "ml6_context_candidate_only": true,
+    "ml7_context_candidate_only": true,
+    "ml8_candidate_derived": true,
+    "ml8_not_admitted": true,
+    "ml8_was_open": true,
+    "no_ac36_admission": true,
+    "no_boundary_application_admitted": true,
+    "no_branch_selection": true,
+    "no_bridge_receipt_admitted": true,
+    "no_channel_rendering": true,
+    "no_chirality_admission": true,
+    "no_force": true,
+    "no_g900_channel_admission": true,
+    "no_mapping_law_admitted": true,
+    "no_native_path_selection": true,
+    "no_native_theorem": true,
+    "no_physics": true,
+    "no_registry_mutation": true,
+    "no_subjective_objective_theorem": true,
+    "no_yz_bridge_admission": true,
+    "obstruction_plateau_pass": true,
+    "receipt_form_candidate_only": true,
+    "receipt_form_candidate_unadmitted": true,
+    "receipt_section_count_7": true,
+    "requirements_plateau_pass": true,
+    "role_plateau_pass": true,
+    "source_post_admitted_channel_count_1": true,
+    "source_post_channel_admitted_true": true,
+    "source_renderer_disabled": true,
+    "source_shape_plateau_pass": true,
+    "transition_plateau_pass": true,
+    "yz_g900_channel_not_admitted": true,
+    "yz_path_a_subjective": true,
+    "yz_path_b_objective": true,
+    "yz_selected_path_none": true
+  },
+  "created_utc": "2026-07-10T13:23:18+00:00",
+  "id": "derive_bridge_receipt_form_candidate_for_yz_to_return_cell_channel_001",
+  "input_artifacts": {
+    "comparison_plateau": "artifacts/json/record_yz_subjective_objective_candidate_to_return_cell_channel_shape_001_plateau.json",
+    "obstruction_correspondence_plateau": "artifacts/json/record_obstruction_correspondence_candidate_for_yz_to_return_cell_channel_001_plateau.json",
+    "requirements_plateau": "artifacts/json/record_bridge_mapping_law_requirements_for_yz_to_return_cell_channel_001_plateau.json",
+    "role_correspondence_plateau": "artifacts/json/record_role_correspondence_candidate_for_yz_to_return_cell_channel_001_plateau.json",
+    "source_shape_plateau": "artifacts/json/record_located_g900_channel_registry_source_shape_001_plateau.json",
+    "transition_correspondence_plateau": "artifacts/json/record_transition_correspondence_candidate_for_yz_to_return_cell_channel_001_plateau.json"
+  },
+  "input_sha256": {
+    "artifacts/json/record_bridge_mapping_law_requirements_for_yz_to_return_cell_channel_001_plateau.json": "7ef758bec2b010d37d4ff1e101799205044d0ddfc90ec178a27c791c68dd5f59",
+    "artifacts/json/record_located_g900_channel_registry_source_shape_001_plateau.json": "9966d48c9598ba7e0251f461f17dec85048c67ea576cb136ca733b9acaef2e8d",
+    "artifacts/json/record_obstruction_correspondence_candidate_for_yz_to_return_cell_channel_001_plateau.json": "50c2de2a14d086d0e72343bef9af7827b1134fcbdb479523eb70ed8ed7a0ce83",
+    "artifacts/json/record_role_correspondence_candidate_for_yz_to_return_cell_channel_001_plateau.json": "a74103c9b820403b9c18f4eaaea5785132512aed9c7eeeed03887c9d7a5927b2",
+    "artifacts/json/record_transition_correspondence_candidate_for_yz_to_return_cell_channel_001_plateau.json": "408cc2f96ae91dd88a00c222e56c407cdab88f33842b64beb22beecc72d19d95",
+    "artifacts/json/record_yz_subjective_objective_candidate_to_return_cell_channel_shape_001_plateau.json": "d63065a12ded0aea98e768e9d254d2576852fc23d075a0e97590d195d183855e"
+  },
+  "keeper_line": "A receipt form can define the gate without opening it.",
+  "ml8_status": {
+    "ml8_bridge_receipt_form_admitted": false,
+    "ml8_bridge_receipt_form_candidate_derived": true,
+    "reason_not_admitted": "Receipt form is derived as a candidate only; no mapping law or bridge receipt is admitted."
+  },
+  "next_gate": "check_bridge_receipt_form_candidate_for_yz_to_return_cell_channel_001",
+  "purpose": "Derive an ML8 candidate bridge receipt form for YZ to return-cell channel without admitting the bridge.",
+  "receipt_sections": [
+    {
+      "field": "source_binding",
+      "id": "RF1_source_binding",
+      "purpose": "Bind the bridge form to the actual admitted return-cell source shape.",
+      "required_content": [
+        "return_cell_channel_source_shape_artifact",
+        "post_channel_admitted=True",
+        "post_admitted_channel_count=1",
+        "renderer_enabled_now=False",
+        "renders_channel_now=False",
+        "mutates_body=False"
+      ],
+      "satisfied_by_current_context": true
+    },
+    {
+      "field": "yz_candidate_binding",
+      "id": "RF2_yz_candidate_binding",
+      "purpose": "Bind the bridge form to the actual YZ candidate shape.",
+      "required_content": [
+        "path_a_subjective_pressure_channel_candidate",
+        "path_b_objective_preservation_channel_candidate",
+        "yz_g900_channel_admitted=False",
+        "selected_path=None"
+      ],
+      "satisfied_by_current_context": true
+    },
+    {
+      "field": "role_correspondence_candidate",
+      "id": "RF3_role_correspondence_section",
+      "purpose": "Carry ML5 as candidate context, not admission.",
+      "required_content": [
+        "permission_to_objective_preservation_candidate",
+        "subjective_pressure_as_unadmitted_gate_pressure_candidate",
+        "zero_render_semantics_guard"
+      ],
+      "satisfied_by_current_context": true
+    },
+    {
+      "field": "transition_correspondence_candidate",
+      "id": "RF4_transition_correspondence_section",
+      "purpose": "Carry ML6 as candidate context, not path selection.",
+      "required_content": [
+        "permission_gate_to_objective_path_b_candidate",
+        "subjective_path_a_as_pre_gate_pressure_candidate",
+        "source_count_one_faces_two_path_fork_without_selection"
+      ],
+      "satisfied_by_current_context": true
+    },
+    {
+      "field": "obstruction_correspondence_candidate",
+      "id": "RF5_obstruction_section",
+      "purpose": "Carry ML7 as the reason bridge remains blocked.",
+      "required_content": [
+        "missing_bridge_receipt_obstruction",
+        "zero_semantics_render_obstruction",
+        "chirality_mirror_obstruction",
+        "count_mismatch_obstruction",
+        "role_transition_not_enough_obstruction"
+      ],
+      "satisfied_by_current_context": true
+    },
+    {
+      "field": "required_denials",
+      "id": "RF6_required_denials",
+      "purpose": "Prevent the receipt form from smuggling admission.",
+      "required_content": [
+        "bridge_receipt_admitted=False",
+        "mapping_law_admitted=False",
+        "g900_channel_admitted=False",
+        "registry_mutation=False",
+        "channel_rendering=False",
+        "subjective_objective_theorem=False",
+        "yz_bridge_admitted=False",
+        "chirality_admitted=False",
+        "branch_selection=False",
+        "selected_path=None",
+        "physics_claim=False",
+        "force_claim=False"
+      ],
+      "satisfied_by_current_context": true
+    },
+    {
+      "field": "future_admission_gate",
+      "id": "RF7_future_admission_gate",
+      "purpose": "State what would be needed later without doing it now.",
+      "required_content": [
+        "all candidate correspondences must be checked as a bridge law",
+        "mirror/chirality guard must be resolved before path selection",
+        "bridge may admit relation without rendering or body mutation only if explicit receipt says so"
+      ],
+      "satisfied_by_current_context": false
+    }
+  ],
+  "status": "BRIDGE_RECEIPT_FORM_CANDIDATE_FOR_YZ_TO_RETURN_CELL_CHANNEL_001_DERIVED",
+  "summary": {
+    "ac36_admitted": false,
+    "addresses_ml8_only": true,
+    "boundary_application_admitted": false,
+    "boundary_application_performed": false,
+    "branch_selection": false,
+    "bridge_receipt": false,
+    "bridge_receipt_form_admitted": false,
+    "bridge_receipt_form_candidate_derived": true,
+    "candidate_name": "yz_to_return_cell_nonadmitting_bridge_receipt_form",
+    "channel_rendering": false,
+    "chirality_admitted": false,
+    "derive_pass": true,
+    "force_claim": false,
+    "future_admission_gate_satisfied": false,
+    "g900_channel_admitted": false,
+    "mapping_law_admitted": false,
+    "native_path_selection": false,
+    "physics_claim": false,
+    "receipt_section_count": 7,
+    "recommended_next": "check_bridge_receipt_form_candidate_for_yz_to_return_cell_channel_001",
+    "registry_mutation": false,
+    "selected_path": null,
+    "subjective_objective_theorem": false,
+    "theorem": false,
+    "yz_bridge_admitted": false
+  }
+}

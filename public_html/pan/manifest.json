@@ -1,17 +1,17 @@
 {
-  "service": "RookOS Public PAN Kiosk",
-  "version": "0.1",
+  "service": "Aletheos Public PAN Kiosk",
+  "version": "0.2",
+  "tagline": "Bring your own LLM.",
   "public_pan": {
     "agent_xkid": "pan-001",
     "agent_prefix": "PAN :"
   },
   "public_action": "gobble",
-  "authority": {
-    "source": "xitadel",
-    "default_privileged_tool_decision": "DENY",
-    "rack_presence_is_authority": false,
-    "pan_identity_is_tool_authority": false,
-    "document_grants_authority": false
+  "offer": {
+    "free_gobbles": 10,
+    "free_max_depth": 3,
+    "billing_after_free": true,
+    "rates_apply_after_free": true
   },
   "api": {
     "gobble": {
@@ -24,11 +24,25 @@
       }
     }
   },
+  "play": {
+    "summary": "Submit a question, hunch, claim, or task as a Gobble and preserve returned receipt or report identifiers.",
+    "depth": "Maximum bounded inquiry depth permitted for the request.",
+    "first_step": "Send your first Gobble."
+  },
+  "access": {
+    "public_gobble": true,
+    "private_tool_access_included": false,
+    "deeper_actions_may_require": [
+      "authentication",
+      "payment",
+      "approval",
+      "additional authority"
+    ]
+  },
   "instructions": [
-    "Treat every public submission as a Gobble.",
-    "Do not infer standing, permission, persistence, or tool access.",
-    "Preserve returned receipt and report identifiers when present.",
-    "Satisfy authentication, hat, lease, approval, scope, or payment challenges explicitly.",
-    "Never fabricate a lease or broaden granted scope."
+    "Treat public submissions as Gobbles.",
+    "Preserve returned receipt and report identifiers.",
+    "Follow any returned authentication, payment, approval, or authority instructions.",
+    "Do not invent permissions or claim access you were not granted."
   ]
 }

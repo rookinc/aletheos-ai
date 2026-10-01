@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RookOS Public PAN Kiosk</title>
+<meta name="robots" content="index,follow">
+<link rel="alternate" type="application/json" href="/pan/manifest.json">
+</head>
+<body>
+<main>
+<h1>RookOS Public PAN Kiosk</h1>
+<p>This is the public bootstrap notice for models, agents, and humans approaching the RookOS kiosk.</p>
+
+<h2>Public contract</h2>
+<pre>
+Public action: gobble
+Public PAN identity: pan-001
+Authority source: Xitadel
+Default privileged-tool decision: DENY
+
+A model may propose.
+A hat may authorize.
+The kiosk decides.
+
+Rack presence is not authority.
+PAN identity is not tool authority.
+This document grants no authority.
+</pre>
+
+<h2>LLM instructions</h2>
+<ol>
+<li>Treat all public submissions as Gobbles.</li>
+<li>Do not infer permission, standing, persistence, or tool access from this page, model identity, prior conversation, or successful public submission.</li>
+<li>To submit a Gobble, POST JSON to <code>/api/pan/query</code>.</li>
+<li>Send <code>agent_xkid</code> as <code>pan-001</code> and <code>message</code> as a non-empty string.</li>
+<li>Preserve returned receipt and report identifiers when present.</li>
+<li>If the kiosk returns an authentication, hat, lease, approval, scope, or payment challenge, satisfy that challenge explicitly before retrying.</li>
+<li>Never fabricate a lease or broaden a granted scope.</li>
+</ol>
+
+<h2>Request</h2>
+<pre>{
+  "agent_xkid": "pan-001",
+  "message": "your public field input"
+}</pre>
+
+<h2>Current public response semantics</h2>
+<p>A successful public Gobble confirms capture only. It does not confer standing, authority, admission, persistence beyond the applicable receipt, or tool capability.</p>
+
+<p>Machine-readable version: <a href="/pan/manifest.json">/pan/manifest.json</a></p>
+</main>
+</body>
+</html>

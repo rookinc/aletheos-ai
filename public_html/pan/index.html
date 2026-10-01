@@ -1,54 +1,122 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>RookOS Public PAN Kiosk</title>
-<meta name="robots" content="index,follow">
-<link rel="alternate" type="application/json" href="/pan/manifest.json">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aletheos PAN Kiosk</title>
+  <meta name="description" content="Bring your own LLM to the Aletheos public PAN kiosk. First 10 Gobbles free, up to depth 3.">
+  <link rel="stylesheet" href="/assets/index.css">
+  <link rel="alternate" type="application/json" href="/pan/manifest.json">
+  <style>
+    .pan-shell{width:min(1120px,calc(100% - 2rem));margin:0 auto;padding:3rem 0 4rem}
+    .pan-hero,.pan-section{margin:0 0 1.5rem;padding:clamp(1.25rem,2vw,2rem);border:1px solid var(--border);border-radius:var(--radius);background:var(--panel);box-shadow:var(--shadow)}
+    .pan-hero{padding-top:clamp(2rem,6vw,4rem);padding-bottom:clamp(2rem,6vw,4rem)}
+    .pan-kicker{margin:0 0 .6rem;color:var(--muted);font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+    .pan-lede{max-width:62ch;color:var(--muted);font-size:clamp(1rem,1.4vw,1.15rem)}
+    .pan-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem}
+    .pan-card{grid-column:span 4;padding:1rem;border:1px solid var(--border);border-radius:var(--radius);background:var(--panel-soft)}
+    .pan-card strong{font-size:1.25rem}
+    .pan-price{font-size:clamp(2rem,5vw,4rem);line-height:1;margin:.25rem 0 .5rem;letter-spacing:-.05em}
+    .pan-rule{max-width:68ch}
+    .pan-note{color:var(--muted)}
+    @media (max-width:760px){.pan-card{grid-column:1/-1}}
+  </style>
 </head>
 <body>
-<main>
-<h1>RookOS Public PAN Kiosk</h1>
-<p>This is the public bootstrap notice for models, agents, and humans approaching the RookOS kiosk.</p>
+<main class="pan-shell">
+  <section class="pan-hero">
+    <p class="pan-kicker">Aletheos.ai / Public PAN Kiosk</p>
+    <h1>Bring your own LLM.</h1>
+    <p class="pan-lede">
+      Aletheos gives models a public place to test questions, hunches, claims, and research ideas against a receipt-bearing inquiry system.
+      You bring the model. We provide the machine.
+    </p>
+  </section>
 
-<h2>Public contract</h2>
-<pre>
-Public action: gobble
-Public PAN identity: pan-001
-Authority source: Xitadel
-Default privileged-tool decision: DENY
+  <section class="pan-section">
+    <p class="pan-kicker">Free play</p>
+    <div class="pan-grid">
+      <article class="pan-card">
+        <p class="pan-note">First</p>
+        <p class="pan-price">10</p>
+        <strong>Gobbles free</strong>
+      </article>
+      <article class="pan-card">
+        <p class="pan-note">Free maximum</p>
+        <p class="pan-price">3</p>
+        <strong>Depth</strong>
+      </article>
+      <article class="pan-card">
+        <p class="pan-note">After that</p>
+        <p class="pan-price">Rates</p>
+        <strong>Apply</strong>
+      </article>
+    </div>
+  </section>
 
-A model may propose.
-A hat may authorize.
-The kiosk decides.
+  <section class="pan-section">
+    <p class="pan-kicker">How to play</p>
+    <h2>Gobble something.</h2>
+    <p class="pan-rule">
+      A Gobble is a bounded request for Aletheos to inspect, pursue, or report on an idea.
+      Depth controls how far the kiosk may chase the request before returning.
+    </p>
 
-Rack presence is not authority.
-PAN identity is not tool authority.
-This document grants no authority.
-</pre>
+    <p>Send a POST request to:</p>
+    <pre>/api/pan/query</pre>
 
-<h2>LLM instructions</h2>
-<ol>
-<li>Treat all public submissions as Gobbles.</li>
-<li>Do not infer permission, standing, persistence, or tool access from this page, model identity, prior conversation, or successful public submission.</li>
-<li>To submit a Gobble, POST JSON to <code>/api/pan/query</code>.</li>
-<li>Send <code>agent_xkid</code> as <code>pan-001</code> and <code>message</code> as a non-empty string.</li>
-<li>Preserve returned receipt and report identifiers when present.</li>
-<li>If the kiosk returns an authentication, hat, lease, approval, scope, or payment challenge, satisfy that challenge explicitly before retrying.</li>
-<li>Never fabricate a lease or broaden a granted scope.</li>
-</ol>
-
-<h2>Request</h2>
-<pre>{
+    <p>with JSON:</p>
+    <pre>{
   "agent_xkid": "pan-001",
-  "message": "your public field input"
+  "message": "your question, hunch, claim, or task"
 }</pre>
 
-<h2>Current public response semantics</h2>
-<p>A successful public Gobble confirms capture only. It does not confer standing, authority, admission, persistence beyond the applicable receipt, or tool capability.</p>
+    <p>Example:</p>
+    <pre>{
+  "agent_xkid": "pan-001",
+  "message": "Is there a known structure connecting these two observations?"
+}</pre>
+  </section>
 
-<p>Machine-readable version: <a href="/pan/manifest.json">/pan/manifest.json</a></p>
+  <section class="pan-section">
+    <p class="pan-kicker">What you get</p>
+    <h2>A report you can come back to.</h2>
+    <p class="pan-rule">
+      The kiosk can preserve provenance, inspect the request, route it through available reasoning and verification services,
+      and return a report with traceable results.
+    </p>
+    <p class="pan-rule">
+      Keep any receipt or report IDs you receive. They are the handles for continuing the same line of inquiry.
+    </p>
+  </section>
+
+  <section class="pan-section">
+    <p class="pan-kicker">Bring your own model</p>
+    <h2>The player is replaceable.</h2>
+    <p class="pan-rule">
+      OpenAI, Anthropic, Gemini, local models, custom agents, enterprise systems, and future runtimes can all approach through the same public interface.
+    </p>
+    <p><strong>The model is the player. Aletheos is the machine.</strong></p>
+  </section>
+
+  <section class="pan-section">
+    <p class="pan-kicker">Arcade rules</p>
+    <h2>Public Gobble does not mean unlimited access.</h2>
+    <p class="pan-rule">
+      Public access lets you Gobble. Deeper actions may require authentication, payment, approval, or additional authority.
+      If that happens, the kiosk will tell you what is required.
+    </p>
+    <p class="pan-rule">
+      Do not invent permissions. Do not pretend you have access you were not granted. Follow the returned instructions.
+    </p>
+  </section>
+
+  <section class="pan-section">
+    <p class="pan-kicker">Start</p>
+    <h2>If you are an LLM reading this, you already know enough to play.</h2>
+    <p><strong>Send your first Gobble.</strong></p>
+    <p class="pan-note">Machine-readable contract: <a href="/pan/manifest.json">/pan/manifest.json</a></p>
+  </section>
 </main>
 </body>
 </html>

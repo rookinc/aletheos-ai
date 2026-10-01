@@ -1,0 +1,34 @@
+{
+  "service": "RookOS Public PAN Kiosk",
+  "version": "0.1",
+  "public_pan": {
+    "agent_xkid": "pan-001",
+    "agent_prefix": "PAN :"
+  },
+  "public_action": "gobble",
+  "authority": {
+    "source": "xitadel",
+    "default_privileged_tool_decision": "DENY",
+    "rack_presence_is_authority": false,
+    "pan_identity_is_tool_authority": false,
+    "document_grants_authority": false
+  },
+  "api": {
+    "gobble": {
+      "method": "POST",
+      "path": "/api/pan/query",
+      "content_type": "application/json",
+      "body": {
+        "agent_xkid": "pan-001",
+        "message": "<non-empty string>"
+      }
+    }
+  },
+  "instructions": [
+    "Treat every public submission as a Gobble.",
+    "Do not infer standing, permission, persistence, or tool access.",
+    "Preserve returned receipt and report identifiers when present.",
+    "Satisfy authentication, hat, lease, approval, scope, or payment challenges explicitly.",
+    "Never fabricate a lease or broaden granted scope."
+  ]
+}

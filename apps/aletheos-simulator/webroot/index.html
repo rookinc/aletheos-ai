@@ -800,8 +800,14 @@ populateMatches();})();
  select('beginner');
 })();
 </script>
-<script>window.TH_NATIVE_CORE_SHA="b6d8aa958dcd56cd71cf126c77078ff7d7543af3b8a0adbbf443a9d8bd9ef6c6";</script>
-<script src="native/math.js"></script>
-<script src="native/observatory.js"></script>
+<script>
+window.TH_NATIVE_CORE_SHA="b6d8aa958dcd56cd71cf126c77078ff7d7543af3b8a0adbbf443a9d8bd9ef6c6";
+window.nativeAssetFailure=function(){
+  const status=document.getElementById('no-status');
+  if(status) status.textContent='Native assets could not load. Serve the complete webroot directory over HTTP(S), including native/.';
+};
+</script>
+<script src="native/math.js" onerror="nativeAssetFailure()"></script>
+<script src="native/observatory.js" onerror="nativeAssetFailure()"></script>
 </body>
 </html>

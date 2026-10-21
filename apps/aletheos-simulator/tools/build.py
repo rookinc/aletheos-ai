@@ -20,7 +20,16 @@ s=s.replace('<section class="selectors"', '<section class="selectors"',1)
 s=s.replace('</header>','</header>\n'+section,1)
 if 'id="native-observatory"' not in s: raise RuntimeError('Baseline insertion anchor missing')
 manifest=json.loads((R/'source-manifest.json').read_text())
-s=s.replace('</body>',f'<script>window.TH_NATIVE_CORE_SHA="{manifest["coreSha256"]}";</script>\n<script src="native/math.js"></script>\n<script src="native/observatory.js"></script>\n</body>')
+s=s.replace('</body>',f'''<script>
+window.TH_NATIVE_CORE_SHA="{manifest["coreSha256"]}";
+window.nativeAssetFailure=function(){{
+  const status=document.getElementById('no-status');
+  if(status) status.textContent='Native assets could not load. Serve the complete webroot directory over HTTP(S), including native/.';
+}};
+</script>
+<script src="native/math.js" onerror="nativeAssetFailure()"></script>
+<script src="native/observatory.js" onerror="nativeAssetFailure()"></script>
+</body>''')
 (R/'webroot/index.html').write_text(s)
 (R/'webroot/release.json').write_text(json.dumps({'app':'Thalean Atomic Helix + Native Observatory','version':'2.1-native-001','target':'https://dev.rook.ca/aletheos/','artifact_sha256':hashlib.sha256(s.encode()).hexdigest(),'baseline_sha256':manifest['baselineSha256'],'deploy_status':'prepared_not_uploaded','source':'apps/aletheos-simulator'},indent=2)+'\n')
 print('Built webroot/index.html; original application preserved')

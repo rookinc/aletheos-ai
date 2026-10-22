@@ -1,0 +1,74 @@
+{
+  "schema": "aletheos.claim-index.v1",
+  "version": "1.0.0",
+  "manuscript": {
+    "title": "The Graviton on Graph HOG52002",
+    "doi": "10.5281/zenodo.23535267",
+    "status": "Manuscript correspondence blocked: DOI request returned HTTP 404 during this run. The entries below are instrument capabilities, not attributed theorem numbers. Gauge-module exactness is unresolved / unverified here."
+  },
+  "claims": [
+    {
+      "id": "SIM002-G60-001",
+      "title": "Pinned Thalion adjacency",
+      "status": "Independently verified finite computation",
+      "detail": "60 vertices, 120 undirected edges, degree 4; exact edge agreement between two repository payloads.",
+      "view": "terrain"
+    },
+    {
+      "id": "SIM002-G60-002",
+      "title": "Distances and triangles",
+      "status": "Independently verified finite computation",
+      "detail": "Diameter 6; shell vector [1,4,8,16,24,6,1] at every root; 40 triangles with witnesses.",
+      "view": "terrain"
+    },
+    {
+      "id": "SIM002-AUT-001",
+      "title": "Automorphism group",
+      "status": "Exhaustive enumeration and independent closure agree",
+      "detail": "480 adjacency-preserving permutations; orbit size 60 and vertex stabilizer order 8. Generators computed in this release, not identified with historical names.",
+      "view": "symmetry"
+    },
+    {
+      "id": "SIM002-QUOT-001",
+      "title": "G60 \u2192 G30/a",
+      "status": "Explicit imported map; finite covering checks executed",
+      "detail": "30 two-vertex fibers, exact quotient edge image, local neighbor bijections, and fixed-point-free involutory deck automorphism.",
+      "view": "frontiers"
+    },
+    {
+      "id": "SIM002-QUOT-002",
+      "title": "G60 \u2192 G15 / V4",
+      "status": "Independent finite verification",
+      "detail": "15 fibers of size 4; exact quotient edge image; local neighbor bijections; deck group order 4; quotient isomorphic to L(Petersen) by Python graph isomorphism.",
+      "view": "frontiers"
+    },
+    {
+      "id": "PAPER-UNBOUND-001",
+      "title": "Manuscript definitions and theorem identifiers",
+      "status": "Blocked \u2014 manuscript unavailable",
+      "detail": "No paper-specific theorem correspondence asserted. Recover manuscript bytes and revision before assigning propositions to views.",
+      "view": null
+    },
+    {
+      "id": "PAPER-OPEN-001",
+      "title": "Gauge-module exactness",
+      "status": "Unresolved; not calculated",
+      "detail": "No resolution claimed. Native finite graph checks do not establish module exactness or a physical interpretation.",
+      "view": null
+    }
+  ],
+  "frontiers": [
+    {
+      "carrier": "G30/a \u00b7 explicit 2-cover",
+      "status": "Recovered from the Project 42 certificate chain, with exact G60 labels. Covering and deck checks execute in this kernel."
+    },
+    {
+      "carrier": "G15",
+      "status": "Recovered exact Project 41 V4 orbit map. Fourfold covering, deck group, and G15 isomorphism to L(Petersen) independently checked. Fibers are inspectable on G60."
+    },
+    {
+      "carrier": "G1800 \u00b7 G9000 \u00b7 HOG52002",
+      "status": "Construction chains not recovered and verified. These are separate carriers, not aliases for the Thalion."
+    }
+  ]
+}

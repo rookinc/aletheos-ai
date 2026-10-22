@@ -1,0 +1,65 @@
+{
+  "schema": "aletheos.source-inventory.v1",
+  "sources": [
+    {
+      "checkout": "aletheos-ai",
+      "revision": "18542c1a0a759b99a99478b17f5212dc5b84a434",
+      "role": "Canonical pinned graph and lab receipts"
+    },
+    {
+      "checkout": "research-automorphisms",
+      "revision": "0781916602ed37f434cc863a6049c8524ef7ab13",
+      "role": "Research source inspected; only specifically bound artifacts admitted"
+    },
+    {
+      "checkout": "research-gravity",
+      "revision": "5063d273f68a586908a100e8a4ede76e72c21b49",
+      "role": "Research source inspected; only specifically bound artifacts admitted"
+    },
+    {
+      "checkout": "research-mechanics",
+      "revision": "1aba07fb293e2cb3c19421df3502f75becfb76fd",
+      "role": "Research source inspected; only specifically bound artifacts admitted"
+    },
+    {
+      "checkout": "research-hodge",
+      "revision": "e5169befd3f9f5e1f322b8b9b993d1313df5e321",
+      "role": "Research source inspected; only specifically bound artifacts admitted"
+    },
+    {
+      "checkout": "research-hyperxi",
+      "revision": "3ee1b7ce29dd116bb4e359132d5efba00e53aa82",
+      "role": "Research source inspected; only specifically bound artifacts admitted"
+    },
+    {
+      "repository": "rookinc/order-4-dodecahedral-residue",
+      "revision": "e1bf21ca3ab700f69432852436f092442f8b46bd",
+      "access": "Authenticated connector; direct Git clone lacked authentication",
+      "role": "Project 41 exact G60 bundle, full native automorphism cache and G15/V4 orbit audit"
+    }
+  ],
+  "admitted": [
+    "g60.json",
+    "symmetry.json",
+    "g30-quotient.json",
+    "g15-quotient.json",
+    "project41-bundle.json",
+    "project41-automorphism-cache.json",
+    "project41-g15-audit.json"
+  ],
+  "checks": {
+    "csv_sha256": "c700a185fab6a5f434da09b7acb716b96c76170774bee946af8ea907e4fe7f9f",
+    "two_repository_edge_representations_agree": true,
+    "independent_self_isomorphism_enumeration": 480,
+    "project41_full_automorphism_set_matches_independent_enumeration": true,
+    "project41_g60_edges_match_exactly": true,
+    "g15_line_petersen_isomorphism_independently_checked": true
+  },
+  "unavailable": [
+    "Companion DOI returned HTTP 404",
+    "SSH alias gurtiamy cannot resolve in this environment",
+    "Historical named automorphism generators not yet bound",
+    "Manuscript claim numbering and exactness computation"
+  ],
+  "live_source_status": "HTTP GET retrieved Atomic Helix v2.0. No matching title found in pinned application tree. Remote filesystem unavailable; deployed build source unresolved."
+}

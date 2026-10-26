@@ -44,7 +44,7 @@ include __DIR__ . '/includes/site_header.php';
           meaning, ethics, relation, and human experience through arguments and
           interpretations that readers can consider for themselves.
         </p>
-        <a class="button button--secondary" href="/research.php#philosophy">Explore philosophy</a>
+        <a class="button button--secondary" href="/philosophy.php">Explore philosophy</a>
       </article>
       <article class="index-card">
         <h3>Scientific research</h3>

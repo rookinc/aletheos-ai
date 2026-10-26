@@ -46,7 +46,7 @@ include __DIR__ . '/includes/site_header.php';
   </section>
 
   <section class="index-section" id="philosophy">
-    <p class="eyebrow">Philosophy · Questions we pursue</p>
+    <p class="eyebrow">Philosophy · Public essays</p>
     <h2>How do we understand ourselves and our obligations?</h2>
     <p class="section-text">
       Knowledge, meaning, ethics, relation, and human experience are subjects
@@ -54,11 +54,29 @@ include __DIR__ . '/includes/site_header.php';
       behind our beliefs, the assumptions within an argument, and the
       consequences of how we think about one another.
     </p>
-    <p class="section-text">
-      A philosophical interpretation should make its reasoning and alternatives
-      clear. It can help us understand a scientific finding without becoming
-      an additional scientific result merely by association.
-    </p>
+    <div class="card-grid">
+      <article class="index-card">
+        <h3>Consciousness and relation</h3>
+        <p>
+          Explore what a claim about a conscious universe could mean, starting
+          with a physician's question. How do subjective experience and
+          objective evidence meet in a shared relationship?
+        </p>
+        <a class="button button--secondary" href="/philosophy/consciousness-and-relation.php">Read the philosophical inquiry</a>
+      </article>
+      <article class="index-card">
+        <h3>Let my trace not be cruelty.</h3>
+        <p>
+          Scott Allen Cave's personal interpretation of morality: care for the
+          consequences of our actions, even when our knowledge of another
+          life is incomplete.
+        </p>
+        <a class="button button--secondary" href="/philosophy/let-my-trace-not-be-cruelty.php">Read the personal perspective</a>
+      </article>
+    </div>
+    <div class="hero-actions">
+      <a class="button button--secondary" href="/philosophy.php">Explore philosophy at CoRI</a>
+    </div>
   </section>
 
   <section class="index-section" id="scientific-research">

@@ -165,9 +165,15 @@ leaving the original application intact. `verify-served.py` checks every
 served byte; `install-living.py rollback` restores the prior entry with hash
 guards. The exact procedure is in `deployment/LIVING-DEPLOYMENT.md`.
 
-A supplementary private review-site deployment is being prepared; its URL
-and final deployment result must be appended after the host confirms success.
-It does not substitute for the requested dev.rook.ca deployment.
+A supplementary owner-private review deployment succeeded on 2026-10-26:
+https://aletheos-living-geometry-review.cosmicisle5.chatgpt.site
+Sites version 1 serves the tested simulator assets from canonical implementation
+commit 94213c39de3752313184cc5872e8c2d64681c668 (entry redirect and Observatory link
+adapted for private hosting). The published URL was opened and presents the
+expected ChatGPT sign-in gate. Authenticated runtime testing of that hosted copy
+was not performed; the browser execution results above are from the matching
+local preview. No access settings were broadened. This private review copy does
+not substitute for the requested dev.rook.ca deployment.
 
 No dev.rook.ca remote staging, rollback copy, activation, or deployed-browser
 validation was performed by this implementation. The remaining release gate is to run

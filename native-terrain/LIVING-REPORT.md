@@ -181,3 +181,15 @@ the prepared procedure from the authenticated host environment, verify the
 served files and both applications, and exercise the new entry on a physical
 Android browser. The candidate is ready for that evaluation; full acceptance
 remains open until those checks succeed.
+
+## Host deployment preparation follow-up — 2026-10-26
+
+The user supplied an authenticated Bluehost shell showing `~/www/dev.rook.ca`
+as a symlink. Added `deploy-on-host.sh` to resolve that path and run the prepared
+installer directly inside the host session. Changed mode navigation to preserve
+the current entry pathname despite the immutable-release `<base>` URL, and
+normalized static release directories/files to 0755/0644. Thirty JavaScript
+and seven Python deployment tests pass. A deployment-style local activation
+was exercised in Chrome: switching to Harmonics and refreshing remained on
+`living.html#harmonics` and loaded the verified native sources. Actual Bluehost
+activation still awaits execution of the supplied host command.

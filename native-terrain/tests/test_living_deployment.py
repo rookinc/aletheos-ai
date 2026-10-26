@@ -2,6 +2,7 @@
 import hashlib
 import importlib.util
 import json
+import os
 from pathlib import Path
 import tempfile
 import unittest
@@ -42,6 +43,24 @@ class AdditiveDeploymentTests(unittest.TestCase):
         release = INSTALL.stage(self.source, self.live)
         self.assertEqual(INSTALL.stage(self.source, self.live), release)
         self.assertFalse((self.live / 'living.html').exists())
+        self.assert_observatory_unchanged()
+
+    def test_static_release_is_readable_under_private_upload_permissions(self):
+        nested = self.source / 'data'
+        nested.mkdir(mode=0o700)
+        (nested / 'fixture.json').write_text('{}')
+        self.manifest()
+        for path in self.source.rglob('*'):
+            os.chmod(path, 0o700 if path.is_dir() else 0o600)
+        os.chmod(self.source, 0o700)
+        release = INSTALL.stage(self.source, self.live)
+        self.assertEqual(release.stat().st_mode & 0o777, 0o755)
+        self.assertEqual((release / 'data').stat().st_mode & 0o777, 0o755)
+        self.assertEqual((release / 'data/fixture.json').stat().st_mode & 0o777, 0o644)
+        # Reusing an intact release also repairs its web-serving modes.
+        os.chmod(release, 0o700)
+        INSTALL.stage(self.source, self.live)
+        self.assertEqual(release.stat().st_mode & 0o777, 0o755)
         self.assert_observatory_unchanged()
 
     def test_activate_then_rollback_first_entry(self):

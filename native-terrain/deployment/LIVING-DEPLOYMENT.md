@@ -33,6 +33,21 @@ records the actual Git commit/branch and whether source edits remain; it does
 not infer test or deployment success. The manifest hashes every static asset.
 Repeated packaging of unchanged source and Git state gives identical ZIP bytes.
 
+## Already logged into Bluehost
+
+From a fresh feature-branch checkout on the authenticated host, run:
+
+```bash
+bash native-terrain/deployment/deploy-on-host.sh "$HOME/www/dev.rook.ca/aletheos" || exit 1
+```
+
+This resolves the symlink to the existing web root, finds Python 3.9+, builds
+and checks the packet, backs up any prior Living Geometry entry, activates it,
+and checks the public HTTP bytes. It requires Git for build provenance and
+outbound HTTPS for the final served-byte check. Keep the printed activation
+receipt. Failure of a post-activation HTTP check does not undo activation;
+inspect the receipt and use the documented rollback if needed.
+
 ## Stage and activate on the authenticated machine
 
 Extract the packet into a fresh directory. Run:

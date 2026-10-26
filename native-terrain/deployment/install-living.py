@@ -49,6 +49,15 @@ def atomic_write(path: Path, data: bytes) -> None:
             os.unlink(temporary)
 
 
+def public_asset_modes(root: Path) -> None:
+    """Static assets must be readable by the web server under restrictive umasks."""
+    for path in root.rglob('*'):
+        if path.is_symlink():
+            raise ValueError('Static release cannot contain symbolic links')
+        os.chmod(path, 0o755 if path.is_dir() else 0o644)
+    os.chmod(root, 0o755)
+
+
 def stage(source: Path, live: Path) -> Path:
     verify(source)
     if not live.is_dir():
@@ -58,11 +67,13 @@ def stage(source: Path, live: Path) -> Path:
         verify(release)
         if (source / 'manifest.json').read_bytes() != (release / 'manifest.json').read_bytes():
             raise ValueError('Release identifier collision')
+        public_asset_modes(release)
     else:
         temporary = Path(tempfile.mkdtemp(prefix='.living-stage-', dir=live))
         try:
             shutil.copytree(source, temporary, dirs_exist_ok=True)
             verify(temporary)
+            public_asset_modes(temporary)
             os.rename(temporary, release)
         finally:
             if temporary.exists():

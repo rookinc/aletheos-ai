@@ -3,6 +3,7 @@ import {buildGeometry} from './living-geometry.mjs';
 import {createExperiment,stepExperiment,reverseExperiment,resetHistory,exportConfiguration,exportSnapshot,exportReceipt,restoreExperiment} from './living-kernel.mjs';
 import {loadRegistered,registeredStep,harmonicSummary,registeredReturnReceipt} from './living-harmonics.mjs';
 import {LivingRenderer} from './living-renderer.mjs';
+import {modeUrl} from './living-navigation.mjs';
 
 const $=id=>document.getElementById(id), pretty=x=>JSON.stringify(x,null,2);
 const MODES={geometry:['FINITE GEOMETRY / EXACT ADJACENCY','Native structure','NATIVE CARRIERS / VISUALIZATION EMBEDDINGS','Explore source geometry, quotient fibers, and registered carriers.'],waltz:['NATIVE THREE-BEAT SUCCESSOR','The Thalean Waltz','NATIVE WALKER / EXPERIMENTAL REGISTER','One moving event. Three steps return. Six positions register the Waltz.'],harmonics:['FIVE-FRAME FOURIER DECOMPOSITION','Opening & recombination','NATIVE TRANSPORT / DERIVED FOURIER PROJECTORS','Five frame channels. One common mode. Two conjugate pairs.'],memory:['CONTROLLED EXPERIMENT / SHARED INITIAL STATE','Memory laboratory','EXPERIMENTAL GRAPH-LOCAL BACKACTION','Identical seed and initial state. History changes only B’s transition probabilities.']};
@@ -33,7 +34,7 @@ function setMode(next){if(!MODES[next])return;mode=next;document.querySelectorAl
  const [k,t,b,c]=MODES[next];$('view-kicker').textContent=k;$('view-title').textContent=t;$('mode-badge').textContent=b;$('viewport-caption').textContent=c;
  $('harmonic-panel').hidden=next!=='harmonics';$('comparison-panel').hidden=next!=='memory';$('memory-controls').hidden=next!=='memory';$('dynamics-title').textContent=next==='memory'?'History & feedback':'Motion & registration';
  $('carrier').value=next==='harmonics'?'g9000':next==='memory'?'g900':next==='waltz'?'pair':$('carrier').value;
- history.replaceState(null,'','#'+next);dirty=true;if(ready)updateUI();
+ history.replaceState(null,'',modeUrl(location.href,next));dirty=true;if(ready)updateUI();
 }
 function select(item){if(item.type==='g60'){selectedVertex=item.index;const pairs=geometry.quotient.orbits[selectedQ];$('selection').textContent=`${item.factor||'Left'} vertex ${item.index+1}\nStored index ${item.index}\nNeighbors: ${geometry.g60.adj[item.index].map(v=>v+1).join(', ')}\nSelect a directed edge below to change the walker.`;}else{selectedQ=item.index;const o=geometry.quotient.orbits[selectedQ];$('selection').textContent=`G900 state ${selectedQ+1} · index ${selectedQ}\nPairs (one-based):\n${o.map(([a,b])=>`(${a+1}, ${b+1})`).join(' ')}\nNeighbors: ${geometry.quotient.adj[selectedQ].map(v=>v+1).join(', ')}\nFactor-exchange fixed: ${geometry.quotient.fixedLocus.includes(selectedQ)}`;$('root').value=selectedQ+1;}dirty=true;}
 function memorySpectrum(run){const amplitudes=Array(5).fill(0);run.history.forEach((v,q)=>{amplitudes[q%5]+=v;});const total=amplitudes.reduce((a,b)=>a+b,0)||1;return harmonicSummary(amplitudes.map(v=>v/total)).energy;}

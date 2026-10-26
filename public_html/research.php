@@ -1,155 +1,103 @@
 <?php
-$page_title = 'Research — Aletheos.ai';
-$page_description = 'Research index for Aletheos and CoRI: Thalean Action Theory, the Thalean graph, papers, labs, and public evidence.';
-$page_css = ['/assets/research_page.css'];
+$page_title = 'Findings and ideas — Aletheos.ai';
+$page_description = 'What CoRI is learning, why it matters, and what remains uncertain: findings, philosophical perspectives, and open questions in AI stewardship and science.';
+$page_css = ['/assets/index.css'];
 include __DIR__ . '/includes/head.php';
 include __DIR__ . '/includes/site_header.php';
 ?>
 
 <main class="site-shell research-page">
   <section class="hero">
-    <p class="eyebrow">Research</p>
-    <h1>The formal work lives here.</h1>
+    <p class="eyebrow">Findings and ideas</p>
+    <h1>What are we learning?</h1>
     <p class="hero-text">
-      Research pages collect the framework, canonical object, papers, technical
-      notes, inspection surfaces, and evidence records behind Aletheos.
+      Start with a finding or a question and what it might mean for people.
+      Our public explanations distinguish scientific observations, philosophical
+      arguments, and possibilities still being explored. The supporting papers
+      and methods are available for readers who want to go further.
     </p>
-    <p class="hero-text">
-      The public goal is simple: claims should remain connected to relation,
-      action, witness, and traceable constraint.
+  </section>
+
+  <section class="index-section">
+    <p class="eyebrow">Research finding · Computer simulation · 26 October 2026</p>
+    <h2>What can memory change?</h2>
+    <p class="section-text">
+      A controlled comparison shows retained history changing subsequent choices
+      in a finite model. Read what happened, why the distinction between storing
+      history and acting on it matters, and what the experiment leaves open.
+    </p>
+    <a class="button button--primary" href="/research/memory-and-possibility.php">Read the finding</a>
+  </section>
+
+  <section class="index-section" id="ai-stewardship">
+    <p class="eyebrow">AI stewardship · Questions we pursue</p>
+    <h2>How do we shape a future with AI?</h2>
+    <p class="section-text">
+      Artificial intelligence raises questions about human agency, responsibility,
+      governance, and the distribution of benefits and harms. Who decides what
+      a system is for? Who can question its decisions? How should people have
+      a voice in changes that affect them?
+    </p>
+    <p class="section-text">
+      CoRI's role is to investigate these questions and explain what the work
+      contributes to public understanding. Commercial products and evaluations
+      belong to Rook's implementation work.
+    </p>
+  </section>
+
+  <section class="index-section" id="philosophy">
+    <p class="eyebrow">Philosophy · Questions we pursue</p>
+    <h2>How do we understand ourselves and our obligations?</h2>
+    <p class="section-text">
+      Knowledge, meaning, ethics, relation, and human experience are subjects
+      of inquiry in their own right. Philosophical work examines the reasons
+      behind our beliefs, the assumptions within an argument, and the
+      consequences of how we think about one another.
+    </p>
+    <p class="section-text">
+      A philosophical interpretation should make its reasoning and alternatives
+      clear. It can help us understand a scientific finding without becoming
+      an additional scientific result merely by association.
+    </p>
+  </section>
+
+  <section class="index-section" id="scientific-research">
+    <p class="eyebrow">Science · Questions we pursue</p>
+    <h2>What can inquiry tell us about our world?</h2>
+    <p class="section-text">
+      CoRI's remit spans scientific disciplines. Current public material
+      includes mathematics, information and computation, and investigations
+      of physical models. We explain what each result establishes and where
+      further evidence is needed.
+    </p>
+    <p class="section-text">
+      The Thalean program is one current line of research. Its finite
+      constructions and simulations support particular findings; their wider
+      relevance must be established through further work.
+    </p>
+  </section>
+
+  <section class="index-section" id="thalean-program">
+    <p class="eyebrow">For readers who want to go deeper</p>
+    <h2>Papers, methods, and experiments.</h2>
+    <p class="section-text">
+      These resources support the public findings and serve researchers who
+      want to examine, reproduce, or employ the methods.
     </p>
     <div class="hero-actions">
-      <a class="button button--primary" href="/the_thalean_graph_at4val_60_6.php">View the Thalean graph</a>
-      <a class="button button--secondary" href="/papers.php">Read papers</a>
-      <a class="button button--secondary" href="/evidence.php">View evidence</a>
+      <a class="button button--secondary" href="/papers.php">Papers and notes</a>
+      <a class="button button--secondary" href="/labs.php">Experiments</a>
+      <a class="button button--secondary" href="/evidence.php">Evidence records</a>
+      <a class="button button--secondary" href="/thalean_action_theory.php">Thalean framework</a>
+      <a class="button button--secondary" href="/the_thalean_graph_at4val_60_6.php">Thalean graph</a>
+      <a class="button button--secondary" href="/research/from-circle-to-thalion.php">Thalion tutorial</a>
+      <a class="button button--secondary" href="/research/thalean-mathematical-spaces.php">Mathematical spaces</a>
+      <a class="button button--secondary" href="/coherence.php">Coherence notes</a>
+      <a class="button button--secondary" href="/glossary.php">Glossary</a>
     </div>
-  </section>
-
-  <section class="index-section">
-    <p class="eyebrow">Core path</p>
-    <h2>From concept to object.</h2>
-
-    <div class="card-grid">
-      <article class="index-card">
-        <p class="card-label">Beginner path</p>
-        <h3>Start Here</h3>
-        <p>
-          Start with a circle, then climb through boundary, body, membrane,
-          port, hinge, witness, closure, and thalion.
-        </p>
-        <a class="button button--secondary" href="/research/from-circle-to-thalion.php">Read the tutorial</a>
-      </article>
-
-      <article class="index-card">
-        <p class="card-label">Framework</p>
-        <h3>Thalean Action Theory</h3>
-        <p>
-          The research framework for relation, action, witness, trace,
-          admissibility, and accountable structure.
-        </p>
-        <a class="button button--secondary" href="/thalean_action_theory.php">Read TAT</a>
-      </article>
-
-      <article class="index-card">
-        <p class="card-label">Canonical object</p>
-        <h3>The Thalean Graph</h3>
-        <p>
-          The theorem-facing public surface for the canonical finite object,
-          verification records, and companion papers.
-        </p>
-        <a class="button button--primary" href="/the_thalean_graph_at4val_60_6.php">View the object</a>
-      </article>
-    </div>
-  </section>
-
-  <section class="index-section">
-    <p class="eyebrow">Research library</p>
-    <h2>Papers, notes, and definitions.</h2>
-
-    <div class="card-grid">
-      <article class="index-card">
-        <p class="card-label">Papers</p>
-        <h3>Papers and notes</h3>
-        <p>
-          Manuscripts, technical notes, and supporting written artifacts for the
-          current research stack.
-        </p>
-        <a class="button button--secondary" href="/papers.php">Open papers</a>
-      </article>
-
-      <article class="index-card">
-        <p class="card-label">Technical spaces</p>
-        <h3>Mathematical spaces</h3>
-        <p>
-          A deeper technical page for the mathematical setting around the
-          Thalean construction.
-        </p>
-        <a class="button button--secondary" href="/research/thalean-mathematical-spaces.php">Open technical page</a>
-      </article>
-
-      <article class="index-card">
-        <p class="card-label">Definitions</p>
-        <h3>Glossary</h3>
-        <p>
-          Public definitions for recurring terms: thalion, witness, boundary,
-          action, surface, TAT, TGT, and related language.
-        </p>
-        <a class="button button--secondary" href="/glossary.php">Open glossary</a>
-      </article>
-    </div>
-  </section>
-
-  <section class="index-section">
-    <p class="eyebrow">Inspection and evidence</p>
-    <h2>Surfaces and receipts.</h2>
-
-    <div class="card-grid">
-      <article class="index-card">
-        <p class="card-label">Labs</p>
-        <h3>Public inspection surfaces</h3>
-        <p>
-          Open live surfaces for viewing, moving, comparing, and questioning the
-          current structures.
-        </p>
-        <a class="button button--secondary" href="/labs.php">Open labs</a>
-      </article>
-
-      <article class="index-card">
-        <p class="card-label">Evidence</p>
-        <h3>Receipts and artifacts</h3>
-        <p>
-          Find theorem objects, JSON records, verification reports, checker
-          scripts, and bounded status records.
-        </p>
-        <a class="button button--secondary" href="/evidence.php">View evidence</a>
-      </article>
-
-      <article class="index-card">
-        <p class="card-label">Coherence</p>
-        <h3>Coherence notes</h3>
-        <p>
-          Notes on surface coherence, projection, observed closure, and the
-          difference between appearance and accountable structure.
-        </p>
-        <a class="button button--secondary" href="/coherence.php">Open coherence notes</a>
-      </article>
-    </div>
-  </section>
-
-  <section class="index-section">
-    <p class="eyebrow">Research posture</p>
-    <h2>Useful, bounded, inspectable.</h2>
-    <p class="section-text">
-      CoRI does not treat visual analogy, numerical coincidence, or one
-      attractive rendering as proof. The work is strongest when a pattern
-      survives changed viewpoints, controlled perturbations, and traceable
-      constraints.
-    </p>
-    <p class="section-text">
-      Aletheos.ai is the public surface for that discipline: relation, action,
-      witness, evidence, and explicit status boundaries.
-    </p>
   </section>
 </main>
 
 <?php include __DIR__ . '/includes/site_footer.php'; ?>
+</body>
+</html>

@@ -1,136 +1,73 @@
 <?php
-$page_title = 'Aletheos.ai — Public research surface for CoRI';
-$page_description = 'Aletheos.ai is the public research surface for CoRI: accountable structure, relation, action, witness, and traceable evidence.';
-$page_css = ['/assets/index.css', '/assets/css/at4val-3d-viewer.css'];
+$page_title = 'Aletheos.ai — Findings and ideas from CoRI';
+$page_description = 'CoRI shares findings and ideas from philosophy, scientific research, and AI stewardship for people concerned about our changing world. A Rook Services Inc. initiative.';
+$page_css = ['/assets/index.css'];
 include __DIR__ . '/includes/head.php';
 include __DIR__ . '/includes/site_header.php';
 ?>
 
 <main class="site-shell">
   <section class="hero">
-    <p class="eyebrow">Aletheos.ai</p>
-    <h1>Making intelligence accountable.</h1>
-
-      <div
-        class="intro-graph intro-graph--at4val"
-        data-at4val-3d
-        data-src="/json/at4val_60_6_3d.json"
-        aria-label="Rotating 3D rendering of AT4val[60,6]"
-      >
-        <canvas></canvas>
-      </div>
-
+    <p class="eyebrow">Center of Recursive Inquiry · A Rook Services Inc. initiative</p>
+    <p class="eyebrow">Research finding · Computer simulation · 26 October 2026</p>
+    <h1>What can memory change?</h1>
     <p class="hero-text">
-      Welcome to Aletheos, the public research surface for the Centre of
-      Recursive Inquiry. We are an AI think tank exploring what emerging
-      intelligent systems mean for human agency, trust, governance, and
-      responsibility.
+      Two simulated systems began with identical conditions. When retained
+      history influenced the next choices in one of them, their paths separated.
+      Turning that influence off restored identical paths.
     </p>
     <p class="hero-text">
-      We work from inside the system, using the same technological transition
-      we study: AI-assisted inquiry, technical artifacts, public labs, and
-      philosophical reflection. Our guiding question is practical and human:
-      when intelligent systems act, what remains visible, and how can people
-      inspect what happened?
+      Keeping a record and using it to make a choice are different behaviors.
+      Read what this controlled comparison shows, why the distinction matters,
+      and what it leaves open.
     </p>
     <div class="hero-actions">
-      <a class="button button--primary" href="/research/from-circle-to-thalion.php">Start here</a>
-      <a class="button button--secondary" href="/labs.php">Open labs</a>
-      <a class="button button--secondary" href="/evidence.php">View evidence</a>
+      <a class="button button--primary" href="/research/memory-and-possibility.php">Read the finding</a>
+      <a class="button button--secondary" href="/research.php">More findings and ideas</a>
     </div>
   </section>
 
   <section class="index-section">
-    <p class="eyebrow">Four doors</p>
-    <h2>Choose your entry point.</h2>
-
-    <div class="card-grid">
-      <article class="index-card">
-        <p class="card-label">New visitor</p>
-        <h3>Start Here</h3>
-        <p>
-          Begin with the ordinary-language path from circle to boundary, body,
-          witness, closure, and thalion.
-        </p>
-        <a class="button button--secondary" href="/research/from-circle-to-thalion.php">Read the tutorial</a>
-      </article>
-
-      <article class="index-card">
-        <p class="card-label">Research reader</p>
-        <h3>Research</h3>
-        <p>
-          Explore Thalean Action Theory, the Thalean graph, papers, technical
-          notes, and current formal claims.
-        </p>
-        <a class="button button--secondary" href="/research.php">View research</a>
-      </article>
-
-      <article class="index-card">
-        <p class="card-label">Explorer</p>
-        <h3>Labs</h3>
-        <p>
-          Open public inspection surfaces for viewing, moving, comparing, and
-          questioning the current structures.
-        </p>
-        <a class="button button--secondary" href="/labs.php">Open labs</a>
-      </article>
-
-      <article class="index-card">
-        <p class="card-label">Verifier</p>
-        <h3>Evidence</h3>
-        <p>
-          Find the receipts: theorem objects, JSON records, verification reports,
-          checker scripts, and bounded status notes.
-        </p>
-        <a class="button button--secondary" href="/evidence.php">View evidence</a>
-      </article>
-    </div>
+    <p class="eyebrow">CoRI's public research home</p>
+    <h2>Understanding our world, and our place in it.</h2>
+    <p class="section-text">
+      CoRI shares findings and ideas from philosophy, scientific research, and
+      the stewardship of artificial intelligence. We write for people concerned
+      about what new knowledge and technology mean for their lives and our
+      shared future. Begin with what we are learning, why it matters, and what
+      remains uncertain.
+    </p>
+    <a class="button button--secondary" href="/about_cori.php">About CoRI</a>
   </section>
 
   <section class="index-section">
-    <p class="eyebrow">Current focus</p>
-    <h2>The active public stack.</h2>
-
+    <p class="eyebrow">The questions we pursue</p>
+    <h2>AI stewardship, philosophy, and science.</h2>
     <div class="card-grid">
       <article class="index-card">
-        <p class="card-label">Concept</p>
-        <h3>What is a thalion?</h3>
+        <h3>Living with artificial intelligence</h3>
         <p>
-          A thalion is the concrete finite transport organism at the center of
-          this research program: boundary, body, relation, witness, and trace
-          held together as inspectable structure.
+          How do we preserve human agency as AI changes daily life? Who shapes
+          its purposes, who benefits, and who bears its consequences?
         </p>
-        <a class="button button--secondary" href="/research/from-circle-to-thalion.php">Start with the concept</a>
+        <a class="button button--secondary" href="/research.php#ai-stewardship">AI stewardship</a>
       </article>
-
       <article class="index-card">
-        <p class="card-label">Object</p>
-        <h3>The Thalean graph</h3>
+        <h3>Making sense of human experience</h3>
         <p>
-          The theorem-facing public surface for the canonical finite object,
-          verification records, and companion papers.
+          What can we know? What do we value? How do our ideas about meaning,
+          responsibility, and our relationships shape the lives we lead?
         </p>
-        <a class="button button--secondary" href="/the_thalean_graph_at4val_60_6.php">View the object</a>
+        <a class="button button--secondary" href="/research.php#philosophy">Philosophical inquiry</a>
       </article>
-
       <article class="index-card">
-        <p class="card-label">Surface</p>
-        <h3>P900 Surface Observatory</h3>
+        <h3>Discovering how our world works</h3>
         <p>
-          The primary live lab for inspecting the current public graph surface
-          through viewpoint, rotation, saved lenses, and visible relation.
+          Scientific inquiry across disciplines can change how we understand
+          nature and our place within it. Findings need explanations that make
+          their significance and uncertainty clear.
         </p>
-        <a class="button button--primary" href="/labs/p900_observatory/lab.html">Open P900</a>
-      </article>
-
-      <article class="index-card">
-        <p class="card-label">Action</p>
-        <h3>Informative Action Lab</h3>
-        <p>
-          Watch action move through a simple visual system, generate a response,
-          and leave a trace that can be inspected afterward.
-        </p>
-        <a class="button button--secondary" href="/labs/informative_action/">Open Informative Action</a>
+        <a class="button button--secondary" href="/research.php#scientific-research">Scientific research</a>
       </article>
     </div>
   </section>
@@ -139,20 +76,18 @@ include __DIR__ . '/includes/site_header.php';
     <p class="eyebrow">CoRI</p>
     <h2>Err. Doubt. Endure. Discover.</h2>
     <p class="section-text">
-      The Centre of Recursive Inquiry studies how ideas, systems, and claims
-      become accountable under changed viewpoints, controlled perturbations,
-      and traceable constraints.
-    </p>
-    <p class="section-text">
-      Aletheos.ai is its public surface: a place where relation, action, witness,
-      and evidence can be inspected rather than merely asserted.
+      Research should give people something worth thinking about. We bring
+      findings, philosophical arguments, and open questions into public view,
+      explain the reasons behind them, and revise our understanding when the
+      work calls for it.
     </p>
     <div class="hero-actions">
-      <a class="button button--secondary" href="/about_cori.php">About CoRI</a>
-      <a class="button button--secondary" href="/thalean_action_theory.php">Read TAT</a>
+      <a class="button button--secondary" href="/mission.php">Our mission</a>
+      <a class="button button--secondary" href="/papers.php">Longer reading</a>
     </div>
   </section>
 </main>
 
-<script src="/assets/js/at4val-3d-viewer.js" defer></script>
 <?php include __DIR__ . '/includes/site_footer.php'; ?>
+</body>
+</html>

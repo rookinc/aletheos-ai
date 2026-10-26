@@ -1,7 +1,10 @@
 <footer class="site-footer">
   <div class="site-footer__inner">
-    <p>&copy; <?php echo date('Y'); ?> Centre of Recursive Inquiry.</p>
-    <p>Aletheos.ai is the public research surface for CoRI: an AI think tank working on accountable intelligence, governance, and human orientation in emerging technologies.</p>
-    <p>Public claims should remain inspectable: action, evidence, witness, governance, and traceable constraint.</p>
+    <p>Center of Recursive Inquiry — a Rook Services Inc. initiative.</p>
+    <p>Findings and ideas from philosophy, scientific research, and AI stewardship.</p>
+    <nav aria-label="Research resources">
+      <a href="/papers.php">Papers</a> · <a href="/labs.php">Labs and tools</a> · <a href="/evidence.php">Evidence</a> · <a href="/glossary.php">Glossary</a>
+    </nav>
+    <p>&copy; <?php echo date('Y'); ?> Rook Services Inc. · <a href="https://rook.ca/">Rook's commercial work</a></p>
   </div>
 </footer>

@@ -291,12 +291,12 @@ include __DIR__ . '/includes/site_header.php';
   <section class="index-section scope-section">
     <div class="section-head">
       <p class="section-kicker">Scope</p>
-      <h2>A theorem object inside a human-centered AI think tank.</h2>
+      <h2>One program within CoRI's broader research.</h2>
       <p class="section-text">
-        The Thalean Graph project is exploratory mathematical research. Aletheos
-        presents it publicly because the broader goal is to make difficult ideas,
-        assumptions, artifacts, and inspection paths visible rather than hidden
-        behind private notes.
+        The Thalean Graph project is exploratory mathematical research within
+        CoRI's wider work in philosophy, science, and AI stewardship. This
+        technical page supports readers who want to examine the methods behind
+        the program's public findings.
       </p>
     </div>
   </section>

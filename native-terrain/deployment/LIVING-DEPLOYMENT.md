@@ -92,6 +92,14 @@ python3 deployment/verify-served.py site \
 ```
 
 This verifies all served assets and the public entry against local bytes.
+An HTTP failure after activation does not undo activation. The verifier records
+bounded error details and stops after a response explicitly naming
+Mod_Security; skipped requests remain unverified and the command exits with a
+failure status. Preserve that receipt and report the HTTP audit separately
+from browser results. A browser may execute the app successfully while the
+verifier's requests are rejected. Do not infer that an activated release needs
+reinstallation from that rejection alone.
+
 Separately open both `/aletheos/` and `/aletheos/living.html` and check:
 
 - Existing observatory navigation and inspections still work.

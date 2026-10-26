@@ -1,12 +1,14 @@
 # ALETHEOS-SIM-003 implementation and evaluation report
 
-**Status, 2026-10-26:** the Living Geometry application executes locally and has
-been exercised in cloud Chrome. Native finite actions, harmonic projections,
-and a reproducible memory-backaction experiment are implemented. The intended
-`dev.rook.ca/aletheos/living.html` deployment is **pending**, because this
-executor lacks authenticated host access. Real Android-device testing is also
-pending. This is an evaluation candidate, not a declaration that every release
-acceptance criterion is complete.
+**Status, 2026-10-26:** Living Geometry is activated at
+https://dev.rook.ca/aletheos/living.html and has been exercised there in cloud
+Chrome. The deployed app loads verified native sources, demonstrates the
+twenty-step return, and reproduces the controlled memory-backaction comparison.
+The original observatory also loads and passes its finite checks. The host's
+Mod_Security rejects the Python HTTP verifier, so a complete independent
+served-byte audit remains unverified despite successful browser execution.
+Physical Android-device testing remains pending. Full release acceptance is
+not claimed.
 
 ## Implementation
 
@@ -111,37 +113,42 @@ errors. These are finite simulation measurements, not gravitational claims.
 
 ## Verification and acceptance
 
-Automated validation includes **29 JavaScript tests** across the preserved
+Automated validation includes **30 JavaScript tests** across the preserved
 kernel and new geometry, harmonics, memory, replay, and input-validation
-coverage, plus **6 Python deployment tests**. The existing independent native
+coverage, plus **7 Python deployment tests** and **6 offline HTTP-verifier
+tests**. The existing independent native
 verification command also passed. The deployment tests exercise
 staging without activation, repeat staging, first-entry rollback, byte-exact
 previous-entry restoration, tamper rejection, and refusal to overwrite later
-entry changes. Shell syntax and Python compilation were checked. Test counts
+entry changes. The HTTP-verifier tests cover exact bytes, activated-entry
+bytes, bounded error diagnostics, and stopping after an explicit Mod_Security
+rejection without retries or changed request headers. Shell syntax and Python
+compilation were checked. Test counts
 refer to this implementation revision; final release packaging must use the
 intended committed source and retain its actual results.
 
-Cloud Chrome verification used a local HTTP preview. It is browser execution
-of this candidate, not verification of the remote target. Recorded checks:
+Cloud Chrome verification first used a local HTTP preview, then exercised the
+actual development deployment after user-run host activation. Recorded checks:
 
 | Acceptance item | Status and evidence |
 | --- | --- |
-| Native G60 source and coupled geometry load | Passed locally; source hash checks and browser viewport |
+| Native G60 source and coupled geometry load | Passed locally and on the deployed app; source hash checks and browser viewport |
 | G900 inspection and fixed locus | Implemented; quotient/fiber invariants tested |
 | Three-beat directed-edge motion | Implemented and tested; visible continuous motion |
 | Six-position Waltz | Implemented; experimental register shown independently of edge indices |
 | Pause, step, reverse, restart | Exercised locally; reverse from tick 20 to 19 and forward to 20 restored state |
 | Five harmonic components and recombination | Implemented and tested; common excitation gave energy 1 in k=0 and approximately zero elsewhere |
-| Twenty-step registered return | Exhaustive finite test and browser F20 return; browser S5 return also checked |
+| Twenty-step registered return | Exhaustive finite test; local and deployed browser F20 return; local browser S5 return also checked |
 | History independent of finite returns | Tested; native walker/clock return leaves retained encounter history |
-| Memory off and measurable backaction | A/B120 experiment above; zero-coupling replay coincides |
+| Memory off and measurable backaction | A/B120 experiment above reproduced on the deployed app; zero-coupling replay coincides |
 | Repeatable results and state export | Deterministic tests; browser snapshot export/import round-trip at tick 20 |
-| Existing observatory remains functional | Existing entry loaded in browser; its source files preserved |
+| Existing observatory remains functional | Original deployed entry reports source verified and finite checks passed; its source files preserved |
 | Narrow layout | Chrome 390×844 layout and screenshot inspected; stacked A/B and accessible control panels |
 | Physical Android usability/performance | **Pending:** no physical Android-device run |
 | Cross-browser and sustained performance | **Pending:** no Safari/Firefox or long-device benchmark claimed |
-| Development deployment accessible with new simulator | **Blocked:** authenticated host access absent; existing v3.0 entry is reachable |
-| Remote served-byte and deployed-browser verification | **Pending deployment** |
+| Development deployment accessible with new simulator | **Passed:** public living.html loads and executes; Harmonics mode survives refresh at the public entry |
+| Deployed-browser verification | **Passed:** source readiness, F20, controlled A/B and zero-coupling runs, route refresh, original observatory |
+| Complete remote served-byte audit | **Blocked:** Python requests receive HTTP 406 naming Mod_Security; host-side packet inventory and SHA-256 hashes passed |
 
 The renderer uses a perspective projection drawn with Canvas 2D, not GPU
 instancing. It caches topology/layout work, batches edge drawing, and reduces
@@ -152,7 +159,7 @@ no unmeasured Android frame-rate guarantee is made. Runs are capped at 10,000
 encounters; reverse/import reconstruct state from logs and can cost more time
 on long runs. Browser reload persistence requires explicit JSON export/import.
 
-## Delivery and remaining gate
+## Delivery and remaining checks
 
 Source is prepared on a dedicated SIM-003 feature branch with the SIM-002
 commit retained as the rollback base. `tools/build.py` emits the static packet,
@@ -171,16 +178,31 @@ Sites version 1 serves the tested simulator assets from canonical implementation
 commit 94213c39de3752313184cc5872e8c2d64681c668 (entry redirect and Observatory link
 adapted for private hosting). The published URL was opened and presents the
 expected ChatGPT sign-in gate. Authenticated runtime testing of that hosted copy
-was not performed; the browser execution results above are from the matching
-local preview. No access settings were broadened. This private review copy does
+was not performed; its matching local preview was exercised before the later
+dev.rook.ca browser verification. No access settings were broadened. This private review copy does
 not substitute for the requested dev.rook.ca deployment.
 
-No dev.rook.ca remote staging, rollback copy, activation, or deployed-browser
-validation was performed by this implementation. The remaining release gate is to run
-the prepared procedure from the authenticated host environment, verify the
-served files and both applications, and exercise the new entry on a physical
-Android browser. The candidate is ready for that evaluation; full acceptance
-remains open until those checks succeed.
+The user executed the prepared deployment helper in the authenticated Bluehost
+session. The supplied receipt confirms a clean-source packet from commit
+`04641b019f1675a7fc7e9dfcf8d58b7812c44863`, verified inventory and SHA-256
+hashes, immutable release `living-release-42e98ad217e1da29ac85`, and activation
+of the public entry. The archive SHA-256 is
+`452ee0b517a86875f6b5673efc208a496866f5c3f15aad5d2b5a970d0ededb54`.
+The host rollback receipt is
+`/home2/gurtiamy/aletheos-living-backups/activation-1793013090011296661/activation.json`.
+The subsequent Python verifier failed with HTTP 406 on all requests; that did
+not undo activation. One diagnostic request returned a body explicitly naming
+Mod_Security. No security rule, request identity, or access setting was changed.
+
+Independent interaction with the deployed app confirmed the F20 return and
+the 120-encounter comparison, including first divergence at 3, 118 unequal
+post-step states, occupied states A=92/B=5, density difference 0.975, and history
+mass 24.81. Zero coupling produced identical paths and occupied states A=B=92.
+The public Harmonics route survived refresh. The original observatory passed
+its native-source and finite checks. See
+`deployment/served-browser-receipt-20261026.json` for the separate browser and
+HTTP-verifier outcomes. Remaining checks are the independent served-byte audit,
+physical Android usability/performance, and broader sustained-device testing.
 
 ## Host deployment preparation follow-up — 2026-10-26
 
@@ -191,5 +213,8 @@ the current entry pathname despite the immutable-release `<base>` URL, and
 normalized static release directories/files to 0755/0644. Thirty JavaScript
 and seven Python deployment tests pass. A deployment-style local activation
 was exercised in Chrome: switching to Harmonics and refreshing remained on
-`living.html#harmonics` and loaded the verified native sources. Actual Bluehost
-activation still awaits execution of the supplied host command.
+`living.html#harmonics` and loaded the verified native sources. Bluehost
+activation and the same public-route refresh check subsequently succeeded as
+recorded above. The follow-up HTTP-verifier improvement captures a bounded
+error excerpt and stops on explicit security rejection; it does not change the
+deployed application assets and does not require reinstalling the live app.

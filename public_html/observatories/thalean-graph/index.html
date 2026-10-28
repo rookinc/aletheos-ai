@@ -1,0 +1,195 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The Graviton on HOG 52002 - The Thalaen Graph</title><style>body{margin:0;background:#081321;color:#e5f1fc;font:15px system-ui}header,section{padding:16px;max-width:900px;margin:auto}h1{font-size:23px;margin:4px 0}small,p{color:#a9c0d3}canvas{display:block;width:100%;height:min(68vh,680px);touch-action:none;background:#06101e}button,select,input{accent-color:#64cfe8}button,select{background:#233d56;color:white;border:1px solid #54748d;border-radius:9px;padding:10px;margin:4px}label{display:inline-block;margin:8px 12px 8px 0}#stats{font-variant-numeric:tabular-nums;color:#8de4f1}.viewmode{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:9px 0}.viewmode select{font-weight:650;border-color:#69cde4}.viewmode span{color:#91b6cb;font-size:13px}.key{display:flex;gap:15px;flex-wrap:wrap} .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px}
+/* Stage-first mobile layout: controls fixed above stage, documentation below fold. */
+body{min-height:100dvh}header{display:none}#stageControls{position:sticky;top:0;z-index:20;box-sizing:border-box;width:100%;max-width:none;padding:8px 10px;background:#0c1c2f;border-bottom:1px solid #385b74;display:flex;align-items:center;gap:7px;flex-wrap:wrap}#stageControls button,#stageControls select{margin:0;padding:9px 10px;font-size:14px}#stageControls select{max-width:48vw}#stageControls .viewmode{padding:0;gap:4px}#stageControls .viewmode label{margin:0;font-size:0}#stageControls .viewmode select{font-size:14px}#stageControls #viewnote{display:none}#stageControls .poleToggle{display:inline-flex;align-items:center;gap:5px;margin:0;padding:7px 5px;white-space:nowrap;font-size:14px}#stageControls .poleToggle input{width:18px;height:18px;margin:0}#stage{height:calc(100dvh - 112px);min-height:420px;max-height:none}#details{border-top:1px solid #36526d;padding-top:22px}#details h2{font-size:20px;margin:8px 0 14px}#details p{line-height:1.5}#stats{margin:12px 0} @media(min-width:700px){#stage{height:calc(100dvh - 66px)}}
+
+.cameraButtons{display:inline-flex;gap:3px;align-items:center}.cameraButtons button{min-width:35px;font-weight:700;padding:9px 8px!important}.cameraButtons button.active{background:#67cde4;color:#061321;border-color:#a4eafb}.fieldRocker{display:inline-flex;padding:3px;border:1px solid #54748d;border-radius:12px;background:#071522;gap:2px}.fieldRocker button{border:0!important;border-radius:9px!important;background:transparent!important;color:#a9c0d3!important;padding:7px 12px!important;margin:0!important}.fieldRocker button.active{background:#67cde4!important;color:#061321!important;font-weight:700}#view[hidden]{display:none!important}@media(max-width:420px){.cameraButtons button{min-width:32px;padding:8px 6px!important}}
+
+/* Observatory UX v2: stage-first, restrained chrome, accessible switches */
+body{background:#061120;color:#e3edf9;font-family:system-ui,-apple-system,sans-serif}
+#stageControls{position:sticky;top:0;z-index:25;display:block;padding:10px 12px 8px;background:linear-gradient(180deg,#071626 80%,rgba(7,22,38,.93));border:0;box-shadow:0 1px 0 rgba(115,177,213,.1)}
+.topBar{display:flex;align-items:center;justify-content:center;gap:16px;max-width:620px;margin:auto}
+#stageControls #play{width:48px;height:48px;flex:0 0 48px;border:1px solid #497b9f;border-radius:50%;background:#0a1e32;color:#e2f0ff;font-size:24px;padding:0;line-height:1;box-shadow:0 0 0 1px rgba(65,180,240,.08)}
+.cameraButtons{display:flex;flex:1;max-width:430px;gap:0;padding:3px;background:#0c1c30;border:1px solid #253c56;border-radius:30px;overflow:hidden}
+#stageControls .cameraButtons button{flex:1;min-width:0;margin:0;padding:11px 3px!important;background:transparent;border:0;border-right:1px solid #22364d;border-radius:0;font-weight:500;color:#c9d8ea;font-size:16px}
+#stageControls .cameraButtons button:last-child{border-right:0}
+#stageControls .cameraButtons button.active{background:#54c9e9;color:#041626;border-radius:28px;font-weight:750;box-shadow:0 0 15px rgba(53,198,240,.25)}
+#stage{display:block;height:clamp(380px,68dvh,850px);min-height:380px;width:100%;background:radial-gradient(ellipse at 50% 48%,#0a2036,#061120 74%)}
+#bottomControls{background:#071322;border-top:1px solid #1b3248;padding:13px 10px 18px}
+.flagGrid{max-width:950px;margin:0 auto;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:0}
+.flag{display:flex;flex-direction:column;align-items:center;gap:7px;margin:0;padding:8px 3px;min-width:0;text-align:center;color:#b7cce0;border-right:1px solid #1a2d43;cursor:pointer;user-select:none}
+.flag:last-child{border:0}.flagIcon{height:24px;font-size:24px;line-height:24px;color:#a8c6df}.flagName{min-height:30px;font-size:11px;line-height:1.3;max-width:75px}
+.flag input{position:absolute;opacity:0;width:1px;height:1px}
+.switch{position:relative;width:36px;height:20px;box-sizing:border-box;border-radius:20px;background:#091321;border:1px solid #465c73;transition:.15s}
+.switch:before{content:'';position:absolute;left:2px;top:2px;width:14px;height:14px;border-radius:50%;background:#7c91a9;transition:.15s}
+.flag input:checked+.switch{border-color:#54d8f5;background:#0b5269}.flag input:checked+.switch:before{transform:translateX(16px);background:#5bdef9}
+.flag input:focus-visible+.switch{outline:2px solid white;outline-offset:3px}
+.modeRow{display:flex;justify-content:center;align-items:center;padding:14px 0 0}
+.fieldRocker{border:1px solid #2b4863;border-radius:30px;padding:3px;background:#091725;display:flex;width:min(320px,85vw)}
+#bottomControls .fieldRocker button{flex:1;border:0!important;border-radius:26px!important;padding:10px 8px!important;margin:0!important;font-size:15px}
+#bottomControls .fieldRocker button.active{background:#54c9e9!important;color:#061321!important}
+#bottomControls #view[hidden]{display:none!important}
+#details{padding:22px 20px 45px;max-width:760px;margin:auto;border-top:1px solid #1c344b}
+@media(max-width:600px){.topBar{gap:10px}#stageControls #play{width:44px;height:44px;flex-basis:44px}#stage{height:clamp(360px,65dvh,750px)}.flagGrid{grid-template-columns:repeat(4,minmax(0,1fr));row-gap:9px}.flag:nth-child(4){border-right:0}.flagName{font-size:11px;min-height:27px}.flag{padding:6px 2px}}
+@media(min-width:601px){#stage{height:calc(100dvh - 260px);min-height:420px}}
+
+/* Compact mobile toggle dock: single-line labels, smaller controls, reduced padding. */
+#bottomControls{padding:7px 8px 9px}
+.flagGrid{max-width:950px}
+.flag{gap:3px;padding:4px 2px;min-height:0}
+.flagIcon{height:18px;line-height:18px;font-size:19px}
+.flagName{min-height:0;font-size:10px;line-height:1.15;max-width:none}
+.switch{width:32px;height:18px}
+.switch:before{width:12px;height:12px}
+.flag input:checked+.switch:before{transform:translateX(14px)}
+.modeRow{padding:7px 0 0}
+#bottomControls .fieldRocker button{padding:7px 8px!important;font-size:14px}
+@media(max-width:600px){
+ .flagGrid{grid-template-columns:repeat(4,minmax(0,1fr));row-gap:3px}
+ .flag{padding:3px 1px;gap:3px}
+ .flagName{font-size:10px;min-height:0;line-height:1.1}
+ .flagIcon{height:18px;line-height:18px;font-size:19px}
+ .flag:nth-child(4){border-right:0}
+}
+
+/* Compact top toolbar: camera and field mode on the same row */
+#stageControls{padding:7px 8px 6px}
+#stageControls .topBar{max-width:100%;gap:5px;justify-content:space-between}
+#stageControls #play{width:34px;height:34px;flex:0 0 34px;font-size:17px}
+#stageControls .cameraButtons{flex:1 1 auto;min-width:0;padding:2px;max-width:none}
+#stageControls .cameraButtons button{font-size:12px;padding:7px 1px!important}
+#stageControls .modeRow{flex:0 0 auto;padding:0;margin:0}
+#stageControls .fieldRocker{width:auto;min-width:0;padding:2px;border-radius:24px}
+#stageControls .fieldRocker button{font-size:11px!important;padding:7px 5px!important;white-space:nowrap}
+#bottomControls{padding:5px 6px 7px}
+.flagName{font-size:9px!important}
+@media(max-width:420px){#stageControls .topBar{gap:4px}#stageControls .cameraButtons button{font-size:11px;padding:7px 0!important}#stageControls .fieldRocker button{font-size:10px!important;padding:7px 4px!important}}
+#thinTitle{height:25px;box-sizing:border-box;display:flex;align-items:center;justify-content:center;padding:0 9px;background:#091726;border-bottom:1px solid #284158;color:#a9c4d7;font-size:11px;letter-spacing:.015em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}#stageControls{top:25px}@media(max-width:390px){#thinTitle{font-size:10px;letter-spacing:0}}
+</style><div id="thinTitle" role="heading" aria-level="1">The Graviton on HOG 52002 - The Thalaen Graph</div><header><small>ALETHEOS · TRIPOLE FIELD VIEW · EXPLORATORY</small><h1>Internal state · solar-style field map</h1><p>Four certified BC chamber cycles; V₄ orientation outcomes shown as a selectable path-holonomy scenario. Field smoothing is visual interpolation, not measured radiation.</p></header><div id="stageControls"><div class="topBar"><button id="play" aria-label="Pause or play animation">Ⅱ</button><div class="cameraButtons" role="group" aria-label="Camera presets"><button type="button" data-camera="oblique" aria-label="Oblique view" title="Oblique">O</button><button type="button" data-camera="front" aria-label="Front view" title="Front">F</button><button type="button" data-camera="side" class="active" aria-label="45 degree view" title="45°">45°</button><button type="button" data-camera="top" aria-label="Top view" title="Top">T</button><button type="button" data-camera="bottom" aria-label="Bottom view" title="Bottom">B</button></div><div class="modeRow"><div class="fieldRocker" role="group" aria-label="Field view"><button type="button" data-field="plasma" aria-pressed="false">Plasma</button><button type="button" data-field="sheets" class="active" aria-pressed="true">Sheets</button></div><select id="view" aria-label="Field view source" hidden><option value="plasma">Continuous plasma cloud</option><option value="sheets" selected>Three flowing sheets</option></select><span id="viewnote" hidden></span></div></div></div><canvas id="stage"></canvas><div id="bottomControls"><div class="flagGrid"><label class="flag"><span class="flagIcon" aria-hidden="true">◎</span><span class="flagName">Pole + centroid</span><input type="checkbox" id="showPoles" checked><span class="switch" aria-hidden="true"></span></label><label class="flag"><span class="flagIcon" aria-hidden="true">∞</span><span class="flagName">Trace paths</span><input type="checkbox" id="tracePoles" ><span class="switch" aria-hidden="true"></span></label><label class="flag"><span class="flagIcon" aria-hidden="true">◉</span><span class="flagName">Wire guides</span><input type="checkbox" id="showGuides" ><span class="switch" aria-hidden="true"></span></label><label class="flag"><span class="flagIcon" aria-hidden="true">⊕</span><span class="flagName">Globe 30°</span><input type="checkbox" id="showGlobe" ><span class="switch" aria-hidden="true"></span></label><label class="flag"><span class="flagIcon" aria-hidden="true">⁙</span><span class="flagName">All 60 vertices</span><input type="checkbox" id="showVertices" ><span class="switch" aria-hidden="true"></span></label><label class="flag"><span class="flagIcon" aria-hidden="true">123</span><span class="flagName">Vertex IDs</span><input type="checkbox" id="vertexIds" ><span class="switch" aria-hidden="true"></span></label><label class="flag"><span class="flagIcon" aria-hidden="true">◇</span><span class="flagName">Diagram labels</span><input type="checkbox" id="showLabels" ><span class="switch" aria-hidden="true"></span></label></div></div><section id="details"><h2>Internal state · solar-style field map</h2><p>Four certified BC chamber cycles; V₄ orientation outcomes shown as selectable path-holonomy scenarios. Field smoothing is illustrative interpolation, not measured radiation.</p><div><label>V₄ return <select id="hol"><option>1</option><option>a</option><option selected>b</option><option>ab</option></select></label><label>Field intensity <input id="gain" type="range" min="0" max="100" value="65"></label><label>Layer opacity <input id="opacity" type="range" min="10" max="100" value="70"></label></div><div id="stats"></div><div class="key"><span><i class="dot" style="background:#3273d9"></i>low activity</span><span><i class="dot" style="background:#19c5b4"></i>middle</span><span><i class="dot" style="background:#f7d44e"></i>high</span><span><i class="dot" style="background:#e98edc"></i>orientation overlay</span></div><p><strong>Verbose vertex layer:</strong> All 60 markers represent the 15 × 4 native G60 carrier states. The point placement is a deterministic illustrative layout, not certified graph geometry; the overlay does not include G900 or G9000 vertices. Vertex IDs use the display indexing q × 4 + g, not native vertex identifiers. No graph edges are inferred.</p><p>Choose a camera preset to restore a view, or drag to rotate; pinch or wheel to zoom. Trace the three moving pole paths with the independent Trace pole paths toggle (one illustrative phase orbit, with fading trails). Hide pole and centroid dots together, or wire guides independently using the stage toggles. The optional globe overlay draws latitude and longitude lines at 30° intervals and labels its fixed north (+90°) and south (−90°) reference poles. Labels rotate with the globe; pole markers obey the Pole + centroid dots toggle. These are display-coordinate poles, not physical or BC transport poles. It is independent of wire guides. Diagram labels identify the three BC chamber markers and the centroid; they are optional display annotations. Switch between continuous plasma and three flowing sheets. Both display the same illustrative phase activity; neither is a measured field. The three moving lobes depict BC phase positions. The V₄ return selector is an explicit scenario, not a derived BC-to-V₄ coupling. The model uses no external dependencies.</p></section><script>
+(()=>{'use strict';const c=document.getElementById('stage'),ctx=c.getContext('2d'),cycs=[[2,11,14],[1,13,10],[0,5,2],[2,5,4]];let yaw=Math.PI/4,pitch=0,zoom=1,run=true,phase=0,last=performance.now(),pointer=new Map(),pinch=0;const el=id=>document.getElementById(id);function resize(){let r=c.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);c.width=Math.round(r.width*d);c.height=Math.round(r.height*d);ctx.setTransform(d,0,0,d,0,0)}window.addEventListener('resize',resize);resize();function project(x,y,z){let a=x*Math.cos(yaw)-z*Math.sin(yaw),b=x*Math.sin(yaw)+z*Math.cos(yaw),v=y*Math.cos(pitch)-b*Math.sin(pitch),depth=y*Math.sin(pitch)+b*Math.cos(pitch);let w=c.clientWidth,h=c.clientHeight,R=Math.min(w*.42,h*.43)*zoom;return [w/2+a*R,h/2-v*R,depth,R]};function line(points,col,width){ctx.beginPath();points.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.strokeStyle=col;ctx.lineWidth=width;ctx.stroke()};function draw(t){let dt=Math.min((t-last)/1000,.06);last=t;if(run)phase+=dt*.36;let w=c.clientWidth,h=c.clientHeight;ctx.clearRect(0,0,w,h);let [cx,cy,,R]=project(0,0,0);let opacity=+el('opacity').value/100,gain=+el('gain').value/100;let glow=ctx.createRadialGradient(cx-R*.2,cy-R*.3,R*.04,cx,cy,R*1.15);glow.addColorStop(0,'rgba(25,154,194,.38)');glow.addColorStop(.65,'rgba(24,58,150,.22)');glow.addColorStop(1,'rgba(13,28,76,0)');ctx.fillStyle=glow;ctx.beginPath();ctx.arc(cx,cy,R*1.12,0,Math.PI*2);ctx.fill();if(el('showGuides').checked){ctx.strokeStyle='rgba(115,195,229,.3)';ctx.setLineDash([5,8]);ctx.beginPath();ctx.arc(cx,cy,R,0,Math.PI*2);ctx.stroke();ctx.setLineDash([]);}
+// Two renderings of the SAME illustrative phase activity; neither claims measured radiation.
+const mode=el('view').value;
+if(mode==='plasma'){
+  // Overlapping soft radial fields: continuous, translucent and depth-sorted.
+  const blobs=[];
+  for(let k=0;k<3;k++)for(let j=0;j<42;j++){
+    const a=j/42*Math.PI*2, th=phase*Math.PI*2+k*2*Math.PI/3;
+    const rr=.43+.17*Math.sin(2*a+th),x=rr*Math.cos(a),z=rr*Math.sin(a),y=.43*Math.sin(a+th);
+    const p=project(x,y,z),power=.5+.5*Math.cos(3*a-th);
+    blobs.push({p,power,k});
+  }
+  blobs.sort((a,b)=>a.p[2]-b.p[2]);
+  for(const b of blobs){
+    const [x,y]=b.p,r=R*(.12+.095*b.power),alpha=(.055+.16*b.power)*opacity*gain;
+    const col=b.power>.78?'249,210,76':b.power>.42?'28,213,167':'45,104,231';
+    const grad=ctx.createRadialGradient(x,y,0,x,y,r);
+    grad.addColorStop(0,`rgba(${col},${alpha})`);
+    grad.addColorStop(.48,`rgba(${col},${alpha*.45})`);
+    grad.addColorStop(1,`rgba(${col},0)`);
+    ctx.fillStyle=grad;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fill();
+  }
+}else{
+  // Three separate, continuous, translucent ribbon sheets (no segmented blocks).
+  const ribbons=[];
+  for(let k=0;k<3;k++){
+    const th=phase*Math.PI*2+k*2*Math.PI/3;
+    for(let j=0;j<110;j++){
+      const a=j/109*Math.PI*2, rr=.46+.17*Math.sin(2*a+th);
+      const x=rr*Math.cos(a),z=rr*Math.sin(a),y=.43*Math.sin(a+th);
+      const thickness=.085+.025*Math.sin(3*a-th);
+      const upper=project(x,y+thickness,z),lower=project(x,y-thickness,z);
+      const power=.5+.5*Math.cos(3*a-th);
+      ribbons.push({k,j,upper,lower,power,depth:(upper[2]+lower[2])/2});
+    }
+  }
+  const quads=[];
+  for(let k=0;k<3;k++)for(let j=0;j<109;j++){
+    const v=ribbons[k*110+j],n=ribbons[k*110+j+1];
+    quads.push({v,n,depth:(v.depth+n.depth)/2});
+  }
+  quads.sort((a,b)=>a.depth-b.depth);
+  for(const {v,n} of quads){
+    const power=(v.power+n.power)/2;
+    const col=power>.77?'247,211,72':power>.44?'26,204,165':'45,100,218';
+    ctx.beginPath();ctx.moveTo(...v.upper.slice(0,2));ctx.lineTo(...n.upper.slice(0,2));
+    ctx.lineTo(...n.lower.slice(0,2));ctx.lineTo(...v.lower.slice(0,2));ctx.closePath();
+    ctx.fillStyle=`rgba(${col},${(.13+.54*power*gain)*opacity})`;ctx.fill();
+  }
+}
+// Native G60 state count: 15 quotient chambers x four V4 register positions.
+// Positions below are explicitly illustrative display coordinates, NOT a native spatial embedding.
+if(el('showVertices').checked){
+  const verts=[];const golden=Math.PI*(3-Math.sqrt(5));
+  for(let q=0;q<15;q++)for(let g=0;g<4;g++){
+    const idx=q*4+g, z=1-2*(q+.5)/15, az=q*golden;
+    const rad=Math.sqrt(1-z*z), off=(g-1.5)*.042;
+    const x=(.79+off)*rad*Math.cos(az), y=(.79+off)*z,
+          zz=(.79+off)*rad*Math.sin(az);
+    const p=project(x,y,zz);verts.push({p,q,g,idx});
+  }
+  verts.sort((a,b)=>a.p[2]-b.p[2]);
+  for(const v of verts){
+    const [x,y,depth]=v.p;const alpha=depth>0?.95:.48;
+    ctx.beginPath();ctx.arc(x,y,el('vertexIds').checked?3.5:2.8,0,Math.PI*2);
+    ctx.fillStyle=['rgba(117,219,242,','rgba(242,196,100,','rgba(218,152,232,','rgba(119,235,174,'][v.g]+alpha+')';ctx.fill();
+    if(el('vertexIds').checked){ctx.font='10px system-ui';ctx.fillStyle='rgba(236,247,255,.9)';ctx.fillText(String(v.idx),x+5,y-4)}
+  }
+}
+// Latitude field shells: three translucent slices.
+if(el('showGlobe').checked){
+  // Latitude and longitude on a unit sphere, every 30 degrees.
+  // Draw rear arcs faintly and front arcs more brightly, in camera depth order.
+  const radius=.985, samples=180;
+  const drawSphereLine=(coords)=>{
+    let seg=[],front=null;
+    function flush(){if(seg.length>1)line(seg,front?'rgba(135,215,245,.48)':'rgba(95,155,200,.13)',front?1.05:.75);seg=[]}
+    for(const v of coords){const p=project(v[0],v[1],v[2]);const f=p[2]>=0;if(front!==null&&f!==front)flush();front=f;seg.push(p)}flush();
+  };
+  for(let lat=-60;lat<=60;lat+=30){
+    const a=lat*Math.PI/180,pts=[];
+    for(let j=0;j<=samples;j++){const lon=2*Math.PI*j/samples;pts.push([radius*Math.cos(a)*Math.cos(lon),radius*Math.sin(a),radius*Math.cos(a)*Math.sin(lon)])}
+    drawSphereLine(pts);
+  }
+  for(let lon=0;lon<180;lon+=30){
+    const a=lon*Math.PI/180,pts=[];
+    for(let j=0;j<=samples;j++){const lat=-Math.PI/2+2*Math.PI*j/samples;pts.push([radius*Math.cos(lat)*Math.cos(a),radius*Math.sin(lat),radius*Math.cos(lat)*Math.sin(a)])}
+    drawSphereLine(pts);
+  }
+}
+// Geographic reference poles are anchored to the globe coordinate frame.
+// Labels follow the globe under all camera rotations and do not imply physical poles.
+if(el('showGlobe').checked){
+  ctx.save();ctx.font='700 12px system-ui';ctx.textBaseline='middle';
+  for(const pole of [{name:'N  +90°',y:1},{name:'S  −90°',y:-1}]){
+    const p=project(0,pole.y,0), x=p[0], y=p[1];
+    const tx=Math.max(7,Math.min(w-76,x+11));
+    const ty=Math.max(16,Math.min(h-16,y+(pole.y>0?-12:13)));
+    ctx.fillStyle='rgba(4,17,31,.86)';ctx.fillRect(tx-5,ty-12,70,24);
+    ctx.strokeStyle='rgba(117,215,241,.5)';ctx.strokeRect(tx-5,ty-12,70,24);
+    ctx.fillStyle='#d7f5ff';ctx.fillText(pole.name,tx,ty);
+    if(el('showPoles').checked){ctx.beginPath();ctx.arc(x,y,3.5,0,Math.PI*2);ctx.fillStyle='#d7f5ff';ctx.fill()}
+  }
+  ctx.restore();
+}
+if(el('showGuides').checked)for(let k=-1;k<=1;k++){let pts=[];for(let j=0;j<=120;j++){let a=j/120*Math.PI*2,rad=Math.sqrt(1-(k*.34)**2)*.83;pts.push(project(rad*Math.cos(a),k*.34,rad*Math.sin(a)))}line(pts,`rgba(${k===0?'82,210,236':'91,139,225'},${.18*opacity})`,1.5)}
+if(el('tracePoles').checked){
+  // One complete illustrative phase orbit, projected through the current camera.
+  // This is not a measured trajectory or native graph-edge transport.
+  ctx.save();ctx.lineCap='round';ctx.lineJoin='round';
+  const colors=[[251,229,108],[116,226,236],[230,162,231]];
+  for(let k=0;k<3;k++){
+    for(let j=0;j<180;j++){
+      const a0=(phase-(180-j)/180)*Math.PI*2+k*2*Math.PI/3;
+      const a1=(phase-(179-j)/180)*Math.PI*2+k*2*Math.PI/3;
+      const p0=project(.72*Math.cos(a0),.27*Math.sin(2*a0),.72*Math.sin(a0));
+      const p1=project(.72*Math.cos(a1),.27*Math.sin(2*a1),.72*Math.sin(a1));
+      const alpha=.08+.72*Math.pow((j+1)/180,1.7);
+      const rgb=colors[k];
+      ctx.strokeStyle=`rgba(${rgb[0]},${rgb[1]},${rgb[2]},${alpha.toFixed(3)})`;
+      ctx.lineWidth=1.1+1.7*(j+1)/180;
+      ctx.beginPath();ctx.moveTo(p0[0],p0[1]);ctx.lineTo(p1[0],p1[1]);ctx.stroke();
+    }
+  }
+  ctx.restore();
+}
+let nodes=[];for(let k=0;k<3;k++){let a=phase*Math.PI*2+k*2*Math.PI/3,pt=project(.72*Math.cos(a),.27*Math.sin(a*2),.72*Math.sin(a));nodes.push({pt,k})}nodes.sort((a,b)=>a.pt[2]-b.pt[2]);if(el('showPoles').checked)for(let {pt,k} of nodes){let [x,y]=pt;let g=ctx.createRadialGradient(x,y,0,x,y,25);g.addColorStop(0,['#fbe56c','#74e2ec','#e6a2e7'][k]);g.addColorStop(1,'rgba(30,160,210,0)');ctx.fillStyle=g;ctx.beginPath();ctx.arc(x,y,25,0,Math.PI*2);ctx.fill();ctx.fillStyle=['#fbe56c','#74e2ec','#e6a2e7'][k];ctx.beginPath();ctx.arc(x,y,5,0,Math.PI*2);ctx.fill()}if(el('showPoles').checked){ctx.fillStyle='#f4f7ff';ctx.beginPath();ctx.arc(cx,cy,4,0,Math.PI*2);ctx.fill()}if(el('showLabels').checked){ctx.save();ctx.font='600 12px system-ui';ctx.textBaseline='middle';let cycleLabels=cycs[+0];for(let {pt,k} of nodes){let [x,y]=pt;let label='BC '+cycleLabels[k];let tx=Math.max(8,Math.min(w-88,x+12)),ty=Math.max(16,Math.min(h-16,y-13));ctx.fillStyle='rgba(5,18,35,.83)';ctx.fillRect(tx-5,ty-11,76,23);ctx.fillStyle=['#fbe56c','#74e2ec','#e6a2e7'][k];ctx.fillText(label,tx,ty)}ctx.fillStyle='rgba(5,18,35,.84)';ctx.fillRect(Math.max(8,cx-38),cy+11,76,22);ctx.fillStyle='#f4f7ff';ctx.fillText('Centroid',Math.max(13,cx-33),cy+22);ctx.restore()}let cycle=cycs[+0],step=Math.floor(phase*3)%3;el('stats').textContent=`BC circuit ${'0'}: ${cycle[step]} → ${cycle[(step+1)%3]} · phase ${step+1}/3 · V₄ scenario ${el('hol').value} · complete BC/V₄ coupling unproved`;requestAnimationFrame(draw)}requestAnimationFrame(draw);el('view').onchange=()=>{el('viewnote').textContent=el('view').value==='plasma'?'Smooth illustrative intensity volume':'Three continuous translucent phase sheets'};el('play').onclick=()=>{run=!run;el('play').textContent=run?'Ⅱ':'▶'};const views={oblique:[.3,-.3,1],front:[0,0,1],side:[Math.PI/4,0,1],top:[0,Math.PI/2,1],bottom:[0,-Math.PI/2,1]};document.querySelectorAll('[data-camera]').forEach(btn=>btn.addEventListener('click',()=>{[yaw,pitch,zoom]=views[btn.dataset.camera];document.querySelectorAll('[data-camera]').forEach(b=>{b.classList.toggle('active',b===btn);b.setAttribute('aria-pressed',String(b===btn))})}));document.querySelectorAll('[data-field]').forEach(btn=>btn.addEventListener('click',()=>{el('view').value=btn.dataset.field;el('view').dispatchEvent(new Event('change'));document.querySelectorAll('[data-field]').forEach(b=>{b.classList.toggle('active',b===btn);b.setAttribute('aria-pressed',String(b===btn))})}));c.addEventListener('pointerdown',e=>{c.setPointerCapture(e.pointerId);pointer.set(e.pointerId,[e.clientX,e.clientY])});c.addEventListener('pointermove',e=>{if(!pointer.has(e.pointerId))return;let prev=pointer.get(e.pointerId);pointer.set(e.pointerId,[e.clientX,e.clientY]);if(pointer.size===1){yaw+=(e.clientX-prev[0])*.008;pitch+=(e.clientY-prev[1])*.008}else{let pts=[...pointer.values()],d=Math.hypot(pts[0][0]-pts[1][0],pts[0][1]-pts[1][1]);if(pinch)zoom=Math.max(.4,Math.min(3,zoom*d/pinch));pinch=d}});for(let ev of ['pointerup','pointercancel'])c.addEventListener(ev,e=>{pointer.delete(e.pointerId);pinch=0});c.addEventListener('wheel',e=>{e.preventDefault();zoom=Math.max(.4,Math.min(3,zoom*Math.exp(-e.deltaY*.001)))},{passive:false});})();
+</script></html>

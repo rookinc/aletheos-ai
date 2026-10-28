@@ -54,6 +54,7 @@ include __DIR__ . '/includes/site_header.php';
 
 
   <section class="index-section">
+    <p class="section-text">Welcome to Aletheos.ai, a Center of Recursive Inquiry publication.</p>
     <p class="eyebrow">The questions we pursue</p>
     <h2>AI stewardship, philosophy, and science.</h2>
     <div class="card-grid">

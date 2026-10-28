@@ -6,7 +6,9 @@ include __DIR__ . '/includes/head.php';
 include __DIR__ . '/includes/site_header.php';
 ?>
 
-<main class="site-shell">\n\n  <style>
+<main class="site-shell">
+
+  <style>
     .thalean-mini-hero{display:grid;grid-template-columns:minmax(0,190px) 1fr;gap:1.2rem;align-items:center;margin:0 0 1.5rem;padding:1rem;border:1px solid #d7dcd9;border-radius:22px;background:#fff;box-shadow:0 12px 30px rgba(25,39,47,.06)}
     .thalean-mini-hero__art{display:block;overflow:hidden;border-radius:15px;background:#081a2b;aspect-ratio:16/9}
     .thalean-mini-hero__art svg{display:block;width:100%;height:100%}
@@ -42,7 +44,6 @@ include __DIR__ . '/includes/site_header.php';
       </svg>
     </a>
     <div class="thalean-mini-hero__copy">
-      <p class="eyebrow">Interactive observatory</p>
       <h2 id="thalean-mini-title">The Graviton on the Thalean Graph</h2>
       <p>Explore the Thalean Graph through two interactive geometric lenses.</p>
       <a class="button button--primary" href="/observatories/thalean-graph/">Explore the simulator</a>

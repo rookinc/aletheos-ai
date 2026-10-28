@@ -6,7 +6,16 @@ include __DIR__ . '/includes/head.php';
 include __DIR__ . '/includes/site_header.php';
 ?>
 
-<main class="site-shell">\n\n  <!-- THALEAN-MINI-HERO-001 -->
+<main class="site-shell">\n\n  <style>
+    .thalean-mini-hero{display:grid;grid-template-columns:minmax(0,190px) 1fr;gap:1.2rem;align-items:center;margin:0 0 1.5rem;padding:1rem;border:1px solid #d7dcd9;border-radius:22px;background:#fff;box-shadow:0 12px 30px rgba(25,39,47,.06)}
+    .thalean-mini-hero__art{display:block;overflow:hidden;border-radius:15px;background:#081a2b;aspect-ratio:16/9}
+    .thalean-mini-hero__art svg{display:block;width:100%;height:100%}
+    .thalean-mini-hero__copy h2{font-size:clamp(1.2rem,4vw,1.8rem);line-height:1.2;margin:.25rem 0 .4rem}
+    .thalean-mini-hero__copy p:not(.eyebrow){margin:.25rem 0 .7rem;color:#59616b;font-size:.95rem}
+    .thalean-mini-hero__copy .button{font-size:.9rem}
+    @media(max-width:560px){.thalean-mini-hero{grid-template-columns:112px minmax(0,1fr);gap:.8rem;padding:.75rem;border-radius:18px}.thalean-mini-hero__art{aspect-ratio:1/1}.thalean-mini-hero__copy h2{font-size:1.1rem}.thalean-mini-hero__copy p:not(.eyebrow){font-size:.8rem;line-height:1.35}.thalean-mini-hero__copy .button{padding:.5rem .65rem;font-size:.8rem}}
+  </style>
+  <!-- THALEAN-MINI-HERO-001 -->
   <section class="thalean-mini-hero" aria-labelledby="thalean-mini-title">
     <a class="thalean-mini-hero__art" href="/observatories/thalean-graph/" aria-label="Open The Graviton on the Thalean Graph simulator">
       <svg viewBox="0 0 320 180" role="img" aria-label="Illustrative circular field with three colored BC markers">

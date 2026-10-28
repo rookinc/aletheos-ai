@@ -6,7 +6,42 @@ include __DIR__ . '/includes/head.php';
 include __DIR__ . '/includes/site_header.php';
 ?>
 
-<main class="site-shell">
+<main class="site-shell">\n\n  <!-- THALEAN-MINI-HERO-001 -->
+  <section class="thalean-mini-hero" aria-labelledby="thalean-mini-title">
+    <a class="thalean-mini-hero__art" href="/observatories/thalean-graph/" aria-label="Open The Graviton on the Thalean Graph simulator">
+      <svg viewBox="0 0 320 180" role="img" aria-label="Illustrative circular field with three colored BC markers">
+        <defs>
+          <radialGradient id="thalean-glow"><stop stop-color="#78cbb6" stop-opacity=".6"/><stop offset=".6" stop-color="#4eb8c5" stop-opacity=".19"/><stop offset="1" stop-color="#061625" stop-opacity="0"/></radialGradient>
+        </defs>
+        <rect width="320" height="180" fill="#081a2b"/>
+        <circle cx="160" cy="90" r="84" fill="url(#thalean-glow)"/>
+        <g fill="none" stroke-width=".8" opacity=".32">
+          <circle cx="160" cy="90" r="72" stroke="#75b9d8"/>
+          <circle cx="160" cy="90" r="62" stroke="#75b9d8"/>
+          <ellipse cx="160" cy="90" rx="68" ry="25" stroke="#7ac7e3" transform="rotate(32 160 90)"/>
+          <ellipse cx="160" cy="90" rx="68" ry="25" stroke="#c39bdb" transform="rotate(-37 160 90)"/>
+        </g>
+        <g fill="none" stroke-width="1" opacity=".34">
+          <path d="M160 26 Q245 90 160 154 Q75 90 160 26" stroke="#64d6e7"/>
+          <path d="M98 90 Q160 8 222 90 Q160 172 98 90" stroke="#e9c66a"/>
+          <path d="M115 43 Q252 54 205 137 Q68 126 115 43" stroke="#d99bd9"/>
+        </g>
+        <circle cx="160" cy="90" r="15" fill="#0c2431"/>
+        <circle cx="218" cy="55" r="6" fill="#63d7ef"/>
+        <circle cx="100" cy="92" r="6" fill="#f0d06e"/>
+        <circle cx="202" cy="141" r="6" fill="#e4a0e1"/>
+      </svg>
+    </a>
+    <div class="thalean-mini-hero__copy">
+      <p class="eyebrow">Interactive observatory</p>
+      <h2 id="thalean-mini-title">The Graviton on the Thalean Graph</h2>
+      <p>Explore the Thalean Graph through two interactive geometric lenses.</p>
+      <a class="button button--primary" href="/observatories/thalean-graph/">Explore the simulator</a>
+    </div>
+  </section>
+  <!-- /THALEAN-MINI-HERO-001 -->
+
+
 
   <section class="index-section">
     <p class="eyebrow">The questions we pursue</p>

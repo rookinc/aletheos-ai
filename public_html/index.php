@@ -7,35 +7,6 @@ include __DIR__ . '/includes/site_header.php';
 ?>
 
 <main class="site-shell">
-  
-
-  
-
-  <section class="index-section">
-    <p class="eyebrow">Philosophy · Two ways into the conversation</p>
-    <h2>Experience and the lives we affect.</h2>
-    <div class="card-grid">
-      <article class="index-card">
-        <p class="card-label">Consciousness and relation</p>
-        <h3>What do we mean by conscious?</h3>
-        <p>
-          If the universe is conscious, what does that mean to a physician?
-          Examine the language of experience, evidence, and the relationships
-          through which we understand one another.
-        </p>
-        <a class="button button--secondary" href="/philosophy/consciousness-and-relation.php">Read the inquiry</a>
-      </article>
-      <article class="index-card">
-        <p class="card-label">Morality · A personal perspective</p>
-        <h3>Let my trace not be cruelty.</h3>
-        <p>
-          Scott Allen Cave considers responsibility before certainty: our actions
-          leave marks in lives whose experience we cannot fully enter.
-        </p>
-        <a class="button button--secondary" href="/philosophy/let-my-trace-not-be-cruelty.php">Read Scott's essay</a>
-      </article>
-    </div>
-  </section>
 
   <section class="index-section">
     <p class="eyebrow">The questions we pursue</p>
@@ -68,6 +39,37 @@ include __DIR__ . '/includes/site_header.php';
       </article>
     </div>
   </section>
+  
+
+  
+
+  <section class="index-section">
+    <p class="eyebrow">Philosophy · Two ways into the conversation</p>
+    <h2>Experience and the lives we affect.</h2>
+    <div class="card-grid">
+      <article class="index-card">
+        <p class="card-label">Consciousness and relation</p>
+        <h3>What do we mean by conscious?</h3>
+        <p>
+          If the universe is conscious, what does that mean to a physician?
+          Examine the language of experience, evidence, and the relationships
+          through which we understand one another.
+        </p>
+        <a class="button button--secondary" href="/philosophy/consciousness-and-relation.php">Read the inquiry</a>
+      </article>
+      <article class="index-card">
+        <p class="card-label">Morality · A personal perspective</p>
+        <h3>Let my trace not be cruelty.</h3>
+        <p>
+          Scott Allen Cave considers responsibility before certainty: our actions
+          leave marks in lives whose experience we cannot fully enter.
+        </p>
+        <a class="button button--secondary" href="/philosophy/let-my-trace-not-be-cruelty.php">Read Scott's essay</a>
+      </article>
+    </div>
+  </section>
+
+
 
 
   <!-- THALEAN-OBSERVATORY-001 -->

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="dark"><meta name="author" content="Scott Allen Cave; Joachim Kiseleczuk"><meta name="description" content="UFT4 Omega Observatory: an experimental field visualization with native Thalean Graph elements. Thalean Graph elements by Scott Allen Cave; UFT4 Omega work by Joachim Kiseleczuk."><title>UFT4 Omega v15.9.1 | G900 Pairing Observatory</title><style>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="dark"><meta name="author" content="Scott Allen Cave; Joachim Kiseleczuk"><meta name="description" content="UFT4 Omega Observatory: an experimental field visualization with native Thalean Graph elements. Thalean Graph elements by Scott Allen Cave; UFT4 Omega work by Joachim Kiseleczuk."><title>UFT4 Omega v15.9.2 | G900 Pairing Observatory</title><style>
 :root{color-scheme:dark;--bg:#060b17;--panel:#0c1423;--edge:#253349;--ink:#e4edf8;--muted:#94a9c3;--cyan:#6ad9e9;--amber:#f4cb7b}
 *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;height:100dvh;overflow:hidden;background:var(--bg);color:var(--ink);font:14px/1.4 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
 body{display:flex;flex-direction:column}.app-header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex:0 0 auto;padding:8px 14px;border-bottom:1px solid var(--edge);background:#0b1423;z-index:2}.brand{display:flex;align-items:center;gap:10px;min-width:0}.brand-mark{font:34px/1 Georgia,serif;color:var(--cyan);width:35px}.brand h1{margin:0;font-size:16px;letter-spacing:.02em;font-weight:650;white-space:nowrap}.brand p{margin:2px 0 0;color:var(--muted);font-size:10px;letter-spacing:.055em}.version{font:10px/1.4 ui-monospace,monospace;color:#9daac1;margin-left:3px}
@@ -24,6 +24,7 @@ body.high-contrast{color-scheme:light;--bg:#f7f7f0;--panel:#fff;--edge:#6a7277;-
 #primaryControls{padding-top:9px;padding-bottom:12px}
 #primaryControls .slider-control{margin-top:4px}
 #primaryControls .range-endpoints{font-size:10px;color:var(--muted);margin-top:-6px;margin-bottom:6px}
+#rotisserie{width:100%;margin-top:8px}#rotisserieHelp{margin:5px 0 0}
 #displayFlags .section-heading{margin-bottom:5px}
 #displayFlags .checks{margin-top:0}
 #displayFlags .display-checks{gap:0 10px}
@@ -53,7 +54,7 @@ body.high-contrast{color-scheme:light;--bg:#f7f7f0;--panel:#fff;--edge:#6a7277;-
 @media(max-height:560px){#launchDialog{padding:18px}#launchInstruction{margin-bottom:12px}.launch-credits{padding:12px 0;gap:10px}}
 </style></head><body>
 <header class="app-header">
-  <div class="brand"><span class="brand-mark" aria-hidden="true">Ω</span><div><h1>UFT4 Omega <span class="version">15.9.1</span></h1><p>G900 host · G60 / G15 observatory</p></div></div>
+  <div class="brand"><span class="brand-mark" aria-hidden="true">Ω</span><div><h1>UFT4 Omega <span class="version">15.9.2</span></h1><p>G900 host · G60 / G15 observatory</p></div></div>
   <div class="header-actions"><button id="contrast" type="button" aria-label="Toggle high-contrast sunlight view" aria-pressed="false">Sunlight</button><button id="play" class="primary" type="button" aria-label="Pause simulation">Pause</button></div>
 </header>
 <main>
@@ -69,6 +70,8 @@ body.high-contrast{color-scheme:light;--bg:#f7f7f0;--panel:#fff;--edge:#6a7277;-
       <div class="slider-label range-endpoints" aria-hidden="true"><span>Separated</span><span>Joined</span></div>
       <div id="zoomSlider"></div>
       <div id="hostOpacitySlider"></div>
+      <button id="rotisserie" type="button" aria-pressed="false" aria-describedby="rotisserieHelp">Rotisserie · Off</button>
+      <p id="rotisserieHelp" class="note">Full yaw, pitch &amp; roll orbit. Play/Pause holds the orbit; drag or change an angle to take control.</p>
     </section>
     <section id="renderControls" aria-labelledby="renderControlsTitle">
       <div class="section-heading"><h2 id="renderControlsTitle">Field style &amp; cycle</h2></div>
@@ -85,7 +88,7 @@ body.high-contrast{color-scheme:light;--bg:#f7f7f0;--panel:#fff;--edge:#6a7277;-
       <details id="bcControls"><summary>BC dots &amp; trails</summary><div class="detail-content">
         
         <div id="bcTailSlider"></div>
-        <p id="bcTailHelp" class="note">BC dots includes the two source/partner markers. Dots and trails are independent. Trail length defaults to 90°; 0° hides trails and 360° spans one orbit.</p>
+        <p id="bcTailHelp" class="note">BC dots includes the two source/partner markers. Dots and trails are independent. Trail length defaults to 182°; 0° hides trails and 360° spans one orbit.</p>
         <div class="select-row"><label for="bcScope">BC placement</label><select id="bcScope"><option value="layers">All visible layers</option><option value="carriers">G60 carriers</option><option value="center">Center only</option></select></div>
         <p class="note">BC 2 (gold), BC 11 (cyan), BC 14 (pink). These are source display labels, not graph vertex indices. Lower-layer tracks are visual projections.</p>
         <p class="note">The illustrative orbit comes from v7.14. Trails extend toward lower phase even in Reverse, with fewer samples at lower adaptive quality. Main Play, speed, reverse and reset drive their phase; BC controls do not reset time.</p>
@@ -1026,7 +1029,7 @@ class RenderingEngine {
  adapt(now){if(this.failed||now-this.lastAdapt<3000)return;this.lastAdapt=now;let cpu=0,n=Math.min(this.sampleCount,90);for(let j=1;j<=n;j++)cpu+=this.samples[((this.sampleCursor-j+1800)%1800)*8+2];cpu/=Math.max(1,n);const schedulingGap=this.stats.frameMs>250;const slow=cpu>25||(!schedulingGap&&this.stats.fps<23);this.slowWindows=slow?this.slowWindows+1:0;this.fastWindows=(!slow&&cpu<12&&this.stats.fps>28)?this.fastWindows+1:0;const levels=['high','balanced','low','safe'],i=levels.indexOf(this.level);
  if(this.slowWindows>=2&&i<3){this.setQuality(levels[i+1]);this.slowWindows=0;this.fastWindows=0;this.app.ui.status('Quality reduced to '+this.level+' to keep controls responsive.');}
  else if(this.app.settings.quality==='auto'&&this.fastWindows>=5&&i>0){this.setQuality(levels[i-1]);this.fastWindows=0;this.app.ui.status('Adaptive quality: '+this.level+'.');}}
- report(){return {version:'15.9.1',...this.stats,quality:this.level,requestedQuality:this.app.settings.quality,mode:this.effectiveMode(),highContrast:!!this.app.settings.highContrast,requestedMode:this.app.settings.faceMode,fieldLayout:this.mesh?.bisected?'bisected A/B':'whole source',fieldHalfElements:this.app.layers.face&&this.mesh?.bisected?this.mesh.faces.length/2:0,width:this.w,height:this.h,dpr:this.dpr,mainPixels:this.canvas.width*this.canvas.height,plasmaBuffer:[this.bw,this.bh],towerMerge:this.app.hostSettings?.merge||0,hostOpacity:this.hostOpacity(),bcHeads:this.app.bcRenderer?.headsDrawn||0,bcSegments:this.app.bcRenderer?.segmentsDrawn||0,bcCpuMs:this.app.bcRenderer?.cpuMs||0,bcFixedBytes:this.app.bcRenderer?.fixedBytes||0,bcError:this.app.bcRenderer?.error||'',knownBufferBytes:this.canvas.width*this.canvas.height*4+(this.buffers?this.bw*this.bh*60:0)+(this.app.bcRenderer?.fixedBytes||0),effects:[...(this.app.settings.highContrast?['sunlight contours','high-contrast graph']:this.effectiveMode()==='sheets'?['geometric sheets']:(this.app.settings.glow>0&&this.app.settings.blur>0?['software radiance','software box-Gaussian bloom','screen composite']:['software radiance'])),...(this.app.bcSettings?.enabled&&this.app.bcSettings.dots?['BC dots']:[]),...(this.app.bcSettings?.enabled&&this.app.bcSettings.trails&&this.app.bcSettings.tailDegrees>0?['BC trails']:[])],simulationTime:this.app.sim.time,errors:this.errors.slice(),contextLost:this.lost,failed:this.failed,stopped:this.stopped};}
+ report(){return {version:'15.9.2',...this.stats,quality:this.level,requestedQuality:this.app.settings.quality,mode:this.effectiveMode(),highContrast:!!this.app.settings.highContrast,requestedMode:this.app.settings.faceMode,fieldLayout:this.mesh?.bisected?'bisected A/B':'whole source',fieldHalfElements:this.app.layers.face&&this.mesh?.bisected?this.mesh.faces.length/2:0,width:this.w,height:this.h,dpr:this.dpr,mainPixels:this.canvas.width*this.canvas.height,plasmaBuffer:[this.bw,this.bh],towerMerge:this.app.hostSettings?.merge||0,hostOpacity:this.hostOpacity(),bcHeads:this.app.bcRenderer?.headsDrawn||0,bcSegments:this.app.bcRenderer?.segmentsDrawn||0,bcCpuMs:this.app.bcRenderer?.cpuMs||0,bcFixedBytes:this.app.bcRenderer?.fixedBytes||0,bcError:this.app.bcRenderer?.error||'',knownBufferBytes:this.canvas.width*this.canvas.height*4+(this.buffers?this.bw*this.bh*60:0)+(this.app.bcRenderer?.fixedBytes||0),effects:[...(this.app.settings.highContrast?['sunlight contours','high-contrast graph']:this.effectiveMode()==='sheets'?['geometric sheets']:(this.app.settings.glow>0&&this.app.settings.blur>0?['software radiance','software box-Gaussian bloom','screen composite']:['software radiance'])),...(this.app.bcSettings?.enabled&&this.app.bcSettings.dots?['BC dots']:[]),...(this.app.bcSettings?.enabled&&this.app.bcSettings.trails&&this.app.bcSettings.tailDegrees>0?['BC trails']:[])],simulationTime:this.app.sim.time,errors:this.errors.slice(),contextLost:this.lost,failed:this.failed,stopped:this.stopped};}
  capture(){const rows=[];for(let j=this.sampleCount;j>0;j--){const a=((this.sampleCursor-j+1800)%1800)*8;rows.push(Array.from(this.samples.slice(a,a+8)));}return {report:this.report(),columns:['rafTimestamp','frameIntervalMs','drawCpuMs','fieldCpuMs','geometryCpuMs','plasmaCpuMs','compositeSubmissionMs','graphCpuMs'],samples:rows};}
 }
 
@@ -1058,7 +1061,7 @@ class UIController {
       ['zoom','Zoom',.4,2.8,.01,2]
     ]);
     this.addRanges('cameraSliders','camera','camera',[
-      ['yaw','Yaw · °',-180,180,1,0],['pitch','Pitch · °',-89,89,1,0],['roll','Roll · °',-180,180,1,0]
+      ['yaw','Yaw · °',-180,180,1,0],['pitch','Pitch · °',-180,180,1,0],['roll','Roll · °',-180,180,1,0]
     ]);
     this.addRanges('simulationSliders','params','field',[
       ['speed','Time speed',0,2,.01,2]
@@ -1092,7 +1095,7 @@ class UIController {
     this.bindGroup(this.buttons.resonanceMode,'res','research','resonanceMode','research');
     this.bindGroup(this.buttons.fiberView,'fiberview','research','fiberView','layers');
     for (const b of this.buttons.presets) b.addEventListener('click',()=>{
-      const p=this.presets[b.dataset.view];
+      const p=this.presets[b.dataset.view];app.stopRotisserie();
       [app.camera.yaw,app.camera.pitch,app.camera.roll]=p;
       app.changed('camera'); this.sync();
     });
@@ -1104,6 +1107,7 @@ class UIController {
     this.el('sceneLabels').addEventListener('change',()=>{app.settings.sceneLabels=this.el('sceneLabels').checked;app.changed('layers');this.sync();});
     for(const id of ['play','playPanel']) this.el(id).addEventListener('click',()=>{app.togglePlay();this.sync();});
     this.el('direction').addEventListener('click',()=>{app.sim.direction=app.sim.direction===-1?1:-1;app.changed('field');this.sync();});
+    this.el('rotisserie').addEventListener('click',()=>app.toggleRotisserie());
     this.el('reset').addEventListener('click',()=>{app.reset();this.sync();});
     this.el('generate').addEventListener('click',()=>app.generate());
     this.el('cancelGeneration').addEventListener('click',()=>app.cancelGeneration());
@@ -1132,6 +1136,7 @@ class UIController {
         let value=Number(input.value);
         if(!Number.isFinite(value)) value=min;
         value=Math.min(max,Math.max(min,value));
+        if(group==='camera'&&key!=='zoom')this.app.stopRotisserie();
         this.state(group)[key]=value;output.textContent=this.formatRange(range,value);
         if(kind!=='research')this.app.changed(kind);
         if(group==='camera')this.syncPresets();
@@ -1163,6 +1168,9 @@ class UIController {
   select(buttons,dataset,value) {
     for(const button of buttons){const active=button.dataset[dataset]===value;button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active));}
   }
+  syncRotisserie() {
+    const active=this.app.orbit.enabled,button=this.el('rotisserie');button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active));button.setAttribute('aria-label',active?'Stop rotisserie camera orbit':'Start rotisserie camera orbit');button.textContent=active?'Rotisserie · On':'Rotisserie · Off';
+  }
   syncPresets() {
     const c=this.app.camera;
     for(const button of this.buttons.presets){const p=this.presets[button.dataset.view],active=c.yaw===p[0]&&c.pitch===p[1]&&c.roll===p[2];button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active));}
@@ -1176,7 +1184,7 @@ class UIController {
     this.el('contrast').setAttribute('aria-pressed',String(!!a.settings.highContrast));
     this.el('contrast').setAttribute('aria-label',a.settings.highContrast?'Return to dark view':'Enable high-contrast sunlight view');
     for(const r of this.ranges){const value=Number(this.state(r.group)[r.key||r.id]);r.input.value=value;r.output.textContent=this.formatRange(r,value);}
-    this.syncFrequency();
+    this.syncFrequency();this.syncRotisserie();
     for(const c of this.checks)c.input.checked=!!this.state(c.group)[c.id];
     this.select(this.buttons.faceMode,'faceMode',a.settings.faceMode);
     this.select(this.buttons.palette,'palette',a.settings.palette);
@@ -1353,6 +1361,7 @@ class UIController {
     const canvas=this.el('canvas'),a=this.app,clamp=(x,lo,hi)=>Math.max(lo,Math.min(hi,x)),wrapYaw=x=>((x+180)%360+360)%360-180;
     canvas.addEventListener('pointerdown',e=>{
       if(!e.isPrimary||e.button>0)return;
+      a.stopRotisserie();
       this.drag={id:e.pointerId,x:e.clientX,y:e.clientY,yaw:a.camera.yaw,pitch:a.camera.pitch,maxTravel:0};
       canvas.setPointerCapture(e.pointerId);
     });
@@ -1361,7 +1370,7 @@ class UIController {
       d.maxTravel=Math.max(d.maxTravel,Math.hypot(e.clientX-d.x,e.clientY-d.y));
       if(d.maxTravel<5)return;
       a.camera.yaw=wrapYaw(d.yaw+(e.clientX-d.x)*.4);
-      a.camera.pitch=clamp(d.pitch-(e.clientY-d.y)*.4,-89,89);
+      a.camera.pitch=wrapYaw(d.pitch-(e.clientY-d.y)*.4);
       a.changed('camera');this.syncCamera();
     });
     const end=e=>{if(this.drag&&e.pointerId===this.drag.id)this.drag=null;};
@@ -1377,10 +1386,11 @@ class UIController {
     canvas.addEventListener('wheel',e=>{e.preventDefault();a.camera.zoom=clamp(a.camera.zoom*(e.deltaY>0?.92:1.08),.4,2.8);a.changed('camera');this.syncCamera();},{passive:false});
     canvas.addEventListener('keydown',e=>{
       const c=a.camera;
+      if(e.key.startsWith('Arrow'))a.stopRotisserie();
       if(e.key==='ArrowLeft')c.yaw=wrapYaw(c.yaw-3);
       else if(e.key==='ArrowRight')c.yaw=wrapYaw(c.yaw+3);
-      else if(e.key==='ArrowUp')c.pitch=clamp(c.pitch+3,-89,89);
-      else if(e.key==='ArrowDown')c.pitch=clamp(c.pitch-3,-89,89);
+      else if(e.key==='ArrowUp')c.pitch=wrapYaw(c.pitch+3);
+      else if(e.key==='ArrowDown')c.pitch=wrapYaw(c.pitch-3);
       else if(e.key==='+'||e.key==='=')c.zoom=clamp(c.zoom*1.08,.4,2.8);
       else if(e.key==='-')c.zoom=clamp(c.zoom*.92,.4,2.8);
       else return;
@@ -1397,15 +1407,32 @@ class UIController {
   updateDiagnostics(text) {if(this.el('diagnostics').open)this.el('diagnosticsText').textContent=text;}
 }
 
+/* Display-only orbit. All three angles wrap continuously; no simulation input. */
+class CameraOrbit {
+ constructor(){this.enabled=false;this.pending=0;}
+ setEnabled(enabled){this.enabled=!!enabled;this.pending=0;}
+ static wrap(degrees){return ((degrees+180)%360+360)%360-180;}
+ step(dt,camera,period=1/30){
+  if(!this.enabled||!Number.isFinite(dt)||dt<=0)return false;
+  this.pending+=Math.min(.1,dt);
+  if(this.pending+1e-9<period)return false;
+  const seconds=this.pending;this.pending=0;
+  camera.yaw=CameraOrbit.wrap(camera.yaw+6*seconds);
+  camera.pitch=CameraOrbit.wrap(camera.pitch+4*seconds);
+  camera.roll=CameraOrbit.wrap(camera.roll+3*seconds);
+  return true;
+ }
+}
+
 /* UI orchestration; simulation and rendering state have separate owners. */
 class ObservatoryApp {
  constructor(){
   this.sim=new SimulationEngine();this.graph=new GraphEngine();this.tower=new TowerReferenceEngine(this.graph);this.geometry=new GeometryEngine(this.sim.params);
   this.host=new HostEngine(this.graph);this.host.playing=false;this.host.setNeighborBlock(1);this.hostSettings={enabled:true,view:"pair",local:false,external:false,trails:false,merge:100,opacity:1};this.hostRenderer=new HostRenderer(this);this.hostTickMs=0;this.lastHostUI=0;
   this.settings={faceMode:'plasma',palette:'ice',blur:9,glow:1.3,opacity:.9,detail:1,turbulence:.35,quality:'auto',highContrast:false,sceneLabels:false};
-  this.camera={yaw:15,pitch:0,roll:-25,zoom:2.6};
+  this.camera={yaw:40,pitch:25,roll:-55,zoom:2.6};this.orbit=new CameraOrbit();
   this.layers={face:true,g60:false,vertices:false,g15:false,g30:false,g30Links:false,selectedConnections:false,fibers:false,generatedLayer:true,showFiberRays:true,showFiberLabels:false};
-  this.bcSettings={enabled:true,dots:false,trails:false,tailDegrees:90,scope:'layers',labels:false};this.bc=new BCTracerEngine();this.bcRenderer=new BCTracerRenderer(this);
+  this.bcSettings={enabled:true,dots:false,trails:true,tailDegrees:182,scope:'layers',labels:false};this.bc=new BCTracerEngine(this.bcSettings.tailDegrees);this.bcRenderer=new BCTracerRenderer(this);
   this.research={resonanceMode:'exact',gradFilter:true,minFilter:true,coherenceFilter:true,mergeFilter:true,compareFilter:false,phaseTol:.2,gradTol:.001,edgeTol:.0335,coherenceTol:.785,orbitTol:.15,fiberView:'generated'};
   this.generated=null;this.fiberAudit=null;this.job=null;this.last=0;this.lastPaint=0;this.lastDetail=1;this.lastFaceMode='plasma';this.ui=new UIController(this);
   this.renderer=new RenderingEngine(this,this.ui.el('canvas'));this.ui.el('certificate').textContent='G900 900 / 3,600 · G60/G15 4:1 intact';this.ui.updateHost();
@@ -1415,7 +1442,9 @@ class ObservatoryApp {
   this.start();
  }
  start(){if(!this.raf&&!document.hidden)this.raf=requestAnimationFrame(this.boundTick);}
- tick(ts){this.raf=0;if(document.hidden)return;if(this.last){const dt=(ts-this.last)/1000;this.sim.step(dt);const ht=performance.now();if(this.sim.playing)this.host.advance(Math.min(.07,Math.max(0,dt))*this.sim.params.speed*this.sim.direction);this.hostTickMs=performance.now()-ht;}this.last=ts;if(ts-this.lastPaint>=1000/30-1){this.lastPaint=ts;this.renderer.render(ts);this.launchPopover?.afterFrame();if(ts-this.lastHostUI>=200){this.lastHostUI=ts;this.ui.updateHost();}}this.start();}
+ tick(ts){this.raf=0;if(document.hidden)return;if(this.last){const dt=(ts-this.last)/1000;this.sim.step(dt);const ht=performance.now();if(this.sim.playing)this.host.advance(Math.min(.07,Math.max(0,dt))*this.sim.params.speed*this.sim.direction);this.hostTickMs=performance.now()-ht;
+ if(this.sim.playing&&this.orbit.enabled){const period=this.renderer.effectiveMode()==='sheets'||!this.layers.face?1/30:this.renderer.config.period/1000;if(this.orbit.step(dt,this.camera,period))this.renderer.invalidate('camera');}
+ }this.last=ts;if(ts-this.lastPaint>=1000/30-1){this.lastPaint=ts;this.renderer.render(ts);this.launchPopover?.afterFrame();if(ts-this.lastHostUI>=200){this.lastHostUI=ts;this.ui.updateHost();if(this.orbit.enabled)this.ui.syncCamera();}}this.start();}
  changed(kind){if(kind==='display')return;if(kind==='bc'){if(this.bcRenderer.failed){this.bcSettings.enabled=false;this.ui.syncBC();this.ui.status('BC overlay disabled after an error. Reload to retry.');}return;}if(!this.renderer)return;if(this.renderer.failed){this.settings.faceMode='sheets';this.settings.quality='safe';this.ui.sync();}
  if(kind==='contrast'){if(this.settings.highContrast)this.renderer.release();this.renderer.dirtyProjection=true;this.ui.sync();}
  if(kind==='quality'){this.renderer.setQuality(this.settings.quality==='auto'?'balanced':this.settings.quality);}
@@ -1425,7 +1454,9 @@ class ObservatoryApp {
  this.renderer.invalidate(kind);if(this.generated&&['field','geometry'].includes(kind))this.ui.el('snapshotNotice').hidden=false;
  if(this.renderer.level==='safe'&&this.settings.faceMode!=='sheets')this.ui.status('Safe quality displays Sheets. Select a higher quality to enable plasma.');
  }
- togglePlay(){this.sim.playing=!this.sim.playing;this.last=0;}
+ toggleRotisserie(){this.orbit.setEnabled(!this.orbit.enabled);this.last=0;this.ui.syncRotisserie();}
+ stopRotisserie(){if(this.orbit.enabled){this.orbit.setEnabled(false);this.ui.syncRotisserie();}}
+ togglePlay(){this.sim.playing=!this.sim.playing;this.orbit.pending=0;this.last=0;}
  reset(){this.sim.reset();this.host.resetPulse();this.host.playing=false;this.ui.updateHost();this.last=0;this.renderer.dirtyPlasma=true;this.ui.status('Simulation time reset to zero. Parameters retained.');}
  setHostSource(block,vertex){this.host.setSource(block,vertex);this.host.playing=false;this.changed('host');this.ui.sync();}
  setHostNeighbor(block){this.host.setNeighborBlock(block);this.changed('host');this.ui.sync();}
@@ -1444,9 +1475,9 @@ class ObservatoryApp {
  this.ui.el('fiberReport').textContent='Candidates regenerated. Run the four-state audit.';this.ui.el('snapshotNotice').hidden=false;
  }catch(e){if(e.name==='AbortError')this.ui.el('generatorReport').textContent='Generation cancelled. Previous completed result retained.';else this.ui.el('generatorReport').textContent='Generator error: '+e.message;}finally{if(this.job===controller)this.job=null;this.ui.setBusy(false);}}
  async audit(){if(this.job)return;if(!this.generated){this.ui.el('fiberReport').textContent='Generate candidate sites first.';return;}const controller=new AbortController();this.job=controller;this.ui.setBusy(true);try{this.fiberAudit=await IndependentGenerator.auditAsync(this.generated,{...this.research},p=>{this.ui.el('fiberReport').textContent=`Auditing: ${p.completed} / ${p.total}`;},controller.signal);this.ui.el('fiberReport').textContent=this.fiberAudit.report;}catch(e){this.ui.el('fiberReport').textContent=e.name==='AbortError'?'Audit cancelled.':'Audit error: '+e.message;}finally{this.job=null;this.ui.setBusy(false);}}
- updateDiagnostics(){this.ui.updateHost();const r=this.renderer.report(),s=r;this.ui.el('renderBadge').textContent=this.settings.highContrast?'SUNLIGHT · SHEETS':r.mode.toUpperCase();this.ui.updateDiagnostics(`Rendering FPS: ${s.fps.toFixed(1)}\nPlasma refreshes/s: ${s.plasmaFps.toFixed(1)}\nAverage delivered frame: ${s.frameMs.toFixed(2)} ms\nQuality: ${s.quality} (requested ${s.requestedQuality})\nDisplay: ${this.renderer.canvas.width} × ${this.renderer.canvas.height} · DPR ${s.dpr.toFixed(2)}\nPlasma buffer: ${s.plasmaBuffer.join(' × ')}\nSurface faces: ${s.surfaceElements} · ${s.fieldLayout} · ${s.fieldHalfElements} per half\nGenerated edges displayed: ${s.generatedEdgesDrawn}\nKnown pixel/array budget: ${(s.knownBufferBytes/1048576).toFixed(2)} MiB (excludes browser copies)\nActive: ${s.effects.join(', ')}\nHost: ${this.hostSettings.enabled?this.hostSettings.view:'hidden'} · ${this.hostRenderer.drawnVertices} vertices displayed\nG900 opacity: ${(this.hostSettings.opacity*100).toFixed(0)}%\nTower merge: ${this.hostSettings.merge.toFixed(0)}% · display only\nHost step / draw CPU: ${this.hostTickMs.toFixed(2)} / ${this.hostRenderer.cpuMs.toFixed(2)} ms\nQuotient sheet instances: ${this.hostRenderer.quotientVerticesDrawn} vertices / ${this.hostRenderer.quotientEdgesDrawn} edges · fiber rays ${this.hostRenderer.fiberRaysDrawn}\nG30 reference: ${this.hostRenderer.g30VerticesDrawn} vertices / ${this.hostRenderer.g30EdgesDrawn} edges · G60 pair rays ${this.hostRenderer.g30RaysDrawn} · 24 pairs cross current G15 fibers\nBC tail ${this.bcSettings.tailDegrees.toFixed(0)}° · phase ${this.bc.phase.toFixed(3)} · ${this.bcRenderer.headsDrawn} dots / ${this.bcRenderer.segmentsDrawn} tail segments\nBC CPU ${this.bcRenderer.cpuMs.toFixed(2)} ms · fixed ${(this.bcRenderer.fixedBytes/1024).toFixed(1)} KiB\nBC error: ${this.bcRenderer.error||'none'}\nPulse edge marks: ${this.hostRenderer.frontierEdgesDrawn} / ${this.hostRenderer.frontierEdgesEligible} visible candidates\nHost pulse: hop ${this.host.travel.toFixed(2)} · ${this.host.reachedCount}/900 reached\nField cycle: ${this.sim.frequencyHz.toFixed(1)} Hz · per simulation second\nAngular frequency: ${this.sim.params.omega.toFixed(3)} rad / simulation second\nRequested wall-time cycle: ${(this.sim.frequencyHz*this.sim.params.speed).toFixed(1)} Hz at current speed (capped clock)\nTime: ${s.simulationTime.toFixed(3)}\nLast CPU timings, ms:\n field / graph response ${s.fieldMs.toFixed(2)}\n geometry / lookup ${s.geometryMs.toFixed(2)}\n plasma / software blur ${s.plasmaMs.toFixed(2)}\n compositing submission ${s.compositeMs.toFixed(2)}\n graph overlay ${s.graphMs.toFixed(2)}\n total ${s.drawMs.toFixed(2)}\nFrames: ${s.frames} · plasma refreshes: ${s.plasmaUpdates}\nBuffer allocations: ${s.bufferAllocations}\nContext lost: ${s.contextLost}\nErrors: ${s.errors.length}\n${s.errors.map(e=>e.message).join('\n')}\nCPU timings do not include all browser raster/GPU work.`);}
+ updateDiagnostics(){this.ui.updateHost();const r=this.renderer.report(),s=r;this.ui.el('renderBadge').textContent=this.settings.highContrast?'SUNLIGHT · SHEETS':r.mode.toUpperCase();this.ui.updateDiagnostics(`Rendering FPS: ${s.fps.toFixed(1)}\nPlasma refreshes/s: ${s.plasmaFps.toFixed(1)}\nAverage delivered frame: ${s.frameMs.toFixed(2)} ms\nQuality: ${s.quality} (requested ${s.requestedQuality})\nDisplay: ${this.renderer.canvas.width} × ${this.renderer.canvas.height} · DPR ${s.dpr.toFixed(2)}\nPlasma buffer: ${s.plasmaBuffer.join(' × ')}\nSurface faces: ${s.surfaceElements} · ${s.fieldLayout} · ${s.fieldHalfElements} per half\nGenerated edges displayed: ${s.generatedEdgesDrawn}\nKnown pixel/array budget: ${(s.knownBufferBytes/1048576).toFixed(2)} MiB (excludes browser copies)\nActive: ${s.effects.join(', ')}\nHost: ${this.hostSettings.enabled?this.hostSettings.view:'hidden'} · ${this.hostRenderer.drawnVertices} vertices displayed\nG900 opacity: ${(this.hostSettings.opacity*100).toFixed(0)}%\nTower merge: ${this.hostSettings.merge.toFixed(0)}% · display only\nHost step / draw CPU: ${this.hostTickMs.toFixed(2)} / ${this.hostRenderer.cpuMs.toFixed(2)} ms\nQuotient sheet instances: ${this.hostRenderer.quotientVerticesDrawn} vertices / ${this.hostRenderer.quotientEdgesDrawn} edges · fiber rays ${this.hostRenderer.fiberRaysDrawn}\nG30 reference: ${this.hostRenderer.g30VerticesDrawn} vertices / ${this.hostRenderer.g30EdgesDrawn} edges · G60 pair rays ${this.hostRenderer.g30RaysDrawn} · 24 pairs cross current G15 fibers\nBC tail ${this.bcSettings.tailDegrees.toFixed(0)}° · phase ${this.bc.phase.toFixed(3)} · ${this.bcRenderer.headsDrawn} dots / ${this.bcRenderer.segmentsDrawn} tail segments\nBC CPU ${this.bcRenderer.cpuMs.toFixed(2)} ms · fixed ${(this.bcRenderer.fixedBytes/1024).toFixed(1)} KiB\nBC error: ${this.bcRenderer.error||'none'}\nPulse edge marks: ${this.hostRenderer.frontierEdgesDrawn} / ${this.hostRenderer.frontierEdgesEligible} visible candidates\nHost pulse: hop ${this.host.travel.toFixed(2)} · ${this.host.reachedCount}/900 reached\nField cycle: ${this.sim.frequencyHz.toFixed(1)} Hz · per simulation second\nAngular frequency: ${this.sim.params.omega.toFixed(3)} rad / simulation second\nRequested wall-time cycle: ${(this.sim.frequencyHz*this.sim.params.speed).toFixed(1)} Hz at current speed (capped clock)\nCamera rotisserie: ${this.orbit.enabled?'on':'off'} · yaw/pitch/roll ${this.camera.yaw.toFixed(1)}° / ${this.camera.pitch.toFixed(1)}° / ${this.camera.roll.toFixed(1)}°\nTime: ${s.simulationTime.toFixed(3)}\nLast CPU timings, ms:\n field / graph response ${s.fieldMs.toFixed(2)}\n geometry / lookup ${s.geometryMs.toFixed(2)}\n plasma / software blur ${s.plasmaMs.toFixed(2)}\n compositing submission ${s.compositeMs.toFixed(2)}\n graph overlay ${s.graphMs.toFixed(2)}\n total ${s.drawMs.toFixed(2)}\nFrames: ${s.frames} · plasma refreshes: ${s.plasmaUpdates}\nBuffer allocations: ${s.bufferAllocations}\nContext lost: ${s.contextLost}\nErrors: ${s.errors.length}\n${s.errors.map(e=>e.message).join('\n')}\nCPU timings do not include all browser raster/GPU work.`);}
 }
-globalThis.UFT4={SimulationEngine,GraphEngine,GeometryEngine,TowerReferenceEngine,BCTracerEngine,BCTracerRenderer,IndependentGenerator,HostEngine,HostRenderer,RenderingEngine,QUALITY,DEFAULT_PARAMS,version:'15.9.1'};
+globalThis.UFT4={CameraOrbit,SimulationEngine,GraphEngine,GeometryEngine,TowerReferenceEngine,BCTracerEngine,BCTracerRenderer,IndependentGenerator,HostEngine,HostRenderer,RenderingEngine,QUALITY,DEFAULT_PARAMS,version:'15.9.2'};
 /* Credits and honest startup readiness, independent of the mathematical engines. */
 class LaunchPopover {
  constructor(){

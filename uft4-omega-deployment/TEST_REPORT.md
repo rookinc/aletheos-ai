@@ -1,3 +1,45 @@
+# UFT4 Omega v15.9.2 — BC trail default and three-axis Rotisserie
+
+30 October 2026. Update prepared against the verified live v15.9.1 page.
+
+## Changes
+
+The default view now includes BC trails at 182°, with dots, selected-vertex connections and labels off. Plasma / Hyperblue, 100% merge, field opacity 0.9, zoom 2.6 and the 10 Hz field setting remain. The opening camera is yaw 40°, pitch 25°, roll −55°, chosen to approximate the reference image's diagonal torus. A screenshot cannot provide exact original camera values or animation phase.
+
+Rotisserie is an optional on/off button immediately after Merge, Zoom and G900 opacity. It starts off so the opening composition is retained. It rotates **all three axes fully**: yaw 6°/s, pitch 4°/s, roll 3°/s, wrapping angles continuously across ±180°. The later request for front, side, top and underside views supersedes the earlier fixed-pitch request; 25° is the starting tilt, not a lock. Manual pitch now spans ±180° and vertical dragging can pass the poles.
+
+Play/Pause and the launch credits hold the orbit. Hidden-page timing resets avoid catch-up jumps. Drag/touch, angle sliders, angle keys and presets hand control back to the user; zoom retains the automatic orbit. Camera motion does not use field Hz, simulation speed or direction. Each accepted elapsed step is capped at 100 ms, so long scheduling gaps slow the displayed orbit instead of jumping.
+
+Automatic camera projection updates are bounded by the existing plasma quality period (50/67/100 ms for High/Balanced/Low) or 1/30 s in Sheets/field-hidden views. The existing renderer and adaptive quality policy remain in control. The orbit reuses the camera object and adds no canvas or rendering buffer. Camera slider DOM synchronization runs at the existing 200 ms host-UI cadence.
+
+Release HTML: 203,829 bytes. SHA256 `8f8f0e9df154a9871e5a7024db182d6a0d26e8c8e1a0c0bb71efd1f40aaad69d`.
+
+## Validation
+
+- JavaScript syntax and Bash syntax passed.
+- **10/10 rotisserie checks passed:** defaults, independent camera state, scheduling partitions, full three-axis coverage, invalid/large elapsed time, real frame-loop pause/visibility/launch gating, quality throttling, manual controls, and native structures. Run `node uft4-omega-deployment/tests/rotisserie.cjs`.
+- A simulated 360-second orbit sampled at 0.1 seconds returned to its starting orientation and reached view-direction components below −0.9 and above +0.9 on each axis. This confirms front/back, side and pole coverage; it is a numerical test, not six minutes of browser runtime.
+- Native G60/G15 and G900 validation passed. Nine inherited engine source hashes match v15.9.1, including field evaluation, native graph, geometry, independent generation, host transport, BC paths and host rendering.
+- **6/6 launch-popover checks passed** again: first-frame readiness, paused startup, Continue, preserved playback, fallback and context errors.
+- Cloud Chromium at 390×844: 182° trails enabled, dots off, 40°/25°/−55° defaults, no horizontal control-panel overflow (client and scroll width both 380 px). Rotisserie enabled and changed all three angle readouts. Pause stopped playback; drag stopped orbit; the Top preset stopped orbit and restored its 0°/89°/0° values. Credits remained functional. No rendering errors were reported.
+- **8/8 mocked deployment checks passed:** new install, identical repeat, verified predecessor update, updated repeat, refusal of unknown content, refusal of a symlinked index or backup directory, and refusal of a concurrent unknown edit. Original Thalean sentinels remained unchanged.
+
+## Observed browser diagnostics
+
+One rolling window while orbiting in Plasma/Balanced reported **1.0 rendering FPS** and **1.0 plasma refreshes/s**, with 1016.50 ms average delivered frame time. The last JavaScript draw took **11.40 ms**: geometry/lookup 3.50 ms, field/graph response 0.40 ms, plasma/software blur 7.30 ms, compositing submission 0.10 ms and graph overlay 0.10 ms. These values are not direct GPU timings.
+
+The display was 390×376 at DPR 1, the plasma buffer 259×250, and the mesh 476 surface faces. Diagnostics showed **one buffer allocation**, 336 BC trail segments, zero BC heads, no context loss and zero rendering errors at 100 total rendered frames (82 plasma updates, including pre-orbit activity). Known pixel/array budget was 4.32 MiB, excluding browser copies.
+
+This is an observed diagnostic snapshot, not a sustained throughput benchmark or a 30 FPS claim. Cloud scheduling was sparse. Physical Android/Samsung testing, prolonged thermal behavior and outdoor glare remain untested by the agent. Initial orientation is an approximation of the supplied screenshot. Existing field/graph qualifications and aliasing limits remain unchanged.
+
+## Installation
+
+Deploy from the existing Termux checkout with the README commands. The installer accepts the exact verified v15.9.1 predecessor (`53d841359bdc30b4d3d89efa9b54efa38a342960c0a038a48fb9e16120b121e3`), saves it outside the web root as `v15.9.1-pre-rotisserie.*.html`, then atomically installs v15.9.2. The release has been prepared and tested; GitHub alone does not update Bluehost.
+
+---
+
+Historical reports follow; their release status and measurements describe those versions, not v15.9.2.
+
 # UFT4 Omega v15.9.1 — launch credits popover
 
 30 October 2026. Website update prepared against the verified live v15.9 page.

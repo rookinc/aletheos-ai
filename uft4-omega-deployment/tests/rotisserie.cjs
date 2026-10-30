@@ -31,18 +31,21 @@ const initial={yaw:40,pitch:25,roll:-55,zoom:2.6};
 test('Screenshot defaults: diagonal joined Plasma view with 182-degree trails',()=>{
  const a=app();assert.deepEqual(plain(a.camera),initial);assert.equal(a.orbit.enabled,false);
  assert.equal(a.settings.faceMode,'plasma');assert.equal(a.settings.palette,'ice');assert.equal(a.hostSettings.merge,100);
+ assert.equal(a.hostSettings.opacity,.5);
  assert.equal(a.bcSettings.trails,true);assert.equal(a.bcSettings.tailDegrees,182);assert.equal(a.bc.tailDegrees,182);
  assert.equal(a.bcSettings.tailOpacity,.25);assert.equal(a.layers.fibers,true);assert.equal(a.settings.fiberOpacity,.25);
  assert.equal(a.bcSettings.dots,false);assert.equal(a.bcSettings.labels,false);assert.equal(a.settings.sceneLabels,false);
  assert.equal(a.layers.selectedConnections,false);assert.equal(a.sim.frequencyHz,1);
 });
 
-test('Display-only orbit leaves clock, field, zoom and camera object identity intact',()=>{
+test('Display-only orbit and merge leave clock, field, topology and camera identity intact',()=>{
  const a=app(),before=JSON.stringify(a.sim.snapshot()),camera=a.camera,keys=Object.keys(camera).join();
+ const graphBefore=JSON.stringify([a.graph.edges,a.graph.fibers,a.graph.qEdges,a.host.edges]);
  const value=a.sim.field([.4,.5,.6]);a.orbit.setEnabled(true);
- for(let i=0;i<360;i++)a.orbit.step(.1,camera,.1);
+ for(let i=0;i<360;i++)a.orbit.step(.1,camera,.1,a.hostSettings);
  assert.equal(a.camera,camera);assert.equal(Object.keys(camera).join(),keys);assert.equal(camera.zoom,initial.zoom);
  assert.equal(JSON.stringify(a.sim.snapshot()),before);assert.equal(a.sim.field([.4,.5,.6]),value);
+ assert.equal(JSON.stringify([a.graph.edges,a.graph.fibers,a.graph.qEdges,a.host.edges]),graphBefore);
  near(CameraOrbit.wrap(camera.yaw-initial.yaw),-144);near(CameraOrbit.wrap(camera.pitch-initial.pitch),144);near(CameraOrbit.wrap(camera.roll-initial.roll),108);
 });
 
@@ -73,15 +76,68 @@ test('Off, invalid deltas and long scheduling gaps cannot jump the camera',()=>{
  o.setEnabled(false);const stopped={...c};o.step(.1,c);assert.deepEqual(c,stopped);o.setEnabled(true);assert.deepEqual(c,stopped);
 });
 
+test('Merge completes a smooth 100 to 0 to 100 cycle in ten active seconds',()=>{
+ const o=new CameraOrbit(),c={...initial},h={enabled:true,view:'pair',merge:100};o.setEnabled(true,h.merge);
+ const expected=[[2.5,50],[5,0],[7.5,50],[10,100]];let elapsed=0;
+ for(const [at,value] of expected){
+  while(elapsed<at-1e-8){o.step(.1,c,.1,h);elapsed+=.1;assert.ok(h.merge>=0&&h.merge<=100);}
+  near(h.merge,value);
+ }
+ // A cosine turns around gently at both endpoints.
+ o.step(.01,c,.01,h);assert.ok(h.merge>99.99);
+});
+
+test('Merge timing is independent of frame rate, field Hz, speed and direction',()=>{
+ for(const rate of [1,10,30,60,120]){
+  const o=new CameraOrbit(),c={...initial},h={enabled:true,view:'pair',merge:100};o.setEnabled(true,h.merge);
+  for(let i=0;i<rate*5;i++)o.step(1/rate,c,.1,h);near(h.merge,0);
+  for(let i=0;i<rate*5;i++)o.step(1/rate,c,.1,h);near(h.merge,100);
+ }
+ const a=app();a.sim.params.speed=0;a.sim.direction=-1;a.sim.params.omega=20*Math.PI;
+ a.orbit.setEnabled(true,a.hostSettings.merge);ticks(a,1100,6000,100);near(a.hostSettings.merge,0);near(a.sim.time,0);
+ ticks(a,6100,11000,100);near(a.hostSettings.merge,100);
+});
+
+test('Merge enable starts from the selected value and rejects invalid deltas',()=>{
+ for(const start of [0,25,50,75,100]){
+  const a=app();a.hostSettings.merge=start;a.toggleRotisserie();
+  assert.equal(a.hostSettings.merge,start);a.orbit.step(1e-9,a.camera,0,a.hostSettings);near(a.hostSettings.merge,start,1e-6);
+  a.orbit.step(.5,a.camera,.1,a.hostSettings);const stopped=a.hostSettings.merge;
+  a.stopRotisserie();a.orbit.step(4,a.camera,.1,a.hostSettings);assert.equal(a.hostSettings.merge,stopped);
+  a.toggleRotisserie();a.orbit.step(1e-9,a.camera,0,a.hostSettings);near(a.hostSettings.merge,stopped,1e-6);
+ }
+ for(const start of [-100,200,NaN,Infinity]){
+  const o=new CameraOrbit(),c={...initial},h={enabled:true,view:'pair',merge:100};o.setEnabled(true,start);
+  o.step(.1,c,.1,h);assert.ok(Number.isFinite(h.merge)&&h.merge>=0&&h.merge<=100);
+ }
+ const o=new CameraOrbit(),c={...initial},h={enabled:true,view:'pair',merge:50};o.setEnabled(true,h.merge);
+ const phase=o.mergePhase;
+ for(const dt of [0,-1,NaN,Infinity])assert.equal(o.step(dt,c,.1,h),false);
+ assert.equal(o.mergePhase,phase);assert.equal(h.merge,50);
+});
+
+test('Merge holds outside mirrored towers without stopping camera rotation',()=>{
+ for(const h of [{enabled:true,view:'overview',merge:25},{enabled:false,view:'pair',merge:25}]){
+  const o=new CameraOrbit(),c={...initial};o.setEnabled(true,h.merge);const phase=o.mergePhase;
+  for(let i=0;i<100;i++)o.step(.1,c,.1,h);
+  assert.equal(h.merge,25);assert.equal(o.mergePhase,phase);assert.notEqual(c.yaw,initial.yaw);
+  h.enabled=true;h.view='pair';o.step(.1,c,.1,h);assert.ok(h.merge<25);
+ }
+});
+
 test('Real frame orchestration freezes orbit while paused, hidden or launch-held',()=>{
- const a=app();a.orbit.setEnabled(true);a.sim.playing=false;const original=plain(a.camera);ticks(a,1010,1510);
+ const a=app();a.orbit.setEnabled(true);a.sim.playing=false;const original=plain(a.camera),merge=a.hostSettings.merge,phase=a.orbit.mergePhase;ticks(a,1010,1510);
  assert.deepEqual(plain(a.camera),original);assert.equal(a.sim.time,0);
+ assert.equal(a.hostSettings.merge,merge);assert.equal(a.orbit.mergePhase,phase);
  // LaunchPopover.hold uses this same real paused simulation state.
  const held={app:a,held:false};a.sim.playing=true;context.LaunchClass.prototype.hold.call(held);ticks(a,1520,2010);
  assert.deepEqual(plain(a.camera),original);assert.equal(a.sim.time,0);
+ assert.equal(a.hostSettings.merge,merge);assert.equal(a.orbit.mergePhase,phase);
  a.sim.playing=true;context.document.hidden=true;ticks(a,2020,2510);assert.deepEqual(plain(a.camera),original);
  context.document.hidden=false;documentEvents.visibilitychange();a.tick(3000);assert.deepEqual(plain(a.camera),original);
+ assert.equal(a.hostSettings.merge,merge);assert.equal(a.orbit.mergePhase,phase);
  ticks(a,3010,3110);assert.notDeepEqual(plain(a.camera),original);
+ assert.ok(a.hostSettings.merge<merge);
 });
 
 test('Automatic projection updates respect plasma quality cadence',()=>{
@@ -108,6 +164,19 @@ test('Manual pitch/roll slider input takes control without resetting the simulat
  for(const r of ui.ranges){a.orbit.setEnabled(true);r.input.value='150';r.input.listeners.input();assert.equal(a.orbit.enabled,false);assert.equal(a.camera[r.key],150);assert.equal(a.sim.time,12.5);}
 });
 
+test('Manual merge takes control while zoom and G900 opacity retain the orbit',()=>{
+ const a=app(),ui=Object.create(context.UIClass.prototype),container=element();a.sim.time=12.5;
+ ui.app=a;ui.ranges=[];ui.elements={};ui.el=()=>container;ui.syncPresets=()=>{};a.changed=()=>{};
+ ui.addRanges('test','hostSettings','camera',[['merge','Merge halves',0,100,1,0]]);
+ ui.addRanges('test','camera','camera',[['zoom','Zoom',.5,4,.1,1]]);
+ ui.addRanges('test','hostSettings','display',[['hostOpacity','G900 opacity',0,1,.01,0,'opacity']]);
+ for(const [i,value,enabled] of [[0,'37',false],[1,'2',true],[2,'.2',true]]){
+  a.orbit.setEnabled(true,a.hostSettings.merge);const r=ui.ranges[i];r.input.value=value;r.input.listeners.input();
+  assert.equal(a.orbit.enabled,enabled);assert.equal(a.sim.time,12.5);
+ }
+ assert.equal(a.hostSettings.merge,37);assert.equal(a.hostSettings.opacity,.2);assert.equal(a.camera.zoom,2);
+});
+
 test('Native structure and inherited mathematical engine sources are preserved',()=>{
  const g=new GraphEngine();assert.equal(g.certificate.valid,true);assert.equal(g.edges.length,120);assert.equal(g.fibers.length,15);assert.equal(g.qEdges.length,30);
  const h=new HostEngine(g);assert.equal(h.neighbors.length,900);assert.equal(h.edges.length,3600);assert.ok(h.neighbors.every(row=>row.length===8));
@@ -122,4 +191,4 @@ test('Native structure and inherited mathematical engine sources are preserved',
  // Renderer styling changes are covered separately in themed-tails.cjs.
  for(const [a,b,expected] of hashes){const body=html.slice(html.indexOf('class '+a),html.indexOf('class '+b));assert.equal(crypto.createHash('sha256').update(body).digest('hex'),expected,a);}
 });
-console.log(`${checks}/10 rotisserie checks passed`);
+console.log(`${checks}/15 orbit/merge checks passed`);

@@ -1,3 +1,33 @@
+# UFT4 Omega v15.9.5 — 50% G900 default and merge cycling
+
+30 October 2026. Prepared from reviewed v15.9.4.
+
+## Changes
+
+**G900 opacity starts at 50%.** Camera Orbit now also oscillates Merge halves using a cosine: 100% joined at 0 seconds, 0% at 5 seconds, and 100% at 10 seconds, repeating with smooth turnarounds. The merge clock uses elapsed active wall time, independent of field frequency, simulation speed and direction. Sparse frames sample that same phase; no catch-up rendering loop or new buffer is introduced. Camera angular motion retains its existing 100 ms elapsed-step cap and full three-axis rotations.
+
+Merge cycling runs only in Mirrored towers with the host visible. Pause, credits and hidden pages hold the cycle; overview and hidden-host views hold merge while camera motion can continue. Changing Merge halves manually stops Camera Orbit, as do existing manual camera controls. Zoom and opacity changes retain orbit. Enabling orbit derives its phase from the current merge position to avoid snapping; from an intermediate position it begins toward separation. The initial Camera Orbit state remains off. Diagnostics and the help text describe the 10-second cycle.
+
+Tail opacity remains 25%, quotient fibers remain on at 25%, and the field remains 1 Hz. G900 master opacity still multiplies native fiber alpha, so the initial fiber line alpha is 0.25 × 0.50 = 0.125 before overlaps. No field equation, native graph table, quotient incidence, independent generator or BC path was changed.
+
+Release HTML: 208,844 bytes. SHA256 `c8f6b2433bbf3193580e7771d23779a0b8e1b63c635afa5115b7af6fe8ae91b2`.
+
+## Validation
+
+- Inline JavaScript and deployment Bash syntax passed.
+- **15/15 camera/merge checks passed:** 50% G900 constructor default; 100/0/100 merge positions over 10 seconds; 1/10/30/60/120 Hz scheduling; restart from current position; finite/clamped inputs; pause, launch and hidden-page holds; overview and hidden-host holds; manual merge takeover; zoom/opacity retaining orbit; existing camera rates, quality cadence and topology checks.
+- **12/12 themed-overlay and 6/6 launch-popover checks passed** (33 application checks). Seven mathematical-engine source hashes continue to match the inherited release.
+- **10/10 mocked SSH/SCP deployment checks passed**, including all three reviewed predecessors, rollback byte and permission checks, repeat installation, unknown-content and symlink rejection, and concurrent-edit refusal. The original Thalean sentinel remained unchanged.
+- Cloud Chromium at 390×844: launch showed G900 50%, merge 100%, both trail/fiber opacity sliders 25%, fibers checked, and field frequency 1 Hz. Camera Orbit changed yaw, pitch, roll and the merge readout. Pause held the merge value across subsequent observations. Manual Merge input set 0% and turned orbit off; returning to 100% and enabling orbit resumed motion. No application errors were captured in browser logs.
+
+Timing tests are numerical checks of the actual inline classes, not a physical-device benchmark. Cloud Chromium confirms interaction and rendering, not Android/Samsung stability or sustained 30 FPS. The existing quality cadence and buffer budgets are retained. Physical device acceptance: confirm the defaults, enable Camera Orbit, time one full merge round trip, pause/resume, adjust Merge manually, and check both Sheets and Plasma. Very sparse rendering can skip visible intermediate positions even though the phase retains the 10-second period. At the inherited 2.6 zoom, separated halves can extend beyond the stage in some orientations; zoom remains manually adjustable. The preview image shows the paused 48% merge state at a manually reduced 1.6 zoom; the launch zoom is unchanged. The mobile panel had no horizontal overflow (380 px client and scroll width).
+
+## Installation
+
+The installer accepts exact reviewed v15.9.2, v15.9.3 or v15.9.4 predecessors, preserves the installed predecessor as `~/.uft4-omega-backups/pre-v15.9.5.*.html`, and atomically replaces only the dedicated UFT4 page. GitHub publication does not update Bluehost; run the README's Termux commands. Live delivery of v15.9.5 has not been verified.
+
+---
+
 # UFT4 Omega v15.9.4 — independent 25% opacity defaults
 
 30 October 2026. Prepared from reviewed v15.9.3.

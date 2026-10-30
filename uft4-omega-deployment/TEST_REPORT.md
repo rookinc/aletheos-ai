@@ -1,3 +1,34 @@
+# UFT4 Omega v15.9.3 — themed overlays, tail opacity and 1 Hz default
+
+30 October 2026. Prepared against the verified live v15.9.2 release.
+
+## Changes
+
+A **Tail opacity** slider now follows Trail length under BC dots & trails. Range 0–100%, step 1%, default 100%. It multiplies only the BC trail strokes; zero skips those strokes while dots, selected source/partner markers, graph connections and the field retain their separate controls. Trail length remains 182°.
+
+BC tails/dots, native graph vertices/edges, quotient fibers, G30/G15 references, local/external host edges, pulse marks, selection markers and generated-graph overlays use shared cached colors for Nebula, Ion Fire and Hyperblue. Each palette has dark strokes for Sunlight mode. The local/external legend swatches update with the selected theme. Sheets, Plasma and Hybrid use modest BC stroke-width/alpha differences; native graph edges remain sharp. No extra glow pass, blur pipeline, canvas or image buffer was added.
+
+The visible orbit control and accessibility labels now say **Camera Orbit**. Its motion and manual takeover behavior are retained. Default field frequency is now **1 Hz**, represented by the existing omega parameter as 2π radians per simulation second. Frequency slider range stays 0–20 Hz. Existing mathematical equations and native graph/fiber tables are preserved.
+
+Release HTML: 206,819 bytes. SHA256 `07c3c401fef9b7d3fdc4217c33b05135dec5c5e8f16e084da6d362686221ee26`.
+
+## Validation
+
+- Inline JavaScript and Bash syntax passed.
+- **8/8 themed-tail checks passed:** trail alpha multiplication and unchanged path positions, opacity zero with BC dots and graph overlays retained, input clamping, all six palette/Sunlight combinations across actual rendering paths, Canvas state restoration, resource identity across 90 style switches, 1 Hz periodicity and finite field evaluation, and Camera Orbit labels/rates.
+- The Sunlight palette's solid overlay colors passed a 4.5:1 contrast check against the stage background. Fading tails and translucent graph layers intentionally have lower effective contrast; this is not a claim that every composited pixel meets that ratio.
+- **10/10 orbit/native checks and 6/6 launch-popover checks passed.** Seven mathematical-engine source receipts still match the inherited release. The two display-renderer hash receipts were replaced by the new functional theme tests because those renderers intentionally changed.
+- **8/8 mocked SSH/SCP deployment checks passed:** new/repeated installs, verified predecessor update, unknown-content and symlink refusal, rollback preservation and concurrent-edit refusal. No production server writes were performed by these checks.
+- Cloud Chromium at 390×844: observed the 1 Hz field default, Camera Orbit label, 100% initial tail opacity, and working 0%, 50% and 100% slider positions. At 0%, visible BC dots and quotient lines remained while tails disappeared. Ion Fire, Nebula, Hyperblue and Sunlight were visually inspected with dots and fibers enabled. Theme legend colors changed correctly. The control panel had no horizontal overflow. Captured browser logs contained no application errors; extension-generated metadata errors were excluded.
+
+Run the three Node files in `uft4-omega-deployment/tests/`: `themed-tails.cjs`, `rotisserie.cjs`, and `launch-popover.cjs`. Node rendering tests use a recording Canvas stub and do not measure GPU work. No fresh sustained performance or physical Android/Samsung test was performed for this appearance update. Prior diagnostic samples below remain historical. Fixed rendering budgets are retained.
+
+## Installation
+
+The current production predecessor was fetched over HTTPS with status 200 and SHA256 `8f8f0e9df154a9871e5a7024db182d6a0d26e8c8e1a0c0bb71efd1f40aaad69d`. The installer admits that exact version, saves `v15.9.2-pre-themed-tails.*.html` outside the web root, then atomically installs this release. GitHub publication alone does not update Bluehost; use the README's Termux deployment command.
+
+---
+
 # UFT4 Omega v15.9.2 — BC trail default and three-axis Rotisserie
 
 30 October 2026. Update prepared against the verified live v15.9.1 page.

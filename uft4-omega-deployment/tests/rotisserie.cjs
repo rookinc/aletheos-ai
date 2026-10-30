@@ -33,7 +33,7 @@ test('Screenshot defaults: diagonal joined Plasma view with 182-degree trails',(
  assert.equal(a.settings.faceMode,'plasma');assert.equal(a.settings.palette,'ice');assert.equal(a.hostSettings.merge,100);
  assert.equal(a.bcSettings.trails,true);assert.equal(a.bcSettings.tailDegrees,182);assert.equal(a.bc.tailDegrees,182);
  assert.equal(a.bcSettings.dots,false);assert.equal(a.bcSettings.labels,false);assert.equal(a.settings.sceneLabels,false);
- assert.equal(a.layers.selectedConnections,false);assert.equal(a.sim.frequencyHz,10);
+ assert.equal(a.layers.selectedConnections,false);assert.equal(a.sim.frequencyHz,1);
 });
 
 test('Display-only orbit leaves clock, field, zoom and camera object identity intact',()=>{
@@ -107,7 +107,7 @@ test('Manual pitch/roll slider input takes control without resetting the simulat
  for(const r of ui.ranges){a.orbit.setEnabled(true);r.input.value='150';r.input.listeners.input();assert.equal(a.orbit.enabled,false);assert.equal(a.camera[r.key],150);assert.equal(a.sim.time,12.5);}
 });
 
-test('Native structure and inherited mathematical/display engine sources are preserved',()=>{
+test('Native structure and inherited mathematical engine sources are preserved',()=>{
  const g=new GraphEngine();assert.equal(g.certificate.valid,true);assert.equal(g.edges.length,120);assert.equal(g.fibers.length,15);assert.equal(g.qEdges.length,30);
  const h=new HostEngine(g);assert.equal(h.neighbors.length,900);assert.equal(h.edges.length,3600);assert.ok(h.neighbors.every(row=>row.length===8));
  const hashes=[
@@ -117,9 +117,8 @@ test('Native structure and inherited mathematical/display engine sources are pre
  ['TowerReferenceEngine','HostEngine','c494834d16ee0f0314d26116d3b40c4a799f6c2796644100edcfb6b83154c000'],
  ['HostEngine','IndependentGenerator','cd324ca66cbd3d85c865763f010b9ede3f8e186154627f651c1001c847f30da0'],
  ['IndependentGenerator','BCTracerEngine','4345f2096319d63f3b4d78aeb22d1f3e3c2226494b17787de240e1e0e362161e'],
- ['BCTracerEngine','BCTracerRenderer','ea205b44e8af8582091e4652225920e5bec43cf966e68e33070174d7a94f27a0'],
- ['BCTracerRenderer','HostRenderer','ab6ef5d77f881d335ee8c266cc486988f7a8c0683b79b864747fced65e68ef00'],
- ['HostRenderer','RenderingEngine','699d1979e8f1420b6411f316ae75a858221a085964e8f58d41dd1cfeb0b94df8']];
+ ['BCTracerEngine','BCTracerRenderer','ea205b44e8af8582091e4652225920e5bec43cf966e68e33070174d7a94f27a0']];
+ // Renderer styling changes are covered separately in themed-tails.cjs.
  for(const [a,b,expected] of hashes){const body=html.slice(html.indexOf('class '+a),html.indexOf('class '+b));assert.equal(crypto.createHash('sha256').update(body).digest('hex'),expected,a);}
 });
 console.log(`${checks}/10 rotisserie checks passed`);

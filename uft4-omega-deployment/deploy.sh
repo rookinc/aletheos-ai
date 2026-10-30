@@ -3,7 +3,7 @@
 # Local Bash works on Termux/macOS/Linux; Bluehost supplies Linux ln -T.
 set -u
 remote=${UFT4_SSH_TARGET:-gurtiamy}
-previous=53d841359bdc30b4d3d89efa9b54efa38a342960c0a038a48fb9e16120b121e3
+previous=8f8f0e9df154a9871e5a7024db182d6a0d26e8c8e1a0c0bb71efd1f40aaad69d
 fail() { printf 'UFT4 deployment stopped: %s\n' "$*" >&2; exit 1; }
 if [ "$#" -ne 0 ]; then fail 'Run deploy.sh without arguments.'; fi
 case "$remote" in ''|-*|*[!A-Za-z0-9_@.:-]*) fail 'Invalid SSH target.';; esac
@@ -20,7 +20,7 @@ hash_file() {
   else return 1; fi
 }
 digest=$(hash_file "$source_file") || fail 'SHA-256 verification unavailable.'
-[ "${digest%% *}" = "$expected" ] || fail 'Local HTML differs from the reviewed v15.9.2 release.'
+[ "${digest%% *}" = "$expected" ] || fail 'Local HTML differs from the reviewed v15.9.3 release.'
 bytes=$(wc -c < "$source_file") || fail 'Cannot measure local HTML.'
 bytes=${bytes//[[:space:]]/}
 case "$bytes" in ''|*[!0-9]*) fail 'Invalid local file size.';; esac
@@ -65,7 +65,7 @@ printf 'STAGE:%s\n' "$stage"
 REMOTE_PREPARE
 ) || fail 'Remote preflight failed; no page was replaced.'
 if [ "$prepared" = UNCHANGED ]; then
-  printf 'Reviewed v15.9.2 is already installed at ~/www/observatories/uft4-omega/index.html.\n'
+  printf 'Reviewed v15.9.3 is already installed at ~/www/observatories/uft4-omega/index.html.\n'
   printf 'Live HTTP delivery was not checked.\n'; exit 0
 fi
 case "$prepared" in STAGE:/*) stage=${prepared#STAGE:};; *) fail 'Unexpected remote staging response.';; esac
@@ -122,7 +122,7 @@ if [ "$current" != "$expected" ]; then
     backups=$HOME/.uft4-omega-backups
     [ ! -L "$backups" ] || stop 'Backup directory is a symlink.'
     if [ ! -d "$backups" ]; then mkdir -m 700 -- "$backups" || stop 'Cannot create backup directory.'; fi
-    backup=$(mktemp "$backups/v15.9.1-pre-rotisserie.XXXXXXXX.html") || stop 'Cannot create rollback file.'
+    backup=$(mktemp "$backups/v15.9.2-pre-themed-tails.XXXXXXXX.html") || stop 'Cannot create rollback file.'
     cp -- index.html "$backup" || stop 'Cannot back up the previous page.'
     digest=$(hash_file "$backup") || stop 'Cannot verify rollback file.'
     [ "${digest%% *}" = "$previous" ] || stop 'Rollback hash mismatch; page was not replaced.'
@@ -136,7 +136,7 @@ if [ "$current" != "$expected" ]; then
   publish_stage=
 fi
 rm -f -- "$stage" || stop 'Installed, but staging cleanup failed.'
-printf 'Reviewed v15.9.2 installed at ~/www/observatories/uft4-omega/index.html.\n'
+printf 'Reviewed v15.9.3 installed at ~/www/observatories/uft4-omega/index.html.\n'
 REMOTE_INSTALL
 then fail 'Remote install failed; inspect the message above before retrying.'; fi
 stage=

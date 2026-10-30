@@ -4,13 +4,13 @@ Dedicated route: `/observatories/uft4-omega/`
 
 Source: `public_html/observatories/uft4-omega/index.html`
 
-The page uses the tested standalone UFT4 Omega v15.9 simulator, with an added visible credit bar and source links. Its inline JavaScript is byte-identical to that release. It starts in Plasma / Hyperblue with joined halves, field-only display flags, and a 10 Hz field-cycle setting. Its native tables and field equations are retained. The existing `/observatories/thalean-graph/` page and site homepage are not modified.
+The page uses the UFT4 Omega v15.9.1 simulator with a launch popover for credits and graphics-engine readiness. The permanent credit strip has moved into the popover. The simulator starts in Plasma / Hyperblue with joined halves, field-only display flags, and a 10 Hz field-cycle setting. Native tables and field equations are retained. The existing `/observatories/thalean-graph/` page and site homepage are not modified.
 
-HTML SHA256: `4ee86fa9227545ed0f01d5a8261fca5e8bf2f0d5d9bbe03df332e45d09a8dbf7`
+The reviewed HTML checksum is recorded in `release.sha256`.
 
 ## Status
 
-The page is prepared in source. Bluehost deployment and public verification must be completed from a machine with access to the hosting account. This development environment could not resolve the Bluehost SSH hostname; a GitHub commit is not evidence of a live deployment.
+The previous credited v15.9 page was installed and independently verified over HTTPS on 30 October 2026, with SHA256 `4ee86fa9227545ed0f01d5a8261fca5e8bf2f0d5d9bbe03df332e45d09a8dbf7`. The launch-popover update must be installed from a machine with hosting access. A GitHub commit alone is not evidence of a live update.
 
 ## Publish from Termux or your Mac
 
@@ -20,17 +20,22 @@ Use the existing website checkout and SSH access:
 cd ~/dev/cori/website/aletheos.ai || exit 1
 git pull --ff-only || exit 1
 bash uft4-omega-deployment/deploy.sh
+printf 'Deploy exit status: %s\n' "$?"
 ```
 
-The deployer verifies the exact HTML checksum, stages it outside the web root, and installs only `~/www/observatories/uft4-omega/index.html`. It leaves the original Thalean Observatory and homepage alone. An already-installed identical page is accepted; a different existing page is preserved and causes the deployer to stop for review. No new credentials or host-key trust are configured by the script.
+The script defaults to the working SSH alias `gurtiamy`. Override it with `UFT4_SSH_TARGET` if another host entry is required. No credentials or host-key trust are configured by the script.
 
-After installation, open `https://aletheos.ai/observatories/uft4-omega/` and confirm v15.9, Plasma / Hyperblue, a 10.0 Hz slider above Display flags, and the two thumb margins. Then confirm the existing Thalean URL still opens. No homepage link is added by this narrowly scoped deployment.
+The deployer verifies the exact HTML checksum, uploads outside the web root, and installs only `~/www/observatories/uft4-omega/index.html`. A final copy beside the destination allows atomic publication on the same filesystem. It leaves the original Thalean Observatory and homepage alone.
 
-If this first installation needs to be withdrawn, rename only the new UFT4 directory outside the public web root. Do not touch `observatories/thalean-graph`. An existing different UFT4 page is never overwritten by this installer.
+An already-installed identical page is accepted. Only the exact previous release identified above is eligible for replacement. Before updating it, the deployer saves a verified rollback copy in `~/.uft4-omega-backups/` outside the web root, prints its path, and rechecks the installed predecessor immediately before atomic replacement. Unknown existing pages and symlinks are rejected. Keep the printed rollback path; it identifies the original HTML that can be restored after review.
+
+After installation, open `https://aletheos.ai/observatories/uft4-omega/` and confirm the launch popover shows both credits and the loading message, then allows entry once a frame is ready. Confirm the normal Plasma / Hyperblue view, 10.0 Hz slider, and thumb margins remain. No homepage link is added by this narrowly scoped deployment.
 
 ## Validation and limits
 
-The v15.9 simulator passed six numerical checks and eight cloud Chromium checks. The dedicated page changes only metadata, attribution HTML and credit styling; its executable JavaScript is unchanged. `TEST_REPORT.md` records the actual measurements, including sparse cloud scheduling and the distinction between simulated frequency and visible refresh rate. Physical Android/Samsung stability and outdoor glare testing remain outstanding. The original v15.8 rollback and modular source remain in the standalone release package.
+The underlying v15.9 simulator passed six numerical checks and eight cloud Chromium checks. The launch change concerns attribution and startup presentation; it does not change the field equations or native graph tables. `TEST_REPORT.md` records checks and measurements. Physical Android/Samsung stability and outdoor glare testing remain outstanding. The original v15.8 rollback and modular source remain in the standalone release package.
+
+The deploy script passes shell syntax validation and mocked local SSH/SCP checks for new installation, admitted predecessor updates, idempotence, unknown-release rejection, symlink rejection, and a concurrent unknown edit. These tests do not establish live server access or live HTTP delivery.
 
 ## Attribution
 

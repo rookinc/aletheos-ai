@@ -1,12 +1,32 @@
-# Dedicated page attribution update
+# UFT4 Omega v15.9.1 — launch credits popover
 
-The dedicated-page HTML adds visible credits for Scott Allen Cave (Thalean Graph elements) and Joachim Kiseleczuk (UFT4 Omega work), author metadata and source links. Its complete inline JavaScript is byte-identical to the v15.9 release measured below.
+30 October 2026. Website update prepared against the verified live v15.9 page.
 
-Dedicated-page SHA256: `4ee86fa9227545ed0f01d5a8261fca5e8bf2f0d5d9bbe03df332e45d09a8dbf7`.
+## Changes
 
-The credited page was visually checked in cloud Chromium at 390×844: both names were visible beneath the title and document width equaled scroll width (390 px). No simulator JavaScript changed. The installer passed Bash syntax checking and local mock SSH/SCP cases for a new installation, an identical repeat, and refusal of a different existing page; the original Thalean sentinel remained intact and temporary staging was cleaned. No live Bluehost deployment or HTTP check was possible from this environment.
+Credits for Scott Allen Cave and Joachim Kiseleczuk now appear in a modal popover on every page load instead of the permanent header strip. The launch instruction reads: “Please pause while the simulator loads the graphics engine.” The page yields two animation frames before initializing the engine so the browser can paint the message first. There is no artificial countdown or network dependency.
 
-The following is the original, unchanged v15.9 test report; its release HTML hash refers to the offline baseline before these attribution-only additions.
+Playback is held at time zero during startup. Continue becomes available after the renderer records a successful frame, including a successful Safe Sheets recovery. Continue or Escape then restores playback. A stopped/lost context or initialization exception presents a reload action rather than claiming readiness. The Credits & sources button at the foot of the controls reopens the popover and preserves whether playback was running or paused.
+
+The native mathematical classes, graph tables, field evaluation, geometry, host transport and independent generator are byte-identical to the verified predecessor. Render calculations and buffer limits are unchanged; the frame loop gains a temporary startup observer removed at readiness. The simulator remains a self-contained HTML file. No changes to the original Thalean Observatory or homepage.
+
+Release SHA256: `53d841359bdc30b4d3d89efa9b54efa38a342960c0a038a48fb9e16120b121e3`.
+
+## Validation
+
+- Inline JavaScript syntax: passed (`node --check`).
+- Six Node lifecycle/native checks: passed. Run `node uft4-omega-deployment/tests/launch-popover.cjs`. Covers paused time at startup, readiness gating, Continue, restored play/pause state, safe-renderer recovery, fatal context states, and native G60/G15 validation. Lifecycle tests use a minimal DOM stub; they are not browser tests.
+- Cloud desktop Chromium: observed the initial disabled loading button, then ready status; Continue, reopen and Escape worked. Reopening from a paused Sunlight view retained paused playback after closing. Reload showed the launch dialog again. Captured page logs contained no application errors; unrelated browser-extension metadata errors were present.
+- Mobile CSS layouts in desktop Chromium: 390×844 dialog was 356×582.31 px with no horizontal overflow. At 320×568 it was 286×536 px with internal vertical scrolling (614 px content); Continue remained reachable and worked. These are desktop iframe checks, not physical Android tests.
+- Bash syntax: passed. Eight mocked SSH/SCP scenarios passed: new install; repeat; admitted predecessor update with verified private rollback; updated-release repeat; unfamiliar page refusal; symlinked index refusal; symlinked backup-directory refusal; concurrent unknown edit refusal. Original Thalean sentinels were preserved. No live server writes were performed by these tests.
+
+The deployer now uses the verified working SSH alias `gurtiamy`, accepts only the exact previous live checksum for an upgrade, saves a verified rollback file outside the web root, and atomically replaces the page from a staging file on the same filesystem. A repeated identical deployment is accepted. The rollback path is printed during installation.
+
+## Verification limits and install status
+
+The previous v15.9 release was independently fetched over HTTPS with status 200 and matching SHA256 `4ee86fa9227545ed0f01d5a8261fca5e8bf2f0d5d9bbe03df332e45d09a8dbf7`. This v15.9.1 update still requires the Termux deployment command. A GitHub commit does not itself update Bluehost.
+
+Readiness means the Canvas rendering code completed a frame; it is not a GPU completion fence or a device-stability certificate. No Android device, fresh sustained performance benchmark or thermal test was available for this UI patch. The historical v15.9 measurements below were not rerun and are retained as baseline evidence.
 
 ---
 

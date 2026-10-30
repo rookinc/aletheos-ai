@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="dark"><meta name="author" content="Scott Allen Cave; Joachim Kiseleczuk"><meta name="description" content="UFT4 Omega Observatory: an experimental field visualization with native Thalean Graph elements. Thalean Graph elements by Scott Allen Cave; UFT4 Omega work by Joachim Kiseleczuk."><title>UFT4 Omega v15.9 | G900 Pairing Observatory</title><style>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="dark"><meta name="author" content="Scott Allen Cave; Joachim Kiseleczuk"><meta name="description" content="UFT4 Omega Observatory: an experimental field visualization with native Thalean Graph elements. Thalean Graph elements by Scott Allen Cave; UFT4 Omega work by Joachim Kiseleczuk."><title>UFT4 Omega v15.9.1 | G900 Pairing Observatory</title><style>
 :root{color-scheme:dark;--bg:#060b17;--panel:#0c1423;--edge:#253349;--ink:#e4edf8;--muted:#94a9c3;--cyan:#6ad9e9;--amber:#f4cb7b}
 *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;height:100dvh;overflow:hidden;background:var(--bg);color:var(--ink);font:14px/1.4 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
 body{display:flex;flex-direction:column}.app-header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex:0 0 auto;padding:8px 14px;border-bottom:1px solid var(--edge);background:#0b1423;z-index:2}.brand{display:flex;align-items:center;gap:10px;min-width:0}.brand-mark{font:34px/1 Georgia,serif;color:var(--cyan);width:35px}.brand h1{margin:0;font-size:16px;letter-spacing:.02em;font-weight:650;white-space:nowrap}.brand p{margin:2px 0 0;color:var(--muted);font-size:10px;letter-spacing:.055em}.version{font:10px/1.4 ui-monospace,monospace;color:#9daac1;margin-left:3px}
@@ -38,13 +38,24 @@ body.high-contrast{color-scheme:light;--bg:#f7f7f0;--panel:#fff;--edge:#6a7277;-
 }
 
 
-.attribution-bar{flex:0 0 auto;display:flex;justify-content:center;flex-wrap:wrap;gap:2px 22px;padding:6px 14px;background:var(--panel);border-bottom:1px solid var(--edge);color:var(--ink);font-size:11px;line-height:1.45;text-align:center}.attribution-bar span{min-width:0;overflow-wrap:anywhere}.attribution-bar strong{font-weight:600}#credits p{font-size:12px;line-height:1.5;margin:8px 0}#credits a{color:var(--cyan);display:inline-flex;align-items:center;min-height:44px;text-decoration:underline;text-underline-offset:3px}
+/* Launch credits: no extra rendering buffers, timers or external assets. */
+#launchDialog{width:min(440px,calc(100% - 32px));max-height:calc(100dvh - 32px);margin:auto;padding:24px;border:1px solid var(--edge);border-radius:18px;background:var(--panel);color:var(--ink);box-shadow:0 20px 70px #0008;overflow:auto;overscroll-behavior:contain}
+#launchDialog::backdrop{background:rgba(2,5,13,.86)}
+#launchDialog h2{font-size:23px;line-height:1.2;letter-spacing:0;text-transform:none;color:var(--ink);margin:10px 0 12px}
+#launchDialog .launch-kicker{font:11px ui-monospace,monospace;letter-spacing:.15em;color:var(--cyan);margin:0}
+#launchDialog p{line-height:1.55}#launchInstruction{font-size:14px;margin:0 0 20px}
+.launch-credits{display:grid;gap:14px;border-block:1px solid var(--edge);padding:18px 0;margin:0}
+.launch-credits dt{font-size:11px;color:var(--muted);margin-bottom:3px}.launch-credits dd{font-size:16px;font-weight:600;margin:0}
+#launchDialog a{color:var(--cyan);display:inline-flex;align-items:center;min-height:44px;font-size:12px;text-underline-offset:3px}
+#launchStatus{font-size:12px;color:var(--cyan);margin:16px 0 4px}#launchDialog .note{font-size:11px}
+#launchContinue{display:block;width:100%;margin-top:18px;min-height:48px}#openCredits{margin-bottom:15px;letter-spacing:normal;font:12px system-ui,sans-serif}
+.high-contrast #launchDialog{box-shadow:0 15px 50px #0004}.high-contrast #launchDialog::backdrop{background:rgba(20,28,36,.7)}
+@media(max-height:560px){#launchDialog{padding:18px}#launchInstruction{margin-bottom:12px}.launch-credits{padding:12px 0;gap:10px}}
 </style></head><body>
 <header class="app-header">
-  <div class="brand"><span class="brand-mark" aria-hidden="true">Ω</span><div><h1>UFT4 Omega <span class="version">15.9</span></h1><p>G900 host · G60 / G15 observatory</p></div></div>
+  <div class="brand"><span class="brand-mark" aria-hidden="true">Ω</span><div><h1>UFT4 Omega <span class="version">15.9.1</span></h1><p>G900 host · G60 / G15 observatory</p></div></div>
   <div class="header-actions"><button id="contrast" type="button" aria-label="Toggle high-contrast sunlight view" aria-pressed="false">Sunlight</button><button id="play" class="primary" type="button" aria-label="Pause simulation">Pause</button></div>
 </header>
-<div class="attribution-bar" aria-label="Research credits"><span>Thalean Graph elements · <strong>Scott Allen Cave</strong></span><span>UFT4 Omega work · <strong>Joachim Kiseleczuk</strong></span></div>
 <main>
   <div id="stage" class="labels-hidden" aria-label="Mirrored towers: outer G60, midway G30 references, and distinct central G15 sheets; the G30 reference does not form a serial quotient into this G15 map">
     <canvas id="canvas" tabindex="0" aria-label="Mirrored views with G60 at the outer ends, G30 reference layers midway, and two distinct G15 sheets in visual contact at the center. G30 does not descend to the preserved G15 map; only verified G60 to G30 pair links are available. One UFT4 torus is split at its local midplane across A, the source, and B, the selected neighbor. Merge halves joins their display positions without merging native graph identities. Tap a host vertex to select; drag to orbit both towers around their shared center; arrow keys adjust camera; plus and minus zoom."></canvas>
@@ -155,11 +166,27 @@ body.high-contrast{color-scheme:light;--bg:#f7f7f0;--panel:#fff;--edge:#6a7277;-
       </div>
     </details>
     <details id="diagnostics" class="major-details"><summary>Developer diagnostics</summary><pre id="diagnosticsText" aria-live="off">Waiting for renderer measurements…</pre><p class="note">Frame timings measure JavaScript work and observed frame cadence. They are not direct GPU timings.</p></details>
-    <section id="credits" aria-labelledby="creditsTitle"><div class="section-heading"><h2 id="creditsTitle">Credits &amp; sources</h2></div><p><strong>Scott Allen Cave</strong> — Thalean Graph elements.</p><p><strong>Joachim Kiseleczuk</strong> — UFT4 Omega work.</p><p><a href="https://gitarrenzauberer.substack.com/p/uft4-omega-the-g30-redline-and-the" target="_blank" rel="noopener noreferrer">Read Joachim Kiseleczuk’s UFT4 Omega publication ↗</a></p><p><a href="/observatories/thalean-graph/">Open the separate Thalean Observatory →</a></p><p class="note">This page brings the native graph structures and the proposed continuous field together for exploration. Attribution does not change their distinct mathematical roles or establish a physical model.</p></section>
-    <details id="about" class="major-details"><summary>About this instrument</summary><div class="detail-content"><p>The certified native G60 graph has 60 vertices, 120 edges, and degree four. Its 15 disjoint four-vertex fibers project to G15, with 15 vertices and 30 edges.</p><p>The G900 host contains 15 native G60 blocks with 1,800 local and 1,800 external edges. The mirrored view starts with each G60 at an outer end and its own G15 sheet at the central interface. Merge halves brings the display positions together while retaining each block and quotient identity. The value is retained but inactive in overview or with the host hidden. The two quotients remain distinct even where their drawings coincide: this is a display reflection, not a topological merge or a quotient identification induced by the external pairing. The native 60-edge matching between adjacent blocks is unchanged. One torus is split at its local midplane across A/source and B/neighbor, with each half sampled from the same field. This display partition introduces neither a second field source nor a new coupling. Pulse arrival measures unit graph hops using a bounded diagnostic clock. Seeking and repeating the pulse do not change UFT4 time.</p><p>Keep three objects distinct: the native graph, its prescribed toroidal embedding, and Joachim’s proposed continuous UFT4 field. Rotation is a display choice; the field visualization is not a validated physical model.</p><p>Sunlight view increases visual contrast independently of Sheets, Plasma or Hybrid. Switching back restores the selected appearance settings.</p><p>Thalean Graph elements: <strong>Scott Allen Cave</strong>. UFT4 Omega work: <strong>Joachim Kiseleczuk</strong>. Graph-field integration: exploratory CoRI collaboration. Standalone instrument · v15.9 field style and cycle controls.</p></div></details>
-    <footer>OBSERVE · COMPARE · VERIFY</footer>
+    <details id="about" class="major-details"><summary>About this instrument</summary><div class="detail-content"><p>The certified native G60 graph has 60 vertices, 120 edges, and degree four. Its 15 disjoint four-vertex fibers project to G15, with 15 vertices and 30 edges.</p><p>The G900 host contains 15 native G60 blocks with 1,800 local and 1,800 external edges. The mirrored view starts with each G60 at an outer end and its own G15 sheet at the central interface. Merge halves brings the display positions together while retaining each block and quotient identity. The value is retained but inactive in overview or with the host hidden. The two quotients remain distinct even where their drawings coincide: this is a display reflection, not a topological merge or a quotient identification induced by the external pairing. The native 60-edge matching between adjacent blocks is unchanged. One torus is split at its local midplane across A/source and B/neighbor, with each half sampled from the same field. This display partition introduces neither a second field source nor a new coupling. Pulse arrival measures unit graph hops using a bounded diagnostic clock. Seeking and repeating the pulse do not change UFT4 time.</p><p>Keep three objects distinct: the native graph, its prescribed toroidal embedding, and Joachim’s proposed continuous UFT4 field. Rotation is a display choice; the field visualization is not a validated physical model.</p><p>Sunlight view increases visual contrast independently of Sheets, Plasma or Hybrid. Switching back restores the selected appearance settings.</p><p>Graph-field integration: exploratory CoRI collaboration. Standalone instrument · v15.9 field style and cycle controls.</p></div></details>
+    <footer><button id="openCredits" type="button" aria-haspopup="dialog" aria-controls="launchDialog">Credits &amp; sources</button><div>OBSERVE · COMPARE · VERIFY</div></footer>
   </aside>
 </main>
+
+<dialog id="launchDialog" aria-labelledby="launchTitle" aria-describedby="launchInstruction" data-state="loading" tabindex="-1">
+  <p class="launch-kicker">UFT4 OMEGA · OBSERVATORY</p>
+  <h2 id="launchTitle">Before you explore</h2>
+  <p id="launchInstruction">Please pause while the simulator loads the graphics engine.</p>
+  <dl class="launch-credits">
+    <div><dt>Thalean Graph elements</dt><dd>Scott Allen Cave</dd></div>
+    <div><dt>UFT4 Omega work</dt><dd>Joachim Kiseleczuk</dd></div>
+  </dl>
+  <a href="https://gitarrenzauberer.substack.com/p/uft4-omega-the-g30-redline-and-the" target="_blank" rel="noopener noreferrer">Read Joachim’s UFT4 Omega publication ↗</a>
+  <p class="note">Native graph structures and the proposed continuous field remain distinct. This exploratory visualization is not a validated physical model.</p>
+  <p id="launchStatus" role="status" aria-live="polite">Preparing the first frame…</p>
+  <p class="note" id="launchPauseNote">The simulation stays paused until you continue.</p>
+  <button id="launchContinue" type="button" class="primary" disabled>Loading graphics…</button>
+  <a href="/observatories/thalean-graph/">Open the separate Thalean Observatory →</a>
+</dialog>
+<noscript><p>JavaScript is required to run this simulator.</p></noscript>
 
 <script>
 'use strict';
@@ -999,7 +1026,7 @@ class RenderingEngine {
  adapt(now){if(this.failed||now-this.lastAdapt<3000)return;this.lastAdapt=now;let cpu=0,n=Math.min(this.sampleCount,90);for(let j=1;j<=n;j++)cpu+=this.samples[((this.sampleCursor-j+1800)%1800)*8+2];cpu/=Math.max(1,n);const schedulingGap=this.stats.frameMs>250;const slow=cpu>25||(!schedulingGap&&this.stats.fps<23);this.slowWindows=slow?this.slowWindows+1:0;this.fastWindows=(!slow&&cpu<12&&this.stats.fps>28)?this.fastWindows+1:0;const levels=['high','balanced','low','safe'],i=levels.indexOf(this.level);
  if(this.slowWindows>=2&&i<3){this.setQuality(levels[i+1]);this.slowWindows=0;this.fastWindows=0;this.app.ui.status('Quality reduced to '+this.level+' to keep controls responsive.');}
  else if(this.app.settings.quality==='auto'&&this.fastWindows>=5&&i>0){this.setQuality(levels[i-1]);this.fastWindows=0;this.app.ui.status('Adaptive quality: '+this.level+'.');}}
- report(){return {version:'15.9',...this.stats,quality:this.level,requestedQuality:this.app.settings.quality,mode:this.effectiveMode(),highContrast:!!this.app.settings.highContrast,requestedMode:this.app.settings.faceMode,fieldLayout:this.mesh?.bisected?'bisected A/B':'whole source',fieldHalfElements:this.app.layers.face&&this.mesh?.bisected?this.mesh.faces.length/2:0,width:this.w,height:this.h,dpr:this.dpr,mainPixels:this.canvas.width*this.canvas.height,plasmaBuffer:[this.bw,this.bh],towerMerge:this.app.hostSettings?.merge||0,hostOpacity:this.hostOpacity(),bcHeads:this.app.bcRenderer?.headsDrawn||0,bcSegments:this.app.bcRenderer?.segmentsDrawn||0,bcCpuMs:this.app.bcRenderer?.cpuMs||0,bcFixedBytes:this.app.bcRenderer?.fixedBytes||0,bcError:this.app.bcRenderer?.error||'',knownBufferBytes:this.canvas.width*this.canvas.height*4+(this.buffers?this.bw*this.bh*60:0)+(this.app.bcRenderer?.fixedBytes||0),effects:[...(this.app.settings.highContrast?['sunlight contours','high-contrast graph']:this.effectiveMode()==='sheets'?['geometric sheets']:(this.app.settings.glow>0&&this.app.settings.blur>0?['software radiance','software box-Gaussian bloom','screen composite']:['software radiance'])),...(this.app.bcSettings?.enabled&&this.app.bcSettings.dots?['BC dots']:[]),...(this.app.bcSettings?.enabled&&this.app.bcSettings.trails&&this.app.bcSettings.tailDegrees>0?['BC trails']:[])],simulationTime:this.app.sim.time,errors:this.errors.slice(),contextLost:this.lost,failed:this.failed,stopped:this.stopped};}
+ report(){return {version:'15.9.1',...this.stats,quality:this.level,requestedQuality:this.app.settings.quality,mode:this.effectiveMode(),highContrast:!!this.app.settings.highContrast,requestedMode:this.app.settings.faceMode,fieldLayout:this.mesh?.bisected?'bisected A/B':'whole source',fieldHalfElements:this.app.layers.face&&this.mesh?.bisected?this.mesh.faces.length/2:0,width:this.w,height:this.h,dpr:this.dpr,mainPixels:this.canvas.width*this.canvas.height,plasmaBuffer:[this.bw,this.bh],towerMerge:this.app.hostSettings?.merge||0,hostOpacity:this.hostOpacity(),bcHeads:this.app.bcRenderer?.headsDrawn||0,bcSegments:this.app.bcRenderer?.segmentsDrawn||0,bcCpuMs:this.app.bcRenderer?.cpuMs||0,bcFixedBytes:this.app.bcRenderer?.fixedBytes||0,bcError:this.app.bcRenderer?.error||'',knownBufferBytes:this.canvas.width*this.canvas.height*4+(this.buffers?this.bw*this.bh*60:0)+(this.app.bcRenderer?.fixedBytes||0),effects:[...(this.app.settings.highContrast?['sunlight contours','high-contrast graph']:this.effectiveMode()==='sheets'?['geometric sheets']:(this.app.settings.glow>0&&this.app.settings.blur>0?['software radiance','software box-Gaussian bloom','screen composite']:['software radiance'])),...(this.app.bcSettings?.enabled&&this.app.bcSettings.dots?['BC dots']:[]),...(this.app.bcSettings?.enabled&&this.app.bcSettings.trails&&this.app.bcSettings.tailDegrees>0?['BC trails']:[])],simulationTime:this.app.sim.time,errors:this.errors.slice(),contextLost:this.lost,failed:this.failed,stopped:this.stopped};}
  capture(){const rows=[];for(let j=this.sampleCount;j>0;j--){const a=((this.sampleCursor-j+1800)%1800)*8;rows.push(Array.from(this.samples.slice(a,a+8)));}return {report:this.report(),columns:['rafTimestamp','frameIntervalMs','drawCpuMs','fieldCpuMs','geometryCpuMs','plasmaCpuMs','compositeSubmissionMs','graphCpuMs'],samples:rows};}
 }
 
@@ -1388,7 +1415,7 @@ class ObservatoryApp {
   this.start();
  }
  start(){if(!this.raf&&!document.hidden)this.raf=requestAnimationFrame(this.boundTick);}
- tick(ts){this.raf=0;if(document.hidden)return;if(this.last){const dt=(ts-this.last)/1000;this.sim.step(dt);const ht=performance.now();if(this.sim.playing)this.host.advance(Math.min(.07,Math.max(0,dt))*this.sim.params.speed*this.sim.direction);this.hostTickMs=performance.now()-ht;}this.last=ts;if(ts-this.lastPaint>=1000/30-1){this.lastPaint=ts;this.renderer.render(ts);if(ts-this.lastHostUI>=200){this.lastHostUI=ts;this.ui.updateHost();}}this.start();}
+ tick(ts){this.raf=0;if(document.hidden)return;if(this.last){const dt=(ts-this.last)/1000;this.sim.step(dt);const ht=performance.now();if(this.sim.playing)this.host.advance(Math.min(.07,Math.max(0,dt))*this.sim.params.speed*this.sim.direction);this.hostTickMs=performance.now()-ht;}this.last=ts;if(ts-this.lastPaint>=1000/30-1){this.lastPaint=ts;this.renderer.render(ts);this.launchPopover?.afterFrame();if(ts-this.lastHostUI>=200){this.lastHostUI=ts;this.ui.updateHost();}}this.start();}
  changed(kind){if(kind==='display')return;if(kind==='bc'){if(this.bcRenderer.failed){this.bcSettings.enabled=false;this.ui.syncBC();this.ui.status('BC overlay disabled after an error. Reload to retry.');}return;}if(!this.renderer)return;if(this.renderer.failed){this.settings.faceMode='sheets';this.settings.quality='safe';this.ui.sync();}
  if(kind==='contrast'){if(this.settings.highContrast)this.renderer.release();this.renderer.dirtyProjection=true;this.ui.sync();}
  if(kind==='quality'){this.renderer.setQuality(this.settings.quality==='auto'?'balanced':this.settings.quality);}
@@ -1419,9 +1446,42 @@ class ObservatoryApp {
  async audit(){if(this.job)return;if(!this.generated){this.ui.el('fiberReport').textContent='Generate candidate sites first.';return;}const controller=new AbortController();this.job=controller;this.ui.setBusy(true);try{this.fiberAudit=await IndependentGenerator.auditAsync(this.generated,{...this.research},p=>{this.ui.el('fiberReport').textContent=`Auditing: ${p.completed} / ${p.total}`;},controller.signal);this.ui.el('fiberReport').textContent=this.fiberAudit.report;}catch(e){this.ui.el('fiberReport').textContent=e.name==='AbortError'?'Audit cancelled.':'Audit error: '+e.message;}finally{this.job=null;this.ui.setBusy(false);}}
  updateDiagnostics(){this.ui.updateHost();const r=this.renderer.report(),s=r;this.ui.el('renderBadge').textContent=this.settings.highContrast?'SUNLIGHT · SHEETS':r.mode.toUpperCase();this.ui.updateDiagnostics(`Rendering FPS: ${s.fps.toFixed(1)}\nPlasma refreshes/s: ${s.plasmaFps.toFixed(1)}\nAverage delivered frame: ${s.frameMs.toFixed(2)} ms\nQuality: ${s.quality} (requested ${s.requestedQuality})\nDisplay: ${this.renderer.canvas.width} × ${this.renderer.canvas.height} · DPR ${s.dpr.toFixed(2)}\nPlasma buffer: ${s.plasmaBuffer.join(' × ')}\nSurface faces: ${s.surfaceElements} · ${s.fieldLayout} · ${s.fieldHalfElements} per half\nGenerated edges displayed: ${s.generatedEdgesDrawn}\nKnown pixel/array budget: ${(s.knownBufferBytes/1048576).toFixed(2)} MiB (excludes browser copies)\nActive: ${s.effects.join(', ')}\nHost: ${this.hostSettings.enabled?this.hostSettings.view:'hidden'} · ${this.hostRenderer.drawnVertices} vertices displayed\nG900 opacity: ${(this.hostSettings.opacity*100).toFixed(0)}%\nTower merge: ${this.hostSettings.merge.toFixed(0)}% · display only\nHost step / draw CPU: ${this.hostTickMs.toFixed(2)} / ${this.hostRenderer.cpuMs.toFixed(2)} ms\nQuotient sheet instances: ${this.hostRenderer.quotientVerticesDrawn} vertices / ${this.hostRenderer.quotientEdgesDrawn} edges · fiber rays ${this.hostRenderer.fiberRaysDrawn}\nG30 reference: ${this.hostRenderer.g30VerticesDrawn} vertices / ${this.hostRenderer.g30EdgesDrawn} edges · G60 pair rays ${this.hostRenderer.g30RaysDrawn} · 24 pairs cross current G15 fibers\nBC tail ${this.bcSettings.tailDegrees.toFixed(0)}° · phase ${this.bc.phase.toFixed(3)} · ${this.bcRenderer.headsDrawn} dots / ${this.bcRenderer.segmentsDrawn} tail segments\nBC CPU ${this.bcRenderer.cpuMs.toFixed(2)} ms · fixed ${(this.bcRenderer.fixedBytes/1024).toFixed(1)} KiB\nBC error: ${this.bcRenderer.error||'none'}\nPulse edge marks: ${this.hostRenderer.frontierEdgesDrawn} / ${this.hostRenderer.frontierEdgesEligible} visible candidates\nHost pulse: hop ${this.host.travel.toFixed(2)} · ${this.host.reachedCount}/900 reached\nField cycle: ${this.sim.frequencyHz.toFixed(1)} Hz · per simulation second\nAngular frequency: ${this.sim.params.omega.toFixed(3)} rad / simulation second\nRequested wall-time cycle: ${(this.sim.frequencyHz*this.sim.params.speed).toFixed(1)} Hz at current speed (capped clock)\nTime: ${s.simulationTime.toFixed(3)}\nLast CPU timings, ms:\n field / graph response ${s.fieldMs.toFixed(2)}\n geometry / lookup ${s.geometryMs.toFixed(2)}\n plasma / software blur ${s.plasmaMs.toFixed(2)}\n compositing submission ${s.compositeMs.toFixed(2)}\n graph overlay ${s.graphMs.toFixed(2)}\n total ${s.drawMs.toFixed(2)}\nFrames: ${s.frames} · plasma refreshes: ${s.plasmaUpdates}\nBuffer allocations: ${s.bufferAllocations}\nContext lost: ${s.contextLost}\nErrors: ${s.errors.length}\n${s.errors.map(e=>e.message).join('\n')}\nCPU timings do not include all browser raster/GPU work.`);}
 }
-globalThis.UFT4={SimulationEngine,GraphEngine,GeometryEngine,TowerReferenceEngine,BCTracerEngine,BCTracerRenderer,IndependentGenerator,HostEngine,HostRenderer,RenderingEngine,QUALITY,DEFAULT_PARAMS,version:'15.9'};
+globalThis.UFT4={SimulationEngine,GraphEngine,GeometryEngine,TowerReferenceEngine,BCTracerEngine,BCTracerRenderer,IndependentGenerator,HostEngine,HostRenderer,RenderingEngine,QUALITY,DEFAULT_PARAMS,version:'15.9.1'};
+/* Credits and honest startup readiness, independent of the mathematical engines. */
+class LaunchPopover {
+ constructor(){
+  this.dialog=document.getElementById('launchDialog');this.button=document.getElementById('launchContinue');this.status=document.getElementById('launchStatus');this.instruction=document.getElementById('launchInstruction');this.pauseNote=document.getElementById('launchPauseNote');this.state='loading';this.app=null;this.held=false;
+  this.button.addEventListener('click',()=>{if(this.state==='error'){location.reload();return;}if(this.state==='ready')this.dialog.close();});
+  this.dialog.addEventListener('cancel',event=>{if(this.state!=='ready')event.preventDefault();});
+  this.dialog.addEventListener('close',()=>{if(this.app&&this.held){this.app.sim.playing=this.resumePlaying;this.app.last=0;this.held=false;this.app.ui.sync();}this.returnFocus?.focus({preventScroll:true});});
+  document.getElementById('openCredits').addEventListener('click',()=>this.openCredits());
+ }
+ open(){this.dialog.showModal();this.dialog.focus({preventScroll:true});}
+ hold(){if(!this.app||this.held)return;this.resumePlaying=this.app.sim.playing;this.held=true;this.app.sim.playing=false;this.app.last=0;this.app.ui.sync();}
+ attach(app){this.app=app;app.launchPopover=this;this.hold();}
+ afterFrame(){
+  const renderer=this.app.renderer;
+  if(renderer.stopped||renderer.lost){this.fail(new Error('The graphics context is unavailable.'));return;}
+  if(renderer.stats.frames<1)return;
+  this.app.launchPopover=null;this.state='ready';this.dialog.dataset.state='ready';
+  this.status.textContent=renderer.failed?'Graphics ready in Safe Sheets.':'Graphics engine ready.';
+  this.button.disabled=false;this.button.textContent='Continue';
+ }
+ fail(error){
+  if(this.app){this.app.launchPopover=null;this.hold();}
+  this.state='error';this.dialog.dataset.state='error';this.status.textContent='Graphics could not start: '+error.message;this.pauseNote.textContent='Reload to try again. No simulation time has advanced.';this.button.disabled=false;this.button.textContent='Reload simulator';
+ }
+ openCredits(){
+  if(this.dialog.open)return;this.returnFocus=document.activeElement;this.hold();this.instruction.textContent='Explore the native Thalean Graph alongside the proposed UFT4 Omega field.';this.pauseNote.textContent=this.resumePlaying?'Playback is paused while credits are open. Continue to resume.':'Playback remains paused when you close these credits.';this.open();
+ }
+}
 if(typeof document!=='undefined'){
- try{globalThis.UFT4.app=new ObservatoryApp();}catch(error){const status=document.getElementById('status');if(status){status.hidden=false;status.textContent='Startup stopped: '+error.message;}console.error(error);}
+ const launch=new LaunchPopover();globalThis.UFT4.launch=launch;launch.open();
+ // Let the browser paint the launch message before allocating the graphics engine.
+ requestAnimationFrame(()=>requestAnimationFrame(()=>{
+  try{const app=new ObservatoryApp();globalThis.UFT4.app=app;launch.attach(app);}
+  catch(error){launch.fail(error);const status=document.getElementById('status');if(status){status.hidden=false;status.textContent='Startup stopped: '+error.message;}console.error(error);}
+ }));
 }
 
 </script></body></html>

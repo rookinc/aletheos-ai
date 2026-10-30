@@ -32,6 +32,7 @@ test('Screenshot defaults: diagonal joined Plasma view with 182-degree trails',(
  const a=app();assert.deepEqual(plain(a.camera),initial);assert.equal(a.orbit.enabled,false);
  assert.equal(a.settings.faceMode,'plasma');assert.equal(a.settings.palette,'ice');assert.equal(a.hostSettings.merge,100);
  assert.equal(a.bcSettings.trails,true);assert.equal(a.bcSettings.tailDegrees,182);assert.equal(a.bc.tailDegrees,182);
+ assert.equal(a.bcSettings.tailOpacity,.25);assert.equal(a.layers.fibers,true);assert.equal(a.settings.fiberOpacity,.25);
  assert.equal(a.bcSettings.dots,false);assert.equal(a.bcSettings.labels,false);assert.equal(a.settings.sceneLabels,false);
  assert.equal(a.layers.selectedConnections,false);assert.equal(a.sim.frequencyHz,1);
 });

@@ -3,7 +3,8 @@
 # Local Bash works on Termux/macOS/Linux; Bluehost supplies Linux ln -T.
 set -u
 remote=${UFT4_SSH_TARGET:-gurtiamy}
-previous=8f8f0e9df154a9871e5a7024db182d6a0d26e8c8e1a0c0bb71efd1f40aaad69d
+previous=07c3c401fef9b7d3fdc4217c33b05135dec5c5e8f16e084da6d362686221ee26
+older=8f8f0e9df154a9871e5a7024db182d6a0d26e8c8e1a0c0bb71efd1f40aaad69d
 fail() { printf 'UFT4 deployment stopped: %s\n' "$*" >&2; exit 1; }
 if [ "$#" -ne 0 ]; then fail 'Run deploy.sh without arguments.'; fi
 case "$remote" in ''|-*|*[!A-Za-z0-9_@.:-]*) fail 'Invalid SSH target.';; esac
@@ -20,7 +21,7 @@ hash_file() {
   else return 1; fi
 }
 digest=$(hash_file "$source_file") || fail 'SHA-256 verification unavailable.'
-[ "${digest%% *}" = "$expected" ] || fail 'Local HTML differs from the reviewed v15.9.3 release.'
+[ "${digest%% *}" = "$expected" ] || fail 'Local HTML differs from the reviewed v15.9.4 release.'
 bytes=$(wc -c < "$source_file") || fail 'Cannot measure local HTML.'
 bytes=${bytes//[[:space:]]/}
 case "$bytes" in ''|*[!0-9]*) fail 'Invalid local file size.';; esac
@@ -38,9 +39,9 @@ trap 'printf "Deployment interrupted.\n" >&2; exit 130' INT
 trap 'printf "Deployment terminated.\n" >&2; exit 143' TERM
 
 printf 'Checking reviewed release on %s…\n' "$remote"
-prepared=$(ssh "$remote" "bash -s -- '$expected' '$previous'" <<'REMOTE_PREPARE'
+prepared=$(ssh "$remote" "bash -s -- '$expected' '$previous' '$older'" <<'REMOTE_PREPARE'
 set -u
-expected=$1; previous=$2
+expected=$1; previous=$2; older=$3
 stop() { printf 'Remote check: %s\n' "$*" >&2; exit 1; }
 hash_file() {
   if command -v sha256sum >/dev/null 2>&1; then sha256sum "$1";
@@ -58,14 +59,14 @@ if [ -e "$index" ] || [ -L "$index" ]; then
   digest=$(hash_file "$index") || stop 'Cannot hash existing index.'
   current=${digest%% *}
   if [ "$current" = "$expected" ]; then printf 'UNCHANGED\n'; exit 0; fi
-  [ "$current" = "$previous" ] || stop 'An unfamiliar index already exists; nothing was overwritten.'
+  [ "$current" = "$previous" ] || [ "$current" = "$older" ] || stop 'An unfamiliar index already exists; nothing was overwritten.'
 fi
 stage=$(mktemp "$HOME/.uft4-omega-upload.XXXXXXXX") || stop 'Cannot create upload staging file.'
 printf 'STAGE:%s\n' "$stage"
 REMOTE_PREPARE
 ) || fail 'Remote preflight failed; no page was replaced.'
 if [ "$prepared" = UNCHANGED ]; then
-  printf 'Reviewed v15.9.3 is already installed at ~/www/observatories/uft4-omega/index.html.\n'
+  printf 'Reviewed v15.9.4 is already installed at ~/www/observatories/uft4-omega/index.html.\n'
   printf 'Live HTTP delivery was not checked.\n'; exit 0
 fi
 case "$prepared" in STAGE:/*) stage=${prepared#STAGE:};; *) fail 'Unexpected remote staging response.';; esac
@@ -75,9 +76,9 @@ printf 'Uploading verified HTML…\n'
 if ! scp "$source_file" "$remote:$stage"; then fail 'Upload failed; destination page was not changed.'; fi
 
 printf 'Installing dedicated page…\n'
-if ! ssh "$remote" "bash -s -- '$stage' '$expected' '$bytes' '$previous'" <<'REMOTE_INSTALL'
+if ! ssh "$remote" "bash -s -- '$stage' '$expected' '$bytes' '$previous' '$older'" <<'REMOTE_INSTALL'
 set -u
-stage=$1; expected=$2; expected_bytes=$3; previous=$4
+stage=$1; expected=$2; expected_bytes=$3; previous=$4; older=$5
 publish_stage=
 trap 'if [ -n "$publish_stage" ]; then rm -f -- "$publish_stage"; fi' EXIT
 stop() { printf 'Remote install: %s\n' "$*" >&2; exit 1; }
@@ -106,7 +107,7 @@ if [ -e index.html ] || [ -L index.html ]; then
   [ -f index.html ] && [ ! -L index.html ] || stop 'Existing index is unsafe.'
   digest=$(hash_file index.html) || stop 'Cannot hash existing index.'
   current=${digest%% *}
-  [ "$current" = "$expected" ] || [ "$current" = "$previous" ] || stop 'An unfamiliar index appeared; nothing was overwritten.'
+  [ "$current" = "$expected" ] || [ "$current" = "$previous" ] || [ "$current" = "$older" ] || stop 'An unfamiliar index appeared; nothing was overwritten.'
 fi
 if [ "$current" != "$expected" ]; then
   # Stage beside the destination so publication is an atomic same-filesystem operation.
@@ -122,21 +123,21 @@ if [ "$current" != "$expected" ]; then
     backups=$HOME/.uft4-omega-backups
     [ ! -L "$backups" ] || stop 'Backup directory is a symlink.'
     if [ ! -d "$backups" ]; then mkdir -m 700 -- "$backups" || stop 'Cannot create backup directory.'; fi
-    backup=$(mktemp "$backups/v15.9.2-pre-themed-tails.XXXXXXXX.html") || stop 'Cannot create rollback file.'
+    backup=$(mktemp "$backups/pre-v15.9.4.XXXXXXXX.html") || stop 'Cannot create rollback file.'
     cp -- index.html "$backup" || stop 'Cannot back up the previous page.'
     digest=$(hash_file "$backup") || stop 'Cannot verify rollback file.'
-    [ "${digest%% *}" = "$previous" ] || stop 'Rollback hash mismatch; page was not replaced.'
+    [ "${digest%% *}" = "$current" ] || stop 'Rollback hash mismatch; page was not replaced.'
     printf 'Rollback copy: %s\n' "$backup"
     # Recheck immediately before replacing only the admitted predecessor.
     [ -f index.html ] && [ ! -L index.html ] || stop 'Existing index changed.'
     digest=$(hash_file index.html) || stop 'Cannot recheck existing index.'
-    [ "${digest%% *}" = "$previous" ] || stop 'Existing page changed; nothing was overwritten.'
+    [ "${digest%% *}" = "$current" ] || stop 'Existing page changed; nothing was overwritten.'
     mv -Tf -- "$publish_stage" index.html || stop 'Atomic update failed.'
   fi
   publish_stage=
 fi
 rm -f -- "$stage" || stop 'Installed, but staging cleanup failed.'
-printf 'Reviewed v15.9.3 installed at ~/www/observatories/uft4-omega/index.html.\n'
+printf 'Reviewed v15.9.4 installed at ~/www/observatories/uft4-omega/index.html.\n'
 REMOTE_INSTALL
 then fail 'Remote install failed; inspect the message above before retrying.'; fi
 stage=

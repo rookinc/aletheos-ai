@@ -1,3 +1,33 @@
+# UFT4 Omega v15.9.4 — independent 25% opacity defaults
+
+30 October 2026. Prepared from reviewed v15.9.3.
+
+## Changes
+
+BC trails now start at **25% opacity**. Native **Quotient fibers start enabled**, with a new **Quotient fiber opacity** slider directly below the display flags. Its range is 0–100%, in 1% steps, default 25%. Zero skips native fiber strokes. The visibility flag retains the chosen opacity when toggled.
+
+Fiber opacity directly sets native G60 → G15 line alpha and is multiplied by G900 opacity when the host is visible. It applies to both mirrored towers, the overview and the host-hidden view. A duplicated native reference-ray pass was consolidated so enabling both native visibility flags draws each incidence once. Generated four-state audit rays, G60 → G30 pair lines, graph edges, BC dots/tails and field opacity retain their independent controls. The slider's percentage is announced for accessibility and appears in diagnostics.
+
+No field equations, graph tables, camera motion, buffer limits or generator logic changed. The 1 Hz field default, Camera Orbit, theme styling, launch credits and 182° trail length are retained.
+
+Release HTML: 207,954 bytes. SHA256 `6e07b6eff9a9790500a462c0f6a09bb7dade2beae7151631b4f1b7ab7d1db99f`.
+
+## Validation
+
+- Inline JavaScript and deployment Bash syntax passed.
+- **12/12 themed-overlay checks passed:** default/clamped fiber and tail opacity; 0%, 25% and 100% native fiber alpha in Sheets, Plasma, Hybrid and Sunlight; 120 mirrored rays or 60 single-view rays; no double drawing when both native visibility flags are enabled; other graph lines, generated audit rays and BC tails/dots unchanged. Existing theme/resource checks also pass.
+- **10/10 camera/native checks and 6/6 launch-popover checks passed** (28 total). Actual application constructor defaults are asserted. Seven mathematical-engine source hashes continue to match the inherited release.
+- **9/9 mocked SSH/SCP deployment checks passed**, including both admitted predecessors, private rollback copies, repeated installation, unknown-content and symlink rejection, and concurrent-edit refusal. The original Thalean page sentinel remained unchanged.
+- Cloud Chromium at 390×844: launch and Continue succeeded; the UI showed quotient fibers checked, both opacity sliders at 25%, and frequency 1 Hz. Fiber slider keyboard changes reached 0% and 100% with correct outputs while tail opacity stayed at 25%. Toggling fibers off/on retained the value. Both sliders were restored to 25% for the captured preview. The scrolling panel measured 380 px client width and 380 px scroll width; no horizontal overflow. No application errors were captured in browser logs.
+
+The Node tests use a recording Canvas and do not benchmark GPU work. No new sustained-performance or physical Android/Samsung test was performed for this small display update. Historical timings below describe earlier releases. On-device acceptance: reload, continue past credits, confirm both 25% defaults and fibers on, independently sweep each slider to 0/100%, toggle fibers, and check Plasma/Sheets/Hybrid plus Sunlight.
+
+## Installation
+
+The installer accepts exact reviewed v15.9.2 or v15.9.3 predecessors, preserves the installed predecessor as `~/.uft4-omega-backups/pre-v15.9.4.*.html`, and atomically replaces only the dedicated UFT4 page. GitHub publication does not update Bluehost; run the README's Termux commands. Live delivery of v15.9.4 has not been verified.
+
+---
+
 # UFT4 Omega v15.9.3 — themed overlays, tail opacity and 1 Hz default
 
 30 October 2026. Prepared against the verified live v15.9.2 release.

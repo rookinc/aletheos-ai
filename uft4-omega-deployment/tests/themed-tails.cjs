@@ -71,8 +71,55 @@ test('Default 1 Hz field has a one-second period and finite evaluations',()=>{
  for(const mode of ['scalar','chiral']){sim.mode=mode;for(const t of [0,.17,2.3])for(const d of [.01,.1,.5,1,4]){sim.time=t;const value=sim.radial(d);assert.ok(Number.isFinite(value));sim.time=t+1;near(sim.radial(d),value)}}
  assert.equal(U.GraphEngine.validate().valid,true);const host=new U.HostEngine(new U.GraphEngine());assert.equal(host.edges.length,3600);assert.ok(host.neighbors.every(x=>x.length===8));
 });
+test('Quotient opacity clamps to 0–100% and missing or invalid values use 25%',()=>{
+ for(const settings of [undefined,{}, {fiberOpacity:NaN},{fiberOpacity:Infinity},{fiberOpacity:'0.8'}])near(U.getFiberOpacity(settings),.25);
+ for(const [value,expected] of [[-1,0],[0,0],[.25,.25],[1,1],[2,1]])near(U.getFiberOpacity({fiberOpacity:value}),expected);
+ assert.match(source,/\['fiberOpacity','Quotient fiber opacity',0,1,\.01,0\]/);
+});
+test('Mirrored quotient fibers draw 120 incidences at exact slider × host opacity in every style',()=>{
+ const f=fixture();f.a.layers.g15=false;f.a.settings.sceneLabels=false;f.a.hostRenderer.project(f.r);
+ const sim=JSON.stringify(f.a.sim.snapshot()),points=Array.from(f.a.graph.points);let paths;
+ for(const faceMode of ['sheets','plasma','hybrid'])for(const highContrast of [false,true])for(const opacity of [0,.25,1]){
+  Object.assign(f.a.settings,{faceMode,highContrast,fiberOpacity:opacity});f.c.records=[];f.a.hostRenderer.drawTowerQuotients(f.r);
+  assert.equal(f.a.hostRenderer.fiberRaysDrawn,opacity?120:0);assert.equal(f.c.records.length,opacity?2:0);
+  if(opacity){
+   assert.equal(f.c.records.reduce((n,x)=>n+x.path.filter(p=>p[0]==='L').length,0),120);
+   const current=f.c.records.map(x=>x.path);if(paths)assert.deepEqual(current,paths);else paths=current;
+   for(const record of f.c.records){near(record.alpha,opacity*.8);assert.ok(record.path.every(p=>p.slice(1).every(Number.isFinite)));}
+  }
+ }
+ // Either native visibility flag selects the same single set of rays.
+ f.a.settings.fiberOpacity=.25;f.a.layers.fibers=false;f.c.records=[];f.a.hostRenderer.drawTowerQuotients(f.r);assert.equal(f.a.hostRenderer.fiberRaysDrawn,120);
+ f.a.layers.showFiberRays=false;f.c.records=[];f.a.hostRenderer.drawTowerQuotients(f.r);assert.equal(f.c.records.length,0);
+ assert.equal(JSON.stringify(f.a.sim.snapshot()),sim);assert.deepEqual(Array.from(f.a.graph.points),points);
+});
+test('Overview and host-hidden native/reference fibers draw 60 incidences without duplication',()=>{
+ for(const enabled of [true,false])for(const highContrast of [false,true]){
+  const f=fixture();Object.assign(f.a.hostSettings,{enabled,view:'overview'});Object.assign(f.a.settings,{highContrast,sceneLabels:false});
+  Object.assign(f.a.layers,{g60:false,g15:false,vertices:false,generatedLayer:false,showFiberLabels:false});f.a.generated=null;f.a.fiberAudit=null;
+  f.a.geometry.configure(f.a.camera,390,376);f.a.hostRenderer.configure(f.a.geometry,390,376);f.a.graph.update(f.a.sim,f.a.geometry);
+  let paths;
+  for(const opacity of [0,.25,1]){
+   f.a.settings.fiberOpacity=opacity;f.c.records=[];f.r.overlays();assert.equal(f.c.records.length,opacity?60:0);
+   if(opacity){const current=f.c.records.map(x=>x.path);if(paths)assert.deepEqual(current,paths);else paths=current;
+    for(const record of f.c.records){near(record.alpha,opacity*(enabled?.8:1));assert.equal(record.path.filter(p=>p[0]==='L').length,1);assert.ok(record.path.every(p=>p.slice(1).every(Number.isFinite)));}
+   }
+  }
+  for(const [main,reference,count] of [[true,false,60],[false,true,60],[true,true,60],[false,false,0]]){
+   f.a.layers.fibers=main;f.a.layers.showFiberRays=reference;f.c.records=[];f.r.overlays();assert.equal(f.c.records.length,count);
+  }
+ }
+});
+test('Quotient opacity leaves BC tails, dots, unrelated graph lines and generated audit rays unchanged',()=>{
+ const f=fixture();f.a.layers.fibers=false;f.a.layers.showFiberRays=false;
+ const capture=opacity=>{f.a.settings.fiberOpacity=opacity;const tails=plain(tailDraw(f,.25));f.c.records=[];f.a.bcRenderer.drawHeads(f.r);const dots=plain(f.c.records);f.c.records=[];f.a.hostRenderer.render(f.r);return{tails,dots,graph:plain(f.c.records)}};
+ const absent=capture(0),full=capture(1);assert.ok(absent.tails.length>0&&absent.dots.length>0&&absent.graph.length>0);assert.deepEqual(full,absent);
+ Object.assign(f.a.hostSettings,{enabled:false});Object.assign(f.a.layers,{g60:false,g15:false,vertices:false,generatedLayer:false,showFiberRays:true});f.a.settings.sceneLabels=false;f.a.research.fiberView='generated';
+ const audit=opacity=>{f.a.settings.fiberOpacity=opacity;f.c.records=[];f.r.overlays();return plain(f.c.records)};
+ const generated=audit(0);assert.equal(generated.filter(x=>x.kind==='stroke').length,4);assert.equal(generated.filter(x=>x.kind==='fill').length,1);generated.filter(x=>x.kind==='stroke').forEach(x=>near(x.alpha,.8));assert.deepEqual(audit(1),generated);
+});
 test('Camera Orbit label and tail opacity control are exposed without changing orbit rates',()=>{
- assert.match(html,/Camera Orbit · Off/);assert.doesNotMatch(html,/Rotisserie ·|rotisserie camera orbit|Camera rotisserie:/);assert.match(source,/\['tailOpacity','Tail opacity',0,1,\.01,0\]/);assert.match(source,/tailDegrees:182,tailOpacity:1/);
+ assert.match(html,/Camera Orbit · Off/);assert.doesNotMatch(html,/Rotisserie ·|rotisserie camera orbit|Camera rotisserie:/);assert.match(source,/\['tailOpacity','Tail opacity',0,1,\.01,0\]/);assert.match(source,/tailDegrees:182,tailOpacity:\.25/);
  const orbit=new U.CameraOrbit(),camera={yaw:0,pitch:0,roll:0,zoom:2.6};orbit.setEnabled(true);for(let i=0;i<10;i++)orbit.step(.1,camera,.1);near(camera.yaw,6);near(camera.pitch,4);near(camera.roll,3);near(camera.zoom,2.6);
 });
-console.log(`${checks}/8 themed-tail checks passed`);
+console.log(`${checks}/12 themed-tail checks passed`);

@@ -1,3 +1,34 @@
+# UFT4 Omega v15.9.9 — collapsible settings menu
+
+Prepared from reviewed v15.9.8.
+
+## Changes
+
+A persistent bottom button hides the settings panel and becomes **☰ Menu**. The stage expands into the freed area; tapping Menu restores the controls and their previous scroll position. The button is outside the scrolling panel, has a 44 px minimum touch target, respects bottom safe-area insets, works in Sunlight mode and supports native keyboard activation. Hidden controls are inert and removed from layout. If an imported setting hides a focused control, focus moves to the menu button before the panel is hidden.
+
+The initial panel stays open. The exact supplied startup profile and its original ZIP are unchanged. Settings exports use schema 2 with `layout.controlsCollapsed`; schema-1 imports remain supported and open the controls panel. Invalid layout values are rejected before scene state changes. Toggling the panel changes only its layout state and requests a resize through the existing bounded rendering pipeline. It does not restart playback, change the camera or reset simulation values.
+
+Release HTML: 230,923 bytes. SHA256 `d00b17dbce3ec5f7e5817d391894e460240a682f2a0de81e854228a535043024`.
+
+## Validation
+
+- Inline JavaScript and Bash syntax passed.
+- **61/61 application checks passed:** 13 camera/default/native checks, 13 settings round-trip/validation checks, 12 themed-overlay checks, 12 ZIP/archive checks, 6 launch checks and 5 new menu checks. The menu tests exercise actual UIController methods for scroll restoration, accessibility state, focus transfer, preservation of simulation/camera/orbit state and avoiding redundant resize requests. Settings tests cover schema-2 collapsed-state round-trip, schema-1 migration and invalid-layout nonmutation. All seven mathematical-engine source receipts remain unchanged.
+- **14/14 mocked deployment checks passed:** exact reviewed v15.9.2–v15.9.8 predecessors, private rollback verification, repeat installs, and unsafe/concurrent-change refusal. Original Thalean page sentinels stayed unchanged.
+- Cloud Chromium, 390×844: stage height changed from **348.47 px to 726 px** when collapsed; canvas backing height updated to 726 px using the existing resize path. The dock stayed at the bottom in a 57 px band, with a **358×44 px** button. Menu restored panel scroll position **2630 px** exactly. Enter and Space toggled correctly. Twelve additional click toggles and a Sunlight toggle completed with no application error captured; browser-extension metadata errors were excluded.
+- Cloud Chromium, 320×568: collapsed stage measured **320×450 px**; the **288×44 px** menu button stayed within the viewport. Controls reopened with client/scroll width **310 px**, without horizontal overflow. Playback stayed active while collapsed.
+- Cloud Chromium, 1363×936: collapsing the side panel expanded the stage from **1008 px to 1363 px** wide. The bottom button remained visible with a **360×44 px** target. The control also retained the paused state in the 390 px review view.
+
+`menu-preview.jpg` shows a paused mobile-sized review frame with controls collapsed. The camera had advanced after Continue before pausing. These are desktop Chromium layout and interaction checks, not physical Android/Samsung tests. No fresh sustained FPS, thermal, outdoor-glare or Android system-navigation inset test was performed. Existing rendering, mathematical and download-delivery limitations remain documented below. No graph, quotient, field equation or physical claim was changed.
+
+## Android acceptance and installation
+
+After installation: continue past the credits, scroll into the controls, tap Hide controls, orbit by dragging, and tap Menu. Confirm the panel returns to its prior scroll position, the lower button clears Android's gesture area, and playback/selected settings are preserved. Repeat in portrait/landscape and Sunlight mode. Import the original schema-1 ZIP and confirm the panel is open; schema-2 imports honor their saved layout preference.
+
+The installer accepts the reviewed predecessors and creates a private `~/.uft4-omega-backups/pre-v15.9.9.*.html` rollback copy before replacement. It installs only the dedicated UFT4 page. GitHub publication does not install the Bluehost page. Live v15.9.9 delivery has not been verified.
+
+---
+
 # UFT4 Omega v15.9.8 — exact uploaded startup preset
 
 Prepared from reviewed v15.9.7.

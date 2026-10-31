@@ -40,9 +40,9 @@ await test('Complete startup profile matches the exact user-uploaded ZIP fixture
  const start=30+zip.readUInt16LE(26)+zip.readUInt16LE(28),length=zip.readUInt32LE(18);
  const uploaded=JSON.parse(zip.subarray(start,start+length).toString('utf8'));
  const a=app(),record=SettingsPresets.capture(a,panels(a));
- assert.equal(record.format,'uft4-omega-settings');assert.equal(record.schemaVersion,1);
+ assert.equal(record.format,'uft4-omega-settings');assert.equal(record.schemaVersion,2);
  assert.deepEqual(plain(context.UFT4.STARTUP_PRESET.settings),uploaded.settings);
- assert.deepEqual(plain(record.settings),uploaded.settings);
+ assert.deepEqual(plain(record.settings),{...uploaded.settings,layout:{controlsCollapsed:false}});
  assert.equal(record.settings.appearance.faceMode,'hybrid');assert.equal(record.settings.appearance.palette,'ice');
  assert.equal(record.settings.host.display.opacity,1);assert.equal(record.settings.appearance.fiberOpacity,.11);
  assert.equal(record.settings.orbit.enabled,true);assert.equal(record.settings.simulation.time,215.92550000000682);assert.equal(record.settings.panels.settingsFiles,true);
@@ -62,7 +62,7 @@ await test('Launch credits hold the imported time and enabled orbit without disc
 });
 
 await test('All control groups and playback positions survive JSON capture/apply round trip',()=>{
- const source=app(),dest=app();
+ const source=app(),dest=app();source.layout.controlsCollapsed=true;
  Object.assign(source.camera,{yaw:-141.25,pitch:178.75,roll:-179.5,zoom:1.73});
  Object.assign(source.settings,{faceMode:'hybrid',palette:'ember',blur:17,glow:2.1,opacity:.43,detail:1.25,turbulence:.71,quality:'low',highContrast:true,sceneLabels:true,fiberOpacity:.64});
  for(const key of Object.keys(source.layers))source.layers[key]=!source.layers[key];
@@ -82,6 +82,23 @@ await test('All control groups and playback positions survive JSON capture/apply
  near(dest.sim.field([.4,.7,.2]),source.sim.field([.4,.7,.2]));assert.equal(dest.bc.tailDegrees,359);
  assert.equal(dest.renderer.level,'low');assert.equal(dest.renderer.releases,1);assert.deepEqual(plain(dest.renderer.invalidations),['geometry','field']);
  assert.equal(dest.last,0);assert.equal(dest.lastPaint,0);
+});
+
+await test('Legacy schema 1 settings reopen controls and migrate without changing the input record',()=>{
+ const a=app();a.layout.controlsCollapsed=true;a.camera.zoom=1.1;
+ const legacy=plain(context.UFT4.STARTUP_PRESET),original=JSON.stringify(legacy);
+ assert.equal(legacy.schemaVersion,1);assert.equal(Object.hasOwn(legacy.settings,'layout'),false);
+ const migrated=SettingsPresets.validate(legacy,a.host);assert.equal(migrated.layout.controlsCollapsed,false);
+ SettingsPresets.apply(a,legacy);
+ assert.deepEqual(state(a),{...legacy.settings,layout:{controlsCollapsed:false}});assert.equal(JSON.stringify(legacy),original);
+ const next=SettingsPresets.capture(a,panels(a));assert.equal(next.schemaVersion,2);assert.equal(next.settings.layout.controlsCollapsed,false);
+});
+
+await test('Schema 2 requires a valid layout and schema 1 cannot inject its new fields',()=>{
+ const a=app();a.layout.controlsCollapsed=true;const base=plain(SettingsPresets.capture(a,panels(a)));
+ for(const mutate of [r=>delete r.settings.layout,r=>r.settings.layout=null,r=>r.settings.layout.controlsCollapsed='false',r=>r.settings.layout.extra=true,r=>r.schemaVersion=1]){
+  const record=plain(base);mutate(record);assertRejectedWithoutMutation(a,record);
+ }
 });
 
 await test('Wrong formats, unsupported versions, missing and unknown fields fail before state changes',()=>{
@@ -124,14 +141,14 @@ await test('JSON import restores settings and playback without applying generate
 
 await test('Malformed, oversized and unsupported JSON imports leave scene and playback unchanged',async()=>{
  const a=app(),transfer=new SettingsTransfer(a.ui),before=state(a);
- const unsupported=plain(SettingsPresets.capture(a));unsupported.schemaVersion=2;
+ const unsupported=plain(SettingsPresets.capture(a));unsupported.schemaVersion=99;
  for(const bad of [file('{"bad":'),file(JSON.stringify(unsupported)),file('[]'),{size:1048577,arrayBuffer(){throw Error('must not read oversized file');}},{size:0,arrayBuffer(){throw Error('must not read empty file');}},file(' '.repeat(262145))]){
   await transfer.importFile(bad);assert.deepEqual(state(a),before);assert.match(a.ui.el('settingsFileStatus').textContent,/Import failed/);assert.equal(transfer.busy,false);assert.equal(a.ui.el('importSettings').disabled,false);
  }
 });
 
 await test('Export download contains settings JSON that can be imported from its ZIP',async()=>{
- const source=app(),dest=app();source.hostSettings.merge=62;source.camera.roll=123;source.sim.time=4.5;source.sim.playing=false;source.ui.el('effectsDetails').open=true;
+ const source=app(),dest=app();source.layout.controlsCollapsed=true;source.hostSettings.merge=62;source.camera.roll=123;source.sim.time=4.5;source.sim.playing=false;source.ui.el('effectsDetails').open=true;
  let blob,clicks=0,removed=false,filename='',revocations=0;
  context.URL={createObjectURL(value){blob=value;return 'blob:test-settings';},revokeObjectURL(){revocations++;}};
  context.document.createElement=()=>({click(){clicks++;filename=this.download;},remove(){removed=true;}});context.document.body={append(){}};
@@ -140,6 +157,8 @@ await test('Export download contains settings JSON that can be imported from its
  exporter.revokeDownload();assert.equal(retry.hidden,true);assert.equal(exporter.downloadURL,null);
  assert.equal(clicks,1);assert.equal(removed,true);assert.equal(revocations,1);assert.match(filename,/^uft4-omega-settings-.*\.zip$/);assert.equal(blob.type,'application/zip');
  const bytes=new Uint8Array(await blob.arrayBuffer());assert.equal(bytes[0],0x50);assert.equal(bytes[1],0x4b);
+ const zip=Buffer.from(bytes),start=30+zip.readUInt16LE(26)+zip.readUInt16LE(28),length=zip.readUInt32LE(18);
+ const exported=JSON.parse(zip.subarray(start,start+length).toString('utf8'));assert.equal(exported.schemaVersion,2);assert.equal(exported.settings.layout.controlsCollapsed,true);
  const transfer=new SettingsTransfer(dest.ui);await transfer.importFile({name:filename,size:bytes.length,arrayBuffer:async()=>bytes.buffer});
  assert.match(dest.ui.el('settingsFileStatus').textContent,/Settings imported/);assert.deepEqual(state(dest),state(source));
 });

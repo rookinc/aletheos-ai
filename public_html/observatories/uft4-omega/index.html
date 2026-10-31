@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="dark"><meta name="author" content="Scott Allen Cave; Joachim Kiseleczuk"><meta name="description" content="UFT4 Omega Observatory: an experimental field visualization with native Thalean Graph elements. Thalean Graph elements by Scott Allen Cave; UFT4 Omega work by Joachim Kiseleczuk."><title>UFT4 Omega v15.9.8 | G900 Pairing Observatory</title><style>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="dark"><meta name="author" content="Scott Allen Cave; Joachim Kiseleczuk"><meta name="description" content="UFT4 Omega Observatory: an experimental field visualization with native Thalean Graph elements. Thalean Graph elements by Scott Allen Cave; UFT4 Omega work by Joachim Kiseleczuk."><title>UFT4 Omega v15.9.9 | G900 Pairing Observatory</title><style>
 :root{color-scheme:dark;--bg:#060b17;--panel:#0c1423;--edge:#253349;--ink:#e4edf8;--muted:#94a9c3;--cyan:#6ad9e9;--amber:#f4cb7b}
 *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;height:100dvh;overflow:hidden;background:var(--bg);color:var(--ink);font:14px/1.4 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
 body{display:flex;flex-direction:column}.app-header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex:0 0 auto;padding:8px 14px;border-bottom:1px solid var(--edge);background:#0b1423;z-index:2}.brand{display:flex;align-items:center;gap:10px;min-width:0}.brand-mark{font:34px/1 Georgia,serif;color:var(--cyan);width:35px}.brand h1{margin:0;font-size:16px;letter-spacing:.02em;font-weight:650;white-space:nowrap}.brand p{margin:2px 0 0;color:var(--muted);font-size:10px;letter-spacing:.055em}.version{font:10px/1.4 ui-monospace,monospace;color:#9daac1;margin-left:3px}
@@ -52,9 +52,15 @@ body.high-contrast{color-scheme:light;--bg:#f7f7f0;--panel:#fff;--edge:#6a7277;-
 #launchContinue{display:block;width:100%;margin-top:18px;min-height:48px}#openCredits{margin-bottom:15px;letter-spacing:normal;font:12px system-ui,sans-serif}
 .high-contrast #launchDialog{box-shadow:0 15px 50px #0004}.high-contrast #launchDialog::backdrop{background:rgba(20,28,36,.7)}
 @media(max-height:560px){#launchDialog{padding:18px}#launchInstruction{margin-bottom:12px}.launch-credits{padding:12px 0;gap:10px}}
+/* A persistent bottom control reveals the settings without covering the stage. */
+#controlsDock{flex:0 0 auto;display:flex;justify-content:center;padding:6px max(16px,env(safe-area-inset-right,0px)) calc(6px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));border-top:1px solid var(--edge);background:var(--panel)}
+#panelMenu{width:100%;max-width:360px;min-height:44px;font-size:13px}
+#panel[hidden]{display:none}
+.controls-collapsed #stage{flex:1 1 auto;min-height:0}
+.high-contrast #controlsDock{background:#fff;border-color:#56616b}
 </style></head><body>
 <header class="app-header">
-  <div class="brand"><span class="brand-mark" aria-hidden="true">Ω</span><div><h1>UFT4 Omega <span class="version">15.9.8</span></h1><p>G900 host · G60 / G15 observatory</p></div></div>
+  <div class="brand"><span class="brand-mark" aria-hidden="true">Ω</span><div><h1>UFT4 Omega <span class="version">15.9.9</span></h1><p>G900 host · G60 / G15 observatory</p></div></div>
   <div class="header-actions"><button id="contrast" type="button" aria-label="Toggle high-contrast sunlight view" aria-pressed="false">Sunlight</button><button id="play" class="primary" type="button" aria-label="Pause simulation">Pause</button></div>
 </header>
 <main>
@@ -183,6 +189,7 @@ body.high-contrast{color-scheme:light;--bg:#f7f7f0;--panel:#fff;--edge:#6a7277;-
     <footer><button id="openCredits" type="button" aria-haspopup="dialog" aria-controls="launchDialog">Credits &amp; sources</button><div>OBSERVE · COMPARE · VERIFY</div></footer>
   </aside>
 </main>
+<nav id="controlsDock" aria-label="Settings menu"><button id="panelMenu" type="button" aria-controls="panel" aria-expanded="true" aria-label="Hide settings menu">Hide controls ▾</button></nav>
 
 <dialog id="launchDialog" aria-labelledby="launchTitle" aria-describedby="launchInstruction" data-state="loading" tabindex="-1">
   <p class="launch-kicker">UFT4 OMEGA · OBSERVATORY</p>
@@ -1061,7 +1068,7 @@ class RenderingEngine {
  adapt(now){if(this.failed||now-this.lastAdapt<3000)return;this.lastAdapt=now;let cpu=0,n=Math.min(this.sampleCount,90);for(let j=1;j<=n;j++)cpu+=this.samples[((this.sampleCursor-j+1800)%1800)*8+2];cpu/=Math.max(1,n);const schedulingGap=this.stats.frameMs>250;const slow=cpu>25||(!schedulingGap&&this.stats.fps<23);this.slowWindows=slow?this.slowWindows+1:0;this.fastWindows=(!slow&&cpu<12&&this.stats.fps>28)?this.fastWindows+1:0;const levels=['high','balanced','low','safe'],i=levels.indexOf(this.level);
  if(this.slowWindows>=2&&i<3){this.setQuality(levels[i+1]);this.slowWindows=0;this.fastWindows=0;this.app.ui.status('Quality reduced to '+this.level+' to keep controls responsive.');}
  else if(this.app.settings.quality==='auto'&&this.fastWindows>=5&&i>0){this.setQuality(levels[i-1]);this.fastWindows=0;this.app.ui.status('Adaptive quality: '+this.level+'.');}}
- report(){return {version:'15.9.8',...this.stats,quality:this.level,requestedQuality:this.app.settings.quality,mode:this.effectiveMode(),highContrast:!!this.app.settings.highContrast,requestedMode:this.app.settings.faceMode,fieldLayout:this.mesh?.bisected?'bisected A/B':'whole source',fieldHalfElements:this.app.layers.face&&this.mesh?.bisected?this.mesh.faces.length/2:0,width:this.w,height:this.h,dpr:this.dpr,mainPixels:this.canvas.width*this.canvas.height,plasmaBuffer:[this.bw,this.bh],towerMerge:this.app.hostSettings?.merge||0,hostOpacity:this.hostOpacity(),bcHeads:this.app.bcRenderer?.headsDrawn||0,bcSegments:this.app.bcRenderer?.segmentsDrawn||0,bcCpuMs:this.app.bcRenderer?.cpuMs||0,bcFixedBytes:this.app.bcRenderer?.fixedBytes||0,bcError:this.app.bcRenderer?.error||'',knownBufferBytes:this.canvas.width*this.canvas.height*4+(this.buffers?this.bw*this.bh*60:0)+(this.app.bcRenderer?.fixedBytes||0),effects:[...(this.app.settings.highContrast?['sunlight contours','high-contrast graph']:this.effectiveMode()==='sheets'?['geometric sheets']:(this.app.settings.glow>0&&this.app.settings.blur>0?['software radiance','software box-Gaussian bloom','screen composite']:['software radiance'])),...(this.app.bcSettings?.enabled&&this.app.bcSettings.dots?['BC dots']:[]),...(this.app.bcSettings?.enabled&&this.app.bcSettings.trails&&this.app.bcSettings.tailDegrees>0?['BC trails']:[])],simulationTime:this.app.sim.time,errors:this.errors.slice(),contextLost:this.lost,failed:this.failed,stopped:this.stopped};}
+ report(){return {version:'15.9.9',...this.stats,quality:this.level,requestedQuality:this.app.settings.quality,mode:this.effectiveMode(),highContrast:!!this.app.settings.highContrast,requestedMode:this.app.settings.faceMode,fieldLayout:this.mesh?.bisected?'bisected A/B':'whole source',fieldHalfElements:this.app.layers.face&&this.mesh?.bisected?this.mesh.faces.length/2:0,width:this.w,height:this.h,dpr:this.dpr,mainPixels:this.canvas.width*this.canvas.height,plasmaBuffer:[this.bw,this.bh],towerMerge:this.app.hostSettings?.merge||0,hostOpacity:this.hostOpacity(),bcHeads:this.app.bcRenderer?.headsDrawn||0,bcSegments:this.app.bcRenderer?.segmentsDrawn||0,bcCpuMs:this.app.bcRenderer?.cpuMs||0,bcFixedBytes:this.app.bcRenderer?.fixedBytes||0,bcError:this.app.bcRenderer?.error||'',knownBufferBytes:this.canvas.width*this.canvas.height*4+(this.buffers?this.bw*this.bh*60:0)+(this.app.bcRenderer?.fixedBytes||0),effects:[...(this.app.settings.highContrast?['sunlight contours','high-contrast graph']:this.effectiveMode()==='sheets'?['geometric sheets']:(this.app.settings.glow>0&&this.app.settings.blur>0?['software radiance','software box-Gaussian bloom','screen composite']:['software radiance'])),...(this.app.bcSettings?.enabled&&this.app.bcSettings.dots?['BC dots']:[]),...(this.app.bcSettings?.enabled&&this.app.bcSettings.trails&&this.app.bcSettings.tailDegrees>0?['BC trails']:[])],simulationTime:this.app.sim.time,errors:this.errors.slice(),contextLost:this.lost,failed:this.failed,stopped:this.stopped};}
  capture(){const rows=[];for(let j=this.sampleCount;j>0;j--){const a=((this.sampleCursor-j+1800)%1800)*8;rows.push(Array.from(this.samples.slice(a,a+8)));}return {report:this.report(),columns:['rafTimestamp','frameIntervalMs','drawCpuMs','fieldCpuMs','geometryCpuMs','plasmaCpuMs','compositeSubmissionMs','graphCpuMs'],samples:rows};}
 }
 
@@ -1175,7 +1182,7 @@ class SettingsArchive {
 /* Versioned local settings only: no graph tables, source code or generated results. */
 class SettingsPresets {
  static format='uft4-omega-settings';
- static version=1;
+ static version=2;
  static panels=['researchVisibility','bcControls','displayNotes','g30Explanation','hostPlayback','effectsDetails','cameraDetails','fieldDetails','embeddingDetails','settingsFiles','advancedResearch','diagnostics','about'];
  static get schema(){
   const bool='boolean',n=(min,max)=>({min,max}),i=(min,max)=>({min,max,integer:true});
@@ -1187,7 +1194,7 @@ class SettingsPresets {
    simulation:{params:{spin:n(-3,3),major:n(.2,1.4),minor:n(.05,.55),core:n(.01,.8),k:n(.2,12),omega:n(0,40*Math.PI),amp:n(.05,3),speed:n(0,2)},time:n(-1e9,1e9),mode:['scalar','chiral'],playing:bool,direction:[-1,1]},
    host:{display:{enabled:bool,view:['pair','overview'],local:bool,external:bool,trails:bool,merge:n(0,100),opacity:n(0,1)},sourceBlock:i(0,14),sourceVertex:i(0,59),neighborBlock:i(0,14),rate:n(.25,3),repeat:bool,playing:bool,travel:n(0,10),lapCount:i(0,1e9)},
    research:{resonanceMode:['exact','tolerant','off'],gradFilter:bool,minFilter:bool,coherenceFilter:bool,mergeFilter:bool,compareFilter:bool,phaseTol:n(.01,3.14),gradTol:n(.0001,.1),edgeTol:n(-.2,.2),coherenceTol:n(.05,3.14),orbitTol:n(.02,.8),fiberView:['generated','reference','split']},
-   orbit:{enabled:bool},panels:Object.fromEntries(this.panels.map(id=>[id,bool]))
+   orbit:{enabled:bool},layout:{controlsCollapsed:bool},panels:Object.fromEntries(this.panels.map(id=>[id,bool]))
   };
  }
  static check(value,rule,path){
@@ -1201,18 +1208,20 @@ class SettingsPresets {
  }
  static capture(a,panels={}){
   const pick=(value,keys)=>Object.fromEntries(keys.map(key=>[key,value[key]])),schema=this.schema;
-  return {format:this.format,schemaVersion:this.version,appVersion:'15.9.8',exportedAt:new Date().toISOString(),settings:{
+  return {format:this.format,schemaVersion:this.version,appVersion:'15.9.9',exportedAt:new Date().toISOString(),settings:{
    camera:pick(a.camera,Object.keys(schema.camera)),appearance:pick(a.settings,Object.keys(schema.appearance)),layers:pick(a.layers,Object.keys(schema.layers)),bc:pick(a.bcSettings,Object.keys(schema.bc)),
    simulation:{params:{...a.sim.params},time:a.sim.time,mode:a.sim.mode,playing:a.sim.playing,direction:a.sim.direction},
    host:{display:{...a.hostSettings},sourceBlock:a.host.sourceBlock,sourceVertex:a.host.sourceVertex,neighborBlock:a.host.neighborBlock,rate:a.host.rate,repeat:a.host.repeat,playing:a.host.playing,travel:a.host.travel,lapCount:a.host.lapCount},
-   research:{...a.research},orbit:{enabled:a.orbit.enabled},panels:Object.fromEntries(this.panels.map(id=>[id,!!panels[id]]))
+   research:{...a.research},orbit:{enabled:a.orbit.enabled},layout:{controlsCollapsed:!!a.layout.controlsCollapsed},panels:Object.fromEntries(this.panels.map(id=>[id,!!panels[id]]))
   }};
  }
  static validate(record,host){
-  if(!record||typeof record!=='object'||Array.isArray(record)||record.format!==this.format||record.schemaVersion!==this.version)throw Error('Use a UFT4 Omega settings file with schema version 1.');
+  if(!record||typeof record!=='object'||Array.isArray(record)||record.format!==this.format||![1,this.version].includes(record.schemaVersion))throw Error('Use a UFT4 Omega settings file with schema version 1 or 2.');
   if(Object.keys(record).some(key=>!['format','schemaVersion','appVersion','exportedAt','settings'].includes(key)))throw Error('Unknown settings file fields.');
   if(typeof record.appVersion!=='string'||record.appVersion.length>32||typeof record.exportedAt!=='string'||record.exportedAt.length>64)throw Error('Invalid settings file metadata.');
-  const s=this.check(record.settings,this.schema,'settings'),h=s.host;
+  let settings=record.settings;
+  if(record.schemaVersion===1){if(!settings||typeof settings!=='object'||Array.isArray(settings)||Object.hasOwn(settings,'layout'))throw Error('Invalid version 1 settings.');settings={...settings,layout:{controlsCollapsed:false}};}
+  const s=this.check(settings,this.schema,'settings'),h=s.host;
   if(!host.blockNeighbors[h.sourceBlock].includes(h.neighborBlock))throw Error('Selected host blocks are not native neighbors.');
   // Validate pulse bounds against the chosen source before touching live state.
   const distances=new Int16Array(900);distances.fill(-1);const queue=new Uint16Array(900);let head=0,tail=1,max=0;queue[0]=h.sourceBlock*60+h.sourceVertex;distances[queue[0]]=0;
@@ -1224,7 +1233,7 @@ class SettingsPresets {
   const s=this.validate(record,a.host);
   if(a.job)throw Error('Finish or cancel the current research run before importing settings.');
   if(a.renderer.lost||a.renderer.stopped)throw Error('Reload the graphics engine before importing settings.');
-  Object.assign(a.camera,s.camera);Object.assign(a.settings,s.appearance);Object.assign(a.layers,s.layers);Object.assign(a.bcSettings,s.bc);
+  Object.assign(a.layout,s.layout);Object.assign(a.camera,s.camera);Object.assign(a.settings,s.appearance);Object.assign(a.layers,s.layers);Object.assign(a.bcSettings,s.bc);
   Object.assign(a.sim.params,s.simulation.params);a.sim.time=s.simulation.time;a.sim.mode=s.simulation.mode;a.sim.playing=s.simulation.playing;a.sim.direction=s.simulation.direction;
   Object.assign(a.hostSettings,s.host.display);a.host.setSource(s.host.sourceBlock,s.host.sourceVertex);a.host.setNeighborBlock(s.host.neighborBlock);a.host.rate=s.host.rate;a.host.seekHop(s.host.travel);a.host.repeat=s.host.repeat;a.host.playing=s.host.playing;a.host.lapCount=s.host.lapCount;
   Object.assign(a.research,s.research);a.orbit.setEnabled(s.orbit.enabled);a.bc.update(a.sim.time,a.bcSettings.tailDegrees);
@@ -1367,8 +1376,25 @@ class UIController {
     this.bindHost();
     this.bindBC();
     this.bindCamera();
+    this.bindPanelMenu();
     this.settingsTransfer=new SettingsTransfer(this);
     this.sync();
+  }
+  bindPanelMenu() {
+    this.el('panelMenu').addEventListener('click',()=>{this.app.layout.controlsCollapsed=!this.app.layout.controlsCollapsed;this.syncPanelMenu();});
+  }
+  syncPanelMenu() {
+    const collapsed=!!this.app.layout.controlsCollapsed;
+    if(this.lastPanelCollapsed===collapsed)return;
+    const panel=this.el('panel'),button=this.el('panelMenu');
+    if(collapsed){this.panelScrollTop=panel.scrollTop;if(panel.contains(document.activeElement))button.focus({preventScroll:true});}
+    panel.hidden=collapsed;panel.inert=collapsed;
+    document.body.classList.toggle('controls-collapsed',collapsed);
+    button.setAttribute('aria-expanded',String(!collapsed));button.setAttribute('aria-label',collapsed?'Open settings menu':'Hide settings menu');
+    button.textContent=collapsed?'☰ Menu':'Hide controls ▾';
+    if(!collapsed)panel.scrollTop=this.panelScrollTop||0;
+    this.lastPanelCollapsed=collapsed;
+    if(this.app.renderer)this.app.renderer.resizePending=true;
   }
   el(id) { return this.elements[id] || (this.elements[id]=document.getElementById(id)); }
   state(group) { return group==='params'?this.app.sim.params:this.app[group]; }
@@ -1428,6 +1454,7 @@ class UIController {
     for(const button of this.buttons.presets){const p=this.presets[button.dataset.view],active=c.yaw===p[0]&&c.pitch===p[1]&&c.roll===p[2];button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active));}
   }
   sync() {
+    this.syncPanelMenu();
     const a=this.app,theme=getOverlayTheme(a.settings);
     document.body.style.setProperty('--overlay-local',theme.local);document.body.style.setProperty('--overlay-external',theme.external);
     document.body.classList.toggle('high-contrast',!!a.settings.highContrast);
@@ -1696,6 +1723,7 @@ class ObservatoryApp {
   this.layers={face:true,g60:false,vertices:false,g15:false,g30:false,g30Links:false,selectedConnections:false,fibers:true,generatedLayer:true,showFiberRays:true,showFiberLabels:false};
   this.bcSettings={enabled:true,dots:false,trails:true,tailDegrees:182,tailOpacity:.25,scope:'layers',labels:false};this.bc=new BCTracerEngine(this.bcSettings.tailDegrees);this.bcRenderer=new BCTracerRenderer(this);
   this.research={resonanceMode:'exact',gradFilter:true,minFilter:true,coherenceFilter:true,mergeFilter:true,compareFilter:false,phaseTol:.2,gradTol:.001,edgeTol:.0335,coherenceTol:.785,orbitTol:.15,fiberView:'generated'};
+  this.layout={controlsCollapsed:false};
   this.generated=null;this.fiberAudit=null;this.job=null;this.last=0;this.lastPaint=0;this.lastDetail=1;this.lastFaceMode='plasma';this.ui=new UIController(this);
   this.renderer=new RenderingEngine(this,this.ui.el('canvas'));this.ui.el('certificate').textContent='G900 900 / 3,600 · G60/G15 4:1 intact';this.ui.updateHost();
   this.ui.el('diagnostics').addEventListener('toggle',()=>this.updateDiagnostics());
@@ -1740,7 +1768,7 @@ class ObservatoryApp {
  async audit(){if(this.job)return;if(!this.generated){this.ui.el('fiberReport').textContent='Generate candidate sites first.';return;}const controller=new AbortController();this.job=controller;this.ui.setBusy(true);try{this.fiberAudit=await IndependentGenerator.auditAsync(this.generated,{...this.research},p=>{this.ui.el('fiberReport').textContent=`Auditing: ${p.completed} / ${p.total}`;},controller.signal);this.ui.el('fiberReport').textContent=this.fiberAudit.report;}catch(e){this.ui.el('fiberReport').textContent=e.name==='AbortError'?'Audit cancelled.':'Audit error: '+e.message;}finally{this.job=null;this.ui.setBusy(false);}}
  updateDiagnostics(){this.ui.updateHost();const r=this.renderer.report(),s=r;this.ui.el('renderBadge').textContent=this.settings.highContrast?'SUNLIGHT · SHEETS':r.mode.toUpperCase();this.ui.updateDiagnostics(`Rendering FPS: ${s.fps.toFixed(1)}\nPlasma refreshes/s: ${s.plasmaFps.toFixed(1)}\nAverage delivered frame: ${s.frameMs.toFixed(2)} ms\nQuality: ${s.quality} (requested ${s.requestedQuality})\nDisplay: ${this.renderer.canvas.width} × ${this.renderer.canvas.height} · DPR ${s.dpr.toFixed(2)}\nPlasma buffer: ${s.plasmaBuffer.join(' × ')}\nSurface faces: ${s.surfaceElements} · ${s.fieldLayout} · ${s.fieldHalfElements} per half\nGenerated edges displayed: ${s.generatedEdgesDrawn}\nKnown pixel/array budget: ${(s.knownBufferBytes/1048576).toFixed(2)} MiB (excludes browser copies)\nActive: ${s.effects.join(', ')}\nHost: ${this.hostSettings.enabled?this.hostSettings.view:'hidden'} · ${this.hostRenderer.drawnVertices} vertices displayed\nG900 opacity: ${(this.hostSettings.opacity*100).toFixed(0)}%\nTower merge: ${this.hostSettings.merge.toFixed(0)}% · display only\nHost step / draw CPU: ${this.hostTickMs.toFixed(2)} / ${this.hostRenderer.cpuMs.toFixed(2)} ms\nQuotient sheet instances: ${this.hostRenderer.quotientVerticesDrawn} vertices / ${this.hostRenderer.quotientEdgesDrawn} edges · fiber rays ${this.hostRenderer.fiberRaysDrawn}\nG30 reference: ${this.hostRenderer.g30VerticesDrawn} vertices / ${this.hostRenderer.g30EdgesDrawn} edges · G60 pair rays ${this.hostRenderer.g30RaysDrawn} · 24 pairs cross current G15 fibers\nQuotient fiber opacity: ${(getFiberOpacity(this.settings)*100).toFixed(0)}%\nTail opacity: ${(getTailOpacity(this.bcSettings)*100).toFixed(0)}%\nBC tail ${this.bcSettings.tailDegrees.toFixed(0)}° · phase ${this.bc.phase.toFixed(3)} · ${this.bcRenderer.headsDrawn} dots / ${this.bcRenderer.segmentsDrawn} tail segments\nBC CPU ${this.bcRenderer.cpuMs.toFixed(2)} ms · fixed ${(this.bcRenderer.fixedBytes/1024).toFixed(1)} KiB\nBC error: ${this.bcRenderer.error||'none'}\nPulse edge marks: ${this.hostRenderer.frontierEdgesDrawn} / ${this.hostRenderer.frontierEdgesEligible} visible candidates\nHost pulse: hop ${this.host.travel.toFixed(2)} · ${this.host.reachedCount}/900 reached\nField cycle: ${this.sim.frequencyHz.toFixed(1)} Hz · per simulation second\nAngular frequency: ${this.sim.params.omega.toFixed(3)} rad / simulation second\nRequested wall-time cycle: ${(this.sim.frequencyHz*this.sim.params.speed).toFixed(1)} Hz at current speed (capped clock)\nCamera Orbit: ${this.orbit.enabled?'on':'off'} · yaw/pitch/roll ${this.camera.yaw.toFixed(1)}° / ${this.camera.pitch.toFixed(1)}° / ${this.camera.roll.toFixed(1)}°\nTime: ${s.simulationTime.toFixed(3)}\nLast CPU timings, ms:\n field / graph response ${s.fieldMs.toFixed(2)}\n geometry / lookup ${s.geometryMs.toFixed(2)}\n plasma / software blur ${s.plasmaMs.toFixed(2)}\n compositing submission ${s.compositeMs.toFixed(2)}\n graph overlay ${s.graphMs.toFixed(2)}\n total ${s.drawMs.toFixed(2)}\nFrames: ${s.frames} · plasma refreshes: ${s.plasmaUpdates}\nBuffer allocations: ${s.bufferAllocations}\nContext lost: ${s.contextLost}\nErrors: ${s.errors.length}\n${s.errors.map(e=>e.message).join('\n')}\nCPU timings do not include all browser raster/GPU work.`);}
 }
-globalThis.UFT4={STARTUP_PRESET,SettingsArchive,SettingsPresets,SettingsTransfer,OVERLAY_THEMES,OVERLAY_STYLES,getOverlayTheme,getOverlayStyle,getTailOpacity,getFiberOpacity,CameraOrbit,SimulationEngine,GraphEngine,GeometryEngine,TowerReferenceEngine,BCTracerEngine,BCTracerRenderer,IndependentGenerator,HostEngine,HostRenderer,RenderingEngine,QUALITY,DEFAULT_PARAMS,version:'15.9.8'};
+globalThis.UFT4={STARTUP_PRESET,SettingsArchive,SettingsPresets,SettingsTransfer,OVERLAY_THEMES,OVERLAY_STYLES,getOverlayTheme,getOverlayStyle,getTailOpacity,getFiberOpacity,CameraOrbit,SimulationEngine,GraphEngine,GeometryEngine,TowerReferenceEngine,BCTracerEngine,BCTracerRenderer,IndependentGenerator,HostEngine,HostRenderer,RenderingEngine,QUALITY,DEFAULT_PARAMS,version:'15.9.9'};
 /* Credits and honest startup readiness, independent of the mathematical engines. */
 class LaunchPopover {
  constructor(){

@@ -146,9 +146,9 @@ const expectedStartup={
 };
 const initial=expectedStartup.camera;
 
-test('Opening state preserves the uploaded Hybrid preset with controls expanded',()=>{
+test('Opening state preserves the uploaded Hybrid preset with controls closed',()=>{
  const a=app({startup:true}),panels=Object.fromEntries(SettingsPresets.panels.map(id=>[id,a.ui.el(id).open]));
- assert.deepEqual(plain(SettingsPresets.capture(a,panels).settings),{...expectedStartup,layout:{controlsCollapsed:false}});
+ assert.deepEqual(plain(SettingsPresets.capture(a,panels).settings),{...expectedStartup,layout:{controlsCollapsed:true}});
  assert.equal(a.bc.tailDegrees,182);assert.equal(a.sim.frequencyHz,1);assert.equal(a.renderer.level,'balanced');
  assert.equal(a.generated,null);assert.equal(a.fiberAudit,null);
 });

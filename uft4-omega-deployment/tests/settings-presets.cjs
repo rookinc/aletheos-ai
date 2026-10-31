@@ -31,7 +31,7 @@ async function test(name,fn){await fn();checks++;console.log('PASS '+name);}
 function assertRejectedWithoutMutation(a,record,pattern){const before=state(a);assert.throws(()=>SettingsPresets.apply(a,record),pattern);assert.deepEqual(state(a),before);}
 
 (async()=>{
-await test('Complete startup profile matches the exact user-uploaded ZIP fixture',()=>{
+await test('Startup preserves the user-uploaded ZIP profile with the menu closed',()=>{
  // Independent fixture reader: this known archive is a single stored JSON file.
  // Its frozen upload hash detects accidental replacement with regenerated defaults.
  const zip=fs.readFileSync(path.join(__dirname,'../default-settings.zip'));
@@ -42,7 +42,7 @@ await test('Complete startup profile matches the exact user-uploaded ZIP fixture
  const a=app(),record=SettingsPresets.capture(a,panels(a));
  assert.equal(record.format,'uft4-omega-settings');assert.equal(record.schemaVersion,2);
  assert.deepEqual(plain(context.UFT4.STARTUP_PRESET.settings),uploaded.settings);
- assert.deepEqual(plain(record.settings),{...uploaded.settings,layout:{controlsCollapsed:false}});
+ assert.deepEqual(plain(record.settings),{...uploaded.settings,layout:{controlsCollapsed:true}});
  assert.equal(record.settings.appearance.faceMode,'hybrid');assert.equal(record.settings.appearance.palette,'ice');
  assert.equal(record.settings.host.display.opacity,1);assert.equal(record.settings.appearance.fiberOpacity,.11);
  assert.equal(record.settings.orbit.enabled,true);assert.equal(record.settings.simulation.time,215.92550000000682);assert.equal(record.settings.panels.settingsFiles,true);

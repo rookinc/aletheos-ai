@@ -1,3 +1,15 @@
+# UFT4 Omega v15.9.10 — start with the menu closed
+
+The settings panel now starts hidden and inert, with the bottom **☰ Menu** button visible. Initial HTML and application state agree, so the expanded stage is available for the first graphics frame behind the launch popover. Tapping Menu restores the controls. The supplied startup scene profile remains intact; only its launch layout is overridden. Schema-1 imports still open the controls, and schema-2 imports honor the saved layout flag.
+
+Validation: **37/37 existing application checks** passed (13 settings, 13 camera/native, 5 menu and 6 launch), with updated startup expectations. **15/15 mocked installer checks** and **6/6 packaged-release checks** passed using the actual bare checksum file. The installer admits the exact v15.9.9 predecessor as well as prior reviewed releases and creates a private rollback copy. No production connection was made.
+
+Cloud Chromium at 390×844 confirmed the panel was hidden before Continue, with a 726 px stage and 44 px Menu target. It remained closed after Continue; Menu opened a 380 px client/scroll-width panel without horizontal overflow, and Hide controls closed it again. No application errors were captured. `menu-default-preview.jpg` is a paused review frame after Continue. Physical Android testing and live installation remain outstanding; previous limitations still apply.
+
+HTML: 231,140 bytes; SHA256 `c438128b28eec599ac895d0da3531e25406024e1a1fa040adaec88811b7a053b`. The checksum manifest retains the required bare-digest format. Original Thalean page, graph tables and field equations are unchanged.
+
+---
+
 # v15.9.9 deployment packaging correction
 
 The initial v15.9.9 commit shipped `release.sha256` in `sha256sum` output format (digest plus filename). The installer requires only the 64-character digest, so it stopped with `Invalid release checksum.` before any SSH/SCP connection. The initial 14 mocked deployment cases rebuilt a bare-digest fixture rather than copying the packaged manifest, so those results did not validate the actual shipped package. This corrects that gap in the earlier validation record.

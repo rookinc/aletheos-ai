@@ -1,3 +1,15 @@
+# v15.9.9 deployment packaging correction
+
+The initial v15.9.9 commit shipped `release.sha256` in `sha256sum` output format (digest plus filename). The installer requires only the 64-character digest, so it stopped with `Invalid release checksum.` before any SSH/SCP connection. The initial 14 mocked deployment cases rebuilt a bare-digest fixture rather than copying the packaged manifest, so those results did not validate the actual shipped package. This corrects that gap in the earlier validation record.
+
+The manifest now contains the exact bare digest plus newline: `d00b17dbce3ec5f7e5817d391894e460240a682f2a0de81e854228a535043024`. The HTML, its version and its checksum are unchanged. No rendering or mathematical code changed.
+
+Validation reproduced the original failure with SSH/SCP blocked, then passed all 14 deployment cases using a byte-for-byte copy of the corrected packaged manifest. These include fresh install, admitted predecessor upgrades, idempotence, private backups and unsafe/concurrent-change refusal. All runs used local SSH/SCP mocks; no server connection or live replacement was made. The persistent `tests/deploy-package.py` regression test copies the shipped script, manifest and HTML unchanged before testing installation, rather than generating its own checksum fixture. All six checks pass: fresh install, idempotence, filename-bearing/empty/wrong-digest manifest rejection and modified-HTML rejection. Each local rejection verifies zero SSH/SCP calls. Replaying the original broken manifest makes the fresh-install test fail with the reported error, confirming that this test catches the packaging defect.
+
+Run the package regression check with `python3 uft4-omega-deployment/tests/deploy-package.py`. Live delivery still requires the normal Termux pull and deployment.
+
+---
+
 # UFT4 Omega v15.9.9 — collapsible settings menu
 
 Prepared from reviewed v15.9.8.

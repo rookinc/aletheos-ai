@@ -12,7 +12,7 @@ Tail opacity is adjustable from 0–100% beneath Trail length and defaults to 25
 
 Quotient fiber opacity has its own 0–100% slider, defaulting to 11% from the saved profile. Its native fiber stroke alpha is multiplied by G900 opacity when the host is displayed. Tail opacity, field opacity and graph-edge appearance remain independently controlled.
 
-The reviewed HTML checksum is recorded in `release.sha256`. The exact supplied ZIP is retained as `default-settings.zip` with SHA256 `8765d9c6e1abe375cd6af5ee4148fe4caad16df91c3aa067e3f3652a01d24086`. Its validated settings are embedded in the standalone HTML; launching the page does not fetch the ZIP.
+The reviewed HTML checksum is recorded in `release.sha256` as exactly one 64-character lowercase SHA-256 digest plus a newline, with no filename. The installer intentionally rejects other formats. The exact supplied ZIP is retained as `default-settings.zip` with SHA256 `8765d9c6e1abe375cd6af5ee4148fe4caad16df91c3aa067e3f3652a01d24086`. Its validated settings are embedded in the standalone HTML; launching the page does not fetch the ZIP.
 
 ## Controls panel
 

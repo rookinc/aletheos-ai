@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="dark"><meta name="author" content="Scott Allen Cave; Joachim Kiseleczuk"><meta name="description" content="UFT4 Omega Observatory: an experimental field visualization with native Thalean Graph elements. Thalean Graph elements by Scott Allen Cave; UFT4 Omega work by Joachim Kiseleczuk."><title>UFT4 Omega v15.9.6 | G900 Pairing Observatory</title><style>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="dark"><meta name="author" content="Scott Allen Cave; Joachim Kiseleczuk"><meta name="description" content="UFT4 Omega Observatory: an experimental field visualization with native Thalean Graph elements. Thalean Graph elements by Scott Allen Cave; UFT4 Omega work by Joachim Kiseleczuk."><title>UFT4 Omega v15.9.7 | G900 Pairing Observatory</title><style>
 :root{color-scheme:dark;--bg:#060b17;--panel:#0c1423;--edge:#253349;--ink:#e4edf8;--muted:#94a9c3;--cyan:#6ad9e9;--amber:#f4cb7b}
 *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;height:100dvh;overflow:hidden;background:var(--bg);color:var(--ink);font:14px/1.4 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
 body{display:flex;flex-direction:column}.app-header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex:0 0 auto;padding:8px 14px;border-bottom:1px solid var(--edge);background:#0b1423;z-index:2}.brand{display:flex;align-items:center;gap:10px;min-width:0}.brand-mark{font:34px/1 Georgia,serif;color:var(--cyan);width:35px}.brand h1{margin:0;font-size:16px;letter-spacing:.02em;font-weight:650;white-space:nowrap}.brand p{margin:2px 0 0;color:var(--muted);font-size:10px;letter-spacing:.055em}.version{font:10px/1.4 ui-monospace,monospace;color:#9daac1;margin-left:3px}
@@ -54,7 +54,7 @@ body.high-contrast{color-scheme:light;--bg:#f7f7f0;--panel:#fff;--edge:#6a7277;-
 @media(max-height:560px){#launchDialog{padding:18px}#launchInstruction{margin-bottom:12px}.launch-credits{padding:12px 0;gap:10px}}
 </style></head><body>
 <header class="app-header">
-  <div class="brand"><span class="brand-mark" aria-hidden="true">Ω</span><div><h1>UFT4 Omega <span class="version">15.9.6</span></h1><p>G900 host · G60 / G15 observatory</p></div></div>
+  <div class="brand"><span class="brand-mark" aria-hidden="true">Ω</span><div><h1>UFT4 Omega <span class="version">15.9.7</span></h1><p>G900 host · G60 / G15 observatory</p></div></div>
   <div class="header-actions"><button id="contrast" type="button" aria-label="Toggle high-contrast sunlight view" aria-pressed="false">Sunlight</button><button id="play" class="primary" type="button" aria-label="Pause simulation">Pause</button></div>
 </header>
 <main>
@@ -143,15 +143,22 @@ body.high-contrast{color-scheme:light;--bg:#f7f7f0;--panel:#fff;--edge:#6a7277;-
       <div class="section-heading"><h2 id="cameraTitle">Camera</h2><span class="eyebrow">02</span></div>
       <p class="note">Drag to orbit the whole scene around one shared center.</p>
       <div class="segmented four" id="presets" aria-label="Camera presets"><button type="button" data-view="iso">Isometric</button><button type="button" data-view="top">Top</button><button type="button" data-view="front">Front</button><button type="button" data-view="side">Side</button></div>
-      <details><summary>Yaw, pitch &amp; roll</summary><div class="detail-content" id="cameraSliders"></div></details>
+      <details id="cameraDetails"><summary>Yaw, pitch &amp; roll</summary><div class="detail-content" id="cameraSliders"></div></details>
     </section>
     <section aria-labelledby="simulationTitle">
       <div class="section-heading"><h2 id="simulationTitle">Simulation</h2><span class="eyebrow">04</span></div>
       <div class="simulation-bar"><button id="playPanel" type="button">Pause</button><button id="direction" type="button" aria-pressed="false">Forward →</button><button id="reset" type="button">Reset time</button></div>
       <div id="simulationSliders"></div>
-      <details><summary>UFT4 field parameters</summary><div class="detail-content"><div class="segmented two" id="modes"><button type="button" data-mode="scalar" class="active" aria-pressed="true">Scalar TRE</button><button type="button" data-mode="chiral" aria-pressed="false">Chiral</button></div><div id="fieldSliders"></div><p class="note">The face samples one centered radial field. In the pair view, local z=0 separates its positive half on A/source from its negative half on B/neighbor. The experimental generator still uses the sum from three sources, as in v14.1.</p></div></details>
-      <details><summary>Prescribed torus &amp; graph rotation</summary><div class="detail-content" id="embeddingSliders"></div><p class="note">Major-radius control preserves the original offset: displayed radius = 1 + control value. This embedding does not define native graph topology.</p></details>
+      <details id="fieldDetails"><summary>UFT4 field parameters</summary><div class="detail-content"><div class="segmented two" id="modes"><button type="button" data-mode="scalar" class="active" aria-pressed="true">Scalar TRE</button><button type="button" data-mode="chiral" aria-pressed="false">Chiral</button></div><div id="fieldSliders"></div><p class="note">The face samples one centered radial field. In the pair view, local z=0 separates its positive half on A/source from its negative half on B/neighbor. The experimental generator still uses the sum from three sources, as in v14.1.</p></div></details>
+      <details id="embeddingDetails"><summary>Prescribed torus &amp; graph rotation</summary><div class="detail-content" id="embeddingSliders"></div><p class="note">Major-radius control preserves the original offset: displayed radius = 1 + control value. This embedding does not define native graph topology.</p></details>
     </section>
+    <details id="settingsFiles" class="major-details"><summary>Save &amp; load settings</summary><div class="detail-content">
+      <div class="segmented two"><button id="exportSettings" type="button">Export settings ZIP</button><button id="importSettings" type="button">Import ZIP / JSON</button></div>
+      <input id="settingsFile" type="file" accept=".zip,.json,application/zip,application/json" hidden aria-label="Choose UFT4 settings ZIP or JSON">
+      <p class="note">Save all controls and playback position to a ZIP containing JSON. Import that ZIP or its JSON to restore the view. Files stay on your device. Generated research results are not included; rerun the saved research settings.</p>
+      <p class="note"><a id="settingsDownload" hidden>Download ZIP again</a></p>
+      <p id="settingsFileStatus" class="note" role="status" aria-live="polite">Ready to save or load settings.</p>
+    </div></details>
     <details id="advancedResearch" class="major-details"><summary>Advanced research <span class="detail-tag">EXPERIMENTAL</span></summary>
       <div class="detail-content">
         <h3>Independent candidate generator</h3>
@@ -1054,8 +1061,218 @@ class RenderingEngine {
  adapt(now){if(this.failed||now-this.lastAdapt<3000)return;this.lastAdapt=now;let cpu=0,n=Math.min(this.sampleCount,90);for(let j=1;j<=n;j++)cpu+=this.samples[((this.sampleCursor-j+1800)%1800)*8+2];cpu/=Math.max(1,n);const schedulingGap=this.stats.frameMs>250;const slow=cpu>25||(!schedulingGap&&this.stats.fps<23);this.slowWindows=slow?this.slowWindows+1:0;this.fastWindows=(!slow&&cpu<12&&this.stats.fps>28)?this.fastWindows+1:0;const levels=['high','balanced','low','safe'],i=levels.indexOf(this.level);
  if(this.slowWindows>=2&&i<3){this.setQuality(levels[i+1]);this.slowWindows=0;this.fastWindows=0;this.app.ui.status('Quality reduced to '+this.level+' to keep controls responsive.');}
  else if(this.app.settings.quality==='auto'&&this.fastWindows>=5&&i>0){this.setQuality(levels[i-1]);this.fastWindows=0;this.app.ui.status('Adaptive quality: '+this.level+'.');}}
- report(){return {version:'15.9.6',...this.stats,quality:this.level,requestedQuality:this.app.settings.quality,mode:this.effectiveMode(),highContrast:!!this.app.settings.highContrast,requestedMode:this.app.settings.faceMode,fieldLayout:this.mesh?.bisected?'bisected A/B':'whole source',fieldHalfElements:this.app.layers.face&&this.mesh?.bisected?this.mesh.faces.length/2:0,width:this.w,height:this.h,dpr:this.dpr,mainPixels:this.canvas.width*this.canvas.height,plasmaBuffer:[this.bw,this.bh],towerMerge:this.app.hostSettings?.merge||0,hostOpacity:this.hostOpacity(),bcHeads:this.app.bcRenderer?.headsDrawn||0,bcSegments:this.app.bcRenderer?.segmentsDrawn||0,bcCpuMs:this.app.bcRenderer?.cpuMs||0,bcFixedBytes:this.app.bcRenderer?.fixedBytes||0,bcError:this.app.bcRenderer?.error||'',knownBufferBytes:this.canvas.width*this.canvas.height*4+(this.buffers?this.bw*this.bh*60:0)+(this.app.bcRenderer?.fixedBytes||0),effects:[...(this.app.settings.highContrast?['sunlight contours','high-contrast graph']:this.effectiveMode()==='sheets'?['geometric sheets']:(this.app.settings.glow>0&&this.app.settings.blur>0?['software radiance','software box-Gaussian bloom','screen composite']:['software radiance'])),...(this.app.bcSettings?.enabled&&this.app.bcSettings.dots?['BC dots']:[]),...(this.app.bcSettings?.enabled&&this.app.bcSettings.trails&&this.app.bcSettings.tailDegrees>0?['BC trails']:[])],simulationTime:this.app.sim.time,errors:this.errors.slice(),contextLost:this.lost,failed:this.failed,stopped:this.stopped};}
+ report(){return {version:'15.9.7',...this.stats,quality:this.level,requestedQuality:this.app.settings.quality,mode:this.effectiveMode(),highContrast:!!this.app.settings.highContrast,requestedMode:this.app.settings.faceMode,fieldLayout:this.mesh?.bisected?'bisected A/B':'whole source',fieldHalfElements:this.app.layers.face&&this.mesh?.bisected?this.mesh.faces.length/2:0,width:this.w,height:this.h,dpr:this.dpr,mainPixels:this.canvas.width*this.canvas.height,plasmaBuffer:[this.bw,this.bh],towerMerge:this.app.hostSettings?.merge||0,hostOpacity:this.hostOpacity(),bcHeads:this.app.bcRenderer?.headsDrawn||0,bcSegments:this.app.bcRenderer?.segmentsDrawn||0,bcCpuMs:this.app.bcRenderer?.cpuMs||0,bcFixedBytes:this.app.bcRenderer?.fixedBytes||0,bcError:this.app.bcRenderer?.error||'',knownBufferBytes:this.canvas.width*this.canvas.height*4+(this.buffers?this.bw*this.bh*60:0)+(this.app.bcRenderer?.fixedBytes||0),effects:[...(this.app.settings.highContrast?['sunlight contours','high-contrast graph']:this.effectiveMode()==='sheets'?['geometric sheets']:(this.app.settings.glow>0&&this.app.settings.blur>0?['software radiance','software box-Gaussian bloom','screen composite']:['software radiance'])),...(this.app.bcSettings?.enabled&&this.app.bcSettings.dots?['BC dots']:[]),...(this.app.bcSettings?.enabled&&this.app.bcSettings.trails&&this.app.bcSettings.tailDegrees>0?['BC trails']:[])],simulationTime:this.app.sim.time,errors:this.errors.slice(),contextLost:this.lost,failed:this.failed,stopped:this.stopped};}
  capture(){const rows=[];for(let j=this.sampleCount;j>0;j--){const a=((this.sampleCursor-j+1800)%1800)*8;rows.push(Array.from(this.samples.slice(a,a+8)));}return {report:this.report(),columns:['rafTimestamp','frameIntervalMs','drawCpuMs','fieldCpuMs','geometryCpuMs','plasmaCpuMs','compositeSubmissionMs','graphCpuMs'],samples:rows};}
+}
+
+/* Small offline settings archive: stored ZIP export; bounded stored/deflate import. */
+class SettingsArchive {
+ static MAX_ARCHIVE=1048576;
+ static MAX_JSON=262144;
+ static MAX_ENTRIES=16;
+ static filename='uft4-omega-settings.json';
+ static crc32(bytes){
+  if(!this.crcTable){this.crcTable=new Uint32Array(256);for(let i=0;i<256;i++){let n=i;for(let bit=0;bit<8;bit++)n=(n>>>1)^((n&1)?0xedb88320:0);this.crcTable[i]=n>>>0;}}
+  let crc=0xffffffff;for(let i=0;i<bytes.length;i++)crc=(crc>>>8)^this.crcTable[(crc^bytes[i])&255];return (crc^0xffffffff)>>>0;
+ }
+ static zip(jsonText){
+  if(typeof jsonText!=='string')throw new Error('Settings JSON must be text.');
+  const data=new TextEncoder().encode(jsonText),name=new TextEncoder().encode(this.filename);
+  if(data.length>this.MAX_JSON)throw new Error('Settings JSON exceeds 256 KiB.');
+  const central=30+name.length+data.length,size=46+name.length;
+  const bytes=new Uint8Array(central+size+22),v=new DataView(bytes.buffer),crc=this.crc32(data);
+  const u16=(p,n)=>v.setUint16(p,n,true),u32=(p,n)=>v.setUint32(p,n,true);
+  u32(0,0x04034b50);u16(4,20);u16(6,0x800);u16(8,0);u16(12,0x21);
+  u32(14,crc);u32(18,data.length);u32(22,data.length);u16(26,name.length);
+  bytes.set(name,30);bytes.set(data,30+name.length);
+  u32(central,0x02014b50);u16(central+4,20);u16(central+6,20);u16(central+8,0x800);u16(central+10,0);u16(central+14,0x21);
+  u32(central+16,crc);u32(central+20,data.length);u32(central+24,data.length);u16(central+28,name.length);
+  bytes.set(name,central+46);
+  const end=central+size;u32(end,0x06054b50);u16(end+8,1);u16(end+10,1);u32(end+12,size);u32(end+16,central);
+  return bytes;
+ }
+ static async unzip(input){
+  const bytes=input instanceof Uint8Array?input:input instanceof ArrayBuffer?new Uint8Array(input):null;
+  if(!bytes)throw new Error('ZIP input must be bytes.');
+  if(bytes.length>this.MAX_ARCHIVE)throw new Error('Settings ZIP exceeds 1 MiB.');
+  if(bytes.length<22)throw new Error('The ZIP file is incomplete.');
+  const view=new DataView(bytes.buffer,bytes.byteOffset,bytes.byteLength),bad=message=>{throw new Error(message||'The ZIP file is malformed.');};
+  const inBounds=(p,n,end=bytes.length)=>Number.isSafeInteger(p)&&Number.isSafeInteger(n)&&p>=0&&n>=0&&p<=end&&n<=end-p;
+  const u16=p=>view.getUint16(p,true),u32=p=>view.getUint32(p,true);
+  let eocd=-1;
+  for(let p=bytes.length-22;p>=Math.max(0,bytes.length-65557);p--){if(u32(p)===0x06054b50&&p+22+u16(p+20)===bytes.length){eocd=p;break;}}
+  if(eocd<0)bad('The ZIP end record is missing.');
+  const count=u16(eocd+10),centralSize=u32(eocd+12),centralOffset=u32(eocd+16);
+  if(u16(eocd)!==0x4b50||u16(eocd+4)||u16(eocd+6)||u16(eocd+8)!==count)bad('Multi-disk ZIP files are not supported.');
+  if(count===65535||centralSize===0xffffffff||centralOffset===0xffffffff)bad('ZIP64 files are not supported.');
+  if(count<1||count>this.MAX_ENTRIES)bad('A settings ZIP must contain 1 to 16 entries.');
+  if(!inBounds(centralOffset,centralSize,eocd)||centralOffset+centralSize!==eocd)bad();
+  if(eocd>=20&&u32(eocd-20)===0x07064b50)bad('ZIP64 files are not supported.');
+  const decoder=new TextDecoder('utf-8',{fatal:true});
+  const extra=(p,n)=>{const end=p+n;while(p<end){if(!inBounds(p,4,end))bad();const type=u16(p),size=u16(p+2);p+=4;if(!inBounds(p,size,end))bad();if(type===1)bad('ZIP64 files are not supported.');p+=size;}};
+  let p=centralOffset,selected=null,jsonCount=0,totalSize=0;
+  const spans=[],names=new Set();
+  for(let entry=0;entry<count;entry++){
+   if(!inBounds(p,46,eocd)||u32(p)!==0x02014b50)bad();
+   const needed=u16(p+6),flags=u16(p+8),method=u16(p+10),crc=u32(p+16),packed=u32(p+20),size=u32(p+24),nameLength=u16(p+28),extraLength=u16(p+30),commentLength=u16(p+32),disk=u16(p+34),local=u32(p+42);
+   const length=46+nameLength+extraLength+commentLength;
+   if(!inBounds(p,length,eocd)||nameLength===0)bad();
+   if(flags&0x2041)bad('Encrypted ZIP files are not supported.');
+   if(flags&~0x80e)bad('This ZIP uses unsupported flags.');
+   if(method!==0&&method!==8)bad('Use a stored or deflate-compressed settings ZIP.');
+   if(needed>20||disk||packed===0xffffffff||size===0xffffffff||local===0xffffffff)bad('ZIP64 or multi-disk ZIP files are not supported.');
+   if(packed>this.MAX_ARCHIVE||size>this.MAX_ARCHIVE||(totalSize+=size)>this.MAX_ARCHIVE)bad('The ZIP contents exceed the import limit.');
+   const rawName=bytes.subarray(p+46,p+46+nameLength);let name;
+   try{name=decoder.decode(rawName);}catch{bad('ZIP filenames must use UTF-8 or ASCII.');}
+   if(name.includes('\0')||names.has(name))bad('The ZIP contains duplicate or invalid filenames.');names.add(name);
+   extra(p+46+nameLength,extraLength);
+   if(!inBounds(local,30,centralOffset)||u32(local)!==0x04034b50)bad();
+   const localNameLength=u16(local+26),localExtraLength=u16(local+28),start=local+30+localNameLength+localExtraLength;
+   if(u16(local+4)!==needed||u16(local+6)!==flags||u16(local+8)!==method||localNameLength!==nameLength||!inBounds(local,30+localNameLength+localExtraLength,centralOffset)||!inBounds(start,packed,centralOffset))bad('ZIP local and central records disagree.');
+   for(let i=0;i<nameLength;i++)if(bytes[local+30+i]!==rawName[i])bad('ZIP filenames disagree.');
+   extra(local+30+localNameLength,localExtraLength);
+   const localCRC=u32(local+14),localPacked=u32(local+18),localSize=u32(local+22);
+   if(flags&8){if((localCRC!==0&&localCRC!==crc)||(localPacked!==0&&localPacked!==packed)||(localSize!==0&&localSize!==size))bad('ZIP local sizes disagree.');}
+   else if(localCRC!==crc||localPacked!==packed||localSize!==size)bad('ZIP local sizes disagree.');
+   if(method===0&&packed!==size)bad('Stored ZIP sizes disagree.');
+   let end=start+packed;
+   if(flags&8){
+    // The descriptor signature is optional. Prefer the signed interpretation when valid.
+    const descriptor=d=>inBounds(d,12,centralOffset)&&u32(d)===crc&&u32(d+4)===packed&&u32(d+8)===size;
+    if(inBounds(end,16,centralOffset)&&u32(end)===0x08074b50&&descriptor(end+4))end+=16;
+    else if(descriptor(end))end+=12;
+    else bad('The ZIP data descriptor is invalid.');
+   }
+   spans.push([local,end]);
+   if(!name.endsWith('/')&&/\.json$/i.test(name)){
+    jsonCount++;if(size>this.MAX_JSON)bad('Settings JSON exceeds 256 KiB.');
+    selected={start,packed,size,method,crc};
+   }
+   p+=length;
+  }
+  if(p!==eocd)bad();
+  spans.sort((a,b)=>a[0]-b[0]);for(let i=1;i<spans.length;i++)if(spans[i][0]<spans[i-1][1])bad('ZIP entries overlap.');
+  if(jsonCount!==1)bad('Choose a ZIP containing exactly one settings JSON file.');
+  const compressed=bytes.subarray(selected.start,selected.start+selected.packed);let output;
+  if(selected.method===0)output=compressed;
+  else{
+   let stream;try{stream=new DecompressionStream('deflate-raw');}catch{bad('This browser cannot open compressed ZIPs. Import the extracted JSON or a ZIP exported by this app.');}
+   // Small input chunks bound native inflate output before the JS size guard runs.
+   let offset=0;
+   const source=new ReadableStream({pull(controller){if(offset===compressed.length){controller.close();return;}const end=Math.min(compressed.length,offset+256);controller.enqueue(compressed.subarray(offset,end));offset=end;}});
+   const reader=source.pipeThrough(stream).getReader(),chunks=[];let total=0;
+   try{
+    while(true){const item=await reader.read();if(item.done)break;total+=item.value.byteLength;if(total>this.MAX_JSON||total>selected.size){await reader.cancel().catch(()=>{});bad('Decompressed settings exceed their allowed size.');}chunks.push(item.value);}
+   }catch(error){await reader.cancel().catch(()=>{});throw new Error(error.message?.startsWith('Decompressed settings')?error.message:'The compressed ZIP data is invalid.');}
+   finally{reader.releaseLock();}
+   output=new Uint8Array(total);let pos=0;for(const chunk of chunks){output.set(chunk,pos);pos+=chunk.byteLength;}
+  }
+  if(output.length!==selected.size||this.crc32(output)!==selected.crc)bad('Settings ZIP integrity check failed.');
+  try{return decoder.decode(output);}catch{bad('Settings JSON must be valid UTF-8.');}
+ }
+}
+
+/* Versioned local settings only: no graph tables, source code or generated results. */
+class SettingsPresets {
+ static format='uft4-omega-settings';
+ static version=1;
+ static panels=['researchVisibility','bcControls','displayNotes','g30Explanation','hostPlayback','effectsDetails','cameraDetails','fieldDetails','embeddingDetails','settingsFiles','advancedResearch','diagnostics','about'];
+ static get schema(){
+  const bool='boolean',n=(min,max)=>({min,max}),i=(min,max)=>({min,max,integer:true});
+  return {
+   camera:{yaw:n(-180,180),pitch:n(-180,180),roll:n(-180,180),zoom:n(.4,2.8)},
+   appearance:{faceMode:['sheets','plasma','hybrid'],palette:['nebula','ember','ice'],blur:n(0,24),glow:n(0,2.5),opacity:n(0,.9),detail:n(.5,1.5),turbulence:n(0,1),quality:['auto','high','balanced','low','safe'],highContrast:bool,sceneLabels:bool,fiberOpacity:n(0,1)},
+   layers:{face:bool,g60:bool,vertices:bool,g15:bool,g30:bool,g30Links:bool,selectedConnections:bool,fibers:bool,generatedLayer:bool,showFiberRays:bool,showFiberLabels:bool},
+   bc:{enabled:bool,dots:bool,trails:bool,tailDegrees:n(0,360),tailOpacity:n(0,1),scope:['layers','carriers','center'],labels:bool},
+   simulation:{params:{spin:n(-3,3),major:n(.2,1.4),minor:n(.05,.55),core:n(.01,.8),k:n(.2,12),omega:n(0,40*Math.PI),amp:n(.05,3),speed:n(0,2)},time:n(-1e9,1e9),mode:['scalar','chiral'],playing:bool,direction:[-1,1]},
+   host:{display:{enabled:bool,view:['pair','overview'],local:bool,external:bool,trails:bool,merge:n(0,100),opacity:n(0,1)},sourceBlock:i(0,14),sourceVertex:i(0,59),neighborBlock:i(0,14),rate:n(.25,3),repeat:bool,playing:bool,travel:n(0,10),lapCount:i(0,1e9)},
+   research:{resonanceMode:['exact','tolerant','off'],gradFilter:bool,minFilter:bool,coherenceFilter:bool,mergeFilter:bool,compareFilter:bool,phaseTol:n(.01,3.14),gradTol:n(.0001,.1),edgeTol:n(-.2,.2),coherenceTol:n(.05,3.14),orbitTol:n(.02,.8),fiberView:['generated','reference','split']},
+   orbit:{enabled:bool},panels:Object.fromEntries(this.panels.map(id=>[id,bool]))
+  };
+ }
+ static check(value,rule,path){
+  const fail=()=>{throw Error('Invalid settings: '+path+'.');};
+  if(rule==='boolean'){if(typeof value!=='boolean')fail();return value;}
+  if(Array.isArray(rule)){if(!rule.includes(value))fail();return value;}
+  if(Object.hasOwn(rule,'min')){if(typeof value!=='number'||!Number.isFinite(value)||value<rule.min||value>rule.max||(rule.integer&&!Number.isInteger(value)))fail();return value;}
+  if(!value||typeof value!=='object'||Array.isArray(value))fail();
+  const keys=Object.keys(rule);if(Object.keys(value).some(key=>!Object.hasOwn(rule,key))||keys.some(key=>!Object.hasOwn(value,key)))fail();
+  const result={};for(const key of keys)result[key]=this.check(value[key],rule[key],path+'.'+key);return result;
+ }
+ static capture(a,panels={}){
+  const pick=(value,keys)=>Object.fromEntries(keys.map(key=>[key,value[key]])),schema=this.schema;
+  return {format:this.format,schemaVersion:this.version,appVersion:'15.9.7',exportedAt:new Date().toISOString(),settings:{
+   camera:pick(a.camera,Object.keys(schema.camera)),appearance:pick(a.settings,Object.keys(schema.appearance)),layers:pick(a.layers,Object.keys(schema.layers)),bc:pick(a.bcSettings,Object.keys(schema.bc)),
+   simulation:{params:{...a.sim.params},time:a.sim.time,mode:a.sim.mode,playing:a.sim.playing,direction:a.sim.direction},
+   host:{display:{...a.hostSettings},sourceBlock:a.host.sourceBlock,sourceVertex:a.host.sourceVertex,neighborBlock:a.host.neighborBlock,rate:a.host.rate,repeat:a.host.repeat,playing:a.host.playing,travel:a.host.travel,lapCount:a.host.lapCount},
+   research:{...a.research},orbit:{enabled:a.orbit.enabled},panels:Object.fromEntries(this.panels.map(id=>[id,!!panels[id]]))
+  }};
+ }
+ static validate(record,host){
+  if(!record||typeof record!=='object'||Array.isArray(record)||record.format!==this.format||record.schemaVersion!==this.version)throw Error('Use a UFT4 Omega settings file with schema version 1.');
+  if(Object.keys(record).some(key=>!['format','schemaVersion','appVersion','exportedAt','settings'].includes(key)))throw Error('Unknown settings file fields.');
+  if(typeof record.appVersion!=='string'||record.appVersion.length>32||typeof record.exportedAt!=='string'||record.exportedAt.length>64)throw Error('Invalid settings file metadata.');
+  const s=this.check(record.settings,this.schema,'settings'),h=s.host;
+  if(!host.blockNeighbors[h.sourceBlock].includes(h.neighborBlock))throw Error('Selected host blocks are not native neighbors.');
+  // Validate pulse bounds against the chosen source before touching live state.
+  const distances=new Int16Array(900);distances.fill(-1);const queue=new Uint16Array(900);let head=0,tail=1,max=0;queue[0]=h.sourceBlock*60+h.sourceVertex;distances[queue[0]]=0;
+  while(head<tail){const v=queue[head++];for(const next of host.neighbors[v])if(distances[next]<0){distances[next]=distances[v]+1;max=Math.max(max,distances[next]);queue[tail++]=next;}}
+  if(h.travel>max+2+1e-9)throw Error('Pulse position exceeds the selected source range.');
+  return s;
+ }
+ static apply(a,record){
+  const s=this.validate(record,a.host);
+  if(a.job)throw Error('Finish or cancel the current research run before importing settings.');
+  if(a.renderer.lost||a.renderer.stopped)throw Error('Reload the graphics engine before importing settings.');
+  Object.assign(a.camera,s.camera);Object.assign(a.settings,s.appearance);Object.assign(a.layers,s.layers);Object.assign(a.bcSettings,s.bc);
+  Object.assign(a.sim.params,s.simulation.params);a.sim.time=s.simulation.time;a.sim.mode=s.simulation.mode;a.sim.playing=s.simulation.playing;a.sim.direction=s.simulation.direction;
+  Object.assign(a.hostSettings,s.host.display);a.host.setSource(s.host.sourceBlock,s.host.sourceVertex);a.host.setNeighborBlock(s.host.neighborBlock);a.host.rate=s.host.rate;a.host.seekHop(s.host.travel);a.host.repeat=s.host.repeat;a.host.playing=s.host.playing;a.host.lapCount=s.host.lapCount;
+  Object.assign(a.research,s.research);a.orbit.setEnabled(s.orbit.enabled);a.bc.update(a.sim.time,a.bcSettings.tailDegrees);
+  a.clearGenerated();a.last=0;a.lastPaint=0;a.lastHostUI=0;a.lastDetail=a.settings.detail;a.lastFaceMode=a.settings.faceMode;
+  const warnings=[];
+  if(a.renderer.failed){a.settings.faceMode='sheets';a.settings.quality='safe';warnings.push('Safe Sheets retained after a rendering error.');}
+  if(a.bcRenderer.failed){a.bcSettings.enabled=false;warnings.push('BC rendering remains disabled after an error.');}
+  try{a.renderer.setQuality(a.settings.quality==='auto'?'balanced':a.settings.quality);if(a.settings.highContrast)a.renderer.release();a.renderer.invalidate('geometry');a.renderer.invalidate('field');}
+  catch(error){a.renderer.fallback('Settings loaded; graphics fallback: '+error.message);warnings.push('Safe Sheets used.');}
+  a.ui.sync();for(const id of this.panels)a.ui.el(id).open=s.panels[id];a.ui.updateHost(true);
+  return warnings;
+ }
+}
+
+class SettingsTransfer {
+ constructor(ui){
+  this.ui=ui;this.busy=false;this.downloadURL=null;
+  ui.el('exportSettings').addEventListener('click',()=>this.exportZIP());
+  ui.el('importSettings').addEventListener('click',()=>ui.el('settingsFile').click());
+  ui.el('settingsFile').addEventListener('change',()=>{const input=ui.el('settingsFile'),file=input.files?.[0];input.value='';if(file)this.importFile(file);});
+  window.addEventListener('pagehide',()=>this.revokeDownload());
+ }
+ message(text){this.ui.el('settingsFileStatus').textContent=text;}
+ revokeDownload(){if(this.downloadURL)URL.revokeObjectURL(this.downloadURL);this.downloadURL=null;this.ui.el('settingsDownload').hidden=true;}
+ exportZIP(){
+  if(this.busy)return;
+  try{
+   const panels=Object.fromEntries(SettingsPresets.panels.map(id=>[id,this.ui.el(id).open])),record=SettingsPresets.capture(this.ui.app,panels);
+   SettingsPresets.validate(record,this.ui.app.host);
+   const bytes=SettingsArchive.zip(JSON.stringify(record,null,2)+'\n');this.revokeDownload();this.downloadURL=URL.createObjectURL(new Blob([bytes],{type:'application/zip'}));
+   const link=document.createElement('a');link.href=this.downloadURL;link.download='uft4-omega-settings-'+new Date().toISOString().replace(/[:.]/g,'-')+'.zip';document.body.append(link);link.click();link.remove();
+   const retry=this.ui.el('settingsDownload');retry.href=this.downloadURL;retry.download=link.download;retry.hidden=false;this.message('Settings ZIP prepared for download.');
+  }catch(error){this.message('Export failed: '+error.message);}
+ }
+ async importFile(file){
+  if(this.busy)return;this.busy=true;for(const id of ['exportSettings','importSettings'])this.ui.el(id).disabled=true;
+  this.message('Reading settings…');
+  try{
+   if(!file.size||file.size>1048576)throw Error('Choose a non-empty ZIP or JSON file up to 1 MiB.');
+   const bytes=new Uint8Array(await file.arrayBuffer()),zip=bytes[0]===0x50&&bytes[1]===0x4b;
+   if(!zip&&bytes.length>262144)throw Error('Settings JSON is limited to 256 KiB.');
+   const text=zip?await SettingsArchive.unzip(bytes):new TextDecoder('utf-8',{fatal:true}).decode(bytes);
+   let record;try{record=JSON.parse(text.replace(/^\uFEFF/,''));}catch{throw Error('The file does not contain valid settings JSON.');}
+   const warnings=SettingsPresets.apply(this.ui.app,record),message='Settings imported. '+warnings.join(' ');
+   this.message(message);this.ui.status(message);
+  }catch(error){this.message('Import failed: '+error.message);this.ui.status('Settings import failed; current scene retained.');}
+  finally{this.busy=false;for(const id of ['exportSettings','importSettings'])this.ui.el(id).disabled=false;}
+ }
 }
 
 /* UI Controller: reads controls on events; renderers consume cached state only. */
@@ -1147,6 +1364,7 @@ class UIController {
     this.bindHost();
     this.bindBC();
     this.bindCamera();
+    this.settingsTransfer=new SettingsTransfer(this);
     this.sync();
   }
   el(id) { return this.elements[id] || (this.elements[id]=document.getElementById(id)); }
@@ -1469,9 +1687,9 @@ class CameraOrbit {
 class ObservatoryApp {
  constructor(){
   this.sim=new SimulationEngine();this.graph=new GraphEngine();this.tower=new TowerReferenceEngine(this.graph);this.geometry=new GeometryEngine(this.sim.params);
-  this.host=new HostEngine(this.graph);this.host.playing=false;this.host.setNeighborBlock(1);this.hostSettings={enabled:true,view:"pair",local:false,external:false,trails:false,merge:50,opacity:.5};this.hostRenderer=new HostRenderer(this);this.hostTickMs=0;this.lastHostUI=0;
+  this.host=new HostEngine(this.graph);this.host.playing=false;this.host.setNeighborBlock(1);this.hostSettings={enabled:true,view:"pair",local:false,external:false,trails:false,merge:100,opacity:.13};this.hostRenderer=new HostRenderer(this);this.hostTickMs=0;this.lastHostUI=0;
   this.settings={faceMode:'plasma',palette:'ice',blur:9,glow:1.3,opacity:.9,detail:1,turbulence:.35,quality:'auto',highContrast:false,sceneLabels:false,fiberOpacity:.25};
-  this.camera={yaw:40,pitch:25,roll:-55,zoom:2.6};this.orbit=new CameraOrbit();
+  this.camera={yaw:40,pitch:25,roll:-55,zoom:2.8};this.orbit=new CameraOrbit();
   this.layers={face:true,g60:false,vertices:false,g15:false,g30:false,g30Links:false,selectedConnections:false,fibers:true,generatedLayer:true,showFiberRays:true,showFiberLabels:false};
   this.bcSettings={enabled:true,dots:false,trails:true,tailDegrees:182,tailOpacity:.25,scope:'layers',labels:false};this.bc=new BCTracerEngine(this.bcSettings.tailDegrees);this.bcRenderer=new BCTracerRenderer(this);
   this.research={resonanceMode:'exact',gradFilter:true,minFilter:true,coherenceFilter:true,mergeFilter:true,compareFilter:false,phaseTol:.2,gradTol:.001,edgeTol:.0335,coherenceTol:.785,orbitTol:.15,fiberView:'generated'};
@@ -1518,7 +1736,7 @@ class ObservatoryApp {
  async audit(){if(this.job)return;if(!this.generated){this.ui.el('fiberReport').textContent='Generate candidate sites first.';return;}const controller=new AbortController();this.job=controller;this.ui.setBusy(true);try{this.fiberAudit=await IndependentGenerator.auditAsync(this.generated,{...this.research},p=>{this.ui.el('fiberReport').textContent=`Auditing: ${p.completed} / ${p.total}`;},controller.signal);this.ui.el('fiberReport').textContent=this.fiberAudit.report;}catch(e){this.ui.el('fiberReport').textContent=e.name==='AbortError'?'Audit cancelled.':'Audit error: '+e.message;}finally{this.job=null;this.ui.setBusy(false);}}
  updateDiagnostics(){this.ui.updateHost();const r=this.renderer.report(),s=r;this.ui.el('renderBadge').textContent=this.settings.highContrast?'SUNLIGHT · SHEETS':r.mode.toUpperCase();this.ui.updateDiagnostics(`Rendering FPS: ${s.fps.toFixed(1)}\nPlasma refreshes/s: ${s.plasmaFps.toFixed(1)}\nAverage delivered frame: ${s.frameMs.toFixed(2)} ms\nQuality: ${s.quality} (requested ${s.requestedQuality})\nDisplay: ${this.renderer.canvas.width} × ${this.renderer.canvas.height} · DPR ${s.dpr.toFixed(2)}\nPlasma buffer: ${s.plasmaBuffer.join(' × ')}\nSurface faces: ${s.surfaceElements} · ${s.fieldLayout} · ${s.fieldHalfElements} per half\nGenerated edges displayed: ${s.generatedEdgesDrawn}\nKnown pixel/array budget: ${(s.knownBufferBytes/1048576).toFixed(2)} MiB (excludes browser copies)\nActive: ${s.effects.join(', ')}\nHost: ${this.hostSettings.enabled?this.hostSettings.view:'hidden'} · ${this.hostRenderer.drawnVertices} vertices displayed\nG900 opacity: ${(this.hostSettings.opacity*100).toFixed(0)}%\nTower merge: ${this.hostSettings.merge.toFixed(0)}% · display only\nHost step / draw CPU: ${this.hostTickMs.toFixed(2)} / ${this.hostRenderer.cpuMs.toFixed(2)} ms\nQuotient sheet instances: ${this.hostRenderer.quotientVerticesDrawn} vertices / ${this.hostRenderer.quotientEdgesDrawn} edges · fiber rays ${this.hostRenderer.fiberRaysDrawn}\nG30 reference: ${this.hostRenderer.g30VerticesDrawn} vertices / ${this.hostRenderer.g30EdgesDrawn} edges · G60 pair rays ${this.hostRenderer.g30RaysDrawn} · 24 pairs cross current G15 fibers\nQuotient fiber opacity: ${(getFiberOpacity(this.settings)*100).toFixed(0)}%\nTail opacity: ${(getTailOpacity(this.bcSettings)*100).toFixed(0)}%\nBC tail ${this.bcSettings.tailDegrees.toFixed(0)}° · phase ${this.bc.phase.toFixed(3)} · ${this.bcRenderer.headsDrawn} dots / ${this.bcRenderer.segmentsDrawn} tail segments\nBC CPU ${this.bcRenderer.cpuMs.toFixed(2)} ms · fixed ${(this.bcRenderer.fixedBytes/1024).toFixed(1)} KiB\nBC error: ${this.bcRenderer.error||'none'}\nPulse edge marks: ${this.hostRenderer.frontierEdgesDrawn} / ${this.hostRenderer.frontierEdgesEligible} visible candidates\nHost pulse: hop ${this.host.travel.toFixed(2)} · ${this.host.reachedCount}/900 reached\nField cycle: ${this.sim.frequencyHz.toFixed(1)} Hz · per simulation second\nAngular frequency: ${this.sim.params.omega.toFixed(3)} rad / simulation second\nRequested wall-time cycle: ${(this.sim.frequencyHz*this.sim.params.speed).toFixed(1)} Hz at current speed (capped clock)\nCamera Orbit: ${this.orbit.enabled?'on':'off'} · yaw/pitch/roll ${this.camera.yaw.toFixed(1)}° / ${this.camera.pitch.toFixed(1)}° / ${this.camera.roll.toFixed(1)}°\nTime: ${s.simulationTime.toFixed(3)}\nLast CPU timings, ms:\n field / graph response ${s.fieldMs.toFixed(2)}\n geometry / lookup ${s.geometryMs.toFixed(2)}\n plasma / software blur ${s.plasmaMs.toFixed(2)}\n compositing submission ${s.compositeMs.toFixed(2)}\n graph overlay ${s.graphMs.toFixed(2)}\n total ${s.drawMs.toFixed(2)}\nFrames: ${s.frames} · plasma refreshes: ${s.plasmaUpdates}\nBuffer allocations: ${s.bufferAllocations}\nContext lost: ${s.contextLost}\nErrors: ${s.errors.length}\n${s.errors.map(e=>e.message).join('\n')}\nCPU timings do not include all browser raster/GPU work.`);}
 }
-globalThis.UFT4={OVERLAY_THEMES,OVERLAY_STYLES,getOverlayTheme,getOverlayStyle,getTailOpacity,getFiberOpacity,CameraOrbit,SimulationEngine,GraphEngine,GeometryEngine,TowerReferenceEngine,BCTracerEngine,BCTracerRenderer,IndependentGenerator,HostEngine,HostRenderer,RenderingEngine,QUALITY,DEFAULT_PARAMS,version:'15.9.6'};
+globalThis.UFT4={SettingsArchive,SettingsPresets,SettingsTransfer,OVERLAY_THEMES,OVERLAY_STYLES,getOverlayTheme,getOverlayStyle,getTailOpacity,getFiberOpacity,CameraOrbit,SimulationEngine,GraphEngine,GeometryEngine,TowerReferenceEngine,BCTracerEngine,BCTracerRenderer,IndependentGenerator,HostEngine,HostRenderer,RenderingEngine,QUALITY,DEFAULT_PARAMS,version:'15.9.7'};
 /* Credits and honest startup readiness, independent of the mathematical engines. */
 class LaunchPopover {
  constructor(){

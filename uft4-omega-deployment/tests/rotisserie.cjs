@@ -26,12 +26,12 @@ vm.runInContext(`UIController=class {
 };`,Object.assign(context,{assertKind:kind=>assert.equal(kind,'camera')}));
 function app(){const a=new context.AppClass();a.start=()=>{};a.last=1000;a.lastPaint=1000;return a;}
 function ticks(a,from,to,step=10){for(let time=from;time<=to;time+=step)a.tick(time);}
-const initial={yaw:40,pitch:25,roll:-55,zoom:2.6};
+const initial={yaw:40,pitch:25,roll:-55,zoom:2.8};
 
-test('Opening defaults: diagonal Plasma view at 50% merge and 50% G900 opacity',()=>{
+test('Opening defaults: joined Plasma view at zoom 2.8 and 13% G900 opacity',()=>{
  const a=app();assert.deepEqual(plain(a.camera),initial);assert.equal(a.orbit.enabled,false);
- assert.equal(a.settings.faceMode,'plasma');assert.equal(a.settings.palette,'ice');assert.equal(a.hostSettings.merge,50);
- assert.equal(a.hostSettings.opacity,.5);
+ assert.equal(a.settings.faceMode,'plasma');assert.equal(a.settings.palette,'ice');assert.equal(a.hostSettings.merge,100);
+ assert.equal(a.hostSettings.opacity,.13);
  assert.equal(a.bcSettings.trails,true);assert.equal(a.bcSettings.tailDegrees,182);assert.equal(a.bc.tailDegrees,182);
  assert.equal(a.bcSettings.tailOpacity,.25);assert.equal(a.layers.fibers,true);assert.equal(a.settings.fiberOpacity,.25);
  assert.equal(a.bcSettings.dots,false);assert.equal(a.bcSettings.labels,false);assert.equal(a.settings.sceneLabels,false);
@@ -44,7 +44,7 @@ test('Display-only orbit leaves merge, clock, field, topology and camera identit
  const value=a.sim.field([.4,.5,.6]);a.orbit.setEnabled(true);
  for(let i=0;i<360;i++)a.orbit.step(.1,camera,.1);
  assert.equal(a.camera,camera);assert.equal(Object.keys(camera).join(),keys);assert.equal(camera.zoom,initial.zoom);
- assert.equal(a.hostSettings.merge,50);assert.equal(JSON.stringify(a.sim.snapshot()),before);assert.equal(a.sim.field([.4,.5,.6]),value);
+ assert.equal(a.hostSettings.merge,100);assert.equal(JSON.stringify(a.sim.snapshot()),before);assert.equal(a.sim.field([.4,.5,.6]),value);
  assert.equal(JSON.stringify([a.graph.edges,a.graph.fibers,a.graph.qEdges,a.host.edges]),graphBefore);
  near(CameraOrbit.wrap(camera.yaw-initial.yaw),-144);near(CameraOrbit.wrap(camera.pitch-initial.pitch),144);near(CameraOrbit.wrap(camera.roll-initial.roll),108);
 });
@@ -76,12 +76,12 @@ test('Off, invalid deltas and long scheduling gaps cannot jump the camera',()=>{
  o.setEnabled(false);const stopped={...c};o.step(.1,c);assert.deepEqual(c,stopped);o.setEnabled(true);assert.deepEqual(c,stopped);
 });
 
-test('Default merge stays at 50% while the camera orbits across frame rates',()=>{
+test('Default merge stays at 100% while the camera orbits across frame rates',()=>{
  for(const rate of [1,10,30,60,120]){
   const a=app();a.sim.params.speed=0;a.sim.direction=-1;a.sim.params.omega=20*Math.PI;a.orbit.setEnabled(true);
-  for(let i=1;i<=rate*20;i++){a.tick(1000+i*1000/rate);assert.equal(a.hostSettings.merge,50);}
+  for(let i=1;i<=rate*20;i++){a.tick(1000+i*1000/rate);assert.equal(a.hostSettings.merge,100);}
   assert.notEqual(a.camera.yaw,initial.yaw);assert.notEqual(a.camera.pitch,initial.pitch);assert.notEqual(a.camera.roll,initial.roll);
-  assert.equal(a.hostSettings.opacity,.5);near(a.sim.time,0);
+  assert.equal(a.hostSettings.opacity,.13);near(a.sim.time,0);
  }
 });
 

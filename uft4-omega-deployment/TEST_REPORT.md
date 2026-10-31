@@ -1,3 +1,42 @@
+# UFT4 Omega v15.9.7 — screenshot defaults and portable settings
+
+Prepared from reviewed v15.9.6.
+
+## Changes
+
+Opening defaults now use **100% merge**, **2.80 zoom**, **13% G900 opacity**, and Camera Orbit off. Host, field face, quotient fibers and BC trails are enabled; the other main display flags and labels remain off. Fiber opacity and tail opacity remain 25%, trail length 182°, field cycle 1 Hz, and Plasma / Hyperblue are retained. Camera angles stay at 40° yaw, 25° pitch and −55° roll: the screenshots do not expose angle readouts or an exact animation time. No merge oscillator was restored.
+
+The **Save & load settings** section exports a ZIP containing `uft4-omega-settings.json` and imports that ZIP, a normally deflated ZIP, or plain JSON. A visible download link remains available after export for retrying the browser download. Only one object URL is retained, replaced on the next export and revoked on page exit.
+
+Schema version 1 includes camera angles/zoom; all field appearance and display flags; BC controls; simulation parameters, time, mode, play state and direction; host display, source/neighbor selection, rate, repeat, play state, travel and lap count; independent-generator/audit parameters; Camera Orbit; and collapsible-panel state. Presets are represented by their resulting angles. Frequency is represented by omega. Native topology, generated sites/edges/audit output, diagnostics history and adaptive realized quality are not serialized. Imported controls clear previous generated results so they can be regenerated from the restored settings.
+
+Imports validate all groups, field types, finite numeric ranges, native host-neighbor relation and source-specific pulse bounds before changing the scene. Active research jobs must finish or be cancelled before import. Existing graphics/BC failure barriers remain in force. Settings are processed locally; there is no upload or external runtime dependency.
+
+The ZIP writer uses stored entries for reliable offline round trips. The reader accepts stored/deflate archives with exactly one JSON file, at most 16 entries, a 1 MiB archive/declared-total limit and a 256 KiB JSON limit. It checks local/central consistency, bounds, overlaps, selected JSON CRC and actual inflated length; encrypted, ZIP64 and multi-disk archives are rejected. Other entries are structurally checked and skipped without extraction. Their payload CRCs are not evaluated. Deflate import uses the browser's raw DecompressionStream; browsers without it can still import app-exported stored ZIPs or extracted JSON.
+
+Release HTML: 226,774 bytes. SHA256 `c9af1de3565968894c23efccaaf25e9117e9f3ca25266af343914f0c086f64eb`. A verified `default-settings.zip` is included with launch settings and time zero.
+
+## Validation
+
+- Inline JavaScript and Bash syntax passed.
+- **13/13 camera/default tests, 12/12 themed-overlay tests and 6/6 launch tests passed.** Seven mathematical-engine source hashes continue to match the inherited release. Camera-only orbit and manually fixed merge remain intact.
+- **10/10 settings tests passed:** all control groups and playback positions round-trip using the real inline simulation/graph/host/BC engines; invalid schemas, missing/unknown/prototype keys, wrong types, nonfinite values, out-of-range values, bad neighbor relations, pulse bounds, malformed/oversized JSON and corrupt ZIPs leave the scene unchanged. Failure barriers and object identity are preserved. Export produces a ZIP that imports back to equivalent settings, and the retry link/URL cleanup is checked.
+- **12/12 archive tests passed:** Python ZIP interoperability, Unicode, stored and deflate files, data descriptors, malformed records, encryption/ZIP64/multi-disk rejection, CRC checks, overlapping entries, declared and actual decompression limits, and the unsupported-decompression fallback. **53 application checks total.**
+- **12/12 mocked SSH/SCP deployment checks passed**, accepting exact reviewed v15.9.2–v15.9.6 predecessors, preserving private backups and original Thalean sentinels, and rejecting unfamiliar files, unsafe symlinks and concurrent edits.
+- Cloud Chromium: visible defaults matched 100% / 2.80 / 13%. JSON import restored a custom 37% merge, 1.73 zoom, Ion Fire, Sunlight and BC dots. Invalid zoom 99 was rejected with the prior controls retained. Stored ZIP and normal deflate ZIP imports restored the expected defaults. The mobile panel had no horizontal overflow (380 px client/scroll width). No application console errors were captured.
+
+## Verification limits and acceptance
+
+The cloud browser displayed the export-ready state and retry link, but its download event/file-delivery API timed out, so the completed browser download was **not verified**. The exported bytes and standard ZIP compatibility are verified separately. Physical Android/Samsung file-picker/download handling and sustained performance remain untested. Existing finite-field/graph qualifications and high-zoom framing limits remain unchanged; no new physical claim is made.
+
+On the phone: reload and confirm defaults; open Save & load settings; export and confirm a `.zip` appears in Downloads; change several controls; import that ZIP and confirm restoration; unzip it and repeat with JSON; check Play/Pause and Camera Orbit; verify a malformed file reports an error without altering the scene. If a download does not appear, use the displayed Download ZIP again link. Existing rendering quality and memory caps remain unchanged.
+
+## Installation
+
+Run the README's Termux commands. The deployer backs up the admitted installed predecessor as `~/.uft4-omega-backups/pre-v15.9.7.*.html` and replaces only the dedicated UFT4 page. GitHub publication does not install the Bluehost page. Live v15.9.7 delivery has not been verified.
+
+---
+
 # UFT4 Omega v15.9.6 — manual merge, default 50%
 
 Prepared from reviewed v15.9.5.

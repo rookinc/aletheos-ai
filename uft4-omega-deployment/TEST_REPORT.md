@@ -1,3 +1,31 @@
+# UFT4 Omega v15.9.6 — manual merge, default 50%
+
+Prepared from reviewed v15.9.5.
+
+## Changes
+
+Removed the merge oscillator and its phase state. **Merge halves defaults to 50%** and stays at the selected value. Camera Orbit again changes only yaw, pitch and roll. Manual merge adjustments retain orbit, just like zoom and opacity. The obsolete merge-cycle help and diagnostic entry have been removed.
+
+G900 opacity stays at 50%; BC trails stay at 25%; native quotient fibers stay enabled at 25%; field frequency stays at 1 Hz. Camera starting angles and zoom, rendering budgets, mathematical engines and native graph/quotient tables are unchanged.
+
+Release HTML: 207,990 bytes. SHA256 `4ec2daf2b024c00746c27e2f09be518aa87d3de5c8939cc3c8a53613f76c8658`.
+
+## Validation
+
+- Inline JavaScript and deployment Bash syntax passed.
+- **13/13 orbit/manual-merge checks passed:** 50% opening merge and G900 opacity, fixed merge throughout 20 simulated seconds at 1/10/30/60/120 Hz scheduling, manual 0/25/50/75/100% settings retained through orbit toggles, pause and host-view changes, and manual merge/zoom/opacity input retaining camera orbit. Existing camera motion, pause/visibility, quality cadence and native checks pass; all seven mathematical-engine source hashes remain unchanged.
+- **12/12 themed-overlay and 6/6 launch-popover checks passed** (31 application checks).
+- **11/11 mocked SSH/SCP deployment checks passed**, admitting exact v15.9.2 through v15.9.5 releases, verifying private rollback contents/permissions and repeat installs, and rejecting unknown files, unsafe symlinks and concurrent changes. Original Thalean page protection is retained.
+- Cloud Chromium at 390×844: opening merge 50% and G900 opacity 50%; enabling Camera Orbit changed all three angles while merge stayed at 50%. A manual change to 20% retained Camera Orbit. The selected value persisted while the camera continued rotating, then was restored to 50% for the preview. No application errors were captured.
+
+These checks do not establish physical Android/Samsung stability or sustained rendering performance. Existing framing limits at high zoom remain; zoom is manually adjustable. On-device acceptance: reload, confirm 50% merge, enable Camera Orbit and verify merge stays fixed, change Merge manually, and pause/resume. Native structures and field claims are unchanged.
+
+## Installation
+
+Use the README's Termux commands. The installer preserves the actual admitted predecessor as `~/.uft4-omega-backups/pre-v15.9.6.*.html` and replaces only the dedicated UFT4 page. GitHub publication does not install the Bluehost page. Live v15.9.6 delivery has not been verified.
+
+---
+
 # UFT4 Omega v15.9.5 — 50% G900 default and merge cycling
 
 30 October 2026. Prepared from reviewed v15.9.4.

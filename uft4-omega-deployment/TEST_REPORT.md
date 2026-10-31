@@ -1,3 +1,34 @@
+# UFT4 Omega v15.9.8 — exact uploaded startup preset
+
+Prepared from reviewed v15.9.7.
+
+## Changes
+
+The complete profile from `uft4-omega-settings-2026-10-31T00-43-22-978Z.zip` is now embedded as the launch preset. Startup applies it through the validated settings-import path before the first frame. Its exact camera values, simulation time, display/field/BC settings, host selection and pulse state, research settings, Camera Orbit and panel-open state are retained.
+
+Key values: Hybrid / Hyperblue; 100% merge; zoom 2.8; G900 opacity 100%; quotient fibers on at 11%; BC trails 182° at 25%; dots and labels off; 1 Hz field cycle; Camera Orbit on. The exact saved angles are 98.91722499999025°, −126.38005312499388°, −10.986700000012206°. The saved simulation time is 215.92550000000682 seconds with forward playback enabled. The credits popover holds this time and camera until Continue. The merge oscillator remains absent.
+
+The bundled `default-settings.zip` is a byte-for-byte copy of the supplied archive: SHA256 `8765d9c6e1abe375cd6af5ee4148fe4caad16df91c3aa067e3f3652a01d24086`, 2,755 bytes. Its original export metadata is preserved. Startup uses the embedded profile and needs no external ZIP fetch. The uploaded artifact demonstrates that a settings ZIP was obtained on the user's side; no broader physical-device stability claim is inferred from that alone.
+
+Release HTML: 228,686 bytes. SHA256 `c93e96e7ee2c7512d1f4ec87c063e0effc0ec5896dc54b366f8b5cc3f0e68d99`.
+
+## Validation
+
+- Inline JavaScript and Bash syntax passed.
+- **13/13 camera/default, 12/12 themed-overlay and 6/6 launch checks passed.** The actual constructor settings are compared against independently recorded uploaded values. Camera scheduling tests retain their independent clock setup. Launch tests hold and resume the saved nonzero phase. All seven mathematical-engine source receipts remain unchanged.
+- **11/11 settings tests passed:** the supplied ZIP checksum is frozen in the test, an independent stored-entry reader obtains its JSON, and the entire settings object is compared against both the embedded preset and actual application startup. A frame-loop test verifies the credits hold the saved time and enabled orbit. Existing round-trip, invalid-file nonmutation and failure-barrier checks remain intact.
+- **12/12 archive checks passed**, including standard ZIP interoperability and bounded malformed-file handling. **54 application checks total.**
+- **13/13 mocked deployment checks passed**, including exact reviewed v15.9.2–v15.9.7 predecessors, verified private rollback copies, repeat installs and unsafe/concurrent-change refusal. Original Thalean page sentinels remained unchanged.
+- Cloud Chromium at 390×844: before Continue, the ready dialog held playback while controls already showed Hybrid, G900 100%, fiber opacity 11%, merge 100%, zoom 2.8, Camera Orbit on and the settings panel expanded. Continue resumed playback, and Pause held it for the review screenshot. The panel measured 380 px client and scroll width, without horizontal overflow. No application errors were captured.
+
+The preview is a paused review frame after Continue, so its camera has advanced from the exact stored angle. No fresh sustained-performance or physical Android test was performed. Existing download-delivery and rendering limits from v15.9.7 remain applicable; its stored/deflate ZIP and JSON import paths are unchanged. No field equation, graph table, native quotient, physical claim or original Thalean page was changed.
+
+## Installation
+
+Use the README's Termux commands. The installer preserves the admitted installed predecessor under `~/.uft4-omega-backups/pre-v15.9.8.*.html` and replaces only the dedicated UFT4 page. GitHub publication alone does not install the Bluehost page. Live v15.9.8 delivery has not been verified.
+
+---
+
 # UFT4 Omega v15.9.7 — screenshot defaults and portable settings
 
 Prepared from reviewed v15.9.6.

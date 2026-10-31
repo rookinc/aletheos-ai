@@ -2,11 +2,11 @@
 // Test the shipped inline settings code with real mathematical engines.
 // DOM, downloads and canvas allocation are stubbed; these are not browser/GPU tests.
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
-const assert=require('node:assert/strict');
+const assert=require('node:assert/strict'),crypto=require('node:crypto');
 const html=fs.readFileSync(path.join(__dirname,'../../public_html/observatories/uft4-omega/index.html'),'utf8');
 const script=html.match(/<script>([\s\S]*)<\/script>/)[1];
 const context={console,performance:require('node:perf_hooks').performance,TextEncoder,TextDecoder,Blob,URL,setTimeout,clearTimeout,DecompressionStream};
-vm.createContext(context);vm.runInContext(script+'\nglobalThis.AppClass=ObservatoryApp;',context);
+vm.createContext(context);vm.runInContext(script+'\nglobalThis.AppClass=ObservatoryApp;globalThis.LaunchClass=LaunchPopover;',context);
 const {SettingsPresets,SettingsTransfer}=context.UFT4;
 const plain=value=>JSON.parse(JSON.stringify(value));
 const near=(a,b)=>assert.ok(Math.abs(a-b)<1e-9,`${a} != ${b}`);
@@ -22,7 +22,7 @@ vm.runInContext(`UIController=class {
  setQuality(value){this.level=value;}release(){this.releases++;}
  fallback(message){this.failed=true;this.app.settings.faceMode='sheets';this.app.settings.quality='safe';this.level='safe';this.message=message;}
 };`,context);
-function app(){const a=new context.AppClass();a.start=()=>{};return a;}
+function app(){const a=new context.AppClass();a.start=()=>{};a.renderer.invalidations=[];a.renderer.releases=0;return a;}
 function panels(a){return Object.fromEntries(SettingsPresets.panels.map(id=>[id,a.ui.el(id).open]));}
 function state(a){return plain(SettingsPresets.capture(a,panels(a)).settings);}
 function file(text,name='settings.json'){const bytes=new TextEncoder().encode(text);return{name,size:bytes.length,arrayBuffer:async()=>bytes.buffer};}
@@ -31,16 +31,34 @@ async function test(name,fn){await fn();checks++;console.log('PASS '+name);}
 function assertRejectedWithoutMutation(a,record,pattern){const before=state(a);assert.throws(()=>SettingsPresets.apply(a,record),pattern);assert.deepEqual(state(a),before);}
 
 (async()=>{
-await test('Screenshot defaults are captured and no topology or generated data is exported',()=>{
- const a=app(),record=SettingsPresets.capture(a);
+await test('Complete startup profile matches the exact user-uploaded ZIP fixture',()=>{
+ // Independent fixture reader: this known archive is a single stored JSON file.
+ // Its frozen upload hash detects accidental replacement with regenerated defaults.
+ const zip=fs.readFileSync(path.join(__dirname,'../default-settings.zip'));
+ assert.equal(crypto.createHash('sha256').update(zip).digest('hex'),'8765d9c6e1abe375cd6af5ee4148fe4caad16df91c3aa067e3f3652a01d24086');
+ assert.equal(zip.readUInt32LE(0),0x04034b50);assert.equal(zip.readUInt16LE(8),0);
+ const start=30+zip.readUInt16LE(26)+zip.readUInt16LE(28),length=zip.readUInt32LE(18);
+ const uploaded=JSON.parse(zip.subarray(start,start+length).toString('utf8'));
+ const a=app(),record=SettingsPresets.capture(a,panels(a));
  assert.equal(record.format,'uft4-omega-settings');assert.equal(record.schemaVersion,1);
- assert.equal(record.settings.camera.zoom,2.8);assert.equal(record.settings.host.display.merge,100);assert.equal(record.settings.host.display.opacity,.13);
- assert.equal(record.settings.layers.fibers,true);assert.equal(record.settings.appearance.fiberOpacity,.25);assert.equal(record.settings.bc.tailOpacity,.25);
- assert.equal(record.settings.bc.tailDegrees,182);assert.equal(record.settings.bc.dots,false);assert.equal(record.settings.orbit.enabled,false);
- assert.equal(record.settings.simulation.params.omega,2*Math.PI);
+ assert.deepEqual(plain(context.UFT4.STARTUP_PRESET.settings),uploaded.settings);
+ assert.deepEqual(plain(record.settings),uploaded.settings);
+ assert.equal(record.settings.appearance.faceMode,'hybrid');assert.equal(record.settings.appearance.palette,'ice');
+ assert.equal(record.settings.host.display.opacity,1);assert.equal(record.settings.appearance.fiberOpacity,.11);
+ assert.equal(record.settings.orbit.enabled,true);assert.equal(record.settings.simulation.time,215.92550000000682);assert.equal(record.settings.panels.settingsFiles,true);
  a.generated={sites:[{p:[1,2,3]}],edges:[[0,1]]};a.fiberAudit={orbits:[[0,1,2,3]]};
  const data=JSON.stringify(SettingsPresets.capture(a));assert.ok(!data.includes('"sites"'));assert.ok(!data.includes('"edges"'));assert.ok(!data.includes('"orbits"'));
  assert.equal(SettingsPresets.validate(record,a.host).host.display.merge,100);
+});
+
+await test('Launch credits hold the imported time and enabled orbit without discarding the profile',()=>{
+ const a=app(),before=state(a),held={app:a,held:false};
+ assert.equal(a.sim.playing,true);assert.equal(a.orbit.enabled,true);
+ context.LaunchClass.prototype.hold.call(held);
+ assert.equal(held.held,true);assert.equal(held.resumePlaying,true);assert.equal(a.sim.playing,false);
+ a.last=1000;a.lastPaint=1000;for(let t=1010;t<=2010;t+=10)a.tick(t);
+ const expected=plain(before);expected.simulation.playing=false;
+ assert.deepEqual(state(a),expected);assert.equal(a.sim.time,215.92550000000682);
 });
 
 await test('All control groups and playback positions survive JSON capture/apply round trip',()=>{

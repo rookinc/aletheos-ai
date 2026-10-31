@@ -7,7 +7,7 @@ const html=fs.readFileSync(path.join(__dirname,'../../public_html/observatories/
 const script=html.match(/<script>([\s\S]*)<\/script>/)[1];
 const context={console,performance:require('node:perf_hooks').performance};
 vm.createContext(context);vm.runInContext(script+'\nglobalThis.AppClass=ObservatoryApp;globalThis.UIClass=UIController;globalThis.LaunchClass=LaunchPopover;',context);
-const {CameraOrbit,GraphEngine,HostEngine}=context.UFT4;
+const {CameraOrbit,GraphEngine,HostEngine,SettingsPresets}=context.UFT4;
 const near=(a,b,tol=1e-7)=>assert.ok(Math.abs(a-b)<tol,`${a} != ${b}`);
 const plain=value=>JSON.parse(JSON.stringify(value));
 let checks=0;function test(name,fn){fn();checks++;console.log('PASS '+name);}
@@ -23,19 +23,134 @@ vm.runInContext(`UIController=class {
 };RenderingEngine=class {
  constructor(app){this.app=app;this.config={period:67};this.invalidations=0;this.frames=0;}
  effectiveMode(){return this.app.settings.faceMode;}invalidate(kind){assertKind(kind);this.invalidations++;}render(){this.frames++;}
-};`,Object.assign(context,{assertKind:kind=>assert.equal(kind,'camera')}));
-function app(){const a=new context.AppClass();a.start=()=>{};a.last=1000;a.lastPaint=1000;return a;}
+ setQuality(value){this.level=value;}release(){}fallback(message){throw Error(message);}
+};`,Object.assign(context,{assertKind:kind=>assert.ok(['camera','geometry','field'].includes(kind),kind)}));
+function app({startup=false}={}){
+ const a=new context.AppClass();a.start=()=>{};a.last=1000;a.lastPaint=1000;a.renderer.invalidations=0;
+ // Scheduling tests deliberately start at zero with orbit off; the first test
+ // checks the unmodified startup state against the user's exported preset.
+ if(!startup){a.sim.time=0;a.orbit.setEnabled(false);}
+ return a;
+}
 function ticks(a,from,to,step=10){for(let time=from;time<=to;time+=step)a.tick(time);}
-const initial={yaw:40,pitch:25,roll:-55,zoom:2.8};
+// Exact user-exported settings from uft4-omega-settings-2026-10-31T00-43-22-978Z.zip.
+const expectedStartup={
+ "camera": {
+  "yaw": 98.91722499999025,
+  "pitch": -126.38005312499388,
+  "roll": -10.986700000012206,
+  "zoom": 2.8
+ },
+ "appearance": {
+  "faceMode": "hybrid",
+  "palette": "ice",
+  "blur": 9,
+  "glow": 1.3,
+  "opacity": 0.9,
+  "detail": 1,
+  "turbulence": 0.35,
+  "quality": "auto",
+  "highContrast": false,
+  "sceneLabels": false,
+  "fiberOpacity": 0.11
+ },
+ "layers": {
+  "face": true,
+  "g60": false,
+  "vertices": false,
+  "g15": false,
+  "g30": false,
+  "g30Links": false,
+  "selectedConnections": false,
+  "fibers": true,
+  "generatedLayer": true,
+  "showFiberRays": true,
+  "showFiberLabels": false
+ },
+ "bc": {
+  "enabled": true,
+  "dots": false,
+  "trails": true,
+  "tailDegrees": 182,
+  "tailOpacity": 0.25,
+  "scope": "layers",
+  "labels": false
+ },
+ "simulation": {
+  "params": {
+   "spin": 0.45,
+   "major": 0.33,
+   "minor": 0.35,
+   "core": 0.07,
+   "k": 12,
+   "omega": 6.283185307179586,
+   "amp": 2.45,
+   "speed": 1
+  },
+  "time": 215.92550000000682,
+  "mode": "scalar",
+  "playing": true,
+  "direction": 1
+ },
+ "host": {
+  "display": {
+   "enabled": true,
+   "view": "pair",
+   "local": false,
+   "external": false,
+   "trails": false,
+   "merge": 100,
+   "opacity": 1
+  },
+  "sourceBlock": 0,
+  "sourceVertex": 0,
+  "neighborBlock": 1,
+  "rate": 1,
+  "repeat": false,
+  "playing": false,
+  "travel": 0,
+  "lapCount": 0
+ },
+ "research": {
+  "resonanceMode": "exact",
+  "gradFilter": true,
+  "minFilter": true,
+  "coherenceFilter": true,
+  "mergeFilter": true,
+  "compareFilter": false,
+  "phaseTol": 0.2,
+  "gradTol": 0.001,
+  "edgeTol": 0.0335,
+  "coherenceTol": 0.785,
+  "orbitTol": 0.15,
+  "fiberView": "generated"
+ },
+ "orbit": {
+  "enabled": true
+ },
+ "panels": {
+  "researchVisibility": false,
+  "bcControls": false,
+  "displayNotes": false,
+  "g30Explanation": false,
+  "hostPlayback": false,
+  "effectsDetails": false,
+  "cameraDetails": false,
+  "fieldDetails": false,
+  "embeddingDetails": false,
+  "settingsFiles": true,
+  "advancedResearch": false,
+  "diagnostics": false,
+  "about": false
+ }
+};
+const initial=expectedStartup.camera;
 
-test('Opening defaults: joined Plasma view at zoom 2.8 and 13% G900 opacity',()=>{
- const a=app();assert.deepEqual(plain(a.camera),initial);assert.equal(a.orbit.enabled,false);
- assert.equal(a.settings.faceMode,'plasma');assert.equal(a.settings.palette,'ice');assert.equal(a.hostSettings.merge,100);
- assert.equal(a.hostSettings.opacity,.13);
- assert.equal(a.bcSettings.trails,true);assert.equal(a.bcSettings.tailDegrees,182);assert.equal(a.bc.tailDegrees,182);
- assert.equal(a.bcSettings.tailOpacity,.25);assert.equal(a.layers.fibers,true);assert.equal(a.settings.fiberOpacity,.25);
- assert.equal(a.bcSettings.dots,false);assert.equal(a.bcSettings.labels,false);assert.equal(a.settings.sceneLabels,false);
- assert.equal(a.layers.selectedConnections,false);assert.equal(a.sim.frequencyHz,1);
+test('Opening state exactly matches the uploaded Hybrid preset, phase and running orbit',()=>{
+ const a=app({startup:true}),panels=Object.fromEntries(SettingsPresets.panels.map(id=>[id,a.ui.el(id).open]));
+ assert.deepEqual(plain(SettingsPresets.capture(a,panels).settings),expectedStartup);
+ assert.equal(a.bc.tailDegrees,182);assert.equal(a.sim.frequencyHz,1);assert.equal(a.renderer.level,'balanced');
+ assert.equal(a.generated,null);assert.equal(a.fiberAudit,null);
 });
 
 test('Display-only orbit leaves merge, clock, field, topology and camera identity intact',()=>{
@@ -52,7 +167,7 @@ test('Display-only orbit leaves merge, clock, field, topology and camera identit
 test('Elapsed-time orbit agrees across 10, 30, 60 and 120 Hz scheduling',()=>{
  for(const rate of [10,30,60,120]){const o=new CameraOrbit(),c={...initial};o.setEnabled(true);
   for(let i=0;i<rate*36;i++)o.step(1/rate,c,.1);
-  near(c.yaw,CameraOrbit.wrap(initial.yaw+216));near(c.pitch,169);near(c.roll,53);
+  near(c.yaw,CameraOrbit.wrap(initial.yaw+216));near(c.pitch,CameraOrbit.wrap(initial.pitch+144));near(c.roll,CameraOrbit.wrap(initial.roll+108));
  }
 });
 
@@ -81,7 +196,7 @@ test('Default merge stays at 100% while the camera orbits across frame rates',()
   const a=app();a.sim.params.speed=0;a.sim.direction=-1;a.sim.params.omega=20*Math.PI;a.orbit.setEnabled(true);
   for(let i=1;i<=rate*20;i++){a.tick(1000+i*1000/rate);assert.equal(a.hostSettings.merge,100);}
   assert.notEqual(a.camera.yaw,initial.yaw);assert.notEqual(a.camera.pitch,initial.pitch);assert.notEqual(a.camera.roll,initial.roll);
-  assert.equal(a.hostSettings.opacity,.13);near(a.sim.time,0);
+  assert.equal(a.hostSettings.opacity,1);near(a.sim.time,0);
  }
 });
 

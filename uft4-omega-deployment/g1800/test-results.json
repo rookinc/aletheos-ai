@@ -1,0 +1,97 @@
+{
+  "schema": "uft4.g1800.tests.v1",
+  "status": "passed",
+  "checks": 12,
+  "results": [
+    {
+      "name": "Native G60 edges retain exact current registration",
+      "status": "passed"
+    },
+    {
+      "name": "All quotient partitions reproduce pinned core, 14,400 product assignments",
+      "status": "passed"
+    },
+    {
+      "name": "Every G1800 state projects consistently; exactly two states per native G900 address",
+      "status": "passed"
+    },
+    {
+      "name": "All 5,400 native turns reproduce conjugated Audit040 maps",
+      "status": "passed"
+    },
+    {
+      "name": "K² is residual diagonal deck action, K⁴ identity; 450 free four-cycles per kernel",
+      "status": "passed"
+    },
+    {
+      "name": "All 480 diagonal automorphisms descend on all 5,400 states and invert",
+      "status": "passed"
+    },
+    {
+      "name": "Invalid state and action requests are refused",
+      "status": "passed"
+    },
+    {
+      "name": "Schema 1/2 migrate to G900; schema 3 retains G1800",
+      "status": "passed"
+    },
+    {
+      "name": "Invalid G1800 imports are atomic before any live state changes",
+      "status": "passed"
+    },
+    {
+      "name": "Receipts identify source, native projection, conventions and open boundaries",
+      "status": "passed"
+    },
+    {
+      "name": "Controller selection, K controls, inverse transport, global pause and return to G900",
+      "status": "passed"
+    },
+    {
+      "name": "Overview computes all 1,800 finite display positions; representative view draws only G60 edges",
+      "status": "passed"
+    }
+  ],
+  "coverage": {
+    "kernels": 3,
+    "nativeStates": 5400,
+    "automorphisms": 480,
+    "quotientTransportStates": 2592000,
+    "sourceCommit": "bdeeb0055d1783760869e862bd02c1abec856d7c"
+  },
+  "limits": [
+    "Canvas calls are mocked; no visual browser QA",
+    "Physical Android and sustained performance are unverified",
+    "No G1800 adjacency or Audit052 host map is asserted"
+  ],
+  "sourceHashes": [
+    {
+      "file": "core.json",
+      "actual": "b6d8aa958dcd56cd71cf126c77078ff7d7543af3b8a0adbbf443a9d8bd9ef6c6",
+      "expected": "b6d8aa958dcd56cd71cf126c77078ff7d7543af3b8a0adbbf443a9d8bd9ef6c6"
+    },
+    {
+      "file": "construction-00.json",
+      "actual": "b056c9c5b598e9ebe7b1b282df174682bc55ba0b06209db352c8fa3da62b522e",
+      "expected": "b056c9c5b598e9ebe7b1b282df174682bc55ba0b06209db352c8fa3da62b522e"
+    },
+    {
+      "file": "construction-01.json",
+      "actual": "219d6c5fd84bd109c7546205b9e19d252d19eae96b18cc88bff269291778c05d",
+      "expected": "219d6c5fd84bd109c7546205b9e19d252d19eae96b18cc88bff269291778c05d"
+    },
+    {
+      "file": "construction-02.json",
+      "actual": "5818af6752762b4dd925acb71c2e390269b0c4ab641b8494076dc5555fe90a9c",
+      "expected": "5818af6752762b4dd925acb71c2e390269b0c4ab641b8494076dc5555fe90a9c"
+    }
+  ],
+  "execution": "JavaScript V8 tool isolate; Node CLI harness supplied but not executed after workspace loss",
+  "releaseSha256": "88b3e0c6186c005897df5f20a1a39efe32e59e70e95ae212248cc561f7c5fb30",
+  "staticValidation": {
+    "mainScriptSyntax": "passed",
+    "testScriptSyntax": "passed",
+    "uniqueDOMIds": 160,
+    "embeddedCodeMatches": true
+  }
+}

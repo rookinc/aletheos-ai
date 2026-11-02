@@ -105,3 +105,14 @@ el('nextFiber').onclick();assert.equal(run('selectedFiber'),0);el('previousFiber
 run('scaffoldTime=3.25');el('scaffoldPlay').onclick();el('linkedTowerFlag').onchange({target:{checked:false}});assert.equal(run('scaffoldTime'),3.25);assert.equal(run('scaffoldRunning'),true);assert.equal(el('linkedTowerPanel').hidden,true);el('linkedTowerFlag').onchange({target:{checked:true}});assert.equal(el('linkedTowerPanel').hidden,false);el('scaffoldPlay').onclick();flush();
 run("setStageView('tower')");flush();assert.equal(el('linkedTowerPanel').hidden,true);
 console.log('PASS: all 9000 native state decompositions, 900 four-pair lift fibres, two active representatives, exact paired 4→2→1 folds, descended K action, selected-fibre/phase synchronization, wrapping selector, preserved camera/wave and running visibility toggle.');
+
+// Hiding chrome never resets the scene or its independent playback clocks.
+for(const view of ['cube','torus','tower','pairings']){
+ run(`setStageView('${view}')`);
+ const snapshot=run('JSON.stringify({q,translation,scaffoldTime,pairingTime,selectedFiber,showLabels,showFIndicators,allFibers,linkedTower})');
+ el('uiToggle').onclick();assert.equal(run('uiHidden'),true);assert.equal(el('uiToggle').textContent,'Show UI');assert.equal(el('uiToggle')['aria-pressed'],'true');
+ assert.equal(run('JSON.stringify({q,translation,scaffoldTime,pairingTime,selectedFiber,showLabels,showFIndicators,allFibers,linkedTower})'),snapshot);
+ el('uiToggle').onclick();assert.equal(run('uiHidden'),false);assert.equal(el('uiToggle').textContent,'Hide UI');
+}
+run("setStageView('torus');scaffoldRunning=true;scaffoldLast=1000;setUIHidden(true);paint(1100)");assert(run('scaffoldRunning&&scaffoldTime>0'));run('scaffoldRunning=false;setUIHidden(false)');flush();
+console.log('PASS: all-mode UI toggle preserves camera, phase, selected fiber and display flags; darts continue while hidden.');

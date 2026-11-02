@@ -1,10 +1,9 @@
-# B32K / G9000 Observatory — v1.0
+# B32K / G9000 Observatory — v1.1
 
 Dedicated observatory target: `https://aletheos.ai/observatories/b32k/`.
 
-Source: `public_html/observatories/b32k/index.html`. This is the exact reviewed
-B32K Stage release (artifact revision 14), including the linked native quotient
-tower. It is a self-contained static HTML page; no build or runtime dependencies
+Source: `public_html/observatories/b32k/index.html`. This release adds a header Hide UI / Show UI pill to the reviewed B32K
+Stage, including the linked native quotient tower. It is a self-contained static HTML page; no build or runtime dependencies
 are required. Committing this package does not itself publish it to Bluehost.
 
 ## Deploy from the existing Termux checkout
@@ -20,13 +19,17 @@ The destination is `~/www/observatories/b32k/index.html`. This installer changes
 no homepage, navigation, other observatory, or server configuration.
 
 The installer checks `release.sha256` before connecting, verifies upload size and
-hash, and publishes with an atomic no-clobber operation. An identical installed
-release is a no-op. Any different existing B32K page stops installation; a later
-update must explicitly admit its predecessor. Temporary uploads are cleaned up.
+hash, and publishes atomically. An identical installed release is a no-op.
+The exact v1.0 predecessor is backed up outside the document root before updating.
+Any other existing B32K page stops installation. Temporary uploads are cleaned up.
 The installer reports whether installation succeeded, but does not claim that
 public HTTPS delivery was verified.
 
 ## Features
+
+- Header Hide UI / Show UI pill in all four views; playback, camera, and options survive hiding.
+  Only the restore pill remains over 3D scenes; Pairings keeps its central graph.
+  The linked tower panel and its connector hide together.
 
 - 9,000 native states and 45,000 native connections.
 - 450 closed F cycles with independent high-contrast fiber darts and focused F

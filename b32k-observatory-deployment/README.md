@@ -1,8 +1,8 @@
-# B32K / G9000 Observatory — v1.1
+# B32K / G9000 Observatory — v1.2
 
 Dedicated observatory target: `https://aletheos.ai/observatories/b32k/`.
 
-Source: `public_html/observatories/b32k/index.html`. This release adds a header Hide UI / Show UI pill to the reviewed B32K
+Source: `public_html/observatories/b32k/index.html`. This release adds independent box/vertex visibility and energy-prioritized labels to B32K
 Stage, including the linked native quotient tower. It is a self-contained static HTML page; no build or runtime dependencies
 are required. Committing this package does not itself publish it to Bluehost.
 
@@ -20,12 +20,17 @@ no homepage, navigation, other observatory, or server configuration.
 
 The installer checks `release.sha256` before connecting, verifies upload size and
 hash, and publishes atomically. An identical installed release is a no-op.
-The exact v1.0 predecessor is backed up outside the document root before updating.
+Either exact v1.0 or v1.1 predecessor is backed up outside the document root before updating.
 Any other existing B32K page stops installation. Temporary uploads are cleaned up.
 The installer reports whether installation succeeded, but does not claim that
 public HTTPS delivery was verified.
 
 ## Features
+
+- Hamburger switches independently hide the box frame (and face labels) and vertex dots.
+  Hide vertices, set Edges to 0%, and disable F indicators for a clear 450-dart view.
+- Vertex labels prioritize raw local wave energy, with short connectors to their dots.
+  Hiding vertices also hides their labels; playback and the underlying graph remain intact.
 
 - Header Hide UI / Show UI pill in all four views; playback, camera, and options survive hiding.
   Only the restore pill remains over 3D scenes; Pairings keeps its central graph.

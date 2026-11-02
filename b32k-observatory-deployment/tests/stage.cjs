@@ -1,6 +1,7 @@
 const fs=require('fs'),vm=require('vm'),assert=require('assert');
 const html=fs.readFileSync(require('path').resolve(__dirname,'../../public_html/observatories/b32k/index.html'),'utf8'),listeners={},frames=[];
-const ctx2d=new Proxy({},{get:()=>()=>{}}),els=new Map();
+let recordDrawing=false;const drawing=[];
+const ctx2d=new Proxy({},{get:(_,key)=>(...args)=>{if(recordDrawing)drawing.push([key,...args]);}}),els=new Map();
 function el(id){if(!els.has(id))els.set(id,{style:{},textContent:'',hidden:true,onclick:null,setAttribute(k,v){this[k]=v},classList:{add(){},remove(){}},getContext:type=>type==='webgl'?null:ctx2d,getBoundingClientRect:()=>({width:390,height:720,left:0,top:0}),setPointerCapture(){},addEventListener(k,f){listeners[k]=f}});return els.get(id)}
 const ctx=vm.createContext({document:{body:{classList:{toggle(){}}},getElementById:el,addEventListener(){},hidden:false},window:{devicePixelRatio:1,addEventListener(){}},requestAnimationFrame:f=>frames.push(f),ResizeObserver:class{observe(){}},console,performance});
 el('topology').textContent=html.match(/<script id="topology" type="application\/json">([\s\S]*?)<\/script>/)[1];
@@ -116,3 +117,22 @@ for(const view of ['cube','torus','tower','pairings']){
 }
 run("setStageView('torus');scaffoldRunning=true;scaffoldLast=1000;setUIHidden(true);paint(1100)");assert(run('scaffoldRunning&&scaffoldTime>0'));run('scaffoldRunning=false;setUIHidden(false)');flush();
 console.log('PASS: all-mode UI toggle preserves camera, phase, selected fiber and display flags; darts continue while hidden.');
+
+// Layer switches remove drawing only; independent darts and field data survive.
+for(const view of ['cube','torus','tower','pairings']){
+ run(`setStageView('${view}')`);
+ const before=run('JSON.stringify({q,translation,scaffoldTime,pairingTime,pulseTime,phi:Array.from(pulsePhi),selectedFiber})');
+ el('boxFrameFlag').onchange({target:{checked:false}});el('verticesFlag').onchange({target:{checked:false}});flush();
+ assert.equal(run('showBoxFrame'),false);assert.equal(run('showVertices'),false);
+ assert.equal(run('JSON.stringify({q,translation,scaffoldTime,pairingTime,pulseTime,phi:Array.from(pulsePhi),selectedFiber})'),before);
+ el('boxFrameFlag').onchange({target:{checked:true}});el('verticesFlag').onchange({target:{checked:true}});flush();
+}
+run("setStageView('torus');edgeOpacity=0;showBoxFrame=false;showVertices=false;showFIndicators=false;linkedTower=false;showLabels=true");
+recordDrawing=true;drawing.length=0;run('initCanvas(labelCtx)();paintLabels();paintFaces()');
+assert.equal(drawing.filter(c=>['arc','stroke','fillText'].includes(c[0])).length,0);
+drawing.length=0;run('allFibers=true;drawScaffoldDarts()');assert(drawing.some(c=>c[0]==='fill'));recordDrawing=false;
+// Coincident projected vertices: the farther but more energetic one wins the label.
+run("setStageView('cube');q=[0,0,0,1];translation=[0,0,-64];positions.fill(9999);positions.set([0,0,0,0,0,-10]);showVertices=true;showLabels=true;pulseActive=true;localEnergy.fill(0);localEnergy[1]=100");
+recordDrawing=true;drawing.length=0;run('paintLabels()');
+const texts=drawing.filter(c=>c[0]==='fillText').map(c=>c[1]);assert(texts[0].startsWith('V2 '));assert(!texts.some(t=>t.startsWith('V1 ')));assert(drawing.some(c=>c[0]==='lineTo'));recordDrawing=false;
+console.log('PASS: all-mode layer switches preserve state; hidden frame/vertices/labels emit no drawing, darts remain; energy-first labels beat depth and connect to vertices.');

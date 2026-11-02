@@ -19,7 +19,7 @@ hash_file() {
   else return 1; fi
 }
 digest=$(hash_file "$source_file") || fail 'SHA-256 verification unavailable.'
-[ "${digest%% *}" = "$expected" ] || fail 'Local HTML differs from the reviewed v1.1 release.'
+[ "${digest%% *}" = "$expected" ] || fail 'Local HTML differs from the reviewed v1.2 release.'
 bytes=$(wc -c < "$source_file") || fail 'Cannot measure local HTML.'
 bytes=${bytes//[[:space:]]/}
 case "$bytes" in ''|*[!0-9]*) fail 'Invalid local file size.';; esac
@@ -41,6 +41,8 @@ prepared=$(ssh "$remote" "bash -s -- '$expected'" <<'REMOTE_PREPARE'
 set -u
 expected=$1
 previous=77e8672d9df1a7b51fbc5ea76c16c607332130a5947a209d4eb11763e5814026
+previous_ui=f6cf0c464d3c3689d288865ef7c89f283edb5c54005b9cc25230ea7fe877d37b
+is_previous() { [ "$1" = "$previous" ] || [ "$1" = "$previous_ui" ]; }
 stop() { printf 'Remote check: %s\n' "$*" >&2; exit 1; }
 hash_file() {
   if command -v sha256sum >/dev/null 2>&1; then sha256sum "$1";
@@ -58,14 +60,14 @@ if [ -e "$index" ] || [ -L "$index" ]; then
   digest=$(hash_file "$index") || stop 'Cannot hash existing index.'
   current=${digest%% *}
   if [ "$current" = "$expected" ]; then printf 'UNCHANGED\n'; exit 0; fi
-  [ "$current" = "$previous" ] || stop 'Unrecognized B32K page; installer will not overwrite it.'
+  is_previous "$current" || stop 'Unrecognized B32K page; installer will not overwrite it.'
 fi
 stage=$(mktemp "$HOME/.b32k-observatory-upload.XXXXXXXX") || stop 'Cannot create upload staging file.'
 printf 'STAGE:%s\n' "$stage"
 REMOTE_PREPARE
 ) || fail 'Remote preflight failed; no page was replaced.'
 if [ "$prepared" = UNCHANGED ]; then
-  printf 'Reviewed v1.1 is already installed at ~/www/observatories/b32k/index.html.\n'
+  printf 'Reviewed v1.2 is already installed at ~/www/observatories/b32k/index.html.\n'
   printf 'Live HTTP delivery was not checked.\n'; exit 0
 fi
 case "$prepared" in STAGE:/*) stage=${prepared#STAGE:};; *) fail 'Unexpected remote staging response.';; esac
@@ -79,6 +81,8 @@ if ! ssh "$remote" "bash -s -- '$stage' '$expected' '$bytes'" <<'REMOTE_INSTALL'
 set -u
 stage=$1; expected=$2; expected_bytes=$3
 previous=77e8672d9df1a7b51fbc5ea76c16c607332130a5947a209d4eb11763e5814026
+previous_ui=f6cf0c464d3c3689d288865ef7c89f283edb5c54005b9cc25230ea7fe877d37b
+is_previous() { [ "$1" = "$previous" ] || [ "$1" = "$previous_ui" ]; }
 publish_stage=
 trap 'if [ -n "$publish_stage" ]; then rm -f -- "$publish_stage"; fi' EXIT
 stop() { printf 'Remote install: %s\n' "$*" >&2; exit 1; }
@@ -107,7 +111,7 @@ if [ -e index.html ] || [ -L index.html ]; then
   [ -f index.html ] && [ ! -L index.html ] || stop 'Existing index is unsafe.'
   digest=$(hash_file index.html) || stop 'Cannot hash existing index.'
   current=${digest%% *}
-  [ "$current" = "$expected" ] || [ "$current" = "$previous" ] || stop 'A different B32K page appeared; nothing was overwritten.'
+  [ "$current" = "$expected" ] || is_previous "$current" || stop 'A different B32K page appeared; nothing was overwritten.'
 fi
 if [ "$current" != "$expected" ]; then
   # Stage beside the destination so publication is an atomic same-filesystem operation.
@@ -119,17 +123,17 @@ if [ "$current" != "$expected" ]; then
   if [ "$current" = missing ]; then
     ln -T -- "$publish_stage" index.html || stop 'Atomic no-clobber installation failed.'
     rm -f -- "$publish_stage" || stop 'Cannot remove installation staging file.'
-  elif [ "$current" = "$previous" ]; then
+  elif is_previous "$current"; then
     backup_dir=$HOME/.b32k-observatory-backups
     [ ! -L "$backup_dir" ] || stop 'Backup directory is unsafe.'
     mkdir -p -- "$backup_dir" || stop 'Cannot create backup directory.'
-    backup=$(mktemp "$backup_dir/v1.0.XXXXXXXX.html") || stop 'Cannot reserve backup.'
+    backup=$(mktemp "$backup_dir/previous.XXXXXXXX.html") || stop 'Cannot reserve backup.'
     cp -- index.html "$backup" || stop 'Cannot back up previous release.'
     digest=$(hash_file "$backup") || stop 'Cannot verify backup.'
-    [ "${digest%% *}" = "$previous" ] || stop 'Backup differs from known predecessor.'
+    [ "${digest%% *}" = "$current" ] || stop 'Backup differs from known predecessor.'
     [ -f index.html ] && [ ! -L index.html ] || stop 'Destination changed before update.'
     digest=$(hash_file index.html) || stop 'Cannot recheck destination.'
-    [ "${digest%% *}" = "$previous" ] || stop 'Destination changed before update.'
+    [ "${digest%% *}" = "$current" ] || stop 'Destination changed before update.'
     mv -fT -- "$publish_stage" index.html || stop 'Atomic update failed.'
     printf 'Previous release backed up at %s\n' "$backup"
   else
@@ -138,7 +142,7 @@ if [ "$current" != "$expected" ]; then
   publish_stage=
 fi
 rm -f -- "$stage" || stop 'Installed, but staging cleanup failed.'
-printf 'Reviewed v1.1 installed at ~/www/observatories/b32k/index.html.\n'
+printf 'Reviewed v1.2 installed at ~/www/observatories/b32k/index.html.\n'
 REMOTE_INSTALL
 then fail 'Remote install failed; inspect the message above before retrying.'; fi
 stage=

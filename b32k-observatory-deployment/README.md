@@ -1,4 +1,4 @@
-# B32K / G9000 Observatory — v1.3
+# B32K / G9000 Observatory — v1.4
 
 Dedicated observatory target: `https://aletheos.ai/observatories/b32k/`.
 
@@ -20,12 +20,17 @@ no homepage, navigation, other observatory, or server configuration.
 
 The installer checks `release.sha256` before connecting, verifies upload size and
 hash, and publishes atomically. An identical installed release is a no-op.
-Any exact v1.0, v1.1, or v1.2 predecessor is backed up outside the document root before updating.
+Any exact v1.0, v1.1, v1.2, or v1.3 predecessor is backed up outside the document root before updating.
 Any other existing B32K page stops installation. Temporary uploads are cleaned up.
 The installer reports whether installation succeeded, but does not claim that
 public HTTPS delivery was verified.
 
 ## Features
+
+- Visible-UI camera readout reports the current 3D view, view-space position offset XYZ,
+  and rotation quaternion XYZW to six decimal places. Screenshot these values to
+  reproduce the camera preset; these are render-transform values, not world-space
+  camera coordinates. The readout follows rotation, pan, travel, reset and view changes.
 
 - Opens with UI hidden and darts playing: Torus, 100% split, 1.5% edges,
   vertices and all 450 darts on; box, F indicators, labels and linked tower off.

@@ -151,3 +151,17 @@ run("setStageView('cube');q=[0,0,0,1];translation=[0,0,-64];positions.fill(9999)
 recordDrawing=true;drawing.length=0;run('paintLabels()');
 const texts=drawing.filter(c=>c[0]==='fillText').map(c=>c[1]);assert(texts[0].startsWith('V2 '));assert(!texts.some(t=>t.startsWith('V1 ')));assert(drawing.some(c=>c[0]==='lineTo'));recordDrawing=false;
 console.log('PASS: all-mode layer switches preserve state; hidden frame/vertices/labels emit no drawing, darts remain; energy-first labels beat depth and connect to vertices.');
+
+for(const view of ['cube','torus','tower']){
+ run(`setStageView('${view}');reset();paint()`);
+ assert(el('cameraReadout').textContent.includes('Offset XYZ:'));
+ assert(el('cameraReadout').textContent.includes('Rotation XYZW:'));
+ const cameraBefore=run('JSON.stringify({q,translation})');run('syncCameraReadout()');assert.equal(run('JSON.stringify({q,translation})'),cameraBefore);
+ const readoutBefore=el('cameraReadout').textContent;
+ run('rotate(0,1,0,.2);move(15,-20);travel(3);paint()');assert.notEqual(el('cameraReadout').textContent,readoutBefore);
+ const preset=JSON.parse(run('JSON.stringify(cameraPreset())'));
+ assert.equal(preset.view,view);assert.equal(preset.rotation.length,4);assert.equal(preset.offset.length,3);
+ for(const v of [...preset.offset,...preset.rotation])assert(el('cameraReadout').textContent.includes(Math.abs(v)<.0000005?'0.000000':v.toFixed(6)));
+ run('reset();paint()');assert.equal(el('cameraReadout').textContent,readoutBefore);
+}
+console.log('PASS: camera readout follows all 3D views, rotation, pan, travel and reset, without changing the camera.');

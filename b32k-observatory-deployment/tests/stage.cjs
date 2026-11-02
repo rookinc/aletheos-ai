@@ -11,6 +11,9 @@ el('pairing-data').textContent=html.match(/<script id="pairing-data" type="appli
 vm.runInContext(html.match(/<script>([\s\S]*?)<\/script>/)[1],ctx);const run=s=>vm.runInContext(s,ctx);
 assert.equal(el('error').hidden,true);
 assert(run("stageView==='torus'&&uiHidden&&scaffoldRunning&&scaffoldMode&&torusSplit===100&&edgeOpacity===.015&&showVertices&&allFibers&&!showBoxFrame&&!showFIndicators&&!showLabels&&!linkedTower"));
+assert.equal(run('JSON.stringify(translation)'),JSON.stringify([-.285293,-6.413592,-32.381834]));
+assert(Math.abs(run('Math.hypot(...q)')-1)<1e-12);
+assert.equal(run('q.map(v=>v.toFixed(6)).join()'),'0.585992,-0.535481,0.410650,0.448598');
 assert.equal(el('headerPlay').textContent,'Pause');
 const startCamera=run('JSON.stringify({q,translation})');
 el('headerPlay').onclick();assert.equal(run('scaffoldRunning'),false);assert.equal(el('headerPlay').textContent,'Play');

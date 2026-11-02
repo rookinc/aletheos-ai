@@ -1,4 +1,4 @@
-# B32K / G9000 Observatory — v1.4
+# B32K / G9000 Observatory — v1.5
 
 Dedicated observatory target: `https://aletheos.ai/observatories/b32k/`.
 
@@ -20,12 +20,17 @@ no homepage, navigation, other observatory, or server configuration.
 
 The installer checks `release.sha256` before connecting, verifies upload size and
 hash, and publishes atomically. An identical installed release is a no-op.
-Any exact v1.0, v1.1, v1.2, or v1.3 predecessor is backed up outside the document root before updating.
+Any exact v1.0, v1.1, v1.2, v1.3, or v1.4 predecessor is backed up outside the document root before updating.
 Any other existing B32K page stops installation. Temporary uploads are cleaned up.
 The installer reports whether installation succeeded, but does not claim that
 public HTTPS delivery was verified.
 
 ## Features
+
+- Default and Reset view Torus camera use the supplied screenshot preset:
+  offset XYZ `[-0.285293, -6.413592, -32.381834]`; rotation XYZW
+  `[0.585992, -0.535481, 0.410650, 0.448598]`, normalized to unit length.
+
 
 - Visible-UI camera readout reports the current 3D view, view-space position offset XYZ,
   and rotation quaternion XYZW to six decimal places. Screenshot these values to

@@ -167,6 +167,22 @@ shutil.copyfile(sys.argv[1], destination)
         self.assertEqual(len(backups), 1)
         self.assertEqual(backups[0].read_bytes(), previous)
 
+    def test_v14_predecessor_is_backed_up_and_updated(self):
+        previous = b'KNOWN V1.4 RELEASE\n'
+        script = self.repo / DEPLOY
+        admitted = '2de1cbe44dea051eb996336d87129866dd4b330d2c0724956bd19761887320e5'
+        original = script.read_text()
+        self.assertEqual(original.count(admitted), 2)
+        script.write_text(original.replace(admitted, hashlib.sha256(previous).hexdigest()))
+        self.target.parent.mkdir()
+        self.target.write_bytes(previous)
+        result = self.run_deploy()
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertEqual(self.target.read_bytes(), self.html)
+        backups = list((self.remote / '.b32k-observatory-backups').glob('*.html'))
+        self.assertEqual(len(backups), 1)
+        self.assertEqual(backups[0].read_bytes(), previous)
+
     def test_existing_different_page_is_preserved(self):
         self.target.parent.mkdir()
         previous = b'EXISTING B32K PAGE\n'

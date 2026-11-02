@@ -19,7 +19,7 @@ hash_file() {
   else return 1; fi
 }
 digest=$(hash_file "$source_file") || fail 'SHA-256 verification unavailable.'
-[ "${digest%% *}" = "$expected" ] || fail 'Local HTML differs from the reviewed v1.4 release.'
+[ "${digest%% *}" = "$expected" ] || fail 'Local HTML differs from the reviewed v1.5 release.'
 bytes=$(wc -c < "$source_file") || fail 'Cannot measure local HTML.'
 bytes=${bytes//[[:space:]]/}
 case "$bytes" in ''|*[!0-9]*) fail 'Invalid local file size.';; esac
@@ -44,7 +44,8 @@ previous=77e8672d9df1a7b51fbc5ea76c16c607332130a5947a209d4eb11763e5814026
 previous_ui=f6cf0c464d3c3689d288865ef7c89f283edb5c54005b9cc25230ea7fe877d37b
 previous_layers=03508f71e6c9eb70fd8ff8142251dce08de26b10d4865a754be3e5da17ce4de0
 previous_presentation=30d86d5c15f71a820a0397c531f586aea60f5a6ea7372b60596e5003a6753f84
-is_previous() { [ "$1" = "$previous" ] || [ "$1" = "$previous_ui" ] || [ "$1" = "$previous_layers" ] || [ "$1" = "$previous_presentation" ]; }
+previous_readout=2de1cbe44dea051eb996336d87129866dd4b330d2c0724956bd19761887320e5
+is_previous() { [ "$1" = "$previous" ] || [ "$1" = "$previous_ui" ] || [ "$1" = "$previous_layers" ] || [ "$1" = "$previous_presentation" ] || [ "$1" = "$previous_readout" ]; }
 stop() { printf 'Remote check: %s\n' "$*" >&2; exit 1; }
 hash_file() {
   if command -v sha256sum >/dev/null 2>&1; then sha256sum "$1";
@@ -69,7 +70,7 @@ printf 'STAGE:%s\n' "$stage"
 REMOTE_PREPARE
 ) || fail 'Remote preflight failed; no page was replaced.'
 if [ "$prepared" = UNCHANGED ]; then
-  printf 'Reviewed v1.4 is already installed at ~/www/observatories/b32k/index.html.\n'
+  printf 'Reviewed v1.5 is already installed at ~/www/observatories/b32k/index.html.\n'
   printf 'Live HTTP delivery was not checked.\n'; exit 0
 fi
 case "$prepared" in STAGE:/*) stage=${prepared#STAGE:};; *) fail 'Unexpected remote staging response.';; esac
@@ -86,7 +87,8 @@ previous=77e8672d9df1a7b51fbc5ea76c16c607332130a5947a209d4eb11763e5814026
 previous_ui=f6cf0c464d3c3689d288865ef7c89f283edb5c54005b9cc25230ea7fe877d37b
 previous_layers=03508f71e6c9eb70fd8ff8142251dce08de26b10d4865a754be3e5da17ce4de0
 previous_presentation=30d86d5c15f71a820a0397c531f586aea60f5a6ea7372b60596e5003a6753f84
-is_previous() { [ "$1" = "$previous" ] || [ "$1" = "$previous_ui" ] || [ "$1" = "$previous_layers" ] || [ "$1" = "$previous_presentation" ]; }
+previous_readout=2de1cbe44dea051eb996336d87129866dd4b330d2c0724956bd19761887320e5
+is_previous() { [ "$1" = "$previous" ] || [ "$1" = "$previous_ui" ] || [ "$1" = "$previous_layers" ] || [ "$1" = "$previous_presentation" ] || [ "$1" = "$previous_readout" ]; }
 publish_stage=
 trap 'if [ -n "$publish_stage" ]; then rm -f -- "$publish_stage"; fi' EXIT
 stop() { printf 'Remote install: %s\n' "$*" >&2; exit 1; }
@@ -146,7 +148,7 @@ if [ "$current" != "$expected" ]; then
   publish_stage=
 fi
 rm -f -- "$stage" || stop 'Installed, but staging cleanup failed.'
-printf 'Reviewed v1.4 installed at ~/www/observatories/b32k/index.html.\n'
+printf 'Reviewed v1.5 installed at ~/www/observatories/b32k/index.html.\n'
 REMOTE_INSTALL
 then fail 'Remote install failed; inspect the message above before retrying.'; fi
 stage=

@@ -1,0 +1,48 @@
+{
+  "service": "Aletheos Public PAN Kiosk",
+  "version": "0.2",
+  "tagline": "Bring your own LLM.",
+  "public_pan": {
+    "agent_xkid": "pan-001",
+    "agent_prefix": "PAN :"
+  },
+  "public_action": "gobble",
+  "offer": {
+    "free_gobbles": 10,
+    "free_max_depth": 3,
+    "billing_after_free": true,
+    "rates_apply_after_free": true
+  },
+  "api": {
+    "gobble": {
+      "method": "POST",
+      "path": "/api/pan/query",
+      "content_type": "application/json",
+      "body": {
+        "agent_xkid": "pan-001",
+        "message": "<non-empty string>"
+      }
+    }
+  },
+  "play": {
+    "summary": "Submit a question, hunch, claim, or task as a Gobble and preserve returned receipt or report identifiers.",
+    "depth": "Maximum bounded inquiry depth permitted for the request.",
+    "first_step": "Send your first Gobble."
+  },
+  "access": {
+    "public_gobble": true,
+    "private_tool_access_included": false,
+    "deeper_actions_may_require": [
+      "authentication",
+      "payment",
+      "approval",
+      "additional authority"
+    ]
+  },
+  "instructions": [
+    "Treat public submissions as Gobbles.",
+    "Preserve returned receipt and report identifiers.",
+    "Follow any returned authentication, payment, approval, or authority instructions.",
+    "Do not invent permissions or claim access you were not granted."
+  ]
+}

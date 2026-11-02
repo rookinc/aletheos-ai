@@ -1,0 +1,813 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Thalean Lab · Atomic Helix v2.0 · Explore &amp; Research</title>
+<style>
+:root{--bg:#070e18;--panel:#0c1725;--panel2:#101d2d;--line:#25394d;--text:#e7f1f9;--muted:#a2b6c7;--cyan:#6ce8ff;--amber:#ffc888;--pink:#efa6e9;--green:#a7e7c8;--rad:16px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 50% 20%,#122438 0,transparent 56%),var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select{font:inherit}button,select{color:var(--text);background:var(--panel2);border:1px solid var(--line);border-radius:9px}button{cursor:pointer;min-height:44px;padding:8px 14px;transition:background .12s,border-color .12s}button:hover:not(:disabled){background:#1a3147;border-color:#6794b1}button[aria-pressed=true]{background:#133546;border-color:var(--cyan);color:#dcfaff}button:disabled,select:disabled{opacity:.53;cursor:not-allowed}button.primary{background:#8aebf6;color:#07131b;border-color:#a6f2f8;font-weight:700}a{color:var(--cyan);text-underline-offset:4px}a:hover{color:#fff}button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible,canvas:focus-visible{outline:3px solid var(--amber);outline-offset:4px}input[type=checkbox]{accent-color:var(--cyan);width:19px;height:19px;flex:0 0 19px}input[type=range]{accent-color:var(--cyan);min-height:35px;max-width:100%}select{padding:10px;width:100%;min-height:44px}.skip{position:absolute;left:16px;top:-70px;padding:12px;background:var(--panel);z-index:50}.skip:focus{top:10px}.app{max-width:1520px;padding:28px 28px 20px;margin:auto}.brand{color:var(--cyan);font-size:12px;letter-spacing:.23em;font-weight:750}.top{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;margin-bottom:22px}.top h1{font-size:clamp(27px,3vw,38px);line-height:1.18;letter-spacing:-.035em;margin:8px 0}.top p{color:var(--muted);margin:0}.top-links{display:flex;flex-direction:column;gap:13px;align-items:flex-end;font-size:13px}.badge{display:inline-flex;align-items:center;gap:8px;border:1px solid #5d4b35;background:#2b231a;color:var(--amber);border-radius:30px;padding:6px 12px;font-size:12px;white-space:nowrap}.badge:before{content:'';height:6px;width:6px;border-radius:50%;background:var(--amber)}.selectors{display:flex;gap:12px;align-items:center;margin-bottom:20px}.atom{display:flex;align-items:center;gap:14px;min-width:158px;text-align:left;padding:12px 18px;background:#0e1b2a}.atom .symbol{font-size:26px;line-height:1.2;min-width:38px}.atom .atomName{font-size:14px;font-weight:650}.atom small{display:block;font-size:11px;color:var(--muted);font-weight:400}.selector-note{color:var(--muted);font-size:13px;margin-left:auto;max-width:310px;text-align:right}.main-grid{display:grid;grid-template-columns:228px minmax(330px,1fr) 276px;gap:16px;align-items:stretch}.panel{border:1px solid var(--line);border-radius:var(--rad);background:linear-gradient(145deg,#0e1a29,#0b1522);padding:20px}.eyebrow{color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;margin:0 0 16px}.reference h2{font-size:24px;margin:0 0 5px;letter-spacing:-.025em}.tag{display:inline-block;font-size:10px;letter-spacing:.06em;padding:3px 7px;border:1px solid #425467;border-radius:5px;color:var(--muted)}.tag.referenceTag{color:var(--green);border-color:#315448}.nuclear{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:22px 0}.nuclear div{padding:8px 0;border-bottom:1px solid var(--line)}.nuclear strong{display:block;font-size:24px}.nuclear span{font-size:11px;color:var(--muted)}.label{color:var(--muted);font-size:12px;margin:18px 0 5px}.config{font-size:19px;letter-spacing:.02em}.small{font-size:12px;line-height:1.6;color:var(--muted)}.divider{height:1px;background:var(--line);margin:23px 0}.pickedTitle{font-size:20px;margin:0 0 8px}.orbit{font:12px/1.6 ui-monospace,SFMono-Regular,Consolas,monospace;overflow-wrap:anywhere;color:var(--cyan)}.v4Actions{display:flex;gap:6px;margin-top:12px}.v4Actions button{padding:6px 10px;flex:1;min-width:0}.scene-shell{position:relative;min-width:0;border:1px solid #2d4760;border-radius:var(--rad);background:radial-gradient(ellipse at 50% 50%,#122a44 0%,#091726 53%,#07101b 82%);overflow:hidden;min-height:590px;display:flex;flex-direction:column}.scene-top{display:flex;align-items:center;justify-content:space-between;gap:6px;padding:16px 18px 0;z-index:2}.scene-top .source-name{color:var(--cyan);font-size:12px;letter-spacing:.03em}.scene-top span:last-child{color:var(--muted);font-size:11px}.scene-wrap{position:relative;flex:1;min-height:380px}.scene-wrap canvas{display:block;width:100%;height:100%;position:absolute;inset:0;touch-action:pan-y}.scene-center-label{position:absolute;bottom:12px;width:100%;text-align:center;pointer-events:none}.scene-center-label b{font-size:17px;letter-spacing:.04em}.scene-center-label small{display:block;margin-top:3px;font-size:11px;color:var(--muted)}.camera{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px;padding:2px 12px 12px}.camera button{font-size:13px;padding:5px 10px;min-height:38px}.scene-caption{padding:11px 18px;border-top:1px solid #23384d;color:var(--muted);font-size:11px;line-height:1.65;background:#0a1420}.scene-caption strong{color:var(--text);font-weight:500}.controls .form-group{margin-bottom:16px}.controls label:not(.check){display:block;font-size:12px;color:var(--muted);margin-bottom:6px}.check{display:flex;align-items:flex-start;gap:10px;min-height:39px;font-size:13px;padding:4px 0;cursor:pointer}.check input{margin:2px 0}.check .desc{display:block;font-size:10px;color:var(--muted);margin-top:1px}.check.disabled{cursor:not-allowed;color:var(--muted)}.notice{font-size:11px;line-height:1.6;color:var(--amber);background:#221d18;border:1px solid #4a3e30;border-radius:8px;padding:10px;margin-top:10px}.transport{margin-top:16px;padding:18px 22px}.transport-top{display:grid;grid-template-columns:auto 1fr 134px;align-items:center;gap:22px}.transport-buttons{display:flex;gap:8px}.scrub label{display:flex;justify-content:space-between;gap:10px;font-size:12px;color:var(--muted)}.scrub input{width:100%}.speed select{padding:7px 10px;min-height:42px}.speed label{font-size:11px;color:var(--muted);display:block}.transport-bottom{display:flex;gap:20px;align-items:center;justify-content:space-between;border-top:1px solid var(--line);margin-top:14px;padding-top:14px}.waltz{display:flex;gap:7px;align-items:stretch}.beat{min-width:39px;padding:3px 10px;border:1px solid transparent;border-radius:7px;text-align:center}.beat small{display:block;color:var(--muted);font-size:10px}.beat b{font-size:17px;font-weight:600}.beat.active{border-color:#5292a5;background:#173546;color:var(--cyan)}.beat.seam{border-left:2px solid var(--pink);border-top-left-radius:0;border-bottom-left-radius:0}.metrics{display:flex;gap:24px}.metrics div{font-size:11px;color:var(--muted)}.metrics b{display:block;font-size:16px;font-weight:600;color:var(--text)}#seamStatus{color:var(--pink)}.notes{margin-top:20px}.tabs{display:flex;gap:6px;border-bottom:1px solid var(--line);margin-bottom:18px;flex-wrap:wrap}.tabs button{background:transparent;border:0;border-radius:0;padding:6px 15px 13px;color:var(--muted)}.tabs button[aria-selected=true]{border-bottom:2px solid var(--cyan);color:var(--cyan)}.tab-content h3{font-size:16px;margin:0 0 8px}.tab-content p{font-size:13px;color:var(--muted);max-width:1000px;margin:8px 0}.note-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.note-grid strong{color:var(--text)}.sources{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}.sources a{font-size:12px}.exportRow{display:flex;align-items:center;gap:16px;margin-top:15px}.exportRow small{color:var(--muted)}footer{margin:20px 3px 0;display:flex;justify-content:space-between;gap:15px;align-items:flex-start;font-size:11px;color:var(--muted)}footer strong{color:var(--text);font-weight:500}.mono{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}[hidden]{display:none!important}
+@media(min-width:1500px){.scene-shell{min-height:650px}}@media(max-width:1140px){.main-grid{grid-template-columns:minmax(350px,1fr) 265px}.reference{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px;order:3}.reference .divider{display:none}.reference .referenceSection{border-right:1px solid var(--line);padding-right:15px}.nuclear{margin:5px 0 15px}.selector-note{max-width:240px}.scene-shell{min-height:600px}.transport-top{gap:12px}.metrics{gap:16px}}
+@media(max-width:759px){.app{padding:19px 14px 20px}.top{gap:12px;margin-bottom:18px}.top-links{font-size:11px;gap:8px}.top-links>a{display:none}.badge{white-space:normal;text-align:center;font-size:10px;padding:5px 9px}.top h1{font-size:28px;max-width:220px}.top p{font-size:12px}.brand{font-size:10px}.selectors{gap:8px;flex-wrap:wrap}.atom{min-width:0;flex:1;gap:9px;padding:10px}.atom .symbol{font-size:23px;min-width:26px}.atom .atomName{font-size:12px}.atom small{font-size:10px}.selector-note{max-width:none;width:100%;text-align:left;font-size:11px}.main-grid{display:contents}.scene-shell{min-height:470px;height:470px;margin-bottom:14px}.scene-wrap{min-height:305px}.scene-top{padding:12px 13px 0}.scene-top span:last-child{font-size:10px}.scene-caption{font-size:10px;padding:9px 13px}.transport{margin-top:0;padding:14px}.controls{margin-top:14px}.reference{display:block;margin-top:14px;order:0}.reference .referenceSection{border:0;padding:0}.reference .referenceSection:first-child{display:none}.reference .nuclear{margin-top:0}.reference h2{font-size:20px}.reference .divider{display:block;margin:16px 0}.transport-top{display:grid;grid-template-columns:minmax(0,1fr) 92px;gap:12px}.transport-buttons{grid-column:1/-1}.transport-buttons button{padding:7px 10px;flex:1;white-space:nowrap}.speed{width:92px}.scrub{min-width:0;width:100%;order:0}.speed label{font-size:10px}.speed select{min-height:44px}.transport-bottom{display:block}.waltz{justify-content:space-between}.beat{flex:1;min-width:0;padding:3px 8px}.metrics{justify-content:space-between;margin-top:15px;gap:10px}.metrics div{font-size:10px}.metrics b{font-size:14px}.note-grid{grid-template-columns:1fr;gap:13px}.panel{padding:17px}.notes{margin-top:14px}.tabs button{font-size:12px;padding:5px 10px 11px}footer{display:block;line-height:1.7}footer span{display:block;margin-top:8px}.exportRow{align-items:flex-start;flex-direction:column;gap:9px}}
+@media(max-width:360px){.atom{gap:5px;padding:8px}.atom .atomName{font-size:11px}.top h1{font-size:25px}.scene-shell{height:425px;min-height:425px}.scene-wrap{min-height:280px}.camera button{padding:5px 7px}.metrics{gap:7px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}button{transition:none}}
+
+.trace-legend{padding:10px 16px;border-top:1px solid var(--line);background:#0a1724;font-size:11px;color:var(--muted);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.trace-legend strong{color:var(--text);font-weight:600}.trace-chips{display:inline-flex;gap:7px;flex-wrap:wrap}.trace-chip{display:inline-flex;align-items:center;gap:4px;white-space:nowrap}.trace-chip i{width:14px;height:3px;border-radius:2px;display:inline-block}.trace-legend .trace-info{width:100%;font-size:10px}.trace-chip.cursor i{height:8px;width:8px;border:1px solid #fff3db;background:transparent;transform:rotate(45deg)}
+@media(max-width:759px){.scene-shell{height:545px;min-height:545px}.trace-legend{font-size:10px;padding:8px 13px}.trace-legend .trace-info{font-size:10px}.scene-caption{line-height:1.45}}
+@media(max-width:360px){.scene-shell{height:500px;min-height:500px}}
+.helix-controls{border:1px solid #36506b;border-radius:12px;padding:12px;background:rgba(35,69,101,.18);margin:13px 0}.helix-two{display:grid;grid-template-columns:1fr 1fr;gap:10px}.helix-two label{font-size:11px;color:var(--muted)!important;line-height:1.4}.helix-two input{width:100%}.helix-two output{float:right;color:var(--cyan)}@media(max-width:400px){.helix-two{grid-template-columns:1fr}}
+.strand-link{stroke:#9bdcc8}.coupled-notice{font-size:11px;color:var(--muted);line-height:1.45;margin-top:7px}.registry-panel{margin-top:12px;border:1px solid #33556a;background:#0d2333;border-radius:10px;padding:12px}.registry-panel h3{font-size:13px;margin:0 0 8px}.registry-row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:7px 0;font-size:12px}.registry-row button{min-height:35px;padding:5px 9px;font-size:11px}.registry-summary{font-size:11px;color:#b8d1df;line-height:1.5}.registry-list{margin:7px 0;padding:0;list-style:none;max-height:190px;overflow:auto}.registry-list li{padding:5px 3px;border-bottom:1px solid #284053;font-size:11px}.registry-list strong{color:#92e8ff}.registry-note{font-size:10px;color:#ffc888;line-height:1.5;margin:7px 0}.registry-hidden{display:none}
+/* v1.9.1 usability fixes — presentation only. */
+/* Expanded direct targets, preserving native labeled checkbox hit areas. */
+#cvTolerance{min-height:44px!important;height:44px!important}
+button:not([hidden]),select:not([hidden]){min-height:44px!important}
+#siteStrand,#siteStep{min-width:44px}
+#convergence-panel select,#convergence-panel button,#convergence-panel input[type=range]{min-height:44px!important}
+.check{min-height:44px!important;align-items:center}
+.check input[type=checkbox]{height:24px!important;width:24px!important;flex-basis:24px!important}
+
+.main-grid{align-items:start!important}
+.scene-shell{align-self:start;height:clamp(520px,72vh,720px);min-height:0!important}
+.camera button,.v4Actions button{min-height:44px!important;min-width:44px!important}
+input[type=range]{min-height:44px!important}
+#dual-workbench button,#dual-workbench select{min-height:44px!important}
+.quick-nav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px;align-items:center}
+.quick-nav a{font-size:13px;display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 12px;text-decoration:none;color:var(--text);border:1px solid var(--line);border-radius:9px;background:var(--panel)}
+.quick-nav a:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+.quick-nav a:hover{background:#1b3448;border-color:var(--cyan)}
+.quick-nav .quick-label{color:var(--muted);font-size:12px;margin-right:3px}
+section[id],aside[id]{scroll-margin-top:15px}
+@media(max-width:759px){.scene-shell{height:470px!important;min-height:470px!important}.quick-nav{gap:6px}.quick-nav .quick-label{width:100%}.quick-nav a{flex:1 1 auto;font-size:12px;padding:8px}}
+@media(max-width:360px){.scene-shell{height:425px!important;min-height:425px!important}}
+
+</style>
+<style id="experience-style">
+.experience-bar{display:flex;gap:12px;align-items:center;justify-content:space-between;border:1px solid #35536b;background:#0b2031;border-radius:14px;padding:11px 15px;margin:0 0 14px;flex-wrap:wrap}
+.experience-bar .experience-buttons{display:flex;gap:6px}
+.experience-bar button{min-height:44px;min-width:110px}
+.experience-bar p{color:#aec5d6;font-size:12px;margin:0;max-width:560px}
+.beginner-intro{background:#11283a;border:1px solid #35536b;border-radius:14px;padding:15px 18px;margin:0 0 14px}
+.beginner-intro h2{font-size:18px;margin:0 0 4px}
+.beginner-intro p{font-size:13px;color:#bdcfdf;margin:4px 0}
+body[data-experience="research"] .beginner-intro{display:none}
+body[data-experience="beginner"] .quick-nav,body[data-experience="beginner"] #referenceCard,body[data-experience="beginner"] #controlPanel,body[data-experience="beginner"] #model-notes,body[data-experience="beginner"] #mol-workbench,body[data-experience="beginner"] #dual-workbench,body[data-experience="beginner"] #encounter-ledger,body[data-experience="beginner"] #branch-compare,body[data-experience="beginner"] #convergence-panel,body[data-experience="beginner"] #receipt-panel{display:none!important}
+body[data-experience="beginner"] .main-grid{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:0!important}
+body[data-experience="beginner"] #scene{grid-column:1!important;min-height:480px;max-height:590px;height:590px;margin-bottom:0}
+body[data-experience="beginner"] .scene-wrap{min-height:300px}
+body[data-experience="beginner"] .selectors{margin-bottom:14px}
+body[data-experience="beginner"] .selector-note{display:none}
+body[data-experience="beginner"] #transport{margin-top:12px}
+@media(max-width:759px){body[data-experience="beginner"] #scene{height:450px;min-height:450px}body[data-experience="beginner"] .main-grid{display:grid!important} .experience-bar{align-items:stretch}.experience-bar .experience-buttons{width:100%}.experience-bar button{flex:1}}
+@media(max-width:360px){body[data-experience="beginner"] #scene{height:410px;min-height:410px}}
+</style>
+<link rel="stylesheet" href="native/observatory.css">
+</head>
+<body>
+<a class="skip" href="#scene">Skip to demonstration</a>
+<main class="app">
+<header class="top"><div><div class="brand">THALEAN LAB</div><h1>Atomic Demonstrator</h1><p>A spherical view of registered return.</p></div><div class="top-links"><span class="badge">Reference pairs · v0.9</span><a href="#model-notes">Model notes &amp; sources</a></div></header>
+<section id="native-observatory" aria-label="Native Thalean Observatory">
+<div class="brand">CoRI / NATIVE MATHEMATICAL OBSERVATORY</div><h2>Let the graph determine the action.</h2>
+<p>Exact finite states, registered transport, inspectable evidence. The Thalion is distinct from its display geometry.</p>
+<nav class="no-nav" aria-label="Native carrier views">
+<button data-native-view="g60" aria-pressed="true">G60 · Native Geometry</button><button data-native-view="g900" aria-pressed="false">G900 · Relational Quotient</button><button data-native-view="g1800" aria-pressed="false">G1800 · Gauge &amp; Transport</button><button data-native-view="g9000" aria-pressed="false">G9000 · Spectral Closure</button><button data-native-view="tensor" aria-pressed="false">Tensor Laboratory</button>
+</nav><p id="no-status" class="no-status" role="status">Loading hash-pinned native fixtures…</p>
+<div class="no-grid"><div><svg id="no-svg" viewBox="0 0 620 420" aria-label="Native mathematical state visualization" role="img"></svg><p id="no-caption" class="no-caption"></p><div id="no-sectors" class="no-sectors"></div></div><div id="no-controls" class="no-controls"></div></div>
+<pre id="no-readout" class="no-readout" tabindex="0" aria-label="Native coordinate and invariant readout"></pre>
+<details><summary>Mathematical receipts · deterministic JSON</summary><p>Checks describe computation, not animation or physical proof. Receipts are content-addressed, not signed or notarized.</p><label for="no-receipts">Recorded operations</label><select id="no-receipts"><option>No operations yet</option></select><div class="no-buttons"><button id="no-copy">Copy receipt</button><button id="no-export">Export receipt JSON</button></div><pre id="no-receipt" class="no-readout" aria-label="Selected mathematical receipt"></pre></details>
+<p class="no-foot">CoRI research · Rook Services Inc. operations · ALETHEOS-SIM-001 · Native / derived / registered / interpretive statuses remain distinct. Existing illustrative workspaces continue below.</p>
+</section>
+<nav class="quick-nav" aria-label="Jump to work areas"><span class="quick-label">Jump to:</span><a href="#scene">Atom</a><a href="#mol-workbench">Molecule</a><a href="#dual-workbench">Encounter</a><a href="#encounter-ledger">History</a><a href="#branch-compare">Compare</a><a href="#convergence-panel">Convergence</a><a href="#receipt-panel">Receipts</a></nav>
+<section class="experience-bar" aria-label="Experience mode"><div class="experience-buttons" role="group" aria-label="Choose experience"><button type="button" id="experienceBeginner" aria-pressed="true">Explore</button><button type="button" id="experienceResearch" aria-pressed="false">Research</button></div><p id="experienceDescription">Explore the sphere, select H, He or O, and play the illustrated cycling traces.</p></section><section class="beginner-intro" aria-label="Getting started"><h2>Explore the atom</h2><p>1. Select Hydrogen, Helium or Oxygen. 2. Press Play. 3. Rotate the sphere or change playback speed.</p><p><strong>What you're seeing:</strong> illustrative G60 trace playback, not calculated electron trajectories. For helical controls, molecular candidates and research receipts, switch to Research.</p></section>
+<section class="selectors" aria-label="Choose reference atom"><button class="atom" data-atom="H" aria-pressed="true"><span class="symbol">H</span><span class="atomName">Hydrogen<small>Hydrogen-1</small></span></button><button class="atom" data-atom="He" aria-pressed="false"><span class="symbol">He</span><span class="atomName">Helium<small>Helium-4</small></span></button><button class="atom" data-atom="O" aria-pressed="false"><span class="symbol">O</span><span class="atomName">Oxygen<small>Oxygen-16</small></span></button><div class="selector-note" id="compactReference">H-1 · neutral reference · 1p / 0n / 1e</div></section>
+<div class="main-grid" id="mainGrid">
+<aside class="panel reference" id="referenceCard" aria-label="Reference atom and selected graph state"><div class="referenceSection"><p class="eyebrow">Atom reference</p><h2 id="atomName">Hydrogen-1</h2><span class="tag referenceTag">REFERENCE DATA</span><p class="small" id="referenceDescription">Neutral hydrogen atom. Not a molecule.</p></div><div class="referenceSection"><div class="nuclear"><div><strong id="protons">1</strong><span>protons</span></div><div><strong id="neutrons">0</strong><span>neutrons</span></div><div><strong id="electrons">1</strong><span>electrons</span></div></div><p class="label">Reference configuration</p><div class="config" id="configuration">1s¹</div><p class="small">Imported atomic reference. Not a G60 prediction.</p></div><div class="referenceSection"><div class="divider"></div><p class="eyebrow">Selected graph state</p><h3 class="pickedTitle">Vertex <span id="selectedVertex">0</span></h3><div class="orbit" id="orbitReadout">V₄ orbit: 0 · 52 · 55 · 59</div><div class="v4Actions" aria-label="Apply V4 action to selected anchor"><button data-deck="e" aria-pressed="true">e</button><button data-deck="a" aria-pressed="false">a</button><button data-deck="b" aria-pressed="false">b</button><button data-deck="ab" aria-pressed="false">ab</button></div><p class="small">Select a node to inspect its registered quartet. These are supplied graph actions, not spin directions.</p></div></aside>
+<section class="scene-shell" id="scene" aria-label="Spherical graph scene"><div class="scene-top"><span class="source-name" id="graphBadge">G60 · AT4val[60,6]</span><span>60 states · 120 edges</span></div><div class="scene-wrap" id="sceneWrap"><canvas id="sceneCanvas" tabindex="0" aria-label="Interactive source-graph display. Arrow keys rotate, plus and minus zoom. Use the controls below as an alternative.">Use the source and selected-state panels for a textual description of the graph.</canvas><div class="scene-center-label"><b id="sceneAtom">H · Hydrogen</b><small id="traceCountReadout">1 electron-count trace · illustrative</small></div></div><div class="trace-legend" aria-label="Trace legend"><strong id="traceLegendTitle">1 electron-count trace</strong><span class="tag">ILLUSTRATIVE</span><span class="trace-chips" id="traceLegend"></span><span class="trace-chip cursor" id="waltzLegend" hidden><i></i>W · route cursor, not an electron</span><span class="trace-info" id="traceHint">Display offsets separate occupancy markers. They do not specify orbital shape, spin, or physical electron paths.</span></div><div class="camera" aria-label="Camera controls"><button data-camera="left" aria-label="Rotate view left">↶ Left</button><button data-camera="right" aria-label="Rotate view right">Right ↷</button><button data-camera="in" aria-label="Zoom in">＋</button><button data-camera="out" aria-label="Zoom out">−</button><button data-camera="reset">Reset view</button></div><div class="scene-caption"><strong>Two separate layers.</strong> Labeled e-traces illustrate electron count on the supplied route; they are not solved trajectories. The optional diamond W is the single waltz cursor. The centre is schematic.</div></section>
+<aside class="panel controls" id="controlPanel" aria-label="Graph and display controls"><p class="eyebrow">Process &amp; layers</p><div class="form-group"><label for="graphSelect">Source graph</label><select id="graphSelect"><option value="6">Structure · [60,6]</option><option value="4">Structured absence · [60,4]</option></select></div><div class="form-group"><label for="projectionSelect">Display coordinates</label><select id="projectionSelect"><option value="sphere">Spherical display</option><option value="cube">Original cube packing</option></select></div><div class="form-group"><label for="processSelect">Process</label><select id="processSelect"><option>Recorded route + illustrative traces</option><option disabled>Stationary model · not connected</option><option disabled>Coherent model · not connected</option></select></div><label class="check"><input type="checkbox" id="edgeToggle" checked><span>Native graph edges</span></label><label class="check"><input type="checkbox" id="electronTraceToggle" checked><span>Electron-count traces<span class="desc">H: 1 · He: 2 · O: 8 — illustrative, not a solver</span></span></label><div class="helix-controls" id="helixControls"><p class="eyebrow" style="margin:13px 0 7px">Helical transport · illustrative</p><label class="check"><input type="checkbox" id="helixToggle" checked><span>Helical lift around graph route<span class="desc">Action on display trace; native G60 edges remain unchanged</span></span></label><div class="helix-two"><label for="helixTurns">Turns per 60-step return <output id="helixTurnsValue">5</output><input id="helixTurns" type="range" min="1" max="12" step="1" value="5"></label><label for="helixRadius">Helix radius <output id="helixRadiusValue">0.17</output><input id="helixRadius" type="range" min="0" max="0.35" step="0.01" value="0.17"></label></div><label class="check"><input type="checkbox" id="helixLeft"><span>Reverse handedness</span></label><p class="small" id="helixStatus">Continuous-frame helix · display only</p><label for="helixDeck" style="display:block;font-size:12px;color:var(--muted)">V₄ helix register (selected deck action)</label><select id="helixDeck"><option value="e">e · identity</option><option value="a">a · first involution</option><option value="b">b · second involution</option><option value="ab">ab · composed involution</option></select><p class="small" id="helixDeckStatus">Register e · 0° phase convention</p></div><div class="helix-controls" id="strandControls"><p class="eyebrow" style="margin:0 0 7px">Coupled strands · geometry test</p><label class="check"><input id="strandToggle" type="checkbox" checked><span>Two transport strands<span class="desc">Separate guide strands; not electrons or DNA</span></span></label><label class="check"><input id="linkToggle" type="checkbox" checked><span>Show correspondence bridges</span></label><label for="bridgeStride" style="display:block;font-size:12px;color:var(--muted)">Bridge spacing · steps <output id="bridgeStrideValue">6</output></label><input id="bridgeStride" type="range" min="2" max="15" step="1" value="6" style="width:100%"><div id="bridgeStatus" class="coupled-notice">Two strands · 10 bridges · 60-step closed carrier</div><section class="registry-panel" aria-label="Atomic site registry"><h3>Atomic sites · H / He / O</h3><p class="registry-note">Local illustrative identities. Attaching a site is not a molecule or a bond.</p><div class="registry-row"><label for="siteElement">Element</label><select id="siteElement"><option value="H">H · hydrogen-1</option><option value="He">He · helium-4</option><option value="O">O · oxygen-16</option></select></div><div class="registry-row"><label for="siteStrand">Strand endpoint</label><select id="siteStrand"><option value="S0">S0</option><option value="S1">S1</option></select><label for="siteStep">Route step</label><select id="siteStep"></select></div><div class="registry-row"><button type="button" id="registerSite">+ Register site</button><button type="button" id="clearSites">Clear sites</button></div><div class="registry-summary" id="siteStatus" role="status">No atomic sites</div><ul class="registry-list" id="siteList" aria-label="Atomic sites"></ul></section><section class="registry-panel" aria-label="Bond and junction registry"><h3>Connection registry · illustrative</h3><div class="registry-row"><label for="registryType">Connection type</label><select id="registryType"><option value="correspondence">Paired-strand correspondence</option><option value="candidate">Candidate junction (not admitted)</option></select></div><div class="registry-row"><label for="registryStep">Route step</label><select id="registryStep"></select></div><div class="registry-row"><button id="registerConnection" type="button">+ Register connection</button><button id="evaluateConnections" type="button">Evaluate</button><button id="clearConnections" type="button">Clear</button></div><div class="registry-row"><label for="registryPolicy">Evaluation policy</label><select id="registryPolicy"><option value="geometric.v1">Geometric correspondence v1</option><option value="chemical.v0">Chemical bond gate v0 (closed)</option><option value="chemistry_reference.v1">Reference pair evaluation v1 (no admission)</option></select></div><div class="registry-summary" id="pairReferenceStatus" role="status">Register two atomic sites at the same step to inspect a chemistry reference pair. This is not a bond prediction.</div><div class="registry-summary" id="registryStatus" role="status">Registry empty</div><ul class="registry-list" id="registryList" aria-label="Registered connections"></ul><p class="registry-note">Evaluate a geometric correspondence or an explicit chemical-bond refusal. Reference chemistry is not a native bond prediction; no bonds are admitted in v0.9.</p></section><section class="registry-panel" id="molecularWorkspace" aria-label="Molecular candidate workspace"><h3>Molecular candidates · reference only</h3><p class="registry-note">Build a connected candidate from registered H, He or O sites. Relationships are proposed reference links, never admitted chemical bonds. H–O–H is available as a three-site example.</p><div class="registry-row"><button type="button" id="seedWater">Seed H–O–H example</button><button type="button" id="clearMolecule">Clear candidate</button></div><div class="registry-row"><label for="molFrom">From site</label><select id="molFrom"></select><label for="molTo">To site</label><select id="molTo"></select></div><div class="registry-row"><button type="button" id="molAddLink">+ Propose reference link</button><button type="button" id="molEvaluate">Evaluate assembly</button></div><div class="registry-summary" id="molStatus" role="status">No molecular candidate · 0 chemical bonds admitted</div><ul class="registry-list" id="molList" aria-label="Candidate molecular sites and links"></ul><p class="registry-note">The three-site H–O–H pattern is conventional reference chemistry only. No bond lengths, 104.5° geometry, forces, molecular energy, or G60 bond prediction is calculated.</p></section></div><label class="check"><input type="checkbox" id="traceToggle"><span>Waltz route &amp; single W cursor<span class="desc">Separate replay instrument — not an electron</span></span></label><label class="check"><input type="checkbox" id="v4Toggle"><span>V₄ registration overlay</span></label><label class="check"><input type="checkbox" id="guideToggle" checked><span>Spherical guide<span class="desc">Illustrative boundary, not a field solution</span></span></label><label class="check disabled"><input type="checkbox" disabled id="densityToggle"><span>Computed density<span class="desc">Atomic model adapter not connected</span></span></label><label class="check disabled"><input type="checkbox" disabled id="g900Toggle"><span>G900 source layer<span class="desc">Native dataset / mapping not connected</span></span></label><div class="notice" id="availability">The atom sets the illustrative trace count: H 1, He 2, O 8. The shared route and display offsets do not compute atomic dynamics.</div></aside>
+</div>
+<section class="panel transport" id="transport" aria-label="Recorded route playback"><div class="transport-top"><div class="transport-buttons"><button id="play" class="primary">▶ Play</button><button id="step">Step</button><button id="reset">Reset</button></div><div class="scrub"><label for="scrubber"><span id="replayLabel">Shared display phase · not atomic time</span><span id="stepLabel">0 / 60</span></label><input id="scrubber" type="range" min="0" max="60" step="1" value="0" aria-label="Replay transition from 0 to 60"></div><div class="speed"><label for="speed">Playback speed</label><select id="speed"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option><option value="4">4×</option></select></div></div><div class="transport-bottom"><div class="waltz" aria-label="Supplied six-event register"><div class="beat active"><small>W</small><b>1</b></div><div class="beat"><small>X</small><b>2</b></div><div class="beat"><small>Y</small><b>3</b></div><div class="beat"><small>Z</small><b>2</b></div><div class="beat seam"><small>T</small><b>2</b></div><div class="beat"><small>I</small><b>3</b></div></div><div class="metrics"><div>Route vertex<b id="routeVertex">0</b></div><div>Full measures<b id="measures">0 / 10</b></div><div>Seams passed<b id="seams">0 / 10</b></div><div>Return status<b id="seamStatus">At start</b></div></div></div></section>
+<section class="panel notes" id="model-notes" aria-label="Model explanation"><div class="tabs" role="tablist" aria-label="Demonstrator information"><button role="tab" id="tab-notes" aria-controls="notes-panel" aria-selected="true" tabindex="0" data-tab="notes">Model notes</button><button role="tab" id="tab-sources" aria-controls="sources-panel" aria-selected="false" tabindex="-1" data-tab="sources">Data &amp; sources</button><button role="tab" id="tab-build" aria-controls="build-panel" aria-selected="false" tabindex="-1" data-tab="build">Build status</button></div><div class="tab-content" id="notes-panel" role="tabpanel" aria-labelledby="tab-notes"><div class="note-grid"><div><h3>01 / Count is visible</h3><p>H, He, and O show one, two, and eight labeled occupancy traces. In the reference ground-state configuration, helium is <strong>1s²</strong>, not two separate energy shells. Trace labels and offsets are display conventions, not measured particle identities, orbital positions, or spin.</p></div><div><h3>02 / Registered return</h3><p>The source G60 graph and existing 60-edge route are replayed here. The <strong>1 2 3 2 2 3</strong> word is a supplied register overlay. The Z→T seam is marked at ten recorded transitions.</p></div><div><h3>03 / Model boundary</h3><p>The spherical layout changes presentation, not graph identity. The colored occupancy traces are illustrative copies of the supplied G60 route with evenly spaced display phases. Density dynamics and the native G900 adapter remain unconnected.</p></div></div></div><div class="tab-content" id="sources-panel" role="tabpanel" aria-labelledby="tab-sources" hidden><h3>Source snapshots, not new graph proofs</h3><p>Geometry and supplied V₄ permutations: <span class="mono">g60_hydrogen_model_001.json</span> from the supplied Hydrogen Lab archive. Route: <span class="mono">waltz_path.json</span> from the existing Waltz Circuit 002 archive. The displayed graph uses that pack's GraphSym numbering.</p><p>AT4val[60,6] remains the canonical source; AT4val[60,4] is comparison wiring. Their coordinate alignment is a chosen display registration. A source route is not transferred automatically to the comparison graph.</p><div class="sources"><a href="https://physics.nist.gov/PhysRefData/Handbook/Tables/hydrogentable1.htm" target="_blank" rel="noopener noreferrer">NIST · Hydrogen</a><a href="https://physics.nist.gov/PhysRefData/Handbook/Tables/heliumtable1.htm" target="_blank" rel="noopener noreferrer">NIST · Helium</a><a href="https://physics.nist.gov/PhysRefData/Handbook/Tables/oxygentable1.htm" target="_blank" rel="noopener noreferrer">NIST · Oxygen</a></div><div class="exportRow"><button id="exportState">Export preview state</button><small>Local JSON. Includes source hashes and limitations; no calculated atomic output.</small></div></div><div class="tab-content" id="build-panel" role="tabpanel" aria-labelledby="tab-build" hidden><h3>Electron-count traces connected · numerical integration pending</h3><p><strong>Connected:</strong> H/He/O reference selector and 1/2/8 illustrative traces, real graph geometry, sphere/cube view, camera controls, supplied V₄ actions, and separately toggled replay of the existing G60 route.</p><p><strong>Not connected:</strong> H wave dynamics, He/O occupation-model extension, calculated density/current, a G900 source dataset, or physical atomic calibration.</p><p>Self-contained HTML with no external libraries or automatic network requests. This file has not been published to a live website.</p></div></section>
+<footer><div><strong>Research demonstrator, not validated atomic simulation.</strong><br>Reference atoms · finite graph geometry · illustrative display. Helical display action is illustrative. Paired strands and registered correspondence bridges are display geometry, not chemical bonds, DNA, or physical fields.</div><span>THALEAN LAB / ATOMIC / HELIX 0.8<br>Source geometry retained. No cloud solver.</span></footer>
+<div class="sr-only" role="status" aria-live="polite" id="announcement"></div>
+</main>
+<script id="fixture" type="application/json">{"schema":"thalean.atomic.layout.fixture.v0.1","graphs":{"6":{"vertices":[[3,3,0],[3,3,1],[2,3,1],[3,2,0],[2,3,0],[3,3,2],[3,3,3],[1,2,3],[3,1,0],[1,3,1],[3,2,1],[1,2,1],[3,2,2],[3,2,3],[1,2,0],[2,3,2],[2,3,3],[1,0,3],[2,0,0],[0,3,1],[2,2,2],[1,1,3],[3,0,0],[0,2,1],[0,1,2],[3,1,1],[0,1,1],[3,1,2],[1,1,0],[1,3,2],[2,2,3],[0,2,2],[1,1,2],[3,1,3],[1,3,0],[2,2,0],[2,1,3],[0,0,3],[2,1,0],[0,3,0],[2,0,3],[3,0,2],[1,0,2],[0,1,3],[0,3,2],[1,3,3],[3,0,1],[2,1,1],[0,0,2],[2,0,1],[0,1,0],[0,2,3],[3,0,3],[0,2,0],[2,0,2],[0,3,3],[1,0,1],[0,0,1],[1,0,0],[0,0,0]],"edges":[[0,1],[0,2],[0,3],[0,4],[1,4],[1,5],[1,6],[2,3],[2,7],[2,9],[3,8],[3,10],[4,11],[4,14],[5,6],[5,12],[5,15],[6,13],[6,16],[7,9],[7,17],[7,21],[8,10],[8,18],[8,22],[9,19],[9,23],[10,20],[10,24],[11,14],[11,25],[11,31],[12,15],[12,26],[12,32],[13,16],[13,27],[13,33],[14,28],[14,34],[15,29],[15,35],[16,30],[16,36],[17,21],[17,37],[17,43],[18,22],[18,35],[18,38],[19,23],[19,39],[19,44],[20,24],[20,30],[20,45],[21,32],[21,40],[22,41],[22,46],[23,27],[23,47],[24,42],[24,48],[25,31],[25,46],[25,49],[26,32],[26,50],[26,53],[27,33],[27,47],[28,34],[28,42],[28,54],[29,35],[29,51],[29,55],[30,36],[30,45],[31,43],[31,51],[32,40],[33,52],[33,54],[34,39],[34,53],[35,38],[36,49],[36,56],[37,43],[37,48],[37,57],[38,47],[38,58],[39,44],[39,53],[40,41],[40,52],[41,46],[41,52],[42,48],[42,54],[43,51],[44,45],[44,55],[45,55],[46,49],[47,58],[48,57],[49,56],[50,53],[50,56],[50,59],[51,55],[52,54],[56,59],[57,58],[57,59],[58,59]],"a":[52,41,54,33,40,46,22,28,13,42,27,32,25,8,21,49,18,34,16,48,47,14,6,24,23,12,31,10,7,56,38,26,11,3,17,36,35,39,30,37,4,1,9,53,57,58,5,20,19,15,51,50,0,43,2,59,29,44,45,55],"b":[55,44,29,51,45,19,39,35,43,15,31,20,23,53,30,9,34,18,17,5,11,38,37,12,25,24,27,26,36,2,14,10,47,50,16,7,28,22,21,6,58,57,49,8,1,4,48,32,46,42,33,3,59,13,56,0,54,41,40,52]},"4":{"vertices":[[3,3,0],[3,3,1],[2,3,1],[3,2,0],[2,3,0],[3,3,3],[3,3,2],[2,0,3],[1,3,1],[3,2,1],[1,2,3],[3,1,0],[3,1,3],[2,0,2],[1,2,0],[0,1,3],[3,2,2],[1,2,1],[2,3,3],[2,3,2],[3,0,2],[3,0,1],[3,0,0],[1,1,3],[0,3,1],[2,2,2],[1,0,3],[1,1,2],[0,1,2],[2,2,3],[0,3,0],[3,0,3],[1,1,0],[3,2,3],[1,0,2],[3,1,2],[2,2,0],[0,2,3],[2,1,1],[2,1,3],[0,1,1],[0,2,2],[2,1,0],[1,3,2],[2,0,0],[2,0,1],[0,2,0],[3,1,1],[1,3,0],[0,3,2],[1,3,3],[0,0,2],[0,0,3],[0,2,1],[0,3,3],[1,0,0],[0,1,0],[1,0,1],[0,0,1],[0,0,0]],"edges":[[0,1],[0,2],[0,3],[0,4],[1,5],[1,6],[1,7],[2,8],[2,10],[2,12],[3,9],[3,11],[3,13],[4,14],[4,17],[4,20],[5,15],[5,18],[5,21],[6,16],[6,19],[6,22],[7,23],[7,27],[7,31],[8,24],[8,28],[8,32],[9,16],[9,25],[9,33],[10,18],[10,29],[10,34],[11,26],[11,30],[11,35],[12,31],[12,33],[12,35],[13,31],[13,32],[13,34],[14,26],[14,27],[14,36],[15,37],[15,40],[15,44],[16,38],[16,45],[17,23],[17,28],[17,41],[18,42],[18,46],[19,39],[19,43],[19,47],[20,21],[20,22],[20,31],[21,45],[21,47],[22,44],[22,46],[23,39],[23,48],[24,49],[24,52],[24,53],[25,42],[25,47],[25,50],[26,39],[26,52],[27,40],[27,53],[28,40],[28,51],[29,38],[29,44],[29,50],[30,48],[30,49],[30,51],[32,42],[32,44],[33,48],[33,52],[34,51],[34,53],[35,38],[35,47],[36,43],[36,45],[36,48],[37,41],[37,54],[37,57],[38,55],[39,57],[40,56],[41,46],[41,53],[42,55],[43,54],[43,56],[45,57],[46,56],[49,54],[49,55],[50,54],[50,58],[51,58],[52,58],[55,59],[56,59],[57,59],[58,59]],"a":[31,20,13,12,7,22,21,4,34,35,32,33,3,2,23,46,47,27,44,45,1,6,5,14,51,38,48,17,53,42,52,0,10,11,8,9,39,56,25,36,41,40,29,57,18,19,15,16,26,58,55,24,30,28,59,50,37,43,49,54],"b":[54,49,43,37,50,30,24,55,19,41,36,15,56,57,29,11,53,25,48,8,58,51,52,42,6,17,44,38,47,14,5,59,39,46,45,40,10,3,27,32,35,9,23,2,26,34,33,28,18,1,4,21,22,16,0,7,12,13,20,31]}},"route":[0,2,3,10,20,24,48,42,54,28,34,14,4,11,25,31,51,43,37,17,7,9,23,19,39,53,26,50,56,59,57,58,47,38,35,18,8,22,46,49,36,16,30,45,44,55,29,15,12,32,21,40,41,52,33,27,13,6,5,1,0],"modes":[0,0,1,0,0,1,1,0,0,1,1,0,0,1,1,0,0,1,1,0,1,0,0,1,0,1,1,0,0,1,1,0,0,1,1,0,0,1,0,1,0,0,1,0,0,1,0,1,0,1,1,0,0,1,0,0,1,0,0,1]}</script>
+<script id="manifest" type="application/json">{"schema":"thalean.atomic.layout.manifest.v0.1.1","status":"illustrative_electron_count_and_recorded_route_preview_not_atomic_solver","date":"2026-10-14","upstream":[{"archive":"g60_hydrogen_lab_001.zip","member":"g60_hydrogen_001/g60_hydrogen_model_001.json","sha256":"e6302d57902c5335612f3b99f10829651d97aef0c619d01e12e142f710ba1ae0","usage":"Graph coordinates, edges and V4 permutations only; numerical eigenmodes not connected in this layout."},{"archive":"g60_waltz_flux_circuit_002.zip","member":"g60_waltz_flux_circuit_002/waltz_path.json","sha256":"9786886424348da8eed0aa4802838af538eb03952c0fdf76aa56a1c8765f5dc4","usage":"Replay fixture; no new route search."}],"canonical_graph":"AT4val[60,6]","comparison_graph":"AT4val[60,4]","source_numbering":"GraphSym numbering from supplied source pack; not assumed identical to Rook CSV labels","sphere_projection":"spherified_cube_display_v1; original model coordinates retained","runtime_external_libraries":[],"atomic_solver_connected":false,"g900_source_connected":false,"he_o_solver_connected":false,"deployment_performed":false,"parent_html_sha256":"068a04e04a4c333554381338a7e6f8f25bc9bf5d30b03b74dba770d50451243f","trace_overlay":{"kind":"illustrative_electron_count","trace_count":{"H":1,"He":2,"O":8},"path_source":"existing supplied G60 Waltz Circuit 002","phase_rule":"offset_j = 60*j/N replay transitions; display-only, not physical phase or spin","tail_length_transitions":5,"trace_labels":"e1 through eN are renderer labels, not distinguishable physical electron identities","waltz_cursor":"single W diamond, independently toggled and off by default","absence_behavior":"disabled: no compatible route supplied","changes_graph_or_model":false,"computed_atomic_trajectories":false}}</script>
+<script>
+'use strict';
+(() => {
+ const data=JSON.parse(document.getElementById('fixture').textContent), manifest=JSON.parse(document.getElementById('manifest').textContent);
+ const $=id=>document.getElementById(id), all=q=>Array.from(document.querySelectorAll(q));
+ const atoms={H:{name:'Hydrogen',isotope:'Hydrogen-1',short:'H-1',p:1,n:0,e:1,config:'1s¹'},He:{name:'Helium',isotope:'Helium-4',short:'He-4',p:2,n:2,e:2,config:'1s²'},O:{name:'Oxygen',isotope:'Oxygen-16',short:'O-16',p:8,n:8,e:8,config:'1s² 2s² 2p⁴'}};
+ const state={atom:'H',graph:'6',projection:'sphere',playing:false,position:0,speed:1,yaw:-.62,pitch:.21,zoom:1,anchor:0,deck:'e',selected:0,helix:true,helixTurns:5,helixRadius:.17,helixHand:1,helixDeck:'e',strandEnabled:true,linkEnabled:true,bridgeStride:6};
+ const canvas=$('sceneCanvas'),ctx=canvas.getContext('2d');
+ let width=500,height=430,dirty=true,raf=0,lastTime=0,picking=[],drag=null;
+ const seams=[4,10,16,22,28,34,40,46,52,58];
+ const traceColours=['#6ce8ff','#ffc888','#efa6e9','#a7e7c8','#afbcff','#ffadb3','#cddd97','#8bd8d0'];
+ let drawnElectronTraces=[];
+ // Same validated route, separate illustration channels. No orbital or spin claims.
+ function traceDescriptors(){return Array.from({length:atoms[state.atom].e},(_,j)=>({id:j+1,label:'e'+(j+1),colour:traceColours[j],offset:60*j/atoms[state.atom].e,helixPhase:2*Math.PI*j/atoms[state.atom].e}));} 
+ function routePoint(position){const p=((position%60)+60)%60,k=Math.floor(p),t=p-k;const a=point(data.route[k]),b=point(data.route[k+1]);return a.map((x,i)=>x+(b[i]-x)*t);}
+ // Rotation-minimizing Bishop frame sampled on the existing polygonal route.
+ // The final orientation is corrected smoothly around the closed path.
+ // All coordinates remain render-only, not a change to the source graph or Hamiltonian.
+ const add=(a,b)=>a.map((x,i)=>x+b[i]),sub=(a,b)=>a.map((x,i)=>x-b[i]),scale=(a,s)=>a.map(x=>x*s),cross=(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]];
+ const dot3=(a,b)=>a.reduce((s,x,i)=>s+x*b[i],0);
+ const norm=a=>{const d=Math.hypot(...a)||1;return a.map(x=>x/d);};
+ const turn=(v,axis,angle)=>add(add(scale(v,Math.cos(angle)),scale(cross(axis,v),Math.sin(angle))),scale(axis,dot3(axis,v)*(1-Math.cos(angle))));
+ const deckPhase={e:0,a:Math.PI/2,b:Math.PI,ab:3*Math.PI/2}; // chosen display crosswalk, not a native spatial angle
+ const SAMPLES=600;
+ let frames=[],frameProjection='';
+ function buildFrames(){
+  const p=Array.from({length:SAMPLES+1},(_,i)=>routePoint(60*i/SAMPLES));
+  const tangents=Array.from({length:SAMPLES+1},(_,i)=>norm(sub(p[Math.min(SAMPLES,i+1)],p[Math.max(0,i-1)])));
+  // Closure tangent is cyclic rather than one-sided.
+  tangents[0]=norm(sub(routePoint(.03),routePoint(59.97)));tangents[SAMPLES]=tangents[0];
+  const n0=norm(cross(tangents[0],Math.abs(tangents[0][1])<.9?[0,1,0]:[1,0,0]));
+  let n=n0;frames=[{t:tangents[0],n:n0,b:norm(cross(tangents[0],n0))}];
+  for(let i=1;i<=SAMPLES;i++){
+   const t0=tangents[i-1],t1=tangents[i],axis=cross(t0,t1),sn=Math.hypot(...axis),cs=Math.max(-1,Math.min(1,dot3(t0,t1)));
+   if(sn>1e-10)n=turn(n,scale(axis,1/sn),Math.atan2(sn,cs));
+   n=norm(sub(n,scale(t1,dot3(n,t1))));frames.push({t:t1,n,b:norm(cross(t1,n))});
+  }
+  const twist=Math.atan2(dot3(cross(frames[SAMPLES].n,n0),tangents[0]),dot3(frames[SAMPLES].n,n0));
+  frames=frames.map((f,i)=>{const n=norm(turn(f.n,f.t,twist*i/SAMPLES));return {t:f.t,n,b:norm(cross(f.t,n))};});
+  frameProjection=state.projection;
+ }
+ function frameAt(position){
+  if(frameProjection!==state.projection||frames.length!==SAMPLES+1)buildFrames();
+  const z=((position%60)+60)%60*SAMPLES/60,k=Math.floor(z),w=z-k;
+  const f=frames[k],g=frames[k+1],t=norm(add(scale(f.t,1-w),scale(g.t,w)));
+  let n=add(scale(f.n,1-w),scale(g.n,w));n=norm(sub(n,scale(t,dot3(n,t))));return {n,b:norm(cross(t,n)),t};
+ }
+ function helicalPoint(position,channel){
+  const base=routePoint(position);
+  if(!state.helix||state.helixRadius===0)return base;
+  const f=frameAt(position);
+  const theta=state.helixHand*2*Math.PI*state.helixTurns*(position/60)+channel.helixPhase+deckPhase[state.helixDeck];
+  return add(base,add(scale(f.n,state.helixRadius*Math.cos(theta)),scale(f.b,state.helixRadius*Math.sin(theta))));
+ }
+ // The paired guide strands share one native route parameter, but are not electron traces.
+ // Connection points are explicit same-address correspondences; the bridge is display geometry.
+ const guidePair=[{id:'S0',helixPhase:0},{id:'S1',helixPhase:Math.PI}];
+ const registry=[];
+ const siteRegistry=[];
+ const siteAtoms={H:{isotope:'hydrogen-1',protons:1,neutrons:0,electrons:1,config:'1s¹'},He:{isotope:'helium-4',protons:2,neutrons:2,electrons:2,config:'1s²'},O:{isotope:'oxygen-16',protons:8,neutrons:8,electrons:8,config:'1s² 2s² 2p⁴'}};
+ const siteId=(strand,step)=>`G60-ATOM-${strand}-${String(step).padStart(2,'0')}`;
+ function siteAt(strand,step){return siteRegistry.find(x=>x.strand===strand&&x.step===step)||null;}
+ function addAtomicSite(element,strand,step){
+  if(!siteAtoms[element])return {ok:false,reason:'unsupported_atom'};
+  if(!['S0','S1'].includes(strand)||!Number.isInteger(step)||step<0||step>=60)return {ok:false,reason:'invalid_endpoint'};
+  if(siteAt(strand,step))return {ok:false,reason:'site_already_registered_at_endpoint'};
+  const record={id:siteId(strand,step),element,reference:{...siteAtoms[element]},strand,step,sourceVertex:data.route[step],sourceGraph:'AT4val[60,6]',scope:'atomic_reference_on_illustrative_helix',chemicalAuthority:false};
+  siteRegistry.push(record);siteRegistry.sort((a,b)=>a.step-b.step||a.strand.localeCompare(b.strand));renderSites();renderRegistry();return {ok:true,id:record.id};
+ }
+ function renderSites(){
+  $('siteStatus').textContent=`${siteRegistry.length} sites · 0 admitted bonds · references only`;
+  $('siteList').replaceChildren();
+  for(const site of siteRegistry){const li=document.createElement('li');li.textContent=`${site.id} · ${site.element} (${site.reference.isotope}) · vertex ${site.sourceVertex}`;$('siteList').append(li);}
+  window.dispatchEvent(new Event('thalean-sites-changed'));
+ }
+
+ const registryId=step=>`G60-S0-S1-${String(step).padStart(2,'0')}`;
+ function registryCanPlace(step){return state.graph==='6'&&state.strandEnabled&&state.helix&&state.helixRadius>0&&Number.isInteger(step)&&step>=0&&step<60;}
+ const JUNCTION_POLICY_VERSION='thalean.junction_gate.v0.9';
+ // Reference expectations are established chemistry, independent of G60 output.
+ // This registry never certifies molecules, bonds, valence satisfaction or energies.
+ const referencePairs={
+  'H-H':{species:'H₂',reference:'Stable diatomic hydrogen is an established molecule.',expected:'covalent bond in the neutral ground-state molecule',category:'reference_compatible'},
+  'H-O':{species:'OH / H₂O contexts',reference:'O–H covalent bonds occur in water and hydroxyl species. The pair alone does not identify a molecule.',expected:'environment-dependent polar covalent relationship',category:'reference_compatible_context_required'},
+  'O-O':{species:'O₂',reference:'Diatomic oxygen exists; its electronic structure is not modeled by this helix.',expected:'bonding in neutral molecular oxygen',category:'reference_compatible'},
+  'H-He':{species:'He-containing systems',reference:'Neutral ground-state helium is a closed-shell noble gas. Specialized excited, ionic, or weak-complex cases require separate conditions.',expected:'no ordinary neutral ground-state covalent bond inferred',category:'reference_not_ordinary'},
+  'He-O':{species:'He-containing systems',reference:'Neutral ground-state helium is a closed-shell noble gas. Specialized complexes require separate evidence.',expected:'no ordinary neutral ground-state covalent bond inferred',category:'reference_not_ordinary'},
+  'He-He':{species:'He₂ / weak complexes',reference:'Helium does not form an ordinary stable ground-state covalent He₂ bond; weak van der Waals dimers can exist under special conditions.',expected:'no ordinary neutral ground-state covalent bond inferred',category:'reference_not_ordinary'}
+ };
+ function pairKey(a,b){return [a,b].sort().join('-');}
+ function evaluateReferencePair(entry){
+   const base=evaluateJunction(entry,'chemical.v0');
+   const left=siteAt('S0',entry.step),right=siteAt('S1',entry.step);
+   if(!left||!right)return {...base,policy:'chemistry_reference.v1',decision:'refused',scope:'reference_comparison_only',pair:null,reasonCode:'missing_atomic_sites',chemicalBondAdmitted:false};
+   const key=pairKey(left.element,right.element),reference=referencePairs[key];
+   return {...base,policy:'chemistry_reference.v1',decision:'reference_only',scope:'reference_comparison_only',pair:key,reference,reasonCode:reference?.category||'unsupported_pair',reasons:base.reasons,chemicalBondAdmitted:false};
+ }
+
+ function evaluateJunction(entry,policy='geometric.v1'){
+   const reasons=[],validAddress=Number.isInteger(entry.step)&&entry.step>=0&&entry.step<60;
+   const distinct=entry.endpointStrands?.length===2&&entry.endpointStrands[0]==='S0'&&entry.endpointStrands[1]==='S1';
+   const correctSource=entry.sourceGraph==='AT4val[60,6]'&&validAddress&&entry.sourceVertex===data.route[entry.step];
+   const geometryActive=registryCanPlace(entry.step);
+   if(!validAddress)reasons.push('step_out_of_bounds');
+   if(!distinct)reasons.push('endpoint_pair_invalid');
+   if(!correctSource)reasons.push('source_identity_mismatch');
+   if(!geometryActive)reasons.push('paired_helix_display_inactive');
+   if(policy==='chemistry_reference.v1')return evaluateReferencePair(entry);
+   if(policy==='chemical.v0'){
+     reasons.push('no_atomic_electronic_solver');
+     reasons.push('no_valence_or_electron_interaction_model');
+     if(!siteAt('S0',entry.step)||!siteAt('S1',entry.step))reasons.push('two_atomic_site_endpoints_required');
+     reasons.push('no_bond_energy_or_geometry_law');
+     reasons.push('no_molecular_species_admission');
+     return {policy,policyVersion:JUNCTION_POLICY_VERSION,decision:'refused',scope:'chemical_bond',reasons,chemicalBondAdmitted:false};
+   }
+   if(policy!=='geometric.v1')return {policy,policyVersion:JUNCTION_POLICY_VERSION,decision:'refused',scope:'unknown',reasons:['unknown_policy'],chemicalBondAdmitted:false};
+   if(entry.type!=='correspondence')reasons.push('junction_candidate_has_no_correspondence_permission');
+   return {policy,policyVersion:JUNCTION_POLICY_VERSION,decision:reasons.length?'refused':'accepted',scope:'illustrative_correspondence_only',reasons,chemicalBondAdmitted:false};
+ }
+ function validateRegistry(){return registry.map(entry=>{
+   const evaluation=evaluateJunction(entry,$('registryPolicy').value);
+   return {...entry,evaluation,admissible:evaluation.decision==='accepted',status:evaluation.decision,
+    endpointA:{strand:'S0',step:entry.step,sourceVertex:data.route[entry.step],atomicSiteId:siteAt('S0',entry.step)?.id??null},
+    endpointB:{strand:'S1',step:entry.step,sourceVertex:data.route[entry.step],atomicSiteId:siteAt('S1',entry.step)?.id??null}};
+ });}
+ function renderRegistry(){
+   const entries=validateRegistry(),accepted=entries.filter(x=>x.status==='accepted').length,refused=entries.filter(x=>x.status==='refused').length;
+   $('registryStatus').textContent=`${entries.length} registered · ${accepted} accepted in selected scope · ${refused} refused · 0 chemical bonds`;
+   $('pairReferenceStatus').textContent=entries.some(x=>x.evaluation.policy==='chemistry_reference.v1') ? 'Reference pair evaluation active · chemistry facts only · 0 admitted bonds' : 'Select Reference pair evaluation to inspect two registered endpoints at the same route step.';
+   $('registryList').replaceChildren();
+   for(const e of entries){const li=document.createElement('li'),name=document.createElement('strong');name.textContent=e.id+' ';li.append(name,document.createTextNode(`${e.type} · vertex ${e.endpointA.sourceVertex} · ${e.status} (${e.evaluation.scope})`));
+    if(e.evaluation.reference){const p=document.createElement('div');p.style.color='var(--green)';p.textContent=`Reference ${e.evaluation.pair} · ${e.evaluation.reference.species}: ${e.evaluation.reference.reference} ${e.evaluation.reference.expected}. No bond admitted.`;li.append(p);}
+    if(e.evaluation.reasons.length){const details=document.createElement('div');details.textContent='Reasons: '+e.evaluation.reasons.join(', ');details.style.color='var(--amber)';li.append(details);} $('registryList').append(li);}
+   $('registerConnection').disabled=!registryCanPlace(Number($('registryStep').value));requestDraw();
+ }
+ function addRegistryConnection(step,type){
+   if(!registryCanPlace(step))return {ok:false,reason:'requires a valid G60 two-strand display'};
+   if(!['correspondence','candidate'].includes(type))return {ok:false,reason:'unknown connection type'};
+   const id=registryId(step);if(registry.some(x=>x.id===id))return {ok:false,reason:'already registered at this address'};
+   registry.push({id,type,step,sourceGraph:'AT4val[60,6]',sourceVertex:data.route[step],endpointStrands:['S0','S1'],authority:'illustrative_only'});registry.sort((a,b)=>a.step-b.step);renderRegistry();return {ok:true,id};
+ }
+
+ let strandAudit={enabled:false,bridgeCount:0,bridgeSamples:[],maxCorrespondenceError:0};
+ function drawCoupledStrands(){
+  const on=state.graph==='6'&&state.strandEnabled&&state.helix&&state.helixRadius>0;
+  const out={enabled:on,bridgeCount:0,bridgeSamples:[],maxCorrespondenceError:0};
+  if(!on){strandAudit=out;return;}
+  const colors=['rgba(99,229,255,.75)','rgba(248,184,224,.77)'];
+  for(let k=0;k<2;k++){
+   for(let i=0;i<240;i++){
+    const a=project(helicalPoint(i/4,guidePair[k]));
+    const b=project(helicalPoint((i+1)/4,guidePair[k]));
+    line([a,b],colors[k],1.25);
+   }
+  }
+  if(state.linkEnabled){
+   for(let s=0;s<60;s+=state.bridgeStride){
+    const a=helicalPoint(s,guidePair[0]),b=helicalPoint(s,guidePair[1]);
+    line([project(a),project(b)],'rgba(167,231,200,.67)',1.3);
+    const c=routePoint(s),mid=scale(add(a,b),.5),error=Math.hypot(...sub(mid,c));
+    out.maxCorrespondenceError=Math.max(out.maxCorrespondenceError,error);
+    out.bridgeCount++;
+    out.bridgeSamples.push({step:s,carrierVertex:data.route[s],endpointSeparation:Math.hypot(...sub(a,b)),midpointError:error});
+   }
+  }
+  for(const entry of validateRegistry()){
+   if(entry.status==='inactive')continue;
+   const a=project(helicalPoint(entry.step,guidePair[0]));const b=project(helicalPoint(entry.step,guidePair[1]));
+   line([a,b],entry.type==='candidate'?'rgba(255,200,136,.85)':'rgba(135,249,187,.95)',entry.type==='candidate'?2:2.7,entry.type==='candidate'?[5,4]:[]);
+   dot(a,3,entry.type==='candidate'?'#ffc888':'#87f9bb',5);dot(b,3,entry.type==='candidate'?'#ffc888':'#87f9bb',5);
+  }
+  strandAudit=out;
+ }
+ function updateStrandUI(){
+  state.strandEnabled=$('strandToggle').checked;
+  state.linkEnabled=$('linkToggle').checked;
+  state.bridgeStride=Number($('bridgeStride').value);
+  $('bridgeStrideValue').textContent=String(state.bridgeStride);
+  const available=state.graph==='6'&&state.helix&&state.helixRadius>0;
+  $('strandToggle').disabled=!available;$('linkToggle').disabled=!available||!state.strandEnabled;
+  $('bridgeStride').disabled=!available||!state.strandEnabled||!state.linkEnabled;
+  const n=Math.ceil(60/state.bridgeStride);
+  $('bridgeStatus').textContent=!available?'Unavailable: requires structure graph and nonzero helix':!state.strandEnabled?'Two-strand guide hidden':`Two display strands · ${state.linkEnabled?n:0} bridges · shared carrier address`;
+  renderRegistry();
+  requestDraw();
+ }
+ function updateHelixUI(){
+  state.helix=$('helixToggle').checked;state.helixTurns=Number($('helixTurns').value);state.helixRadius=Number($('helixRadius').value);state.helixHand=$('helixLeft').checked?-1:1;state.helixDeck=$('helixDeck').value;
+  $('helixTurnsValue').textContent=String(state.helixTurns);$('helixRadiusValue').textContent=state.helixRadius.toFixed(2);
+  $('helixStatus').textContent=state.helix?`Active · ${state.helixTurns} turns / cycle · ${state.helixHand===1?'right':'left'}-handed · display only`:'Off · original graph-route traces';
+  $('helixDeckStatus').textContent=`Native V₄ action ${state.helixDeck} on quartet · illustrative helix phase ${Math.round(deckPhase[state.helixDeck]*180/Math.PI)}° (chosen crosswalk)`;
+  updateStrandUI();
+  requestDraw();
+ }
+ function visibleElectronTraces(){return state.graph==='6'&&$('electronTraceToggle').checked;}
+ function updateTraceUI(){
+  const available=state.graph==='6',visible=visibleElectronTraces(),n=atoms[state.atom].e;
+  $('electronTraceToggle').disabled=!available;$('traceToggle').disabled=!available;
+  $('traceLegendTitle').textContent=visible?`${n} electron-count ${n===1?'trace':'traces'}`:available?'Electron-count traces hidden':`${n} electrons · no compatible trace route`;
+  $('traceCountReadout').textContent=visible?`${n} electron-count ${n===1?'trace':'traces'} · illustrative`:available?'Illustrative traces hidden':'Comparison geometry · no compatible trace route';
+  $('traceLegend').replaceChildren();
+  if(visible)for(const t of traceDescriptors()){const chip=document.createElement('span');chip.className='trace-chip';const swatch=document.createElement('i');swatch.style.background=t.colour;swatch.setAttribute('aria-hidden','true');chip.append(swatch,document.createTextNode(t.label));$('traceLegend').append(chip);}
+  $('waltzLegend').hidden=!(available&&$('traceToggle').checked);
+  $('traceHint').textContent=!available?'No [60,4] route is connected. Structure paths are not transferred.':state.atom==='He'?'He reference: 1s². Two helical markers may be phase-separated in the view, but share the same reference shell. Not physical spin or orbital phase.':'Trace labels, helix, and offsets are display conventions, not physical particle paths, spin, orbitals, or DNA.';
+  canvas.setAttribute('aria-label',`Interactive ${state.graph==='6'?'G60 structure':'structured absence'} graph. ${visible?n+' illustrative electron-count traces.':'No electron-count traces shown.'} ${available&&$('traceToggle').checked?'One separate W route cursor.':''} Arrow keys rotate; plus and minus zoom.`);
+  requestDraw();
+ }
+ function drawElectronTraces(){
+  drawnElectronTraces=[];if(!visibleElectronTraces())return;
+  const traces=traceDescriptors();
+  for(const t of traces){
+   const phase=state.position+t.offset;
+   for(let i=0;i<20;i++){const a=project(helicalPoint(phase-5+i/4,t)),b=project(helicalPoint(phase-5+(i+1)/4,t));ctx.globalAlpha=.16+.79*(i+1)/20;line([a,b],t.colour,1.2+1.1*(i+1)/20);}
+   ctx.globalAlpha=1;
+   const lifted=helicalPoint(phase,t),p=project(lifted);drawnElectronTraces.push({...t,phase:((phase%60)+60)%60,position3D:lifted,basePosition3D:routePoint(phase),screen:{x:p.x,y:p.y},z:p.z});
+  }
+  for(const t of [...drawnElectronTraces].sort((a,b)=>a.z-b.z)){
+   const p=t.screen;dot(p,5,t.colour,14);ctx.beginPath();ctx.arc(p.x,p.y,8,0,2*Math.PI);ctx.strokeStyle=t.colour;ctx.lineWidth=1.3;ctx.stroke();
+   ctx.font='600 12px system-ui,sans-serif';ctx.lineWidth=3;ctx.strokeStyle='#07101b';ctx.fillStyle=t.colour;ctx.strokeText(t.label,p.x+11,p.y-10);ctx.fillText(t.label,p.x+11,p.y-10);
+  }
+  ctx.globalAlpha=1;
+ }
+ const announce=text=>{$('announcement').textContent=text;};
+ function graph(){return data.graphs[state.graph];}
+ function quartet(v){const g=graph();return [v,g.a[v],g.b[v],g.a[g.b[v]]];}
+ function point(v){const raw=graph().vertices[v].map(x=>(x-1.5)/1.5);if(state.projection==='cube')return raw.map(x=>x*.68);const [x,y,z]=raw;return [x*Math.sqrt(1-y*y/2-z*z/2+y*y*z*z/3),y*Math.sqrt(1-z*z/2-x*x/2+z*z*x*x/3),z*Math.sqrt(1-x*x/2-y*y/2+x*x*y*y/3)];}
+ function project(p){const [x,y,z]=p,c=Math.cos(state.yaw),s=Math.sin(state.yaw),cp=Math.cos(state.pitch),sp=Math.sin(state.pitch);const xx=x*c+z*s,zz=-x*s+z*c,yy=y*cp-zz*sp,depth=y*sp+zz*cp;const scale=Math.min(width,height)*.36*state.zoom*(4/(4-depth*.3));return {x:width/2+xx*scale,y:height/2-8-yy*scale,z:depth,scale};}
+ function line(points,stroke,thickness=1,dash=[]){if(points.length<2)return;ctx.beginPath();ctx.moveTo(points[0].x,points[0].y);for(const p of points.slice(1))ctx.lineTo(p.x,p.y);ctx.strokeStyle=stroke;ctx.lineWidth=thickness;ctx.setLineDash(dash);ctx.stroke();ctx.setLineDash([]);}
+ function dot(p,r,color,glow=0){ctx.beginPath();ctx.fillStyle=color;ctx.shadowBlur=glow;ctx.shadowColor=color;ctx.arc(p.x,p.y,r,0,Math.PI*2);ctx.fill();ctx.shadowBlur=0;}
+ function draw(){
+  if(!ctx)return;
+  ctx.clearRect(0,0,width,height);
+  const r=Math.min(width,height)*.37*state.zoom;const grd=ctx.createRadialGradient(width/2,height/2,5,width/2,height/2,r*1.45);grd.addColorStop(0,'rgba(51,142,200,.15)');grd.addColorStop(.55,'rgba(22,68,109,.10)');grd.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=grd;ctx.fillRect(0,0,width,height);
+  if($('guideToggle').checked){
+   for(let a=-2;a<=2;a++){const latitude=a*Math.PI/8,p=[];for(let k=0;k<=90;k++){const th=k*2*Math.PI/90;p.push(project([1.12*Math.cos(latitude)*Math.cos(th),1.12*Math.sin(latitude),1.12*Math.cos(latitude)*Math.sin(th)]));}line(p,'rgba(117,196,236,.13)',.7);}
+   for(let a=0;a<4;a++){const az=a*Math.PI/4,p=[];for(let k=0;k<=100;k++){const t=k*2*Math.PI/100;p.push(project([1.12*Math.sin(t)*Math.cos(az),1.12*Math.cos(t),1.12*Math.sin(t)*Math.sin(az)]));}line(p,'rgba(117,196,236,.11)',.7);}
+   ctx.beginPath();ctx.arc(width/2,height/2-8,r*1.1,0,Math.PI*2);ctx.strokeStyle='rgba(119,204,242,.24)';ctx.lineWidth=.9;ctx.stroke();
+  }
+  const g=graph(),pts=g.vertices.map((_,i)=>project(point(i))),colour=state.graph==='6'?'106,219,247':'248,186,112';
+  if($('edgeToggle').checked)for(const [u,v]of g.edges){const alpha=.1+.12*(2+pts[u].z+pts[v].z)/4;line([pts[u],pts[v]],`rgba(${colour},${alpha})`,.9);}
+  const current=Math.min(60,Math.floor(state.position));
+  if(state.graph==='6'&&$('traceToggle').checked){for(let i=0;i<current;i++){line([pts[data.route[i]],pts[data.route[i+1]]],seams.includes(i+1)?'rgba(239,166,233,.88)':'rgba(146,226,255,.44)',seams.includes(i+1)?2:1.4);}}
+  const orbit=quartet(state.anchor);if($('v4Toggle').checked){line([pts[orbit[0]],pts[orbit[1]],pts[orbit[3]],pts[orbit[2]],pts[orbit[0]]],'rgba(169,231,201,.65)',1,[3,4]);}
+  picking=pts.map((p,i)=>({...p,id:i}));for(const p of [...picking].sort((a,b)=>a.z-b.z)){const active=$('v4Toggle').checked&&orbit.includes(p.id);dot(p,active?4:Math.max(1.5,2.4+p.z*.6),active?'#c2f7dd':`rgba(${colour},${.47+.38*(p.z+1)/2})`,active?10:3);}
+  // Nucleus glyph is reference illustration, not a physical size or nuclear model.
+  const at=atoms[state.atom],count=at.p+at.n,ncenter={x:width/2,y:height/2-8};
+  const halo=ctx.createRadialGradient(ncenter.x,ncenter.y,0,ncenter.x,ncenter.y,30);halo.addColorStop(0,'rgba(255,211,154,.22)');halo.addColorStop(1,'rgba(255,211,154,0)');ctx.fillStyle=halo;ctx.fillRect(ncenter.x-31,ncenter.y-31,62,62);
+  for(let i=0;i<count;i++){const t=i*2.399963,radius=count===1?0:Math.sqrt(i/count)*12;dot({x:ncenter.x+Math.cos(t)*radius,y:ncenter.y+Math.sin(t)*radius},count>5?3:5,i<at.p?'#ffd7a2':'#baafe9',7);}
+  if($('v4Toggle').checked){const p=pts[state.selected];ctx.beginPath();ctx.arc(p.x,p.y,7,0,2*Math.PI);ctx.strokeStyle='#c0f4db';ctx.lineWidth=1.5;ctx.stroke();}
+   drawCoupledStrands();
+   drawElectronTraces();
+   if(state.graph==='6'&&$('traceToggle').checked){const p=project(routePoint(state.position));ctx.beginPath();ctx.moveTo(p.x,p.y-13);ctx.lineTo(p.x+13,p.y);ctx.lineTo(p.x,p.y+13);ctx.lineTo(p.x-13,p.y);ctx.closePath();ctx.strokeStyle='#fff3db';ctx.lineWidth=1.8;ctx.stroke();ctx.font='700 12px system-ui,sans-serif';ctx.strokeStyle='#07101b';ctx.lineWidth=3;ctx.strokeText('W',p.x-23,p.y-14);ctx.fillStyle='#fff3db';ctx.fillText('W',p.x-23,p.y-14);}
+
+ }
+ function requestDraw(){dirty=true;if(!raf)raf=requestAnimationFrame(frame);}
+ function frame(ts){raf=0;const dt=lastTime?Math.min(.1,(ts-lastTime)/1000):0;lastTime=ts;if(state.playing){state.position=Math.min(60,state.position+dt*2.5*state.speed);dirty=true;updateTransport();if(state.position>=60){state.playing=false;$('play').textContent='▶ Replay';announce('Circuit complete. Returned to vertex zero.');}}
+ if(dirty){draw();dirty=false;}if(state.playing)raf=requestAnimationFrame(frame);else lastTime=0;}
+ function resize(){const b=$('sceneWrap').getBoundingClientRect();width=b.width;height=b.height;const dpr=Math.min(devicePixelRatio||1,2);canvas.width=Math.round(width*dpr);canvas.height=Math.round(height*dpr);ctx&&ctx.setTransform(dpr,0,0,dpr,0,0);requestDraw();}
+ function pause(){state.playing=false;$('play').textContent=state.position>=60?'▶ Replay':'▶ Play';requestDraw();}
+ function updateTransport(){const k=Math.min(60,Math.floor(state.position+1e-8)),available=state.graph==='6';$('scrubber').value=String(k);$('stepLabel').textContent=available?`${k} / 60`:'Unavailable';$('routeVertex').textContent=available?String(data.route[k]):'—';$('measures').textContent=available?`${Math.floor(k/6)} / 10`:'—';$('seams').textContent=available?`${seams.filter(v=>v<=k).length} / 10`:'—';$('seamStatus').textContent=!available?'No route':k===60?'Closed at 0':k===0?'At start':seams.includes(k)?'ZT seam':'In circuit';all('.beat').forEach((b,i)=>b.classList.toggle('active',available&&i===k%6));['play','step','reset','scrubber','speed'].forEach(id=>$(id).disabled=!available);$('replayLabel').textContent=available?'Shared display phase · not atomic time':'No route connected for [60,4]';}
+ function updateInspector(){const q=quartet(state.anchor);state.selected=q[{e:0,a:1,b:2,ab:3}[state.deck]];$('selectedVertex').textContent=String(state.selected);$('orbitReadout').textContent='V₄ orbit: '+q.join(' · ');all('[data-deck]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.deck===state.deck)));requestDraw();}
+ function setAtom(key){if(!Object.hasOwn(atoms,key))return;pause();state.atom=key;state.position=0;const a=atoms[key];$('atomName').textContent=a.isotope;$('protons').textContent=a.p;$('neutrons').textContent=a.n;$('electrons').textContent=a.e;$('configuration').textContent=a.config;$('sceneAtom').textContent=`${key} · ${a.name}`;$('compactReference').textContent=`${a.short} · neutral reference · ${a.p}p / ${a.n}n / ${a.e}e`;$('referenceDescription').textContent=`Neutral ${a.name.toLowerCase()} atom. Not a molecule.`;all('[data-atom]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.atom===key)));updateTransport();updateTraceUI();requestDraw();announce(`${a.isotope} selected. ${a.e} illustrative electron-count traces when enabled on G60. The atomic solver is not connected.`);}
+ all('[data-atom]').forEach(b=>b.addEventListener('click',()=>setAtom(b.dataset.atom)));
+ $('graphSelect').addEventListener('change',e=>{pause();state.graph=e.target.value;state.position=0;state.anchor=0;state.deck='e';$('graphBadge').textContent=state.graph==='6'?'G60 · AT4val[60,6]':'Comparison · AT4val[60,4]';$('graphBadge').style.color=state.graph==='6'?'var(--cyan)':'var(--amber)';$('processSelect').disabled=state.graph!=='6';$('availability').textContent=state.graph==='6'?'H, He, O show 1, 2, 8 illustrative occupancy traces. Helix transforms display coordinates only. No atomic solver runs here.':'Comparison geometry loaded. No compatible absence route or atomic solver is connected. Structure traces are not transferred.';updateTransport();updateInspector();updateTraceUI();updateStrandUI();announce(`Graph ${state.graph==='6'?'structure':'structured absence'} selected. Playback paused.`);});
+ $('projectionSelect').addEventListener('change',e=>{state.projection=e.target.value;requestDraw();announce('Display coordinates changed. Model inputs are unchanged.');});
+ ['edgeToggle','v4Toggle','guideToggle'].forEach(id=>$(id).addEventListener('change',requestDraw));
+ ['strandToggle','linkToggle','bridgeStride'].forEach(id=>$(id).addEventListener('input',updateStrandUI));
+ ['electronTraceToggle','traceToggle'].forEach(id=>$(id).addEventListener('change',updateTraceUI));['helixToggle','helixTurns','helixRadius','helixLeft','helixDeck'].forEach(id=>$(id).addEventListener('input',updateHelixUI));
+ all('[data-deck]').forEach(b=>b.addEventListener('click',()=>{state.deck=b.dataset.deck;$('v4Toggle').checked=true;updateInspector();announce(`V4 action ${state.deck}. Selected vertex ${state.selected}.`);}));
+ $('play').addEventListener('click',()=>{if(state.graph!=='6')return;if(state.playing){pause();announce('Replay paused.');}else{if(state.position>=60)state.position=0;state.playing=true;$('play').textContent='Ⅱ Pause';announce('Recorded graph-route replay started.');requestDraw();}});
+ $('step').addEventListener('click',()=>{pause();state.position=Math.min(60,Math.floor(state.position)+1);updateTransport();requestDraw();announce(`Replay step ${state.position}. ${$('seamStatus').textContent}.`);});
+ $('reset').addEventListener('click',()=>{pause();state.position=0;updateTransport();requestDraw();announce('Replay reset. Camera unchanged.');});
+ $('scrubber').addEventListener('input',e=>{pause();state.position=Number(e.target.value);updateTransport();requestDraw();});
+ $('speed').addEventListener('change',e=>state.speed=Number(e.target.value));
+ function camera(action){if(action==='left')state.yaw-=.18;if(action==='right')state.yaw+=.18;if(action==='up')state.pitch=Math.min(1.4,state.pitch+.12);if(action==='down')state.pitch=Math.max(-1.4,state.pitch-.12);if(action==='in')state.zoom=Math.min(1.5,state.zoom+.1);if(action==='out')state.zoom=Math.max(.6,state.zoom-.1);if(action==='reset'){state.yaw=-.62;state.pitch=.21;state.zoom=1;}requestDraw();}
+ all('[data-camera]').forEach(b=>b.addEventListener('click',()=>camera(b.dataset.camera)));
+ canvas.addEventListener('keydown',e=>{const action={ArrowLeft:'left',ArrowRight:'right',ArrowUp:'up',ArrowDown:'down','+':'in','=':'in','-':'out'}[e.key];if(action){e.preventDefault();camera(action);}else if(e.key===' '){e.preventDefault();if(!$('play').disabled)$('play').click();}});
+ canvas.addEventListener('pointerdown',e=>{drag={x:e.clientX,y:e.clientY,ox:e.clientX,oy:e.clientY,moved:false,pointer:e.pointerId};if(e.pointerType==='mouse')canvas.setPointerCapture(e.pointerId);});
+ canvas.addEventListener('pointermove',e=>{if(!drag)return;const dx=e.clientX-drag.x,dy=e.clientY-drag.y;if(Math.hypot(e.clientX-drag.ox,e.clientY-drag.oy)>5)drag.moved=true;state.yaw+=dx*.008;state.pitch=Math.max(-1.4,Math.min(1.4,state.pitch+dy*.008));drag.x=e.clientX;drag.y=e.clientY;requestDraw();});
+ canvas.addEventListener('pointerup',e=>{if(drag&&!drag.moved){const rect=canvas.getBoundingClientRect(),x=e.clientX-rect.left,y=e.clientY-rect.top;const near=picking.map(p=>({p,d:Math.hypot(p.x-x,p.y-y)})).sort((a,b)=>a.d-b.d)[0];if(near&&near.d<18){state.anchor=near.p.id;state.deck='e';$('v4Toggle').checked=true;updateInspector();announce(`Selected source vertex ${state.selected}.`);}}drag=null;});canvas.addEventListener('pointercancel',()=>drag=null);
+ const tabs=all('[data-tab]');function setTab(b){tabs.forEach(t=>{const active=t===b;t.setAttribute('aria-selected',String(active));t.tabIndex=active?0:-1;$(t.dataset.tab+'-panel').hidden=!active;});}
+ tabs.forEach((b,i)=>{b.addEventListener('click',()=>setTab(b));b.addEventListener('keydown',e=>{let n;if(e.key==='ArrowRight')n=(i+1)%tabs.length;if(e.key==='ArrowLeft')n=(i+tabs.length-1)%tabs.length;if(e.key==='Home')n=0;if(e.key==='End')n=tabs.length-1;if(n!==undefined){e.preventDefault();setTab(tabs[n]);tabs[n].focus();}});});
+ $('exportState').addEventListener('click',()=>{const blob=new Blob([JSON.stringify({schema:'thalean.atomic.layout.preview.export.v0.2',preset:atoms[state.atom],ui:{...state,playing:false},layers:{edges:$('edgeToggle').checked,trace:$('traceToggle').checked,electronCountTraces:$('electronTraceToggle').checked,electronCountTracesActive:visibleElectronTraces(),v4:$('v4Toggle').checked,guide:$('guideToggle').checked},atomicSiteRegistry:{schema:'thalean.atomic_sites.v0.9',records:siteRegistry,chemicalBondsAdmitted:0},connectionRegistry:{schema:"thalean.connection_registry.v0.2",policy:$("registryPolicy").value,records:validateRegistry(),chemicalBondsAdmitted:0},strandAction:{enabled:state.strandEnabled,bridges:state.linkEnabled,stride:state.bridgeStride,semantics:"same-route-position paired display correspondence; not a chemical bond"},helicalAction:{enabled:state.helix,turnsPerCycle:state.helixTurns,radius:state.helixRadius,handedness:state.helixHand,frame:"closure-corrected rotation-minimizing transported frame (display only)",deckRegister:state.helixDeck,deckPhaseConventionRadians:deckPhase[state.helixDeck],physicalHelixClaim:false,dnaModelConnected:false},traceIllustration:{enabled:visibleElectronTraces(),traceCount:visibleElectronTraces()?atoms[state.atom].e:0,descriptors:traceDescriptors(),physicalTrajectories:false,phaseRule:manifest.trace_overlay.phase_rule},manifest,notice:'Illustrative electron counts, source geometry, and recorded-route preview only. No numerical atomic calculation or derived electron paths.'},null,2)],{type:'application/json'});const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='thalean-atomic-preview-state.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);announce('Preview state exported locally.');});
+ document.addEventListener('visibilitychange',()=>{if(document.hidden&&state.playing){pause();announce('Replay paused while the page was hidden.');}});
+ // In mobile DOM order, keep playback immediately after the scene and place controls below it.
+ const media=matchMedia('(max-width:759px)');function reorder(){const grid=$('mainGrid'),transport=$('transport');if(media.matches){grid.after($('referenceCard'));grid.after($('controlPanel'));grid.after(transport);}else{grid.prepend($('referenceCard'));grid.append($('controlPanel'));grid.after(transport);}resize();}media.addEventListener('change',reorder);
+ if(ctx){new ResizeObserver(resize).observe($('sceneWrap'));}else{$('availability').textContent='Graphics unavailable. The reference and selected-state controls remain available.';}
+ for(let s=0;s<60;s++){const opt=document.createElement('option');opt.value=String(s);opt.textContent=`Step ${s} · vertex ${data.route[s]}`;$('registryStep').append(opt);const so=opt.cloneNode(true);$('siteStep').append(so);}
+ $('registerSite').addEventListener('click',()=>{const x=addAtomicSite($('siteElement').value,$('siteStrand').value,Number($('siteStep').value));announce(x.ok?'Site '+x.id+' registered':x.reason)});
+ $('clearSites').addEventListener('click',()=>{siteRegistry.length=0;renderSites();renderRegistry();announce('Atomic site registry cleared')});
+ $('registerConnection').addEventListener('click',()=>{const outcome=addRegistryConnection(Number($('registryStep').value),$('registryType').value);announce(outcome.ok?`Registered ${outcome.id}`:outcome.reason);});
+ $('clearConnections').addEventListener('click',()=>{registry.length=0;renderRegistry();announce('Connection registry cleared');});
+ $('registryPolicy').addEventListener('change',()=>{renderRegistry();announce('Junctions evaluated under '+$('registryPolicy').value);});
+ $('evaluateConnections').addEventListener('click',()=>{renderRegistry();announce('Evaluation complete. Zero chemical bonds admitted.');});
+
+ // Molecular candidate workspace: reference-only adjacency with stable local site IDs.
+ const molecularLinks=[];
+ const molecularKey=(a,b)=>[a,b].sort().join('::');
+ function proposeMolecularLink(a,b){
+   if(a===b)return {ok:false,reason:'self_link_forbidden'};
+   if(!siteRegistry.some(s=>s.id===a)||!siteRegistry.some(s=>s.id===b))return {ok:false,reason:'both_sites_must_be_registered'};
+   const key=molecularKey(a,b);
+   if(molecularLinks.some(l=>l.id===key))return {ok:false,reason:'duplicate_relationship'};
+   molecularLinks.push({id:key,from:a,to:b,kind:'candidate_chemical_reference',chemicalBondAdmitted:false});
+   renderMolecule();return {ok:true,id:key};
+ }
+ function moleculeReceipt(){
+   const selected=new Set(molecularLinks.flatMap(l=>[l.from,l.to]));
+   const sites=siteRegistry.filter(s=>selected.has(s.id));
+   const missing=molecularLinks.filter(l=>!siteRegistry.some(s=>s.id===l.from)||!siteRegistry.some(s=>s.id===l.to));
+   const adj=new Map(sites.map(s=>[s.id,[]]));
+   for(const l of molecularLinks)if(adj.has(l.from)&&adj.has(l.to)){adj.get(l.from).push(l.to);adj.get(l.to).push(l.from);}
+   const visited=new Set(),start=sites[0]?.id;if(start){const todo=[start];while(todo.length){const x=todo.pop();if(visited.has(x))continue;visited.add(x);todo.push(...adj.get(x));}}
+   const counts={H:0,He:0,O:0};sites.forEach(s=>counts[s.element]++);
+   const connected=sites.length>0&&visited.size===sites.length&&!missing.length;
+   const degrees=Object.fromEntries(sites.map(s=>[s.id,adj.get(s.id).length]));
+   const waterPattern=connected&&sites.length===3&&molecularLinks.length===2&&counts.H===2&&counts.O===1&&counts.He===0&&sites.filter(s=>s.element==='O').every(s=>degrees[s.id]===2)&&sites.filter(s=>s.element==='H').every(s=>degrees[s.id]===1);
+   const reasons=[];if(!sites.length)reasons.push('no_candidate_sites');if(missing.length)reasons.push('stale_site_reference');if(sites.length&&!connected)reasons.push('candidate_not_connected');
+   if(!waterPattern)reasons.push('not_the_H_O_H_reference_pattern');
+   reasons.push('no_multisite_electronic_solver','no_bond_energy_or_geometry_law','chemical_bond_admission_unavailable');
+   return {policy:'molecular_reference_candidate.v0.9',decision:waterPattern?'reference_pattern_match':'unconfirmed_candidate',connected,waterReferencePattern:waterPattern,siteCount:sites.length,linkCount:molecularLinks.length,elements:counts,sites:sites.map(s=>({id:s.id,element:s.element,strand:s.strand,step:s.step,sourceVertex:s.sourceVertex})),links:molecularLinks.map(l=>({...l})),reasons,chemicalBondAdmitted:false,moleculeAdmitted:false};
+ }
+ function renderMolecule(){
+   const ids=siteRegistry.map(s=>s.id),sel0=$('molFrom').value,sel1=$('molTo').value;
+   for(const id of ['molFrom','molTo']){const e=$(id);e.replaceChildren();for(const s of siteRegistry){const opt=document.createElement('option');opt.value=s.id;opt.textContent=`${s.element} · ${s.strand}@${s.step}`;e.append(opt);}}
+   if(ids.includes(sel0))$('molFrom').value=sel0;if(ids.includes(sel1))$('molTo').value=sel1;
+   if(!$('molTo').value&&ids.length>1)$('molTo').value=ids[1];
+   const rec=moleculeReceipt();$('molStatus').textContent=`${rec.siteCount} linked sites · ${rec.linkCount} proposed links · ${rec.waterReferencePattern?'H–O–H reference pattern matched':rec.connected?'connected candidate':'no connected candidate'} · 0 admitted bonds`;
+   $('molList').replaceChildren();for(const l of molecularLinks){const a=siteRegistry.find(s=>s.id===l.from),b=siteRegistry.find(s=>s.id===l.to);const li=document.createElement('li');li.textContent=`${a?.element??'?'} (${a?.id??l.from}) — ${b?.element??'?'} (${b?.id??l.to}) · reference candidate only`;$('molList').append(li);}
+   requestDraw();window.dispatchEvent(new Event('thalean-sites-changed'));return rec;
+ }
+ function seedWaterExample(){
+   // The example is a local candidate, not a rearrangement of graph edges or atomic data.
+   if(state.graph!=='6')return {ok:false,reason:'structure_G60_required'};
+   siteRegistry.length=0;molecularLinks.length=0;
+   const entries=[['O','S0',6],['H','S1',6],['H','S0',12]];
+   for(const [element,strand,step] of entries){const result=addAtomicSite(element,strand,step);if(!result.ok)return result;}
+   proposeMolecularLink(siteId('S0',6),siteId('S1',6));
+   proposeMolecularLink(siteId('S0',6),siteId('S0',12));
+   return {ok:true,receipt:renderMolecule()};
+ }
+ $('seedWater').addEventListener('click',()=>{const x=seedWaterExample();announce(x.ok?'H–O–H reference candidate seeded; no bonds admitted':x.reason)});
+ $('clearMolecule').addEventListener('click',()=>{molecularLinks.length=0;renderMolecule();announce('Candidate relationships cleared')});
+ $('molAddLink').addEventListener('click',()=>{const x=proposeMolecularLink($('molFrom').value,$('molTo').value);announce(x.ok?'Reference relationship proposed; no bonds admitted':x.reason)});
+ $('molEvaluate').addEventListener('click',()=>{const r=renderMolecule();announce(r.waterReferencePattern?'H–O–H reference shape matched; chemical admission remains closed':'Candidate evaluated; no chemical bonds admitted')});
+ // Keep stale site links visible as refusals rather than silently converting them to bonds.
+ $('clearSites').addEventListener('click',renderMolecule);
+ $('registerSite').addEventListener('click',renderMolecule);
+
+ window.TH_MOLECULE_AUDIT=()=>moleculeReceipt();
+ // Read-only bridge into independent 3D view. Never overwrite graph address with display coordinates.
+ window.TH_SITE_BRIDGE=()=>({sourceGraph:state.graph==='6'?'AT4val[60,6]':'AT4val[60,4]',sites:siteRegistry.map(s=>({...s,reference:{...s.reference}})),links:molecularLinks.map(l=>({...l})),receipt:moleculeReceipt(),chemicalBondsAdmitted:0});
+ renderMolecule();
+ updateInspector();updateTransport();updateTraceUI();updateHelixUI();updateStrandUI();renderSites();renderRegistry();reorder();
+ window.TH_AUDIT=()=>({atom:state.atom,graph:state.graph,position:state.position,playing:state.playing,projection:state.projection,selected:state.selected,orbit:quartet(state.anchor),atomicSolverConnected:false,g900SourceConnected:false,graphVertices:graph().vertices.length,graphEdges:graph().edges.length,referenceElectronCount:atoms[state.atom].e,electronTraceCount:visibleElectronTraces()?atoms[state.atom].e:0,drawnElectronTraceCount:drawnElectronTraces.length,electronTraces:drawnElectronTraces.map(t=>({id:t.id,label:t.label,phase:t.phase,position3D:t.position3D,basePosition3D:t.basePosition3D,screen:t.screen})),waltzCursorCount:state.graph==='6'&&$('traceToggle').checked?1:0,helix:{enabled:state.helix,turns:state.helixTurns,radius:state.helixRadius,hand:state.helixHand,deck:state.helixDeck,frame:'rotation_minimizing_closed_v1'},atomicSites:{entries:siteRegistry,chemicalBondsAdmitted:0},registry:{entries:validateRegistry(),policy:$('registryPolicy').value,chemicalBondsAdmitted:0,chemicalClaim:false,referencePairKeys:Object.keys(referencePairs)},strands:{...strandAudit,enabledSetting:state.strandEnabled,linksSetting:state.linkEnabled,stride:state.bridgeStride,geometricOnly:true,dnaClaim:false},traceKind:'illustrative_not_computed_atomic_trajectories'});
+})();
+</script>
+<style>
+#mol-workbench{max-width:1450px;margin:22px auto;padding:22px;border:1px solid #32516b;border-radius:18px;background:#0a1828;color:#eaf6ff;font-family:system-ui,sans-serif}#mol-workbench h2{margin:0 0 4px;font-size:23px}#mol-workbench .mol-note{font-size:13px;color:#a6bdcf;margin:5px 0 12px}#mol-workbench .mol-grid{display:grid;grid-template-columns:minmax(250px,1fr) minmax(220px,300px);gap:18px}#mol-workbench canvas{width:100%;height:390px;border-radius:12px;background:radial-gradient(circle,#182e46,#06101c);touch-action:none;cursor:grab}#mol-workbench .mol-control{margin-bottom:18px}#mol-workbench label{display:block;margin-bottom:6px;font-size:13px;color:#d1eafa}#mol-workbench input[type=range]{width:100%}#mol-workbench select,#mol-workbench button{min-height:44px;background:#10283c;border:1px solid #52748d;color:#f3faff;padding:8px;border-radius:8px}#mol-workbench .mol-stat{color:#acd2e1;font-size:12px;line-height:1.6}#mol-workbench button{cursor:pointer}#mol-workbench .mol-footer{margin-top:14px;color:#b6cbd7;font-size:12px}#mol-workbench .mol-row{display:flex;justify-content:space-between;gap:10px}#mol-workbench .mol-green{color:#8ee8d2}@media(max-width:750px){#mol-workbench{margin:14px;padding:14px}#mol-workbench .mol-grid{grid-template-columns:1fr}#mol-workbench canvas{height:310px}}
+#mol-workbench .assembly-transform{border:1px solid #355269;padding:12px;border-radius:12px;margin:12px 0;background:#0b2031}#mol-workbench .assembly-transform h3{font-size:15px;margin:0 0 9px}#mol-workbench .transform-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}#mol-workbench .transform-grid label{font-size:11px}#mol-workbench .transform-grid input{width:100%}#mol-workbench .transform-grid strong{float:right}#mol-workbench .assembly-buttons{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}#mol-workbench .assembly-buttons button{flex:1}</style><section id="mol-workbench" aria-label="Three-dimensional candidate molecular placement">
+ <h2>3D Molecular Candidate Workspace <span style="font-size:12px;color:#8fe5ec">v1.2</span></h2>
+ <p class="mol-note">Independent placement view for H, He, O. Geometry is reference-guided or user-selected; no G60 molecular forces or chemical bonds are computed.</p>
+ <div class="mol-grid"><div><canvas id="molCanvas" role="img" aria-label="Rotatable 3D projection of selected candidate atomic sites"></canvas><p class="mol-stat">Drag to rotate · labels indicate atoms · solid rods show <strong>candidate links only</strong></p></div>
+ <div><div class="mol-control"><label for="molPreset">Candidate assembly</label><select id="molPreset"><option value="registered">Registered sites (live)</option><option value="water">H–O–H (three sites)</option><option value="hydrogen">H–H (two sites)</option><option value="oxygen">O–O (two sites)</option><option value="helium">He···He (comparison only)</option></select></div>
+ <div class="mol-control" id="molAngleGroup"><label for="molAngle">H–O–H angle <strong id="molAngleLabel">104.5°</strong></label><input id="molAngle" type="range" min="80" max="140" step="0.5" value="104.5"/></div>
+ <div class="mol-control"><label for="molLength">Candidate separation <strong id="molLengthLabel">1.00×</strong></label><input id="molLength" type="range" min="0.6" max="1.6" step="0.05" value="1"/></div>
+ <div class="mol-control"><label for="molTilt">View tilt <strong id="molTiltLabel">22°</strong></label><input id="molTilt" type="range" min="-80" max="80" value="22"/></div>
+ <div class="assembly-transform" aria-label="Assembly transform"><h3>Rigid assembly transform · display only</h3><div class="transform-grid">
+<div><label for="molMoveX">Translate X <strong id="molMoveXLabel">0.00</strong></label><input id="molMoveX" type="range" min="-2" max="2" step="0.05" value="0"></div><div><label for="molMoveY">Translate Y <strong id="molMoveYLabel">0.00</strong></label><input id="molMoveY" type="range" min="-2" max="2" step="0.05" value="0"></div><div><label for="molMoveZ">Translate Z <strong id="molMoveZLabel">0.00</strong></label><input id="molMoveZ" type="range" min="-2" max="2" step="0.05" value="0"></div><div><label for="molRotX">Rotate X <strong id="molRotXLabel">0°</strong></label><input id="molRotX" type="range" min="-180" max="180" step="5" value="0"></div><div><label for="molRotY">Rotate Y <strong id="molRotYLabel">0°</strong></label><input id="molRotY" type="range" min="-180" max="180" step="5" value="0"></div><div><label for="molRotZ">Rotate Z <strong id="molRotZLabel">0°</strong></label><input id="molRotZ" type="range" min="-180" max="180" step="5" value="0"></div></div><div class="assembly-buttons"><button id="molResetTransform" type="button">Reset assembly transform</button></div><p class="mol-stat">Rigid transformation preserves local distances, candidate links and registered identities; camera rotation is independent.</p></div><button id="molReset" type="button">Reset placement &amp; camera</button><div class="mol-stat" id="molReadout" aria-live="polite"></div></div></div>
+ <p class="mol-footer">Registered mode reads the atomic-site registry and candidate relationship IDs. Display coordinates are a separate illustrative placement, not route coordinates. Water's ~104.5° angle is an imported reference benchmark, not a Thalean prediction. Candidate rods do not indicate admitted chemical bonds. H–H, O–O and He···He remain reference geometry examples. This panel does not modify the G60 simulation or its junction register.</p>
+</section><script>
+(()=>{'use strict';
+ const $=id=>document.getElementById(id), canvas=$('molCanvas'), ctx=canvas.getContext('2d');
+ if(!ctx)return;
+ const state={yaw:-0.58,tilt:22,angle:104.5,length:1,preset:'registered',drag:null,shift:[0,0,0],rotation:[0,0,0]};
+ const presets={water:{labels:['O','H','H'],types:['O','H','H'],links:[[0,1],[0,2]],title:'H–O–H · water connectivity candidate'},hydrogen:{labels:['H','H'],types:['H','H'],links:[[0,1]],title:'H–H · diatomic candidate'},oxygen:{labels:['O','O'],types:['O','O'],links:[[0,1]],title:'O–O · diatomic candidate'},helium:{labels:['He','He'],types:['He','He'],links:[],title:'He···He · unlinked comparison'}};
+ const colours={O:'#e17b8a',H:'#d6ecff',He:'#dcbbff'}, radii={O:23,H:15,He:19};
+ function registeredSnapshot(){return window.TH_SITE_BRIDGE?window.TH_SITE_BRIDGE():{sites:[],links:[],sourceGraph:'unavailable',chemicalBondsAdmitted:0};}
+ function registeredScene(){
+  const snap=registeredSnapshot(),sites=snap.sites.filter(s=>s.sourceGraph==='AT4val[60,6]');
+  const ids=new Map(sites.map((s,i)=>[s.id,i]));
+  const links=snap.links.filter(l=>ids.has(l.from)&&ids.has(l.to)).map(l=>[ids.get(l.from),ids.get(l.to)]);
+  // Deterministic illustrative layout: connected 3-site candidate gets a reference-guided bend;
+  // other assemblies occupy an indexed circular distribution; no molecular energy calculation.
+  let positions=sites.map((s,i)=>{const phase=2*Math.PI*i/Math.max(sites.length,1);return [state.length*Math.cos(phase),state.length*Math.sin(phase),.18*state.length*Math.sin(phase*2)];});
+  if(sites.length===3&&links.length===2){
+   const degrees=sites.map((s,i)=>links.filter(l=>l.includes(i)).length),centre=degrees.indexOf(2);
+   if(centre>=0){const leaves=[0,1,2].filter(i=>i!==centre),a=state.angle*Math.PI/360,L=state.length;positions[centre]=[0,.5*L,0];positions[leaves[0]]=[L*Math.sin(a),.5*L-L*Math.cos(a),0];positions[leaves[1]]=[-L*Math.sin(a),.5*L-L*Math.cos(a),0];}
+  }
+  return {snap,sites,links,positions};
+ }
+ function geometry(){if(state.preset==='registered')return registeredScene().positions;const a=state.angle*Math.PI/180,L=state.length;if(state.preset==='water'){return [[0,0,0],[Math.sin(a/2)*L,-Math.cos(a/2)*L,0],[-Math.sin(a/2)*L,-Math.cos(a/2)*L,0]];}return [[-L*.7,0,0],[L*.7,0,0]];}
+ function rigid(v){const [rx,ry,rz]=state.rotation.map(a=>a*Math.PI/180);let [x,y,z]=v;
+  let yy=y*Math.cos(rx)-z*Math.sin(rx),zz=y*Math.sin(rx)+z*Math.cos(rx);y=yy;z=zz;
+  let xx=x*Math.cos(ry)+z*Math.sin(ry);zz=-x*Math.sin(ry)+z*Math.cos(ry);x=xx;z=zz;
+  xx=x*Math.cos(rz)-y*Math.sin(rz);yy=x*Math.sin(rz)+y*Math.cos(rz);
+  return [xx+state.shift[0], yy+state.shift[1],z+state.shift[2]];}
+ function projection(v,w,h){const y=state.yaw,t=state.tilt*Math.PI/180,c=Math.cos(y),s=Math.sin(y),ct=Math.cos(t),st=Math.sin(t);const x=v[0]*c-v[2]*s, z=v[0]*s+v[2]*c, yy=v[1]*ct-z*st, depth=v[1]*st+z*ct,scale=Math.min(w,h)*.36*(3/(3-depth*.24));return{x:w/2+x*scale,y:h/2-yy*scale+8,z:depth,scale};}
+ function render(){let b=canvas.getBoundingClientRect(),w=Math.max(220,b.width),h=Math.max(200,b.height),dpr=Math.min(window.devicePixelRatio||1,2);if(canvas.width!==Math.round(w*dpr)||canvas.height!==Math.round(h*dpr)){canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);}ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,w,h);
+ const reg=state.preset==='registered'?registeredScene():null;
+ const localPositions=(reg?reg.positions:geometry());const transformedPositions=localPositions.map(rigid);
+ const config=reg?{types:reg.sites.map(s=>s.element),labels:reg.sites.map(s=>s.element),links:reg.links,title:`Registered candidate · ${reg.snap.sourceGraph}`} : presets[state.preset],pts=transformedPositions.map(v=>projection(v,w,h));
+ ctx.lineWidth=12;ctx.lineCap='round';for(const [a,b] of config.links){ctx.strokeStyle='rgba(139,199,221,.6)';ctx.beginPath();ctx.moveTo(pts[a].x,pts[a].y);ctx.lineTo(pts[b].x,pts[b].y);ctx.stroke();}
+ for(const item of pts.map((p,i)=>({...p,i})).sort((a,b)=>a.z-b.z)){const t=config.types[item.i],r=radii[t],grad=ctx.createRadialGradient(item.x-r*.35,item.y-r*.4,2,item.x,item.y,r);grad.addColorStop(0,'#fff');grad.addColorStop(.28,colours[t]);grad.addColorStop(1,'#243345');ctx.fillStyle=grad;ctx.shadowColor=colours[t];ctx.shadowBlur=15;ctx.beginPath();ctx.arc(item.x,item.y,r,0,Math.PI*2);ctx.fill();ctx.shadowBlur=0;ctx.font='bold 14px system-ui';ctx.fillStyle='#0b1724';ctx.textAlign='center';ctx.fillText(config.labels[item.i],item.x,item.y+5);}
+ $('molReadout').textContent=config.title+' · '+config.types.length+' sites · '+config.links.length+' candidate links · admitted bonds: 0'+(reg?' · registered route addresses preserved separately':' · illustration preset');
+ window.TH_PLACEMENT_AUDIT=()=>({mode:state.preset,siteIds:reg?.sites.map(s=>s.id)||[],sourceVertices:reg?.sites.map(s=>s.sourceVertex)||[],displayPositions:transformedPositions.map(p=>[...p]),localPositions:localPositions.map(p=>[...p]),assemblyTranslation:[...state.shift],assemblyRotationDeg:[...state.rotation],siteIdOrder:reg?.sites.map(s=>s.id)||[],linkIds:reg?.snap.links.map(l=>l.id)||[],links:config.links,chemicalBondsAdmitted:0,derivedMolecularForces:false});}
+ function update(){for(let i=0;i<3;i++){const a='XYZ'[i];state.shift[i]=Number($('molMove'+a).value);state.rotation[i]=Number($('molRot'+a).value);$('molMove'+a+'Label').textContent=state.shift[i].toFixed(2);$('molRot'+a+'Label').textContent=state.rotation[i]+'°';}state.preset=$('molPreset').value;state.angle=Number($('molAngle').value);state.length=Number($('molLength').value);state.tilt=Number($('molTilt').value);$('molAngleLabel').textContent=state.angle.toFixed(1)+'°';$('molLengthLabel').textContent=state.length.toFixed(2)+'×';$('molTiltLabel').textContent=state.tilt+'°';$('molAngleGroup').hidden=state.preset!=='water';render();}
+ for(const id of ['molPreset','molAngle','molLength','molTilt',...'XYZ'.split('').flatMap(a=>['molMove'+a,'molRot'+a])])$(id).addEventListener('input',update);
+ $('molResetTransform').addEventListener('click',()=>{for(const a of 'XYZ'){$('molMove'+a).value='0';$('molRot'+a).value='0';}update();});
+ $('molReset').addEventListener('click',()=>{for(const a of 'XYZ'){$('molMove'+a).value='0';$('molRot'+a).value='0';}state.yaw=-.58;$('molPreset').value='registered';$('molAngle').value='104.5';$('molLength').value='1';$('molTilt').value='22';update();});
+ canvas.addEventListener('pointerdown',e=>{canvas.setPointerCapture(e.pointerId);state.drag={x:e.clientX,y:e.clientY,yaw:state.yaw,tilt:state.tilt};});
+ canvas.addEventListener('pointermove',e=>{if(!state.drag)return;state.yaw=state.drag.yaw+(e.clientX-state.drag.x)*.012;state.tilt=Math.max(-80,Math.min(80,state.drag.tilt+(e.clientY-state.drag.y)*.3));$('molTilt').value=String(Math.round(state.tilt));update();});
+ for(const event of ['pointerup','pointercancel'])canvas.addEventListener(event,()=>state.drag=null);
+ window.addEventListener('resize',render);window.addEventListener('thalean-sites-changed',()=>{if(state.preset==='registered')render();});update();
+})();
+</script><style>
+#dual-workbench{max-width:1450px;margin:20px auto;padding:20px;background:#0b1a2b;border:1px solid #38546c;border-radius:18px;color:#e8f5ff;font:14px system-ui,sans-serif}#dual-workbench h2{margin:0 0 6px;font-size:23px}#dual-workbench p{color:#a9bfd0;line-height:1.5}#dual-workbench .dual-layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:16px}#dual-workbench canvas{display:block;width:100%;height:390px;background:radial-gradient(ellipse at 50% 50%,#162e48,#08121e 74%);border:1px solid #37516b;border-radius:12px;touch-action:pan-y}#dual-workbench .dual-panel{display:grid;gap:12px}#dual-workbench fieldset{border:1px solid #37516b;border-radius:10px;padding:12px;min-width:0}#dual-workbench legend{color:#8fe5ec}#dual-workbench label{display:block;margin:5px 0;color:#c4d8e7}#dual-workbench input[type=range]{width:100%}#dual-workbench button,#dual-workbench select{background:#143049;color:#eaf5fe;border:1px solid #577a96;border-radius:8px;padding:10px;min-height:40px}#dual-workbench .dual-stat{font:12px/1.55 ui-monospace,monospace;white-space:pre-wrap;color:#b9d6e5;padding:10px;border-radius:9px;background:#0c2435}#dual-workbench .dual-row{display:flex;gap:8px;flex-wrap:wrap}#dual-workbench .dual-row>*{flex:1}#dual-workbench .dual-warning{color:#f1c691;font-size:12px}@media(max-width:800px){#dual-workbench{margin:15px;padding:14px}#dual-workbench .dual-layout{grid-template-columns:1fr}#dual-workbench canvas{height:300px}}
+</style><section id="dual-workbench" aria-label="Two independent molecular assemblies">
+<h2>Assembly Encounter · v1.3</h2>
+<p>Two independently movable candidate assemblies. A reads the live site registry; B is a separate H/O reference candidate. A dashed interface indicates geometric proximity, not chemical admission.</p>
+<div class="dual-layout"><div><canvas id="dualCanvas" role="img" aria-label="Two rotatable candidate assemblies with proximity interface"></canvas><p class="dual-warning">Geometry is illustrative, dimensionless, and independent of native G60 addresses. No force, bond energy or molecular admission.</p><div class="dual-stat" id="dualReadout" aria-live="polite">Loading assembly interface…</div></div>
+<div class="dual-panel">
+<fieldset><legend>Assembly A · registered sites</legend><div id="dualACount">No sites loaded</div><label for="dualAX">Translate X</label><input id="dualAX" type="range" min="-3" max="3" step="0.05" value="-1.3"><label for="dualAY">Translate Y</label><input id="dualAY" type="range" min="-3" max="3" step="0.05" value="0"><label for="dualAR">Rotate Z</label><input id="dualAR" type="range" min="-180" max="180" step="5" value="0"></fieldset>
+<fieldset><legend>Assembly B · independent reference candidate</legend><label for="dualPreset">Candidate</label><select id="dualPreset"><option value="water">H–O–H</option><option value="hydrogen">H–H</option><option value="oxygen">O–O</option><option value="helium">He···He</option></select><label for="dualBX">Translate X</label><input id="dualBX" type="range" min="-3" max="3" step="0.05" value="1.4"><label for="dualBY">Translate Y</label><input id="dualBY" type="range" min="-3" max="3" step="0.05" value="0"><label for="dualBR">Rotate Z</label><input id="dualBR" type="range" min="-180" max="180" step="5" value="0"></fieldset>
+<fieldset><legend>Candidate encounter</legend><label for="dualThreshold">Proximity threshold (display units) <output id="dualThresholdValue">0.70</output></label><input id="dualThreshold" type="range" min="0.2" max="1.5" step="0.05" value="0.70"><div class="dual-row"><button id="dualCheck" type="button">Evaluate proximity</button><button id="dualReset" type="button">Reset</button></div><p class="dual-warning">Evaluation records distance only; every cross-assembly chemical bond remains refused.</p></fieldset>
+</div></div></section><script>
+(()=>{'use strict';
+const el=id=>document.getElementById(id),canvas=el('dualCanvas'),ctx=canvas.getContext('2d');if(!ctx)return;
+const models={water:{atoms:['O','H','H'],edges:[[0,1],[0,2]],pos:[[0,.46,0],[-.79,-.15,0],[.79,-.15,0]]},hydrogen:{atoms:['H','H'],edges:[[0,1]],pos:[[-.48,0,0],[.48,0,0]]},oxygen:{atoms:['O','O'],edges:[[0,1]],pos:[[-.54,0,0],[.54,0,0]]},helium:{atoms:['He','He'],edges:[],pos:[[-.65,0,0],[.65,0,0]]}};
+const colors={O:'#e77a8f',H:'#cdeeff',He:'#c6b4f5'};let lastResult=null;
+function sourceA(){const s=window.TH_SITE_BRIDGE?.()||{sites:[],links:[],sourceGraph:'unavailable'};const sites=s.sites.filter(a=>a.sourceGraph==='AT4val[60,6]');const idx=new Map(sites.map((a,i)=>[a.id,i]));const links=s.links.filter(l=>idx.has(l.from)&&idx.has(l.to)).map(l=>[idx.get(l.from),idx.get(l.to)]);let pos=sites.map((_,i)=>[.8*Math.cos(2*Math.PI*i/Math.max(1,sites.length)),.8*Math.sin(2*Math.PI*i/Math.max(1,sites.length)),0]);if(sites.length===3&&links.length===2){const deg=sites.map((_,i)=>links.filter(x=>x.includes(i)).length);const pivot=deg.indexOf(2);if(pivot>=0){const leaf=[0,1,2].filter(i=>i!==pivot);pos[pivot]=[0,.46,0];pos[leaf[0]]=[-.79,-.15,0];pos[leaf[1]]=[.79,-.15,0];}}
+return {atoms:sites.map(x=>x.element),ids:sites.map(x=>x.id),sourceVertices:sites.map(x=>x.sourceVertex),pos,edges:links};}
+function move(scene,id){const x=Number(el('dual'+id+'X').value),y=Number(el('dual'+id+'Y').value),angle=Number(el('dual'+id+'R').value)*Math.PI/180,c=Math.cos(angle),s=Math.sin(angle);return {...scene,positions:scene.pos.map(([px,py,pz])=>[c*px-s*py+x,s*px+c*py+y,pz])};}
+function calculate(){const a=move(sourceA(),'A');const raw=models[el('dualPreset').value];const b=move({...raw,ids:raw.atoms.map((_,i)=>`B-${el('dualPreset').value}-${i}`)},'B');const cutoff=Number(el('dualThreshold').value);let best=null;for(let i=0;i<a.positions.length;i++)for(let j=0;j<b.positions.length;j++){const p=a.positions[i],q=b.positions[j],d=Math.hypot(p[0]-q[0],p[1]-q[1],p[2]-q[2]);if(!best||d<best.distance)best={aId:a.ids[i],bId:b.ids[j],aIndex:i,bIndex:j,distance:d};}
+return {a,b,best,cutoff,proximate:!!best&&best.distance<=cutoff};}
+function paint(){const r=calculate(),rect=canvas.getBoundingClientRect(),w=Math.max(200,rect.width),h=Math.max(220,rect.height),dpr=Math.min(window.devicePixelRatio||1,2);canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,w,h);const scale=Math.min(w/8,h/5.8)*.93;const proj=p=>({x:w/2+p[0]*scale,y:h/2-p[1]*scale-p[2]*scale*.17});
+for(const [group,scene] of [['A',r.a],['B',r.b]]){const pts=scene.positions.map(proj);ctx.lineCap='round';for(const [i,j] of scene.edges){ctx.strokeStyle=group==='A'?'#528ba8':'#a99bda';ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.stroke();}pts.forEach((p,i)=>{ctx.fillStyle=colors[scene.atoms[i]]||'#fff';ctx.beginPath();ctx.arc(p.x,p.y,scene.atoms[i]==='O'?15:11,0,Math.PI*2);ctx.fill();ctx.fillStyle='#0c1521';ctx.font='bold 12px system-ui';ctx.textAlign='center';ctx.fillText(scene.atoms[i],p.x,p.y+4);});}
+if(r.proximate){const p=proj(r.a.positions[r.best.aIndex]),q=proj(r.b.positions[r.best.bIndex]);ctx.strokeStyle='#f7c276';ctx.lineWidth=2;ctx.setLineDash([6,5]);ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke();ctx.setLineDash([]);}
+el('dualACount').textContent=`${r.a.atoms.length} registered sites`;el('dualThresholdValue').textContent=r.cutoff.toFixed(2);const best=r.best;el('dualReadout').textContent=`A: ${r.a.atoms.length} sites / ${r.a.edges.length} internal candidates\nB: ${r.b.atoms.length} sites / ${r.b.edges.length} internal candidates\nClosest pair: ${best?best.aId+' ↔ '+best.bId:'none'}\nDistance: ${best?best.distance.toFixed(3):'N/A'} display units\nProximity: ${r.proximate?'yes':'no'} · chemical bond admitted: NO`;return r;}
+const controls=['dualAX','dualAY','dualAR','dualBX','dualBY','dualBR','dualPreset','dualThreshold'];controls.forEach(id=>el(id).addEventListener('input',()=>{lastResult=null;paint();}));el('dualCheck').addEventListener('click',()=>{const r=paint();lastResult={schema:'thalean.assembly.encounter.v1.3',aSiteIds:[...r.a.ids],aSourceVertices:[...r.a.sourceVertices],bSiteIds:[...r.b.ids],closest:r.best?{...r.best}:null,threshold:r.cutoff,proximityValid:r.proximate,chemicalBondAdmitted:false,reason:r.best?'geometry_only_no_chemical_energy_model':'no_registered_A_sites'};el('dualReadout').textContent+='\nEvaluation recorded: '+lastResult.reason;});el('dualReset').addEventListener('click',()=>{for(const [id,v] of Object.entries({dualAX:-1.3,dualAY:0,dualAR:0,dualBX:1.4,dualBY:0,dualBR:0,dualPreset:'water',dualThreshold:.7}))el(id).value=v;lastResult=null;paint();});window.addEventListener('thalean-sites-changed',()=>{lastResult=null;paint();});window.addEventListener('resize',paint);window.TH_ENCOUNTER_AUDIT=()=>({current:calculate(),lastEvaluation:lastResult});paint();
+})();
+</script><style>
+#encounter-ledger{max-width:1450px;margin:18px auto;padding:20px;background:#0b1a2b;color:#e8f5ff;border:1px solid #38546c;border-radius:18px;font:14px system-ui,sans-serif}#encounter-ledger h2{font-size:23px;margin:0 0 8px}#encounter-ledger p{color:#b0c8d6;line-height:1.5}#encounter-ledger .actions{display:flex;flex-wrap:wrap;gap:9px;margin:12px 0}#encounter-ledger button{background:#13364d;color:#eaf7ff;border:1px solid #507993;border-radius:8px;padding:10px;min-height:44px;cursor:pointer}#encounter-ledger .stats{display:flex;flex-wrap:wrap;gap:10px}#encounter-ledger .stats span{padding:9px 12px;background:#102a3d;border-radius:7px}#encounter-ledger table{width:100%;border-collapse:collapse;font-size:12px}#encounter-ledger th,#encounter-ledger td{text-align:left;padding:9px 7px;border-bottom:1px solid #2e465a;vertical-align:top}#encounter-ledger .scroll{max-height:340px;overflow:auto}#encounter-ledger .muted{color:#b8cad9;font-size:12px}#encounter-ledger .alert{color:#f6cb94} @media(max-width:700px){#encounter-ledger{margin:15px;padding:14px}#encounter-ledger table{font-size:11px}}
+</style><section id="encounter-ledger" aria-label="Registered encounter history">
+<h2>Encounter History & Branches · v1.7</h2>
+<p>Observe a sequence of sampled assembly encounters. The event record distinguishes approach, contact threshold, separation, and return to an earlier geometric configuration. No motion or physical time is inferred between samples.</p>
+<div class="actions"><button id="ehSample" type="button">Record current sample</button><button id="ehReset" type="button">New history</button><button id="ehExport" type="button">Export JSON receipt</button></div>
+<section class="eh-replay" aria-label="Read-only encounter timeline"><h3>Encounter timeline · read-only preview</h3><div class="actions"><button id="ehFirst" type="button">First</button><button id="ehPrev" type="button">Previous</button><button id="ehNext" type="button">Next</button><button id="ehLast" type="button">Last</button><button id="ehLive" type="button">Leave replay</button></div><label for="ehScrub">Recorded observation <output id="ehIndex">Live · no replay selected</output></label><input id="ehScrub" type="range" min="0" max="0" value="0" step="1" disabled style="width:100%;accent-color:#7be9ff;min-height:40px"><canvas id="ehPreview" width="720" height="260" style="display:block;width:100%;max-width:720px;height:auto;margin:10px auto;background:#081522;border:1px solid #35516b;border-radius:12px" role="img" aria-label="Read-only planar assembly pose snapshot visualization"></canvas><p class="muted" id="ehReplayDetail" aria-live="polite">Select a recorded sample to inspect its saved configuration. Live assembly controls are unaffected.</p></section>
+<section class="eh-branches" aria-label="Experimental history branches"><h3>Experimental branches</h3><p>Fork at a selected observation to continue from the same recorded past. The parent history remains unchanged. Selecting a branch previews its history; only the explicit Restore branch tip action changes live controls.</p><div class="actions"><label for="ehBranchSelect">Active history <select id="ehBranchSelect" style="min-height:44px;background:#102a3d;color:#fff;border:1px solid #507993;border-radius:8px;padding:8px"><option value="main">Main history</option></select></label><button id="ehFork" type="button">Fork at selected observation</button><button id="ehRestore" type="button">Restore branch tip to live controls</button></div><p class="muted" id="ehBranchStatus" aria-live="polite">Main history · no branch selected.</p><div class="scroll"><table><thead><tr><th>History</th><th>Parent</th><th>Fork event</th><th>Samples</th><th>New events</th></tr></thead><tbody id="ehBranchRows"></tbody></table></div><p class="muted" id="ehCompare">Comparison becomes available after the first fork.</p></section>
+<div class="stats"><span id="ehCount">0 samples</span><span id="ehEncounter">0 encounter entries</span><span id="ehReturn">0 geometric returns</span></div>
+<p class="muted" id="ehStatus" aria-live="polite">Seed registered sites in Assembly A, then record samples as you move the assemblies.</p>
+<div class="scroll"><table><thead><tr><th>#</th><th>Observation</th><th>Distance</th><th>Inside threshold</th><th>Relative geometry</th></tr></thead><tbody id="ehRows"></tbody></table></div>
+<p class="alert">Observational geometry only. Recording order is user-controlled; a sampled return is not reversed time. All chemical bond admissions remain closed.</p>
+</section><script>
+(()=>{'use strict';
+const $=id=>document.getElementById(id);
+const branches=new Map([['main',{id:'main',name:'Main history',parent:null,forkEvent:null,prefix:0,events:[],nextLocalId:1}]]);
+let branchId='main',ledger=branches.get('main').events,nextId=1,replayIndex=-1,branchSerial=0;
+function active(){return branches.get(branchId);}
+function selectBranch(id){if(!branches.has(id))return;branchId=id;ledger=active().events;nextId=active().nextLocalId;replayIndex=-1;render();}
+function branchRows(){
+$('ehBranchSelect').replaceChildren();$('ehBranchRows').replaceChildren();
+for(const b of branches.values()){
+const opt=document.createElement('option');opt.value=b.id;opt.textContent=b.name;$('ehBranchSelect').appendChild(opt);
+const tr=document.createElement('tr');for(const v of [b.name,b.parent||'—',b.forkEvent??'—',b.events.length,Math.max(0,b.events.length-b.prefix)]){let td=document.createElement('td');td.textContent=String(v);tr.appendChild(td)}$('ehBranchRows').appendChild(tr);
+}
+$('ehBranchSelect').value=branchId;
+const b=active(),parent=b.parent?branches.get(b.parent):null;
+$('ehBranchStatus').textContent=b.parent?`${b.name}: forked from ${parent.name} at event #${b.forkEvent}; inherited ${b.prefix} records. Original remains independent.`:'Main history is the original experiment.';
+if(parent){const head=b.events.slice(b.prefix), parentSuffix=parent.events.slice(b.prefix);$('ehCompare').textContent=`Comparison: shared prefix ${b.prefix} · ${b.name} added ${head.length} events · ${parent.name} has ${parentSuffix.length} events after fork. History counts are observations, not physical time.`;}
+else $('ehCompare').textContent=branches.size>1?`${branches.size-1} child history branch(es) available. Select a branch to compare it with its parent.`:'Comparison becomes available after the first fork.';
+}
+function fork(){if(replayIndex<0||!ledger[replayIndex]){$('ehBranchStatus').textContent='Select a recorded observation using the timeline before forking.';return;}
+const point=ledger[replayIndex];const newId=`branch-${++branchSerial}`;
+const prefix=structuredClone(ledger.slice(0,replayIndex+1));
+branches.set(newId,{id:newId,name:`Branch ${branchSerial}`,parent:branchId,forkEvent:point.id,prefix:prefix.length,events:prefix,nextLocalId:Math.max(...prefix.map(x=>x.id),0)+1});
+selectBranch(newId);showReplay(prefix.length-1);
+}
+function restoreTip(){const tip=ledger.at(-1);if(!tip){$('ehBranchStatus').textContent='Cannot restore: branch is empty.';return;}
+const values=tip.snap.pose;controls.forEach((id,i)=>{if($(id)){$(id).value=values[i];$(id).dispatchEvent(new Event('input',{bubbles:true}));$(id).dispatchEvent(new Event('change',{bubbles:true}));}});
+replayIndex=-1;render();$('ehBranchStatus').textContent='Restored branch tip to live controls. This did not alter recorded observations.';
+}
+
+const controls=['dualAX','dualAY','dualAR','dualBX','dualBY','dualBR','dualPreset','dualThreshold'];
+const fmt=n=>Number(n).toFixed(3);
+function snapshot(){const audit=window.TH_ENCOUNTER_AUDIT?.();if(!audit)return null;const r=audit.current;
+const ids=[...r.a.ids,...r.b.ids];const pose=controls.map(id=>$(id).value);
+return {aIds:[...r.a.ids],aSourceVertices:[...r.a.sourceVertices],aLinks:structuredClone(r.a.edges||[]),bLinks:structuredClone(r.b.edges||[]),bIds:[...r.b.ids],bPreset:$('dualPreset').value,pose,closest:r.best?{aId:r.best.aId,bId:r.best.bId,distance:r.best.distance}:null,distance:r.best?.distance??null,inside:r.proximate,threshold:r.cutoff};}
+function sameConfiguration(a,b){if(!a||!b||a.aIds.join('|')!==b.aIds.join('|')||a.bIds.join('|')!==b.bIds.join('|')||a.bPreset!==b.bPreset)return false;
+// Exclude threshold from geometric identity; ensure all six rigid-position parameters match within 0.001.
+return a.pose.slice(0,6).every((v,i)=>Math.abs(Number(v)-Number(b.pose[i]))<.001);}
+function classify(current){const prior=ledger.at(-1);if(!current.closest)return {kind:'no_A_sites',detail:'No registered Assembly A sites'};
+if(!prior||!prior.snap.closest)return {kind:'baseline',detail:'Initial observation'};
+const prev=prior.snap,delta=current.distance-prev.distance,was=prev.inside,now=current.inside;
+if(!was&&now)return {kind:'encounter_entry',detail:'Crossed into chosen distance threshold'};
+if(was&&!now)return {kind:'separation',detail:'Crossed out of chosen distance threshold'};
+const ret=ledger.find(entry=>sameConfiguration(current,entry.snap));
+if(ret)return {kind:'geometric_return',detail:'Matched sample '+ret.id+'; history remains distinct',ref:ret.id};
+if(delta<-.0005)return {kind:'approach',detail:'Sampled closest separation decreased'};
+if(delta>.0005)return {kind:'recede',detail:'Sampled closest separation increased'};
+return {kind:'steady',detail:'No measured distance change'};}
+function preview(){
+const canvas=$('ehPreview'),ctx=canvas.getContext('2d');if(!ctx)return;
+ctx.clearRect(0,0,canvas.width,canvas.height);ctx.fillStyle='#081522';ctx.fillRect(0,0,720,260);
+ctx.strokeStyle='#254359';ctx.lineWidth=1;
+for(let x=30;x<720;x+=30){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,260);ctx.stroke();}
+for(let y=20;y<260;y+=30){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(720,y);ctx.stroke();}
+if(replayIndex<0||!ledger[replayIndex]){
+ctx.fillStyle='#b0c8d6';ctx.font='16px system-ui';ctx.fillText('Read-only replay · select a recorded observation',38,130);
+$('ehIndex').textContent='Live · no replay selected';$('ehReplayDetail').textContent='Replay is separate from live assembly state and cannot overwrite recorded events.';return;}
+const e=ledger[replayIndex],p=e.snap.pose.map(Number);const originX=360,originY=130,scale=65;
+function drawAssembly(x,y,angle,col,label){const px=originX+x*scale,py=originY-y*scale;
+ctx.save();ctx.translate(px,py);ctx.rotate(-angle*Math.PI/180);
+ctx.strokeStyle=col;ctx.lineWidth=4;ctx.beginPath();ctx.moveTo(-19,13);ctx.lineTo(0,-16);ctx.lineTo(19,13);ctx.stroke();
+for(const [dx,dy] of [[0,-16],[-19,13],[19,13]]){ctx.beginPath();ctx.arc(dx,dy,7,0,Math.PI*2);ctx.fillStyle=col;ctx.fill();}
+ctx.restore();ctx.fillStyle='#e9f6ff';ctx.font='12px system-ui';ctx.fillText(label,px+25,py-20);}
+drawAssembly(p[0],p[1],p[2],'#77dfff','A');drawAssembly(p[3],p[4],p[5],'#e4a8db','B');
+$('ehIndex').textContent=`${replayIndex+1} / ${ledger.length} · event #${e.id}`;
+$('ehReplayDetail').textContent=`${e.event.kind} · ${e.event.detail} · distance ${e.snap.distance===null?'unavailable':fmt(e.snap.distance)} · inside threshold ${e.snap.inside?'yes':'no'} · positions recorded in display units. Live controls unchanged.`;
+}
+function showReplay(index){replayIndex=ledger.length?Math.max(0,Math.min(ledger.length-1,index)):-1;if(replayIndex>=0)$('ehScrub').value=String(replayIndex);preview();}
+function render(){const encounters=ledger.filter(e=>e.event.kind==='encounter_entry').length,returns=ledger.filter(e=>e.event.kind==='geometric_return').length;
+$('ehCount').textContent=ledger.length+' samples';$('ehEncounter').textContent=encounters+' encounter entries';$('ehReturn').textContent=returns+' geometric returns';
+$('ehRows').replaceChildren();for(const e of ledger){const row=document.createElement('tr');for(const val of [e.id,e.event.kind,e.snap.distance===null?'—':fmt(e.snap.distance),e.snap.inside?'Yes':'No',e.event.detail]){const td=document.createElement('td');td.textContent=String(val);row.appendChild(td)}$('ehRows').appendChild(row)}
+branchRows();$('ehStatus').textContent=ledger.length?'Most recent: '+ledger.at(-1).event.kind+' · '+ledger.at(-1).event.detail:'New history. Set your assembly positions and record the first sample.';$('ehScrub').max=String(Math.max(0,ledger.length-1));$('ehScrub').disabled=!ledger.length; if(replayIndex>=ledger.length)replayIndex=ledger.length-1; if(replayIndex>=0)$('ehScrub').value=String(replayIndex);preview();}
+function record(){const snap=snapshot();if(!snap)return;const event=classify(snap);ledger.push({id:nextId++,event,snap,ordinal:ledger.length,branchId});active().nextLocalId=nextId;render();}
+$('ehSample').addEventListener('click',record);$('ehFork').addEventListener('click',fork);$('ehRestore').addEventListener('click',restoreTip);$('ehBranchSelect').addEventListener('change',e=>selectBranch(e.target.value));
+$('ehFirst').addEventListener('click',()=>showReplay(0));
+$('ehPrev').addEventListener('click',()=>showReplay(replayIndex<0?Math.max(0,ledger.length-1):replayIndex-1));
+$('ehNext').addEventListener('click',()=>showReplay(replayIndex<0?0:replayIndex+1));
+$('ehLast').addEventListener('click',()=>showReplay(ledger.length-1));
+$('ehLive').addEventListener('click',()=>{replayIndex=-1;preview();});
+$('ehScrub').addEventListener('input',e=>showReplay(Number(e.target.value)));
+
+$('ehReset').addEventListener('click',()=>{if(!confirm('Start a new empty history on this active branch? Other branches will be retained.'))return;active().events=[];active().prefix=0;active().nextLocalId=1;ledger=active().events;nextId=1;replayIndex=-1;render();});
+$('ehExport').addEventListener('click',()=>{const out={schema:'thalean.encounter.branches.v1.6',graph:'AT4val[60,6]',units:'illustrative display units',dataOrigin:'user-triggered ordered samples',thresholdRule:'distance <= sampled threshold',siteAndPoseSnapshots:true,bondAdmitted:false,physicsTimeMeasured:false,replayIndex,readOnlyReplay:true,activeBranch:branchId,branches:[...branches.values()].map(b=>structuredClone(b)),events:ledger};const blob=new Blob([JSON.stringify(out,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='thalean_encounter_branches_v1_6.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});
+window.TH_ENCOUNTER_HISTORY_AUDIT=()=>({activeBranch:branchId,branchCount:branches.size,branches:[...branches.values()].map(b=>structuredClone(b)),samples:ledger.length,events:structuredClone(ledger),encounterEntries:ledger.filter(e=>e.event.kind==='encounter_entry').length,returns:ledger.filter(e=>e.event.kind==='geometric_return').length,replayIndex,replaySnapshot:replayIndex<0?null:structuredClone(ledger[replayIndex]),livePose:controls.map(id=>$(id).value)});render();
+})();
+</script><style>
+#branch-compare{max-width:1450px;margin:18px auto;padding:20px;background:#0b1a2b;color:#e8f5ff;border:1px solid #38546c;border-radius:18px;font:14px system-ui,sans-serif}
+#branch-compare h2{margin:0 0 9px;font-size:23px}#branch-compare p{color:#b0c8d6}#branch-compare .bc-controls{display:flex;flex-wrap:wrap;gap:12px;align-items:end;margin:12px 0}#branch-compare label{display:flex;flex-direction:column;gap:5px}#branch-compare select,#branch-compare button{min-height:44px;background:#12344a;color:#eaf7ff;border:1px solid #507993;border-radius:8px;padding:8px}#branch-compare input[type=range]{width:100%;accent-color:#7be9ff;min-height:44px}#branch-compare .bc-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}#branch-compare .bc-card{border:1px solid #35516b;border-radius:12px;padding:12px;background:#081522;min-width:0}#branch-compare canvas{display:block;width:100%;height:auto;aspect-ratio:360/245}#branch-compare .bc-details{white-space:pre-wrap;font-size:12px;color:#b0c8d6;margin:8px 0}#branch-compare .bc-diff{padding:12px;border:1px solid #35516b;border-radius:8px;margin-top:12px;white-space:pre-wrap;font-size:12px}#branch-compare .bc-muted{color:#b0c8d6;font-size:12px}@media(max-width:640px){#branch-compare{padding:14px;margin:14px}#branch-compare .bc-grid{grid-template-columns:1fr}}
+</style>
+<section id="branch-compare" aria-label="Synchronized history comparison"><h2>Synchronized Branch Comparison · v1.7</h2><p>Select any two recorded histories and compare their observations at the same <strong>ordinal sample position</strong>. The comparison is read-only; neither timeline nor the live assemblies is modified.</p>
+<div class="bc-controls"><label>History A<select id="bcA"><option value="main">Main history</option></select></label><label>History B<select id="bcB"><option value="main">Main history</option></select></label><button id="bcRefresh" type="button">Refresh comparison</button><button id="bcFirst" type="button">First</button><button id="bcPrev" type="button">Previous</button><button id="bcNext" type="button">Next</button><button id="bcLast" type="button">Last</button></div>
+<label for="bcScrub">Shared observation ordinal <output id="bcIndex">No observations</output></label><input type="range" min="0" max="0" value="0" id="bcScrub" disabled>
+<div class="bc-grid"><div class="bc-card"><strong id="bcTitleA">History A</strong><canvas id="bcCanvasA" width="360" height="245" aria-label="Read-only geometry of history A" role="img"></canvas><div class="bc-details" id="bcDetailA">No observation.</div></div><div class="bc-card"><strong id="bcTitleB">History B</strong><canvas id="bcCanvasB" width="360" height="245" aria-label="Read-only geometry of history B" role="img"></canvas><div class="bc-details" id="bcDetailB">No observation.</div></div></div>
+<div class="bc-diff" id="bcDiff" aria-live="polite">Create observations and fork a branch to begin comparing.</div><p class="bc-muted">Shared position is observation order, not calibrated time. A missing sample is shown as missing, never carried forward. Distances and geometry use illustrative display coordinates. Comparison creates no chemical bond or physical prediction.</p></section>
+<script>
+(()=>{'use strict';
+const el=id=>document.getElementById(id);let position=0;
+function audit(){return window.TH_ENCOUNTER_HISTORY_AUDIT?.();}
+function refresh(){const r=audit();if(!r)return;const ids=r.branches.map(b=>b.id);for(const field of ['bcA','bcB']){const old=el(field).value;el(field).replaceChildren();for(const b of r.branches){const option=document.createElement('option');option.value=b.id;option.textContent=b.name;el(field).append(option)}el(field).value=ids.includes(old)?old:(field==='bcB'&&ids.length>1?ids[1]:ids[0]||'main');}update();}
+function currentPair(){const r=audit();if(!r)return [null,null];return ['bcA','bcB'].map(k=>r.branches.find(b=>b.id===el(k).value)||null);}
+function paint(id,entry){const canvas=el(id),ctx=canvas.getContext('2d');if(!ctx)return;ctx.fillStyle='#081522';ctx.fillRect(0,0,360,245);ctx.strokeStyle='#254359';ctx.lineWidth=.7;for(let x=20;x<360;x+=24){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,245);ctx.stroke()}for(let y=20;y<245;y+=24){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(360,y);ctx.stroke()}
+if(!entry){ctx.fillStyle='#aec8d8';ctx.font='13px system-ui';ctx.fillText('No observation at this position',30,122);return;}
+const p=entry.snap?.pose?.map(Number);if(!p||p.length<6)return;const x0=180,y0=123,s=31;
+function assembly(x,y,angle,color,label){ctx.save();ctx.translate(x0+x*s,y0-y*s);ctx.rotate(-angle*Math.PI/180);ctx.strokeStyle=color;ctx.lineWidth=4;ctx.beginPath();ctx.moveTo(-17,13);ctx.lineTo(0,-15);ctx.lineTo(17,13);ctx.stroke();for(const [dx,dy] of [[-17,13],[0,-15],[17,13]]){ctx.beginPath();ctx.arc(dx,dy,6,0,2*Math.PI);ctx.fillStyle=color;ctx.fill()}ctx.restore();ctx.fillStyle='#eff9ff';ctx.font='12px system-ui';ctx.fillText(label,x0+x*s+21,y0-y*s-18);}
+assembly(p[0],p[1],p[2],'#77dfff','A');assembly(p[3],p[4],p[5],'#e4a8db','B');}
+function detail(id,entry){el(id).textContent=!entry?'Missing observation at this ordinal.':`Event #${entry.id} · ${entry.event.kind}\nDistance: ${entry.snap.distance===null?'unavailable':Number(entry.snap.distance).toFixed(3)} · inside: ${entry.snap.inside?'yes':'no'}\nSites: A [${entry.snap.aIds.join(', ')}] · B [${entry.snap.bIds.join(', ')}]`;}
+function update(){const [a,b]=currentPair();if(!a||!b)return;const n=Math.max(a.events.length,b.events.length),limit=Math.max(0,n-1);position=Math.min(position,limit);el('bcScrub').max=String(limit);el('bcScrub').disabled=n===0;el('bcScrub').value=String(position);el('bcIndex').textContent=n?`${position+1} / ${n}`:'No observations';const eA=a.events[position]||null,eB=b.events[position]||null;el('bcTitleA').textContent=a.name;el('bcTitleB').textContent=b.name;paint('bcCanvasA',eA);paint('bcCanvasB',eB);detail('bcDetailA',eA);detail('bcDetailB',eB);
+const shared=Math.min(a.events.length,b.events.length),samePrefix=(()=>{let k=0;while(k<shared&&JSON.stringify(a.events[k].snap)===JSON.stringify(b.events[k].snap)&&a.events[k].event.kind===b.events[k].event.kind)k++;return k})();const lines=[`A: ${a.events.length} samples · B: ${b.events.length} samples`,`Common observed prefix: ${samePrefix} samples`,`At sample ${position+1}: ${!eA||!eB?'one or both histories have no observation':eA.event.kind+' vs '+eB.event.kind}`];if(eA&&eB){let dA=eA.snap.distance,dB=eB.snap.distance;lines.push('Closest-site distance difference (A − B): '+(dA===null||dB===null?'unavailable':(dA-dB).toFixed(3)));lines.push('Same recorded geometry: '+(JSON.stringify(eA.snap.pose)===JSON.stringify(eB.snap.pose)?'yes':'no'));}lines.push('Comparison only · no mutation · no bond admission');el('bcDiff').textContent=lines.join('\n');}
+for(const id of ['bcA','bcB'])el(id).addEventListener('change',update);el('bcRefresh').addEventListener('click',refresh);el('bcScrub').addEventListener('input',e=>{position=Number(e.target.value);update()});el('bcFirst').addEventListener('click',()=>{position=0;update()});el('bcPrev').addEventListener('click',()=>{position=Math.max(0,position-1);update()});el('bcNext').addEventListener('click',()=>{position++;update()});el('bcLast').addEventListener('click',()=>{const [a,b]=currentPair();position=Math.max(0,Math.max(a?.events.length||0,b?.events.length||0)-1);update()});
+for(const id of ['ehSample','ehFork','ehReset','ehBranchSelect'])el(id)?.addEventListener('click',()=>queueMicrotask(refresh));el('ehBranchSelect')?.addEventListener('change',()=>queueMicrotask(refresh));
+window.TH_BRANCH_COMPARE_AUDIT=()=>{const [a,b]=currentPair();return {selected:[a?.id,b?.id],position,countA:a?.events.length||0,countB:b?.events.length||0,readOnly:true,comparisonText:el('bcDiff').textContent}};
+refresh();
+})();
+</script>
+
+<style>
+#convergence-panel{max-width:1450px;margin:18px auto;padding:20px;background:#0b1a2b;color:#e8f5ff;border:1px solid #38546c;border-radius:18px;font:14px system-ui,sans-serif}
+#convergence-panel h2{font-size:23px;margin:0 0 10px}#convergence-panel p,#convergence-panel .muted{color:#b0c8d6}
+#convergence-panel .cv-controls{display:flex;flex-wrap:wrap;gap:12px;align-items:end}
+#convergence-panel label{display:flex;flex-direction:column;gap:5px;font-size:12px}
+#convergence-panel input,#convergence-panel select{font:inherit;border-radius:8px;padding:8px;background:#12273c;border:1px solid #49627a;color:white;min-height:42px}
+#convergence-panel button{padding:9px 14px;border:1px solid #5b829b;background:#173b55;color:#f1faff;border-radius:8px;min-height:42px;cursor:pointer}
+#convergence-panel table{width:100%;border-collapse:collapse;font-size:12px;min-width:640px}#convergence-panel td,#convergence-panel th{border-bottom:1px solid #30475a;padding:9px;text-align:left}
+#convergence-panel .scroll{overflow:auto;max-height:300px}#convergence-panel .cv-stats{margin:13px 0;padding:12px;border:1px solid #354f62;border-radius:8px;white-space:pre-line}
+#convergence-panel .cv-note{font-size:12px;color:#d8bb88}
+</style>
+<section id="convergence-panel" aria-label="History convergence detector">
+<h2>History Convergence · v1.8</h2>
+<p>Search two selected histories for repeated configurations at <em>any pair of observation positions</em>. Preserve both event sequences. Numerical proximity never overrides site identities or candidate connectivity.</p>
+<div class="cv-controls"><label>History A<select id="cvA"></select></label><label>History B<select id="cvB"></select></label><label>Placement tolerance (display units)<input id="cvTolerance" type="number" min="0" max="5" step="0.001" value="0.001"></label><button type="button" id="cvCheck">Detect convergence</button></div>
+<div id="cvSummary" class="cv-stats" role="status" aria-live="polite">Record samples and choose two histories to detect convergence.</div>
+<div class="scroll"><table><thead><tr><th>History A event</th><th>History B event</th><th>Verdict</th><th>Max. placement delta</th><th>Historical distinction</th></tr></thead><tbody id="cvRows"></tbody></table></div>
+<p class="cv-note">Comparison is read-only. Coordinates are illustrative, rotation is periodic modulo 360°, and distance threshold is excluded from pose identity. Same pose does not imply the same sampled history, physical molecule, bond, or time.</p>
+</section>
+<script>
+(()=>{'use strict';
+const $=id=>document.getElementById(id);
+const get=()=>window.TH_ENCOUNTER_HISTORY_AUDIT?.();
+const norm=angle=>((Number(angle)%360)+360)%360;
+const angleDelta=(a,b)=>{const d=Math.abs(norm(a)-norm(b));return Math.min(d,360-d);};
+function signature(s){
+ if(!s||!Array.isArray(s.aLinks)||!Array.isArray(s.bLinks))return null;
+ const idsA=[...(s.aIds||[])],idsB=[...(s.bIds||[])];
+ const source=[...(s.aSourceVertices||[])];
+ return {aIds:idsA,bIds:idsB,vertices:source,preset:s.bPreset,linksA:s.aLinks||null,linksB:s.bLinks||null};
+}
+function typedKey(s){const q=signature(s);return q?JSON.stringify(q):'';}
+function measure(a,b){
+ const ap=a?.pose?.slice(0,6).map(Number),bp=b?.pose?.slice(0,6).map(Number);
+ if(!ap||!bp||ap.length!==6||bp.length!==6||[...ap,...bp].some(v=>!Number.isFinite(v)))return Infinity;
+ return Math.max(...ap.map((v,i)=>(i===2||i===5)?angleDelta(v,bp[i]):Math.abs(v-bp[i])));
+}
+function evaluate(a,b,tolerance){
+ if(!a||!b)return {kind:'missing_observation',delta:null};
+ if(!signature(a)||!signature(b))return {kind:'incomplete_legacy_provenance',delta:measure(a,b)};
+ if(typedKey(a)!==typedKey(b))return {kind:'identity_or_topology_mismatch',delta:measure(a,b)};
+ const delta=measure(a,b);
+ return {kind:delta===0?'exact_configuration':delta<=tolerance?'tolerance_configuration':'distinct_configuration',delta};
+}
+function populate(){
+ const r=get();if(!r)return;
+ const ids=new Set(r.branches.map(b=>b.id));
+ for(const field of ['cvA','cvB']){
+ const old=$(field).value;$(field).replaceChildren();
+ for(const b of r.branches){const op=document.createElement('option');op.value=b.id;op.textContent=b.name;$(field).append(op)}
+ $(field).value=ids.has(old)?old:(field==='cvB'&&r.branches.length>1?r.branches[1].id:r.branches[0]?.id||'main');
+ }
+}
+function scan(){
+ populate();const r=get();if(!r)return null;
+ const a=r.branches.find(b=>b.id===$('cvA').value),b=r.branches.find(b=>b.id===$('cvB').value);
+ const tolerance=Number($('cvTolerance').value);if(!Number.isFinite(tolerance)||tolerance<0||tolerance>5){$('cvSummary').textContent='Invalid tolerance. Enter 0–5 display units.';return null;}
+ const matches=[];let mismatched=0,legacy=0;
+ for(let i=0;i<(a?.events.length||0);i++)for(let j=0;j<(b?.events.length||0);j++){
+ const x=evaluate(a.events[i].snap,b.events[j].snap,tolerance);
+ if(x.kind==='exact_configuration'||x.kind==='tolerance_configuration')matches.push({aIndex:i,bIndex:j,aEventId:a.events[i].id,bEventId:b.events[j].id,verdict:x.kind,maxDelta:x.delta,differentHistory:a.id!==b.id||i!==j});
+ else if(x.kind==='identity_or_topology_mismatch')mismatched++;else if(x.kind==='incomplete_legacy_provenance')legacy++;
+ }
+ const tbody=$('cvRows');tbody.replaceChildren();
+ for(const m of matches.slice(0,250)){
+ const tr=document.createElement('tr');for(const v of [m.aEventId,m.bEventId,m.verdict,m.maxDelta.toFixed(6),m.differentHistory?'Distinct occurrence':'Same recorded position']){let td=document.createElement('td');td.textContent=String(v);tr.append(td)}tbody.append(tr);
+ }
+ $('cvSummary').textContent=`${a?.name||'A'}: ${a?.events.length||0} observations · ${b?.name||'B'}: ${b?.events.length||0} observations\n${matches.length} matching configuration pairs (${matches.filter(x=>x.verdict==='exact_configuration').length} exact; ${matches.filter(x=>x.verdict==='tolerance_configuration').length} tolerance) · ${mismatched} identity/topology-incompatible pairs · ${legacy} incomplete legacy pairs. ${matches.length>250?'Showing first 250 matches.':''}`;
+ return {branchA:a?.id,branchB:b?.id,tolerance,matchCount:matches.length,identityMismatches:mismatched,matches,readOnly:true};
+}
+let last=null;
+$('cvCheck').addEventListener('click',()=>{last=scan()});
+for(const id of ['ehFork','ehSample','ehReset','ehBranchSelect'])$(id)?.addEventListener('click',()=>queueMicrotask(populate));
+$('ehBranchSelect')?.addEventListener('change',()=>queueMicrotask(populate));
+window.TH_CONVERGENCE_AUDIT=()=>last?structuredClone(last):null;
+window.TH_CONVERGENCE_EVALUATE=(a,b,t)=>evaluate(a,b,t);
+populate();
+})();
+</script>
+
+<style>
+#receipt-panel{max-width:1450px;margin:18px auto;padding:20px;border:1px solid #38546c;border-radius:18px;background:#0b1a2b;color:#e8f5ff;font:14px system-ui,sans-serif}
+#receipt-panel h2{margin:0 0 10px;font-size:23px}#receipt-panel p{color:#b0c8d6}
+#receipt-panel button,#receipt-panel select{min-height:44px;background:#153b53;color:#eaf7ff;border:1px solid #537d96;border-radius:8px;padding:9px;margin:4px}
+#receipt-panel button:disabled{opacity:.5}#receipt-panel pre{overflow:auto;white-space:pre-wrap;word-break:break-word;max-height:350px;border:1px solid #334c61;padding:13px;border-radius:9px;background:#081522;font:11px/1.5 ui-monospace,monospace}
+#receipt-panel .rp-note{font-size:12px;color:#d8bb88}#receipt-panel .rp-actions{display:flex;gap:7px;flex-wrap:wrap}
+</style>
+<section id="receipt-panel" aria-label="History convergence receipts">
+<h2>Convergence Receipts · v1.9</h2>
+<p>After detecting convergence, select one matching observation pair and capture a frozen local receipt. Every receipt records its source observations, branch ancestry, comparison threshold, and the paths through both histories.</p>
+<label for="rpPair">Convergent observation pair</label><select id="rpPair"><option value="">Run Detect convergence first</option></select>
+<div class="rp-actions"><button id="rpCapture" type="button">Capture receipt</button><button id="rpVerify" type="button">Verify selected receipt</button><button id="rpExport" type="button">Export receipt JSON</button><button id="rpExportAll" type="button">Export all receipts</button></div>
+<label for="rpSaved">Saved receipts</label><select id="rpSaved"><option value="">No receipts captured</option></select>
+<div id="rpStatus" role="status" aria-live="polite">No receipt captured.</div><pre id="rpBody">Capture a matching pair to inspect its provenance.</pre>
+<p class="rp-note">These are local, content-hashed research receipts, not digital signatures, external timestamps, notarization, chemical-bond admission, or immutable storage. Exports are under your control.</p>
+</section>
+<script>
+(()=>{'use strict';
+const $=id=>document.getElementById(id), saved=[];
+const clone=x=>JSON.parse(JSON.stringify(x));
+function canon(o){if(Array.isArray(o))return '['+o.map(canon).join(',')+']';if(o&&typeof o==='object')return '{'+Object.keys(o).sort().map(k=>JSON.stringify(k)+':'+canon(o[k])).join(',')+'}';return JSON.stringify(o);}
+const hex=a=>[...new Uint8Array(a)].map(b=>b.toString(16).padStart(2,'0')).join('');
+async function digest(o){if(!crypto?.subtle)throw Error('SHA-256 unavailable in this browser context');return hex(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(canon(o))));}
+function get(){return window.TH_ENCOUNTER_HISTORY_AUDIT?.();}
+function branch(r,id){return r?.branches?.find(x=>x.id===id);}
+function path(b,index){return b.events.slice(0,index+1).map(e=>({eventId:e.id,ordinal:e.ordinal,kind:e.event?.kind??null,detail:e.event?.detail??null,snapshot:clone(e.snap)}));}
+function populateMatches(){let c=window.TH_CONVERGENCE_AUDIT?.();const s=$('rpPair'),prior=s.value;s.replaceChildren();if(!c||!c.matches.length){s.add(new Option('Run Detect convergence with matches',''));return;}c.matches.forEach((m,i)=>s.add(new Option(`${m.aEventId} ↔ ${m.bEventId} · ${m.verdict} · Δ ${m.maxDelta.toFixed(6)}`,String(i))));s.value=[...s.options].some(o=>o.value===prior)?prior:'0';}
+function show(){let sel=Number($('rpSaved').value),rec=saved[sel];$('rpBody').textContent=rec?JSON.stringify(rec,null,2):'No saved receipt';}
+function choices(){let sel=$('rpSaved');sel.replaceChildren();saved.forEach((r,i)=>sel.add(new Option(`${r.id} · ${r.contentSha256.slice(0,12)}`,String(i))));if(!saved.length)sel.add(new Option('No receipts captured',''));else sel.value=String(saved.length-1);show();}
+async function capture(){try{
+const c=window.TH_CONVERGENCE_AUDIT?.(),i=Number($('rpPair').value);if(!c||!Number.isInteger(i)||!c.matches[i])throw Error('Detect convergence and select a matching pair first.');
+const r=get(),a=branch(r,c.branchA),b=branch(r,c.branchB),m=c.matches[i];if(!a||!b||!a.events[m.aIndex]||!b.events[m.bIndex])throw Error('Source observation no longer exists. Detect convergence again.');
+const checked=window.TH_CONVERGENCE_EVALUATE(a.events[m.aIndex].snap,b.events[m.bIndex].snap,c.tolerance);
+if(checked.kind!==m.verdict||Math.abs(checked.delta-m.maxDelta)>1e-8)throw Error('Observation changed since comparison. Run Detect convergence again.');
+const payload={schema:'thalean.convergence.receipt.v1.9',researchOnly:true,unit:'illustrative display units',comparison:{branchA:a.id,branchB:b.id,eventA:m.aEventId,eventB:m.bEventId,indexA:m.aIndex,indexB:m.bIndex,verdict:m.verdict,tolerance:c.tolerance,maxDelta:m.maxDelta,distinctOccurrence:m.differentHistory},ancestry:{branchA:{id:a.id,parent:a.parentId??null,forkEvent:a.forkEvent??null},branchB:{id:b.id,parent:b.parentId??null,forkEvent:b.forkEvent??null}},paths:{a:path(a,m.aIndex),b:path(b,m.bIndex)},source:'Local sampled encounter ledger. No physics time or admitted chemical bond.'};
+const receipt={id:`CR-${String(saved.length+1).padStart(4,'0')}`,payload,contentSha256:await digest(payload),hashAlgorithm:'SHA-256',signed:false};
+saved.push(clone(receipt));choices();$('rpStatus').textContent=`Captured ${receipt.id}. Snapshot retained separately from live branch edits.`;
+}catch(e){$('rpStatus').textContent='Capture refused: '+e.message;}}
+async function verify(){const rec=saved[Number($('rpSaved').value)];if(!rec)return $('rpStatus').textContent='No receipt selected.';const hash=await digest(rec.payload);const good=hash===rec.contentSha256;
+const r=get(),a=branch(r,rec.payload.comparison.branchA),b=branch(r,rec.payload.comparison.branchB);const p=rec.payload;
+const current=!!(a&&b&&canon(path(a,p.comparison.indexA))===canon(p.paths.a)&&canon(path(b,p.comparison.indexB))===canon(p.paths.b));
+$('rpStatus').textContent=`Content integrity: ${good?'PASS':'FAIL'} · Current ledger provenance: ${current?'MATCH':'CHANGED / UNAVAILABLE'} · ${rec.id}`;}
+function download(payload,name){const blob=new Blob([JSON.stringify(payload,null,2)+'\n'],{type:'application/json'}),u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),1500);}
+$('rpCapture').addEventListener('click',capture);$('rpVerify').addEventListener('click',()=>verify().catch(e=>$('rpStatus').textContent=e.message));$('rpSaved').addEventListener('change',show);
+$('rpExport').addEventListener('click',()=>{const r=saved[Number($('rpSaved').value)];if(r)download(r,r.id+'.json');else $('rpStatus').textContent='No receipt to export.';});
+$('rpExportAll').addEventListener('click',()=>{if(saved.length)download({schema:'thalean.convergence.receipts.v1.9',receipts:clone(saved)},'thalean_convergence_receipts.json');else $('rpStatus').textContent='No receipts to export.';});
+$('cvCheck').addEventListener('click',()=>queueMicrotask(populateMatches));
+window.TH_RECEIPTS_AUDIT=()=>clone(saved);window.TH_RECEIPT_VERIFY=async r=>await digest(r.payload)===r.contentSha256;
+populateMatches();})();
+</script>
+<script id="experience-controller">
+(function(){'use strict';
+ const beginner=document.getElementById('experienceBeginner'),research=document.getElementById('experienceResearch'),desc=document.getElementById('experienceDescription');
+ function select(mode){document.body.dataset.experience=mode;beginner.setAttribute('aria-pressed',String(mode==='beginner'));research.setAttribute('aria-pressed',String(mode==='research'));desc.textContent=mode==='beginner'?'Explore the sphere, select H, He or O, and play the illustrated cycling traces.':'Full helical, molecular, branching, convergence and receipt workspaces. Your current experiment is unchanged.';
+  window.dispatchEvent(new Event('resize')); }
+ beginner.addEventListener('click',()=>select('beginner'));research.addEventListener('click',()=>select('research'));
+ select('beginner');
+})();
+</script>
+<script>
+window.TH_NATIVE_CORE_SHA="b6d8aa958dcd56cd71cf126c77078ff7d7543af3b8a0adbbf443a9d8bd9ef6c6";
+window.nativeAssetFailure=function(){
+  const status=document.getElementById('no-status');
+  if(status) status.textContent='Native assets could not load. Serve the complete webroot directory over HTTP(S), including native/.';
+};
+</script>
+<script src="native/math.js" onerror="nativeAssetFailure()"></script>
+<script src="native/observatory.js" onerror="nativeAssetFailure()"></script>
+</body>
+</html>

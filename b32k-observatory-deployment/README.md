@@ -1,4 +1,4 @@
-# B32K / G9000 Observatory — v1.2
+# B32K / G9000 Observatory — v1.3
 
 Dedicated observatory target: `https://aletheos.ai/observatories/b32k/`.
 
@@ -20,12 +20,18 @@ no homepage, navigation, other observatory, or server configuration.
 
 The installer checks `release.sha256` before connecting, verifies upload size and
 hash, and publishes atomically. An identical installed release is a no-op.
-Either exact v1.0 or v1.1 predecessor is backed up outside the document root before updating.
+Any exact v1.0, v1.1, or v1.2 predecessor is backed up outside the document root before updating.
 Any other existing B32K page stops installation. Temporary uploads are cleaned up.
 The installer reports whether installation succeeded, but does not claim that
 public HTTPS delivery was verified.
 
 ## Features
+
+- Opens with UI hidden and darts playing: Torus, 100% split, 1.5% edges,
+  vertices and all 450 darts on; box, F indicators, labels and linked tower off.
+- The clean header retains Thalean G9000, Play/Pause, and Show UI.
+  Play/Pause controls the current view: darts, pairing cycle, or wave.
+
 
 - Hamburger switches independently hide the box frame (and face labels) and vertex dots.
   Hide vertices, set Edges to 0%, and disable F indicators for a clear 450-dart view.
@@ -33,7 +39,7 @@ public HTTPS delivery was verified.
   Hiding vertices also hides their labels; playback and the underlying graph remain intact.
 
 - Header Hide UI / Show UI pill in all four views; playback, camera, and options survive hiding.
-  Only the restore pill remains over 3D scenes; Pairings keeps its central graph.
+  The title, playback and restore pills remain over 3D scenes; Pairings keeps its central graph.
   The linked tower panel and its connector hide together.
 
 - 9,000 native states and 45,000 native connections.

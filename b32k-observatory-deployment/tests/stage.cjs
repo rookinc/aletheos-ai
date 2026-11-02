@@ -8,7 +8,22 @@ el('topology').textContent=html.match(/<script id="topology" type="application\/
 el('native-darts').textContent=html.match(/<script id="native-darts" type="application\/json">([\s\S]*?)<\/script>/)[1];
 el('quotient-link').textContent=html.match(/<script id="quotient-link" type="application\/json">([\s\S]*?)<\/script>/)[1];
 el('pairing-data').textContent=html.match(/<script id="pairing-data" type="application\/json">([\s\S]*?)<\/script>/)[1];
-vm.runInContext(html.match(/<script>([\s\S]*?)<\/script>/)[1],ctx);const run=s=>vm.runInContext(s,ctx);run("setTorusSplit(0);setStageView('cube');reset()");
+vm.runInContext(html.match(/<script>([\s\S]*?)<\/script>/)[1],ctx);const run=s=>vm.runInContext(s,ctx);
+assert.equal(el('error').hidden,true);
+assert(run("stageView==='torus'&&uiHidden&&scaffoldRunning&&scaffoldMode&&torusSplit===100&&edgeOpacity===.015&&showVertices&&allFibers&&!showBoxFrame&&!showFIndicators&&!showLabels&&!linkedTower"));
+assert.equal(el('headerPlay').textContent,'Pause');
+const startCamera=run('JSON.stringify({q,translation})');
+el('headerPlay').onclick();assert.equal(run('scaffoldRunning'),false);assert.equal(el('headerPlay').textContent,'Play');
+el('headerPlay').onclick();assert.equal(run('scaffoldRunning'),true);assert.equal(run('JSON.stringify({q,translation})'),startCamera);
+for(const view of ['pairings','tower','cube']){
+ run(`setStageView('${view}')`);el('headerPlay').onclick();
+ const active=view==='pairings'?'pairingRunning':view==='tower'?'omega.sim.playing':'pulseRunning';
+ assert.equal(run(active),true);assert.equal(el('headerPlay').textContent,'Pause');
+ el('headerPlay').onclick();assert.equal(run(active),false);assert.equal(el('headerPlay').textContent,'Play');
+}
+run("clearPulse();setStageView('torus');scaffoldMode=false;scaffoldControls()");el('headerPlay').onclick();assert.equal(run('pulseRunning'),true);el('headerPlay').onclick();assert.equal(run('pulseRunning'),false);
+console.log('PASS: screenshot defaults and clean header; play/pause controls each view and wave mode without camera reset.');
+run("clearPulse();scaffoldMode=true;showBoxFrame=true;showFIndicators=true;linkedTower=true;setUIHidden(false);setTorusSplit(0);setStageView('cube');reset()");
 function flush(){while(frames.length)frames.shift()();}
 flush();assert.equal(el('error').hidden,true);assert.equal(run('new Set(addresses).size'),9000);assert.equal(run('positions.length'),27000);assert.equal(run('edges.length'),12);
 assert(run('addresses.every((a,i)=>a>=0&&a<32768&&positions[3*i]+15.5===(a&31)&&positions[3*i+1]+15.5===((a>>>5)&31)&&positions[3*i+2]+15.5===(a>>>10))'));

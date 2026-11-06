@@ -13,7 +13,7 @@ const OrthogonalLayout = Object.freeze({
  try{sim=new M.Experiment(data);clock=new CycleClock(.05,performance.now());}catch(error){$('metric').textContent=error.message;$('play').disabled=true;return;}
  const planes=L.names.map((name,i)=>({visible:true,opacity:1,offset:0}));
  const flags=['showAxes','showPaths','showFactors','showSelected','showResponse','orbit'];
- let merge=0,edgeOpacity=1,vertexOpacity=0,selected=0,colorMode='plane',paths=[],width=0,height=0,dpr=1;
+ let merge=0,edgeOpacity=.13,vertexOpacity=.62,selected=0,colorMode='plane',paths=[],width=0,height=0,dpr=1;
  let dirty=true,backgroundDirty=true,layoutDirty=true,lastPaint=0,lastFrame=0,lastMetric=-Infinity,noticeTimer,priorView='oblique';
  let mode='assembly',tolerance=.05,inverseDirty=true,inverseReadyAt=0;
  const inverse=new InverseVolume();

@@ -15,6 +15,8 @@ const OrthogonalLayout = Object.freeze({
  const flags=['showAxes','showPaths','showFactors','showSelected','showResponse','orbit'];
  let merge=0,edgeOpacity=1,vertexOpacity=0,selected=0,colorMode='plane',paths=[],width=0,height=0,dpr=1;
  let dirty=true,backgroundDirty=true,layoutDirty=true,lastPaint=0,lastFrame=0,lastMetric=-Infinity,noticeTimer,priorView='oblique';
+ let mode='assembly',tolerance=.05,inverseDirty=true,inverseReadyAt=0;
+ const inverse=new InverseVolume();
  const transportColors={interior:'#f2bd71',exterior:'#62dcea',turn:'#bd9ae9'};
  const setDirty=(back=true)=>{dirty=true;if(back)backgroundDirty=true;};
  function notice(message,ms=4200){$('notice').textContent=message;$('notice').hidden=false;clearTimeout(noticeTimer);noticeTimer=setTimeout(()=>$('notice').hidden=true,ms);}
@@ -26,7 +28,7 @@ const OrthogonalLayout = Object.freeze({
  function view(name){camera.reset();if(name==='x')camera.turn(0,-Math.PI/2,0);else if(name==='y')camera.turn(Math.PI/2,0,0);else if(name==='oblique'){camera.turn(0,-Math.PI/4,0);camera.turn(Math.atan(1/Math.sqrt(2)),0,0);}priorView=name;updateViews();setDirty();}
  function updateViews(){document.querySelectorAll('[data-view]').forEach(b=>b.setAttribute('aria-current',String(b.dataset.view===priorView)));}
  bindVolumeCamera(canvas,camera,()=>{priorView='custom';updateViews();setDirty();},()=>setDrawer($('drawer').hidden),()=>view('oblique'));
- function project(p){const r=camera.rotate(p),scale=Math.min(width*.41,height*.40)*camera.zoom;return [width/2+camera.panX+scale*r[0],height/2+camera.panY-scale*r[1],r[2]];}
+ function project(p){const r=camera.rotate(p),scale=Math.min(width*.41,height*.40)*camera.zoom*(mode==='inverse'?1.32:1);return [width/2+camera.panX+scale*r[0],height/2+camera.panY-scale*r[1],r[2]];}
  function position(v){return M.splitPoint(sim.g.cycleOf[v],sim.g.stageOf[v],undefined,merge);}
  function segment(path,a,b){const p=project(a),q=project(b);path.moveTo(p[0],p[1]);path.lineTo(q[0],q[1]);}
  function stroke(g,path,color,alpha=1,lineWidth=.7){if(alpha<=0)return;g.globalAlpha=alpha;g.strokeStyle=color;g.lineWidth=lineWidth;g.stroke(path);g.globalAlpha=1;}
@@ -53,10 +55,59 @@ const OrthogonalLayout = Object.freeze({
   }
   g.globalAlpha=.6;g.fillStyle='#d8e5ed';g.beginPath();g.arc(o[0],o[1],1.7,0,Math.PI*2);g.fill();g.globalAlpha=1;
  }
+ function setMode(next){
+  mode=next;const active=mode==='inverse';document.body.classList.toggle('inverse',active);
+  $('assemblyMode').setAttribute('aria-pressed',String(!active));$('inverseMode').setAttribute('aria-pressed',String(active));
+  $('inverseControls').hidden=!active;$('inverseGuide').hidden=!active;$('modeLabel').textContent=active?'X ∩ Y ∩ Z':'ONE ORIGIN';
+  $('volume').setAttribute('aria-label',active?'Three-way convergence in a central cube. Drag to rotate, pinch to zoom.':'Three orthogonal Thalean charts. Drag to rotate, pinch to zoom.');
+  if(!active)$('gains').textContent='PID gains · P 1.4 · I 0.12 · D 4';
+  lastMetric=-Infinity;updatePlanes();layout();setDirty();
+ }
+ function drawCube(g){
+  if(!$('cubeFrame').checked)return;
+  const path=new Path2D(),h=inverse.half;
+  for(let axis=0;axis<3;axis++)for(const a of [-h,h])for(const b of [-h,h]){
+   const p=[0,0,0],q=[0,0,0];p[axis]=-h;q[axis]=h;p[(axis+1)%3]=q[(axis+1)%3]=a;p[(axis+2)%3]=q[(axis+2)%3]=b;segment(path,p,q);
+  }
+  stroke(g,path,'#779bb5',.32,.8);
+ }
+ function drawInverse(now){
+  const active=planes.every(p=>p.visible&&p.opacity>0);
+  if(inverseDirty&&now>=inverseReadyAt){inverse.build(paths,tolerance);inverseDirty=false;backgroundDirty=true;}
+  ctx.setTransform(dpr,0,0,dpr,0,0);ctx.globalAlpha=1;
+  const gradient=ctx.createRadialGradient(width/2,height/2,0,width/2,height/2,Math.max(width,height)*.65);
+  gradient.addColorStop(0,'#122638');gradient.addColorStop(1,'#060e18');ctx.fillStyle=gradient;ctx.fillRect(0,0,width,height);
+  if(backgroundDirty){
+   bg.setTransform(dpr,0,0,dpr,0,0);bg.clearRect(0,0,width,height);drawCube(bg);
+   if(active&&!inverseDirty){
+    const faces=inverse.faces.map(f=>({...f,normal:camera.rotate(f.normal),screen:f.points.map(project)})).filter(f=>f.normal[2]>0.00001);
+    faces.sort((a,b)=>a.screen.reduce((s,p)=>s+p[2],0)-b.screen.reduce((s,p)=>s+p[2],0));
+    for(const f of faces){
+     const light=.55+.25*f.normal[2]+.13*f.normal[1]-.07*f.normal[0];
+     bg.fillStyle=`rgb(${Math.round(166*light+44*f.strength)},${Math.round(220*light+30*f.strength)},${Math.round(239*light)})`;
+     bg.beginPath();f.screen.forEach((p,i)=>i?bg.lineTo(p[0],p[1]):bg.moveTo(p[0],p[1]));bg.closePath();bg.fill();
+     bg.strokeStyle='#a9e6ea26';bg.lineWidth=.45;bg.stroke();
+    }
+   }
+   backgroundDirty=false;
+  }
+  ctx.drawImage(background,0,0,background.width,background.height,0,0,width,height);
+  const count=active&&!inverseDirty?inverse.count:0;
+  $('visibleCount').textContent=inverseDirty?'Updating overlap…':count.toLocaleString()+' shared cells';
+  $('cycleReadout').textContent='X ∩ Y ∩ Z · full-cycle envelope';
+  $('gains').textContent=`ε ${tolerance.toFixed(3)} · cell ${inverse.step.toFixed(3)} · ${inverse.n}³ grid`;
+  $('metric').textContent=`V ≈ ${(count*inverse.step**3).toFixed(5)} chart³ · merge ${merge}%`;
+  $('empty').hidden=active&&(count>0||inverseDirty);
+  $('empty').innerHTML=active?'No shared cells at this tolerance<span>Adjust tolerance or merge to inspect the overlap.</span>':'Three visible copies required<span>Enable X, Y and Z with nonzero opacity.</span>';
+ }
+ $('assemblyMode').onclick=()=>setMode('assembly');$('inverseMode').onclick=()=>setMode('inverse');
+ $('tolerance').oninput=e=>{tolerance=+e.target.value/1000;$('toleranceValue').textContent=tolerance.toFixed(3);inverseDirty=true;inverseReadyAt=performance.now()+100;setDirty();};
+ $('cubeFrame').onchange=()=>setDirty();
  function arrow(point,heading,color,size,alpha){const a=project(point),b=project(point.map((x,i)=>x-heading[i])),dx=a[0]-b[0],dy=a[1]-b[1],norm=Math.hypot(dx,dy);if(norm<.01)return;const ux=dx/norm,uy=dy/norm;ctx.globalAlpha=alpha;ctx.fillStyle=color;ctx.strokeStyle='#07121b';ctx.lineWidth=.55;ctx.beginPath();ctx.moveTo(a[0]+ux*size,a[1]+uy*size);ctx.lineTo(a[0]-ux*size-uy*size*.6,a[1]-uy*size+ux*size*.6);ctx.lineTo(a[0]-ux*size+uy*size*.6,a[1]-uy*size-ux*size*.6);ctx.closePath();ctx.fill();ctx.stroke();}
  function draw(now){
   if(!width||!height)return;
-  if(layoutDirty){paths=data.cycles.map((c,i)=>c.map((_,k)=>M.path(i,k,merge)));layoutDirty=false;backgroundDirty=true;}
+  if(layoutDirty){paths=data.cycles.map((c,i)=>c.map((_,k)=>M.path(i,k,merge)));layoutDirty=false;backgroundDirty=true;inverseDirty=true;}
+  if(mode==='inverse'){drawInverse(now);dirty=false;return;}
   if(backgroundDirty)buildBackground();
   ctx.setTransform(dpr,0,0,dpr,0,0);const gradient=ctx.createRadialGradient(width/2,height*.48,0,width/2,height*.48,Math.max(width,height)*.65);gradient.addColorStop(0,'#122238');gradient.addColorStop(.65,'#091521');gradient.addColorStop(1,'#060e18');ctx.globalAlpha=1;ctx.fillStyle=gradient;ctx.fillRect(0,0,width,height);ctx.drawImage(background,0,0,background.width,background.height,0,0,width,height);
   const k=clock.phaseStep,f=clock.fraction;
@@ -76,8 +127,8 @@ const OrthogonalLayout = Object.freeze({
  }
  function advance(){sim.step();dirty=true;}
  function setPlay(running){clock.setRunning(running,performance.now(),advance);$('play').textContent=running?'Ⅱ':'▶';$('play').setAttribute('aria-pressed',String(running));$('play').setAttribute('aria-label',running?'Pause':'Play');dirty=true;}
- function frame(t){const dt=lastFrame?Math.min(.1,(t-lastFrame)/1000):0;lastFrame=t;const now=performance.now();clock.advance(now,advance);if(clock.running)dirty=true;if($('orbit').checked&&clock.running){camera.turn(0,dt*.065,0);priorView='custom';updateViews();setDirty();}if(dirty&&t-lastPaint>=1000/30){draw(t);lastPaint=t;}requestAnimationFrame(frame);}
- function updatePlanes(){document.querySelectorAll('[data-plane]').forEach(b=>b.setAttribute('aria-pressed',String(planes[+b.dataset.plane].visible)));planes.forEach((p,i)=>{const c=$('planeVisible'+i);if(c)c.checked=p.visible;});const count=planes.filter(p=>p.visible&&p.opacity>0).length;$('visibleCount').textContent=count+' plane'+(count===1?'':'s');$('empty').hidden=count>0;setDirty();}
+ function frame(t){const dt=lastFrame?Math.min(.1,(t-lastFrame)/1000):0;lastFrame=t;const now=performance.now();clock.advance(now,advance);if(clock.running||(mode==='inverse'&&inverseDirty))dirty=true;if($('orbit').checked&&clock.running){camera.turn(0,dt*.065,0);priorView='custom';updateViews();setDirty();}if(dirty&&t-lastPaint>=1000/30){draw(t);lastPaint=t;}requestAnimationFrame(frame);}
+ function updatePlanes(){document.querySelectorAll('[data-plane]').forEach(b=>b.setAttribute('aria-pressed',String(planes[+b.dataset.plane].visible)));planes.forEach((p,i)=>{const c=$('planeVisible'+i);if(c)c.checked=p.visible;});const count=planes.filter(p=>p.visible&&p.opacity>0).length;$('visibleCount').textContent=count+' plane'+(count===1?'':'s');$('empty').hidden=count>0;if(mode==='assembly')$('empty').innerHTML='All planes hidden<span>Use X, Y or Z above to show a plane.</span>';setDirty();}
  for(let i=0;i<3;i++){
   const card=document.createElement('div');card.className='plane-card';card.innerHTML=`<div class="plane-head"><input id="planeVisible${i}" type="checkbox" checked aria-label="Show ${L.names[i]} copy"><strong class="${L.names[i].toLowerCase()}">${L.names[i]} · ${L.planes[i]} plane</strong><button data-solo="${i}">Solo</button></div><label>Opacity <output id="opacityValue${i}">100%</output><input id="opacity${i}" type="range" min="0" max="100" value="100" aria-label="${L.names[i]} copy opacity"></label><label>Phase offset <output id="phaseValue${i}">0° · 0 steps</output><input id="phase${i}" type="range" min="0" max="19" value="0" aria-label="${L.names[i]} copy phase offset"></label>`;$('planeControls').append(card);
   $('planeVisible'+i).onchange=e=>{planes[i].visible=e.target.checked;updatePlanes();};$('opacity'+i).oninput=e=>{planes[i].opacity=+e.target.value/100;$('opacityValue'+i).textContent=e.target.value+'%';updatePlanes();};$('phase'+i).oninput=e=>{planes[i].offset=+e.target.value;$('phaseValue'+i).textContent=`${planes[i].offset*18}° · ${planes[i].offset} steps`;dirty=true;};
@@ -88,7 +139,7 @@ const OrthogonalLayout = Object.freeze({
  $('play').onclick=()=>setPlay(!clock.running);$('reset').onclick=()=>{sim.reset();clock.reset(performance.now());view('oblique');dirty=true;notice('Simulation restarted.');};
  $('step').onclick=()=>{setPlay(false);clock.fraction=0;clock.steps++;sim.step();dirty=true;};
  $('hz').oninput=e=>{const hz=M.positionHz(+e.target.value);clock.setHz(hz,performance.now(),advance);$('hzValue').textContent=hz.toFixed(2)+' Hz';$('hz').setAttribute('aria-valuetext',hz+' hertz');dirty=true;};
- for(const name of ['edges','vertices','merge'])$(name).oninput=e=>{const n=+e.target.value;$(name+'Value').textContent=n+'%';if(name==='edges')edgeOpacity=n/100;if(name==='vertices')vertexOpacity=n/100;if(name==='merge'){merge=n;layoutDirty=true;}setDirty();};
+ for(const name of ['edges','vertices','merge'])$(name).oninput=e=>{const n=+e.target.value;$(name+'Value').textContent=n+'%';if(name==='edges')edgeOpacity=n/100;if(name==='vertices')vertexOpacity=n/100;if(name==='merge'){merge=n;layoutDirty=true;inverseDirty=true;inverseReadyAt=performance.now()+100;}setDirty();};
  for(const name of flags)$(name).onchange=()=>setDirty();
  $('colorMode').onchange=e=>{colorMode=e.target.value;setDirty();};$('selected').onchange=e=>{selected=Math.max(0,Math.min(449,Math.round(Number(e.target.value)||1)-1));e.target.value=selected+1;setDirty();};
  document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>view(b.dataset.view));
@@ -98,21 +149,23 @@ const OrthogonalLayout = Object.freeze({
  function openInfo(){if(!$('info').open)$('info').showModal();} $('about').onclick=openInfo;$('credits').onclick=openInfo;$('closeInfo').onclick=()=>$('info').close();
  document.addEventListener('keydown',e=>{if(e.key==='Escape'){setDrawer(false);if(document.body.classList.contains('immersive'))setImmersive(false);}if(e.code==='Space'&&(e.target===canvas||e.target===document.body)){e.preventDefault();setPlay(!clock.running);}});
  document.addEventListener('visibilitychange',()=>{if(document.hidden)setPlay(false);});
- function settings(){return {schema:'thalean-orthogonal-settings-1',source:'Thalean Graph Explorer v0.34.0',hz:clock.hz,running:clock.running,merge,edgeOpacity,vertexOpacity,selected,colorMode,planes:planes.map(p=>({...p})),flags:Object.fromEntries(flags.map(id=>[id,$(id).checked])),camera:{q:camera.q.slice(),zoom:camera.zoom,pan:[camera.panX/Math.max(1,width),camera.panY/Math.max(1,height)]}};}
+ function settings(){return {schema:'thalean-orthogonal-settings-1',source:'Thalean Graph Explorer v0.34.0',hz:clock.hz,running:clock.running,mode,tolerance,cubeFrame:$('cubeFrame').checked,merge,edgeOpacity,vertexOpacity,selected,colorMode,planes:planes.map(p=>({...p})),flags:Object.fromEntries(flags.map(id=>[id,$(id).checked])),camera:{q:camera.q.slice(),zoom:camera.zoom,pan:[camera.panX/Math.max(1,width),camera.panY/Math.max(1,height)]}};}
  function validate(s){
   const num=(n,a,b)=>typeof n==='number'&&Number.isFinite(n)&&n>=a&&n<=b;
   if(!s||s.schema!=='thalean-orthogonal-settings-1')throw Error('Choose a Thalean Orthogonal settings file.');
   if(!num(s.hz,.05,10)||!num(s.merge,0,100)||!num(s.edgeOpacity,0,1)||!num(s.vertexOpacity,0,1)||!Number.isInteger(s.selected)||!num(s.selected,0,449)||typeof s.running!=='boolean'||!['plane','transport'].includes(s.colorMode))throw Error('Invalid display settings.');
+  if((s.mode!==undefined&&!['assembly','inverse'].includes(s.mode))||(s.tolerance!==undefined&&!num(s.tolerance,.01,.12))||(s.cubeFrame!==undefined&&typeof s.cubeFrame!=='boolean'))throw Error('Invalid inverse cube settings.');
   if(!Array.isArray(s.planes)||s.planes.length!==3||s.planes.some(p=>!p||typeof p.visible!=='boolean'||!num(p.opacity,0,1)||!Number.isInteger(p.offset)||!num(p.offset,0,19)))throw Error('Invalid plane settings.');
   if(!s.flags||flags.some(id=>typeof s.flags[id]!=='boolean'))throw Error('Invalid visibility flags.');
   const c=s.camera;if(!c||!Array.isArray(c.q)||c.q.length!==4||c.q.some(v=>!num(v,-1,1))||Math.abs(Math.hypot(...c.q)-1)>1e-5||!num(c.zoom,1e-4,1e4)||!Array.isArray(c.pan)||c.pan.length!==2||c.pan.some(v=>!Number.isFinite(v)))throw Error('Invalid camera settings.');
   return s;
  }
- function applySettings(s){validate(s);setPlay(false);sim.reset();clock.reset(performance.now());clock.hz=s.hz;merge=s.merge;edgeOpacity=s.edgeOpacity;vertexOpacity=s.vertexOpacity;selected=s.selected;colorMode=s.colorMode;planes.forEach((p,i)=>Object.assign(p,s.planes[i]));flags.forEach(id=>$(id).checked=s.flags[id]);camera.q=s.camera.q.slice();camera.zoom=s.camera.zoom;camera.panX=s.camera.pan[0]*width;camera.panY=s.camera.pan[1]*height;priorView='custom';updateViews();
+ function applySettings(s){validate(s);tolerance=s.tolerance??.05;$('tolerance').value=tolerance*1000;$('toleranceValue').textContent=tolerance.toFixed(3);$('cubeFrame').checked=s.cubeFrame??true;inverseDirty=true;inverseReadyAt=0;setMode(s.mode??'assembly');setPlay(false);sim.reset();clock.reset(performance.now());clock.hz=s.hz;merge=s.merge;edgeOpacity=s.edgeOpacity;vertexOpacity=s.vertexOpacity;selected=s.selected;colorMode=s.colorMode;planes.forEach((p,i)=>Object.assign(p,s.planes[i]));flags.forEach(id=>$(id).checked=s.flags[id]);camera.q=s.camera.q.slice();camera.zoom=s.camera.zoom;camera.panX=s.camera.pan[0]*width;camera.panY=s.camera.pan[1]*height;priorView='custom';updateViews();
   $('hz').value=M.hzPosition(s.hz);$('hzValue').textContent=s.hz.toFixed(2)+' Hz';$('hz').setAttribute('aria-valuetext',s.hz+' hertz');for(const [id,n]of [['edges',edgeOpacity*100],['vertices',vertexOpacity*100],['merge',merge]]){$(id).value=n;$(id+'Value').textContent=n+'%';}$('selected').value=selected+1;$('colorMode').value=colorMode;planes.forEach((p,i)=>{$('opacity'+i).value=p.opacity*100;$('opacityValue'+i).textContent=Math.round(p.opacity*100)+'%';$('phase'+i).value=p.offset;$('phaseValue'+i).textContent=`${p.offset*18}° · ${p.offset} steps`;});updatePlanes();layoutDirty=true;setPlay(s.running);notice('Settings loaded · fresh simulation started.');}
  $('save').onclick=()=>{const url=URL.createObjectURL(new Blob([JSON.stringify(settings(),null,2)],{type:'application/json'})),a=document.createElement('a');a.href=url;a.download='Thalean_Orthogonal_Settings.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);notice('Settings saved.');};
  $('load').onclick=()=>{$('file').value='';$('file').click();};$('file').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{if(f.size>1024*1024)throw Error('Settings file is too large (1 MB maximum).');applySettings(JSON.parse(await f.text()));}catch(error){notice(error instanceof SyntaxError?'Invalid JSON; settings unchanged.':error.message,6000);}finally{$('file').value='';}};
+ $('inverseSave').onclick=()=>$('save').click();$('inverseLoad').onclick=()=>$('load').click();
  $('audit').textContent=`Verified: ${sim.g.n.toLocaleString()} states, ${sim.g.edges.length.toLocaleString()} edges, degree 10, 450 disjoint F cycles of length 20. Three proper rotations with mutually perpendicular normals. No cross-copy edges.`;
- window.orthogonalObservatory={settings,validate,applySettings,getState:()=>({steps:clock.steps,phase:clock.phaseStep,running:clock.running,geometry:{states:sim.g.n,edges:sim.g.edges.length,cycles:data.cycles.length},planes:planes.map(p=>({...p})),size:[width,height],metrics:sim.closed.metrics()}),draw:()=>{setDirty();draw(performance.now());}};
- view('oblique');updatePlanes();layout();requestAnimationFrame(frame);notice('Drag to rotate · pinch to zoom · tap plane buttons to hide/show',5500);
+ window.orthogonalObservatory={settings,validate,applySettings,getState:()=>({mode,inverse:{count:inverse.count,tolerance,volume:inverse.volume},steps:clock.steps,phase:clock.phaseStep,running:clock.running,geometry:{states:sim.g.n,edges:sim.g.edges.length,cycles:data.cycles.length},planes:planes.map(p=>({...p})),size:[width,height],metrics:sim.closed.metrics()}),draw:()=>{setDirty();draw(performance.now());}};
+ view('oblique');setMode(location.hash==='#inverse'?'inverse':'assembly');updatePlanes();layout();requestAnimationFrame(frame);notice('Drag to rotate · pinch to zoom · tap plane buttons to hide/show',5500);
 })();

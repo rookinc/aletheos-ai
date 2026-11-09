@@ -137,3 +137,22 @@ and maximum native-sample gap for the selected reconstruction. These are
 coordinate modes, separate from scalar-area modes and native graph edges.
 Exports include coordinate coefficients and all native samples.
 Verify with `node verify-triangle-spatial.cjs`.
+
+
+## v0.9 — 450 route triangles
+
+The `450 Triangles` tab and `#all-triangles` entry show one geometric triangle for each of the 450 native F routes. Each route position is drawn in XY, XZ and YZ, producing 1,350 corner markers. These three corners represent one native state, not three distinct adjacent vertices. This construction is separate from the 41 selectable verified native triangle orbits. Connecting edges are drawing geometry.
+
+The view uses its own face, edge, corner, flower and depth controls; isolate any F1–F450, synchronize or stagger phases, pause or step, rotate, zoom and toggle planes. Hidden planes suppress complete faces. Hydrogen evolution and probability/current rendering are inactive here. JSON state and offline export retain the new controls.
+
+Validation: `node verify-swarm.cjs` checks 10,800 route configurations, F advancement, all three coordinate mappings, 20-step closure and 450 distinct active state IDs at every integer phase.
+
+
+## v0.10 — front camera and dart tails
+
+XYZ Front uses X up, Y right, and Z into the screen, matching the supplied reference. The 450 Triangles view opens and resets to this preset. White selection arrows toggles the selected route's white outline, halo and white edge emphasis while retaining its ordinary colored darts. Dart tails controls opacity of the preceding three F steps, with fading toward the oldest sample; zero hides all tails. Both controls persist in JSON state and offline exports.
+
+
+## v0.10.1 — preferred starting settings
+
+Start in 450 Triangles at 4 Hz, Front camera, faces 17%, edges 0%, vertices 0%, tails 16%, flower 0%, depth 20%, F21 selected, all routes shown and phases synchronized. White selection arrows are off. All three planes and axes remain enabled; labels and auto orbit default off. Saved state/offline settings continue to override the defaults when restored.

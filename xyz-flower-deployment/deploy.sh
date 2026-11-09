@@ -14,10 +14,10 @@ trap 'rm -rf -- "$work"' EXIT
 python3 "$release_dir/remote_install.py" pack "$release_dir" "$work/payload.tar.gz" || fail 'Release validation failed.'
 installer=$(cat "$release_dir/remote_install.py") || fail 'Cannot read installer.'
 quoted_installer=${installer//\'/\'\\\'\'}
-printf 'Uploading XYZ Flower v0.8 via %s…\n' "$remote"
+printf 'Uploading XYZ Flower v0.10.1 via %s…\n' "$remote"
 ssh -T "$remote" "python3 -c '$quoted_installer' install" < "$work/payload.tar.gz" || fail 'SSH installation failed; see server message above.'
 for file in index.html pilot002-evidence.json; do
-  curl -fsSL --max-time 40 --retry 2 -o "$work/$file" "https://aletheos.ai/observatories/xyz-flower/$file?release=v0.8" || fail "Installed, but public fetch failed for $file."
+  curl -fsSL --max-time 40 --retry 2 -o "$work/$file" "https://aletheos.ai/observatories/xyz-flower/$file?release=v0.10.1" || fail "Installed, but public fetch failed for $file."
   python3 - "$release_dir/manifest.json" "$work/$file" "$file" <<'PY'
 import hashlib,json,sys
 expected=json.load(open(sys.argv[1]))['files']['observatories/xyz-flower/'+sys.argv[3]]['sha256']
@@ -26,7 +26,7 @@ if hashlib.sha256(open(sys.argv[2],'rb').read()).hexdigest()!=expected:
 PY
   [ "$?" -eq 0 ] || fail 'Public checksum verification failed.'
 done
-curl -fsSL --max-time 40 --retry 2 -o "$work/catalog.html" 'https://aletheos.ai/observatories/?release=xyz-flower-v0.8' || fail 'Installed, but catalog fetch failed.'
+curl -fsSL --max-time 40 --retry 2 -o "$work/catalog.html" 'https://aletheos.ai/observatories/?release=xyz-flower-v0.10.1' || fail 'Installed, but catalog fetch failed.'
 python3 - "$work/catalog.html" <<'PY'
 from html.parser import HTMLParser
 import sys

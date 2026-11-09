@@ -1,4 +1,3 @@
-process.chdir(__dirname);
 const assert=require('node:assert/strict'),fs=require('node:fs'),M=require('./model.js');
 const t=JSON.parse(fs.readFileSync('transport.json')),d=JSON.parse(fs.readFileSync('pilot-data.json'));
 const n=M.native(t),p=M.verify(d);

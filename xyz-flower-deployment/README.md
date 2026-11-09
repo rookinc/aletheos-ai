@@ -1,4 +1,8 @@
-# XYZ Flower · Thalean Observatory v0.8
+# XYZ Flower · Thalean Observatory v0.10.1
+
+Default: 450 Triangles, Front camera (X up, Y right), 4 Hz, F21, synchronized.
+Faces 17%, edges/vertices/flower 0%, tails 16%, depth 20%; labels and white arrows off.
+The 450 geometric triangles join three drawings of each F route, not native graph edges.
 
 Public route: https://aletheos.ai/observatories/xyz-flower/
 Catalog: https://aletheos.ai/observatories/
@@ -54,7 +58,7 @@ The self-contained build uses Python's standard library with the shipped data.
 The installer verifies SHA-256 and runs PHP lint on Bluehost before writes.
 It backs up changed files outside the webroot and rolls back installation
 errors. It accepts absent files, the known original catalog, exact v0.3,
-v0.4, v0.5, v0.6 or v0.7 releases, or the current release. Other changes block
+v0.4, v0.5, v0.6, v0.7 or v0.8 releases, or the current release. Other changes block
 writes. The deployment script checks public file hashes and the catalog link
 afterward. Live Bluehost publication still requires the existing Termux SSH
 connection.

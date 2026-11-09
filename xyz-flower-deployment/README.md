@@ -1,4 +1,4 @@
-# XYZ Flower · Thalean Observatory v0.4
+# XYZ Flower · Thalean Observatory v0.5
 
 Public route: https://aletheos.ai/observatories/xyz-flower/
 Catalog: https://aletheos.ai/observatories/
@@ -32,3 +32,6 @@ Open the flower route with #hydrogen to start in this tab.
 Run `node verify-hydrogen.cjs` inside source for 135 numerical cases.
 The installer accepts an absent destination, the known original catalog,
 exact v0.3 release hashes, or this release; other edits block all writes.
+
+Adds independent Hydrogen Edges / Vertices / Flower drawings faders and
+signed-current flow tracers. Supports upgrades from both v0.3 and v0.4.

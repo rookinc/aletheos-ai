@@ -80,3 +80,15 @@ No physical electron orbit or proton at the flower center is asserted.
 Verify with `node verify.cjs` and `node verify-hydrogen.cjs`. The latter writes
 `hydrogen-verification.json`, including independently recomputed eigenvector
 residuals, graph edge registration, current continuity and stationary checks.
+
+## Flow visibility (v0.5)
+
+Hydrogen's layer faders are grouped at the top of its controls: Edges controls
+current chords and flow tracers; Vertices controls probability dots; Flower
+drawings controls the geometric circles and plane labels. All reach zero
+independently. Axis guides and F darts retain separate switches.
+Flow tracers use the analytic integral of signed two-mode edge current,
+with a display speed scale and edge wrapping. Their direction reverses with
+current, brightness tracks its magnitude, and pause freezes their positions.
+They do not depict electron paths. Stationary modes show no current tracers.
+Existing state files load defaults for the new controls.

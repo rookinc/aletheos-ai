@@ -1,6 +1,12 @@
 <?php
 /* Aletheos Observatory Library 001 — discover published child pages locally. */
 $catalog = [
+    'xyz-flower' => [
+        'title' => 'XYZ Flower · Thalean Observatory', 'category' => 'geometry', 'kind' => '3D flower and native transport', 'icon' => 'flower',
+        'description' => 'Follow 450 native Thalean dart routes through three perpendicular flowers on the XY, XZ and YZ planes. Orbit, isolate planes, and adjust bloom depth.',
+        'detail' => '150 routes per plane, with verified 20-step returns. Includes flat flower, mandala, native F and Fourier views.'
+    ],
+
     'jupiter' => [
         'title' => 'Jupiter Vortex Lab', 'category' => 'fluid', 'kind' => 'Fluid dynamics', 'icon' => 'vortex',
         'description' => 'Evolve interacting vortices in a regional fluid model, then explore a separate experiment on the native 9,000-state Thalean graph.',
@@ -104,6 +110,7 @@ usort($entries, function ($a, $b) {
 function obs_escape($value) { return htmlspecialchars((string)$value, ENT_QUOTES, 'UTF-8'); }
 function obs_icon($name) {
     $shapes = [
+        'flower' => '<circle cx="22.000" cy="40.000" r="11"/><circle cx="27.500" cy="49.526" r="11"/><circle cx="33.000" cy="59.053" r="11"/><circle cx="27.500" cy="30.474" r="11"/><circle cx="33.000" cy="40.000" r="11"/><circle cx="38.500" cy="49.526" r="11"/><circle cx="44.000" cy="59.053" r="11"/><circle cx="33.000" cy="20.947" r="11"/><circle cx="38.500" cy="30.474" r="11"/><circle cx="44.000" cy="40.000" r="11"/><circle cx="49.500" cy="49.526" r="11"/><circle cx="55.000" cy="59.053" r="11"/><circle cx="44.000" cy="20.947" r="11"/><circle cx="49.500" cy="30.474" r="11"/><circle cx="55.000" cy="40.000" r="11"/><circle cx="60.500" cy="49.526" r="11"/><circle cx="55.000" cy="20.947" r="11"/><circle cx="60.500" cy="30.474" r="11"/><circle cx="66.000" cy="40.000" r="11"/>',
         'vortex' => '<path d="M14 37c-8-20 24-31 35-12 8 14-14 28-25 16-8-9 5-19 12-12 5 5-2 11-6 7M78 27c11 21-20 38-34 21"/><path d="M9 54c22 19 58 10 70-13M19 12c16-10 43-5 51 12" opacity=".4"/>',
         'bubble' => '<circle cx="44" cy="36" r="27"/><circle cx="44" cy="36" r="12" stroke-dasharray="3 5" opacity=".45"/><circle cx="44" cy="36" r="3" fill="currentColor" stroke="none"/><path d="M6 36h8m60 0h8M44 1v7m0 56v7" opacity=".5"/>',
         'planes' => '<path d="M44 5 74 22 44 40 14 22ZM14 22v29l30 18V40m30-18v29L44 69M44 5v35M14 51l30-18 30 18"/><path d="m29 14 30 18v28M29 60V32l30-18" opacity=".35"/>',

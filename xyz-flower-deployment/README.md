@@ -1,7 +1,7 @@
-# XYZ Flower · Thalean Observatory v0.10.1
+# XYZ Flower · Thalean Observatory v0.10.2
 
-Default: 450 Triangles, Front camera (X up, Y right), 4 Hz, F21, synchronized.
-Faces 17%, edges/vertices/flower 0%, tails 16%, depth 20%; labels and white arrows off.
+Default: 450 Triangles, Front camera (X up, Y right), 0.05 Hz, F1, synchronized.
+Faces 0%, edges 9%, vertices 0%, flower 49%, tails 64%, depth 32%; labels and white arrows off.
 The 450 geometric triangles join three drawings of each F route, not native graph edges.
 
 Public route: https://aletheos.ai/observatories/xyz-flower/

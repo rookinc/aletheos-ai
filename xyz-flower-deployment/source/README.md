@@ -156,3 +156,8 @@ XYZ Front uses X up, Y right, and Z into the screen, matching the supplied refer
 ## v0.10.1 — preferred starting settings
 
 Start in 450 Triangles at 4 Hz, Front camera, faces 17%, edges 0%, vertices 0%, tails 16%, flower 0%, depth 20%, F21 selected, all routes shown and phases synchronized. White selection arrows are off. All three planes and axes remain enabled; labels and auto orbit default off. Saved state/offline settings continue to override the defaults when restored.
+
+
+## v0.10.2 — slower synchronized default
+
+450 Triangles now starts at 0.05 Hz with F1 selected. Faces 0%, edges 9%, vertices 0%, tails 64%, flower drawings 49%, bloom depth 32%. All routes remain active and synchronized; labels, white selection arrows and auto orbit remain off. All three planes and axes remain enabled. Front camera remains the established X-up/Y-right preset.

@@ -20,7 +20,7 @@ import tempfile
 import time
 import uuid
 
-RELEASE = 'aletheos-xyz-flower-v0.10.1'
+RELEASE = 'aletheos-xyz-flower-v0.10.2'
 BASE_INDEX_HASH = '26647d2203ea1571cb990ee04017c29201a57bb7518345495e60eca295c963a2'
 PREVIOUS_HASHES = {'observatories/index.php': '6103c00aef4cbfa17d719283b2a03dffba777c7ccf070e06ca481c21c66f347a', 'observatories/xyz-flower/index.html': 'a227c1ad8633be782317585c4906e7d8d1ea39937afd8fa7d82e2dc7d36922a0', 'observatories/xyz-flower/pilot002-evidence.json': '547aa2ea97fa3642a6e9f047582b1c5a21004f7dad2e9de441504f32fa1de70d'}
 PREVIOUS_V04_HASHES = {'observatories/index.php': '36b45f52060a2d49cfadb3e4ef1c7c8801d96dbc8e6f0a6f8becf7b6671d052a', 'observatories/xyz-flower/index.html': '11b6dde8075b79fb15aa95387658b92bb6219466f58709fe6d30075eefc2beba', 'observatories/xyz-flower/pilot002-evidence.json': '547aa2ea97fa3642a6e9f047582b1c5a21004f7dad2e9de441504f32fa1de70d'}
@@ -28,6 +28,7 @@ PREVIOUS_V05_HASHES = {'observatories/index.php': '36b45f52060a2d49cfadb3e4ef1c7
 PREVIOUS_V06_HASHES = {'observatories/index.php': '36b45f52060a2d49cfadb3e4ef1c7c8801d96dbc8e6f0a6f8becf7b6671d052a', 'observatories/xyz-flower/index.html': 'd39c4ab30984e25bbca584ce1a23d14a4d5873a2d0235ac4f1b5dae883a3730a', 'observatories/xyz-flower/pilot002-evidence.json': '547aa2ea97fa3642a6e9f047582b1c5a21004f7dad2e9de441504f32fa1de70d'}
 PREVIOUS_V07_HASHES = {'observatories/index.php': '36b45f52060a2d49cfadb3e4ef1c7c8801d96dbc8e6f0a6f8becf7b6671d052a', 'observatories/xyz-flower/index.html': 'a7b17d35a34d59111d579acbf7108e896433e593570e2bd3bab12d739ff4cc11', 'observatories/xyz-flower/pilot002-evidence.json': '547aa2ea97fa3642a6e9f047582b1c5a21004f7dad2e9de441504f32fa1de70d'}
 PREVIOUS_V08_HASHES = {'observatories/index.php': '36b45f52060a2d49cfadb3e4ef1c7c8801d96dbc8e6f0a6f8becf7b6671d052a', 'observatories/xyz-flower/index.html': '445bd8ca4aa4e4c1f1c05d4692a5f119359a7a5ce97cf27dac129e8f7797c87e', 'observatories/xyz-flower/pilot002-evidence.json': '547aa2ea97fa3642a6e9f047582b1c5a21004f7dad2e9de441504f32fa1de70d'}
+PREVIOUS_V0101_HASHES = {'observatories/index.php': '36b45f52060a2d49cfadb3e4ef1c7c8801d96dbc8e6f0a6f8becf7b6671d052a', 'observatories/xyz-flower/index.html': '68b608fd18a0293f46befdddc5eba701f04bf58d931e58d3c48adb3c624e7cd7', 'observatories/xyz-flower/pilot002-evidence.json': '547aa2ea97fa3642a6e9f047582b1c5a21004f7dad2e9de441504f32fa1de70d'}
 MAX_BYTES = 32 * 1024 * 1024
 MAX_FILE_BYTES = 8 * 1024 * 1024
 REQUIRED = {'observatories/index.php', 'observatories/xyz-flower/index.html', 'observatories/xyz-flower/pilot002-evidence.json'}
@@ -179,7 +180,7 @@ def install_archive(stream, root=None, php_binary='php', fail_after=None):
     states = {name: file_state(path) for name, path in targets.items()}
     # Refuse to replace edits made since the known catalog release.
     for name, current in states.items():
-        accepted = {None, manifest['files'][name]['sha256'], PREVIOUS_HASHES.get(name), PREVIOUS_V04_HASHES.get(name), PREVIOUS_V05_HASHES.get(name), PREVIOUS_V06_HASHES.get(name), PREVIOUS_V07_HASHES.get(name), PREVIOUS_V08_HASHES.get(name)}
+        accepted = {None, manifest['files'][name]['sha256'], PREVIOUS_HASHES.get(name), PREVIOUS_V04_HASHES.get(name), PREVIOUS_V05_HASHES.get(name), PREVIOUS_V06_HASHES.get(name), PREVIOUS_V07_HASHES.get(name), PREVIOUS_V08_HASHES.get(name), PREVIOUS_V0101_HASHES.get(name)}
         if name == 'observatories/index.php': accepted.add(BASE_INDEX_HASH)
         if current not in accepted:
             raise ValueError('Destination has unreviewed changes; no files replaced: ' + name)

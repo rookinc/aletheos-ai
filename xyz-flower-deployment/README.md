@@ -1,14 +1,24 @@
-# XYZ Flower · Thalean Observatory v0.6
+# XYZ Flower · Thalean Observatory v0.7
 
 Public route: https://aletheos.ai/observatories/xyz-flower/
 Catalog: https://aletheos.ai/observatories/
 Triangle view: append #triangles to the flower route.
+Cycle analysis: append #triangle-spectrum to open the Fourier readout.
 Hydrogen view: append #hydrogen to the flower route.
 
 Run `bash xyz-flower-deployment/deploy.sh` from this extracted release on
 Termux using the existing `gurtiamy` SSH alias. The package installs the
 flower HTML, mathematical evidence JSON, and existing catalog entry only.
 No external runtime or ChatGPT sign-in is required by the public flavor.
+
+Cycle & Fourier analyzes 20 discrete native F samples for drawing area,
+squared side length, centroid coordinates, oriented area components and
+graph distance. Current-depth and flat-reference signals share chart scales.
+The single-sided DFT exposes bins 1-10 with optional mean/DC; its inverse
+reconstructs the samples. JSON exports retain all complex coefficients;
+CSV exports retain twenty samples and their native state IDs. Frequencies
+are cycles per F return, not physical Hz. This observable analysis does not
+assert a new native operator bridge or a hydrogen energy spectrum.
 
 The native triangle overlay selects among 41 equal-phase, cross-plane F
 orbits. All 820 discrete triangles retain graph distances 1, 1, 1 through
@@ -24,12 +34,13 @@ and flower faders and signed-current flow tracers are retained. This is a
 dimensionless graph hydrogen analogue, not calibrated physical hydrogen.
 
 Inside `source/`, run `python build.py`, `node verify.cjs`,
-`node verify-triangles.cjs`, and `node verify-hydrogen.cjs`.
+`node verify-triangles.cjs`, `node verify-triangle-spectrum.cjs`, and
+`node verify-hydrogen.cjs`.
 The self-contained build uses Python's standard library with the shipped data.
 
 The installer verifies SHA-256 and runs PHP lint on Bluehost before writes.
 It backs up changed files outside the webroot and rolls back installation
 errors. It accepts absent files, the known original catalog, exact v0.3,
-v0.4 or v0.5 releases, or the current release. Other changes block writes.
+v0.4, v0.5 or v0.6 releases, or the current release. Other changes block writes.
 The deployment script checks public file hashes and the catalog link afterward.
 Live Bluehost publication still requires the existing Termux SSH connection.

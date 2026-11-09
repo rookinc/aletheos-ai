@@ -108,3 +108,17 @@ edges or Hamiltonian terms are added. Verify with `node verify-triangles.cjs`.
 
 Corrected source-version text to registered Explorer v0.34.0; earlier display
 version edits had inadvertently modified this citation. Transport data unchanged.
+
+## Triangle Fourier study (v0.7)
+
+Cycle & Fourier analyzes 20 discrete native samples for the selected orbit
+and bloom depth. It exposes area, squared side, centroid coordinates, oriented
+area components, and graph distance. The chart compares current depth to flat
+geometry on the same scale; camera and visibility never alter measurements.
+Normalized DFT coefficients, single-sided amplitudes, mean, dominant non-DC
+bin, and inverse reconstruction error are included in JSON export. CSV exports
+all signals for current and flat drawings. Step buttons select native samples.
+This is an observable spectrum, distinct from the Pilot002 operator witness.
+Twenty samples only resolve bins0–10; higher continuous frequencies may alias.
+The #triangle-spectrum link opens this analysis directly. Verify with
+`node verify-triangle-spectrum.cjs`.

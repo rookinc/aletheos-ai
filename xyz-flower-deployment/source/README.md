@@ -60,3 +60,23 @@ so there are 150 routes per plane. This is a coordinate embedding only.
 The #xyz fragment opens the 3D layout. Plane visibility, XYZ axes and
 existing depth/trail/camera controls are supported. Older state files
 receive defaults for new settings.
+
+## Hydrogen flower (v0.4)
+
+Reuses Hydrogen Motiph 1.0's registered G9000 engine, graph and three
+precomputed spectral presets without changing its Hamiltonian. All 1,800
+K entries and quotient addresses match. The #hydrogen fragment opens
+probability, relative-phase and signed-current visualization on fixed
+XYZ flower state coordinates. All 9,000 states and 45,000 edges are computed;
+the 160 largest two-mode current coefficients are displayed. Plane visibility
+and bloom depth affect drawing only. Optional F darts use a separate clock.
+Ground/excited/coherent modes, attraction g=0/1/4, mixing, phase, measurements,
+state save/load and full JSON receipts are supported.
+
+This is a dimensionless graph hydrogen analogue with two retained spectral
+modes, not calibrated physical hydrogen. Attraction does not commute with F.
+No physical electron orbit or proton at the flower center is asserted.
+
+Verify with `node verify.cjs` and `node verify-hydrogen.cjs`. The latter writes
+`hydrogen-verification.json`, including independently recomputed eigenvector
+residuals, graph edge registration, current continuity and stationary checks.

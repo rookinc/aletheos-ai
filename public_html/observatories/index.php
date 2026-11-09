@@ -2,9 +2,9 @@
 /* Aletheos Observatory Library 001 — discover published child pages locally. */
 $catalog = [
     'xyz-flower' => [
-        'title' => 'XYZ Flower · Thalean Observatory', 'category' => 'geometry', 'kind' => '3D flower and native transport', 'icon' => 'flower',
+        'title' => 'XYZ Flower · Thalean Observatory', 'category' => 'geometry', 'kind' => '3D flower, hydrogen and native transport', 'icon' => 'flower',
         'description' => 'Follow 450 native Thalean dart routes through three perpendicular flowers on the XY, XZ and YZ planes. Orbit, isolate planes, and adjust bloom depth.',
-        'detail' => '150 routes per plane, with verified 20-step returns. Includes flat flower, mandala, native F and Fourier views.'
+        'detail' => '150 routes per plane, with verified 20-step returns. Includes graph-hydrogen probability, phase and currents, plus flat flower, mandala, native F and Fourier views.'
     ],
 
     'jupiter' => [

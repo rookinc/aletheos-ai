@@ -1,5 +1,5 @@
 {
-  "release": "v0.3",
+  "release": "v0.4",
   "native_routes": 450,
   "states": 9000,
   "return_period": 20,
@@ -8,10 +8,65 @@
     150,
     150
   ],
-  "deployment_tests_passed": 9,
+  "deployment_tests_passed": 10,
   "default_view": "XYZ flower",
   "runtime_dependencies": "none",
   "private_links_removed": true,
   "catalog_base_git_blob": "a24dfbe5bf6c983043f155aad8b8727acb35ef58",
-  "verification_limit": "No PHP CLI on build host. PHP lint is mandatory on Bluehost before writes. Live deployment awaits Termux SSH."
+  "verification_limit": "No PHP CLI on build host. PHP lint is mandatory on Bluehost before writes. Live deployment awaits Termux SSH.",
+  "hydrogen": {
+    "source": {
+      "library_file_id": "libfile_97e3a78b53448191aa5b907a7f8a23c4",
+      "filename": "Hydrogen_Motiph_1_0.html",
+      "sha256": "d6ef1ec2e1c6da50a0d829b7c32cd5dfe32b86eca0c91b0228e9c845ff3196f7"
+    },
+    "states": 9000,
+    "edges": 45000,
+    "KMatches": 1800,
+    "FEdges": 9000,
+    "attractionMismatchUnderF": 6600,
+    "presets": [
+      {
+        "g": 0,
+        "energies": [
+          4.2504063622907734e-15,
+          1.0978869674096805
+        ],
+        "eigenResiduals": [
+          1.2622266550189964e-14,
+          1.501835811648351e-14
+        ]
+      },
+      {
+        "g": 1,
+        "energies": [
+          -0.26560791920995563,
+          0.8279244450594431
+        ],
+        "eigenResiduals": [
+          9.235270599928953e-15,
+          8.221835553636609e-15
+        ]
+      },
+      {
+        "g": 4,
+        "energies": [
+          -1.1596932587711968,
+          -0.1638947182919711
+        ],
+        "eigenResiduals": [
+          7.55570335200529e-15,
+          9.803091357565399e-15
+        ]
+      }
+    ],
+    "cases": 135,
+    "maxNormError": 1.971756091734278e-13,
+    "maxEnergyError": 5.81756864903582e-14,
+    "maxContinuityResidual": 2.4069288229178198e-17,
+    "maxStationaryDensityChange": 1.734723475976807e-18,
+    "maxStationaryCurrent": 8.673617379884035e-19,
+    "maxPeriodDensityChange": 1.734723475976807e-18,
+    "passed": true
+  }
 }

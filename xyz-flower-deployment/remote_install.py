@@ -20,8 +20,9 @@ import tempfile
 import time
 import uuid
 
-RELEASE = 'aletheos-xyz-flower-v0.3'
+RELEASE = 'aletheos-xyz-flower-v0.4'
 BASE_INDEX_HASH = '26647d2203ea1571cb990ee04017c29201a57bb7518345495e60eca295c963a2'
+PREVIOUS_HASHES = {'observatories/index.php': '6103c00aef4cbfa17d719283b2a03dffba777c7ccf070e06ca481c21c66f347a', 'observatories/xyz-flower/index.html': 'a227c1ad8633be782317585c4906e7d8d1ea39937afd8fa7d82e2dc7d36922a0', 'observatories/xyz-flower/pilot002-evidence.json': '547aa2ea97fa3642a6e9f047582b1c5a21004f7dad2e9de441504f32fa1de70d'}
 MAX_BYTES = 32 * 1024 * 1024
 MAX_FILE_BYTES = 8 * 1024 * 1024
 REQUIRED = {'observatories/index.php', 'observatories/xyz-flower/index.html', 'observatories/xyz-flower/pilot002-evidence.json'}
@@ -173,7 +174,7 @@ def install_archive(stream, root=None, php_binary='php', fail_after=None):
     states = {name: file_state(path) for name, path in targets.items()}
     # Refuse to replace edits made since the known catalog release.
     for name, current in states.items():
-        accepted = {None, manifest['files'][name]['sha256']}
+        accepted = {None, manifest['files'][name]['sha256'], PREVIOUS_HASHES.get(name)}
         if name == 'observatories/index.php': accepted.add(BASE_INDEX_HASH)
         if current not in accepted:
             raise ValueError('Destination has unreviewed changes; no files replaced: ' + name)

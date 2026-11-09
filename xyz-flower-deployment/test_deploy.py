@@ -18,6 +18,15 @@ class Tests(unittest.TestCase):
   try:
    (self.obs/'index.php').write_bytes(old);result=self.install();self.assertEqual((Path(result['backup_directory'])/'observatories/index.php').read_bytes(),old)
   finally:I.BASE_INDEX_HASH=original
+ def test_upgrade_previous_release(self):
+  originals={name:('Previous release: '+name).encode() for name in I.REQUIRED};old=I.PREVIOUS_HASHES
+  I.PREVIOUS_HASHES={name:I.digest(data) for name,data in originals.items()}
+  try:
+   for name,data in originals.items():
+    path=self.root/name;path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(data)
+   result=self.install();self.assertEqual(len(result['changed']),3)
+   for name,data in originals.items():self.assertEqual((Path(result['backup_directory'])/name).read_bytes(),data)
+  finally:I.PREVIOUS_HASHES=old
  def test_changed_catalog_blocks_all_writes(self):
   (self.obs/'index.php').write_text('Later catalog edits')
   with self.assertRaisesRegex(ValueError,'unreviewed'):self.install()

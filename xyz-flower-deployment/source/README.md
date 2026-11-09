@@ -92,3 +92,19 @@ with a display speed scale and edge wrapping. Their direction reverses with
 current, brightness tracks its magnitude, and pause freezes their positions.
 They do not depict electron paths. Stationary modes show no current tracers.
 Existing state files load defaults for the new controls.
+
+## Native triangles (v0.6)
+
+The #triangles link opens one verified triangular 3-cycle in the XYZ flower.
+41 common-phase triangle orbits are selectable; these are a subset of 134
+cross-plane orbits under the current display assignment. The selected three
+darts share the F phase; the other darts keep their usual staggered offsets.
+Only triangle darts is enabled by default. Face and edge opacity are separate.
+Step buttons pause and advance one native step. Readouts distinguish invariant
+graph distances (1,1,1) from interpolated drawing area; IDs are zero-based,
+route labels one-based. A hidden plane suppresses the face. Receipt export
+includes the full twenty-step state sequence and source provenance. No graph
+edges or Hamiltonian terms are added. Verify with `node verify-triangles.cjs`.
+
+Corrected source-version text to registered Explorer v0.34.0; earlier display
+version edits had inadvertently modified this citation. Transport data unchanged.

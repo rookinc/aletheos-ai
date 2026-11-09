@@ -1,7 +1,8 @@
-# XYZ Flower · Thalean Observatory v0.7
+# XYZ Flower · Thalean Observatory v0.8
 
 Public route: https://aletheos.ai/observatories/xyz-flower/
 Catalog: https://aletheos.ai/observatories/
+3D Fourier view: append #fourier3d to the flower route.
 Triangle view: append #triangles to the flower route.
 Cycle analysis: append #triangle-spectrum to open the Fourier readout.
 Hydrogen view: append #hydrogen to the flower route.
@@ -10,6 +11,18 @@ Run `bash xyz-flower-deployment/deploy.sh` from this extracted release on
 Termux using the existing `gurtiamy` SSH alias. The package installs the
 flower HTML, mathematical evidence JSON, and existing catalog entry only.
 No external runtime or ChatGPT sign-in is required by the public flavor.
+
+The 3D Fourier overlay reconstructs the nine XYZ corner-coordinate signals
+over the native triangle. Gold shows the mean plus one harmonic, or the
+mean plus harmonics 1 through k. The full cumulative set, k = 10, reproduces
+all twenty native samples to numerical precision. Between samples, the
+trigonometric interpolation can differ from the native drawing interpolation.
+The overlay has its own opacity fader, path switch and native-reference
+switch. Its JSON receipt includes all complex coordinate coefficients,
+native samples and reconstruction errors. Gold edges are drawing geometry;
+they introduce no native graph edges or Hamiltonian terms. Coordinate modes
+are separate from the scalar-area spectrum. #fourier3d starts at 80% bloom
+depth to expose additional drawing harmonics beyond the flat circle motion.
 
 Cycle & Fourier analyzes 20 discrete native F samples for drawing area,
 squared side length, centroid coordinates, oriented area components and
@@ -34,13 +47,14 @@ and flower faders and signed-current flow tracers are retained. This is a
 dimensionless graph hydrogen analogue, not calibrated physical hydrogen.
 
 Inside `source/`, run `python build.py`, `node verify.cjs`,
-`node verify-triangles.cjs`, `node verify-triangle-spectrum.cjs`, and
-`node verify-hydrogen.cjs`.
+`node verify-triangles.cjs`, `node verify-triangle-spectrum.cjs`,
+`node verify-triangle-spatial.cjs`, and `node verify-hydrogen.cjs`.
 The self-contained build uses Python's standard library with the shipped data.
 
 The installer verifies SHA-256 and runs PHP lint on Bluehost before writes.
 It backs up changed files outside the webroot and rolls back installation
 errors. It accepts absent files, the known original catalog, exact v0.3,
-v0.4, v0.5 or v0.6 releases, or the current release. Other changes block writes.
-The deployment script checks public file hashes and the catalog link afterward.
-Live Bluehost publication still requires the existing Termux SSH connection.
+v0.4, v0.5, v0.6 or v0.7 releases, or the current release. Other changes block
+writes. The deployment script checks public file hashes and the catalog link
+afterward. Live Bluehost publication still requires the existing Termux SSH
+connection.

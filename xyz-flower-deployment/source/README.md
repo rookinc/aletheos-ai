@@ -122,3 +122,18 @@ This is an observable spectrum, distinct from the Pilot002 operator witness.
 Twenty samples only resolve bins0–10; higher continuous frequencies may alias.
 The #triangle-spectrum link opens this analysis directly. Verify with
 `node verify-triangle-spectrum.cjs`.
+
+## Spatial Fourier overlay (v0.8)
+
+#fourier3d opens gold Fourier-coordinate triangles over the cyan native
+reference, with depth .8 to expose more than the flat first harmonic.
+The overlay transforms the nine corner-coordinate signals independently.
+Choose mean plus one harmonic or mean plus harmonics1..k, k0..10; fade the
+overlay, toggle its full-cycle paths, or hide the native reference. k0 is
+the three mean positions. Cumulativek10 reconstructs all20 native samples;
+fractional phases use trigonometric interpolation and need not match the
+native display interpolation. Readouts report current corner separation
+and maximum native-sample gap for the selected reconstruction. These are
+coordinate modes, separate from scalar-area modes and native graph edges.
+Exports include coordinate coefficients and all native samples.
+Verify with `node verify-triangle-spatial.cjs`.

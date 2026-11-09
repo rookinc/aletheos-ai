@@ -1,5 +1,5 @@
 {
-  "release": "v0.10.2",
+  "release": "v0.10.3",
   "native_routes": 450,
   "states": 9000,
   "return_period": 20,
@@ -9,7 +9,7 @@
     150
   ],
   "deployment_tests_passed": 10,
-  "default_view": "XYZ flower",
+  "default_view": "450 Triangles",
   "runtime_dependencies": "none",
   "private_links_removed": true,
   "catalog_base_git_blob": "a24dfbe5bf6c983043f155aad8b8727acb35ef58",
@@ -468,7 +468,7 @@
     ],
     "scope": "Coordinate Fourier interpolation, not native graph dynamics. DC plus k=1 reproduces flat circular paths. All modes reproduce all20 discrete samples; lifted between-step paths differ from the native drawing interpolation."
   },
-  "source_site_commit": "20613d66e58c8990d01b8486ed4180852e920669",
+  "base_source_site_commit": "20613d66e58c8990d01b8486ed4180852e920669",
   "source_test_suites_passed": 6,
   "exact_v08_upgrade": "passed",
   "swarm": {
@@ -481,5 +481,7 @@
     "distinctStatesAtEveryStep": 450,
     "scope": "Each triangle is three drawing copies of one native state; connecting edges are geometric."
   },
-  "exact_v0101_upgrade": "passed"
+  "exact_v0101_upgrade": "passed",
+  "exact_v0102_upgrade": "passed, with only the observatory HTML changed and an unchanged rerun",
+  "camera_ui": "Phone-width Chromium preview verified the live readout, zoom, Front, Reset view and the JSON download fallback."
 }

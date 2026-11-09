@@ -1,6 +1,9 @@
-# XYZ Flower · Thalean Observatory v0.10.2
+# XYZ Flower · Thalean Observatory v0.10.3
 
-Default: 450 Triangles, Front camera (X up, Y right), 0.05 Hz, F1, synchronized.
+Default: 450 Triangles, screenshot-matched camera, 0.05 Hz, F1, synchronized.
+Reset view restores the fitted angle. Camera opens a live rotation (W X Y Z),
+zoom and pixel pan readout. Copy coordinates captures the full-precision
+JSON camera state.
 Faces 0%, edges 9%, vertices 0%, flower 49%, tails 64%, depth 32%; labels and white arrows off.
 The 450 geometric triangles join three drawings of each F route, not native graph edges.
 
@@ -58,7 +61,7 @@ The self-contained build uses Python's standard library with the shipped data.
 The installer verifies SHA-256 and runs PHP lint on Bluehost before writes.
 It backs up changed files outside the webroot and rolls back installation
 errors. It accepts absent files, the known original catalog, exact v0.3,
-v0.4, v0.5, v0.6, v0.7 or v0.8 releases, or the current release. Other changes block
+v0.4, v0.5, v0.6, v0.7, v0.8, v0.10.1 or v0.10.2 releases, or the current release. Other changes block
 writes. The deployment script checks public file hashes and the catalog link
 afterward. Live Bluehost publication still requires the existing Termux SSH
 connection.

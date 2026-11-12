@@ -1,72 +1,71 @@
-# UFT4 Omega — dedicated Aletheos observatory
+# UFT4 Omega 16.0.0 — G1800 registration
 
-Dedicated route: `/observatories/uft4-omega/`
+The existing `/observatories/uft4-omega/` gains a **G1800 lift** selector beside **G900 host**. The G900 opening profile, native tables, field equation, credits, camera controls and original host view are retained. The standalone HTML contains the complete native fixture and code; it makes no new network requests.
 
-Source: `public_html/observatories/uft4-omega/index.html`
+## G1800 behavior
 
-The page uses the UFT4 Omega v15.9.10 simulator with a launch popover for credits and graphics-engine readiness. Its opening state retains the complete validated settings profile in the user-supplied `uft4-omega-settings-2026-10-31T00-43-22-978Z.zip`, applied before the first rendered frame, with the controls panel now closed by default. This uses Hybrid / Hyperblue, Merge halves at 100%, G900 opacity at 100%, BC trails enabled at 182° and 25% opacity, native quotient fibers enabled at 11% opacity, BC dots and labels off, zoom 2.8 and a 1 Hz field cycle. The exact opening angles are yaw 98.91722499999025°, pitch −126.38005312499388° and roll −10.986700000012206°. Simulation time starts at the saved 215.92550000000682 seconds, with forward playback and Camera Orbit enabled. The bottom **☰ Menu** button opens the controls. Inside the initially hidden panel, **Save & load settings** remains expanded and other collapsible sections remain closed, as recorded in the profile. Host source/neighbor and pulse settings, research settings and remaining controls are also restored from that profile.
+- Select any of the three diagonal kernels: a, b or ab.
+- Inspect all 1,800 kernel classes in a two-sheet overview, or inspect a selected class's two equivalent ordered-pair representatives on two G60 factor graphs.
+- Select an exact class index, native quotient G900 index, or registered sheet. State identities display one-based numbers with explicit zero-based indices; native G60 vertices are V1 through V60.
+- Apply K, K inverse, the residual deck involution Δ = K², or K⁴. The selected source-registered K has 450 free four-cycles per kernel.
+- Run the discrete cycle with global Play/Pause, direction and Time speed; its own rate is 0.25–4 K steps per simulation second. The G900 pulse holds while G1800 is active.
+- Apply any of the 480 native diagonal automorphisms and its inverse. Kernel changes follow the native deck action. Changing kernel manually preserves the selected least ordered-pair representative and registers a new origin.
+- Export a local JSON receipt identifying the selected state, source revision, projection, representatives, exact action and open boundaries.
 
-The launch credits hold both simulation and camera motion until Continue. Camera Orbit then turns through full yaw, pitch and roll around the shared center at 6°/s, 4°/s and 3°/s respectively. It changes only the camera angles and does not animate Merge halves. Merge remains at the user-selected setting during orbit. Play/Pause, launch credits and page hiding hold the camera; dragging, angle sliders, arrow keys or a camera preset stop it. Merge, zoom and opacity remain adjustable while orbiting. Camera motion is independent of field frequency, simulation speed and direction, and angular steps remain capped for continuity. Native tables and field equations are retained. The existing `/observatories/thalean-graph/` page and site homepage are not modified.
+The carrier selector remains visible while the controls panel is collapsed. Select **G1800 lift**, then **Menu** for its controls. The current G900 view remains the initial view; G1800 cycle playback starts paused. Existing settings files migrate safely. New schema-3 settings retain native carrier selection, origin, action count, selected automorphism, drawing view, rate and playback. Schema-1/2 settings restore G900 with default native registration. Invalid imports are checked before live state changes.
 
-Tail opacity is adjustable from 0–100% beneath Trail length and defaults to 25%. It fades the BC tails independently of the dots, graph lines and field. Tail, dot and graph-line colors follow Nebula, Ion Fire and Hyperblue palettes; Sunlight uses contrast-appropriate variants. The former Rotisserie control is labeled Camera Orbit.
+## What the view asserts
 
-Quotient fiber opacity has its own 0–100% slider, defaulting to 11% from the saved profile. Its native fiber stroke alpha is multiplied by G900 opacity when the host is displayed. Tail opacity, field opacity and graph-edge appearance remain independently controlled.
+G1800 is the finite set `(G60 × G60) / <h,h>`; the two-to-one projection goes to the native diagonal-V4 quotient set of size 900. Each G1800 class has two ordered-pair representatives; two such classes share a quotient G900 address. These are separate two-element relationships.
 
-The reviewed HTML checksum is recorded in `release.sha256` as exactly one 64-character lowercase SHA-256 digest plus a newline, with no filename. The installer intentionally rejects other formats. The exact supplied ZIP is retained as `default-settings.zip` with SHA256 `8765d9c6e1abe375cd6af5ee4148fe4caad16df91c3aa067e3f3652a01d24086`. Its validated settings are embedded in the standalone HTML; launching the page does not fetch the ZIP.
+The current Audit052 G900 host uses a separate registration. **No correspondence to its block/vertex indices is asserted.** This change adds no G1800 graph adjacency or field coupling. The overview's two toroidal sheets and numbering are display conventions. Projection fibers identify common quotient addresses; cycle connectors identify action steps, not graph edges. The representative view draws only the two preserved native G60 graphs. Gauge-module exactness remains unresolved. No G9000 frames or physical identification are added.
 
-## Controls panel
+The three K permutations are extracted from frame 0 of Audit040 constructions 00, 01 and 02 and conjugated into the common native quotient coordinates. They are selected registered actions, not an assertion that one K is intrinsically preferred. Their square is independently checked against residual diagonal deck action.
 
-A persistent bottom button reads **Hide controls** while the controls panel is open and **☰ Menu** while it is closed. Hiding controls lets the canvas fill the freed space. Reopening restores the panel’s scroll position without changing settings, simulation playback or Camera Orbit. The initial panel is closed so the observatory starts with the full stage and a bottom **☰ Menu** button. The other supplied startup settings are unchanged. This toggle hides the controls panel, not the field or graph layers.
+## Source and build
 
-## Settings files
+Native sources are pinned to repository commit `bdeeb0055d1783760869e862bd02c1abec856d7c`, Project 41 revision `e1bf21ca3ab700f69432852436f092442f8b46bd`. `g1800/native-data.json` retains source hashes and the minimal deck, automorphism and turn tables. `g1800/registration.js` owns the finite engine and carrier UI; the reviewed HTML embeds both.
 
-Open **Save & load settings** and choose **Export settings ZIP** to save a portable snapshot. The app writes an uncompressed ZIP containing one schema-2 settings JSON file. Schema 2 adds `layout.controlsCollapsed` to preserve the panel’s open/closed state. Import remains compatible with schema-1 files, which open the panel; the supplied original ZIP is unchanged. **Import ZIP / JSON** accepts that ZIP, a plain settings JSON file, or a normal stored/deflated ZIP containing exactly one JSON file. Deflated ZIP import uses the browser’s DecompressionStream support; the app’s own uncompressed export avoids that dependency. Files are processed locally, work offline and are not uploaded.
+Rebuild after editing either embedded source:
 
-The snapshot includes camera orientation and zoom; appearance and layer controls; BC settings; simulation parameters, time, playback and direction; host selection, pulse settings, travel position and lap count; research parameters; Camera Orbit state; collapsible-section preferences; and the controls-panel open/closed state. Generated graph and audit results are not included. Import validates the file schema and values before changing application state. Invalid files leave the current settings in place. Finish or cancel any active generator job before importing. The import limits are 1 MiB per file/archive, 256 KiB for JSON and 16 ZIP entries. Encrypted and ZIP64 archives are not accepted.
+```sh
+python3 uft4-omega-deployment/tools/build-g1800.py
+node uft4-omega-deployment/tests/g1800.cjs
+```
 
-Export a snapshot, change Merge halves or a palette, then import the saved file and confirm the saved settings return. Check both ZIP and plain-JSON import. Files save simulator settings, not a certified physical state or new graph topology.
+The Node test harness has no package dependencies. Source-backed tests use the pinned Git objects. If those objects are absent, fetch the existing `work/aletheos-sim-001` branch before running; tests fail rather than silently omitting source comparisons.
 
-## Status
+## Verification and pending gate
 
-The live v15.9.2 page was independently verified over HTTPS with status 200 and a matching checksum on 30 October 2026. This update admits these exact reviewed predecessors:
+**12 check groups passed in a JavaScript V8 execution isolate.** They reproduce all 14,400 product-state quotient assignments, check all 5,400 kernel states, reproduce all 5,400 selected K images, and verify quotient descent/inversion for all 480 automorphisms on all 5,400 states (2,592,000 state transports). Tests also cover rejected inputs, legacy settings migration, atomic invalid imports, receipts, controller controls, paused playback, return to G900 and finite drawing coordinates. Core and all three construction SHA-256 hashes match the pinned manifest. The complete embedded main script and test harness pass syntax compilation; all 160 static DOM IDs are unique.
 
-- v15.9.9: `d00b17dbce3ec5f7e5817d391894e460240a682f2a0de81e854228a535043024`.
-- v15.9.8: `c93e96e7ee2c7512d1f4ec87c063e0effc0ec5896dc54b366f8b5cc3f0e68d99`.
-- v15.9.7: `c9af1de3565968894c23efccaaf25e9117e9f3ca25266af343914f0c086f64eb`.
-- v15.9.6: `4ec2daf2b024c00746c27e2f09be518aa87d3de5c8939cc3c8a53613f76c8658`.
-- v15.9.5: `c8f6b2433bbf3193580e7771d23779a0b8e1b63c635afa5115b7af6fe8ae91b2`.
-- v15.9.4: `6e07b6eff9a9790500a462c0f6a09bb7dade2beae7151631b4f1b7ab7d1db99f`.
-- v15.9.3: `07c3c401fef9b7d3fdc4217c33b05135dec5c5e8f16e084da6d362686221ee26`.
-- v15.9.2: `8f8f0e9df154a9871e5a7024db182d6a0d26e8c8e1a0c0bb71efd1f40aaad69d`.
+The workspace disconnected during implementation. The reproducible Node CLI harness is supplied but was not itself executed after that loss. Canvas calls in controller tests are mocked. **Browser rendering, real settings-file download/import, physical Android behavior and sustained performance remain pending.** Keep this update in draft and complete those checks before deployment. The existing historical browser suites have not been rerun for this update; their earlier results apply to earlier releases.
 
-The deployer checks the installed file against these exact checksums. The v15.9.10 closed-menu default update must be installed from a machine with hosting access. A GitHub commit alone is not evidence of a live update.
+See `g1800/test-results.json` for executed checks and limits. `TEST_REPORT.md` retains historical release evidence.
 
-## Publish from Termux or your Mac
+## Browser acceptance checklist
 
-Use the existing website checkout and SSH access:
+1. Open the page at desktop and narrow mobile widths. Verify launch credits, Continue, and the retained G900 opening profile.
+2. Select G1800 lift and open Menu. Check the overview, each kernel, maximum class index, both sheets and G60 representative view. Verify labels remain readable, controls fit, and no JavaScript errors occur.
+3. Step K forward/backward, exchange sheets, apply K⁴ and reset. Run/pause the cycle, global Pause, reverse direction, zero Time speed and page hiding. Verify no hidden catch-up steps.
+4. Apply an automorphism that exchanges b/ab, then its inverse. Verify exact return.
+5. Export/import schema-3 settings and a native receipt. Import the retained original schema-1 ZIP and a schema-2 file; verify G900 opening state returns. Reject invalid state indices and incompatible origin/action counts without changing live state.
+6. Return to G900. Verify original host selection, pulse, field styles, orbit, camera, Sunlight and settings controls. Check both normal and Safe Sheets startup.
+
+## Deployment after the pending checks
+
+The guarded deployer now admits the exact v15.9.10 predecessor hash `c438128b28eec599ac895d0da3531e25406024e1a1fa040adaec88811b7a053b`, retaining its earlier checksum guards, outside-webroot rollback copy and atomic installation. It still changes only `~/www/observatories/uft4-omega/index.html`. The script changes have not been shell-executed in this disconnected environment.
+
+Use the existing website checkout and hosting access after validation:
 
 ```sh
 cd ~/dev/cori/website/aletheos.ai || exit 1
 git pull --ff-only || exit 1
 bash uft4-omega-deployment/deploy.sh
-printf 'Deploy exit status: %s\n' "$?"
 ```
 
-The script defaults to the working SSH alias `gurtiamy`. Override it with `UFT4_SSH_TARGET` if another host entry is required. No credentials or host-key trust are configured by the script.
-
-The deployer verifies the exact HTML checksum, uploads outside the web root, and installs only `~/www/observatories/uft4-omega/index.html`. A final copy beside the destination allows atomic publication on the same filesystem. It leaves the original Thalean Observatory and homepage alone.
-
-An already-installed identical page is accepted. Only the exact reviewed predecessors identified above are eligible for replacement. Before updating it, the deployer saves a verified rollback copy in `~/.uft4-omega-backups/` outside the web root, names it `pre-v15.9.10.*.html`, prints its path, and verifies the backup and installed page against the same observed predecessor checksum immediately before atomic replacement. Unknown existing pages and symlinks are rejected. Keep the printed rollback path; it identifies the original HTML that can be restored after review.
-
-After installation, open `https://aletheos.ai/observatories/uft4-omega/` and confirm the launch popover shows both credits and the loading message, then allows entry once a frame is ready. Confirm the Hybrid / Hyperblue opening view, Merge halves at 100%, zoom 2.8, G900 opacity at 100%, 182° BC trails at 25% opacity, enabled quotient fibers at 11% opacity, dots and labels off, 1.0 Hz field-cycle setting, and initially closed controls with **☰ Menu** visible at the bottom. Tap Menu to inspect the preserved settings and expanded Save & load settings section. Simulation time and camera must remain held during the launch dialog, then resume from the saved state with Camera Orbit on after Continue. Confirm Merge halves stays at 100% while the camera turns; changing Merge manually must retain the chosen value. Use Hide controls and confirm the canvas expands; use Menu to restore the controls and their prior scroll position. Settings and playback must stay unchanged. Confirm a schema-2 import honors its saved `layout.controlsCollapsed` preference, then import the original schema-1 ZIP and confirm the panel opens. Pause/resume, settings export/import and palette/Sunlight controls remain available. No homepage link is added by this narrowly scoped deployment.
-
-## Validation and limits
-
-The underlying v15.9 simulator passed six numerical checks and eight cloud Chromium checks. The v15.9.10 change defaults the controls panel to closed, retaining the persistent bottom Menu toggle and schema-2 layout preference. All other supplied startup settings remain unchanged. Schema-1 imports still open the panel, while schema-2 imports honor their saved layout state. The profile is preserved as display and simulation configuration; it does not alter native graph tables, field equations or independent-generation logic. Camera Orbit remains camera-only with no merge oscillator. The launch credits popover and offline settings import/export remain in place. `TEST_REPORT.md` records checks and measurements. The uploaded ZIP provides an actual user-exported settings artifact; it does not establish independent physical Android/Samsung stability, sustained performance or outdoor glare testing. Those device checks remain outstanding. The original v15.8 rollback and modular source remain in the standalone release package.
-
-The deploy script passes shell syntax validation and mocked local SSH/SCP checks for new installation, admitted predecessor updates, idempotence, unknown-release rejection, symlink rejection, and a concurrent unknown edit. These tests do not establish live server access or live HTTP delivery.
+A GitHub commit is not a live deployment. No live page has been changed by this work.
 
 ## Attribution
 
-- Thalean Graph elements: **Scott Allen Cave**, as directed by the author.
-- UFT4 Omega work: **Joachim Kiseleczuk**. Spelling verified against his own byline and author statement at https://gitarrenzauberer.substack.com/p/uft4-omega-the-g30-redline-and-the on 30 October 2026. This source verifies attribution; it does not validate the physical claims in the publication.
+Thalean Graph elements: **Scott Allen Cave**. UFT4 Omega work: **Joachim Kiseleczuk**. Existing publication links and credits are preserved.

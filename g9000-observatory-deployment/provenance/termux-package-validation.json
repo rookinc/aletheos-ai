@@ -1,0 +1,21 @@
+{
+  "format": "g9000-termux-package-validation-v1",
+  "destination": "https://aletheos.ai/observatories/g9000/",
+  "source_commit": "07e9048586f50382f0dd263b8f86f5b414caec06",
+  "application_checks": {
+    "total": 33,
+    "passed": 33
+  },
+  "deployment_mock_checks": {
+    "total": 12,
+    "passed": 12,
+    "network_used": false
+  },
+  "native_rebuild": "PASS: 9000 states, 45000 edges, 450 F20 cycles",
+  "base_registration": "PASS against sealed THALEAN-NATIVE-LOOP-ENVELOPE-013",
+  "shell_syntax": "PASS",
+  "independent_deployment_review": "PASS",
+  "live_deployment_status": "NOT_RUN: requires operator Termux SSH session",
+  "server_requirements": "Existing gurtiamy access, ~/www/observatories, Python3.6+; installer checks preflight",
+  "browser_review": "Upstream app reviewed at desktop and 390x844 before import; app imported byte-for-byte."
+}

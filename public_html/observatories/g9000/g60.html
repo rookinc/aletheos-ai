@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#080e19"><meta name="description" content="An interactive G60 observatory: exact Thalean graph connectivity, four illustrative magnetic poles, and signed forward and return traversal.">
+<title>G60 · Signed Observatory</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="universe" aria-label="Interactive G60 graph. Drag to orbit, pinch or scroll to zoom. Select a vertex to inspect its four neighbors." tabindex="0"></canvas>
+<header class="topbar chrome">
+  <button class="identity" id="homeView" title="Reset view"><span class="mark">✧</span><span><strong>G60</strong><small>SIGNED OBSERVATORY</small></span></button>
+  <nav class="views" aria-label="View"><button class="active" data-view="face">Four poles</button><button data-view="oblique">Oblique</button><button data-view="spatial">Spatial graph</button></nav>
+  <div class="topactions"><button id="aboutBtn" class="icon" aria-label="About this observatory">i</button><button id="focusBtn" class="icon" aria-label="Hide interface" title="Focus view">⛶</button><button id="menuBtn" class="icon" aria-label="Open controls" aria-expanded="false">☰</button></div>
+</header>
+<section class="equation chrome" aria-label="Traversal expression"><div><i>E</i>[1, a, b, ab]<span class="hinge">|</span>[ba, b, a, 1]<i>E</i><sup>−1</sup></div><p>One carrier. Two directions. Order retained.</p></section>
+<aside class="readout chrome"><span class="eyebrow">AT4val[60,6]</span><div class="stats"><span><b>60</b> vertices</span><span><b>120</b> edges</span><span><b>4</b> degree</span></div><span class="source-status"><i></i> Atlas adjacency verified</span></aside>
+<section id="inspector" class="inspector chrome" hidden><button id="clearSelection" aria-label="Clear vertex selection">×</button><span class="eyebrow">VERTEX INSPECTOR</span><h2 id="vertexTitle"></h2><p id="vertexNeighbors"></p><small>Vertex identity is one-based; source index is zero-based.</small></section>
+<div class="scene-caption chrome"><span id="sceneLabel">Circular layout</span><span>Illustrative field &amp; traversal</span></div>
+
+<aside id="controls" class="controls chrome" aria-label="Observatory controls" hidden>
+ <div class="panel-heading"><h2>Observation controls</h2><button id="closeMenu" class="icon" aria-label="Close controls">×</button></div>
+ <fieldset><legend>Motion</legend><label class="range-label" for="speed">Cycles per second <output id="speedValue">0.15 Hz</output></label><input id="speed" type="range" min="0.05" max="2" step="0.05" value="0.15"><label class="check"><input id="autoOrbit" type="checkbox">Camera orbit</label></fieldset>
+ <fieldset><legend>Layers</legend><label class="check"><input id="field" type="checkbox" checked>Magnetic field illustration</label><label class="range-label" for="fieldAlpha">Field opacity <output id="fieldAlphaValue">55%</output></label><input id="fieldAlpha" type="range" min="0" max="1" step="0.01" value="0.55"><label class="check"><input id="edges" type="checkbox" checked>Graph edges</label><label class="range-label" for="edgeAlpha">Edge opacity <output id="edgeAlphaValue">32%</output></label><input id="edgeAlpha" type="range" min="0" max="1" step="0.01" value="0.32"><label class="check"><input id="vertices" type="checkbox" checked>Vertices</label><label class="check"><input id="poleLabels" type="checkbox" checked>Pole labels</label><label class="check"><input id="vertexLabels" type="checkbox">Vertex numbers</label><label class="check"><input id="tracer" type="checkbox" checked>Signed traversal marker</label></fieldset>
+ <fieldset><legend>Camera</legend><div class="button-row"><button id="zoomOut" aria-label="Zoom out">−</button><button id="resetView">Reset view</button><button id="zoomIn" aria-label="Zoom in">+</button></div><p class="hint">Drag to orbit · Shift-drag or two fingers to pan · Scroll or pinch to zoom</p></fieldset>
+ <fieldset><legend>Keep this view</legend><div class="button-row"><button id="saveImage">Save image</button><button id="exportSettings">Export settings</button></div><button id="importSettings" class="full">Import settings</button><input id="importFile" type="file" accept="application/json,.json" hidden></fieldset>
+ <p class="panel-note">Signs identify traversal side. They are not magnetic polarity or arithmetic operator values.</p>
+</aside>
+
+<footer class="transport chrome">
+ <div class="transport-head"><div class="live-state"><span class="eyebrow" id="directionLabel">FORWARD</span><strong id="activeCode">+1 <span>↦ 1</span></strong></div><div class="playback"><button id="previous" class="icon" aria-label="Previous state" title="Previous state">‹</button><button id="play" class="play" aria-label="Play traversal">▶︎</button><button id="next" class="icon" aria-label="Next state" title="Next state">›</button></div><div class="cycle-readout"><span class="eyebrow">DISPLAY CYCLE</span><span id="cycleValue">0.00 / 1</span></div></div>
+ <div class="steps" aria-label="Signed traversal states"><span class="envelope">E</span><button data-step="0" class="active">+1</button><button data-step="1">+2</button><button data-step="2">+3</button><button data-step="3">+4</button><span class="seam" title="ab | ba comparison boundary">|</span><button data-step="4">−4</button><button data-step="5">−3</button><button data-step="6">−2</button><button data-step="7">−1</button><span class="envelope">E<sup>−1</sup></span></div>
+ <input id="phase" type="range" min="0" max="7.999" step="0.001" value="0" aria-label="Traversal phase">
+ <div class="transport-note"><span id="orderNote">1 → a → b → ab</span><span>Signed display codes</span></div>
+</footer>
+<button id="restoreUI" class="restore" hidden aria-label="Show interface">G60 · Show controls</button><button id="focusPlay" class="focus-play" hidden aria-label="Play traversal">▶︎</button>
+<div id="toast" class="toast" role="status" hidden></div>
+<dialog id="about"><button id="closeAbout" class="dialog-close" aria-label="Close explanation">×</button><span class="eyebrow">READING THE OBSERVATORY</span><h1>Structure, direction,<br>and the return.</h1><p>The carrier uses the atlas’s actual G60 adjacency: <b>60 vertices, 120 undirected edges, four neighbors per vertex.</b> Changing the view moves the drawing, not its connections.</p><h3>The signed register</h3><table><thead><tr><th>Position</th><th>Forward</th><th>Return</th></tr></thead><tbody><tr><td>Top</td><td>+1 ↦ 1</td><td>−1 ↦ 1</td></tr><tr><td>Right</td><td>+2 ↦ a</td><td>−2 ↦ a</td></tr><tr><td>Bottom</td><td>+3 ↦ b</td><td>−3 ↦ b</td></tr><tr><td>Left / hinge</td><td>+4 ↦ ab</td><td>−4 ↦ ba</td></tr></tbody></table><p>The forward display runs clockwise from the top; the return retraces it. <b>+4 and −4 retain the ab / ba word distinction.</b> This does not assert ba = −ab.</p><h3>What is illustrative?</h3><p>Pole placement, field curves, geometric layouts and the moving marker are display conventions. The marker follows the signed register, not a verified walk along G60 edges. The E / E⁻¹ envelope is shown symbolically; no numerical E operator or magnetic dynamics are claimed.</p><p>Red marks the two north regions; blue marks the two south regions. The + / − labels instead mark forward and return presentation.</p><div class="source-block"><span class="eyebrow">DATA SOURCE</span><p>Thalean Native Graph Atlas<br>g60_adjacency.json · ROOT-005J.3</p><a href="graph.json" download="g60-atlas-adjacency.json">Download source adjacency ↗</a></div><p class="hint">Tap a vertex to inspect neighbors. Space plays or pauses; arrow keys step through the register.</p></dialog>
+<script src="data.js"></script><script src="app.js"></script>
+</body></html>

@@ -1,0 +1,41 @@
+'use strict';
+const assert=require('node:assert/strict');
+const data=require('../../public_html/observatories/g9000/absence-data.js');
+const lens=require('../../public_html/observatories/g9000/absence-lens.js');
+assert.equal(data.vertices.length,15);
+assert.equal(data.edges.length,30);
+assert.equal(data.pentagons.length,12);
+const edgeSet=new Set(data.edges.map(([a,b])=>lens.edgeKey(a,b)));
+const degree=Array(15).fill(0);data.edges.forEach(([a,b])=>{degree[a]++;degree[b]++;});
+assert.ok(degree.every(d=>d===4),'The line graph must be4regular.');
+const census={disjoint:0,vertex:0,edge:0};
+data.pentagons.forEach((cycle,i)=>{
+  assert.equal(cycle.length,5);assert.equal(new Set(cycle).size,5);
+  assert.ok(lens.cycleEdges(i).every(e=>edgeSet.has(e)),'Every pentagon edge belongs to the graph.');
+  assert.deepEqual(lens.profile(i),{disjoint:1,vertex:5,edge:5});
+  assert.equal(lens.candidates(i,'all').length,11);
+  assert.equal(lens.mate(lens.mate(i)),i);
+  assert.notEqual(lens.mate(i),i);
+  assert.equal(new Set([...cycle,...data.pentagons[lens.mate(i)]]).size,10,'Matched pentagons are vertex-disjoint.');
+  ['disjoint','vertex','edge'].forEach(type=>lens.candidates(i,type).forEach(j=>assert.equal(lens.relation(i,j).type,type)));
+  for(let j=i+1;j<12;j++){
+    const relation=lens.relation(i,j);census[relation.type]++;
+    const recorded=data.pentagon_pairs.find(p=>p.a===i&&p.b===j);
+    assert.equal(relation.type,recorded.relation);
+    assert.equal(relation.sharedVertices.length,recorded.shared_vertices);
+    assert.equal(relation.sharedEdges.length,recorded.shared_edges);
+    assert.deepEqual(lens.relation(j,i),relation,'Pair relation is symmetric.');
+  }
+});
+assert.deepEqual(census,{disjoint:6,vertex:30,edge:30});
+const pairs=data.pentagons.map((_,i)=>[i,lens.mate(i)]).filter(([i,j])=>i<j);
+assert.deepEqual(pairs,data.certificate.matching_pairs);
+const [A,B]=data.certificate.sheet_partition;
+assert.equal(new Set(A.concat(B)).size,12);assert.equal(A.length,6);assert.equal(B.length,6);
+pairs.forEach(([i,j])=>assert.notEqual(A.includes(i),A.includes(j)));
+A.forEach(i=>B.forEach(j=>assert.equal(lens.relation(i,j).type,i===lens.mate(j)?'disjoint':'edge')));
+[A,B].forEach(sheet=>sheet.forEach(i=>sheet.forEach(j=>{if(i!==j)assert.equal(lens.relation(i,j).type,'vertex');})));
+assert.equal(lens.vertexLabel(0),'1');assert.equal(lens.vertexLabel(14),'15');
+assert.throws(()=>lens.vertexLabel(15),RangeError);assert.throws(()=>lens.relation(0,0),RangeError);assert.throws(()=>lens.relation(-1,3),RangeError);assert.throws(()=>lens.candidates(0,'physics'),RangeError);
+assert.equal(data.certificate.automorphism_count,120);assert.equal(data.certificate.matching_covariant,true);
+console.log('PASS:15vertices,30edges,12validpentagons; all66pairrelations,1/5/5profiles, six disjoint mates and crown-sheet structure.');

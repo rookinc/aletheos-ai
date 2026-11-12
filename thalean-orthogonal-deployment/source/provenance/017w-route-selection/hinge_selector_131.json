@@ -1,0 +1,503 @@
+{
+  "audit_pass": true,
+  "checks": {
+    "Audit124_passes": true,
+    "Audit130_passes": true,
+    "connector_route_pentagons_are_in_native_census": true,
+    "hinge_support_is_two_triangles": true,
+    "native_G15_has_15_vertices": true,
+    "native_G15_has_30_edges": true,
+    "native_G15_pentagon_census_nonempty": true,
+    "six_fixed_column_hinge_transitions_loaded": true,
+    "six_hinge_vertices_loaded": true,
+    "two_connector_route_pentagons_recovered": true,
+    "two_reverse_partner_hinge_transitions_loaded": true
+  },
+  "claims": {
+    "WXYZTI_hinge_native_pentagon_census_completed": true,
+    "WXYZTI_hinge_selected_route_family_index": 0,
+    "WXYZTI_hinge_selects_orientation": false,
+    "WXYZTI_hinge_uniquely_selects_route_family_among_native_pentagons": false,
+    "WXYZTI_hinge_vertex_incidence_distinguishes_route_families": true,
+    "hinge_correction_resolves_Audit117_L0_failure": false,
+    "hinge_correction_resolves_Audit117_L1H_failure": false,
+    "native_b_orientation_pair_remains": true,
+    "physical_inside_outside_claim": false,
+    "sigma_exchange_is_native_chain_automorphism": false,
+    "sigma_is_native_topological_coorientation": false,
+    "two_sheet_connector_embedded_in_native_G1800": false,
+    "two_sheet_shortest_connector_pair_is_canonical": false
+  },
+  "interpretation": {
+    "boundary": "Vertex incidence is an unoriented selector. Even a unique route-family result cannot select between the two native-b-exchanged orientations.",
+    "closed": "The fixed-column WXYZTI hinge support was compared with every simple native G15 pentagon and with the two Audit130 connector families."
+  },
+  "kernel": "a",
+  "measurements": {
+    "hinge_components": [
+      [
+        0,
+        2,
+        5
+      ],
+      [
+        1,
+        10,
+        13
+      ]
+    ],
+    "hinge_rows": [
+      {
+        "alignment_index": 0,
+        "edge_role": "YZ",
+        "role_class": "reverse_partner",
+        "role_pair": "IW/YZ",
+        "source": 1,
+        "target": 10
+      },
+      {
+        "alignment_index": 2,
+        "edge_role": "IW",
+        "role_class": "shared_B",
+        "role_pair": "IW/YZ",
+        "source": 5,
+        "target": 0
+      },
+      {
+        "alignment_index": 4,
+        "edge_role": "XY",
+        "role_class": "shared_B",
+        "role_pair": "TI/XY",
+        "source": 2,
+        "target": 5
+      },
+      {
+        "alignment_index": 7,
+        "edge_role": "XY",
+        "role_class": "shared_B",
+        "role_pair": "TI/XY",
+        "source": 13,
+        "target": 1
+      },
+      {
+        "alignment_index": 8,
+        "edge_role": "WX",
+        "role_class": "reverse_partner",
+        "role_pair": "WX/ZT",
+        "source": 0,
+        "target": 2
+      },
+      {
+        "alignment_index": 10,
+        "edge_role": "ZT",
+        "role_class": "shared_B",
+        "role_pair": "WX/ZT",
+        "source": 10,
+        "target": 13
+      }
+    ],
+    "hinge_transition_count": 6,
+    "hinge_transition_edge_incidence_profile": {
+      "0": 8,
+      "1": 4
+    },
+    "hinge_vertex_incidence_profile": {
+      "0": 1,
+      "1": 2,
+      "2": 6,
+      "3": 2,
+      "4": 1
+    },
+    "hinge_vertices": [
+      0,
+      1,
+      2,
+      5,
+      10,
+      13
+    ],
+    "maximal_native_pentagon_count": 1,
+    "maximal_native_pentagon_indices": [
+      4
+    ],
+    "maximum_hinge_vertex_incidence": 4,
+    "native_G15_edge_count": 30,
+    "native_G15_pentagon_count": 12,
+    "native_G15_vertex_count": 15,
+    "pentagon_rows": [
+      {
+        "contains_fixed_base_vertex_zero": true,
+        "cycle": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "hinge_component_incidence": [
+          2,
+          1
+        ],
+        "hinge_transition_edge_incidence_count": 0,
+        "hinge_vertex_incidence_count": 3,
+        "hinge_vertices": [
+          0,
+          1,
+          2
+        ],
+        "is_connector_route_family": true,
+        "pentagon_index": 0,
+        "reverse_pair_endpoint_cover_count": 1,
+        "route_family_index": 0
+      },
+      {
+        "contains_fixed_base_vertex_zero": true,
+        "cycle": [
+          0,
+          1,
+          8,
+          7,
+          9
+        ],
+        "hinge_component_incidence": [
+          1,
+          1
+        ],
+        "hinge_transition_edge_incidence_count": 0,
+        "hinge_vertex_incidence_count": 2,
+        "hinge_vertices": [
+          0,
+          1
+        ],
+        "is_connector_route_family": false,
+        "pentagon_index": 1,
+        "reverse_pair_endpoint_cover_count": 0,
+        "route_family_index": null
+      },
+      {
+        "contains_fixed_base_vertex_zero": true,
+        "cycle": [
+          0,
+          4,
+          12,
+          13,
+          11
+        ],
+        "hinge_component_incidence": [
+          1,
+          1
+        ],
+        "hinge_transition_edge_incidence_count": 0,
+        "hinge_vertex_incidence_count": 2,
+        "hinge_vertices": [
+          0,
+          13
+        ],
+        "is_connector_route_family": false,
+        "pentagon_index": 2,
+        "reverse_pair_endpoint_cover_count": 0,
+        "route_family_index": null
+      },
+      {
+        "contains_fixed_base_vertex_zero": true,
+        "cycle": [
+          0,
+          9,
+          6,
+          10,
+          11
+        ],
+        "hinge_component_incidence": [
+          1,
+          1
+        ],
+        "hinge_transition_edge_incidence_count": 0,
+        "hinge_vertex_incidence_count": 2,
+        "hinge_vertices": [
+          0,
+          10
+        ],
+        "is_connector_route_family": true,
+        "pentagon_index": 3,
+        "reverse_pair_endpoint_cover_count": 0,
+        "route_family_index": 1
+      },
+      {
+        "contains_fixed_base_vertex_zero": false,
+        "cycle": [
+          1,
+          2,
+          5,
+          10,
+          11
+        ],
+        "hinge_component_incidence": [
+          2,
+          2
+        ],
+        "hinge_transition_edge_incidence_count": 1,
+        "hinge_vertex_incidence_count": 4,
+        "hinge_vertices": [
+          1,
+          2,
+          5,
+          10
+        ],
+        "is_connector_route_family": false,
+        "pentagon_index": 4,
+        "reverse_pair_endpoint_cover_count": 1,
+        "route_family_index": null
+      },
+      {
+        "contains_fixed_base_vertex_zero": false,
+        "cycle": [
+          1,
+          8,
+          14,
+          13,
+          11
+        ],
+        "hinge_component_incidence": [
+          0,
+          2
+        ],
+        "hinge_transition_edge_incidence_count": 0,
+        "hinge_vertex_incidence_count": 2,
+        "hinge_vertices": [
+          1,
+          13
+        ],
+        "is_connector_route_family": false,
+        "pentagon_index": 5,
+        "reverse_pair_endpoint_cover_count": 0,
+        "route_family_index": null
+      },
+      {
+        "contains_fixed_base_vertex_zero": false,
+        "cycle": [
+          2,
+          3,
+          12,
+          14,
+          8
+        ],
+        "hinge_component_incidence": [
+          1,
+          0
+        ],
+        "hinge_transition_edge_incidence_count": 0,
+        "hinge_vertex_incidence_count": 1,
+        "hinge_vertices": [
+          2
+        ],
+        "is_connector_route_family": false,
+        "pentagon_index": 6,
+        "reverse_pair_endpoint_cover_count": 0,
+        "route_family_index": null
+      },
+      {
+        "contains_fixed_base_vertex_zero": false,
+        "cycle": [
+          2,
+          5,
+          6,
+          7,
+          8
+        ],
+        "hinge_component_incidence": [
+          2,
+          0
+        ],
+        "hinge_transition_edge_incidence_count": 1,
+        "hinge_vertex_incidence_count": 2,
+        "hinge_vertices": [
+          2,
+          5
+        ],
+        "is_connector_route_family": false,
+        "pentagon_index": 7,
+        "reverse_pair_endpoint_cover_count": 0,
+        "route_family_index": null
+      },
+      {
+        "contains_fixed_base_vertex_zero": false,
+        "cycle": [
+          3,
+          4,
+          9,
+          6,
+          5
+        ],
+        "hinge_component_incidence": [
+          1,
+          0
+        ],
+        "hinge_transition_edge_incidence_count": 0,
+        "hinge_vertex_incidence_count": 1,
+        "hinge_vertices": [
+          5
+        ],
+        "is_connector_route_family": false,
+        "pentagon_index": 8,
+        "reverse_pair_endpoint_cover_count": 0,
+        "route_family_index": null
+      },
+      {
+        "contains_fixed_base_vertex_zero": false,
+        "cycle": [
+          3,
+          5,
+          10,
+          13,
+          12
+        ],
+        "hinge_component_incidence": [
+          1,
+          2
+        ],
+        "hinge_transition_edge_incidence_count": 1,
+        "hinge_vertex_incidence_count": 3,
+        "hinge_vertices": [
+          5,
+          10,
+          13
+        ],
+        "is_connector_route_family": false,
+        "pentagon_index": 9,
+        "reverse_pair_endpoint_cover_count": 0,
+        "route_family_index": null
+      },
+      {
+        "contains_fixed_base_vertex_zero": false,
+        "cycle": [
+          4,
+          9,
+          7,
+          14,
+          12
+        ],
+        "hinge_component_incidence": [
+          0,
+          0
+        ],
+        "hinge_transition_edge_incidence_count": 0,
+        "hinge_vertex_incidence_count": 0,
+        "hinge_vertices": [],
+        "is_connector_route_family": false,
+        "pentagon_index": 10,
+        "reverse_pair_endpoint_cover_count": 0,
+        "route_family_index": null
+      },
+      {
+        "contains_fixed_base_vertex_zero": false,
+        "cycle": [
+          6,
+          7,
+          14,
+          13,
+          10
+        ],
+        "hinge_component_incidence": [
+          0,
+          2
+        ],
+        "hinge_transition_edge_incidence_count": 1,
+        "hinge_vertex_incidence_count": 2,
+        "hinge_vertices": [
+          10,
+          13
+        ],
+        "is_connector_route_family": false,
+        "pentagon_index": 11,
+        "reverse_pair_endpoint_cover_count": 0,
+        "route_family_index": null
+      }
+    ],
+    "reverse_endpoint_pairs": [
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        10
+      ]
+    ],
+    "route_family_distinguished": true,
+    "route_hinge_component_profile": {
+      "0": [
+        2,
+        1
+      ],
+      "1": [
+        1,
+        1
+      ]
+    },
+    "route_hinge_vertex_profile": {
+      "0": 3,
+      "1": 2
+    },
+    "route_orientation_count_after_family_selection": 2,
+    "route_reverse_pair_cover_profile": {
+      "0": 1,
+      "1": 0
+    },
+    "route_rows": [
+      {
+        "contains_fixed_base_vertex_zero": true,
+        "cycle": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "hinge_component_incidence": [
+          2,
+          1
+        ],
+        "hinge_transition_edge_incidence_count": 0,
+        "hinge_vertex_incidence_count": 3,
+        "hinge_vertices": [
+          0,
+          1,
+          2
+        ],
+        "is_connector_route_family": true,
+        "pentagon_index": 0,
+        "reverse_pair_endpoint_cover_count": 1,
+        "route_family_index": 0
+      },
+      {
+        "contains_fixed_base_vertex_zero": true,
+        "cycle": [
+          0,
+          9,
+          6,
+          10,
+          11
+        ],
+        "hinge_component_incidence": [
+          1,
+          1
+        ],
+        "hinge_transition_edge_incidence_count": 0,
+        "hinge_vertex_incidence_count": 2,
+        "hinge_vertices": [
+          0,
+          10
+        ],
+        "is_connector_route_family": true,
+        "pentagon_index": 3,
+        "reverse_pair_endpoint_cover_count": 0,
+        "route_family_index": 1
+      }
+    ],
+    "selected_route_family_index": 0,
+    "selected_route_hinge_vertex_count": 3,
+    "selected_route_is_globally_unique_maximum": false
+  },
+  "schema": "g1800_wxyzti_hinge_pentagon_selector_131.v1",
+  "verdict": "fixed_column_hinge_vertex_incidence_distinguishes_connector_route_families_but_not_uniquely_among_all_native_pentagons"
+}

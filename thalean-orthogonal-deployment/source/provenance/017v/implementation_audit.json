@@ -1,0 +1,52 @@
+{
+  "audit_id": "017V",
+  "verification_pass": true,
+  "baseline_commit": "7abb1c6681879db06a292952d0fc4b0440c206de",
+  "unchanged_sources": {
+    "native-data.json": true,
+    "native-model.js": true,
+    "cycle-clock.js": true,
+    "volume-camera.js": true,
+    "inverse-volume.js": true
+  },
+  "model": {
+    "audit": "017V paired history model",
+    "pass": true,
+    "stateChecks": 9000,
+    "transitionChecks": 9000,
+    "snapshotChecks": 180000,
+    "trailChecks": 1890000,
+    "returnChecks": 27000,
+    "sourceNativeSHA256": "d070869e90b5d3b34981ae593faf5c635dfa25eb1aedebd504833a7a17f27e11",
+    "unchangedEngine": true
+  },
+  "integration": {
+    "audit": "017V paired history panel integration",
+    "pass": true,
+    "checks": 25,
+    "actualPanelSourceExecuted": true,
+    "actualSettingsValidatorExecuted": true,
+    "browserUsed": false
+  },
+  "original_tests_pass": true,
+  "deployment_performed": false,
+  "built_html_sha256": "ebe248b6724f3e2727004b126b1b78f4bc6abb2670b830a4ce7a8406d573b44f",
+  "metadata_reproduction": {
+    "byte_identical": true,
+    "sha256": "e1b4482ff1226735724533a08579eb123ab6dd3ffa399871e806ab9f5bce2bff"
+  },
+  "browser_checks": {
+    "passed": [
+      "default-off",
+      "open-close-Escape",
+      "start-10-20-return",
+      "off-diagonal-cycle-selection",
+      "copy-phase-offset",
+      "hidden-copy-notice",
+      "inverse-mode",
+      "portrait-390x844",
+      "landscape-844x390"
+    ],
+    "physical_android_tested": false
+  }
+}

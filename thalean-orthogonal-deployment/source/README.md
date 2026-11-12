@@ -29,3 +29,11 @@ The exposed voxel faces form the display mesh. The volume is occupied-cell count
 The proposed Planck-volume / Hilbert-action interpretation remains a hypothesis: this implementation does not define an action, assign a physical scale, or implement an inverse-cube force law.
 
 `node test-inverse.cjs` verifies the accelerated distance grid against independent brute-force distances to three rotated path sets, checks tolerance monotonicity, validates nonempty and empty native cases, and checks the mesh and volume. At merge 0 and tolerance 0.05, 1,592 cells are retained (0.012736 chart³); no sample at the origin is invented. At merge 100 with the same tolerance, no grid sample meets all three path sets.
+
+## Opt-in paired sheet history — audit 017V
+
+**Sheet history** opens a readout of the original selected F cycle. It is disabled by default. It shows the ordered G15 pair, four relative V4 states, hidden bit, native indices, completed transitions and separate projected/full return status. Play, Step F and Restart use the existing clock controls. Cycle and copy selection use the existing registration, including copy phase offsets. Closing the panel leaves that registration and clock intact.
+
+See [the implementation and validation record](provenance/017v/README.md) and [the route-provenance follow-up](provenance/017w-route-selection/README.md). The display does not identify F with a single-G60 edge walk. The latter remains unsupported by the recovered sources.
+
+Additional verification: `node test-paired-history.cjs` and `node test-paired-history-panel.cjs`.

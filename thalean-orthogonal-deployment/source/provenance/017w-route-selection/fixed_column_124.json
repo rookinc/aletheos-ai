@@ -1,0 +1,1091 @@
+{
+  "audit_pass": true,
+  "checks": {
+    "Audit121_passes": true,
+    "Audit122_passes": true,
+    "Audit123_passes": true,
+    "Project21_C_cycle_derivation_passes": true,
+    "cycles_one_and_two_do_not_touch_fixed_column": true,
+    "each_selected_cycle_has_one_reverse_and_two_shared_members": true,
+    "each_selected_cycle_has_three_fixed_column_members": true,
+    "each_selected_cycle_touches_all_three_role_pair_sectors": true,
+    "exactly_two_cycles_touch_fixed_column": true,
+    "fixed_column_rule_recovers_all_six_exceptions_exactly": true,
+    "fixed_pair_is_reported_column_zero": true,
+    "fixed_pair_is_zero_fifteen": true,
+    "four_native_C_cycles_loaded": true
+  },
+  "claims": {
+    "cycle_selection_is_derived_from_unique_native_b_fixed_column": true,
+    "fixed_column_C_cycle_selector_completed": true,
+    "fixed_column_rejects_native_C_cycles_one_and_two": true,
+    "fixed_column_selector_constructs_sigma_covariance": false,
+    "fixed_column_selector_derives_reverse_partner_BC_swap": false,
+    "fixed_column_selector_recovers_all_six_hinge_members": true,
+    "fixed_column_selects_exactly_native_C_cycles_zero_and_three": true,
+    "physical_inside_outside_claim": false,
+    "sigma_exchange_is_native_chain_automorphism": false,
+    "sigma_is_native_topological_coorientation": false
+  },
+  "interpretation": {
+    "boundary": "The selector is native relative to the imported WXYZTI pair register, native-b action, aligned rule members, and native C-cycle registry. It does not derive those upstream structures or construct sigma covariance.",
+    "closed": "Within the four registered native C-cycles, the rule 'select every aligned member whose WXYZTI column set contains column zero' selects exactly cycles 0 and 3 and recovers all six fixed-pair hinge members with no false positives or misses."
+  },
+  "kernel": "a",
+  "measurements": {
+    "actual_exception_member_count": 6,
+    "cycle_rows": [
+      {
+        "aligned_member_count": 6,
+        "cycle_index": 0,
+        "fixed_column_alignment_indices": [
+          2,
+          4,
+          8
+        ],
+        "fixed_column_member_count": 3,
+        "fixed_column_transition_keys": [
+          [
+            2,
+            5
+          ],
+          [
+            5,
+            0
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "member_rows": [
+          {
+            "alignment_index": 4,
+            "all_columns": [
+              0,
+              2,
+              4,
+              17
+            ],
+            "contains_fixed_column": true,
+            "cycle_index": 0,
+            "edge_role": "XY",
+            "fixed_column_on_from_side": true,
+            "fixed_column_on_to_side": false,
+            "from_columns": [
+              0,
+              4
+            ],
+            "role_class": "shared_B",
+            "role_pair": "TI/XY",
+            "to_columns": [
+              2,
+              17
+            ],
+            "transition_key": [
+              2,
+              5
+            ]
+          },
+          {
+            "alignment_index": 4,
+            "all_columns": [
+              8,
+              18
+            ],
+            "contains_fixed_column": false,
+            "cycle_index": 0,
+            "edge_role": "TI",
+            "fixed_column_on_from_side": false,
+            "fixed_column_on_to_side": false,
+            "from_columns": [
+              8,
+              18
+            ],
+            "role_class": "reverse_partner",
+            "role_pair": "TI/XY",
+            "to_columns": [
+              8,
+              18
+            ],
+            "transition_key": [
+              2,
+              5
+            ]
+          },
+          {
+            "alignment_index": 2,
+            "all_columns": [
+              2,
+              17
+            ],
+            "contains_fixed_column": false,
+            "cycle_index": 0,
+            "edge_role": "YZ",
+            "fixed_column_on_from_side": false,
+            "fixed_column_on_to_side": false,
+            "from_columns": [
+              2,
+              17
+            ],
+            "role_class": "reverse_partner",
+            "role_pair": "IW/YZ",
+            "to_columns": [
+              2,
+              17
+            ],
+            "transition_key": [
+              5,
+              0
+            ]
+          },
+          {
+            "alignment_index": 2,
+            "all_columns": [
+              0,
+              4,
+              8,
+              18
+            ],
+            "contains_fixed_column": true,
+            "cycle_index": 0,
+            "edge_role": "IW",
+            "fixed_column_on_from_side": false,
+            "fixed_column_on_to_side": true,
+            "from_columns": [
+              8,
+              18
+            ],
+            "role_class": "shared_B",
+            "role_pair": "IW/YZ",
+            "to_columns": [
+              0,
+              4
+            ],
+            "transition_key": [
+              5,
+              0
+            ]
+          },
+          {
+            "alignment_index": 8,
+            "all_columns": [
+              0,
+              4
+            ],
+            "contains_fixed_column": true,
+            "cycle_index": 0,
+            "edge_role": "WX",
+            "fixed_column_on_from_side": true,
+            "fixed_column_on_to_side": true,
+            "from_columns": [
+              0,
+              4
+            ],
+            "role_class": "reverse_partner",
+            "role_pair": "WX/ZT",
+            "to_columns": [
+              0,
+              4
+            ],
+            "transition_key": [
+              0,
+              2
+            ]
+          },
+          {
+            "alignment_index": 8,
+            "all_columns": [
+              2,
+              8,
+              17,
+              18
+            ],
+            "contains_fixed_column": false,
+            "cycle_index": 0,
+            "edge_role": "ZT",
+            "fixed_column_on_from_side": false,
+            "fixed_column_on_to_side": false,
+            "from_columns": [
+              2,
+              17
+            ],
+            "role_class": "shared_B",
+            "role_pair": "WX/ZT",
+            "to_columns": [
+              8,
+              18
+            ],
+            "transition_key": [
+              0,
+              2
+            ]
+          }
+        ],
+        "selected_by_fixed_column": true,
+        "selected_class_profile": {
+          "reverse_partner": 1,
+          "shared_B": 2
+        },
+        "selected_role_pair_profile": {
+          "IW/YZ": 1,
+          "TI/XY": 1,
+          "WX/ZT": 1
+        },
+        "transition_count": 3
+      },
+      {
+        "aligned_member_count": 6,
+        "cycle_index": 1,
+        "fixed_column_alignment_indices": [],
+        "fixed_column_member_count": 0,
+        "fixed_column_transition_keys": [],
+        "member_rows": [
+          {
+            "alignment_index": 5,
+            "all_columns": [
+              7,
+              8,
+              10,
+              18
+            ],
+            "contains_fixed_column": false,
+            "cycle_index": 1,
+            "edge_role": "XY",
+            "fixed_column_on_from_side": false,
+            "fixed_column_on_to_side": false,
+            "from_columns": [
+              7,
+              10
+            ],
+            "role_class": "shared_B",
+            "role_pair": "TI/XY",
+            "to_columns": [
+              8,
+              18
+            ],
+            "transition_key": [
+              4,
+              5
+            ]
+          },
+          {
+            "alignment_index": 5,
+            "all_columns": [
+              13,
+              17
+            ],
+            "contains_fixed_column": false,
+            "cycle_index": 1,
+            "edge_role": "TI",
+            "fixed_column_on_from_side": false,
+            "fixed_column_on_to_side": false,
+            "from_columns": [
+              13,
+              17
+            ],
+            "role_class": "reverse_partner",
+            "role_pair": "TI/XY",
+            "to_columns": [
+              13,
+              17
+            ],
+            "transition_key": [
+              4,
+              5
+            ]
+          },
+          {
+            "alignment_index": 3,
+            "all_columns": [
+              8,
+              18
+            ],
+            "contains_fixed_column": false,
+            "cycle_index": 1,
+            "edge_role": "YZ",
+            "fixed_column_on_from_side": false,
+            "fixed_column_on_to_side": false,
+            "from_columns": [
+              8,
+              18
+            ],
+            "role_class": "reverse_partner",
+            "role_pair": "IW/YZ",
+            "to_columns": [
+              8,
+              18
+            ],
+            "transition_key": [
+              5,
+              2
+            ]
+          },
+          {
+            "alignment_index": 3,
+            "all_columns": [
+              7,
+              10,
+              13,
+              17
+            ],
+            "contains_fixed_column": false,
+            "cycle_index": 1,
+            "edge_role": "IW",
+            "fixed_column_on_from_side": false,
+            "fixed_column_on_to_side": false,
+            "from_columns": [
+              13,
+              17
+            ],
+            "role_class": "shared_B",
+            "role_pair": "IW/YZ",
+            "to_columns": [
+              7,
+              10
+            ],
+            "transition_key": [
+              5,
+              2
+            ]
+          },
+          {
+            "alignment_index": 9,
+            "all_columns": [
+              7,
+              10
+            ],
+            "contains_fixed_column": false,
+            "cycle_index": 1,
+            "edge_role": "WX",
+            "fixed_column_on_from_side": false,
+            "fixed_column_on_to_side": false,
+            "from_columns": [
+              7,
+              10
+            ],
+            "role_class": "reverse_partner",
+            "role_pair": "WX/ZT",
+            "to_columns": [
+              7,
+              10
+            ],
+            "transition_key": [
+              2,
+              4
+            ]
+          },
+          {
+            "alignment_index": 9,
+            "all_columns": [
+              8,
+              13,
+              17,
+              18
+            ],
+            "contains_fixed_column": false,
+            "cycle_index": 1,
+            "edge_role": "ZT",
+            "fixed_column_on_from_side": false,
+            "fixed_column_on_to_side": false,
+            "from_columns": [
+              8,
+              18
+            ],
+            "role_class": "shared_B",
+            "role_pair": "WX/ZT",
+            "to_columns": [
+              13,
+              17
+            ],
+            "transition_key": [
+              2,
+              4
+            ]
+          }
+        ],
+        "selected_by_fixed_column": false,
+        "selected_class_profile": {},
+        "selected_role_pair_profile": {},
+        "transition_count": 3
+      },
+      {
+        "aligned_member_count": 6,
+        "cycle_index": 2,
+        "fixed_column_alignment_indices": [],
+        "fixed_column_member_count": 0,
+        "fixed_column_transition_keys": [],
+        "member_rows": [
+          {
+            "alignment_index": 6,
+            "all_columns": [
+              7,
+              12,
+              23,
+              24
+            ],
+            "contains_fixed_column": false,
+            "cycle_index": 2,
+            "edge_role": "XY",
+            "fixed_column_on_from_side": false,
+            "fixed_column_on_to_side": false,
+            "from_columns": [
+              23,
+              24
+            ],
+            "role_class": "shared_B",
+            "role_pair": "TI/XY",
+            "to_columns": [
+              7,
+              12
+            ],
+            "transition_key": [
+              11,
+              2
+            ]
+          },
+          {
+            "alignment_index": 6,
+            "all_columns": [
+              4,
+              5
+            ],
+            "contains_fixed_column": false,
+            "cycle_index": 2,
+            "edge_role": "TI",
+            "fixed_column_on_from_side": false,
+            "fixed_column_on_to_side": false,
+            "from_columns": [
+              4,
+              5
+            ],
+            "role_class": "reverse_partner",
+            "role_pair": "TI/XY",
+            "to_columns": [
+              4,
+              5
+            ],
+            "transition_key": [
+              11,
+              2
+            ]
+          },
+          {
+            "alignment_index": 1,
+            "all_columns": [
+              7,
+              12
+            ],
+            "contains_fixed_column": false,
+            "cycle_index": 2,
+            "edge_role": "YZ",
+            "fixed_column_on_from_side": false,
+            "fixed_column_on_to_side": false,
+            "from_columns": [
+              7,
+              12
+            ],
+            "role_class": "reverse_partner",
+            "role_pair": "IW/YZ",
+            "to_columns": [
+              7,
+              12
+            ],
+            "transition_key": [
+              2,
+              14
+            ]
+          },
+          {
+            "alignment_index": 1,
+            "all_columns": [
+              4,
+              5,
+              23,
+              24
+            ],
+            "contains_fixed_column": false,
+            "cycle_index": 2,
+            "edge_role": "IW",
+            "fixed_column_on_from_side": false,
+            "fixed_column_on_to_side": false,
+            "from_columns": [
+              4,
+              5
+            ],
+            "role_class": "shared_B",
+            "role_pair": "IW/YZ",
+            "to_columns": [
+              23,
+              24
+            ],
+            "transition_key": [
+              2,
+              14
+            ]
+          },
+          {
+            "alignment_index": 11,
+            "all_columns": [
+              23,
+              24
+            ],
+            "contains_fixed_column": false,
+            "cycle_index": 2,
+            "edge_role": "WX",
+            "fixed_column_on_from_side": false,
+            "fixed_column_on_to_side": false,
+            "from_columns": [
+              23,
+              24
+            ],
+            "role_class": "reverse_partner",
+            "role_pair": "WX/ZT",
+            "to_columns": [
+              23,
+              24
+            ],
+            "transition_key": [
+              14,
+              11
+            ]
+          },
+          {
+            "alignment_index": 11,
+            "all_columns": [
+              4,
+              5,
+              7,
+              12
+            ],
+            "contains_fixed_column": false,
+            "cycle_index": 2,
+            "edge_role": "ZT",
+            "fixed_column_on_from_side": false,
+            "fixed_column_on_to_side": false,
+            "from_columns": [
+              7,
+              12
+            ],
+            "role_class": "shared_B",
+            "role_pair": "WX/ZT",
+            "to_columns": [
+              4,
+              5
+            ],
+            "transition_key": [
+              14,
+              11
+            ]
+          }
+        ],
+        "selected_by_fixed_column": false,
+        "selected_class_profile": {},
+        "selected_role_pair_profile": {},
+        "transition_count": 3
+      },
+      {
+        "aligned_member_count": 6,
+        "cycle_index": 3,
+        "fixed_column_alignment_indices": [
+          0,
+          7,
+          10
+        ],
+        "fixed_column_member_count": 3,
+        "fixed_column_transition_keys": [
+          [
+            13,
+            1
+          ],
+          [
+            1,
+            10
+          ],
+          [
+            10,
+            13
+          ]
+        ],
+        "member_rows": [
+          {
+            "alignment_index": 7,
+            "all_columns": [
+              0,
+              2,
+              28,
+              29
+            ],
+            "contains_fixed_column": true,
+            "cycle_index": 3,
+            "edge_role": "XY",
+            "fixed_column_on_from_side": false,
+            "fixed_column_on_to_side": true,
+            "from_columns": [
+              28,
+              29
+            ],
+            "role_class": "shared_B",
+            "role_pair": "TI/XY",
+            "to_columns": [
+              0,
+              2
+            ],
+            "transition_key": [
+              13,
+              1
+            ]
+          },
+          {
+            "alignment_index": 7,
+            "all_columns": [
+              4,
+              9
+            ],
+            "contains_fixed_column": false,
+            "cycle_index": 3,
+            "edge_role": "TI",
+            "fixed_column_on_from_side": false,
+            "fixed_column_on_to_side": false,
+            "from_columns": [
+              4,
+              9
+            ],
+            "role_class": "reverse_partner",
+            "role_pair": "TI/XY",
+            "to_columns": [
+              4,
+              9
+            ],
+            "transition_key": [
+              13,
+              1
+            ]
+          },
+          {
+            "alignment_index": 0,
+            "all_columns": [
+              0,
+              2
+            ],
+            "contains_fixed_column": true,
+            "cycle_index": 3,
+            "edge_role": "YZ",
+            "fixed_column_on_from_side": true,
+            "fixed_column_on_to_side": true,
+            "from_columns": [
+              0,
+              2
+            ],
+            "role_class": "reverse_partner",
+            "role_pair": "IW/YZ",
+            "to_columns": [
+              0,
+              2
+            ],
+            "transition_key": [
+              1,
+              10
+            ]
+          },
+          {
+            "alignment_index": 0,
+            "all_columns": [
+              4,
+              9,
+              28,
+              29
+            ],
+            "contains_fixed_column": false,
+            "cycle_index": 3,
+            "edge_role": "IW",
+            "fixed_column_on_from_side": false,
+            "fixed_column_on_to_side": false,
+            "from_columns": [
+              4,
+              9
+            ],
+            "role_class": "shared_B",
+            "role_pair": "IW/YZ",
+            "to_columns": [
+              28,
+              29
+            ],
+            "transition_key": [
+              1,
+              10
+            ]
+          },
+          {
+            "alignment_index": 10,
+            "all_columns": [
+              28,
+              29
+            ],
+            "contains_fixed_column": false,
+            "cycle_index": 3,
+            "edge_role": "WX",
+            "fixed_column_on_from_side": false,
+            "fixed_column_on_to_side": false,
+            "from_columns": [
+              28,
+              29
+            ],
+            "role_class": "reverse_partner",
+            "role_pair": "WX/ZT",
+            "to_columns": [
+              28,
+              29
+            ],
+            "transition_key": [
+              10,
+              13
+            ]
+          },
+          {
+            "alignment_index": 10,
+            "all_columns": [
+              0,
+              2,
+              4,
+              9
+            ],
+            "contains_fixed_column": true,
+            "cycle_index": 3,
+            "edge_role": "ZT",
+            "fixed_column_on_from_side": true,
+            "fixed_column_on_to_side": false,
+            "from_columns": [
+              0,
+              2
+            ],
+            "role_class": "shared_B",
+            "role_pair": "WX/ZT",
+            "to_columns": [
+              4,
+              9
+            ],
+            "transition_key": [
+              10,
+              13
+            ]
+          }
+        ],
+        "selected_by_fixed_column": true,
+        "selected_class_profile": {
+          "reverse_partner": 1,
+          "shared_B": 2
+        },
+        "selected_role_pair_profile": {
+          "IW/YZ": 1,
+          "TI/XY": 1,
+          "WX/ZT": 1
+        },
+        "transition_count": 3
+      }
+    ],
+    "fixed_column": 0,
+    "fixed_column_both_count": 2,
+    "fixed_column_from_count": 4,
+    "fixed_column_to_count": 4,
+    "fixed_pair": [
+      0,
+      15
+    ],
+    "native_C_cycle_count": 4,
+    "predicted_member_count": 6,
+    "predicted_member_rows": [
+      {
+        "alignment_index": 4,
+        "all_columns": [
+          0,
+          2,
+          4,
+          17
+        ],
+        "contains_fixed_column": true,
+        "cycle_index": 0,
+        "edge_role": "XY",
+        "fixed_column_on_from_side": true,
+        "fixed_column_on_to_side": false,
+        "from_columns": [
+          0,
+          4
+        ],
+        "role_class": "shared_B",
+        "role_pair": "TI/XY",
+        "to_columns": [
+          2,
+          17
+        ],
+        "transition_key": [
+          2,
+          5
+        ]
+      },
+      {
+        "alignment_index": 2,
+        "all_columns": [
+          0,
+          4,
+          8,
+          18
+        ],
+        "contains_fixed_column": true,
+        "cycle_index": 0,
+        "edge_role": "IW",
+        "fixed_column_on_from_side": false,
+        "fixed_column_on_to_side": true,
+        "from_columns": [
+          8,
+          18
+        ],
+        "role_class": "shared_B",
+        "role_pair": "IW/YZ",
+        "to_columns": [
+          0,
+          4
+        ],
+        "transition_key": [
+          5,
+          0
+        ]
+      },
+      {
+        "alignment_index": 8,
+        "all_columns": [
+          0,
+          4
+        ],
+        "contains_fixed_column": true,
+        "cycle_index": 0,
+        "edge_role": "WX",
+        "fixed_column_on_from_side": true,
+        "fixed_column_on_to_side": true,
+        "from_columns": [
+          0,
+          4
+        ],
+        "role_class": "reverse_partner",
+        "role_pair": "WX/ZT",
+        "to_columns": [
+          0,
+          4
+        ],
+        "transition_key": [
+          0,
+          2
+        ]
+      },
+      {
+        "alignment_index": 7,
+        "all_columns": [
+          0,
+          2,
+          28,
+          29
+        ],
+        "contains_fixed_column": true,
+        "cycle_index": 3,
+        "edge_role": "XY",
+        "fixed_column_on_from_side": false,
+        "fixed_column_on_to_side": true,
+        "from_columns": [
+          28,
+          29
+        ],
+        "role_class": "shared_B",
+        "role_pair": "TI/XY",
+        "to_columns": [
+          0,
+          2
+        ],
+        "transition_key": [
+          13,
+          1
+        ]
+      },
+      {
+        "alignment_index": 0,
+        "all_columns": [
+          0,
+          2
+        ],
+        "contains_fixed_column": true,
+        "cycle_index": 3,
+        "edge_role": "YZ",
+        "fixed_column_on_from_side": true,
+        "fixed_column_on_to_side": true,
+        "from_columns": [
+          0,
+          2
+        ],
+        "role_class": "reverse_partner",
+        "role_pair": "IW/YZ",
+        "to_columns": [
+          0,
+          2
+        ],
+        "transition_key": [
+          1,
+          10
+        ]
+      },
+      {
+        "alignment_index": 10,
+        "all_columns": [
+          0,
+          2,
+          4,
+          9
+        ],
+        "contains_fixed_column": true,
+        "cycle_index": 3,
+        "edge_role": "ZT",
+        "fixed_column_on_from_side": true,
+        "fixed_column_on_to_side": false,
+        "from_columns": [
+          0,
+          2
+        ],
+        "role_class": "shared_B",
+        "role_pair": "WX/ZT",
+        "to_columns": [
+          4,
+          9
+        ],
+        "transition_key": [
+          10,
+          13
+        ]
+      }
+    ],
+    "prediction_rows": [
+      {
+        "actual": true,
+        "actual_edge_role": "YZ",
+        "actual_role_pair": "IW/YZ",
+        "actual_transition": [
+          1,
+          10
+        ],
+        "alignment_index": 0,
+        "exact_match": true,
+        "predicted": true,
+        "predicted_edge_role": "YZ",
+        "predicted_role_pair": "IW/YZ",
+        "predicted_transition": [
+          1,
+          10
+        ],
+        "role_class": "reverse_partner"
+      },
+      {
+        "actual": true,
+        "actual_edge_role": "IW",
+        "actual_role_pair": "IW/YZ",
+        "actual_transition": [
+          5,
+          0
+        ],
+        "alignment_index": 2,
+        "exact_match": true,
+        "predicted": true,
+        "predicted_edge_role": "IW",
+        "predicted_role_pair": "IW/YZ",
+        "predicted_transition": [
+          5,
+          0
+        ],
+        "role_class": "shared_B"
+      },
+      {
+        "actual": true,
+        "actual_edge_role": "XY",
+        "actual_role_pair": "TI/XY",
+        "actual_transition": [
+          2,
+          5
+        ],
+        "alignment_index": 4,
+        "exact_match": true,
+        "predicted": true,
+        "predicted_edge_role": "XY",
+        "predicted_role_pair": "TI/XY",
+        "predicted_transition": [
+          2,
+          5
+        ],
+        "role_class": "shared_B"
+      },
+      {
+        "actual": true,
+        "actual_edge_role": "XY",
+        "actual_role_pair": "TI/XY",
+        "actual_transition": [
+          13,
+          1
+        ],
+        "alignment_index": 7,
+        "exact_match": true,
+        "predicted": true,
+        "predicted_edge_role": "XY",
+        "predicted_role_pair": "TI/XY",
+        "predicted_transition": [
+          13,
+          1
+        ],
+        "role_class": "shared_B"
+      },
+      {
+        "actual": true,
+        "actual_edge_role": "WX",
+        "actual_role_pair": "WX/ZT",
+        "actual_transition": [
+          0,
+          2
+        ],
+        "alignment_index": 8,
+        "exact_match": true,
+        "predicted": true,
+        "predicted_edge_role": "WX",
+        "predicted_role_pair": "WX/ZT",
+        "predicted_transition": [
+          0,
+          2
+        ],
+        "role_class": "reverse_partner"
+      },
+      {
+        "actual": true,
+        "actual_edge_role": "ZT",
+        "actual_role_pair": "WX/ZT",
+        "actual_transition": [
+          10,
+          13
+        ],
+        "alignment_index": 10,
+        "exact_match": true,
+        "predicted": true,
+        "predicted_edge_role": "ZT",
+        "predicted_role_pair": "WX/ZT",
+        "predicted_transition": [
+          10,
+          13
+        ],
+        "role_class": "shared_B"
+      }
+    ],
+    "selected_cycle_count": 2,
+    "selected_cycle_indices": [
+      0,
+      3
+    ],
+    "unselected_cycle_indices": [
+      1,
+      2
+    ]
+  },
+  "schema": "g1800_wxyzti_fixed_column_C_cycle_selector_124.v1",
+  "verdict": "unique_native_b_fixed_column_exactly_selects_C_cycles_zero_and_three_and_all_six_hinge_members"
+}

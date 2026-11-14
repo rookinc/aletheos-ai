@@ -20,6 +20,7 @@ commands = [
     ['node', 'test-encounter-app.cjs'],
     ['node', 'scripts/replay-encounter.cjs', 'provenance/encounter-001/example-replay.json'],
     ['node', 'scripts/replay-encounter.cjs', 'provenance/encounter-001/browser-replay.json'],
+    ['node', 'test-encounter-replay.cjs'],
     ['python3', '../encounter-v12/test-deploy.py', '--previous', '../paired-sheet-history-017v/index.html', '--output', 'provenance/encounter-001/deployment-checks.json'],
 ]
 receipts = []

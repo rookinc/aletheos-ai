@@ -1,0 +1,29 @@
+{
+  "pass": true,
+  "producer": "node test-encounter-replay.cjs",
+  "fixture_sha256": "f192d811e05dd983774da8819fafa6ddbc148faecb091d95b07c6838b46508ad",
+  "checks": [
+    "actual_android_scan_record_and_continuation_replay",
+    "nearly_tied_candidates_may_reorder",
+    "native_state_tampering_rejected",
+    "hidden_bit_tampering_rejected",
+    "count_tampering_rejected",
+    "invented_interaction_rejected",
+    "coupling_event_tampering_rejected",
+    "geometry_beyond_tolerance_rejected",
+    "nonfinite_geometry_rejected",
+    "missing_candidate_rejected",
+    "changed_continuation_rejected",
+    "arbitrary_candidate_reordering_rejected"
+  ],
+  "result": {
+    "pass": true,
+    "observations": 1,
+    "scanReplayed": true,
+    "continuationReplayed": true,
+    "couplingEvents": 0,
+    "geometryTolerance": 1e-12,
+    "geometryMaxDelta": 1.1102230246251565e-16
+  },
+  "boundary": "Tolerance applies only to display geometry, not native states, counts, candidate membership, or continuation tuples. Different retained membership at a cutoff still rejects."
+}

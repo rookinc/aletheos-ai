@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#222d3d"><meta name="description" content="Three native Thalean transport charts, orthogonal about one shared origin."><title>Thalean Orthogonal Observatory</title><style>:root{color-scheme:dark;--bg:#08121f;--panel:#273243;--ink:#d4e3ee;--muted:#98a9b8;--edge:#53677b;--cyan:#60e3eb;--x:#ff838c;--y:#8ce4b7;--z:#89b6ff;--header:220px;--footer:30px}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 system-ui,-apple-system,Segoe UI,sans-serif;overflow:hidden}button,input,select{font:inherit}button,select{color:var(--ink);background:linear-gradient(#425167,#273446);border:1px solid #728398;border-right:2px solid #101a27;border-bottom:3px solid #101a27;border-radius:3px;box-shadow:inset 1px 1px #9aadc133;cursor:pointer;min-height:36px;padding:5px 12px}button:hover{filter:brightness(1.15)}button:active{transform:translateY(1px)}button:focus-visible,select:focus-visible,input:focus-visible,canvas:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}button.active,button[aria-pressed=true],button[aria-current=true]{background:linear-gradient(#415a60,#2b4148);border-color:#8bdce3;box-shadow:inset 0 -2px #6cddd1}input[type=range]{width:100%;height:20px;accent-color:var(--cyan);cursor:pointer;margin:0}input[type=checkbox]{width:19px;height:19px;accent-color:var(--cyan)}input[type=number]{width:75px;padding:7px;background:#101c2a;border:1px solid var(--edge);color:var(--ink);border-radius:3px}output{font:12px/1.4 ui-monospace,monospace;color:#a3e9c0}#chrome{position:fixed;z-index:3;inset:0 0 auto;background:linear-gradient(#384658,#232f40);border:2px outset #6b798c;padding:8px 12px 10px;box-shadow:0 4px 18px #0003}.title{display:flex;align-items:center;gap:10px;height:28px;margin-bottom:9px;white-space:nowrap}.title button{border:0;box-shadow:none;background:none;padding:0;min-height:28px;font-size:12px;letter-spacing:.08em}.title strong{font-weight:800}.title small{font:10px monospace;color:var(--muted)}.bars{flex:1;height:11px;background:repeating-linear-gradient(to bottom,#101c2e 0 2px,#8092a4 2px 3px,transparent 3px 5px);min-width:8px}.toolbar{display:flex;gap:6px}.square{width:40px;min-width:40px;height:40px;padding:0;font-size:25px}.toolbar #play{color:#b6f9d7}.clock{display:flex;align-items:center;flex:1;min-width:80px;gap:10px;background:linear-gradient(90deg,#07140e,#10241b);border:2px inset #5a697c;padding:0 11px}.clock output{color:#b4f0ae;white-space:nowrap;font:14px monospace}.clock input{accent-color:#b5e5bf}.views{display:flex;gap:4px}.views button{padding:0;width:35px;font-weight:700}.planes{display:flex;gap:7px;margin:9px 0}.plane{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:5px 8px;min-height:34px}.plane strong{font-size:14px}.plane span{font-size:12px;color:#cbd5df}.plane i{width:6px;height:6px;border-radius:50%;background:currentColor;box-shadow:0 0 8px currentColor}.plane[aria-pressed=false]{opacity:.47;background:#253040;border-color:#53677b;box-shadow:none}.x{color:var(--x)}.y{color:var(--y)}.z{color:var(--z)}.faders{display:grid;grid-template-columns:1fr 1fr auto auto;gap:12px;align-items:center}.faders label,.merge{display:grid;grid-template-columns:1fr auto;color:var(--muted);font-size:12px;gap:2px 8px}.faders input,.merge input{grid-column:1/-1}.faders button{padding:3px 10px;font-size:12px}.merge{margin-top:6px;border-top:1px solid #53677b;padding-top:4px}#stage{position:fixed;top:var(--header);bottom:var(--footer);left:0;right:0;background:radial-gradient(ellipse at 50% 48%,#122238 0,#091521 58%,#060e18 100%);overflow:hidden}canvas{width:100%;height:100%;display:block;touch-action:none}.stage-label{pointer-events:none;position:absolute;top:14px;left:18px;right:18px;display:flex;justify-content:space-between;color:#8093a7;font:10px monospace;letter-spacing:.14em}.stage-label span:first-child{color:#c4d5e5;text-transform:uppercase}#hud{position:absolute;bottom:15px;left:15px;pointer-events:none;padding:9px 12px;border:1px solid #455d72;background:#07121edb;border-radius:4px;color:#9fb2c4;font:11px/1.6 ui-monospace,monospace;max-width:calc(100% - 80px)}#cycleReadout{color:#d1e6f5;font-size:12px}.gains{color:#afd2dc}.help{position:absolute;bottom:15px;right:15px;width:40px;height:40px;font-size:24px;background:#0a1522;border:1px solid #698399;box-shadow:none}.help:hover{background:#1a2e40}#copyright{position:fixed;bottom:0;left:0;right:0;padding:5px 12px;border-top:1px solid #556578;background:#222d3d;display:flex;align-items:center;justify-content:space-between;gap:10px;color:#91a2b4;font:10px ui-monospace,monospace}#copyright button{border:0;box-shadow:none;background:none;min-height:20px;padding:0;text-decoration:underline;font-size:11px;color:#b8d9e5}#drawer{position:fixed;right:10px;top:10px;bottom:10px;z-index:6;width:min(370px,calc(100% - 20px));background:#263344f7;border:1px solid #71849b;box-shadow:0 20px 80px #000b;overflow:auto;border-radius:7px;overscroll-behavior:contain}.drawer-head{display:flex;align-items:center;justify-content:space-between;padding:12px 15px;position:sticky;top:0;background:#2c3b4e;border-bottom:1px solid #566b80;z-index:1}h2{font-size:16px;letter-spacing:.015em;margin:0}.drawer-head .square{width:32px;min-width:32px;height:32px;min-height:32px;font-size:23px}section{padding:15px;border-bottom:1px solid #4a6076}h3{margin:0 0 8px;font-size:12px;text-transform:uppercase;letter-spacing:.09em;color:#bed4e3}.hint{font-size:12px;color:#a7b8c7;margin:0 0 12px}.plane-card{border:1px solid #4e6379;padding:10px;margin-bottom:8px;background:#1726374d;border-radius:4px}.plane-head{display:flex;align-items:center;gap:8px}.plane-head strong{flex:1}.plane-head button{padding:2px 9px;min-height:28px;font-size:11px}.plane-card label{display:grid;grid-template-columns:1fr auto;font-size:11px;color:#a4b8c9;gap:3px;margin-top:7px}.plane-card input[type=range]{grid-column:1/-1}.wide{width:100%}.select-row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:10px 0;font-size:12px}.select-row select{max-width:190px;font-size:11px;padding:4px}.check{display:flex;align-items:center;gap:8px;min-height:33px;font-size:12px}.actions{display:flex;gap:8px}.actions button:nth-child(2){flex:1}dialog{width:min(520px,calc(100vw - 24px));max-height:85dvh;padding:0;border:1px solid #7890a6;border-radius:6px;color:var(--ink);background:#202e40}dialog::backdrop{background:#0009;backdrop-filter:blur(3px)}.info-body{padding:2px 18px 20px;font-size:13px;color:#bccbda}.info-body p{margin:15px 0}.info-body strong{color:#e1edf6}table{width:100%;border-collapse:collapse;text-align:left}td,th{padding:7px 10px;border-bottom:1px solid #4b6075}th{color:#8fa9bc;font-size:11px}dt{color:#d5e6ef;margin-top:10px}dd{margin:2px 0;font-size:12px;color:#a5b9cb}summary{cursor:pointer;padding:10px 0;color:#a9dce5}#notice{position:fixed;bottom:55px;left:50%;transform:translateX(-50%);max-width:calc(100% - 30px);width:max-content;background:#233a4a;border:1px solid #74a1ac;border-radius:5px;padding:10px 14px;z-index:10;font-size:12px;box-shadow:0 4px 20px #0006}#reveal{position:fixed;top:12px;left:12px;z-index:5;background:#1e2f42e6;min-height:34px;font-size:11px;letter-spacing:.1em}#reveal span{margin-left:10px;font-size:16px}body.immersive{--header:0px!important;--footer:0px!important}body.immersive #chrome,body.immersive #copyright,body.immersive #hud,body.immersive .help,body.immersive .stage-label{display:none}#empty{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;color:#9ab0c5;pointer-events:none;font-size:16px}#empty span{display:block;font-size:12px;margin-top:8px;white-space:nowrap}[hidden]{display:none!important}
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#222d3d"><meta name="description" content="Three native Thalean transport charts, orthogonal about one shared origin."><title>G9000 Automaton Observatory</title><style>:root{color-scheme:dark;--bg:#08121f;--panel:#273243;--ink:#d4e3ee;--muted:#98a9b8;--edge:#53677b;--cyan:#60e3eb;--x:#ff838c;--y:#8ce4b7;--z:#89b6ff;--header:220px;--footer:30px}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 system-ui,-apple-system,Segoe UI,sans-serif;overflow:hidden}button,input,select{font:inherit}button,select{color:var(--ink);background:linear-gradient(#425167,#273446);border:1px solid #728398;border-right:2px solid #101a27;border-bottom:3px solid #101a27;border-radius:3px;box-shadow:inset 1px 1px #9aadc133;cursor:pointer;min-height:36px;padding:5px 12px}button:hover{filter:brightness(1.15)}button:active{transform:translateY(1px)}button:focus-visible,select:focus-visible,input:focus-visible,canvas:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}button.active,button[aria-pressed=true],button[aria-current=true]{background:linear-gradient(#415a60,#2b4148);border-color:#8bdce3;box-shadow:inset 0 -2px #6cddd1}input[type=range]{width:100%;height:20px;accent-color:var(--cyan);cursor:pointer;margin:0}input[type=checkbox]{width:19px;height:19px;accent-color:var(--cyan)}input[type=number]{width:75px;padding:7px;background:#101c2a;border:1px solid var(--edge);color:var(--ink);border-radius:3px}output{font:12px/1.4 ui-monospace,monospace;color:#a3e9c0}#chrome{position:fixed;z-index:3;inset:0 0 auto;background:linear-gradient(#384658,#232f40);border:2px outset #6b798c;padding:8px 12px 10px;box-shadow:0 4px 18px #0003}.title{display:flex;align-items:center;gap:10px;height:28px;margin-bottom:9px;white-space:nowrap}.title button{border:0;box-shadow:none;background:none;padding:0;min-height:28px;font-size:12px;letter-spacing:.08em}.title strong{font-weight:800}.title small{font:10px monospace;color:var(--muted)}.bars{flex:1;height:11px;background:repeating-linear-gradient(to bottom,#101c2e 0 2px,#8092a4 2px 3px,transparent 3px 5px);min-width:8px}.toolbar{display:flex;gap:6px}.square{width:40px;min-width:40px;height:40px;padding:0;font-size:25px}.toolbar #play{color:#b6f9d7}.clock{display:flex;align-items:center;flex:1;min-width:80px;gap:10px;background:linear-gradient(90deg,#07140e,#10241b);border:2px inset #5a697c;padding:0 11px}.clock output{color:#b4f0ae;white-space:nowrap;font:14px monospace}.clock input{accent-color:#b5e5bf}.views{display:flex;gap:4px}.views button{padding:0;width:35px;font-weight:700}.planes{display:flex;gap:7px;margin:9px 0}.plane{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:5px 8px;min-height:34px}.plane strong{font-size:14px}.plane span{font-size:12px;color:#cbd5df}.plane i{width:6px;height:6px;border-radius:50%;background:currentColor;box-shadow:0 0 8px currentColor}.plane[aria-pressed=false]{opacity:.47;background:#253040;border-color:#53677b;box-shadow:none}.x{color:var(--x)}.y{color:var(--y)}.z{color:var(--z)}.faders{display:grid;grid-template-columns:1fr 1fr auto auto;gap:12px;align-items:center}.faders label,.merge{display:grid;grid-template-columns:1fr auto;color:var(--muted);font-size:12px;gap:2px 8px}.faders input,.merge input{grid-column:1/-1}.faders button{padding:3px 10px;font-size:12px}.merge{margin-top:6px;border-top:1px solid #53677b;padding-top:4px}#stage{position:fixed;top:var(--header);bottom:var(--footer);left:0;right:0;background:radial-gradient(ellipse at 50% 48%,#122238 0,#091521 58%,#060e18 100%);overflow:hidden}canvas{width:100%;height:100%;display:block;touch-action:none}.stage-label{pointer-events:none;position:absolute;top:14px;left:18px;right:18px;display:flex;justify-content:space-between;color:#8093a7;font:10px monospace;letter-spacing:.14em}.stage-label span:first-child{color:#c4d5e5;text-transform:uppercase}#hud{position:absolute;bottom:15px;left:15px;pointer-events:none;padding:9px 12px;border:1px solid #455d72;background:#07121edb;border-radius:4px;color:#9fb2c4;font:11px/1.6 ui-monospace,monospace;max-width:calc(100% - 80px)}#cycleReadout{color:#d1e6f5;font-size:12px}.gains{color:#afd2dc}.help{position:absolute;bottom:15px;right:15px;width:40px;height:40px;font-size:24px;background:#0a1522;border:1px solid #698399;box-shadow:none}.help:hover{background:#1a2e40}#copyright{position:fixed;bottom:0;left:0;right:0;padding:5px 12px;border-top:1px solid #556578;background:#222d3d;display:flex;align-items:center;justify-content:space-between;gap:10px;color:#91a2b4;font:10px ui-monospace,monospace}#copyright button{border:0;box-shadow:none;background:none;min-height:20px;padding:0;text-decoration:underline;font-size:11px;color:#b8d9e5}#drawer{position:fixed;right:10px;top:10px;bottom:10px;z-index:6;width:min(370px,calc(100% - 20px));background:#263344f7;border:1px solid #71849b;box-shadow:0 20px 80px #000b;overflow:auto;border-radius:7px;overscroll-behavior:contain}.drawer-head{display:flex;align-items:center;justify-content:space-between;padding:12px 15px;position:sticky;top:0;background:#2c3b4e;border-bottom:1px solid #566b80;z-index:1}h2{font-size:16px;letter-spacing:.015em;margin:0}.drawer-head .square{width:32px;min-width:32px;height:32px;min-height:32px;font-size:23px}section{padding:15px;border-bottom:1px solid #4a6076}h3{margin:0 0 8px;font-size:12px;text-transform:uppercase;letter-spacing:.09em;color:#bed4e3}.hint{font-size:12px;color:#a7b8c7;margin:0 0 12px}.plane-card{border:1px solid #4e6379;padding:10px;margin-bottom:8px;background:#1726374d;border-radius:4px}.plane-head{display:flex;align-items:center;gap:8px}.plane-head strong{flex:1}.plane-head button{padding:2px 9px;min-height:28px;font-size:11px}.plane-card label{display:grid;grid-template-columns:1fr auto;font-size:11px;color:#a4b8c9;gap:3px;margin-top:7px}.plane-card input[type=range]{grid-column:1/-1}.wide{width:100%}.select-row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:10px 0;font-size:12px}.select-row select{max-width:190px;font-size:11px;padding:4px}.check{display:flex;align-items:center;gap:8px;min-height:33px;font-size:12px}.actions{display:flex;gap:8px}.actions button:nth-child(2){flex:1}dialog{width:min(520px,calc(100vw - 24px));max-height:85dvh;padding:0;border:1px solid #7890a6;border-radius:6px;color:var(--ink);background:#202e40}dialog::backdrop{background:#0009;backdrop-filter:blur(3px)}.info-body{padding:2px 18px 20px;font-size:13px;color:#bccbda}.info-body p{margin:15px 0}.info-body strong{color:#e1edf6}table{width:100%;border-collapse:collapse;text-align:left}td,th{padding:7px 10px;border-bottom:1px solid #4b6075}th{color:#8fa9bc;font-size:11px}dt{color:#d5e6ef;margin-top:10px}dd{margin:2px 0;font-size:12px;color:#a5b9cb}summary{cursor:pointer;padding:10px 0;color:#a9dce5}#notice{position:fixed;bottom:55px;left:50%;transform:translateX(-50%);max-width:calc(100% - 30px);width:max-content;background:#233a4a;border:1px solid #74a1ac;border-radius:5px;padding:10px 14px;z-index:10;font-size:12px;box-shadow:0 4px 20px #0006}#reveal{position:fixed;top:12px;left:12px;z-index:5;background:#1e2f42e6;min-height:34px;font-size:11px;letter-spacing:.1em}#reveal span{margin-left:10px;font-size:16px}body.immersive{--header:0px!important;--footer:0px!important}body.immersive #chrome,body.immersive #copyright,body.immersive #hud,body.immersive .help,body.immersive .stage-label{display:none}#empty{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;color:#9ab0c5;pointer-events:none;font-size:16px}#empty span{display:block;font-size:12px;margin-top:8px;white-space:nowrap}[hidden]{display:none!important}
 @media(min-width:900px){#chrome{padding:9px max(16px,calc((100vw - 1100px)/2)) 10px}.toolbar .clock{max-width:none}.title button{font-size:13px}#hud{bottom:22px;left:24px;font-size:12px}.help{bottom:22px;right:24px}.stage-label{top:20px;left:24px;right:24px}}
 @media(max-width:480px){#chrome{padding:6px 8px 7px}.title{gap:6px;margin-bottom:6px}.title button{font-size:9px;letter-spacing:.035em}.title small{font-size:9px}.toolbar{gap:4px}.square{width:31px;min-width:31px;height:37px;min-height:37px;font-size:22px}.views{gap:3px}.views button{width:25px;font-size:12px;min-height:37px}.clock{padding:0 6px;gap:5px}.clock output{font-size:11px}.clock input{min-width:20px}.planes{margin:7px 0;gap:5px}.plane{gap:5px;min-height:32px;padding:3px 4px}.plane span{font-size:10px}.plane strong{font-size:12px}.faders{gap:8px}.faders button{padding:2px 6px;font-size:10px;min-height:32px}.faders label,.merge{font-size:11px}output{font-size:10px}#hud{bottom:12px;left:10px;padding:6px 8px;font-size:9px;max-width:calc(100% - 65px)}#cycleReadout{font-size:10px}.help{bottom:12px;right:10px;width:34px;height:36px;font-size:22px}#copyright{font-size:8px;padding:4px 9px}#copyright button{font-size:10px}.stage-label{top:11px;left:12px;right:12px;font-size:9px}#drawer{top:auto;bottom:0;right:0;width:100%;max-height:85dvh;border-radius:12px 12px 0 0}.merge{margin-top:4px;padding-top:2px}}
 @media(max-height:520px){.title{height:20px;margin-bottom:3px}.planes{margin:4px 0}.merge{display:none}.faders{display:none}.toolbar .square{height:32px;min-height:32px}#hud{font-size:9px;padding:4px 8px}.stage-label{top:7px}}
@@ -24,10 +24,15 @@ body.encounter #stage{right:min(450px,44vw)}
 @media(max-height:520px) and (max-width:700px){body.encounter #stage{bottom:var(--footer);right:55%}#encounterPanel{top:var(--header);width:55%;height:auto}.lab-row{display:block}.lab-row>*{margin-bottom:5px}}
 
 @media(max-width:700px){body.encounter #chrome .planes,body.encounter #assemblyFaders,body.encounter #chrome>.merge{display:none}body.encounter #chrome{padding-bottom:8px}}
+.auto-legend{display:flex;flex-wrap:wrap;gap:14px;margin:16px 0 8px;font-size:12px}.auto-a{color:#60e3eb}.auto-b{color:#f5c47c}.auto-buttons{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0}.auto-buttons button{flex:1;min-height:42px;font-size:12px}.auto-contact{display:block;white-space:pre-line;border-left:3px solid #688598;padding:10px;background:#0c1824;font:12px/1.7 ui-monospace,monospace}.auto-contact.contact{border-color:#60e3eb;background:#113238}#autoJointChart{display:block;width:100%;height:auto;margin:14px 0;border:1px solid #314455}body.entity-workbench #chrome .planes,body.entity-workbench #assemblyFaders,body.entity-workbench #chrome>.merge{display:none}body.entity-workbench #play:disabled,body.entity-workbench #hz:disabled{opacity:.45}#automatonControls details{margin:12px 0}#automatonControls summary{min-height:38px;font-size:12px;cursor:pointer}#automatonControls a{color:var(--cyan);font-size:12px}#autoRecords{display:block}#projectionTools>summary{color:#bcd6e4}.lab-export{border-top:1px solid #314455;padding-top:12px}
+
+body.entity-workbench #chrome #play,body.entity-workbench #chrome .clock{display:none}
+
+body.entity-workbench .lab-intro{display:none}
 </style></head>
 <body>
 <header id="chrome">
- <div class="title"><span class="bars"></span><button id="hide" title="Hide controls" aria-label="Hide controls"><strong>THALEAN</strong> <span>ORTHOGONAL OBSERVATORY</span></button><small>v1.2</small><span class="bars"></span></div>
+ <div class="title"><span class="bars"></span><button id="hide" title="Hide controls" aria-label="Hide controls"><strong>THALEAN</strong> <span>G9000 AUTOMATON OBSERVATORY</span></button><small>v1.3</small><span class="bars"></span></div>
  <nav class="mode-tabs" aria-label="Observatory view"><button id="assemblyMode" aria-pressed="true">Assembly</button><button id="inverseMode" aria-pressed="false">Inverse cube</button><button id="historyToggle" aria-pressed="false" aria-expanded="false" aria-controls="pairedHistoryPanel">Sheet history</button><button id="encounterMode" aria-pressed="false" aria-controls="encounterPanel">Encounter Lab</button></nav>
  <div class="toolbar">
   <button id="settings" class="square" title="Display and plane controls" aria-label="Display and plane controls" aria-expanded="false" aria-controls="drawer">☷</button>
@@ -48,9 +53,39 @@ body.encounter #stage{right:min(450px,44vw)}
 <main id="stage"><canvas id="volume" tabindex="0" aria-label="Three orthogonal Thalean charts. Drag to rotate, pinch to zoom, two fingers to pan, twist to roll. Double tap for controls."></canvas><div class="stage-label"><span id="visibleCount">3 planes</span><span id="modeLabel">ONE ORIGIN</span></div><div id="hud"><div id="cycleReadout">F 0 / 20</div><div id="gains" class="gains">PID gains · P 1.4 · I 0.12 · D 4</div><div id="metric">Starting native model…</div></div><button id="about" class="help" aria-label="About this observatory">?</button><div id="empty" hidden>All planes hidden<span>Use X, Y or Z above to show a plane.</span></div></main>
 
 <aside id="encounterPanel" hidden aria-label="Encounter Lab">
- <div class="lab-heading"><div><small>READ-ONLY RESEARCH INSTRUMENT</small><h2>Encounter Lab</h2></div><button id="labClose" aria-label="Close Encounter Lab">×</button></div>
+ <div class="lab-heading"><div><small>NATIVE AUTOMATA · DECLARED EXPERIMENTS</small><h2>Entity encounter workbench</h2></div><button id="labClose" aria-label="Close Encounter Lab">×</button></div>
  <p class="lab-boundary">No native coupling law admitted.</p>
- <p class="hint">Three uncoupled presentations of one carrier. Chart proximity, quotient return and physical interaction are separate tests.</p>
+ <p class="hint lab-intro">Independent entities on a shared native graph. Choose the original projections to inspect the legacy carrier views.</p>
+ <section id="automatonControls" class="lab-section automaton-controls">
+ <label class="lab-wide">Workbench view <select id="autoView"><option value="entities">Entity A · Entity B · shared field</option><option value="projections">Original three projections</option></select></label>
+ <div id="autoEntityControls">
+ <div class="auto-legend"><span class="auto-a">● Entity A</span><span class="auto-b">● Entity B</span><span>Shared native field</span></div>
+ <p class="hint">Point-supported native states · common carrier registration.</p>
+ <div class="lab-row"><label class="auto-a">A · native address<input id="autoA" type="number" min="0" max="8999" value="0"></label><label class="auto-b">B · native address<input id="autoB" type="number" min="0" max="8999" value="16"></label><button id="autoPrepare">Prepare / clear run</button></div>
+ <div class="auto-buttons"><button id="autoApproach">Approach preset</button><button id="autoHidden">Hidden-partner preset</button></div>
+ <div class="auto-buttons"><button id="autoStepA">Step A</button><button id="autoStepB">Step B</button><button id="autoStepBoth">Step both</button><button id="autoPlay" aria-pressed="false">Play pair</button></div>
+ <p class="hint">Pair playback: one synchronous F step per second. Individual steps are declared scheduling controls.</p>
+ <output id="autoContact" class="auto-contact" role="status"></output>
+ <details><summary>Exact entity states</summary><pre id="autoTuples" class="lab-pre"></pre></details>
+ <details><summary>Shared field &amp; evidence</summary><p class="hint">The field is the native 9,000-vertex, 45,000-edge relational graph, in a display embedding. Adjacency and co-location are exact; screen distance is visualization. The two independent 9,000-state automata have point-supported preparations. Extended-body placement and field backreaction remain open. This kinematic field has no admitted response equation.</p><p class="hint">F preserves native adjacency. Synchronous playback cannot create a new contact. Stepping one entity can change eligibility; no coupling follows automatically.</p><a href="https://github.com/rookinc/aletheos-ai/tree/thalean-orthogonal-encounter-v12/thalean-orthogonal-deployment/source/provenance/two-entity-field-001" target="_blank" rel="noopener noreferrer">Inspect two-entity audit ↗</a></details>
+ <div class="auto-buttons"><button id="autoRecord">Record pair</button><button id="autoExport">Export automaton replay</button></div>
+ <output id="autoRecords" class="hint">0 observations · no feedback into evolution</output>
+ <details><summary>Isolated experimental evolution</summary>
+ <label class="check"><input id="autoExperimental" type="checkbox"> Enable declared Witness008 model</label>
+ <p class="hint">Experimental · separate diagonal-b registration. A correlated field Ψ(A,B) on joint configurations, with 25 chosen local terms. Source reference 0 is fixed. This executor does not modify the native entities or transplant labels into their field.</p>
+ <div id="autoExperimentBody" hidden>
+ <label class="lab-wide">Normalized model time · t/T <input id="autoTime" type="range" min="0" max="2" step="0.01" value="0"></label>
+ <div class="auto-buttons"><button id="autoTime0">0 · ready</button><button id="autoTime1">T · written</button><button id="autoTime2">2T · return</button></div>
+ <canvas id="autoJointChart" width="700" height="210" aria-label="Joint configuration field norm across 31 source states"></canvas>
+ <pre id="autoExperimentInfo" class="lab-pre"></pre>
+ <p class="hint">Bars are mathematical field-norm fractions, not detector probabilities. T = π/κ; no physical clock is assigned. The witness resets at 2T. The independent-product restriction cannot write B488.</p>
+ <a href="https://github.com/rookinc/aletheos-ai/tree/thalean-orthogonal-encounter-v12/thalean-orthogonal-deployment/source/provenance/two-entity-field-001" target="_blank" rel="noopener noreferrer">Model assumptions and replay certificates ↗</a>
+ </div></details>
+ </div>
+ <div class="auto-buttons"><button id="autoSave">Save settings</button><button id="autoLoad">Load settings</button></div>
+</section>
+
+ <details id="projectionTools" class="lab-section"><summary>Original projections · return, scans &amp; provenance</summary>
  <section class="lab-section">
   <h3>Native return <span class="lab-tag">Certified derived</span></h3>
   <div class="lab-row"><label>Inspect copy <select id="labCopy"><option value="0">X · YZ</option><option value="1">Y · ZX</option><option value="2">Z · XY</option></select></label><label>Cycle <input id="labCycle" type="number" min="1" max="450" value="1"></label><button id="labStep">Step F</button></div>
@@ -77,9 +112,10 @@ body.encounter #stage{right:min(450px,44vw)}
  </details>
  <details class="lab-section"><summary>Six-channel bridge <span class="lab-tag">Unsupported</span></summary><p>The certified 35-dimensional SU(6) algebra acts on a registered complex field. X±, Y±, Z± are candidate display labels. No source-derived intertwiner from these three embeddings to that field is admitted.</p><p id="labBridgeStatus" class="hint"></p></details>
  <details class="lab-section"><summary>Chart appearance</summary><p class="hint">Display-only geometry. Changing merge does not change the native graph or F.</p><label class="lab-wide">Merge <input id="labMerge" type="range" min="0" max="100" value="0"></label><label class="lab-wide">Edges <input id="labEdges" type="range" min="0" max="100" value="13"></label><label class="lab-wide">Vertices <input id="labVertices" type="range" min="0" max="100" value="62"></label></details>
- <details class="lab-section"><summary>Experimental coupling</summary><label class="check"><input id="labExperimental" type="checkbox"> Inspect experimental research</label><p id="labCoupling" class="lab-boundary">No native coupling law admitted.</p><p id="labExperimentNote" hidden class="hint">Replayed witness experiment 007 uses a different native registration, with zero-based addresses 0 → 488 and probe 7207. Its engineered mirror kernel, role fields and contact coefficients are declared assumptions. Contact reactivates; source/probe coherent phases change. Its F array and horizontal quotient graph differ from this observatory; labels cannot be transplanted. Native hopping support does not certify coupling or spatial locality. No experimental executor is connected to the carrier.</p></details>
+ <details class="lab-section"><summary>Historical Witness007 notes</summary><label class="check"><input id="labExperimental" type="checkbox"> Inspect historical Witness007 research</label><p id="labCoupling" class="lab-boundary">No native coupling law admitted.</p><p id="labExperimentNote" hidden class="hint">Replayed witness experiment 007 uses a different native registration, with zero-based addresses 0 → 488 and probe 7207. Its engineered mirror kernel, role fields and contact coefficients are declared assumptions. Contact reactivates; source/probe coherent phases change. Its F array and horizontal quotient graph differ from this observatory; labels cannot be transplanted. Native hopping support does not certify coupling or spatial locality. No experimental executor is connected to the carrier.</p></details>
  <details class="lab-section"><summary>Provenance inspector</summary><label class="lab-wide">Claim <select id="labEvidence"></select></label><pre id="labEvidenceInfo" class="lab-pre"></pre><a id="labEvidenceLink" target="_blank" rel="noopener noreferrer">Open audit and executable producer ↗</a></details>
- <div class="lab-export"><button id="labExport">Export replay certificate</button><small class="hint">JSON includes scan inputs, native tuples, observations, continuation results and evidence.</small></div>
+ </details>
+ <div class="lab-export"><button id="labExport">Export original-projection replay</button><small class="hint">JSON includes scan inputs, native tuples, observations, continuation results and evidence.</small></div>
 </aside>
 
 <aside id="pairedHistoryPanel" hidden aria-label="Paired Sheet History">
@@ -1455,6 +1491,207 @@ const PairedHistoryPanel=(()=>{
       "HTTP 406 prevented live-source comparison. Owner host access and review of the release diff remain deployment gates.",
       "Research replay receipts are verified here; use replay-research.py to regenerate them from the pinned source packages."
     ]
+  },
+  "automaton_ui": {
+    "audit": "G9000_AUTOMATON_OBSERVATORY_UI_001",
+    "status": "Certified derived / Experimental (declared separately)",
+    "verdict": "PASS_LOCAL_VALIDATION_READY_FOR_GUARDED_TERMUX_INSTALL",
+    "producer": "python3 scripts/check-automaton-release.py",
+    "base_commit": "94cecc53ddbb45ef3c697be20184d9bdec5d3971",
+    "previous_production_html_sha256": "29ee7dc62e1bab177c4e2048b29868ae54831519e5764545ba3449012063a7d1",
+    "previous_production_verification": "User-provided Termux SSH/public LIVE VERIFIED output in this conversation.",
+    "native_result": "Two independent native F automata on a static shared registered graph; exact state, adjacency and co-location inspection. No admitted native coupling or field backreaction.",
+    "experimental_result": "Isolated source008 joint-configuration field. 25 declared global local terms discover the certified31-state component; analytic field-norm evolution in normalized time is checked against an independent matrix exponential.",
+    "source": {
+      "audit": "G9000_ENCOUNTER_WITNESS_008",
+      "registration": "Reciprocal diagonal-b quotient; distinct from observatory diagonal-a",
+      "model_data_sha256": "7351c309e0d4f4fefe35c06bfc86cd8fd91074b8fa91e2af51fe3d8e63ae2fe3",
+      "containing010_archive_sha256": "509e639c915c22c4bfa95af3adcf74998e887886cb65cad54c448d08879d5852",
+      "certificate": "provenance/two-entity-field-001/008-certificate.json",
+      "independent": "provenance/two-entity-field-001/008-independent.json",
+      "status": "Experimental",
+      "assumptions": [
+        "Correlated joint configuration field, not independent role fields or a derived ambient field on one G9000.",
+        "25 selected positive local terms and their coefficients.",
+        "Fixed source reference0; no source backreaction.",
+        "No physical clock, detector probability or permanent memory."
+      ]
+    },
+    "preserved_native_source_hashes": {
+      "native-data.json": "d070869e90b5d3b34981ae593faf5c635dfa25eb1aedebd504833a7a17f27e11",
+      "native-model.js": "1b01d744ce9a461e38390a9d2c6954a1750af0121823bd2ef4282f3b4d430cd3",
+      "paired-history.js": "d5addbee20fe17a90c673efd9ccd39d23e44acfc745f5a628f8e111a3818da4a",
+      "paired-history-data.json": "e1b4482ff1226735724533a08579eb123ab6dd3ffa399871e806ab9f5bce2bff",
+      "cycle-clock.js": "857316c56d19290ef1e474d0b9752ca0c5cf5b199a8e5972b45dc8108447e610",
+      "volume-camera.js": "5d09b81b619d51bd77fbe92af3c4268016cd3366aeed37d4e112292075a80beb",
+      "inverse-volume.js": "bc7851240eb5d4a90de8076903e36925b3372cf2377a1c8df9cfe0a2a079d401"
+    },
+    "ui_source_sha256": {
+      "build.py": "a819a109f2cf8063dc693154e8f30e6c552b2a28964a141f06a4694f75d7f77f",
+      "src/app.js": "3e47f9e36d897c0c1a90a50a0e63dbc143dd685dec7fec736ba50f7d13664c29",
+      "src/ui.html": "0264eb586c48b4ac661c432bd40011901376ff8212db77359cf7ff63101a81fa",
+      "src/style.css": "61e9f7011e73705a95b7e1b2f8e07e09daa21428457efbf51a2b789eb8c88cc7",
+      "src/encounter-panel.html": "712438ef29866117a0e624791f4208fe5344a23b52aab0212f08c3e56c4e2ff5",
+      "src/encounter-panel.js": "001c6af4a8dd72805a2ea4566c055dc90186062d095e216c771b5b471d1307f4",
+      "src/encounter.css": "0a3cbbbc654ccd49d5a9afb623da479f8a1269e0cc4fa6e51c357eb508339c6c",
+      "src/encounter-model.js": "89206ee8721c62a407c2bdd1b2774018af8b2795a77fff9234043e213151caaa",
+      "src/automaton-panel.html": "67a9ed4669d4e3839efa7b1a57cac4bee258bfe60724e481d8c9627cbedcbd08",
+      "src/automaton-panel.js": "a51786b6142ec15ba98c65bbbff84f7a9fe3581d045687cf140d481516bd0afe",
+      "src/automaton-model.js": "d46400d26c35cfc9cb26988c2ce77b63e2a67d3409af25820caa6b83981e6601",
+      "src/automaton-joint-data.json": "5432cfb2ec70c8c791e083c3c28d809f63f457c9ce9de62c43ec4a6696f49b68"
+    },
+    "commands": [
+      {
+        "command": [
+          "node",
+          "test.cjs"
+        ],
+        "exit": 0,
+        "log": "check-01.txt"
+      },
+      {
+        "command": [
+          "node",
+          "test-inverse.cjs"
+        ],
+        "exit": 0,
+        "log": "check-02.txt"
+      },
+      {
+        "command": [
+          "node",
+          "test-paired-history.cjs"
+        ],
+        "exit": 0,
+        "log": "check-03.txt"
+      },
+      {
+        "command": [
+          "node",
+          "test-paired-history-panel.cjs"
+        ],
+        "exit": 0,
+        "log": "check-04.txt"
+      },
+      {
+        "command": [
+          "node",
+          "test-automaton.cjs"
+        ],
+        "exit": 0,
+        "log": "check-05.txt"
+      },
+      {
+        "command": [
+          "node",
+          "test-encounter-app.cjs"
+        ],
+        "exit": 0,
+        "log": "check-06.txt"
+      },
+      {
+        "command": [
+          "node",
+          "test-encounter-replay.cjs"
+        ],
+        "exit": 0,
+        "log": "check-07.txt"
+      },
+      {
+        "command": [
+          "node",
+          "scripts/replay-automaton.cjs",
+          "provenance/automaton-ui-001/browser-replay.json"
+        ],
+        "exit": 0,
+        "log": "check-08.txt"
+      },
+      {
+        "command": [
+          "python3",
+          "scripts/verify-automaton-evolution.py"
+        ],
+        "exit": 0,
+        "log": "check-09.txt"
+      }
+    ],
+    "model_checks": {
+      "pass": true,
+      "checks": [
+        "native_independence_contact_and_synchronous_invariance",
+        "native_approach_and_hidden_partner_controls",
+        "record_has_no_dynamic_effect_and_export_is_a_copy",
+        "invalid_preparations_are_atomic_and_limits_precede_mutation",
+        "declared_global_rules_close_on_31_states_and_reject_altered_program",
+        "experimental_ready_write_and_return_endpoints_are_exact",
+        "norm_and_marginals_over_full_period_and_native_isolation",
+        "replay_native_steps_observations_and_experimental_snapshot",
+        "tampered_native_and_experimental_claims_are_rejected",
+        "settings_validation_preserves_native_range_and_default_boundary"
+      ],
+      "scope": "Native pair + isolated declared008 analytical evolution"
+    },
+    "application_checks": {
+      "pass": true,
+      "checks": 11,
+      "passed": [
+        "app_starts_with_experimental_disabled_and_original_counts",
+        "all_modes_and_history_remain_operable",
+        "phase_independence_and_exact_monitor",
+        "actual_scan_has_no_native_effect",
+        "witness_records_and_equal_continuation",
+        "experimental_inspection_cannot_couple_or_mutate",
+        "actual_settings_round_trip_and_legacy_compatibility",
+        "invalid_settings_are_atomic",
+        "replay_certificate_and_tamper_negative_control",
+        "new_entity_controls_and_experimental_executor_are_isolated",
+        "scene_caption_and_keyboard_route_follow_selected_automaton_view"
+      ],
+      "actualApplicationExecuted": true,
+      "browserUsed": false
+    },
+    "evolution_oracle": {
+      "pass": true,
+      "producer": "python3 scripts/verify-automaton-evolution.py",
+      "samples": 17,
+      "method": "SciPy direct expm of independently assembled 31x31 Hermitian generator; compared with actual JavaScript samples",
+      "max_norm_fraction_error": 2.248201624865942e-15,
+      "max_energy_error": 6.483702463810914e-14,
+      "joint_data_sha256": "5432cfb2ec70c8c791e083c3c28d809f63f457c9ce9de62c43ec4a6696f49b68",
+      "boundary": "Numerical diagnostic of the declared model; source exact algebra and closure certificates remain separate."
+    },
+    "browser_checks": [
+      "native_approach_changes_adjacency_with_B_fixed",
+      "hidden_partner_preset_no_native_contact",
+      "experimental_T_write_preserves_native_pair",
+      "browser_download_export",
+      "settings_real_file_picker_roundtrip",
+      "legacy_spatial_scan_21",
+      "legacy_sheet_history_visible",
+      "paired_playback_advances",
+      "synchronous_playback_preserves_noncontact",
+      "final_native_independent_step",
+      "experimental_disabled_by_default",
+      "mobile_approach_before",
+      "mobile_independent_step",
+      "mobile_declared_write",
+      "mobile_layout_360x740",
+      "mobile_layout_390x844",
+      "zero_application_console_errors",
+      "projection_scene_caption",
+      "space_routes_to_pair_playback",
+      "space_pauses_pair"
+    ],
+    "deployment_validation": "prepare-automaton-release.py runs the real guarded server/wrapper through17 isolated installer/rollback checks; see deployment-checks.json.",
+    "failures": [],
+    "production_deployed": false,
+    "boundaries": [
+      "Point-supported preparations, not a certified placement law for extended G9000 bodies.",
+      "Experimental b-registration is separate from native observatory a-registration.",
+      "No native interaction, memory theorem, physical time or detector probability is inferred.",
+      "Mobile QA uses360x740 and390x844 iframe viewports in Chrome; physical Android validation remains for the deployed update.",
+      "Historical v1.2 evidence retains its original scope; this audit records the current UI changes."
+    ]
   }
 }
 </script><script>'use strict';
@@ -1608,6 +1845,527 @@ const EncounterPanel=(()=>{
  }
  return {create};
 })();
+</script><script id="automatonJointData" type="application/json">{
+  "history": [
+    [
+      7,
+      0
+    ],
+    [
+      2055,
+      0
+    ],
+    [
+      4084,
+      0
+    ],
+    [
+      5860,
+      0
+    ],
+    [
+      7207,
+      0
+    ],
+    [
+      255,
+      0
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      255,
+      255
+    ],
+    [
+      244,
+      244
+    ],
+    [
+      1735,
+      1735
+    ],
+    [
+      1729,
+      1729
+    ],
+    [
+      1676,
+      1676
+    ],
+    [
+      1668,
+      1668
+    ],
+    [
+      1553,
+      1553
+    ],
+    [
+      1541,
+      1541
+    ],
+    [
+      521,
+      521
+    ],
+    [
+      488,
+      488
+    ],
+    [
+      521,
+      488
+    ],
+    [
+      1541,
+      488
+    ],
+    [
+      1553,
+      488
+    ],
+    [
+      1668,
+      488
+    ],
+    [
+      1676,
+      488
+    ],
+    [
+      1729,
+      488
+    ],
+    [
+      1735,
+      488
+    ],
+    [
+      244,
+      488
+    ],
+    [
+      255,
+      488
+    ],
+    [
+      7207,
+      488
+    ],
+    [
+      5860,
+      488
+    ],
+    [
+      4084,
+      488
+    ],
+    [
+      2055,
+      488
+    ],
+    [
+      7,
+      488
+    ]
+  ],
+  "terms": [
+    {
+      "a2": 30,
+      "b2": 1,
+      "kind": "probe",
+      "label": "approach / return",
+      "witness_absent": [
+        7,
+        2055
+      ],
+      "witness_at": null,
+      "x": 7,
+      "y": 2055
+    },
+    {
+      "a2": 29,
+      "b2": 2,
+      "kind": "probe",
+      "label": "approach / return",
+      "witness_absent": [
+        2055,
+        4084
+      ],
+      "witness_at": null,
+      "x": 2055,
+      "y": 4084
+    },
+    {
+      "a2": 28,
+      "b2": 3,
+      "kind": "probe",
+      "label": "approach / return",
+      "witness_absent": [
+        4084,
+        5860
+      ],
+      "witness_at": null,
+      "x": 4084,
+      "y": 5860
+    },
+    {
+      "a2": 27,
+      "b2": 4,
+      "kind": "probe",
+      "label": "approach / return",
+      "witness_absent": [
+        5860,
+        7207
+      ],
+      "witness_at": null,
+      "x": 5860,
+      "y": 7207
+    },
+    {
+      "a2": 26,
+      "b2": 5,
+      "kind": "probe",
+      "label": "approach / return",
+      "witness_absent": [
+        7207,
+        255
+      ],
+      "witness_at": null,
+      "x": 7207,
+      "y": 255
+    },
+    {
+      "a2": 25,
+      "b2": 6,
+      "kind": "probe",
+      "label": "capture",
+      "witness_absent": [],
+      "witness_at": 0,
+      "x": 255,
+      "y": 0
+    },
+    {
+      "a2": 24,
+      "b2": 7,
+      "kind": "pair",
+      "label": "co-move",
+      "witness_absent": [],
+      "witness_at": null,
+      "x": 0,
+      "y": 255
+    },
+    {
+      "a2": 23,
+      "b2": 8,
+      "kind": "pair",
+      "label": "co-move",
+      "witness_absent": [],
+      "witness_at": null,
+      "x": 255,
+      "y": 244
+    },
+    {
+      "a2": 22,
+      "b2": 9,
+      "kind": "pair",
+      "label": "co-move",
+      "witness_absent": [],
+      "witness_at": null,
+      "x": 244,
+      "y": 1735
+    },
+    {
+      "a2": 21,
+      "b2": 10,
+      "kind": "pair",
+      "label": "co-move",
+      "witness_absent": [],
+      "witness_at": null,
+      "x": 1735,
+      "y": 1729
+    },
+    {
+      "a2": 20,
+      "b2": 11,
+      "kind": "pair",
+      "label": "co-move",
+      "witness_absent": [],
+      "witness_at": null,
+      "x": 1729,
+      "y": 1676
+    },
+    {
+      "a2": 19,
+      "b2": 12,
+      "kind": "pair",
+      "label": "co-move",
+      "witness_absent": [],
+      "witness_at": null,
+      "x": 1676,
+      "y": 1668
+    },
+    {
+      "a2": 18,
+      "b2": 13,
+      "kind": "pair",
+      "label": "co-move",
+      "witness_absent": [],
+      "witness_at": null,
+      "x": 1668,
+      "y": 1553
+    },
+    {
+      "a2": 17,
+      "b2": 14,
+      "kind": "pair",
+      "label": "co-move",
+      "witness_absent": [],
+      "witness_at": null,
+      "x": 1553,
+      "y": 1541
+    },
+    {
+      "a2": 16,
+      "b2": 15,
+      "kind": "pair",
+      "label": "co-move",
+      "witness_absent": [],
+      "witness_at": null,
+      "x": 1541,
+      "y": 521
+    },
+    {
+      "a2": 15,
+      "b2": 16,
+      "kind": "pair",
+      "label": "co-move",
+      "witness_absent": [],
+      "witness_at": null,
+      "x": 521,
+      "y": 488
+    },
+    {
+      "a2": 14,
+      "b2": 17,
+      "kind": "probe",
+      "label": "release",
+      "witness_absent": [],
+      "witness_at": 488,
+      "x": 488,
+      "y": 521
+    },
+    {
+      "a2": 13,
+      "b2": 18,
+      "kind": "probe",
+      "label": "free return",
+      "witness_absent": [
+        521,
+        1541
+      ],
+      "witness_at": null,
+      "x": 521,
+      "y": 1541
+    },
+    {
+      "a2": 12,
+      "b2": 19,
+      "kind": "probe",
+      "label": "free return",
+      "witness_absent": [
+        1541,
+        1553
+      ],
+      "witness_at": null,
+      "x": 1541,
+      "y": 1553
+    },
+    {
+      "a2": 11,
+      "b2": 20,
+      "kind": "probe",
+      "label": "free return",
+      "witness_absent": [
+        1553,
+        1668
+      ],
+      "witness_at": null,
+      "x": 1553,
+      "y": 1668
+    },
+    {
+      "a2": 10,
+      "b2": 21,
+      "kind": "probe",
+      "label": "free return",
+      "witness_absent": [
+        1668,
+        1676
+      ],
+      "witness_at": null,
+      "x": 1668,
+      "y": 1676
+    },
+    {
+      "a2": 9,
+      "b2": 22,
+      "kind": "probe",
+      "label": "free return",
+      "witness_absent": [
+        1676,
+        1729
+      ],
+      "witness_at": null,
+      "x": 1676,
+      "y": 1729
+    },
+    {
+      "a2": 8,
+      "b2": 23,
+      "kind": "probe",
+      "label": "free return",
+      "witness_absent": [
+        1729,
+        1735
+      ],
+      "witness_at": null,
+      "x": 1729,
+      "y": 1735
+    },
+    {
+      "a2": 7,
+      "b2": 24,
+      "kind": "probe",
+      "label": "free return",
+      "witness_absent": [
+        1735,
+        244
+      ],
+      "witness_at": null,
+      "x": 1735,
+      "y": 244
+    },
+    {
+      "a2": 6,
+      "b2": 25,
+      "kind": "probe",
+      "label": "free return",
+      "witness_absent": [
+        244,
+        255,
+        0
+      ],
+      "witness_at": null,
+      "x": 244,
+      "y": 255
+    }
+  ],
+  "provenance": {
+    "audit": "G9000_ENCOUNTER_WITNESS_008",
+    "registration": "Reciprocal diagonal-b quotient; distinct from observatory diagonal-a",
+    "model_data_sha256": "7351c309e0d4f4fefe35c06bfc86cd8fd91074b8fa91e2af51fe3d8e63ae2fe3",
+    "containing010_archive_sha256": "509e639c915c22c4bfa95af3adcf74998e887886cb65cad54c448d08879d5852",
+    "certificate": "provenance/two-entity-field-001/008-certificate.json",
+    "independent": "provenance/two-entity-field-001/008-independent.json",
+    "status": "Experimental",
+    "assumptions": [
+      "Correlated joint configuration field, not independent role fields or a derived ambient field on one G9000.",
+      "25 selected positive local terms and their coefficients.",
+      "Fixed source reference0; no source backreaction.",
+      "No physical clock, detector probability or permanent memory."
+    ]
+  },
+  "native_provenance": {
+    "native-data.json": "d070869e90b5d3b34981ae593faf5c635dfa25eb1aedebd504833a7a17f27e11",
+    "native-model.js": "1b01d744ce9a461e38390a9d2c6954a1750af0121823bd2ef4282f3b4d430cd3",
+    "paired-history-data.json": "e1b4482ff1226735724533a08579eb123ab6dd3ffa399871e806ab9f5bce2bff"
+  }
+}
+</script><script>'use strict';
+const G9000Automaton=(()=>{
+ const clone=x=>JSON.parse(JSON.stringify(x));
+ const address=x=>{if(!Number.isInteger(x)||x<0||x>8999)throw Error('Native address must be an integer from 0 to 8999.');return x;};
+ class Pair{
+  constructor(data,metadata,N,H){this.N=N;this.g=N.topology(data);this.other=N.topology(data);this.history=new H.Model(data,metadata);this.adj=Array.from({length:9000},()=>new Set());for(const[a,b]of this.g.edges){this.adj[a].add(b);this.adj[b].add(a);}this.prepare(0,16);}
+  prepare(a,b){address(a);address(b);this.prepared=[a,b];this.a=a;this.b=b;this.steps=[0,0];this.actions=[];this.records=[];}
+  snapshot(){return {A:this.history.at(this.a),B:this.history.at(this.b),steps:this.steps.slice(),adjacent:this.adj[this.a].has(this.b),coLocated:this.a===this.b,nativeCouplingEvents:0};}
+  step(operator){if(!['A','B','both'].includes(operator))throw Error('Unknown native operator.');if(this.actions.length>=500)throw Error('500-step limit reached. Export and prepare a fresh run.');const before=[this.a,this.b];if(operator!=='B'){this.a=this.g.F[this.a];this.steps[0]++;}if(operator!=='A'){this.b=this.other.F[this.b];this.steps[1]++;}this.actions.push({operator,before,after:[this.a,this.b]});return this.snapshot();}
+  record(){if(this.records.length>=100)throw Error('100-observation limit reached.');this.records.push({sequence:this.records.length+1,afterAction:this.actions.length,snapshot:this.snapshot()});return this.records.length;}
+  export(){return clone({prepared:this.prepared,actions:this.actions,snapshot:this.snapshot(),observations:this.records});}
+ }
+ class Joint008{
+  constructor(data){this.data=clone(data);const {history,terms}=this.data;if(history.length!==31||terms.length!==25)throw Error('Invalid declared model.');
+   const key=s=>s.join(':'),indices=new Map(history.map((s,i)=>[key(s),i]));if(indices.size!==31)throw Error('Duplicate joint state.');
+   // Discover transitions from the GLOBAL local rules, not a projected chain.
+   const seen=new Set([key(history[0])]),queue=[history[0]];let links=0;
+   for(let i=0;i<queue.length;i++){const state=queue[i],j=indices.get(key(state));if(j===undefined)throw Error('Model leaks outside certified component.');let diagonal=0;const targets=[];
+    for(const term of terms){const {x,y,a2,b2}=term;let target=null,weight=0;
+     if(term.kind==='pair'){if(state[0]===x&&state[1]===x){target=[y,y];weight=a2;}else if(state[0]===y&&state[1]===y){target=[x,x];weight=b2;}}
+     else if((term.witness_at===null||state[1]===term.witness_at)&&!term.witness_absent.includes(state[1])){if(state[0]===x){target=[y,state[1]];weight=a2;}else if(state[0]===y){target=[x,state[1]];weight=b2;}}
+     if(target){diagonal+=weight;const k=indices.get(key(target));if(k===undefined||Math.abs(k-j)!==1||a2*b2!==(Math.min(j,k)+1)*(30-Math.min(j,k)))throw Error('Uncertified joint link.');targets.push(k);if(!seen.has(key(target))){seen.add(key(target));queue.push(target);}}
+    }
+    if(diagonal!==30||targets.length!==(j===0||j===30?1:2)||new Set(targets).size!==targets.length)throw Error('Uncertified joint generator.');links+=targets.length;
+   }
+   if(seen.size!==31||links!==60)throw Error('Joint component closure failed.');
+  }
+  sample(t){if(!Number.isFinite(t)||t<0||t>2)throw Error('Choose normalized time from 0 to 2T.');let weights;
+   if(t===0||t===2)weights=Array.from({length:31},(_,j)=>+(j===0));else if(t===1)weights=Array.from({length:31},(_,j)=>+(j===30));else{const p=Math.sin(Math.PI*t/2)**2,q=Math.cos(Math.PI*t/2)**2;let choose=1;weights=Array.from({length:31},(_,j)=>{if(j)choose=choose*(31-j)/j;return choose*p**j*q**(30-j);});}
+   const sum=(fn)=>weights.reduce((s,w,j)=>s+(fn(this.data.history[j])?w:0),0);
+   return {status:'Experimental',model:'Encounter Witness008',timeOverT:t,weights,totalNorm:weights.reduce((s,w)=>s+w,0),probeHome:sum(s=>s[0]===7),witnessReady:sum(s=>s[1]===0),witnessWritten:sum(s=>s[1]===488),energyOverKappa:7.5,dominantJointState:this.data.history[weights.indexOf(Math.max(...weights))].slice(),nativeCouplingEvents:0};
+  }
+ }
+ function validateSettings(s){if(!s||!['entities','projections'].includes(s.view)||typeof s.experimental!=='boolean')throw Error('Invalid automaton settings.');address(s.a);address(s.b);return s;}
+ return {Pair,Joint008,validateSettings};
+})();
+if(typeof module!=='undefined')module.exports=G9000Automaton;
+</script><script>'use strict';
+const AutomatonPanel=(()=>{
+ function create({data,metadata,jointData,controls}){
+  const $=id=>document.getElementById(id),pair=new G9000Automaton.Pair(data,metadata,NativeModel,PairedSheetHistory),joint=new G9000Automaton.Joint008(jointData);
+  let view='entities',experimental=false,time=0,running=false,lastTick=null,pointMerge=null,points=null;
+  const sceneActive=()=>view==='entities';
+  const download=(value,name)=>{const u=URL.createObjectURL(new Blob([JSON.stringify(value,null,2)],{type:'application/json'})),a=document.createElement('a');a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),1000);};
+  const tuple=s=>`native ${s.state} · frame ${s.frame} · G1800 ${s.pairedState}\nπ = (${s.frame}, ${s.g900}) · G15 (${s.basePair.join(', ')})\nrelative ${s.relativeSheet} · hidden ${s.hiddenBit}`;
+  function stop(){running=false;lastTick=null;$('autoPlay').textContent='Play pair';$('autoPlay').setAttribute('aria-pressed','false');}
+  function paintExperiment(){
+   $('autoExperimentBody').hidden=!experimental;if(!experimental)return;
+   const s=joint.sample(time);$('autoTime').value=time;
+   $('autoExperimentInfo').textContent=`Experimental · Witness008 · t/T ${time.toFixed(2)}\nA at home 7: ${s.probeHome.toFixed(8)}\nB at written address 488: ${s.witnessWritten.toFixed(8)}\nB at ready address 0: ${s.witnessReady.toFixed(8)}\nTotal norm: ${s.totalNorm.toFixed(12)}\nModel H/κ: ${s.energyOverKappa}\nLargest joint component: (${s.dominantJointState.join(', ')})\nNative coupling events: 0`;
+   const c=$('autoJointChart').getContext('2d');c.fillStyle='#09131e';c.fillRect(0,0,700,210);for(let j=0;j<31;j++){const w=s.weights[j];c.fillStyle=jointData.history[j][1]===488?'#f5c47c':'#60e3eb';c.fillRect(12+j*22,178-150*w,16,Math.max(1,150*w));}c.font='16px ui-monospace,monospace';c.fillStyle='#c8e1ee';c.fillText('h₀ (7,0)',12,202);c.fillText('h₃₀ (7,488)',535,202);
+  }
+  function update(){const s=pair.snapshot();$('autoA').value=pair.a;$('autoB').value=pair.b;$('autoContact').textContent=`Native adjacency: ${s.adjacent?'YES':'NO'} · co-location: ${s.coLocated?'YES':'NO'}\nA: ${s.steps[0]} F steps · B: ${s.steps[1]} F steps\nNative coupling events: 0`;$('autoContact').classList.toggle('contact',s.adjacent);$('autoTuples').textContent=`ENTITY A\n${tuple(s.A)}\nNext F ${pair.g.F[pair.a]}\n\nENTITY B\n${tuple(s.B)}\nNext F ${pair.other.F[pair.b]}`;$('autoRecords').textContent=`${pair.records.length} observations · no feedback into evolution`;$('autoEntityControls').hidden=!sceneActive();$('autoView').value=view;controls.dirty();}
+  const act=fn=>()=>{try{fn();update();}catch(e){stop();controls.notice(e.message);}};
+  $('autoA').onfocus=stop;$('autoB').onfocus=stop;
+  $('autoPrepare').onclick=act(()=>{const a=$('autoA').value,b=$('autoB').value;if(a===''||b==='')throw Error('Enter both native addresses.');pair.prepare(Number(a),Number(b));stop();});
+  $('autoApproach').onclick=act(()=>{pair.prepare(7208,16);stop();});$('autoHidden').onclick=act(()=>{pair.prepare(488,16);stop();});
+  for(const [id,op]of [['autoStepA','A'],['autoStepB','B'],['autoStepBoth','both']])$(id).onclick=act(()=>{stop();pair.step(op);});
+  $('autoPlay').onclick=()=>{running=!running;lastTick=null;$('autoPlay').textContent=running?'Pause pair':'Play pair';$('autoPlay').setAttribute('aria-pressed',String(running));};
+  $('autoView').onchange=e=>{view=e.target.value;stop();controls.changed();update();};
+  $('autoRecord').onclick=act(()=>pair.record());$('autoSave').onclick=()=>controls.save();$('autoLoad').onclick=()=>controls.load();
+  $('autoExperimental').onchange=e=>{experimental=e.target.checked;time=0;paintExperiment();controls.dirty();};
+  $('autoTime').oninput=act(()=>{const n=Number($('autoTime').value);joint.sample(n);time=n;paintExperiment();});
+  for(let i=0;i<3;i++)$('autoTime'+i).onclick=act(()=>{time=i;paintExperiment();});
+  const exportReplay=()=>({schema:'g9000-automaton-replay-1',nativeSource:jointData.native_provenance,native:pair.export(),experimental:experimental?{source:jointData.provenance,timeOverT:time,snapshot:joint.sample(time)}:null,nativeCouplingEvents:0,assumptions:{native:'Independent F_A/F_B on the commonly registered observatory a-quotient graph; no field response law.',experimental:'Declared correlated joint field in the distinct b registration. No transplantation to native entity instances.'}});
+  $('autoExport').onclick=()=>download(exportReplay(),'G9000_Automaton_Replay.json');
+  function tick(now){if(!running)return;if(lastTick===null){lastTick=now;return;}if(now-lastTick>=1000){lastTick=now;try{pair.step('both');update();}catch(e){stop();controls.notice(e.message);}}}
+  function render(ctx,project,width,height,merge){
+   if(pointMerge!==merge){points=Array.from({length:9000},(_,v)=>NativeModel.splitPoint(pair.g.cycleOf[v],pair.g.stageOf[v],undefined,merge));pointMerge=merge;}
+   const projected=points.map(project),graph=new Path2D();for(const[a,b]of pair.g.edges){graph.moveTo(projected[a][0],projected[a][1]);graph.lineTo(projected[b][0],projected[b][1]);}
+   ctx.globalAlpha=.025;ctx.strokeStyle='#759aaf';ctx.lineWidth=.45;ctx.stroke(graph);ctx.globalAlpha=.23;ctx.fillStyle='#9ab2c5';for(const p of projected)ctx.fillRect(p[0],p[1],1,1);
+   for(const [v,color,label,r]of [[pair.a,'#60e3eb','A',7],[pair.b,'#f5c47c','B',11]]){const p=projected[v];ctx.globalAlpha=.55;ctx.strokeStyle=color;ctx.lineWidth=1.2;ctx.beginPath();for(const w of pair.adj[v]){ctx.moveTo(p[0],p[1]);ctx.lineTo(projected[w][0],projected[w][1]);}ctx.stroke();ctx.globalAlpha=1;ctx.beginPath();ctx.arc(p[0],p[1],r,0,2*Math.PI);ctx.fillStyle='#09131e';ctx.fill();ctx.lineWidth=2.4;ctx.stroke();ctx.fillStyle=color;ctx.font='bold 12px ui-monospace,monospace';ctx.textAlign='left';ctx.fillText(label+' '+v,Math.max(8,Math.min(width-75,p[0]+15)),Math.max(18,Math.min(height-8,p[1]+(label==='A'?-16:25))));}
+   ctx.globalAlpha=1;
+  }
+  const settings=()=>({view,a:pair.a,b:pair.b,experimental});
+  function apply(s){s=s??{view:'entities',a:0,b:16,experimental:false};G9000Automaton.validateSettings(s);stop();view=s.view;pair.prepare(s.a,s.b);experimental=s.experimental;time=0;$('autoExperimental').checked=experimental;paintExperiment();update();controls.changed();}
+  update();
+  return {sceneActive,render,tick,stop,settings,apply,exportReplay,togglePlay:()=>$('autoPlay').onclick(),snapshot:()=>pair.snapshot()};
+ }
+ return {create};
+})();
 </script><script>'use strict';
 // Proper cyclic rotations: native +Y is the symmetry normal of the Data chart.
 const OrthogonalLayout = Object.freeze({
@@ -1631,6 +2389,9 @@ const OrthogonalLayout = Object.freeze({
  const encounterPanel=EncounterPanel.create({data,metadata:JSON.parse($('pairedHistoryData').textContent),evidence:JSON.parse($('encounterEvidence').textContent),getContext:()=>({selected,steps:clock.steps,planes,mode,merge,edgeOpacity,vertexOpacity,projection:[0,1].map(j=>[[1,0,0],[0,1,0],[0,0,1]].map(v=>camera.rotate(v)[j]))}),controls:{notice,display:(name,value)=>{$(name).value=value;$(name).oninput({target:$(name)});},dirty:()=>setDirty(false),pause:()=>{setPlay(false);clock.fraction=0;dirty=true;},step:()=>$('step').onclick(),close:()=>setMode('assembly'),selectCycle:index=>{$('selected').value=index+1;$('selected').onchange({target:$('selected')});},plane:(i,changes)=>{Object.assign(planes[i],changes);$('phase'+i).value=planes[i].offset;$('phaseValue'+i).textContent=`${planes[i].offset*18}° · ${planes[i].offset} steps`;updatePlanes();}}});
  const transportColors={interior:'#f2bd71',exterior:'#62dcea',turn:'#bd9ae9'};
  const setDirty=(back=true)=>{dirty=true;if(back)backgroundDirty=true;};
+ const automatonPanel=AutomatonPanel.create({data,metadata:JSON.parse($('pairedHistoryData').textContent),jointData:JSON.parse($('automatonJointData').textContent),controls:{notice,dirty:()=>setDirty(),changed:()=>syncWorkbench(),save:()=>$('save').click(),load:()=>$('load').click()}});
+ function syncWorkbench(){const active=mode==='encounter'&&automatonPanel.sceneActive();document.body.classList.toggle('entity-workbench',active);if(active)setPlay(false);$('play').disabled=active;$('hz').disabled=active;$('volume').setAttribute('aria-label',active?'Shared native G9000 field with independently registered entities A and B. Drag to rotate, pinch to zoom.':mode==='inverse'?'Three-way convergence in a central cube. Drag to rotate, pinch to zoom.':'Original Thalean charts. Drag to rotate, pinch to zoom.');$('projectionTools').open=!automatonPanel.sceneActive();if(active){$('empty').hidden=true;$('visibleCount').textContent='1 NATIVE FIELD';$('modeLabel').textContent='ENTITY A · ENTITY B';}else if(mode==='encounter'){updatePlanes();$('modeLabel').textContent='ORIGINAL THREE PROJECTIONS';}layout();setDirty();}
+
  function notice(message,ms=4200){$('notice').textContent=message;$('notice').hidden=false;clearTimeout(noticeTimer);noticeTimer=setTimeout(()=>$('notice').hidden=true,ms);}
  function setDrawer(open){$('drawer').hidden=!open;$('settings').setAttribute('aria-expanded',String(open));if(open)$('closeDrawer').focus();}
  function setImmersive(value){document.body.classList.toggle('immersive',value);$('reveal').hidden=!value;layout();}
@@ -1673,7 +2434,7 @@ const OrthogonalLayout = Object.freeze({
   $('inverseControls').hidden=!active;$('inverseGuide').hidden=!active;$('modeLabel').textContent=active?'X ∩ Y ∩ Z':encounter?'READ-ONLY ENCOUNTER LAB':'ONE ORIGIN';
   $('volume').setAttribute('aria-label',active?'Three-way convergence in a central cube. Drag to rotate, pinch to zoom.':'Three orthogonal Thalean charts. Drag to rotate, pinch to zoom.');
   if(!active)$('gains').textContent='PID gains · P 1.4 · I 0.12 · D 4';
-  lastMetric=-Infinity;updatePlanes();layout();setDirty();
+  lastMetric=-Infinity;automatonPanel.stop();updatePlanes();syncWorkbench();layout();setDirty();
  }
  function drawCube(g){
   if(!$('cubeFrame').checked)return;
@@ -1723,6 +2484,7 @@ const OrthogonalLayout = Object.freeze({
   if(!width||!height)return;
   if(layoutDirty){paths=data.cycles.map((c,i)=>c.map((_,k)=>M.path(i,k,merge)));layoutDirty=false;backgroundDirty=true;inverseDirty=true;}
   if(mode==='inverse'){drawInverse(now);dirty=false;return;}
+  if(mode==='encounter'&&automatonPanel.sceneActive()){ctx.setTransform(dpr,0,0,dpr,0,0);ctx.globalAlpha=1;ctx.fillStyle='#091521';ctx.fillRect(0,0,width,height);automatonPanel.render(ctx,project,width,height,merge);const s=automatonPanel.snapshot();$('cycleReadout').textContent=`A ${s.steps[0]} · B ${s.steps[1]} F steps`;$('gains').textContent='Shared native relational field';$('metric').textContent='Native coupling events: 0';dirty=false;return;}
   if(backgroundDirty)buildBackground();
   ctx.setTransform(dpr,0,0,dpr,0,0);const gradient=ctx.createRadialGradient(width/2,height*.48,0,width/2,height*.48,Math.max(width,height)*.65);gradient.addColorStop(0,'#122238');gradient.addColorStop(.65,'#091521');gradient.addColorStop(1,'#060e18');ctx.globalAlpha=1;ctx.fillStyle=gradient;ctx.fillRect(0,0,width,height);ctx.drawImage(background,0,0,background.width,background.height,0,0,width,height);
   const k=clock.phaseStep,f=clock.fraction;
@@ -1744,8 +2506,8 @@ const OrthogonalLayout = Object.freeze({
  }
  function advance(){sim.step();dirty=true;}
  function setPlay(running){clock.setRunning(running,performance.now(),advance);$('play').textContent=running?'Ⅱ':'▶';$('play').setAttribute('aria-pressed',String(running));$('play').setAttribute('aria-label',running?'Pause':'Play');dirty=true;}
- function frame(t){const dt=lastFrame?Math.min(.1,(t-lastFrame)/1000):0;lastFrame=t;const now=performance.now();clock.advance(now,advance);if(clock.running||(mode==='inverse'&&inverseDirty))dirty=true;if($('orbit').checked&&clock.running){camera.turn(0,dt*.065,0);priorView='custom';updateViews();setDirty();}if(dirty&&t-lastPaint>=1000/30){draw(t);lastPaint=t;}requestAnimationFrame(frame);}
- function updatePlanes(){document.querySelectorAll('[data-plane]').forEach(b=>b.setAttribute('aria-pressed',String(planes[+b.dataset.plane].visible)));planes.forEach((p,i)=>{const c=$('planeVisible'+i);if(c)c.checked=p.visible;});const count=planes.filter(p=>p.visible&&p.opacity>0).length;$('visibleCount').textContent=count+' plane'+(count===1?'':'s');$('empty').hidden=count>0;if(mode==='assembly')$('empty').innerHTML='All planes hidden<span>Use X, Y or Z above to show a plane.</span>';setDirty();}
+ function frame(t){const dt=lastFrame?Math.min(.1,(t-lastFrame)/1000):0;lastFrame=t;const now=performance.now();if(mode==='encounter'&&automatonPanel.sceneActive())automatonPanel.tick(now);clock.advance(now,advance);if(clock.running||(mode==='inverse'&&inverseDirty))dirty=true;if($('orbit').checked&&clock.running){camera.turn(0,dt*.065,0);priorView='custom';updateViews();setDirty();}if(dirty&&t-lastPaint>=1000/30){draw(t);lastPaint=t;}requestAnimationFrame(frame);}
+ function updatePlanes(){document.querySelectorAll('[data-plane]').forEach(b=>b.setAttribute('aria-pressed',String(planes[+b.dataset.plane].visible)));planes.forEach((p,i)=>{const c=$('planeVisible'+i);if(c)c.checked=p.visible;});const count=planes.filter(p=>p.visible&&p.opacity>0).length;$('visibleCount').textContent=count+' plane'+(count===1?'':'s');$('empty').hidden=count>0;if(mode==='assembly')$('empty').innerHTML='All planes hidden<span>Use X, Y or Z above to show a plane.</span>';if(mode==='encounter'&&automatonPanel.sceneActive()){$('empty').hidden=true;$('visibleCount').textContent='1 NATIVE FIELD';}setDirty();}
  for(let i=0;i<3;i++){
   const card=document.createElement('div');card.className='plane-card';card.innerHTML=`<div class="plane-head"><input id="planeVisible${i}" type="checkbox" checked aria-label="Show ${L.names[i]} copy"><strong class="${L.names[i].toLowerCase()}">${L.names[i]} · ${L.planes[i]} plane</strong><button data-solo="${i}">Solo</button></div><label>Opacity <output id="opacityValue${i}">100%</output><input id="opacity${i}" type="range" min="0" max="100" value="100" aria-label="${L.names[i]} copy opacity"></label><label>Phase offset <output id="phaseValue${i}">0° · 0 steps</output><input id="phase${i}" type="range" min="0" max="19" value="0" aria-label="${L.names[i]} copy phase offset"></label>`;$('planeControls').append(card);
   $('planeVisible'+i).onchange=e=>{planes[i].visible=e.target.checked;updatePlanes();};$('opacity'+i).oninput=e=>{planes[i].opacity=+e.target.value/100;$('opacityValue'+i).textContent=e.target.value+'%';updatePlanes();};$('phase'+i).oninput=e=>{planes[i].offset=+e.target.value;$('phaseValue'+i).textContent=`${planes[i].offset*18}° · ${planes[i].offset} steps`;dirty=true;};
@@ -1753,7 +2515,7 @@ const OrthogonalLayout = Object.freeze({
  document.querySelectorAll('[data-plane]').forEach(b=>b.onclick=()=>{const p=planes[+b.dataset.plane];p.visible=!p.visible;updatePlanes();});
  document.querySelectorAll('[data-solo]').forEach(b=>b.onclick=()=>{planes.forEach((p,i)=>p.visible=i===+b.dataset.solo);updatePlanes();view(L.names[+b.dataset.solo].toLowerCase());setDrawer(false);});
  $('showAll').onclick=()=>{planes.forEach(p=>p.visible=true);updatePlanes();view('oblique');};
- $('play').onclick=()=>setPlay(!clock.running);$('reset').onclick=()=>{sim.reset();clock.reset(performance.now());view('oblique');dirty=true;notice('Simulation restarted.');};
+ $('play').onclick=()=>setPlay(!clock.running);$('reset').onclick=()=>{if(mode==='encounter'&&automatonPanel.sceneActive()){automatonPanel.apply();view('oblique');notice('Fresh entity pair prepared.');return;}sim.reset();clock.reset(performance.now());view('oblique');dirty=true;notice('Simulation restarted.');};
  $('step').onclick=()=>{setPlay(false);clock.fraction=0;clock.steps++;sim.step();dirty=true;};
  $('hz').oninput=e=>{const hz=M.positionHz(+e.target.value);clock.setHz(hz,performance.now(),advance);$('hzValue').textContent=hz.toFixed(2)+' Hz';$('hz').setAttribute('aria-valuetext',hz+' hertz');dirty=true;};
  for(const name of ['edges','vertices','merge'])$(name).oninput=e=>{const n=+e.target.value;$(name+'Value').textContent=n+'%';if(name==='edges')edgeOpacity=n/100;if(name==='vertices')vertexOpacity=n/100;if(name==='merge'){merge=n;layoutDirty=true;inverseDirty=true;inverseReadyAt=performance.now()+100;}setDirty();};
@@ -1764,9 +2526,9 @@ const OrthogonalLayout = Object.freeze({
  $('settings').onclick=()=>setDrawer($('drawer').hidden);$('closeDrawer').onclick=()=>{setDrawer(false);$('settings').focus();};
  $('hide').onclick=()=>setImmersive(true);$('reveal').onclick=()=>setImmersive(false);
  function openInfo(){if(!$('info').open)$('info').showModal();} $('about').onclick=openInfo;$('credits').onclick=openInfo;$('closeInfo').onclick=()=>$('info').close();
- document.addEventListener('keydown',e=>{if(e.key==='Escape'){setDrawer(false);if(document.body.classList.contains('immersive'))setImmersive(false);}if(e.code==='Space'&&(e.target===canvas||e.target===document.body)){e.preventDefault();setPlay(!clock.running);}});
- document.addEventListener('visibilitychange',()=>{if(document.hidden)setPlay(false);});
- function settings(){return {encounter:encounterPanel.settings(),pairedHistory:historyPanel.settings(),schema:'thalean-orthogonal-settings-1',source:'Thalean Graph Explorer v0.34.0',hz:clock.hz,running:clock.running,mode,tolerance,cubeFrame:$('cubeFrame').checked,merge,edgeOpacity,vertexOpacity,selected,colorMode,planes:planes.map(p=>({...p})),flags:Object.fromEntries(flags.map(id=>[id,$(id).checked])),camera:{q:camera.q.slice(),zoom:camera.zoom,pan:[camera.panX/Math.max(1,width),camera.panY/Math.max(1,height)]}};}
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'){setDrawer(false);if(document.body.classList.contains('immersive'))setImmersive(false);}if(e.code==='Space'&&(e.target===canvas||e.target===document.body)){e.preventDefault();if(mode==='encounter'&&automatonPanel.sceneActive())automatonPanel.togglePlay();else setPlay(!clock.running);}});
+ document.addEventListener('visibilitychange',()=>{if(document.hidden){setPlay(false);automatonPanel.stop();}});
+ function settings(){return {automaton:automatonPanel.settings(),encounter:encounterPanel.settings(),pairedHistory:historyPanel.settings(),schema:'thalean-orthogonal-settings-1',source:'Thalean Graph Explorer v0.34.0',hz:clock.hz,running:clock.running,mode,tolerance,cubeFrame:$('cubeFrame').checked,merge,edgeOpacity,vertexOpacity,selected,colorMode,planes:planes.map(p=>({...p})),flags:Object.fromEntries(flags.map(id=>[id,$(id).checked])),camera:{q:camera.q.slice(),zoom:camera.zoom,pan:[camera.panX/Math.max(1,width),camera.panY/Math.max(1,height)]}};}
  function validate(s){
   const num=(n,a,b)=>typeof n==='number'&&Number.isFinite(n)&&n>=a&&n<=b;
   if(!s||s.schema!=='thalean-orthogonal-settings-1')throw Error('Choose a Thalean Orthogonal settings file.');
@@ -1776,16 +2538,17 @@ const OrthogonalLayout = Object.freeze({
   if(!s.flags||flags.some(id=>typeof s.flags[id]!=='boolean'))throw Error('Invalid visibility flags.');
   if(s.pairedHistory!==undefined&&(!s.pairedHistory||typeof s.pairedHistory.enabled!=='boolean'||!Number.isInteger(s.pairedHistory.copy)||s.pairedHistory.copy<0||s.pairedHistory.copy>2))throw Error('Invalid paired history settings.');
   if(s.encounter!==undefined){const e=s.encounter;if(!e||!Number.isInteger(e.copy)||!num(e.copy,0,2)||!['spatial','projection','envelope'].includes(e.kind)||!num(e.epsilon,.001,.2)||typeof e.experimental!=='boolean')throw Error('Invalid Encounter Lab settings.');}
+  if(s.automaton!==undefined)G9000Automaton.validateSettings(s.automaton);
   const c=s.camera;if(!c||!Array.isArray(c.q)||c.q.length!==4||c.q.some(v=>!num(v,-1,1))||Math.abs(Math.hypot(...c.q)-1)>1e-5||!num(c.zoom,1e-4,1e4)||!Array.isArray(c.pan)||c.pan.length!==2||c.pan.some(v=>!Number.isFinite(v)))throw Error('Invalid camera settings.');
   return s;
  }
  function applySettings(s){validate(s);tolerance=s.tolerance??.05;$('tolerance').value=tolerance*1000;$('toleranceValue').textContent=tolerance.toFixed(3);$('cubeFrame').checked=s.cubeFrame??true;inverseDirty=true;inverseReadyAt=0;setMode(s.mode??'assembly');setPlay(false);sim.reset();clock.reset(performance.now());clock.hz=s.hz;merge=s.merge;edgeOpacity=s.edgeOpacity;vertexOpacity=s.vertexOpacity;selected=s.selected;colorMode=s.colorMode;planes.forEach((p,i)=>Object.assign(p,s.planes[i]));flags.forEach(id=>$(id).checked=s.flags[id]);camera.q=s.camera.q.slice();camera.zoom=s.camera.zoom;camera.panX=s.camera.pan[0]*width;camera.panY=s.camera.pan[1]*height;priorView='custom';updateViews();
-  $('hz').value=M.hzPosition(s.hz);$('hzValue').textContent=s.hz.toFixed(2)+' Hz';$('hz').setAttribute('aria-valuetext',s.hz+' hertz');for(const [id,n]of [['edges',edgeOpacity*100],['vertices',vertexOpacity*100],['merge',merge]]){$(id).value=n;$(id+'Value').textContent=n+'%';}$('selected').value=selected+1;$('colorMode').value=colorMode;planes.forEach((p,i)=>{$('opacity'+i).value=p.opacity*100;$('opacityValue'+i).textContent=Math.round(p.opacity*100)+'%';$('phase'+i).value=p.offset;$('phaseValue'+i).textContent=`${p.offset*18}° · ${p.offset} steps`;});updatePlanes();layoutDirty=true;setPlay(s.running);historyPanel.apply(s.mode==='encounter'?{enabled:false,copy:s.pairedHistory?.copy??0}:s.pairedHistory);encounterPanel.apply(s.encounter);notice('Settings loaded · fresh simulation started.');}
+  $('hz').value=M.hzPosition(s.hz);$('hzValue').textContent=s.hz.toFixed(2)+' Hz';$('hz').setAttribute('aria-valuetext',s.hz+' hertz');for(const [id,n]of [['edges',edgeOpacity*100],['vertices',vertexOpacity*100],['merge',merge]]){$(id).value=n;$(id+'Value').textContent=n+'%';}$('selected').value=selected+1;$('colorMode').value=colorMode;planes.forEach((p,i)=>{$('opacity'+i).value=p.opacity*100;$('opacityValue'+i).textContent=Math.round(p.opacity*100)+'%';$('phase'+i).value=p.offset;$('phaseValue'+i).textContent=`${p.offset*18}° · ${p.offset} steps`;});updatePlanes();layoutDirty=true;setPlay(s.running);historyPanel.apply(s.mode==='encounter'?{enabled:false,copy:s.pairedHistory?.copy??0}:s.pairedHistory);encounterPanel.apply(s.encounter);automatonPanel.apply(s.automaton);notice('Settings loaded · fresh simulation started.');}
  $('save').onclick=()=>{const url=URL.createObjectURL(new Blob([JSON.stringify(settings(),null,2)],{type:'application/json'})),a=document.createElement('a');a.href=url;a.download='Thalean_Orthogonal_Settings.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);notice('Settings saved.');};
  $('load').onclick=()=>{$('file').value='';$('file').click();};$('file').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{if(f.size>1024*1024)throw Error('Settings file is too large (1 MB maximum).');applySettings(JSON.parse(await f.text()));}catch(error){notice(error instanceof SyntaxError?'Invalid JSON; settings unchanged.':error.message,6000);}finally{$('file').value='';}};
  $('inverseSave').onclick=()=>$('save').click();$('inverseLoad').onclick=()=>$('load').click();
  $('audit').textContent=`Verified: ${sim.g.n.toLocaleString()} states, ${sim.g.edges.length.toLocaleString()} edges, degree 10, 450 disjoint F cycles of length 20. Three proper rotations with mutually perpendicular normals. No cross-copy edges.`;
- window.orthogonalObservatory={getEncounter:()=>encounterPanel.state(),settings,validate,applySettings,getPairedHistory:()=>historyPanel.getState(),getState:()=>({mode,inverse:{count:inverse.count,tolerance,volume:inverse.volume},steps:clock.steps,phase:clock.phaseStep,running:clock.running,geometry:{states:sim.g.n,edges:sim.g.edges.length,cycles:data.cycles.length},planes:planes.map(p=>({...p})),size:[width,height],metrics:sim.closed.metrics()}),draw:()=>{setDirty();draw(performance.now());}};
+ window.orthogonalObservatory={getAutomaton:()=>automatonPanel.exportReplay(),getEncounter:()=>encounterPanel.state(),settings,validate,applySettings,getPairedHistory:()=>historyPanel.getState(),getState:()=>({mode,inverse:{count:inverse.count,tolerance,volume:inverse.volume},steps:clock.steps,phase:clock.phaseStep,running:clock.running,geometry:{states:sim.g.n,edges:sim.g.edges.length,cycles:data.cycles.length},planes:planes.map(p=>({...p})),size:[width,height],metrics:sim.closed.metrics()}),draw:()=>{setDirty();draw(performance.now());}};
  view('oblique');setMode(location.hash==='#encounter'?'encounter':location.hash==='#inverse'?'inverse':'assembly');updatePlanes();layout();requestAnimationFrame(frame);notice('Drag to rotate · pinch to zoom · tap plane buttons to hide/show',5500);
 })();
 </script>

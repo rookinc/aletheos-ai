@@ -1,0 +1,201 @@
+{
+  "audit": "G9000_AUTOMATON_OBSERVATORY_UI_001",
+  "status": "Certified derived / Experimental (declared separately)",
+  "verdict": "PASS_LOCAL_VALIDATION_READY_FOR_GUARDED_TERMUX_INSTALL",
+  "producer": "python3 scripts/check-automaton-release.py",
+  "base_commit": "94cecc53ddbb45ef3c697be20184d9bdec5d3971",
+  "previous_production_html_sha256": "29ee7dc62e1bab177c4e2048b29868ae54831519e5764545ba3449012063a7d1",
+  "previous_production_verification": "User-provided Termux SSH/public LIVE VERIFIED output in this conversation.",
+  "native_result": "Two independent native F automata on a static shared registered graph; exact state, adjacency and co-location inspection. No admitted native coupling or field backreaction.",
+  "experimental_result": "Isolated source008 joint-configuration field. 25 declared global local terms discover the certified31-state component; analytic field-norm evolution in normalized time is checked against an independent matrix exponential.",
+  "source": {
+    "audit": "G9000_ENCOUNTER_WITNESS_008",
+    "registration": "Reciprocal diagonal-b quotient; distinct from observatory diagonal-a",
+    "model_data_sha256": "7351c309e0d4f4fefe35c06bfc86cd8fd91074b8fa91e2af51fe3d8e63ae2fe3",
+    "containing010_archive_sha256": "509e639c915c22c4bfa95af3adcf74998e887886cb65cad54c448d08879d5852",
+    "certificate": "provenance/two-entity-field-001/008-certificate.json",
+    "independent": "provenance/two-entity-field-001/008-independent.json",
+    "status": "Experimental",
+    "assumptions": [
+      "Correlated joint configuration field, not independent role fields or a derived ambient field on one G9000.",
+      "25 selected positive local terms and their coefficients.",
+      "Fixed source reference0; no source backreaction.",
+      "No physical clock, detector probability or permanent memory."
+    ]
+  },
+  "preserved_native_source_hashes": {
+    "native-data.json": "d070869e90b5d3b34981ae593faf5c635dfa25eb1aedebd504833a7a17f27e11",
+    "native-model.js": "1b01d744ce9a461e38390a9d2c6954a1750af0121823bd2ef4282f3b4d430cd3",
+    "paired-history.js": "d5addbee20fe17a90c673efd9ccd39d23e44acfc745f5a628f8e111a3818da4a",
+    "paired-history-data.json": "e1b4482ff1226735724533a08579eb123ab6dd3ffa399871e806ab9f5bce2bff",
+    "cycle-clock.js": "857316c56d19290ef1e474d0b9752ca0c5cf5b199a8e5972b45dc8108447e610",
+    "volume-camera.js": "5d09b81b619d51bd77fbe92af3c4268016cd3366aeed37d4e112292075a80beb",
+    "inverse-volume.js": "bc7851240eb5d4a90de8076903e36925b3372cf2377a1c8df9cfe0a2a079d401"
+  },
+  "ui_source_sha256": {
+    "build.py": "a819a109f2cf8063dc693154e8f30e6c552b2a28964a141f06a4694f75d7f77f",
+    "src/app.js": "3e47f9e36d897c0c1a90a50a0e63dbc143dd685dec7fec736ba50f7d13664c29",
+    "src/ui.html": "0264eb586c48b4ac661c432bd40011901376ff8212db77359cf7ff63101a81fa",
+    "src/style.css": "61e9f7011e73705a95b7e1b2f8e07e09daa21428457efbf51a2b789eb8c88cc7",
+    "src/encounter-panel.html": "712438ef29866117a0e624791f4208fe5344a23b52aab0212f08c3e56c4e2ff5",
+    "src/encounter-panel.js": "001c6af4a8dd72805a2ea4566c055dc90186062d095e216c771b5b471d1307f4",
+    "src/encounter.css": "0a3cbbbc654ccd49d5a9afb623da479f8a1269e0cc4fa6e51c357eb508339c6c",
+    "src/encounter-model.js": "89206ee8721c62a407c2bdd1b2774018af8b2795a77fff9234043e213151caaa",
+    "src/automaton-panel.html": "67a9ed4669d4e3839efa7b1a57cac4bee258bfe60724e481d8c9627cbedcbd08",
+    "src/automaton-panel.js": "a51786b6142ec15ba98c65bbbff84f7a9fe3581d045687cf140d481516bd0afe",
+    "src/automaton-model.js": "d46400d26c35cfc9cb26988c2ce77b63e2a67d3409af25820caa6b83981e6601",
+    "src/automaton-joint-data.json": "5432cfb2ec70c8c791e083c3c28d809f63f457c9ce9de62c43ec4a6696f49b68"
+  },
+  "commands": [
+    {
+      "command": [
+        "node",
+        "test.cjs"
+      ],
+      "exit": 0,
+      "log": "check-01.txt"
+    },
+    {
+      "command": [
+        "node",
+        "test-inverse.cjs"
+      ],
+      "exit": 0,
+      "log": "check-02.txt"
+    },
+    {
+      "command": [
+        "node",
+        "test-paired-history.cjs"
+      ],
+      "exit": 0,
+      "log": "check-03.txt"
+    },
+    {
+      "command": [
+        "node",
+        "test-paired-history-panel.cjs"
+      ],
+      "exit": 0,
+      "log": "check-04.txt"
+    },
+    {
+      "command": [
+        "node",
+        "test-automaton.cjs"
+      ],
+      "exit": 0,
+      "log": "check-05.txt"
+    },
+    {
+      "command": [
+        "node",
+        "test-encounter-app.cjs"
+      ],
+      "exit": 0,
+      "log": "check-06.txt"
+    },
+    {
+      "command": [
+        "node",
+        "test-encounter-replay.cjs"
+      ],
+      "exit": 0,
+      "log": "check-07.txt"
+    },
+    {
+      "command": [
+        "node",
+        "scripts/replay-automaton.cjs",
+        "provenance/automaton-ui-001/browser-replay.json"
+      ],
+      "exit": 0,
+      "log": "check-08.txt"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/verify-automaton-evolution.py"
+      ],
+      "exit": 0,
+      "log": "check-09.txt"
+    }
+  ],
+  "model_checks": {
+    "pass": true,
+    "checks": [
+      "native_independence_contact_and_synchronous_invariance",
+      "native_approach_and_hidden_partner_controls",
+      "record_has_no_dynamic_effect_and_export_is_a_copy",
+      "invalid_preparations_are_atomic_and_limits_precede_mutation",
+      "declared_global_rules_close_on_31_states_and_reject_altered_program",
+      "experimental_ready_write_and_return_endpoints_are_exact",
+      "norm_and_marginals_over_full_period_and_native_isolation",
+      "replay_native_steps_observations_and_experimental_snapshot",
+      "tampered_native_and_experimental_claims_are_rejected",
+      "settings_validation_preserves_native_range_and_default_boundary"
+    ],
+    "scope": "Native pair + isolated declared008 analytical evolution"
+  },
+  "application_checks": {
+    "pass": true,
+    "checks": 11,
+    "passed": [
+      "app_starts_with_experimental_disabled_and_original_counts",
+      "all_modes_and_history_remain_operable",
+      "phase_independence_and_exact_monitor",
+      "actual_scan_has_no_native_effect",
+      "witness_records_and_equal_continuation",
+      "experimental_inspection_cannot_couple_or_mutate",
+      "actual_settings_round_trip_and_legacy_compatibility",
+      "invalid_settings_are_atomic",
+      "replay_certificate_and_tamper_negative_control",
+      "new_entity_controls_and_experimental_executor_are_isolated",
+      "scene_caption_and_keyboard_route_follow_selected_automaton_view"
+    ],
+    "actualApplicationExecuted": true,
+    "browserUsed": false
+  },
+  "evolution_oracle": {
+    "pass": true,
+    "producer": "python3 scripts/verify-automaton-evolution.py",
+    "samples": 17,
+    "method": "SciPy direct expm of independently assembled 31x31 Hermitian generator; compared with actual JavaScript samples",
+    "max_norm_fraction_error": 2.248201624865942e-15,
+    "max_energy_error": 6.483702463810914e-14,
+    "joint_data_sha256": "5432cfb2ec70c8c791e083c3c28d809f63f457c9ce9de62c43ec4a6696f49b68",
+    "boundary": "Numerical diagnostic of the declared model; source exact algebra and closure certificates remain separate."
+  },
+  "browser_checks": [
+    "native_approach_changes_adjacency_with_B_fixed",
+    "hidden_partner_preset_no_native_contact",
+    "experimental_T_write_preserves_native_pair",
+    "browser_download_export",
+    "settings_real_file_picker_roundtrip",
+    "legacy_spatial_scan_21",
+    "legacy_sheet_history_visible",
+    "paired_playback_advances",
+    "synchronous_playback_preserves_noncontact",
+    "final_native_independent_step",
+    "experimental_disabled_by_default",
+    "mobile_approach_before",
+    "mobile_independent_step",
+    "mobile_declared_write",
+    "mobile_layout_360x740",
+    "mobile_layout_390x844",
+    "zero_application_console_errors",
+    "projection_scene_caption",
+    "space_routes_to_pair_playback",
+    "space_pauses_pair"
+  ],
+  "deployment_validation": "prepare-automaton-release.py runs the real guarded server/wrapper through17 isolated installer/rollback checks; see deployment-checks.json.",
+  "failures": [],
+  "production_deployed": false,
+  "boundaries": [
+    "Point-supported preparations, not a certified placement law for extended G9000 bodies.",
+    "Experimental b-registration is separate from native observatory a-registration.",
+    "No native interaction, memory theorem, physical time or detector probability is inferred.",
+    "Mobile QA uses360x740 and390x844 iframe viewports in Chrome; physical Android validation remains for the deployed update.",
+    "Historical v1.2 evidence retains its original scope; this audit records the current UI changes."
+  ]
+}

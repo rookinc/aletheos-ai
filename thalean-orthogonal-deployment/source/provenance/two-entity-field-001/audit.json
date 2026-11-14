@@ -1,0 +1,254 @@
+{
+  "audit": "G9000_TWO_ENTITY_FIELD_TEST_001",
+  "producer": "python3 scripts/replay-two-entity-field.py --archive ORIGINAL_010.zip",
+  "verdict": "NATIVE_KINEMATICS_PASS_DECLARED_LOCAL_MODEL_PASS_AUTONOMOUS_NATIVE_FIELD_LAW_OPEN",
+  "status": "Certified derived / Experimental (separate scopes)",
+  "inputs": {
+    "G9000_ENCOUNTER_WITNESS_010_Audit_Package.zip": {
+      "sha256": "509e639c915c22c4bfa95af3adcf74998e887886cb65cad54c448d08879d5852",
+      "library_file_id": "libfile_fde3_f-63eb7bc053108191afe6100a5addccd9_49e008ebf4888191aa3c13bfa6801182"
+    },
+    "nested009_sha256": "33f67ce1eccd39b80ba7b878d73d7705f503d62fb491d3c532ed35f93df828ec",
+    "nested008_sha256": "a11b11f88f94ae982c57b2045b5a8e69e0fed46e59ac58fc7552bb274d666ffd"
+  },
+  "receipts": [
+    {
+      "stage": "native-product",
+      "command": [
+        "node",
+        "scripts/test-two-entity-field.cjs"
+      ],
+      "exit": 0,
+      "log": "native-product.txt",
+      "log_sha256": "6e403eb5511cd65c47c2895fd575df0c9873145d0381c70c44f0dbdebf97a8b6"
+    },
+    {
+      "stage": "008-manifest",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "verify_manifest.py"
+      ],
+      "exit": 0,
+      "log": "008-manifest.txt",
+      "log_sha256": "f3add81aa1358929d7a3c09eb1b748cc9e7acdac8a800a3a8985edf50c169a95"
+    },
+    {
+      "stage": "008-producer",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "derive.py"
+      ],
+      "exit": 0,
+      "log": "008-producer.txt",
+      "log_sha256": "80a6d2759b20e29a1b9e7afbc9b8d61720b158959eeb76029119c056068b9256"
+    },
+    {
+      "stage": "008-independent",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "verify_independently.py"
+      ],
+      "exit": 0,
+      "log": "008-independent.txt",
+      "log_sha256": "d18b63e8e4d2090f8016f044c117381aead8f70d9d9ee9894c08cdfb3ee0f876"
+    },
+    {
+      "stage": "009-manifest",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "verify_manifest.py"
+      ],
+      "exit": 0,
+      "log": "009-manifest.txt",
+      "log_sha256": "58566b316c5b5e1b35c8b436f8f5cf490f94a436ca755f3b8eee1dac8b68d1d4"
+    },
+    {
+      "stage": "009-producer",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "reconcile.py"
+      ],
+      "exit": 0,
+      "log": "009-producer.txt",
+      "log_sha256": "8784afe7b2aa2e5e3f0a6a7fff7a822de5ff48a20359e8225d9693de2d2af6be"
+    },
+    {
+      "stage": "009-independent",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "verify_independently.py"
+      ],
+      "exit": 0,
+      "log": "009-independent.txt",
+      "log_sha256": "e95390d5575bb6e38710f48bce30a1bf4ec01114cae39fcc2ef438f395d11b7d"
+    },
+    {
+      "stage": "010-fresh-replay-earlier-in-this-request",
+      "command": [
+        "python3",
+        "replay.py",
+        "--output",
+        "/workspace/scratch/c285df05cbcd/two-entity-replay010"
+      ],
+      "exit": 0,
+      "log": "010-execution.json",
+      "log_sha256": "4620fc9088216200b6076f22a16a2a99b887aeded9f6c49923d5165ed1e26669"
+    }
+  ],
+  "native": {
+    "transported_undirected_edge_tests": 900000,
+    "single_entity_quotient_continuation_tests": 180000,
+    "synchronous_contact_invariance": "F is a bijection carrying the full edge set onto itself. Therefore contacts and noncontacts are invariant under T0 for ALL 81000000 ordered pairs, including all 20 phases. The proof checks the edge set, not 1.62 billion pair/time combinations.",
+    "joint_quotient_completeness": "Every word in independent F_A/F_B and inverses reduces to F_A^r F_B^s. Component quotient factorization proves equality for every r,s and every 4-point joint hidden-bit fiber. No new distinguishable joint-quotient response.",
+    "relational_readout": {
+      "A": [
+        {
+          "state": 0,
+          "frame": 0,
+          "pairedState": 0,
+          "g900": 0,
+          "basePair": [
+            0,
+            0
+          ],
+          "relativeSheet": 0,
+          "hiddenBit": 0
+        },
+        {
+          "state": 488,
+          "frame": 0,
+          "pairedState": 488,
+          "g900": 0,
+          "basePair": [
+            0,
+            0
+          ],
+          "relativeSheet": 0,
+          "hiddenBit": 1
+        }
+      ],
+      "B": {
+        "state": 16,
+        "frame": 0,
+        "pairedState": 16,
+        "g900": 16,
+        "basePair": [
+          0,
+          6
+        ],
+        "relativeSheet": 0,
+        "hiddenBit": 0
+      },
+      "A_projection_equal": true,
+      "adjacency_outputs": [
+        1,
+        0
+      ],
+      "interpretation": "Changing to a relational contact observation exposes a distinction already present before continuation. This is native contact eligibility, not a dynamically written/used memory record."
+    },
+    "asynchronous_control": {
+      "before": [
+        7208,
+        16
+      ],
+      "step_A_only": [
+        0,
+        16
+      ],
+      "step_both": [
+        0,
+        3540
+      ],
+      "contact_outputs": [
+        0,
+        1,
+        0
+      ],
+      "interpretation": "F_A while holding B fixed is a declared scheduling control. It supplies an approach, but no native response/coupling follows from contact."
+    },
+    "coupling_events": 0
+  },
+  "declared_coupling": {
+    "carrier": "Psi(A,W) in (C6 tensor C2) over X_A x X_W, one field fiber per JOINT configuration; two address sectors, not three independent role fields.",
+    "base_graph": "The recovered reciprocal b-quotient registration, not the observatory a-quotient.",
+    "field_on_single_G9000_recovered": false,
+    "source_reference": 0,
+    "source_backreaction": false,
+    "selected_native_physical_law": false,
+    "terms": 25,
+    "prepared_component_states": 31,
+    "transfer_at_T": {
+      "before": [
+        7,
+        0
+      ],
+      "after": [
+        7,
+        488
+      ],
+      "T": "pi/kappa"
+    },
+    "return_at_2T": "Identity on the complete prepared component; no permanent autonomous record.",
+    "product_restriction": "Independent product fields cannot write W488; exact invariant-support theorem in009.",
+    "counterfactual": {
+      "normal_component": 31,
+      "without_source_vacancy_condition": 39,
+      "meaning": "Declared local contact conditions change joint evolution; the coefficient/program is not selected by the graph."
+    }
+  },
+  "readout": {
+    "010_composition_checks": 33,
+    "010_native_gate_checks": 65,
+    "010_independent_checks": 46,
+    "echo": {
+      "input_norm_squared": 2,
+      "rational_intensities": [
+        [
+          "49/25",
+          "1/25",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1/25",
+          "49/25",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "rational_normalized": [
+        "(49,1,0,0,0,0)/50",
+        "(1,49,0,0,0,0)/50"
+      ],
+      "balanced_normalized": [
+        "(1,0,0,0,0,0)",
+        "(0,1,0,0,0,0)"
+      ]
+    },
+    "native_t_witness_scope": {
+      "G9000_crosswalk_for_this_new_t_witness": false,
+      "balanced_grammar_write_admitted": false,
+      "native_automorphism_word_vertex_and_frame_closed_witness": true,
+      "native_edge_incidence_compatible_word_witness": true,
+      "native_selected_edge_transport_or_inscription": false,
+      "prepared_state_specific_all36_initial_moment_equality": true,
+      "source_selected_autonomous_schedule": false,
+      "universal_invisible_native_vertex_closed_residual": false
+    }
+  },
+  "failures": [],
+  "unresolved": [
+    "No source-selected joint transition law for two extended G9000 bodies in a dynamical field on one G9000 carrier.",
+    "Identity registration of point-supported native configurations is the tested baseline, not a derived body-to-field placement.",
+    "Native adjacency supplies eligibility; it does not select a force, transfer rate or field response.",
+    "The declared successful coupling lives on joint configuration space and requires correlations; it is not the independent product baseline.",
+    "Observable readout depends on the declared projection and source-supported controls.",
+    "010 native t witness has no certified G9000 encounter crosswalk.",
+    "Reciprocal b and observatory a registrations remain distinct."
+  ],
+  "deployment_changed": false
+}

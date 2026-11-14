@@ -1,0 +1,26 @@
+[
+  {
+    "script": "custody.py",
+    "returncode": 0,
+    "stdout": "{\"status\": \"PASS\", \"unique_archives\": 38, \"verified_manifests\": 33, \"verified_members\": 784, \"scope\": \"Manifest verification is byte custody, not a replay of all ancestral producers.\"}\n",
+    "stderr": ""
+  },
+  {
+    "script": "compose_echo.py",
+    "returncode": 0,
+    "stdout": "{\"all_passed\": true, \"checks\": 33, \"output\": \"/workspace/scratch/c285df05cbcd/two-entity-replay010/composition/composition_certificate.json\"}\n",
+    "stderr": ""
+  },
+  {
+    "script": "native_gate.py",
+    "returncode": 0,
+    "stdout": "{\"status\": \"PASS\", \"checks\": 65, \"census\": {\"1\": 2880, \"2\": 720}, \"moment_fixers\": [0, 326], \"prepared_outputs_over25\": [[98, 2, 50, 0, 0, 0], [2, 98, 50, 0, 0, 0]]}\n",
+    "stderr": ""
+  },
+  {
+    "script": "verify_independently.py",
+    "returncode": 0,
+    "stdout": "{\"all_passed\": true, \"checks\": 46, \"output\": \"/workspace/scratch/c285df05cbcd/two-entity-replay010/independent.json\"}\n",
+    "stderr": ""
+  }
+]

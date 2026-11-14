@@ -1,0 +1,143 @@
+{
+  "audit": "G9000_TWO_ENTITY_FIELD_TEST_001_NATIVE",
+  "status": "Certified derived",
+  "verdict": "NATIVE_CONTACT_READOUT_EXISTS_UNCOUPLED_F_DOES_NOT_SCATTER",
+  "producer": "node scripts/test-two-entity-field.cjs",
+  "input_provenance": {
+    "native_data_sha256": "d070869e90b5d3b34981ae593faf5c635dfa25eb1aedebd504833a7a17f27e11",
+    "native_model_sha256": "1b01d744ce9a461e38390a9d2c6954a1750af0121823bd2ef4282f3b4d430cd3",
+    "paired_history_sha256": "e1b4482ff1226735724533a08579eb123ab6dd3ffa399871e806ab9f5bce2bff"
+  },
+  "checks": [
+    {
+      "name": "independent_instances_same_preserved_carrier",
+      "pass": true
+    },
+    {
+      "name": "F_is_an_automorphism_of_shared_native_graph",
+      "pass": true
+    },
+    {
+      "name": "all_twenty_synchronous_phases_preserve_every_contact",
+      "pass": true
+    },
+    {
+      "name": "all_hidden_partner_neighborhoods_are_disjoint",
+      "pass": true
+    },
+    {
+      "name": "single_entity_quotient_factors_for_all_native_F_continuations",
+      "pass": true
+    },
+    {
+      "name": "independent_F_words_commute_and_preserve_joint_quotient_equivalence",
+      "pass": true
+    },
+    {
+      "name": "relational_contact_reads_hidden_bit_with_fixed_probe",
+      "pass": true
+    },
+    {
+      "name": "asynchronous_approach_requires_an_explicit_schedule",
+      "pass": true
+    },
+    {
+      "name": "field_observation_does_not_change_either_native_transition",
+      "pass": true
+    }
+  ],
+  "model": {
+    "entityA": "Independent 9000-state native F automaton",
+    "entityB": "Independent 9000-state native F automaton",
+    "field": "Commonly registered native graph X with 45000 undirected edges. Static relational substrate, not a derived dynamical field Phi.",
+    "registration": "Both copies use the same recovered named native carrier; identity registration is declared.",
+    "joint_state": "(a,b) in X_A x X_B",
+    "joint_state_count": 81000000,
+    "joint_transition": "T0(a,b)=(F(a),F(b))",
+    "joint_period": 20,
+    "joint_cycle_count": 4050000,
+    "joint_projection": "(pi(a),pi(b))",
+    "contact_selector": "C(a,b)=1 iff {a,b} is a native graph edge; co-location is a separate equality predicate",
+    "native_interaction_law_admitted": false
+  },
+  "results": {
+    "transported_undirected_edge_tests": 900000,
+    "single_entity_quotient_continuation_tests": 180000,
+    "synchronous_contact_invariance": "F is a bijection carrying the full edge set onto itself. Therefore contacts and noncontacts are invariant under T0 for ALL 81000000 ordered pairs, including all 20 phases. The proof checks the edge set, not 1.62 billion pair/time combinations.",
+    "joint_quotient_completeness": "Every word in independent F_A/F_B and inverses reduces to F_A^r F_B^s. Component quotient factorization proves equality for every r,s and every 4-point joint hidden-bit fiber. No new distinguishable joint-quotient response.",
+    "relational_readout": {
+      "A": [
+        {
+          "state": 0,
+          "frame": 0,
+          "pairedState": 0,
+          "g900": 0,
+          "basePair": [
+            0,
+            0
+          ],
+          "relativeSheet": 0,
+          "hiddenBit": 0
+        },
+        {
+          "state": 488,
+          "frame": 0,
+          "pairedState": 488,
+          "g900": 0,
+          "basePair": [
+            0,
+            0
+          ],
+          "relativeSheet": 0,
+          "hiddenBit": 1
+        }
+      ],
+      "B": {
+        "state": 16,
+        "frame": 0,
+        "pairedState": 16,
+        "g900": 16,
+        "basePair": [
+          0,
+          6
+        ],
+        "relativeSheet": 0,
+        "hiddenBit": 0
+      },
+      "A_projection_equal": true,
+      "adjacency_outputs": [
+        1,
+        0
+      ],
+      "interpretation": "Changing to a relational contact observation exposes a distinction already present before continuation. This is native contact eligibility, not a dynamically written/used memory record."
+    },
+    "asynchronous_control": {
+      "before": [
+        7208,
+        16
+      ],
+      "step_A_only": [
+        0,
+        16
+      ],
+      "step_both": [
+        0,
+        3540
+      ],
+      "contact_outputs": [
+        0,
+        1,
+        0
+      ],
+      "interpretation": "F_A while holding B fixed is a declared scheduling control. It supplies an approach, but no native response/coupling follows from contact."
+    },
+    "coupling_events": 0
+  },
+  "boundaries": [
+    "The two entities are independent automaton configurations (point-supported preparations on their carriers), not two extended bodies whose shapes and placement maps have been recovered.",
+    "A full G9000-shaped body and a dynamical ambient field require additional source-derived state/registration laws.",
+    "A graph adjacency predicate is not an admitted interaction Hamiltonian.",
+    "No probabilities, forces, energy exchange, autonomous source selection or persistent operational memory follow from this product test."
+  ],
+  "failures": []
+}

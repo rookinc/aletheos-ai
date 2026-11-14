@@ -1,0 +1,309 @@
+{
+  "audit": "orthogonal_encounter_detector_001",
+  "producer": "node scripts/audit-encounter.cjs",
+  "input_provenance": {
+    "repository": "rookinc/aletheos-ai",
+    "base_commit": "9a1a659e8f6b1e4d83212271b7840788d1f3aa19",
+    "native_data_sha256": "d070869e90b5d3b34981ae593faf5c635dfa25eb1aedebd504833a7a17f27e11",
+    "paired_history_sha256": "e1b4482ff1226735724533a08579eb123ab6dd3ffa399871e806ab9f5bce2bff"
+  },
+  "status": "Visualization",
+  "verdict": "PASS",
+  "criteria": {
+    "spatial": "Completed-step chart vertices; Euclidean distance <= epsilon",
+    "projection": "Stored orthonormal camera projection; projected distance <= epsilon with depth discarded",
+    "envelope": "Existing50^3 grid in[-.5,.5]^3; distance to each full-cycle source polyline <= epsilon"
+  },
+  "default_spatial_count": 21,
+  "default_projection_count": 430,
+  "default_envelope_cells": 1592,
+  "scan_result_cap": 200,
+  "example": {
+    "id": "0:254:2:309",
+    "distance": 0.022730412219303265,
+    "spatialDistance": 0.022730412219303265,
+    "kind": "spatial",
+    "status": "Visualization",
+    "endpoints": [
+      {
+        "copy": "X",
+        "axis": 0,
+        "cycle": 254,
+        "stage": 0,
+        "state": 616,
+        "tuple": {
+          "state": 616,
+          "frame": 0,
+          "pairedState": 616,
+          "g900": 316,
+          "basePair": [
+            8,
+            6
+          ],
+          "relativeSheet": 0,
+          "hiddenBit": 0
+        },
+        "next": {
+          "state": 3551,
+          "frame": 1,
+          "pairedState": 1751,
+          "g900": 579,
+          "basePair": [
+            6,
+            8
+          ],
+          "relativeSheet": 3,
+          "hiddenBit": 0
+        },
+        "point": [
+          -0.6936412154800928,
+          -0.30575192402578294,
+          -0.713372686620683
+        ]
+      },
+      {
+        "copy": "Z",
+        "axis": 2,
+        "cycle": 309,
+        "stage": 0,
+        "state": 702,
+        "tuple": {
+          "state": 702,
+          "frame": 0,
+          "pairedState": 702,
+          "g900": 402,
+          "basePair": [
+            13,
+            14
+          ],
+          "relativeSheet": 3,
+          "hiddenBit": 1
+        },
+        "next": {
+          "state": 2772,
+          "frame": 1,
+          "pairedState": 972,
+          "g900": 612,
+          "basePair": [
+            14,
+            13
+          ],
+          "relativeSheet": 0,
+          "hiddenBit": 0
+        },
+        "point": [
+          -0.7139547511510651,
+          -0.3001189424003241,
+          -0.7048696620875635
+        ]
+      }
+    ],
+    "sameCarrierAdjacency": false,
+    "sharedRegisteredLabel": false,
+    "crossCopyNativeEdge": false,
+    "provenInteraction": false
+  },
+  "envelope_example": {
+    "id": "cell:51938",
+    "kind": "envelope",
+    "status": "Visualization",
+    "point": [
+      -0.08999999999999997,
+      0.27,
+      0.27
+    ],
+    "cellId": 51938,
+    "cellIndex": 795,
+    "distance": 0.04872890815474982,
+    "endpoints": [
+      {
+        "copy": "X",
+        "axis": 0,
+        "cycle": 170,
+        "stage": 13,
+        "state": 6080,
+        "tuple": {
+          "state": 6080,
+          "frame": 3,
+          "pairedState": 680,
+          "g900": 380,
+          "basePair": [
+            13,
+            2
+          ],
+          "relativeSheet": 1,
+          "hiddenBit": 0
+        },
+        "next": {
+          "state": 7603,
+          "frame": 4,
+          "pairedState": 403,
+          "g900": 197,
+          "basePair": [
+            2,
+            13
+          ],
+          "relativeSheet": 2,
+          "hiddenBit": 0
+        },
+        "point": [
+          -0.08999999999999986,
+          0.23593215291636682,
+          0.2354721434296618
+        ],
+        "d2": 0.002352791084255663,
+        "distance": 0.04850557786745421,
+        "segment": 6,
+        "segmentFraction": 0.5675,
+        "intervalEnd": {
+          "state": 7603,
+          "frame": 4,
+          "pairedState": 403,
+          "g900": 197,
+          "basePair": [
+            2,
+            13
+          ],
+          "relativeSheet": 2,
+          "hiddenBit": 0
+        }
+      },
+      {
+        "copy": "Y",
+        "axis": 1,
+        "cycle": 385,
+        "stage": 2,
+        "state": 5393,
+        "tuple": {
+          "state": 5393,
+          "frame": 2,
+          "pairedState": 1793,
+          "g900": 567,
+          "basePair": [
+            6,
+            10
+          ],
+          "relativeSheet": 2,
+          "hiddenBit": 0
+        },
+        "next": {
+          "state": 6824,
+          "frame": 3,
+          "pairedState": 1424,
+          "g900": 811,
+          "basePair": [
+            10,
+            6
+          ],
+          "relativeSheet": 1,
+          "hiddenBit": 1
+        },
+        "point": [
+          -0.1051684688347323,
+          0.27,
+          0.3163079263535283
+        ],
+        "d2": 0.0023745064899540432,
+        "distance": 0.04872890815474982,
+        "segment": 2,
+        "segmentFraction": 0.29750000000000004,
+        "intervalEnd": {
+          "state": 6824,
+          "frame": 3,
+          "pairedState": 1424,
+          "g900": 811,
+          "basePair": [
+            10,
+            6
+          ],
+          "relativeSheet": 1,
+          "hiddenBit": 1
+        }
+      },
+      {
+        "copy": "Z",
+        "axis": 2,
+        "cycle": 250,
+        "stage": 11,
+        "state": 2439,
+        "tuple": {
+          "state": 2439,
+          "frame": 1,
+          "pairedState": 639,
+          "g900": 339,
+          "basePair": [
+            8,
+            8
+          ],
+          "relativeSheet": 3,
+          "hiddenBit": 1
+        },
+        "next": {
+          "state": 4211,
+          "frame": 2,
+          "pairedState": 611,
+          "g900": 311,
+          "basePair": [
+            8,
+            8
+          ],
+          "relativeSheet": 0,
+          "hiddenBit": 0
+        },
+        "point": [
+          -0.10547681458767448,
+          0.316205238248117,
+          0.27
+        ],
+        "d2": 0.0023744558313465096,
+        "distance": 0.048728388351622194,
+        "segment": 8,
+        "segmentFraction": 0.2975000000000001,
+        "intervalEnd": {
+          "state": 4211,
+          "frame": 2,
+          "pairedState": 611,
+          "g900": 311,
+          "basePair": [
+            8,
+            8
+          ],
+          "relativeSheet": 0,
+          "hiddenBit": 0
+        }
+      }
+    ],
+    "pairRelations": [
+      {
+        "copies": "XY",
+        "sameCarrierAdjacency": false,
+        "sharedRegisteredLabel": false,
+        "crossCopyNativeEdge": false,
+        "provenInteraction": false
+      },
+      {
+        "copies": "XZ",
+        "sameCarrierAdjacency": false,
+        "sharedRegisteredLabel": false,
+        "crossCopyNativeEdge": false,
+        "provenInteraction": false
+      },
+      {
+        "copies": "YZ",
+        "sameCarrierAdjacency": false,
+        "sharedRegisteredLabel": false,
+        "crossCopyNativeEdge": false,
+        "provenInteraction": false
+      }
+    ],
+    "crossCopyNativeEdge": false,
+    "provenInteraction": false
+  },
+  "negative_controls": "Hidden copies and empty overlap produce no candidates; any overlap yields zero coupling events.",
+  "failures": [],
+  "boundaries": [
+    "All coordinates are chart units.",
+    "Envelope source intervals need not occur simultaneously; interpolants have no native state identity.",
+    "Common-carrier label adjacency is not a cross-copy edge."
+  ]
+}

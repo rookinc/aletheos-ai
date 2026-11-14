@@ -1,0 +1,175 @@
+{
+  "audit": "orthogonal_observatory_v12_regression_001",
+  "status": "Certified derived",
+  "verdict": "LOCAL_REGRESSIONS_PASS_PRODUCTION_ATTESTATION_PENDING",
+  "producer": "python3 scripts/run-encounter-regressions.py",
+  "input_provenance": {
+    "repository": "rookinc/aletheos-ai",
+    "base_commit": "9a1a659e8f6b1e4d83212271b7840788d1f3aa19",
+    "baseline_input_hashes": {
+      "src/native-data.json": "d070869e90b5d3b34981ae593faf5c635dfa25eb1aedebd504833a7a17f27e11",
+      "src/native-model.js": "1b01d744ce9a461e38390a9d2c6954a1750af0121823bd2ef4282f3b4d430cd3",
+      "src/volume-camera.js": "5d09b81b619d51bd77fbe92af3c4268016cd3366aeed37d4e112292075a80beb",
+      "src/cycle-clock.js": "857316c56d19290ef1e474d0b9752ca0c5cf5b199a8e5972b45dc8108447e610",
+      "src/paired-history.js": "d5addbee20fe17a90c673efd9ccd39d23e44acfc745f5a628f8e111a3818da4a",
+      "src/paired-history-data.json": "e1b4482ff1226735724533a08579eb123ab6dd3ffa399871e806ab9f5bce2bff",
+      "src/inverse-volume.js": "bc7851240eb5d4a90de8076903e36925b3372cf2377a1c8df9cfe0a2a079d401",
+      "src/app.js": "88222ce2fbbcff6bfe8aab377be14984b497fdfab6d235128d1b3e6c0a1c4351",
+      "src/ui.html": "b863cb4fbd64edb2bbffa805aa0cdf585961084aae9c7a422897b15a63a99615",
+      "src/style.css": "61e9f7011e73705a95b7e1b2f8e07e09daa21428457efbf51a2b789eb8c88cc7",
+      "build.py": "b58e25b61f0eb36170912acbed894f2cd6758883804293cff3d5e342a86d3d5b"
+    },
+    "browser_ui_hashes": {
+      "build.py": "acd976727775ade72065982af70d87569f9fc52f09ca8fc58bc378bc876e3e9d",
+      "src/app.js": "e172652e47a6929897ea046bab0fc800bcc96e3709d293fa27cbcbbb5bea0da4",
+      "src/ui.html": "1764ac72c4fb2650a13b776d37d7f78d7120dbe2d2458f3ce580ed5c9f64f5aa",
+      "src/style.css": "61e9f7011e73705a95b7e1b2f8e07e09daa21428457efbf51a2b789eb8c88cc7",
+      "src/encounter-panel.html": "3f26c28c66d051e2d746d3a98edd7c561818d88dd48e0d6b5f88c29fe97feb74",
+      "src/encounter-panel.js": "001c6af4a8dd72805a2ea4566c055dc90186062d095e216c771b5b471d1307f4",
+      "src/encounter.css": "5f8c357d410eabfaa931485e69a3c97392fcb8d5b7dbd120ad3d8561e01441e8",
+      "src/encounter-model.js": "89206ee8721c62a407c2bdd1b2774018af8b2795a77fff9234043e213151caaa"
+    }
+  },
+  "commands": [
+    {
+      "command": [
+        "python3",
+        "scripts/verify-source-recovery.py"
+      ],
+      "exit": 0,
+      "log": "regression-01.txt"
+    },
+    {
+      "command": [
+        "node",
+        "test.cjs"
+      ],
+      "exit": 0,
+      "log": "regression-02.txt"
+    },
+    {
+      "command": [
+        "node",
+        "test-inverse.cjs"
+      ],
+      "exit": 0,
+      "log": "regression-03.txt"
+    },
+    {
+      "command": [
+        "node",
+        "test-paired-history.cjs"
+      ],
+      "exit": 0,
+      "log": "regression-04.txt"
+    },
+    {
+      "command": [
+        "node",
+        "test-paired-history-panel.cjs"
+      ],
+      "exit": 0,
+      "log": "regression-05.txt"
+    },
+    {
+      "command": [
+        "node",
+        "scripts/audit-encounter.cjs"
+      ],
+      "exit": 0,
+      "log": "regression-06.txt"
+    },
+    {
+      "command": [
+        "node",
+        "test-encounter-app.cjs"
+      ],
+      "exit": 0,
+      "log": "regression-07.txt"
+    },
+    {
+      "command": [
+        "node",
+        "scripts/replay-encounter.cjs",
+        "provenance/encounter-001/example-replay.json"
+      ],
+      "exit": 0,
+      "log": "regression-08.txt"
+    },
+    {
+      "command": [
+        "node",
+        "scripts/replay-encounter.cjs",
+        "provenance/encounter-001/browser-replay.json"
+      ],
+      "exit": 0,
+      "log": "regression-09.txt"
+    },
+    {
+      "command": [
+        "python3",
+        "../encounter-v12/test-deploy.py",
+        "--previous",
+        "../paired-sheet-history-017v/index.html",
+        "--output",
+        "provenance/encounter-001/deployment-checks.json"
+      ],
+      "exit": 0,
+      "log": "regression-10.txt"
+    }
+  ],
+  "native_suite_count": 12,
+  "equal_continuation_tests": 180000,
+  "app_regression": {
+    "pass": true,
+    "checks": 9,
+    "passed": [
+      "app_starts_with_experimental_disabled_and_original_counts",
+      "all_modes_and_history_remain_operable",
+      "phase_independence_and_exact_monitor",
+      "actual_scan_has_no_native_effect",
+      "witness_records_and_equal_continuation",
+      "experimental_inspection_cannot_couple_or_mutate",
+      "actual_settings_round_trip_and_legacy_compatibility",
+      "invalid_settings_are_atomic",
+      "replay_certificate_and_tamper_negative_control"
+    ],
+    "actualApplicationExecuted": true,
+    "browserUsed": false
+  },
+  "deployment_safety_checks": 17,
+  "browser_checks": [
+    "mobile_stale_scan_label",
+    "mobile_independent_phase",
+    "mobile_single_copy_negative_control",
+    "mobile_equal_continuation",
+    "mobile_experimental_isolation",
+    "desktop_browser_settings_roundtrip",
+    "desktop_inverse_mode_1592_cells",
+    "desktop_sheet_history_visible",
+    "desktop_projection_overlap_1143_pairs_depth_distinguished",
+    "mobile_360x740_no_horizontal_overflow",
+    "mobile_390x844_no_horizontal_overflow",
+    "desktop_spatial_21_candidates_zero_coupling",
+    "browser_export_replayed_independently"
+  ],
+  "browser_application_errors": 0,
+  "negative_controls": [
+    "Geometric overlap causes zero coupling events.",
+    "Single visible copy produces no cross-copy candidate.",
+    "Tampered replay and invalid settings are rejected.",
+    "Observation and experimental inspection do not change live Plant trajectories.",
+    "Unknown production page, bad upload and conflicting backup are refused."
+  ],
+  "changed_file_review": "Reviewed app integration, detector definitions, immutable observation records, replay verifier and guarded installer. Native carrier and history producers are hash-identical to baseline.",
+  "failures": [],
+  "production_deployed": false,
+  "release_ready": false,
+  "boundaries": [
+    "Local baseline, model, controller, browser and installer checks passed; this is not live production attestation.",
+    "Browser receipt covers desktop Chrome and 360x740/390x844 viewport layout; physical Android device testing is outstanding.",
+    "Browser interactions were executed through CUA, separately from this command; no fabricated headless-browser pass is asserted.",
+    "HTTP 406 prevented live-source comparison. Owner host access and review of the release diff remain deployment gates.",
+    "Research replay receipts are verified here; use replay-research.py to regenerate them from the pinned source packages."
+  ]
+}

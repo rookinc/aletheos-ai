@@ -1,0 +1,62 @@
+{
+  "audit": "orthogonal_observatory_source_recovery_001",
+  "status": "Certified derived",
+  "verdict": "REPOSITORY_BASELINE_RECOVERED_LIVE_BYTES_UNVERIFIED",
+  "repository": "rookinc/aletheos-ai",
+  "base_branch": "deploy/thalean-sheet-history-017v",
+  "base_commit": "9a1a659e8f6b1e4d83212271b7840788d1f3aa19",
+  "development_branch": "thalean-orthogonal-encounter-v12",
+  "entry_point": "public_html/observatories/thalean-orthogonal/index.html",
+  "build": "python3 thalean-orthogonal-deployment/source/build.py",
+  "baseline_html_sha256": "ebe248b6724f3e2727004b126b1b78f4bc6abb2670b830a4ce7a8406d573b44f",
+  "input_hashes": {
+    "src/native-data.json": "d070869e90b5d3b34981ae593faf5c635dfa25eb1aedebd504833a7a17f27e11",
+    "src/native-model.js": "1b01d744ce9a461e38390a9d2c6954a1750af0121823bd2ef4282f3b4d430cd3",
+    "src/volume-camera.js": "5d09b81b619d51bd77fbe92af3c4268016cd3366aeed37d4e112292075a80beb",
+    "src/cycle-clock.js": "857316c56d19290ef1e474d0b9752ca0c5cf5b199a8e5972b45dc8108447e610",
+    "src/paired-history.js": "d5addbee20fe17a90c673efd9ccd39d23e44acfc745f5a628f8e111a3818da4a",
+    "src/paired-history-data.json": "e1b4482ff1226735724533a08579eb123ab6dd3ffa399871e806ab9f5bce2bff",
+    "src/inverse-volume.js": "bc7851240eb5d4a90de8076903e36925b3372cf2377a1c8df9cfe0a2a079d401",
+    "src/app.js": "88222ce2fbbcff6bfe8aab377be14984b497fdfab6d235128d1b3e6c0a1c4351",
+    "src/ui.html": "b863cb4fbd64edb2bbffa805aa0cdf585961084aae9c7a422897b15a63a99615",
+    "src/style.css": "61e9f7011e73705a95b7e1b2f8e07e09daa21428457efbf51a2b789eb8c88cc7",
+    "build.py": "b58e25b61f0eb36170912acbed894f2cd6758883804293cff3d5e342a86d3d5b"
+  },
+  "live_retrieval": {
+    "url": "https://aletheos.ai/observatories/thalean-orthogonal/",
+    "result": "HTTP 406; web fetch also unavailable",
+    "discrepancy": "Cannot compare deployed bytes; no observed mismatch claimed."
+  },
+  "research_root": "~/dev/cori/research/mathematics/ is absent in this environment. Connected repository and preserved audit packages used.",
+  "baseline_sources": {
+    "rendering": "src/app.js + src/volume-camera.js",
+    "graph_and_F": "src/native-data.json + src/native-model.js",
+    "history": "src/paired-history.js + src/paired-history-data.json, generator scripts/generate-paired-history.py",
+    "inverse_cube": "src/inverse-volume.js",
+    "save_load": "src/app.js schema thalean-orthogonal-settings-1; load resets simulation",
+    "deployment": "paired-sheet-history-017v/deploy.sh + server.sh; owner SSH alias gurtiamy; no automatic branch deployment found"
+  },
+  "main_branch": "fb155cf9916ab1b4e502dd6d2bffdf7d21a59dfc has no Orthogonal source; development is based on latest recovered deployment branch.",
+  "producer": "python3 scripts/verify-source-recovery.py; node scripts/audit-encounter.cjs",
+  "failures": [
+    "Live HTTP byte attestation unavailable"
+  ],
+  "boundaries": [
+    "A v1.1 label alone does not identify the deployed commit.",
+    "Existing PID Plant is preserved legacy apparatus, not newly certified native physics."
+  ],
+  "existing_tests": [
+    "test.cjs",
+    "test-inverse.cjs",
+    "test-paired-history.cjs",
+    "test-paired-history-panel.cjs"
+  ],
+  "existing_provenance": [
+    "provenance/017v/source_hashes.json",
+    "provenance/017v/native.json",
+    "provenance/017v/017o.json",
+    "provenance/017v/017s.json",
+    "provenance/017v/implementation_audit.json",
+    "provenance/017w-route-selection/sources.json"
+  ]
+}

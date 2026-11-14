@@ -17,11 +17,18 @@ body.immersive #pairedHistoryPanel{display:none}
 @media(max-height:520px){#pairedHistoryPanel{top:8px;bottom:8px;max-height:none;right:8px;width:min(390px,60vw)}}
 
 #pairedHistoryPanel .drawer-head{display:grid;grid-template-columns:1fr auto;gap:8px}#pairedHistoryPanel .drawer-head .history-actions{grid-column:1/-1}
+body.encounter #stage{right:min(450px,44vw)}
+#encounterPanel{position:fixed;z-index:12;right:0;top:var(--header);bottom:var(--footer);width:min(450px,44vw);overflow:auto;padding:16px;background:#111e2cf5;border-left:1px solid #466578;overscroll-behavior:contain}
+#encounterPanel[hidden]{display:none}.lab-heading{display:flex;align-items:center;justify-content:space-between;gap:12px}.lab-heading small{font-size:10px;letter-spacing:1.5px;color:var(--cyan)}.lab-heading h2{margin:4px 0;font-size:22px}.lab-heading button{font-size:22px;min-width:42px}.lab-boundary{padding:9px 11px;border-left:2px solid var(--cyan);background:#17323b;color:#bbf5f4;font-size:12px}.lab-section{border-top:1px solid #314455;margin-top:14px;padding-top:12px}.lab-section h3{font-size:14px;margin:0 0 10px}.lab-section summary{cursor:pointer;min-height:38px;padding:4px 0}.lab-row{display:flex;align-items:end;gap:7px;flex-wrap:wrap;margin:10px 0}.lab-row label{display:flex;flex-direction:column;gap:4px;font-size:11px;flex:1;min-width:75px}.lab-row select,.lab-row input{width:100%;min-height:38px}.lab-row button{font-size:12px}.lab-wide{display:flex;flex-direction:column;gap:5px;font-size:11px}.lab-wide select{width:100%;font-size:12px}.lab-pre{white-space:pre-wrap;overflow-wrap:anywhere;font:11px/1.65 ui-monospace,monospace;background:#09131e;border:1px solid #2d4557;border-radius:4px;padding:10px;color:#c8e1ee;max-height:270px;overflow:auto}.lab-phases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.lab-phases label{display:flex;align-items:center;flex-wrap:wrap;font-size:11px;gap:5px;padding:6px;background:#162635;border:1px solid #33495b}.lab-phases input[type=number]{width:100%;min-height:35px}.lab-phases input[type=checkbox]{margin:0}.lab-return{display:block;padding:8px 0;color:var(--cyan);font-size:13px}.lab-tag{font-size:9px;font-weight:normal;text-transform:uppercase;color:#e6c987;border:1px solid #6e5a38;border-radius:3px;padding:2px 4px;vertical-align:middle}.lab-export{margin:20px 0;display:flex;flex-direction:column;gap:8px}.lab-section a{color:var(--cyan);font-size:12px}.lab-section p{font-size:12px}#labRecordStatus{display:block;font-size:11px;margin-top:6px}.lab-section button:disabled{opacity:.5}.mode-tabs{flex-wrap:wrap}
+@media(max-width:700px){body.encounter #stage{right:0;bottom:calc(var(--footer) + 47dvh)}#encounterPanel{top:auto;bottom:var(--footer);width:100%;height:47dvh;border-left:0;border-top:1px solid #466578;padding:12px 14px}.lab-heading h2{font-size:18px}.lab-heading small{font-size:9px}.mode-tabs button{font-size:11px;padding:5px 8px;min-height:36px}.lab-section button{min-height:42px}.lab-row select,.lab-wide select,.lab-row input{font-size:14px}.lab-pre{font-size:11px}body.encounter #hud{display:none}body.encounter .stage-label{font-size:9px}#encounterPanel .hint{font-size:11px}}
+@media(max-height:520px) and (max-width:700px){body.encounter #stage{bottom:var(--footer);right:55%}#encounterPanel{top:var(--header);width:55%;height:auto}.lab-row{display:block}.lab-row>*{margin-bottom:5px}}
+
+@media(max-width:700px){body.encounter #chrome .planes,body.encounter #assemblyFaders,body.encounter #chrome>.merge{display:none}body.encounter #chrome{padding-bottom:8px}}
 </style></head>
 <body>
 <header id="chrome">
- <div class="title"><span class="bars"></span><button id="hide" title="Hide controls" aria-label="Hide controls"><strong>THALEAN</strong> <span>ORTHOGONAL OBSERVATORY</span></button><small>v1.1</small><span class="bars"></span></div>
- <nav class="mode-tabs" aria-label="Observatory view"><button id="assemblyMode" aria-pressed="true">Assembly</button><button id="inverseMode" aria-pressed="false">Inverse cube</button><button id="historyToggle" aria-pressed="false" aria-expanded="false" aria-controls="pairedHistoryPanel">Sheet history</button></nav>
+ <div class="title"><span class="bars"></span><button id="hide" title="Hide controls" aria-label="Hide controls"><strong>THALEAN</strong> <span>ORTHOGONAL OBSERVATORY</span></button><small>v1.2</small><span class="bars"></span></div>
+ <nav class="mode-tabs" aria-label="Observatory view"><button id="assemblyMode" aria-pressed="true">Assembly</button><button id="inverseMode" aria-pressed="false">Inverse cube</button><button id="historyToggle" aria-pressed="false" aria-expanded="false" aria-controls="pairedHistoryPanel">Sheet history</button><button id="encounterMode" aria-pressed="false" aria-controls="encounterPanel">Encounter Lab</button></nav>
  <div class="toolbar">
   <button id="settings" class="square" title="Display and plane controls" aria-label="Display and plane controls" aria-expanded="false" aria-controls="drawer">☷</button>
   <button id="play" class="square active" aria-pressed="true" aria-label="Pause">Ⅱ</button>
@@ -39,6 +46,41 @@ body.immersive #pairedHistoryPanel{display:none}
  <label class="merge">Merge <output id="mergeValue">0%</output><input id="merge" aria-label="Merge" type="range" min="0" max="100" value="0"></label>
 </header>
 <main id="stage"><canvas id="volume" tabindex="0" aria-label="Three orthogonal Thalean charts. Drag to rotate, pinch to zoom, two fingers to pan, twist to roll. Double tap for controls."></canvas><div class="stage-label"><span id="visibleCount">3 planes</span><span id="modeLabel">ONE ORIGIN</span></div><div id="hud"><div id="cycleReadout">F 0 / 20</div><div id="gains" class="gains">PID gains · P 1.4 · I 0.12 · D 4</div><div id="metric">Starting native model…</div></div><button id="about" class="help" aria-label="About this observatory">?</button><div id="empty" hidden>All planes hidden<span>Use X, Y or Z above to show a plane.</span></div></main>
+
+<aside id="encounterPanel" hidden aria-label="Encounter Lab">
+ <div class="lab-heading"><div><small>READ-ONLY RESEARCH INSTRUMENT</small><h2>Encounter Lab</h2></div><button id="labClose" aria-label="Close Encounter Lab">×</button></div>
+ <p class="lab-boundary">No native coupling law admitted.</p>
+ <p class="hint">Three uncoupled presentations of one carrier. Chart proximity, quotient return and physical interaction are separate tests.</p>
+ <section class="lab-section">
+  <h3>Native return <span class="lab-tag">Certified derived</span></h3>
+  <div class="lab-row"><label>Inspect copy <select id="labCopy"><option value="0">X · YZ</option><option value="1">Y · ZX</option><option value="2">Z · XY</option></select></label><label>Cycle <input id="labCycle" type="number" min="1" max="450" value="1"></label><button id="labStep">Step F</button></div>
+  <div id="labPhases" class="lab-phases"></div>
+  <output id="labReturn" class="lab-return"></output>
+  <pre id="labNative" class="lab-pre" aria-label="Exact native state"></pre>
+  <small class="hint">Native indices are zero-based. Cycles are displayed 1–450. π = (frame, G900 quotient); the chart is a separate visualization.</small>
+ </section>
+ <section class="lab-section">
+  <h3>Encounter detector <span class="lab-tag">Visualization</span></h3>
+  <label class="lab-wide">Criterion <select id="labKind"><option value="spatial">Spatial proximity · completed F step</option><option value="projection">Camera projection overlap · depth ignored</option><option value="envelope">Three full-cycle envelopes · 50³ samples</option></select></label>
+  <div class="lab-row"><label>ε · chart units <input id="labEpsilon" type="number" min="0.001" max="0.2" step="0.001" value="0.05"></label><label id="labCellLabel" hidden>Sample number <input id="labCell" type="number" min="1" max="125000" value="1"></label><button id="labScan">Pause &amp; scan</button></div>
+  <p id="labScanStatus" class="hint" role="status">No scan yet. Detection uses all 450 cycles in each visible copy.</p>
+  <label class="lab-wide">Candidate <select id="labCandidate"><option>No candidates scanned</option></select></label>
+  <pre id="labCandidateInfo" class="lab-pre">Select a criterion and scan. A geometric overlap cannot trigger a native event.</pre>
+  <details><summary>Detection definition and limits</summary><p id="labCriterion" class="hint">Current-step scans compare all 450 × 450 pairs for each visible copy pair. Results retain the nearest 200 and report the full count. Full-envelope scans inspect one occupied grid cell and its nearest source intervals in all three copies.</p><p class="hint">Adjacency is tested between labels in the common carrier; there are no cross-copy edges. Equal registered labels do not merge instances. Interpolated segment positions are not native states.</p></details>
+ </section>
+ <details class="lab-section"><summary>Witness history &amp; equal continuation</summary>
+  <p class="hint">Append-only observation log, maximum 100 records per session. Recording never changes native evolution. Settings load starts a fresh simulation; this log keeps its captured contexts.</p>
+  <button id="labRecord">Record current state and candidate</button><output id="labRecordStatus">0 observations</output>
+  <div class="lab-row"><label>Record A <select id="labRecordA"></select></label><label>Record B <select id="labRecordB"></select></label></div>
+  <div class="lab-row"><label>Same continuation Fⁿ <input id="labContinuation" type="number" min="0" max="19" value="1"></label><button id="labCompare">Compare records</button><button id="labF10">Test F⁰ / F¹⁰ pair</button></div>
+  <pre id="labMemory" class="lab-pre">No memory test run. F⁰ / F¹⁰ prepares equal quotient projections with different hidden bits, without advancing the live carrier.</pre>
+ </details>
+ <details class="lab-section"><summary>Six-channel bridge <span class="lab-tag">Unsupported</span></summary><p>The certified 35-dimensional SU(6) algebra acts on a registered complex field. X±, Y±, Z± are candidate display labels. No source-derived intertwiner from these three embeddings to that field is admitted.</p><p id="labBridgeStatus" class="hint"></p></details>
+ <details class="lab-section"><summary>Chart appearance</summary><p class="hint">Display-only geometry. Changing merge does not change the native graph or F.</p><label class="lab-wide">Merge <input id="labMerge" type="range" min="0" max="100" value="0"></label><label class="lab-wide">Edges <input id="labEdges" type="range" min="0" max="100" value="13"></label><label class="lab-wide">Vertices <input id="labVertices" type="range" min="0" max="100" value="62"></label></details>
+ <details class="lab-section"><summary>Experimental coupling</summary><label class="check"><input id="labExperimental" type="checkbox"> Inspect experimental research</label><p id="labCoupling" class="lab-boundary">No native coupling law admitted.</p><p id="labExperimentNote" hidden class="hint">Replayed witness experiment 007 uses a different native registration, with zero-based addresses 0 → 488 and probe 7207. Its engineered mirror kernel, role fields and contact coefficients are declared assumptions. Contact reactivates; source/probe coherent phases change. Its F array and horizontal quotient graph differ from this observatory; labels cannot be transplanted. Native hopping support does not certify coupling or spatial locality. No experimental executor is connected to the carrier.</p></details>
+ <details class="lab-section"><summary>Provenance inspector</summary><label class="lab-wide">Claim <select id="labEvidence"></select></label><pre id="labEvidenceInfo" class="lab-pre"></pre><a id="labEvidenceLink" target="_blank" rel="noopener noreferrer">Open audit and executable producer ↗</a></details>
+ <div class="lab-export"><button id="labExport">Export replay certificate</button><small class="hint">JSON includes scan inputs, native tuples, observations, continuation results and evidence.</small></div>
+</aside>
 
 <aside id="pairedHistoryPanel" hidden aria-label="Paired Sheet History">
  <div class="drawer-head"><div><span class="history-kicker">NATIVE PAIRED CARRIER</span><h2>Paired Sheet History</h2></div><button id="historyClose" class="square" aria-label="Close paired sheet history">×</button><div class="history-actions"><button id="historyPlay" aria-label="Pause original F clock">Pause</button><button id="historyStep">Step F</button><button id="historyReset">Restart</button></div></div>
@@ -278,6 +320,1294 @@ const PairedHistoryPanel=(()=>{
  }
  return {create};
 })();
+</script><script id="encounterEvidence" type="application/json">{
+  "source": {
+    "audit": "orthogonal_observatory_source_recovery_001",
+    "status": "Certified derived",
+    "verdict": "REPOSITORY_BASELINE_RECOVERED_LIVE_BYTES_UNVERIFIED",
+    "repository": "rookinc/aletheos-ai",
+    "base_branch": "deploy/thalean-sheet-history-017v",
+    "base_commit": "9a1a659e8f6b1e4d83212271b7840788d1f3aa19",
+    "development_branch": "thalean-orthogonal-encounter-v12",
+    "entry_point": "public_html/observatories/thalean-orthogonal/index.html",
+    "build": "python3 thalean-orthogonal-deployment/source/build.py",
+    "baseline_html_sha256": "ebe248b6724f3e2727004b126b1b78f4bc6abb2670b830a4ce7a8406d573b44f",
+    "input_hashes": {
+      "src/native-data.json": "d070869e90b5d3b34981ae593faf5c635dfa25eb1aedebd504833a7a17f27e11",
+      "src/native-model.js": "1b01d744ce9a461e38390a9d2c6954a1750af0121823bd2ef4282f3b4d430cd3",
+      "src/volume-camera.js": "5d09b81b619d51bd77fbe92af3c4268016cd3366aeed37d4e112292075a80beb",
+      "src/cycle-clock.js": "857316c56d19290ef1e474d0b9752ca0c5cf5b199a8e5972b45dc8108447e610",
+      "src/paired-history.js": "d5addbee20fe17a90c673efd9ccd39d23e44acfc745f5a628f8e111a3818da4a",
+      "src/paired-history-data.json": "e1b4482ff1226735724533a08579eb123ab6dd3ffa399871e806ab9f5bce2bff",
+      "src/inverse-volume.js": "bc7851240eb5d4a90de8076903e36925b3372cf2377a1c8df9cfe0a2a079d401",
+      "src/app.js": "88222ce2fbbcff6bfe8aab377be14984b497fdfab6d235128d1b3e6c0a1c4351",
+      "src/ui.html": "b863cb4fbd64edb2bbffa805aa0cdf585961084aae9c7a422897b15a63a99615",
+      "src/style.css": "61e9f7011e73705a95b7e1b2f8e07e09daa21428457efbf51a2b789eb8c88cc7",
+      "build.py": "b58e25b61f0eb36170912acbed894f2cd6758883804293cff3d5e342a86d3d5b"
+    },
+    "live_retrieval": {
+      "url": "https://aletheos.ai/observatories/thalean-orthogonal/",
+      "result": "HTTP 406; web fetch also unavailable",
+      "discrepancy": "Cannot compare deployed bytes; no observed mismatch claimed."
+    },
+    "research_root": "~/dev/cori/research/mathematics/ is absent in this environment. Connected repository and preserved audit packages used.",
+    "baseline_sources": {
+      "rendering": "src/app.js + src/volume-camera.js",
+      "graph_and_F": "src/native-data.json + src/native-model.js",
+      "history": "src/paired-history.js + src/paired-history-data.json, generator scripts/generate-paired-history.py",
+      "inverse_cube": "src/inverse-volume.js",
+      "save_load": "src/app.js schema thalean-orthogonal-settings-1; load resets simulation",
+      "deployment": "paired-sheet-history-017v/deploy.sh + server.sh; owner SSH alias gurtiamy; no automatic branch deployment found"
+    },
+    "main_branch": "fb155cf9916ab1b4e502dd6d2bffdf7d21a59dfc has no Orthogonal source; development is based on latest recovered deployment branch.",
+    "producer": "python3 scripts/verify-source-recovery.py; node scripts/audit-encounter.cjs",
+    "failures": [
+      "Live HTTP byte attestation unavailable"
+    ],
+    "boundaries": [
+      "A v1.1 label alone does not identify the deployed commit.",
+      "Existing PID Plant is preserved legacy apparatus, not newly certified native physics."
+    ],
+    "existing_tests": [
+      "test.cjs",
+      "test-inverse.cjs",
+      "test-paired-history.cjs",
+      "test-paired-history-panel.cjs"
+    ],
+    "existing_provenance": [
+      "provenance/017v/source_hashes.json",
+      "provenance/017v/native.json",
+      "provenance/017v/017o.json",
+      "provenance/017v/017s.json",
+      "provenance/017v/implementation_audit.json",
+      "provenance/017w-route-selection/sources.json"
+    ]
+  },
+  "baseline": {
+    "audit": "orthogonal_observatory_native_baseline_001",
+    "producer": "node scripts/audit-encounter.cjs",
+    "input_provenance": {
+      "repository": "rookinc/aletheos-ai",
+      "base_commit": "9a1a659e8f6b1e4d83212271b7840788d1f3aa19",
+      "native_data_sha256": "d070869e90b5d3b34981ae593faf5c635dfa25eb1aedebd504833a7a17f27e11",
+      "paired_history_sha256": "e1b4482ff1226735724533a08579eb123ab6dd3ffa399871e806ab9f5bce2bff"
+    },
+    "status": "Certified derived",
+    "verdict": "PASS",
+    "state_count": 9000,
+    "undirected_edge_count": 45000,
+    "degree": 10,
+    "F_cycles": 450,
+    "F_period": 20,
+    "copy_semantics": "One native simulation; three proper display rotations with independent visibility/opacity/phase. No cross-copy edges or independent new organisms.",
+    "state_tuple": [
+      "frame mod5",
+      "ordered G15 pair (u,v)",
+      "relative V4 label r in 0..3",
+      "hidden bit h"
+    ],
+    "transformation": "F(f,u,v,r,h)=(f+1 mod5,v,u,r XOR3,h XOR(r>>1))",
+    "return_scope": {
+      "states_tested": 9000,
+      "F10": "(frame,G900) returns and hidden bit flips for every state",
+      "F20": "Full registered-state return; exact least period20 for every state",
+      "chart_positions_equal_at_F10_at_merge0": 0
+    },
+    "failures": [],
+    "boundaries": [
+      "The native quotient projection is not the arbitrary torus/split rendering.",
+      "The inherited PID simulation has continuous x,v,I and imposed gains. It is preserved, not certified as native physical dynamics."
+    ]
+  },
+  "detector": {
+    "audit": "orthogonal_encounter_detector_001",
+    "producer": "node scripts/audit-encounter.cjs",
+    "input_provenance": {
+      "repository": "rookinc/aletheos-ai",
+      "base_commit": "9a1a659e8f6b1e4d83212271b7840788d1f3aa19",
+      "native_data_sha256": "d070869e90b5d3b34981ae593faf5c635dfa25eb1aedebd504833a7a17f27e11",
+      "paired_history_sha256": "e1b4482ff1226735724533a08579eb123ab6dd3ffa399871e806ab9f5bce2bff"
+    },
+    "status": "Visualization",
+    "verdict": "PASS",
+    "criteria": {
+      "spatial": "Completed-step chart vertices; Euclidean distance <= epsilon",
+      "projection": "Stored orthonormal camera projection; projected distance <= epsilon with depth discarded",
+      "envelope": "Existing50^3 grid in[-.5,.5]^3; distance to each full-cycle source polyline <= epsilon"
+    },
+    "default_spatial_count": 21,
+    "default_projection_count": 430,
+    "default_envelope_cells": 1592,
+    "scan_result_cap": 200,
+    "example": {
+      "id": "0:254:2:309",
+      "distance": 0.022730412219303265,
+      "spatialDistance": 0.022730412219303265,
+      "kind": "spatial",
+      "status": "Visualization",
+      "endpoints": [
+        {
+          "copy": "X",
+          "axis": 0,
+          "cycle": 254,
+          "stage": 0,
+          "state": 616,
+          "tuple": {
+            "state": 616,
+            "frame": 0,
+            "pairedState": 616,
+            "g900": 316,
+            "basePair": [
+              8,
+              6
+            ],
+            "relativeSheet": 0,
+            "hiddenBit": 0
+          },
+          "next": {
+            "state": 3551,
+            "frame": 1,
+            "pairedState": 1751,
+            "g900": 579,
+            "basePair": [
+              6,
+              8
+            ],
+            "relativeSheet": 3,
+            "hiddenBit": 0
+          },
+          "point": [
+            -0.6936412154800928,
+            -0.30575192402578294,
+            -0.713372686620683
+          ]
+        },
+        {
+          "copy": "Z",
+          "axis": 2,
+          "cycle": 309,
+          "stage": 0,
+          "state": 702,
+          "tuple": {
+            "state": 702,
+            "frame": 0,
+            "pairedState": 702,
+            "g900": 402,
+            "basePair": [
+              13,
+              14
+            ],
+            "relativeSheet": 3,
+            "hiddenBit": 1
+          },
+          "next": {
+            "state": 2772,
+            "frame": 1,
+            "pairedState": 972,
+            "g900": 612,
+            "basePair": [
+              14,
+              13
+            ],
+            "relativeSheet": 0,
+            "hiddenBit": 0
+          },
+          "point": [
+            -0.7139547511510651,
+            -0.3001189424003241,
+            -0.7048696620875635
+          ]
+        }
+      ],
+      "sameCarrierAdjacency": false,
+      "sharedRegisteredLabel": false,
+      "crossCopyNativeEdge": false,
+      "provenInteraction": false
+    },
+    "envelope_example": {
+      "id": "cell:51938",
+      "kind": "envelope",
+      "status": "Visualization",
+      "point": [
+        -0.08999999999999997,
+        0.27,
+        0.27
+      ],
+      "cellId": 51938,
+      "cellIndex": 795,
+      "distance": 0.04872890815474982,
+      "endpoints": [
+        {
+          "copy": "X",
+          "axis": 0,
+          "cycle": 170,
+          "stage": 13,
+          "state": 6080,
+          "tuple": {
+            "state": 6080,
+            "frame": 3,
+            "pairedState": 680,
+            "g900": 380,
+            "basePair": [
+              13,
+              2
+            ],
+            "relativeSheet": 1,
+            "hiddenBit": 0
+          },
+          "next": {
+            "state": 7603,
+            "frame": 4,
+            "pairedState": 403,
+            "g900": 197,
+            "basePair": [
+              2,
+              13
+            ],
+            "relativeSheet": 2,
+            "hiddenBit": 0
+          },
+          "point": [
+            -0.08999999999999986,
+            0.23593215291636682,
+            0.2354721434296618
+          ],
+          "d2": 0.002352791084255663,
+          "distance": 0.04850557786745421,
+          "segment": 6,
+          "segmentFraction": 0.5675,
+          "intervalEnd": {
+            "state": 7603,
+            "frame": 4,
+            "pairedState": 403,
+            "g900": 197,
+            "basePair": [
+              2,
+              13
+            ],
+            "relativeSheet": 2,
+            "hiddenBit": 0
+          }
+        },
+        {
+          "copy": "Y",
+          "axis": 1,
+          "cycle": 385,
+          "stage": 2,
+          "state": 5393,
+          "tuple": {
+            "state": 5393,
+            "frame": 2,
+            "pairedState": 1793,
+            "g900": 567,
+            "basePair": [
+              6,
+              10
+            ],
+            "relativeSheet": 2,
+            "hiddenBit": 0
+          },
+          "next": {
+            "state": 6824,
+            "frame": 3,
+            "pairedState": 1424,
+            "g900": 811,
+            "basePair": [
+              10,
+              6
+            ],
+            "relativeSheet": 1,
+            "hiddenBit": 1
+          },
+          "point": [
+            -0.1051684688347323,
+            0.27,
+            0.3163079263535283
+          ],
+          "d2": 0.0023745064899540432,
+          "distance": 0.04872890815474982,
+          "segment": 2,
+          "segmentFraction": 0.29750000000000004,
+          "intervalEnd": {
+            "state": 6824,
+            "frame": 3,
+            "pairedState": 1424,
+            "g900": 811,
+            "basePair": [
+              10,
+              6
+            ],
+            "relativeSheet": 1,
+            "hiddenBit": 1
+          }
+        },
+        {
+          "copy": "Z",
+          "axis": 2,
+          "cycle": 250,
+          "stage": 11,
+          "state": 2439,
+          "tuple": {
+            "state": 2439,
+            "frame": 1,
+            "pairedState": 639,
+            "g900": 339,
+            "basePair": [
+              8,
+              8
+            ],
+            "relativeSheet": 3,
+            "hiddenBit": 1
+          },
+          "next": {
+            "state": 4211,
+            "frame": 2,
+            "pairedState": 611,
+            "g900": 311,
+            "basePair": [
+              8,
+              8
+            ],
+            "relativeSheet": 0,
+            "hiddenBit": 0
+          },
+          "point": [
+            -0.10547681458767448,
+            0.316205238248117,
+            0.27
+          ],
+          "d2": 0.0023744558313465096,
+          "distance": 0.048728388351622194,
+          "segment": 8,
+          "segmentFraction": 0.2975000000000001,
+          "intervalEnd": {
+            "state": 4211,
+            "frame": 2,
+            "pairedState": 611,
+            "g900": 311,
+            "basePair": [
+              8,
+              8
+            ],
+            "relativeSheet": 0,
+            "hiddenBit": 0
+          }
+        }
+      ],
+      "pairRelations": [
+        {
+          "copies": "XY",
+          "sameCarrierAdjacency": false,
+          "sharedRegisteredLabel": false,
+          "crossCopyNativeEdge": false,
+          "provenInteraction": false
+        },
+        {
+          "copies": "XZ",
+          "sameCarrierAdjacency": false,
+          "sharedRegisteredLabel": false,
+          "crossCopyNativeEdge": false,
+          "provenInteraction": false
+        },
+        {
+          "copies": "YZ",
+          "sameCarrierAdjacency": false,
+          "sharedRegisteredLabel": false,
+          "crossCopyNativeEdge": false,
+          "provenInteraction": false
+        }
+      ],
+      "crossCopyNativeEdge": false,
+      "provenInteraction": false
+    },
+    "negative_controls": "Hidden copies and empty overlap produce no candidates; any overlap yields zero coupling events.",
+    "failures": [],
+    "boundaries": [
+      "All coordinates are chart units.",
+      "Envelope source intervals need not occur simultaneously; interpolants have no native state identity.",
+      "Common-carrier label adjacency is not a cross-copy edge."
+    ]
+  },
+  "witness": {
+    "audit": "orthogonal_registered_witness_001",
+    "producer": "node scripts/audit-encounter.cjs",
+    "input_provenance": {
+      "repository": "rookinc/aletheos-ai",
+      "base_commit": "9a1a659e8f6b1e4d83212271b7840788d1f3aa19",
+      "native_data_sha256": "d070869e90b5d3b34981ae593faf5c635dfa25eb1aedebd504833a7a17f27e11",
+      "paired_history_sha256": "e1b4482ff1226735724533a08579eb123ab6dd3ffa399871e806ab9f5bce2bff"
+    },
+    "status": "Certified derived",
+    "verdict": "PASS_READ_ONLY_LOG",
+    "records": [
+      {
+        "schema": "orthogonal-observation-1",
+        "sequence": 1,
+        "status": "Certified derived",
+        "role": "Read-only observation; dynamically ineffective",
+        "context": {
+          "kind": "spatial",
+          "steps": 0,
+          "merge": 0,
+          "epsilon": 0.05,
+          "planes": [
+            {
+              "visible": true,
+              "offset": 0,
+              "opacity": 1
+            },
+            {
+              "visible": true,
+              "offset": 0,
+              "opacity": 1
+            },
+            {
+              "visible": true,
+              "offset": 0,
+              "opacity": 1
+            }
+          ],
+          "projection": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "selected": 0,
+          "copy": 0
+        },
+        "state": {
+          "state": 0,
+          "frame": 0,
+          "pairedState": 0,
+          "g900": 0,
+          "basePair": [
+            0,
+            0
+          ],
+          "relativeSheet": 0,
+          "hiddenBit": 0
+        },
+        "next": {
+          "state": 2280,
+          "frame": 1,
+          "pairedState": 480,
+          "g900": 8,
+          "basePair": [
+            0,
+            0
+          ],
+          "relativeSheet": 3,
+          "hiddenBit": 0
+        },
+        "candidate": {
+          "scanConfig": {
+            "kind": "spatial",
+            "steps": 0,
+            "merge": 0,
+            "epsilon": 0.05,
+            "planes": [
+              {
+                "visible": true,
+                "offset": 0,
+                "opacity": 1
+              },
+              {
+                "visible": true,
+                "offset": 0,
+                "opacity": 1
+              },
+              {
+                "visible": true,
+                "offset": 0,
+                "opacity": 1
+              }
+            ],
+            "projection": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ]
+            ]
+          },
+          "selected": {
+            "id": "0:254:2:309",
+            "distance": 0.022730412219303265,
+            "spatialDistance": 0.022730412219303265,
+            "kind": "spatial",
+            "status": "Visualization",
+            "endpoints": [
+              {
+                "copy": "X",
+                "axis": 0,
+                "cycle": 254,
+                "stage": 0,
+                "state": 616,
+                "tuple": {
+                  "state": 616,
+                  "frame": 0,
+                  "pairedState": 616,
+                  "g900": 316,
+                  "basePair": [
+                    8,
+                    6
+                  ],
+                  "relativeSheet": 0,
+                  "hiddenBit": 0
+                },
+                "next": {
+                  "state": 3551,
+                  "frame": 1,
+                  "pairedState": 1751,
+                  "g900": 579,
+                  "basePair": [
+                    6,
+                    8
+                  ],
+                  "relativeSheet": 3,
+                  "hiddenBit": 0
+                },
+                "point": [
+                  -0.6936412154800928,
+                  -0.30575192402578294,
+                  -0.713372686620683
+                ]
+              },
+              {
+                "copy": "Z",
+                "axis": 2,
+                "cycle": 309,
+                "stage": 0,
+                "state": 702,
+                "tuple": {
+                  "state": 702,
+                  "frame": 0,
+                  "pairedState": 702,
+                  "g900": 402,
+                  "basePair": [
+                    13,
+                    14
+                  ],
+                  "relativeSheet": 3,
+                  "hiddenBit": 1
+                },
+                "next": {
+                  "state": 2772,
+                  "frame": 1,
+                  "pairedState": 972,
+                  "g900": 612,
+                  "basePair": [
+                    14,
+                    13
+                  ],
+                  "relativeSheet": 0,
+                  "hiddenBit": 0
+                },
+                "point": [
+                  -0.7139547511510651,
+                  -0.3001189424003241,
+                  -0.7048696620875635
+                ]
+              }
+            ],
+            "sameCarrierAdjacency": false,
+            "sharedRegisteredLabel": false,
+            "crossCopyNativeEdge": false,
+            "provenInteraction": false
+          }
+        }
+      },
+      {
+        "schema": "orthogonal-observation-1",
+        "sequence": 2,
+        "status": "Certified derived",
+        "role": "Read-only observation; dynamically ineffective",
+        "context": {
+          "kind": "spatial",
+          "steps": 10,
+          "merge": 0,
+          "epsilon": 0.05,
+          "planes": [
+            {
+              "visible": true,
+              "offset": 0,
+              "opacity": 1
+            },
+            {
+              "visible": true,
+              "offset": 0,
+              "opacity": 1
+            },
+            {
+              "visible": true,
+              "offset": 0,
+              "opacity": 1
+            }
+          ],
+          "projection": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "selected": 0,
+          "copy": 0
+        },
+        "state": {
+          "state": 488,
+          "frame": 0,
+          "pairedState": 488,
+          "g900": 0,
+          "basePair": [
+            0,
+            0
+          ],
+          "relativeSheet": 0,
+          "hiddenBit": 1
+        },
+        "next": {
+          "state": 1808,
+          "frame": 1,
+          "pairedState": 8,
+          "g900": 8,
+          "basePair": [
+            0,
+            0
+          ],
+          "relativeSheet": 3,
+          "hiddenBit": 1
+        },
+        "candidate": null
+      }
+    ],
+    "dynamically_effective_register": false,
+    "log_semantics": "Append-only observations with exact before/next tuples and captured scan context; no feedback into native evolution.",
+    "failures": [],
+    "boundaries": [
+      "Observation sequence number is not native time.",
+      "Equal logs or distinct logs do not prove memory.",
+      "Existing PID integrator I is imposed apparatus, not a new native witness law."
+    ]
+  },
+  "memory": {
+    "audit": "g9000_native_operational_memory_audit_001",
+    "producer": "node scripts/audit-encounter.cjs",
+    "input_provenance": {
+      "repository": "rookinc/aletheos-ai",
+      "base_commit": "9a1a659e8f6b1e4d83212271b7840788d1f3aa19",
+      "native_data_sha256": "d070869e90b5d3b34981ae593faf5c635dfa25eb1aedebd504833a7a17f27e11",
+      "paired_history_sha256": "e1b4482ff1226735724533a08579eb123ab6dd3ffa399871e806ab9f5bce2bff"
+    },
+    "status": "Certified derived",
+    "verdict": "NO_DISTINGUISHING_F_CONTINUATION",
+    "projection": "pi=(frame,G900 quotient), each fiber has two registered states",
+    "state_pairs_tested": 9000,
+    "continuation_tests": 180000,
+    "finite_completeness": "F has order20. Equality for all powers0..19 and quotient compatibility excludes any distinguishing word in F and F^-1.",
+    "minimal_distinguishing_continuation": null,
+    "replay_example": {
+      "operator": "F^1",
+      "projection": "pi(state) = (frame, G900 quotient)",
+      "before": [
+        {
+          "state": 0,
+          "frame": 0,
+          "pairedState": 0,
+          "g900": 0,
+          "basePair": [
+            0,
+            0
+          ],
+          "relativeSheet": 0,
+          "hiddenBit": 0
+        },
+        {
+          "state": 488,
+          "frame": 0,
+          "pairedState": 488,
+          "g900": 0,
+          "basePair": [
+            0,
+            0
+          ],
+          "relativeSheet": 0,
+          "hiddenBit": 1
+        }
+      ],
+      "after": [
+        {
+          "state": 2280,
+          "frame": 1,
+          "pairedState": 480,
+          "g900": 8,
+          "basePair": [
+            0,
+            0
+          ],
+          "relativeSheet": 3,
+          "hiddenBit": 0
+        },
+        {
+          "state": 1808,
+          "frame": 1,
+          "pairedState": 8,
+          "g900": 8,
+          "basePair": [
+            0,
+            0
+          ],
+          "relativeSheet": 3,
+          "hiddenBit": 1
+        }
+      ],
+      "inputProjectionEqual": true,
+      "registeredStatesDiffer": true,
+      "hiddenBitsDiffer": true,
+      "outputProjectionEqual": true,
+      "operationalMemoryEstablished": false,
+      "boundary": "Only deterministic F continuations are admitted here. A log, bit difference, or unequal initial quotient does not establish history-caused response."
+    },
+    "graph_control": "D=F^10 is a graph automorphism; projected neighbor multisets agree on every two-point fiber.",
+    "commutators": {
+      "native": "[F,D]=0 on all9000 labels",
+      "observation": "Let S_C be the diagonal adjacency selector of native C=16 on C^9000. [S_C,D] is nonzero, with support 20. S_C is a readout projector, not a dynamical encounter law.",
+      "encounter_order": "No source-admitted joint encounter operators C1,C2 exist in this observatory. Their dynamical commutator is not defined."
+    },
+    "failures": [],
+    "boundaries": [
+      "This is a no-go for the admitted F continuation family and this projection, not all future native laws.",
+      "A hidden bit can be distinguished by a finer observation; that does not make it dynamically effective memory.",
+      "No persistence or memory theorem is inferred from the external log."
+    ]
+  },
+  "bridge": {
+    "audit": "orthogonal_six_channel_bridge_audit_001",
+    "status": "Unsupported",
+    "verdict": "FIELD_SU6_REPLAYED_DISPLAY_BRIDGE_NOT_ADMITTED",
+    "producer": "python3 scripts/replay-research.py --inputs ARCHIVE_DIRECTORY",
+    "input_provenance": {
+      "SU6_NATIVE_FIELD_INVARIANTS_001_Audit_Package.zip": {
+        "sha256": "138aee043c76030aa6e70ca24e266348f3871566c6afc0ce4d8efd567cf7d187",
+        "library_file_id": "libfile_126e34eb2d38819191d3e115628d9f88"
+      },
+      "G9000_ENCOUNTER_WITNESS_007_Audit_Package.zip": {
+        "sha256": "51188ca5f1358d1cab38d102826cbfc1d3837fd933ae03d929d5e17879c7674f",
+        "library_file_id": "libfile_fde3_f-e8662f8b31a881918fa9a9fdd375ded7_49e008ebf4888191aa3c13bfa6801182"
+      },
+      "SU6_NATIVE_HISTORY_CROSSWALK_001_Audit_Package.zip": {
+        "sha256": "d5d1171b95eca9979418e858295971f0828ea20e0bc081bb842a28161ad9d738",
+        "library_file_id": "libfile_f407dfd5751481918721b3cd83125e2a"
+      }
+    },
+    "field_result": {
+      "construction": "Five coherent native link rotations plus one native relative central phase. Canonical quadratic field generators; no finite-map logarithms.",
+      "faithful_representation": "U tensor I2",
+      "field_real_dimension": 24,
+      "generated_connected_group": "SU(6)",
+      "generated_lie_dimension": 35,
+      "multiplicity_complex_dimension": 6,
+      "seed_count": 6,
+      "seed_names": [
+        "A_0_1",
+        "A_0_2",
+        "A_0_3",
+        "A_0_4",
+        "A_0_5",
+        "D_0_1"
+      ]
+    },
+    "field_scope": {
+      "every_native_finite_symmetry_lies_in_SU6": false,
+      "field_generated_SU6_proved": true,
+      "five_mixing_flows_are_explicit_field_constructions": true,
+      "full_physical_action_SU6_invariance_proved": false,
+      "minimal_number_of_generators_of_abstract_SU6_claimed": false,
+      "native_quadratic_realization_proved": true,
+      "orientation_and_common_registration_inherited": true,
+      "source_selected_inter_face_physical_time_law_recovered": false,
+      "unique_physical_connection_selected": false
+    },
+    "replay_counts": {
+      "SU6_007": 47,
+      "SU6_007_independent": 46,
+      "field_invariants": 38,
+      "field_invariants_independent": 42,
+      "reciprocal_exact": 55,
+      "reciprocal_independent_exact": 22,
+      "reciprocal_numerical_diagnostics": 8
+    },
+    "seven_bridge_tests": [
+      {
+        "test": "Native reversal/orientation",
+        "result": "F^-1 and F^10 exist; no source-selected X+ to X- channel operator identified."
+      },
+      {
+        "test": "Six independent complex channels",
+        "result": "The display supplies three spatial vectors and their negatives, real rank3. No C6 amplitude readout map is defined. This is not a no-go for six abstract channels."
+      },
+      {
+        "test": "Complex structure",
+        "result": "Certified J exists on the inherited24-real field. No induced J on display label space supplied."
+      },
+      {
+        "test": "Hermitian preservation",
+        "result": "All six field seeds and finite flows pass source checks; no display-to-field map to test."
+      },
+      {
+        "test": "Determinant one",
+        "result": "Tracefree complex field seeds generate determinant-one flows. F is an even9000-permutation; that fact alone is unrelated to SU6."
+      },
+      {
+        "test": "Lie algebra dimension35",
+        "result": "Source SU6-007 replayed exactly: five coherent link rotations plus one relative phase. Display rotations do not supply these generators."
+      },
+      {
+        "test": "Intertwining native transport",
+        "result": "No map from observatory states/three embeddings to the source field with compatible operators recovered. Reciprocal base also has the typed-carrier obstruction below."
+      }
+    ],
+    "reciprocal_registration": {
+      "same_named_G60_graph_and_deck": true,
+      "observatory_diagonal_quotient": "a",
+      "reciprocal_diagonal_quotient": "b",
+      "F_label_mismatches": 9000,
+      "shared_indexed_edges": 19500,
+      "observatory_only_edges": 25500,
+      "reciprocal_only_edges": 25500,
+      "horizontal_trace_A10": {
+        "a": 10409947200,
+        "b": 10417204800
+      },
+      "obstruction": "Different horizontal closed-walk counts exclude an isomorphism preserving the horizontal graph. No transplantation of this base experiment into the observatory is admitted. This does not decide arbitrary untyped9000-graph isomorphism or all other registrations.",
+      "numeric_labels": "0,488,7207 are zero-based state addresses in the experiment registration; its coefficients g/J=2/5 and norm ratio10sqrt2 are chosen model parameters."
+    },
+    "history_crosswalk": "Sealed source manifest verified and theorem inspected. Its independently transported registrations and doublet residual are not an observatory coupling; balanced-release parent chain not rerun here.",
+    "replay_receipts": [
+      {
+        "command": [
+          "python3",
+          "verify_manifest.py"
+        ],
+        "exit": 0,
+        "log": "field-manifest.log",
+        "log_sha256": "686a52907cb51617ab6aea02af231cddc09022543afe3f6700bdbcb3ed230463"
+      },
+      {
+        "command": [
+          "python3",
+          "replay.py",
+          "--output",
+          "/tmp/orthogonal-research-mqxj7dz8/field-results"
+        ],
+        "exit": 0,
+        "log": "field-replay.log",
+        "log_sha256": "a69c3080752b1071fc2928f8c248df04dc57f55e3647cff3ed147c96f896e550"
+      },
+      {
+        "command": [
+          "python3",
+          "verify_independently.py",
+          "--results",
+          "/tmp/orthogonal-research-mqxj7dz8/field-results",
+          "--output",
+          "/tmp/orthogonal-research-mqxj7dz8/field-results/independent.json"
+        ],
+        "exit": 0,
+        "log": "field-independent.log",
+        "log_sha256": "a7d4c47d00d37575f44d5a234c195351568ca0a17c9dde2845706b83bcdc58c6"
+      },
+      {
+        "command": [
+          "python3",
+          "verify_manifest.py"
+        ],
+        "exit": 0,
+        "log": "reciprocal-manifest.log",
+        "log_sha256": "f3add81aa1358929d7a3c09eb1b748cc9e7acdac8a800a3a8985edf50c169a95"
+      },
+      {
+        "command": [
+          "python3",
+          "derive.py"
+        ],
+        "exit": 0,
+        "log": "reciprocal-replay.log",
+        "log_sha256": "a9f44be1260af7e7f61cacd0abcec1a588711c63a821e64e521fb75b83e2b290"
+      },
+      {
+        "command": [
+          "python3",
+          "verify_independently.py"
+        ],
+        "exit": 0,
+        "log": "reciprocal-independent.log",
+        "log_sha256": "823a52bf158faf2d0bd2716f2cf4cafb5f3d279f22c1ab8d807cd6285e2d8745"
+      },
+      {
+        "command": [
+          "python3",
+          "verify_manifest.py"
+        ],
+        "exit": 0,
+        "log": "history-manifest.log",
+        "log_sha256": "fd95470406bc9b23e1461c935b8c3b97c201a0371848c3877a74b414a356ea37"
+      }
+    ],
+    "failures": [
+      "No source-derived six-channel observatory intertwiner",
+      "Reciprocal base uses different horizontal quotient"
+    ],
+    "boundaries": [
+      "Six labels do not imply six independent complex amplitudes.",
+      "A full field SU6 generation theorem does not select a physical Hamiltonian, time law or geometric encounter.",
+      "Experimental007 remains unimplemented in the live carrier."
+    ]
+  },
+  "regression": {
+    "audit": "orthogonal_observatory_v12_regression_001",
+    "status": "Certified derived",
+    "verdict": "LOCAL_REGRESSIONS_PASS_PRODUCTION_ATTESTATION_PENDING",
+    "producer": "python3 scripts/run-encounter-regressions.py",
+    "input_provenance": {
+      "repository": "rookinc/aletheos-ai",
+      "base_commit": "9a1a659e8f6b1e4d83212271b7840788d1f3aa19",
+      "baseline_input_hashes": {
+        "src/native-data.json": "d070869e90b5d3b34981ae593faf5c635dfa25eb1aedebd504833a7a17f27e11",
+        "src/native-model.js": "1b01d744ce9a461e38390a9d2c6954a1750af0121823bd2ef4282f3b4d430cd3",
+        "src/volume-camera.js": "5d09b81b619d51bd77fbe92af3c4268016cd3366aeed37d4e112292075a80beb",
+        "src/cycle-clock.js": "857316c56d19290ef1e474d0b9752ca0c5cf5b199a8e5972b45dc8108447e610",
+        "src/paired-history.js": "d5addbee20fe17a90c673efd9ccd39d23e44acfc745f5a628f8e111a3818da4a",
+        "src/paired-history-data.json": "e1b4482ff1226735724533a08579eb123ab6dd3ffa399871e806ab9f5bce2bff",
+        "src/inverse-volume.js": "bc7851240eb5d4a90de8076903e36925b3372cf2377a1c8df9cfe0a2a079d401",
+        "src/app.js": "88222ce2fbbcff6bfe8aab377be14984b497fdfab6d235128d1b3e6c0a1c4351",
+        "src/ui.html": "b863cb4fbd64edb2bbffa805aa0cdf585961084aae9c7a422897b15a63a99615",
+        "src/style.css": "61e9f7011e73705a95b7e1b2f8e07e09daa21428457efbf51a2b789eb8c88cc7",
+        "build.py": "b58e25b61f0eb36170912acbed894f2cd6758883804293cff3d5e342a86d3d5b"
+      },
+      "browser_ui_hashes": {
+        "build.py": "acd976727775ade72065982af70d87569f9fc52f09ca8fc58bc378bc876e3e9d",
+        "src/app.js": "e172652e47a6929897ea046bab0fc800bcc96e3709d293fa27cbcbbb5bea0da4",
+        "src/ui.html": "1764ac72c4fb2650a13b776d37d7f78d7120dbe2d2458f3ce580ed5c9f64f5aa",
+        "src/style.css": "61e9f7011e73705a95b7e1b2f8e07e09daa21428457efbf51a2b789eb8c88cc7",
+        "src/encounter-panel.html": "3f26c28c66d051e2d746d3a98edd7c561818d88dd48e0d6b5f88c29fe97feb74",
+        "src/encounter-panel.js": "001c6af4a8dd72805a2ea4566c055dc90186062d095e216c771b5b471d1307f4",
+        "src/encounter.css": "5f8c357d410eabfaa931485e69a3c97392fcb8d5b7dbd120ad3d8561e01441e8",
+        "src/encounter-model.js": "89206ee8721c62a407c2bdd1b2774018af8b2795a77fff9234043e213151caaa"
+      }
+    },
+    "commands": [
+      {
+        "command": [
+          "python3",
+          "scripts/verify-source-recovery.py"
+        ],
+        "exit": 0,
+        "log": "regression-01.txt"
+      },
+      {
+        "command": [
+          "node",
+          "test.cjs"
+        ],
+        "exit": 0,
+        "log": "regression-02.txt"
+      },
+      {
+        "command": [
+          "node",
+          "test-inverse.cjs"
+        ],
+        "exit": 0,
+        "log": "regression-03.txt"
+      },
+      {
+        "command": [
+          "node",
+          "test-paired-history.cjs"
+        ],
+        "exit": 0,
+        "log": "regression-04.txt"
+      },
+      {
+        "command": [
+          "node",
+          "test-paired-history-panel.cjs"
+        ],
+        "exit": 0,
+        "log": "regression-05.txt"
+      },
+      {
+        "command": [
+          "node",
+          "scripts/audit-encounter.cjs"
+        ],
+        "exit": 0,
+        "log": "regression-06.txt"
+      },
+      {
+        "command": [
+          "node",
+          "test-encounter-app.cjs"
+        ],
+        "exit": 0,
+        "log": "regression-07.txt"
+      },
+      {
+        "command": [
+          "node",
+          "scripts/replay-encounter.cjs",
+          "provenance/encounter-001/example-replay.json"
+        ],
+        "exit": 0,
+        "log": "regression-08.txt"
+      },
+      {
+        "command": [
+          "node",
+          "scripts/replay-encounter.cjs",
+          "provenance/encounter-001/browser-replay.json"
+        ],
+        "exit": 0,
+        "log": "regression-09.txt"
+      },
+      {
+        "command": [
+          "python3",
+          "../encounter-v12/test-deploy.py",
+          "--previous",
+          "../paired-sheet-history-017v/index.html",
+          "--output",
+          "provenance/encounter-001/deployment-checks.json"
+        ],
+        "exit": 0,
+        "log": "regression-10.txt"
+      }
+    ],
+    "native_suite_count": 12,
+    "equal_continuation_tests": 180000,
+    "app_regression": {
+      "pass": true,
+      "checks": 9,
+      "passed": [
+        "app_starts_with_experimental_disabled_and_original_counts",
+        "all_modes_and_history_remain_operable",
+        "phase_independence_and_exact_monitor",
+        "actual_scan_has_no_native_effect",
+        "witness_records_and_equal_continuation",
+        "experimental_inspection_cannot_couple_or_mutate",
+        "actual_settings_round_trip_and_legacy_compatibility",
+        "invalid_settings_are_atomic",
+        "replay_certificate_and_tamper_negative_control"
+      ],
+      "actualApplicationExecuted": true,
+      "browserUsed": false
+    },
+    "deployment_safety_checks": 17,
+    "browser_checks": [
+      "mobile_stale_scan_label",
+      "mobile_independent_phase",
+      "mobile_single_copy_negative_control",
+      "mobile_equal_continuation",
+      "mobile_experimental_isolation",
+      "desktop_browser_settings_roundtrip",
+      "desktop_inverse_mode_1592_cells",
+      "desktop_sheet_history_visible",
+      "desktop_projection_overlap_1143_pairs_depth_distinguished",
+      "mobile_360x740_no_horizontal_overflow",
+      "mobile_390x844_no_horizontal_overflow",
+      "desktop_spatial_21_candidates_zero_coupling",
+      "browser_export_replayed_independently"
+    ],
+    "browser_application_errors": 0,
+    "negative_controls": [
+      "Geometric overlap causes zero coupling events.",
+      "Single visible copy produces no cross-copy candidate.",
+      "Tampered replay and invalid settings are rejected.",
+      "Observation and experimental inspection do not change live Plant trajectories.",
+      "Unknown production page, bad upload and conflicting backup are refused."
+    ],
+    "changed_file_review": "Reviewed app integration, detector definitions, immutable observation records, replay verifier and guarded installer. Native carrier and history producers are hash-identical to baseline.",
+    "failures": [],
+    "production_deployed": false,
+    "release_ready": false,
+    "boundaries": [
+      "Local baseline, model, controller, browser and installer checks passed; this is not live production attestation.",
+      "Browser receipt covers desktop Chrome and 360x740/390x844 viewport layout; physical Android device testing is outstanding.",
+      "Browser interactions were executed through CUA, separately from this command; no fabricated headless-browser pass is asserted.",
+      "HTTP 406 prevented live-source comparison. Owner host access and review of the release diff remain deployment gates.",
+      "Research replay receipts are verified here; use replay-research.py to regenerate them from the pinned source packages."
+    ]
+  }
+}
+</script><script>'use strict';
+// Observation only. Own topology/readout objects; no reference to the live Plant.
+const EncounterLab = (() => {
+ const names=['X','Y','Z'];
+ const clone=x=>JSON.parse(JSON.stringify(x));
+ const freeze=x=>{if(x&&typeof x==='object'){Object.values(x).forEach(freeze);Object.freeze(x);}return x;};
+ const integer=(x,lo,hi)=>Number.isSafeInteger(x)&&x>=lo&&x<=hi;
+ const norm2=(a,b)=>a.reduce((n,v,i)=>n+(v-b[i])**2,0);
+ const projection=s=>[s.frame,s.g900];
+ const equal=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
+ function rotate(p,axis){return axis===0?[p[1],p[2],p[0]]:axis===1?p.slice():[p[2],p[0],p[1]];}
+ function segmentNearest(p,a,b){const d=b.map((v,i)=>v-a[i]),len=d.reduce((s,x)=>s+x*x,0);const t=len?Math.max(0,Math.min(1,d.reduce((s,x,i)=>s+x*(p[i]-a[i]),0)/len)):0;const point=a.map((x,i)=>x+t*d[i]);return {d2:norm2(p,point),t,point};}
+ class Model {
+  constructor(data,metadata,Native,History){
+   this.native=Native;this.g=Native.topology(data);this.history=new History.Model(data,metadata);
+   this.cycles=this.history.cycles;this.records=[];this.pathCache=null;this.pathMerge=null;
+   this.edges=new Set(this.g.edges.map(([a,b])=>Math.min(a,b)*9000+Math.max(a,b)));
+  }
+  tuple(state){return this.history.at(state);}
+  next(state,count=1){if(!integer(state,0,8999)||!integer(count,0,Number.MAX_SAFE_INTEGER))throw Error('Invalid native continuation.');let v=state;for(let i=0;i<count%20;i++)v=this.g.F[v];return v;}
+  monitor(cycle,steps,offset){return this.history.snapshot(cycle,steps,offset);}
+  validate(c){
+   if(!c||!integer(c.steps,0,Number.MAX_SAFE_INTEGER)||!Number.isFinite(c.merge)||c.merge<0||c.merge>100||!Number.isFinite(c.epsilon)||c.epsilon<.001||c.epsilon>.2)throw Error('Invalid encounter scan.');
+   if(!Array.isArray(c.planes)||c.planes.length!==3||c.planes.some(p=>!p||typeof p.visible!=='boolean'||!integer(p.offset,0,19)||!Number.isFinite(p.opacity)||p.opacity<0||p.opacity>1))throw Error('Invalid field presentation.');
+   if(!['spatial','projection','envelope'].includes(c.kind))throw Error('Unknown detector.');
+   if(c.kind==='projection'&&(!Array.isArray(c.projection)||c.projection.length!==2||c.projection.some(r=>!Array.isArray(r)||r.length!==3||r.some(x=>!Number.isFinite(x)))||c.projection.some(r=>Math.abs(norm2(r,[0,0,0])-1)>1e-9)||Math.abs(c.projection[0].reduce((s,x,i)=>s+x*c.projection[1][i],0))>1e-9))throw Error('Projection must have two orthonormal rows.');
+   return c;
+  }
+  point(cycle,stage,axis,merge){return rotate(this.native.splitPoint(cycle,stage,undefined,merge),axis);}
+  endpoint(cycle,stage,axis,merge){const state=this.cycles[cycle][stage];return {copy:names[axis],axis,cycle,stage,state,tuple:this.tuple(state),next:this.tuple(this.g.F[state]),point:this.point(cycle,stage,axis,merge)};}
+  classify(a,b){return {sameCarrierAdjacency:this.edges.has(Math.min(a,b)*9000+Math.max(a,b)),sharedRegisteredLabel:a===b,crossCopyNativeEdge:false,provenInteraction:false};}
+  scan(config){
+   const c=clone(this.validate(config));if(c.kind==='envelope')throw Error('Use envelope() for full-cycle sampling.');
+   const points=c.planes.map((p,axis)=>p.visible&&p.opacity>0?this.cycles.map((_,cycle)=>this.endpoint(cycle,(c.steps%20+p.offset)%20,axis,c.merge)):[]);
+   const project=p=>c.projection.map(r=>r.reduce((n,v,i)=>n+v*p[i],0));
+   const coords=points.map(ps=>ps.map(p=>c.kind==='projection'?project(p.point):p.point));
+   const candidates=[];const lim=c.epsilon**2;
+   for(let i=0;i<3;i++)for(let j=i+1;j<3;j++)for(let a=0;a<points[i].length;a++)for(let b=0;b<points[j].length;b++){
+    const d2=norm2(coords[i][a],coords[j][b]);if(d2>lim)continue;
+    const x=points[i][a],y=points[j][b];candidates.push({id:`${i}:${a}:${j}:${b}`,distance:Math.sqrt(d2),spatialDistance:Math.sqrt(norm2(x.point,y.point)),kind:c.kind,status:'Visualization',endpoints:[x,y],...this.classify(x.state,y.state)});
+   }
+   candidates.sort((a,b)=>a.distance-b.distance||a.id.localeCompare(b.id));
+   return freeze({schema:'orthogonal-encounter-scan-1',criterion:c.kind==='spatial'?'Euclidean distance between completed-step chart vertices <= epsilon':'Distance in the stored orthonormal 2D camera projection <= epsilon; depth discarded',config:c,count:candidates.length,retained:Math.min(candidates.length,200),truncated:candidates.length>200,candidates:candidates.slice(0,200),couplingEvents:0});
+  }
+  paths(merge){if(this.pathMerge!==merge){this.pathCache=this.cycles.map((c,i)=>c.map((_,k)=>this.native.path(i,k,merge)));this.pathMerge=merge;}return this.pathCache;}
+  envelope(config,Inverse,cellIndex=0){
+   const c=clone(this.validate(config));if(c.kind!=='envelope'||!integer(cellIndex,0,124999))throw Error('Invalid envelope selection.');
+   if(!c.planes.every(p=>p.visible&&p.opacity>0))return freeze({schema:'orthogonal-encounter-scan-1',config:c,count:0,candidates:[],retained:0,truncated:false,couplingEvents:0,criterion:'All three visible full-cycle envelopes required.'});
+   const paths=this.paths(c.merge),grid=new Inverse().build(paths,c.epsilon);const cell=grid.cells[Math.min(cellIndex,Math.max(0,grid.count-1))];
+   const candidates=[];
+   if(cell){const endpoints=[];for(let axis=0;axis<3;axis++){
+    let best=null;
+    for(let cycle=0;cycle<450;cycle++)for(let stage=0;stage<20;stage++){
+     const path=paths[cycle][stage];for(let seg=1;seg<path.points.length;seg++){
+      const a=rotate(path.points[seg-1],axis),b=rotate(path.points[seg],axis),near=segmentNearest(cell.point,a,b);
+      if(!best||near.d2<best.d2)best={...this.endpoint(cycle,stage,axis,c.merge),point:near.point,d2:near.d2,distance:Math.sqrt(near.d2),segment:seg-1,segmentFraction:near.t,intervalEnd:this.tuple(this.g.F[this.cycles[cycle][stage]])};
+     }
+    }endpoints.push(best);
+   }
+   candidates.push({id:`cell:${cell.id}`,kind:'envelope',status:'Visualization',point:cell.point,cellId:cell.id,cellIndex:Math.min(cellIndex,grid.count-1),distance:Math.max(...endpoints.map(e=>e.distance)),endpoints,pairRelations:[[0,1],[0,2],[1,2]].map(([a,b])=>({copies:names[a]+names[b],...this.classify(endpoints[a].state,endpoints[b].state)})),crossCopyNativeEdge:false,provenInteraction:false});}
+   return freeze({schema:'orthogonal-encounter-scan-1',config:c,count:grid.count,retained:candidates.length,truncated:false,grid:{n:50,step:.02,domain:[-.5,.5],volume:grid.volume},criterion:'50^3 grid: sample-centre distance to each full F-polyline envelope <= epsilon. Independent path intervals; not simultaneous contact. No unique native state at interpolated positions.',candidates,couplingEvents:0});
+  }
+  continuePair(a,b,steps){
+   const before=[this.tuple(a),this.tuple(b)],after=[this.tuple(this.next(a,steps)),this.tuple(this.next(b,steps))];
+   return freeze({operator:`F^${steps}`,projection:'pi(state) = (frame, G900 quotient)',before,after,inputProjectionEqual:equal(projection(before[0]),projection(before[1])),registeredStatesDiffer:a!==b,hiddenBitsDiffer:before[0].hiddenBit!==before[1].hiddenBit,outputProjectionEqual:equal(projection(after[0]),projection(after[1])),operationalMemoryEstablished:false,boundary:'Only deterministic F continuations are admitted here. A log, bit difference, or unequal initial quotient does not establish history-caused response.'});
+  }
+  capture(context,candidate=null){
+   const snap=this.monitor(context.selected,context.steps,context.planes[context.copy].offset);
+   const record=freeze({schema:'orthogonal-observation-1',sequence:this.records.length+1,status:'Certified derived',role:'Read-only observation; dynamically ineffective',context:clone(context),state:snap.current,next:this.tuple(this.g.F[snap.current.state]),candidate:candidate?clone(candidate):null});
+   if(this.records.length>=100)throw Error('100-record limit reached. Export before starting a new observation session.');this.records.push(record);return clone(record);
+  }
+  ledger(){return clone(this.records);}
+ }
+ return Object.freeze({Model,projection,rotate,segmentNearest});
+})();
+if(typeof module!=='undefined')module.exports=EncounterLab;
+</script><script>'use strict';
+const EncounterPanel=(()=>{
+ function create({data,metadata,evidence,getContext,controls}){
+  const $=id=>document.getElementById(id),model=new EncounterLab.Model(data,metadata,NativeModel,PairedSheetHistory);
+  let copy=0,kind='spatial',epsilon=.05,experimental=false,scan=null,candidateIndex=0,memory=null,last='';
+  const candidate=()=>scan?.candidates[candidateIndex]??null;
+  const config=()=>{const c=getContext();return {steps:c.steps,merge:c.merge,planes:c.planes.map(p=>({...p})),kind,epsilon,projection:c.projection};};
+  const isCurrent=()=>{if(!scan)return false;const a=scan.config,b=config();return a.kind===b.kind&&a.epsilon===b.epsilon&&a.merge===b.merge&&JSON.stringify(a.planes)===JSON.stringify(b.planes)&&(a.kind==='envelope'||a.steps===b.steps)&&(a.kind!=='projection'||JSON.stringify(a.projection)===JSON.stringify(b.projection));};
+  const scanStatus=()=>{if(scan)$('labScanStatus').textContent=`${scan.count.toLocaleString()} ${scan.config.kind==='envelope'?'shared grid cells':'candidate pairs'} · ${scan.retained} inspected${scan.truncated?' (nearest 200 retained)':''} · captured F ${scan.config.steps%20}. ${isCurrent()?'Current scan.':'Stored snapshot; rescan for current controls.'}`;};
+  for(const [id,name]of [['labMerge','merge'],['labEdges','edges'],['labVertices','vertices']])$(id).oninput=e=>controls.display(name,+e.target.value);
+  const download=(value,name)=>{const u=URL.createObjectURL(new Blob([JSON.stringify(value,null,2)],{type:'application/json'})),a=document.createElement('a');a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),1000);};
+  const formatTuple=v=>`native ${v.state} · frame ${v.frame} · G1800 ${v.pairedState}\nπ = (${v.frame}, ${v.g900}) · G15 pair (${v.basePair.join(', ')})\nrelative ${PairedSheetHistory.names[v.relativeSheet]} [${v.relativeSheet}] · hidden ${v.hiddenBit}`;
+  for(let i=0;i<3;i++){
+   const label=document.createElement('label');label.className=['x','y','z'][i];label.innerHTML=`<input id="labVisible${i}" type="checkbox" checked aria-label="Show ${['X','Y','Z'][i]} in Encounter Lab"> ${['X','Y','Z'][i]} · phase F <input id="labPhase${i}" type="number" min="0" max="19" value="0" aria-label="${['X','Y','Z'][i]} phase">`;$('labPhases').append(label);
+   $('labVisible'+i).onchange=e=>controls.plane(i,{visible:e.target.checked});
+   $('labPhase'+i).oninput=e=>{const v=Number(e.target.value);if(e.target.value!==''&&Number.isInteger(v)&&v>=0&&v<20)controls.plane(i,{offset:v});};
+   $('labPhase'+i).onchange=e=>{const v=Number(e.target.value);if(Number.isInteger(v)&&v>=0&&v<20)controls.plane(i,{offset:v});else e.target.value=getContext().planes[i].offset;};
+  }
+  function update(){
+   const c=getContext();if(c.mode!=='encounter')return;
+   const key=JSON.stringify([c.steps,c.selected,c.planes,c.merge,c.edgeOpacity,c.vertexOpacity,c.projection,copy,kind,epsilon]);if(key===last)return;last=key;scanStatus();
+   for(const[id,value]of [['labMerge',c.merge],['labEdges',c.edgeOpacity*100],['labVertices',c.vertexOpacity*100]])if(document.activeElement!==$(id))$(id).value=value;
+   const s=model.monitor(c.selected,c.steps,c.planes[copy].offset),v=s.current;
+   if(document.activeElement!==$('labCycle'))$('labCycle').value=c.selected+1;
+   c.planes.forEach((p,i)=>{$('labVisible'+i).checked=p.visible;if(document.activeElement!==$('labPhase'+i))$('labPhase'+i).value=p.offset;});
+   $('labNative').textContent=`Clock: ${s.steps} completed steps · F ${s.phase}\nCopy ${['X','Y','Z'][copy]}: F ${(s.phase+s.offset)%20} · reference F ${s.offset}\n${formatTuple(v)}\nChart XYZ: ${model.point(c.selected,(s.phase+s.offset)%20,copy,c.merge).map(x=>x.toFixed(6)).join(', ')}\nNext F: ${model.next(v.state)}`;
+   $('labReturn').textContent=!s.started?'Reference state · no return yet':s.nativeReturned?'Full registered return':s.relativeReturned?'Partial return · π restored, hidden bit flipped':'Native transport in progress';
+  }
+  function showCandidate(){
+   const item=candidate();if(!item){$('labCandidateInfo').textContent='No candidates at this criterion. Native coupling events: 0.';return;}
+   const lines=[`${item.kind} · ${item.id}`,`Distance ${item.distance.toPrecision(7)} chart units`];
+   if(item.spatialDistance!==undefined)lines.push(`3D separation ${item.spatialDistance.toPrecision(7)}`);
+   for(const p of item.endpoints)lines.push(`\n${p.copy} · cycle ${p.cycle+1} · F ${p.stage}\n${formatTuple(p.tuple)}\nNext F native ${p.next.state}${p.intervalEnd?`\nSegment ${p.segment} fraction ${p.segmentFraction.toFixed(6)}\nInterval endpoints ${p.state} → ${p.intervalEnd.state}`:''}`);
+   for(const r of item.pairRelations??[item])lines.push(`\n${r.copies??'Pair'} same-carrier adjacency: ${r.sameCarrierAdjacency?'yes':'no'}\nShared registered label: ${r.sharedRegisteredLabel?'yes':'no'}`);
+   lines.push('\nCross-copy native edge: no\nProven interaction: no\nNative coupling events: 0');$('labCandidateInfo').textContent=lines.join('\n');controls.dirty();
+  }
+  function runScan(){
+   controls.pause();kind=$('labKind').value;epsilon=Number($('labEpsilon').value);
+   try{
+    const c=config();scan=kind==='envelope'?model.envelope(c,InverseVolume,Number($('labCell').value)-1):model.scan(c);candidateIndex=0;
+    const frag=document.createDocumentFragment();scan.candidates.forEach((p,i)=>{const o=document.createElement('option');o.value=i;o.textContent=`${i+1}. ${p.id} · d ${p.distance.toFixed(5)}`;frag.append(o);});$('labCandidate').replaceChildren(frag);$('labCandidate').disabled=!scan.candidates.length;
+    $('labScanStatus').textContent=`${scan.count.toLocaleString()} ${kind==='envelope'?'shared grid cells':'candidate pairs'} · ${scan.retained} inspected${scan.truncated?' (nearest 200 retained)':''} · captured F ${scan.config.steps%20}. Scan again after changing controls.`;
+    $('labCriterion').textContent=scan.criterion;if(scan.candidates[0]?.cellIndex!==undefined)$('labCell').value=scan.candidates[0].cellIndex+1;showCandidate();
+   }catch(e){controls.notice(e.message);$('labScanStatus').textContent=e.message;}
+  }
+  function renderMemory(){
+   $('labMemory').textContent=`${memory.operator} on both native inputs\nπ equal before: ${memory.inputProjectionEqual}\nRegistered state differs: ${memory.registeredStatesDiffer}\nHidden bits differ: ${memory.hiddenBitsDiffer}\nπ equal afterwards: ${memory.outputProjectionEqual}\nBefore: ${memory.before.map(x=>x.state).join(' / ')}\nAfter: ${memory.after.map(x=>x.state).join(' / ')}\nOperational memory established: no\n${memory.boundary}`;
+  }
+  function continuation(){const n=Number($('labContinuation').value);if(!Number.isInteger(n)||n<0||n>19)throw Error('Choose continuation 0–19.');return n;}
+  $('labScan').onclick=runScan;$('labCandidate').onchange=e=>{candidateIndex=+e.target.value;showCandidate();};
+  $('labKind').onchange=e=>{kind=e.target.value;$('labCellLabel').hidden=kind!=='envelope';controls.dirty();};
+  $('labEpsilon').onchange=e=>{const n=Number(e.target.value);if(Number.isFinite(n)&&n>=.001&&n<=.2)epsilon=n;else e.target.value=epsilon;controls.dirty();};
+  $('labCopy').onchange=e=>{copy=+e.target.value;last='';update();};
+  $('labCycle').onchange=e=>{const n=Math.max(1,Math.min(450,Math.round(Number(e.target.value)||1)));controls.selectCycle(n-1);last='';update();};
+  $('labStep').onclick=()=>{controls.step();update();};$('labClose').onclick=()=>controls.close();
+  $('labRecord').onclick=()=>{try{
+   const c=getContext(),item=candidate();const r=model.capture({...c,copy},item?{scanConfig:scan.config,selected:item}:null);
+   const values=[$('labRecordA').value,$('labRecordB').value];
+   for(const id of ['labRecordA','labRecordB']){const o=document.createElement('option');o.value=r.sequence-1;o.textContent=`#${r.sequence} · ${r.state.state}`;$(id).append(o);}
+   $('labRecordA').value=values[0]||'0';$('labRecordB').value=r.sequence-1;$('labRecordStatus').textContent=`${r.sequence} observations · log never feeds evolution${item&&!isCurrent()?' · candidate retained from an earlier scan':''}`;
+  }catch(e){controls.notice(e.message);}};
+  $('labCompare').onclick=()=>{try{const records=model.ledger(),a=records[+$('labRecordA').value],b=records[+$('labRecordB').value];if(!a||!b)throw Error('Record two states first.');memory=model.continuePair(a.state.state,b.state.state,continuation());renderMemory();}catch(e){controls.notice(e.message);}};
+  $('labF10').onclick=()=>{try{const c=getContext(),a=model.monitor(c.selected,c.steps,c.planes[copy].offset).current.state;memory=model.continuePair(a,model.next(a,10),continuation());renderMemory();}catch(e){controls.notice(e.message);}};
+  $('labExperimental').onchange=e=>{experimental=e.target.checked;$('labExperimentNote').hidden=!experimental;$('labCoupling').textContent='No native coupling law admitted.';};
+  const claims=Object.values(evidence);for(const [i,claim]of claims.entries()){const o=document.createElement('option');o.value=i;o.textContent=claim.audit;$('labEvidence').append(o);}
+  function showEvidence(){const claim=claims[+$('labEvidence').value||0];$('labEvidenceInfo').textContent=JSON.stringify(claim,null,2);$('labEvidenceLink').href=`https://github.com/rookinc/aletheos-ai/tree/thalean-orthogonal-encounter-v12/thalean-orthogonal-deployment/source/provenance/encounter-001`;}
+  $('labEvidence').onchange=showEvidence;showEvidence();$('labBridgeStatus').textContent='Read the bridge audit for recovered generators, replay results and the missing map. Display reversal is not a complex SU(6) operator.';
+  const settings=()=>({copy,kind,epsilon,experimental});
+  function apply(s){copy=s?.copy??0;kind=s?.kind??'spatial';epsilon=s?.epsilon??.05;experimental=s?.experimental??false;$('labCopy').value=copy;$('labKind').value=kind;$('labEpsilon').value=epsilon;$('labExperimental').checked=experimental;$('labExperimentNote').hidden=!experimental;$('labCellLabel').hidden=kind!=='envelope';scan=null;memory=null;candidateIndex=0;last='';$('labScanStatus').textContent='Fresh simulation; scan again. Earlier observations retain their original contexts.';$('labCandidate').replaceChildren();showCandidate();$('labMemory').textContent='No continuation tested for this simulation.';update();}
+  const state=()=>({settings:settings(),scan,observations:model.ledger(),memory,couplingEvents:0});
+  $('labExport').onclick=()=>download({schema:'orthogonal-encounter-replay-1',...state(),evidence},'Orthogonal_Encounter_Replay.json');
+  return {update,settings,apply,state,runScan,markers:()=>isCurrent()?(candidate()?.endpoints.map(p=>p.point)??[]):[]};
+ }
+ return {create};
+})();
 </script><script>'use strict';
 // Proper cyclic rotations: native +Y is the symmetry normal of the Data chart.
 const OrthogonalLayout = Object.freeze({
@@ -298,6 +1628,7 @@ const OrthogonalLayout = Object.freeze({
  let mode='assembly',tolerance=.05,inverseDirty=true,inverseReadyAt=0;
  const inverse=new InverseVolume();
  const historyPanel=PairedHistoryPanel.create({data,getContext:()=>({selected,steps:clock.steps,planes,mode,running:clock.running}),controls:{notice:message=>notice(message,6000),play:()=>$('play').onclick(),step:()=>$('step').onclick(),reset:()=>$('reset').onclick(),selectCycle:index=>{$('selected').value=index+1;$('selected').onchange({target:$('selected')});}}});
+ const encounterPanel=EncounterPanel.create({data,metadata:JSON.parse($('pairedHistoryData').textContent),evidence:JSON.parse($('encounterEvidence').textContent),getContext:()=>({selected,steps:clock.steps,planes,mode,merge,edgeOpacity,vertexOpacity,projection:[0,1].map(j=>[[1,0,0],[0,1,0],[0,0,1]].map(v=>camera.rotate(v)[j]))}),controls:{notice,display:(name,value)=>{$(name).value=value;$(name).oninput({target:$(name)});},dirty:()=>setDirty(false),pause:()=>{setPlay(false);clock.fraction=0;dirty=true;},step:()=>$('step').onclick(),close:()=>setMode('assembly'),selectCycle:index=>{$('selected').value=index+1;$('selected').onchange({target:$('selected')});},plane:(i,changes)=>{Object.assign(planes[i],changes);$('phase'+i).value=planes[i].offset;$('phaseValue'+i).textContent=`${planes[i].offset*18}° · ${planes[i].offset} steps`;updatePlanes();}}});
  const transportColors={interior:'#f2bd71',exterior:'#62dcea',turn:'#bd9ae9'};
  const setDirty=(back=true)=>{dirty=true;if(back)backgroundDirty=true;};
  function notice(message,ms=4200){$('notice').textContent=message;$('notice').hidden=false;clearTimeout(noticeTimer);noticeTimer=setTimeout(()=>$('notice').hidden=true,ms);}
@@ -337,9 +1668,9 @@ const OrthogonalLayout = Object.freeze({
   g.globalAlpha=.6;g.fillStyle='#d8e5ed';g.beginPath();g.arc(o[0],o[1],1.7,0,Math.PI*2);g.fill();g.globalAlpha=1;
  }
  function setMode(next){
-  mode=next;const active=mode==='inverse';document.body.classList.toggle('inverse',active);
-  $('assemblyMode').setAttribute('aria-pressed',String(!active));$('inverseMode').setAttribute('aria-pressed',String(active));
-  $('inverseControls').hidden=!active;$('inverseGuide').hidden=!active;$('modeLabel').textContent=active?'X ∩ Y ∩ Z':'ONE ORIGIN';
+  mode=next;const encounter=mode==='encounter';document.body.classList.toggle('encounter',encounter);$('encounterPanel').hidden=!encounter;$('encounterMode').setAttribute('aria-pressed',String(encounter));if(encounter)historyPanel.apply({enabled:false,copy:historyPanel.settings().copy});const active=mode==='inverse';document.body.classList.toggle('inverse',active);
+  $('assemblyMode').setAttribute('aria-pressed',String(mode==='assembly'));$('inverseMode').setAttribute('aria-pressed',String(active));
+  $('inverseControls').hidden=!active;$('inverseGuide').hidden=!active;$('modeLabel').textContent=active?'X ∩ Y ∩ Z':encounter?'READ-ONLY ENCOUNTER LAB':'ONE ORIGIN';
   $('volume').setAttribute('aria-label',active?'Three-way convergence in a central cube. Drag to rotate, pinch to zoom.':'Three orthogonal Thalean charts. Drag to rotate, pinch to zoom.');
   if(!active)$('gains').textContent='PID gains · P 1.4 · I 0.12 · D 4';
   lastMetric=-Infinity;updatePlanes();layout();setDirty();
@@ -381,12 +1712,14 @@ const OrthogonalLayout = Object.freeze({
   $('empty').hidden=active&&(count>0||inverseDirty);
   $('empty').innerHTML=active?'No shared cells at this tolerance<span>Adjust tolerance or merge to inspect the overlap.</span>':'Three visible copies required<span>Enable X, Y and Z with nonzero opacity.</span>';
  }
+ $('encounterMode').onclick=()=>setMode('encounter');
+ const openHistory=$('historyToggle').onclick;$('historyToggle').onclick=()=>{if(mode==='encounter')setMode('assembly');openHistory();};
  $('assemblyMode').onclick=()=>setMode('assembly');$('inverseMode').onclick=()=>setMode('inverse');
  $('tolerance').oninput=e=>{tolerance=+e.target.value/1000;$('toleranceValue').textContent=tolerance.toFixed(3);inverseDirty=true;inverseReadyAt=performance.now()+100;setDirty();};
  $('cubeFrame').onchange=()=>setDirty();
  function arrow(point,heading,color,size,alpha){const a=project(point),b=project(point.map((x,i)=>x-heading[i])),dx=a[0]-b[0],dy=a[1]-b[1],norm=Math.hypot(dx,dy);if(norm<.01)return;const ux=dx/norm,uy=dy/norm;ctx.globalAlpha=alpha;ctx.fillStyle=color;ctx.strokeStyle='#07121b';ctx.lineWidth=.55;ctx.beginPath();ctx.moveTo(a[0]+ux*size,a[1]+uy*size);ctx.lineTo(a[0]-ux*size-uy*size*.6,a[1]-uy*size+ux*size*.6);ctx.lineTo(a[0]-ux*size+uy*size*.6,a[1]-uy*size-ux*size*.6);ctx.closePath();ctx.fill();ctx.stroke();}
  function draw(now){
-  historyPanel.update();
+  historyPanel.update();encounterPanel.update();
   if(!width||!height)return;
   if(layoutDirty){paths=data.cycles.map((c,i)=>c.map((_,k)=>M.path(i,k,merge)));layoutDirty=false;backgroundDirty=true;inverseDirty=true;}
   if(mode==='inverse'){drawInverse(now);dirty=false;return;}
@@ -398,13 +1731,15 @@ const OrthogonalLayout = Object.freeze({
    if($('showFactors').checked&&$('showSelected').checked&&edgeOpacity>0){const path=new Path2D();for(let i=0;i<sim.g.factorCount;i++){const a=sim.g.from[i],b=sim.g.to[i];if(a===v||b===v)segment(path,L.point(position(a),axis),L.point(position(b),axis));}stroke(ctx,path,colorMode==='plane'?L.colors[axis]:'#c298ff',.55*edgeOpacity*p.opacity,1.1);}
   }
   if(vertexOpacity>0){const markers=[];for(let axis=0;axis<3;axis++){const p=planes[axis];if(!p.visible||p.opacity<=0)continue;for(let c=0;c<450;c++){const loc=M.at(paths[c][(k+p.offset)%20],f),point=L.point(loc.point,axis),heading=L.point(loc.heading,axis);markers.push({c,point,heading,axis,side:M.chartSide(loc.heading),depth:project(point)[2]});}}markers.sort((a,b)=>a.depth-b.depth);
-   const amplitudes=$('showResponse').checked?data.cycles.map(c=>{let a=0,b=0;for(const v of c){a+=sim.closed.x[v]**2;b+=sim.open.x[v]**2;}return [Math.sqrt(a/20),Math.sqrt(b/20)];}):null;
+   const amplitudes=mode!=='encounter'&&$('showResponse').checked?data.cycles.map(c=>{let a=0,b=0;for(const v of c){a+=sim.closed.x[v]**2;b+=sim.open.x[v]**2;}return [Math.sqrt(a/20),Math.sqrt(b/20)];}):null;
    for(const m of markers){const alpha=vertexOpacity*planes[m.axis].opacity;if(amplitudes){const[a,b]=amplitudes[m.c];if(Math.max(a,b)>.001){const q=project(m.point);ctx.globalAlpha=alpha*.35;ctx.strokeStyle='#b1c3d4';ctx.lineWidth=.7;ctx.beginPath();ctx.arc(q[0],q[1],3+Math.min(12,b*45),0,2*Math.PI);ctx.stroke();ctx.fillStyle=L.colors[m.axis];ctx.beginPath();ctx.arc(q[0],q[1],2+Math.min(10,a*45),0,2*Math.PI);ctx.fill();}}
     arrow(m.point,m.heading,m.c===selected?'#f2fbff':colorMode==='plane'?L.colors[m.axis]:transportColors[m.side],m.c===selected?4.5:2.6,alpha);
    }
   }
+  if(mode==='encounter'){for(const p of encounterPanel.markers()){const q=project(p);ctx.globalAlpha=.9;ctx.strokeStyle='#60e3eb';ctx.lineWidth=1.5;ctx.beginPath();ctx.arc(q[0],q[1],7,0,2*Math.PI);ctx.stroke();}}
   ctx.globalAlpha=1;
   if(now-lastMetric>200||!clock.running){const a=sim.closed.metrics(),b=sim.open.metrics();$('cycleReadout').textContent=`${clock.hz.toFixed(2)} Hz · cycle ${clock.cycles} · F ${k} / 20`;$('metric').textContent=`RMS ${a.rms.toFixed(5)} PID / ${b.rms.toFixed(5)} free · Δ ${(a.total-9000).toExponential(1)}`;lastMetric=now;}
+  if(mode==='encounter'){$('cycleReadout').textContent=`Native F ${clock.phaseStep} / 20 · ${clock.steps} completed steps`;$('gains').textContent='Read-only chart observations';$('metric').textContent='No native coupling law admitted.';}
   dirty=false;
  }
  function advance(){sim.step();dirty=true;}
@@ -431,26 +1766,27 @@ const OrthogonalLayout = Object.freeze({
  function openInfo(){if(!$('info').open)$('info').showModal();} $('about').onclick=openInfo;$('credits').onclick=openInfo;$('closeInfo').onclick=()=>$('info').close();
  document.addEventListener('keydown',e=>{if(e.key==='Escape'){setDrawer(false);if(document.body.classList.contains('immersive'))setImmersive(false);}if(e.code==='Space'&&(e.target===canvas||e.target===document.body)){e.preventDefault();setPlay(!clock.running);}});
  document.addEventListener('visibilitychange',()=>{if(document.hidden)setPlay(false);});
- function settings(){return {pairedHistory:historyPanel.settings(),schema:'thalean-orthogonal-settings-1',source:'Thalean Graph Explorer v0.34.0',hz:clock.hz,running:clock.running,mode,tolerance,cubeFrame:$('cubeFrame').checked,merge,edgeOpacity,vertexOpacity,selected,colorMode,planes:planes.map(p=>({...p})),flags:Object.fromEntries(flags.map(id=>[id,$(id).checked])),camera:{q:camera.q.slice(),zoom:camera.zoom,pan:[camera.panX/Math.max(1,width),camera.panY/Math.max(1,height)]}};}
+ function settings(){return {encounter:encounterPanel.settings(),pairedHistory:historyPanel.settings(),schema:'thalean-orthogonal-settings-1',source:'Thalean Graph Explorer v0.34.0',hz:clock.hz,running:clock.running,mode,tolerance,cubeFrame:$('cubeFrame').checked,merge,edgeOpacity,vertexOpacity,selected,colorMode,planes:planes.map(p=>({...p})),flags:Object.fromEntries(flags.map(id=>[id,$(id).checked])),camera:{q:camera.q.slice(),zoom:camera.zoom,pan:[camera.panX/Math.max(1,width),camera.panY/Math.max(1,height)]}};}
  function validate(s){
   const num=(n,a,b)=>typeof n==='number'&&Number.isFinite(n)&&n>=a&&n<=b;
   if(!s||s.schema!=='thalean-orthogonal-settings-1')throw Error('Choose a Thalean Orthogonal settings file.');
   if(!num(s.hz,.05,10)||!num(s.merge,0,100)||!num(s.edgeOpacity,0,1)||!num(s.vertexOpacity,0,1)||!Number.isInteger(s.selected)||!num(s.selected,0,449)||typeof s.running!=='boolean'||!['plane','transport'].includes(s.colorMode))throw Error('Invalid display settings.');
-  if((s.mode!==undefined&&!['assembly','inverse'].includes(s.mode))||(s.tolerance!==undefined&&!num(s.tolerance,.01,.12))||(s.cubeFrame!==undefined&&typeof s.cubeFrame!=='boolean'))throw Error('Invalid inverse cube settings.');
+  if((s.mode!==undefined&&!['assembly','inverse','encounter'].includes(s.mode))||(s.tolerance!==undefined&&!num(s.tolerance,.01,.12))||(s.cubeFrame!==undefined&&typeof s.cubeFrame!=='boolean'))throw Error('Invalid inverse cube settings.');
   if(!Array.isArray(s.planes)||s.planes.length!==3||s.planes.some(p=>!p||typeof p.visible!=='boolean'||!num(p.opacity,0,1)||!Number.isInteger(p.offset)||!num(p.offset,0,19)))throw Error('Invalid plane settings.');
   if(!s.flags||flags.some(id=>typeof s.flags[id]!=='boolean'))throw Error('Invalid visibility flags.');
   if(s.pairedHistory!==undefined&&(!s.pairedHistory||typeof s.pairedHistory.enabled!=='boolean'||!Number.isInteger(s.pairedHistory.copy)||s.pairedHistory.copy<0||s.pairedHistory.copy>2))throw Error('Invalid paired history settings.');
+  if(s.encounter!==undefined){const e=s.encounter;if(!e||!Number.isInteger(e.copy)||!num(e.copy,0,2)||!['spatial','projection','envelope'].includes(e.kind)||!num(e.epsilon,.001,.2)||typeof e.experimental!=='boolean')throw Error('Invalid Encounter Lab settings.');}
   const c=s.camera;if(!c||!Array.isArray(c.q)||c.q.length!==4||c.q.some(v=>!num(v,-1,1))||Math.abs(Math.hypot(...c.q)-1)>1e-5||!num(c.zoom,1e-4,1e4)||!Array.isArray(c.pan)||c.pan.length!==2||c.pan.some(v=>!Number.isFinite(v)))throw Error('Invalid camera settings.');
   return s;
  }
  function applySettings(s){validate(s);tolerance=s.tolerance??.05;$('tolerance').value=tolerance*1000;$('toleranceValue').textContent=tolerance.toFixed(3);$('cubeFrame').checked=s.cubeFrame??true;inverseDirty=true;inverseReadyAt=0;setMode(s.mode??'assembly');setPlay(false);sim.reset();clock.reset(performance.now());clock.hz=s.hz;merge=s.merge;edgeOpacity=s.edgeOpacity;vertexOpacity=s.vertexOpacity;selected=s.selected;colorMode=s.colorMode;planes.forEach((p,i)=>Object.assign(p,s.planes[i]));flags.forEach(id=>$(id).checked=s.flags[id]);camera.q=s.camera.q.slice();camera.zoom=s.camera.zoom;camera.panX=s.camera.pan[0]*width;camera.panY=s.camera.pan[1]*height;priorView='custom';updateViews();
-  $('hz').value=M.hzPosition(s.hz);$('hzValue').textContent=s.hz.toFixed(2)+' Hz';$('hz').setAttribute('aria-valuetext',s.hz+' hertz');for(const [id,n]of [['edges',edgeOpacity*100],['vertices',vertexOpacity*100],['merge',merge]]){$(id).value=n;$(id+'Value').textContent=n+'%';}$('selected').value=selected+1;$('colorMode').value=colorMode;planes.forEach((p,i)=>{$('opacity'+i).value=p.opacity*100;$('opacityValue'+i).textContent=Math.round(p.opacity*100)+'%';$('phase'+i).value=p.offset;$('phaseValue'+i).textContent=`${p.offset*18}° · ${p.offset} steps`;});updatePlanes();layoutDirty=true;setPlay(s.running);historyPanel.apply(s.pairedHistory);notice('Settings loaded · fresh simulation started.');}
+  $('hz').value=M.hzPosition(s.hz);$('hzValue').textContent=s.hz.toFixed(2)+' Hz';$('hz').setAttribute('aria-valuetext',s.hz+' hertz');for(const [id,n]of [['edges',edgeOpacity*100],['vertices',vertexOpacity*100],['merge',merge]]){$(id).value=n;$(id+'Value').textContent=n+'%';}$('selected').value=selected+1;$('colorMode').value=colorMode;planes.forEach((p,i)=>{$('opacity'+i).value=p.opacity*100;$('opacityValue'+i).textContent=Math.round(p.opacity*100)+'%';$('phase'+i).value=p.offset;$('phaseValue'+i).textContent=`${p.offset*18}° · ${p.offset} steps`;});updatePlanes();layoutDirty=true;setPlay(s.running);historyPanel.apply(s.mode==='encounter'?{enabled:false,copy:s.pairedHistory?.copy??0}:s.pairedHistory);encounterPanel.apply(s.encounter);notice('Settings loaded · fresh simulation started.');}
  $('save').onclick=()=>{const url=URL.createObjectURL(new Blob([JSON.stringify(settings(),null,2)],{type:'application/json'})),a=document.createElement('a');a.href=url;a.download='Thalean_Orthogonal_Settings.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);notice('Settings saved.');};
  $('load').onclick=()=>{$('file').value='';$('file').click();};$('file').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{if(f.size>1024*1024)throw Error('Settings file is too large (1 MB maximum).');applySettings(JSON.parse(await f.text()));}catch(error){notice(error instanceof SyntaxError?'Invalid JSON; settings unchanged.':error.message,6000);}finally{$('file').value='';}};
  $('inverseSave').onclick=()=>$('save').click();$('inverseLoad').onclick=()=>$('load').click();
  $('audit').textContent=`Verified: ${sim.g.n.toLocaleString()} states, ${sim.g.edges.length.toLocaleString()} edges, degree 10, 450 disjoint F cycles of length 20. Three proper rotations with mutually perpendicular normals. No cross-copy edges.`;
- window.orthogonalObservatory={settings,validate,applySettings,getPairedHistory:()=>historyPanel.getState(),getState:()=>({mode,inverse:{count:inverse.count,tolerance,volume:inverse.volume},steps:clock.steps,phase:clock.phaseStep,running:clock.running,geometry:{states:sim.g.n,edges:sim.g.edges.length,cycles:data.cycles.length},planes:planes.map(p=>({...p})),size:[width,height],metrics:sim.closed.metrics()}),draw:()=>{setDirty();draw(performance.now());}};
- view('oblique');setMode(location.hash==='#inverse'?'inverse':'assembly');updatePlanes();layout();requestAnimationFrame(frame);notice('Drag to rotate · pinch to zoom · tap plane buttons to hide/show',5500);
+ window.orthogonalObservatory={getEncounter:()=>encounterPanel.state(),settings,validate,applySettings,getPairedHistory:()=>historyPanel.getState(),getState:()=>({mode,inverse:{count:inverse.count,tolerance,volume:inverse.volume},steps:clock.steps,phase:clock.phaseStep,running:clock.running,geometry:{states:sim.g.n,edges:sim.g.edges.length,cycles:data.cycles.length},planes:planes.map(p=>({...p})),size:[width,height],metrics:sim.closed.metrics()}),draw:()=>{setDirty();draw(performance.now());}};
+ view('oblique');setMode(location.hash==='#encounter'?'encounter':location.hash==='#inverse'?'inverse':'assembly');updatePlanes();layout();requestAnimationFrame(frame);notice('Drag to rotate · pinch to zoom · tap plane buttons to hide/show',5500);
 })();
 </script>
 </body></html>

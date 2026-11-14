@@ -1,0 +1,1137 @@
+{
+  "source": {
+    "audit": "orthogonal_observatory_source_recovery_001",
+    "status": "Certified derived",
+    "verdict": "REPOSITORY_BASELINE_RECOVERED_LIVE_BYTES_UNVERIFIED",
+    "repository": "rookinc/aletheos-ai",
+    "base_branch": "deploy/thalean-sheet-history-017v",
+    "base_commit": "9a1a659e8f6b1e4d83212271b7840788d1f3aa19",
+    "development_branch": "thalean-orthogonal-encounter-v12",
+    "entry_point": "public_html/observatories/thalean-orthogonal/index.html",
+    "build": "python3 thalean-orthogonal-deployment/source/build.py",
+    "baseline_html_sha256": "ebe248b6724f3e2727004b126b1b78f4bc6abb2670b830a4ce7a8406d573b44f",
+    "input_hashes": {
+      "src/native-data.json": "d070869e90b5d3b34981ae593faf5c635dfa25eb1aedebd504833a7a17f27e11",
+      "src/native-model.js": "1b01d744ce9a461e38390a9d2c6954a1750af0121823bd2ef4282f3b4d430cd3",
+      "src/volume-camera.js": "5d09b81b619d51bd77fbe92af3c4268016cd3366aeed37d4e112292075a80beb",
+      "src/cycle-clock.js": "857316c56d19290ef1e474d0b9752ca0c5cf5b199a8e5972b45dc8108447e610",
+      "src/paired-history.js": "d5addbee20fe17a90c673efd9ccd39d23e44acfc745f5a628f8e111a3818da4a",
+      "src/paired-history-data.json": "e1b4482ff1226735724533a08579eb123ab6dd3ffa399871e806ab9f5bce2bff",
+      "src/inverse-volume.js": "bc7851240eb5d4a90de8076903e36925b3372cf2377a1c8df9cfe0a2a079d401",
+      "src/app.js": "88222ce2fbbcff6bfe8aab377be14984b497fdfab6d235128d1b3e6c0a1c4351",
+      "src/ui.html": "b863cb4fbd64edb2bbffa805aa0cdf585961084aae9c7a422897b15a63a99615",
+      "src/style.css": "61e9f7011e73705a95b7e1b2f8e07e09daa21428457efbf51a2b789eb8c88cc7",
+      "build.py": "b58e25b61f0eb36170912acbed894f2cd6758883804293cff3d5e342a86d3d5b"
+    },
+    "live_retrieval": {
+      "url": "https://aletheos.ai/observatories/thalean-orthogonal/",
+      "result": "HTTP 406; web fetch also unavailable",
+      "discrepancy": "Cannot compare deployed bytes; no observed mismatch claimed."
+    },
+    "research_root": "~/dev/cori/research/mathematics/ is absent in this environment. Connected repository and preserved audit packages used.",
+    "baseline_sources": {
+      "rendering": "src/app.js + src/volume-camera.js",
+      "graph_and_F": "src/native-data.json + src/native-model.js",
+      "history": "src/paired-history.js + src/paired-history-data.json, generator scripts/generate-paired-history.py",
+      "inverse_cube": "src/inverse-volume.js",
+      "save_load": "src/app.js schema thalean-orthogonal-settings-1; load resets simulation",
+      "deployment": "paired-sheet-history-017v/deploy.sh + server.sh; owner SSH alias gurtiamy; no automatic branch deployment found"
+    },
+    "main_branch": "fb155cf9916ab1b4e502dd6d2bffdf7d21a59dfc has no Orthogonal source; development is based on latest recovered deployment branch.",
+    "producer": "python3 scripts/verify-source-recovery.py; node scripts/audit-encounter.cjs",
+    "failures": [
+      "Live HTTP byte attestation unavailable"
+    ],
+    "boundaries": [
+      "A v1.1 label alone does not identify the deployed commit.",
+      "Existing PID Plant is preserved legacy apparatus, not newly certified native physics."
+    ],
+    "existing_tests": [
+      "test.cjs",
+      "test-inverse.cjs",
+      "test-paired-history.cjs",
+      "test-paired-history-panel.cjs"
+    ],
+    "existing_provenance": [
+      "provenance/017v/source_hashes.json",
+      "provenance/017v/native.json",
+      "provenance/017v/017o.json",
+      "provenance/017v/017s.json",
+      "provenance/017v/implementation_audit.json",
+      "provenance/017w-route-selection/sources.json"
+    ]
+  },
+  "baseline": {
+    "audit": "orthogonal_observatory_native_baseline_001",
+    "producer": "node scripts/audit-encounter.cjs",
+    "input_provenance": {
+      "repository": "rookinc/aletheos-ai",
+      "base_commit": "9a1a659e8f6b1e4d83212271b7840788d1f3aa19",
+      "native_data_sha256": "d070869e90b5d3b34981ae593faf5c635dfa25eb1aedebd504833a7a17f27e11",
+      "paired_history_sha256": "e1b4482ff1226735724533a08579eb123ab6dd3ffa399871e806ab9f5bce2bff"
+    },
+    "status": "Certified derived",
+    "verdict": "PASS",
+    "state_count": 9000,
+    "undirected_edge_count": 45000,
+    "degree": 10,
+    "F_cycles": 450,
+    "F_period": 20,
+    "copy_semantics": "One native simulation; three proper display rotations with independent visibility/opacity/phase. No cross-copy edges or independent new organisms.",
+    "state_tuple": [
+      "frame mod5",
+      "ordered G15 pair (u,v)",
+      "relative V4 label r in 0..3",
+      "hidden bit h"
+    ],
+    "transformation": "F(f,u,v,r,h)=(f+1 mod5,v,u,r XOR3,h XOR(r>>1))",
+    "return_scope": {
+      "states_tested": 9000,
+      "F10": "(frame,G900) returns and hidden bit flips for every state",
+      "F20": "Full registered-state return; exact least period20 for every state",
+      "chart_positions_equal_at_F10_at_merge0": 0
+    },
+    "failures": [],
+    "boundaries": [
+      "The native quotient projection is not the arbitrary torus/split rendering.",
+      "The inherited PID simulation has continuous x,v,I and imposed gains. It is preserved, not certified as native physical dynamics."
+    ]
+  },
+  "detector": {
+    "audit": "orthogonal_encounter_detector_001",
+    "producer": "node scripts/audit-encounter.cjs",
+    "input_provenance": {
+      "repository": "rookinc/aletheos-ai",
+      "base_commit": "9a1a659e8f6b1e4d83212271b7840788d1f3aa19",
+      "native_data_sha256": "d070869e90b5d3b34981ae593faf5c635dfa25eb1aedebd504833a7a17f27e11",
+      "paired_history_sha256": "e1b4482ff1226735724533a08579eb123ab6dd3ffa399871e806ab9f5bce2bff"
+    },
+    "status": "Visualization",
+    "verdict": "PASS",
+    "criteria": {
+      "spatial": "Completed-step chart vertices; Euclidean distance <= epsilon",
+      "projection": "Stored orthonormal camera projection; projected distance <= epsilon with depth discarded",
+      "envelope": "Existing50^3 grid in[-.5,.5]^3; distance to each full-cycle source polyline <= epsilon"
+    },
+    "default_spatial_count": 21,
+    "default_projection_count": 430,
+    "default_envelope_cells": 1592,
+    "scan_result_cap": 200,
+    "example": {
+      "id": "0:254:2:309",
+      "distance": 0.022730412219303265,
+      "spatialDistance": 0.022730412219303265,
+      "kind": "spatial",
+      "status": "Visualization",
+      "endpoints": [
+        {
+          "copy": "X",
+          "axis": 0,
+          "cycle": 254,
+          "stage": 0,
+          "state": 616,
+          "tuple": {
+            "state": 616,
+            "frame": 0,
+            "pairedState": 616,
+            "g900": 316,
+            "basePair": [
+              8,
+              6
+            ],
+            "relativeSheet": 0,
+            "hiddenBit": 0
+          },
+          "next": {
+            "state": 3551,
+            "frame": 1,
+            "pairedState": 1751,
+            "g900": 579,
+            "basePair": [
+              6,
+              8
+            ],
+            "relativeSheet": 3,
+            "hiddenBit": 0
+          },
+          "point": [
+            -0.6936412154800928,
+            -0.30575192402578294,
+            -0.713372686620683
+          ]
+        },
+        {
+          "copy": "Z",
+          "axis": 2,
+          "cycle": 309,
+          "stage": 0,
+          "state": 702,
+          "tuple": {
+            "state": 702,
+            "frame": 0,
+            "pairedState": 702,
+            "g900": 402,
+            "basePair": [
+              13,
+              14
+            ],
+            "relativeSheet": 3,
+            "hiddenBit": 1
+          },
+          "next": {
+            "state": 2772,
+            "frame": 1,
+            "pairedState": 972,
+            "g900": 612,
+            "basePair": [
+              14,
+              13
+            ],
+            "relativeSheet": 0,
+            "hiddenBit": 0
+          },
+          "point": [
+            -0.7139547511510651,
+            -0.3001189424003241,
+            -0.7048696620875635
+          ]
+        }
+      ],
+      "sameCarrierAdjacency": false,
+      "sharedRegisteredLabel": false,
+      "crossCopyNativeEdge": false,
+      "provenInteraction": false
+    },
+    "envelope_example": {
+      "id": "cell:51938",
+      "kind": "envelope",
+      "status": "Visualization",
+      "point": [
+        -0.08999999999999997,
+        0.27,
+        0.27
+      ],
+      "cellId": 51938,
+      "cellIndex": 795,
+      "distance": 0.04872890815474982,
+      "endpoints": [
+        {
+          "copy": "X",
+          "axis": 0,
+          "cycle": 170,
+          "stage": 13,
+          "state": 6080,
+          "tuple": {
+            "state": 6080,
+            "frame": 3,
+            "pairedState": 680,
+            "g900": 380,
+            "basePair": [
+              13,
+              2
+            ],
+            "relativeSheet": 1,
+            "hiddenBit": 0
+          },
+          "next": {
+            "state": 7603,
+            "frame": 4,
+            "pairedState": 403,
+            "g900": 197,
+            "basePair": [
+              2,
+              13
+            ],
+            "relativeSheet": 2,
+            "hiddenBit": 0
+          },
+          "point": [
+            -0.08999999999999986,
+            0.23593215291636682,
+            0.2354721434296618
+          ],
+          "d2": 0.002352791084255663,
+          "distance": 0.04850557786745421,
+          "segment": 6,
+          "segmentFraction": 0.5675,
+          "intervalEnd": {
+            "state": 7603,
+            "frame": 4,
+            "pairedState": 403,
+            "g900": 197,
+            "basePair": [
+              2,
+              13
+            ],
+            "relativeSheet": 2,
+            "hiddenBit": 0
+          }
+        },
+        {
+          "copy": "Y",
+          "axis": 1,
+          "cycle": 385,
+          "stage": 2,
+          "state": 5393,
+          "tuple": {
+            "state": 5393,
+            "frame": 2,
+            "pairedState": 1793,
+            "g900": 567,
+            "basePair": [
+              6,
+              10
+            ],
+            "relativeSheet": 2,
+            "hiddenBit": 0
+          },
+          "next": {
+            "state": 6824,
+            "frame": 3,
+            "pairedState": 1424,
+            "g900": 811,
+            "basePair": [
+              10,
+              6
+            ],
+            "relativeSheet": 1,
+            "hiddenBit": 1
+          },
+          "point": [
+            -0.1051684688347323,
+            0.27,
+            0.3163079263535283
+          ],
+          "d2": 0.0023745064899540432,
+          "distance": 0.04872890815474982,
+          "segment": 2,
+          "segmentFraction": 0.29750000000000004,
+          "intervalEnd": {
+            "state": 6824,
+            "frame": 3,
+            "pairedState": 1424,
+            "g900": 811,
+            "basePair": [
+              10,
+              6
+            ],
+            "relativeSheet": 1,
+            "hiddenBit": 1
+          }
+        },
+        {
+          "copy": "Z",
+          "axis": 2,
+          "cycle": 250,
+          "stage": 11,
+          "state": 2439,
+          "tuple": {
+            "state": 2439,
+            "frame": 1,
+            "pairedState": 639,
+            "g900": 339,
+            "basePair": [
+              8,
+              8
+            ],
+            "relativeSheet": 3,
+            "hiddenBit": 1
+          },
+          "next": {
+            "state": 4211,
+            "frame": 2,
+            "pairedState": 611,
+            "g900": 311,
+            "basePair": [
+              8,
+              8
+            ],
+            "relativeSheet": 0,
+            "hiddenBit": 0
+          },
+          "point": [
+            -0.10547681458767448,
+            0.316205238248117,
+            0.27
+          ],
+          "d2": 0.0023744558313465096,
+          "distance": 0.048728388351622194,
+          "segment": 8,
+          "segmentFraction": 0.2975000000000001,
+          "intervalEnd": {
+            "state": 4211,
+            "frame": 2,
+            "pairedState": 611,
+            "g900": 311,
+            "basePair": [
+              8,
+              8
+            ],
+            "relativeSheet": 0,
+            "hiddenBit": 0
+          }
+        }
+      ],
+      "pairRelations": [
+        {
+          "copies": "XY",
+          "sameCarrierAdjacency": false,
+          "sharedRegisteredLabel": false,
+          "crossCopyNativeEdge": false,
+          "provenInteraction": false
+        },
+        {
+          "copies": "XZ",
+          "sameCarrierAdjacency": false,
+          "sharedRegisteredLabel": false,
+          "crossCopyNativeEdge": false,
+          "provenInteraction": false
+        },
+        {
+          "copies": "YZ",
+          "sameCarrierAdjacency": false,
+          "sharedRegisteredLabel": false,
+          "crossCopyNativeEdge": false,
+          "provenInteraction": false
+        }
+      ],
+      "crossCopyNativeEdge": false,
+      "provenInteraction": false
+    },
+    "negative_controls": "Hidden copies and empty overlap produce no candidates; any overlap yields zero coupling events.",
+    "failures": [],
+    "boundaries": [
+      "All coordinates are chart units.",
+      "Envelope source intervals need not occur simultaneously; interpolants have no native state identity.",
+      "Common-carrier label adjacency is not a cross-copy edge."
+    ]
+  },
+  "witness": {
+    "audit": "orthogonal_registered_witness_001",
+    "producer": "node scripts/audit-encounter.cjs",
+    "input_provenance": {
+      "repository": "rookinc/aletheos-ai",
+      "base_commit": "9a1a659e8f6b1e4d83212271b7840788d1f3aa19",
+      "native_data_sha256": "d070869e90b5d3b34981ae593faf5c635dfa25eb1aedebd504833a7a17f27e11",
+      "paired_history_sha256": "e1b4482ff1226735724533a08579eb123ab6dd3ffa399871e806ab9f5bce2bff"
+    },
+    "status": "Certified derived",
+    "verdict": "PASS_READ_ONLY_LOG",
+    "records": [
+      {
+        "schema": "orthogonal-observation-1",
+        "sequence": 1,
+        "status": "Certified derived",
+        "role": "Read-only observation; dynamically ineffective",
+        "context": {
+          "kind": "spatial",
+          "steps": 0,
+          "merge": 0,
+          "epsilon": 0.05,
+          "planes": [
+            {
+              "visible": true,
+              "offset": 0,
+              "opacity": 1
+            },
+            {
+              "visible": true,
+              "offset": 0,
+              "opacity": 1
+            },
+            {
+              "visible": true,
+              "offset": 0,
+              "opacity": 1
+            }
+          ],
+          "projection": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "selected": 0,
+          "copy": 0
+        },
+        "state": {
+          "state": 0,
+          "frame": 0,
+          "pairedState": 0,
+          "g900": 0,
+          "basePair": [
+            0,
+            0
+          ],
+          "relativeSheet": 0,
+          "hiddenBit": 0
+        },
+        "next": {
+          "state": 2280,
+          "frame": 1,
+          "pairedState": 480,
+          "g900": 8,
+          "basePair": [
+            0,
+            0
+          ],
+          "relativeSheet": 3,
+          "hiddenBit": 0
+        },
+        "candidate": {
+          "scanConfig": {
+            "kind": "spatial",
+            "steps": 0,
+            "merge": 0,
+            "epsilon": 0.05,
+            "planes": [
+              {
+                "visible": true,
+                "offset": 0,
+                "opacity": 1
+              },
+              {
+                "visible": true,
+                "offset": 0,
+                "opacity": 1
+              },
+              {
+                "visible": true,
+                "offset": 0,
+                "opacity": 1
+              }
+            ],
+            "projection": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ]
+            ]
+          },
+          "selected": {
+            "id": "0:254:2:309",
+            "distance": 0.022730412219303265,
+            "spatialDistance": 0.022730412219303265,
+            "kind": "spatial",
+            "status": "Visualization",
+            "endpoints": [
+              {
+                "copy": "X",
+                "axis": 0,
+                "cycle": 254,
+                "stage": 0,
+                "state": 616,
+                "tuple": {
+                  "state": 616,
+                  "frame": 0,
+                  "pairedState": 616,
+                  "g900": 316,
+                  "basePair": [
+                    8,
+                    6
+                  ],
+                  "relativeSheet": 0,
+                  "hiddenBit": 0
+                },
+                "next": {
+                  "state": 3551,
+                  "frame": 1,
+                  "pairedState": 1751,
+                  "g900": 579,
+                  "basePair": [
+                    6,
+                    8
+                  ],
+                  "relativeSheet": 3,
+                  "hiddenBit": 0
+                },
+                "point": [
+                  -0.6936412154800928,
+                  -0.30575192402578294,
+                  -0.713372686620683
+                ]
+              },
+              {
+                "copy": "Z",
+                "axis": 2,
+                "cycle": 309,
+                "stage": 0,
+                "state": 702,
+                "tuple": {
+                  "state": 702,
+                  "frame": 0,
+                  "pairedState": 702,
+                  "g900": 402,
+                  "basePair": [
+                    13,
+                    14
+                  ],
+                  "relativeSheet": 3,
+                  "hiddenBit": 1
+                },
+                "next": {
+                  "state": 2772,
+                  "frame": 1,
+                  "pairedState": 972,
+                  "g900": 612,
+                  "basePair": [
+                    14,
+                    13
+                  ],
+                  "relativeSheet": 0,
+                  "hiddenBit": 0
+                },
+                "point": [
+                  -0.7139547511510651,
+                  -0.3001189424003241,
+                  -0.7048696620875635
+                ]
+              }
+            ],
+            "sameCarrierAdjacency": false,
+            "sharedRegisteredLabel": false,
+            "crossCopyNativeEdge": false,
+            "provenInteraction": false
+          }
+        }
+      },
+      {
+        "schema": "orthogonal-observation-1",
+        "sequence": 2,
+        "status": "Certified derived",
+        "role": "Read-only observation; dynamically ineffective",
+        "context": {
+          "kind": "spatial",
+          "steps": 10,
+          "merge": 0,
+          "epsilon": 0.05,
+          "planes": [
+            {
+              "visible": true,
+              "offset": 0,
+              "opacity": 1
+            },
+            {
+              "visible": true,
+              "offset": 0,
+              "opacity": 1
+            },
+            {
+              "visible": true,
+              "offset": 0,
+              "opacity": 1
+            }
+          ],
+          "projection": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "selected": 0,
+          "copy": 0
+        },
+        "state": {
+          "state": 488,
+          "frame": 0,
+          "pairedState": 488,
+          "g900": 0,
+          "basePair": [
+            0,
+            0
+          ],
+          "relativeSheet": 0,
+          "hiddenBit": 1
+        },
+        "next": {
+          "state": 1808,
+          "frame": 1,
+          "pairedState": 8,
+          "g900": 8,
+          "basePair": [
+            0,
+            0
+          ],
+          "relativeSheet": 3,
+          "hiddenBit": 1
+        },
+        "candidate": null
+      }
+    ],
+    "dynamically_effective_register": false,
+    "log_semantics": "Append-only observations with exact before/next tuples and captured scan context; no feedback into native evolution.",
+    "failures": [],
+    "boundaries": [
+      "Observation sequence number is not native time.",
+      "Equal logs or distinct logs do not prove memory.",
+      "Existing PID integrator I is imposed apparatus, not a new native witness law."
+    ]
+  },
+  "memory": {
+    "audit": "g9000_native_operational_memory_audit_001",
+    "producer": "node scripts/audit-encounter.cjs",
+    "input_provenance": {
+      "repository": "rookinc/aletheos-ai",
+      "base_commit": "9a1a659e8f6b1e4d83212271b7840788d1f3aa19",
+      "native_data_sha256": "d070869e90b5d3b34981ae593faf5c635dfa25eb1aedebd504833a7a17f27e11",
+      "paired_history_sha256": "e1b4482ff1226735724533a08579eb123ab6dd3ffa399871e806ab9f5bce2bff"
+    },
+    "status": "Certified derived",
+    "verdict": "NO_DISTINGUISHING_F_CONTINUATION",
+    "projection": "pi=(frame,G900 quotient), each fiber has two registered states",
+    "state_pairs_tested": 9000,
+    "continuation_tests": 180000,
+    "finite_completeness": "F has order20. Equality for all powers0..19 and quotient compatibility excludes any distinguishing word in F and F^-1.",
+    "minimal_distinguishing_continuation": null,
+    "replay_example": {
+      "operator": "F^1",
+      "projection": "pi(state) = (frame, G900 quotient)",
+      "before": [
+        {
+          "state": 0,
+          "frame": 0,
+          "pairedState": 0,
+          "g900": 0,
+          "basePair": [
+            0,
+            0
+          ],
+          "relativeSheet": 0,
+          "hiddenBit": 0
+        },
+        {
+          "state": 488,
+          "frame": 0,
+          "pairedState": 488,
+          "g900": 0,
+          "basePair": [
+            0,
+            0
+          ],
+          "relativeSheet": 0,
+          "hiddenBit": 1
+        }
+      ],
+      "after": [
+        {
+          "state": 2280,
+          "frame": 1,
+          "pairedState": 480,
+          "g900": 8,
+          "basePair": [
+            0,
+            0
+          ],
+          "relativeSheet": 3,
+          "hiddenBit": 0
+        },
+        {
+          "state": 1808,
+          "frame": 1,
+          "pairedState": 8,
+          "g900": 8,
+          "basePair": [
+            0,
+            0
+          ],
+          "relativeSheet": 3,
+          "hiddenBit": 1
+        }
+      ],
+      "inputProjectionEqual": true,
+      "registeredStatesDiffer": true,
+      "hiddenBitsDiffer": true,
+      "outputProjectionEqual": true,
+      "operationalMemoryEstablished": false,
+      "boundary": "Only deterministic F continuations are admitted here. A log, bit difference, or unequal initial quotient does not establish history-caused response."
+    },
+    "graph_control": "D=F^10 is a graph automorphism; projected neighbor multisets agree on every two-point fiber.",
+    "commutators": {
+      "native": "[F,D]=0 on all9000 labels",
+      "observation": "Let S_C be the diagonal adjacency selector of native C=16 on C^9000. [S_C,D] is nonzero, with support 20. S_C is a readout projector, not a dynamical encounter law.",
+      "encounter_order": "No source-admitted joint encounter operators C1,C2 exist in this observatory. Their dynamical commutator is not defined."
+    },
+    "failures": [],
+    "boundaries": [
+      "This is a no-go for the admitted F continuation family and this projection, not all future native laws.",
+      "A hidden bit can be distinguished by a finer observation; that does not make it dynamically effective memory.",
+      "No persistence or memory theorem is inferred from the external log."
+    ]
+  },
+  "bridge": {
+    "audit": "orthogonal_six_channel_bridge_audit_001",
+    "status": "Unsupported",
+    "verdict": "FIELD_SU6_REPLAYED_DISPLAY_BRIDGE_NOT_ADMITTED",
+    "producer": "python3 scripts/replay-research.py --inputs ARCHIVE_DIRECTORY",
+    "input_provenance": {
+      "SU6_NATIVE_FIELD_INVARIANTS_001_Audit_Package.zip": {
+        "sha256": "138aee043c76030aa6e70ca24e266348f3871566c6afc0ce4d8efd567cf7d187",
+        "library_file_id": "libfile_126e34eb2d38819191d3e115628d9f88"
+      },
+      "G9000_ENCOUNTER_WITNESS_007_Audit_Package.zip": {
+        "sha256": "51188ca5f1358d1cab38d102826cbfc1d3837fd933ae03d929d5e17879c7674f",
+        "library_file_id": "libfile_fde3_f-e8662f8b31a881918fa9a9fdd375ded7_49e008ebf4888191aa3c13bfa6801182"
+      },
+      "SU6_NATIVE_HISTORY_CROSSWALK_001_Audit_Package.zip": {
+        "sha256": "d5d1171b95eca9979418e858295971f0828ea20e0bc081bb842a28161ad9d738",
+        "library_file_id": "libfile_f407dfd5751481918721b3cd83125e2a"
+      }
+    },
+    "field_result": {
+      "construction": "Five coherent native link rotations plus one native relative central phase. Canonical quadratic field generators; no finite-map logarithms.",
+      "faithful_representation": "U tensor I2",
+      "field_real_dimension": 24,
+      "generated_connected_group": "SU(6)",
+      "generated_lie_dimension": 35,
+      "multiplicity_complex_dimension": 6,
+      "seed_count": 6,
+      "seed_names": [
+        "A_0_1",
+        "A_0_2",
+        "A_0_3",
+        "A_0_4",
+        "A_0_5",
+        "D_0_1"
+      ]
+    },
+    "field_scope": {
+      "every_native_finite_symmetry_lies_in_SU6": false,
+      "field_generated_SU6_proved": true,
+      "five_mixing_flows_are_explicit_field_constructions": true,
+      "full_physical_action_SU6_invariance_proved": false,
+      "minimal_number_of_generators_of_abstract_SU6_claimed": false,
+      "native_quadratic_realization_proved": true,
+      "orientation_and_common_registration_inherited": true,
+      "source_selected_inter_face_physical_time_law_recovered": false,
+      "unique_physical_connection_selected": false
+    },
+    "replay_counts": {
+      "SU6_007": 47,
+      "SU6_007_independent": 46,
+      "field_invariants": 38,
+      "field_invariants_independent": 42,
+      "reciprocal_exact": 55,
+      "reciprocal_independent_exact": 22,
+      "reciprocal_numerical_diagnostics": 8
+    },
+    "seven_bridge_tests": [
+      {
+        "test": "Native reversal/orientation",
+        "result": "F^-1 and F^10 exist; no source-selected X+ to X- channel operator identified."
+      },
+      {
+        "test": "Six independent complex channels",
+        "result": "The display supplies three spatial vectors and their negatives, real rank3. No C6 amplitude readout map is defined. This is not a no-go for six abstract channels."
+      },
+      {
+        "test": "Complex structure",
+        "result": "Certified J exists on the inherited24-real field. No induced J on display label space supplied."
+      },
+      {
+        "test": "Hermitian preservation",
+        "result": "All six field seeds and finite flows pass source checks; no display-to-field map to test."
+      },
+      {
+        "test": "Determinant one",
+        "result": "Tracefree complex field seeds generate determinant-one flows. F is an even9000-permutation; that fact alone is unrelated to SU6."
+      },
+      {
+        "test": "Lie algebra dimension35",
+        "result": "Source SU6-007 replayed exactly: five coherent link rotations plus one relative phase. Display rotations do not supply these generators."
+      },
+      {
+        "test": "Intertwining native transport",
+        "result": "No map from observatory states/three embeddings to the source field with compatible operators recovered. Reciprocal base also has the typed-carrier obstruction below."
+      }
+    ],
+    "reciprocal_registration": {
+      "same_named_G60_graph_and_deck": true,
+      "observatory_diagonal_quotient": "a",
+      "reciprocal_diagonal_quotient": "b",
+      "F_label_mismatches": 9000,
+      "shared_indexed_edges": 19500,
+      "observatory_only_edges": 25500,
+      "reciprocal_only_edges": 25500,
+      "horizontal_trace_A10": {
+        "a": 10409947200,
+        "b": 10417204800
+      },
+      "obstruction": "Different horizontal closed-walk counts exclude an isomorphism preserving the horizontal graph. No transplantation of this base experiment into the observatory is admitted. This does not decide arbitrary untyped9000-graph isomorphism or all other registrations.",
+      "numeric_labels": "0,488,7207 are zero-based state addresses in the experiment registration; its coefficients g/J=2/5 and norm ratio10sqrt2 are chosen model parameters."
+    },
+    "history_crosswalk": "Sealed source manifest verified and theorem inspected. Its independently transported registrations and doublet residual are not an observatory coupling; balanced-release parent chain not rerun here.",
+    "replay_receipts": [
+      {
+        "command": [
+          "python3",
+          "verify_manifest.py"
+        ],
+        "exit": 0,
+        "log": "field-manifest.log",
+        "log_sha256": "686a52907cb51617ab6aea02af231cddc09022543afe3f6700bdbcb3ed230463"
+      },
+      {
+        "command": [
+          "python3",
+          "replay.py",
+          "--output",
+          "/tmp/orthogonal-research-mqxj7dz8/field-results"
+        ],
+        "exit": 0,
+        "log": "field-replay.log",
+        "log_sha256": "a69c3080752b1071fc2928f8c248df04dc57f55e3647cff3ed147c96f896e550"
+      },
+      {
+        "command": [
+          "python3",
+          "verify_independently.py",
+          "--results",
+          "/tmp/orthogonal-research-mqxj7dz8/field-results",
+          "--output",
+          "/tmp/orthogonal-research-mqxj7dz8/field-results/independent.json"
+        ],
+        "exit": 0,
+        "log": "field-independent.log",
+        "log_sha256": "a7d4c47d00d37575f44d5a234c195351568ca0a17c9dde2845706b83bcdc58c6"
+      },
+      {
+        "command": [
+          "python3",
+          "verify_manifest.py"
+        ],
+        "exit": 0,
+        "log": "reciprocal-manifest.log",
+        "log_sha256": "f3add81aa1358929d7a3c09eb1b748cc9e7acdac8a800a3a8985edf50c169a95"
+      },
+      {
+        "command": [
+          "python3",
+          "derive.py"
+        ],
+        "exit": 0,
+        "log": "reciprocal-replay.log",
+        "log_sha256": "a9f44be1260af7e7f61cacd0abcec1a588711c63a821e64e521fb75b83e2b290"
+      },
+      {
+        "command": [
+          "python3",
+          "verify_independently.py"
+        ],
+        "exit": 0,
+        "log": "reciprocal-independent.log",
+        "log_sha256": "823a52bf158faf2d0bd2716f2cf4cafb5f3d279f22c1ab8d807cd6285e2d8745"
+      },
+      {
+        "command": [
+          "python3",
+          "verify_manifest.py"
+        ],
+        "exit": 0,
+        "log": "history-manifest.log",
+        "log_sha256": "fd95470406bc9b23e1461c935b8c3b97c201a0371848c3877a74b414a356ea37"
+      }
+    ],
+    "failures": [
+      "No source-derived six-channel observatory intertwiner",
+      "Reciprocal base uses different horizontal quotient"
+    ],
+    "boundaries": [
+      "Six labels do not imply six independent complex amplitudes.",
+      "A full field SU6 generation theorem does not select a physical Hamiltonian, time law or geometric encounter.",
+      "Experimental007 remains unimplemented in the live carrier."
+    ]
+  },
+  "regression": {
+    "audit": "orthogonal_observatory_v12_regression_001",
+    "status": "Certified derived",
+    "verdict": "LOCAL_REGRESSIONS_PASS_PRODUCTION_ATTESTATION_PENDING",
+    "producer": "python3 scripts/run-encounter-regressions.py",
+    "input_provenance": {
+      "repository": "rookinc/aletheos-ai",
+      "base_commit": "9a1a659e8f6b1e4d83212271b7840788d1f3aa19",
+      "baseline_input_hashes": {
+        "src/native-data.json": "d070869e90b5d3b34981ae593faf5c635dfa25eb1aedebd504833a7a17f27e11",
+        "src/native-model.js": "1b01d744ce9a461e38390a9d2c6954a1750af0121823bd2ef4282f3b4d430cd3",
+        "src/volume-camera.js": "5d09b81b619d51bd77fbe92af3c4268016cd3366aeed37d4e112292075a80beb",
+        "src/cycle-clock.js": "857316c56d19290ef1e474d0b9752ca0c5cf5b199a8e5972b45dc8108447e610",
+        "src/paired-history.js": "d5addbee20fe17a90c673efd9ccd39d23e44acfc745f5a628f8e111a3818da4a",
+        "src/paired-history-data.json": "e1b4482ff1226735724533a08579eb123ab6dd3ffa399871e806ab9f5bce2bff",
+        "src/inverse-volume.js": "bc7851240eb5d4a90de8076903e36925b3372cf2377a1c8df9cfe0a2a079d401",
+        "src/app.js": "88222ce2fbbcff6bfe8aab377be14984b497fdfab6d235128d1b3e6c0a1c4351",
+        "src/ui.html": "b863cb4fbd64edb2bbffa805aa0cdf585961084aae9c7a422897b15a63a99615",
+        "src/style.css": "61e9f7011e73705a95b7e1b2f8e07e09daa21428457efbf51a2b789eb8c88cc7",
+        "build.py": "b58e25b61f0eb36170912acbed894f2cd6758883804293cff3d5e342a86d3d5b"
+      },
+      "browser_ui_hashes": {
+        "build.py": "acd976727775ade72065982af70d87569f9fc52f09ca8fc58bc378bc876e3e9d",
+        "src/app.js": "e172652e47a6929897ea046bab0fc800bcc96e3709d293fa27cbcbbb5bea0da4",
+        "src/ui.html": "1764ac72c4fb2650a13b776d37d7f78d7120dbe2d2458f3ce580ed5c9f64f5aa",
+        "src/style.css": "61e9f7011e73705a95b7e1b2f8e07e09daa21428457efbf51a2b789eb8c88cc7",
+        "src/encounter-panel.html": "3f26c28c66d051e2d746d3a98edd7c561818d88dd48e0d6b5f88c29fe97feb74",
+        "src/encounter-panel.js": "001c6af4a8dd72805a2ea4566c055dc90186062d095e216c771b5b471d1307f4",
+        "src/encounter.css": "5f8c357d410eabfaa931485e69a3c97392fcb8d5b7dbd120ad3d8561e01441e8",
+        "src/encounter-model.js": "89206ee8721c62a407c2bdd1b2774018af8b2795a77fff9234043e213151caaa"
+      }
+    },
+    "commands": [
+      {
+        "command": [
+          "python3",
+          "scripts/verify-source-recovery.py"
+        ],
+        "exit": 0,
+        "log": "regression-01.txt"
+      },
+      {
+        "command": [
+          "node",
+          "test.cjs"
+        ],
+        "exit": 0,
+        "log": "regression-02.txt"
+      },
+      {
+        "command": [
+          "node",
+          "test-inverse.cjs"
+        ],
+        "exit": 0,
+        "log": "regression-03.txt"
+      },
+      {
+        "command": [
+          "node",
+          "test-paired-history.cjs"
+        ],
+        "exit": 0,
+        "log": "regression-04.txt"
+      },
+      {
+        "command": [
+          "node",
+          "test-paired-history-panel.cjs"
+        ],
+        "exit": 0,
+        "log": "regression-05.txt"
+      },
+      {
+        "command": [
+          "node",
+          "scripts/audit-encounter.cjs"
+        ],
+        "exit": 0,
+        "log": "regression-06.txt"
+      },
+      {
+        "command": [
+          "node",
+          "test-encounter-app.cjs"
+        ],
+        "exit": 0,
+        "log": "regression-07.txt"
+      },
+      {
+        "command": [
+          "node",
+          "scripts/replay-encounter.cjs",
+          "provenance/encounter-001/example-replay.json"
+        ],
+        "exit": 0,
+        "log": "regression-08.txt"
+      },
+      {
+        "command": [
+          "node",
+          "scripts/replay-encounter.cjs",
+          "provenance/encounter-001/browser-replay.json"
+        ],
+        "exit": 0,
+        "log": "regression-09.txt"
+      },
+      {
+        "command": [
+          "python3",
+          "../encounter-v12/test-deploy.py",
+          "--previous",
+          "../paired-sheet-history-017v/index.html",
+          "--output",
+          "provenance/encounter-001/deployment-checks.json"
+        ],
+        "exit": 0,
+        "log": "regression-10.txt"
+      }
+    ],
+    "native_suite_count": 12,
+    "equal_continuation_tests": 180000,
+    "app_regression": {
+      "pass": true,
+      "checks": 9,
+      "passed": [
+        "app_starts_with_experimental_disabled_and_original_counts",
+        "all_modes_and_history_remain_operable",
+        "phase_independence_and_exact_monitor",
+        "actual_scan_has_no_native_effect",
+        "witness_records_and_equal_continuation",
+        "experimental_inspection_cannot_couple_or_mutate",
+        "actual_settings_round_trip_and_legacy_compatibility",
+        "invalid_settings_are_atomic",
+        "replay_certificate_and_tamper_negative_control"
+      ],
+      "actualApplicationExecuted": true,
+      "browserUsed": false
+    },
+    "deployment_safety_checks": 17,
+    "browser_checks": [
+      "mobile_stale_scan_label",
+      "mobile_independent_phase",
+      "mobile_single_copy_negative_control",
+      "mobile_equal_continuation",
+      "mobile_experimental_isolation",
+      "desktop_browser_settings_roundtrip",
+      "desktop_inverse_mode_1592_cells",
+      "desktop_sheet_history_visible",
+      "desktop_projection_overlap_1143_pairs_depth_distinguished",
+      "mobile_360x740_no_horizontal_overflow",
+      "mobile_390x844_no_horizontal_overflow",
+      "desktop_spatial_21_candidates_zero_coupling",
+      "browser_export_replayed_independently"
+    ],
+    "browser_application_errors": 0,
+    "negative_controls": [
+      "Geometric overlap causes zero coupling events.",
+      "Single visible copy produces no cross-copy candidate.",
+      "Tampered replay and invalid settings are rejected.",
+      "Observation and experimental inspection do not change live Plant trajectories.",
+      "Unknown production page, bad upload and conflicting backup are refused."
+    ],
+    "changed_file_review": "Reviewed app integration, detector definitions, immutable observation records, replay verifier and guarded installer. Native carrier and history producers are hash-identical to baseline.",
+    "failures": [],
+    "production_deployed": false,
+    "release_ready": false,
+    "boundaries": [
+      "Local baseline, model, controller, browser and installer checks passed; this is not live production attestation.",
+      "Browser receipt covers desktop Chrome and 360x740/390x844 viewport layout; physical Android device testing is outstanding.",
+      "Browser interactions were executed through CUA, separately from this command; no fabricated headless-browser pass is asserted.",
+      "HTTP 406 prevented live-source comparison. Owner host access and review of the release diff remain deployment gates.",
+      "Research replay receipts are verified here; use replay-research.py to regenerate them from the pinned source packages."
+    ]
+  }
+}

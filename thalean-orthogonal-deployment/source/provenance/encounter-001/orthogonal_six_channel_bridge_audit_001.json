@@ -1,0 +1,183 @@
+{
+  "audit": "orthogonal_six_channel_bridge_audit_001",
+  "status": "Unsupported",
+  "verdict": "FIELD_SU6_REPLAYED_DISPLAY_BRIDGE_NOT_ADMITTED",
+  "producer": "python3 scripts/replay-research.py --inputs ARCHIVE_DIRECTORY",
+  "input_provenance": {
+    "SU6_NATIVE_FIELD_INVARIANTS_001_Audit_Package.zip": {
+      "sha256": "138aee043c76030aa6e70ca24e266348f3871566c6afc0ce4d8efd567cf7d187",
+      "library_file_id": "libfile_126e34eb2d38819191d3e115628d9f88"
+    },
+    "G9000_ENCOUNTER_WITNESS_007_Audit_Package.zip": {
+      "sha256": "51188ca5f1358d1cab38d102826cbfc1d3837fd933ae03d929d5e17879c7674f",
+      "library_file_id": "libfile_fde3_f-e8662f8b31a881918fa9a9fdd375ded7_49e008ebf4888191aa3c13bfa6801182"
+    },
+    "SU6_NATIVE_HISTORY_CROSSWALK_001_Audit_Package.zip": {
+      "sha256": "d5d1171b95eca9979418e858295971f0828ea20e0bc081bb842a28161ad9d738",
+      "library_file_id": "libfile_f407dfd5751481918721b3cd83125e2a"
+    }
+  },
+  "field_result": {
+    "construction": "Five coherent native link rotations plus one native relative central phase. Canonical quadratic field generators; no finite-map logarithms.",
+    "faithful_representation": "U tensor I2",
+    "field_real_dimension": 24,
+    "generated_connected_group": "SU(6)",
+    "generated_lie_dimension": 35,
+    "multiplicity_complex_dimension": 6,
+    "seed_count": 6,
+    "seed_names": [
+      "A_0_1",
+      "A_0_2",
+      "A_0_3",
+      "A_0_4",
+      "A_0_5",
+      "D_0_1"
+    ]
+  },
+  "field_scope": {
+    "every_native_finite_symmetry_lies_in_SU6": false,
+    "field_generated_SU6_proved": true,
+    "five_mixing_flows_are_explicit_field_constructions": true,
+    "full_physical_action_SU6_invariance_proved": false,
+    "minimal_number_of_generators_of_abstract_SU6_claimed": false,
+    "native_quadratic_realization_proved": true,
+    "orientation_and_common_registration_inherited": true,
+    "source_selected_inter_face_physical_time_law_recovered": false,
+    "unique_physical_connection_selected": false
+  },
+  "replay_counts": {
+    "SU6_007": 47,
+    "SU6_007_independent": 46,
+    "field_invariants": 38,
+    "field_invariants_independent": 42,
+    "reciprocal_exact": 55,
+    "reciprocal_independent_exact": 22,
+    "reciprocal_numerical_diagnostics": 8
+  },
+  "seven_bridge_tests": [
+    {
+      "test": "Native reversal/orientation",
+      "result": "F^-1 and F^10 exist; no source-selected X+ to X- channel operator identified."
+    },
+    {
+      "test": "Six independent complex channels",
+      "result": "The display supplies three spatial vectors and their negatives, real rank3. No C6 amplitude readout map is defined. This is not a no-go for six abstract channels."
+    },
+    {
+      "test": "Complex structure",
+      "result": "Certified J exists on the inherited24-real field. No induced J on display label space supplied."
+    },
+    {
+      "test": "Hermitian preservation",
+      "result": "All six field seeds and finite flows pass source checks; no display-to-field map to test."
+    },
+    {
+      "test": "Determinant one",
+      "result": "Tracefree complex field seeds generate determinant-one flows. F is an even9000-permutation; that fact alone is unrelated to SU6."
+    },
+    {
+      "test": "Lie algebra dimension35",
+      "result": "Source SU6-007 replayed exactly: five coherent link rotations plus one relative phase. Display rotations do not supply these generators."
+    },
+    {
+      "test": "Intertwining native transport",
+      "result": "No map from observatory states/three embeddings to the source field with compatible operators recovered. Reciprocal base also has the typed-carrier obstruction below."
+    }
+  ],
+  "reciprocal_registration": {
+    "same_named_G60_graph_and_deck": true,
+    "observatory_diagonal_quotient": "a",
+    "reciprocal_diagonal_quotient": "b",
+    "F_label_mismatches": 9000,
+    "shared_indexed_edges": 19500,
+    "observatory_only_edges": 25500,
+    "reciprocal_only_edges": 25500,
+    "horizontal_trace_A10": {
+      "a": 10409947200,
+      "b": 10417204800
+    },
+    "obstruction": "Different horizontal closed-walk counts exclude an isomorphism preserving the horizontal graph. No transplantation of this base experiment into the observatory is admitted. This does not decide arbitrary untyped9000-graph isomorphism or all other registrations.",
+    "numeric_labels": "0,488,7207 are zero-based state addresses in the experiment registration; its coefficients g/J=2/5 and norm ratio10sqrt2 are chosen model parameters."
+  },
+  "history_crosswalk": "Sealed source manifest verified and theorem inspected. Its independently transported registrations and doublet residual are not an observatory coupling; balanced-release parent chain not rerun here.",
+  "replay_receipts": [
+    {
+      "command": [
+        "python3",
+        "verify_manifest.py"
+      ],
+      "exit": 0,
+      "log": "field-manifest.log",
+      "log_sha256": "686a52907cb51617ab6aea02af231cddc09022543afe3f6700bdbcb3ed230463"
+    },
+    {
+      "command": [
+        "python3",
+        "replay.py",
+        "--output",
+        "/tmp/orthogonal-research-mqxj7dz8/field-results"
+      ],
+      "exit": 0,
+      "log": "field-replay.log",
+      "log_sha256": "a69c3080752b1071fc2928f8c248df04dc57f55e3647cff3ed147c96f896e550"
+    },
+    {
+      "command": [
+        "python3",
+        "verify_independently.py",
+        "--results",
+        "/tmp/orthogonal-research-mqxj7dz8/field-results",
+        "--output",
+        "/tmp/orthogonal-research-mqxj7dz8/field-results/independent.json"
+      ],
+      "exit": 0,
+      "log": "field-independent.log",
+      "log_sha256": "a7d4c47d00d37575f44d5a234c195351568ca0a17c9dde2845706b83bcdc58c6"
+    },
+    {
+      "command": [
+        "python3",
+        "verify_manifest.py"
+      ],
+      "exit": 0,
+      "log": "reciprocal-manifest.log",
+      "log_sha256": "f3add81aa1358929d7a3c09eb1b748cc9e7acdac8a800a3a8985edf50c169a95"
+    },
+    {
+      "command": [
+        "python3",
+        "derive.py"
+      ],
+      "exit": 0,
+      "log": "reciprocal-replay.log",
+      "log_sha256": "a9f44be1260af7e7f61cacd0abcec1a588711c63a821e64e521fb75b83e2b290"
+    },
+    {
+      "command": [
+        "python3",
+        "verify_independently.py"
+      ],
+      "exit": 0,
+      "log": "reciprocal-independent.log",
+      "log_sha256": "823a52bf158faf2d0bd2716f2cf4cafb5f3d279f22c1ab8d807cd6285e2d8745"
+    },
+    {
+      "command": [
+        "python3",
+        "verify_manifest.py"
+      ],
+      "exit": 0,
+      "log": "history-manifest.log",
+      "log_sha256": "fd95470406bc9b23e1461c935b8c3b97c201a0371848c3877a74b414a356ea37"
+    }
+  ],
+  "failures": [
+    "No source-derived six-channel observatory intertwiner",
+    "Reciprocal base uses different horizontal quotient"
+  ],
+  "boundaries": [
+    "Six labels do not imply six independent complex amplitudes.",
+    "A full field SU6 generation theorem does not select a physical Hamiltonian, time law or geometric encounter.",
+    "Experimental007 remains unimplemented in the live carrier."
+  ]
+}

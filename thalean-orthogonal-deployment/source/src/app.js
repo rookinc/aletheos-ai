@@ -18,6 +18,7 @@ const OrthogonalLayout = Object.freeze({
  let mode='assembly',tolerance=.05,inverseDirty=true,inverseReadyAt=0;
  const inverse=new InverseVolume();
  const historyPanel=PairedHistoryPanel.create({data,getContext:()=>({selected,steps:clock.steps,planes,mode,running:clock.running}),controls:{notice:message=>notice(message,6000),play:()=>$('play').onclick(),step:()=>$('step').onclick(),reset:()=>$('reset').onclick(),selectCycle:index=>{$('selected').value=index+1;$('selected').onchange({target:$('selected')});}}});
+ const encounterPanel=EncounterPanel.create({data,metadata:JSON.parse($('pairedHistoryData').textContent),evidence:JSON.parse($('encounterEvidence').textContent),getContext:()=>({selected,steps:clock.steps,planes,mode,merge,edgeOpacity,vertexOpacity,projection:[0,1].map(j=>[[1,0,0],[0,1,0],[0,0,1]].map(v=>camera.rotate(v)[j]))}),controls:{notice,display:(name,value)=>{$(name).value=value;$(name).oninput({target:$(name)});},dirty:()=>setDirty(false),pause:()=>{setPlay(false);clock.fraction=0;dirty=true;},step:()=>$('step').onclick(),close:()=>setMode('assembly'),selectCycle:index=>{$('selected').value=index+1;$('selected').onchange({target:$('selected')});},plane:(i,changes)=>{Object.assign(planes[i],changes);$('phase'+i).value=planes[i].offset;$('phaseValue'+i).textContent=`${planes[i].offset*18}° · ${planes[i].offset} steps`;updatePlanes();}}});
  const transportColors={interior:'#f2bd71',exterior:'#62dcea',turn:'#bd9ae9'};
  const setDirty=(back=true)=>{dirty=true;if(back)backgroundDirty=true;};
  function notice(message,ms=4200){$('notice').textContent=message;$('notice').hidden=false;clearTimeout(noticeTimer);noticeTimer=setTimeout(()=>$('notice').hidden=true,ms);}
@@ -57,9 +58,9 @@ const OrthogonalLayout = Object.freeze({
   g.globalAlpha=.6;g.fillStyle='#d8e5ed';g.beginPath();g.arc(o[0],o[1],1.7,0,Math.PI*2);g.fill();g.globalAlpha=1;
  }
  function setMode(next){
-  mode=next;const active=mode==='inverse';document.body.classList.toggle('inverse',active);
-  $('assemblyMode').setAttribute('aria-pressed',String(!active));$('inverseMode').setAttribute('aria-pressed',String(active));
-  $('inverseControls').hidden=!active;$('inverseGuide').hidden=!active;$('modeLabel').textContent=active?'X ∩ Y ∩ Z':'ONE ORIGIN';
+  mode=next;const encounter=mode==='encounter';document.body.classList.toggle('encounter',encounter);$('encounterPanel').hidden=!encounter;$('encounterMode').setAttribute('aria-pressed',String(encounter));if(encounter)historyPanel.apply({enabled:false,copy:historyPanel.settings().copy});const active=mode==='inverse';document.body.classList.toggle('inverse',active);
+  $('assemblyMode').setAttribute('aria-pressed',String(mode==='assembly'));$('inverseMode').setAttribute('aria-pressed',String(active));
+  $('inverseControls').hidden=!active;$('inverseGuide').hidden=!active;$('modeLabel').textContent=active?'X ∩ Y ∩ Z':encounter?'READ-ONLY ENCOUNTER LAB':'ONE ORIGIN';
   $('volume').setAttribute('aria-label',active?'Three-way convergence in a central cube. Drag to rotate, pinch to zoom.':'Three orthogonal Thalean charts. Drag to rotate, pinch to zoom.');
   if(!active)$('gains').textContent='PID gains · P 1.4 · I 0.12 · D 4';
   lastMetric=-Infinity;updatePlanes();layout();setDirty();
@@ -101,12 +102,14 @@ const OrthogonalLayout = Object.freeze({
   $('empty').hidden=active&&(count>0||inverseDirty);
   $('empty').innerHTML=active?'No shared cells at this tolerance<span>Adjust tolerance or merge to inspect the overlap.</span>':'Three visible copies required<span>Enable X, Y and Z with nonzero opacity.</span>';
  }
+ $('encounterMode').onclick=()=>setMode('encounter');
+ const openHistory=$('historyToggle').onclick;$('historyToggle').onclick=()=>{if(mode==='encounter')setMode('assembly');openHistory();};
  $('assemblyMode').onclick=()=>setMode('assembly');$('inverseMode').onclick=()=>setMode('inverse');
  $('tolerance').oninput=e=>{tolerance=+e.target.value/1000;$('toleranceValue').textContent=tolerance.toFixed(3);inverseDirty=true;inverseReadyAt=performance.now()+100;setDirty();};
  $('cubeFrame').onchange=()=>setDirty();
  function arrow(point,heading,color,size,alpha){const a=project(point),b=project(point.map((x,i)=>x-heading[i])),dx=a[0]-b[0],dy=a[1]-b[1],norm=Math.hypot(dx,dy);if(norm<.01)return;const ux=dx/norm,uy=dy/norm;ctx.globalAlpha=alpha;ctx.fillStyle=color;ctx.strokeStyle='#07121b';ctx.lineWidth=.55;ctx.beginPath();ctx.moveTo(a[0]+ux*size,a[1]+uy*size);ctx.lineTo(a[0]-ux*size-uy*size*.6,a[1]-uy*size+ux*size*.6);ctx.lineTo(a[0]-ux*size+uy*size*.6,a[1]-uy*size-ux*size*.6);ctx.closePath();ctx.fill();ctx.stroke();}
  function draw(now){
-  historyPanel.update();
+  historyPanel.update();encounterPanel.update();
   if(!width||!height)return;
   if(layoutDirty){paths=data.cycles.map((c,i)=>c.map((_,k)=>M.path(i,k,merge)));layoutDirty=false;backgroundDirty=true;inverseDirty=true;}
   if(mode==='inverse'){drawInverse(now);dirty=false;return;}
@@ -118,13 +121,15 @@ const OrthogonalLayout = Object.freeze({
    if($('showFactors').checked&&$('showSelected').checked&&edgeOpacity>0){const path=new Path2D();for(let i=0;i<sim.g.factorCount;i++){const a=sim.g.from[i],b=sim.g.to[i];if(a===v||b===v)segment(path,L.point(position(a),axis),L.point(position(b),axis));}stroke(ctx,path,colorMode==='plane'?L.colors[axis]:'#c298ff',.55*edgeOpacity*p.opacity,1.1);}
   }
   if(vertexOpacity>0){const markers=[];for(let axis=0;axis<3;axis++){const p=planes[axis];if(!p.visible||p.opacity<=0)continue;for(let c=0;c<450;c++){const loc=M.at(paths[c][(k+p.offset)%20],f),point=L.point(loc.point,axis),heading=L.point(loc.heading,axis);markers.push({c,point,heading,axis,side:M.chartSide(loc.heading),depth:project(point)[2]});}}markers.sort((a,b)=>a.depth-b.depth);
-   const amplitudes=$('showResponse').checked?data.cycles.map(c=>{let a=0,b=0;for(const v of c){a+=sim.closed.x[v]**2;b+=sim.open.x[v]**2;}return [Math.sqrt(a/20),Math.sqrt(b/20)];}):null;
+   const amplitudes=mode!=='encounter'&&$('showResponse').checked?data.cycles.map(c=>{let a=0,b=0;for(const v of c){a+=sim.closed.x[v]**2;b+=sim.open.x[v]**2;}return [Math.sqrt(a/20),Math.sqrt(b/20)];}):null;
    for(const m of markers){const alpha=vertexOpacity*planes[m.axis].opacity;if(amplitudes){const[a,b]=amplitudes[m.c];if(Math.max(a,b)>.001){const q=project(m.point);ctx.globalAlpha=alpha*.35;ctx.strokeStyle='#b1c3d4';ctx.lineWidth=.7;ctx.beginPath();ctx.arc(q[0],q[1],3+Math.min(12,b*45),0,2*Math.PI);ctx.stroke();ctx.fillStyle=L.colors[m.axis];ctx.beginPath();ctx.arc(q[0],q[1],2+Math.min(10,a*45),0,2*Math.PI);ctx.fill();}}
     arrow(m.point,m.heading,m.c===selected?'#f2fbff':colorMode==='plane'?L.colors[m.axis]:transportColors[m.side],m.c===selected?4.5:2.6,alpha);
    }
   }
+  if(mode==='encounter'){for(const p of encounterPanel.markers()){const q=project(p);ctx.globalAlpha=.9;ctx.strokeStyle='#60e3eb';ctx.lineWidth=1.5;ctx.beginPath();ctx.arc(q[0],q[1],7,0,2*Math.PI);ctx.stroke();}}
   ctx.globalAlpha=1;
   if(now-lastMetric>200||!clock.running){const a=sim.closed.metrics(),b=sim.open.metrics();$('cycleReadout').textContent=`${clock.hz.toFixed(2)} Hz · cycle ${clock.cycles} · F ${k} / 20`;$('metric').textContent=`RMS ${a.rms.toFixed(5)} PID / ${b.rms.toFixed(5)} free · Δ ${(a.total-9000).toExponential(1)}`;lastMetric=now;}
+  if(mode==='encounter'){$('cycleReadout').textContent=`Native F ${clock.phaseStep} / 20 · ${clock.steps} completed steps`;$('gains').textContent='Read-only chart observations';$('metric').textContent='No native coupling law admitted.';}
   dirty=false;
  }
  function advance(){sim.step();dirty=true;}
@@ -151,24 +156,25 @@ const OrthogonalLayout = Object.freeze({
  function openInfo(){if(!$('info').open)$('info').showModal();} $('about').onclick=openInfo;$('credits').onclick=openInfo;$('closeInfo').onclick=()=>$('info').close();
  document.addEventListener('keydown',e=>{if(e.key==='Escape'){setDrawer(false);if(document.body.classList.contains('immersive'))setImmersive(false);}if(e.code==='Space'&&(e.target===canvas||e.target===document.body)){e.preventDefault();setPlay(!clock.running);}});
  document.addEventListener('visibilitychange',()=>{if(document.hidden)setPlay(false);});
- function settings(){return {pairedHistory:historyPanel.settings(),schema:'thalean-orthogonal-settings-1',source:'Thalean Graph Explorer v0.34.0',hz:clock.hz,running:clock.running,mode,tolerance,cubeFrame:$('cubeFrame').checked,merge,edgeOpacity,vertexOpacity,selected,colorMode,planes:planes.map(p=>({...p})),flags:Object.fromEntries(flags.map(id=>[id,$(id).checked])),camera:{q:camera.q.slice(),zoom:camera.zoom,pan:[camera.panX/Math.max(1,width),camera.panY/Math.max(1,height)]}};}
+ function settings(){return {encounter:encounterPanel.settings(),pairedHistory:historyPanel.settings(),schema:'thalean-orthogonal-settings-1',source:'Thalean Graph Explorer v0.34.0',hz:clock.hz,running:clock.running,mode,tolerance,cubeFrame:$('cubeFrame').checked,merge,edgeOpacity,vertexOpacity,selected,colorMode,planes:planes.map(p=>({...p})),flags:Object.fromEntries(flags.map(id=>[id,$(id).checked])),camera:{q:camera.q.slice(),zoom:camera.zoom,pan:[camera.panX/Math.max(1,width),camera.panY/Math.max(1,height)]}};}
  function validate(s){
   const num=(n,a,b)=>typeof n==='number'&&Number.isFinite(n)&&n>=a&&n<=b;
   if(!s||s.schema!=='thalean-orthogonal-settings-1')throw Error('Choose a Thalean Orthogonal settings file.');
   if(!num(s.hz,.05,10)||!num(s.merge,0,100)||!num(s.edgeOpacity,0,1)||!num(s.vertexOpacity,0,1)||!Number.isInteger(s.selected)||!num(s.selected,0,449)||typeof s.running!=='boolean'||!['plane','transport'].includes(s.colorMode))throw Error('Invalid display settings.');
-  if((s.mode!==undefined&&!['assembly','inverse'].includes(s.mode))||(s.tolerance!==undefined&&!num(s.tolerance,.01,.12))||(s.cubeFrame!==undefined&&typeof s.cubeFrame!=='boolean'))throw Error('Invalid inverse cube settings.');
+  if((s.mode!==undefined&&!['assembly','inverse','encounter'].includes(s.mode))||(s.tolerance!==undefined&&!num(s.tolerance,.01,.12))||(s.cubeFrame!==undefined&&typeof s.cubeFrame!=='boolean'))throw Error('Invalid inverse cube settings.');
   if(!Array.isArray(s.planes)||s.planes.length!==3||s.planes.some(p=>!p||typeof p.visible!=='boolean'||!num(p.opacity,0,1)||!Number.isInteger(p.offset)||!num(p.offset,0,19)))throw Error('Invalid plane settings.');
   if(!s.flags||flags.some(id=>typeof s.flags[id]!=='boolean'))throw Error('Invalid visibility flags.');
   if(s.pairedHistory!==undefined&&(!s.pairedHistory||typeof s.pairedHistory.enabled!=='boolean'||!Number.isInteger(s.pairedHistory.copy)||s.pairedHistory.copy<0||s.pairedHistory.copy>2))throw Error('Invalid paired history settings.');
+  if(s.encounter!==undefined){const e=s.encounter;if(!e||!Number.isInteger(e.copy)||!num(e.copy,0,2)||!['spatial','projection','envelope'].includes(e.kind)||!num(e.epsilon,.001,.2)||typeof e.experimental!=='boolean')throw Error('Invalid Encounter Lab settings.');}
   const c=s.camera;if(!c||!Array.isArray(c.q)||c.q.length!==4||c.q.some(v=>!num(v,-1,1))||Math.abs(Math.hypot(...c.q)-1)>1e-5||!num(c.zoom,1e-4,1e4)||!Array.isArray(c.pan)||c.pan.length!==2||c.pan.some(v=>!Number.isFinite(v)))throw Error('Invalid camera settings.');
   return s;
  }
  function applySettings(s){validate(s);tolerance=s.tolerance??.05;$('tolerance').value=tolerance*1000;$('toleranceValue').textContent=tolerance.toFixed(3);$('cubeFrame').checked=s.cubeFrame??true;inverseDirty=true;inverseReadyAt=0;setMode(s.mode??'assembly');setPlay(false);sim.reset();clock.reset(performance.now());clock.hz=s.hz;merge=s.merge;edgeOpacity=s.edgeOpacity;vertexOpacity=s.vertexOpacity;selected=s.selected;colorMode=s.colorMode;planes.forEach((p,i)=>Object.assign(p,s.planes[i]));flags.forEach(id=>$(id).checked=s.flags[id]);camera.q=s.camera.q.slice();camera.zoom=s.camera.zoom;camera.panX=s.camera.pan[0]*width;camera.panY=s.camera.pan[1]*height;priorView='custom';updateViews();
-  $('hz').value=M.hzPosition(s.hz);$('hzValue').textContent=s.hz.toFixed(2)+' Hz';$('hz').setAttribute('aria-valuetext',s.hz+' hertz');for(const [id,n]of [['edges',edgeOpacity*100],['vertices',vertexOpacity*100],['merge',merge]]){$(id).value=n;$(id+'Value').textContent=n+'%';}$('selected').value=selected+1;$('colorMode').value=colorMode;planes.forEach((p,i)=>{$('opacity'+i).value=p.opacity*100;$('opacityValue'+i).textContent=Math.round(p.opacity*100)+'%';$('phase'+i).value=p.offset;$('phaseValue'+i).textContent=`${p.offset*18}° · ${p.offset} steps`;});updatePlanes();layoutDirty=true;setPlay(s.running);historyPanel.apply(s.pairedHistory);notice('Settings loaded · fresh simulation started.');}
+  $('hz').value=M.hzPosition(s.hz);$('hzValue').textContent=s.hz.toFixed(2)+' Hz';$('hz').setAttribute('aria-valuetext',s.hz+' hertz');for(const [id,n]of [['edges',edgeOpacity*100],['vertices',vertexOpacity*100],['merge',merge]]){$(id).value=n;$(id+'Value').textContent=n+'%';}$('selected').value=selected+1;$('colorMode').value=colorMode;planes.forEach((p,i)=>{$('opacity'+i).value=p.opacity*100;$('opacityValue'+i).textContent=Math.round(p.opacity*100)+'%';$('phase'+i).value=p.offset;$('phaseValue'+i).textContent=`${p.offset*18}° · ${p.offset} steps`;});updatePlanes();layoutDirty=true;setPlay(s.running);historyPanel.apply(s.mode==='encounter'?{enabled:false,copy:s.pairedHistory?.copy??0}:s.pairedHistory);encounterPanel.apply(s.encounter);notice('Settings loaded · fresh simulation started.');}
  $('save').onclick=()=>{const url=URL.createObjectURL(new Blob([JSON.stringify(settings(),null,2)],{type:'application/json'})),a=document.createElement('a');a.href=url;a.download='Thalean_Orthogonal_Settings.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);notice('Settings saved.');};
  $('load').onclick=()=>{$('file').value='';$('file').click();};$('file').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{if(f.size>1024*1024)throw Error('Settings file is too large (1 MB maximum).');applySettings(JSON.parse(await f.text()));}catch(error){notice(error instanceof SyntaxError?'Invalid JSON; settings unchanged.':error.message,6000);}finally{$('file').value='';}};
  $('inverseSave').onclick=()=>$('save').click();$('inverseLoad').onclick=()=>$('load').click();
  $('audit').textContent=`Verified: ${sim.g.n.toLocaleString()} states, ${sim.g.edges.length.toLocaleString()} edges, degree 10, 450 disjoint F cycles of length 20. Three proper rotations with mutually perpendicular normals. No cross-copy edges.`;
- window.orthogonalObservatory={settings,validate,applySettings,getPairedHistory:()=>historyPanel.getState(),getState:()=>({mode,inverse:{count:inverse.count,tolerance,volume:inverse.volume},steps:clock.steps,phase:clock.phaseStep,running:clock.running,geometry:{states:sim.g.n,edges:sim.g.edges.length,cycles:data.cycles.length},planes:planes.map(p=>({...p})),size:[width,height],metrics:sim.closed.metrics()}),draw:()=>{setDirty();draw(performance.now());}};
- view('oblique');setMode(location.hash==='#inverse'?'inverse':'assembly');updatePlanes();layout();requestAnimationFrame(frame);notice('Drag to rotate · pinch to zoom · tap plane buttons to hide/show',5500);
+ window.orthogonalObservatory={getEncounter:()=>encounterPanel.state(),settings,validate,applySettings,getPairedHistory:()=>historyPanel.getState(),getState:()=>({mode,inverse:{count:inverse.count,tolerance,volume:inverse.volume},steps:clock.steps,phase:clock.phaseStep,running:clock.running,geometry:{states:sim.g.n,edges:sim.g.edges.length,cycles:data.cycles.length},planes:planes.map(p=>({...p})),size:[width,height],metrics:sim.closed.metrics()}),draw:()=>{setDirty();draw(performance.now());}};
+ view('oblique');setMode(location.hash==='#encounter'?'encounter':location.hash==='#inverse'?'inverse':'assembly');updatePlanes();layout();requestAnimationFrame(frame);notice('Drag to rotate · pinch to zoom · tap plane buttons to hide/show',5500);
 })();

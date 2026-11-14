@@ -1,0 +1,54 @@
+{
+  "pass": true,
+  "method": "Interactive Chrome via CUA; DOM assertions, native controls and screenshots",
+  "checks": [
+    "mobile_stale_scan_label",
+    "mobile_independent_phase",
+    "mobile_single_copy_negative_control",
+    "mobile_equal_continuation",
+    "mobile_experimental_isolation",
+    "desktop_browser_settings_roundtrip",
+    "desktop_inverse_mode_1592_cells",
+    "desktop_sheet_history_visible",
+    "desktop_projection_overlap_1143_pairs_depth_distinguished",
+    "mobile_360x740_no_horizontal_overflow",
+    "mobile_390x844_no_horizontal_overflow",
+    "desktop_spatial_21_candidates_zero_coupling",
+    "browser_export_replayed_independently"
+  ],
+  "application_errors": [],
+  "excluded_extension_errors": 150,
+  "viewports": [
+    {
+      "width": 1363,
+      "height": 936
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "stageHeight": 278.453125,
+      "noHorizontalOverflow": true
+    },
+    {
+      "width": 360,
+      "height": 740,
+      "stageHeight": 223.328125,
+      "noHorizontalOverflow": true
+    }
+  ],
+  "limits": [
+    "Mobile sizes use real iframe viewport layout in desktop Chrome. No physical Android device or touch-hardware performance test.",
+    "Browser observations are a session receipt, not an independently runnable browser automation suite.",
+    "Final inline evidence may be rebuilt; UI sources are pinned separately."
+  ],
+  "ui_source_sha256": {
+    "build.py": "acd976727775ade72065982af70d87569f9fc52f09ca8fc58bc378bc876e3e9d",
+    "src/app.js": "e172652e47a6929897ea046bab0fc800bcc96e3709d293fa27cbcbbb5bea0da4",
+    "src/ui.html": "1764ac72c4fb2650a13b776d37d7f78d7120dbe2d2458f3ce580ed5c9f64f5aa",
+    "src/style.css": "61e9f7011e73705a95b7e1b2f8e07e09daa21428457efbf51a2b789eb8c88cc7",
+    "src/encounter-panel.html": "3f26c28c66d051e2d746d3a98edd7c561818d88dd48e0d6b5f88c29fe97feb74",
+    "src/encounter-panel.js": "001c6af4a8dd72805a2ea4566c055dc90186062d095e216c771b5b471d1307f4",
+    "src/encounter.css": "5f8c357d410eabfaa931485e69a3c97392fcb8d5b7dbd120ad3d8561e01441e8",
+    "src/encounter-model.js": "89206ee8721c62a407c2bdd1b2774018af8b2795a77fff9234043e213151caaa"
+  }
+}

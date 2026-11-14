@@ -1,0 +1,34 @@
+<aside id="encounterPanel" hidden aria-label="Encounter Lab">
+ <div class="lab-heading"><div><small>READ-ONLY RESEARCH INSTRUMENT</small><h2>Encounter Lab</h2></div><button id="labClose" aria-label="Close Encounter Lab">×</button></div>
+ <p class="lab-boundary">No native coupling law admitted.</p>
+ <p class="hint">Three uncoupled presentations of one carrier. Chart proximity, quotient return and physical interaction are separate tests.</p>
+ <section class="lab-section">
+  <h3>Native return <span class="lab-tag">Certified derived</span></h3>
+  <div class="lab-row"><label>Inspect copy <select id="labCopy"><option value="0">X · YZ</option><option value="1">Y · ZX</option><option value="2">Z · XY</option></select></label><label>Cycle <input id="labCycle" type="number" min="1" max="450" value="1"></label><button id="labStep">Step F</button></div>
+  <div id="labPhases" class="lab-phases"></div>
+  <output id="labReturn" class="lab-return"></output>
+  <pre id="labNative" class="lab-pre" aria-label="Exact native state"></pre>
+  <small class="hint">Native indices are zero-based. Cycles are displayed 1–450. π = (frame, G900 quotient); the chart is a separate visualization.</small>
+ </section>
+ <section class="lab-section">
+  <h3>Encounter detector <span class="lab-tag">Visualization</span></h3>
+  <label class="lab-wide">Criterion <select id="labKind"><option value="spatial">Spatial proximity · completed F step</option><option value="projection">Camera projection overlap · depth ignored</option><option value="envelope">Three full-cycle envelopes · 50³ samples</option></select></label>
+  <div class="lab-row"><label>ε · chart units <input id="labEpsilon" type="number" min="0.001" max="0.2" step="0.001" value="0.05"></label><label id="labCellLabel" hidden>Sample number <input id="labCell" type="number" min="1" max="125000" value="1"></label><button id="labScan">Pause &amp; scan</button></div>
+  <p id="labScanStatus" class="hint" role="status">No scan yet. Detection uses all 450 cycles in each visible copy.</p>
+  <label class="lab-wide">Candidate <select id="labCandidate"><option>No candidates scanned</option></select></label>
+  <pre id="labCandidateInfo" class="lab-pre">Select a criterion and scan. A geometric overlap cannot trigger a native event.</pre>
+  <details><summary>Detection definition and limits</summary><p id="labCriterion" class="hint">Current-step scans compare all 450 × 450 pairs for each visible copy pair. Results retain the nearest 200 and report the full count. Full-envelope scans inspect one occupied grid cell and its nearest source intervals in all three copies.</p><p class="hint">Adjacency is tested between labels in the common carrier; there are no cross-copy edges. Equal registered labels do not merge instances. Interpolated segment positions are not native states.</p></details>
+ </section>
+ <details class="lab-section"><summary>Witness history &amp; equal continuation</summary>
+  <p class="hint">Append-only observation log, maximum 100 records per session. Recording never changes native evolution. Settings load starts a fresh simulation; this log keeps its captured contexts.</p>
+  <button id="labRecord">Record current state and candidate</button><output id="labRecordStatus">0 observations</output>
+  <div class="lab-row"><label>Record A <select id="labRecordA"></select></label><label>Record B <select id="labRecordB"></select></label></div>
+  <div class="lab-row"><label>Same continuation Fⁿ <input id="labContinuation" type="number" min="0" max="19" value="1"></label><button id="labCompare">Compare records</button><button id="labF10">Test F⁰ / F¹⁰ pair</button></div>
+  <pre id="labMemory" class="lab-pre">No memory test run. F⁰ / F¹⁰ prepares equal quotient projections with different hidden bits, without advancing the live carrier.</pre>
+ </details>
+ <details class="lab-section"><summary>Six-channel bridge <span class="lab-tag">Unsupported</span></summary><p>The certified 35-dimensional SU(6) algebra acts on a registered complex field. X±, Y±, Z± are candidate display labels. No source-derived intertwiner from these three embeddings to that field is admitted.</p><p id="labBridgeStatus" class="hint"></p></details>
+ <details class="lab-section"><summary>Chart appearance</summary><p class="hint">Display-only geometry. Changing merge does not change the native graph or F.</p><label class="lab-wide">Merge <input id="labMerge" type="range" min="0" max="100" value="0"></label><label class="lab-wide">Edges <input id="labEdges" type="range" min="0" max="100" value="13"></label><label class="lab-wide">Vertices <input id="labVertices" type="range" min="0" max="100" value="62"></label></details>
+ <details class="lab-section"><summary>Experimental coupling</summary><label class="check"><input id="labExperimental" type="checkbox"> Inspect experimental research</label><p id="labCoupling" class="lab-boundary">No native coupling law admitted.</p><p id="labExperimentNote" hidden class="hint">Replayed witness experiment 007 uses a different native registration, with zero-based addresses 0 → 488 and probe 7207. Its engineered mirror kernel, role fields and contact coefficients are declared assumptions. Contact reactivates; source/probe coherent phases change. Its F array and horizontal quotient graph differ from this observatory; labels cannot be transplanted. Native hopping support does not certify coupling or spatial locality. No experimental executor is connected to the carrier.</p></details>
+ <details class="lab-section"><summary>Provenance inspector</summary><label class="lab-wide">Claim <select id="labEvidence"></select></label><pre id="labEvidenceInfo" class="lab-pre"></pre><a id="labEvidenceLink" target="_blank" rel="noopener noreferrer">Open audit and executable producer ↗</a></details>
+ <div class="lab-export"><button id="labExport">Export replay certificate</button><small class="hint">JSON includes scan inputs, native tuples, observations, continuation results and evidence.</small></div>
+</aside>

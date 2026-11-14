@@ -1,0 +1,91 @@
+{
+  "audit": "g9000_native_operational_memory_audit_001",
+  "producer": "node scripts/audit-encounter.cjs",
+  "input_provenance": {
+    "repository": "rookinc/aletheos-ai",
+    "base_commit": "9a1a659e8f6b1e4d83212271b7840788d1f3aa19",
+    "native_data_sha256": "d070869e90b5d3b34981ae593faf5c635dfa25eb1aedebd504833a7a17f27e11",
+    "paired_history_sha256": "e1b4482ff1226735724533a08579eb123ab6dd3ffa399871e806ab9f5bce2bff"
+  },
+  "status": "Certified derived",
+  "verdict": "NO_DISTINGUISHING_F_CONTINUATION",
+  "projection": "pi=(frame,G900 quotient), each fiber has two registered states",
+  "state_pairs_tested": 9000,
+  "continuation_tests": 180000,
+  "finite_completeness": "F has order20. Equality for all powers0..19 and quotient compatibility excludes any distinguishing word in F and F^-1.",
+  "minimal_distinguishing_continuation": null,
+  "replay_example": {
+    "operator": "F^1",
+    "projection": "pi(state) = (frame, G900 quotient)",
+    "before": [
+      {
+        "state": 0,
+        "frame": 0,
+        "pairedState": 0,
+        "g900": 0,
+        "basePair": [
+          0,
+          0
+        ],
+        "relativeSheet": 0,
+        "hiddenBit": 0
+      },
+      {
+        "state": 488,
+        "frame": 0,
+        "pairedState": 488,
+        "g900": 0,
+        "basePair": [
+          0,
+          0
+        ],
+        "relativeSheet": 0,
+        "hiddenBit": 1
+      }
+    ],
+    "after": [
+      {
+        "state": 2280,
+        "frame": 1,
+        "pairedState": 480,
+        "g900": 8,
+        "basePair": [
+          0,
+          0
+        ],
+        "relativeSheet": 3,
+        "hiddenBit": 0
+      },
+      {
+        "state": 1808,
+        "frame": 1,
+        "pairedState": 8,
+        "g900": 8,
+        "basePair": [
+          0,
+          0
+        ],
+        "relativeSheet": 3,
+        "hiddenBit": 1
+      }
+    ],
+    "inputProjectionEqual": true,
+    "registeredStatesDiffer": true,
+    "hiddenBitsDiffer": true,
+    "outputProjectionEqual": true,
+    "operationalMemoryEstablished": false,
+    "boundary": "Only deterministic F continuations are admitted here. A log, bit difference, or unequal initial quotient does not establish history-caused response."
+  },
+  "graph_control": "D=F^10 is a graph automorphism; projected neighbor multisets agree on every two-point fiber.",
+  "commutators": {
+    "native": "[F,D]=0 on all9000 labels",
+    "observation": "Let S_C be the diagonal adjacency selector of native C=16 on C^9000. [S_C,D] is nonzero, with support 20. S_C is a readout projector, not a dynamical encounter law.",
+    "encounter_order": "No source-admitted joint encounter operators C1,C2 exist in this observatory. Their dynamical commutator is not defined."
+  },
+  "failures": [],
+  "boundaries": [
+    "This is a no-go for the admitted F continuation family and this projection, not all future native laws.",
+    "A hidden bit can be distinguished by a finer observation; that does not make it dynamically effective memory.",
+    "No persistence or memory theorem is inferred from the external log."
+  ]
+}

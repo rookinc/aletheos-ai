@@ -1,0 +1,36 @@
+{
+  "audit": "orthogonal_observatory_native_baseline_001",
+  "producer": "node scripts/audit-encounter.cjs",
+  "input_provenance": {
+    "repository": "rookinc/aletheos-ai",
+    "base_commit": "9a1a659e8f6b1e4d83212271b7840788d1f3aa19",
+    "native_data_sha256": "d070869e90b5d3b34981ae593faf5c635dfa25eb1aedebd504833a7a17f27e11",
+    "paired_history_sha256": "e1b4482ff1226735724533a08579eb123ab6dd3ffa399871e806ab9f5bce2bff"
+  },
+  "status": "Certified derived",
+  "verdict": "PASS",
+  "state_count": 9000,
+  "undirected_edge_count": 45000,
+  "degree": 10,
+  "F_cycles": 450,
+  "F_period": 20,
+  "copy_semantics": "One native simulation; three proper display rotations with independent visibility/opacity/phase. No cross-copy edges or independent new organisms.",
+  "state_tuple": [
+    "frame mod5",
+    "ordered G15 pair (u,v)",
+    "relative V4 label r in 0..3",
+    "hidden bit h"
+  ],
+  "transformation": "F(f,u,v,r,h)=(f+1 mod5,v,u,r XOR3,h XOR(r>>1))",
+  "return_scope": {
+    "states_tested": 9000,
+    "F10": "(frame,G900) returns and hidden bit flips for every state",
+    "F20": "Full registered-state return; exact least period20 for every state",
+    "chart_positions_equal_at_F10_at_merge0": 0
+  },
+  "failures": [],
+  "boundaries": [
+    "The native quotient projection is not the arbitrary torus/split rendering.",
+    "The inherited PID simulation has continuous x,v,I and imposed gains. It is preserved, not certified as native physical dynamics."
+  ]
+}

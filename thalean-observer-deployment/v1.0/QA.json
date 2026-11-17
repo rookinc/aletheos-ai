@@ -1,0 +1,37 @@
+{
+  "audit_id": "THALEAN-OBSERVER-OBSERVATORY-001-ALETHEOS-001",
+  "release": "1.0.0",
+  "status": "LOCAL_CHECKS_PASS_REMOTE_INSTALL_PENDING",
+  "input_provenance": {
+    "source_app_commit": "20425893f5c233d03b01af8ea3cf704947f970c1",
+    "audit_archive_sha256": "30b2b01a0ccc08c88ac7e9e3f582214978ef6542d6ee083ec00420f6525ce48f",
+    "embedded_data_sha256": "030305e8d2e2f0c3bc591ee589e181e7576145e79b811c89fa80955f6e114c1a",
+    "html_sha256": "8a54178fda15715f4d198a897b2028279e081f1f14bf2427ef1806bf978f9135"
+  },
+  "automated_checks": {
+    "embedded_model": {"command": "node --test tests/model.test.mjs", "passed": 8, "failed": 0},
+    "server_installer": {"command": "python3 tests/test-deploy.py", "passed": 19, "failed": 0},
+    "termux_wrapper": {"command": "python3 tests/test-termux.py", "passed": 7, "failed": 0},
+    "bash_syntax": {"command": "bash -n deploy.sh server.sh", "passed": true},
+    "inline_module_syntax": {"method": "Extracted module checked with node --check", "passed": true},
+    "rebuild": {"command": "python3 build.py --source /absolute/path/to/source-checkout --output /tmp/observer-index.html", "sha256_identical": true}
+  },
+  "standalone_browser_smoke": {
+    "environment": "Managed local preview in Chrome; no Aletheos server contacted",
+    "three_views_load": true,
+    "step_four_same_address_opposite_sheet": true,
+    "step_eight_complete_working_return": true,
+    "replay_three_step_boundary_enforced": true,
+    "qp_receipt_200_pq_receipt_138": true,
+    "gate_exact_rational_checks_8_of_8": true,
+    "embedded_model_blob_download_completes": true
+  },
+  "retained_source_ui_qa": {
+    "source_commit": "20425893f5c233d03b01af8ea3cf704947f970c1",
+    "desktop_and_375_pixel_content_width": "Passed for all three views before asset-only bundling"
+  },
+  "pass_fail_conditions": "All local tests and exact rebuild must pass. Public success requires deploy.sh to attest the remote installed file and full HTTPS response against the pinned HTML SHA-256. HTTP errors or differing response bytes fail public verification.",
+  "remote_installation": {"performed_from_work": false, "requires": "Run deploy.sh in the owner's Termux with existing gurtiamy alias", "public_https_verified": false},
+  "mathematical_boundary": "G60 finite registered return and native comparison maps; G9000 bounded source replay plus local rational gate verification. This deployment changes asset packaging only.",
+  "unproved_claims": ["G60/G9000 dynamical projection", "Full multi-observer physical reconciliation", "Unlimited native autobiographical history", "Physical or experiential identification of consciousness"]
+}

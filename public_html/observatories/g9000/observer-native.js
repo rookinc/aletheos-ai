@@ -23,10 +23,21 @@ function measure(cycle,a,b,phase,referencePhase,referenceType){
  const plus=signal.map((x,i)=>x+ref[i]),minus=signal.map((x,i)=>x-ref[i]);
  return {difference:energy(plus)-energy(minus),overlap:dot(signal,ref),signal,reference:ref};
 }
+function reconstruct(cycle,phase,referencePhase,measurements){
+ // Two signed interference contrasts against quarter-turn separated references.
+ // y = 4 G [a,b], with G_ij = <basis_j(phase), reference_i>.
+ const r=field(cycle,1,0,phase),q=field(cycle,0,1,phase);
+ const refs=[referencePhase,(referencePhase+1)%4].map(p=>field(cycle,1,0,p));
+ const g=refs.map(v=>[dot(v,r),dot(v,q)]);
+ const determinant=g[0][0]*g[1][1]-g[0][1]*g[1][0];
+ if(!determinant)return{rank:Math.abs(g[0][0])+Math.abs(g[0][1])+Math.abs(g[1][0])+Math.abs(g[1][1])?1:0,determinant,coefficients:null,gram:g};
+ const y=measurements.map(v=>v/4);
+ return{rank:2,determinant,coefficients:[(y[0]*g[1][1]-y[1]*g[0][1])/determinant,(g[0][0]*y[1]-g[1][0]*y[0])/determinant],gram:g};
+}
 function decode(a,b,phase,referencePhase,referenceType){
  const c=Array.from({length:20},(_,i)=>i);
  const m=measure(c,a,b,phase,referencePhase,referenceType);
  return m;
 }
-root.OBSERVER_NATIVE={assertCycles,basis,field,dot,energy,measure,decode};
+root.OBSERVER_NATIVE={assertCycles,basis,field,dot,energy,measure,decode,reconstruct};
 })(window);

@@ -6,7 +6,18 @@ for(let u=0;u<60;u++)if(rep[u]===-1){const v=partner[u],id=pairs.length;pairs.pu
 const liftedEdges=new Map();
 edges.forEach(([u,v])=>{const a=rep[u],b=rep[v];if(a===b)return;const key=[Math.min(a,b),Math.max(a,b)].join(',');if(!liftedEdges.has(key))liftedEdges.set(key,[]);liftedEdges.get(key).push([u,v])});
 const qsign=new Map(),signErrors=[];
-for(const key of qkeys){const [a,b]=key.split(',').map(Number),u=pairs.map((p,i)=>base[p[0]]===a?i:-1).filter(i=>i>=0),v=pairs.map((p,i)=>base[p[0]]===b?i:-1).filter(i=>i>=0);if(u.length!==2||v.length!==2){signErrors.push(key+':fiber');continue}const sig=[];for(const e of liftedEdges.get([Math.min(u[0],v[0]),Math.max(u[0],v[0])].join(','))||[]){const from=rep[e[0]]===u[0]?e[0]:e[1],to=from===e[0]?e[1]:e[0];sig.push((from===pairs[u[0]][0])===(to===pairs[v[0]][0])?0:1)}if(sig.length!==2||sig[0]!==sig[1])signErrors.push(key+':inconsistent');else qsign.set(key,sig[0])}
+const fibers=Array.from({length:15},()=>[]);
+pairs.forEach((p,i)=>fibers[base[p[0]]].push(i));
+const intermediateEdges=[...liftedEdges.keys()].map(k=>k.split(',').map(Number));
+for(const key of qkeys){
+ const [a,b]=key.split(',').map(Number),fa=fibers[a],fb=fibers[b];
+ if(fa.length!==2||fb.length!==2){signErrors.push(key+':fiber');continue}
+ const matching=intermediateEdges.filter(([i,j])=>(fa.includes(i)&&fb.includes(j))||(fa.includes(j)&&fb.includes(i)));
+ if(matching.length!==2){signErrors.push(key+':edge count '+matching.length);continue}
+ const codes=matching.map(([i,j])=>{const left=fa.includes(i)?i:j,right=fa.includes(i)?j:i;return Number(fa.indexOf(left)!==fb.indexOf(right))});
+ if(codes[0]!==codes[1])signErrors.push(key+':not a 2-lift');
+ else qsign.set(key,codes[0]);
+}
 const coreAdj=Array.from({length:15},()=>[]);
 qkeys.forEach(k=>{const [u,v]=k.split(',').map(Number);coreAdj[u].push(v);coreAdj[v].push(u)});
 function findOddLoop(){let best=null;for(let start=0;start<15;start++){let stack=[[start],[start]]; // replace below with DFS paths

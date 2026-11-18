@@ -3,7 +3,7 @@
 const N=root.NATIVE_MODEL;
 function mount(host){
  const ac=new AbortController(),on=(el,event,fn)=>el.addEventListener(event,fn,{signal:ac.signal});
- const cycles=N.cycles,turn=N.turn;
+ const cycles=N.cycles;
  const e=(id)=>host.querySelector('#'+id);
  let step=0,selected=0,record=null,reference=0,mode='matched',coupled=true;
  host.innerHTML=`<section class="observer-lens">
@@ -27,7 +27,7 @@ function mount(host){
  const svg=e('obSvg'),NS='http://www.w3.org/2000/svg';
  function add(tag,attrs,txt){const el=document.createElementNS(NS,tag);Object.entries(attrs).forEach(([k,v])=>el.setAttribute(k,String(v)));if(txt!==undefined)el.textContent=txt;svg.appendChild(el);return el;}
  function render(){
- const cycle=cycles[selected],site=cycle[step],next=turn[site];
+ const cycle=cycles[selected],site=cycle[step],next=cycle[(step+1)%20];
  svg.replaceChildren();
  const cx=320,cy=108,rad=82;
  for(let i=0;i<20;i++){const a=2*Math.PI*i/20-Math.PI/2,b=2*Math.PI*(i+1)/20-Math.PI/2;add('line',{x1:cx+rad*Math.cos(a),y1:cy+rad*Math.sin(a),x2:cx+rad*Math.cos(b),y2:cy+rad*Math.sin(b),stroke:'#436177','stroke-width':2});}

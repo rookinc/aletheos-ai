@@ -37,7 +37,7 @@ function mount(host){
  e('obRead').textContent='Native cycle energy contrast: '+m.difference+'\\nSigned overlap: '+m.overlap+'\\nReference: '+mode+' · phase '+reference+'\\nRecord: '+(record?'written at F phase '+record.phase+', cycle '+record.cycle:'not written');
  if(record){
  const usePhase=e('obCalibrated').checked?record.phase:0;
- const rec=MathNative.reconstruct(cycles[record.cycle],usePhase,record.referencePhase,record.measurements);
+ const rec=record.mode==='stationary'?{rank:0,coefficients:null}:MathNative.reconstruct(cycles[record.cycle],usePhase,record.referencePhase,record.measurements);
  e('obRead').textContent+='\\nReconstruction rank: '+rec.rank+'/2'+(rec.coefficients?'\\nDecoded signal: ('+rec.coefficients.join(', ')+')':'\\nNot enough independent observations');
  }
  e('obMeaning').textContent=!record?'The native F cycle supplies the twenty-site support. Signal amplitudes and record-writing are declared.':('Stored contrast '+record.difference+' and overlap '+record.overlap+' remain unchanged after the encounter. Current contrast '+m.difference+'. Two phase-shifted signed measurements can recover two local quadratures when the reference is matched; this is not the eight-dimensional four-flux decoder.');
@@ -51,7 +51,7 @@ function mount(host){
  on(e('obPhase'),'input',ev=>{step=Number(ev.target.value);render();});
  on(e('obPrev'),'click',()=>{step=(step+19)%20;render();});
  on(e('obNext'),'click',()=>{step=(step+1)%20;render();});
- on(e('obWrite'),'click',()=>{const cycle=cycles[selected],m=MathNative.measure(cycle,amplitudeA,amplitudeB,step,reference,mode);const second=MathNative.measure(cycle,amplitudeA,amplitudeB,step,(reference+1)%4,mode);record={cycle:selected,site:cycle[step],phase:step,referencePhase:reference,measurements:[m.difference,second.difference],difference:m.difference,overlap:m.overlap};render();});
+ on(e('obWrite'),'click',()=>{const cycle=cycles[selected],m=MathNative.measure(cycle,amplitudeA,amplitudeB,step,reference,mode);const second=MathNative.measure(cycle,amplitudeA,amplitudeB,step,(reference+1)%4,mode);record={cycle:selected,site:cycle[step],phase:step,referencePhase:reference,mode,measurements:[m.difference,second.difference],difference:m.difference,overlap:m.overlap};render();});
  on(e('obCalibrated'),'change',render);\n on(e('obClear'),'click',()=>{record=null;render();});
  render();
  return{destroy(){ac.abort();host.replaceChildren();}};

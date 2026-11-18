@@ -33,7 +33,6 @@ function mount(host){
  for(let i=0;i<20;i++){const a=2*Math.PI*i/20-Math.PI/2,b=2*Math.PI*(i+1)/20-Math.PI/2;add('line',{x1:cx+rad*Math.cos(a),y1:cy+rad*Math.sin(a),x2:cx+rad*Math.cos(b),y2:cy+rad*Math.sin(b),stroke:'#436177','stroke-width':2});}
  for(let i=0;i<20;i++){const a=2*Math.PI*i/20-Math.PI/2,x=cx+rad*Math.cos(a),y=cy+rad*Math.sin(a);add('circle',{cx:x,cy:y,r:i===step?9:5,fill:i===step?'#f0be78':i%2===0?'#54d5c6':'#8499bb'});if(i%5===0)add('text',{x:cx+112*Math.cos(a),y:cy+112*Math.sin(a)+4,'text-anchor':'middle',fill:'#c4d6e4','font-size':12},String(i));}
  const m=MathNative.measure(cycle,amplitudeA,amplitudeB,step,reference,mode);
- const current= MathNative.basis(step,0);
  e('obSite').textContent='Cycle '+selected+' / 450 · site '+site+' → '+next+' · F step '+step+'/19 · signal coefficients ('+amplitudeA+','+amplitudeB+')';
  e('obRead').textContent='Native cycle energy contrast: '+m.difference+'\\nSigned overlap: '+m.overlap+'\\nReference: '+mode+' · phase '+reference+'\\nRecord: '+(record?'written at F phase '+record.phase+', cycle '+record.cycle:'not written');
  e('obMeaning').textContent=!record?'The native F cycle supplies the twenty-site support. Signal amplitudes and record-writing are declared.':('Stored contrast '+record.difference+' and overlap '+record.overlap+' remain unchanged after the encounter. Current contrast '+m.difference+'. This record is a scalar measurement, not a complete four-flux decoder.');

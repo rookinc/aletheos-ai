@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0a1015">
+<title>Reciprocal Witness Observatory · Aletheos.ai</title>
+<meta name="description" content="Replay a Thalean encounter. Send a signed disturbance, clear what the receiver retains, and measure what comes back.">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<a class="skip" href="#instrument">Skip to instrument</a>
+<header class="sitehead"><div class="wrap headrow">
+<a class="brand" href="https://aletheos.ai/" aria-label="Aletheos home"><svg viewBox="0 0 42 40" width="36" height="36" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 32 20.5 3 38 32Z M10 27h21 M14 20h13"/><ellipse cx="21" cy="23" rx="18" ry="5.7" transform="rotate(-17 21 23)"/></g></svg>Aletheos<span>.ai</span></a>
+<nav aria-label="Site"><a href="/library/">Research Library</a><a href="./field-guide.html" class="guidelink">Field guide</a></nav>
+</div></header>
+<main class="wrap">
+<section class="mast">
+<div class="eyebrow"><i></i> Center of Recursive Inquiry</div>
+<h1>Reciprocal Witness <em>Observatory</em></h1>
+<p>Send the same signal twice. Change what the receiver keeps. Measure what comes back.</p>
+</section>
+<nav class="experiments" aria-label="Experiment selection" id="experiments"></nav>
+<label class="mobileExperiment">Experiment <select id="mobileExperiment" aria-label="Experiment"></select></label>
+<section id="instrument" tabindex="-1" aria-labelledby="sceneTitle">
+<div class="instrumenthead"><div><div class="eyebrow" id="sourceLabel">TOM-PHY-029 · Exact finite replay</div><h2 id="sceneTitle">Two-sphere encounter</h2></div><button type="button" class="action" id="primary"><span aria-hidden="true">↻</span> Replay one encounter</button></div>
+<div class="desk">
+<div class="viewport">
+<div class="viewbar"><div class="seg" role="group" aria-label="Geometry"><button id="face" aria-pressed="true">Face-to-face</button><button id="nest" aria-pressed="false">Nested</button></div><label class="camera"><span>Camera</span><select id="camera" aria-label="Camera"><option value="external">External</option><option value="A">View from A</option><option value="B">View from B</option></select></label></div>
+<div class="visual" id="visual"><canvas id="scene" role="img" aria-label="Sphere A faces sphere B across boundary Sigma."></canvas><div id="skyLayer" hidden></div><span class="reticle tl"></span><span class="reticle tr"></span><span class="reticle bl"></span><span class="reticle br"></span></div>
+<div class="legend"><span><i class="shapeA"></i><span id="legendA">A · Sender</span></span><span><i class="shapeB"></i><span id="legendB">B · Receiver</span></span><span><i class="shapeS"></i><span id="legendS">Σ · Shared boundary</span></span></div>
+<div id="directionReadout" hidden class="localRuler"></div><div class="timeline"><div class="track" id="track" aria-label="Encounter checkpoints"></div><div class="transport"><button id="play" aria-label="Play"><span aria-hidden="true">▷</span> Play</button><button id="step"><span aria-hidden="true">▹│</span> Step</button><button id="reset"><span aria-hidden="true">↻</span> Replay</button><span id="clock" class="clock"></span></div></div>
+</div>
+<section class="readout" aria-labelledby="rdtitle"><div class="paneltag"><span class="pulse"></span> Live readout</div><div class="rdmeta" id="eventBadge">Launch</div><h3 id="rdtitle">A sends</h3><div id="explain" class="explain"></div><div id="meters" class="meters"></div><div id="rdfoot" class="rdfoot"></div></section>
+</div>
+<div id="notice" role="status" aria-live="polite" aria-atomic="true" class="sr"></div>
+<div id="special"></div>
+<div class="bench">
+<section class="controls box"><div class="boxtitle"><h3>Experiment controls</h3></div><div id="physicalControls"></div><section class="perspective"><h4>Observer display</h4><div class="formgrid"><label>Ledger orientation<select id="orient"><option value="global">Fixed · A to B positive</option><option value="B">B-local · outward positive</option></select></label><label id="outerLabel" hidden>Outer shell<select id="outer"><option value="B">B encloses A</option><option value="A">A encloses B</option></select></label></div><p id="orientNote" class="hint"></p></section></section>
+<section class="box witness" aria-labelledby="witnessTitle"><div class="boxtitle"><h3 id="witnessTitle">Independent observer</h3><span class="tag">Read only</span></div><p id="witnessLead"></p><button id="compare" class="secondary">Compare receipts</button><div id="comparison"></div><div class="receiptline"><button id="ledgerButton" class="textbutton">Open event receipt</button><button id="export" class="textbutton">Export JSON</button></div><pre id="ledger" aria-label="Event receipt" hidden></pre></section>
+</div>
+<section class="methods"><details><summary>Guided walkthrough</summary><div id="walkthrough" class="detailbody"></div></details><details><summary>Equations and assumptions</summary><div id="equations" class="detailbody"></div></details><details><summary>Source versions and replay evidence</summary><div id="sources" class="detailbody"></div></details></section>
+</section>
+<footer><div><b>Reciprocal Witness Observatory</b><p>Scott Allen Cave · Center of Recursive Inquiry</p></div><nav aria-label="Research navigation"><a href="./field-guide.html" class="guidelink">Field guide</a><a href="/library/records/cori-0089/">Library record</a><a href="/library/observatories/">Observatory index</a></nav></footer>
+</main>
+<noscript>This instrument requires JavaScript. The field guide describes the experiments and their exact results.</noscript>
+<script type="module" src="./app.js"></script>
+</body></html>

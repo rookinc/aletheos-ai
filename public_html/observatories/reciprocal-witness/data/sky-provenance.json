@@ -1,0 +1,60 @@
+{
+  "credit": "Scott Allen Cave · Center of Recursive Inquiry. Sky data: ESA/Planck Collaboration, hosted by IRSA.",
+  "input_sha256": {
+    "CMB-Obfuscation-and-Thalean-Observer-Mechanics.pdf": "e983b966ed97e37fd781b6a23cad1a7998a8fb4249c14c5b9d6edcc032e32bd0",
+    "CMB-and-Thalean-Observer-Mechanics-Review.pdf": "18314ff6012b0fb9570b5ea5e2ccd7e3e01cc4cc327db422aa0384d2e45e667e",
+    "Thalean-Geodesic-Observer.zip": "602b8a21f537b03c6c7f7d283d5f4b2e2f04f9b38b8798666c3e82cb536a3930",
+    "Thalean-Returning-Observer.zip": "37fa5674726be609d58b77aa3cf2a12746f4a164fea317cdc3d56b039a9bffb0",
+    "Thalean-CMB-Phase-Receiver.zip": "22e2745776f62096c110a38e0915632dd3c3defa72578ff897b48732f1729aaa",
+    "Triad-Comparator.zip": "0180cf7c95c07dbce5dff772a327822357dccbc316d8eb0cf377a3aa12bd3bfa",
+    "Thalean-CMB-Phase-Receiver/replay.py": "9ff42ce1880ab995f94e446101d936b7fd01a6b9fdc7e12bb66fecae7dbb3fe6",
+    "Thalean-CMB-Phase-Receiver/results.json": "1efd3255e2634ba1f72518f3636d06aa625ed1f1dd937c951ac56cec2b75a8ac",
+    "Thalean-Geodesic-Observer/geodesics.py": "afb571e9da4bc370ef1e39bc2ad180d0442cebae070b725efbb6afe2bdb31a16",
+    "sky/prior/inputs/smica-filtered-lowband.json": "0c5563d7836b13c1401b183a8bfa01a7a825b8d93d288f6c52ef8a74f2e69744",
+    "sky/prior/planck-protocol.json": "b7009f5d4fa5ebf68742d877e4d4d4c43b6b37071b684954cad9aad9a26d8a86",
+    "sky/prior/audit_wmap.py": "c8f2c5d11bee97299b34942f5ef15c728dd0257397d4008855e778ced82e072c",
+    "CMB-DATUM-008-receipt.json": "604a57e18f980889edcb0f1f57ea8f1eeadd7d3516aa24f9a663115c767e302d",
+    "Gravity-Petrie-Probe-Receipt.json": "55680d54679b2a9f88f4379bcf1d7759d4a8bf5129e4f37d18168db9b2bbf845",
+    "native_g60_B1_vertex_edge_004.csv": "9a3db57bb31a3e9ab31a5dfb969697ccdca685e8bcafa19bde51a9349b81093c",
+    "native_g60_B2_edge_face_004.csv": "1ed06f750330b53e238331eef1c12879c6b94fa74c7c06bb32368b62dafa20b8",
+    "native_tensor_arrays.npz": "c2393278b1014c59798dc0b47c597a12f31c1c4a56d75d4872770278da98ef28"
+  },
+  "reference": "CMB Obfuscation and Thalean Observer Mechanics §4. CMB and Thalean Observer Mechanics Review pp. 1–2, attachment Triad-Comparator.zip.",
+  "replayed": {
+    "CMB-phase-source": "Verified all five input digests. The phase channel vanishes on both legs of all 20 direct edge-pair slices. The alternate partner analyzer gives (0,+420),(0,−420).",
+    "cross_edge_comparator": {
+      "directed_edges": 240,
+      "legal_windows": 960,
+      "positive": 480,
+      "negative": 480
+    },
+    "geodesic_source": "480 eligible launches and 57,600 common-beacon/lag checks. All equal-bit controls yielded identical arrivals."
+  },
+  "sky_map": {
+    "archive": "https://irsa.ipac.caltech.edu/data/Planck/release_3/all-sky-maps/maps/component-maps/cmb/COM_CMB_IQU-smica_2048_R3.00_full.fits",
+    "upstream_fits_sha256_as_recorded_by_cmb_datum_003": "60952c645eb33d151905ddf5837477e15ca02a3261feca4ceca3c3feece4f9ac",
+    "product": "COM_CMB_IQU-smica_2048_R3.00_full.fits",
+    "field": "I_STOKES",
+    "units": "thermodynamic microkelvin",
+    "working_input": "sky-planck-coefficients.json",
+    "protocol": "sky-planck-protocol.json",
+    "render": "sky-planck.png",
+    "processing": "Native NESTED pixels averaged to NSIDE 128. Equal-weight full-sky quadrature, degrees 2 and 3, no new beam correction. Evaluate real orthonormal harmonics in Galactic coordinates. Original Mollweide projection with Galactic north up, longitude increasing left and a fixed linear palette −55 to +55 thermodynamic µK. No sky values enter the combiner.",
+    "rendered_range_microkelvin": [
+      -50.8962,
+      48.2654
+    ]
+  },
+  "astronomical_anchor": {
+    "collaboration": "Event Horizon Telescope Collaboration",
+    "paper": "First Sagittarius A* Event Horizon Telescope Results. I",
+    "doi": "https://doi.org/10.3847/2041-8213/ac6674",
+    "primary": "https://eventhorizontelescope.org/publications/first-sagittarius-event-horizon-telescope-results-i-shadow-supermassive-black-hole",
+    "wavelength_mm": 1.3,
+    "observations_year": 2017,
+    "bright_ring_diameter_microarcsec": 51.8,
+    "credible_halfwidth_microarcsec": 2.3,
+    "credible_fraction": 0.68,
+    "display": "Original schematic. No EHT brightness image or visibility data used."
+  }
+}

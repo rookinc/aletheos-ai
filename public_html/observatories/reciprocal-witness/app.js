@@ -17,6 +17,13 @@ const validHash=location.hash.slice(1);if(validHash in profiles)state.name=valid
 if(state.name==='sky')state.outer='A';
 let timer=0,paintRequest=0,record=null,engine=null,current=null,previousName=null;
 const currentConfig=()=>sticky[state.name];
+const sittersLink=document.createElement('a');
+sittersLink.href='./sitters.html';
+sittersLink.textContent='Open the two-sitter field loop';
+sittersLink.className='textbutton';
+sittersLink.id='sittersLink';
+sittersLink.hidden=true;
+$('sceneTitle').after(sittersLink);
 const sourceLinks={
  paired:'./data/paired-provenance.json',flux:'./data/flux-provenance.json',sag:'./data/flux-provenance.json',sky:'./data/sky-provenance.json',heart:'./data/replay-sha256.json'
 };
@@ -89,6 +96,7 @@ function render(controlsDirty=true,animate=false){
  const priorDetails=[...$('special').querySelectorAll('details[open]')].map(x=>x.querySelector('summary')?.textContent);
  engine=compute(n,c,e);current=readout(n,c,e,state.branch,engine);record=buildReceipt(state.branch,e,engine,current);
  $('mobileExperiment').value=n;for(const b of $('experiments').querySelectorAll('button'))b.setAttribute('aria-pressed',String(b.dataset.scene===n));
+ sittersLink.hidden=n!=='heart';
  $('sourceLabel').textContent=p.source;$('sceneTitle').textContent=p.title;
  $('eventBadge').textContent=current.label;$('rdtitle').textContent=current.title;$('explain').textContent=current.text;$('meters').innerHTML=current.meters;$('rdfoot').innerHTML=current.foot;
  if(n==='sky'&&!state.apparatus){$('rdtitle').textContent=state.map?'Measured temperature modes':'Sky receiver';$('eventBadge').textContent='Observational context';$('explain').textContent=state.map?'These twelve real coefficients reconstruct the measured quadrupole and octupole on a Galactic sky.':'Enable a display layer to inspect the sky or local phase receiver.';$('meters').innerHTML=state.map?'<div class="meter"><span>Temperature units</span><b>µK CMB</b></div><div class="meter"><span>Multipoles</span><b>ℓ = 2, 3</b></div>':'';$('rdfoot').textContent='The instrument retains the selected phase preparation for replay.';}

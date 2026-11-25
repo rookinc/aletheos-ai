@@ -7,27 +7,59 @@ import mimetypes
 from pathlib import Path
 import posixpath
 import re
-from html import escape
 
 p=argparse.ArgumentParser(description=__doc__)
-p.add_argument('instrument',type=Path);p.add_argument('output',type=Path);args=p.parse_args()
+p.add_argument('instrument',type=Path)
+p.add_argument('output',type=Path)
+p.add_argument('--sitters',action='store_true',help='Build just the two-sitter loop as one offline HTML file')
+args=p.parse_args()
 root=args.instrument
 def data(raw,kind):return 'data:'+kind+';base64,'+base64.b64encode(raw).decode('ascii')
 def source(path):return (root/path).read_text()
 def resource(path):return data((root/path).read_bytes(),mimetypes.guess_type(path)[0] or 'application/octet-stream')
-page=source('index.html')
-css=re.sub(r'url\("\./(fonts/[^"]+)"\)',lambda m:'url("'+resource(m.group(1))+'")',source('style.css'))
-page=page.replace('<link rel="stylesheet" href="./style.css">','<style>'+css+'</style>')
-imports={}
-for file in [*root.glob('*.js'),*(root/'data').glob('*.js')]:
-    key=file.relative_to(root).as_posix()
-    def replace(m):
-        imported=posixpath.normpath(posixpath.join(posixpath.dirname(key),m.group(2)))
-        return m.group(1)+"'rw/"+imported+"'"
-    mod=re.sub(r"(\bfrom\s+)'(\.[^']+)'",replace,file.read_text())
-    if key=='panels.js':
-        mod=mod.replace("'./data/sky-planck.png'","'"+resource('data/sky-planck.png')+"'")
-    imports['rw/'+key]=data(mod.encode(),'text/javascript')
+def styled_page(filename):
+    def stylesheet(match):
+        css = re.sub(r'url\("\./(fonts/[^"]+)"\)', lambda m: 'url("'+resource(m.group(1))+'")', source(match.group(1)))
+        return '<style>'+css+'</style>'
+    return re.sub(r'<link rel="stylesheet" href="\./([^"]+)">',stylesheet,source(filename))
+
+def module_loader(entry):
+    imports = {}
+    def collect(key):
+        if 'rw/'+key in imports:
+            return
+        imports['rw/'+key] = ''
+        def dependency(match):
+            imported = posixpath.normpath(posixpath.join(posixpath.dirname(key),match.group(2)))
+            collect(imported)
+            return match.group(1)+"'rw/"+imported+"'"
+        mod = re.sub(r"(\bfrom\s+)'(\.[^']+)'",dependency,source(key))
+        if key == 'panels.js':
+            mod = mod.replace("'./data/sky-planck.png'","'"+resource('data/sky-planck.png')+"'")
+        imports['rw/'+key] = data(mod.encode(),'text/javascript')
+    collect(entry)
+    mapping = json.dumps({'imports':imports},separators=(',',':'))
+    return '<script type="importmap">'+mapping+'</script><script type="module">import "rw/'+entry+'";</script>'
+
+def sitter_page():
+    html = styled_page('sitters.html')
+    html = html.replace('href="./index.html#heart"','href="https://aletheos.ai/observatories/reciprocal-witness/#heart"')
+    html = html.replace('href="/library/','href="https://aletheos.ai/library/')
+    def evidence(match):
+        path = match.group(1)
+        return 'download="'+Path(path).name+'" href="'+resource(path)+'"'
+    html = re.sub(r'href="\./([^"]+\.(?:js|mjs|py|md))"',evidence,html)
+    return html.replace('<script type="module" src="./sitters.js"></script>', module_loader('sitters.js'))
+
+args.output.parent.mkdir(parents=True,exist_ok=True)
+loop_page = sitter_page() if (root/'sitters.html').exists() else ''
+if args.sitters:
+    if not loop_page:
+        p.error('This installation has no sitters.html')
+    args.output.write_text(loop_page)
+    raise SystemExit(0)
+
+page=styled_page('index.html')
 def embedded(doc,id):
     part=re.search(r'<main id="guide" class="wrap guide">(.*?)</main>',source(doc),re.S).group(1)
     return '<main id="'+id+'" class="wrap guide" hidden><div style="padding-top:14px"><button data-close-doc>Return to experiment</button></div>'+part+'</main>'
@@ -53,6 +85,21 @@ document.addEventListener('click',ev=>{
   const target=document.getElementById(raw.slice(1));if(target){ev.preventDefault();target.scrollIntoView();}return;
  }
  const [path,frag]=raw.replace(/^\.\//,'').split('#');
+ if(path==='sitters.html'){
+  ev.preventDefault();
+  const frame=document.createElement('iframe');
+  frame.title='Two-sitter field loop';
+  frame.style.cssText='position:fixed;inset:0;width:100%;height:100%;border:0;z-index:100;background:#090f15';
+  const overflow=document.body.style.overflow;document.body.style.overflow='hidden';
+  frame.addEventListener('load',()=>{
+   frame.contentDocument.querySelectorAll('.backHearts').forEach(back=>back.addEventListener('click',e=>{
+    e.preventDefault();frame.remove();document.body.style.overflow=overflow;a.focus();
+   }));
+   frame.contentWindow.focus();
+  },{once:true});
+  frame.srcdoc=new TextDecoder().decode(Uint8Array.from(atob(LOOP_HTML),c=>c.charCodeAt(0)));
+  document.body.append(frame);return;
+ }
  if(path==='index.html'){
   ev.preventDefault();closeDoc();
   const s=document.querySelector('#mobileExperiment');if(frag&&[...s.options].some(o=>o.value===frag)){s.value=frag;s.dispatchEvent(new Event('change',{bubbles:true}));}
@@ -67,8 +114,8 @@ document.addEventListener('click',ev=>{
 });
 })();
 </script>'''
-dialog=dialog.replace('const pages=', 'const FILES='+json.dumps(attach,separators=(',',':'))+';\nconst pages=')
-bootstrap='<script type="importmap">'+json.dumps({'imports':imports},separators=(',',':'))+'</script><script type="module">import "rw/app.js";</script>'
+dialog=dialog.replace('const pages=', 'const LOOP_HTML='+json.dumps(base64.b64encode(loop_page.encode()).decode('ascii'))+';\nconst FILES='+json.dumps(attach,separators=(',',':'))+';\nconst pages=')
+bootstrap=module_loader('app.js')
 page=page.replace('<script type="module" src="./app.js"></script>',docs+dialog+bootstrap)
 page=page.replace('href="/library/','href="https://aletheos.ai/library/')
-args.output.parent.mkdir(parents=True,exist_ok=True);args.output.write_text(page)
+args.output.write_text(page)

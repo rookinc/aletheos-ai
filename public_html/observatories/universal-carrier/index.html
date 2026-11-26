@@ -43,9 +43,15 @@ input[type=range]{accent-color:#6be8ea}
 .deck-title button{font-size:12px;min-height:27px;padding-inline:8px}
 .deck button:active,.deck-title button:active,.deck [aria-pressed=true],.deck-title [aria-pressed=true],.deck-title [aria-expanded=true]{
   color:var(--phosphor);background:#202b2b;border-color:#101920 #758587 #809091 #172126;box-shadow:inset 0 1px 3px #0d1219}
-.deck{display:grid;grid-template-columns:minmax(290px,.78fr) minmax(310px,1.22fr);align-items:center;
+.deck{display:grid;grid-template-columns:minmax(430px,.95fr) minmax(310px,1.05fr);align-items:center;
   gap:10px;padding:5px 6px;background:linear-gradient(#4a5060,#353b49);border-top:1px solid #818898;border-bottom:2px solid #171c28}
-.view-strip{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:5px;min-width:0}
+.view-strip{display:grid;grid-template-columns:auto auto minmax(0,1fr) auto;align-items:stretch;gap:5px;min-width:0}
+.speed-control{display:grid;align-content:center;justify-items:stretch;padding:1px 4px;
+  border:1px solid;border-color:#151d28 #6f7989 #697483 #1a202e;background:#222a33;color:#d4e0e4}
+.speed-control label{display:block;font:650 9px/1.1 system-ui,sans-serif;letter-spacing:.045em;text-transform:uppercase}
+.speed-control select{min-width:0;width:100%;margin:0;padding:1px 0;border:0;border-radius:0;background:#17231e;
+  color:#d2f484;font:650 13px/1.18 ui-monospace,monospace;cursor:pointer}
+.speed-control select option{background:#17231e;color:#d2f484}
 .view-keys{min-width:0}
 .view-keys button{flex:1}
 .deck #torusPlay{min-width:67px;display:flex;align-items:center;justify-content:center;gap:6px;
@@ -74,7 +80,7 @@ input[type=range]{accent-color:#6be8ea}
   .fader-strip input{height:27px}
 }
 .deck :focus-visible,.deck-title :focus-visible{outline:2px solid #ffe2a0;outline-offset:1px}
-@media(max-width:640px){
+@media(max-width:790px){
   .deck{grid-template-columns:1fr;gap:4px;padding:4px 5px}
   .deck-title{gap:6px;padding:3px 5px}
   .window-tools{gap:3px}
@@ -107,10 +113,22 @@ input[type=range]{accent-color:#6be8ea}
   .loom-separator{display:none}
   .loom-example th,.loom-example td{padding:5px 3px}
 }
-@media(max-width:360px){
+@media(max-width:445px){
+  .reset-word{display:none}
+  .view-strip{gap:3px}
   .view-keys button{padding-inline:3px}
-  .deck #torusPlay{min-width:58px;padding-inline:5px}
+  .deck #torusPlay{min-width:54px;padding-inline:4px}
+  .speed-control{padding-inline:2px}
+}
+@media(max-width:390px){
+  .view-keys button{padding-inline:2px}
+  .deck #torusPlay{min-width:50px;font-size:12px;gap:4px}
   #homeCamera{padding-inline:6px}
+}
+@media(max-width:360px){
+  .deck #torusPlay{width:32px;min-width:32px;padding:0;font-size:0;gap:0}
+  .view-keys button{padding-inline:1px;font-size:12px}
+  .speed-control select{font-size:12px}
 }
 </style><main><div id="stageFrame"><header class="deck-title">
   <h1>Thalean G9000 <span class="loom-model"><span class="loom-separator">· </span>Light Loom</span></h1>
@@ -123,12 +141,32 @@ input[type=range]{accent-color:#6be8ea}
 <div class="deck" role="group" aria-label="Stage controls">
   <div class="view-strip">
     <button id="torusPlay" data-playing="true">Pause</button>
+    <div class="speed-control">
+      <label for="torusSpeed">Cycle speed</label>
+      <select id="torusSpeed" aria-describedby="cycleUnits" title="Full cycles per second · ten contacts per cycle">
+        <option value=".25">0.025 Hz</option>
+        <option value=".70" selected>0.07 Hz</option>
+        <option value="1.5">0.15 Hz</option>
+        <option value="3">0.3 Hz</option>
+        <option value="5">0.5 Hz</option>
+        <option value="10">1 Hz</option>
+        <option value="20">2 Hz</option>
+        <option value="40">4 Hz</option>
+        <option value="80">8 Hz</option>
+        <option value="120">12 Hz</option>
+        <option value="200">20 Hz</option>
+        <option value="300">30 Hz</option>
+        <option value="470">47 Hz</option>
+        <option value="600">60 Hz</option>
+      </select>
+      <span id="cycleUnits" hidden>Hertz means full ten-contact cycles per second.</span>
+    </div>
     <div class="view-keys" role="group" aria-label="Camera views">
       <button data-camera="Front" aria-pressed="false">Front</button>
       <button data-camera="Top" aria-pressed="false">Top</button>
       <button data-camera="Ortho" aria-pressed="true">Ortho</button>
     </div>
-    <button id="homeCamera">Reset view</button>
+    <button id="homeCamera" title="Reset view to Ortho" aria-label="Reset view">Reset<span class="reset-word"> view</span></button>
   </div>
   <div class="fader-bank">
     <div class="fader-strip">
@@ -148,9 +186,6 @@ input[type=range]{accent-color:#6be8ea}
 <section id="settingsPanel" aria-labelledby="settingsButton" hidden>
   <fieldset class="playback-settings">
     <legend>Playback</legend>
-    <label for="torusSpeed">Contacts/s
-      <select id="torusSpeed"><option>.25</option><option selected>.70</option><option>1.5</option><option>3</option></select>
-    </label>
     <label for="motionLaw">Pacing
       <select id="motionLaw"><option value="gravity" selected>Gravity · probe 26</option><option value="uniform">Uniform</option></select>
     </label>
@@ -178,7 +213,7 @@ input[type=range]{accent-color:#6be8ea}
     <p>The browser replays ten archived contacts on the finite graph AT4val[60,6], called G60 here. A <em>dart</em> is an edge with a direction of travel. The packet embedded in this page contains 60 sites, 120 undirected edges, and a map from the 60 sites to 15 quotient slots. Each slot collects four sites. The starting point of a comparison is the ordered pair of site numbers, written tail → head. The ten recorded darts join into a closed itinerary.</p>
     <p class="loom-route" aria-label="Ten-contact itinerary">26 → 15 → 4 → 56 → 48 → 54 → 40 → 7 → 34 → 22 → 26</p>
     <p>In the source, <code>k</code> is the contact index and <code>current()</code> selects <code>D.rows[k]</code>. The front panel numbers contacts 1 through 10, so contact 1 corresponds to row 0. Each row contains the dart, 20 face positions <code>q</code>, 20 signed velocities <code>v</code>, a unit-total 60-site energy profile <code>rho</code>, an archived potential span, four pair correlations, and the fixed-quartet CHSH score. The shared graph data live in <code>D.edges</code> and <code>D.pi</code>. Here <em>kernel</em> means the common replay and readout machinery. The Einstein drawer also uses the word for a specific mathematical operator, the Green kernel that produced its archived potential values.</p>
-    <p>At a contact change, <code>render()</code> refreshes the eight instrument summaries and the contact record from the selected index. The graph view highlights the current dart and colors sites by their recorded energy. Opening a drawer selects where that graph is shown. Between contacts, <code>contactPhase()</code> gives the renderer a continuous phase. Uniform pacing advances that phase evenly. Gravity pacing shapes it using archived potential samples at site 26. Both settings visit the same ten rows in the same order.</p>
+    <p>At a contact change, <code>render()</code> refreshes the eight instrument summaries and the contact record from the selected index. The graph view highlights the current dart and colors sites by their recorded energy. Opening a drawer selects where that graph is shown. Between contacts, <code>contactPhase()</code> gives the renderer a continuous phase. Uniform pacing advances that phase evenly. Gravity pacing shapes it using archived potential samples at site 26. Both settings follow the same ten-row itinerary. Cycle speed on the top deck is measured in full cycles per second (Hz). The opening rate of 0.07 Hz is 0.70 contacts per second. At 60 Hz the clock traverses 600 contacts per second. Each frame shows the contact reached at that instant, so a fast rate can skip visible contacts or repeatedly sample a similar phase when it matches the screen refresh rate.</p>
 
     <h4 id="loom-optics">How a contact becomes a visible weave</h4>
     <p>The stage draws the same toroidal brightness pattern in three coordinate planes. In the default CMY palette, XZ is magenta, XY is yellow, and YZ is cyan. The displayed contact orbit makes one turn around the ring in five contacts and one around the tube in ten. The depth of a surface patch, the traveling brightness crest, and the opacities of the visible layers determine each plane’s contribution to a screen pixel. The camera determines which projected patches overlap.</p>
@@ -549,7 +584,9 @@ const N=window.CAMERA_NAVIGATION;
 const presets={Front:[0,0],Top:[0,Math.PI/2],Ortho:[Math.PI/4,Math.atan(1/Math.sqrt(2))]};
 let orientation=N.initial(...presets.Ortho),matrix=N.matrix(orientation);
 let panX=0,panY=0,zoom=1;
-let fraction=0, lastFrame=0, frame=0;
+let fraction=0, lastFrame=null, frame=0;
+const speedControl=$('torusSpeed');
+let contactsPerSecond=Number(speedControl.value);
 let playing=true;
 // Same chart permutations as the G9000 Flower view's planePoint.
 function chartPoint(p,chart){
@@ -724,21 +761,39 @@ function presentLight(){
     hud.restore()
   }
 }
+// The contact register follows active elapsed time, including frames the display skips.
+function displayAt(now){
+  const elapsed=lastFrame===null?0:Math.max(0,now-lastFrame);
+  lastFrame=Math.max(now,lastFrame??now);
+  const phase=fraction+elapsed*.001*contactsPerSecond;
+  const steps=Math.floor(phase);
+  fraction=phase-steps;
+  const next=(k+steps)%D.rows.length;
+  if(next===k)renderTorus();
+  else{k=next;render()}
+}
 function tick(now){
   frame=0;
   if(!playing||document.hidden)return;
-  fraction+=Math.min(100,now-(lastFrame||now))*.001*Number($('torusSpeed').value);lastFrame=now;
-  if(fraction>=1){fraction-=1;k=(k+1)%10;render()}else renderTorus();
-  if(!frame)frame=requestAnimationFrame(tick)
+  displayAt(now);
+  frame=requestAnimationFrame(tick)
 }
-function syncTorus(){
+function syncPlayback(){
   cancelAnimationFrame(frame);frame=0;
-
   $('torusPlay').textContent=playing?'Pause':'Play';
   $('torusPlay').dataset.playing=String(playing);
-  renderTorus();if(playing&&!document.hidden)frame=requestAnimationFrame(tick)
+  lastFrame=null;
+  if(playing&&!document.hidden){
+    lastFrame=performance.now();
+    frame=requestAnimationFrame(tick)
+  }
 }
-$('torusPlay').onclick=()=>{playing=!playing;lastFrame=0;syncTorus()};
+speedControl.onchange=()=>{
+  // Complete the old rate's interval before applying the new rate.
+  if(playing&&!document.hidden)displayAt(performance.now());
+  contactsPerSecond=Number(speedControl.value)
+};
+$('torusPlay').onclick=()=>{playing=!playing;syncPlayback()};
 const fingers=new Map();
 let lastTap=null,tapStart=null;
 function rectPoint(x,y){
@@ -815,7 +870,7 @@ torusCanvas.addEventListener('wheel',e=>{
   const delta=e.deltaY*(e.deltaMode===1?16:e.deltaMode===2?200:1);
   zoom=N.zoom(zoom,Math.exp(-Math.max(-300,Math.min(300,delta))*.003));renderTorus()
 },{passive:false});
-document.addEventListener('visibilitychange',()=>{lastFrame=0;syncTorus()});
+document.addEventListener('visibilitychange',syncPlayback);
 window.addEventListener('resize',()=>{renderTorus()});
 
 function render(){showRec();const r=current(),g=frac(r.coarse_span);$('step').value=k;$('step').setAttribute('aria-valuetext',(k+1)+' of 10');$('pos').textContent=(k+1)+' / 10';let opts={
@@ -830,7 +885,7 @@ for(const drawer of drawers){
   const fields=drawer.querySelector('.readout').children;
   opts[drawer.dataset.mode].forEach((value,i)=>fields[i].textContent=value)
 }
-$('record').innerHTML=[['Native dart',r.tail+' → '+r.head],['Quotient dart',D.pi[r.tail]+' → '+D.pi[r.head]],['First face q, v',r.q[0].toFixed(4)+', '+r.v[0].toFixed(4)],['Energy in chambers 1, 6, 12',r.rho.reduce((s,v,i)=>s+([1,6,12].includes(D.pi[i])?v:0),0).toFixed(7)],['Within-fibre field',0],['Collective pair score',r.CHSH]].map(([a,b])=>'<tr><th>'+a+'</th><td>'+b+'</td></tr>').join('');$('trial').textContent='';if(!$('graphReadout').hidden)draw();table();syncTorus()}
+$('record').innerHTML=[['Native dart',r.tail+' → '+r.head],['Quotient dart',D.pi[r.tail]+' → '+D.pi[r.head]],['First face q, v',r.q[0].toFixed(4)+', '+r.v[0].toFixed(4)],['Energy in chambers 1, 6, 12',r.rho.reduce((s,v,i)=>s+([1,6,12].includes(D.pi[i])?v:0),0).toFixed(7)],['Within-fibre field',0],['Collective pair score',r.CHSH]].map(([a,b])=>'<tr><th>'+a+'</th><td>'+b+'</td></tr>').join('');$('trial').textContent='';if(!$('graphReadout').hidden)draw();table();renderTorus()}
 const drawers=document.querySelectorAll('.instrument');
 for(const drawer of drawers)drawer.addEventListener('toggle',()=>{
   const active=Array.from(drawers).find(d=>d.open);
@@ -838,7 +893,14 @@ for(const drawer of drawers)drawer.addEventListener('toggle',()=>{
   const graph=$('graphReadout');graph.hidden=mode==='Reziprokium';
   if(!graph.hidden){active.querySelector('.readout').after(graph);draw()}
 });
-$('next').onclick=()=>{fraction=0;k=(k+1)%10;render()};$('prev').onclick=()=>{fraction=0;k=(k+9)%10;render()};$('step').oninput=e=>{fraction=0;k=+e.target.value;render()};$('model').onchange=()=>{settings();render()};$('left').onchange=$('right').onchange=()=>{table();$('trial').textContent=''};
+function selectContact(index){
+  k=index;fraction=0;lastFrame=playing&&!document.hidden?performance.now():null;
+  render()
+}
+$('next').onclick=()=>selectContact((k+1)%D.rows.length);
+$('prev').onclick=()=>selectContact((k+D.rows.length-1)%D.rows.length);
+$('step').oninput=e=>selectContact(Number(e.target.value));
+$('model').onchange=()=>{settings();render()};$('left').onchange=$('right').onchange=()=>{table();$('trial').textContent=''};
 $('sample').onclick=()=>{let p=table(),u=Math.random(),j=0;while(j<3&&u>=p[j])u-=p[j++];let c=counts.get(key())||[0,0,0,0];c[j]++;counts.set(key(),c);table();$('trial').textContent='Registered (A,B) = '+['(+,+)','(+,−)','(−,+)','(−,−)'][j]};
 $('clear').onclick=()=>{counts.delete(key());$('trial').textContent='';table()};$('motionLaw').onchange=renderTorus;
 $('recRoute').onchange=$('recState').onchange=()=>{showRec();renderTorus()};
@@ -852,7 +914,7 @@ function revealGuideAnchor(){
   }
 }
 window.addEventListener('hashchange',revealGuideAnchor);
-settings();render();
+settings();render();syncPlayback();
 if(location.hash)revealGuideAnchor();
 </script></html>
 

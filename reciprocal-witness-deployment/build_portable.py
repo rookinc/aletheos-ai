@@ -11,6 +11,7 @@ import re
 p=argparse.ArgumentParser(description=__doc__)
 p.add_argument('instrument',type=Path)
 p.add_argument('output',type=Path)
+p.add_argument('--orthogonal',action='store_true',help='Build the standalone sitter loop and open on the Orthogonal Assembly')
 p.add_argument('--sitters',action='store_true',help='Build just the two-sitter loop as one offline HTML file')
 args=p.parse_args()
 root=args.instrument
@@ -19,7 +20,7 @@ def source(path):return (root/path).read_text()
 def resource(path):return data((root/path).read_bytes(),mimetypes.guess_type(path)[0] or 'application/octet-stream')
 def styled_page(filename):
     def stylesheet(match):
-        css = re.sub(r'url\("\./(fonts/[^"]+)"\)', lambda m: 'url("'+resource(m.group(1))+'")', source(match.group(1)))
+        css = re.sub(r'url\("\./(fonts/[^"]+)"\)', lambda m: 'url("'+resource(m.group(1))+'")', source(match.group(1).split('?',1)[0]))
         return '<style>'+css+'</style>'
     return re.sub(r'<link rel="stylesheet" href="\./([^"]+)">',stylesheet,source(filename))
 
@@ -30,7 +31,7 @@ def module_loader(entry):
             return
         imports['rw/'+key] = ''
         def dependency(match):
-            imported = posixpath.normpath(posixpath.join(posixpath.dirname(key),match.group(2)))
+            imported = posixpath.normpath(posixpath.join(posixpath.dirname(key),match.group(2).split('?',1)[0]))
             collect(imported)
             return match.group(1)+"'rw/"+imported+"'"
         mod = re.sub(r"(\bfrom\s+)'(\.[^']+)'",dependency,source(key))
@@ -41,19 +42,22 @@ def module_loader(entry):
     mapping = json.dumps({'imports':imports},separators=(',',':'))
     return '<script type="importmap">'+mapping+'</script><script type="module">import "rw/'+entry+'";</script>'
 
-def sitter_page():
+def sitter_page(open_orthogonal=False):
     html = styled_page('sitters.html')
+    if open_orthogonal:
+        html = html.replace('<body class="duet">','<body class="duet" data-default-field="orthogonal">')
     html = html.replace('href="./index.html#heart"','href="https://aletheos.ai/observatories/reciprocal-witness/#heart"')
     html = html.replace('href="/library/','href="https://aletheos.ai/library/')
     def evidence(match):
         path = match.group(1)
         return 'download="'+Path(path).name+'" href="'+resource(path)+'"'
-    html = re.sub(r'href="\./([^"]+\.(?:js|mjs|py|md))"',evidence,html)
-    return html.replace('<script type="module" src="./sitters.js"></script>', module_loader('sitters.js'))
+    html = re.sub(r'href="\./([^"]+\.(?:js|mjs|py|md|json))"',evidence,html)
+    return re.sub(r'<script type="module" src="\./sitters\.js(?:\?[^"]*)?"></script>',
+                  lambda _: module_loader('sitters.js'),html)
 
 args.output.parent.mkdir(parents=True,exist_ok=True)
-loop_page = sitter_page() if (root/'sitters.html').exists() else ''
-if args.sitters:
+loop_page = sitter_page(args.orthogonal) if (root/'sitters.html').exists() else ''
+if args.sitters or args.orthogonal:
     if not loop_page:
         p.error('This installation has no sitters.html')
     args.output.write_text(loop_page)

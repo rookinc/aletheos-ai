@@ -2,33 +2,49 @@
 
 The instrument belongs at `/observatories/reciprocal-witness/`. Its Library record is `/library/records/cori-0089/`. The website repository was checked at `fb155cf9916ab1b4e502dd6d2bffdf7d21a59dfc`. That revision contains instrument directories. The research catalog and its November 23 PHP publication wrapper are maintained on the web host.
 
-## Add the two-sitter loop to the published observatory
+## Install the two sitters in the Orthogonal field
 
-The single-file phone installer is [Update-Two-Sitters.sh](releases/Update-Two-Sitters.sh). Download it to Termux and run `bash Update-Two-Sitters.sh` from that directory. It carries the complete update and uses the configured `gurtiamy` SSH alias.
-
-From a checkout of this revision, the equivalent command is
+Save the current single-file installer as `Update-Orthogonal-Sitters.sh` in Downloads. With the existing Bluehost SSH alias configured in Termux, run
 
 ```bash
-bash reciprocal-witness-deployment/update-sitters.sh
+bash Update-Orthogonal-Sitters.sh
 ```
 
-The update verifies the installed entry page and every reused asset declared in `sitters-release.json`. It accepts the recorded original or updated SHA-256 for each replaced file. New asset paths must be available or already contain the expected bytes. The command checks the transfer digest on Bluehost, makes a private backup of overwritten files, installs the new assets, switches the link in `app.js`, and checks the served bytes of the sitter page and its browser dependencies. It uses the existing `gurtiamy` SSH alias. `WITNESS_SSH_TARGET` can select another configured SSH target.
+The current release carries the complete update. The checkout command is `bash reciprocal-witness-deployment/update-sitters.sh`. The installer accepts the first Reciprocal Witness release, the published two-sitter release, a partial update, or the completed update. The default SSH target is `gurtiamy`. A configured alternate can be selected with `WITNESS_SSH_TARGET`. [Current phone installer](releases/Update-Orthogonal-Sitters.sh)
 
-The update touches only the instrument files named in its manifest. The entry page retains the hash registered under CORI-0089. A rerun can finish a partially installed release. If the public-byte checks fail after the filesystem installation, repeat the following read-only check after the host or cache becomes available.
+On a host with the pinned Orthogonal v1.8 workbench, the installer adds **Two sitters** to its seven-mode navigation. The link opens `/observatories/reciprocal-witness/sitters.html?field=orthogonal`. Opening `sitters.html` without a field parameter still selects the original sitter view. The workbench is independently installed at `/observatories/thalean-orthogonal/`. This branch carries its public menu excerpt and fingerprints. The running installer reads the actual page on the host.
+
+The link is one 368-byte insertion at offset 24,615. The original page has 420,768 bytes and SHA-256 `53ae52f010d79e678556bce470aaaaf740249603a3c498caccd753760a90662f`. The patched page has SHA-256 `e1e7146123c670c329eba0259967c11c61ef8104ef4bff1177459b217643ace3`. The installer checks the entire original, the navigation anchor and both surrounding regions, and backs up the original privately on the server. It writes the menu after the Reciprocal files pass their on-host hash checks. A missing workbench is reported as `absent`. A different independent release is reported as `preserved-unrecognized`; the Reciprocal field installs, and that workbench keeps its own navigation. On a host with the pinned workbench, this command removes only the inserted link and verifies recovery of the exact original bytes.
 
 ```bash
-python3 -B reciprocal-witness-deployment/update_sitters.py verify
+bash Update-Orthogonal-Sitters.sh --remove-menu-link
 ```
 
-To inspect the exact archive or reproduce the installation checks locally, run
+The upload is checked before extraction. The installation verifies each changed or reused file, the versioned CSS and JavaScript URLs used by the browser, the field query URL, and the separately served workbench when present. The installer prints the filesystem result before it checks the public routes. A changed installation has a private backup journal of original and replacement hashes. A stale public response is reported separately. Recheck the public site from a full checkout with `python3 -B reciprocal-witness-deployment/update_sitters.py verify`.
+
+## Replay the installer checks
+
+From a complete release, run
 
 ```bash
-python3 -B reciprocal-witness-deployment/update_sitters.py pack /tmp/reciprocal-witness-sitters.tar.gz
-tar -tzf /tmp/reciprocal-witness-sitters.tar.gz
 python3 -B reciprocal-witness-deployment/test_sitters_update.py
+python3 -B reciprocal-witness-deployment/test_orthogonal_update.py
 ```
 
-`fixtures/v1/` contains the exact previous versions of the replaced files from commit `dfe977f66d57ed34d61d42c6221378cbd819f9d1`. The integration test uses these bytes to exercise restoration after an interrupted switch, reruns, preservation of independent site edits, and HTTP responses from a temporary local server.
+The first command exercises the published v1 base, the SSH pipeline, the embedded phone payload and delivery checks. The second exercises the published v2 files and the public Orthogonal menu excerpt offline. It tests interrupted updates, private backups, independently edited pages, repeated installs, byte-exact link removal, and fresh accessions with and without the independent workbench. The exact historical files required for these tests live in `fixtures/v1/` and `fixtures/v2/`. The full independently built Orthogonal HTML stays on its original host.
+
+For the full-page check, supply a local copy of the unmodified v1.8 file with the SHA printed above. With Playwright and Chromium installed, this also clicks the link at 390×844 and 1280×800. It reports hashes, viewport sizes and public paths. It operates entirely in a temporary local site.
+
+```bash
+python3 -B reciprocal-witness-deployment/test_orthogonal_update.py --orthogonal-page /path/to/orthogonal-v1.8.html --browser
+```
+
+Recreate the deterministic upload or the single-file phone installer with
+
+```bash
+python3 -B reciprocal-witness-deployment/update_sitters.py pack /tmp/reciprocal-witness-orthogonal.tar.gz
+python3 -B reciprocal-witness-deployment/update_sitters.py phone /tmp/Update-Orthogonal-Sitters.sh
+```
 
 ## Install the complete accession on a fresh host
 
@@ -38,7 +54,7 @@ After checking out the release or extracting its complete ZIP on Scott’s SSH-e
 bash reciprocal-witness-deployment/deploy.sh
 ```
 
-The script uses the existing `gurtiamy` alias. The remote Python installer targets `~/public_html`. It stages the complete instrument and record, checks the SHA-256 of each catalog scope, backs up the current files privately, installs the new directories, and changes six catalog files. It then checks the original ten public HTTPS routes and the sitter release’s public assets, including the complete instrument entry and guide digests. An identical installation can be rerun. A conflicting accession, changed catalog scope or different pre-existing instrument stops the installation before public writes. If the publication source changes after this release was prepared, incorporate its changes and regenerate the baseline. The runtime applies edits to each server-side publication’s existing `main` element so current headers, scripts and any site-specific outer markup survive.
+The script uses the existing `gurtiamy` alias. The remote Python installer targets `~/public_html`. It stages the complete instrument and record, checks the SHA-256 of each catalog scope, backs up the current files privately, installs the new directories, and changes six catalog files. It checks the original ten public HTTPS routes, then runs the same Orthogonal menu integration and sitter-asset verification used for upgrades. An identical installation can be rerun. A conflicting accession, changed catalog scope or different pre-existing instrument stops the installation before public writes. If the publication source changes after this release was prepared, incorporate its changes and regenerate the baseline. The runtime applies edits to each server-side publication’s existing `main` element so current headers, scripts and any site-specific outer markup survive.
 
 | Public route | Integration |
 | --- | --- |

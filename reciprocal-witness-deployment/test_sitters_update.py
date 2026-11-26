@@ -108,7 +108,7 @@ def must_fail(action, text):
         raise AssertionError('Expected failure containing '+text)
 
 
-def check_shell_transport(tmp, site, state, origin):
+def check_shell_transport(tmp, site, state, origin, menu_restore=False):
     shim = tmp/'transport'
     shim.mkdir()
     ssh = shim/'ssh'
@@ -119,7 +119,8 @@ import os, shlex, subprocess, sys
 if sys.argv[1] != 'fixture-sitters-host':
     sys.exit(82)
 cmd = sys.argv[2].replace('update_sitters.py apply', 'update_sitters.py apply --webroot "$WITNESS_TEST_WEBROOT" --state "$WITNESS_TEST_STATE"')
-verify = 'import os,sys;sys.path.insert(0,"reciprocal-witness-deployment");import update_sitters as u;print(u.public_checks(u.load_spec(),os.environ["WITNESS_TEST_ORIGIN"]))'
+cmd = cmd.replace('update_sitters.py restore-menu', 'update_sitters.py restore-menu --webroot "$WITNESS_TEST_WEBROOT" --state "$WITNESS_TEST_STATE"')
+verify = 'import json,os,sys;sys.path.insert(0,"reciprocal-witness-deployment");import update_sitters as u;r=json.load(open("install-result.json"));print(u.public_checks(u.load_spec(),os.environ["WITNESS_TEST_ORIGIN"],receipt=r["orthogonal_menu"],menu_only=r.get("scope")=="orthogonal-menu-only"))'
 cmd = cmd.replace('python3 -B reciprocal-witness-deployment/update_sitters.py verify', 'python3 -B -c '+shlex.quote(verify))
 payload = sys.stdin.buffer.read()
 if os.environ.get('WITNESS_TEST_CORRUPT') == '1':
@@ -130,13 +131,19 @@ sys.exit(subprocess.run(['bash','-c',cmd],input=payload).returncode)
     env = dict(os.environ, PATH=str(shim)+os.pathsep+os.environ['PATH'],
                WITNESS_SSH_TARGET='fixture-sitters-host', WITNESS_TEST_WEBROOT=str(site),
                WITNESS_TEST_STATE=str(state), WITNESS_TEST_ORIGIN=origin)
-    for script in (HERE/'update-sitters.sh', HERE/'releases/Update-Two-Sitters.sh'):
+    for script in (HERE/'update-sitters.sh', HERE/'releases/Update-Orthogonal-Sitters.sh'):
         cmd = ['bash',str(script)]
         ok = subprocess.run(cmd,env=env,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
         assert ok.returncode == 0, ok.stderr.decode()
         assert b'"already_current": true' in ok.stdout and b'verified_https' in ok.stdout
         corrupt = subprocess.run(cmd,env=dict(env,WITNESS_TEST_CORRUPT='1'),capture_output=True)
         assert corrupt.returncode != 0 and b'"already_current"' not in corrupt.stdout
+        if menu_restore:
+            menu_cmd = cmd + ['--remove-menu-link']
+            rolled = subprocess.run(menu_cmd,env=env,capture_output=True)
+            assert rolled.returncode==0 and b'"status": "removed"' in rolled.stdout,rolled.stderr
+            restored = subprocess.run(cmd,env=env,capture_output=True)
+            assert restored.returncode==0 and b'"status": "installed"' in restored.stdout,restored.stderr
 
 
 def run():
@@ -151,7 +158,7 @@ def run():
         webroot.mkdir()
         dest = webroot/INSTRUMENT
         pack = updater.build_archive(package,archive,spec)
-        phone_installer = (HERE/'releases/Update-Two-Sitters.sh').read_bytes()
+        phone_installer = (HERE/'releases/Update-Orthogonal-Sitters.sh').read_bytes()
         encoded = re.search(rb'base64\.b64decode\("""(.*?)"""\)', phone_installer, re.S)
         assert encoded and base64.b64decode(encoded.group(1)) == archive.read_bytes()
         twin = root/'copy.tar.gz'

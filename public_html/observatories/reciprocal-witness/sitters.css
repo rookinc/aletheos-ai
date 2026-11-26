@@ -14,3 +14,22 @@
  .strip#ecgA,.strip#ecgB{grid-column:2;height:42px}
  .rowbeat strong{font-size:.76rem}
 }
+
+.fieldtabs{display:flex;align-items:center;justify-content:center;gap:4px;padding:5px;border-bottom:1px solid #2b3c47;background:#101b23}
+.fieldtabs button{flex:1;max-width:245px;min-height:34px;background:none;border:1px solid transparent;border-radius:5px;color:#afbfc8;padding:4px 9px;font-size:.88rem}
+.fieldtabs button[aria-pressed=true]{background:#1f353a;color:#d8f3eb;border-color:#40595c}
+#orthCanvas{touch-action:none;cursor:grab;outline-offset:-3px;height:clamp(320px,36vw,462px)}#orthCanvas:active{cursor:grabbing}
+.charttools{background:#0d1923;border-top:1px solid #2a3b48}
+.charttools summary{display:flex;align-items:center;gap:9px;min-height:36px;padding:5px 15px;font-size:.82rem;font-weight:600;cursor:pointer}
+.charttools summary:after{margin-left:0}.charttools #chartSummary{margin-left:auto;color:#a9c1ca;font:normal .75rem var(--mono)}
+.chartgrid{display:grid;grid-template-columns:1fr 1fr;gap:9px 15px;padding:5px 15px}
+.chartgrid label{color:#c8d7db;font-size:.82rem}.chartgrid select,.chartgrid input{width:100%;display:block}.chartgrid output{float:right;color:#d8ede8}
+.charthelp{padding:0 15px 8px;color:#a6bcc7;font-size:.8rem}.charthelp a{color:#9bdbce}
+#orthCanvas:focus-visible{outline:2px solid var(--a)}
+@media(max-width:700px){#orthCanvas{height:clamp(260px,77vw,370px)}.charttools summary{padding-inline:10px}.fieldtabs button{font-size:.8rem;min-height:35px}.chartgrid{gap:7px 10px;padding-inline:10px}}
+
+.chartOverlay{position:absolute;inset:10px 20px auto;display:flex;align-items:center;justify-content:space-between;pointer-events:none;font:500 .76rem var(--mono);letter-spacing:.01em;color:#d5e3e8}
+.chartOverlay>span{display:inline-flex;gap:8px}.chartOverlay i{font-style:normal;color:#ff9a9c}.chartOverlay i:nth-child(2){color:#99e2b8}.chartOverlay i:last-child{color:#9abaff}
+.chartOverlay output{background:#0a1524cf;border-radius:3px;padding:2px 5px;font-weight:500;color:#d6e6e8}
+.chartgrid .chart-check{grid-column:1/-1;display:flex;gap:6px;align-items:center}.chartgrid .chart-check input{width:auto}
+@media(max-width:700px){.chartOverlay{inset:10px 17px auto;font-size:.71rem}}

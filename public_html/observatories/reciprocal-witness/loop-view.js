@@ -172,3 +172,6 @@ export function phasePlot(canvas,clock,t,windowDeg){
   ctx.restore();dot(ctx,left+gw*(t-start)/15,y(clock.at(t).gapDeg),2.7,CMY[0]);
   ctx.textAlign='left';ctx.fillStyle='#b3c4c8';ctx.fillText(Math.floor(start)+' s',left,h-2);ctx.textAlign='right';ctx.fillText(Math.floor(end)+' s',w-right,h-2);
 }
+
+// Both views share the sitter portraits, heartbeat clocks and dart identity marks.
+export {sitter as drawSitter, heart as drawHeart, head as drawDartHead, size as canvasSurface};

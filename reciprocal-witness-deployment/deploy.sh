@@ -14,6 +14,8 @@ tar -czf - \
     reciprocal-witness-deployment/catalog-inputs.json \
     reciprocal-witness-deployment/catalog-baseline.zip \
     reciprocal-witness-deployment/install.py \
+    reciprocal-witness-deployment/orthogonal_menu.py \
+    reciprocal-witness-deployment/orthogonal-menu.json \
     reciprocal-witness-deployment/update_sitters.py \
     reciprocal-witness-deployment/sitters-release.json |
 ssh "$target" 'set -eu
@@ -22,4 +24,5 @@ stage=$(mktemp -d)
 trap '\''rm -rf -- "$stage"'\'' EXIT
 tar -xzf - -C "$stage"
 python3 -B "$stage/reciprocal-witness-deployment/install.py" --verify-https
-python3 -B "$stage/reciprocal-witness-deployment/update_sitters.py" verify'
+python3 -B "$stage/reciprocal-witness-deployment/update_sitters.py" apply --receipt "$stage/install-result.json"
+python3 -B "$stage/reciprocal-witness-deployment/update_sitters.py" verify --receipt "$stage/install-result.json"'

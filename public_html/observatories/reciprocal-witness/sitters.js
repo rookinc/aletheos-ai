@@ -1,6 +1,7 @@
 import {ENCOUNTERS, twoSitters} from './loop-transport.js';
 import {dartPairAt, DART_PAIRS} from './dart-orbits.js';
-import {fieldRenderer, phasePlot, rhythmStrip} from './loop-view.js';
+import {fieldRenderer, phasePlot, rhythmStrip} from './loop-view.js?v=orthogonal-1';
+import {orthogonalRenderer} from './orthogonal-view.js';
 
 const $ = id => document.getElementById(id);
 const controls = ['rateA', 'rateB', 'gap', 'window', 'openA', 'openB'];
@@ -31,6 +32,57 @@ let t = 0, speed = 1, tail = 20, pair = 'all', activeStep = -1;
 let playing = !matchMedia('(prefers-reduced-motion: reduce)').matches;
 let lastTick = null, lastPaint = -Infinity, lastReadout = -Infinity, request = 0;
 let scrubCycle = null, comparisonStart = null, comparisonModel = null;
+let field = 'spheres', orthogonal = null;
+const colorNames = [['Cyan','red'],['Magenta','green'],['Yellow','blue']];
+
+function syncChartTools(){
+  $('chartCamera').value=orthogonal.cameraName;
+  const name=orthogonal.cameraName==='oblique'?'Oblique':orthogonal.cameraName==='custom'?'Free orbit':'Along '+orthogonal.cameraName.toUpperCase();
+  $('chartSummary').textContent=name+' · '+orthogonal.copy+' chart';
+}
+function selectField(next) {
+  field=next==='orthogonal'?'orthogonal':'spheres';
+  const inChart=field==='orthogonal';
+  $('fieldCanvas').hidden=inChart;
+  $('orthCanvas').hidden=!inChart;
+  $('chartTools').hidden=!inChart;
+  $('chartLegend').hidden=!inChart;
+  $('spheresView').setAttribute('aria-pressed',String(!inChart));
+  $('orthogonalView').setAttribute('aria-pressed',String(inChart));
+  $('sitterTitle').innerHTML=inChart?'Orthogonal <em>field loop</em>':'Two-sitter <em>field loop</em>';
+  $('sitterIntro').textContent=inChart?'Two seated hearts share one G9000 field. A beat from each sitter advances the six colored darts.':'A beat from each sitter advances the darts. Open both heart clocks to let their rhythms pull together.';
+  document.title=(inChart?'Two sitters in the orthogonal field':'Two-sitter field loop')+' · Reciprocal Witness Observatory';
+  if(inChart && !orthogonal){
+    orthogonal=orthogonalRenderer($('orthCanvas'),()=>{syncChartTools();paint(false);});
+    syncChartTools();
+  }
+  paint();
+}
+function chooseField(next){
+  selectField(next);
+  if(location.protocol==='https:'||location.protocol==='http:'){
+    const url=new URL(location.href);
+    if(field==='orthogonal')url.searchParams.set('field',field);else url.searchParams.delete('field');
+    history.replaceState(history.state,'',url);
+  }
+}
+function enableFields(){
+  // An already-open, cached first-edition document can use the same clock script.
+  if(!$('orthogonalView'))return;
+  $('spheresView').addEventListener('click',()=>chooseField('spheres'));
+  $('orthogonalView').addEventListener('click',()=>chooseField('orthogonal'));
+  for(const [id,key] of [['chartCamera','camera'],['chartCopy','copy'],['chartMerge','merge'],['chartLight','light'],['chartOthers','others']]){
+    const control=$(id);
+    control.addEventListener(control.type==='range'?'input':'change',()=>{
+      orthogonal.setting(key,control.type==='checkbox'?control.checked:control.value);
+      $('mergeReading').textContent=$('chartMerge').value+'%';
+      $('lightReading').textContent=$('chartLight').value+'%';
+      syncChartTools();paint(false);
+    });
+  }
+  selectField(new URLSearchParams(location.search).get('field')||document.body.dataset.defaultField);
+}
+
 function showAddresses(step) {
   const table = document.createElement('table'), row = table.insertRow();
   for (const heading of ['Dart pair', 'A · CMY', 'B · RGB']) {
@@ -65,6 +117,10 @@ function showReadout(state) {
   $('gateState').textContent = (state.waiting ? 'Sitter '+state.waiting+' has arrived and is waiting. ' : '') + recent;
   const scope = $('scope');
   scope.dataset.nativeStep = state.n; scope.dataset.time = t.toFixed(5); scope.dataset.playing = String(playing);
+  if(field==='orthogonal'){
+    const i=pair==='all'?0:Number(pair),sites=dartPairAt(i,state.n);
+    $('chartSites').textContent=colorNames[i][0]+' '+sites.a.id+' · '+colorNames[i][1]+' '+sites.b.id;
+  }
   if(activeStep!==state.n){showAddresses(state.n);activeStep=state.n;}
   rhythmStrip($('ecgA'),model.clock,t,'A');
   rhythmStrip($('ecgB'),model.clock,t,'B');
@@ -72,7 +128,8 @@ function showReadout(state) {
 }
 function paint(readouts=true) {
   const state = model.at(t);
-  drawField(state,{pair,tail});
+  if(field==='orthogonal')orthogonal.draw(state,{pair,tail});
+  else drawField(state,{pair,tail});
   if(readouts) showReadout(state);
 }
 function frame(now) {
@@ -156,6 +213,7 @@ $('trail').addEventListener('change',()=>{tail=Number($('trail').value);paint();
 $('pair').addEventListener('change',()=>{pair=$('pair').value;paint();});
 $('receipt').addEventListener('click',()=>{
   const data=model.receipt(t,tail,pair);
+  if(field==='orthogonal')data.display.orthogonal=orthogonal.registration(model.at(t));
   if(comparisonModel){
     const open=comparisonModel.at(t);
     data.matchedOpenReplay={config:comparisonModel.clock.config,clock:open.clocks,nativeStep:open.n,lastPairedBeat:open.last};
@@ -168,4 +226,4 @@ $('receipt').addEventListener('click',()=>{
 document.addEventListener('visibilitychange',resetTimer);
 new ResizeObserver(()=>paint()).observe($('scope'));
 window.addEventListener('resize',()=>paint());
-setConfig(config);setPlaying(playing);
+enableFields();setConfig(config);setPlaying(playing);

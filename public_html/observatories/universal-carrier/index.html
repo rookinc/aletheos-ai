@@ -146,8 +146,8 @@ input[type=range]{accent-color:#6be8ea}
       <label for="torusSpeed">Cycle speed</label>
       <select id="torusSpeed" aria-describedby="cycleUnits" title="Full cycles per second · ten contacts per cycle">
         <option value=".25">0.025 Hz</option>
-        <option value=".70" selected>0.07 Hz</option>
-        <option value="1.5">0.15 Hz</option>
+        <option value=".70">0.07 Hz</option>
+        <option value="1.5" selected>0.15 Hz</option>
         <option value="3">0.3 Hz</option>
         <option value="5">0.5 Hz</option>
         <option value="10">1 Hz</option>
@@ -172,8 +172,8 @@ input[type=range]{accent-color:#6be8ea}
   <div class="fader-bank">
     <div class="fader-strip">
       <label for="masterBrightness">Master brightness</label>
-      <input id="masterBrightness" type="range" min="0" max="16" step="0.25" value="9" aria-valuetext="9 times">
-      <output id="gainValue" for="masterBrightness">9×</output>
+      <input id="masterBrightness" type="range" min="0" max="16" step="0.25" value="4.25" aria-valuetext="4.25 times">
+      <output id="gainValue" for="masterBrightness">4.25×</output>
     </div>
     <div class="fader-strip">
       <label for="whiteSquelch">White squelch</label>
@@ -190,10 +190,10 @@ input[type=range]{accent-color:#6be8ea}
     <label for="motionLaw">Pacing
       <select id="motionLaw"><option value="gravity" selected>Gravity · probe 26</option><option value="uniform">Uniform</option></select>
     </label>
-    <div class="contact-title"><label for="step">Contact</label><output id="pos" for="step">6 / 10</output></div>
+    <div class="contact-title"><label for="step">Contact</label><output id="pos" for="step">3 / 10</output></div>
     <div class="contact-step">
       <button id="prev" aria-label="Previous contact">‹</button>
-      <input id="step" type="range" min="0" max="9" value="5" aria-valuetext="6 of 10">
+      <input id="step" type="range" min="0" max="9" value="2" aria-valuetext="3 of 10">
       <button id="next" aria-label="Next contact">›</button>
     </div>
   </fieldset>
@@ -216,7 +216,7 @@ input[type=range]{accent-color:#6be8ea}
     <p>The browser replays ten archived contacts on the finite graph AT4val[60,6], called G60 here. A <em>dart</em> is an edge with a direction of travel. The packet embedded in this page contains 60 sites, 120 undirected edges, and a map from the 60 sites to 15 quotient slots. Each slot collects four sites. The starting point of a comparison is the ordered pair of site numbers, written tail → head. The ten recorded darts join into a closed itinerary.</p>
     <p class="loom-route" aria-label="Ten-contact itinerary">26 → 15 → 4 → 56 → 48 → 54 → 40 → 7 → 34 → 22 → 26</p>
     <p>In the source, <code>k</code> is the contact index and <code>current()</code> selects <code>D.rows[k]</code>. The front panel numbers contacts 1 through 10, so contact 1 corresponds to row 0. Each row contains the dart, 20 face positions <code>q</code>, 20 signed velocities <code>v</code>, a unit-total 60-site energy profile <code>rho</code>, an archived potential span, four pair correlations, and the fixed-quartet CHSH score. The shared graph data live in <code>D.edges</code> and <code>D.pi</code>. Here <em>kernel</em> means the common replay and readout machinery. The Einstein drawer also uses the word for a specific mathematical operator, the Green kernel that produced its archived potential values.</p>
-    <p>At a contact change, <code>render()</code> refreshes the eight instrument summaries and the contact record from the selected index. The graph view highlights the current dart and colors sites by their recorded energy. Opening a drawer selects where that graph is shown. Between contacts, <code>contactPhase()</code> gives the renderer a continuous phase. Uniform pacing advances that phase evenly. Gravity pacing shapes it using archived potential samples at site 26. Both settings follow the same ten-row itinerary. Cycle speed on the top deck is measured in full cycles per second (Hz). The opening rate of 0.07 Hz is 0.70 contacts per second. At 60 Hz the clock traverses 600 contacts per second. Each frame shows the contact reached at that instant, so a fast rate can skip visible contacts or repeatedly sample a similar phase when it matches the screen refresh rate.</p>
+    <p>At a contact change, <code>render()</code> refreshes the eight instrument summaries and the contact record from the selected index. The graph view highlights the current dart and colors sites by their recorded energy. Opening a drawer selects where that graph is shown. Between contacts, <code>contactPhase()</code> gives the renderer a continuous phase. Uniform pacing advances that phase evenly. Gravity pacing shapes it using archived potential samples at site 26. Both settings follow the same ten-row itinerary. Cycle speed on the top deck is measured in full cycles per second (Hz). The opening rate of 0.15 Hz is 1.5 contacts per second. At 60 Hz the clock traverses 600 contacts per second. Each frame shows the contact reached at that instant, so a fast rate can skip visible contacts or repeatedly sample a similar phase when it matches the screen refresh rate.</p>
 
     <h4 id="loom-optics">How a contact becomes a visible weave</h4>
     <p>The stage draws the same toroidal brightness pattern in three coordinate planes. In the default CMY palette, XZ is magenta, XY is yellow, and YZ is cyan. The displayed contact orbit makes one turn around the ring in five contacts and one around the tube in ten. The depth of a surface patch, the traveling brightness crest, and the opacities of the visible layers determine each plane’s contribution to a screen pixel. The camera determines which projected patches overlap.</p>

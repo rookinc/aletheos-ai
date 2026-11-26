@@ -22,7 +22,6 @@ input[type=range]{accent-color:#6be8ea}
 #settingsPanel input[type=range]{width:100%;min-width:0;margin:0;accent-color:#9bdbcf}
 #settingsPanel input[type=checkbox]{width:auto;justify-self:start}
 #settingsPanel output{text-align:right;font-variant-numeric:tabular-nums}
-#squelchHint{display:block;margin:0 0 5px;color:#b6c9cb}
 #viewport.white-only canvas{image-rendering:pixelated}
 .playback-settings label{display:flex;justify-content:space-between;gap:8px}
 .playback-settings select{width:62%;max-width:100%;min-width:0;margin:2px 0;padding:4px 6px}
@@ -44,7 +43,7 @@ input[type=range]{accent-color:#6be8ea}
 .deck-title button{font-size:12px;min-height:27px;padding-inline:8px}
 .deck button:active,.deck-title button:active,.deck [aria-pressed=true],.deck-title [aria-pressed=true],.deck-title [aria-expanded=true]{
   color:var(--phosphor);background:#202b2b;border-color:#101920 #758587 #809091 #172126;box-shadow:inset 0 1px 3px #0d1219}
-.deck{display:grid;grid-template-columns:minmax(290px,.95fr) minmax(265px,1.05fr);align-items:center;
+.deck{display:grid;grid-template-columns:minmax(290px,.78fr) minmax(310px,1.22fr);align-items:center;
   gap:10px;padding:5px 6px;background:linear-gradient(#4a5060,#353b49);border-top:1px solid #818898;border-bottom:2px solid #171c28}
 .view-strip{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:5px;min-width:0}
 .view-keys{min-width:0}
@@ -53,27 +52,33 @@ input[type=range]{accent-color:#6be8ea}
   color:#ddeecc;background:linear-gradient(#333e44,#202b31);border-color:#83918f #202630 #121922 #7c898b}
 #torusPlay::before{content:"";box-sizing:border-box;width:9px;height:10px;border-left:9px solid #c7ed8f;border-block:5px solid transparent}
 #torusPlay[data-playing=true]::before{border:0;border-inline:3px solid #c7ed8f}
-.master-strip{min-width:0;display:grid;grid-template-columns:max-content minmax(30px,1fr) 4.5em;align-items:center;gap:9px;
-  padding:1px 3px 1px 8px;border:1px solid;border-color:#161c28 #6f7989 #697483 #1a202e;
+.fader-bank{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);gap:4px;align-items:stretch;min-width:0}
+#whiteSquelch{--fill:#8ddbd9}
+.fader-strip{min-width:0;display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"label value" "fader fader";align-items:center;gap:0 4px;
+  padding:3px 5px 0;border:1px solid;border-color:#161c28 #6f7989 #697483 #1a202e;
   background:linear-gradient(#222936,#2a313c)}
-.master-strip label{font:650 11px/1.15 system-ui,sans-serif;letter-spacing:.055em;text-transform:uppercase;color:#e0e6ec}
-.master-strip output{display:block;line-height:1;text-align:right;padding:4px 6px;
+.fader-strip label{grid-area:label;font:650 11px/1.15 system-ui,sans-serif;letter-spacing:.055em;text-transform:uppercase;color:#e0e6ec}
+.fader-strip output{grid-area:value;display:block;line-height:1;text-align:right;padding:2px 4px;
   color:var(--phosphor);background:#131d19;border:1px solid;border-color:#070d0c #536056 #536056 #070d0c;
   font:600 14px/1 ui-monospace,monospace;font-variant-numeric:tabular-nums}
-#masterBrightness{--level:0%;--track:linear-gradient(to right,#e6b756 0 var(--level),#131923 var(--level) 100%);
-  appearance:none;-webkit-appearance:none;width:100%;min-width:0;height:28px;padding:0;margin:0;background:transparent;cursor:pointer;touch-action:pan-y}
-#masterBrightness::-webkit-slider-runnable-track{height:7px;border:1px solid;border-color:#090d15 #616c79 #616c79 #0b1019;background:var(--track)}
-#masterBrightness::-moz-range-track{height:5px;border:1px solid;border-color:#090d15 #616c79 #616c79 #0b1019;background:var(--track)}
-#masterBrightness::-webkit-slider-thumb{-webkit-appearance:none;width:15px;height:19px;margin-top:-7px;border:1px solid;border-color:#ecf0f1 #3a4451 #303b48 #dae3e6;border-radius:1px;
+.fader-strip input{grid-area:fader;--level:0%;--track:linear-gradient(to right,var(--fill,#e6b756) 0 var(--level),#131923 var(--level) 100%);
+  appearance:none;-webkit-appearance:none;width:100%;min-width:0;height:24px;padding:0;margin:0;background:transparent;cursor:pointer;touch-action:pan-y}
+.fader-strip input::-webkit-slider-runnable-track{height:7px;border:1px solid;border-color:#090d15 #616c79 #616c79 #0b1019;background:var(--track)}
+.fader-strip input::-moz-range-track{height:5px;border:1px solid;border-color:#090d15 #616c79 #616c79 #0b1019;background:var(--track)}
+.fader-strip input::-webkit-slider-thumb{-webkit-appearance:none;width:15px;height:19px;margin-top:-7px;border:1px solid;border-color:#ecf0f1 #3a4451 #303b48 #dae3e6;border-radius:1px;
   background:linear-gradient(to right,#c5cdd2,#9aa6b2 42%,#536273 43% 51%,#d7dfe1 52% 60%,#8e9ba8 61%);box-shadow:1px 1px #111924}
-#masterBrightness::-moz-range-thumb{width:13px;height:17px;border:1px solid;border-color:#ecf0f1 #3a4451 #303b48 #dae3e6;border-radius:1px;
+.fader-strip input::-moz-range-thumb{width:13px;height:17px;border:1px solid;border-color:#ecf0f1 #3a4451 #303b48 #dae3e6;border-radius:1px;
   background:linear-gradient(to right,#c5cdd2,#9aa6b2 42%,#536273 43% 51%,#d7dfe1 52% 60%,#8e9ba8 61%);box-shadow:1px 1px #111924}
+@media(min-width:980px){
+  .fader-strip{grid-template-areas:"label fader value";grid-template-columns:auto minmax(40px,1fr) auto;padding:2px 4px;column-gap:6px}
+  .fader-strip input{height:27px}
+}
 .deck :focus-visible,.deck-title :focus-visible{outline:2px solid #ffe2a0;outline-offset:1px}
 @media(max-width:640px){
   .deck{grid-template-columns:1fr;gap:4px;padding:4px 5px}
   .deck-title{gap:6px;padding:3px 5px}
   .window-tools{gap:3px}
-  .master-strip{gap:7px}
+  .fader-strip label{font-size:clamp(10px,2.85vw,11px);letter-spacing:.035em}
 }
 
 .loom-model{white-space:nowrap;color:#d2e6dc}
@@ -102,6 +107,11 @@ input[type=range]{accent-color:#6be8ea}
   .loom-separator{display:none}
   .loom-example th,.loom-example td{padding:5px 3px}
 }
+@media(max-width:360px){
+  .view-keys button{padding-inline:3px}
+  .deck #torusPlay{min-width:58px;padding-inline:5px}
+  #homeCamera{padding-inline:6px}
+}
 </style><main><div id="stageFrame"><header class="deck-title">
   <h1>Thalean G9000 <span class="loom-model"><span class="loom-separator">· </span>Light Loom</span></h1>
   <span class="title-grille" aria-hidden="true"></span>
@@ -120,10 +130,18 @@ input[type=range]{accent-color:#6be8ea}
     </div>
     <button id="homeCamera">Reset view</button>
   </div>
-  <div class="master-strip">
-    <label for="masterBrightness">Master brightness</label>
-    <input id="masterBrightness" type="range" min="0" max="16" step="0.25" value="9" aria-valuetext="9 times">
-    <output id="gainValue" for="masterBrightness">9×</output>
+  <div class="fader-bank">
+    <div class="fader-strip">
+      <label for="masterBrightness">Master brightness</label>
+      <input id="masterBrightness" type="range" min="0" max="16" step="0.25" value="9" aria-valuetext="9 times">
+      <output id="gainValue" for="masterBrightness">9×</output>
+    </div>
+    <div class="fader-strip">
+      <label for="whiteSquelch">White squelch</label>
+      <input id="whiteSquelch" type="range" min="0" max="100" step="1" value="0" aria-describedby="squelchHint" title="At 100%, only exact white (#FFFFFF) passes">
+      <output id="squelchValue" for="whiteSquelch">0%</output>
+      <span id="squelchHint" hidden>100% isolates #FFFFFF and hides the XYZ axes.</span>
+    </div>
   </div>
 </div>
 <div id="viewport"><canvas id="fieldDisplay" aria-hidden="true"></canvas><canvas id="torus" aria-label="Toroidal projection of the ten registered contacts"></canvas>
@@ -136,17 +154,15 @@ input[type=range]{accent-color:#6be8ea}
     <label for="motionLaw">Pacing
       <select id="motionLaw"><option value="gravity" selected>Gravity · probe 26</option><option value="uniform">Uniform</option></select>
     </label>
-    <div class="contact-title"><label for="step">Contact</label><output id="pos" for="step">5 / 10</output></div>
+    <div class="contact-title"><label for="step">Contact</label><output id="pos" for="step">6 / 10</output></div>
     <div class="contact-step">
       <button id="prev" aria-label="Previous contact">‹</button>
-      <input id="step" type="range" min="0" max="9" value="4" aria-valuetext="5 of 10">
+      <input id="step" type="range" min="0" max="9" value="5" aria-valuetext="6 of 10">
       <button id="next" aria-label="Next contact">›</button>
     </div>
   </fieldset>
   <fieldset class="light-settings">
     <legend>Light and layers</legend>
-<label for="whiteSquelch">White squelch<input type="range" id="whiteSquelch" min="0" max="100" step="1" value="0" aria-describedby="squelchHint"><output id="squelchValue" for="whiteSquelch">0%</output></label>
-<small id="squelchHint">100% isolates #FFFFFF and hides the XYZ axes.</small>
 <label for="scatterFlag" title="Simulate scattering of the field light">Gaussian blur<input type="checkbox" id="scatterFlag" checked></label>
 <label for="rgbFlag">RGB channels<input type="checkbox" id="rgbFlag"></label><label for="axisFlag">XYZ axes<input type="checkbox" id="axisFlag" checked></label><label for="alpha-field"><span id="name-field">XZ · Magenta</span><input id="alpha-field" data-layer="field" type="range" min="0" max="100" value="15"><output for="alpha-field">15%</output></label><label for="alpha-fieldXY"><span id="name-fieldXY">XY · Yellow</span><input id="alpha-fieldXY" data-layer="fieldXY" type="range" min="0" max="100" value="15"><output for="alpha-fieldXY">15%</output></label><label for="alpha-fieldYZ"><span id="name-fieldYZ">YZ · Cyan</span><input id="alpha-fieldYZ" data-layer="fieldYZ" type="range" min="0" max="100" value="15"><output for="alpha-fieldYZ">15%</output></label><label for="alpha-wave">Brightness field<input id="alpha-wave" data-layer="wave" type="range" min="0" max="100" value="100"><output for="alpha-wave">100%</output></label><label for="alpha-surface">Surface<input id="alpha-surface" data-layer="surface" type="range" min="0" max="100" value="0"><output for="alpha-surface">0%</output></label><label for="alpha-mesh">Mesh<input id="alpha-mesh" data-layer="mesh" type="range" min="0" max="100" value="0"><output for="alpha-mesh">0%</output></label><label for="alpha-arrows">Direction arrows<input id="alpha-arrows" data-layer="arrows" type="range" min="0" max="100" value="0"><output for="alpha-arrows">0%</output></label><label for="alpha-arrowTrails">Arrow tracers<input id="alpha-arrowTrails" data-layer="arrowTrails" type="range" min="0" max="100" value="60"><output for="alpha-arrowTrails">60%</output></label><label for="tailLength">Tail length<input id="tailLength" type="range" min="0" max="300" step="5" value="300"><output for="tailLength">300%</output></label><label for="alpha-orbit">Contact orbit<input id="alpha-orbit" data-layer="orbit" type="range" min="0" max="100" value="0"><output for="alpha-orbit">0%</output></label><label for="alpha-head">Tracer head<input id="alpha-head" data-layer="head" type="range" min="0" max="100" value="0"><output for="alpha-head">0%</output></label><label for="alpha-tail">Tracer tail<input id="alpha-tail" data-layer="tail" type="range" min="0" max="100" value="0"><output for="alpha-tail">0%</output></label><label for="alpha-outward">Outward pulse<input id="alpha-outward" data-layer="outward" type="range" min="0" max="100" value="0"><output for="alpha-outward">0%</output></label><label for="alpha-returning">Return pulse<input id="alpha-returning" data-layer="returning" type="range" min="0" max="100" value="0"><output for="alpha-returning">0%</output></label></fieldset>
 </section></div></div><section id="instruments"><h2>Instruments</h2>
@@ -168,7 +184,7 @@ input[type=range]{accent-color:#6be8ea}
     <p>The stage draws the same toroidal brightness pattern in three coordinate planes. In the default CMY palette, XZ is magenta, XY is yellow, and YZ is cyan. The displayed contact orbit makes one turn around the ring in five contacts and one around the tube in ten. The depth of a surface patch, the traveling brightness crest, and the opacities of the visible layers determine each plane’s contribution to a screen pixel. The camera determines which projected patches overlap.</p>
     <p>With Gaussian blur enabled, the renderer keeps 35% of each plane’s projected light at its original position and spreads 65% into neighboring pixels with a Gaussian width of four CSS pixels. It then mixes the three contributions and applies master brightness. A sufficiently bright, balanced mixture reaches display white. This gives a practical reading rule. To locate a white crossing, record the camera, palette, blur, and gain. To identify the underlying contact, read the dart and its row. A change of gain can reveal a crossing while the recorded field stays fixed.</p>
 
-    <p>White squelch in Settings tests the final eight-bit display color after scattering, palette mixing, and master brightness. At 0% the full field is visible. At higher settings a pixel passes when its red, green, and blue bytes each reach the cutoff, rounded up from 255 times the slider percentage divided by 100. Passing pixels keep their color. At 100% only RGB (255, 255, 255), or <code>#FFFFFF</code>, passes. Even <code>#FFFFFE</code> falls below the cutoff. The XYZ guide is hidden at 100% so every visible point against the stage background is a field pixel that passed. A uniformly dark stage at this setting means the current frame contains no exact white.</p>
+    <p>The White squelch fader beside Master brightness on the top deck tests the final eight-bit display color after scattering, palette mixing, and master brightness. At 0% the full field is visible. At higher settings a pixel passes when its red, green, and blue bytes each reach the cutoff, rounded up from 255 times the slider percentage divided by 100. Passing pixels keep their color. At 100% only RGB (255, 255, 255), or <code>#FFFFFF</code>, passes. Even <code>#FFFFFE</code> falls below the cutoff. The XYZ guide is hidden at 100% so every visible point against the stage background is a field pixel that passed. A uniformly dark stage at this setting means the current frame contains no exact white.</p>
     <h4 id="loom-instruments">What each instrument reads</h4>
     <dl class="loom-readers">
       <dt>Reziprokium · What comes back?</dt>
@@ -495,6 +511,7 @@ function syncWhiteSquelch(){
   const meaning=percent===100?'exact white only':percent===0?'full field':'each color channel at least '+whiteCutoff+' of 255';
   whiteSquelch.setAttribute('aria-valuetext',percent+'%, '+meaning);
   $('squelchValue').textContent=percent+'%';
+  whiteSquelch.style.setProperty('--level',percent+'%');
   $('viewport').classList.toggle('white-only',percent===100)
 }
 syncWhiteSquelch();
@@ -532,8 +549,7 @@ const N=window.CAMERA_NAVIGATION;
 const presets={Front:[0,0],Top:[0,Math.PI/2],Ortho:[Math.PI/4,Math.atan(1/Math.sqrt(2))]};
 let orientation=N.initial(...presets.Ortho),matrix=N.matrix(orientation);
 let panX=0,panY=0,zoom=1;
-// Start partway through contact 5 at the captured Ortho view.
-let fraction=.31, lastFrame=0, frame=0;
+let fraction=0, lastFrame=0, frame=0;
 let playing=true;
 // Same chart permutations as the G9000 Flower view's planePoint.
 function chartPoint(p,chart){

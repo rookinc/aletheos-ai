@@ -1,4 +1,5 @@
 <!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Thalean G9000 · Light Loom</title>
+<link rel="describedby" type="application/json" href="https://raw.githubusercontent.com/rookinc/aletheos-ai/be33158937d7d9abaddeedd5ebb3a3f5fe3c47eb/public_html/observatories/universal-carrier/verification/manifest.json" title="Light Loom verification manifest">
 <meta name="description" content="The Light Loom replays ten contacts on the Thalean graph. Explore three light bands, eight instrument readouts, and a source guide to the shared kernel."><style>
 *{box-sizing:border-box}body{margin:0;background:#111d22;color:#f1f3ec;font:16px/1.55 system-ui,sans-serif}main{max-width:1060px;margin:auto;padding:22px}h1,h2{font-family:Georgia,serif;font-weight:500;margin:.1em 0 .4em;line-height:1.1}h1{font-size:clamp(32px,5vw,62px)}h2{font-size:27px}header{padding:16px 0 5px;border-bottom:1px solid #496167}nav,.row{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}button,select{font:inherit;color:inherit;background:#26383e;border:1px solid #587076;border-radius:5px;padding:6px 11px}button{cursor:pointer}button[aria-pressed=true]{background:#b8e9dc;color:#142d2c}section{border-top:1px solid #466269;padding:14px 0}.cols{display:grid;grid-template-columns:1.15fr 1fr;gap:22px}.value{font:34px/1.15 Georgia,serif;color:#fbce83;margin:10px 0}.hint,small{color:#b6c9cb}canvas{width:100%;aspect-ratio:1.45;background:#16272c;border-radius:8px}table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}td,th{border-bottom:1px solid #3b545d;text-align:left;padding:6px}label{display:inline-flex;gap:6px;align-items:center}input{width:150px}#ledger{padding-left:20px}#ledger li::marker{color:#9ae1cb}.sw{color:#f7cb81}.panel{padding:8px 0}p{margin:.5em 0}button:focus-visible,select:focus-visible{outline:3px solid #f9cd81}@media(max-width:700px){main{padding:14px}.cols{grid-template-columns:1fr;gap:8px}}
 label{max-width:100%;flex-wrap:wrap}select{max-width:100%}.cols>div{min-width:0}#ledger{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:8px}#ledger li{padding:9px;border-left:4px solid var(--c);background:#1c2e33;font-size:.89rem}#ledger li:nth-child(1){--c:#ce99db}#ledger li:nth-child(2){--c:#f4c075}#ledger li:nth-child(3){--c:#81c7ba}#ledger li:nth-child(4){--c:#80afda}#ledger li:nth-child(5){--c:#cfda80}#ledger li:nth-child(6){--c:#ea9a91}#joint td:nth-child(2){background:linear-gradient(to right,#28574e var(--p),transparent var(--p));font-variant-numeric:tabular-nums}#torus{display:block;aspect-ratio:1.85;height:clamp(170px,40vw,300px);touch-action:none;background:#0b1824}canvas[hidden]{display:none!important}#stageFrame{position:relative;background:#0b1824;border-radius:9px;overflow:hidden}#torus{height:clamp(340px,65svh,740px);aspect-ratio:auto}.cameraTools{position:absolute;right:8px;top:8px;display:flex;gap:5px}.cameraTools button{background:#172a30e8;font-size:14px;padding:8px 10px}.cols:has(#tview:not([hidden])){grid-template-columns:1fr}.stage-open{overflow:hidden}#stageFrame.expanded{position:fixed;inset:0;z-index:20;border-radius:0;height:100dvh}#stageFrame.expanded #torus{height:100%;width:100%}#stageFrame.expanded .cameraTools{top:max(8px,env(safe-area-inset-top));right:max(8px,env(safe-area-inset-right))}@media(max-width:700px){main{padding:10px}header{padding:2px 0}header h1{font-size:26px}header p{display:none}nav{flex-wrap:nowrap;overflow-x:auto;margin:6px 0}nav button{flex:none}.row{margin:7px 0}#torus{height:clamp(310px,61svh,650px)}} .cameraTools{flex-wrap:wrap;justify-content:flex-end;left:8px}.presets,.stageActions{display:flex;gap:4px}.presets button[aria-pressed=true]{background:#b7e6dc;color:#112629}@media(max-width:680px){.cameraTools{flex-direction:column;align-items:flex-end}} 
@@ -209,6 +210,8 @@ input[type=range]{accent-color:#6be8ea}
     <p>Thalean names the graph mechanics that supply the contacts. G9000 places the instrument in the observatory family that supplies its three-plane Flower view. The Light Loom follows one ten-contact trajectory on the underlying 60-site graph.
     </p><p>The same idea explains the drawers. Pause once and open Thalean, Wheeler, and Bell in turn. Thalean names a directed edge. Wheeler tells you which quotient slot its arrival site occupies. Bell gives a correlation score for the signed field at that contact. The contact number gives you a common address for three different questions.</p>
 
+    <p><a href="#loom-verification">Verify the graph, regenerate the experiment, and check the displayed pixels</a>.</p>
+
     <h4 id="loom-kernel">What the shared kernel does</h4>
     <p>The browser replays ten archived contacts on the finite graph AT4val[60,6], called G60 here. A <em>dart</em> is an edge with a direction of travel. The packet embedded in this page contains 60 sites, 120 undirected edges, and a map from the 60 sites to 15 quotient slots. Each slot collects four sites. The starting point of a comparison is the ordered pair of site numbers, written tail → head. The ten recorded darts join into a closed itinerary.</p>
     <p class="loom-route" aria-label="Ten-contact itinerary">26 → 15 → 4 → 56 → 48 → 54 → 40 → 7 → 34 → 22 → 26</p>
@@ -254,6 +257,22 @@ input[type=range]{accent-color:#6be8ea}
     </table>
     <p>Every component of <code>q</code> and <code>v</code> at contact 6 is the negative of its value at contact 1. All 60 entries of <code>rho</code> agree between the two rows. That is why the signed turn can distinguish the two halves of the orbit while the energy-based Bell score agrees. Wheeler gives a second explanation of how information can coincide. Arrival sites 15 and 40 have different native identities and the same quotient address, slot 0.</p>
 
+    <h4 id="loom-verification">Reproduce the Light Loom</h4>
+    <p>A reader can start with the raw packet and trace each displayed quantity to its inputs, generator, and verification result. All links below refer to a fixed revision.</p>
+    <ul class="loom-links">
+      <li><a href="https://raw.githubusercontent.com/rookinc/aletheos-ai/be33158937d7d9abaddeedd5ebb3a3f5fe3c47eb/public_html/observatories/universal-carrier/verification/manifest.json">Verification manifest (JSON)</a> · <a href="https://raw.githubusercontent.com/rookinc/aletheos-ai/be33158937d7d9abaddeedd5ebb3a3f5fe3c47eb/public_html/observatories/universal-carrier/verification/packet.json">Exact copy of the page packet (JSON)</a> · <a href="https://github.com/rookinc/aletheos-ai/blob/be33158937d7d9abaddeedd5ebb3a3f5fe3c47eb/public_html/observatories/universal-carrier/verification/README.md">Replay guide and field definitions</a></li>
+      <li><a href="https://raw.githubusercontent.com/rookinc/aletheos-ai/be33158937d7d9abaddeedd5ebb3a3f5fe3c47eb/public_html/observatories/universal-carrier/verification/Light-Loom-Replay.zip">Download generators, inputs, and reference page (ZIP)</a> · <a href="https://raw.githubusercontent.com/rookinc/aletheos-ai/be33158937d7d9abaddeedd5ebb3a3f5fe3c47eb/public_html/observatories/universal-carrier/verification/numerical-receipt.txt">Numerical results</a> · <a href="https://raw.githubusercontent.com/rookinc/aletheos-ai/be33158937d7d9abaddeedd5ebb3a3f5fe3c47eb/public_html/observatories/universal-carrier/verification/optics-receipt.json">Recorded browser results</a></li>
+    </ul>
+    <p><strong>Identify the graph.</strong> A 60-site permutation takes all 120 native edges to entry 6 of GraphSym’s order-60 census. A second permutation maps the 15 quotient slots into the theorem object’s matrix order. Keep the Loom’s slot numbering when evaluating chambers 1, 6, and 12. <a href="https://raw.githubusercontent.com/rookinc/aletheos-ai/be33158937d7d9abaddeedd5ebb3a3f5fe3c47eb/public_html/observatories/universal-carrier/verification/identity.json">Both permutations</a> · <a href="https://github.com/rhysje00/graphsym/blob/7f41251f06d341722428190bd33e8685436cf389/graphs/at4valent/AT_4valent_60.s6">Independent census</a></p>
+    <p><strong>Generate the contact rows.</strong> The launch specifies the quotient pentagon 11 → 0 → 4 → 12 → 13, starting lift 26, and tan(ψ/2) = −1/5. The native tensors and symmetry actions determine the signed update for this launch. The calibrated Green matrix and the chosen encoder and analyzer quartet specify the readouts. The replay reconstructs the rational initial field, advances all ten contacts, and compares the results with the HTML. <a href="https://github.com/rookinc/aletheos-ai/blob/be33158937d7d9abaddeedd5ebb3a3f5fe3c47eb/public_html/observatories/universal-carrier/verification/pentagon.py">Launch and first-zero rule</a> · <a href="https://github.com/rookinc/aletheos-ai/blob/be33158937d7d9abaddeedd5ebb3a3f5fe3c47eb/public_html/observatories/universal-carrier/verification/experiment.py">Field, energy, potential, and correlations</a></p>
+    <p>Extract the ZIP, enter <code>Light-Loom-Replay</code>, and run these commands using Python 3.12. The optional <code>--separated</code> step also calculates the three all-launch receiver preparations. Pass the path to a saved HTML page to check a different revision.</p>
+    <pre><code>python -m pip install -r requirements.txt
+python run_checks.py --separated</code></pre>
+    <p>Contacts 1 and 6 both give 19119/7792. Contacts 3 and 8 reach 29885/11688. The kit checks the four correlations separately before checking their sum. These are collective model predictions. “Register one pair” samples a joint probability table; the replay supplies no physical detector data for a Bell experiment.</p>
+    <p><strong>Measure the pixels on this device.</strong> The browser check sends known colors through the display mixer and measures the scattering of a sharp edge. At 100% squelch, changing one white channel from 255 to 254 must return the stage background. The result identifies the rendering paths available in this browser. <a href="https://raw.githubusercontent.com/rookinc/aletheos-ai/be33158937d7d9abaddeedd5ebb3a3f5fe3c47eb/public_html/observatories/universal-carrier/verification/verify-optics.js">Standalone DevTools check</a></p>
+    <button type="button" id="loom-optics-check" aria-controls="loom-optics-result">Run browser optics check</button>
+    <p id="loom-optics-status" role="status"></p><pre id="loom-optics-result" hidden></pre>
+
     <h4 id="loom-source">Reading the packet without running the animation</h4>
     <p>The orientation text and replay packet are part of the HTML. A reader or agent can inspect the page source without a canvas or a running clock. Save the linked HTML source as <code>index.html</code> and run this Python example to check the comparison directly. Use the row’s uppercase <code>CHSH</code> field to preserve its exact fraction. Lowercase <code>chsh</code> is its decimal approximation.</p>
     <pre><code>import json
@@ -274,9 +293,9 @@ for field in ("q", "v"):
     <ul class="loom-links">
       <li>For papers, constructions, and replays, start at the <a href="https://aletheos.ai/library/">Thalean Library</a>. For a programmatic search, use its <a href="https://aletheos.ai/library/catalog.json">JSON catalog</a>. Useful search terms include <em>AT4val[60,6]</em>, <em>four-flux</em>, and <em>TOM-PHY-029</em>.</li>
       <li>To choose another instrument, open the <a href="https://aletheos.ai/library/observatories/">Library Observatory Index</a> or the <a href="https://aletheos.ai/observatories/">Aletheos Observatories directory</a>. Agents can also consult the <a href="https://aletheos.ai/observatories/registry.json">observatory registry in JSON</a>.</li>
-      <li>For the finite object underneath the contact register, read the <a href="https://aletheos.ai/the_thalean_graph_at4val_60_6.php">Thalean Graph reference</a> and inspect its <a href="https://aletheos.ai/json/theorem_object.json">machine-readable theorem object</a>.</li>
+      <li>For the finite object underneath the contact register, read the <a href="https://aletheos.ai/the_thalean_graph_at4val_60_6.php">Thalean Graph reference</a> and inspect the <a href="https://aletheos.ai/json/theorem_object.json">15-slot quotient theorem object</a>.</li>
       <li>For the three-plane Flower geometry, visit the related <a href="https://aletheos.ai/observatories/g9000/">G9000 Paired Field Observatory</a>. For the ten-contact, eight-drawer instrument documented here, use the <a href="https://aletheos.ai/observatories/universal-carrier/">Light Loom</a>.</li>
-      <li>For implementation-level verification, inspect the <a href="https://raw.githubusercontent.com/rookinc/aletheos-ai/main/public_html/observatories/universal-carrier/index.html">current HTML and embedded replay data</a>. The <a href="https://github.com/rookinc/aletheos-ai/blob/ee5a8261e2596f9f426536219f8d3630e15f1d82/public_html/observatories/universal-carrier/index.html">fixed source revision used for this guide</a> preserves the packet, renderer, and drawer formulas together.</li>
+      <li>For implementation-level verification, inspect the <a href="https://raw.githubusercontent.com/rookinc/aletheos-ai/main/public_html/observatories/universal-carrier/index.html">current HTML and embedded replay data</a>. The <a href="https://github.com/rookinc/aletheos-ai/blob/d0d8e17612d3746d99bcd70ced842645811e4a0e/public_html/observatories/universal-carrier/index.html">fixed source revision used for this guide</a> preserves the packet, renderer, and drawer formulas together.</li>
     </ul>
   </article>
 </details>
@@ -916,5 +935,158 @@ function revealGuideAnchor(){
 window.addEventListener('hashchange',revealGuideAnchor);
 settings();render();syncPlayback();
 if(location.hash)revealGuideAnchor();
+</script>
+<script>
+function verifyLightLoomOptics() {
+  function requireCheck(ok, message) {
+    if (!ok) throw new Error('Light Loom optics: ' + message);
+  }
+  function canvas(w, h) {
+    const el = document.createElement('canvas');
+    el.width = w;
+    el.height = h;
+    return el;
+  }
+
+  const slider = document.getElementById('whiteSquelch');
+  requireCheck(slider && typeof createLightMixer === 'function' &&
+    typeof createScatteringPass === 'function', 'Run on the Universal Carrier / Light Loom page.');
+  const background = [11, 24, 36];
+  const levels = [0, 25, 50, 75, 99, 100];
+  const original = slider.value;
+  const observedCutoffs = [];
+  try {
+    for (const percent of levels) {
+      slider.value = String(percent);
+      slider.dispatchEvent(new Event('input', {bubbles: true}));
+      const expected = Math.ceil(255 * percent / 100);
+      requireCheck(whiteCutoff === expected, 'wrong cutoff at ' + percent + '%');
+      observedCutoffs.push(whiteCutoff);
+    }
+  } finally {
+    slider.value = original;
+    slider.dispatchEvent(new Event('input', {bubbles: true}));
+  }
+
+  // In each row a different primary sweeps 0..255 while the other two stay 255.
+  // The unfiltered output is the oracle's input: gate the displayed bytes.
+  const width = 256, height = 3;
+  const source = canvas(width, height);
+  const ctx = source.getContext('2d', {alpha: false});
+  const ramp = ctx.createImageData(width, height);
+  ramp.data.fill(255);
+  for (let row = 0; row < height; row++) {
+    for (let x = 0; x < width; x++) ramp.data[4 * (row * width + x) + row] = x;
+  }
+
+  function auditMixer(useGL) {
+    const display = canvas(width, height);
+    const hud = canvas(width, height).getContext('2d', {willReadFrequently: true});
+    if (!useGL) display.getContext('2d'); // force the shipped fallback
+    const gl = useGL ? display.getContext('webgl', {alpha: false}) : null;
+    if (useGL && !gl) return {backend: 'WebGL', status: 'unavailable'};
+    const mix = createLightMixer(display, hud, source, () => {});
+    function read(gain, rgb, cutoff) {
+      hud.clearRect(0, 0, width, height);
+      mix(gain, rgb, source, cutoff);
+      if (!gl) return hud.getImageData(0, 0, width, height).data;
+      requireCheck(hud.getImageData(0, 0, 1, 1).data[3] === 0,
+        'unexpected fallback while probing WebGL');
+      const data = new Uint8Array(4 * width * height);
+      gl.readPixels(0, 0, width, height, gl.RGBA, gl.UNSIGNED_BYTE, data);
+      requireCheck(gl.getError() === gl.NO_ERROR, 'WebGL readback failed');
+      return data;
+    }
+
+    try {
+      ctx.putImageData(ramp, 0, 0);
+      const baseline = read(1, true, 0);
+      const gates = [];
+      for (const [index, percent] of levels.entries()) {
+        const cutoff = observedCutoffs[index], filtered = read(1, true, cutoff);
+        let passed = 0;
+        const weakestBytes = new Set();
+        for (let i = 0; i < baseline.length; i += 4) {
+          const weakest = Math.min(baseline[i], baseline[i + 1], baseline[i + 2]);
+          weakestBytes.add(weakest);
+          const passes = weakest >= cutoff;
+          if (passes) passed++;
+          for (let c = 0; c < 3; c++) {
+            const expected = passes ? baseline[i + c] : background[c];
+            requireCheck(filtered[i + c] === expected, 'backend ' + (gl ? 'WebGL' : '2D') +
+              ', ' + percent + '%, pixel ' + i / 4 + ', channel ' + c);
+          }
+        }
+        if (cutoff > 0) requireCheck(weakestBytes.has(cutoff - 1) && weakestBytes.has(cutoff),
+          'fixture did not straddle the gate at ' + cutoff);
+        if (percent === 100) requireCheck(passed === 3, 'expected three pure-white ramp endpoints');
+        gates.push({percent, cutoff, passed, samples: width * height});
+      }
+
+      const paletteCases = [
+        {signal: [255, 0, 0], rgb: true, gain: 1, expected: [255, 24, 36]},
+        {signal: [255, 0, 0], rgb: false, gain: 1, expected: [11, 255, 255]},
+        {signal: [0, 255, 0], rgb: false, gain: 1, expected: [255, 24, 255]},
+        {signal: [0, 0, 255], rgb: false, gain: 1, expected: [255, 255, 36]},
+        {signal: [20, 20, 20], rgb: false, gain: 9, expected: [255, 255, 255]}
+      ];
+      for (const {signal, rgb, gain, expected} of paletteCases) {
+        ctx.fillStyle = 'rgb(' + signal.join(',') + ')';
+        ctx.fillRect(0, 0, width, height);
+        const pixel = read(gain, rgb, 0);
+        requireCheck(expected.every((byte, i) => pixel[i] === byte), 'palette or gain mismatch');
+      }
+      return {backend: gl ? 'WebGL' : 'Canvas 2D', status: 'passed', gates, paletteCases: paletteCases.length};
+    } finally {
+      // Repeated checks should not consume device WebGL contexts used by the stage.
+      if (gl) gl.getExtension('WEBGL_lose_context')?.loseContext();
+    }
+  }
+
+  function auditScatter() {
+    // A half-plane with a straight vertical edge yields the cumulative Gaussian
+    // response in x. Use a discrete kernel as a reference for browser blur.
+    const size = 96, middle = size / 2;
+    const input = canvas(size, size);
+    const ink = input.getContext('2d', {alpha: false});
+    ink.fillStyle = '#ff0000';
+    ink.fillRect(middle, 0, middle, size);
+    const out = createScatteringPass()(input, 1);
+    const bytes = out.getContext('2d').getImageData(0, middle, size, 1).data;
+    const sigma = 4, direct = 0.35, radius = 24;
+    const weights = Array.from({length: radius * 2 + 1}, (_, i) =>
+      Math.exp(-0.5 * ((i - radius) / sigma) ** 2));
+    const total = weights.reduce((a, b) => a + b, 0);
+    let maxError = 0;
+    for (let x = middle - 16; x <= middle + 16; x++) {
+      let sum = 0;
+      for (let j = 0; j < weights.length; j++) if (x + j - radius >= middle) sum += weights[j];
+      const expected = 255 * ((x >= middle ? direct : 0) + (1 - direct) * sum / total);
+      maxError = Math.max(maxError, Math.abs(bytes[x * 4] - expected));
+      requireCheck(bytes[x * 4 + 1] === 0 && bytes[x * 4 + 2] === 0, 'scattering mixed planes');
+    }
+    // Canvas filters and the downsampled fallback approximate the continuous blur.
+    requireCheck(maxError <= 8, 'Gaussian step-response error ' + maxError + ' exceeds 8 bytes');
+    return {backend: 'filter' in ink ? 'Canvas blur' : 'software Gaussian', sigmaCSSPx: 4, dpr: 1,
+      directFraction: direct, samples: 33, maxByteError: +maxError.toFixed(3), toleranceBytes: 8};
+  }
+
+  const renderers = [auditMixer(false), auditMixer(true)];
+  return {status: 'passed on listed available backends', url: location.href, userAgent: navigator.userAgent,
+    renderers, scattering: auditScatter()};
+}
+document.getElementById('loom-optics-check').addEventListener('click', () => {
+  const result = document.getElementById('loom-optics-result');
+  const status = document.getElementById('loom-optics-status');
+  try {
+    const receipt = verifyLightLoomOptics();
+    status.textContent = 'Passed on ' + receipt.renderers.filter(r => r.status === 'passed').map(r => r.backend).join(' and ') + '.';
+    result.textContent = JSON.stringify(receipt, null, 2);
+  } catch (error) {
+    status.textContent = 'The optics check failed.';
+    result.textContent = String(error);
+  }
+  result.hidden = false;
+});
 </script></html>
 

@@ -1,8 +1,8 @@
 <!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Universal Carrier Observatory · Joachim’s Reziprokium</title><style>
 *{box-sizing:border-box}body{margin:0;background:#111d22;color:#f1f3ec;font:16px/1.55 system-ui,sans-serif}main{max-width:1060px;margin:auto;padding:22px}h1,h2{font-family:Georgia,serif;font-weight:500;margin:.1em 0 .4em;line-height:1.1}h1{font-size:clamp(32px,5vw,62px)}h2{font-size:27px}header{padding:16px 0 5px;border-bottom:1px solid #496167}nav,.row{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}button,select{font:inherit;color:inherit;background:#26383e;border:1px solid #587076;border-radius:5px;padding:6px 11px}button{cursor:pointer}button[aria-pressed=true]{background:#b8e9dc;color:#142d2c}section{border-top:1px solid #466269;padding:14px 0}.cols{display:grid;grid-template-columns:1.15fr 1fr;gap:22px}.value{font:34px/1.15 Georgia,serif;color:#fbce83;margin:10px 0}.hint,small{color:#b6c9cb}canvas{width:100%;aspect-ratio:1.45;background:#16272c;border-radius:8px}table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}td,th{border-bottom:1px solid #3b545d;text-align:left;padding:6px}label{display:inline-flex;gap:6px;align-items:center}input{width:150px}#ledger{padding-left:20px}#ledger li::marker{color:#9ae1cb}.sw{color:#f7cb81}.panel{padding:8px 0}p{margin:.5em 0}button:focus-visible,select:focus-visible{outline:3px solid #f9cd81}@media(max-width:700px){main{padding:14px}.cols{grid-template-columns:1fr;gap:8px}}
-label{max-width:100%;flex-wrap:wrap}select{max-width:100%}.cols>div{min-width:0}#ledger{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:8px}#ledger li{padding:9px;border-left:4px solid var(--c);background:#1c2e33;font-size:.89rem}#ledger li:nth-child(1){--c:#ce99db}#ledger li:nth-child(2){--c:#f4c075}#ledger li:nth-child(3){--c:#81c7ba}#ledger li:nth-child(4){--c:#80afda}#ledger li:nth-child(5){--c:#cfda80}#ledger li:nth-child(6){--c:#ea9a91}#joint td:nth-child(2){background:linear-gradient(to right,#28574e var(--p),transparent var(--p));font-variant-numeric:tabular-nums}</style><main><header><small>Aletheos · Reziprokium edition</small><h1>Universal Carrier Observatory</h1><p>Follow one registered pentagon through ten contacts. Switch instruments at any contact.</p></header>
+label{max-width:100%;flex-wrap:wrap}select{max-width:100%}.cols>div{min-width:0}#ledger{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:8px}#ledger li{padding:9px;border-left:4px solid var(--c);background:#1c2e33;font-size:.89rem}#ledger li:nth-child(1){--c:#ce99db}#ledger li:nth-child(2){--c:#f4c075}#ledger li:nth-child(3){--c:#81c7ba}#ledger li:nth-child(4){--c:#80afda}#ledger li:nth-child(5){--c:#cfda80}#ledger li:nth-child(6){--c:#ea9a91}#joint td:nth-child(2){background:linear-gradient(to right,#28574e var(--p),transparent var(--p));font-variant-numeric:tabular-nums}#torus{display:block;aspect-ratio:1.85;height:clamp(170px,40vw,300px);touch-action:none;background:#0b1824}canvas[hidden]{display:none!important}</style><main><header><small>Aletheos · Reziprokium edition</small><h1>Universal Carrier Observatory</h1><p>Follow one registered pentagon through ten contacts. Switch instruments at any contact.</p></header>
 <nav aria-label="Instruments" id="nav"></nav><div class="row"><button id="prev">← Previous</button><button id="next">Next contact →</button><label>Contact <input id="step" type="range" min="0" max="9" value="0"></label><output id="pos"></output></div>
-<div class="cols"><div><canvas id="graph" width="620" height="430" aria-label="G60 vertices grouped in fifteen four-site fibres. Highlighted dart marks the current contact."></canvas><small><span class="sw">Gold</span> shows the local directed contact. Teal intensity follows endpoint energy. Layout groups the four lifts of each quotient site.</small></div><div aria-live="polite"><h2 id="heading"></h2><div class="value" id="value"></div><p id="detail"></p><p class="hint" id="boundary"></p></div></div>
+<div class="cols"><div><div id="tview"><canvas id="torus" aria-label="Toroidal projection of the ten registered contacts"></canvas><div class="row"><button id="torusPlay">Pause</button><label>View <select id="torusView"><option value=".18">Edge-on</option><option value=".70">Oblique</option><option value="1.55">Top</option></select></label><label>Contacts/s <select id="torusSpeed"><option>.25</option><option selected>.70</option><option>1.5</option><option>3</option></select></label></div><small>Drag to orbit. Gold follows the ten contacts: one turn around the ring in five contacts, one around the tube in ten. Motion between contacts is display interpolation. The paired-port replay below uses its own clock.</small></div><canvas id="graph" width="620" height="430" aria-label="G60 vertices grouped in fifteen four-site fibres. Highlighted dart marks the current contact."></canvas><small><span class="sw">Gold</span> shows the local directed contact. Teal intensity follows endpoint energy. Layout groups the four lifts of each quotient site.</small></div><div aria-live="polite"><h2 id="heading"></h2><div class="value" id="value"></div><p id="detail"></p><p class="hint" id="boundary"></p></div></div>
 <section id="bell" hidden><h2>Bell measurement</h2><div class="row"><label>Preparation <select id="model"><option>Pentagon · fixed collective charges</option><option>Program 02 · six native axes</option><option>Singlet · angular benchmark</option><option>Independent histories</option><option>Phase-erased shared bit</option><option>Local routed shared history</option><option>Separated stations · relay</option><option>Separated stations · A</option><option>Separated stations · undisplaced</option></select></label></div><div class="row"><label>Alice <select id="left"></select></label><label>Bob <select id="right"></select></label><button id="sample">Register one pair</button><button id="clear">Clear counts</button></div><p id="trial"></p><table><thead><tr><th>A, B</th><th>Predicted joint</th><th>Registered count</th></tr></thead><tbody id="joint"></tbody></table><p id="local"></p><small>Samples use a central joint-table sampler. Counts are grouped by preparation, settings and contact. The sampler supplies no local detection dynamics.</small>
 <h2 style="margin-top:18px">Event ledger</h2><ol id="ledger"></ol></section>
 <section id="recip" hidden><h2>Receiver-to-source return</h2><p>This paired-port replay starts its own two-update clock on the TOM-PHY-029 cover. Both runs use the same launch.</p><div class="row"><label>Launch route <select id="recRoute"><option value="preserve">Preserve</option><option value="swap">Swap</option></select></label><label>B after update one <select id="recState"><option value="retained">Retain signed displacement</option><option value="cleared">Clear signed displacement</option></select></label></div><table><tbody id="recValues"></tbody></table><small>Negative net into B means outward energy transfer across the fixed cut. Source velocity and cut current measure different things.</small></section><section><h2>Contact record</h2><table><tbody id="record"></tbody></table></section></main>
@@ -26,6 +26,73 @@ for(let [u,v] of D.edges){c.beginPath();c.strokeStyle='#344b50';c.moveTo(...pts[
 let [x,y]=pts[r.tail],[u,v]=pts[r.head],a=Math.atan2(v-y,u-x);c.strokeStyle=c.fillStyle='#ffcc76';c.lineWidth=3;c.beginPath();c.moveTo(x,y);c.lineTo(u,v);c.stroke();c.beginPath();c.moveTo(u,v);c.lineTo(u-13*Math.cos(a-.42),v-13*Math.sin(a-.42));c.lineTo(u-13*Math.cos(a+.42),v-13*Math.sin(a+.42));c.fill();c.lineWidth=1;if(mode==='Bell'&&$('model').selectedIndex===5){for(const [ids,color] of [[[8,41,47,39,2],'#dba1ed'],[[8,41,53,49,3],'#8cc6fd']]){c.strokeStyle=color;c.lineWidth=3;c.setLineDash([5,3]);c.beginPath();ids.forEach((id,j)=>j?c.lineTo(...pts[id]):c.moveTo(...pts[id]));c.stroke();c.setLineDash([]);c.fillStyle=color;c.fillText('Station '+ids[4],...pts[ids[4]])}c.lineWidth=1;c.fillStyle='#ffcc76'}c.font='17px system-ui';c.fillText(r.tail+' → '+r.head,15,27)}
 function showRec(){const run=D.recip[$('recRoute').value],state=run[$('recState').value];$('recValues').innerHTML=[['B · stored position difference',state.receiver],['A · next signed velocity',state.source],['A · retained minus cleared',run.delta],['Net energy into B · one update',state.net_in]].map(([a,b])=>'<tr><th>'+a+'</th><td>'+b+'</td></tr>').join('')}
 $('recRoute').onchange=$('recState').onchange=showRec;
+const torusCanvas=$('torus'), tc=torusCanvas.getContext('2d');
+const tau=2*Math.PI, angle=n=>tau*n;
+let tilt=.18, yaw=-.3, fraction=0, lastFrame=0, frame=0;
+let playing=!matchMedia('(prefers-reduced-motion: reduce)').matches;
+function point(u,v){
+  const tube=0.34, ring=1+tube*Math.cos(v);
+  const a=u+yaw, x=ring*Math.cos(a), z=ring*Math.sin(a), y=tube*Math.sin(v);
+  return [x,y*Math.cos(tilt)-z*Math.sin(tilt),z*Math.cos(tilt)+y*Math.sin(tilt)];
+}
+function orbit(p){return point(angle(p/5),angle(p/10))}
+function renderTorus(){
+  const box=torusCanvas.getBoundingClientRect(), dpr=Math.min(devicePixelRatio||1,2);
+  const w=Math.round(box.width*dpr),h=Math.round(box.height*dpr);if(!w||!h)return;
+  if(torusCanvas.width!==w||torusCanvas.height!==h){torusCanvas.width=w;torusCanvas.height=h}
+  tc.setTransform(dpr,0,0,dpr,0,0);
+  const W=w/dpr,H=h/dpr,S=W*.34,screen=p=>[W/2+p[0]*S,H/2-p[1]*S];
+  tc.fillStyle='#0b1824';tc.fillRect(0,0,W,H);
+  const phase=k+fraction, surface=[],nu=48,nv=14;
+  for(let i=0;i<nu;i++)for(let j=0;j<nv;j++){
+    const u=angle(i/nu),v=angle(j/nv),du=tau/nu,dv=tau/nv;
+    const p=[point(u,v),point(u+du,v),point(u+du,v+dv),point(u,v+dv)];
+    const depth=p.reduce((sum,a)=>sum+a[2],0)/4;
+    surface.push({p,depth,i,j,u,v})
+  }
+  surface.sort((a,b)=>a.depth-b.depth);
+  for(const {p,depth,i,j,u,v} of surface){
+    const bright=(depth+1.34)/2.68, shine=.5+.5*Math.cos(v-2*u+angle(phase/10));
+    tc.beginPath();p.forEach((v,n)=>n?tc.lineTo(...screen(v)):tc.moveTo(...screen(v)));tc.closePath();
+    tc.fillStyle='rgba(32,95,111,'+(.10+.22*bright)+')';tc.fill();
+    tc.strokeStyle='rgba(132,213,211,'+(.08+.29*bright)+')';tc.lineWidth=.65;tc.stroke();
+    if((i+j)%3===0){
+      const u0=u+tau/nu*(phase%1),v0=v+tau/nv*(phase%1);
+      const a=screen(point(u0,v0)),b=screen(point(u0+.032,v0+.016)),dir=Math.atan2(b[1]-a[1],b[0]-a[0]);
+      tc.save();tc.translate(...a);tc.rotate(dir);tc.fillStyle=shine>.68?'#e4bd6d':'#73d1cf';tc.globalAlpha=.25+.58*bright;
+      tc.beginPath();tc.moveTo(3.2,0);tc.lineTo(-1.8,-1.7);tc.lineTo(-1.8,1.7);tc.closePath();tc.fill();tc.restore()
+    }
+  }
+  for(let n=0;n<160;n++){
+    const a=orbit(n/16),b=orbit((n+1)/16);
+    tc.strokeStyle='rgba(251,200,112,'+(a[2]>0?.7:.18)+')';tc.lineWidth=1.5;tc.beginPath();tc.moveTo(...screen(a));tc.lineTo(...screen(b));tc.stroke()
+  }
+  for(let t=20;t>=0;t--){
+    const p=screen(orbit(phase-t*.016));tc.fillStyle='rgba(255,214,137,'+(1-t/21)+')';
+    tc.beginPath();tc.arc(...p,t===0?4.5:2.4,0,tau);tc.fill()
+  }
+}
+function tick(now){
+  frame=0;
+  if(mode!=='Reziprokium'||!playing||document.hidden)return;
+  fraction+=Math.min(100,now-(lastFrame||now))*.001*Number($('torusSpeed').value);lastFrame=now;
+  if(fraction>=1){fraction-=1;k=(k+1)%10;render()}else renderTorus();
+  if(!frame)frame=requestAnimationFrame(tick)
+}
+function syncTorus(){
+  cancelAnimationFrame(frame);frame=0;
+  const visible=mode==='Reziprokium';
+  $('tview').hidden=!visible;$('graph').hidden=visible;$('graph').nextElementSibling.hidden=visible;
+  $('torusPlay').textContent=playing?'Pause':'Play';
+  if(visible){renderTorus();if(playing&&!document.hidden)frame=requestAnimationFrame(tick)}
+}
+$('torusPlay').onclick=()=>{playing=!playing;lastFrame=0;syncTorus()};
+$('torusView').onchange=e=>{tilt=Number(e.target.value);renderTorus()};
+torusCanvas.onpointerdown=e=>{torusCanvas.setPointerCapture(e.pointerId)};
+torusCanvas.onpointermove=e=>{if(torusCanvas.hasPointerCapture(e.pointerId)){yaw+=e.movementX*.009;tilt=Math.max(-1.56,Math.min(1.56,tilt+e.movementY*.009));$('torusView').selectedIndex=-1;renderTorus()}};
+document.addEventListener('visibilitychange',()=>{lastFrame=0;syncTorus()});
+window.addEventListener('resize',()=>{if(mode==='Reziprokium')renderTorus()});
+
 function render(){$('recip').hidden=mode!=='Reziprokium';if(mode==='Reziprokium')showRec();const r=current(),g=frac(r.coarse_span);$('step').value=k;$('pos').textContent=(k+1)+' / 10';let opts={
 Reziprokium:['Joachim Kiseleczuk · Reziprokium','h · v = '+D.recip.guard[k],'The fixed turn 26 → 15 → 4 reads the signed velocity of this pentagon. Step five contacts to see it reverse while endpoint energy repeats.','Joachim’s breathing-field proposal motivates the comparison. The separate receiver replay below measures the step Scott calls diastolic return.'],Thalean:['Registered contact',r.tail+' → '+r.head,'The native first-zero guard advances the contact. Five steps recover the energy profile. Ten restore the signed field and dart.','The optional cover sign returns after twenty contacts.'],
 Einstein:['Gravity field','Δφ = '+g.toFixed(7),'Unit-total endpoint energy passed through the calibrated full Green kernel. The field span is max φ − min φ. Within-fibre response Cρ is exactly zero.','This is a passive probe. No source force or SI energy conversion is installed.'],
@@ -34,8 +101,8 @@ Bohm:['Guided exit','Next site '+D.rows[(k+1)%10].head,'The signed field selects
 Wheeler:['Return and memory','Slot '+D.pi[r.head],'Four G60 vertices share this slot. Two extra bits suffice to identify a lift within a declared fibre chart.','A complete path can require further receipts. The crossing bit belongs to a different reference-relative observer.'],
 Bohr:['Collective charge readout','‖[X,Z]‖ = 2','The fixed charge analyzers have a nonzero commutator on the encoded modes. Their ordinary one-wing means vanish on this preparation.','The registered Klein deck permutations commute. Complementarity depends on the observable algebra.'],
 Bell:['Pentagon · fixed analyzer quartet','S = '+r.chsh.toFixed(6),'Exact CHSH '+r.CHSH+' = 14/5 − 1.5 × the energy fraction in chambers 1, 6 and 12. These use the frozen chamber labels.','The controls below can switch to independent preparations. Point-receiver scores and transmission tests are in the paper.']};
-let [h,v,d,b]=opts[mode];$('heading').textContent=h;$('value').textContent=v;$('detail').textContent=d;$('boundary').textContent=b;$('bell').hidden=mode!=='Bell';$('record').innerHTML=[['Native dart',r.tail+' → '+r.head],['Quotient dart',D.pi[r.tail]+' → '+D.pi[r.head]],['First face q, v',r.q[0].toFixed(4)+', '+r.v[0].toFixed(4)],['Energy in chambers 1, 6, 12',r.rho.reduce((s,v,i)=>s+([1,6,12].includes(D.pi[i])?v:0),0).toFixed(7)],['Within-fibre field',0],['Collective pair score',r.CHSH]].map(([a,b])=>'<tr><th>'+a+'</th><td>'+b+'</td></tr>').join('');for(const b of $('nav').children)b.setAttribute('aria-pressed',b.textContent===mode);$('trial').textContent='';draw();table()}
+let [h,v,d,b]=opts[mode];$('heading').textContent=h;$('value').textContent=v;$('detail').textContent=d;$('boundary').textContent=b;$('bell').hidden=mode!=='Bell';$('record').innerHTML=[['Native dart',r.tail+' → '+r.head],['Quotient dart',D.pi[r.tail]+' → '+D.pi[r.head]],['First face q, v',r.q[0].toFixed(4)+', '+r.v[0].toFixed(4)],['Energy in chambers 1, 6, 12',r.rho.reduce((s,v,i)=>s+([1,6,12].includes(D.pi[i])?v:0),0).toFixed(7)],['Within-fibre field',0],['Collective pair score',r.CHSH]].map(([a,b])=>'<tr><th>'+a+'</th><td>'+b+'</td></tr>').join('');for(const b of $('nav').children)b.setAttribute('aria-pressed',b.textContent===mode);$('trial').textContent='';if(mode!=='Reziprokium')draw();table();syncTorus()}
 for(const n of names){const b=document.createElement('button');b.textContent=n;b.onclick=()=>{mode=n;render()};$('nav').append(b)}
-$('next').onclick=()=>{k=(k+1)%10;render()};$('prev').onclick=()=>{k=(k+9)%10;render()};$('step').oninput=e=>{k=+e.target.value;render()};$('model').onchange=()=>{settings();render()};$('left').onchange=$('right').onchange=()=>{table();$('trial').textContent=''};
+$('next').onclick=()=>{fraction=0;k=(k+1)%10;render()};$('prev').onclick=()=>{fraction=0;k=(k+9)%10;render()};$('step').oninput=e=>{fraction=0;k=+e.target.value;render()};$('model').onchange=()=>{settings();render()};$('left').onchange=$('right').onchange=()=>{table();$('trial').textContent=''};
 $('sample').onclick=()=>{let p=table(),u=Math.random(),j=0;while(j<3&&u>=p[j])u-=p[j++];let c=counts.get(key())||[0,0,0,0];c[j]++;counts.set(key(),c);table();$('trial').textContent='Registered (A,B) = '+['(+,+)','(+,−)','(−,+)','(−,−)'][j]};
 $('clear').onclick=()=>{counts.delete(key());$('trial').textContent='';table()};settings();render();</script></html>

@@ -37,7 +37,7 @@ def load_spec(spec_file=SPEC):
         if path.is_absolute() or '..' in path.parts or name != str(path) or '\\' in name or not path.parts:
             raise ValueError('Invalid release path: ' + name)
     hashes = [*guards.values(), *(x['after'] for x in files.values()),
-              *(x[k] for x in files.values() for k in ('before','v2') if x[k] is not None)]
+              *(x[k] for x in files.values() for k in ('before','v2','v3') if x.get(k) is not None)]
     if not all(SHA.fullmatch(value) for value in hashes) or any(k not in files and k not in guards for k in public):
         raise ValueError('Invalid release fingerprint or HTTP check')
     for url in spec['runtime_urls']:
@@ -126,7 +126,7 @@ def update(webroot, package, private, spec, menu_rule=menu.RULE):
             old_sha = None if old is None else digest(old)
             if old_sha == desired[name]:
                 continue
-            if old_sha not in (spec['files'][name]['before'], spec['files'][name]['v2']):
+            if old_sha not in (spec['files'][name]['before'], spec['files'][name]['v2'], spec['files'][name].get('v3',spec['files'][name]['after'])):
                 raise ValueError('Existing bytes differ from both supported versions: ' + str(path))
             mode = 0o644 if old is None else path.stat().st_mode & 0o777
             changes[name] = old, mode

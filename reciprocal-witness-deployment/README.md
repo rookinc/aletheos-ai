@@ -4,20 +4,20 @@ The instrument belongs at `/observatories/reciprocal-witness/`. Its Library reco
 
 ## Install the two sitters in the Orthogonal field
 
-Save the current single-file installer as `Update-Orthogonal-Sitters.sh` in Downloads. With the existing Bluehost SSH alias configured in Termux, run
+Save the current single-file installer as `Update-Sitter-Layers.sh` in Downloads. With the existing Bluehost SSH alias configured in Termux, run
 
 ```bash
-bash Update-Orthogonal-Sitters.sh
+bash Update-Sitter-Layers.sh
 ```
 
-The current release carries the complete update. The checkout command is `bash reciprocal-witness-deployment/update-sitters.sh`. The installer accepts the first Reciprocal Witness release, the published two-sitter release, a partial update, or the completed update. The default SSH target is `gurtiamy`. A configured alternate can be selected with `WITNESS_SSH_TARGET`. [Current phone installer](releases/Update-Orthogonal-Sitters.sh)
+The current release carries the complete update. The checkout command is `bash reciprocal-witness-deployment/update-sitters.sh`. The installer accepts the first Reciprocal Witness release, the published two-sitter release, a partial update, or the completed update. The default SSH target is `gurtiamy`. A configured alternate can be selected with `WITNESS_SSH_TARGET`. [Current phone installer](releases/Update-Sitter-Layers.sh)
 
 On a host with the pinned Orthogonal v1.8 workbench, the installer adds **Two sitters** to its seven-mode navigation. The link opens `/observatories/reciprocal-witness/sitters.html?field=orthogonal`. Opening `sitters.html` without a field parameter still selects the original sitter view. The workbench is independently installed at `/observatories/thalean-orthogonal/`. This branch carries its public menu excerpt and fingerprints. The running installer reads the actual page on the host.
 
 The link is one 368-byte insertion at offset 24,615. The original page has 420,768 bytes and SHA-256 `53ae52f010d79e678556bce470aaaaf740249603a3c498caccd753760a90662f`. The patched page has SHA-256 `e1e7146123c670c329eba0259967c11c61ef8104ef4bff1177459b217643ace3`. The installer checks the entire original, the navigation anchor and both surrounding regions, and backs up the original privately on the server. It writes the menu after the Reciprocal files pass their on-host hash checks. A missing workbench is reported as `absent`. A different independent release is reported as `preserved-unrecognized`; the Reciprocal field installs, and that workbench keeps its own navigation. On a host with the pinned workbench, this command removes only the inserted link and verifies recovery of the exact original bytes.
 
 ```bash
-bash Update-Orthogonal-Sitters.sh --remove-menu-link
+bash Update-Sitter-Layers.sh --remove-menu-link
 ```
 
 The upload is checked before extraction. The installation verifies each changed or reused file, the versioned CSS and JavaScript URLs used by the browser, the field query URL, and the separately served workbench when present. The installer prints the filesystem result before it checks the public routes. A changed installation has a private backup journal of original and replacement hashes. A stale public response is reported separately. Recheck the public site from a full checkout with `python3 -B reciprocal-witness-deployment/update_sitters.py verify`.
@@ -43,7 +43,7 @@ Recreate the deterministic upload or the single-file phone installer with
 
 ```bash
 python3 -B reciprocal-witness-deployment/update_sitters.py pack /tmp/reciprocal-witness-orthogonal.tar.gz
-python3 -B reciprocal-witness-deployment/update_sitters.py phone /tmp/Update-Orthogonal-Sitters.sh
+python3 -B reciprocal-witness-deployment/update_sitters.py phone /tmp/Update-Sitter-Layers.sh
 ```
 
 ## Install the complete accession on a fresh host

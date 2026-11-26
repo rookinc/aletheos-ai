@@ -10,6 +10,11 @@ const positiveMod = n => ((n%20)+20)%20;
 
 function sourceView(camera,name) {
   camera.reset();
+  if(name==='seated'){
+    camera.turn(0,-38.25*Math.PI/180,0);
+    camera.turn(-2.16*Math.PI/180,0,0);
+    camera.turn(0,0,.3*Math.PI/180);
+  }
   if(name==='x')camera.turn(0,-Math.PI/2,0);
   if(name==='y')camera.turn(Math.PI/2,0,0);
   if(name==='oblique'){
@@ -107,18 +112,25 @@ function appendTrace(ctx,path,start,finish,screen) {
 
 export function orthogonalRenderer(canvas,onChange) {
   const camera=new VolumeCamera();
-  let cameraName='oblique',axis=2,merge=0,light=.65,allCharts=true;
+  let cameraName='oblique',axis=2,merge=0,light=.65,allCharts=true,tracerAlpha=1,arrowAlpha=1;
   let plate=null,dirty=true,screen=null,viewSize='',phaseKey='',fieldPaths=[];
   let orbitPaths=new Map();
   function view(name){
-    if(!['oblique','x','y','z'].includes(name))return;
-    sourceView(camera,name);cameraName=name;dirty=true;
+    if(!['seated','oblique','x','y','z'].includes(name))return;
+    sourceView(camera,name);
+    if(name==='seated'){
+      camera.panX=-.009*canvas.clientWidth;
+      camera.panY=.057*canvas.clientHeight;
+    }
+    cameraName=name;dirty=true;
   }
-  view('oblique');
+  view('seated');
   function gesture(){cameraName='custom';dirty=true;onChange();}
-  function reset(){view('oblique');onChange();}
+  function reset(){view('seated');onChange();}
   bindVolumeCamera(canvas,camera,gesture,reset,reset);
   function setting(key,value) {
+    if(key==='tracer')tracerAlpha=Number(value)/100;
+    if(key==='arrow')arrowAlpha=Number(value)/100;
     if(key==='camera')view(value);
     if(key==='copy'){axis=Number(value);orbitPaths.clear();dirty=true;}
     if(key==='others'){allCharts=Boolean(value);dirty=true;}
@@ -153,7 +165,7 @@ export function orthogonalRenderer(canvas,onChange) {
     return batches;
   }
   function paintMarkers(ctx,batches,front) {
-    ctx.save();ctx.globalAlpha=(front?.85:.62)*light;
+    ctx.save();ctx.globalAlpha=(front?.85:.62)*light*arrowAlpha;
     for(const c of chartCopies){ctx.fillStyle=c.color;ctx.fill(batches[c.axis][front?1:0]);}
     ctx.restore();
   }
@@ -176,7 +188,7 @@ export function orthogonalRenderer(canvas,onChange) {
       ctx.lineWidth=side?1.7:1.6;
       for(let k=k0;k<k1;k++){
         const lo=Math.max(0,start-k),hi=Math.min(1,drawn-k);if(hi<=lo)continue;
-        ctx.globalAlpha=.19+.68*((k+hi-start)/Math.max(1,drawn-start));
+        ctx.globalAlpha=tracerAlpha*(.19+.68*((k+hi-start)/Math.max(1,drawn-start)));
         ctx.beginPath();appendTrace(ctx,pathFor(i,side,k),lo,hi,screen);ctx.stroke();
       }
     }
@@ -204,10 +216,10 @@ export function orthogonalRenderer(canvas,onChange) {
     }
     ctx.drawImage(plate,0,0,w,h);
     const step=Math.floor(state.drawn),f=state.drawn-step;
-    const batches=light>0?markerBatches(positiveMod(step),f,w,visibleCopies()):null;
+    const batches=light>0&&arrowAlpha>0?markerBatches(positiveMod(step),f,w,visibleCopies()):null;
     if(batches)paintMarkers(ctx,batches,false);
     const selected=pair==='all'?[0,1,2]:[Number(pair)];
-    paintTrails(ctx,state.drawn,selected,tail);
+    if(tracerAlpha>0)paintTrails(ctx,state.drawn,selected,tail);
     const seats=sitters(ctx,state);
     if(batches)paintMarkers(ctx,batches,true);
     paintHeads(ctx,state.drawn,selected);
@@ -221,7 +233,7 @@ export function orthogonalRenderer(canvas,onChange) {
   }
   function registration(state) {
     const f=state.drawn-Math.floor(state.drawn);
-    return {source:CHART_SOURCE,copy:AXES[axis],visibleCopies:visibleCopies().map(c=>c.name),mergePercent:merge,brightness:Math.round(100*light),
+    return {source:CHART_SOURCE,copy:AXES[axis],visibleCopies:visibleCopies().map(c=>c.name),mergePercent:merge,brightness:Math.round(100*light),tracerOpacity:tracerAlpha,arrowOpacity:arrowAlpha,
       camera:{name:cameraName,quaternion:[...camera.q],zoom:camera.zoom,panPixels:[camera.panX,camera.panY],
         viewport:[canvas.clientWidth,canvas.clientHeight]},sitterLocations:SEATS,
       displayedStep:state.drawn,registered:DART_PAIRS.map((_,i)=>{

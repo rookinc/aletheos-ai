@@ -78,6 +78,7 @@ with sync_playwright() as pw:
         else:
             page.goto(options.url)
         expect(loc('run')).to_have_accessible_name('Play loop')
+        press('spheresView');press('restart')
         expect(loc('orbitReading')).to_have_text('F0 / 20')
         expect(loc('gapReading')).to_have_text('B leads A by 42.0°')
         ensure_layout()

@@ -1,7 +1,7 @@
 import {ENCOUNTERS, twoSitters} from './loop-transport.js';
 import {dartPairAt, DART_PAIRS} from './dart-orbits.js';
 import {fieldRenderer, phasePlot, rhythmStrip} from './loop-view.js?v=orthogonal-1';
-import {orthogonalRenderer} from './orthogonal-view.js';
+import {orthogonalRenderer} from './orthogonal-view.js?v=layers-2';
 
 const $ = id => document.getElementById(id);
 const controls = ['rateA', 'rateB', 'gap', 'window', 'openA', 'openB'];
@@ -37,7 +37,7 @@ const colorNames = [['Cyan','red'],['Magenta','green'],['Yellow','blue']];
 
 function syncChartTools(){
   $('chartCamera').value=orthogonal.cameraName;
-  const name=orthogonal.cameraName==='oblique'?'Oblique':orthogonal.cameraName==='custom'?'Free orbit':'Along '+orthogonal.cameraName.toUpperCase();
+  const name=orthogonal.cameraName==='seated'?'Seated view':orthogonal.cameraName==='oblique'?'Oblique':orthogonal.cameraName==='custom'?'Free orbit':'Along '+orthogonal.cameraName.toUpperCase();
   $('chartSummary').textContent=name+' · '+orthogonal.copy+' chart';
 }
 function selectField(next) {
@@ -47,6 +47,7 @@ function selectField(next) {
   $('orthCanvas').hidden=!inChart;
   $('chartTools').hidden=!inChart;
   $('chartLegend').hidden=!inChart;
+  $('layerAlpha').hidden=!inChart;
   $('spheresView').setAttribute('aria-pressed',String(!inChart));
   $('orthogonalView').setAttribute('aria-pressed',String(inChart));
   $('sitterTitle').innerHTML=inChart?'Orthogonal <em>field loop</em>':'Two-sitter <em>field loop</em>';
@@ -62,7 +63,7 @@ function chooseField(next){
   selectField(next);
   if(location.protocol==='https:'||location.protocol==='http:'){
     const url=new URL(location.href);
-    if(field==='orthogonal')url.searchParams.set('field',field);else url.searchParams.delete('field');
+    if(field==='orthogonal')url.searchParams.set('field',field);else url.searchParams.set('field','spheres');
     history.replaceState(history.state,'',url);
   }
 }
@@ -80,7 +81,15 @@ function enableFields(){
       syncChartTools();paint(false);
     });
   }
-  selectField(new URLSearchParams(location.search).get('field')||document.body.dataset.defaultField);
+  for(const layer of ['tracer','arrow']){
+    const slider=$(layer+'Alpha');
+    slider.addEventListener('input',()=>{
+      orthogonal.setting(layer,slider.value);
+      $(layer+'Percent').textContent=slider.value+'%';
+      paint(false);
+    });
+  }
+  selectField(new URLSearchParams(location.search).get('field')||'orthogonal');
 }
 
 function showAddresses(step) {
@@ -226,4 +235,4 @@ $('receipt').addEventListener('click',()=>{
 document.addEventListener('visibilitychange',resetTimer);
 new ResizeObserver(()=>paint()).observe($('scope'));
 window.addEventListener('resize',()=>paint());
-enableFields();setConfig(config);setPlaying(playing);
+enableFields();setConfig(config,field==='orthogonal'?model.timeForStep(33):0);setPlaying(playing);

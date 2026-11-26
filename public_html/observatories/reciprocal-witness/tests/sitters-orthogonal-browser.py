@@ -119,6 +119,21 @@ with sync_playwright() as pw:
         def layout():
             assert page.evaluate('document.documentElement.scrollWidth <= innerWidth + 1')
         charts(True)
+        expect(loc('orbitReading')).to_have_text('F13 / 20')
+        initial=read()
+        assert initial['display']['orthogonal']['camera']['name']=='seated'
+        for layer in ('tracer','arrow'):
+            slider=loc(layer+'Alpha')
+            box=slider.bounding_box()
+            assert box['y']+box['height']<height
+            prior=loc('orthCanvas').evaluate("c=>c.toDataURL()")
+            slider.focus();slider.press('Home')
+            assert loc('orthCanvas').evaluate("c=>c.toDataURL()")!=prior
+            rec=read()
+            assert rec['display']['orthogonal'][layer+'Opacity']==0 and experiment(rec)==experiment(initial)
+            slider.press('End')
+            assert loc('orthCanvas').evaluate("c=>c.toDataURL()")==prior
+        press('restart')
         expect(loc('run')).to_have_accessible_name('Play loop')
         expect(loc('chartSites')).to_have_text('Cyan 0 · red 488')
         layout()

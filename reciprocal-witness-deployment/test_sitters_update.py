@@ -131,7 +131,7 @@ sys.exit(subprocess.run(['bash','-c',cmd],input=payload).returncode)
     env = dict(os.environ, PATH=str(shim)+os.pathsep+os.environ['PATH'],
                WITNESS_SSH_TARGET='fixture-sitters-host', WITNESS_TEST_WEBROOT=str(site),
                WITNESS_TEST_STATE=str(state), WITNESS_TEST_ORIGIN=origin)
-    for script in (HERE/'update-sitters.sh', HERE/'releases/Update-Orthogonal-Sitters.sh'):
+    for script in (HERE/'update-sitters.sh', HERE/'releases/Update-Sitter-Layers.sh'):
         cmd = ['bash',str(script)]
         ok = subprocess.run(cmd,env=env,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
         assert ok.returncode == 0, ok.stderr.decode()
@@ -158,7 +158,7 @@ def run():
         webroot.mkdir()
         dest = webroot/INSTRUMENT
         pack = updater.build_archive(package,archive,spec)
-        phone_installer = (HERE/'releases/Update-Orthogonal-Sitters.sh').read_bytes()
+        phone_installer = (HERE/'releases/Update-Sitter-Layers.sh').read_bytes()
         encoded = re.search(rb'base64\.b64decode\("""(.*?)"""\)', phone_installer, re.S)
         assert encoded and base64.b64decode(encoded.group(1)) == archive.read_bytes()
         twin = root/'copy.tar.gz'

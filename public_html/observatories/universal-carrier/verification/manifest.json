@@ -1,0 +1,157 @@
+{
+  "schema_version": "1.0",
+  "instrument": "Thalean G9000 · Light Loom",
+  "reference_html_commit": "d0d8e17612d3746d99bcd70ced842645811e4a0e",
+  "reference_html_url": "https://raw.githubusercontent.com/rookinc/aletheos-ai/d0d8e17612d3746d99bcd70ced842645811e4a0e/public_html/observatories/universal-carrier/index.html",
+  "packet": {
+    "path": "packet.json",
+    "sha256": "b348b05852ac20adf4d7b03fed0d7b1bd4013ffd4daa420544f43f2b6fd19a95",
+    "serialization": "Original inline JSON text followed by a single LF, UTF-8",
+    "keys": [
+      "recip",
+      "separated",
+      "rows",
+      "pi",
+      "C",
+      "edges"
+    ],
+    "contact_index": "UI = step + 1",
+    "numerics": {
+      "exact_rational_strings": [
+        "rows[].coarse_span",
+        "rows[].E[]",
+        "rows[].CHSH",
+        "recip.guard[]"
+      ],
+      "decimal_exports": [
+        "rows[].q[]",
+        "rows[].v[]",
+        "rows[].rho[]",
+        "rows[].chsh"
+      ]
+    },
+    "E_order": [
+      "00",
+      "01",
+      "10",
+      "11"
+    ],
+    "joint_outcome_order": [
+      "++",
+      "+-",
+      "-+",
+      "--"
+    ]
+  },
+  "launch": {
+    "quotient_pentagon": [
+      11,
+      0,
+      4,
+      12,
+      13
+    ],
+    "initial_site": 26,
+    "tan_half_phase": "-1/5",
+    "chosen_inputs": [
+      "native signed tensors and actions",
+      "four-site quotient",
+      "calibrated Green kernel",
+      "collective encoder and fixed analyzers"
+    ]
+  },
+  "run": {
+    "stdlib": "python check_packet.py packet.json",
+    "graph": "python verify_graph.py packet.json --census AT_4valent_60.s6 --theorem source/theorem_object.json",
+    "all_numeric": "python run_checks.py --separated",
+    "against_another_page": "python run_checks.py saved-page.html --separated",
+    "browser": "Execute verify-optics.js inside the running Light Loom page in browser DevTools.",
+    "dependencies": "requirements.txt",
+    "numerical_receipt": "numerical-receipt.txt",
+    "browser_receipt": "optics-receipt.json"
+  },
+  "sources": {
+    "source_revisions": "source/revisions.json",
+    "original_archive": "Universal-Thalean-Carrier-Research.zip",
+    "external_census": "https://raw.githubusercontent.com/rhysje00/graphsym/7f41251f06d341722428190bd33e8685436cf389/graphs/at4valent/AT_4valent_60.s6",
+    "census_record": 6,
+    "quotient_theorem": "https://aletheos.ai/json/theorem_object.json"
+  },
+  "claims": [
+    {
+      "register": "Graph and quotient",
+      "evidence": "external reference isomorphism",
+      "inputs": "AT_4valent_60.s6, identity.json, source/theorem_object.json",
+      "program": "verify_graph.py",
+      "criterion": "120 relabeled native edges equal GraphSym entry 6. The relabeled G15 quotient satisfies Q = MMᵀ = A³+2A²+2I."
+    },
+    {
+      "register": "Thalean and Schrödinger",
+      "evidence": "exact model regeneration",
+      "inputs": "chosen launch, signed actions, native tensors, quotient",
+      "program": "pentagon.py, experiment.py",
+      "criterion": "Rebuild the rational launch and first-zero held/free update, then compare the signed fields and each native dart at all ten rows."
+    },
+    {
+      "register": "Einstein",
+      "evidence": "calibrated model regeneration",
+      "inputs": "B1, B2, regenerated q and v, rational G/Gden and C/Cden",
+      "program": "experiment.py, replay_loom.py",
+      "criterion": "Generate normalized endpoint rho and exact Green span; check within-fibre null and site-26 pacing samples. Probe tolerance 1e-14 absolute."
+    },
+    {
+      "register": "Reziprokium",
+      "evidence": "exact model regeneration",
+      "inputs": "fixed turn 26→15→4, signed velocities, paired-cover.js",
+      "program": "reciprokum.py",
+      "criterion": "Compare all ten guard products and both retained/cleared interventions on each launch route."
+    },
+    {
+      "register": "Bohm",
+      "evidence": "independent guard selection",
+      "inputs": "incoming dart, signed face state, W turn tensor",
+      "program": "verify-drawers.py",
+      "criterion": "Select the downward crossing among the eligible outgoing guards and compare all ten successors."
+    },
+    {
+      "register": "Wheeler",
+      "evidence": "quotient projection and fibre enumeration",
+      "inputs": "pi, arriving sites",
+      "program": "verify_graph.py, verify-drawers.py",
+      "criterion": "Check four lifts per slot and recover the 60 sites from (slot, index in sorted fibre)."
+    },
+    {
+      "register": "Bohr",
+      "evidence": "exact encoded observable algebra",
+      "inputs": "integer X and Z, charge projector and encoder",
+      "program": "verify-drawers.py",
+      "criterion": "Check commutator norm 2 and vanishing one-wing charge contractions."
+    },
+    {
+      "register": "Bell, fixed pentagon preparation",
+      "evidence": "exact pair computation and independent projector check",
+      "inputs": "signed four-flux state, collective switch and analyzer axes",
+      "program": "experiment.py, factorization.py, verify.py",
+      "criterion": "Compare 40 E fractions and 10 scores; prove the three-chamber identity and independently check 40 joint tables."
+    },
+    {
+      "register": "Bell, separate all-launch preparations",
+      "evidence": "numerical receiver replay",
+      "inputs": "K=3,F=3 source, both stations, frozen receiver and flight data",
+      "program": "separated_tables.py (--separated via run_checks.py)",
+      "criterion": "Compare all probabilities, correlations, S and marginal changes for three stored preparations with absolute tolerance 1e-11."
+    },
+    {
+      "register": "Display, gain and scattering",
+      "evidence": "browser pixel measurement",
+      "inputs": "actual UI cutoff and mixer, controlled RGB ramps and step edge",
+      "program": "verify-optics.js",
+      "criterion": "Test six cutoff positions across 768 pixels each per available backend, five hue/gain controls, and the 35% direct / 65% blurred step profile. At 100% only exact display white passes."
+    }
+  ],
+  "boundaries": [
+    "The specified preparation, calibration and analyzer axes select this experiment; an unlabeled adjacency list permits many choices.",
+    "The sampled pair outcomes are drawn from joint tables. Experimental detector outcomes, physical separation, and a loophole-controlled Bell test are outside this replay.",
+    "The optics receipt identifies the measured browser backends. The blur is a display-space approximation."
+  ]
+}

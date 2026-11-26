@@ -1,0 +1,73 @@
+/* Shared by the curated Observatory index and the deployed-instrument directory. */
+main section.loom-feature {
+  margin: clamp(1rem, 3vw, 2.25rem) 0;
+  padding: 0;
+  border: 0;
+}
+main .loom-feature-link {
+  display: grid;
+  grid-template-columns: minmax(0, .86fr) minmax(0, 1.14fr);
+  align-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  box-sizing: border-box;
+  background: #0a1823;
+  border: 1px solid #29434c;
+  border-radius: 1rem;
+  color: #f4faf9;
+  text-decoration: none;
+}
+main .loom-feature-link:focus-visible {
+  outline: 3px solid #00a9ac;
+  outline-offset: 4px;
+}
+.loom-feature-copy {
+  position: relative;
+  z-index: 1;
+  padding: clamp(1.35rem, 3.8vw, 3.75rem) 0 clamp(1.35rem, 3.8vw, 3.75rem) clamp(1.35rem, 3.8vw, 3.75rem);
+}
+main .loom-feature p.loom-feature-label {
+  margin: 0 0 1rem;
+  color: #a9d8da;
+  font: 600 .8rem/1.55 "Instrument Sans", system-ui, sans-serif;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+main .loom-feature h2 {
+  margin: 0;
+  color: #f4faf9;
+  font: 400 clamp(2.85rem, 6.6vw, 5.5rem)/1 Baskervville, Georgia, serif;
+  letter-spacing: -.055em;
+}
+main .loom-feature p.loom-feature-description {
+  max-width: 34ch;
+  margin: 1.1rem 0 1.5rem;
+  color: #ccdbde;
+  font: 400 1.05rem/1.55 "Instrument Sans", system-ui, sans-serif;
+}
+.loom-feature-action {
+  display: inline-block;
+  padding: .73rem 1.1rem;
+  border-radius: .4rem;
+  background: #e8f5ef;
+  color: #102e31;
+  font: 600 .98rem/1.4 "Instrument Sans", system-ui, sans-serif;
+}
+.loom-feature-link:hover .loom-feature-action,
+.loom-feature-link:focus-visible .loom-feature-action {
+  background: #c5efec;
+  text-decoration: underline;
+  text-underline-offset: .16em;
+}
+.loom-feature-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+@media (max-width: 42rem) {
+  main .loom-feature-link { grid-template-columns: minmax(0, 1fr); }
+  .loom-feature-copy { padding: 1.4rem 1.4rem .7rem; }
+  main .loom-feature p.loom-feature-label { margin-bottom: .7rem; }
+  main .loom-feature p.loom-feature-description { margin: .8rem 0 1rem; }
+  .loom-feature-image { max-height: clamp(8rem, 37vw, 13rem); object-fit: contain; margin-bottom: .75rem; }
+}

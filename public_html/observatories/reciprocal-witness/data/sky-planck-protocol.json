@@ -1,0 +1,21 @@
+{
+  "extends": "CMB-DATUM-002 protocol sha256 dd347ea5eebdc1977cd06da082397c498fa70cfe9ec93cbe3ab383dfc4ac533c",
+  "primary_planck": {
+    "product": "COM_CMB_IQU-smica_2048_R3.00_full.fits",
+    "column": "I_STOKES"
+  },
+  "product_sensitivity_or_fallback": {
+    "product": "COM_CMB_IQU-smica-nosz_2048_R3.00_full.fits",
+    "column": "I_STOKES"
+  },
+  "frame": "the existing WMAP Galactic contact frame, with no frame fit",
+  "prefilter": "as in WMAP audit: nested arithmetic means to NSIDE 128, equal-weight full-sky quadrature for ell=2 and ell=3",
+  "numerical_control": "repeat with NSIDE 64",
+  "latitude_fit_control": "same WMAP abs(b)>=20 degree support and joint ell 0..8 fit at NSIDE 64, retain ell 2 and 3",
+  "beams": "published map beams, no new beam correction or gain normalization",
+  "common_geometry": "same native projectors, decoder at rcond 1e-10 and 8192 fixed Fibonacci evaluation points, applied separately to each mission",
+  "comparisons": "sky, degree 2, degree 3, all directional samples and native register; mission-to-mission receivers and predictions on the same held-out grid",
+  "units": "thermodynamic microkelvin",
+  "original_protocol_sha256": "981497dfbc59b9310f61a72fde1f4cfa07ed6d125ff9ec291ab0c22915240332",
+  "source_column_amendment": "The noSZ I_STOKES_INP temperature payload failed its published K_CMB scale. Use the standard I_STOKES column across both Planck products. This selection preceded any receiver comparison and all observation and scoring parameters remain sealed."
+}

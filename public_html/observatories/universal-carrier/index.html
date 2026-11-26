@@ -1,8 +1,8 @@
 <!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Universal Carrier Observatory · Joachim’s Reziprokium</title><style>
 *{box-sizing:border-box}body{margin:0;background:#111d22;color:#f1f3ec;font:16px/1.55 system-ui,sans-serif}main{max-width:1060px;margin:auto;padding:22px}h1,h2{font-family:Georgia,serif;font-weight:500;margin:.1em 0 .4em;line-height:1.1}h1{font-size:clamp(32px,5vw,62px)}h2{font-size:27px}header{padding:16px 0 5px;border-bottom:1px solid #496167}nav,.row{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}button,select{font:inherit;color:inherit;background:#26383e;border:1px solid #587076;border-radius:5px;padding:6px 11px}button{cursor:pointer}button[aria-pressed=true]{background:#b8e9dc;color:#142d2c}section{border-top:1px solid #466269;padding:14px 0}.cols{display:grid;grid-template-columns:1.15fr 1fr;gap:22px}.value{font:34px/1.15 Georgia,serif;color:#fbce83;margin:10px 0}.hint,small{color:#b6c9cb}canvas{width:100%;aspect-ratio:1.45;background:#16272c;border-radius:8px}table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}td,th{border-bottom:1px solid #3b545d;text-align:left;padding:6px}label{display:inline-flex;gap:6px;align-items:center}input{width:150px}#ledger{padding-left:20px}#ledger li::marker{color:#9ae1cb}.sw{color:#f7cb81}.panel{padding:8px 0}p{margin:.5em 0}button:focus-visible,select:focus-visible{outline:3px solid #f9cd81}@media(max-width:700px){main{padding:14px}.cols{grid-template-columns:1fr;gap:8px}}
-label{max-width:100%;flex-wrap:wrap}select{max-width:100%}.cols>div{min-width:0}#ledger{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:8px}#ledger li{padding:9px;border-left:4px solid var(--c);background:#1c2e33;font-size:.89rem}#ledger li:nth-child(1){--c:#ce99db}#ledger li:nth-child(2){--c:#f4c075}#ledger li:nth-child(3){--c:#81c7ba}#ledger li:nth-child(4){--c:#80afda}#ledger li:nth-child(5){--c:#cfda80}#ledger li:nth-child(6){--c:#ea9a91}#joint td:nth-child(2){background:linear-gradient(to right,#28574e var(--p),transparent var(--p));font-variant-numeric:tabular-nums}#torus{display:block;aspect-ratio:1.85;height:clamp(170px,40vw,300px);touch-action:none;background:#0b1824}canvas[hidden]{display:none!important}</style><main><header><small>Aletheos · Reziprokium edition</small><h1>Universal Carrier Observatory</h1><p>Follow one registered pentagon through ten contacts. Switch instruments at any contact.</p></header>
+label{max-width:100%;flex-wrap:wrap}select{max-width:100%}.cols>div{min-width:0}#ledger{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:8px}#ledger li{padding:9px;border-left:4px solid var(--c);background:#1c2e33;font-size:.89rem}#ledger li:nth-child(1){--c:#ce99db}#ledger li:nth-child(2){--c:#f4c075}#ledger li:nth-child(3){--c:#81c7ba}#ledger li:nth-child(4){--c:#80afda}#ledger li:nth-child(5){--c:#cfda80}#ledger li:nth-child(6){--c:#ea9a91}#joint td:nth-child(2){background:linear-gradient(to right,#28574e var(--p),transparent var(--p));font-variant-numeric:tabular-nums}#torus{display:block;aspect-ratio:1.85;height:clamp(170px,40vw,300px);touch-action:none;background:#0b1824}canvas[hidden]{display:none!important}#stageFrame{position:relative;background:#0b1824;border-radius:9px;overflow:hidden}#torus{height:clamp(340px,65svh,740px);aspect-ratio:auto}.cameraTools{position:absolute;right:8px;top:8px;display:flex;gap:5px}.cameraTools button{background:#172a30e8;font-size:14px;padding:8px 10px}.cols:has(#tview:not([hidden])){grid-template-columns:1fr}.stage-open{overflow:hidden}#stageFrame.expanded{position:fixed;inset:0;z-index:20;border-radius:0;height:100dvh}#stageFrame.expanded #torus{height:100%;width:100%}#stageFrame.expanded .cameraTools{top:max(8px,env(safe-area-inset-top));right:max(8px,env(safe-area-inset-right))}@media(max-width:700px){main{padding:10px}header{padding:2px 0}header h1{font-size:26px}header p{display:none}nav{flex-wrap:nowrap;overflow-x:auto;margin:6px 0}nav button{flex:none}.row{margin:7px 0}#torus{height:clamp(310px,61svh,650px)}} </style><main><header><small>Aletheos · Reziprokium edition</small><h1>Universal Carrier Observatory</h1><p>Follow one registered pentagon through ten contacts. Switch instruments at any contact.</p></header>
 <nav aria-label="Instruments" id="nav"></nav><div class="row"><button id="prev">← Previous</button><button id="next">Next contact →</button><label>Contact <input id="step" type="range" min="0" max="9" value="0"></label><output id="pos"></output></div>
-<div class="cols"><div><div id="tview"><canvas id="torus" aria-label="Toroidal projection of the ten registered contacts"></canvas><div class="row"><button id="torusPlay">Pause</button><label>View <select id="torusView"><option value=".18">Edge-on</option><option value=".70">Oblique</option><option value="1.55">Top</option></select></label><label>Contacts/s <select id="torusSpeed"><option>.25</option><option selected>.70</option><option>1.5</option><option>3</option></select></label></div><small>Drag to orbit. Gold follows the ten contacts: one turn around the ring in five contacts, one around the tube in ten. Motion between contacts is display interpolation. The paired-port replay below uses its own clock.</small></div><canvas id="graph" width="620" height="430" aria-label="G60 vertices grouped in fifteen four-site fibres. Highlighted dart marks the current contact."></canvas><small><span class="sw">Gold</span> shows the local directed contact. Teal intensity follows endpoint energy. Layout groups the four lifts of each quotient site.</small></div><div aria-live="polite"><h2 id="heading"></h2><div class="value" id="value"></div><p id="detail"></p><p class="hint" id="boundary"></p></div></div>
+<div class="cols"><div><div id="tview"><div id="stageFrame"><canvas id="torus" aria-label="Toroidal projection of the ten registered contacts"></canvas><div class="cameraTools"><button id="homeCamera">Reset view</button><button id="expandStage" aria-pressed="false">Full stage</button></div></div><div class="row"><button id="torusPlay">Pause</button><label>View <select id="torusView"><option value=".18">Edge-on</option><option value=".70">Oblique</option><option value="1.55">Top</option></select></label><label>Contacts/s <select id="torusSpeed"><option>.25</option><option selected>.70</option><option>1.5</option><option>3</option></select></label></div><small>Drag to orbit. Use two fingers to pan, pinch to zoom, or twist to roll. Double-tap to reset. With a mouse, scroll to zoom and Shift-drag to pan. Gold follows the ten contacts: one turn around the ring in five contacts, one around the tube in ten. Motion between contacts is display interpolation. The paired-port replay below uses its own clock.</small></div><canvas id="graph" width="620" height="430" aria-label="G60 vertices grouped in fifteen four-site fibres. Highlighted dart marks the current contact."></canvas><small><span class="sw">Gold</span> shows the local directed contact. Teal intensity follows endpoint energy. Layout groups the four lifts of each quotient site.</small></div><div aria-live="polite"><h2 id="heading"></h2><div class="value" id="value"></div><p id="detail"></p><p class="hint" id="boundary"></p></div></div>
 <section id="bell" hidden><h2>Bell measurement</h2><div class="row"><label>Preparation <select id="model"><option>Pentagon · fixed collective charges</option><option>Program 02 · six native axes</option><option>Singlet · angular benchmark</option><option>Independent histories</option><option>Phase-erased shared bit</option><option>Local routed shared history</option><option>Separated stations · relay</option><option>Separated stations · A</option><option>Separated stations · undisplaced</option></select></label></div><div class="row"><label>Alice <select id="left"></select></label><label>Bob <select id="right"></select></label><button id="sample">Register one pair</button><button id="clear">Clear counts</button></div><p id="trial"></p><table><thead><tr><th>A, B</th><th>Predicted joint</th><th>Registered count</th></tr></thead><tbody id="joint"></tbody></table><p id="local"></p><small>Samples use a central joint-table sampler. Counts are grouped by preparation, settings and contact. The sampler supplies no local detection dynamics.</small>
 <h2 style="margin-top:18px">Event ledger</h2><ol id="ledger"></ol></section>
 <section id="recip" hidden><h2>Receiver-to-source return</h2><p>This paired-port replay starts its own two-update clock on the TOM-PHY-029 cover. Both runs use the same launch.</p><div class="row"><label>Launch route <select id="recRoute"><option value="preserve">Preserve</option><option value="swap">Swap</option></select></label><label>B after update one <select id="recState"><option value="retained">Retain signed displacement</option><option value="cleared">Clear signed displacement</option></select></label></div><table><tbody id="recValues"></tbody></table><small>Negative net into B means outward energy transfer across the fixed cut. Source velocity and cut current measure different things.</small></section><section><h2>Contact record</h2><table><tbody id="record"></tbody></table></section></main>
@@ -28,6 +28,7 @@ function showRec(){const run=D.recip[$('recRoute').value],state=run[$('recState'
 $('recRoute').onchange=$('recState').onchange=showRec;
 const torusCanvas=$('torus'), tc=torusCanvas.getContext('2d');
 const tau=2*Math.PI, angle=n=>tau*n;
+let panX=0,panY=0,zoom=1,roll=0;
 let tilt=.18, yaw=-.3, fraction=0, lastFrame=0, frame=0;
 let playing=!matchMedia('(prefers-reduced-motion: reduce)').matches;
 function point(u,v){
@@ -41,7 +42,7 @@ function renderTorus(){
   const w=Math.round(box.width*dpr),h=Math.round(box.height*dpr);if(!w||!h)return;
   if(torusCanvas.width!==w||torusCanvas.height!==h){torusCanvas.width=w;torusCanvas.height=h}
   tc.setTransform(dpr,0,0,dpr,0,0);
-  const W=w/dpr,H=h/dpr,S=W*.34,screen=p=>[W/2+p[0]*S,H/2-p[1]*S];
+  const W=w/dpr,H=h/dpr,S=Math.min(W,H)*.345*zoom,cr=Math.cos(roll),sr=Math.sin(roll),screen=p=>[W/2+panX+(cr*p[0]+sr*p[1])*S,H/2+panY+(sr*p[0]-cr*p[1])*S];
   tc.fillStyle='#0b1824';tc.fillRect(0,0,W,H);
   const phase=k+fraction, surface=[],nu=48,nv=14;
   for(let i=0;i<nu;i++)for(let j=0;j<nv;j++){
@@ -87,9 +88,73 @@ function syncTorus(){
   if(visible){renderTorus();if(playing&&!document.hidden)frame=requestAnimationFrame(tick)}
 }
 $('torusPlay').onclick=()=>{playing=!playing;lastFrame=0;syncTorus()};
-$('torusView').onchange=e=>{tilt=Number(e.target.value);renderTorus()};
-torusCanvas.onpointerdown=e=>{torusCanvas.setPointerCapture(e.pointerId)};
-torusCanvas.onpointermove=e=>{if(torusCanvas.hasPointerCapture(e.pointerId)){yaw+=e.movementX*.009;tilt=Math.max(-1.56,Math.min(1.56,tilt+e.movementY*.009));$('torusView').selectedIndex=-1;renderTorus()}};
+const fingers=new Map();
+let lastTap=null,tapStart=null;
+function rectPoint(x,y){
+  const r=torusCanvas.getBoundingClientRect();
+  return {x:x-r.left-r.width/2,y:y-r.top-r.height/2}
+}
+function cameraAround(from,to,factor,rotation){
+  const next=Math.max(.30,Math.min(8,zoom*factor));
+  const scale=next/zoom, c=Math.cos(rotation),s=Math.sin(rotation);
+  const dx=panX-from.x,dy=panY-from.y;
+  panX=to.x+scale*(c*dx-s*dy);panY=to.y+scale*(s*dx+c*dy);
+  zoom=next;roll+=rotation
+}
+function resetView(value=.18){
+  tilt=value;yaw=-.3;zoom=1;roll=panX=panY=0;
+  $('torusView').value=value===.18?'.18':value===.70?'.70':'1.55';renderTorus()
+}
+$('torusView').onchange=e=>resetView(Number(e.target.value));
+$('homeCamera').onclick=()=>resetView();
+function expandStage(on){
+  $('stageFrame').classList.toggle('expanded',on);document.body.classList.toggle('stage-open',on);
+  $('expandStage').textContent=on?'Exit full stage':'Full stage';$('expandStage').setAttribute('aria-pressed',on);
+  renderTorus()
+}
+$('expandStage').onclick=()=>expandStage(!$('stageFrame').classList.contains('expanded'));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('stageFrame').classList.contains('expanded'))expandStage(false)});
+torusCanvas.addEventListener('contextmenu',e=>e.preventDefault());
+torusCanvas.onpointerdown=e=>{
+  if(fingers.size>=2)return;
+  torusCanvas.setPointerCapture(e.pointerId);
+  const p=rectPoint(e.clientX,e.clientY);
+  fingers.set(e.pointerId,p);
+  tapStart=fingers.size===1?{...p,time:performance.now()}:null;
+  if(fingers.size===2)lastTap=null
+};
+torusCanvas.onpointermove=e=>{
+  if(!fingers.has(e.pointerId))return;
+  const before=fingers.get(e.pointerId),after=rectPoint(e.clientX,e.clientY);
+  if(tapStart&&Math.hypot(after.x-tapStart.x,after.y-tapStart.y)>8){tapStart=null;lastTap=null}
+  fingers.set(e.pointerId,after);
+  if(fingers.size===1){
+    if(e.shiftKey||e.buttons===2){panX+=after.x-before.x;panY+=after.y-before.y}
+    else{yaw+=(after.x-before.x)*.009;tilt+=(after.y-before.y)*.009;$('torusView').selectedIndex=-1}
+  }else{
+    const other=[...fingers].find(([id])=>id!==e.pointerId)[1];
+    const mid=p=>({x:(p.x+other.x)/2,y:(p.y+other.y)/2});
+    const d=p=>Math.hypot(p.x-other.x,p.y-other.y);
+    const arg=p=>Math.atan2(p.y-other.y,p.x-other.x);
+    if(d(before)>2&&d(after)>2)cameraAround(mid(before),mid(after),d(after)/d(before),arg(after)-arg(before))
+  }
+  renderTorus()
+};
+function lift(e){
+  if(!fingers.delete(e.pointerId))return;
+  const now=performance.now();
+  if(e.type==='pointerup'&&tapStart&&now-tapStart.time<300){
+    if(lastTap&&now-lastTap.time<350&&Math.hypot(tapStart.x-lastTap.x,tapStart.y-lastTap.y)<24){resetView();lastTap=null}
+    else lastTap={...tapStart,time:now}
+  }
+  tapStart=null
+}
+for(const evt of ['pointerup','pointercancel','lostpointercapture'])torusCanvas.addEventListener(evt,lift);
+torusCanvas.addEventListener('wheel',e=>{
+  e.preventDefault();const p=rectPoint(e.clientX,e.clientY);
+  const delta=e.deltaY*(e.deltaMode===1?16:e.deltaMode===2?200:1);
+  cameraAround(p,p,Math.exp(-Math.max(-300,Math.min(300,delta))*.003),0);renderTorus()
+},{passive:false});
 document.addEventListener('visibilitychange',()=>{lastFrame=0;syncTorus()});
 window.addEventListener('resize',()=>{if(mode==='Reziprokium')renderTorus()});
 

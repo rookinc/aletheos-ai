@@ -201,7 +201,7 @@ input[type=range]{accent-color:#6be8ea}
     <legend>Light and layers</legend>
 <label for="scatterFlag" title="Simulate scattering of the field light">Gaussian blur<input type="checkbox" id="scatterFlag" checked></label>
 <label for="rgbFlag">RGB channels<input type="checkbox" id="rgbFlag"></label><label for="axisFlag">XYZ axes<input type="checkbox" id="axisFlag" checked></label><label for="alpha-field"><span id="name-field">XZ · Magenta</span><input id="alpha-field" data-layer="field" type="range" min="0" max="100" value="65"><output for="alpha-field">65%</output></label><label for="alpha-fieldXY"><span id="name-fieldXY">XY · Yellow</span><input id="alpha-fieldXY" data-layer="fieldXY" type="range" min="0" max="100" value="63"><output for="alpha-fieldXY">63%</output></label><label for="alpha-fieldYZ"><span id="name-fieldYZ">YZ · Cyan</span><input id="alpha-fieldYZ" data-layer="fieldYZ" type="range" min="0" max="100" value="15"><output for="alpha-fieldYZ">15%</output></label><label for="alpha-wave">Brightness field<input id="alpha-wave" data-layer="wave" type="range" min="0" max="100" value="100"><output for="alpha-wave">100%</output></label><label for="alpha-surface">Surface<input id="alpha-surface" data-layer="surface" type="range" min="0" max="100" value="0"><output for="alpha-surface">0%</output></label><label for="alpha-mesh">Mesh<input id="alpha-mesh" data-layer="mesh" type="range" min="0" max="100" value="0"><output for="alpha-mesh">0%</output></label><label for="alpha-arrows">Direction arrows<input id="alpha-arrows" data-layer="arrows" type="range" min="0" max="100" value="0"><output for="alpha-arrows">0%</output></label><label for="alpha-arrowTrails">Arrow tracers<input id="alpha-arrowTrails" data-layer="arrowTrails" type="range" min="0" max="100" value="60"><output for="alpha-arrowTrails">60%</output></label><label for="tailLength">Tail length<input id="tailLength" type="range" min="0" max="300" step="5" value="300"><output for="tailLength">300%</output></label><label for="alpha-orbit">Contact orbit<input id="alpha-orbit" data-layer="orbit" type="range" min="0" max="100" value="0"><output for="alpha-orbit">0%</output></label><label for="alpha-head">Tracer head<input id="alpha-head" data-layer="head" type="range" min="0" max="100" value="0"><output for="alpha-head">0%</output></label><label for="alpha-tail">Tracer tail<input id="alpha-tail" data-layer="tail" type="range" min="0" max="100" value="0"><output for="alpha-tail">0%</output></label><label for="alpha-outward">Outward pulse<input id="alpha-outward" data-layer="outward" type="range" min="0" max="100" value="0"><output for="alpha-outward">0%</output></label><label for="alpha-returning">Return pulse<input id="alpha-returning" data-layer="returning" type="range" min="0" max="100" value="0"><output for="alpha-returning">0%</output></label></fieldset>
-</section></div></div><section id="instruments"><h2>Instruments</h2>
+</section></div></div><section id="instruments"><h2>Instruments</h2><details class="loom-guide" id="matter-wave"><summary>Matter-wave spectrometer · native harmonics</summary><article class="loom-copy"><h3>Signed field and energy clocks</h3><p>Fourier analysis of the archived ten-contact register, before brightness, camera or playback transforms. Frequency is in cycles per contact, not physical Hz. The energy field has a native graph gradient; the face quadratures have no vertex-domain crosswalk in this instrument.</p><label>Observable <select id="mw-field"><option value="q">Signed q</option><option value="v">Signed v</option><option value="rho">Energy density</option></select></label><p id="mw-recurrence" role="status"></p><table><thead><tr><th>Harmonic</th><th>Cycles/contact</th><th>Power</th><th>Graph k² proxy</th></tr></thead><tbody id="mw-spectrum"></tbody></table><p>Graph k² is the Rayleigh quotient of the unnormalized G60 Laplacian, using the complex temporal Fourier mode of the vertex energy density. It is a graph-unit proxy, not an inverse physical wavelength. A single periodic history cannot identify an independent dispersion branch or rest mass.</p><p>SR comparison target: ω² = c²k² + ω₀². A rest gap is not fitted here. Next experiment: independent native preparations and measured propagation histories.</p><button id="mw-export">Export spectrum receipt</button></article></details>
 <details id="light-loom-guide" class="loom-guide">
   <summary>About the Light Loom · Name, kernel &amp; resources</summary>
   <article class="loom-copy" aria-labelledby="loom-guide-title">
@@ -1100,5 +1100,32 @@ document.getElementById('loom-optics-check').addEventListener('click', () => {
   }
   result.hidden = false;
 });
+</script><script>
+(()=>{
+const field=document.getElementById('mw-field'), body=document.getElementById('mw-spectrum'), status=document.getElementById('mw-recurrence');
+function audit(){
+ const f=field.value, rows=D.rows,N=rows.length,M=rows[0][f].length;
+ const half=N/2,sign=f==='rho'?1:-1;
+ let residual=0;
+ for(let t=0;t<half;t++)for(let j=0;j<M;j++)residual=Math.max(residual,Math.abs(rows[t+half][f][j]-sign*rows[t][f][j]));
+ const bins=[];
+ for(let h=0;h<=half;h++){
+  const re=new Array(M).fill(0),im=new Array(M).fill(0);
+  for(let t=0;t<N;t++)for(let j=0;j<M;j++){const a=2*Math.PI*h*t/N;re[j]+=rows[t][f][j]*Math.cos(a);im[j]-=rows[t][f][j]*Math.sin(a)}
+  const norm=re.reduce((s,x,j)=>s+x*x+im[j]*im[j],0);
+  const k2=f==='rho'&&norm>1e-20?D.edges.reduce((s,[a,b])=>s+(re[a]-re[b])**2+(im[a]-im[b])**2,0)/norm:null;
+  bins.push({harmonic:h,cycles_per_contact:h/N,power:norm*(h===0||h===half?1:2),graph_k2_proxy:k2});
+ }
+ const total=bins.reduce((s,b)=>s+b.power,0);
+ for(const b of bins)b.power_fraction=b.power/total;
+ return {observable:f,contact_count:N,half_return_sign:sign,half_return_max_error:residual,frequency_units:'cycles/contact',graph_units:'unnormalized G60 Laplacian',physical_mass_inferred:false,bins};
+}
+function show(){
+ const a=audit();
+ status.textContent='Five-contact '+(a.half_return_sign===1?'return':'sign reversal')+' · maximum error '+a.half_return_max_error.toExponential(2);
+ body.replaceChildren(...a.bins.map(b=>{const tr=document.createElement('tr');for(const value of [b.harmonic,b.cycles_per_contact.toFixed(2),(100*b.power_fraction).toFixed(5)+'%',b.graph_k2_proxy===null?'—':b.graph_k2_proxy.toFixed(6)]){const td=document.createElement('td');td.textContent=value;tr.append(td)}return tr}));
+}
+field.addEventListener('change',show);document.getElementById('mw-export').addEventListener('click',()=>{const url=URL.createObjectURL(new Blob([JSON.stringify(audit(),null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='light-loom-spectrum.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)});show();
+})();
 </script></html>
 

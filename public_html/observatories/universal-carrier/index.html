@@ -131,6 +131,15 @@ input[type=range]{accent-color:#6be8ea}
   .view-keys button{padding-inline:1px;font-size:12px}
   .speed-control select{font-size:12px}
 }
+
+@media (max-width: 700px) and (orientation: portrait) {
+  #stageFrame:not(.expanded) { min-height: 0; }
+  #stageFrame:not(.expanded) #viewport {
+    flex: none;
+    min-height: 0;
+    height: clamp(235px, min(84vw, 48svh), 420px);
+  }
+}
 </style><main><div id="stageFrame"><header class="deck-title">
   <h1>Thalean G9000 <span class="loom-model"><span class="loom-separator">· </span>Light Loom</span></h1>
   <span class="title-grille" aria-hidden="true"></span>

@@ -1,0 +1,306 @@
+{
+  "title": "Independent native contact preparations",
+  "observation": "Normalized endpoint energy at each held-entry event; in-between states are unsampled.",
+  "frequency_unit": "omega / omega_free = h / (N * step_free_periods); one free period = 2*pi oscillator-time units.",
+  "spatial_operator": "Unnormalized 60-vertex combinatorial Laplacian 4I-A, on normalized endpoint density.",
+  "exact_checks": [
+    "Opposite eligible guards, first positive held and free zeros, signed native update.",
+    "Exact closure, minimal periods and spatial/temporal support on every trajectory.",
+    "The canonical launch matches every published endpoint and face trace to 2e-12."
+  ],
+  "conclusion": "At graph eigenvalue 2, the twelve-contact density carries two distinct positive temporal lines. Its pure H2 line also shifts with launch parameter at fixed eigenvalue. These samples cannot provide one frequency per density eigenvalue. A fundamental field dispersion law, propagation speed and gap remain undetermined.",
+  "scope": "Two symmetry-generated routes, each at two rational launch parameters. Harmonics of one route are related. The temporal spectra are contact-sampled and frequencies are in native clock units.",
+  "source_sha256": {
+    "native_tensor_arrays.npz": "c2393278b1014c59798dc0b47c597a12f31c1c4a56d75d4872770278da98ef28",
+    "actions.npz": "dc7eafc829d31d64182cca9c209e0929dbb20e8f65ee64d1595a237eaf3cd402"
+  },
+  "route_search": "All 480 native vertex actions and all 60 roots, retaining cyclic neighbor walks of length at least three with a live forward turn. Classes are distinguished by the guard autocorrelation sequence. Other histories are outside this search.",
+  "route_classes": [
+    {
+      "contact_count": 12,
+      "representative_start": 3,
+      "representative_action": 15,
+      "rooted_action_pairs": 480,
+      "guard_autocorrelation": [
+        1380,
+        -1020,
+        330,
+        30,
+        330,
+        -1020,
+        1380,
+        -1020,
+        330,
+        30,
+        330,
+        -1020
+      ]
+    },
+    {
+      "contact_count": 10,
+      "representative_start": 1,
+      "representative_action": 21,
+      "rooted_action_pairs": 480,
+      "guard_autocorrelation": [
+        1380,
+        1020,
+        330,
+        -330,
+        -1020,
+        -1380,
+        -1020,
+        -330,
+        330,
+        1020
+      ]
+    }
+  ],
+  "preparations": [
+    {
+      "id": "pentagon-1-5",
+      "label": "Pentagon \u00b7 \u22121/5",
+      "action": 447,
+      "parameter": "-1/5",
+      "contact_count": 10,
+      "step_free_periods": 0.937167041810999,
+      "native_cycle": [
+        26,
+        15,
+        4,
+        56,
+        48,
+        54,
+        40,
+        7,
+        34,
+        22
+      ],
+      "hold_free_periods": 0.5969585970905096,
+      "free_free_periods": 0.3402084447204893,
+      "signed_period_contacts": 10,
+      "density_period_contacts": 5,
+      "nonzero_signed_bins": [
+        1,
+        3
+      ],
+      "density_spectrum": [
+        {
+          "harmonic": 0,
+          "omega_over_free": 0.0,
+          "share_of_density_power": 0.9611148949422654,
+          "rayleigh_k_squared": 0.2328961999117789,
+          "graph_eigenvalue_power": {
+            "0": 0.8835519000441105,
+            "2": 0.11644809995588945
+          }
+        },
+        {
+          "harmonic": 2,
+          "omega_over_free": 0.2134091267374451,
+          "share_of_density_power": 0.03830458186443915,
+          "rayleigh_k_squared": 3.1067305431650096,
+          "graph_eigenvalue_power": {
+            "2": 0.631089818944997,
+            "5": 0.36891018105500306
+          }
+        },
+        {
+          "harmonic": 4,
+          "omega_over_free": 0.4268182534748902,
+          "share_of_density_power": 0.0005805231932953967,
+          "rayleigh_k_squared": 3.638674085577839,
+          "graph_eigenvalue_power": {
+            "2": 0.4537753048073869,
+            "5": 0.5462246951926131
+          }
+        }
+      ]
+    },
+    {
+      "id": "pentagon-3-20",
+      "label": "Pentagon \u00b7 \u22123/20",
+      "action": 447,
+      "parameter": "-3/20",
+      "contact_count": 10,
+      "step_free_periods": 0.9526068577225104,
+      "native_cycle": [
+        26,
+        15,
+        4,
+        56,
+        48,
+        54,
+        40,
+        7,
+        34,
+        22
+      ],
+      "hold_free_periods": 0.6551873679885994,
+      "free_free_periods": 0.297419489733911,
+      "signed_period_contacts": 10,
+      "density_period_contacts": 5,
+      "nonzero_signed_bins": [
+        1,
+        3
+      ],
+      "density_spectrum": [
+        {
+          "harmonic": 0,
+          "omega_over_free": 0.0,
+          "share_of_density_power": 0.922698640112012,
+          "rayleigh_k_squared": 0.23105444107247067,
+          "graph_eigenvalue_power": {
+            "0": 0.8844727794637647,
+            "2": 0.11552722053623533
+          }
+        },
+        {
+          "harmonic": 2,
+          "omega_over_free": 0.20995019968485154,
+          "share_of_density_power": 0.07606933986119518,
+          "rayleigh_k_squared": 3.087831423536839,
+          "graph_eigenvalue_power": {
+            "2": 0.6373895254877203,
+            "5": 0.3626104745122796
+          }
+        },
+        {
+          "harmonic": 4,
+          "omega_over_free": 0.4199003993697031,
+          "share_of_density_power": 0.0012320200267927647,
+          "rayleigh_k_squared": 3.6320847095283004,
+          "graph_eigenvalue_power": {
+            "2": 0.45597176349056645,
+            "5": 0.5440282365094335
+          }
+        }
+      ]
+    },
+    {
+      "id": "twelve-1-5",
+      "label": "Twelve-contact loop \u00b7 \u22121/5",
+      "action": 15,
+      "parameter": "-1/5",
+      "contact_count": 12,
+      "step_free_periods": 0.9371670418109987,
+      "native_cycle": [
+        3,
+        46,
+        38,
+        32,
+        28,
+        34,
+        20,
+        11,
+        17,
+        13,
+        57,
+        49
+      ],
+      "hold_free_periods": 0.9320409714477254,
+      "free_free_periods": 0.00512607036327343,
+      "signed_period_contacts": 6,
+      "density_period_contacts": 6,
+      "nonzero_signed_bins": [
+        0,
+        4,
+        6
+      ],
+      "density_spectrum": [
+        {
+          "harmonic": 0,
+          "omega_over_free": 0.0,
+          "share_of_density_power": 0.7861504447958327,
+          "rayleigh_k_squared": 0.05294419496274615,
+          "graph_eigenvalue_power": {
+            "0": 0.973897187738369,
+            "2": 0.02585662211513641,
+            "5": 0.00024619014649466614
+          }
+        },
+        {
+          "harmonic": 2,
+          "omega_over_free": 0.17784093894787098,
+          "share_of_density_power": 0.16840652472328174,
+          "rayleigh_k_squared": 2.0,
+          "graph_eigenvalue_power": {
+            "2": 1.0
+          }
+        },
+        {
+          "harmonic": 4,
+          "omega_over_free": 0.35568187789574196,
+          "share_of_density_power": 0.04544303048088555,
+          "rayleigh_k_squared": 3.4509803921568625,
+          "graph_eigenvalue_power": {
+            "2": 0.5163398692810458,
+            "5": 0.4836601307189542
+          }
+        }
+      ]
+    },
+    {
+      "id": "twelve-3-20",
+      "label": "Twelve-contact loop \u00b7 \u22123/20",
+      "action": 15,
+      "parameter": "-3/20",
+      "contact_count": 12,
+      "step_free_periods": 0.9526068577225104,
+      "native_cycle": [
+        3,
+        46,
+        38,
+        32,
+        28,
+        34,
+        20,
+        11,
+        17,
+        13,
+        57,
+        49
+      ],
+      "hold_free_periods": 0.9521615136462716,
+      "free_free_periods": 0.0004453440762387737,
+      "signed_period_contacts": 6,
+      "density_period_contacts": 6,
+      "nonzero_signed_bins": [
+        0,
+        4,
+        6
+      ],
+      "density_spectrum": [
+        {
+          "harmonic": 0,
+          "omega_over_free": 0.0,
+          "share_of_density_power": 0.8008260240849648,
+          "rayleigh_k_squared": 0.032736564681502316,
+          "graph_eigenvalue_power": {
+            "0": 0.9845429557182264,
+            "2": 0.014849552242455172,
+            "5": 0.0006074920393183948
+          }
+        },
+        {
+          "harmonic": 2,
+          "omega_over_free": 0.17495849973737626,
+          "share_of_density_power": 0.1568495060330901,
+          "rayleigh_k_squared": 2.0,
+          "graph_eigenvalue_power": {
+            "2": 1.0
+          }
+        },
+        {
+          "harmonic": 4,
+          "omega_over_free": 0.3499169994747525,
+          "share_of_density_power": 0.04232446988194496,
+          "rayleigh_k_squared": 3.4509803921568625,
+          "graph_eigenvalue_power": {
+            "2": 0.5163398692810457,
+            "5": 0.4836601307189542
+          }
+        }
+      ]
+    }
+  ]
+}
